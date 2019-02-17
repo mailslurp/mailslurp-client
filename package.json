@@ -1,0 +1,21 @@
+{
+  "name": "mailslurp-client",
+  "version": "3.0.0.alpha",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --outDir dist/",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.0",
+    "mailslurp-swagger-sdk-ts": "git+ssh://git@github.com:mailslurp/swagger-sdk-typescript-fetch.git#288e4e8e322d586ebc17a85ed7f783984dd55976",
+    "ts-jest": "^23.10.5"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.9",
+    "jest": "^24.1.0",
+    "typescript": "^2.0"
+  }
+}
