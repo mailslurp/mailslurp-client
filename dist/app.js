@@ -36,9 +36,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
- * Convenience wrapper around generated swagger sdk
+ * This library is a convenience wrapper around the generated swagger sdk
+ * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
 var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
+/**
+ *  MailSlurp client
+ *  Usage:
+ *  `
+ *  const api = new MailSlurp({ apiKey: "test" })
+ *  const inbox = await api.createInbox()
+ *  `
+ */
 var MailSlurp = /** @class */ (function () {
     function MailSlurp(opts) {
         // check options
@@ -57,17 +66,17 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
-    MailSlurp.prototype.deleteInbox = function (id) {
+    MailSlurp.prototype.deleteInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.deleteInboxUsingDELETE(id)];
+                return [2 /*return*/, this.inboxApi.deleteInboxUsingDELETE(inboxId)];
             });
         });
     };
-    MailSlurp.prototype.getInbox = function (id) {
+    MailSlurp.prototype.getInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.getInboxUsingGET(id)];
+                return [2 /*return*/, this.inboxApi.getInboxUsingGET(inboxId)];
             });
         });
     };
@@ -78,25 +87,25 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
-    MailSlurp.prototype.getMessages = function (id, args) {
+    MailSlurp.prototype.getMessages = function (inboxId, args) {
         if (args === void 0) { args = {}; }
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.getMessagesUsingGET(id, args.limit, args.minCount, args.retryTimeout, args.since)];
+                return [2 /*return*/, this.inboxApi.getMessagesUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since)];
             });
         });
     };
-    MailSlurp.prototype.sendMessage = function (id, sendEmailOptions) {
+    MailSlurp.prototype.sendMessage = function (inboxId, sendEmailOptions) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.sendMessageUsingPOST(id, sendEmailOptions)];
+                return [2 /*return*/, this.inboxApi.sendMessageUsingPOST(inboxId, sendEmailOptions)];
             });
         });
     };
-    MailSlurp.prototype.getMessage = function (id) {
+    MailSlurp.prototype.getMessage = function (messageId) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.emailApi.getMessageUsingGET(id)];
+                return [2 /*return*/, this.emailApi.getMessageUsingGET(messageId)];
             });
         });
     };
