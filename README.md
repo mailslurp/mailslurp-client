@@ -51,6 +51,14 @@ interface AbstractMailSlurpClient {
 
 ```
 
+### Response types
+- [Inbox](docs/interfaces/_api_.inbox.md)
+- [Email](docs/interfaces/_api_.email.md)
+- [SendEmailOptions](docs/interfaces/_api_.sendemailoptions.md)
+- [GetMessageOptions](docs/modules/_index_.md)
+
+See [documentation](https://docs.mailslurp.com) for more information.
+
 ### Calling a method
 ```javascript
 // call methods and get a Promise back
