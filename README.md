@@ -4,7 +4,7 @@
 
 Completely rewritten for MailSlurp v2.0.
 
-###About
+## About
 This client is a handwritten wrapper around the [official generated swagger client](https://github.com/mailslurp/swagger-sdk-typescript-fetch). It's written in Typescript but can be used in Javascript. 
 
 ![MailSlurp Logo](https://www.mailslurp.com/images/permalink/about.svg)
