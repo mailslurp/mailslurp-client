@@ -60,18 +60,6 @@ interface AbstractMailSlurpClient {
 
 See [documentation](https://docs.mailslurp.com) for more information.
 
-### Calling a method
-```javascript
-// call methods and get a Promise back
-(async () => {
-    try {
-        const inbox = await api.createInbox()
-    } catch (e) {
-        // handle error
-    }
-})
-```
-
 ## Examples 
 
 ### Test email sending
