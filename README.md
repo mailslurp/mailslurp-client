@@ -10,9 +10,10 @@ This client is a handwritten wrapper around the [official generated swagger clie
 ![MailSlurp Logo](https://www.mailslurp.com/images/permalink/about.svg)
 
 ## Documentation
-Please see [official documentation](https://docs.mailslurp.com) for extensive usage and examples.
+The best way to understand the library is the [examples section](#examples)
+For more information see [official documentation](https://docs.mailslurp.com).
 
-The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions. Or take a look at the [js-docs](./docs/).
+The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions. Or additionally take a look at the [js-docs](./docs/).
 
 ## Install
 `npm install mailslurp-client`
@@ -71,4 +72,46 @@ See [documentation](https://docs.mailslurp.com) for more information.
 })
 ```
 
-For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32).
+## Examples 
+
+### Test email sending
+```typescript
+// javascript jest example. other SDKs and REST APIs available
+import { MailSlurp } from "mailslurp-client"
+const api = new MailSlurp({ apiKey: "test" }) 
+
+test('my app can receive and handle emails', async () => {
+    // create a new email address for this test
+    const inbox = await api.createInbox()
+
+    // send an email from the address to your application
+    await api.sendEmail(inbox.id, { to: myAppAddress })
+
+    // assert that app has handled the email
+    expect(myAppReceivedEmail()).resolves.toBe(true)
+})
+```
+
+### Test email processing
+```typescript
+// can your app handle inbound emails
+import { MailSlurp } from "mailslurp-client"
+const api = new MailSlurp({ apiKey: "test" }) 
+
+test('my app can send emails', async () => {
+    // create a new email address for this test
+    const inbox = await api.createInbox()
+
+    // trigger an app action that sends an email
+    await signUpForMyApp(inbox.emailAddress)
+
+    // fetch welcome email from the inbox
+    const emails = await api.getEmails(inbox.id, { minCount: 1 })
+
+    // assert that the correct email was sent
+    expect(emails[0].length).toBe(1)
+    expect(emails[0].content).toBe(expectedContent)
+}
+```
+
+For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://doc.mailslurp.com).
