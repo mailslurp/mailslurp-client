@@ -1,8 +1,12 @@
-install:
+node_modules:
 	yarn install
 
-test:
-	yarn run test
+test: node_modules
+	#yarn run test
 
-build: 
+build: test
 	yarn run build
+
+deploy: build
+	npm publish
+
