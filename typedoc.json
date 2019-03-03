@@ -1,0 +1,10 @@
+{
+  "theme": "markdown",
+  "out": "docs",
+  "exclude": "*.spec.ts",
+  "excludeExternals": true,
+  "includeDeclarations" : true,
+  "disableOutputCheck": true,
+  "mode": "modules",
+  "readme": "none"
+}

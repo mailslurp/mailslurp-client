@@ -2,7 +2,14 @@
  * This library is a convenience wrapper around the generated swagger sdk
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
-import { EmailControllerApi, InboxControllerApi, SendEmailOptions } from "mailslurp-swagger-sdk-ts"
+import {
+    Email,
+    EmailControllerApi,
+    EmailPreview,
+    Inbox,
+    InboxControllerApi,
+    SendEmailOptions
+} from "mailslurp-swagger-sdk-ts"
 
 type Config = {
   // obtain an apiKey at https://app.mailslurp.com 
@@ -44,27 +51,25 @@ export class MailSlurp {
         this.emailApi = new EmailControllerApi(conf)
     }
 
-    async createInbox() {
+    async createInbox(): Promise<Inbox> {
         return this.inboxApi.createInboxUsingPOST()
     }
-    async deleteInbox(inboxId: string) {
+    async deleteInbox(inboxId: string): Promise<Response> {
         return this.inboxApi.deleteInboxUsingDELETE(inboxId)
     }
-    async getInbox(inboxId: string) {
+    async getInbox(inboxId: string): Promise<Inbox> {
         return this.inboxApi.getInboxUsingGET(inboxId)
     }
-    async getInboxes() {
+    async getInboxes(): Promise<Inbox[]> {
         return this.inboxApi.getInboxesUsingGET()
     }
-    async getMessages(inboxId: string, args: GetMessagesOptions = {}) {
+    async getMessages(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]> {
         return this.inboxApi.getMessagesUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since)
     }
-    async sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions) {
+    async sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
         return this.inboxApi.sendMessageUsingPOST(inboxId, sendEmailOptions)
     }
-    async getMessage(messageId: string) {
+    async getMessage(messageId: string): Promise<Email> {
         return this.emailApi.getMessageUsingGET(messageId)
     }
-    // TODO getRawMessage ? fetch raw message contents from s3?
-    // TODO message analytics fetch
 }

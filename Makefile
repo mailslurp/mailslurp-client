@@ -6,6 +6,8 @@ test: node_modules
 
 build: test
 	yarn run build
+	rm -rf docs
+	yarn run docs
 
 deploy: build
 	npm publish

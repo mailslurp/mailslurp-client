@@ -12,7 +12,7 @@ This client is a handwritten wrapper around the [official generated swagger clie
 ## Documentation
 Please see [official documentation](https://docs.mailslurp.com) for extensive usage and examples.
 
-The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions.
+The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions. Or take a look at the [js-docs](./docs/).
 
 ## Install
 `npm install mailslurp-client`
