@@ -1,16 +1,15 @@
 # Official MailSlurp Javascript/Typescript API Client
 
-![MailSlurp Logo](https://www.mailslurp.com/images/cta-image-2.svg)
-
 > Offical SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [about page](https://www.mailslurp.com) for more information.
 
 Completely rewritten for MailSlurp v2.0.
 
-### About
+###About
 This client is a handwritten wrapper around the [official generated swagger client](https://github.com/mailslurp/swagger-sdk-typescript-fetch). It's written in Typescript but can be used in Javascript. 
 
+![MailSlurp Logo](https://www.mailslurp.com/images/permalink/about.svg)
 
-### Documentation
+## Documentation
 Please see [official documentation](https://docs.mailslurp.com) for extensive usage and examples.
 
 The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions.
