@@ -111,4 +111,4 @@ var MailSlurp = /** @class */ (function () {
     };
     return MailSlurp;
 }());
-exports.default = MailSlurp;
+exports.MailSlurp = MailSlurp;

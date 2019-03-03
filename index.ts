@@ -29,7 +29,7 @@ type GetMessagesOptions  = {
  *  const inbox = await api.createInbox()
  *  `
  */
-export default class MailSlurp {
+export class MailSlurp {
     private inboxApi: InboxControllerApi;
     private emailApi: EmailControllerApi;
     
