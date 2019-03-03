@@ -21,6 +21,7 @@ OR
 
 ## Usage
 
+### Instantiation
 ```javascript
 // import the package
 import { MailSlurp } from "mailslurp-client"
@@ -28,7 +29,30 @@ import { MailSlurp } from "mailslurp-client"
 
 // create an instance with your apiKey
 const api = new MailSlurp({ apiKey: "test" })
+```
 
+### Methods
+```typescript
+interface AbstractMailSlurpClient {
+    getMessage(messageId: string): Promise<Email>;
+
+    createInbox(): Promise<Inbox>;
+
+    deleteInbox(inboxId: string): Promise<Response>;
+
+    getInbox(inboxId: string): Promise<Inbox>;
+
+    getInboxes(): Promise<Inbox[]>;
+
+    getMessages(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]>;
+
+    sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+}
+
+```
+
+### Calling a method
+```javascript
 // call methods and get a Promise back
 (async () => {
     try {
