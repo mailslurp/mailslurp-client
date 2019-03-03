@@ -27,7 +27,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:14](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c076dcc/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L14)*
 
 #### Type declaration
 
@@ -40,7 +40,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c076dcc/index.ts#L19)*
+*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L19)*
 
 #### Type declaration
 
