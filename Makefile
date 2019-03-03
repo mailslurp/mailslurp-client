@@ -4,5 +4,5 @@ install:
 test:
 	yarn run test
 
-build: test
+build: 
 	yarn run build
