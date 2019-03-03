@@ -8,6 +8,10 @@
 
 * [MailSlurp](../classes/_index_.mailslurp.md)
 
+### Interfaces
+
+* [AbstractMailSlurpClient](../interfaces/_index_.abstractmailslurpclient.md)
+
 ### Type aliases
 
 * [Config](_index_.md#config)
@@ -23,7 +27,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:14](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2f4d62e/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c076dcc/index.ts#L14)*
 
 #### Type declaration
 
@@ -36,7 +40,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2f4d62e/index.ts#L19)*
+*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c076dcc/index.ts#L19)*
 
 #### Type declaration
 

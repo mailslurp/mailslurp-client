@@ -39,7 +39,7 @@ interface AbstractMailSlurpClient {
 
     getInboxes(): Promise<Inbox[]>;
 
-    getMessages(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]>;
+    getMessages(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
     sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
 }

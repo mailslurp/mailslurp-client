@@ -1,6 +1,6 @@
 {
   "name": "mailslurp-client",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
