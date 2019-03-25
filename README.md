@@ -1,17 +1,22 @@
 # Official MailSlurp Javascript/Typescript API Client
 
-> Offical SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [about page](https://www.mailslurp.com) for more information.
+Offical SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [https://www.mailslurp.com](https://www.mailslurp.com) for more information.
 
 Completely rewritten for MailSlurp v2.0.
 
 ## About
 This client is a handwritten wrapper around the [official generated swagger client](https://github.com/mailslurp/swagger-sdk-typescript-fetch). It's written in Typescript but can be used in Javascript. 
 
-![MailSlurp Logo](https://www.mailslurp.com/images/permalink/about.svg)
+## Concept
+MailSlurp is an API for sending and receiving emails from ephemeral addresses. It is designed for use in test suites that test applications that in some way interact with emails.
+
+Below is a diagram of how your application, tests and MailSlurp interact. 
+![MailSlurp Concept](https://www.mailslurp.com/images/permalink/about.svg)
 
 ## Documentation
-The best way to understand the library is the [examples section](#examples)
-For more information see [official documentation](https://docs.mailslurp.com).
+Start by reading the [the official MailSlurp documentation](https://docs.mailslurp.com).
+
+The best way to understand this library is the [examples section](#examples).
 
 The source for this client is very small so try reading [index.ts](./index.ts) Typescript definitions. Or additionally take a look at the [js-docs](./docs/).
 
@@ -25,8 +30,8 @@ OR
 ### Instantiation
 ```javascript
 // import the package
-import { MailSlurp } from "mailslurp-client"
-// OR const MailSlurp = require("mailslurp-client").MailSlurp
+import MailSlurp from "mailslurp-client"
+// const MailSlurp = require("mailslurp-client")
 
 // create an instance with your apiKey
 const api = new MailSlurp({ apiKey: "test" })
@@ -35,7 +40,7 @@ const api = new MailSlurp({ apiKey: "test" })
 ### Methods
 ```typescript
 interface AbstractMailSlurpClient {
-    getMessage(messageId: string): Promise<Email>;
+    getEmail(emailId: string): Promise<Email>;
 
     createInbox(): Promise<Inbox>;
 
@@ -45,9 +50,9 @@ interface AbstractMailSlurpClient {
 
     getInboxes(): Promise<Inbox[]>;
 
-    getMessages(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
-    sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
 }
 
 ```
@@ -103,3 +108,7 @@ test('my app can send emails', async () => {
 ```
 
 For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://doc.mailslurp.com).
+
+
+### Debug
+The library uses the debug package to log actions. Set DEBUG=mailslurp-client to enable logging output.

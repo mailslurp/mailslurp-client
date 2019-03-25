@@ -30,8 +30,8 @@ ManageEntitiesApi - object-oriented interface
 
 ### Methods
 
+* [deleteEmailUsingDELETE](_api_.manageentitiesapi.md#deleteemailusingdelete)
 * [deleteInboxUsingDELETE](_api_.manageentitiesapi.md#deleteinboxusingdelete)
-* [deleteMessageUsingDELETE](_api_.manageentitiesapi.md#deletemessageusingdelete)
 * [getInboxUsingGET](_api_.manageentitiesapi.md#getinboxusingget)
 * [getInboxesUsingGET](_api_.manageentitiesapi.md#getinboxesusingget)
 
@@ -99,17 +99,17 @@ ___
 
 ## Methods
 
-<a id="deleteinboxusingdelete"></a>
+<a id="deleteemailusingdelete"></a>
 
-###  deleteInboxUsingDELETE
+###  deleteEmailUsingDELETE
 
-▸ **deleteInboxUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteEmailUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:1394*
 
-Permanently delete an inbox and associated email address
+Deletes an email and removes it from the inbox
 
-*__summary__*: Delete Inbox
+*__summary__*: Delete Email
 
 *__throws__*: {RequiredError}
 
@@ -125,17 +125,17 @@ Permanently delete an inbox and associated email address
 **Returns:** `Promise`<`Response`>
 
 ___
-<a id="deletemessageusingdelete"></a>
+<a id="deleteinboxusingdelete"></a>
 
-###  deleteMessageUsingDELETE
+###  deleteInboxUsingDELETE
 
-▸ **deleteMessageUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteInboxUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:1406*
 
-Deletes an email and removes it from the inbox
+Permanently delete an inbox and associated email address
 
-*__summary__*: Delete Email
+*__summary__*: Delete Inbox
 
 *__throws__*: {RequiredError}
 

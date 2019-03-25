@@ -9,6 +9,7 @@ build: test
 	rm -rf docs
 	yarn run docs
 
+# manually bump package version first
 deploy: build
 	npm publish
 

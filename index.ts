@@ -10,6 +10,10 @@ import {
     InboxControllerApi,
     SendEmailOptions
 } from "mailslurp-swagger-sdk-ts"
+import debug from "debug"
+
+// setup logger. enable output with DEBUG=mailslurp-client env variable
+const log = debug("mailslurp-client");
 
 type Config = {
     // obtain an apiKey at https://app.mailslurp.com
@@ -20,7 +24,7 @@ type GetMessagesOptions = {
     // max emails to return
     limit?: number,
     // minimum number of emails to expect.
-    // when give, server will retry databases until this number is met or the retry timeout is exheeded
+    // when give, server will retry databases until this number is met or the retry timeout is exceeded
     minCount?: number,
     // maximum time to wait for conditions to be met
     retryTimeout?: number,
@@ -28,8 +32,11 @@ type GetMessagesOptions = {
     since?: Date
 }
 
+/**
+ * Define the MailSlurp client interface
+ */
 interface AbstractMailSlurpClient {
-    getMessage(messageId: string): Promise<Email>;
+    getEmail(emailId: string): Promise<Email>;
 
     createInbox(): Promise<Inbox>;
 
@@ -39,9 +46,27 @@ interface AbstractMailSlurpClient {
 
     getInboxes(): Promise<Inbox[]>;
 
-    getMessages(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
-    sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+}
+
+
+/**
+ * Helper logging function
+ * @param tag
+ * @param fn
+ */
+async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
+    log("[%s] executing", tag);
+    try {
+        const result = await fn();
+        log("[%s] returned %O", tag, result);
+        return result;
+    } catch (e) {
+        log("[%s] threw exception %O", tag, e);
+        throw e;
+    }
 }
 
 /**
@@ -62,36 +87,67 @@ export class MailSlurp implements AbstractMailSlurpClient {
             throw "Missing apiKey config parameter"
         }
         // instantiate api clients
-        const conf = {apiKey: opts.apiKey}
-        this.inboxApi = new InboxControllerApi(conf)
-        this.emailApi = new EmailControllerApi(conf)
+        const conf = {apiKey: opts.apiKey};
+        this.inboxApi = new InboxControllerApi(conf);
+        this.emailApi = new EmailControllerApi(conf);
     }
 
+    /**
+     * Create an inbox
+     */
     async createInbox(): Promise<Inbox> {
-        return this.inboxApi.createInboxUsingPOST()
+        return logCall("createInbox", () => this.inboxApi.createInboxUsingPOST())
     }
 
+    /**
+     * Delete an inbox by id
+     * @param inboxId
+     */
     async deleteInbox(inboxId: string): Promise<Response> {
-        return this.inboxApi.deleteInboxUsingDELETE(inboxId)
+        return logCall("createInbox", () => this.inboxApi.deleteInboxUsingDELETE(inboxId));
     }
 
+    /**
+     * Get an inbox by id
+     * @param inboxId
+     */
     async getInbox(inboxId: string): Promise<Inbox> {
-        return this.inboxApi.getInboxUsingGET(inboxId)
+        return logCall("getInbox", () => this.inboxApi.getInboxUsingGET(inboxId));
     }
 
+    /**
+     * Get all inboxes
+     */
     async getInboxes(): Promise<Inbox[]> {
-        return this.inboxApi.getInboxesUsingGET()
+        return logCall("getInboxes", () => this.inboxApi.getInboxesUsingGET());
     }
 
-    async getMessages(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]> {
-        return this.inboxApi.getMessagesUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since)
+    /**
+     * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
+     * @param inboxId
+     * @param args
+     */
+    async getEmails(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]> {
+        return logCall("getEmails", () => this.inboxApi.getEmailsUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since));
     }
 
-    async sendMessage(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
-        return this.inboxApi.sendMessageUsingPOST(inboxId, sendEmailOptions)
+    /**
+     * Get a full email from by id
+     * @param emailId
+     */
+    async getEmail(emailId: string): Promise<Email> {
+        return logCall("getEmail", () => this.emailApi.getEmailUsingGET(emailId));
     }
 
-    async getMessage(messageId: string): Promise<Email> {
-        return this.emailApi.getMessageUsingGET(messageId)
+    /**
+     * Send and email from a given inbox
+     * @param inboxId
+     * @param sendEmailOptions
+     */
+    async sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
+        return logCall("sendEmail", () => this.inboxApi.sendEmailUsingPOST(inboxId, sendEmailOptions));
     }
+
 }
+
+export default MailSlurp;

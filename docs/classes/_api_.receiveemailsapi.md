@@ -31,9 +31,9 @@ ReceiveEmailsApi - object-oriented interface
 ### Methods
 
 * [createInboxUsingPOST](_api_.receiveemailsapi.md#createinboxusingpost)
-* [getMessageAnalyticsUsingGET](_api_.receiveemailsapi.md#getmessageanalyticsusingget)
-* [getMessageUsingGET](_api_.receiveemailsapi.md#getmessageusingget)
-* [getMessagesUsingGET](_api_.receiveemailsapi.md#getmessagesusingget)
+* [getEmailAnalyticsUsingGET](_api_.receiveemailsapi.md#getemailanalyticsusingget)
+* [getEmailUsingGET](_api_.receiveemailsapi.md#getemailusingget)
+* [getEmailsUsingGET](_api_.receiveemailsapi.md#getemailsusingget)
 
 ---
 
@@ -124,11 +124,11 @@ Create a new ephemeral email address to send and receive from
 **Returns:** `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
 ___
-<a id="getmessageanalyticsusingget"></a>
+<a id="getemailanalyticsusingget"></a>
 
-###  getMessageAnalyticsUsingGET
+###  getEmailAnalyticsUsingGET
 
-▸ **getMessageAnalyticsUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
+▸ **getEmailAnalyticsUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
 
 *Defined in api.ts:1772*
 
@@ -150,11 +150,11 @@ Returns a spam analysis on a given email
 **Returns:** `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
 
 ___
-<a id="getmessageusingget"></a>
+<a id="getemailusingget"></a>
 
-###  getMessageUsingGET
+###  getEmailUsingGET
 
-▸ **getMessageUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
+▸ **getEmailUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
 
 *Defined in api.ts:1784*
 
@@ -176,11 +176,11 @@ Returns a email summary object with headers and content. To retrieve the raw ema
 **Returns:** `Promise`<[Email](../interfaces/_api_.email.md)>
 
 ___
-<a id="getmessagesusingget"></a>
+<a id="getemailsusingget"></a>
 
-###  getMessagesUsingGET
+###  getEmailsUsingGET
 
-▸ **getMessagesUsingGET**(id: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
+▸ **getEmailsUsingGET**(id: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
 
 *Defined in api.ts:1800*
 
@@ -196,7 +196,7 @@ List emails that inbox has received. To make this endpoint wait for a minimum nu
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  Limit the result set, ordered by descending received date time |
+| id | `string` |  Id of inbox that emails belongs to |
 | `Optional` limit | `number` |
 | `Optional` minCount | `number` |
 | `Optional` retryTimeout | `number` |

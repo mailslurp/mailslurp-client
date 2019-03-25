@@ -30,9 +30,9 @@ EmailControllerApi - object-oriented interface
 
 ### Methods
 
-* [deleteMessageUsingDELETE](_api_.emailcontrollerapi.md#deletemessageusingdelete)
-* [getMessageAnalyticsUsingGET](_api_.emailcontrollerapi.md#getmessageanalyticsusingget)
-* [getMessageUsingGET](_api_.emailcontrollerapi.md#getmessageusingget)
+* [deleteEmailUsingDELETE](_api_.emailcontrollerapi.md#deleteemailusingdelete)
+* [getEmailAnalyticsUsingGET](_api_.emailcontrollerapi.md#getemailanalyticsusingget)
+* [getEmailUsingGET](_api_.emailcontrollerapi.md#getemailusingget)
 
 ---
 
@@ -98,11 +98,11 @@ ___
 
 ## Methods
 
-<a id="deletemessageusingdelete"></a>
+<a id="deleteemailusingdelete"></a>
 
-###  deleteMessageUsingDELETE
+###  deleteEmailUsingDELETE
 
-▸ **deleteMessageUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteEmailUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:536*
 
@@ -124,11 +124,11 @@ Deletes an email and removes it from the inbox
 **Returns:** `Promise`<`Response`>
 
 ___
-<a id="getmessageanalyticsusingget"></a>
+<a id="getemailanalyticsusingget"></a>
 
-###  getMessageAnalyticsUsingGET
+###  getEmailAnalyticsUsingGET
 
-▸ **getMessageAnalyticsUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
+▸ **getEmailAnalyticsUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
 
 *Defined in api.ts:548*
 
@@ -150,11 +150,11 @@ Returns a spam analysis on a given email
 **Returns:** `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
 
 ___
-<a id="getmessageusingget"></a>
+<a id="getemailusingget"></a>
 
-###  getMessageUsingGET
+###  getEmailUsingGET
 
-▸ **getMessageUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
+▸ **getEmailUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
 
 *Defined in api.ts:560*
 

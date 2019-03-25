@@ -31,7 +31,7 @@ SendEmailsApi - object-oriented interface
 ### Methods
 
 * [createInboxUsingPOST](_api_.sendemailsapi.md#createinboxusingpost)
-* [sendMessageUsingPOST](_api_.sendemailsapi.md#sendmessageusingpost)
+* [sendEmailUsingPOST](_api_.sendemailsapi.md#sendemailusingpost)
 
 ---
 
@@ -122,11 +122,11 @@ Create a new ephemeral email address to send and receive from
 **Returns:** `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
 ___
-<a id="sendmessageusingpost"></a>
+<a id="sendemailusingpost"></a>
 
-###  sendMessageUsingPOST
+###  sendEmailUsingPOST
 
-▸ **sendMessageUsingPOST**(id: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
+▸ **sendEmailUsingPOST**(id: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:1995*
 

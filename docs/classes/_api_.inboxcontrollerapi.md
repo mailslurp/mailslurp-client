@@ -32,10 +32,10 @@ InboxControllerApi - object-oriented interface
 
 * [createInboxUsingPOST](_api_.inboxcontrollerapi.md#createinboxusingpost)
 * [deleteInboxUsingDELETE](_api_.inboxcontrollerapi.md#deleteinboxusingdelete)
+* [getEmailsUsingGET](_api_.inboxcontrollerapi.md#getemailsusingget)
 * [getInboxUsingGET](_api_.inboxcontrollerapi.md#getinboxusingget)
 * [getInboxesUsingGET](_api_.inboxcontrollerapi.md#getinboxesusingget)
-* [getMessagesUsingGET](_api_.inboxcontrollerapi.md#getmessagesusingget)
-* [sendMessageUsingPOST](_api_.inboxcontrollerapi.md#sendmessageusingpost)
+* [sendEmailUsingPOST](_api_.inboxcontrollerapi.md#sendemailusingpost)
 
 ---
 
@@ -152,13 +152,43 @@ Permanently delete an inbox and associated email address
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="getemailsusingget"></a>
+
+###  getEmailsUsingGET
+
+▸ **getEmailsUsingGET**(id: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
+
+*Defined in api.ts:1054*
+
+List emails that inbox has received. To make this endpoint wait for a minimum number of emails use the minCount parameter. The server will retry the inbox database until the minCount is satisfied or the retryTimeout is reached.
+
+*__summary__*: List Inbox's Emails
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: InboxControllerApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| id | `string` |  Id of inbox that emails belongs to |
+| `Optional` limit | `number` |
+| `Optional` minCount | `number` |
+| `Optional` retryTimeout | `number` |
+| `Optional` since | `Date` |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
+
+___
 <a id="getinboxusingget"></a>
 
 ###  getInboxUsingGET
 
 ▸ **getInboxUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
-*Defined in api.ts:1050*
+*Defined in api.ts:1066*
 
 Returns an inbox's properties, including its email address
 
@@ -184,7 +214,7 @@ ___
 
 ▸ **getInboxesUsingGET**(options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)[]>
 
-*Defined in api.ts:1061*
+*Defined in api.ts:1077*
 
 List your inboxes
 
@@ -203,41 +233,11 @@ List your inboxes
 **Returns:** `Promise`<[Inbox](../interfaces/_api_.inbox.md)[]>
 
 ___
-<a id="getmessagesusingget"></a>
+<a id="sendemailusingpost"></a>
 
-###  getMessagesUsingGET
+###  sendEmailUsingPOST
 
-▸ **getMessagesUsingGET**(id: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
-
-*Defined in api.ts:1077*
-
-List emails that inbox has received. To make this endpoint wait for a minimum number of emails use the minCount parameter. The server will retry the inbox database until the minCount is satisfied or the retryTimeout is reached.
-
-*__summary__*: List Inbox's Emails
-
-*__throws__*: {RequiredError}
-
-*__memberof__*: InboxControllerApi
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| id | `string` |  Limit the result set, ordered by descending received date time |
-| `Optional` limit | `number` |
-| `Optional` minCount | `number` |
-| `Optional` retryTimeout | `number` |
-| `Optional` since | `Date` |
-| `Optional` options | `any` |
-
-**Returns:** `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
-
-___
-<a id="sendmessageusingpost"></a>
-
-###  sendMessageUsingPOST
-
-▸ **sendMessageUsingPOST**(id: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
+▸ **sendEmailUsingPOST**(id: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:1090*
 

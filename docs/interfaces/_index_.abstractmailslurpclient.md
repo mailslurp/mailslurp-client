@@ -2,6 +2,8 @@
 
 # Interface: AbstractMailSlurpClient
 
+Define the MailSlurp client interface
+
 ## Hierarchy
 
 **AbstractMailSlurpClient**
@@ -16,11 +18,11 @@
 
 * [createInbox](_index_.abstractmailslurpclient.md#createinbox)
 * [deleteInbox](_index_.abstractmailslurpclient.md#deleteinbox)
+* [getEmail](_index_.abstractmailslurpclient.md#getemail)
+* [getEmails](_index_.abstractmailslurpclient.md#getemails)
 * [getInbox](_index_.abstractmailslurpclient.md#getinbox)
 * [getInboxes](_index_.abstractmailslurpclient.md#getinboxes)
-* [getMessage](_index_.abstractmailslurpclient.md#getmessage)
-* [getMessages](_index_.abstractmailslurpclient.md#getmessages)
-* [sendMessage](_index_.abstractmailslurpclient.md#sendmessage)
+* [sendEmail](_index_.abstractmailslurpclient.md#sendemail)
 
 ---
 
@@ -32,7 +34,7 @@
 
 ▸ **createInbox**(): `Promise`<`Inbox`>
 
-*Defined in [index.ts:34](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L34)*
+*Defined in [index.ts:41](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L41)*
 
 **Returns:** `Promise`<`Inbox`>
 
@@ -43,7 +45,7 @@ ___
 
 ▸ **deleteInbox**(inboxId: *`string`*): `Promise`<`Response`>
 
-*Defined in [index.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L36)*
+*Defined in [index.ts:43](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L43)*
 
 **Parameters:**
 
@@ -54,13 +56,48 @@ ___
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="getemail"></a>
+
+###  getEmail
+
+▸ **getEmail**(emailId: *`string`*): `Promise`<`Email`>
+
+*Defined in [index.ts:39](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L39)*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| emailId | `string` |
+
+**Returns:** `Promise`<`Email`>
+
+___
+<a id="getemails"></a>
+
+###  getEmails
+
+▸ **getEmails**(inboxId: *`string`*, args: *[GetMessagesOptions](../modules/_index_.md#getmessagesoptions)*): `Promise`<`EmailPreview`[]>
+
+*Defined in [index.ts:49](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L49)*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| inboxId | `string` |
+| args | [GetMessagesOptions](../modules/_index_.md#getmessagesoptions) |
+
+**Returns:** `Promise`<`EmailPreview`[]>
+
+___
 <a id="getinbox"></a>
 
 ###  getInbox
 
 ▸ **getInbox**(inboxId: *`string`*): `Promise`<`Inbox`>
 
-*Defined in [index.ts:38](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L38)*
+*Defined in [index.ts:45](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L45)*
 
 **Parameters:**
 
@@ -77,53 +114,18 @@ ___
 
 ▸ **getInboxes**(): `Promise`<`Inbox`[]>
 
-*Defined in [index.ts:40](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L40)*
+*Defined in [index.ts:47](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L47)*
 
 **Returns:** `Promise`<`Inbox`[]>
 
 ___
-<a id="getmessage"></a>
+<a id="sendemail"></a>
 
-###  getMessage
+###  sendEmail
 
-▸ **getMessage**(messageId: *`string`*): `Promise`<`Email`>
+▸ **sendEmail**(inboxId: *`string`*, sendEmailOptions: *`SendEmailOptions`*): `Promise`<`Response`>
 
-*Defined in [index.ts:32](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L32)*
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| messageId | `string` |
-
-**Returns:** `Promise`<`Email`>
-
-___
-<a id="getmessages"></a>
-
-###  getMessages
-
-▸ **getMessages**(inboxId: *`string`*, args: *[GetMessagesOptions](../modules/_index_.md#getmessagesoptions)*): `Promise`<`EmailPreview`[]>
-
-*Defined in [index.ts:42](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L42)*
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| inboxId | `string` |
-| args | [GetMessagesOptions](../modules/_index_.md#getmessagesoptions) |
-
-**Returns:** `Promise`<`EmailPreview`[]>
-
-___
-<a id="sendmessage"></a>
-
-###  sendMessage
-
-▸ **sendMessage**(inboxId: *`string`*, sendEmailOptions: *`SendEmailOptions`*): `Promise`<`Response`>
-
-*Defined in [index.ts:44](https://github.com/mailslurp/mailslurp-client-ts-js/blob/28333ed/index.ts#L44)*
+*Defined in [index.ts:51](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5b2ec3b/index.ts#L51)*
 
 **Parameters:**
 

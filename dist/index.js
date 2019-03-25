@@ -34,12 +34,47 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This library is a convenience wrapper around the generated swagger sdk
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
 var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
+var debug_1 = __importDefault(require("debug"));
+// setup logger. enable output with DEBUG=mailslurp-client env variable
+var log = debug_1.default("mailslurp-client");
+/**
+ * Helper logging function
+ * @param tag
+ * @param fn
+ */
+function logCall(tag, fn) {
+    return __awaiter(this, void 0, void 0, function () {
+        var result, e_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    log("[%s] executing", tag);
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, fn()];
+                case 2:
+                    result = _a.sent();
+                    log("[%s] returned %O", tag, result);
+                    return [2 /*return*/, result];
+                case 3:
+                    e_1 = _a.sent();
+                    log("[%s] threw exception %O", tag, e_1);
+                    throw e_1;
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
 /**
  *  MailSlurp client
  *  Usage:
@@ -59,56 +94,92 @@ var MailSlurp = /** @class */ (function () {
         this.inboxApi = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(conf);
         this.emailApi = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(conf);
     }
+    /**
+     * Create an inbox
+     */
     MailSlurp.prototype.createInbox = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.createInboxUsingPOST()];
+                return [2 /*return*/, logCall("createInbox", function () { return _this.inboxApi.createInboxUsingPOST(); })];
             });
         });
     };
+    /**
+     * Delete an inbox by id
+     * @param inboxId
+     */
     MailSlurp.prototype.deleteInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.deleteInboxUsingDELETE(inboxId)];
+                return [2 /*return*/, logCall("createInbox", function () { return _this.inboxApi.deleteInboxUsingDELETE(inboxId); })];
             });
         });
     };
+    /**
+     * Get an inbox by id
+     * @param inboxId
+     */
     MailSlurp.prototype.getInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.getInboxUsingGET(inboxId)];
+                return [2 /*return*/, logCall("getInbox", function () { return _this.inboxApi.getInboxUsingGET(inboxId); })];
             });
         });
     };
+    /**
+     * Get all inboxes
+     */
     MailSlurp.prototype.getInboxes = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.getInboxesUsingGET()];
+                return [2 /*return*/, logCall("getInboxes", function () { return _this.inboxApi.getInboxesUsingGET(); })];
             });
         });
     };
-    MailSlurp.prototype.getMessages = function (inboxId, args) {
+    /**
+     * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
+     * @param inboxId
+     * @param args
+     */
+    MailSlurp.prototype.getEmails = function (inboxId, args) {
         if (args === void 0) { args = {}; }
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.getMessagesUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since)];
+                return [2 /*return*/, logCall("getEmails", function () { return _this.inboxApi.getEmailsUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since); })];
             });
         });
     };
-    MailSlurp.prototype.sendMessage = function (inboxId, sendEmailOptions) {
+    /**
+     * Get a full email from by id
+     * @param emailId
+     */
+    MailSlurp.prototype.getEmail = function (emailId) {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.inboxApi.sendMessageUsingPOST(inboxId, sendEmailOptions)];
+                return [2 /*return*/, logCall("getEmail", function () { return _this.emailApi.getEmailUsingGET(emailId); })];
             });
         });
     };
-    MailSlurp.prototype.getMessage = function (messageId) {
+    /**
+     * Send and email from a given inbox
+     * @param inboxId
+     * @param sendEmailOptions
+     */
+    MailSlurp.prototype.sendEmail = function (inboxId, sendEmailOptions) {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.emailApi.getMessageUsingGET(messageId)];
+                return [2 /*return*/, logCall("sendEmail", function () { return _this.inboxApi.sendEmailUsingPOST(inboxId, sendEmailOptions); })];
             });
         });
     };
     return MailSlurp;
 }());
 exports.MailSlurp = MailSlurp;
+exports.default = MailSlurp;
