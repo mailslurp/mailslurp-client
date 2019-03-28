@@ -31,7 +31,7 @@ OR
 ```javascript
 // import the package
 import MailSlurp from "mailslurp-client"
-// const MailSlurp = require("mailslurp-client")
+// const MailSlurp = require("mailslurp-client").default
 
 // create an instance with your apiKey
 const api = new MailSlurp({ apiKey: "test" })
