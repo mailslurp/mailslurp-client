@@ -112,7 +112,7 @@ test('my app can send emails', async () => {
 }
 ```
 
-For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://doc.mailslurp.com).
+For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://docs.mailslurp.com).
 
 
 ### Debug
