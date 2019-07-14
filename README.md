@@ -31,7 +31,7 @@ OR
 ```javascript
 // import the package
 import MailSlurp from "mailslurp-client"
-// const MailSlurp = require("mailslurp-client")
+// const MailSlurp = require("mailslurp-client").default
 
 // create an instance with your apiKey
 const api = new MailSlurp({ apiKey: "test" })
@@ -126,16 +126,21 @@ test('my app can send emails', async () => {
     // trigger an app action that sends an email
     await signUpForMyApp(inbox.emailAddress)
 
-    // fetch welcome email from the inbox
+    // fetch emails from the inbox
     const emails = await api.getEmails(inbox.id, { minCount: 1 })
 
-    // assert that the correct email was sent
-    expect(emails[0].length).toBe(1)
-    expect(emails[0].content).toBe(expectedContent)
+    // assert that there is an email in the inbox
+    expect(emails.length).toBe(1)
+    
+    // fetch specific email content
+    const email = await api.getEmail(emails[0].id)
+    
+    // assert that correct email was sent
+    expect(email.body).toBe(expectedContent)
 }
 ```
 
-For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://doc.mailslurp.com).
+For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://docs.mailslurp.com).
 
 
 ### Debug
