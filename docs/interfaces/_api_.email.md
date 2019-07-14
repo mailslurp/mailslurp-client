@@ -14,44 +14,31 @@
 
 ### Properties
 
-* [attachments](_api_.email.md#attachments)
 * [bcc](_api_.email.md#bcc)
 * [body](_api_.email.md#body)
 * [cc](_api_.email.md#cc)
-* [created](_api_.email.md#created)
+* [createdAt](_api_.email.md#createdat)
 * [from](_api_.email.md#from)
 * [headers](_api_.email.md#headers)
 * [id](_api_.email.md#id)
 * [inboxId](_api_.email.md#inboxid)
-* [raw](_api_.email.md#raw)
+* [rawUrl](_api_.email.md#rawurl)
 * [subject](_api_.email.md#subject)
 * [to](_api_.email.md#to)
+* [updatedAt](_api_.email.md#updatedat)
 * [userId](_api_.email.md#userid)
 
 ---
 
 ## Properties
 
-<a id="attachments"></a>
-
-### `<Optional>` attachments
-
-**● attachments**: *`Array`<`string`>*
-
-*Defined in api.ts:92*
-
-*__type__*: {Array}
-
-*__memberof__*: Email
-
-___
 <a id="bcc"></a>
 
 ### `<Optional>` bcc
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in api.ts:98*
+*Defined in api.ts:92*
 
 *__type__*: {Array}
 
@@ -64,7 +51,7 @@ ___
 
 **● body**: *`string`*
 
-*Defined in api.ts:104*
+*Defined in api.ts:98*
 
 *__type__*: {string}
 
@@ -77,20 +64,20 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in api.ts:110*
+*Defined in api.ts:104*
 
 *__type__*: {Array}
 
 *__memberof__*: Email
 
 ___
-<a id="created"></a>
+<a id="createdat"></a>
 
-### `<Optional>` created
+###  createdAt
 
-**● created**: *`Date`*
+**● createdAt**: *`Date`*
 
-*Defined in api.ts:116*
+*Defined in api.ts:110*
 
 *__type__*: {Date}
 
@@ -99,24 +86,24 @@ ___
 ___
 <a id="from"></a>
 
-### `<Optional>` from
+###  from
 
-**● from**: *`Array`<`string`>*
+**● from**: *`string`*
 
-*Defined in api.ts:122*
+*Defined in api.ts:116*
 
-*__type__*: {Array}
+*__type__*: {string}
 
 *__memberof__*: Email
 
 ___
 <a id="headers"></a>
 
-### `<Optional>` headers
+###  headers
 
 **● headers**: *`object`*
 
-*Defined in api.ts:128*
+*Defined in api.ts:122*
 
 *__type__*: {{ \[key: string\]: string; }}
 
@@ -133,7 +120,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in api.ts:134*
+*Defined in api.ts:128*
 
 *__type__*: {string}
 
@@ -142,24 +129,24 @@ ___
 ___
 <a id="inboxid"></a>
 
-### `<Optional>` inboxId
+###  inboxId
 
 **● inboxId**: *`string`*
 
-*Defined in api.ts:140*
+*Defined in api.ts:134*
 
 *__type__*: {string}
 
 *__memberof__*: Email
 
 ___
-<a id="raw"></a>
+<a id="rawurl"></a>
 
-### `<Optional>` raw
+###  rawUrl
 
-**● raw**: *`string`*
+**● rawUrl**: *`string`*
 
-*Defined in api.ts:146*
+*Defined in api.ts:140*
 
 *__type__*: {string}
 
@@ -172,7 +159,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in api.ts:152*
+*Defined in api.ts:146*
 
 *__type__*: {string}
 
@@ -181,20 +168,33 @@ ___
 ___
 <a id="to"></a>
 
-### `<Optional>` to
+###  to
 
 **● to**: *`Array`<`string`>*
 
-*Defined in api.ts:158*
+*Defined in api.ts:152*
 
 *__type__*: {Array}
 
 *__memberof__*: Email
 
 ___
+<a id="updatedat"></a>
+
+###  updatedAt
+
+**● updatedAt**: *`Date`*
+
+*Defined in api.ts:158*
+
+*__type__*: {Date}
+
+*__memberof__*: Email
+
+___
 <a id="userid"></a>
 
-### `<Optional>` userId
+###  userId
 
 **● userId**: *`string`*
 

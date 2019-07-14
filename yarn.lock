@@ -2078,9 +2078,9 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-"mailslurp-swagger-sdk-ts@https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#b8e9c71e48ff496e942491284d2a74159cc476f5":
+"mailslurp-swagger-sdk-ts@https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#2a57fd0e84e74f8a3933c092f10bdf0d5d940923":
   version "1.0.0"
-  resolved "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#b8e9c71e48ff496e942491284d2a74159cc476f5"
+  resolved "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#2a57fd0e84e74f8a3933c092f10bdf0d5d940923"
   dependencies:
     portable-fetch "^3.0.0"
 

@@ -141,7 +141,7 @@ ___
 
 *Defined in api.ts:286*
 
-Email subject line
+Optional email subject line
 
 *__type__*: {string}
 
@@ -156,7 +156,7 @@ ___
 
 *Defined in api.ts:292*
 
-Destination email address
+List of destination email addresses
 
 *__type__*: {Array}
 

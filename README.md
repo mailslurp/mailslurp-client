@@ -2,7 +2,7 @@
 
 Offical SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [https://www.mailslurp.com](https://www.mailslurp.com) for more information.
 
-Completely rewritten for MailSlurp v2.0.
+Completely rewritten for MailSlurp v2.0. For release notes see [CHANGELOG.md](./CHANGELOG.md).
 
 ## About
 This client is a handwritten wrapper around the [official generated swagger client](https://github.com/mailslurp/swagger-sdk-typescript-fetch). It's written in Typescript but can be used in Javascript. 
@@ -56,6 +56,34 @@ interface AbstractMailSlurpClient {
 }
 
 ```
+### Parameters
+```typescript
+interface SendEmailOptions {
+		// array of recipient email addresses
+    to: Array<string>;
+		// everything else is optional
+    bcc?: Array<string>;
+    cc?: Array<string>;
+    subject?: string;
+    body?: string;
+    html?: boolean;
+    charset?: string;
+    from?: string;
+    replyTo?: string;
+}
+
+type GetMessagesOptions = {
+    // max emails to return
+    limit?: number,
+    // minimum number of emails to expect.
+    // when give, server will retry databases until this number is met or the retry timeout is exceeded
+    minCount?: number,
+    // maximum time to wait for conditions to be met
+    retryTimeout?: number,
+    // ignore emails received before this ISO-8601 date time
+    since?: Date
+}<Paste>
+```
 
 ### Response types
 - [Inbox](docs/interfaces/_api_.inbox.md)
@@ -78,7 +106,7 @@ test('my app can receive and handle emails', async () => {
     const inbox = await api.createInbox()
 
     // send an email from the address to your application
-    await api.sendEmail(inbox.id, { to: myAppAddress })
+    await api.sendEmail(inbox.id, { to: [myAppAddress] })
 
     // assert that app has handled the email
     expect(myAppReceivedEmail()).resolves.toBe(true)
