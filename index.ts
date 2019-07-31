@@ -3,12 +3,14 @@
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
 import {
+    BulkApi,
     Email,
     EmailControllerApi,
     EmailPreview,
     Inbox,
     InboxControllerApi,
-    SendEmailOptions
+    SendEmailOptions,
+    BulkSendEmailOptions
 } from "mailslurp-swagger-sdk-ts"
 import debug from "debug"
 
@@ -38,9 +40,15 @@ type GetMessagesOptions = {
 interface AbstractMailSlurpClient {
     getEmail(emailId: string): Promise<Email>;
 
+    getRawEmail(emailId: string): Promise<string>;
+
     createInbox(): Promise<Inbox>;
 
+    bulkCreateInboxes(count: number): Promise<Inbox[]>;
+
     deleteInbox(inboxId: string): Promise<Response>;
+
+    bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
 
     getInbox(inboxId: string): Promise<Inbox>;
 
@@ -49,6 +57,8 @@ interface AbstractMailSlurpClient {
     getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
     sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+
+    bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
 }
 
 
@@ -80,6 +90,7 @@ async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
 export class MailSlurp implements AbstractMailSlurpClient {
     private inboxApi: InboxControllerApi;
     private emailApi: EmailControllerApi;
+    private bulkApi: BulkApi;
 
     constructor(opts: Config) {
         // check options
@@ -90,6 +101,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
         const conf = {apiKey: opts.apiKey};
         this.inboxApi = new InboxControllerApi(conf);
         this.emailApi = new EmailControllerApi(conf);
+        this.bulkApi = new BulkApi(conf);
     }
 
     /**
@@ -140,12 +152,42 @@ export class MailSlurp implements AbstractMailSlurpClient {
     }
 
     /**
+     * Get an email's raw contents from by id
+     * @param emailId
+     */
+    async getRawEmail(emailId: string): Promise<string> {
+        return logCall("getRawEmail", () => this.emailApi.getRawEmailUsingGET(emailId));
+    }
+
+    /**
      * Send and email from a given inbox
      * @param inboxId
      * @param sendEmailOptions
      */
     async sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
         return logCall("sendEmail", () => this.inboxApi.sendEmailUsingPOST(inboxId, sendEmailOptions));
+    }
+
+    /**
+     * Bulk send emails
+     */
+    async bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response> {
+        return logCall("bulkSendEmails", () => this.bulkApi.bulkSendEmailsUsingPOST(bulkSendEmailOptions));
+    }
+
+
+    /**
+     * Bulk create inboxes
+     */
+    async bulkCreateInboxes(count: number): Promise<Inbox[]> {
+        return logCall("bulkCreateInboxes", () => this.bulkApi.bulkCreateInboxesUsingPOST(count));
+    }
+
+    /**
+     * Bulk delete inboxes
+     */
+    async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
+        return logCall("bulkDeleteInboxes", () => this.bulkApi.bulkDeleteInboxesUsingDELETE(inboxIds));
     }
 
 }

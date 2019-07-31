@@ -1,8 +1,12 @@
 {
   "name": "mailslurp-client",
+  "description": "Test email account API Client",
   "version": "3.0.17",
-  "main": "./dist/index.js",
   "license": "MIT",
+  "author": "mailslurp.com",
+  "homepage": "https://www.mailslurp.com",
+  "keywords": ["mailslurp", "email", "test", "smtp"],
+  "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
   "scripts": {

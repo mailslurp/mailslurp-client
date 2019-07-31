@@ -1,14 +1,21 @@
 # Official MailSlurp Javascript/Typescript API Client
+Create unlimited test email accounts via REST then send and receive real emails from them.
 
-Offical SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [https://www.mailslurp.com](https://www.mailslurp.com) for more information.
+## Quick links
+- [Get API KEY](https://app.mailslurp.com)
+- [Pricing](https://www.mailslurp.com)
+- [REST Documentation](https://docs.mailslurp.com)
+- [Support](https://www.mailslurp.com/support)
+
+## About package
+Official SDK Client for the [MailSlurp API](https://www.mailslurp.com). See [https://www.mailslurp.com](https://www.mailslurp.com) for more information.
 
 Completely rewritten for MailSlurp v2.0. For release notes see [CHANGELOG.md](./CHANGELOG.md).
 
-## About
 This client is a handwritten wrapper around the [official generated swagger client](https://github.com/mailslurp/swagger-sdk-typescript-fetch). It's written in Typescript but can be used in Javascript. 
 
 ## Concept
-MailSlurp is an API for sending and receiving emails from ephemeral addresses. It is designed for use in test suites that test applications that in some way interact with emails.
+MailSlurp is an API for sending and receiving emails from ephemeral email addresses. It is designed for use in test suites that test applications that in some way interact with emails.
 
 Below is a diagram of how your application, tests and MailSlurp interact. 
 ![MailSlurp Concept](https://www.mailslurp.com/images/permalink/about.svg)
@@ -27,6 +34,8 @@ OR
 
 ## Usage
 
+MailSlurp is an email testing API. It should be used in a test-suite to test the functionality of email dependent processes.
+
 ### Instantiation
 ```javascript
 // import the package
@@ -42,9 +51,15 @@ const api = new MailSlurp({ apiKey: "test" })
 interface AbstractMailSlurpClient {
     getEmail(emailId: string): Promise<Email>;
 
+    getRawEmail(emailId: string): Promise<string>;
+
     createInbox(): Promise<Inbox>;
 
+    bulkCreateInboxes(count: number): Promise<Inbox[]>;
+
     deleteInbox(inboxId: string): Promise<Response>;
+
+    bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
 
     getInbox(inboxId: string): Promise<Inbox>;
 
@@ -53,15 +68,17 @@ interface AbstractMailSlurpClient {
     getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
     sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+
+    bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
 }
 
 ```
-### Parameters
+### Common parameter types
 ```typescript
 interface SendEmailOptions {
-		// array of recipient email addresses
+    // array of recipient email addresses
     to: Array<string>;
-		// everything else is optional
+	// everything else is optional
     bcc?: Array<string>;
     cc?: Array<string>;
     subject?: string;
@@ -72,17 +89,17 @@ interface SendEmailOptions {
     replyTo?: string;
 }
 
-type GetMessagesOptions = {
+interface GetMessagesOptions {
     // max emails to return
-    limit?: number,
+    limit?: number;
     // minimum number of emails to expect.
     // when give, server will retry databases until this number is met or the retry timeout is exceeded
-    minCount?: number,
+    minCount?: number;
     // maximum time to wait for conditions to be met
-    retryTimeout?: number,
+    retryTimeout?: number;
     // ignore emails received before this ISO-8601 date time
-    since?: Date
-}<Paste>
+    since?: Date;
+}
 ```
 
 ### Response types
@@ -142,6 +159,8 @@ test('my app can send emails', async () => {
 
 For all functions and operations [see the typescript definitions](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/index.ts#L32) or [developer documentation](https://docs.mailslurp.com).
 
-
 ### Debug
 The library uses the debug package to log actions. Set DEBUG=mailslurp-client to enable logging output.
+
+### Issues and feature requests
+Please reach out to the developers on twitter [@MailSlurp](https://twitter.com/@mailslurp) or via the [support page](https://www.mailslurp.com/support)
