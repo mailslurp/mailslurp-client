@@ -93,6 +93,7 @@ var MailSlurp = /** @class */ (function () {
         var conf = { apiKey: opts.apiKey };
         this.inboxApi = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(conf);
         this.emailApi = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(conf);
+        this.bulkApi = new mailslurp_swagger_sdk_ts_1.BulkApi(conf);
     }
     /**
      * Create an inbox
@@ -167,6 +168,18 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
+     * Get an email's raw contents from by id
+     * @param emailId
+     */
+    MailSlurp.prototype.getRawEmail = function (emailId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("getRawEmail", function () { return _this.emailApi.getRawEmailUsingGET(emailId); })];
+            });
+        });
+    };
+    /**
      * Send and email from a given inbox
      * @param inboxId
      * @param sendEmailOptions
@@ -176,6 +189,39 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, logCall("sendEmail", function () { return _this.inboxApi.sendEmailUsingPOST(inboxId, sendEmailOptions); })];
+            });
+        });
+    };
+    /**
+     * Bulk send emails
+     */
+    MailSlurp.prototype.bulkSendEmails = function (bulkSendEmailOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("bulkSendEmails", function () { return _this.bulkApi.bulkSendEmailsUsingPOST(bulkSendEmailOptions); })];
+            });
+        });
+    };
+    /**
+     * Bulk create inboxes
+     */
+    MailSlurp.prototype.bulkCreateInboxes = function (count) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("bulkCreateInboxes", function () { return _this.bulkApi.bulkCreateInboxesUsingPOST(count); })];
+            });
+        });
+    };
+    /**
+     * Bulk delete inboxes
+     */
+    MailSlurp.prototype.bulkDeleteInboxes = function (inboxIds) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("bulkDeleteInboxes", function () { return _this.bulkApi.bulkDeleteInboxesUsingDELETE(inboxIds); })];
             });
         });
     };

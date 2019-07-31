@@ -7,7 +7,10 @@
 ### Classes
 
 * [BaseAPI](../classes/_api_.baseapi.md)
+* [BulkActionsApi](../classes/_api_.bulkactionsapi.md)
+* [BulkApi](../classes/_api_.bulkapi.md)
 * [EmailControllerApi](../classes/_api_.emailcontrollerapi.md)
+* [EnterpriseApi](../classes/_api_.enterpriseapi.md)
 * [InboxControllerApi](../classes/_api_.inboxcontrollerapi.md)
 * [ManageEntitiesApi](../classes/_api_.manageentitiesapi.md)
 * [ReceiveEmailsApi](../classes/_api_.receiveemailsapi.md)
@@ -16,6 +19,7 @@
 
 ### Interfaces
 
+* [BulkSendEmailOptions](../interfaces/_api_.bulksendemailoptions.md)
 * [Email](../interfaces/_api_.email.md)
 * [EmailAnalytics](../interfaces/_api_.emailanalytics.md)
 * [EmailPreview](../interfaces/_api_.emailpreview.md)
@@ -30,9 +34,18 @@
 
 ### Functions
 
+* [BulkActionsApiFactory](_api_.md#bulkactionsapifactory)
+* [BulkActionsApiFetchParamCreator](_api_.md#bulkactionsapifetchparamcreator)
+* [BulkActionsApiFp](_api_.md#bulkactionsapifp)
+* [BulkApiFactory](_api_.md#bulkapifactory)
+* [BulkApiFetchParamCreator](_api_.md#bulkapifetchparamcreator)
+* [BulkApiFp](_api_.md#bulkapifp)
 * [EmailControllerApiFactory](_api_.md#emailcontrollerapifactory)
 * [EmailControllerApiFetchParamCreator](_api_.md#emailcontrollerapifetchparamcreator)
 * [EmailControllerApiFp](_api_.md#emailcontrollerapifp)
+* [EnterpriseApiFactory](_api_.md#enterpriseapifactory)
+* [EnterpriseApiFetchParamCreator](_api_.md#enterpriseapifetchparamcreator)
+* [EnterpriseApiFp](_api_.md#enterpriseapifp)
 * [InboxControllerApiFactory](_api_.md#inboxcontrollerapifactory)
 * [InboxControllerApiFetchParamCreator](_api_.md#inboxcontrollerapifetchparamcreator)
 * [InboxControllerApiFp](_api_.md#inboxcontrollerapifp)
@@ -66,13 +79,131 @@ ___
 
 ## Functions
 
+<a id="bulkactionsapifactory"></a>
+
+### `<Const>` BulkActionsApiFactory
+
+▸ **BulkActionsApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
+
+*Defined in api.ts:788*
+
+BulkActionsApi - factory interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+| `Optional` fetch | [FetchAPI](../interfaces/_api_.fetchapi.md) |
+| `Optional` basePath | `string` |
+
+**Returns:** `object`
+
+___
+<a id="bulkactionsapifetchparamcreator"></a>
+
+### `<Const>` BulkActionsApiFetchParamCreator
+
+▸ **BulkActionsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:593*
+
+BulkActionsApi - fetch parameter creator
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
+<a id="bulkactionsapifp"></a>
+
+### `<Const>` BulkActionsApiFp
+
+▸ **BulkActionsApiFp**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:722*
+
+BulkActionsApi - functional programming interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
+<a id="bulkapifactory"></a>
+
+### `<Const>` BulkApiFactory
+
+▸ **BulkApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
+
+*Defined in api.ts:509*
+
+BulkApi - factory interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+| `Optional` fetch | [FetchAPI](../interfaces/_api_.fetchapi.md) |
+| `Optional` basePath | `string` |
+
+**Returns:** `object`
+
+___
+<a id="bulkapifetchparamcreator"></a>
+
+### `<Const>` BulkApiFetchParamCreator
+
+▸ **BulkApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:314*
+
+BulkApi - fetch parameter creator
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
+<a id="bulkapifp"></a>
+
+### `<Const>` BulkApiFp
+
+▸ **BulkApiFp**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:443*
+
+BulkApi - functional programming interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
 <a id="emailcontrollerapifactory"></a>
 
 ### `<Const>` EmailControllerApiFactory
 
 ▸ **EmailControllerApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:486*
+*Defined in api.ts:1114*
 
 EmailControllerApi - factory interface
 
@@ -93,7 +224,7 @@ ___
 
 ▸ **EmailControllerApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:300*
+*Defined in api.ts:872*
 
 EmailControllerApi - fetch parameter creator
 
@@ -112,9 +243,68 @@ ___
 
 ▸ **EmailControllerApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:420*
+*Defined in api.ts:1029*
 
 EmailControllerApi - functional programming interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
+<a id="enterpriseapifactory"></a>
+
+### `<Const>` EnterpriseApiFactory
+
+▸ **EnterpriseApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
+
+*Defined in api.ts:1415*
+
+EnterpriseApi - factory interface
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+| `Optional` fetch | [FetchAPI](../interfaces/_api_.fetchapi.md) |
+| `Optional` basePath | `string` |
+
+**Returns:** `object`
+
+___
+<a id="enterpriseapifetchparamcreator"></a>
+
+### `<Const>` EnterpriseApiFetchParamCreator
+
+▸ **EnterpriseApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:1220*
+
+EnterpriseApi - fetch parameter creator
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` configuration | `Configuration` |
+
+**Returns:** `object`
+
+___
+<a id="enterpriseapifp"></a>
+
+### `<Const>` EnterpriseApiFp
+
+▸ **EnterpriseApiFp**(configuration?: *`Configuration`*): `object`
+
+*Defined in api.ts:1349*
+
+EnterpriseApi - functional programming interface
 
 **Parameters:**
 
@@ -131,7 +321,7 @@ ___
 
 ▸ **InboxControllerApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:944*
+*Defined in api.ts:1873*
 
 InboxControllerApi - factory interface
 
@@ -152,7 +342,7 @@ ___
 
 ▸ **InboxControllerApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:570*
+*Defined in api.ts:1499*
 
 InboxControllerApi - fetch parameter creator
 
@@ -171,7 +361,7 @@ ___
 
 ▸ **InboxControllerApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:818*
+*Defined in api.ts:1747*
 
 InboxControllerApi - functional programming interface
 
@@ -190,7 +380,7 @@ ___
 
 ▸ **ManageEntitiesApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:1335*
+*Defined in api.ts:2323*
 
 ManageEntitiesApi - factory interface
 
@@ -211,7 +401,7 @@ ___
 
 ▸ **ManageEntitiesApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1100*
+*Defined in api.ts:2029*
 
 ManageEntitiesApi - fetch parameter creator
 
@@ -230,7 +420,7 @@ ___
 
 ▸ **ManageEntitiesApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1251*
+*Defined in api.ts:2220*
 
 ManageEntitiesApi - functional programming interface
 
@@ -249,7 +439,7 @@ ___
 
 ▸ **ReceiveEmailsApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:1698*
+*Defined in api.ts:2823*
 
 ReceiveEmailsApi - factory interface
 
@@ -270,7 +460,7 @@ ___
 
 ▸ **ReceiveEmailsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1439*
+*Defined in api.ts:2449*
 
 ReceiveEmailsApi - fetch parameter creator
 
@@ -289,7 +479,7 @@ ___
 
 ▸ **ReceiveEmailsApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1610*
+*Defined in api.ts:2697*
 
 ReceiveEmailsApi - functional programming interface
 
@@ -308,7 +498,7 @@ ___
 
 ▸ **SendEmailsApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:1943*
+*Defined in api.ts:3230*
 
 SendEmailsApi - factory interface
 
@@ -329,7 +519,7 @@ ___
 
 ▸ **SendEmailsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1810*
+*Defined in api.ts:2979*
 
 SendEmailsApi - fetch parameter creator
 
@@ -348,7 +538,7 @@ ___
 
 ▸ **SendEmailsApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1896*
+*Defined in api.ts:3145*
 
 SendEmailsApi - functional programming interface
 

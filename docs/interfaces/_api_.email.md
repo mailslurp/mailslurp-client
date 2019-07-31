@@ -22,7 +22,6 @@
 * [headers](_api_.email.md#headers)
 * [id](_api_.email.md#id)
 * [inboxId](_api_.email.md#inboxid)
-* [rawUrl](_api_.email.md#rawurl)
 * [subject](_api_.email.md#subject)
 * [to](_api_.email.md#to)
 * [updatedAt](_api_.email.md#updatedat)
@@ -38,7 +37,7 @@
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in api.ts:92*
+*Defined in api.ts:112*
 
 *__type__*: {Array}
 
@@ -51,7 +50,7 @@ ___
 
 **● body**: *`string`*
 
-*Defined in api.ts:98*
+*Defined in api.ts:118*
 
 *__type__*: {string}
 
@@ -64,7 +63,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in api.ts:104*
+*Defined in api.ts:124*
 
 *__type__*: {Array}
 
@@ -77,7 +76,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in api.ts:110*
+*Defined in api.ts:130*
 
 *__type__*: {Date}
 
@@ -90,7 +89,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in api.ts:116*
+*Defined in api.ts:136*
 
 *__type__*: {string}
 
@@ -103,7 +102,7 @@ ___
 
 **● headers**: *`object`*
 
-*Defined in api.ts:122*
+*Defined in api.ts:142*
 
 *__type__*: {{ \[key: string\]: string; }}
 
@@ -120,7 +119,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in api.ts:128*
+*Defined in api.ts:148*
 
 *__type__*: {string}
 
@@ -133,20 +132,7 @@ ___
 
 **● inboxId**: *`string`*
 
-*Defined in api.ts:134*
-
-*__type__*: {string}
-
-*__memberof__*: Email
-
-___
-<a id="rawurl"></a>
-
-###  rawUrl
-
-**● rawUrl**: *`string`*
-
-*Defined in api.ts:140*
+*Defined in api.ts:154*
 
 *__type__*: {string}
 
@@ -159,7 +145,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in api.ts:146*
+*Defined in api.ts:160*
 
 *__type__*: {string}
 
@@ -172,7 +158,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in api.ts:152*
+*Defined in api.ts:166*
 
 *__type__*: {Array}
 
@@ -185,7 +171,7 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in api.ts:158*
+*Defined in api.ts:172*
 
 *__type__*: {Date}
 
@@ -198,7 +184,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in api.ts:164*
+*Defined in api.ts:178*
 
 *__type__*: {string}
 

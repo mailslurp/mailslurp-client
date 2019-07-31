@@ -36,7 +36,7 @@ Options for sending an email message from an inbox
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in api.ts:244*
+*Defined in api.ts:258*
 
 Optional list of bcc destination email addresses
 
@@ -51,7 +51,7 @@ ___
 
 **● body**: *`string`*
 
-*Defined in api.ts:250*
+*Defined in api.ts:264*
 
 Contents of email
 
@@ -66,7 +66,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in api.ts:256*
+*Defined in api.ts:270*
 
 Optional list of cc destination email addresses
 
@@ -81,7 +81,7 @@ ___
 
 **● charset**: *`string`*
 
-*Defined in api.ts:262*
+*Defined in api.ts:276*
 
 Optional charset
 
@@ -96,7 +96,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in api.ts:268*
+*Defined in api.ts:282*
 
 Optional from address. If not set source inbox address will be used
 
@@ -111,7 +111,7 @@ ___
 
 **● html**: *`boolean`*
 
-*Defined in api.ts:274*
+*Defined in api.ts:288*
 
 *__type__*: {boolean}
 
@@ -124,7 +124,7 @@ ___
 
 **● replyTo**: *`string`*
 
-*Defined in api.ts:280*
+*Defined in api.ts:294*
 
 Optional replyTo header
 
@@ -139,7 +139,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in api.ts:286*
+*Defined in api.ts:300*
 
 Optional email subject line
 
@@ -154,9 +154,9 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in api.ts:292*
+*Defined in api.ts:306*
 
-List of destination email addresses
+List of destination email addresses. Even single recipients must be in array form.
 
 *__type__*: {Array}
 

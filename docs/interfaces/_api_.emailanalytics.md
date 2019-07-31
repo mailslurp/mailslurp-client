@@ -28,7 +28,7 @@ Analysis of an email message and its contents
 
 **● spamNegativityPercentage**: *`number`*
 
-*Defined in api.ts:178*
+*Defined in api.ts:192*
 
 *__type__*: {number}
 

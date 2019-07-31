@@ -10,7 +10,13 @@
 
 **BaseAPI**
 
+↳  [BulkApi](_api_.bulkapi.md)
+
+↳  [BulkActionsApi](_api_.bulkactionsapi.md)
+
 ↳  [EmailControllerApi](_api_.emailcontrollerapi.md)
+
+↳  [EnterpriseApi](_api_.enterpriseapi.md)
 
 ↳  [InboxControllerApi](_api_.inboxcontrollerapi.md)
 

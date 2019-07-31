@@ -107,11 +107,11 @@ ___
 
 ▸ **createInboxUsingPOST**(options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
-*Defined in api.ts:1026*
+*Defined in api.ts:1955*
 
-Create a new ephemeral email address to send and receive from
+Create a new inbox and ephemeral email address to send and receive from. This is a necessary step before sending or receiving emails. The response contains the inbox's ID and its associated email address. It is recommended that you create a new inbox during each test method so that it is unique and empty
 
-*__summary__*: Create Inbox
+*__summary__*: Create an Inbox (email address)
 
 *__throws__*: {RequiredError}
 
@@ -130,9 +130,9 @@ ___
 
 ###  deleteInboxUsingDELETE
 
-▸ **deleteInboxUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteInboxUsingDELETE**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:1038*
+*Defined in api.ts:1967*
 
 Permanently delete an inbox and associated email address
 
@@ -146,7 +146,7 @@ Permanently delete an inbox and associated email address
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| inboxId | `string` |  inboxId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`Response`>
@@ -156,13 +156,13 @@ ___
 
 ###  getEmailsUsingGET
 
-▸ **getEmailsUsingGET**(id: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
+▸ **getEmailsUsingGET**(inboxId: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/_api_.emailpreview.md)[]>
 
-*Defined in api.ts:1054*
+*Defined in api.ts:1983*
 
-List emails that inbox has received. To make this endpoint wait for a minimum number of emails use the minCount parameter. The server will retry the inbox database until the minCount is satisfied or the retryTimeout is reached.
+List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
 
-*__summary__*: List Inbox's Emails
+*__summary__*: List an Inbox's Emails
 
 *__throws__*: {RequiredError}
 
@@ -172,7 +172,7 @@ List emails that inbox has received. To make this endpoint wait for a minimum nu
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  Id of inbox that emails belongs to |
+| inboxId | `string` |  Id of inbox that emails belongs to |
 | `Optional` limit | `number` |
 | `Optional` minCount | `number` |
 | `Optional` retryTimeout | `number` |
@@ -186,11 +186,11 @@ ___
 
 ###  getInboxUsingGET
 
-▸ **getInboxUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
+▸ **getInboxUsingGET**(inboxId: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
-*Defined in api.ts:1066*
+*Defined in api.ts:1995*
 
-Returns an inbox's properties, including its email address
+Returns an inbox's properties, including its email address and ID
 
 *__summary__*: Get Inbox
 
@@ -202,7 +202,7 @@ Returns an inbox's properties, including its email address
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| inboxId | `string` |  inboxId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
@@ -214,9 +214,9 @@ ___
 
 ▸ **getInboxesUsingGET**(options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)[]>
 
-*Defined in api.ts:1077*
+*Defined in api.ts:2006*
 
-List your inboxes
+List the inboxes you have created
 
 *__summary__*: List Inboxes
 
@@ -237,11 +237,11 @@ ___
 
 ###  sendEmailUsingPOST
 
-▸ **sendEmailUsingPOST**(id: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
+▸ **sendEmailUsingPOST**(inboxId: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:1090*
+*Defined in api.ts:2019*
 
-Send an email from the inbox's email address
+Send an email from the inbox's email address. Specify the email recipients and contents in the request body. See the `SendEmailOptions` for more information. Note the `inboxId` refers to the inbox's id NOT its email address
 
 *__summary__*: Send Email
 
@@ -253,7 +253,7 @@ Send an email from the inbox's email address
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| inboxId | `string` |  inboxId |
 | sendEmailOptions | [SendEmailOptions](../interfaces/_api_.sendemailoptions.md) |  sendEmailOptions |
 | `Optional` options | `any` |
 

@@ -30,6 +30,7 @@ ManageEntitiesApi - object-oriented interface
 
 ### Methods
 
+* [bulkDeleteInboxesUsingDELETE](_api_.manageentitiesapi.md#bulkdeleteinboxesusingdelete)
 * [deleteEmailUsingDELETE](_api_.manageentitiesapi.md#deleteemailusingdelete)
 * [deleteInboxUsingDELETE](_api_.manageentitiesapi.md#deleteinboxusingdelete)
 * [getInboxUsingGET](_api_.manageentitiesapi.md#getinboxusingget)
@@ -99,13 +100,39 @@ ___
 
 ## Methods
 
+<a id="bulkdeleteinboxesusingdelete"></a>
+
+###  bulkDeleteInboxesUsingDELETE
+
+▸ **bulkDeleteInboxesUsingDELETE**(ids: *`Array`<`string`>*, options?: *`any`*): `Promise`<`Response`>
+
+*Defined in api.ts:2392*
+
+Enterprise Account Required
+
+*__summary__*: Bulk Delete Inboxes
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: ManageEntitiesApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| ids | `Array`<`string`> |  ids |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<`Response`>
+
+___
 <a id="deleteemailusingdelete"></a>
 
 ###  deleteEmailUsingDELETE
 
-▸ **deleteEmailUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteEmailUsingDELETE**(emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:1394*
+*Defined in api.ts:2404*
 
 Deletes an email and removes it from the inbox
 
@@ -119,7 +146,7 @@ Deletes an email and removes it from the inbox
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| emailId | `string` |  emailId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`Response`>
@@ -129,9 +156,9 @@ ___
 
 ###  deleteInboxUsingDELETE
 
-▸ **deleteInboxUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteInboxUsingDELETE**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:1406*
+*Defined in api.ts:2416*
 
 Permanently delete an inbox and associated email address
 
@@ -145,7 +172,7 @@ Permanently delete an inbox and associated email address
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| inboxId | `string` |  inboxId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`Response`>
@@ -155,11 +182,11 @@ ___
 
 ###  getInboxUsingGET
 
-▸ **getInboxUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
+▸ **getInboxUsingGET**(inboxId: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
-*Defined in api.ts:1418*
+*Defined in api.ts:2428*
 
-Returns an inbox's properties, including its email address
+Returns an inbox's properties, including its email address and ID
 
 *__summary__*: Get Inbox
 
@@ -171,7 +198,7 @@ Returns an inbox's properties, including its email address
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| inboxId | `string` |  inboxId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
@@ -183,9 +210,9 @@ ___
 
 ▸ **getInboxesUsingGET**(options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)[]>
 
-*Defined in api.ts:1429*
+*Defined in api.ts:2439*
 
-List your inboxes
+List the inboxes you have created
 
 *__summary__*: List Inboxes
 

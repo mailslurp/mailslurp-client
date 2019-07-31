@@ -33,6 +33,7 @@ EmailControllerApi - object-oriented interface
 * [deleteEmailUsingDELETE](_api_.emailcontrollerapi.md#deleteemailusingdelete)
 * [getEmailAnalyticsUsingGET](_api_.emailcontrollerapi.md#getemailanalyticsusingget)
 * [getEmailUsingGET](_api_.emailcontrollerapi.md#getemailusingget)
+* [getRawEmailUsingGET](_api_.emailcontrollerapi.md#getrawemailusingget)
 
 ---
 
@@ -102,9 +103,9 @@ ___
 
 ###  deleteEmailUsingDELETE
 
-▸ **deleteEmailUsingDELETE**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **deleteEmailUsingDELETE**(emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:536*
+*Defined in api.ts:1174*
 
 Deletes an email and removes it from the inbox
 
@@ -118,7 +119,7 @@ Deletes an email and removes it from the inbox
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| emailId | `string` |  emailId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`Response`>
@@ -128,9 +129,9 @@ ___
 
 ###  getEmailAnalyticsUsingGET
 
-▸ **getEmailAnalyticsUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
+▸ **getEmailAnalyticsUsingGET**(emailId: *`string`*, options?: *`any`*): `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
 
-*Defined in api.ts:548*
+*Defined in api.ts:1186*
 
 Returns a spam analysis on a given email
 
@@ -144,7 +145,7 @@ Returns a spam analysis on a given email
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| emailId | `string` |  emailId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[EmailAnalytics](../interfaces/_api_.emailanalytics.md)>
@@ -154,11 +155,11 @@ ___
 
 ###  getEmailUsingGET
 
-▸ **getEmailUsingGET**(id: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
+▸ **getEmailUsingGET**(emailId: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
 
-*Defined in api.ts:560*
+*Defined in api.ts:1198*
 
-Returns a email summary object with headers and content. To retrieve the raw email download it from the `raw` url.
+Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawMessage endpoint
 
 *__summary__*: Get Email Content
 
@@ -170,10 +171,36 @@ Returns a email summary object with headers and content. To retrieve the raw ema
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| id | `string` |  id |
+| emailId | `string` |  emailId |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Email](../interfaces/_api_.email.md)>
+
+___
+<a id="getrawemailusingget"></a>
+
+###  getRawEmailUsingGET
+
+▸ **getRawEmailUsingGET**(emailId: *`string`*, options?: *`any`*): `Promise`<`string`>
+
+*Defined in api.ts:1210*
+
+Returns a raw, unparsed and unprocessed email
+
+*__summary__*: Get Raw Email Content
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: EmailControllerApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| emailId | `string` |  emailId |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<`string`>
 
 ___
 
