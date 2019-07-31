@@ -1,7 +1,8 @@
 {
   "name": "mailslurp-client",
-  "version": "3.0.16",
+  "version": "3.0.17",
   "main": "./dist/index.js",
+  "license": "MIT",
   "typings": "./dist/index.d.ts",
   "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
   "scripts": {
@@ -12,7 +13,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#2a57fd0e84e74f8a3933c092f10bdf0d5d940923"
+    "mailslurp-swagger-sdk-ts": "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#3a4bd3c5806ebf0b5856fee6f10e42d006738c4a"
   },
   "devDependencies": {
     "@types/node": "^8.0.9",
