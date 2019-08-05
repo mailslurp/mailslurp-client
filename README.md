@@ -34,7 +34,7 @@ sendEmailSimple(sendEmailOptions: SendEmailOptions);
 // get the latest email in an inbox or if empty wait for one to arrive
 // must provide either inboxId or emailAddress of an inbox you have created
 // for waiting on emails in non-empty inboxes see advanced operations
-fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email>;
+fetchLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
 ```
 
 ## Examples
@@ -55,10 +55,30 @@ test('can signup user', async () => {
 })
 
 test('user receives welcome email', async () => {
-    const { subject, body } = await mailslurp.fetchLatestEmail(null, emailAddress)
+    const { subject, body } = await mailslurp.fetchLatestEmail(emailAddress)
     expect(subject).to.contain("Welcome to my app!")
     expect(body).to.contain("Thank you for joining")
+    // can also use body to extract verification codes with regex capture
 }) 
+```
+
+#### Send an email from unique address
+```typescript
+const MailSlurpClient = require('mailslurp-client')
+const mailslurp = new MailSlurpClient({ apiKey: 'your-api-key' })
+
+test('can send email to my app', async () => {
+    await mailslurp.sendEmailSimple({ 
+        to: ['my-app@app.com'],
+        subject: 'Hello support',
+        body: '' 
+    })
+})
+
+test('my app reacted to sent email', async () => {
+    const handledEmail = await testAppReceivedEmail()
+    expect(handledEmail).to.equal(true)
+})
 ```
 
 ## Extra operations
@@ -87,3 +107,6 @@ sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response
 
 bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
 ```
+
+## Help and support
+Please find extensive guides and documentation at [MailSlurp developers](https://www.mailslurp.com/developers). For help please see the [support page](https://www.mailslurp.com/support).

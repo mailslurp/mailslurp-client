@@ -39,7 +39,7 @@ type GetMessagesOptions = {
 interface AbstractMailSlurpClient {
 
     // simple
-    fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email>;
+    fetchLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
      
     createNewEmailAddress(): Promise<Inbox>;
 
@@ -110,11 +110,11 @@ export class MailSlurp implements AbstractMailSlurpClient {
         this.extraOperationsApi = new ExtraOperationsApi(conf)
     }
 
-    async fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email> {
+    async fetchLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email> {
         if (!inboxId && !inboxEmailAddress) {
             throw "Must provide either inboxId or emailAddress of inbox that you want to fetch from"
         }
-        return logCall("fetchLatestEmail", () => this.commonOperationsApi.fetchLatestEmailUsingGET(inboxId, inboxEmailAddress))
+        return logCall("fetchLatestEmail", () => this.commonOperationsApi.fetchLatestEmailUsingGET(inboxEmailAddress, inboxId))
     }
 
     async createNewEmailAddress(): Promise<Inbox> {

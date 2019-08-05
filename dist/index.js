@@ -94,14 +94,14 @@ var MailSlurp = /** @class */ (function () {
         this.commonOperationsApi = new mailslurp_swagger_sdk_ts_1.CommonOperationsApi(conf);
         this.extraOperationsApi = new mailslurp_swagger_sdk_ts_1.ExtraOperationsApi(conf);
     }
-    MailSlurp.prototype.fetchLatestEmail = function (inboxId, inboxEmailAddress) {
+    MailSlurp.prototype.fetchLatestEmail = function (inboxEmailAddress, inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 if (!inboxId && !inboxEmailAddress) {
                     throw "Must provide either inboxId or emailAddress of inbox that you want to fetch from";
                 }
-                return [2 /*return*/, logCall("fetchLatestEmail", function () { return _this.commonOperationsApi.fetchLatestEmailUsingGET(inboxId, inboxEmailAddress); })];
+                return [2 /*return*/, logCall("fetchLatestEmail", function () { return _this.commonOperationsApi.fetchLatestEmailUsingGET(inboxEmailAddress, inboxId); })];
             });
         });
     };
