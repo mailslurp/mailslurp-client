@@ -109,4 +109,4 @@ bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
 ```
 
 ## Help and support
-Please find extensive guides and documentation at [MailSlurp developers](https://www.mailslurp.com/developers). For help please see the [support page](https://www.mailslurp.com/support).
+Please find extensive guides and documentation at [developers portal](https://www.mailslurp.com/developers). For help please see the [support page](https://www.mailslurp.com/support).
