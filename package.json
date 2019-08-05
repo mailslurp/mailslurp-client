@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Test email account API Client",
-  "version": "3.0.17",
+  "version": "3.0.18",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#3a4bd3c5806ebf0b5856fee6f10e42d006738c4a"
+    "mailslurp-swagger-sdk-ts": "https://github.com/mailslurp/swagger-sdk-typescript-fetch.git#1da9cad8ff70228ddc2024ec18e2b2f3fc350810"
   },
   "devDependencies": {
     "@types/node": "^8.0.9",

@@ -1,5 +1,6 @@
 # Official MailSlurp Javascript/Typescript API Client
 Create unlimited test email accounts via REST then send and receive real emails from them.
+This library requires a [MailSlurp account](https://app.mailslurp.com).
 
 ## Quick links
 - [Get API KEY](https://app.mailslurp.com)
