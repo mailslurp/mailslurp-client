@@ -107,6 +107,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
         // instantiate api clients
         const conf = {apiKey: opts.apiKey};
         this.commonOperationsApi = new CommonOperationsApi(conf);
+        this.extraOperationsApi = new ExtraOperationsApi(conf)
     }
 
     async fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email> {

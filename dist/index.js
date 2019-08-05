@@ -92,6 +92,7 @@ var MailSlurp = /** @class */ (function () {
         // instantiate api clients
         var conf = { apiKey: opts.apiKey };
         this.commonOperationsApi = new mailslurp_swagger_sdk_ts_1.CommonOperationsApi(conf);
+        this.extraOperationsApi = new mailslurp_swagger_sdk_ts_1.ExtraOperationsApi(conf);
     }
     MailSlurp.prototype.fetchLatestEmail = function (inboxId, inboxEmailAddress) {
         return __awaiter(this, void 0, void 0, function () {
