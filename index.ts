@@ -3,12 +3,11 @@
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
 import {
-    BulkApi,
     Email,
-    EmailControllerApi,
+    ExtraOperationsApi,
     EmailPreview,
     Inbox,
-    InboxControllerApi,
+    CommonOperationsApi,
     SendEmailOptions,
     BulkSendEmailOptions
 } from "mailslurp-swagger-sdk-ts"
@@ -38,6 +37,15 @@ type GetMessagesOptions = {
  * Define the MailSlurp client interface
  */
 interface AbstractMailSlurpClient {
+
+    // simple
+    fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email>;
+     
+    createNewEmailAddress(): Promise<Inbox>;
+
+    sendEmailSimple(sendEmailOptions: SendEmailOptions);
+
+    // advanced
     getEmail(emailId: string): Promise<Email>;
 
     getRawEmail(emailId: string): Promise<string>;
@@ -88,9 +96,8 @@ async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
  *  `
  */
 export class MailSlurp implements AbstractMailSlurpClient {
-    private inboxApi: InboxControllerApi;
-    private emailApi: EmailControllerApi;
-    private bulkApi: BulkApi;
+    private commonOperationsApi: CommonOperationsApi;
+    private extraOperationsApi: ExtraOperationsApi;
 
     constructor(opts: Config) {
         // check options
@@ -99,16 +106,30 @@ export class MailSlurp implements AbstractMailSlurpClient {
         }
         // instantiate api clients
         const conf = {apiKey: opts.apiKey};
-        this.inboxApi = new InboxControllerApi(conf);
-        this.emailApi = new EmailControllerApi(conf);
-        this.bulkApi = new BulkApi(conf);
+        this.commonOperationsApi = new CommonOperationsApi(conf);
     }
+
+    async fetchLatestEmail(inboxId?: string, inboxEmailAddress?: string): Promise<Email> {
+        if (!inboxId && !inboxEmailAddress) {
+            throw "Must provide either inboxId or emailAddress of inbox that you want to fetch from"
+        }
+        return logCall("fetchLatestEmail", () => this.commonOperationsApi.fetchLatestEmailUsingGET(inboxId, inboxEmailAddress))
+    }
+
+    async createNewEmailAddress(): Promise<Inbox> {
+        return logCall("createNewEmailAddress", () => this.commonOperationsApi.createNewEmailAddressUsingPOST())
+    }
+
+    async sendEmailSimple(sendEmailOptions: SendEmailOptions) {
+        return logCall("sendEmailSimple", () => this.commonOperationsApi.sendEmailUsingPOST(sendEmailOptions))
+    }
+
 
     /**
      * Create an inbox
      */
     async createInbox(): Promise<Inbox> {
-        return logCall("createInbox", () => this.inboxApi.createInboxUsingPOST())
+        return logCall("createInbox", () => this.extraOperationsApi.createInboxUsingPOST())
     }
 
     /**
@@ -116,7 +137,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param inboxId
      */
     async deleteInbox(inboxId: string): Promise<Response> {
-        return logCall("createInbox", () => this.inboxApi.deleteInboxUsingDELETE(inboxId));
+        return logCall("createInbox", () => this.extraOperationsApi.deleteInboxUsingDELETE(inboxId));
     }
 
     /**
@@ -124,14 +145,14 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param inboxId
      */
     async getInbox(inboxId: string): Promise<Inbox> {
-        return logCall("getInbox", () => this.inboxApi.getInboxUsingGET(inboxId));
+        return logCall("getInbox", () => this.extraOperationsApi.getInboxUsingGET(inboxId));
     }
 
     /**
      * Get all inboxes
      */
     async getInboxes(): Promise<Inbox[]> {
-        return logCall("getInboxes", () => this.inboxApi.getInboxesUsingGET());
+        return logCall("getInboxes", () => this.extraOperationsApi.getInboxesUsingGET());
     }
 
     /**
@@ -140,7 +161,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param args
      */
     async getEmails(inboxId: string, args: GetMessagesOptions = {}): Promise<EmailPreview[]> {
-        return logCall("getEmails", () => this.inboxApi.getEmailsUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since));
+        return logCall("getEmails", () => this.extraOperationsApi.getEmailsUsingGET(inboxId, args.limit, args.minCount, args.retryTimeout, args.since));
     }
 
     /**
@@ -148,7 +169,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param emailId
      */
     async getEmail(emailId: string): Promise<Email> {
-        return logCall("getEmail", () => this.emailApi.getEmailUsingGET(emailId));
+        return logCall("getEmail", () => this.extraOperationsApi.getEmailUsingGET(emailId));
     }
 
     /**
@@ -156,7 +177,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param emailId
      */
     async getRawEmail(emailId: string): Promise<string> {
-        return logCall("getRawEmail", () => this.emailApi.getRawEmailUsingGET(emailId));
+        return logCall("getRawEmail", () => this.extraOperationsApi.getRawEmailUsingGET(emailId));
     }
 
     /**
@@ -165,14 +186,14 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param sendEmailOptions
      */
     async sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
-        return logCall("sendEmail", () => this.inboxApi.sendEmailUsingPOST(inboxId, sendEmailOptions));
+        return logCall("sendEmail", () => this.extraOperationsApi.sendEmailUsingPOST1(inboxId, sendEmailOptions));
     }
 
     /**
      * Bulk send emails
      */
     async bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response> {
-        return logCall("bulkSendEmails", () => this.bulkApi.bulkSendEmailsUsingPOST(bulkSendEmailOptions));
+        return logCall("bulkSendEmails", () => this.extraOperationsApi.bulkSendEmailsUsingPOST(bulkSendEmailOptions));
     }
 
 
@@ -180,14 +201,14 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * Bulk create inboxes
      */
     async bulkCreateInboxes(count: number): Promise<Inbox[]> {
-        return logCall("bulkCreateInboxes", () => this.bulkApi.bulkCreateInboxesUsingPOST(count));
+        return logCall("bulkCreateInboxes", () => this.extraOperationsApi.bulkCreateInboxesUsingPOST(count));
     }
 
     /**
      * Bulk delete inboxes
      */
     async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
-        return logCall("bulkDeleteInboxes", () => this.bulkApi.bulkDeleteInboxesUsingDELETE(inboxIds));
+        return logCall("bulkDeleteInboxes", () => this.extraOperationsApi.bulkDeleteInboxesUsingDELETE(inboxIds));
     }
 
 }

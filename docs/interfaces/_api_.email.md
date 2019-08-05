@@ -14,6 +14,7 @@
 
 ### Properties
 
+* [analysis](_api_.email.md#analysis)
 * [bcc](_api_.email.md#bcc)
 * [body](_api_.email.md#body)
 * [cc](_api_.email.md#cc)
@@ -31,13 +32,26 @@
 
 ## Properties
 
+<a id="analysis"></a>
+
+### `<Optional>` analysis
+
+**● analysis**: *[EmailAnalysis](_api_.emailanalysis.md)*
+
+*Defined in api.ts:112*
+
+*__type__*: {EmailAnalysis}
+
+*__memberof__*: Email
+
+___
 <a id="bcc"></a>
 
 ### `<Optional>` bcc
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in api.ts:112*
+*Defined in api.ts:118*
 
 *__type__*: {Array}
 
@@ -50,7 +64,7 @@ ___
 
 **● body**: *`string`*
 
-*Defined in api.ts:118*
+*Defined in api.ts:124*
 
 *__type__*: {string}
 
@@ -63,7 +77,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in api.ts:124*
+*Defined in api.ts:130*
 
 *__type__*: {Array}
 
@@ -76,7 +90,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in api.ts:130*
+*Defined in api.ts:136*
 
 *__type__*: {Date}
 
@@ -89,7 +103,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in api.ts:136*
+*Defined in api.ts:142*
 
 *__type__*: {string}
 
@@ -102,7 +116,7 @@ ___
 
 **● headers**: *`object`*
 
-*Defined in api.ts:142*
+*Defined in api.ts:148*
 
 *__type__*: {{ \[key: string\]: string; }}
 
@@ -119,7 +133,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in api.ts:148*
+*Defined in api.ts:154*
 
 *__type__*: {string}
 
@@ -132,7 +146,7 @@ ___
 
 **● inboxId**: *`string`*
 
-*Defined in api.ts:154*
+*Defined in api.ts:160*
 
 *__type__*: {string}
 
@@ -145,7 +159,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in api.ts:160*
+*Defined in api.ts:166*
 
 *__type__*: {string}
 
@@ -158,7 +172,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in api.ts:166*
+*Defined in api.ts:172*
 
 *__type__*: {Array}
 
@@ -171,7 +185,7 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in api.ts:172*
+*Defined in api.ts:178*
 
 *__type__*: {Date}
 
@@ -184,7 +198,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in api.ts:178*
+*Defined in api.ts:184*
 
 *__type__*: {string}
 

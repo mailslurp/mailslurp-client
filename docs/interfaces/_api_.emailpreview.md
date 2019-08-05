@@ -29,7 +29,7 @@ Preview of an email message. For full message call the message endpoint with a g
 
 **● created**: *`Date`*
 
-*Defined in api.ts:206*
+*Defined in api.ts:236*
 
 *__type__*: {Date}
 
@@ -42,7 +42,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in api.ts:212*
+*Defined in api.ts:242*
 
 *__type__*: {string}
 

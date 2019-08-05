@@ -10,21 +10,9 @@
 
 **BaseAPI**
 
-↳  [BulkApi](_api_.bulkapi.md)
+↳  [CommonOperationsApi](_api_.commonoperationsapi.md)
 
-↳  [BulkActionsApi](_api_.bulkactionsapi.md)
-
-↳  [EmailControllerApi](_api_.emailcontrollerapi.md)
-
-↳  [EnterpriseApi](_api_.enterpriseapi.md)
-
-↳  [InboxControllerApi](_api_.inboxcontrollerapi.md)
-
-↳  [ManageEntitiesApi](_api_.manageentitiesapi.md)
-
-↳  [ReceiveEmailsApi](_api_.receiveemailsapi.md)
-
-↳  [SendEmailsApi](_api_.sendemailsapi.md)
+↳  [ExtraOperationsApi](_api_.extraoperationsapi.md)
 
 ## Index
 

@@ -35,7 +35,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:20](https://github.com/mailslurp/mailslurp-client-ts-js/blob/80cba3d/index.ts#L20)*
+*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/aaf33c4/index.ts#L19)*
 
 #### Type declaration
 
@@ -48,7 +48,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:25](https://github.com/mailslurp/mailslurp-client-ts-js/blob/80cba3d/index.ts#L25)*
+*Defined in [index.ts:24](https://github.com/mailslurp/mailslurp-client-ts-js/blob/aaf33c4/index.ts#L24)*
 
 #### Type declaration
 
@@ -70,7 +70,7 @@ ___
 
 **● log**: *`any`* =  debug("mailslurp-client")
 
-*Defined in [index.ts:18](https://github.com/mailslurp/mailslurp-client-ts-js/blob/80cba3d/index.ts#L18)*
+*Defined in [index.ts:17](https://github.com/mailslurp/mailslurp-client-ts-js/blob/aaf33c4/index.ts#L17)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **logCall**<`T`>(tag: *`String`*, fn: *`function`*): `Promise`<`T`>
 
-*Defined in [index.ts:70](https://github.com/mailslurp/mailslurp-client-ts-js/blob/80cba3d/index.ts#L70)*
+*Defined in [index.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/aaf33c4/index.ts#L78)*
 
 Helper logging function
 

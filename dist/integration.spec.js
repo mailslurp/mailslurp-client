@@ -9,3 +9,8 @@ test("that import was successful", function () {
     expect(index_1.MailSlurp).not.toBeNull();
     expect(index_2.default).not.toBeNull();
 });
+test("client can be instantiated", function () {
+    var client = new index_1.MailSlurp({ apiKey: 'test' });
+    expect(client).not.toBeNull();
+    expect(client.fetchLatestEmail).not.toBeNull();
+});
