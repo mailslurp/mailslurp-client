@@ -122,7 +122,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
     }
 
     async sendEmailSimple(sendEmailOptions: SendEmailOptions) {
-        return logCall("sendEmailSimple", () => this.commonOperationsApi.sendEmailUsingPOST(sendEmailOptions))
+        return logCall("sendEmailSimple", () => this.commonOperationsApi.sendEmailSimpleUsingPOST(sendEmailOptions))
     }
 
 
@@ -187,7 +187,7 @@ export class MailSlurp implements AbstractMailSlurpClient {
      * @param sendEmailOptions
      */
     async sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response> {
-        return logCall("sendEmail", () => this.extraOperationsApi.sendEmailUsingPOST1(inboxId, sendEmailOptions));
+        return logCall("sendEmail", () => this.extraOperationsApi.sendEmailUsingPOST(inboxId, sendEmailOptions));
     }
 
     /**

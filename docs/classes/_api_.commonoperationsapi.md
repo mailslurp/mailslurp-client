@@ -32,7 +32,7 @@ CommonOperationsApi - object-oriented interface
 
 * [createNewEmailAddressUsingPOST](_api_.commonoperationsapi.md#createnewemailaddressusingpost)
 * [fetchLatestEmailUsingGET](_api_.commonoperationsapi.md#fetchlatestemailusingget)
-* [sendEmailUsingPOST](_api_.commonoperationsapi.md#sendemailusingpost)
+* [sendEmailSimpleUsingPOST](_api_.commonoperationsapi.md#sendemailsimpleusingpost)
 
 ---
 
@@ -150,11 +150,11 @@ Will return either the last received email or wait for an email to arrive and re
 **Returns:** `Promise`<[Email](../interfaces/_api_.email.md)>
 
 ___
-<a id="sendemailusingpost"></a>
+<a id="sendemailsimpleusingpost"></a>
 
-###  sendEmailUsingPOST
+###  sendEmailSimpleUsingPOST
 
-▸ **sendEmailUsingPOST**(sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
+▸ **sendEmailSimpleUsingPOST**(sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:605*
 

@@ -117,7 +117,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall("sendEmailSimple", function () { return _this.commonOperationsApi.sendEmailUsingPOST(sendEmailOptions); })];
+                return [2 /*return*/, logCall("sendEmailSimple", function () { return _this.commonOperationsApi.sendEmailSimpleUsingPOST(sendEmailOptions); })];
             });
         });
     };
@@ -214,7 +214,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall("sendEmail", function () { return _this.extraOperationsApi.sendEmailUsingPOST1(inboxId, sendEmailOptions); })];
+                return [2 /*return*/, logCall("sendEmail", function () { return _this.extraOperationsApi.sendEmailUsingPOST(inboxId, sendEmailOptions); })];
             });
         });
     };

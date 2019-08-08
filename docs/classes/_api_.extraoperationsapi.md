@@ -41,7 +41,7 @@ ExtraOperationsApi - object-oriented interface
 * [getInboxUsingGET](_api_.extraoperationsapi.md#getinboxusingget)
 * [getInboxesUsingGET](_api_.extraoperationsapi.md#getinboxesusingget)
 * [getRawEmailUsingGET](_api_.extraoperationsapi.md#getrawemailusingget)
-* [sendEmailUsingPOST1](_api_.extraoperationsapi.md#sendemailusingpost1)
+* [sendEmailUsingPOST](_api_.extraoperationsapi.md#sendemailusingpost)
 
 ---
 
@@ -395,11 +395,11 @@ Returns a raw, unparsed and unprocessed email
 **Returns:** `Promise`<`string`>
 
 ___
-<a id="sendemailusingpost1"></a>
+<a id="sendemailusingpost"></a>
 
-###  sendEmailUsingPOST1
+###  sendEmailUsingPOST
 
-▸ **sendEmailUsingPOST1**(inboxId: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
+▸ **sendEmailUsingPOST**(inboxId: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in api.ts:1612*
 
