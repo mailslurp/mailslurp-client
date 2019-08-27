@@ -8,7 +8,7 @@ For full documentation please see [Javascript Documentation](https://github.com/
 ## Links
 - [Get API KEY](https://app.mailslurp.com)
 - [Developer Guides](https://www.mailslurp.com/developers)
-- [Classes and Methods](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md))
+- [Classes and Methods](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md)
 - [REST API documentation](https://docs.mailslurp.com)
 - [Other languages](https://www.mailslurp.com/developers)
 - [Support](https://www.mailslurp.com/support)
