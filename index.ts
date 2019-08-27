@@ -63,11 +63,12 @@ async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
 
 /**
  *  MailSlurp client
+ *
  *  Usage:
- *  `
- *  const api = new MailSlurp({ apiKey: "test" })
+ *  ```javascript
+ *  const api = new MailSlurp({ apiKey: "your-api-key" })
  *  const inbox = await api.createInbox()
- *  `
+ *  ```
  */
 export class MailSlurp {
 
