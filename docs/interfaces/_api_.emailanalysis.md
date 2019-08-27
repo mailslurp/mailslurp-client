@@ -32,7 +32,7 @@ Analysis of email
 
 **● dkimVerdict**: *`string`*
 
-*Defined in api.ts:198*
+*Defined in api.ts:256*
 
 *__type__*: {string}
 
@@ -45,7 +45,7 @@ ___
 
 **● dmarcVerdict**: *`string`*
 
-*Defined in api.ts:204*
+*Defined in api.ts:262*
 
 *__type__*: {string}
 
@@ -58,7 +58,7 @@ ___
 
 **● spamVerdict**: *`string`*
 
-*Defined in api.ts:210*
+*Defined in api.ts:268*
 
 *__type__*: {string}
 
@@ -71,7 +71,7 @@ ___
 
 **● spfVerdict**: *`string`*
 
-*Defined in api.ts:216*
+*Defined in api.ts:274*
 
 *__type__*: {string}
 
@@ -84,7 +84,7 @@ ___
 
 **● virusVerdict**: *`string`*
 
-*Defined in api.ts:222*
+*Defined in api.ts:280*
 
 *__type__*: {string}
 

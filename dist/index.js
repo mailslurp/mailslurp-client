@@ -251,6 +251,28 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
+    /**
+     * Create a webhook for notifications
+     */
+    MailSlurp.prototype.createWebhook = function (inboxId, createWebhookOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("createWebhook", function () { return _this.extraOperationsApi.createInboxWebhookUsingPOST(inboxId, createWebhookOptions); })];
+            });
+        });
+    };
+    /**
+     * Get email attachment by id
+     */
+    MailSlurp.prototype.getEmailAttachment = function (emailId, attachmentId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("getEmailAttachment", function () { return _this.extraOperationsApi.getEmailAttachmentUsingGET(attachmentId, emailId); })];
+            });
+        });
+    };
     return MailSlurp;
 }());
 exports.MailSlurp = MailSlurp;

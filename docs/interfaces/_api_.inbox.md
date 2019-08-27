@@ -31,7 +31,7 @@ Representation of an inbox with an email address. Emails can be sent to or from 
 
 **● created**: *`Date`*
 
-*Defined in api.ts:256*
+*Defined in api.ts:314*
 
 *__type__*: {Date}
 
@@ -44,7 +44,7 @@ ___
 
 **● emailAddress**: *`string`*
 
-*Defined in api.ts:262*
+*Defined in api.ts:320*
 
 The inbox's email address. Send an email to this address and the inbox will receive it
 
@@ -59,7 +59,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in api.ts:268*
+*Defined in api.ts:326*
 
 *__type__*: {string}
 
@@ -72,7 +72,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in api.ts:274*
+*Defined in api.ts:332*
 
 *__type__*: {string}
 

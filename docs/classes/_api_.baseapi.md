@@ -65,7 +65,7 @@ ___
 
 ### `<Protected>` configuration
 
-**● configuration**: *`Configuration`*
+**● configuration**: *`Configuration` \| `undefined`*
 
 *Defined in api.ts:58*
 

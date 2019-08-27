@@ -77,7 +77,7 @@ ___
 
 ###  name
 
-**● name**: *"RequiredError"*
+**● name**: *"RequiredError"* = "RequiredError"
 
 *Overrides Error.name*
 

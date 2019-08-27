@@ -77,7 +77,7 @@ ___
 
 ### `<Protected>` configuration
 
-**● configuration**: *`Configuration`*
+**● configuration**: *`Configuration` \| `undefined`*
 
 *Inherited from [BaseAPI](_api_.baseapi.md).[configuration](_api_.baseapi.md#configuration)*
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **createNewEmailAddressUsingPOST**(options?: *`any`*): `Promise`<[Inbox](../interfaces/_api_.inbox.md)>
 
-*Defined in api.ts:580*
+*Defined in api.ts:694*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **fetchLatestEmailUsingGET**(inboxEmailAddress?: *`string`*, inboxId?: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/_api_.email.md)>
 
-*Defined in api.ts:593*
+*Defined in api.ts:707*
 
 Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox see the other receive methods.
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **sendEmailSimpleUsingPOST**(sendEmailOptions: *[SendEmailOptions](../interfaces/_api_.sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in api.ts:605*
+*Defined in api.ts:719*
 
 To specify an email address first create an inbox and use that with the other send email methods
 

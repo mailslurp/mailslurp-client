@@ -25,11 +25,13 @@ Bulk sending options
 
 <a id="inboxids"></a>
 
-###  inboxIds
+### `<Optional>` inboxIds
 
 **● inboxIds**: *`Array`<`string`>*
 
-*Defined in api.ts:92*
+*Defined in api.ts:112*
+
+Inboxes to send from
 
 *__type__*: {Array}
 
@@ -42,7 +44,7 @@ ___
 
 **● sendEmailOptions**: *[SendEmailOptions](_api_.sendemailoptions.md)*
 
-*Defined in api.ts:98*
+*Defined in api.ts:118*
 
 *__type__*: {SendEmailOptions}
 

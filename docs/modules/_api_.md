@@ -13,7 +13,9 @@
 
 ### Interfaces
 
+* [BasicAuthOptions](../interfaces/_api_.basicauthoptions.md)
 * [BulkSendEmailOptions](../interfaces/_api_.bulksendemailoptions.md)
+* [CreateWebhookOptions](../interfaces/_api_.createwebhookoptions.md)
 * [Email](../interfaces/_api_.email.md)
 * [EmailAnalysis](../interfaces/_api_.emailanalysis.md)
 * [EmailPreview](../interfaces/_api_.emailpreview.md)
@@ -21,6 +23,7 @@
 * [FetchArgs](../interfaces/_api_.fetchargs.md)
 * [Inbox](../interfaces/_api_.inbox.md)
 * [SendEmailOptions](../interfaces/_api_.sendemailoptions.md)
+* [Webhook](../interfaces/_api_.webhook.md)
 
 ### Variables
 
@@ -61,7 +64,7 @@ ___
 
 ▸ **CommonOperationsApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:531*
+*Defined in api.ts:645*
 
 CommonOperationsApi - factory interface
 
@@ -82,7 +85,7 @@ ___
 
 ▸ **CommonOperationsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:344*
+*Defined in api.ts:446*
 
 CommonOperationsApi - fetch parameter creator
 
@@ -101,7 +104,7 @@ ___
 
 ▸ **CommonOperationsApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:465*
+*Defined in api.ts:579*
 
 CommonOperationsApi - functional programming interface
 
@@ -120,7 +123,7 @@ ___
 
 ▸ **ExtraOperationsApiFactory**(configuration?: *`Configuration`*, fetch?: *[FetchAPI](../interfaces/_api_.fetchapi.md)*, basePath?: *`string`*): `object`
 
-*Defined in api.ts:1334*
+*Defined in api.ts:1760*
 
 ExtraOperationsApi - factory interface
 
@@ -141,7 +144,7 @@ ___
 
 ▸ **ExtraOperationsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:615*
+*Defined in api.ts:729*
 
 ExtraOperationsApi - fetch parameter creator
 
@@ -160,7 +163,7 @@ ___
 
 ▸ **ExtraOperationsApiFp**(configuration?: *`Configuration`*): `object`
 
-*Defined in api.ts:1094*
+*Defined in api.ts:1441*
 
 ExtraOperationsApi - functional programming interface
 
