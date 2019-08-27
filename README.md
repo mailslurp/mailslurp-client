@@ -1,10 +1,13 @@
 # Official MailSlurp API Client
+
+![logo](https://www.mailslurp.com/permalink/logo.png)
+
 Create unlimited private test email accounts. Send and receive real emails with them.
 This library requires a [MailSlurp account](https://app.mailslurp.com).
 
 ## Links
 - [Get API KEY](https://app.mailslurp.com)
-- [Developers guides and documentation](https://www.mailslurp.com/developers)
+- [Documentation](https://www.mailslurp.com/developers)
 - [Pricing](https://www.mailslurp.com/pricing)
 - [REST API documentation](https://docs.mailslurp.com)
 - [Support](https://www.mailslurp.com/support)
@@ -27,11 +30,11 @@ createNewEmailAddress(): Promise<Inbox>;
 // send an email from a randomly generated email address
 // to send from a know address see advanced operations
 // sendEmailOptions must include recipients, subject and body
-// for more options see SendEmailOptions definiton
+// for more options see SendEmailOptions definition
 // { to: string[], subject: string, body: string }
 sendEmailSimple(sendEmailOptions: SendEmailOptions);
 
-// get the latest email in an inbox or if empty wait for one to arrive
+// get the latest email in an inbox or if empty WAIT for one to arrive
 // must provide either inboxId or emailAddress of an inbox you have created
 // for waiting on emails in non-empty inboxes see advanced operations
 fetchLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
@@ -85,17 +88,9 @@ test('my app reacted to sent email', async () => {
 You can use MailSlurp in more advanced ways. Here are some method definitions. Read the source (it's small) for more information.
 
 ```typescript
-getEmail(emailId: string): Promise<Email>;
-
-getRawEmail(emailId: string): Promise<string>;
-
 createInbox(): Promise<Inbox>;
 
-bulkCreateInboxes(count: number): Promise<Inbox[]>;
-
 deleteInbox(inboxId: string): Promise<Response>;
-
-bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
 
 getInbox(inboxId: string): Promise<Inbox>;
 
@@ -103,10 +98,24 @@ getInboxes(): Promise<Inbox[]>;
 
 getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
-sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+getEmail(emailId: string): Promise<Email>;
 
-bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
+getRawEmail(emailId: string): Promise<string>;
+
+getEmailAttachment(emailId: string, attachmentId: string);
+
+sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>;
+
+bulkCreateInboxes(count: number): Promise<Inbox[]>;
+
+bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>;
+
+bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
+
+createWebhook(inboxId: string, createWebhookOptions: CreateWebhookOptions): Promise<Webhook>;
 ```
 
 ## Help and support
-Please find extensive guides and documentation at [developers portal](https://www.mailslurp.com/developers). For help please see the [support page](https://www.mailslurp.com/support).
+Please find extensive guides and documentation at [developers portal](https://www.mailslurp.com/developers). 
+
+For help please see the [support page](https://www.mailslurp.com/support).

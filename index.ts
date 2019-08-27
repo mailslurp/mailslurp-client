@@ -9,7 +9,7 @@ import {
     Inbox,
     CommonOperationsApi,
     SendEmailOptions,
-    BulkSendEmailOptions
+    BulkSendEmailOptions, Webhook, CreateWebhookOptions
 } from "mailslurp-swagger-sdk-ts"
 import debug from "debug"
 
@@ -46,17 +46,9 @@ interface AbstractMailSlurpClient {
     sendEmailSimple(sendEmailOptions: SendEmailOptions);
 
     // advanced
-    getEmail(emailId: string): Promise<Email>;
-
-    getRawEmail(emailId: string): Promise<string>;
-
     createInbox(): Promise<Inbox>;
 
-    bulkCreateInboxes(count: number): Promise<Inbox[]>;
-
     deleteInbox(inboxId: string): Promise<Response>;
-
-    bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
 
     getInbox(inboxId: string): Promise<Inbox>;
 
@@ -64,9 +56,21 @@ interface AbstractMailSlurpClient {
 
     getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
 
-    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>
+    getEmail(emailId: string): Promise<Email>;
 
-    bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>
+    getRawEmail(emailId: string): Promise<string>;
+
+    getEmailAttachment(emailId: string, attachmentId: string);
+
+    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>;
+
+    bulkCreateInboxes(count: number): Promise<Inbox[]>;
+
+    bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>;
+
+    bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
+
+    createWebhook(inboxId: string, createWebhookOptions: CreateWebhookOptions): Promise<Webhook>;
 }
 
 
@@ -197,7 +201,6 @@ export class MailSlurp implements AbstractMailSlurpClient {
         return logCall("bulkSendEmails", () => this.extraOperationsApi.bulkSendEmailsUsingPOST(bulkSendEmailOptions));
     }
 
-
     /**
      * Bulk create inboxes
      */
@@ -210,6 +213,20 @@ export class MailSlurp implements AbstractMailSlurpClient {
      */
     async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
         return logCall("bulkDeleteInboxes", () => this.extraOperationsApi.bulkDeleteInboxesUsingDELETE(inboxIds));
+    }
+
+    /**
+     * Create a webhook for notifications
+     */
+    async createWebhook(inboxId: string, createWebhookOptions: CreateWebhookOptions): Promise<Webhook> {
+        return logCall("createWebhook", () => this.extraOperationsApi.createInboxWebhookUsingPOST(inboxId, createWebhookOptions))
+    }
+
+    /**
+     * Get email attachment by id
+     */
+    async getEmailAttachment(emailId: string, attachmentId: string): Promise<Response> {
+        return logCall("getEmailAttachment", () => this.extraOperationsApi.getEmailAttachmentUsingGET(attachmentId, emailId))
     }
 
 }

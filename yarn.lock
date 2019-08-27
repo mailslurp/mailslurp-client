@@ -2078,10 +2078,10 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-mailslurp-swagger-sdk-ts@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-1.0.0.tgz#769b1b4728d6f271804b23a3a987fdbdcedd0749"
-  integrity sha512-yCd6PEP3+Rc/+FeoCIfIb9vNijtafdrVw4bUatqDLbCSsbeWNqluDRL/O4fO1YKdTJYh8jK4ERmCioZqkn+6lg==
+mailslurp-swagger-sdk-ts@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-4.1.2.tgz#f6076d782ba3ce2493cfc8a987210abfb371bcf4"
+  integrity sha512-leU0j9+yLQAGAGAThsRlHYKMrtPSBe3J6OqQXhANJ2pKAOV8kBfiLRACuCQXIg+GgumHbv3XjPpTjlvdxrs9qQ==
   dependencies:
     portable-fetch "^3.0.0"
 

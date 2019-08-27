@@ -1,11 +1,16 @@
 {
   "name": "mailslurp-client",
   "description": "Test email account API Client",
-  "version": "3.0.25",
+  "version": "4.1.2",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
-  "keywords": ["mailslurp", "email", "test", "smtp"],
+  "keywords": [
+    "mailslurp",
+    "email",
+    "test",
+    "smtp"
+  ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
@@ -17,7 +22,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "1.0.0"
+    "mailslurp-swagger-sdk-ts": "^4.1.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.9",
