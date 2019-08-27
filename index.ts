@@ -113,7 +113,7 @@ export class MailSlurp {
    *
    * @param sendEmailOptions
    */
-  async sendEmailSimple(sendEmailOptions: SendEmailOptions) {
+  async sendEmailSimple(sendEmailOptions: SendEmailOptions): Promise<Response> {
     return logCall("sendEmailSimple", () => this.commonOperationsApi.sendEmailSimple(sendEmailOptions))
   }
 
