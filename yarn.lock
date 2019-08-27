@@ -131,6 +131,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@microsoft/tsdoc@^0.12.12":
+  version "0.12.12"
+  resolved "https://registry.yarnpkg.com/@microsoft/tsdoc/-/tsdoc-0.12.12.tgz#6692f1cbca664f68abbc62f9a26459fba8b9ff28"
+  integrity sha512-5EzH1gHIonvvgA/xWRmVAJmRkTQj/yayUXyr66hFwNZiFE4j7lP8is9YQeXhwxGZEjO1PVMblAmFF0CyjNtPGw==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -2078,10 +2083,10 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-mailslurp-swagger-sdk-ts@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-4.1.2.tgz#f6076d782ba3ce2493cfc8a987210abfb371bcf4"
-  integrity sha512-leU0j9+yLQAGAGAThsRlHYKMrtPSBe3J6OqQXhANJ2pKAOV8kBfiLRACuCQXIg+GgumHbv3XjPpTjlvdxrs9qQ==
+mailslurp-swagger-sdk-ts@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-4.3.0.tgz#f37cc932eaa62082e5519095c0ab4af7aa958505"
+  integrity sha512-PlbQ5s2PkcLIEALYTqJoCWxOq9QHUUNwCEW0y/KPCigJqEC2UJJC6XTufSy/1au09x1LhXZfCyTkRWpNNbe23w==
   dependencies:
     portable-fetch "^3.0.0"
 

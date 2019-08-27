@@ -1,11 +1,11 @@
 
-#  mailslurp-swagger-sdk-ts
+#  mailslurp-client
 
 ## Index
 
 ### External modules
 
-* ["api"](modules/_api_.md)
+* ["index"](modules/_index_.md)
 
 ---
 

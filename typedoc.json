@@ -2,8 +2,8 @@
   "theme": "markdown",
   "out": "docs",
   "exclude": "*.spec.ts",
-  "excludeExternals": true,
-  "includeDeclarations" : true,
+  "excludeExternals": false,
+  "includeDeclarations" : false,
   "disableOutputCheck": true,
   "mode": "modules",
   "readme": "none"

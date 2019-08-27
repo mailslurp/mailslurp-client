@@ -8,10 +8,6 @@
 
 * [MailSlurp](../classes/_index_.mailslurp.md)
 
-### Interfaces
-
-* [AbstractMailSlurpClient](../interfaces/_index_.abstractmailslurpclient.md)
-
 ### Type aliases
 
 * [Config](_index_.md#config)
@@ -35,7 +31,11 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9324df4/index.ts#L19)*
+*Defined in [index.ts:28](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L28)*
+
+MailSlurp config
+
+*__remarks__*: [Obtain your API Key](https://app.mailslurp.com) in your dashboard.
 
 #### Type declaration
 
@@ -48,7 +48,11 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:24](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9324df4/index.ts#L24)*
+*Defined in [index.ts:39](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L39)*
+
+Options for advanced message fetching
+
+*__remarks__*: For more control over fetching. See also Webhook endpoints
 
 #### Type declaration
 
@@ -70,7 +74,7 @@ ___
 
 **● log**: *`any`* =  debug("mailslurp-client")
 
-*Defined in [index.ts:17](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9324df4/index.ts#L17)*
+*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L19)*
 
 ___
 
@@ -82,19 +86,17 @@ ___
 
 ▸ **logCall**<`T`>(tag: *`String`*, fn: *`function`*): `Promise`<`T`>
 
-*Defined in [index.ts:82](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9324df4/index.ts#L82)*
-
-Helper logging function
+*Defined in [index.ts:52](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L52)*
 
 **Type parameters:**
 
 #### T 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| tag | `String` |  \- |
-| fn | `function` |   |
+| Name | Type |
+| ------ | ------ |
+| tag | `String` |
+| fn | `function` |
 
 **Returns:** `Promise`<`T`>
 

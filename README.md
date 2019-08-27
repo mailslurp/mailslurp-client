@@ -1,16 +1,18 @@
-# Official MailSlurp API Client
-
 ![logo](https://www.mailslurp.com/permalink/logo.png)
 
-Create unlimited private test email accounts. Send and receive real emails with them.
-This library requires a [MailSlurp account](https://app.mailslurp.com).
+> Send and receive emails from unlimited private inboxes. In applications or tests.
+
+# About
+For full documentation please see [Javascript Documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md)
 
 ## Links
 - [Get API KEY](https://app.mailslurp.com)
-- [Documentation](https://www.mailslurp.com/developers)
-- [Pricing](https://www.mailslurp.com/pricing)
+- [Developer Guides](https://www.mailslurp.com/developers)
+- [Classes and Methods](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md))
 - [REST API documentation](https://docs.mailslurp.com)
+- [Other languages](https://www.mailslurp.com/developers)
 - [Support](https://www.mailslurp.com/support)
+- [Contact](mailto:contact@mailslurp.dev)
 
 ## Install
 `npm install -s mailslurp-client`
@@ -21,24 +23,20 @@ const MailSlurpClient = require('mailslurp-client')
 const mailslurp = new MailSlurpClient({ apiKey: 'your-api-key' })
 ```
 
+## Methods
+See [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md).
+
 ## Common operations
 
 ```typescript
-// create a new email address and return { id: string, emailAdress: string }
 createNewEmailAddress(): Promise<Inbox>;
-
-// send an email from a randomly generated email address
-// to send from a know address see advanced operations
-// sendEmailOptions must include recipients, subject and body
-// for more options see SendEmailOptions definition
-// { to: string[], subject: string, body: string }
 sendEmailSimple(sendEmailOptions: SendEmailOptions);
-
-// get the latest email in an inbox or if empty WAIT for one to arrive
-// must provide either inboxId or emailAddress of an inbox you have created
-// for waiting on emails in non-empty inboxes see advanced operations
-fetchLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
+waitForLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
 ```
+
+## Advanced
+See [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md).
+
 
 ## Examples
 Here are some example use cases with an imaginary application that uses email addresses
@@ -58,7 +56,7 @@ test('can signup user', async () => {
 })
 
 test('user receives welcome email', async () => {
-    const { subject, body } = await mailslurp.fetchLatestEmail(emailAddress)
+    const { subject, body } = await mailslurp.waitForLatestEmail(emailAddress)
     expect(subject).to.contain("Welcome to my app!")
     expect(body).to.contain("Thank you for joining")
     // can also use body to extract verification codes with regex capture
@@ -82,37 +80,6 @@ test('my app reacted to sent email', async () => {
     const handledEmail = await testAppReceivedEmail()
     expect(handledEmail).to.equal(true)
 })
-```
-
-## Extra operations
-You can use MailSlurp in more advanced ways. Here are some method definitions. Read the source (it's small) for more information.
-
-```typescript
-createInbox(): Promise<Inbox>;
-
-deleteInbox(inboxId: string): Promise<Response>;
-
-getInbox(inboxId: string): Promise<Inbox>;
-
-getInboxes(): Promise<Inbox[]>;
-
-getEmails(inboxId: string, args: GetMessagesOptions): Promise<EmailPreview[]>;
-
-getEmail(emailId: string): Promise<Email>;
-
-getRawEmail(emailId: string): Promise<string>;
-
-getEmailAttachment(emailId: string, attachmentId: string);
-
-sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>;
-
-bulkCreateInboxes(count: number): Promise<Inbox[]>;
-
-bulkSendEmails(bulkSendEmailOptions: BulkSendEmailOptions): Promise<Response>;
-
-bulkDeleteInboxes(inboxIds: string[]): Promise<Response>;
-
-createWebhook(inboxId: string, createWebhookOptions: CreateWebhookOptions): Promise<Webhook>;
 ```
 
 ## Help and support

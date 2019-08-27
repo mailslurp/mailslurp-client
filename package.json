@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Test email account API Client",
-  "version": "4.1.2",
+  "version": "4.3.0",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -18,13 +18,14 @@
     "build": "tsc --outDir dist/",
     "prepublishOnly": "npm run build",
     "test": "jest",
-    "docs": "typedoc && typedoc node_modules/mailslurp-swagger-sdk-ts/api.ts"
+    "docs": "typedoc index.ts"
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "^4.1.2"
+    "mailslurp-swagger-sdk-ts": "4.3.0"
   },
   "devDependencies": {
+    "@microsoft/tsdoc": "^0.12.12",
     "@types/node": "^8.0.9",
     "jest": "^24.1.0",
     "ts-jest": "^24.0.0",
