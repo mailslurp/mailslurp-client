@@ -31,7 +31,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:28](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L28)*
+*Defined in [index.ts:28](https://github.com/mailslurp/mailslurp-client-ts-js/blob/eb98a1b/index.ts#L28)*
 
 MailSlurp config
 
@@ -48,7 +48,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:39](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L39)*
+*Defined in [index.ts:39](https://github.com/mailslurp/mailslurp-client-ts-js/blob/eb98a1b/index.ts#L39)*
 
 Options for advanced message fetching
 
@@ -74,7 +74,7 @@ ___
 
 **● log**: *`any`* =  debug("mailslurp-client")
 
-*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L19)*
+*Defined in [index.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/eb98a1b/index.ts#L19)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **logCall**<`T`>(tag: *`String`*, fn: *`function`*): `Promise`<`T`>
 
-*Defined in [index.ts:52](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2dde31c/index.ts#L52)*
+*Defined in [index.ts:52](https://github.com/mailslurp/mailslurp-client-ts-js/blob/eb98a1b/index.ts#L52)*
 
 **Type parameters:**
 

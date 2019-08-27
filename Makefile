@@ -1,13 +1,13 @@
 node_modules:
-	yarn install
+	npm install
 
 test: node_modules
-	yarn run test
+	npm run test
 
 build: test
-	yarn run build
+	npm run build
 	rm -rf docs
-	yarn run docs
+	npm run docs
 
 # manually bump package version first
 deploy: build
