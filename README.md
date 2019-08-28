@@ -32,6 +32,7 @@ See [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/b
 createNewEmailAddress(): Promise<Inbox>;
 sendEmailSimple(sendEmailOptions: SendEmailOptions);
 waitForLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
+waitForNthEmail(inboxId: string, index: number): Promise<Email>
 ```
 
 ## Advanced

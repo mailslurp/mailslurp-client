@@ -73,11 +73,12 @@ function logCall(tag, fn) {
 }
 /**
  *  MailSlurp client
+ *
  *  Usage:
- *  `
- *  const api = new MailSlurp({ apiKey: "test" })
+ *  ```javascript
+ *  const api = new MailSlurp({ apiKey: "your-api-key" })
  *  const inbox = await api.createInbox()
- *  `
+ *  ```
  */
 var MailSlurp = /** @class */ (function () {
     function MailSlurp(opts) {
@@ -145,7 +146,20 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Create an inbox
+     * Wait for email at the given zero-based index in an inbox
+     * @param inboxId of the email address
+     * @param index zero based index
+     */
+    MailSlurp.prototype.waitForNthEmail = function (inboxId, index) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, logCall("waitForNthEmail", function () { return _this.commonOperationsApi.waitForNthEmail(inboxId, index); })];
+            });
+        });
+    };
+    /**
+     * Create an inbox / email address
      */
     MailSlurp.prototype.createInbox = function () {
         return __awaiter(this, void 0, void 0, function () {

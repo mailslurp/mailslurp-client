@@ -136,7 +136,16 @@ export class MailSlurp {
   }
 
   /**
-   * Create an inbox
+   * Wait for email at the given zero-based index in an inbox
+   * @param inboxId of the email address
+   * @param index zero based index
+   */
+  async waitForNthEmail(inboxId: string, index: number): Promise<Email> {
+    return logCall("waitForNthEmail", () => this.commonOperationsApi.waitForNthEmail(inboxId, index))
+  }
+
+  /**
+   * Create an inbox / email address
    */
   async createInbox(): Promise<Inbox> {
     return logCall("createInbox", () => this.extraOperationsApi.createInbox())
