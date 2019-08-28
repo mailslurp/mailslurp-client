@@ -33,6 +33,8 @@ createNewEmailAddress(): Promise<Inbox>;
 sendEmailSimple(sendEmailOptions: SendEmailOptions);
 waitForLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
 waitForNthEmail(inboxId: string, index: number): Promise<Email>
+
+// more methods available, see docs
 ```
 
 ## Advanced
