@@ -167,7 +167,7 @@ export class MailSlurp {
         count?: number,
         inboxId?: string,
         timeout?: number
-    ) {
+    ): Promise<EmailPreview[]> {
         return logCall('waitForMatchingEmail', () =>
             this.commonOperationsApi.waitForMatchingEmail(
                 matchOptions,
@@ -188,7 +188,7 @@ export class MailSlurp {
         count?: number,
         inboxId?: string,
         timeout?: number
-    ) {
+    ): Promise<EmailPreview[]> {
         return logCall('waitForEmailCount', () =>
             this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout)
         );

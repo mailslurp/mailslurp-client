@@ -29,18 +29,22 @@ Usage:
 * [createInbox](_index_.mailslurp.md#createinbox)
 * [createNewEmailAddress](_index_.mailslurp.md#createnewemailaddress)
 * [createWebhook](_index_.mailslurp.md#createwebhook)
+* [deleteEmail](_index_.mailslurp.md#deleteemail)
+* [deleteEmailAddress](_index_.mailslurp.md#deleteemailaddress)
 * [deleteInbox](_index_.mailslurp.md#deleteinbox)
+* [deleteWebhook](_index_.mailslurp.md#deletewebhook)
 * [downloadAttachment](_index_.mailslurp.md#downloadattachment)
-* [fetchLatestEmail](_index_.mailslurp.md#fetchlatestemail)
+* [emptyInbox](_index_.mailslurp.md#emptyinbox)
 * [getEmail](_index_.mailslurp.md#getemail)
-* [getEmailAttachment](_index_.mailslurp.md#getemailattachment)
 * [getEmails](_index_.mailslurp.md#getemails)
 * [getInbox](_index_.mailslurp.md#getinbox)
 * [getInboxes](_index_.mailslurp.md#getinboxes)
 * [getRawEmail](_index_.mailslurp.md#getrawemail)
 * [sendEmail](_index_.mailslurp.md#sendemail)
 * [sendEmailSimple](_index_.mailslurp.md#sendemailsimple)
+* [waitForEmailCount](_index_.mailslurp.md#waitforemailcount)
 * [waitForLatestEmail](_index_.mailslurp.md#waitforlatestemail)
+* [waitForMatchingEmails](_index_.mailslurp.md#waitformatchingemails)
 * [waitForNthEmail](_index_.mailslurp.md#waitfornthemail)
 
 ---
@@ -53,7 +57,7 @@ Usage:
 
 ⊕ **new MailSlurp**(opts: *[Config](../modules/_index_.md#config)*): [MailSlurp](_index_.mailslurp.md)
 
-*Defined in [index.ts:82](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L82)*
+*Defined in [index.ts:82](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L82)*
 
 **Parameters:**
 
@@ -73,7 +77,7 @@ ___
 
 ▸ **bulkCreateInboxes**(count: *`number`*): `Promise`<`Inbox`[]>
 
-*Defined in [index.ts:221](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L221)*
+*Defined in [index.ts:333](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L333)*
 
 Bulk create inboxes
 
@@ -92,7 +96,7 @@ ___
 
 ▸ **bulkDeleteInboxes**(inboxIds: *`string`[]*): `Promise`<`Response`>
 
-*Defined in [index.ts:228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L228)*
+*Defined in [index.ts:342](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L342)*
 
 Bulk delete inboxes
 
@@ -111,7 +115,7 @@ ___
 
 ▸ **bulkSendEmails**(bulkSendEmailOptions: *`BulkSendEmailOptions`*): `Promise`<`Response`>
 
-*Defined in [index.ts:214](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L214)*
+*Defined in [index.ts:322](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L322)*
 
 Bulk send emails
 
@@ -130,7 +134,7 @@ ___
 
 ▸ **createInbox**(): `Promise`<`Inbox`>
 
-*Defined in [index.ts:150](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L150)*
+*Defined in [index.ts:230](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L230)*
 
 Create an inbox / email address
 
@@ -143,11 +147,11 @@ ___
 
 ▸ **createNewEmailAddress**(): `Promise`<`Inbox`>
 
-*Defined in [index.ts:104](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L104)*
+*Defined in [index.ts:103](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L103)*
 
-Create a new email address and associated inbox
+Create a new email address / inbox
 
-*__remarks__*: All none-paid accounts use the `@mailslurp.com` domain. Custom domains available with plans.
+*__remarks__*: Returns id and emailAddress of created inbox. All none-paid accounts use the `@mailslurp.com` domain. Custom domains available with plans.
 
 **Returns:** `Promise`<`Inbox`>
 
@@ -158,7 +162,7 @@ ___
 
 ▸ **createWebhook**(inboxId: *`string`*, createWebhookOptions: *`CreateWebhookOptions`*): `Promise`<`Webhook`>
 
-*Defined in [index.ts:235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L235)*
+*Defined in [index.ts:351](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L351)*
 
 Create a webhook for notifications
 
@@ -172,13 +176,51 @@ Create a webhook for notifications
 **Returns:** `Promise`<`Webhook`>
 
 ___
+<a id="deleteemail"></a>
+
+###  deleteEmail
+
+▸ **deleteEmail**(emailId: *`string`*): `Promise`<`Response`>
+
+*Defined in [index.ts:211](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L211)*
+
+Delete an email by id
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| emailId | `string` |   |
+
+**Returns:** `Promise`<`Response`>
+
+___
+<a id="deleteemailaddress"></a>
+
+###  deleteEmailAddress
+
+▸ **deleteEmailAddress**(emailId: *`string`*): `Promise`<`Response`>
+
+*Defined in [index.ts:221](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L221)*
+
+Delete an email by id
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| emailId | `string` |   |
+
+**Returns:** `Promise`<`Response`>
+
+___
 <a id="deleteinbox"></a>
 
 ###  deleteInbox
 
 ▸ **deleteInbox**(inboxId: *`string`*): `Promise`<`Response`>
 
-*Defined in [index.ts:158](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L158)*
+*Defined in [index.ts:240](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L240)*
 
 Delete an inbox by id
 
@@ -191,13 +233,33 @@ Delete an inbox by id
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="deletewebhook"></a>
+
+###  deleteWebhook
+
+▸ **deleteWebhook**(inboxId: *`string`*, webhookId: *`string`*): `Promise`<`Response`>
+
+*Defined in [index.ts:363](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L363)*
+
+Create a webhook for notifications
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| inboxId | `string` |
+| webhookId | `string` |
+
+**Returns:** `Promise`<`Response`>
+
+___
 <a id="downloadattachment"></a>
 
 ###  downloadAttachment
 
 ▸ **downloadAttachment**(emailId: *`string`*, attachmentId: *`string`*): `Promise`<`Response`>
 
-*Defined in [index.ts:242](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L242)*
+*Defined in [index.ts:372](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L372)*
 
 Get email attachment by id
 
@@ -211,24 +273,23 @@ Get email attachment by id
 **Returns:** `Promise`<`Response`>
 
 ___
-<a id="fetchlatestemail"></a>
+<a id="emptyinbox"></a>
 
-###  fetchLatestEmail
+###  emptyInbox
 
-▸ **fetchLatestEmail**(inboxEmailAddress?: *`string`*, inboxId?: *`string`*): `Promise`<`Email`>
+▸ **emptyInbox**(inboxId: *`string`*): `Promise`<`Response`>
 
-*Defined in [index.ts:256](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L256)*
+*Defined in [index.ts:201](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L201)*
 
-*__deprecated__*: 
+Delete all emails in a given inbox
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` inboxEmailAddress | `string` |
-| `Optional` inboxId | `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| inboxId | `string` |   |
 
-**Returns:** `Promise`<`Email`>
+**Returns:** `Promise`<`Response`>
 
 ___
 <a id="getemail"></a>
@@ -237,7 +298,7 @@ ___
 
 ▸ **getEmail**(emailId: *`string`*): `Promise`<`Email`>
 
-*Defined in [index.ts:190](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L190)*
+*Defined in [index.ts:289](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L289)*
 
 Get a full email from by id
 
@@ -250,33 +311,13 @@ Get a full email from by id
 **Returns:** `Promise`<`Email`>
 
 ___
-<a id="getemailattachment"></a>
-
-###  getEmailAttachment
-
-▸ **getEmailAttachment**(emailId: *`string`*, attachmentId: *`string`*): `Promise`<`Response`>
-
-*Defined in [index.ts:249](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L249)*
-
-*__deprecated__*: 
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| emailId | `string` |
-| attachmentId | `string` |
-
-**Returns:** `Promise`<`Response`>
-
-___
 <a id="getemails"></a>
 
 ###  getEmails
 
 ▸ **getEmails**(inboxId: *`string`*, args?: *[GetMessagesOptions](../modules/_index_.md#getmessagesoptions)*): `Promise`<`EmailPreview`[]>
 
-*Defined in [index.ts:182](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L182)*
+*Defined in [index.ts:270](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L270)*
 
 Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
 
@@ -296,7 +337,7 @@ ___
 
 ▸ **getInbox**(inboxId: *`string`*): `Promise`<`Inbox`>
 
-*Defined in [index.ts:166](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L166)*
+*Defined in [index.ts:250](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L250)*
 
 Get an inbox by id
 
@@ -315,7 +356,7 @@ ___
 
 ▸ **getInboxes**(): `Promise`<`Inbox`[]>
 
-*Defined in [index.ts:173](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L173)*
+*Defined in [index.ts:259](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L259)*
 
 Get all inboxes
 
@@ -328,7 +369,7 @@ ___
 
 ▸ **getRawEmail**(emailId: *`string`*): `Promise`<`string`>
 
-*Defined in [index.ts:198](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L198)*
+*Defined in [index.ts:299](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L299)*
 
 Get an email's raw contents from by id
 
@@ -347,7 +388,7 @@ ___
 
 ▸ **sendEmail**(inboxId: *`string`*, sendEmailOptions: *`SendEmailOptions`*): `Promise`<`Response`>
 
-*Defined in [index.ts:207](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L207)*
+*Defined in [index.ts:310](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L310)*
 
 Send and email from a given inbox
 
@@ -367,7 +408,7 @@ ___
 
 ▸ **sendEmailSimple**(sendEmailOptions: *`SendEmailOptions`*): `Promise`<`Response`>
 
-*Defined in [index.ts:117](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L117)*
+*Defined in [index.ts:118](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L118)*
 
 Send an email from a random address
 
@@ -382,13 +423,34 @@ Send an email from a random address
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="waitforemailcount"></a>
+
+###  waitForEmailCount
+
+▸ **waitForEmailCount**(count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*): `Promise`<`EmailPreview`[]>
+
+*Defined in [index.ts:187](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L187)*
+
+Wait for and return list of emails with length of given count
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` count | `number` |  \- |
+| `Optional` inboxId | `string` |  \- |
+| `Optional` timeout | `number` |   |
+
+**Returns:** `Promise`<`EmailPreview`[]>
+
+___
 <a id="waitforlatestemail"></a>
 
 ###  waitForLatestEmail
 
-▸ **waitForLatestEmail**(inboxEmailAddress?: *`string`*, inboxId?: *`string`*): `Promise`<`Email`>
+▸ **waitForLatestEmail**(inboxId?: *`string`*, timeout?: *`number`*): `Promise`<`Email`>
 
-*Defined in [index.ts:131](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L131)*
+*Defined in [index.ts:135](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L135)*
 
 Wait for an email to arrive at an inbox or return first found result
 
@@ -398,28 +460,51 @@ Wait for an email to arrive at an inbox or return first found result
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| `Optional` inboxEmailAddress | `string` |  \- |
-| `Optional` inboxId | `string` |   |
+| `Optional` inboxId | `string` |  \- |
+| `Optional` timeout | `number` |  max milliseconds to wait |
 
 **Returns:** `Promise`<`Email`>
+
+___
+<a id="waitformatchingemails"></a>
+
+###  waitForMatchingEmails
+
+▸ **waitForMatchingEmails**(matchOptions: *`MatchOptions`*, count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*): `Promise`<`EmailPreview`[]>
+
+*Defined in [index.ts:165](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L165)*
+
+Wait until both count and match options are met and return list of emails.
+
+*__remarks__*: Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| matchOptions | `MatchOptions` |  \- |
+| `Optional` count | `number` |  \- |
+| `Optional` inboxId | `string` |  \- |
+| `Optional` timeout | `number` |  timeout max milliseconds to wait |
+
+**Returns:** `Promise`<`EmailPreview`[]>
 
 ___
 <a id="waitfornthemail"></a>
 
 ###  waitForNthEmail
 
-▸ **waitForNthEmail**(inboxId: *`string`*, index: *`number`*): `Promise`<`Email`>
+▸ **waitForNthEmail**(inboxId: *`string`*, index: *`number`*, timeout?: *`number`*): `Promise`<`Email`>
 
-*Defined in [index.ts:143](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3dca9/index.ts#L143)*
-
-Wait for email at the given zero-based index in an inbox
+*Defined in [index.ts:144](https://github.com/mailslurp/mailslurp-client-ts-js/blob/711f92c/index.ts#L144)*
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| inboxId | `string` |  of the email address |
-| index | `number` |  zero based index |
+| Name | Type |
+| ------ | ------ |
+| inboxId | `string` |
+| index | `number` |
+| `Optional` timeout | `number` |
 
 **Returns:** `Promise`<`Email`>
 

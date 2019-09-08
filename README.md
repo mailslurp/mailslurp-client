@@ -31,9 +31,10 @@ See [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/b
 ```typescript
 createNewEmailAddress(): Promise<Inbox>;
 sendEmailSimple(sendEmailOptions: SendEmailOptions);
-waitForLatestEmail(inboxEmailAddress?: string, inboxId?: string): Promise<Email>;
-waitForNthEmail(inboxId: string, index: number): Promise<Email>
-
+waitForLatestEmail(inboxId?: string, timeout?: number): Promise<Email>;
+waitForNthEmail(inboxId: string, index: number, timeout?: number): Promise<Email>;
+waitForMatchingEmails(matchOptions: MatchOptions, count?: number, inboxId?: string, timeout?: number): Promise<EmailPreview[]>;
+waitForEmailCount(count?: number, inboxId?: string, timeout?: number): Promise<EmailPreview[]>;
 // more methods available, see docs
 ```
 
