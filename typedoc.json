@@ -1,11 +1,11 @@
 {
-  "theme": "markdown",
-  "out": "docs",
-  "exclude": "*.spec.ts",
-  "excludeExternals": true,
-  "excludeNotExported": true,
-  "includeDeclarations" : false,
-  "disableOutputCheck": true,
-  "mode": "modules",
-  "readme": "none"
+    "theme": "markdown",
+    "out": "docs",
+    "exclude": "*.spec.ts",
+    "excludeExternals": true,
+    "excludeNotExported": true,
+    "includeDeclarations": false,
+    "disableOutputCheck": true,
+    "mode": "modules",
+    "readme": "none"
 }

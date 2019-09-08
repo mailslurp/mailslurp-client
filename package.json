@@ -1,36 +1,39 @@
 {
-  "name": "mailslurp-client",
-  "description": "Test email account API Client",
-  "version": "4.3.4",
-  "license": "MIT",
-  "author": "mailslurp.com",
-  "homepage": "https://www.mailslurp.com",
-  "keywords": [
-    "mailslurp",
-    "email",
-    "test",
-    "smtp"
-  ],
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
-  "scripts": {
-    "build": "tsc --outDir dist/",
-    "prepublishOnly": "npm run build",
-    "test": "jest",
-    "docs": "typedoc index.ts"
-  },
-  "dependencies": {
-    "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "4.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^8.0.9",
-    "jest": "^24.1.0",
-    "ts-jest": "^24.0.0",
-    "typedoc": "^0.15.0",
-    "typedoc-plugin-external-module-map": "^1.0.0",
-    "typedoc-plugin-markdown": "^1.1.27",
-    "typescript": "^3.5.3"
-  }
+    "name": "mailslurp-client",
+    "description": "Test email account API Client",
+    "version": "5.0.0",
+    "license": "MIT",
+    "author": "mailslurp.com",
+    "homepage": "https://www.mailslurp.com",
+    "keywords": [
+        "mailslurp",
+        "email",
+        "test",
+        "smtp"
+    ],
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
+    "scripts": {
+        "build": "tsc --outDir dist/",
+        "prepublishOnly": "npm run build",
+        "test": "jest",
+        "docs": "typedoc index.ts",
+        "fmt": "prettier --write **.{ts,json,js}"
+    },
+    "dependencies": {
+        "debug": "^4.1.1",
+        "mailslurp-swagger-sdk-ts": "4.6.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.18",
+        "@types/node": "^8.0.9",
+        "jest": "^24.1.0",
+        "prettier": "^1.18.2",
+        "ts-jest": "^24.0.0",
+        "typedoc": "^0.15.0",
+        "typedoc-plugin-external-module-map": "^1.0.0",
+        "typedoc-plugin-markdown": "^1.1.27",
+        "typescript": "^3.5.3"
+    }
 }
