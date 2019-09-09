@@ -1,7 +1,7 @@
 {
     "name": "mailslurp-client",
     "description": "Test email account API Client",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "license": "MIT",
     "author": "mailslurp.com",
     "homepage": "https://www.mailslurp.com",
@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "@types/jest": "^24.0.18",
-        "@types/node": "^8.0.9",
+        "@types/node": "^12.7.4",
         "jest": "^24.1.0",
         "prettier": "^1.18.2",
         "ts-jest": "^24.0.0",

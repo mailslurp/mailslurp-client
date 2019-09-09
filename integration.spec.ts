@@ -1,4 +1,5 @@
 import Default, { MailSlurp } from './index';
+const mailslurpRequire = require('./index').MailSlurp;
 
 const createNewEmailAddress = jest.fn();
 const sendEmailSimple = jest.fn();
@@ -36,6 +37,16 @@ describe('importing client', () => {
     });
     test('client can be instantiated', () => {
         const client = new MailSlurp({ apiKey: 'test' });
+        expect(client).not.toBeNull();
+        expect(client.createNewEmailAddress).not.toBeNull();
+    });
+    test('default client can be instantiated', () => {
+        const client = new Default({ apiKey: 'test' });
+        expect(client).not.toBeNull();
+        expect(client.createNewEmailAddress).not.toBeNull();
+    });
+    test('require client can be instantiated', () => {
+        const client = new mailslurpRequire({ apiKey: 'test' });
         expect(client).not.toBeNull();
         expect(client.createNewEmailAddress).not.toBeNull();
     });

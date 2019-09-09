@@ -44,6 +44,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __importStar(require("./index"));
+var mailslurpRequire = require('./index').MailSlurp;
 var createNewEmailAddress = jest.fn();
 var sendEmailSimple = jest.fn();
 var waitForLatestEmail = jest.fn();
@@ -77,6 +78,16 @@ describe('importing client', function () {
     });
     test('client can be instantiated', function () {
         var client = new index_1.MailSlurp({ apiKey: 'test' });
+        expect(client).not.toBeNull();
+        expect(client.createNewEmailAddress).not.toBeNull();
+    });
+    test('default client can be instantiated', function () {
+        var client = new index_1.default({ apiKey: 'test' });
+        expect(client).not.toBeNull();
+        expect(client.createNewEmailAddress).not.toBeNull();
+    });
+    test('require client can be instantiated', function () {
+        var client = new mailslurpRequire({ apiKey: 'test' });
         expect(client).not.toBeNull();
         expect(client.createNewEmailAddress).not.toBeNull();
     });

@@ -19,7 +19,7 @@ For full documentation please see [Javascript Documentation](https://github.com/
 
 ## Use
 ```javascript
-const MailSlurpClient = require('mailslurp-client')
+const { MailSlurpClient } = require('mailslurp-client')
 const mailslurp = new MailSlurpClient({ apiKey: 'your-api-key' })
 ```
 
