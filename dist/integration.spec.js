@@ -107,6 +107,62 @@ describe('functions are mapped correctly to common operations api', function () 
             }
         });
     }); });
+    test('can wrap a json error', function () { return __awaiter(_this, void 0, void 0, function () {
+        var client, threw, e_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    createNewEmailAddress.mockRejectedValue({
+                        json: jest.fn().mockReturnValue('error-json'),
+                    });
+                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    threw = false;
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, client.createNewEmailAddress()];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    e_1 = _a.sent();
+                    threw = true;
+                    expect(e_1).toEqual('error-json');
+                    return [3 /*break*/, 4];
+                case 4:
+                    expect(threw).toBeTruthy();
+                    expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    test('can wrap a non json error', function () { return __awaiter(_this, void 0, void 0, function () {
+        var client, threw, e_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    createNewEmailAddress.mockRejectedValue('error-text');
+                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    threw = false;
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, client.createNewEmailAddress()];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    e_2 = _a.sent();
+                    threw = true;
+                    expect(e_2).toEqual('error-text');
+                    return [3 /*break*/, 4];
+                case 4:
+                    expect(threw).toBeTruthy();
+                    expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
     test('can send email', function () { return __awaiter(_this, void 0, void 0, function () {
         var client, options;
         return __generator(this, function (_a) {

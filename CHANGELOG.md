@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.0.0]
+### Added
+- Human-readable exceptions
+
+## [5.*]
+### Added
+- New endpoints 
+
 ## [4.1.2]
 ### Added
 - New dependency on a rebuilt swagger library

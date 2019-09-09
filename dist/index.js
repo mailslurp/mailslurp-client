@@ -47,26 +47,34 @@ var debug_1 = __importDefault(require("debug"));
 // setup logger. enable output with DEBUG=mailslurp-client env variable
 var log = debug_1.default('mailslurp-client');
 // helper
-function logCall(tag, fn) {
+function wrapCall(tag, fn) {
     return __awaiter(this, void 0, void 0, function () {
-        var result, e_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var result, e_1, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     log('[%s] executing', tag);
-                    _a.label = 1;
+                    _b.label = 1;
                 case 1:
-                    _a.trys.push([1, 3, , 4]);
+                    _b.trys.push([1, 3, , 7]);
                     return [4 /*yield*/, fn()];
                 case 2:
-                    result = _a.sent();
+                    result = _b.sent();
                     log('[%s] returned %O', tag, result);
                     return [2 /*return*/, result];
                 case 3:
-                    e_1 = _a.sent();
+                    e_1 = _b.sent();
                     log('[%s] threw exception %O', tag, e_1);
-                    throw e_1;
-                case 4: return [2 /*return*/];
+                    if (!e_1.json) return [3 /*break*/, 5];
+                    return [4 /*yield*/, e_1.json()];
+                case 4:
+                    _a = _b.sent();
+                    return [3 /*break*/, 6];
+                case 5:
+                    _a = e_1;
+                    _b.label = 6;
+                case 6: throw _a;
+                case 7: return [2 /*return*/];
             }
         });
     });
@@ -103,7 +111,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('createNewEmailAddress', function () {
+                return [2 /*return*/, wrapCall('createNewEmailAddress', function () {
                         return _this.commonOperationsApi.createNewEmailAddress();
                     })];
             });
@@ -122,7 +130,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('sendEmailSimple', function () {
+                return [2 /*return*/, wrapCall('sendEmailSimple', function () {
                         return _this.commonOperationsApi.sendEmailSimple(sendEmailOptions);
                     })];
             });
@@ -141,7 +149,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('waitForLatestEmail', function () {
+                return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
                         return _this.commonOperationsApi.waitForLatestEmail(inboxId, timeout);
                     })];
             });
@@ -151,7 +159,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('waitForNthEmail', function () {
+                return [2 /*return*/, wrapCall('waitForNthEmail', function () {
                         return _this.commonOperationsApi.waitForNthEmail(inboxId, index, timeout);
                     })];
             });
@@ -172,7 +180,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('waitForMatchingEmail', function () {
+                return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
                         return _this.commonOperationsApi.waitForMatchingEmail(matchOptions, count, inboxId, timeout);
                     })];
             });
@@ -188,7 +196,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('waitForEmailCount', function () {
+                return [2 /*return*/, wrapCall('waitForEmailCount', function () {
                         return _this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout);
                     })];
             });
@@ -202,7 +210,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('emptyInbox', function () {
+                return [2 /*return*/, wrapCall('emptyInbox', function () {
                         return _this.commonOperationsApi.emptyInbox(inboxId);
                     })];
             });
@@ -216,7 +224,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, log('deleteEmail', function () {
+                return [2 /*return*/, wrapCall('deleteEmail', function () {
                         return _this.commonOperationsApi.deleteEmail(emailId);
                     })];
             });
@@ -230,7 +238,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, log('deleteEmailAddress', function () {
+                return [2 /*return*/, wrapCall('deleteEmailAddress', function () {
                         return _this.commonOperationsApi.deleteEmailAddress(emailId);
                     })];
             });
@@ -243,7 +251,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('createInbox', function () {
+                return [2 /*return*/, wrapCall('createInbox', function () {
                         return _this.extraOperationsApi.createInbox();
                     })];
             });
@@ -257,7 +265,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('createInbox', function () {
+                return [2 /*return*/, wrapCall('createInbox', function () {
                         return _this.extraOperationsApi.deleteInbox(inboxId);
                     })];
             });
@@ -271,7 +279,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('getInbox', function () {
+                return [2 /*return*/, wrapCall('getInbox', function () {
                         return _this.extraOperationsApi.getInbox(inboxId);
                     })];
             });
@@ -284,7 +292,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('getInboxes', function () {
+                return [2 /*return*/, wrapCall('getInboxes', function () {
                         return _this.extraOperationsApi.getInboxes();
                     })];
             });
@@ -300,7 +308,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('getEmails', function () {
+                return [2 /*return*/, wrapCall('getEmails', function () {
                         return _this.extraOperationsApi.getEmails(inboxId, args.limit, args.minCount, args.retryTimeout, args.since);
                     })];
             });
@@ -314,7 +322,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('getEmail', function () {
+                return [2 /*return*/, wrapCall('getEmail', function () {
                         return _this.extraOperationsApi.getEmail(emailId);
                     })];
             });
@@ -328,7 +336,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('getRawEmail', function () {
+                return [2 /*return*/, wrapCall('getRawEmail', function () {
                         return _this.extraOperationsApi.getRawEmailContents(emailId);
                     })];
             });
@@ -343,7 +351,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('sendEmail', function () {
+                return [2 /*return*/, wrapCall('sendEmail', function () {
                         return _this.extraOperationsApi.sendEmail(inboxId, sendEmailOptions);
                     })];
             });
@@ -356,7 +364,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('bulkSendEmails', function () {
+                return [2 /*return*/, wrapCall('bulkSendEmails', function () {
                         return _this.extraOperationsApi.bulkSendEmails(bulkSendEmailOptions);
                     })];
             });
@@ -369,7 +377,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('bulkCreateInboxes', function () {
+                return [2 /*return*/, wrapCall('bulkCreateInboxes', function () {
                         return _this.extraOperationsApi.bulkCreateInboxes(count);
                     })];
             });
@@ -382,7 +390,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('bulkDeleteInboxes', function () {
+                return [2 /*return*/, wrapCall('bulkDeleteInboxes', function () {
                         return _this.extraOperationsApi.bulkDeleteInboxes(inboxIds);
                     })];
             });
@@ -395,7 +403,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('createWebhook', function () {
+                return [2 /*return*/, wrapCall('createWebhook', function () {
                         return _this.extraOperationsApi.createWebhook(inboxId, createWebhookOptions);
                     })];
             });
@@ -408,7 +416,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('deleteWebhook', function () {
+                return [2 /*return*/, wrapCall('deleteWebhook', function () {
                         return _this.extraOperationsApi.deleteWebhook(inboxId, webhookId);
                     })];
             });
@@ -421,7 +429,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, logCall('downloadAttachment', function () {
+                return [2 /*return*/, wrapCall('downloadAttachment', function () {
                         return _this.extraOperationsApi.downloadAttachment(attachmentId, emailId);
                     })];
             });

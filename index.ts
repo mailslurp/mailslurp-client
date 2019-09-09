@@ -50,7 +50,7 @@ export type GetMessagesOptions = {
 };
 
 // helper
-async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
+async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
     log('[%s] executing', tag);
     try {
         const result = await fn();
@@ -58,7 +58,7 @@ async function logCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
         return result;
     } catch (e) {
         log('[%s] threw exception %O', tag, e);
-        throw e;
+        throw e.json ? await e.json() : e;
     }
 }
 
@@ -101,8 +101,8 @@ export class MailSlurp {
      * Custom domains available with plans.
      */
     async createNewEmailAddress(): Promise<Inbox> {
-        return logCall('createNewEmailAddress', () =>
-            this.commonOperationsApi.createNewEmailAddress()
+        return wrapCall('createNewEmailAddress', () =>
+            this.commonOperationsApi.createNewEmailAddress(),
         );
     }
 
@@ -116,10 +116,10 @@ export class MailSlurp {
      * @param sendEmailOptions
      */
     async sendEmailSimple(
-        sendEmailOptions: SendEmailOptions
+        sendEmailOptions: SendEmailOptions,
     ): Promise<Response> {
-        return logCall('sendEmailSimple', () =>
-            this.commonOperationsApi.sendEmailSimple(sendEmailOptions)
+        return wrapCall('sendEmailSimple', () =>
+            this.commonOperationsApi.sendEmailSimple(sendEmailOptions),
         );
     }
 
@@ -134,20 +134,20 @@ export class MailSlurp {
      */
     async waitForLatestEmail(
         inboxId?: string,
-        timeout?: number
+        timeout?: number,
     ): Promise<Email> {
-        return logCall('waitForLatestEmail', () =>
-            this.commonOperationsApi.waitForLatestEmail(inboxId, timeout)
+        return wrapCall('waitForLatestEmail', () =>
+            this.commonOperationsApi.waitForLatestEmail(inboxId, timeout),
         );
     }
 
     async waitForNthEmail(
         inboxId: string,
         index: number,
-        timeout?: number
+        timeout?: number,
     ): Promise<Email> {
-        return logCall('waitForNthEmail', () =>
-            this.commonOperationsApi.waitForNthEmail(inboxId, index, timeout)
+        return wrapCall('waitForNthEmail', () =>
+            this.commonOperationsApi.waitForNthEmail(inboxId, index, timeout),
         );
     }
 
@@ -166,15 +166,15 @@ export class MailSlurp {
         matchOptions: MatchOptions,
         count?: number,
         inboxId?: string,
-        timeout?: number
+        timeout?: number,
     ): Promise<EmailPreview[]> {
-        return logCall('waitForMatchingEmail', () =>
+        return wrapCall('waitForMatchingEmail', () =>
             this.commonOperationsApi.waitForMatchingEmail(
                 matchOptions,
                 count,
                 inboxId,
-                timeout
-            )
+                timeout,
+            ),
         );
     }
 
@@ -187,10 +187,10 @@ export class MailSlurp {
     async waitForEmailCount(
         count?: number,
         inboxId?: string,
-        timeout?: number
+        timeout?: number,
     ): Promise<EmailPreview[]> {
-        return logCall('waitForEmailCount', () =>
-            this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout)
+        return wrapCall('waitForEmailCount', () =>
+            this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout),
         );
     }
 
@@ -199,8 +199,8 @@ export class MailSlurp {
      * @param inboxId
      */
     async emptyInbox(inboxId: string): Promise<Response> {
-        return logCall('emptyInbox', () =>
-            this.commonOperationsApi.emptyInbox(inboxId)
+        return wrapCall('emptyInbox', () =>
+            this.commonOperationsApi.emptyInbox(inboxId),
         );
     }
 
@@ -209,8 +209,8 @@ export class MailSlurp {
      * @param emailId
      */
     async deleteEmail(emailId: string): Promise<Response> {
-        return log('deleteEmail', () =>
-            this.commonOperationsApi.deleteEmail(emailId)
+        return wrapCall('deleteEmail', () =>
+            this.commonOperationsApi.deleteEmail(emailId),
         );
     }
 
@@ -219,8 +219,8 @@ export class MailSlurp {
      * @param emailId
      */
     async deleteEmailAddress(emailId: string): Promise<Response> {
-        return log('deleteEmailAddress', () =>
-            this.commonOperationsApi.deleteEmailAddress(emailId)
+        return wrapCall('deleteEmailAddress', () =>
+            this.commonOperationsApi.deleteEmailAddress(emailId),
         );
     }
 
@@ -228,8 +228,8 @@ export class MailSlurp {
      * Create an inbox / email address
      */
     async createInbox(): Promise<Inbox> {
-        return logCall('createInbox', () =>
-            this.extraOperationsApi.createInbox()
+        return wrapCall('createInbox', () =>
+            this.extraOperationsApi.createInbox(),
         );
     }
 
@@ -238,8 +238,8 @@ export class MailSlurp {
      * @param inboxId
      */
     async deleteInbox(inboxId: string): Promise<Response> {
-        return logCall('createInbox', () =>
-            this.extraOperationsApi.deleteInbox(inboxId)
+        return wrapCall('createInbox', () =>
+            this.extraOperationsApi.deleteInbox(inboxId),
         );
     }
 
@@ -248,8 +248,8 @@ export class MailSlurp {
      * @param inboxId
      */
     async getInbox(inboxId: string): Promise<Inbox> {
-        return logCall('getInbox', () =>
-            this.extraOperationsApi.getInbox(inboxId)
+        return wrapCall('getInbox', () =>
+            this.extraOperationsApi.getInbox(inboxId),
         );
     }
 
@@ -257,8 +257,8 @@ export class MailSlurp {
      * Get all inboxes
      */
     async getInboxes(): Promise<Inbox[]> {
-        return logCall('getInboxes', () =>
-            this.extraOperationsApi.getInboxes()
+        return wrapCall('getInboxes', () =>
+            this.extraOperationsApi.getInboxes(),
         );
     }
 
@@ -269,16 +269,16 @@ export class MailSlurp {
      */
     async getEmails(
         inboxId: string,
-        args: GetMessagesOptions = {}
+        args: GetMessagesOptions = {},
     ): Promise<EmailPreview[]> {
-        return logCall('getEmails', () =>
+        return wrapCall('getEmails', () =>
             this.extraOperationsApi.getEmails(
                 inboxId,
                 args.limit,
                 args.minCount,
                 args.retryTimeout,
-                args.since
-            )
+                args.since,
+            ),
         );
     }
 
@@ -287,8 +287,8 @@ export class MailSlurp {
      * @param emailId
      */
     async getEmail(emailId: string): Promise<Email> {
-        return logCall('getEmail', () =>
-            this.extraOperationsApi.getEmail(emailId)
+        return wrapCall('getEmail', () =>
+            this.extraOperationsApi.getEmail(emailId),
         );
     }
 
@@ -297,8 +297,8 @@ export class MailSlurp {
      * @param emailId
      */
     async getRawEmail(emailId: string): Promise<string> {
-        return logCall('getRawEmail', () =>
-            this.extraOperationsApi.getRawEmailContents(emailId)
+        return wrapCall('getRawEmail', () =>
+            this.extraOperationsApi.getRawEmailContents(emailId),
         );
     }
 
@@ -309,10 +309,10 @@ export class MailSlurp {
      */
     async sendEmail(
         inboxId: string,
-        sendEmailOptions: SendEmailOptions
+        sendEmailOptions: SendEmailOptions,
     ): Promise<Response> {
-        return logCall('sendEmail', () =>
-            this.extraOperationsApi.sendEmail(inboxId, sendEmailOptions)
+        return wrapCall('sendEmail', () =>
+            this.extraOperationsApi.sendEmail(inboxId, sendEmailOptions),
         );
     }
 
@@ -320,10 +320,10 @@ export class MailSlurp {
      * Bulk send emails
      */
     async bulkSendEmails(
-        bulkSendEmailOptions: BulkSendEmailOptions
+        bulkSendEmailOptions: BulkSendEmailOptions,
     ): Promise<Response> {
-        return logCall('bulkSendEmails', () =>
-            this.extraOperationsApi.bulkSendEmails(bulkSendEmailOptions)
+        return wrapCall('bulkSendEmails', () =>
+            this.extraOperationsApi.bulkSendEmails(bulkSendEmailOptions),
         );
     }
 
@@ -331,8 +331,8 @@ export class MailSlurp {
      * Bulk create inboxes
      */
     async bulkCreateInboxes(count: number): Promise<Inbox[]> {
-        return logCall('bulkCreateInboxes', () =>
-            this.extraOperationsApi.bulkCreateInboxes(count)
+        return wrapCall('bulkCreateInboxes', () =>
+            this.extraOperationsApi.bulkCreateInboxes(count),
         );
     }
 
@@ -340,8 +340,8 @@ export class MailSlurp {
      * Bulk delete inboxes
      */
     async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
-        return logCall('bulkDeleteInboxes', () =>
-            this.extraOperationsApi.bulkDeleteInboxes(inboxIds)
+        return wrapCall('bulkDeleteInboxes', () =>
+            this.extraOperationsApi.bulkDeleteInboxes(inboxIds),
         );
     }
 
@@ -350,10 +350,10 @@ export class MailSlurp {
      */
     async createWebhook(
         inboxId: string,
-        createWebhookOptions: CreateWebhookOptions
+        createWebhookOptions: CreateWebhookOptions,
     ): Promise<Webhook> {
-        return logCall('createWebhook', () =>
-            this.extraOperationsApi.createWebhook(inboxId, createWebhookOptions)
+        return wrapCall('createWebhook', () =>
+            this.extraOperationsApi.createWebhook(inboxId, createWebhookOptions),
         );
     }
 
@@ -361,8 +361,8 @@ export class MailSlurp {
      * Create a webhook for notifications
      */
     async deleteWebhook(inboxId: string, webhookId: string): Promise<Response> {
-        return logCall('deleteWebhook', () =>
-            this.extraOperationsApi.deleteWebhook(inboxId, webhookId)
+        return wrapCall('deleteWebhook', () =>
+            this.extraOperationsApi.deleteWebhook(inboxId, webhookId),
         );
     }
 
@@ -371,10 +371,10 @@ export class MailSlurp {
      */
     async downloadAttachment(
         emailId: string,
-        attachmentId: string
+        attachmentId: string,
     ): Promise<Response> {
-        return logCall('downloadAttachment', () =>
-            this.extraOperationsApi.downloadAttachment(attachmentId, emailId)
+        return wrapCall('downloadAttachment', () =>
+            this.extraOperationsApi.downloadAttachment(attachmentId, emailId),
         );
     }
 }

@@ -1,4 +1,5 @@
 import Default, { MailSlurp } from './index';
+
 const mailslurpRequire = require('./index').MailSlurp;
 
 const createNewEmailAddress = jest.fn();
@@ -58,6 +59,34 @@ describe('functions are mapped correctly to common operations api', () => {
         await client.createNewEmailAddress();
         expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
     });
+    test('can wrap a json error', async () => {
+        createNewEmailAddress.mockRejectedValue({
+            json: jest.fn().mockReturnValue('error-json'),
+        });
+        const client = new MailSlurp({ apiKey: 'test' });
+        let threw = false;
+        try {
+            await client.createNewEmailAddress();
+        } catch (e) {
+            threw = true;
+            expect(e).toEqual('error-json');
+        }
+        expect(threw).toBeTruthy();
+        expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+    });
+    test('can wrap a non json error', async () => {
+        createNewEmailAddress.mockRejectedValue('error-text');
+        const client = new MailSlurp({ apiKey: 'test' });
+        let threw = false;
+        try {
+            await client.createNewEmailAddress();
+        } catch (e) {
+            threw = true;
+            expect(e).toEqual('error-text');
+        }
+        expect(threw).toBeTruthy();
+        expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+    });
     test('can send email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
         const options = {
@@ -91,7 +120,7 @@ describe('functions are mapped correctly to common operations api', () => {
             options,
             count,
             inboxId,
-            timeout
+            timeout,
         );
     });
 });
