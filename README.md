@@ -106,7 +106,20 @@ await mailslurp.deleteEmail(email.id)
 ```
 
 ## Paid features
--
+
+MailSlurp is free for personal use but paid memberships gain access to many powerful features. These include
+
+- Custom domains
+- Unlimited usage
+- Webhook notifications
+- UI Web Interface
+- Custom feature requests
+- Rapid support
+
+To arrange a call or to see all paid features checkout the [pricing page](https://www.mailslurp.com/pricing).
+
+## More information
+See [mailslurp.com](https://www.mailslurp.com) for all information.
 
 ## License
 [MIT License](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/LICENSE)
