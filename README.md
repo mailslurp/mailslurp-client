@@ -18,7 +18,7 @@ const { MailSlurp } = require('mailslurp-client');
 const mailslurp = new MailSlurp({ apiKey: 'xxxxxx' })
 ```
 
-> :key: All requests require an API Key. Get yours free via the [MailSlurp Dashboard](https://app.mailslurp.com)
+> :key: **Note**: All requests require an API Key. Get yours free via the [MailSlurp Dashboard](https://app.mailslurp.com)
 
 ## Documentation
 Please see generated [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md) for this repository or view the [developers page](https://www.mailslurp.com/developers).
@@ -62,7 +62,7 @@ To receive an email first make sure you have an inbox with an email address. The
 const email = await mailslurp.waitForLatestEmail(inbox.id)
 ``` 
 
-:warning: **Note:** MailSlurp will return immediately if the inbox already contains an email. 
+> :warning: **Note:** MailSlurp will return immediately if the inbox already contains an email. 
 
 For more control over email fetching use the `getEmails` methods. MailSlurp will hang the connection until all conditions are met or the timeout is exceeded.
 
@@ -74,6 +74,5 @@ const emails = await mailslurp.getEmails(inbox.id, {
 })
 ```
 
-
-
 ## :mag: Searching emails
+Coming soon...
