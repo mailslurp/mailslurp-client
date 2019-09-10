@@ -53,7 +53,7 @@ mailslurp.sendEmail(inbox.id, { to: ['recipient@domain.com'], ...otherOptions })
 
 For a full list of email sending options [see the documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/sendemailoptions.md). If you wish to send from custom domains see the [pricing page](https://www.mailslurp.com/pricing).
 
-## :inbox_tray: Receiving emails
+### :inbox_tray: Receiving emails
 MailSlurp is an asynchronous service. That means certain API calls will wait until a condition is met. This saves you from having to poll the API. ([Webhooks](https://www.mailslurp.com/pricing) are also available).
 
 To receive an email first make sure you have an inbox with an email address. Then send an email to that address with any service (including MailSlurp itself). Now you can wait for the email to arrive.
@@ -74,5 +74,5 @@ const emails = await mailslurp.getEmails(inbox.id, {
 })
 ```
 
-## :mag: Searching emails
+### :mag: Searching emails
 Coming soon...
