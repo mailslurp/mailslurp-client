@@ -21,7 +21,7 @@ const mailslurp = new MailSlurp({ apiKey: 'xxxxxx' })
 > :key: **Note**: All requests require an API Key. Get yours free via the [MailSlurp Dashboard](https://app.mailslurp.com)
 
 ## Documentation
-Please see generated [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/_index_.mailslurp.md) for this repository or view the [developers page](https://www.mailslurp.com/developers).
+Please see generated [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/mailslurp.md) for this repository or view the [developers page](https://www.mailslurp.com/developers).
 
 ## Questions
 Please reach out any time using [live chat](https://drift.me/mailslurp) or [email](mailto:contact@mailslurp.dev).
