@@ -59,7 +59,10 @@ MailSlurp is an asynchronous service. That means certain API calls will wait unt
 To receive an email first make sure you have an inbox with an email address. Then send an email to that address with any service (including MailSlurp itself). Now you can wait for the email to arrive.
 
 ```javascript
-const email = await mailslurp.waitForLatestEmail(inbox.id)
+let email = await mailslurp.waitForLatestEmail(inbox.id)
+// other methods
+email = await mailslurp.waitForNthEmail(inbox.id, index)
+const emails = await mailslurp.waitForEmailCount(count, inbox.id)
 ``` 
 
 > :warning: **Note:** MailSlurp will return immediately if the inbox already contains an email. 
