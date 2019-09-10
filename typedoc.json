@@ -2,10 +2,12 @@
     "theme": "markdown",
     "out": "docs",
     "exclude": "*.spec.ts",
-    "excludeExternals": true,
+    "exclude": "node_modules/types*",
+    "excludeExternals": false,
     "excludeNotExported": true,
-    "includeDeclarations": false,
+    "includeDeclarations": true,
     "disableOutputCheck": true,
-    "mode": "modules",
-    "readme": "none"
+    "mode": "file",
+    "readme": "none",
+    "name": "MailSlurp Client"
 }
