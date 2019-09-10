@@ -3,7 +3,7 @@
 > :incoming_envelope: Send and receive real emails in applications or tests.
 
 ##  Introduction
-MailSlurp is a **free API** for sending and receiving emails from applications or tests. It is designed as a simpler, more powerful interface for SMTP mail servers. 
+[MailSlurp](https://www.mailslurp.com) is a **free API** for sending and receiving emails from applications or tests. It is designed as a simpler, more powerful interface for SMTP mail servers. 
 
 This repository hosts the recommended MailSlurp client. MailSlurp can also be used as a [REST API](https://docs.mailslurp.com) or with officially supported clients in [Javascript](https://github.com/mailslurp/mailslurp-client-ts-js), [Ruby](https://github.com/mailslurp/mailslurp-client-ruby), [Python](https://github.com/mailslurp/mailslurp-client-python), [PHP](https://github.com/mailslurp/mailslurp-client-php), [Java](https://github.com/mailslurp/mailslurp-client-java), [C#](https://github.com/mailslurp/mailslurp-client-csharp), [Go](https://github.com/mailslurp/mailslurp-client-go) and [more](https://www.mailslurp.com/developers).
 
@@ -67,12 +67,47 @@ const email = await mailslurp.waitForLatestEmail(inbox.id)
 For more control over email fetching use the `getEmails` methods. MailSlurp will hang the connection until all conditions are met or the timeout is exceeded.
 
 ```javascript
-const emails = await mailslurp.getEmails(inbox.id, {
-    limit: 2,
-    minCount: 2,
-    retryTimeout: 60000
+// get a list of matching emails in preview form
+const emailPreviews = await mailslurp.getEmails(inbox.id, {
+    minCount: 2, // wait until 2 emails present
+    retryTimeout: 60000 // max milliseconds to wait
 })
+// then get the email you want in full form
+const email = await mailslurp.getEmail(emailPreviews[0].id)
 ```
 
 ### :mag: Searching emails
-Coming soon...
+MailSlurp has simple email matching features that let you wait for an email that matches a particular subject, recipient or more.
+
+```javascript
+const matchOptions = {
+  matches: [
+    {
+      field: 'SUBJECT',
+      should: 'CONTAIN',
+      value: 'Welcome to my company'
+    }
+  ]
+};
+await mailslurp.waitForMatchingEmails(matchOptions, 1, inbox.id, 5000);
+```
+
+For more information on email matching [see the documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/matchoptions.md).
+
+### :mailbox_with_no_mail: Deleting entities
+You can empty an inbox easily with:
+```javascript
+await mailslurp.emptyInbox(inbox.id)
+```
+
+You can also delete emails individually:
+```javascript
+await mailslurp.deleteEmail(email.id)
+```
+
+## Paid features
+-
+
+## License
+[MIT License](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/LICENSE)
+
