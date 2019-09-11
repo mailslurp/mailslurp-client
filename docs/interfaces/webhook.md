@@ -37,8 +37,8 @@ Representation of a webhook for an inbox. Representation of a webhook for an inb
 
 **● basicAuth**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:471*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:498*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:502*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:530*
 
 Does Webhook expect basic authentication Does Webhook expect basic authentication
 
@@ -57,8 +57,8 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:477*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:504*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:508*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:536*
 
 *__type__*: {Date}
 
@@ -75,8 +75,8 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:483*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:510*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:514*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:542*
 
 ID of the Webhook ID of the Webhook
 
@@ -95,8 +95,8 @@ ___
 
 **● inboxId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:489*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:516*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:520*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:548*
 
 The inbox that the Webhook will be triggered by The inbox that the Webhook will be triggered by
 
@@ -115,8 +115,8 @@ ___
 
 **● name**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:495*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:522*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:526*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:554*
 
 *__type__*: {string}
 
@@ -133,8 +133,8 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:501*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:528*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:532*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:560*
 
 *__type__*: {Date}
 

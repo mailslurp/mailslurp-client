@@ -1,7 +1,7 @@
 {
     "name": "mailslurp-client",
-    "description": "Test email account API Client",
-    "version": "6.0.0",
+    "description": "Send and receive emails in code",
+    "version": "6.1.0",
     "license": "MIT",
     "author": "mailslurp.com",
     "homepage": "https://www.mailslurp.com",
@@ -9,7 +9,9 @@
         "mailslurp",
         "email",
         "test",
-        "smtp"
+        "smtp",
+        "recieve",
+        "send"
     ],
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -23,7 +25,7 @@
     },
     "dependencies": {
         "debug": "^4.1.1",
-        "mailslurp-swagger-sdk-ts": "4.6.0"
+        "mailslurp-swagger-sdk-ts": "4.8.0"
     },
     "devDependencies": {
         "@types/debug": "^4.1.5",

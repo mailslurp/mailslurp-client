@@ -435,6 +435,19 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
+    /**
+     * Upload an attachment for use in email sending
+     */
+    MailSlurp.prototype.uploadAttachment = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('uploadAttachment', function () {
+                        return _this.extraOperationsApi.uploadAttachment(options);
+                    })];
+            });
+        });
+    };
     return MailSlurp;
 }());
 exports.MailSlurp = MailSlurp;

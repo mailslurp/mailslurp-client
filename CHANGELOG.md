@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.1.0]
+### Added
+- Upload endpoints made public
+
 ## [6.0.0]
 ### Added
 - Human-readable exceptions

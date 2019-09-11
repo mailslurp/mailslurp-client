@@ -53,6 +53,16 @@ mailslurp.sendEmail(inbox.id, { to: ['recipient@domain.com'], ...otherOptions })
 
 For a full list of email sending options [see the documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/sendemailoptions.md). If you wish to send from custom domains see the [pricing page](https://www.mailslurp.com/pricing).
 
+To send attachments first upload each attachment you wish to send.
+```javascript
+const id = await mailslurp.uploadAttachment({
+    base64Contents: 'base64-encoded-file-contents',
+    contentType: "optional/content-type",
+    filename: "optional-filename"
+})
+```
+Then use the returned attachment IDs in the `attachments` field of the [send email options](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/sendemailoptions.md).
+
 ### :inbox_tray: Receiving emails
 MailSlurp is an asynchronous service. That means certain API calls will wait until a condition is met. This saves you from having to poll the API. ([Webhooks](https://www.mailslurp.com/pricing) are also available).
 
@@ -60,6 +70,9 @@ To receive an email first make sure you have an inbox with an email address. The
 
 ```javascript
 let email = await mailslurp.waitForLatestEmail(inbox.id)
+```
+
+```javascript
 // other methods
 email = await mailslurp.waitForNthEmail(inbox.id, index)
 const emails = await mailslurp.waitForEmailCount(count, inbox.id)

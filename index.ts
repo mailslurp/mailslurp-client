@@ -10,7 +10,7 @@ import {
     EmailPreview,
     ExtraOperationsApi,
     Inbox,
-    SendEmailOptions,
+    SendEmailOptions, UploadAttachmentOptions,
     Webhook,
 } from 'mailslurp-swagger-sdk-ts';
 import debug from 'debug';
@@ -375,6 +375,15 @@ export class MailSlurp {
     ): Promise<Response> {
         return wrapCall('downloadAttachment', () =>
             this.extraOperationsApi.downloadAttachment(attachmentId, emailId),
+        );
+    }
+
+    /**
+     * Upload an attachment for use in email sending
+     */
+    async uploadAttachment(options: UploadAttachmentOptions): Promise<String> {
+        return wrapCall('uploadAttachment', () =>
+            this.extraOperationsApi.uploadAttachment(options)
         );
     }
 }

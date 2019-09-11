@@ -20,6 +20,7 @@ Options for sending an email message from an inbox Options for sending an email 
 
 ### Properties
 
+* [attachments](sendemailoptions.md#attachments)
 * [bcc](sendemailoptions.md#bcc)
 * [body](sendemailoptions.md#body)
 * [cc](sendemailoptions.md#cc)
@@ -34,14 +35,34 @@ Options for sending an email message from an inbox Options for sending an email 
 
 ## Properties
 
+<a id="attachments"></a>
+
+### `<Optional>` attachments
+
+**● attachments**: *`Array`<`string`>*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:410*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:436*
+
+Optional list of attachment IDs to send with this email Optional list of attachment IDs to send with this email
+
+*__type__*: {Array}
+
+*__memberof__*: SendEmailOptions
+
+*__type__*: {Array}
+
+*__memberof__*: SendEmailOptions
+
+___
 <a id="bcc"></a>
 
 ### `<Optional>` bcc
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:410*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:436*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:416*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:442*
 
 Optional list of bcc destination email addresses Optional list of bcc destination email addresses
 
@@ -60,8 +81,8 @@ ___
 
 **● body**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:416*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:442*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:422*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:448*
 
 Contents of email Contents of email
 
@@ -80,8 +101,8 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:422*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:448*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:428*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:454*
 
 Optional list of cc destination email addresses Optional list of cc destination email addresses
 
@@ -100,8 +121,8 @@ ___
 
 **● charset**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:428*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:454*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:434*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:460*
 
 Optional charset Optional charset
 
@@ -120,8 +141,8 @@ ___
 
 **● from**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:434*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:460*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:440*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:466*
 
 Optional from address. If not set source inbox address will be used Optional from address. If not set source inbox address will be used
 
@@ -140,8 +161,8 @@ ___
 
 **● html**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:440*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:466*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:446*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:472*
 
 *__type__*: {boolean}
 
@@ -158,8 +179,8 @@ ___
 
 **● replyTo**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:446*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:472*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:452*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:478*
 
 Optional replyTo header Optional replyTo header
 
@@ -178,8 +199,8 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:452*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:478*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:458*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:484*
 
 Optional email subject line Optional email subject line
 
@@ -198,8 +219,8 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:458*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:484*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:464*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:490*
 
 List of destination email addresses. Even single recipients must be in array form. List of destination email addresses. Even single recipients must be in array form.
 
