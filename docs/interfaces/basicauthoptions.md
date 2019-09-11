@@ -6,10 +6,6 @@
 
 *__interface__*: BasicAuthOptions
 
-*__export__*: 
-
-*__interface__*: BasicAuthOptions
-
 ## Hierarchy
 
 **BasicAuthOptions**
@@ -32,11 +28,6 @@
 **● password**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:80*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:98*
-
-*__type__*: {string}
-
-*__memberof__*: BasicAuthOptions
 
 *__type__*: {string}
 
@@ -50,11 +41,6 @@ ___
 **● username**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:74*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:92*
-
-*__type__*: {string}
-
-*__memberof__*: BasicAuthOptions
 
 *__type__*: {string}
 

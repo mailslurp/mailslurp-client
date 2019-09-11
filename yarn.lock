@@ -2229,10 +2229,10 @@ lunr@^2.3.6:
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.3.6.tgz#f278beee7ffd56ad86e6e478ce02ab2b98c78dd5"
   integrity sha512-swStvEyDqQ85MGpABCMBclZcLI/pBIlu8FFDtmX197+oEgKloJ67QnB+Tidh0340HmLMs39c4GrkPY3cmkXp6Q==
 
-mailslurp-swagger-sdk-ts@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-4.8.0.tgz#a6ff082384146ec536e26158fa46ee19100c1cfa"
-  integrity sha512-i9AkFIcOztVHqI15AjN9cuWVtmifmfILoltVTVs8Fm0YP6xPdf2qjbUSu41p2MfpofzpsvXwpVqJaK9IhkzSqg==
+mailslurp-swagger-sdk-ts@4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/mailslurp-swagger-sdk-ts/-/mailslurp-swagger-sdk-ts-4.8.2.tgz#cc3bef90083e2f0509ea63d9cc16d82cf25ef8e8"
+  integrity sha512-HcMtC3gqpPF0tzgFkYIfgd58aHAsCi1SLF59AbVtJ55ea2RIdVtcisvily8v+t4GTo6CHbzAXeV6lQxT7JvGBw==
   dependencies:
     portable-fetch "^3.0.0"
 

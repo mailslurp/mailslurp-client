@@ -10,11 +10,12 @@ import {
     EmailPreview,
     ExtraOperationsApi,
     Inbox,
-    SendEmailOptions, UploadAttachmentOptions,
+    SendEmailOptions,
+    UploadAttachmentOptions,
     Webhook,
+    MatchOptions
 } from 'mailslurp-swagger-sdk-ts';
 import debug from 'debug';
-import { MatchOptions } from 'mailslurp-swagger-sdk-ts/api';
 
 // setup logger. enable output with DEBUG=mailslurp-client env variable
 const log = debug('mailslurp-client');
@@ -381,9 +382,9 @@ export class MailSlurp {
     /**
      * Upload an attachment for use in email sending
      */
-    async uploadAttachment(options: UploadAttachmentOptions): Promise<String> {
+    async uploadAttachment(options: UploadAttachmentOptions): Promise<Array<String>> {
         return wrapCall('uploadAttachment', () =>
-            this.extraOperationsApi.uploadAttachment(options)
+            this.extraOperationsApi.uploadAttachment(options),
         );
     }
 }

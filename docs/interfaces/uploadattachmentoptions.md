@@ -2,11 +2,7 @@
 
 # Interface: UploadAttachmentOptions
 
-Options for uploading files for attachments Options for uploading files for attachments
-
-*__export__*: 
-
-*__interface__*: UploadAttachmentOptions
+Options for uploading files for attachments
 
 *__export__*: 
 
@@ -35,13 +31,8 @@ Options for uploading files for attachments Options for uploading files for atta
 **● base64Contents**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:477*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:504*
 
-Base64 encoded string of file contents Base64 encoded string of file contents
-
-*__type__*: {string}
-
-*__memberof__*: UploadAttachmentOptions
+Base64 encoded string of file contents
 
 *__type__*: {string}
 
@@ -55,13 +46,8 @@ ___
 **● contentType**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:483*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:510*
 
-Optional contentType for file. For instance application/pdf Optional contentType for file. For instance application/pdf
-
-*__type__*: {string}
-
-*__memberof__*: UploadAttachmentOptions
+Optional contentType for file. For instance application/pdf
 
 *__type__*: {string}
 
@@ -75,13 +61,8 @@ ___
 **● filename**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:489*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:516*
 
-Optional filename to save upload with Optional filename to save upload with
-
-*__type__*: {string}
-
-*__memberof__*: UploadAttachmentOptions
+Optional filename to save upload with
 
 *__type__*: {string}
 

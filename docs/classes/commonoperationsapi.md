@@ -2,13 +2,7 @@
 
 # Class: CommonOperationsApi
 
-CommonOperationsApi - object-oriented interface CommonOperationsApi - object-oriented interface
-
-*__export__*: 
-
-*__class__*: CommonOperationsApi
-
-*__extends__*: {BaseAPI}
+CommonOperationsApi - object-oriented interface
 
 *__export__*: 
 
@@ -19,8 +13,6 @@ CommonOperationsApi - object-oriented interface CommonOperationsApi - object-ori
 ## Hierarchy
 
  [BaseAPI](baseapi.md)
-
- `BaseAPI`
 
 **↳ CommonOperationsApi**
 
@@ -60,8 +52,6 @@ CommonOperationsApi - object-oriented interface CommonOperationsApi - object-ori
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Overrides BaseAPI.__constructor*
-
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
 
 **Parameters:**
@@ -87,7 +77,6 @@ ___
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:47*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 <a id="configuration"></a>
@@ -98,8 +87,6 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Overrides BaseAPI.configuration*
-
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
 
 ___
@@ -107,12 +94,11 @@ ___
 
 ### `<Protected>` fetch
 
-**● fetch**: *`FetchAPI`*
+**● fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:48*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 

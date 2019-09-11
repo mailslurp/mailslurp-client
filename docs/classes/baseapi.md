@@ -6,10 +6,6 @@
 
 *__class__*: BaseAPI
 
-*__export__*: 
-
-*__class__*: BaseAPI
-
 ## Hierarchy
 
 **BaseAPI**
@@ -63,27 +59,24 @@ ___
 **● basePath**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:47*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 <a id="configuration"></a>
 
 ### `<Protected>` configuration
 
-**● configuration**: *`Configuration` \| `undefined`*
+**● configuration**: *[Configuration](configuration.md) \| `undefined`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:58*
 
 ___
 <a id="fetch"></a>
 
 ### `<Protected>` fetch
 
-**● fetch**: *`FetchAPI`*
+**● fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:48*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 

@@ -39,18 +39,15 @@
 * [DiffOptions](#diffoptions)
 * [GetMessagesOptions](#getmessagesoptions)
 
-### Functions
+### Variables
 
+* [COLLECTION_FORMATS](#collection_formats)
 * [CommonOperationsApiFactory](#commonoperationsapifactory)
 * [CommonOperationsApiFetchParamCreator](#commonoperationsapifetchparamcreator)
 * [CommonOperationsApiFp](#commonoperationsapifp)
 * [ExtraOperationsApiFactory](#extraoperationsapifactory)
 * [ExtraOperationsApiFetchParamCreator](#extraoperationsapifetchparamcreator)
 * [ExtraOperationsApiFp](#extraoperationsapifp)
-
-### Object literals
-
-* [COLLECTION_FORMATS](#collection_formats)
 
 ---
 
@@ -62,7 +59,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/982b5f6/index.ts#L29)*
+*Defined in [index.ts:30](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3ccf1/index.ts#L30)*
 
 MailSlurp config
 
@@ -92,7 +89,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:40](https://github.com/mailslurp/mailslurp-client-ts-js/blob/982b5f6/index.ts#L40)*
+*Defined in [index.ts:41](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3ccf1/index.ts#L41)*
 
 Options for advanced message fetching
 
@@ -102,24 +99,42 @@ Options for advanced message fetching
 
 ___
 
-## Functions
+## Variables
 
+<a id="collection_formats"></a>
+
+### `<Const>` COLLECTION_FORMATS
+
+**● COLLECTION_FORMATS**: *`object`*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:18*
+
+*__export__*: 
+
+#### Type declaration
+
+___
 <a id="commonoperationsapifactory"></a>
 
 ### `<Const>` CommonOperationsApiFactory
 
-▸ **CommonOperationsApiFactory**(configuration?: *`Configuration`*, fetch?: *`FetchAPI`*, basePath?: *`string`*): `object`
+**● CommonOperationsApiFactory**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:1179*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:708*
 
-CommonOperationsApi - factory interface CommonOperationsApi - factory interface
+CommonOperationsApi - factory interface
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*, fetch?: *[FetchAPI](interfaces/fetchapi.md)*, basePath?: *`string`*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
-| `Optional` fetch | `FetchAPI` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
+| `Optional` fetch | [FetchAPI](interfaces/fetchapi.md) |
 | `Optional` basePath | `string` |
 
 **Returns:** `object`
@@ -129,17 +144,22 @@ ___
 
 ### `<Const>` CommonOperationsApiFetchParamCreator
 
-▸ **CommonOperationsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
+**● CommonOperationsApiFetchParamCreator**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:568*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:538*
 
-CommonOperationsApi - fetch parameter creator CommonOperationsApi - fetch parameter creator
+CommonOperationsApi - fetch parameter creator
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
 
 **Returns:** `object`
 
@@ -148,17 +168,22 @@ ___
 
 ### `<Const>` CommonOperationsApiFp
 
-▸ **CommonOperationsApiFp**(configuration?: *`Configuration`*): `object`
+**● CommonOperationsApiFp**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:992*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:623*
 
-CommonOperationsApi - functional programming interface CommonOperationsApi - functional programming interface
+CommonOperationsApi - functional programming interface
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
 
 **Returns:** `object`
 
@@ -167,18 +192,23 @@ ___
 
 ### `<Const>` ExtraOperationsApiFactory
 
-▸ **ExtraOperationsApiFactory**(configuration?: *`Configuration`*, fetch?: *`FetchAPI`*, basePath?: *`string`*): `object`
+**● ExtraOperationsApiFactory**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:2582*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1205*
 
-ExtraOperationsApi - factory interface ExtraOperationsApi - factory interface
+ExtraOperationsApi - factory interface
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*, fetch?: *[FetchAPI](interfaces/fetchapi.md)*, basePath?: *`string`*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
-| `Optional` fetch | `FetchAPI` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
+| `Optional` fetch | [FetchAPI](interfaces/fetchapi.md) |
 | `Optional` basePath | `string` |
 
 **Returns:** `object`
@@ -188,17 +218,22 @@ ___
 
 ### `<Const>` ExtraOperationsApiFetchParamCreator
 
-▸ **ExtraOperationsApiFetchParamCreator**(configuration?: *`Configuration`*): `object`
+**● ExtraOperationsApiFetchParamCreator**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:1409*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:889*
 
-ExtraOperationsApi - fetch parameter creator ExtraOperationsApi - fetch parameter creator
+ExtraOperationsApi - fetch parameter creator
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
 
 **Returns:** `object`
 
@@ -207,73 +242,24 @@ ___
 
 ### `<Const>` ExtraOperationsApiFp
 
-▸ **ExtraOperationsApiFp**(configuration?: *`Configuration`*): `object`
+**● ExtraOperationsApiFp**: *`function`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:2223*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1047*
 
-ExtraOperationsApi - functional programming interface ExtraOperationsApi - functional programming interface
+ExtraOperationsApi - functional programming interface
+
+*__export__*: 
+
+#### Type declaration
+▸(configuration?: *[Configuration](classes/configuration.md)*): `object`
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` configuration | `Configuration` |
+| `Optional` configuration | [Configuration](classes/configuration.md) |
 
 **Returns:** `object`
-
-___
-
-## Object literals
-
-<a id="collection_formats"></a>
-
-### `<Const>` COLLECTION_FORMATS
-
-**COLLECTION_FORMATS**: *`object`*
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:18*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:26*
-
-*__export__*: 
-
-*__export__*: 
-
-<a id="collection_formats.csv"></a>
-
-####  csv
-
-**● csv**: *`string`* = ","
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:27*
-
-___
-<a id="collection_formats.pipes"></a>
-
-####  pipes
-
-**● pipes**: *`string`* = "|"
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:30*
-
-___
-<a id="collection_formats.ssv"></a>
-
-####  ssv
-
-**● ssv**: *`string`* = " "
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:28*
-
-___
-<a id="collection_formats.tsv"></a>
-
-####  tsv
-
-**● tsv**: *`string`* = "	"
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:29*
-
-___
 
 ___
 

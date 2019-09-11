@@ -4,14 +4,9 @@
 
 *__export__*: 
 
-*__interface__*: MatchOption
+*__namespace__*: MatchOption
 
 ## Index
-
-### Enumerations
-
-* [FieldEnum](../enums/matchoption.fieldenum.md)
-* [ShouldEnum](../enums/matchoption.shouldenum.md)
 
 ### Properties
 

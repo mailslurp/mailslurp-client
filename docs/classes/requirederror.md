@@ -8,15 +8,7 @@
 
 *__extends__*: {Error}
 
-*__export__*: 
-
-*__class__*: RequiredError
-
-*__extends__*: {Error}
-
 ## Hierarchy
-
- `Error`
 
  `Error`
 
@@ -68,7 +60,6 @@ ___
 **● field**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:59*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:76*
 
 ___
 <a id="message"></a>
@@ -79,8 +70,6 @@ ___
 
 *Inherited from Error.message*
 
-*Overrides Error.message*
-
 *Defined in node_modules/typescript/lib/lib.es5.d.ts:974*
 
 ___
@@ -88,12 +77,11 @@ ___
 
 ###  name
 
-**● name**: *"RequiredError"* = "RequiredError"
+**● name**: *"RequiredError"*
 
 *Overrides Error.name*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:60*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:75*
 
 ___
 <a id="stack"></a>
@@ -115,7 +103,6 @@ ___
 
 **● Error**: *`ErrorConstructor`*
 
-*Defined in node_modules/typescript/lib/lib.es5.d.ts:984*
 *Defined in node_modules/typescript/lib/lib.es5.d.ts:984*
 
 ___

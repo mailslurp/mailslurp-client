@@ -55,7 +55,7 @@ For a full list of email sending options [see the documentation](https://github.
 
 To send attachments first upload each attachment you wish to send.
 ```javascript
-const id = await mailslurp.uploadAttachment({
+const [id] = await mailslurp.uploadAttachment({
     base64Contents: 'base64-encoded-file-contents',
     contentType: "optional/content-type",
     filename: "optional-filename"

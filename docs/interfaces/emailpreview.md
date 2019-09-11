@@ -2,11 +2,7 @@
 
 # Interface: EmailPreview
 
-Preview of an email message. For full message call the message endpoint with a given message id. Preview of an email message. For full message call the message endpoint with a given message id.
-
-*__export__*: 
-
-*__interface__*: EmailPreview
+Preview of an email message. For full message call the message endpoint with a given message id.
 
 *__export__*: 
 
@@ -38,11 +34,6 @@ Preview of an email message. For full message call the message endpoint with a g
 **● bcc**: *`Array`<`string`>*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:273*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:294*
-
-*__type__*: {Array}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {Array}
 
@@ -56,11 +47,6 @@ ___
 **● cc**: *`Array`<`string`>*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:279*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:300*
-
-*__type__*: {Array}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {Array}
 
@@ -74,11 +60,6 @@ ___
 **● created**: *`Date`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:285*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:306*
-
-*__type__*: {Date}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {Date}
 
@@ -92,11 +73,6 @@ ___
 **● id**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:291*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:312*
-
-*__type__*: {string}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {string}
 
@@ -110,11 +86,6 @@ ___
 **● subject**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:297*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:318*
-
-*__type__*: {string}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {string}
 
@@ -128,11 +99,6 @@ ___
 **● to**: *`Array`<`string`>*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:303*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:324*
-
-*__type__*: {Array}
-
-*__memberof__*: EmailPreview
 
 *__type__*: {Array}
 

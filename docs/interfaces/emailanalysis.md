@@ -2,11 +2,7 @@
 
 # Interface: EmailAnalysis
 
-Analysis of email Analysis of email
-
-*__export__*: 
-
-*__interface__*: EmailAnalysis
+Analysis of email
 
 *__export__*: 
 
@@ -37,11 +33,6 @@ Analysis of email Analysis of email
 **● dkimVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:236*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:256*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
 
 *__type__*: {string}
 
@@ -55,11 +46,6 @@ ___
 **● dmarcVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:242*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:262*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
 
 *__type__*: {string}
 
@@ -73,11 +59,6 @@ ___
 **● spamVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:248*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:268*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
 
 *__type__*: {string}
 
@@ -91,11 +72,6 @@ ___
 **● spfVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:254*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:274*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
 
 *__type__*: {string}
 
@@ -109,11 +85,6 @@ ___
 **● virusVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:260*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:280*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
 
 *__type__*: {string}
 

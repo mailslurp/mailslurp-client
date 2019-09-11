@@ -2,13 +2,7 @@
 
 # Class: ExtraOperationsApi
 
-ExtraOperationsApi - object-oriented interface ExtraOperationsApi - object-oriented interface
-
-*__export__*: 
-
-*__class__*: ExtraOperationsApi
-
-*__extends__*: {BaseAPI}
+ExtraOperationsApi - object-oriented interface
 
 *__export__*: 
 
@@ -19,8 +13,6 @@ ExtraOperationsApi - object-oriented interface ExtraOperationsApi - object-orien
 ## Hierarchy
 
  [BaseAPI](baseapi.md)
-
- `BaseAPI`
 
 **↳ ExtraOperationsApi**
 
@@ -69,8 +61,6 @@ ExtraOperationsApi - object-oriented interface ExtraOperationsApi - object-orien
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Overrides BaseAPI.__constructor*
-
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
 
 **Parameters:**
@@ -96,7 +86,6 @@ ___
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:47*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 <a id="configuration"></a>
@@ -107,8 +96,6 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Overrides BaseAPI.configuration*
-
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
 
 ___
@@ -116,12 +103,11 @@ ___
 
 ### `<Protected>` fetch
 
-**● fetch**: *`FetchAPI`*
+**● fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:48*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:60*
 
 ___
 
@@ -549,7 +535,7 @@ ___
 
 ###  uploadAttachment
 
-▸ **uploadAttachment**(uploadAttachmentOptions: *[UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md)*, options?: *`any`*): `Promise`<`string`>
+▸ **uploadAttachment**(uploadAttachmentOptions: *[UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md)*, options?: *`any`*): `Promise`<`string`[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1524*
 
@@ -568,14 +554,14 @@ When sending emails with attachments first upload each attachment with this endp
 | uploadAttachmentOptions | [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md) |  uploadOptions |
 | `Optional` options | `any` |
 
-**Returns:** `Promise`<`string`>
+**Returns:** `Promise`<`string`[]>
 
 ___
 <a id="uploadmultipartform"></a>
 
 ###  uploadMultipartForm
 
-▸ **uploadMultipartForm**(file: *`any`*, contentType?: *`string`*, filename?: *`string`*, options?: *`any`*): `Promise`<`string`>
+▸ **uploadMultipartForm**(file: *`any`*, contentType?: *`string`*, filename?: *`string`*, options?: *`any`*): `Promise`<`string`[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1535*
 
@@ -596,7 +582,7 @@ When sending emails with attachments first upload each attachment with this endp
 | `Optional` filename | `string` |
 | `Optional` options | `any` |
 
-**Returns:** `Promise`<`string`>
+**Returns:** `Promise`<`string`[]>
 
 ___
 

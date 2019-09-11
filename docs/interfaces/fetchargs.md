@@ -6,10 +6,6 @@
 
 *__interface__*: FetchArgs
 
-*__export__*: 
-
-*__interface__*: FetchArgs
-
 ## Hierarchy
 
 **FetchArgs**
@@ -32,7 +28,6 @@
 **● options**: *`any`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:39*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:49*
 
 ___
 <a id="url"></a>
@@ -42,7 +37,6 @@ ___
 **● url**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:38*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:48*
 
 ___
 

@@ -6,10 +6,6 @@
 
 *__interface__*: CreateWebhookOptions
 
-*__export__*: 
-
-*__interface__*: CreateWebhookOptions
-
 ## Hierarchy
 
 **CreateWebhookOptions**
@@ -30,14 +26,9 @@
 
 ### `<Optional>` basicAuth
 
-**● basicAuth**: *`BasicAuthOptions`*
+**● basicAuth**: *[BasicAuthOptions](basicauthoptions.md)*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:112*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:132*
-
-*__type__*: {BasicAuthOptions}
-
-*__memberof__*: CreateWebhookOptions
 
 *__type__*: {BasicAuthOptions}
 
@@ -51,11 +42,6 @@ ___
 **● name**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:124*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:144*
-
-*__type__*: {string}
-
-*__memberof__*: CreateWebhookOptions
 
 *__type__*: {string}
 
@@ -69,13 +55,8 @@ ___
 **● url**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:118*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/api.ts:138*
 
-Public URL (including protocol) that MailSlurp can post WebhookNotificationObjects to when an email is received Public URL (including protocol) that MailSlurp can post WebhookNotificationObjects to when an email is received
-
-*__type__*: {string}
-
-*__memberof__*: CreateWebhookOptions
+Public URL (including protocol) that MailSlurp can post WebhookNotificationObjects to when an email is received
 
 *__type__*: {string}
 

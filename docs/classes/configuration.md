@@ -52,15 +52,8 @@ ___
 **● accessToken**: *`string` \| `function`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:47*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:51*
 
-parameter for oauth2 security parameter for oauth2 security
-
-*__param__*: security name
-
-*__param__*: oauth2 scope
-
-*__memberof__*: Configuration
+parameter for oauth2 security
 
 *__param__*: security name
 
@@ -76,13 +69,8 @@ ___
 **● apiKey**: *`string` \| `function`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:26*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:30*
 
-parameter for apiKey security parameter for apiKey security
-
-*__param__*: security name
-
-*__memberof__*: Configuration
+parameter for apiKey security
 
 *__param__*: security name
 
@@ -96,13 +84,8 @@ ___
 **● baseOptions**: *`any`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:61*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:65*
 
-base options for fetch calls base options for fetch calls
-
-*__type__*: {any}
-
-*__memberof__*: Configuration
+base options for fetch calls
 
 *__type__*: {any}
 
@@ -116,13 +99,8 @@ ___
 **● basePath**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:54*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:58*
 
-override base path override base path
-
-*__type__*: {string}
-
-*__memberof__*: Configuration
+override base path
 
 *__type__*: {string}
 
@@ -136,13 +114,8 @@ ___
 **● password**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:40*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:44*
 
-parameter for basic security parameter for basic security
-
-*__type__*: {string}
-
-*__memberof__*: Configuration
+parameter for basic security
 
 *__type__*: {string}
 
@@ -156,13 +129,8 @@ ___
 **● username**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:33*
-*Defined in node_modules/mailslurp-swagger-sdk-ts/configuration.ts:37*
 
-parameter for basic security parameter for basic security
-
-*__type__*: {string}
-
-*__memberof__*: Configuration
+parameter for basic security
 
 *__type__*: {string}
 
