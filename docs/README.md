@@ -59,7 +59,7 @@
 
 **Ƭ Config**: *`object`*
 
-*Defined in [index.ts:30](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3ccf1/index.ts#L30)*
+*Defined in [index.ts:30](https://github.com/mailslurp/mailslurp-client-ts-js/blob/cf7bfd1/index.ts#L30)*
 
 MailSlurp config
 
@@ -89,7 +89,7 @@ ___
 
 **Ƭ GetMessagesOptions**: *`object`*
 
-*Defined in [index.ts:41](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4c3ccf1/index.ts#L41)*
+*Defined in [index.ts:43](https://github.com/mailslurp/mailslurp-client-ts-js/blob/cf7bfd1/index.ts#L43)*
 
 Options for advanced message fetching
 

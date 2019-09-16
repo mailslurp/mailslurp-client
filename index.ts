@@ -29,7 +29,9 @@ const log = debug('mailslurp-client');
  */
 export type Config = {
     // obtain an apiKey at https://app.mailslurp.com
-    apiKey?: string;
+    apiKey: string;
+    // optional attribution id (see sales)
+    attribution?: string
 };
 
 /**
@@ -82,10 +84,16 @@ export class MailSlurp {
      */
     private extraOperationsApi: ExtraOperationsApi;
 
+    private callOptions: any = {};
+
     constructor(opts: Config) {
         // check options
         if (!opts.apiKey) {
             throw 'Missing apiKey config parameter';
+        }
+        // set call options if required
+        if(opts.attribution) {
+            this.callOptions['headers'] = { 'x-attribution': opts.attribution }
         }
         // instantiate api clients
         const conf = { apiKey: opts.apiKey };
@@ -103,7 +111,7 @@ export class MailSlurp {
      */
     async createNewEmailAddress(): Promise<Inbox> {
         return wrapCall('createNewEmailAddress', () =>
-            this.commonOperationsApi.createNewEmailAddress(),
+            this.commonOperationsApi.createNewEmailAddress(this.callOptions),
         );
     }
 
@@ -120,7 +128,7 @@ export class MailSlurp {
         sendEmailOptions: SendEmailOptions,
     ): Promise<Response> {
         return wrapCall('sendEmailSimple', () =>
-            this.commonOperationsApi.sendEmailSimple(sendEmailOptions),
+            this.commonOperationsApi.sendEmailSimple(sendEmailOptions, this.callOptions),
         );
     }
 
@@ -138,7 +146,7 @@ export class MailSlurp {
         timeout?: number,
     ): Promise<Email> {
         return wrapCall('waitForLatestEmail', () =>
-            this.commonOperationsApi.waitForLatestEmail(inboxId, timeout),
+            this.commonOperationsApi.waitForLatestEmail(inboxId, timeout, this.callOptions),
         );
     }
 
@@ -148,7 +156,7 @@ export class MailSlurp {
         timeout?: number,
     ): Promise<Email> {
         return wrapCall('waitForNthEmail', () =>
-            this.commonOperationsApi.waitForNthEmail(inboxId, index, timeout),
+            this.commonOperationsApi.waitForNthEmail(inboxId, index, timeout, this.callOptions),
         );
     }
 
@@ -175,6 +183,7 @@ export class MailSlurp {
                 count,
                 inboxId,
                 timeout,
+                this.callOptions
             ),
         );
     }
@@ -191,7 +200,7 @@ export class MailSlurp {
         timeout?: number,
     ): Promise<EmailPreview[]> {
         return wrapCall('waitForEmailCount', () =>
-            this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout),
+            this.commonOperationsApi.waitForEmailCount(count, inboxId, timeout, this.callOptions),
         );
     }
 
@@ -201,7 +210,7 @@ export class MailSlurp {
      */
     async emptyInbox(inboxId: string): Promise<Response> {
         return wrapCall('emptyInbox', () =>
-            this.commonOperationsApi.emptyInbox(inboxId),
+            this.commonOperationsApi.emptyInbox(inboxId, this.callOptions),
         );
     }
 
@@ -211,7 +220,7 @@ export class MailSlurp {
      */
     async deleteEmail(emailId: string): Promise<Response> {
         return wrapCall('deleteEmail', () =>
-            this.commonOperationsApi.deleteEmail(emailId),
+            this.commonOperationsApi.deleteEmail(emailId, this.callOptions),
         );
     }
 
@@ -221,7 +230,7 @@ export class MailSlurp {
      */
     async deleteEmailAddress(emailId: string): Promise<Response> {
         return wrapCall('deleteEmailAddress', () =>
-            this.commonOperationsApi.deleteEmailAddress(emailId),
+            this.commonOperationsApi.deleteEmailAddress(emailId, this.callOptions),
         );
     }
 
@@ -230,7 +239,7 @@ export class MailSlurp {
      */
     async createInbox(): Promise<Inbox> {
         return wrapCall('createInbox', () =>
-            this.extraOperationsApi.createInbox(),
+            this.extraOperationsApi.createInbox(this.callOptions),
         );
     }
 
@@ -240,7 +249,7 @@ export class MailSlurp {
      */
     async deleteInbox(inboxId: string): Promise<Response> {
         return wrapCall('createInbox', () =>
-            this.extraOperationsApi.deleteInbox(inboxId),
+            this.extraOperationsApi.deleteInbox(inboxId, this.callOptions),
         );
     }
 
@@ -250,7 +259,7 @@ export class MailSlurp {
      */
     async getInbox(inboxId: string): Promise<Inbox> {
         return wrapCall('getInbox', () =>
-            this.extraOperationsApi.getInbox(inboxId),
+            this.extraOperationsApi.getInbox(inboxId, this.callOptions),
         );
     }
 
@@ -259,7 +268,7 @@ export class MailSlurp {
      */
     async getInboxes(): Promise<Inbox[]> {
         return wrapCall('getInboxes', () =>
-            this.extraOperationsApi.getInboxes(),
+            this.extraOperationsApi.getInboxes(this.callOptions),
         );
     }
 
@@ -279,6 +288,7 @@ export class MailSlurp {
                 args.minCount,
                 args.retryTimeout,
                 args.since,
+                this.callOptions
             ),
         );
     }
@@ -289,7 +299,7 @@ export class MailSlurp {
      */
     async getEmail(emailId: string): Promise<Email> {
         return wrapCall('getEmail', () =>
-            this.extraOperationsApi.getEmail(emailId),
+            this.extraOperationsApi.getEmail(emailId, this.callOptions),
         );
     }
 
@@ -299,7 +309,7 @@ export class MailSlurp {
      */
     async getRawEmail(emailId: string): Promise<string> {
         return wrapCall('getRawEmail', () =>
-            this.extraOperationsApi.getRawEmailContents(emailId),
+            this.extraOperationsApi.getRawEmailContents(emailId, this.callOptions),
         );
     }
 
@@ -313,7 +323,7 @@ export class MailSlurp {
         sendEmailOptions: SendEmailOptions,
     ): Promise<Response> {
         return wrapCall('sendEmail', () =>
-            this.extraOperationsApi.sendEmail(inboxId, sendEmailOptions),
+            this.extraOperationsApi.sendEmail(inboxId, sendEmailOptions, this.callOptions),
         );
     }
 
@@ -324,7 +334,7 @@ export class MailSlurp {
         bulkSendEmailOptions: BulkSendEmailOptions,
     ): Promise<Response> {
         return wrapCall('bulkSendEmails', () =>
-            this.extraOperationsApi.bulkSendEmails(bulkSendEmailOptions),
+            this.extraOperationsApi.bulkSendEmails(bulkSendEmailOptions, this.callOptions),
         );
     }
 
@@ -333,7 +343,7 @@ export class MailSlurp {
      */
     async bulkCreateInboxes(count: number): Promise<Inbox[]> {
         return wrapCall('bulkCreateInboxes', () =>
-            this.extraOperationsApi.bulkCreateInboxes(count),
+            this.extraOperationsApi.bulkCreateInboxes(count, this.callOptions),
         );
     }
 
@@ -342,7 +352,7 @@ export class MailSlurp {
      */
     async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
         return wrapCall('bulkDeleteInboxes', () =>
-            this.extraOperationsApi.bulkDeleteInboxes(inboxIds),
+            this.extraOperationsApi.bulkDeleteInboxes(inboxIds, this.callOptions),
         );
     }
 
@@ -354,7 +364,7 @@ export class MailSlurp {
         createWebhookOptions: CreateWebhookOptions,
     ): Promise<Webhook> {
         return wrapCall('createWebhook', () =>
-            this.extraOperationsApi.createWebhook(inboxId, createWebhookOptions),
+            this.extraOperationsApi.createWebhook(inboxId, createWebhookOptions, this.callOptions),
         );
     }
 
@@ -363,7 +373,7 @@ export class MailSlurp {
      */
     async deleteWebhook(inboxId: string, webhookId: string): Promise<Response> {
         return wrapCall('deleteWebhook', () =>
-            this.extraOperationsApi.deleteWebhook(inboxId, webhookId),
+            this.extraOperationsApi.deleteWebhook(inboxId, webhookId, this.callOptions),
         );
     }
 
@@ -375,7 +385,7 @@ export class MailSlurp {
         attachmentId: string,
     ): Promise<Response> {
         return wrapCall('downloadAttachment', () =>
-            this.extraOperationsApi.downloadAttachment(attachmentId, emailId),
+            this.extraOperationsApi.downloadAttachment(attachmentId, emailId, this.callOptions),
         );
     }
 
@@ -384,7 +394,7 @@ export class MailSlurp {
      */
     async uploadAttachment(options: UploadAttachmentOptions): Promise<Array<String>> {
         return wrapCall('uploadAttachment', () =>
-            this.extraOperationsApi.uploadAttachment(options),
+            this.extraOperationsApi.uploadAttachment(options, this.callOptions),
         );
     }
 }

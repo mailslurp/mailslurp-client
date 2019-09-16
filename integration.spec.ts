@@ -76,7 +76,7 @@ describe('functions are mapped correctly to common operations api', () => {
     });
     test('can wrap a non json error', async () => {
         createNewEmailAddress.mockRejectedValue('error-text');
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
         let threw = false;
         try {
             await client.createNewEmailAddress();
@@ -85,7 +85,11 @@ describe('functions are mapped correctly to common operations api', () => {
             expect(e).toEqual('error-text');
         }
         expect(threw).toBeTruthy();
-        expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+        expect(createNewEmailAddress).toHaveBeenCalledWith({
+            headers: {
+                'x-attribution':  'test-attribution'
+            }
+        });
     });
     test('can send email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
@@ -93,24 +97,24 @@ describe('functions are mapped correctly to common operations api', () => {
             to: [''],
         };
         await client.sendEmailSimple(options);
-        expect(sendEmailSimple).toHaveBeenCalledWith(options);
+        expect(sendEmailSimple).toHaveBeenCalledWith(options, {});
     });
     test('can wait for latest email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
         const inboxId = 'inboxId';
         const timeout = 123;
         await client.waitForLatestEmail(inboxId, timeout);
-        expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout);
+        expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, {});
     });
     test('can wait for nth email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
         const inboxId = 'inboxId';
         const index = 2;
         await client.waitForNthEmail(inboxId, index);
-        expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined);
+        expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, {});
     });
     test('can wait for matching email', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
         const options = {};
         const count = 2;
         const inboxId = 'inboxId';
@@ -121,6 +125,11 @@ describe('functions are mapped correctly to common operations api', () => {
             count,
             inboxId,
             timeout,
+            {
+                headers: {
+                    'x-attribution': 'test-attribution'
+                }
+            }
         );
     });
 });

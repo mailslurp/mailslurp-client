@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.2.0]
+### Added
+- Enable attribution
+
 ## [6.1.0]
 ### Added
 - Upload endpoints made public

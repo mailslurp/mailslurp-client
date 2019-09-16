@@ -142,7 +142,7 @@ describe('functions are mapped correctly to common operations api', function () 
             switch (_a.label) {
                 case 0:
                     createNewEmailAddress.mockRejectedValue('error-text');
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
                     threw = false;
                     _a.label = 1;
                 case 1:
@@ -158,7 +158,11 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [3 /*break*/, 4];
                 case 4:
                     expect(threw).toBeTruthy();
-                    expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    expect(createNewEmailAddress).toHaveBeenCalledWith({
+                        headers: {
+                            'x-attribution': 'test-attribution'
+                        }
+                    });
                     return [2 /*return*/];
             }
         });
@@ -175,7 +179,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.sendEmailSimple(options)];
                 case 1:
                     _a.sent();
-                    expect(sendEmailSimple).toHaveBeenCalledWith(options);
+                    expect(sendEmailSimple).toHaveBeenCalledWith(options, {});
                     return [2 /*return*/];
             }
         });
@@ -191,7 +195,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForLatestEmail(inboxId, timeout)];
                 case 1:
                     _a.sent();
-                    expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout);
+                    expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, {});
                     return [2 /*return*/];
             }
         });
@@ -207,7 +211,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForNthEmail(inboxId, index)];
                 case 1:
                     _a.sent();
-                    expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined);
+                    expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, {});
                     return [2 /*return*/];
             }
         });
@@ -217,7 +221,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
                     options = {};
                     count = 2;
                     inboxId = 'inboxId';
@@ -225,7 +229,11 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForMatchingEmails(options, count, inboxId, timeout)];
                 case 1:
                     _a.sent();
-                    expect(waitForMatchingEmail).toHaveBeenCalledWith(options, count, inboxId, timeout);
+                    expect(waitForMatchingEmail).toHaveBeenCalledWith(options, count, inboxId, timeout, {
+                        headers: {
+                            'x-attribution': 'test-attribution'
+                        }
+                    });
                     return [2 /*return*/];
             }
         });
