@@ -110,7 +110,7 @@ ___
 
 ▸ **createNewEmailAddress**(options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:803*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:852*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **deleteEmail**(emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:812*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:861*
 
 Deletes an email
 
@@ -161,7 +161,7 @@ ___
 
 ▸ **deleteEmailAddress**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:821*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:870*
 
 Deletes an inbox
 
@@ -187,7 +187,7 @@ ___
 
 ▸ **emptyInbox**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:830*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:879*
 
 Deletes all emails
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **sendEmailSimple**(sendEmailOptions: *[SendEmailOptions](../interfaces/sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:839*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:888*
 
 To specify an email address first create an inbox and use that with the other send email methods
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **waitForEmailCount**(count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:850*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:899*
 
 Will only wait if count is greater that the found emails in given inbox.If you need to wait for an email for a non-empty inbox see the other receive methods.
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **waitForLatestEmail**(inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:860*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:909*
 
 Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox see the other receive methods.
 
@@ -294,7 +294,7 @@ ___
 
 ▸ **waitForMatchingEmail**(matchOptions: *[MatchOptions](../interfaces/matchoptions.md)*, count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:872*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:921*
 
 Results must also meet provided count. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **waitForNthEmail**(inboxId?: *`string`*, index?: *`number`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:883*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:932*
 
 *__summary__*: Wait for or fetch the email with a given index in the inbox specified
 

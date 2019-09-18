@@ -32,7 +32,7 @@ Analysis of email
 
 **● dkimVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:236*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:248*
 
 *__type__*: {string}
 
@@ -45,7 +45,7 @@ ___
 
 **● dmarcVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:242*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:254*
 
 *__type__*: {string}
 
@@ -58,7 +58,7 @@ ___
 
 **● spamVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:248*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:260*
 
 *__type__*: {string}
 
@@ -71,7 +71,7 @@ ___
 
 **● spfVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:254*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:266*
 
 *__type__*: {string}
 
@@ -84,7 +84,7 @@ ___
 
 **● virusVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:260*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:272*
 
 *__type__*: {string}
 

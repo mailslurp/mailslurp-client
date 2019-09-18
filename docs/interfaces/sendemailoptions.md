@@ -25,6 +25,7 @@ Options for sending an email message from an inbox
 * [html](sendemailoptions.md#html)
 * [replyTo](sendemailoptions.md#replyto)
 * [subject](sendemailoptions.md#subject)
+* [templateVariables](sendemailoptions.md#templatevariables)
 * [to](sendemailoptions.md#to)
 
 ---
@@ -37,9 +38,9 @@ Options for sending an email message from an inbox
 
 **● attachments**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:410*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:453*
 
-Optional list of attachment IDs to send with this email
+Optional list of attachment IDs to send with this email. You must first upload each attachment separately in order to obtain attachment IDs
 
 *__type__*: {Array}
 
@@ -52,7 +53,7 @@ ___
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:416*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:459*
 
 Optional list of bcc destination email addresses
 
@@ -67,9 +68,9 @@ ___
 
 **● body**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:422*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:465*
 
-Contents of email
+Contents of email. If HTML set isHTML to true. You can use moustache templates here if you provide a templateVariables option
 
 *__type__*: {string}
 
@@ -82,7 +83,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:428*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:471*
 
 Optional list of cc destination email addresses
 
@@ -97,7 +98,7 @@ ___
 
 **● charset**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:434*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:477*
 
 Optional charset
 
@@ -112,7 +113,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:440*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:483*
 
 Optional from address. If not set source inbox address will be used
 
@@ -127,7 +128,7 @@ ___
 
 **● html**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:446*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:489*
 
 *__type__*: {boolean}
 
@@ -140,7 +141,7 @@ ___
 
 **● replyTo**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:452*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:495*
 
 Optional replyTo header
 
@@ -155,11 +156,26 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:458*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:501*
 
 Optional email subject line
 
 *__type__*: {string}
+
+*__memberof__*: SendEmailOptions
+
+___
+<a id="templatevariables"></a>
+
+### `<Optional>` templateVariables
+
+**● templateVariables**: *`any`*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:507*
+
+Optional map of template variables. Will replace moustache syntax variables in subject or body with the associated values
+
+*__type__*: {any}
 
 *__memberof__*: SendEmailOptions
 
@@ -170,7 +186,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:464*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:513*
 
 List of destination email addresses. Even single recipients must be in array form.
 

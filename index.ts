@@ -15,6 +15,7 @@ import {
     Webhook,
     MatchOptions
 } from 'mailslurp-swagger-sdk-ts';
+
 import debug from 'debug';
 
 // setup logger. enable output with DEBUG=mailslurp-client env variable
@@ -66,13 +67,27 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
 }
 
 /**
- *  MailSlurp client
+ *  Official MailSlurp Client
  *
- *  Usage:
+ *  Installing
+ *  `npm install --save mailslurp-client`
+ *
+ *  Import ES6
  *  ```javascript
- *  const api = new MailSlurp({ apiKey: "your-api-key" })
- *  const inbox = await api.createInbox()
+ *  import { MailSlurp } from 'mailslurp-client'
  *  ```
+ *  Require ES5
+ *  ```javascript
+ *  const MailSlurp = require('mailslurp-client').MailSlurp
+ *  ```
+ *
+ *  Configure
+ *  ```javascript
+ *  const mailslurp = new MailSlurp({ apiKey: "your-api-key" })
+ *  const inbox = await mailslurp.createInbox()
+ *  ```
+ *
+ *  **Get an API key at [app.mailslurp.com](https://app.mailslurp.com)**
  */
 export class MailSlurp {
     /**
@@ -105,9 +120,7 @@ export class MailSlurp {
      * Create a new email address / inbox
      *
      * @remarks
-     * Returns id and emailAddress of created inbox.
-     * All none-paid accounts use the `@mailslurp.com` domain.
-     * Custom domains available with plans.
+     * Returns `id` and `emailAddress` of created inbox.
      */
     async createNewEmailAddress(): Promise<Inbox> {
         return wrapCall('createNewEmailAddress', () =>
@@ -369,7 +382,9 @@ export class MailSlurp {
     }
 
     /**
-     * Create a webhook for notifications
+     * Create a webhook for notifications for a given inbox
+     *
+     * When the inbox receives an email your webhook url will be posted a json object containing the email id
      */
     async deleteWebhook(inboxId: string, webhookId: string): Promise<Response> {
         return wrapCall('deleteWebhook', () =>
@@ -379,6 +394,8 @@ export class MailSlurp {
 
     /**
      * Get email attachment by id
+     *
+     * Returns HTTP response containing byte stream
      */
     async downloadAttachment(
         emailId: string,
@@ -391,6 +408,8 @@ export class MailSlurp {
 
     /**
      * Upload an attachment for use in email sending
+     *
+     * Attachment contents must be a base64 encoded string
      */
     async uploadAttachment(options: UploadAttachmentOptions): Promise<Array<String>> {
         return wrapCall('uploadAttachment', () =>

@@ -24,7 +24,7 @@
 
 **● field**: *`FieldEnum`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:347*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:390*
 
 The email property to match on. One of SUBJECT, TO, BCC, CC or FROM
 
@@ -39,7 +39,7 @@ ___
 
 **● should**: *`ShouldEnum`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:353*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:396*
 
 What criteria to apply. CONTAIN or EQUAL. Note CONTAIN is recommended due to some SMTP servers adding new lines
 
@@ -54,7 +54,7 @@ ___
 
 **● value**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:359*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:402*
 
 The value to compare to the field using EQUAL or CONTAIN
 

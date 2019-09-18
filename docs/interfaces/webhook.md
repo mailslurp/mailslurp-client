@@ -33,7 +33,7 @@ Representation of a webhook for an inbox.
 
 **● basicAuth**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:502*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:551*
 
 Does Webhook expect basic authentication
 
@@ -48,7 +48,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:508*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:557*
 
 *__type__*: {Date}
 
@@ -61,7 +61,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:514*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:563*
 
 ID of the Webhook
 
@@ -76,7 +76,7 @@ ___
 
 **● inboxId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:520*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:569*
 
 The inbox that the Webhook will be triggered by
 
@@ -91,7 +91,7 @@ ___
 
 **● name**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:526*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:575*
 
 *__type__*: {string}
 
@@ -104,7 +104,7 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:532*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:581*
 
 *__type__*: {Date}
 

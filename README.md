@@ -1,11 +1,16 @@
 <p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="200" src="https://www.mailslurp.com/permalink/logo.png" alt="Vue logo"></a></p>
 
-> :incoming_envelope: Send and receive real emails in applications or tests.
-
 ##  Introduction
 [MailSlurp](https://www.mailslurp.com) is a **free API** for sending and receiving emails from applications or tests. It is designed as a simpler, more powerful interface for SMTP mail servers. 
 
 This repository hosts the recommended MailSlurp client. MailSlurp can also be used as a [REST API](https://docs.mailslurp.com) or with officially supported clients in [Javascript](https://github.com/mailslurp/mailslurp-client-ts-js), [Ruby](https://github.com/mailslurp/mailslurp-client-ruby), [Python](https://github.com/mailslurp/mailslurp-client-python), [PHP](https://github.com/mailslurp/mailslurp-client-php), [Java](https://github.com/mailslurp/mailslurp-client-java), [C#](https://github.com/mailslurp/mailslurp-client-csharp), [Go](https://github.com/mailslurp/mailslurp-client-go) and [more](https://www.mailslurp.com/developers).
+
+For more integrations see [mailslurp.com](https://www.mailslurp.com/)
+
+## Documentation
+- [Quickstart](https://www.mailslurp.com/developers/guides/getting-started/)
+- [Guides and examples](https://www.mailslurp.com/developers/guides/)
+- [Full method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/mailslurp.md) 
 
 ## Installing
 ```bash
@@ -20,9 +25,6 @@ const mailslurp = new MailSlurp({ apiKey: 'xxxxxx' })
 
 > :key: **Note**: All requests require an API Key. Get yours free via the [MailSlurp Dashboard](https://app.mailslurp.com)
 
-## Documentation
-Please see generated [method documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/classes/mailslurp.md) for this repository or view the [developers page](https://www.mailslurp.com/developers).
-
 ## Questions
 Please reach out any time using [live chat](https://drift.me/mailslurp) or [email](mailto:contact@mailslurp.dev).
 
@@ -31,7 +33,7 @@ For anything related to this client please open an issue. For all other issues p
 
 ## Examples
 
-### :mailbox: Creating email addresses
+### Creating email addresses
 MailSlurp uses the concept of an inbox. Inboxes have IDs and email addresses. If you want to receive emails you'll need to create an inbox first.
 
 ```javascript
@@ -39,7 +41,7 @@ const { id, emailAddress } = await mailslurp.createInbox()
 // or if you prefer
 const { id, emailAddress } = await mailslurp.createNewEmailAddress()
 ```
-### :outbox_tray: Sending emails
+### Sending emails
 You can send real emails with MailSlurp. If you don't care what address it is sent from use the `sendEmailSimple` method. This will send emails from a random MailSlurp address.
 
 ```javascript
@@ -63,7 +65,7 @@ const [id] = await mailslurp.uploadAttachment({
 ```
 Then use the returned attachment IDs in the `attachments` field of the [send email options](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/sendemailoptions.md).
 
-### :inbox_tray: Receiving emails
+### Receiving emails
 MailSlurp is an asynchronous service. That means certain API calls will wait until a condition is met. This saves you from having to poll the API. ([Webhooks](https://www.mailslurp.com/pricing) are also available).
 
 To receive an email first make sure you have an inbox with an email address. Then send an email to that address with any service (including MailSlurp itself). Now you can wait for the email to arrive.
@@ -92,7 +94,7 @@ const emailPreviews = await mailslurp.getEmails(inbox.id, {
 const email = await mailslurp.getEmail(emailPreviews[0].id)
 ```
 
-### :mag: Searching emails
+### Searching emails
 MailSlurp has simple email matching features that let you wait for an email that matches a particular subject, recipient or more.
 
 ```javascript
@@ -110,7 +112,7 @@ await mailslurp.waitForMatchingEmails(matchOptions, 1, inbox.id, 5000);
 
 For more information on email matching [see the documentation](https://github.com/mailslurp/mailslurp-client-ts-js/blob/master/docs/interfaces/matchoptions.md).
 
-### :mailbox_with_no_mail: Deleting entities
+### Deleting entities
 You can empty an inbox easily with:
 ```javascript
 await mailslurp.emptyInbox(inbox.id)
@@ -120,19 +122,6 @@ You can also delete emails individually:
 ```javascript
 await mailslurp.deleteEmail(email.id)
 ```
-
-## Paid features
-
-MailSlurp is free for personal use but paid memberships gain access to many powerful features. These include
-
-- Custom domains
-- Unlimited usage
-- Webhook notifications
-- UI Web Interface
-- Custom feature requests
-- Rapid support
-
-To arrange a call or to see all paid features checkout the [pricing page](https://www.mailslurp.com/pricing).
 
 ## More information
 See [mailslurp.com](https://www.mailslurp.com) for all information.

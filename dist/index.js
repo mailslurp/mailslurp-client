@@ -80,13 +80,27 @@ function wrapCall(tag, fn) {
     });
 }
 /**
- *  MailSlurp client
+ *  Official MailSlurp Client
  *
- *  Usage:
+ *  Installing
+ *  `npm install --save mailslurp-client`
+ *
+ *  Import ES6
  *  ```javascript
- *  const api = new MailSlurp({ apiKey: "your-api-key" })
- *  const inbox = await api.createInbox()
+ *  import { MailSlurp } from 'mailslurp-client'
  *  ```
+ *  Require ES5
+ *  ```javascript
+ *  const MailSlurp = require('mailslurp-client').MailSlurp
+ *  ```
+ *
+ *  Configure
+ *  ```javascript
+ *  const mailslurp = new MailSlurp({ apiKey: "your-api-key" })
+ *  const inbox = await mailslurp.createInbox()
+ *  ```
+ *
+ *  **Get an API key at [app.mailslurp.com](https://app.mailslurp.com)**
  */
 var MailSlurp = /** @class */ (function () {
     function MailSlurp(opts) {
@@ -108,9 +122,7 @@ var MailSlurp = /** @class */ (function () {
      * Create a new email address / inbox
      *
      * @remarks
-     * Returns id and emailAddress of created inbox.
-     * All none-paid accounts use the `@mailslurp.com` domain.
-     * Custom domains available with plans.
+     * Returns `id` and `emailAddress` of created inbox.
      */
     MailSlurp.prototype.createNewEmailAddress = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -415,7 +427,9 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Create a webhook for notifications
+     * Create a webhook for notifications for a given inbox
+     *
+     * When the inbox receives an email your webhook url will be posted a json object containing the email id
      */
     MailSlurp.prototype.deleteWebhook = function (inboxId, webhookId) {
         return __awaiter(this, void 0, void 0, function () {
@@ -429,6 +443,8 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Get email attachment by id
+     *
+     * Returns HTTP response containing byte stream
      */
     MailSlurp.prototype.downloadAttachment = function (emailId, attachmentId) {
         return __awaiter(this, void 0, void 0, function () {
@@ -442,6 +458,8 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Upload an attachment for use in email sending
+     *
+     * Attachment contents must be a base64 encoded string
      */
     MailSlurp.prototype.uploadAttachment = function (options) {
         return __awaiter(this, void 0, void 0, function () {

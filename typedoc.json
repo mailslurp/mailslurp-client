@@ -5,9 +5,11 @@
     "exclude": "node_modules/types*",
     "excludeExternals": false,
     "excludeNotExported": true,
+    "excludePrivate": true,
+    "hideGenerator": true,
     "includeDeclarations": true,
     "disableOutputCheck": true,
     "mode": "file",
-    "readme": "none",
+    "readme": "config/DOC.md",
     "name": "MailSlurp Client"
 }
