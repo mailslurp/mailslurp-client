@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.3.0]
+### Added
+- Enable email templating
+
 ## [6.2.0]
 ### Added
 - Enable attribution
