@@ -5,15 +5,18 @@
 import {
     BulkSendEmailOptions,
     CommonOperationsApi,
+    CreateDomainOptions,
     CreateWebhookOptions,
+    DomainPlusVerificationRecordsAndStatus,
+    DomainPreview,
     Email,
     EmailPreview,
     ExtraOperationsApi,
     Inbox,
+    MatchOptions,
     SendEmailOptions,
     UploadAttachmentOptions,
     Webhook,
-    MatchOptions
 } from 'mailslurp-swagger-sdk-ts';
 
 import debug from 'debug';
@@ -107,8 +110,8 @@ export class MailSlurp {
             throw 'Missing apiKey config parameter';
         }
         // set call options if required
-        if(opts.attribution) {
-            this.callOptions['headers'] = { 'x-attribution': opts.attribution }
+        if (opts.attribution) {
+            this.callOptions['headers'] = { 'x-attribution': opts.attribution };
         }
         // instantiate api clients
         const conf = { apiKey: opts.apiKey };
@@ -196,7 +199,7 @@ export class MailSlurp {
                 count,
                 inboxId,
                 timeout,
-                this.callOptions
+                this.callOptions,
             ),
         );
     }
@@ -301,7 +304,7 @@ export class MailSlurp {
                 args.minCount,
                 args.retryTimeout,
                 args.since,
-                this.callOptions
+                this.callOptions,
             ),
         );
     }
@@ -415,6 +418,35 @@ export class MailSlurp {
         return wrapCall('uploadAttachment', () =>
             this.extraOperationsApi.uploadAttachment(options, this.callOptions),
         );
+    }
+
+    /**
+     * Create a custom domain for use with MailSlurp
+     * You must own and have access to DNS setup for the domain in order to verify it
+     * @param options
+     */
+    async createDomain(options: CreateDomainOptions): Promise<DomainPlusVerificationRecordsAndStatus> {
+        return wrapCall('createDomain', () => {
+            return this.extraOperationsApi.createDomain(options, this.callOptions);
+        });
+    }
+
+    /**
+     * Get domains
+     */
+    async getDomains(): Promise<Array<DomainPreview>> {
+        return wrapCall('getDomains', () => {
+            return this.extraOperationsApi.getDomains(this.callOptions);
+        });
+    }
+
+    /**
+     * Get domain
+     */
+    async getDomain(domainId: string): Promise<DomainPlusVerificationRecordsAndStatus> {
+        return wrapCall('getDomain', () => {
+            return this.extraOperationsApi.getDomain(domainId, this.callOptions);
+        });
     }
 }
 

@@ -2,7 +2,7 @@
 
 # Interface: EmailPreview
 
-Preview of an email message. For full message call the message endpoint with a given message id.
+Preview of an email message. For full message call the email endpoints with the provided email id.
 
 *__export__*: 
 
@@ -33,7 +33,7 @@ Preview of an email message. For full message call the message endpoint with a g
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:285*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:366*
 
 *__type__*: {Array}
 
@@ -46,7 +46,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:291*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:372*
 
 *__type__*: {Array}
 
@@ -59,7 +59,7 @@ ___
 
 **● created**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:297*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:378*
 
 *__type__*: {Date}
 
@@ -68,11 +68,13 @@ ___
 ___
 <a id="id"></a>
 
-###  id
+### `<Optional>` id
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:303*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:384*
+
+ID of the Email.
 
 *__type__*: {string}
 
@@ -85,7 +87,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:309*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:390*
 
 *__type__*: {string}
 
@@ -98,7 +100,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:315*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:396*
 
 *__type__*: {Array}
 

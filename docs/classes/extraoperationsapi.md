@@ -33,13 +33,17 @@ ExtraOperationsApi - object-oriented interface
 * [bulkCreateInboxes](extraoperationsapi.md#bulkcreateinboxes)
 * [bulkDeleteInboxes](extraoperationsapi.md#bulkdeleteinboxes)
 * [bulkSendEmails](extraoperationsapi.md#bulksendemails)
+* [createDomain](extraoperationsapi.md#createdomain)
 * [createInbox](extraoperationsapi.md#createinbox)
 * [createWebhook](extraoperationsapi.md#createwebhook)
+* [deleteDomain](extraoperationsapi.md#deletedomain)
 * [deleteEmail1](extraoperationsapi.md#deleteemail1)
 * [deleteInbox](extraoperationsapi.md#deleteinbox)
 * [deleteWebhook](extraoperationsapi.md#deletewebhook)
 * [downloadAttachment](extraoperationsapi.md#downloadattachment)
 * [forwardEmail](extraoperationsapi.md#forwardemail)
+* [getDomain](extraoperationsapi.md#getdomain)
+* [getDomains](extraoperationsapi.md#getdomains)
 * [getEmail](extraoperationsapi.md#getemail)
 * [getEmails](extraoperationsapi.md#getemails)
 * [getInbox](extraoperationsapi.md#getinbox)
@@ -120,7 +124,7 @@ ___
 
 ▸ **bulkCreateInboxes**(count: *`number`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1450*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1627*
 
 Enterprise Plan Required
 
@@ -146,7 +150,7 @@ ___
 
 ▸ **bulkDeleteInboxes**(requestBody: *`Array`<`string`>*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1459*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1636*
 
 Enterprise Plan Required
 
@@ -172,7 +176,7 @@ ___
 
 ▸ **bulkSendEmails**(bulkSendEmailOptions: *[BulkSendEmailOptions](../interfaces/bulksendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1468*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1645*
 
 Enterprise Plan Required
 
@@ -192,15 +196,41 @@ Enterprise Plan Required
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="createdomain"></a>
+
+###  createDomain
+
+▸ **createDomain**(createDomainOptions: *[CreateDomainOptions](../interfaces/createdomainoptions.md)*, options?: *`any`*): `Promise`<[DomainPlusVerificationRecordsAndStatus](../interfaces/domainplusverificationrecordsandstatus.md)>
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1654*
+
+Link a domain that you own with MailSlurp so you can create inboxes with it. Returns DNS records used for validation. You must add these verification records to your host provider's DNS setup to verify the domain.
+
+*__summary__*: Create Domain
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: ExtraOperationsApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| createDomainOptions | [CreateDomainOptions](../interfaces/createdomainoptions.md) |  domainOptions |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<[DomainPlusVerificationRecordsAndStatus](../interfaces/domainplusverificationrecordsandstatus.md)>
+
+___
 <a id="createinbox"></a>
 
 ###  createInbox
 
-▸ **createInbox**(options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
+▸ **createInbox**(emailAddress?: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1476*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1663*
 
-Create a new inbox and ephemeral email address to send and receive from. This is a necessary step before sending or receiving emails. The response contains the inbox's ID and its associated email address. It is recommended that you create a new inbox during each test method so that it is unique and empty
+Create a new inbox and with a ranmdomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
 
 *__summary__*: Create an Inbox (email address)
 
@@ -212,6 +242,7 @@ Create a new inbox and ephemeral email address to send and receive from. This is
 
 | Name | Type |
 | ------ | ------ |
+| `Optional` emailAddress | `string` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Inbox](../interfaces/inbox.md)>
@@ -223,7 +254,7 @@ ___
 
 ▸ **createWebhook**(inboxId: *`string`*, createWebhookOptions: *[CreateWebhookOptions](../interfaces/createwebhookoptions.md)*, options?: *`any`*): `Promise`<[Webhook](../interfaces/webhook.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1486*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1673*
 
 Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
 
@@ -244,13 +275,37 @@ Get notified whenever an inbox receives an email via a WebHook URL. An emailID w
 **Returns:** `Promise`<[Webhook](../interfaces/webhook.md)>
 
 ___
+<a id="deletedomain"></a>
+
+###  deleteDomain
+
+▸ **deleteDomain**(id: *`string`*, options?: *`any`*): `Promise`<`Response`>
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1682*
+
+*__summary__*: Delete a domain
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: ExtraOperationsApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| id | `string` |  id |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<`Response`>
+
+___
 <a id="deleteemail1"></a>
 
 ###  deleteEmail1
 
 ▸ **deleteEmail1**(emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1495*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1691*
 
 Deletes an email and removes it from the inbox
 
@@ -276,7 +331,7 @@ ___
 
 ▸ **deleteInbox**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1504*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1700*
 
 Permanently delete an inbox and associated email address
 
@@ -302,7 +357,7 @@ ___
 
 ▸ **deleteWebhook**(inboxId: *`string`*, webhookId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1514*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1710*
 
 *__summary__*: Delete and disable a WebHook for an Inbox
 
@@ -327,7 +382,7 @@ ___
 
 ▸ **downloadAttachment**(attachmentId: *`string`*, emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1524*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1720*
 
 Returns the specified attachment for a given email as a byte stream (file download). Get the attachmentId from the email response. Requires enterprise account.
 
@@ -354,7 +409,7 @@ ___
 
 ▸ **forwardEmail**(emailId: *`string`*, forwardEmailOptions: *[ForwardEmailOptions](../interfaces/forwardemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1534*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1730*
 
 Forward email content to given recipients
 
@@ -375,13 +430,62 @@ Forward email content to given recipients
 **Returns:** `Promise`<`Response`>
 
 ___
+<a id="getdomain"></a>
+
+###  getDomain
+
+▸ **getDomain**(id: *`string`*, options?: *`any`*): `Promise`<[DomainPlusVerificationRecordsAndStatus](../interfaces/domainplusverificationrecordsandstatus.md)>
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1739*
+
+Returns domain verification status and tokens
+
+*__summary__*: Get a domain
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: ExtraOperationsApi
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| id | `string` |  id |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<[DomainPlusVerificationRecordsAndStatus](../interfaces/domainplusverificationrecordsandstatus.md)>
+
+___
+<a id="getdomains"></a>
+
+###  getDomains
+
+▸ **getDomains**(options?: *`any`*): `Promise`<[DomainPreview](../interfaces/domainpreview.md)[]>
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1747*
+
+*__summary__*: Get domains
+
+*__throws__*: {RequiredError}
+
+*__memberof__*: ExtraOperationsApi
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` options | `any` |
+
+**Returns:** `Promise`<[DomainPreview](../interfaces/domainpreview.md)[]>
+
+___
 <a id="getemail"></a>
 
 ###  getEmail
 
 ▸ **getEmail**(emailId: *`string`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1543*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1756*
 
 Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawMessage endpoint
 
@@ -407,7 +511,7 @@ ___
 
 ▸ **getEmails**(inboxId: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1556*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1769*
 
 List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
 
@@ -437,7 +541,7 @@ ___
 
 ▸ **getInbox**(inboxId: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1565*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1778*
 
 Returns an inbox's properties, including its email address and ID.
 
@@ -463,7 +567,7 @@ ___
 
 ▸ **getInboxes**(options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1573*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1786*
 
 List the inboxes you have created
 
@@ -488,7 +592,7 @@ ___
 
 ▸ **getRawEmailContents**(emailId: *`string`*, options?: *`any`*): `Promise`<`string`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1582*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1795*
 
 Returns a raw, unparsed and unprocessed email
 
@@ -514,7 +618,7 @@ ___
 
 ▸ **getWebhooks**(inboxId: *`string`*, options?: *`any`*): `Promise`<[Webhook](../interfaces/webhook.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1591*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1804*
 
 *__summary__*: Get all WebHooks for an Inbox
 
@@ -538,7 +642,7 @@ ___
 
 ▸ **sendEmail**(inboxId: *`string`*, sendEmailOptions: *[SendEmailOptions](../interfaces/sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1601*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1814*
 
 Send an email from the inbox's email address. Specify the email recipients and contents in the request body. See the `SendEmailOptions` for more information. Note the `inboxId` refers to the inbox's id NOT its email address
 
@@ -565,7 +669,7 @@ ___
 
 ▸ **uploadAttachment**(uploadAttachmentOptions: *[UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md)*, options?: *`any`*): `Promise`<`string`[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1610*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1823*
 
 When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.
 
@@ -591,7 +695,7 @@ ___
 
 ▸ **uploadMultipartForm**(file: *`any`*, contentType?: *`string`*, filename?: *`string`*, options?: *`any`*): `Promise`<`string`[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1621*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1834*
 
 When sending emails with attachments first upload each attachment with this endpoint. Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email. This means that attachments can easily be reused.
 

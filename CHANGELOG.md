@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.4.0]
+### Added
+- Enable custom domains
+
 ## [6.3.0]
 ### Added
 - Enable email templating

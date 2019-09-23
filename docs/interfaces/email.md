@@ -44,7 +44,7 @@ Representation of an email
 
 **● analysis**: *[EmailAnalysis](emailanalysis.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:137*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:218*
 
 *__type__*: {EmailAnalysis}
 
@@ -57,7 +57,7 @@ ___
 
 **● attachments**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:143*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:224*
 
 *__type__*: {Array}
 
@@ -70,7 +70,7 @@ ___
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:149*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:230*
 
 *__type__*: {Array}
 
@@ -83,7 +83,7 @@ ___
 
 **● body**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:155*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:236*
 
 *__type__*: {string}
 
@@ -96,7 +96,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:161*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:242*
 
 *__type__*: {Array}
 
@@ -109,7 +109,7 @@ ___
 
 **● charset**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:167*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:248*
 
 *__type__*: {string}
 
@@ -122,7 +122,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:173*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:254*
 
 *__type__*: {Date}
 
@@ -135,7 +135,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:179*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:260*
 
 *__type__*: {string}
 
@@ -148,7 +148,7 @@ ___
 
 **● headers**: *`object`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:185*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:266*
 
 *__type__*: {{ \[key: string\]: string; }}
 
@@ -165,7 +165,7 @@ ___
 
 **● html**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:193*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:274*
 
 *__type__*: {boolean}
 
@@ -178,7 +178,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:199*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:280*
 
 *__type__*: {string}
 
@@ -191,7 +191,7 @@ ___
 
 **● inboxId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:205*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:286*
 
 *__type__*: {string}
 
@@ -204,7 +204,7 @@ ___
 
 **● rawUrl**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:211*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:292*
 
 *__type__*: {string}
 
@@ -217,7 +217,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:217*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:298*
 
 *__type__*: {string}
 
@@ -230,7 +230,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:223*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:304*
 
 *__type__*: {Array}
 
@@ -243,7 +243,7 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:229*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:310*
 
 *__type__*: {Date}
 
@@ -256,7 +256,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:235*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:316*
 
 *__type__*: {string}
 

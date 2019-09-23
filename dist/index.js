@@ -471,6 +471,47 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
+    /**
+     * Create a custom domain for use with MailSlurp
+     * You must own and have access to DNS setup for the domain in order to verify it
+     * @param options
+     */
+    MailSlurp.prototype.createDomain = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('createDomain', function () {
+                        return _this.extraOperationsApi.createDomain(options, _this.callOptions);
+                    })];
+            });
+        });
+    };
+    /**
+     * Get domains
+     */
+    MailSlurp.prototype.getDomains = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('getDomains', function () {
+                        return _this.extraOperationsApi.getDomains(_this.callOptions);
+                    })];
+            });
+        });
+    };
+    /**
+     * Get domain
+     */
+    MailSlurp.prototype.getDomain = function (domainId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('getDomain', function () {
+                        return _this.extraOperationsApi.getDomain(domainId, _this.callOptions);
+                    })];
+            });
+        });
+    };
     return MailSlurp;
 }());
 exports.MailSlurp = MailSlurp;
