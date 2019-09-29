@@ -31,7 +31,7 @@ Options for forwarding an email
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:427*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:482*
 
 *__type__*: {Array}
 
@@ -44,7 +44,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:421*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:476*
 
 *__type__*: {Array}
 
@@ -57,7 +57,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:415*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:470*
 
 *__type__*: {string}
 
@@ -70,7 +70,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:409*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:464*
 
 *__type__*: {Array}
 

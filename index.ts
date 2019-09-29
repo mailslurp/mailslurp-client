@@ -110,9 +110,13 @@ export class MailSlurp {
             throw 'Missing apiKey config parameter';
         }
         // set call options if required
+        let headers = {
+            'x-client': 'mailslurp-client-ts-js'
+        };
         if (opts.attribution) {
-            this.callOptions['headers'] = { 'x-attribution': opts.attribution };
+            headers['x-attribution'] = opts.attribution;
         }
+        this.callOptions['headers'] = headers;
         // instantiate api clients
         const conf = { apiKey: opts.apiKey };
         this.commonOperationsApi = new CommonOperationsApi(conf);
@@ -253,9 +257,9 @@ export class MailSlurp {
     /**
      * Create an inbox / email address
      */
-    async createInbox(): Promise<Inbox> {
+    async createInbox(emailAddress?: string): Promise<Inbox> {
         return wrapCall('createInbox', () =>
-            this.extraOperationsApi.createInbox(this.callOptions),
+            this.extraOperationsApi.createInbox(emailAddress, this.callOptions),
         );
     }
 
@@ -285,6 +289,16 @@ export class MailSlurp {
     async getInboxes(): Promise<Inbox[]> {
         return wrapCall('getInboxes', () =>
             this.extraOperationsApi.getInboxes(this.callOptions),
+        );
+    }
+
+    /**
+     * Get all emails
+     * Returns paginated email previews
+     */
+    async getAllEmails(page?: number, size?: number) {
+        return wrapCall('getAllEmails', () =>
+            this.extraOperationsApi.getEmailsPaginated(page, size, this.callOptions),
         );
     }
 
@@ -385,6 +399,18 @@ export class MailSlurp {
     }
 
     /**
+     * Get webhooks for an inbox
+     * @param inboxId
+     */
+    async getWebhooks(
+        inboxId: string,
+    ): Promise<Webhook[]> {
+        return wrapCall('getWebhooks', () => {
+            return this.extraOperationsApi.getWebhooks(inboxId, this.callOptions);
+        });
+    }
+
+    /**
      * Create a webhook for notifications for a given inbox
      *
      * When the inbox receives an email your webhook url will be posted a json object containing the email id
@@ -446,6 +472,15 @@ export class MailSlurp {
     async getDomain(domainId: string): Promise<DomainPlusVerificationRecordsAndStatus> {
         return wrapCall('getDomain', () => {
             return this.extraOperationsApi.getDomain(domainId, this.callOptions);
+        });
+    }
+
+    /**
+     * Delete domain
+     */
+    async deleteDomain(domainId: string): Promise<Response> {
+        return wrapCall('deleteDomain', () => {
+            return this.extraOperationsApi.deleteDomain(domainId, this.callOptions);
         });
     }
 }

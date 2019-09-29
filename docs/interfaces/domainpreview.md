@@ -16,6 +16,7 @@ Preview object for domain entity
 
 ### Properties
 
+* [createdAt](domainpreview.md#createdat)
 * [domain](domainpreview.md#domain)
 * [id](domainpreview.md#id)
 
@@ -23,13 +24,26 @@ Preview object for domain entity
 
 ## Properties
 
+<a id="createdat"></a>
+
+###  createdAt
+
+**● createdAt**: *`Date`*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:199*
+
+*__type__*: {Date}
+
+*__memberof__*: DomainPreview
+
+___
 <a id="domain"></a>
 
 ###  domain
 
 **● domain**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:199*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:205*
 
 *__type__*: {string}
 
@@ -42,7 +56,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:205*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:211*
 
 *__type__*: {string}
 

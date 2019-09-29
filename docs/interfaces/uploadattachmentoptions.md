@@ -30,7 +30,7 @@ Options for uploading files for attachments
 
 **● base64Contents**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:607*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:791*
 
 Base64 encoded string of file contents
 
@@ -45,7 +45,7 @@ ___
 
 **● contentType**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:613*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:797*
 
 Optional contentType for file. For instance application/pdf
 
@@ -60,7 +60,7 @@ ___
 
 **● filename**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:619*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:803*
 
 Optional filename to save upload with
 

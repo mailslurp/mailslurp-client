@@ -31,7 +31,7 @@ Representation of an inbox with an email address. Emails can be sent to or from 
 
 **● created**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:440*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:495*
 
 *__type__*: {Date}
 
@@ -44,7 +44,7 @@ ___
 
 **● emailAddress**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:446*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:501*
 
 The inbox's email address. Send an email to this address and the inbox will receive it
 
@@ -59,7 +59,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:452*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:507*
 
 *__type__*: {string}
 
@@ -72,7 +72,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:458*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:513*
 
 *__type__*: {string}
 

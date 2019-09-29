@@ -46,11 +46,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __importStar(require("./index"));
 var mailslurpRequire = require('./index').MailSlurp;
 var createNewEmailAddress = jest.fn();
+var createInbox = jest.fn();
 var sendEmailSimple = jest.fn();
 var waitForLatestEmail = jest.fn();
+var getEmailsPaginated = jest.fn();
 var waitForNthEmail = jest.fn();
 var waitForMatchingEmail = jest.fn();
 var waitForEmailCount = jest.fn();
+var callOptions = {
+    headers: {
+        'x-client': 'mailslurp-client-ts-js',
+    },
+};
 jest.mock('mailslurp-swagger-sdk-ts', function () {
     return {
         CommonOperationsApi: function () {
@@ -64,7 +71,10 @@ jest.mock('mailslurp-swagger-sdk-ts', function () {
             };
         },
         ExtraOperationsApi: function () {
-            return {};
+            return {
+                getEmailsPaginated: getEmailsPaginated,
+                createInbox: createInbox,
+            };
         },
     };
 });
@@ -103,6 +113,20 @@ describe('functions are mapped correctly to common operations api', function () 
                 case 1:
                     _a.sent();
                     expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    test('can create a new email address with specific address', function () { return __awaiter(_this, void 0, void 0, function () {
+        var client;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    return [4 /*yield*/, client.createInbox('test@gmail.com')];
+                case 1:
+                    _a.sent();
+                    expect(createInbox).toHaveBeenCalledWith('test@gmail.com', callOptions);
                     return [2 /*return*/];
             }
         });
@@ -160,8 +184,9 @@ describe('functions are mapped correctly to common operations api', function () 
                     expect(threw).toBeTruthy();
                     expect(createNewEmailAddress).toHaveBeenCalledWith({
                         headers: {
-                            'x-attribution': 'test-attribution'
-                        }
+                            'x-attribution': 'test-attribution',
+                            "x-client": "mailslurp-client-ts-js"
+                        },
                     });
                     return [2 /*return*/];
             }
@@ -179,7 +204,35 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.sendEmailSimple(options)];
                 case 1:
                     _a.sent();
-                    expect(sendEmailSimple).toHaveBeenCalledWith(options, {});
+                    expect(sendEmailSimple).toHaveBeenCalledWith(options, callOptions);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    test('can get all emails', function () { return __awaiter(_this, void 0, void 0, function () {
+        var client;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    return [4 /*yield*/, client.getAllEmails()];
+                case 1:
+                    _a.sent();
+                    expect(getEmailsPaginated).toHaveBeenCalledWith(undefined, undefined, callOptions);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    test('can get all emails with pagination', function () { return __awaiter(_this, void 0, void 0, function () {
+        var client;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    return [4 /*yield*/, client.getAllEmails(1, 2)];
+                case 1:
+                    _a.sent();
+                    expect(getEmailsPaginated).toHaveBeenCalledWith(1, 2, callOptions);
                     return [2 /*return*/];
             }
         });
@@ -195,7 +248,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForLatestEmail(inboxId, timeout)];
                 case 1:
                     _a.sent();
-                    expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, {});
+                    expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, callOptions);
                     return [2 /*return*/];
             }
         });
@@ -211,7 +264,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForNthEmail(inboxId, index)];
                 case 1:
                     _a.sent();
-                    expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, {});
+                    expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, callOptions);
                     return [2 /*return*/];
             }
         });
@@ -231,8 +284,9 @@ describe('functions are mapped correctly to common operations api', function () 
                     _a.sent();
                     expect(waitForMatchingEmail).toHaveBeenCalledWith(options, count, inboxId, timeout, {
                         headers: {
-                            'x-attribution': 'test-attribution'
-                        }
+                            'x-attribution': 'test-attribution',
+                            'x-client': 'mailslurp-client-ts-js',
+                        },
                     });
                     return [2 /*return*/];
             }

@@ -3,11 +3,19 @@ import Default, { MailSlurp } from './index';
 const mailslurpRequire = require('./index').MailSlurp;
 
 const createNewEmailAddress = jest.fn();
+const createInbox = jest.fn();
 const sendEmailSimple = jest.fn();
 const waitForLatestEmail = jest.fn();
+const getEmailsPaginated = jest.fn();
 const waitForNthEmail = jest.fn();
 const waitForMatchingEmail = jest.fn();
 const waitForEmailCount = jest.fn();
+
+const callOptions = {
+    headers: {
+        'x-client': 'mailslurp-client-ts-js',
+    },
+};
 
 jest.mock('mailslurp-swagger-sdk-ts', () => {
     return {
@@ -22,7 +30,10 @@ jest.mock('mailslurp-swagger-sdk-ts', () => {
             };
         },
         ExtraOperationsApi: function() {
-            return {};
+            return {
+                getEmailsPaginated,
+                createInbox,
+            };
         },
     };
 });
@@ -59,6 +70,11 @@ describe('functions are mapped correctly to common operations api', () => {
         await client.createNewEmailAddress();
         expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
     });
+    test('can create a new email address with specific address', async () => {
+        const client = new MailSlurp({ apiKey: 'test' });
+        await client.createInbox('test@gmail.com');
+        expect(createInbox).toHaveBeenCalledWith('test@gmail.com', callOptions);
+    });
     test('can wrap a json error', async () => {
         createNewEmailAddress.mockRejectedValue({
             json: jest.fn().mockReturnValue('error-json'),
@@ -87,8 +103,9 @@ describe('functions are mapped correctly to common operations api', () => {
         expect(threw).toBeTruthy();
         expect(createNewEmailAddress).toHaveBeenCalledWith({
             headers: {
-                'x-attribution':  'test-attribution'
-            }
+                'x-attribution': 'test-attribution',
+                "x-client": "mailslurp-client-ts-js"
+            },
         });
     });
     test('can send email', async () => {
@@ -97,21 +114,31 @@ describe('functions are mapped correctly to common operations api', () => {
             to: [''],
         };
         await client.sendEmailSimple(options);
-        expect(sendEmailSimple).toHaveBeenCalledWith(options, {});
+        expect(sendEmailSimple).toHaveBeenCalledWith(options, callOptions);
+    });
+    test('can get all emails', async () => {
+        const client = new MailSlurp({ apiKey: 'test' });
+        await client.getAllEmails();
+        expect(getEmailsPaginated).toHaveBeenCalledWith(undefined, undefined, callOptions);
+    });
+    test('can get all emails with pagination', async () => {
+        const client = new MailSlurp({ apiKey: 'test' });
+        await client.getAllEmails(1, 2);
+        expect(getEmailsPaginated).toHaveBeenCalledWith(1, 2, callOptions);
     });
     test('can wait for latest email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
         const inboxId = 'inboxId';
         const timeout = 123;
         await client.waitForLatestEmail(inboxId, timeout);
-        expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, {});
+        expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, callOptions);
     });
     test('can wait for nth email', async () => {
         const client = new MailSlurp({ apiKey: 'test' });
         const inboxId = 'inboxId';
         const index = 2;
         await client.waitForNthEmail(inboxId, index);
-        expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, {});
+        expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, callOptions);
     });
     test('can wait for matching email', async () => {
         const client = new MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
@@ -127,9 +154,10 @@ describe('functions are mapped correctly to common operations api', () => {
             timeout,
             {
                 headers: {
-                    'x-attribution': 'test-attribution'
-                }
-            }
+                    'x-attribution': 'test-attribution',
+                    'x-client': 'mailslurp-client-ts-js',
+                },
+            },
         );
     });
 });

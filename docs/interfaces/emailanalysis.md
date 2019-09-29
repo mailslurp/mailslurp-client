@@ -28,22 +28,9 @@ Analysis of email
 
 <a id="dkimverdict"></a>
 
-###  dkimVerdict
+### `<Optional>` dkimVerdict
 
 **● dkimVerdict**: *`string`*
-
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:329*
-
-*__type__*: {string}
-
-*__memberof__*: EmailAnalysis
-
-___
-<a id="dmarcverdict"></a>
-
-###  dmarcVerdict
-
-**● dmarcVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:335*
 
@@ -52,11 +39,11 @@ ___
 *__memberof__*: EmailAnalysis
 
 ___
-<a id="spamverdict"></a>
+<a id="dmarcverdict"></a>
 
-###  spamVerdict
+### `<Optional>` dmarcVerdict
 
-**● spamVerdict**: *`string`*
+**● dmarcVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:341*
 
@@ -65,11 +52,11 @@ ___
 *__memberof__*: EmailAnalysis
 
 ___
-<a id="spfverdict"></a>
+<a id="spamverdict"></a>
 
-###  spfVerdict
+### `<Optional>` spamVerdict
 
-**● spfVerdict**: *`string`*
+**● spamVerdict**: *`string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:347*
 
@@ -78,13 +65,26 @@ ___
 *__memberof__*: EmailAnalysis
 
 ___
+<a id="spfverdict"></a>
+
+### `<Optional>` spfVerdict
+
+**● spfVerdict**: *`string`*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:353*
+
+*__type__*: {string}
+
+*__memberof__*: EmailAnalysis
+
+___
 <a id="virusverdict"></a>
 
-###  virusVerdict
+### `<Optional>` virusVerdict
 
 **● virusVerdict**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:353*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:359*
 
 *__type__*: {string}
 

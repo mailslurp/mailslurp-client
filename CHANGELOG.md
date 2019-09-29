@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.4.1]
+### Added
+- Domain delete endpoints
+### Fixed
+- Fix bug in custom domain creation
+
 ## [6.4.0]
 ### Added
 - Enable custom domains

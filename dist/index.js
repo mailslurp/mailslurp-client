@@ -110,9 +110,13 @@ var MailSlurp = /** @class */ (function () {
             throw 'Missing apiKey config parameter';
         }
         // set call options if required
+        var headers = {
+            'x-client': 'mailslurp-client-ts-js'
+        };
         if (opts.attribution) {
-            this.callOptions['headers'] = { 'x-attribution': opts.attribution };
+            headers['x-attribution'] = opts.attribution;
         }
+        this.callOptions['headers'] = headers;
         // instantiate api clients
         var conf = { apiKey: opts.apiKey };
         this.commonOperationsApi = new mailslurp_swagger_sdk_ts_1.CommonOperationsApi(conf);
@@ -264,12 +268,12 @@ var MailSlurp = /** @class */ (function () {
     /**
      * Create an inbox / email address
      */
-    MailSlurp.prototype.createInbox = function () {
+    MailSlurp.prototype.createInbox = function (emailAddress) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.extraOperationsApi.createInbox(_this.callOptions);
+                        return _this.extraOperationsApi.createInbox(emailAddress, _this.callOptions);
                     })];
             });
         });
@@ -311,6 +315,20 @@ var MailSlurp = /** @class */ (function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getInboxes', function () {
                         return _this.extraOperationsApi.getInboxes(_this.callOptions);
+                    })];
+            });
+        });
+    };
+    /**
+     * Get all emails
+     * Returns paginated email previews
+     */
+    MailSlurp.prototype.getAllEmails = function (page, size) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('getAllEmails', function () {
+                        return _this.extraOperationsApi.getEmailsPaginated(page, size, _this.callOptions);
                     })];
             });
         });
@@ -427,6 +445,20 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
+     * Get webhooks for an inbox
+     * @param inboxId
+     */
+    MailSlurp.prototype.getWebhooks = function (inboxId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('getWebhooks', function () {
+                        return _this.extraOperationsApi.getWebhooks(inboxId, _this.callOptions);
+                    })];
+            });
+        });
+    };
+    /**
      * Create a webhook for notifications for a given inbox
      *
      * When the inbox receives an email your webhook url will be posted a json object containing the email id
@@ -508,6 +540,19 @@ var MailSlurp = /** @class */ (function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getDomain', function () {
                         return _this.extraOperationsApi.getDomain(domainId, _this.callOptions);
+                    })];
+            });
+        });
+    };
+    /**
+     * Delete domain
+     */
+    MailSlurp.prototype.deleteDomain = function (domainId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('deleteDomain', function () {
+                        return _this.extraOperationsApi.deleteDomain(domainId, _this.callOptions);
                     })];
             });
         });
