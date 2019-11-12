@@ -18,6 +18,7 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 
 |    | **Resources** |
 |----|---------------|
+| 📦 | [NPM Module](https://www.npmjs.com/package/mailslurp-client) |
 | 📖 | [Documentation](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md) |
 | ✍️  | [Examples](https://github.com/mailslurp/examples) |
 | 🎓 | [Developer Portal](https://www.mailslurp.com/developers/)                |
