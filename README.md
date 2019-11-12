@@ -32,12 +32,18 @@ npm install --save mailslurp-client
 ```
 
 ```javascript
+// instantiate client
 const MailSlurp = require('mailslurp-client').default;
 const mailslurp = new MailSlurp({ apiKey: 'XXXXX' });
 
+// create a new email address
 const { emailAddress, id } = await mailslurp.createInbox();
 
+// receive email using created inbox
 const { subject, body } = await mailslurp.waitForLatestEmail(id);
+
+// send email from inbox
+await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
 ```
 
 ## Change Log
