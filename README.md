@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mailslurp/mailslurp-client/master/logo.svg" height="46px" alt="">
+  <img src="https://www.mailslurp.com/logo.svg" height="46px" alt="">
 </p>
 
 [MailSlurp](https://www.mailslurp.com) is an Email API for developers and QA testers. 
