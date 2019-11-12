@@ -47,6 +47,9 @@ await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
 ```
 > [See documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md).
 
+## Other Clients
+You can find [more MailSlurp SDKs](https://www.mailslurp.com/developers/integrations/) on our website. If you wish to call the REST API directly please see the [HTTP Documentation](https://docs.mailslurp.com).
+
 ## Change Log
 See [CHANGELOG.md](https://github.com/mailslurp/mailslurp-client/blob/master/CHANGELOG.md).
 
