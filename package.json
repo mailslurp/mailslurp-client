@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Send and receive emails in code",
-  "version": "6.5.1",
+  "version": "6.5.2",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -15,7 +15,7 @@
   ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "repository": "https://github.com/mailslurp/mailslurp-client-ts-js",
+  "repository": "https://github.com/mailslurp/mailslurp-client",
   "scripts": {
     "build": "tsc --outDir dist/",
     "prepublishOnly": "npm run build",
