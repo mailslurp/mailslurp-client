@@ -25,8 +25,6 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 | 🔑 | [Get API Key](https://app.mailslurp.com/sign-up/)                   |
 | ⚠️  | [Report an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
 
-> [See documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md).
-
 ## Examples
 
 ```
@@ -47,6 +45,7 @@ const { subject, body } = await mailslurp.waitForLatestEmail(id);
 // send email from inbox
 await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
 ```
+> [See documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md).
 
 ## Change Log
 See [CHANGELOG.md](https://github.com/mailslurp/mailslurp-client/blob/master/CHANGELOG.md).
