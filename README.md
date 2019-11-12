@@ -1,5 +1,3 @@
-<p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="200" src="https://www.mailslurp.com/permalink/logo.png" alt="Vue logo"></a></p>
-
 ##  Introduction
 [MailSlurp](https://www.mailslurp.com) is a **free API** for sending and receiving emails from applications or tests. It is designed as a simpler, more powerful interface for SMTP mail servers. 
 
