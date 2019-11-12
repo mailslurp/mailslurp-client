@@ -5,9 +5,11 @@
 [MailSlurp](https://www.mailslurp.com) is an Email API for developers and QA testers. 
 It let's users create emails addresses on demand, then send and receive emails and attachments in applications and tests. **MailSlurp is free for personal use**.
 
-<p align="center">
-  <h2 style="border: none">✉️  &rarr; 📭 &rarr; 📨</h2>
-</p>
+## Features ✉️  &rarr; 📭 &rarr; 📨
+- Create dynamic email accounts 
+- Receive emails with `waitFor(condition)` long-polling
+- Receive emails using Push WebHooks
+- Send templated, transactional emails
 
 ## About
 This project contains the official and recommend MailSlurp SDK Client for Node, Javascript, and Typescript. All MailSlurp requests require API Authentication. Obtain a [free API Key for personal use](https://app.mailslurp.com/sign-up/).
