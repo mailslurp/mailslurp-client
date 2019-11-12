@@ -25,6 +25,21 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 | 🔑 | [Get API Key](https://app.mailslurp.com/sign-up/)                   |
 | ⚠️  | [Report an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
 
+## Examples
+
+```
+npm install --save mailslurp-client
+```
+
+```javascript
+const MailSlurp = require('mailslurp-client').default;
+const mailslurp = new MailSlurp({ apiKey: 'XXXXX' });
+
+const { emailAddress, id } = await mailslurp.createInbox();
+
+const { subject, body } = await mailslurp.waitForLatestEmail(id);
+```
+
 ## Change Log
 See [CHANGELOG.md](https://github.com/mailslurp/mailslurp-client/blob/master/CHANGELOG.md).
 
