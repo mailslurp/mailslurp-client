@@ -25,6 +25,8 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 | 🔑 | [Get API Key](https://app.mailslurp.com/sign-up/)                   |
 | ⚠️  | [Report an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
 
+> [See documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md).
+
 ## Examples
 
 ```
