@@ -10,12 +10,12 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 
 ## Getting Started
 
-| **Resource**   | **Link**                                             |
-|----------------|------------------------------------------------------|
-| Documentation  | [Javascript Class Docs](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md) |
-| Guides         | [Developer Portal](https://www.mailslurp.com/developers/)                |
-| API Key        | [Account Settings](https://app.mailslurp.com/sign-up/)                   |
-| Issues         | [Open an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
+| **Resources**    |
+|-----------------|
+| 📖 [Documentation](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md) |
+| 🎓 [Developer Portal](https://www.mailslurp.com/developers/)                |
+| 🔑 [Get API Key](https://app.mailslurp.com/sign-up/)                   |
+| ⚠️  [Report an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
 
 ## Issues
 Please [open an issue](https://github.com/mailslurp/mailslurp-client/issues).
