@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.6.0]
+### Added
+- Bump underlying swagger dependency to 6.0.0
+
 ## [6.4.1]
 ### Added
 - Domain delete endpoints
