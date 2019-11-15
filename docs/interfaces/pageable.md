@@ -31,7 +31,7 @@
 
 **● offset**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:656*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:779*
 
 *__type__*: {number}
 
@@ -44,7 +44,7 @@ ___
 
 **● pageNumber**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:662*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:785*
 
 *__type__*: {number}
 
@@ -57,7 +57,7 @@ ___
 
 **● pageSize**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:668*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:791*
 
 *__type__*: {number}
 
@@ -70,7 +70,7 @@ ___
 
 **● paged**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:674*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:797*
 
 *__type__*: {boolean}
 
@@ -83,7 +83,7 @@ ___
 
 **● sort**: *[Sort](sort.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:680*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:803*
 
 *__type__*: {Sort}
 
@@ -96,7 +96,7 @@ ___
 
 **● unpaged**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:686*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:809*
 
 *__type__*: {boolean}
 

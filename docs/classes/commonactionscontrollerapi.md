@@ -1,12 +1,12 @@
-[MailSlurp Client](../README.md) > [CommonOperationsApi](../classes/commonoperationsapi.md)
+[MailSlurp Client](../README.md) > [CommonActionsControllerApi](../classes/commonactionscontrollerapi.md)
 
-# Class: CommonOperationsApi
+# Class: CommonActionsControllerApi
 
-CommonOperationsApi - object-oriented interface
+CommonActionsControllerApi - object-oriented interface
 
 *__export__*: 
 
-*__class__*: CommonOperationsApi
+*__class__*: CommonActionsControllerApi
 
 *__extends__*: {BaseAPI}
 
@@ -14,31 +14,31 @@ CommonOperationsApi - object-oriented interface
 
  [BaseAPI](baseapi.md)
 
-**↳ CommonOperationsApi**
+**↳ CommonActionsControllerApi**
 
 ## Index
 
 ### Constructors
 
-* [constructor](commonoperationsapi.md#constructor)
+* [constructor](commonactionscontrollerapi.md#constructor)
 
 ### Properties
 
-* [basePath](commonoperationsapi.md#basepath)
-* [configuration](commonoperationsapi.md#configuration)
-* [fetch](commonoperationsapi.md#fetch)
+* [basePath](commonactionscontrollerapi.md#basepath)
+* [configuration](commonactionscontrollerapi.md#configuration)
+* [fetch](commonactionscontrollerapi.md#fetch)
 
 ### Methods
 
-* [createNewEmailAddress](commonoperationsapi.md#createnewemailaddress)
-* [deleteEmail](commonoperationsapi.md#deleteemail)
-* [deleteEmailAddress](commonoperationsapi.md#deleteemailaddress)
-* [emptyInbox](commonoperationsapi.md#emptyinbox)
-* [sendEmailSimple](commonoperationsapi.md#sendemailsimple)
-* [waitForEmailCount](commonoperationsapi.md#waitforemailcount)
-* [waitForLatestEmail](commonoperationsapi.md#waitforlatestemail)
-* [waitForMatchingEmail](commonoperationsapi.md#waitformatchingemail)
-* [waitForNthEmail](commonoperationsapi.md#waitfornthemail)
+* [createNewEmailAddress](commonactionscontrollerapi.md#createnewemailaddress)
+* [deleteEmail](commonactionscontrollerapi.md#deleteemail)
+* [deleteEmailAddress](commonactionscontrollerapi.md#deleteemailaddress)
+* [emptyInbox](commonactionscontrollerapi.md#emptyinbox)
+* [sendEmailSimple](commonactionscontrollerapi.md#sendemailsimple)
+* [waitForEmailCount](commonactionscontrollerapi.md#waitforemailcount)
+* [waitForLatestEmail](commonactionscontrollerapi.md#waitforlatestemail)
+* [waitForMatchingEmail](commonactionscontrollerapi.md#waitformatchingemail)
+* [waitForNthEmail](commonactionscontrollerapi.md#waitfornthemail)
 
 ---
 
@@ -48,7 +48,7 @@ CommonOperationsApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new CommonOperationsApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [CommonOperationsApi](commonoperationsapi.md)
+⊕ **new CommonActionsControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [CommonActionsControllerApi](commonactionscontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -62,7 +62,7 @@ CommonOperationsApi - object-oriented interface
 | `Optional` basePath | `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
-**Returns:** [CommonOperationsApi](commonoperationsapi.md)
+**Returns:** [CommonActionsControllerApi](commonactionscontrollerapi.md)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **createNewEmailAddress**(options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1117*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1465*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -118,7 +118,7 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **deleteEmail**(emailId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1126*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1474*
 
 Deletes an email
 
@@ -143,7 +143,7 @@ Deletes an email
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -161,7 +161,7 @@ ___
 
 ▸ **deleteEmailAddress**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1135*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1483*
 
 Deletes an inbox
 
@@ -169,7 +169,7 @@ Deletes an inbox
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -187,7 +187,7 @@ ___
 
 ▸ **emptyInbox**(inboxId: *`string`*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1144*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1492*
 
 Deletes all emails
 
@@ -195,7 +195,7 @@ Deletes all emails
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **sendEmailSimple**(sendEmailOptions: *[SendEmailOptions](../interfaces/sendemailoptions.md)*, options?: *`any`*): `Promise`<`Response`>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1153*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1501*
 
 To specify an email address first create an inbox and use that with the other send email methods
 
@@ -221,7 +221,7 @@ To specify an email address first create an inbox and use that with the other se
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **waitForEmailCount**(count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1164*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1512*
 
 Will only wait if count is greater that the found emails in given inbox.If you need to wait for an email for a non-empty inbox see the other receive methods.
 
@@ -247,7 +247,7 @@ Will only wait if count is greater that the found emails in given inbox.If you n
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **waitForLatestEmail**(inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1174*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1522*
 
 Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox see the other receive methods.
 
@@ -275,7 +275,7 @@ Will return either the last received email or wait for an email to arrive and re
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -294,7 +294,7 @@ ___
 
 ▸ **waitForMatchingEmail**(matchOptions: *[MatchOptions](../interfaces/matchoptions.md)*, count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1186*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1534*
 
 Results must also meet provided count. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
 
@@ -302,7 +302,7 @@ Results must also meet provided count. Match options allow simple CONTAINS or EQ
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 
@@ -323,13 +323,13 @@ ___
 
 ▸ **waitForNthEmail**(inboxId?: *`string`*, index?: *`number`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1197*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1545*
 
 *__summary__*: Wait for or fetch the email with a given index in the inbox specified
 
 *__throws__*: {RequiredError}
 
-*__memberof__*: CommonOperationsApi
+*__memberof__*: CommonActionsControllerApi
 
 **Parameters:**
 

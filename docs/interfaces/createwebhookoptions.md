@@ -28,7 +28,7 @@
 
 **● basicAuth**: *[BasicAuthOptions](basicauthoptions.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:125*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:150*
 
 *__type__*: {BasicAuthOptions}
 
@@ -41,7 +41,7 @@ ___
 
 **● name**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:137*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:162*
 
 *__type__*: {string}
 
@@ -54,7 +54,7 @@ ___
 
 **● url**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:131*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:156*
 
 Public URL (including protocol) that MailSlurp can post WebhookNotificationObjects to when an email is received
 

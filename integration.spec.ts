@@ -19,7 +19,7 @@ const callOptions = {
 
 jest.mock('mailslurp-swagger-sdk-ts', () => {
     return {
-        CommonOperationsApi: function() {
+        CommonActionsControllerApi: function() {
             return {
                 createNewEmailAddress,
                 sendEmailSimple,
@@ -29,11 +29,24 @@ jest.mock('mailslurp-swagger-sdk-ts', () => {
                 waitForEmailCount,
             };
         },
-        ExtraOperationsApi: function() {
+        EmailControllerApi: function() {
             return {
                 getEmailsPaginated,
-                createInbox,
             };
+        },
+        InboxControllerApi: function() {
+            return {
+                createInbox,
+            }
+        },
+        DomainControllerApi: function() {
+            return {}
+        },
+        AttachmentControllerApi: function() {
+            return {}
+        },
+        BulkActionsControllerApi: function() {
+            return {}
         },
     };
 });

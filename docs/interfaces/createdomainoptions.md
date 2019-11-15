@@ -28,7 +28,7 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 **● domain**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:112*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:137*
 
 The top level domain you wish to use with MailSlurp
 

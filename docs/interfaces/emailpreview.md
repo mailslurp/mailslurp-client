@@ -34,7 +34,7 @@ Preview of an email message. For full message call the email endpoints with the 
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:372*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:397*
 
 *__type__*: {Array}
 
@@ -47,7 +47,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:378*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:403*
 
 *__type__*: {Array}
 
@@ -60,7 +60,7 @@ ___
 
 **● created**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:384*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:409*
 
 *__type__*: {Date}
 
@@ -73,7 +73,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:390*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:415*
 
 *__type__*: {Date}
 
@@ -86,7 +86,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:396*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:421*
 
 ID of the Email.
 
@@ -101,7 +101,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:402*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:427*
 
 *__type__*: {string}
 
@@ -114,7 +114,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:408*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:433*
 
 *__type__*: {Array}
 

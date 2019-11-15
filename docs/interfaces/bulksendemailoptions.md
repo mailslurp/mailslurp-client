@@ -29,7 +29,7 @@ Bulk sending options
 
 **● inboxIds**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:93*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:118*
 
 Inboxes to send from
 
@@ -44,7 +44,7 @@ ___
 
 **● sendEmailOptions**: *[SendEmailOptions](sendemailoptions.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:99*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:124*
 
 *__type__*: {SendEmailOptions}
 

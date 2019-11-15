@@ -35,7 +35,7 @@
 
 **● content**: *`Array`<[EmailProjection](emailprojection.md)>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:589*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:645*
 
 *__type__*: {Array}
 
@@ -48,7 +48,7 @@ ___
 
 **● first**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:595*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:651*
 
 *__type__*: {boolean}
 
@@ -61,7 +61,7 @@ ___
 
 **● last**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:601*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:657*
 
 *__type__*: {boolean}
 
@@ -74,7 +74,7 @@ ___
 
 **● number**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:607*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:663*
 
 *__type__*: {number}
 
@@ -87,7 +87,7 @@ ___
 
 **● numberOfElements**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:613*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:669*
 
 *__type__*: {number}
 
@@ -100,7 +100,7 @@ ___
 
 **● pageable**: *[Pageable](pageable.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:619*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:675*
 
 *__type__*: {Pageable}
 
@@ -113,7 +113,7 @@ ___
 
 **● size**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:625*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:681*
 
 *__type__*: {number}
 
@@ -126,7 +126,7 @@ ___
 
 **● sort**: *[Sort](sort.md)*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:631*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:687*
 
 *__type__*: {Sort}
 
@@ -139,7 +139,7 @@ ___
 
 **● totalElements**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:637*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:693*
 
 *__type__*: {number}
 
@@ -152,7 +152,7 @@ ___
 
 **● totalPages**: *`number`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:643*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:699*
 
 *__type__*: {number}
 
