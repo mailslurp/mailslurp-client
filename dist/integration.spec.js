@@ -60,7 +60,7 @@ var callOptions = {
 };
 jest.mock('mailslurp-swagger-sdk-ts', function () {
     return {
-        CommonOperationsApi: function () {
+        CommonActionsControllerApi: function () {
             return {
                 createNewEmailAddress: createNewEmailAddress,
                 sendEmailSimple: sendEmailSimple,
@@ -70,11 +70,24 @@ jest.mock('mailslurp-swagger-sdk-ts', function () {
                 waitForEmailCount: waitForEmailCount,
             };
         },
-        ExtraOperationsApi: function () {
+        EmailControllerApi: function () {
             return {
                 getEmailsPaginated: getEmailsPaginated,
+            };
+        },
+        InboxControllerApi: function () {
+            return {
                 createInbox: createInbox,
             };
+        },
+        DomainControllerApi: function () {
+            return {};
+        },
+        AttachmentControllerApi: function () {
+            return {};
+        },
+        BulkActionsControllerApi: function () {
+            return {};
         },
     };
 });

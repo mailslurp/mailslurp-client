@@ -32,7 +32,7 @@
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:150*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:175*
 
 *__type__*: {Date}
 
@@ -45,7 +45,7 @@ ___
 
 **● domain**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:156*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:181*
 
 *__type__*: {string}
 
@@ -58,7 +58,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:162*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:187*
 
 *__type__*: {string}
 
@@ -71,7 +71,7 @@ ___
 
 **● updatedAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:168*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:193*
 
 *__type__*: {Date}
 
@@ -84,7 +84,7 @@ ___
 
 **● userId**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:174*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:199*
 
 *__type__*: {string}
 
@@ -97,7 +97,7 @@ ___
 
 **● verificationToken**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:180*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:205*
 
 *__type__*: {string}
 
@@ -110,7 +110,7 @@ ___
 
 **● verified**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:186*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:211*
 
 *__type__*: {boolean}
 

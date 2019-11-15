@@ -10,9 +10,17 @@
 
 **BaseAPI**
 
-↳  [CommonOperationsApi](commonoperationsapi.md)
+↳  [AttachmentControllerApi](attachmentcontrollerapi.md)
 
-↳  [ExtraOperationsApi](extraoperationsapi.md)
+↳  [BulkActionsControllerApi](bulkactionscontrollerapi.md)
+
+↳  [CommonActionsControllerApi](commonactionscontrollerapi.md)
+
+↳  [DomainControllerApi](domaincontrollerapi.md)
+
+↳  [EmailControllerApi](emailcontrollerapi.md)
+
+↳  [InboxControllerApi](inboxcontrollerapi.md)
 
 ## Index
 

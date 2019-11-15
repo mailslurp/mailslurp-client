@@ -30,7 +30,7 @@ Preview object for domain entity
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:199*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:224*
 
 *__type__*: {Date}
 
@@ -43,7 +43,7 @@ ___
 
 **● domain**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:205*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:230*
 
 *__type__*: {string}
 
@@ -56,7 +56,7 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:211*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:236*
 
 *__type__*: {string}
 

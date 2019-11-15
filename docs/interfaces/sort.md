@@ -27,7 +27,7 @@
 
 **● sorted**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:772*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:895*
 
 *__type__*: {boolean}
 
@@ -40,7 +40,7 @@ ___
 
 **● unsorted**: *`boolean`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:778*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:901*
 
 *__type__*: {boolean}
 

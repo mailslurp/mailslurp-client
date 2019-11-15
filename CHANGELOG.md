@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.7.0]
+### Added
+- Add new controllers and tests. Add pagination supprot
+
 ## [6.6.0]
 ### Added
 - Bump underlying swagger dependency to 6.0.0

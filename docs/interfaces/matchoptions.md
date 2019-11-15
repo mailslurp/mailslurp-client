@@ -28,7 +28,7 @@ Optional filter for matching emails based on fields
 
 **● matches**: *`Array`<[MatchOption](../modules/matchoption.md)>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:576*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:632*
 
 1 or more match options. Options are additive so if one does not match the email is excluded from results
 

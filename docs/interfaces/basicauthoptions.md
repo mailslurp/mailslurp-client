@@ -27,7 +27,7 @@
 
 **● password**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:80*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:105*
 
 *__type__*: {string}
 
@@ -40,7 +40,7 @@ ___
 
 **● username**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:74*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:99*
 
 *__type__*: {string}
 

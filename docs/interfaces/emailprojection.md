@@ -14,10 +14,12 @@
 
 ### Properties
 
+* [attachments](emailprojection.md#attachments)
 * [bcc](emailprojection.md#bcc)
 * [cc](emailprojection.md#cc)
 * [createdAt](emailprojection.md#createdat)
 * [id](emailprojection.md#id)
+* [inboxId](emailprojection.md#inboxid)
 * [subject](emailprojection.md#subject)
 * [to](emailprojection.md#to)
 
@@ -25,13 +27,26 @@
 
 ## Properties
 
+<a id="attachments"></a>
+
+###  attachments
+
+**● attachments**: *`Array`<`string`>*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:446*
+
+*__type__*: {Array}
+
+*__memberof__*: EmailProjection
+
+___
 <a id="bcc"></a>
 
 ### `<Optional>` bcc
 
 **● bcc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:421*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:452*
 
 *__type__*: {Array}
 
@@ -44,7 +59,7 @@ ___
 
 **● cc**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:427*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:458*
 
 *__type__*: {Array}
 
@@ -57,7 +72,7 @@ ___
 
 **● createdAt**: *`Date`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:433*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:464*
 
 *__type__*: {Date}
 
@@ -70,7 +85,20 @@ ___
 
 **● id**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:439*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:470*
+
+*__type__*: {string}
+
+*__memberof__*: EmailProjection
+
+___
+<a id="inboxid"></a>
+
+###  inboxId
+
+**● inboxId**: *`string`*
+
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:476*
 
 *__type__*: {string}
 
@@ -83,7 +111,7 @@ ___
 
 **● subject**: *`string`*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:445*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:482*
 
 *__type__*: {string}
 
@@ -96,7 +124,7 @@ ___
 
 **● to**: *`Array`<`string`>*
 
-*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:451*
+*Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:488*
 
 *__type__*: {Array}
 
