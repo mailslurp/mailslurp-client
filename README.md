@@ -44,8 +44,12 @@ const { subject, body } = await mailslurp.waitForLatestEmail(id);
 
 // send email from inbox
 await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
+
+// SEE DOCUMENTATION FOR ALL METHODS
 ```
-> [See documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md).
+
+## Documentation
+This repository contains [documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md). The client closely resembles the REST API. The REST API has detailed documentation at [docs.mailslurp.com](https://docs.mailslurp.com).
 
 ## Other Clients
 You can find [more MailSlurp SDKs](https://www.mailslurp.com/developers/integrations/) on our website. If you wish to call the REST API directly please see the [HTTP Documentation](https://docs.mailslurp.com).
@@ -54,7 +58,7 @@ You can find [more MailSlurp SDKs](https://www.mailslurp.com/developers/integrat
 See [CHANGELOG.md](https://github.com/mailslurp/mailslurp-client/blob/master/CHANGELOG.md).
 
 ## Issues
-Please [open an issue](https://github.com/mailslurp/mailslurp-client/issues).
+Please [email support](mailto:contact@mailslurp.dev) and include a sample of the code you are using. Alternatively you can start a [chat with our developers](https://drift.me/mailslurp) (note: responses may be asynchronous).
 
 ## License
 [MIT](./LICENSE)
