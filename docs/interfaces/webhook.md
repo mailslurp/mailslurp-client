@@ -31,7 +31,7 @@ Representation of a webhook for an inbox.
 
 ### `<Optional>` basicAuth
 
-**● basicAuth**: *`boolean`*
+**● basicAuth**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:939*
 
@@ -59,7 +59,7 @@ ___
 
 ### `<Optional>` id
 
-**● id**: *`string`*
+**● id**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:951*
 
@@ -74,7 +74,7 @@ ___
 
 ### `<Optional>` inboxId
 
-**● inboxId**: *`string`*
+**● inboxId**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:957*
 
@@ -89,7 +89,7 @@ ___
 
 ### `<Optional>` name
 
-**● name**: *`string`*
+**● name**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:963*
 

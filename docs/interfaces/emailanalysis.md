@@ -30,7 +30,7 @@ Analysis of email
 
 ### `<Optional>` dkimVerdict
 
-**● dkimVerdict**: *`string`*
+**● dkimVerdict**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:360*
 
@@ -43,7 +43,7 @@ ___
 
 ### `<Optional>` dmarcVerdict
 
-**● dmarcVerdict**: *`string`*
+**● dmarcVerdict**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:366*
 
@@ -56,7 +56,7 @@ ___
 
 ### `<Optional>` spamVerdict
 
-**● spamVerdict**: *`string`*
+**● spamVerdict**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:372*
 
@@ -69,7 +69,7 @@ ___
 
 ### `<Optional>` spfVerdict
 
-**● spfVerdict**: *`string`*
+**● spfVerdict**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:378*
 
@@ -82,7 +82,7 @@ ___
 
 ### `<Optional>` virusVerdict
 
-**● virusVerdict**: *`string`*
+**● virusVerdict**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:384*
 

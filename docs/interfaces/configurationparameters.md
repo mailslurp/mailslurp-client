@@ -63,7 +63,7 @@ ___
 
 ### `<Optional>` basePath
 
-**● basePath**: *`string`*
+**● basePath**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:17*
 
@@ -72,7 +72,7 @@ ___
 
 ### `<Optional>` password
 
-**● password**: *`string`*
+**● password**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:15*
 
@@ -81,7 +81,7 @@ ___
 
 ### `<Optional>` username
 
-**● username**: *`string`*
+**● username**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/configuration.d.ts:14*
 

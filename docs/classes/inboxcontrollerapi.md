@@ -49,7 +49,7 @@ InboxControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new InboxControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [InboxControllerApi](inboxcontrollerapi.md)
+⊕ **new InboxControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [InboxControllerApi](inboxcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -60,7 +60,7 @@ InboxControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [InboxControllerApi](inboxcontrollerapi.md)
@@ -109,7 +109,7 @@ ___
 
 ###  createInbox
 
-▸ **createInbox**(emailAddress?: *`string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
+▸ **createInbox**(emailAddress?: *`undefined` \| `string`*, options?: *`any`*): `Promise`<[Inbox](../interfaces/inbox.md)>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:2272*
 
@@ -125,7 +125,7 @@ Create a new inbox and with a ranmdomized email address to send and receive from
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` emailAddress | `string` |
+| `Optional` emailAddress | `undefined` \| `string` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Inbox](../interfaces/inbox.md)>
@@ -213,7 +213,7 @@ ___
 
 ###  getAllInboxes
 
-▸ **getAllInboxes**(page?: *`number`*, size?: *`number`*, options?: *`any`*): `Promise`<[PageInboxProjection](../interfaces/pageinboxprojection.md)>
+▸ **getAllInboxes**(page?: *`undefined` \| `number`*, size?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[PageInboxProjection](../interfaces/pageinboxprojection.md)>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:2311*
 
@@ -229,8 +229,8 @@ List inboxes in paginated form
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` page | `number` |
-| `Optional` size | `number` |
+| `Optional` page | `undefined` \| `number` |
+| `Optional` size | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[PageInboxProjection](../interfaces/pageinboxprojection.md)>
@@ -240,7 +240,7 @@ ___
 
 ###  getEmails
 
-▸ **getEmails**(inboxId: *`string`*, limit?: *`number`*, minCount?: *`number`*, retryTimeout?: *`number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
+▸ **getEmails**(inboxId: *`string`*, limit?: *`undefined` \| `number`*, minCount?: *`undefined` \| `number`*, retryTimeout?: *`undefined` \| `number`*, since?: *`Date`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:2324*
 
@@ -257,9 +257,9 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | inboxId | `string` |  Id of inbox that emails belongs to |
-| `Optional` limit | `number` |
-| `Optional` minCount | `number` |
-| `Optional` retryTimeout | `number` |
+| `Optional` limit | `undefined` \| `number` |
+| `Optional` minCount | `undefined` \| `number` |
+| `Optional` retryTimeout | `undefined` \| `number` |
 | `Optional` since | `Date` |
 | `Optional` options | `any` |
 

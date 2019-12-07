@@ -43,7 +43,7 @@ DomainControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new DomainControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [DomainControllerApi](domaincontrollerapi.md)
+⊕ **new DomainControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [DomainControllerApi](domaincontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -54,7 +54,7 @@ DomainControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [DomainControllerApi](domaincontrollerapi.md)

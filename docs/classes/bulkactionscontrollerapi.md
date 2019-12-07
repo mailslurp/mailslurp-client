@@ -42,7 +42,7 @@ BulkActionsControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new BulkActionsControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [BulkActionsControllerApi](bulkactionscontrollerapi.md)
+⊕ **new BulkActionsControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [BulkActionsControllerApi](bulkactionscontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -53,7 +53,7 @@ BulkActionsControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [BulkActionsControllerApi](bulkactionscontrollerapi.md)

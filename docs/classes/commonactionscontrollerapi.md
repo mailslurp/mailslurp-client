@@ -48,7 +48,7 @@ CommonActionsControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new CommonActionsControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [CommonActionsControllerApi](commonactionscontrollerapi.md)
+⊕ **new CommonActionsControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [CommonActionsControllerApi](commonactionscontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -59,7 +59,7 @@ CommonActionsControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [CommonActionsControllerApi](commonactionscontrollerapi.md)
@@ -237,7 +237,7 @@ ___
 
 ###  waitForEmailCount
 
-▸ **waitForEmailCount**(count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
+▸ **waitForEmailCount**(count?: *`undefined` \| `number`*, inboxId?: *`undefined` \| `string`*, timeout?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1512*
 
@@ -253,9 +253,9 @@ Will only wait if count is greater that the found emails in given inbox.If you n
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` count | `number` |
-| `Optional` inboxId | `string` |
-| `Optional` timeout | `number` |
+| `Optional` count | `undefined` \| `number` |
+| `Optional` inboxId | `undefined` \| `string` |
+| `Optional` timeout | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
@@ -265,7 +265,7 @@ ___
 
 ###  waitForLatestEmail
 
-▸ **waitForLatestEmail**(inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
+▸ **waitForLatestEmail**(inboxId?: *`undefined` \| `string`*, timeout?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1522*
 
@@ -281,8 +281,8 @@ Will return either the last received email or wait for an email to arrive and re
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` inboxId | `string` |
-| `Optional` timeout | `number` |
+| `Optional` inboxId | `undefined` \| `string` |
+| `Optional` timeout | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Email](../interfaces/email.md)>
@@ -292,7 +292,7 @@ ___
 
 ###  waitForMatchingEmail
 
-▸ **waitForMatchingEmail**(matchOptions: *[MatchOptions](../interfaces/matchoptions.md)*, count?: *`number`*, inboxId?: *`string`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
+▸ **waitForMatchingEmail**(matchOptions: *[MatchOptions](../interfaces/matchoptions.md)*, count?: *`undefined` \| `number`*, inboxId?: *`undefined` \| `string`*, timeout?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1534*
 
@@ -309,9 +309,9 @@ Results must also meet provided count. Match options allow simple CONTAINS or EQ
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | matchOptions | [MatchOptions](../interfaces/matchoptions.md) |  matchOptions |
-| `Optional` count | `number` |
-| `Optional` inboxId | `string` |
-| `Optional` timeout | `number` |
+| `Optional` count | `undefined` \| `number` |
+| `Optional` inboxId | `undefined` \| `string` |
+| `Optional` timeout | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[EmailPreview](../interfaces/emailpreview.md)[]>
@@ -321,7 +321,7 @@ ___
 
 ###  waitForNthEmail
 
-▸ **waitForNthEmail**(inboxId?: *`string`*, index?: *`number`*, timeout?: *`number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
+▸ **waitForNthEmail**(inboxId?: *`undefined` \| `string`*, index?: *`undefined` \| `number`*, timeout?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[Email](../interfaces/email.md)>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1545*
 
@@ -335,9 +335,9 @@ ___
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` inboxId | `string` |
-| `Optional` index | `number` |
-| `Optional` timeout | `number` |
+| `Optional` inboxId | `undefined` \| `string` |
+| `Optional` index | `undefined` \| `number` |
+| `Optional` timeout | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[Email](../interfaces/email.md)>

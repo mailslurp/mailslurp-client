@@ -82,27 +82,47 @@ function wrapCall(tag, fn) {
 /**
  *  Official MailSlurp Client
  *
- *  Installing
+ *  This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
+ *
+ *  ## Features
+ *  - Create email addresses on demand
+ *  - Receive emails and attachments in code
+ *  - Send emails and attachments
+ *  - Create custom domains and webhooks
+ *
+ *  ## Prerequisites
+ *  MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
+ *
+ *  ## Installing
  *  `npm install --save mailslurp-client`
  *
- *  Import ES6
+ *  ## Importing
+ *
+ *  ### Import ES6
  *  ```javascript
  *  import { MailSlurp } from 'mailslurp-client'
  *  ```
- *  Require ES5
+ *  ### Require ES5
  *  ```javascript
- *  const MailSlurp = require('mailslurp-client').MailSlurp
+ *  const MailSlurp = require('mailslurp-client').MailSlurp;
+ *  // or default import
+ *  const MailSlurp = require('mailslurp-client').default;
  *  ```
  *
- *  Configure
+ *  ## Configure
  *  ```javascript
  *  const mailslurp = new MailSlurp({ apiKey: "your-api-key" })
  *  const inbox = await mailslurp.createInbox()
  *  ```
  *
- *  **Get an API key at [app.mailslurp.com](https://app.mailslurp.com)**
+ *  ## Next steps
+ *  Now you can use your mailslurp instance to perform actions like sending and receiving emails. See those methods for more information.
  */
 var MailSlurp = /** @class */ (function () {
+    /**
+     * Create a new MailSlurp instance
+     * @param opts
+     */
     function MailSlurp(opts) {
         this.callOptions = {};
         // check options
@@ -112,10 +132,8 @@ var MailSlurp = /** @class */ (function () {
         // set call options if required
         var headers = {
             'x-client': 'mailslurp-client-ts-js',
+            'x-attribution': opts.attribution
         };
-        if (opts.attribution) {
-            headers['x-attribution'] = opts.attribution;
-        }
         this.callOptions['headers'] = headers;
         // instantiate api clients
         var clientConfiguration = { apiKey: opts.apiKey };
@@ -127,10 +145,11 @@ var MailSlurp = /** @class */ (function () {
         this.bulkActionsController = new mailslurp_swagger_sdk_ts_1.BulkActionsControllerApi(clientConfiguration);
     }
     /**
-     * Create a new email address / inbox
+     * Create a new inbox
      *
-     * @remarks
-     * Returns `id` and `emailAddress` of created inbox.
+     * ```typescript
+     * const { id, emailAddress } = await mailslurp.createNewEmailAddress()
+     * ```
      */
     MailSlurp.prototype.createNewEmailAddress = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -145,7 +164,6 @@ var MailSlurp = /** @class */ (function () {
     /**
      * Send an email from a random address
      *
-     * @remarks
      * To send from a known address first create an inbox and then use
      * the sendEmail endpoints.
      *
@@ -163,11 +181,17 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Wait for an email to arrive at an inbox or return first found result
-     *
-     * @remarks
      * Retries the call until at least one email is found or a maximum timeout is exceeded
      *
-     * @param inboxId
+     * ```typescript
+     * try {
+     *   const email = await mailslurp.waitForLatestEmail(inboxId)
+     * } catch (e) {
+     *   // handle timeout or email wasn't received
+     * }
+     * ```
+     *
+     * @param inboxId uuid
      * @param timeout max milliseconds to wait
      */
     MailSlurp.prototype.waitForLatestEmail = function (inboxId, timeout) {
@@ -180,6 +204,21 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
+    /**
+     * Return or wait for email number `n` in an inbox
+     *
+     * ```typescript
+     * try {
+     *   const email3 = await mailslurp.waitForNthEmail(inboxId, 3)
+     * } catch (e) {
+     *   // handle timeout or email wasn't received
+     * }
+     * ```
+     *
+     * @param inboxId
+     * @param index
+     * @param timeout
+     */
     MailSlurp.prototype.waitForNthEmail = function (inboxId, index, timeout) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
@@ -191,10 +230,24 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Wait until both count and match options are met and return list of emails.
+     * Wait until both count and match options are met and return list of emails. Match options are a bit verbose but allow
+     * for type safety on the API end. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
      *
-     * @remarks
-     * Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
+     * ```typescript
+     * try {
+     *   const matchingWelcomeEmails = await mailslurp.waitForMatchingEmails({
+     *     matches: [
+     *       {
+     *         field: 'SUBJECT',
+     *         should: 'CONTAIN',
+     *         value: 'Welcome'
+     *       }
+     *     ]
+     *   }, 1, inboxId)
+     * } catch (e) {
+     *   // handle timeout or no results
+     * }
+     * ```
      *
      * @param matchOptions
      * @param count
@@ -213,6 +266,15 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Wait for and return list of emails with length of given count
+     *
+     * ```typescript
+     * try {
+     *   // wait for 4 emails in an inbox then return them
+     *   const emails = waitForEmailCount(4, inboxId)
+     * } catch (e) {
+     *   // handle error or timeout
+     * }
+     * ```
      * @param count
      * @param inboxId
      * @param timeout
@@ -270,7 +332,25 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Create an inbox / email address
+     * Create an inbox. Pass an optional `emailAddress` to specify the email address. If not argument is passed
+     * MailSlurp will assign the inbox a random email address ending in `@mailslurp.com`.
+     *
+     * ```typescript
+     * // generate a random email address
+     * try {
+     *   const randomizedInbox = await mailslurp.createInbox();
+     * } catch (e) {
+     *   // handle errors
+     * }
+     *
+     * // generate specifc email address
+     * try {
+     *   // note you must verify the domain with MailSlurp before you can create email addresses using it
+     *   const customInbox = await mailslurp.createInbox('myaddress@mydomain.com`)
+     * } catch (e) {
+     *   // handle errors
+     * }
+     * ```
      */
     MailSlurp.prototype.createInbox = function (emailAddress) {
         return __awaiter(this, void 0, void 0, function () {
@@ -353,6 +433,18 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
+     *
+     * ```typescript
+     * try {
+     *   // first get emails for an inbox
+     *   const emails = mailslurp.getEmails(inboxId, { limit: 1 })
+     *   const fullEmail = mailslurp.getEmail(emails[0].id)
+     *   console.log(fullEmail.body, fullEmail.subject) // etc
+     * } catch (e) {
+     *   // handle errors
+     * }
+     * ```
+     *
      * @param inboxId
      * @param args
      */
@@ -368,7 +460,17 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Get a full email from by id
+     * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
+     *
+     * ```typescript
+     * try {
+     *   const fullEmail = mailslurp.getEmail(emailId)
+     *   console.log(fullEmail.body, fullEmail.subject) // etc
+     * } catch (e) {
+     *   // handle errors
+     * }
+     * ```
+     *
      * @param emailId
      */
     MailSlurp.prototype.getEmail = function (emailId) {
@@ -477,9 +579,7 @@ var MailSlurp = /** @class */ (function () {
         });
     };
     /**
-     * Create a webhook for notifications for a given inbox
-     *
-     * When the inbox receives an email your webhook url will be posted a json object containing the email id
+     * Remove a webhook from an inbox
      */
     MailSlurp.prototype.deleteWebhook = function (inboxId, webhookId) {
         return __awaiter(this, void 0, void 0, function () {

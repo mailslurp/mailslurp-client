@@ -42,7 +42,7 @@
 
 ###  constructor
 
-⊕ **new BaseAPI**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [BaseAPI](baseapi.md)
+⊕ **new BaseAPI**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [BaseAPI](baseapi.md)
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:49*
 
@@ -51,7 +51,7 @@
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [BaseAPI](baseapi.md)

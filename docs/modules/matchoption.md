@@ -22,7 +22,7 @@
 
 ### `<Optional>` field
 
-**● field**: *`FieldEnum`*
+**● field**: *`MatchOption.FieldEnum`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:582*
 
@@ -37,7 +37,7 @@ ___
 
 ### `<Optional>` should
 
-**● should**: *`ShouldEnum`*
+**● should**: *`MatchOption.ShouldEnum`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:588*
 
@@ -52,7 +52,7 @@ ___
 
 ### `<Optional>` value
 
-**● value**: *`string`*
+**● value**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:594*
 

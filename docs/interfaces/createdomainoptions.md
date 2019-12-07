@@ -26,7 +26,7 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 ### `<Optional>` domain
 
-**● domain**: *`string`*
+**● domain**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:137*
 

@@ -28,7 +28,7 @@ Options for uploading files for attachments
 
 ### `<Optional>` base64Contents
 
-**● base64Contents**: *`string`*
+**● base64Contents**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:914*
 
@@ -43,7 +43,7 @@ ___
 
 ### `<Optional>` contentType
 
-**● contentType**: *`string`*
+**● contentType**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:920*
 
@@ -58,7 +58,7 @@ ___
 
 ### `<Optional>` filename
 
-**● filename**: *`string`*
+**● filename**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:926*
 

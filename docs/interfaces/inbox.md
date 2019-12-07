@@ -42,7 +42,7 @@ ___
 
 ### `<Optional>` emailAddress
 
-**● emailAddress**: *`string`*
+**● emailAddress**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:538*
 
@@ -57,7 +57,7 @@ ___
 
 ### `<Optional>` id
 
-**● id**: *`string`*
+**● id**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:544*
 
@@ -70,7 +70,7 @@ ___
 
 ### `<Optional>` userId
 
-**● userId**: *`string`*
+**● userId**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:550*
 

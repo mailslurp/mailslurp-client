@@ -29,7 +29,7 @@
 
 ### `<Optional>` offset
 
-**● offset**: *`number`*
+**● offset**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:779*
 
@@ -42,7 +42,7 @@ ___
 
 ### `<Optional>` pageNumber
 
-**● pageNumber**: *`number`*
+**● pageNumber**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:785*
 
@@ -55,7 +55,7 @@ ___
 
 ### `<Optional>` pageSize
 
-**● pageSize**: *`number`*
+**● pageSize**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:791*
 
@@ -68,7 +68,7 @@ ___
 
 ### `<Optional>` paged
 
-**● paged**: *`boolean`*
+**● paged**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:797*
 
@@ -94,7 +94,7 @@ ___
 
 ### `<Optional>` unpaged
 
-**● unpaged**: *`boolean`*
+**● unpaged**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:809*
 

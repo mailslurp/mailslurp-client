@@ -41,7 +41,7 @@ AttachmentControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new AttachmentControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [AttachmentControllerApi](attachmentcontrollerapi.md)
+⊕ **new AttachmentControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [AttachmentControllerApi](attachmentcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -52,7 +52,7 @@ AttachmentControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [AttachmentControllerApi](attachmentcontrollerapi.md)
@@ -127,7 +127,7 @@ ___
 
 ###  uploadMultipartForm
 
-▸ **uploadMultipartForm**(file: *`any`*, contentType?: *`string`*, filename?: *`string`*, options?: *`any`*): `Promise`<`string`[]>
+▸ **uploadMultipartForm**(file: *`any`*, contentType?: *`undefined` \| `string`*, filename?: *`undefined` \| `string`*, options?: *`any`*): `Promise`<`string`[]>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1069*
 
@@ -144,8 +144,8 @@ When sending emails with attachments first upload each attachment with this endp
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | file | `any` |  file |
-| `Optional` contentType | `string` |
-| `Optional` filename | `string` |
+| `Optional` contentType | `undefined` \| `string` |
+| `Optional` filename | `undefined` \| `string` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`string`[]>

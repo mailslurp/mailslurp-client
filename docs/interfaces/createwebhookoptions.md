@@ -39,7 +39,7 @@ ___
 
 ### `<Optional>` name
 
-**● name**: *`string`*
+**● name**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:162*
 
@@ -52,7 +52,7 @@ ___
 
 ### `<Optional>` url
 
-**● url**: *`string`*
+**● url**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:156*
 

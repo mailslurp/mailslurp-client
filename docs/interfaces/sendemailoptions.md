@@ -66,7 +66,7 @@ ___
 
 ### `<Optional>` body
 
-**● body**: *`string`*
+**● body**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:834*
 
@@ -96,7 +96,7 @@ ___
 
 ### `<Optional>` charset
 
-**● charset**: *`string`*
+**● charset**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:846*
 
@@ -111,7 +111,7 @@ ___
 
 ### `<Optional>` from
 
-**● from**: *`string`*
+**● from**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:852*
 
@@ -126,7 +126,7 @@ ___
 
 ### `<Optional>` html
 
-**● html**: *`boolean`*
+**● html**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:858*
 
@@ -139,7 +139,7 @@ ___
 
 ### `<Optional>` replyTo
 
-**● replyTo**: *`string`*
+**● replyTo**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:864*
 
@@ -154,7 +154,7 @@ ___
 
 ### `<Optional>` subject
 
-**● subject**: *`string`*
+**● subject**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:870*
 

@@ -84,7 +84,7 @@ ___
 
 ### `<Optional>` id
 
-**● id**: *`string`*
+**● id**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:421*
 
@@ -99,7 +99,7 @@ ___
 
 ### `<Optional>` subject
 
-**● subject**: *`string`*
+**● subject**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:427*
 

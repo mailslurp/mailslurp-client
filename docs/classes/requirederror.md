@@ -36,7 +36,7 @@
 
 ###  constructor
 
-⊕ **new RequiredError**(field: *`string`*, msg?: *`string`*): [RequiredError](requirederror.md)
+⊕ **new RequiredError**(field: *`string`*, msg?: *`undefined` \| `string`*): [RequiredError](requirederror.md)
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:60*
 
@@ -45,7 +45,7 @@
 | Name | Type |
 | ------ | ------ |
 | field | `string` |
-| `Optional` msg | `string` |
+| `Optional` msg | `undefined` \| `string` |
 
 **Returns:** [RequiredError](requirederror.md)
 
@@ -88,7 +88,7 @@ ___
 
 ### `<Optional>` stack
 
-**● stack**: *`string`*
+**● stack**: *`undefined` \| `string`*
 
 *Inherited from Error.stack*
 

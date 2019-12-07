@@ -46,7 +46,7 @@ ___
 
 ### `<Optional>` first
 
-**● first**: *`boolean`*
+**● first**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:718*
 
@@ -59,7 +59,7 @@ ___
 
 ### `<Optional>` last
 
-**● last**: *`boolean`*
+**● last**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:724*
 
@@ -72,7 +72,7 @@ ___
 
 ### `<Optional>` number
 
-**● number**: *`number`*
+**● number**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:730*
 
@@ -85,7 +85,7 @@ ___
 
 ### `<Optional>` numberOfElements
 
-**● numberOfElements**: *`number`*
+**● numberOfElements**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:736*
 
@@ -111,7 +111,7 @@ ___
 
 ### `<Optional>` size
 
-**● size**: *`number`*
+**● size**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:748*
 
@@ -137,7 +137,7 @@ ___
 
 ### `<Optional>` totalElements
 
-**● totalElements**: *`number`*
+**● totalElements**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:760*
 
@@ -150,7 +150,7 @@ ___
 
 ### `<Optional>` totalPages
 
-**● totalPages**: *`number`*
+**● totalPages**: *`undefined` \| `number`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:766*
 

@@ -46,7 +46,7 @@ EmailControllerApi - object-oriented interface
 
 ###  constructor
 
-⊕ **new EmailControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [EmailControllerApi](emailcontrollerapi.md)
+⊕ **new EmailControllerApi**(configuration?: *[Configuration](configuration.md)*, basePath?: *`undefined` \| `string`*, fetch?: *[FetchAPI](../interfaces/fetchapi.md)*): [EmailControllerApi](emailcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
@@ -57,7 +57,7 @@ EmailControllerApi - object-oriented interface
 | Name | Type |
 | ------ | ------ |
 | `Optional` configuration | [Configuration](configuration.md) |
-| `Optional` basePath | `string` |
+| `Optional` basePath | `undefined` \| `string` |
 | `Optional` fetch | [FetchAPI](../interfaces/fetchapi.md) |
 
 **Returns:** [EmailControllerApi](emailcontrollerapi.md)
@@ -132,7 +132,7 @@ ___
 
 ###  downloadAttachment
 
-▸ **downloadAttachment**(attachmentId: *`string`*, emailId: *`string`*, apiKey?: *`string`*, options?: *`any`*): `Promise`<`Response`>
+▸ **downloadAttachment**(attachmentId: *`string`*, emailId: *`string`*, apiKey?: *`undefined` \| `string`*, options?: *`any`*): `Promise`<`Response`>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1928*
 
@@ -150,7 +150,7 @@ Returns the specified attachment for a given email as a byte stream (file downlo
 | ------ | ------ | ------ |
 | attachmentId | `string` |  attachmentId |
 | emailId | `string` |  emailId |
-| `Optional` apiKey | `string` |
+| `Optional` apiKey | `undefined` \| `string` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<`Response`>
@@ -240,7 +240,7 @@ ___
 
 ###  getEmailsPaginated
 
-▸ **getEmailsPaginated**(page?: *`number`*, size?: *`number`*, options?: *`any`*): `Promise`<[PageEmailProjection](../interfaces/pageemailprojection.md)>
+▸ **getEmailsPaginated**(page?: *`undefined` \| `number`*, size?: *`undefined` \| `number`*, options?: *`any`*): `Promise`<[PageEmailProjection](../interfaces/pageemailprojection.md)>
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:1967*
 
@@ -256,8 +256,8 @@ Responses are paginated
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` page | `number` |
-| `Optional` size | `number` |
+| `Optional` page | `undefined` \| `number` |
+| `Optional` size | `undefined` \| `number` |
 | `Optional` options | `any` |
 
 **Returns:** `Promise`<[PageEmailProjection](../interfaces/pageemailprojection.md)>

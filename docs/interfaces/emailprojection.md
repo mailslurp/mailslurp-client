@@ -109,7 +109,7 @@ ___
 
 ### `<Optional>` subject
 
-**● subject**: *`string`*
+**● subject**: *`undefined` \| `string`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:482*
 

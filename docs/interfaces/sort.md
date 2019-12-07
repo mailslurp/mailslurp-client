@@ -25,7 +25,7 @@
 
 ### `<Optional>` sorted
 
-**● sorted**: *`boolean`*
+**● sorted**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:895*
 
@@ -38,7 +38,7 @@ ___
 
 ### `<Optional>` unsorted
 
-**● unsorted**: *`boolean`*
+**● unsorted**: *`undefined` \| `false` \| `true`*
 
 *Defined in node_modules/mailslurp-swagger-sdk-ts/dist/api.d.ts:901*
 
