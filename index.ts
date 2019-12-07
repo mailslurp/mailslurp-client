@@ -85,38 +85,60 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
  *  - Send emails and attachments
  *  - Create custom domains and webhooks
  *
- * ## Prerequisites
+ * ## Get started
  *
  * MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
  *
  * ## Installing
+ * First you'll need to install the MailSlurp package from [npm](https://npmjs.com/package/mailslurp-client).
  *
  * `npm install --save mailslurp-client`
  *
  * ## Importing
+ * Next import the client into your application or test.
  *
- * ### Import ES6
+ * #### Typescript or ES6
  *
  * [[include: import.md]]
  *
- * ### Require ES5
+ * #### NodeJS require
  *
  * [[include: require.md]]
  *
  * ## Configure
+ * Next configure an instance of MailSlurp using your API Key.
  *
  * [[include: configure.md]]
  *
- * ## Next steps
+ * ## Example usage
+ * Now that you have a configured client you can use it to interact with MailSlurp. Here are some common examples:
  *
- * ### Creating an inbox
+ * #### Create an inbox
  * [[include: create-inbox.md]]
  *
- * ### Sending an email
+ * #### List your inboxes
+ * [[include: list-inboxes.md]]
+ *
+ * #### List emails in an inbox
+ * [[include: list-emails.md]]
+ *
+ * #### Get an email
+ * One way to receive an email is to fetch it by ID. You can find an emails ID by listing the emails in an inbox.
+ * [[include: get-email.md]]
+ *
+ * #### WaitFor methods
+ * Another way to receive an email is by using a `waitFor` method. WaitFor methods hold open a connection until a condition is met.
+ * This is useful for situation in which an email has been sent and you expect it to arrive within a given time period.
+ * [[include wait-for-methods.md]]
+ *
+ * #### WaitFor in action
+ * Here is an example of a `waitFor` method in action.
+ * [[include wait-for-test.md]]
+ *
+ * #### Send an email
  * [[include: send-email.md]]
  *
- * ### Listing emails in an inbox
- * [[include: list-emails.md]]
+ * > See the methods below for more details.
  */
 export class MailSlurp {
     private commonActionsController: CommonActionsControllerApi;
