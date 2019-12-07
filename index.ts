@@ -129,16 +129,17 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
  * #### WaitFor methods
  * Another way to receive an email is by using a `waitFor` method. WaitFor methods hold open a connection until a condition is met.
  * This is useful for situation in which an email has been sent and you expect it to arrive within a given time period.
- * [[include wait-for-methods.md]]
+ * [[include: wait-for-methods.md]]
  *
  * #### WaitFor in action
  * Here is an example of a `waitFor` method in action.
- * [[include wait-for-test.md]]
+ * [[include: wait-for-test.md]]
  *
  * #### Send an email
  * [[include: send-email.md]]
  *
- * > See the methods below for more details.
+ * ## Next steps
+ * See the methods below for more details.
  */
 export class MailSlurp {
     private commonActionsController: CommonActionsControllerApi;
