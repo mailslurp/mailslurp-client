@@ -16,26 +16,31 @@ This project contains the official and recommend MailSlurp SDK Client for Node, 
 
 ## Getting Started
 
-|    | **Resources** |
-|----|---------------|
-| 📦 | [NPM Module](https://www.npmjs.com/package/mailslurp-client) |
-| 📖 | [Documentation](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md) |
-| ✍️  | [Examples](https://github.com/mailslurp/examples) |
-| 🎓 | [Developer Portal](https://www.mailslurp.com/developers/)                |
-| 🔑 | [Get API Key](https://app.mailslurp.com/sign-up/)                   |
-| ⚠️  | [Report an issue](https://github.com/mailslurp/mailslurp-client/issues) | 
+- [Documentation](https://docs.mailslurp.com/)
+- [Create free account](https://docs.mailslurp.com/)
 
-## Examples
-
+## Install
 ```
 npm install --save mailslurp-client
 ```
 
-```javascript
-// instantiate client
-const MailSlurp = require('mailslurp-client').default;
-const mailslurp = new MailSlurp({ apiKey: 'XXXXX' });
+## Import client
+```typescript
+// ES6 import
+import { MailSlurp } from "mailslurp-client";
 
+// ES5 require
+const MailSlurp = require('mailslurp-client').default;
+```
+
+## Instantiate
+```typescript
+const mailslurp = new MailSlurp({ apiKey: 'your-api-key' });
+```
+
+## Examples
+Here are some quick examples:
+```javascript
 // create a new email address
 const { emailAddress, id } = await mailslurp.createInbox();
 
@@ -44,12 +49,13 @@ const { subject, body } = await mailslurp.waitForLatestEmail(id);
 
 // send email from inbox
 await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
-
-// SEE DOCUMENTATION FOR ALL METHODS
 ```
+See the documentation for more methods and examples.
 
 ## Documentation
-This repository contains [documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md). The client closely resembles the REST API. The REST API has detailed documentation at [docs.mailslurp.com](https://docs.mailslurp.com).
+See [docs.mailslurp.com](https://docs.mailslurp.com) for full documentation and examples.
+
+This repository also contains [documentation for all methods](https://github.com/mailslurp/mailslurp-client/blob/master/docs/classes/mailslurp.md). The client closely resembles the REST API. The REST API has detailed documentation at [docs.mailslurp.com](https://docs.mailslurp.com).
 
 ## Other Clients
 You can find [more MailSlurp SDKs](https://www.mailslurp.com/developers/integrations/) on our website. If you wish to call the REST API directly please see the [HTTP Documentation](https://docs.mailslurp.com).
