@@ -74,49 +74,49 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
 }
 
 /**
- *  Official MailSlurp Client
+ * Official MailSlurp Client
  *
- *  This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
+ * This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
  *
- *  ## Features
+ * ## Features
  *
  *  - Create email addresses on demand
  *  - Receive emails and attachments in code
  *  - Send emails and attachments
  *  - Create custom domains and webhooks
  *
- *  ## Prerequisites
+ * ## Prerequisites
  *
- *  MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
+ * MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
  *
- *  ## Installing
+ * ## Installing
  *
- *  `npm install --save mailslurp-client`
+ * `npm install --save mailslurp-client`
  *
- *  ## Importing
+ * ## Importing
  *
- *  ### Import ES6
+ * ### Import ES6
  *
  * [[include: import.md]]
  *
- *  ### Require ES5
+ * ### Require ES5
  *
- *  [[include: require.md]]
+ * [[include: require.md]]
  *
- *  ## Configure
+ * ## Configure
  *
- *  [[include: configure.md]]
+ * [[include: configure.md]]
  *
- *  ## Next steps
+ * ## Next steps
  *
- *  ### Creating an inbox
- *  [[include: create-inbox.md]]
+ * ### Creating an inbox
+ * [[include: create-inbox.md]]
  *
- *  ### Sending an email
- *  [[include: send-email.md]]
+ * ### Sending an email
+ * [[include: send-email.md]]
  *
- *  ### Listing emails in an inbox
- *  [[include: list-emails.md]]
+ * ### Listing emails in an inbox
+ * [[include: list-emails.md]]
  */
 export class MailSlurp {
     private commonActionsController: CommonActionsControllerApi;

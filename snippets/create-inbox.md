@@ -6,7 +6,7 @@ try {
   // handle errors
 }
 
-// generate specifc email address ending in `@<yourdomain>`
+// generate specific email address ending in `@<yourdomain>`
 // note you must verify the domain with MailSlurp before 
 // you can create email addresses using it
 try {
