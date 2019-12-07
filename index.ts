@@ -79,38 +79,44 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
  *  This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
  *
  *  ## Features
+ *
  *  - Create email addresses on demand
  *  - Receive emails and attachments in code
  *  - Send emails and attachments
  *  - Create custom domains and webhooks
  *
  *  ## Prerequisites
+ *
  *  MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
  *
  *  ## Installing
+ *
  *  `npm install --save mailslurp-client`
  *
  *  ## Importing
  *
  *  ### Import ES6
- *  ```javascript
- *  import { MailSlurp } from 'mailslurp-client'
- *  ```
+ *
+ * [[include: import.md]]
+ *
  *  ### Require ES5
- *  ```javascript
- *  const MailSlurp = require('mailslurp-client').MailSlurp;
- *  // or default import
- *  const MailSlurp = require('mailslurp-client').default;
- *  ```
+ *
+ *  [[include: require.md]]
  *
  *  ## Configure
- *  ```javascript
- *  const mailslurp = new MailSlurp({ apiKey: "your-api-key" })
- *  const inbox = await mailslurp.createInbox()
- *  ```
+ *
+ *  [[include: configure.md]]
  *
  *  ## Next steps
- *  Now you can use your mailslurp instance to perform actions like sending and receiving emails. See those methods for more information.
+ *
+ *  ### Creating an inbox
+ *  [[include: create-inbox.md]]
+ *
+ *  ### Sending an email
+ *  [[include: send-email.md]]
+ *
+ *  ### Listing emails in an inbox
+ *  [[include: list-emails.md]]
  */
 export class MailSlurp {
     private commonActionsController: CommonActionsControllerApi;
@@ -327,22 +333,7 @@ export class MailSlurp {
      * Create an inbox. Pass an optional `emailAddress` to specify the email address. If not argument is passed
      * MailSlurp will assign the inbox a random email address ending in `@mailslurp.com`.
      *
-     * ```typescript
-     * // generate a random email address
-     * try {
-     *   const randomizedInbox = await mailslurp.createInbox();
-     * } catch (e) {
-     *   // handle errors
-     * }
-     *
-     * // generate specifc email address
-     * try {
-     *   // note you must verify the domain with MailSlurp before you can create email addresses using it
-     *   const customInbox = await mailslurp.createInbox('myaddress@mydomain.com`)
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: create-inbox.md]]
      */
     async createInbox(emailAddress?: string): Promise<Inbox> {
         return wrapCall('createInbox', () =>
@@ -372,6 +363,8 @@ export class MailSlurp {
 
     /**
      * Get all inboxes
+     *
+     * [[include: list-inboxes.md]]
      */
     async getInboxes(): Promise<Inbox[]> {
         return wrapCall('getInboxes', () =>
@@ -403,16 +396,7 @@ export class MailSlurp {
     /**
      * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
      *
-     * ```typescript
-     * try {
-     *   // first get emails for an inbox
-     *   const emails = mailslurp.getEmails(inboxId, { limit: 1 })
-     *   const fullEmail = mailslurp.getEmail(emails[0].id)
-     *   console.log(fullEmail.body, fullEmail.subject) // etc
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: get-emails.md]]
      *
      * @param inboxId
      * @param args
@@ -436,14 +420,7 @@ export class MailSlurp {
     /**
      * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
      *
-     * ```typescript
-     * try {
-     *   const fullEmail = mailslurp.getEmail(emailId)
-     *   console.log(fullEmail.body, fullEmail.subject) // etc
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: get-email.md]]
      *
      * @param emailId
      */
@@ -465,6 +442,8 @@ export class MailSlurp {
 
     /**
      * Send and email from a given inbox
+     *
+     * [[include: send-email.md]]
      * @param inboxId
      * @param sendEmailOptions
      */

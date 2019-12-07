@@ -1,15 +1,19 @@
 {
+    "name": "MailSlurp JS",
     "theme": "markdown",
+    "mode": "file",
     "out": "docs",
-    "exclude": "*.spec.ts",
-    "exclude": "node_modules/types*",
-    "excludeExternals": false,
+    "exclude":"**/node_modules/**",
+    "excludeExternals": true,
     "excludeNotExported": true,
     "excludePrivate": true,
     "hideGenerator": true,
+    "externalPattern": "**/node_modules/**",
+    "ignoreCompilerErrors": true,
+    "external-modulemap": "node_modules/mailslurp-swagger-sdk-ts/.*",
     "includeDeclarations": true,
     "disableOutputCheck": true,
-    "mode": "file",
     "readme": "config/DOC.md",
-    "name": "MailSlurp Client"
+    "includes": "./snippets",
+    "tsconfig": "./tsconfig.json"
 }
