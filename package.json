@@ -1,17 +1,20 @@
 {
   "name": "mailslurp-client",
   "description": "Send and receive emails in code",
-  "version": "6.7.2",
+  "version": "6.7.4",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
   "keywords": [
-    "mailslurp",
     "email",
-    "test",
     "smtp",
-    "recieve",
-    "send"
+    "test",
+    "e2e",
+    "integration",
+    "account",
+    "receive",
+    "send",
+    "mailslurp"
   ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",

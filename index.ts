@@ -39,7 +39,9 @@ export type Config = {
     // obtain an apiKey at https://app.mailslurp.com
     apiKey: string;
     // optional attribution id (see sales)
-    attribution?: string
+    attribution?: string,
+    // optional api base path
+    basePath?: string
 };
 
 /**
@@ -168,7 +170,7 @@ export class MailSlurp {
         this.callOptions['headers'] = headers;
 
         // instantiate api clients
-        const clientConfiguration = { apiKey: opts.apiKey };
+        const clientConfiguration = { apiKey: opts.apiKey, basePath: opts.basePath };
         this.commonActionsController = new CommonActionsControllerApi(clientConfiguration);
         this.inboxController = new InboxControllerApi(clientConfiguration);
         this.emailController = new EmailControllerApi(clientConfiguration);

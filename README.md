@@ -50,7 +50,7 @@ const { subject, body } = await mailslurp.waitForLatestEmail(id);
 // send email from inbox
 await mailslurp.sendEmail(id, { to: ['xxxx@gmail.com'] })
 ```
-See the documentation for more methods and examples.
+See the [documentation](https://docs.mailslurp.com) for more methods and examples.
 
 ## Documentation
 See [docs.mailslurp.com](https://docs.mailslurp.com) for full documentation and examples.

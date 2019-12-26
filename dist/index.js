@@ -80,43 +80,72 @@ function wrapCall(tag, fn) {
     });
 }
 /**
- *  Official MailSlurp Client
+ * Official MailSlurp Client
  *
- *  This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
+ * This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
  *
- *  ## Features
+ * ## Features
+ *
  *  - Create email addresses on demand
  *  - Receive emails and attachments in code
  *  - Send emails and attachments
  *  - Create custom domains and webhooks
  *
- *  ## Prerequisites
- *  MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
+ * ## Get started
  *
- *  ## Installing
- *  `npm install --save mailslurp-client`
+ * MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
  *
- *  ## Importing
+ * ## Installing
+ * First you'll need to install the MailSlurp package from [npm](https://npmjs.com/package/mailslurp-client).
  *
- *  ### Import ES6
- *  ```javascript
- *  import { MailSlurp } from 'mailslurp-client'
- *  ```
- *  ### Require ES5
- *  ```javascript
- *  const MailSlurp = require('mailslurp-client').MailSlurp;
- *  // or default import
- *  const MailSlurp = require('mailslurp-client').default;
- *  ```
+ * `npm install --save mailslurp-client`
  *
- *  ## Configure
- *  ```javascript
- *  const mailslurp = new MailSlurp({ apiKey: "your-api-key" })
- *  const inbox = await mailslurp.createInbox()
- *  ```
+ * ## Importing
+ * Next import the client into your application or test.
  *
- *  ## Next steps
- *  Now you can use your mailslurp instance to perform actions like sending and receiving emails. See those methods for more information.
+ * #### Typescript or ES6
+ *
+ * [[include: import.md]]
+ *
+ * #### NodeJS require
+ *
+ * [[include: require.md]]
+ *
+ * ## Configure
+ * Next configure an instance of MailSlurp using your API Key.
+ *
+ * [[include: configure.md]]
+ *
+ * ## Example usage
+ * Now that you have a configured client you can use it to interact with MailSlurp. Here are some common examples:
+ *
+ * #### Create an inbox
+ * [[include: create-inbox.md]]
+ *
+ * #### List your inboxes
+ * [[include: list-inboxes.md]]
+ *
+ * #### List emails in an inbox
+ * [[include: list-emails.md]]
+ *
+ * #### Get an email
+ * One way to receive an email is to fetch it by ID. You can find an emails ID by listing the emails in an inbox.
+ * [[include: get-email.md]]
+ *
+ * #### WaitFor methods
+ * Another way to receive an email is by using a `waitFor` method. WaitFor methods hold open a connection until a condition is met.
+ * This is useful for situation in which an email has been sent and you expect it to arrive within a given time period.
+ * [[include: wait-for-methods.md]]
+ *
+ * #### WaitFor in action
+ * Here is an example of a `waitFor` method in action.
+ * [[include: wait-for-test.md]]
+ *
+ * #### Send an email
+ * [[include: send-email.md]]
+ *
+ * ## Next steps
+ * See the methods below for more details.
  */
 var MailSlurp = /** @class */ (function () {
     /**
@@ -136,7 +165,7 @@ var MailSlurp = /** @class */ (function () {
         };
         this.callOptions['headers'] = headers;
         // instantiate api clients
-        var clientConfiguration = { apiKey: opts.apiKey };
+        var clientConfiguration = { apiKey: opts.apiKey, basePath: opts.basePath };
         this.commonActionsController = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
         this.inboxController = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
         this.emailController = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
@@ -335,22 +364,7 @@ var MailSlurp = /** @class */ (function () {
      * Create an inbox. Pass an optional `emailAddress` to specify the email address. If not argument is passed
      * MailSlurp will assign the inbox a random email address ending in `@mailslurp.com`.
      *
-     * ```typescript
-     * // generate a random email address
-     * try {
-     *   const randomizedInbox = await mailslurp.createInbox();
-     * } catch (e) {
-     *   // handle errors
-     * }
-     *
-     * // generate specifc email address
-     * try {
-     *   // note you must verify the domain with MailSlurp before you can create email addresses using it
-     *   const customInbox = await mailslurp.createInbox('myaddress@mydomain.com`)
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: create-inbox.md]]
      */
     MailSlurp.prototype.createInbox = function (emailAddress) {
         return __awaiter(this, void 0, void 0, function () {
@@ -392,6 +406,8 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Get all inboxes
+     *
+     * [[include: list-inboxes.md]]
      */
     MailSlurp.prototype.getInboxes = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -434,16 +450,7 @@ var MailSlurp = /** @class */ (function () {
     /**
      * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
      *
-     * ```typescript
-     * try {
-     *   // first get emails for an inbox
-     *   const emails = mailslurp.getEmails(inboxId, { limit: 1 })
-     *   const fullEmail = mailslurp.getEmail(emails[0].id)
-     *   console.log(fullEmail.body, fullEmail.subject) // etc
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: get-emails.md]]
      *
      * @param inboxId
      * @param args
@@ -462,14 +469,7 @@ var MailSlurp = /** @class */ (function () {
     /**
      * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
      *
-     * ```typescript
-     * try {
-     *   const fullEmail = mailslurp.getEmail(emailId)
-     *   console.log(fullEmail.body, fullEmail.subject) // etc
-     * } catch (e) {
-     *   // handle errors
-     * }
-     * ```
+     * [[include: get-email.md]]
      *
      * @param emailId
      */
@@ -499,6 +499,8 @@ var MailSlurp = /** @class */ (function () {
     };
     /**
      * Send and email from a given inbox
+     *
+     * [[include: send-email.md]]
      * @param inboxId
      * @param sendEmailOptions
      */

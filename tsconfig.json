@@ -5,6 +5,7 @@
         "lib": ["es2015", "es2017", "dom"],
         "module": "CommonJS",
         "types": ["jest", "node"],
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "noImplicitAny": true
     }
 }
