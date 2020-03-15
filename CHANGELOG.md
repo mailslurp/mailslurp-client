@@ -1,8 +1,12 @@
 # Changelog
 
+## [7.0.x]
+### Added
+- Export swagger generated client for better type support. Expose more functionality added to API include webhooks, templates, contacts, groups and more.
+
 ## [6.7.0]
 ### Added
-- Add new controllers and tests. Add pagination supprot
+- Add new controllers and tests. Add pagination support
 
 ## [6.6.0]
 ### Added

@@ -1,51 +1,51 @@
 {
-  "name": "mailslurp-client",
-  "description": "Send and receive emails in code",
-  "version": "6.7.4",
-  "license": "MIT",
-  "author": "mailslurp.com",
-  "homepage": "https://www.mailslurp.com",
-  "keywords": [
-    "email",
-    "smtp",
-    "test",
-    "e2e",
-    "integration",
-    "account",
-    "receive",
-    "send",
-    "mailslurp"
-  ],
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "repository": "https://github.com/mailslurp/mailslurp-client",
-  "scripts": {
-    "build": "tsc --outDir dist/",
-    "prepublishOnly": "npm run build",
-    "test": "jest",
-    "docs": "typedoc --options ./typedoc.json index.ts",
-    "fmt": "prettier --write **.{ts,json,js}"
-  },
-  "dependencies": {
-    "debug": "^4.1.1",
-    "mailslurp-swagger-sdk-ts": "6.1.0",
-    "typedoc-plugin-external-module-map": "^1.0.0",
-    "typedoc-plugin-markdown": "^2.2.14"
-  },
-  "devDependencies": {
-    "@types/debug": "^4.1.5",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.4",
-    "jest": "^24.1.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.0.0",
-    "typedoc": "^0.15.3",
-    "typescript": "^3.5.3"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": true,
-    "singleQuote": true
-  }
+    "name": "mailslurp-client",
+    "description": "Send and receive emails in code",
+    "version": "7.0.7",
+    "license": "MIT",
+    "author": "mailslurp.com",
+    "homepage": "https://www.mailslurp.com",
+    "keywords": [
+        "email",
+        "smtp",
+        "test",
+        "e2e",
+        "integration",
+        "account",
+        "receive",
+        "send",
+        "mailslurp"
+    ],
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "repository": "https://github.com/mailslurp/mailslurp-client",
+    "scripts": {
+        "build": "tsc --outDir dist/",
+        "prepublishOnly": "npm run build",
+        "test": "jest",
+        "docs": "typedoc --options ./typedoc.json index.ts",
+        "fmt": "prettier --write **.{ts,json,js}"
+    },
+    "dependencies": {
+        "debug": "^4.1.1",
+        "mailslurp-swagger-sdk-ts": "7.0.7",
+        "typedoc-plugin-external-module-map": "^1.0.0",
+        "typedoc-plugin-markdown": "^2.2.14"
+    },
+    "devDependencies": {
+        "@types/debug": "^4.1.5",
+        "@types/jest": "^24.0.18",
+        "@types/node": "^12.7.4",
+        "jest": "^24.1.0",
+        "prettier": "^1.18.2",
+        "ts-jest": "^24.0.0",
+        "typedoc": "^0.15.3",
+        "typescript": "^3.5.3"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true
+    }
 }
