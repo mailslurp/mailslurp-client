@@ -23,7 +23,7 @@
 
 Ƭ **Config**: *object*
 
-*Defined in [index.ts:37](https://github.com/mailslurp/mailslurp-client-ts-js/blob/23e0b5b/index.ts#L37)*
+*Defined in [index.ts:37](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2ef5cc4/index.ts#L37)*
 
 MailSlurp config
 
@@ -46,7 +46,7 @@ ___
 
 Ƭ **GetMessagesOptions**: *object*
 
-*Defined in [index.ts:418](https://github.com/mailslurp/mailslurp-client-ts-js/blob/23e0b5b/index.ts#L418)*
+*Defined in [index.ts:418](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2ef5cc4/index.ts#L418)*
 
 Options for advanced message fetching
 
@@ -71,7 +71,7 @@ For more control over fetching. See also Webhook endpoints
 
 ▸ **wrapCall**<**T**>(`tag`: String, `fn`: function): *Promise‹T›*
 
-*Defined in [index.ts:433](https://github.com/mailslurp/mailslurp-client-ts-js/blob/23e0b5b/index.ts#L433)*
+*Defined in [index.ts:433](https://github.com/mailslurp/mailslurp-client-ts-js/blob/2ef5cc4/index.ts#L433)*
 
 **Type parameters:**
 

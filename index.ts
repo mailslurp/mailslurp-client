@@ -354,14 +354,6 @@ export class MailSlurp {
     );
   }
 
-  async sendEmailSimple(
-    sendEmailOptions: SendEmailOptions
-  ): Promise<void> {
-    return wrapCall('sendEmail', () =>
-      this.common.sendEmailSimple({sendEmailOptions})
-    );
-  }
-
   /**
    * Get email attachment by id
    *
