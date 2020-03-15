@@ -7,6 +7,7 @@
 ### External modules
 
 * ["index"](modules/_index_.md)
+* ["node_modules/@types/isomorphic-fetch/index.d"](modules/_node_modules__types_isomorphic_fetch_index_d_.md)
 * ["node_modules/@types/jest-diff/index.d"](modules/_node_modules__types_jest_diff_index_d_.md)
 * ["node_modules/@types/jest/index.d"](modules/_node_modules__types_jest_index_d_.md)
 * ["node_modules/@types/node/assert.d"](modules/_node_modules__types_node_assert_d_.md)

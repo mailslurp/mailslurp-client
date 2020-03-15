@@ -40,6 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @see https://www.mailslurp.com/js/ for documentation
  */
 var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
+require("isomorphic-fetch");
 /**
  * Official MailSlurp Client
  *
@@ -84,6 +85,7 @@ var MailSlurp = /** @class */ (function () {
                 'x-client': 'mailslurp-client-ts-js',
                 'x-attribution': opts.attribution,
             },
+            fetchApi: opts.fetchApi || fetch
         });
         // instantiate api clients
         this.emails = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
@@ -340,6 +342,16 @@ var MailSlurp = /** @class */ (function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('sendEmail', function () {
                         return _this.inboxes.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
+                    })];
+            });
+        });
+    };
+    MailSlurp.prototype.sendEmailSimple = function (sendEmailOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('sendEmail', function () {
+                        return _this.common.sendEmailSimple({ sendEmailOptions: sendEmailOptions });
                     })];
             });
         });
