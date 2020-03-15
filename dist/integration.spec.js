@@ -45,25 +45,23 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __importStar(require("./index"));
 var mailslurpRequire = require('./index').MailSlurp;
-var createNewEmailAddress = jest.fn();
 var createInbox = jest.fn();
-var sendEmailSimple = jest.fn();
+var sendEmail = jest.fn();
 var waitForLatestEmail = jest.fn();
 var getEmailsPaginated = jest.fn();
 var waitForNthEmail = jest.fn();
 var waitForMatchingEmail = jest.fn();
 var waitForEmailCount = jest.fn();
-var callOptions = {
-    headers: {
-        'x-client': 'mailslurp-client-ts-js',
-    },
-};
 jest.mock('mailslurp-swagger-sdk-ts', function () {
     return {
+        Configuration: function () {
+            return {};
+        },
         CommonActionsControllerApi: function () {
+            return {};
+        },
+        WaitForControllerApi: function () {
             return {
-                createNewEmailAddress: createNewEmailAddress,
-                sendEmailSimple: sendEmailSimple,
                 waitForLatestEmail: waitForLatestEmail,
                 waitForNthEmail: waitForNthEmail,
                 waitForMatchingEmail: waitForMatchingEmail,
@@ -78,6 +76,7 @@ jest.mock('mailslurp-swagger-sdk-ts', function () {
         InboxControllerApi: function () {
             return {
                 createInbox: createInbox,
+                sendEmail: sendEmail,
             };
         },
         DomainControllerApi: function () {
@@ -87,6 +86,18 @@ jest.mock('mailslurp-swagger-sdk-ts', function () {
             return {};
         },
         BulkActionsControllerApi: function () {
+            return {};
+        },
+        ContactControllerApi: function () {
+            return {};
+        },
+        TemplateControllerApi: function () {
+            return {};
+        },
+        GroupControllerApi: function () {
+            return {};
+        },
+        WebhookControllerApi: function () {
             return {};
         },
     };
@@ -102,12 +113,12 @@ describe('importing client', function () {
     test('client can be instantiated', function () {
         var client = new index_1.MailSlurp({ apiKey: 'test' });
         expect(client).not.toBeNull();
-        expect(client.createNewEmailAddress).not.toBeNull();
+        expect(client.createInbox).not.toBeNull();
     });
     test('default client can be instantiated', function () {
         var client = new index_1.default({ apiKey: 'test' });
         expect(client).not.toBeNull();
-        expect(client.createNewEmailAddress).not.toBeNull();
+        expect(client.createInbox).not.toBeNull();
     });
     test('require client can be instantiated', function () {
         var client = new mailslurpRequire({ apiKey: 'test' });
@@ -122,10 +133,10 @@ describe('functions are mapped correctly to common operations api', function () 
             switch (_a.label) {
                 case 0:
                     client = new index_1.MailSlurp({ apiKey: 'test' });
-                    return [4 /*yield*/, client.createNewEmailAddress()];
+                    return [4 /*yield*/, client.createInbox()];
                 case 1:
                     _a.sent();
-                    expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    expect(createInbox).toHaveBeenCalledTimes(1);
                     return [2 /*return*/];
             }
         });
@@ -139,7 +150,14 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.createInbox('test@gmail.com')];
                 case 1:
                     _a.sent();
-                    expect(createInbox).toHaveBeenCalledWith('test@gmail.com', callOptions);
+                    expect(createInbox).toHaveBeenCalledWith({
+                        description: undefined,
+                        emailAddress: 'test@gmail.com',
+                        expiresAt: undefined,
+                        favourite: undefined,
+                        name: undefined,
+                        tags: undefined,
+                    });
                     return [2 /*return*/];
             }
         });
@@ -149,7 +167,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    createNewEmailAddress.mockRejectedValue({
+                    createInbox.mockRejectedValue({
                         json: jest.fn().mockReturnValue('error-json'),
                     });
                     client = new index_1.MailSlurp({ apiKey: 'test' });
@@ -157,7 +175,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, client.createNewEmailAddress()];
+                    return [4 /*yield*/, client.createInbox()];
                 case 2:
                     _a.sent();
                     return [3 /*break*/, 4];
@@ -168,7 +186,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [3 /*break*/, 4];
                 case 4:
                     expect(threw).toBeTruthy();
-                    expect(createNewEmailAddress).toHaveBeenCalledTimes(1);
+                    expect(createInbox).toHaveBeenCalledTimes(1);
                     return [2 /*return*/];
             }
         });
@@ -178,13 +196,16 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    createNewEmailAddress.mockRejectedValue('error-text');
-                    client = new index_1.MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
+                    createInbox.mockRejectedValue('error-text');
+                    client = new index_1.MailSlurp({
+                        apiKey: 'test',
+                        attribution: 'test-attribution',
+                    });
                     threw = false;
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, client.createNewEmailAddress()];
+                    return [4 /*yield*/, client.createInbox()];
                 case 2:
                     _a.sent();
                     return [3 /*break*/, 4];
@@ -195,29 +216,35 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [3 /*break*/, 4];
                 case 4:
                     expect(threw).toBeTruthy();
-                    expect(createNewEmailAddress).toHaveBeenCalledWith({
-                        headers: {
-                            'x-attribution': 'test-attribution',
-                            "x-client": "mailslurp-client-ts-js"
-                        },
+                    expect(createInbox).toHaveBeenCalledWith({
+                        description: undefined,
+                        emailAddress: undefined,
+                        expiresAt: undefined,
+                        favourite: undefined,
+                        name: undefined,
+                        tags: undefined,
                     });
                     return [2 /*return*/];
             }
         });
     }); });
     test('can send email', function () { return __awaiter(_this, void 0, void 0, function () {
-        var client, options;
+        var client, inboxId, options;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     client = new index_1.MailSlurp({ apiKey: 'test' });
+                    inboxId = '';
                     options = {
                         to: [''],
                     };
-                    return [4 /*yield*/, client.sendEmailSimple(options)];
+                    return [4 /*yield*/, client.sendEmail(inboxId, options)];
                 case 1:
                     _a.sent();
-                    expect(sendEmailSimple).toHaveBeenCalledWith(options, callOptions);
+                    expect(sendEmail).toHaveBeenCalledWith({
+                        inboxId: inboxId,
+                        sendEmailOptions: options,
+                    });
                     return [2 /*return*/];
             }
         });
@@ -231,7 +258,13 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.getAllEmails()];
                 case 1:
                     _a.sent();
-                    expect(getEmailsPaginated).toHaveBeenCalledWith(undefined, undefined, callOptions);
+                    expect(getEmailsPaginated).toHaveBeenCalledWith({
+                        inboxId: undefined,
+                        page: undefined,
+                        size: undefined,
+                        sort: undefined,
+                        unreadOnly: undefined,
+                    });
                     return [2 /*return*/];
             }
         });
@@ -245,7 +278,13 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.getAllEmails(1, 2)];
                 case 1:
                     _a.sent();
-                    expect(getEmailsPaginated).toHaveBeenCalledWith(1, 2, callOptions);
+                    expect(getEmailsPaginated).toHaveBeenCalledWith({
+                        page: 1,
+                        size: 2,
+                        inboxId: undefined,
+                        sort: undefined,
+                        unreadOnly: undefined,
+                    });
                     return [2 /*return*/];
             }
         });
@@ -261,7 +300,11 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForLatestEmail(inboxId, timeout)];
                 case 1:
                     _a.sent();
-                    expect(waitForLatestEmail).toHaveBeenCalledWith(inboxId, timeout, callOptions);
+                    expect(waitForLatestEmail).toHaveBeenCalledWith({
+                        inboxId: inboxId,
+                        timeout: timeout,
+                        unreadOnly: undefined,
+                    });
                     return [2 /*return*/];
             }
         });
@@ -277,7 +320,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForNthEmail(inboxId, index)];
                 case 1:
                     _a.sent();
-                    expect(waitForNthEmail).toHaveBeenCalledWith(inboxId, index, undefined, callOptions);
+                    expect(waitForNthEmail).toHaveBeenCalledWith({ inboxId: inboxId, index: index });
                     return [2 /*return*/];
             }
         });
@@ -287,7 +330,10 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test', attribution: 'test-attribution' });
+                    client = new index_1.MailSlurp({
+                        apiKey: 'test',
+                        attribution: 'test-attribution',
+                    });
                     options = {};
                     count = 2;
                     inboxId = 'inboxId';
@@ -295,11 +341,12 @@ describe('functions are mapped correctly to common operations api', function () 
                     return [4 /*yield*/, client.waitForMatchingEmails(options, count, inboxId, timeout)];
                 case 1:
                     _a.sent();
-                    expect(waitForMatchingEmail).toHaveBeenCalledWith(options, count, inboxId, timeout, {
-                        headers: {
-                            'x-attribution': 'test-attribution',
-                            'x-client': 'mailslurp-client-ts-js',
-                        },
+                    expect(waitForMatchingEmail).toHaveBeenCalledWith({
+                        count: count,
+                        inboxId: inboxId,
+                        timeout: timeout,
+                        matchOptions: {},
+                        unreadOnly: undefined,
                     });
                     return [2 /*return*/];
             }
