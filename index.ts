@@ -12,7 +12,7 @@ import {
   CreateDomainOptions,
   CreateWebhookOptions,
   DomainControllerApi,
-  DomainPlusVerificationRecordsAndStatus,
+  DomainDto,
   DomainPreview,
   Email,
   EmailControllerApi,
@@ -22,7 +22,7 @@ import {
   MatchOptions,
   SendEmailOptions,
   UploadAttachmentOptions,
-  Webhook,
+  WebhookDto,
 } from 'mailslurp-swagger-sdk-ts';
 
 import debug from 'debug';
@@ -172,7 +172,7 @@ export class MailSlurp {
     this.callOptions['headers'] = headers;
 
     // instantiate api clients
-    const clientConfiguration = {apiKey: opts.apiKey, basePath: opts.basePath};
+    const clientConfiguration = {apiKey: opts.apiKey, basePath: opts.basePath} as any;
     this.commonActionsController = new CommonActionsControllerApi(clientConfiguration);
     this.inboxController = new InboxControllerApi(clientConfiguration);
     this.emailController = new EmailControllerApi(clientConfiguration);
