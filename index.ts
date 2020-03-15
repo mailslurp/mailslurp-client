@@ -46,9 +46,28 @@ export type Config = {
 /**
  * Official MailSlurp Client
  *
- * Based on the MailSlurp REST API. Exports convenience methods plus full controllers.
  *
- * @see https://www.mailslurp.com/js/ for documentation.
+ *
+ * ## Install
+ * `npm install --save mailslurp-client`
+ *
+ * ## Configure
+ * Create a MailSlurp account to get an [API Key](https://app.mailslurp.com/sign-up/).
+ *
+ * ```typescript
+ * const MailSlurp = require('mailslurp-client').default;
+ * const mailslurp = new MailSlurp({ apiKey: 'xxxx' })
+ * ```
+ *
+ * ## Make requests
+ *
+ * ```typescript
+ * const inbox = await mailslurp.createInbox()
+ * await mailslurp.sendEmail({ to: [inbox.emailAddress] })
+ * const email = await mailslurp.waitForLatestEmail(inbox.id)
+ * ```
+ *
+ * Read [quick start guide](https://www.mailslurp.com/guides/) for more examples or see the methods below.
  */
 export class MailSlurp {
     public readonly emails: EmailControllerApi;

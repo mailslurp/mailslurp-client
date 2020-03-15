@@ -4,15 +4,15 @@
 
 # MailSlurp Javascript Client
 
-Official MailSlurp Javascript client.
+Official MailSlurp Javascript client. Create real email addresses on demand then send and receive emails from code and tests.
 
 ## Install
 `npm install --save mailslurp-client`
 
-## Documentation
-[Method documentation](./docs/classes/_index_.mailslurp.md)
-[Guides](https://www.mailslurp/guides/)
-[API Key](https://app.mailslurp.com/sign-up/)
+## Links
+- [Method documentation](./docs/classes/_index_.mailslurp.md)
+- [Guides](https://www.mailslurp/guides/)
+- [API Key](https://app.mailslurp.com/sign-up/)
 
 
 

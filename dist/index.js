@@ -37,11 +37,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This library is a convenience wrapper around the generated swagger sdk
- * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
+ * @see https://www.mailslurp.com/js/ for documentation
  */
 var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
 /**
  * Official MailSlurp Client
+ *
+ *
+ *
+ * ## Install
+ * `npm install --save mailslurp-client`
+ *
+ * ## Configure
+ * Create a MailSlurp account to get an [API Key](https://app.mailslurp.com/sign-up/).
+ *
+ * ```typescript
+ * const MailSlurp = require('mailslurp-client').default;
+ * const mailslurp = new MailSlurp({ apiKey: 'xxxx' })
+ * ```
+ *
+ * ## Make requests
+ *
+ * ```typescript
+ * const inbox = await mailslurp.createInbox()
+ * await mailslurp.sendEmail({ to: [inbox.emailAddress] })
+ * const email = await mailslurp.waitForLatestEmail(inbox.id)
+ * ```
+ *
+ * Read [quick start guide](https://www.mailslurp.com/guides/) for more examples or see the methods below.
  */
 var MailSlurp = /** @class */ (function () {
     /**
@@ -63,24 +86,24 @@ var MailSlurp = /** @class */ (function () {
             },
         });
         // instantiate api clients
-        this.emailController = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
-        this.inboxController = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
-        this.attachmentController = new mailslurp_swagger_sdk_ts_1.AttachmentControllerApi(clientConfiguration);
+        this.emails = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
+        this.inboxes = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
+        this.attachments = new mailslurp_swagger_sdk_ts_1.AttachmentControllerApi(clientConfiguration);
         this.domains = new mailslurp_swagger_sdk_ts_1.DomainControllerApi(clientConfiguration);
         this.contacts = new mailslurp_swagger_sdk_ts_1.ContactControllerApi(clientConfiguration);
         this.groups = new mailslurp_swagger_sdk_ts_1.GroupControllerApi(clientConfiguration);
         this.templates = new mailslurp_swagger_sdk_ts_1.TemplateControllerApi(clientConfiguration);
         this.webhooks = new mailslurp_swagger_sdk_ts_1.WebhookControllerApi(clientConfiguration);
-        this.commonActionsController = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
-        this.bulkActionsController = new mailslurp_swagger_sdk_ts_1.BulkActionsControllerApi(clientConfiguration);
-        this.waitForController = new mailslurp_swagger_sdk_ts_1.WaitForControllerApi(clientConfiguration);
+        this.common = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
+        this.bulk = new mailslurp_swagger_sdk_ts_1.BulkActionsControllerApi(clientConfiguration);
+        this.waitFor = new mailslurp_swagger_sdk_ts_1.WaitForControllerApi(clientConfiguration);
     }
     MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox({
+                        return _this.inboxes.createInbox({
                             emailAddress: emailAddress,
                             name: name,
                             description: description,
@@ -97,7 +120,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteInbox', function () {
-                        return _this.inboxController.deleteInbox({ inboxId: inboxId });
+                        return _this.inboxes.deleteInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -107,7 +130,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('emptyInbox', function () {
-                        return _this.commonActionsController.emptyInbox({ inboxId: inboxId });
+                        return _this.common.emptyInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -117,7 +140,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getInbox', function () {
-                        return _this.inboxController.getInbox({ inboxId: inboxId });
+                        return _this.inboxes.getInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -131,7 +154,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxController.getInboxes(); })];
+                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxes.getInboxes(); })];
             });
         });
     };
@@ -144,7 +167,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllInboxes', function () {
-                        return _this.inboxController.getAllInboxes({
+                        return _this.inboxes.getAllInboxes({
                             page: page,
                             size: size,
                             favourite: favourite,
@@ -161,7 +184,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.waitForController.waitForLatestEmail({
+                        return _this.waitFor.waitForLatestEmail({
                             inboxId: inboxId,
                             timeout: timeout,
                             unreadOnly: unreadOnly,
@@ -175,7 +198,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.waitForController.waitForNthEmail({
+                        return _this.waitFor.waitForNthEmail({
                             inboxId: inboxId,
                             index: index,
                             timeout: timeout,
@@ -190,7 +213,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitForController.waitForMatchingEmail({
+                        return _this.waitFor.waitForMatchingEmail({
                             matchOptions: matchOptions,
                             count: count,
                             inboxId: inboxId,
@@ -206,7 +229,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.waitForController.waitForEmailCount({
+                        return _this.waitFor.waitForEmailCount({
                             count: count,
                             inboxId: inboxId,
                             timeout: timeout,
@@ -222,7 +245,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteEmail', function () {
-                        return _this.emailController.deleteEmail({ emailId: emailId });
+                        return _this.emails.deleteEmail({ emailId: emailId });
                     })];
             });
         });
@@ -236,7 +259,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emailController.getEmailsPaginated({
+                        return _this.emails.getEmailsPaginated({
                             page: page,
                             size: size,
                             inboxId: inboxId,
@@ -261,7 +284,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails({
+                        return _this.inboxes.getEmails({
                             inboxId: inboxId,
                             limit: args.limit,
                             minCount: args.minCount,
@@ -285,7 +308,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmail', function () {
-                        return _this.emailController.getEmail({ emailId: emailId });
+                        return _this.emails.getEmail({ emailId: emailId });
                     })];
             });
         });
@@ -299,7 +322,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getRawEmail', function () {
-                        return _this.emailController.getRawEmailContents({ emailId: emailId });
+                        return _this.emails.getRawEmailContents({ emailId: emailId });
                     })];
             });
         });
@@ -316,7 +339,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('sendEmail', function () {
-                        return _this.inboxController.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
+                        return _this.inboxes.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
                     })];
             });
         });
@@ -331,7 +354,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('downloadAttachment', function () {
-                        return _this.emailController.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
+                        return _this.emails.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
                     })];
             });
         });
@@ -346,7 +369,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('uploadAttachment', function () {
-                        return _this.attachmentController.uploadAttachment({
+                        return _this.attachments.uploadAttachment({
                             uploadOptions: options,
                         });
                     })];
@@ -363,7 +386,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAttachmentMetaData', function () {
-                        return _this.emailController.getAttachmentMetaData({
+                        return _this.emails.getAttachmentMetaData({
                             attachmentId: attachmentId,
                             emailId: emailId,
                         });
