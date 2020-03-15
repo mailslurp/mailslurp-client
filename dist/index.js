@@ -346,16 +346,6 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
-    MailSlurp.prototype.sendEmailSimple = function (sendEmailOptions) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('sendEmail', function () {
-                        return _this.common.sendEmailSimple({ sendEmailOptions: sendEmailOptions });
-                    })];
-            });
-        });
-    };
     /**
      * Get email attachment by id
      *

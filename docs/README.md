@@ -1,9 +1,15 @@
-[MailSlurp JS](README.md) › [Globals](globals.md)
+---
+title: Javascript
+featured: true
+icon: devicon-javascript-plain
 
-# MailSlurp JS
+---
+# MailSlurp Javascript Client
 
-# Read This!
+Official MailSlurp Javascript client.
 
-**These files are not meant to be edited by hand.**
-If you need to make modifications, the respective files should be changed within the repository's top-level `src` directory.
-Running `gulp LKG` will then appropriately update the files in this directory.
+## Install
+`npm install --save mailslurp-client`
+
+## Documentation
+[Method documentation](./classes/_index_.mailslurp.md)

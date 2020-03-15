@@ -12,6 +12,7 @@ build: test
 	rm -rf docs/modules/_node_modules__types*
 	rm -rf docs/modules/_node_modules_jest*
 	rm -rf docs/interfaces/_node_modules__types*
+	cp config/DOC.md docs/README.md
 
 # manually bump package version first
 deploy: build
