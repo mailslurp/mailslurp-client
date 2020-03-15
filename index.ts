@@ -2,6 +2,7 @@
  * This library is a convenience wrapper around the generated swagger sdk
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
+export * from 'mailslurp-swagger-sdk-ts';
 import {
   AttachmentControllerApi,
   AttachmentMetaData,

@@ -1,7 +1,6 @@
 {
     "name": "MailSlurp JS",
     "theme": "markdown",
-    "mode": "file",
     "out": "docs",
     "exclude":"**/node_modules/**",
     "excludeExternals": true,
