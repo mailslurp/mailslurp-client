@@ -34,118 +34,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This library is a convenience wrapper around the generated swagger sdk
  * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
  */
 var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
-var debug_1 = __importDefault(require("debug"));
-// setup logger. enable output with DEBUG=mailslurp-client env variable
-var log = debug_1.default('mailslurp-client');
-// helper
-function wrapCall(tag, fn) {
-    return __awaiter(this, void 0, void 0, function () {
-        var result, e_1, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    log('[%s] executing', tag);
-                    _b.label = 1;
-                case 1:
-                    _b.trys.push([1, 3, , 7]);
-                    return [4 /*yield*/, fn()];
-                case 2:
-                    result = _b.sent();
-                    log('[%s] returned %O', tag, result);
-                    return [2 /*return*/, result];
-                case 3:
-                    e_1 = _b.sent();
-                    log('[%s] threw exception %O', tag, e_1);
-                    if (!e_1.json) return [3 /*break*/, 5];
-                    return [4 /*yield*/, e_1.json()];
-                case 4:
-                    _a = _b.sent();
-                    return [3 /*break*/, 6];
-                case 5:
-                    _a = e_1;
-                    _b.label = 6;
-                case 6: throw _a;
-                case 7: return [2 /*return*/];
-            }
-        });
-    });
-}
 /**
  * Official MailSlurp Client
- *
- * This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
- *
- * ## Features
- *
- *  - Create email addresses on demand
- *  - Receive emails and attachments in code
- *  - Send emails and attachments
- *  - Create custom domains and webhooks
- *
- * ## Get started
- *
- * MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
- *
- * ## Installing
- * First you'll need to install the MailSlurp package from [npm](https://npmjs.com/package/mailslurp-client).
- *
- * `npm install --save mailslurp-client`
- *
- * ## Importing
- * Next import the client into your application or test.
- *
- * #### Typescript or ES6
- *
- * [[include: import.md]]
- *
- * #### NodeJS require
- *
- * [[include: require.md]]
- *
- * ## Configure
- * Next configure an instance of MailSlurp using your API Key.
- *
- * [[include: configure.md]]
- *
- * ## Example usage
- * Now that you have a configured client you can use it to interact with MailSlurp. Here are some common examples:
- *
- * #### Create an inbox
- * [[include: create-inbox.md]]
- *
- * #### List your inboxes
- * [[include: list-inboxes.md]]
- *
- * #### List emails in an inbox
- * [[include: list-emails.md]]
- *
- * #### Get an email
- * One way to receive an email is to fetch it by ID. You can find an emails ID by listing the emails in an inbox.
- * [[include: get-email.md]]
- *
- * #### WaitFor methods
- * Another way to receive an email is by using a `waitFor` method. WaitFor methods hold open a connection until a condition is met.
- * This is useful for situation in which an email has been sent and you expect it to arrive within a given time period.
- * [[include: wait-for-methods.md]]
- *
- * #### WaitFor in action
- * Here is an example of a `waitFor` method in action.
- * [[include: wait-for-test.md]]
- *
- * #### Send an email
- * [[include: send-email.md]]
- *
- * ## Next steps
- * See the methods below for more details.
  */
 var MailSlurp = /** @class */ (function () {
     /**
@@ -153,253 +49,75 @@ var MailSlurp = /** @class */ (function () {
      * @param opts
      */
     function MailSlurp(opts) {
-        this.callOptions = {};
         // check options
         if (!opts.apiKey) {
             throw 'Missing apiKey config parameter';
         }
-        // set call options if required
-        var headers = {
-            'x-client': 'mailslurp-client-ts-js',
-            'x-attribution': opts.attribution
-        };
-        this.callOptions['headers'] = headers;
+        // create credentials
+        var clientConfiguration = new mailslurp_swagger_sdk_ts_1.Configuration({
+            apiKey: opts.apiKey,
+            basePath: opts.basePath,
+            headers: {
+                'x-client': 'mailslurp-client-ts-js',
+                'x-attribution': opts.attribution,
+            },
+        });
         // instantiate api clients
-        var clientConfiguration = { apiKey: opts.apiKey, basePath: opts.basePath };
-        this.commonActionsController = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
-        this.inboxController = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
         this.emailController = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
-        this.domainController = new mailslurp_swagger_sdk_ts_1.DomainControllerApi(clientConfiguration);
+        this.inboxController = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
         this.attachmentController = new mailslurp_swagger_sdk_ts_1.AttachmentControllerApi(clientConfiguration);
+        this.domains = new mailslurp_swagger_sdk_ts_1.DomainControllerApi(clientConfiguration);
+        this.contacts = new mailslurp_swagger_sdk_ts_1.ContactControllerApi(clientConfiguration);
+        this.groups = new mailslurp_swagger_sdk_ts_1.GroupControllerApi(clientConfiguration);
+        this.templates = new mailslurp_swagger_sdk_ts_1.TemplateControllerApi(clientConfiguration);
+        this.webhooks = new mailslurp_swagger_sdk_ts_1.WebhookControllerApi(clientConfiguration);
+        this.commonActionsController = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
         this.bulkActionsController = new mailslurp_swagger_sdk_ts_1.BulkActionsControllerApi(clientConfiguration);
+        this.waitForController = new mailslurp_swagger_sdk_ts_1.WaitForControllerApi(clientConfiguration);
     }
-    /**
-     * Create a new inbox
-     *
-     * ```typescript
-     * const { id, emailAddress } = await mailslurp.createNewEmailAddress()
-     * ```
-     */
-    MailSlurp.prototype.createNewEmailAddress = function () {
+    MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('createNewEmailAddress', function () {
-                        return _this.commonActionsController.createNewEmailAddress(_this.callOptions);
+                return [2 /*return*/, wrapCall('createInbox', function () {
+                        return _this.inboxController.createInbox({
+                            emailAddress: emailAddress,
+                            name: name,
+                            description: description,
+                            expiresAt: expiresAt,
+                            favourite: favourite,
+                            tags: tags,
+                        });
                     })];
             });
         });
     };
-    /**
-     * Send an email from a random address
-     *
-     * To send from a known address first create an inbox and then use
-     * the sendEmail endpoints.
-     *
-     * @param sendEmailOptions
-     */
-    MailSlurp.prototype.sendEmailSimple = function (sendEmailOptions) {
+    MailSlurp.prototype.deleteInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('sendEmailSimple', function () {
-                        return _this.commonActionsController.sendEmailSimple(sendEmailOptions, _this.callOptions);
+                return [2 /*return*/, wrapCall('deleteInbox', function () {
+                        return _this.inboxController.deleteInbox({ inboxId: inboxId });
                     })];
             });
         });
     };
-    /**
-     * Wait for an email to arrive at an inbox or return first found result
-     * Retries the call until at least one email is found or a maximum timeout is exceeded
-     *
-     * ```typescript
-     * try {
-     *   const email = await mailslurp.waitForLatestEmail(inboxId)
-     * } catch (e) {
-     *   // handle timeout or email wasn't received
-     * }
-     * ```
-     *
-     * @param inboxId uuid
-     * @param timeout max milliseconds to wait
-     */
-    MailSlurp.prototype.waitForLatestEmail = function (inboxId, timeout) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.commonActionsController.waitForLatestEmail(inboxId, timeout, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Return or wait for email number `n` in an inbox
-     *
-     * ```typescript
-     * try {
-     *   const email3 = await mailslurp.waitForNthEmail(inboxId, 3)
-     * } catch (e) {
-     *   // handle timeout or email wasn't received
-     * }
-     * ```
-     *
-     * @param inboxId
-     * @param index
-     * @param timeout
-     */
-    MailSlurp.prototype.waitForNthEmail = function (inboxId, index, timeout) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.commonActionsController.waitForNthEmail(inboxId, index, timeout, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Wait until both count and match options are met and return list of emails. Match options are a bit verbose but allow
-     * for type safety on the API end. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM.
-     *
-     * ```typescript
-     * try {
-     *   const matchingWelcomeEmails = await mailslurp.waitForMatchingEmails({
-     *     matches: [
-     *       {
-     *         field: 'SUBJECT',
-     *         should: 'CONTAIN',
-     *         value: 'Welcome'
-     *       }
-     *     ]
-     *   }, 1, inboxId)
-     * } catch (e) {
-     *   // handle timeout or no results
-     * }
-     * ```
-     *
-     * @param matchOptions
-     * @param count
-     * @param inboxId
-     * @param timeout  timeout max milliseconds to wait
-     */
-    MailSlurp.prototype.waitForMatchingEmails = function (matchOptions, count, inboxId, timeout) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.commonActionsController.waitForMatchingEmail(matchOptions, count, inboxId, timeout, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Wait for and return list of emails with length of given count
-     *
-     * ```typescript
-     * try {
-     *   // wait for 4 emails in an inbox then return them
-     *   const emails = waitForEmailCount(4, inboxId)
-     * } catch (e) {
-     *   // handle error or timeout
-     * }
-     * ```
-     * @param count
-     * @param inboxId
-     * @param timeout
-     */
-    MailSlurp.prototype.waitForEmailCount = function (count, inboxId, timeout) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.commonActionsController.waitForEmailCount(count, inboxId, timeout, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Delete all emails in a given inbox
-     * @param inboxId
-     */
     MailSlurp.prototype.emptyInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('emptyInbox', function () {
-                        return _this.commonActionsController.emptyInbox(inboxId, _this.callOptions);
+                        return _this.commonActionsController.emptyInbox({ inboxId: inboxId });
                     })];
             });
         });
     };
-    /**
-     * Delete an email by id
-     * @param emailId
-     */
-    MailSlurp.prototype.deleteEmail = function (emailId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('deleteEmail', function () {
-                        return _this.commonActionsController.deleteEmail(emailId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Delete an email by id
-     * @param emailId
-     */
-    MailSlurp.prototype.deleteEmailAddress = function (emailId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('deleteEmailAddress', function () {
-                        return _this.commonActionsController.deleteEmailAddress(emailId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Create an inbox. Pass an optional `emailAddress` to specify the email address. If not argument is passed
-     * MailSlurp will assign the inbox a random email address ending in `@mailslurp.com`.
-     *
-     * [[include: create-inbox.md]]
-     */
-    MailSlurp.prototype.createInbox = function (emailAddress) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox(emailAddress, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Delete an inbox by id
-     * @param inboxId
-     */
-    MailSlurp.prototype.deleteInbox = function (inboxId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.deleteInbox(inboxId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Get an inbox by id
-     * @param inboxId
-     */
     MailSlurp.prototype.getInbox = function (inboxId) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getInbox', function () {
-                        return _this.inboxController.getInbox(inboxId, _this.callOptions);
+                        return _this.inboxController.getInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -413,9 +131,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getInboxes', function () {
-                        return _this.inboxController.getInboxes(_this.callOptions);
-                    })];
+                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxController.getInboxes(); })];
             });
         });
     };
@@ -423,12 +139,90 @@ var MailSlurp = /** @class */ (function () {
      * Get all inboxes paginated
      * Returns paginated inbox previews
      */
-    MailSlurp.prototype.getAllInboxes = function (page, size) {
+    MailSlurp.prototype.getAllInboxes = function (page, size, favourite, search, sort) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllInboxes', function () {
-                        return _this.inboxController.getAllInboxes(page, size, _this.callOptions);
+                        return _this.inboxController.getAllInboxes({
+                            page: page,
+                            size: size,
+                            favourite: favourite,
+                            search: search,
+                            sort: sort,
+                        });
+                    })];
+            });
+        });
+    };
+    // waitFor methods
+    MailSlurp.prototype.waitForLatestEmail = function (inboxId, timeout, unreadOnly) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
+                        return _this.waitForController.waitForLatestEmail({
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
+                    })];
+            });
+        });
+    };
+    MailSlurp.prototype.waitForNthEmail = function (inboxId, index, timeout, unreadOnly) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('waitForNthEmail', function () {
+                        return _this.waitForController.waitForNthEmail({
+                            inboxId: inboxId,
+                            index: index,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
+                    })];
+            });
+        });
+    };
+    MailSlurp.prototype.waitForMatchingEmails = function (matchOptions, count, inboxId, timeout, unreadOnly) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
+                        return _this.waitForController.waitForMatchingEmail({
+                            matchOptions: matchOptions,
+                            count: count,
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
+                    })];
+            });
+        });
+    };
+    MailSlurp.prototype.waitForEmailCount = function (count, inboxId, timeout, unreadOnly) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('waitForEmailCount', function () {
+                        return _this.waitForController.waitForEmailCount({
+                            count: count,
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
+                    })];
+            });
+        });
+    };
+    // email methods
+    MailSlurp.prototype.deleteEmail = function (emailId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('deleteEmail', function () {
+                        return _this.emailController.deleteEmail({ emailId: emailId });
                     })];
             });
         });
@@ -437,12 +231,18 @@ var MailSlurp = /** @class */ (function () {
      * Get all emails
      * Returns paginated email previews
      */
-    MailSlurp.prototype.getAllEmails = function (page, size) {
+    MailSlurp.prototype.getAllEmails = function (page, size, inboxId, sort, unreadOnly) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emailController.getEmailsPaginated(page, size, _this.callOptions);
+                        return _this.emailController.getEmailsPaginated({
+                            page: page,
+                            size: size,
+                            inboxId: inboxId,
+                            sort: sort,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -461,7 +261,14 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails(inboxId, args.limit, args.minCount, args.retryTimeout, args.since, _this.callOptions);
+                        return _this.inboxController.getEmails({
+                            inboxId: inboxId,
+                            limit: args.limit,
+                            minCount: args.minCount,
+                            retryTimeout: args.retryTimeout,
+                            since: args.since,
+                            sort: args.sort,
+                        });
                     })];
             });
         });
@@ -478,7 +285,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmail', function () {
-                        return _this.emailController.getEmail(emailId, _this.callOptions);
+                        return _this.emailController.getEmail({ emailId: emailId });
                     })];
             });
         });
@@ -492,7 +299,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getRawEmail', function () {
-                        return _this.emailController.getRawEmailContents(emailId, _this.callOptions);
+                        return _this.emailController.getRawEmailContents({ emailId: emailId });
                     })];
             });
         });
@@ -509,86 +316,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('sendEmail', function () {
-                        return _this.inboxController.sendEmail(inboxId, sendEmailOptions, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Bulk send emails
-     */
-    MailSlurp.prototype.bulkSendEmails = function (bulkSendEmailOptions) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('bulkSendEmails', function () {
-                        return _this.bulkActionsController.bulkSendEmails(bulkSendEmailOptions, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Bulk create inboxes
-     */
-    MailSlurp.prototype.bulkCreateInboxes = function (count) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('bulkCreateInboxes', function () {
-                        return _this.bulkActionsController.bulkCreateInboxes(count, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Bulk delete inboxes
-     */
-    MailSlurp.prototype.bulkDeleteInboxes = function (inboxIds) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('bulkDeleteInboxes', function () {
-                        return _this.bulkActionsController.bulkDeleteInboxes(inboxIds, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Create a webhook for notifications
-     */
-    MailSlurp.prototype.createWebhook = function (inboxId, createWebhookOptions) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('createWebhook', function () {
-                        return _this.inboxController.createWebhook(inboxId, createWebhookOptions, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Get webhooks for an inbox
-     * @param inboxId
-     */
-    MailSlurp.prototype.getWebhooks = function (inboxId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getWebhooks', function () {
-                        return _this.inboxController.getWebhooks(inboxId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Remove a webhook from an inbox
-     */
-    MailSlurp.prototype.deleteWebhook = function (inboxId, webhookId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('deleteWebhook', function () {
-                        return _this.inboxController.deleteWebhook(inboxId, webhookId, _this.callOptions);
+                        return _this.inboxController.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
                     })];
             });
         });
@@ -603,7 +331,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('downloadAttachment', function () {
-                        return _this.emailController.downloadAttachment(attachmentId, emailId, _this.callOptions);
+                        return _this.emailController.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
                     })];
             });
         });
@@ -618,7 +346,9 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('uploadAttachment', function () {
-                        return _this.attachmentController.uploadAttachment(options, _this.callOptions);
+                        return _this.attachmentController.uploadAttachment({
+                            uploadOptions: options,
+                        });
                     })];
             });
         });
@@ -633,61 +363,10 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAttachmentMetaData', function () {
-                        return _this.emailController.getAttachmentMetaData(attachmentId, emailId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Create a custom domain for use with MailSlurp
-     * You must own and have access to DNS setup for the domain in order to verify it
-     * @param options
-     */
-    MailSlurp.prototype.createDomain = function (options) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('createDomain', function () {
-                        return _this.domainController.createDomain(options, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Get domains
-     */
-    MailSlurp.prototype.getDomains = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getDomains', function () {
-                        return _this.domainController.getDomains(_this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Get domain
-     */
-    MailSlurp.prototype.getDomain = function (domainId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getDomain', function () {
-                        return _this.domainController.getDomain(domainId, _this.callOptions);
-                    })];
-            });
-        });
-    };
-    /**
-     * Delete domain
-     */
-    MailSlurp.prototype.deleteDomain = function (domainId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('deleteDomain', function () {
-                        return _this.domainController.deleteDomain(domainId, _this.callOptions);
+                        return _this.emailController.getAttachmentMetaData({
+                            attachmentId: attachmentId,
+                            emailId: emailId,
+                        });
                     })];
             });
         });
@@ -695,4 +374,30 @@ var MailSlurp = /** @class */ (function () {
     return MailSlurp;
 }());
 exports.MailSlurp = MailSlurp;
+// helper
+function wrapCall(tag, fn) {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_1, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 2, , 6]);
+                    return [4 /*yield*/, fn()];
+                case 1: return [2 /*return*/, _b.sent()];
+                case 2:
+                    e_1 = _b.sent();
+                    if (!e_1.json) return [3 /*break*/, 4];
+                    return [4 /*yield*/, e_1.json()];
+                case 3:
+                    _a = _b.sent();
+                    return [3 /*break*/, 5];
+                case 4:
+                    _a = e_1;
+                    _b.label = 5;
+                case 5: throw _a;
+                case 6: return [2 /*return*/];
+            }
+        });
+    });
+}
 exports.default = MailSlurp;

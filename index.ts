@@ -1,50 +1,383 @@
 /**
  * This library is a convenience wrapper around the generated swagger sdk
- * @see https://github.com/mailslurp/swagger-sdk-typescript-fetch for more information
+ * @see https://www.mailslurp.com/js/ for documentation
  */
-export * from 'mailslurp-swagger-sdk-ts';
 import {
-  AttachmentControllerApi,
-  AttachmentMetaData,
-  BulkActionsControllerApi,
-  BulkSendEmailOptions,
-  CommonActionsControllerApi,
-  CreateDomainOptions,
-  CreateWebhookOptions,
-  DomainControllerApi,
-  DomainDto,
-  DomainPreview,
-  Email,
-  EmailControllerApi,
-  EmailPreview,
-  Inbox,
-  InboxControllerApi,
-  MatchOptions,
-  SendEmailOptions,
-  UploadAttachmentOptions,
-  WebhookDto,
+    AttachmentControllerApi,
+    AttachmentMetaData,
+    BulkActionsControllerApi,
+    CommonActionsControllerApi,
+    Configuration,
+    ContactControllerApi,
+    DomainControllerApi,
+    Email,
+    EmailControllerApi,
+    EmailPreview,
+    GetAllInboxesSortEnum,
+    GetEmailsPaginatedSortEnum,
+    GetEmailsSortEnum,
+    GroupControllerApi,
+    Inbox,
+    InboxControllerApi,
+    MatchOptions,
+    PageInboxProjection,
+    SendEmailOptions,
+    TemplateControllerApi,
+    UploadAttachmentOptions,
+    WaitForControllerApi,
+    WebhookControllerApi,
 } from 'mailslurp-swagger-sdk-ts';
-
-import debug from 'debug';
-
-// setup logger. enable output with DEBUG=mailslurp-client env variable
-const log = debug('mailslurp-client');
 
 /**
  * MailSlurp config
  *
  * @remarks
- *
  * [Obtain your API Key](https://app.mailslurp.com) in your dashboard.
  */
 export type Config = {
-  // obtain an apiKey at https://app.mailslurp.com
-  apiKey: string;
-  // optional attribution id (see sales)
-  attribution?: string,
-  // optional api base path
-  basePath?: string
+    // obtain an apiKey at https://app.mailslurp.com
+    apiKey: string;
+    // optional attribution id (see sales)
+    attribution?: string;
+    // optional api base path
+    basePath?: string;
 };
+
+/**
+ * Official MailSlurp Client
+ *
+ * Based on the MailSlurp REST API. Exports convenience methods plus full controllers.
+ *
+ * @see https://www.mailslurp.com/js/ for documentation.
+ */
+export class MailSlurp {
+    public readonly emails: EmailControllerApi;
+    public readonly inboxes: InboxControllerApi;
+    public readonly attachments: AttachmentControllerApi;
+
+    public readonly common: CommonActionsControllerApi;
+    public readonly bulk: BulkActionsControllerApi;
+    public readonly waitFor: WaitForControllerApi;
+
+    public readonly domains: DomainControllerApi;
+    public readonly contacts: ContactControllerApi;
+    public readonly groups: GroupControllerApi;
+    public readonly templates: TemplateControllerApi;
+    public readonly webhooks: WebhookControllerApi;
+
+    /**
+     * Create a new MailSlurp instance
+     * @param opts
+     */
+    constructor(opts: Config) {
+        // check options
+        if (!opts.apiKey) {
+            throw 'Missing apiKey config parameter';
+        }
+        // create credentials
+        const clientConfiguration = new Configuration({
+            apiKey: opts.apiKey,
+            basePath: opts.basePath,
+            headers: {
+                'x-client': 'mailslurp-client-ts-js',
+                'x-attribution': opts.attribution,
+            },
+        });
+        // instantiate api clients
+        this.emails = new EmailControllerApi(clientConfiguration);
+        this.inboxes = new InboxControllerApi(clientConfiguration);
+        this.attachments = new AttachmentControllerApi(
+            clientConfiguration
+        );
+        this.domains = new DomainControllerApi(clientConfiguration);
+
+        this.contacts = new ContactControllerApi(clientConfiguration);
+        this.groups = new GroupControllerApi(clientConfiguration);
+        this.templates = new TemplateControllerApi(clientConfiguration);
+        this.webhooks = new WebhookControllerApi(clientConfiguration);
+
+        this.common = new CommonActionsControllerApi(
+            clientConfiguration
+        );
+        this.bulk = new BulkActionsControllerApi(
+            clientConfiguration
+        );
+        this.waitFor = new WaitForControllerApi(clientConfiguration);
+    }
+
+    async createInbox(
+        emailAddress?: string,
+        name?: string,
+        description?: string,
+        expiresAt?: Date,
+        favourite?: boolean,
+        tags?: Array<string>
+    ): Promise<Inbox> {
+        return wrapCall('createInbox', () =>
+            this.inboxes.createInbox({
+                emailAddress,
+                name,
+                description,
+                expiresAt,
+                favourite,
+                tags,
+            })
+        );
+    }
+
+    async deleteInbox(inboxId: string): Promise<void> {
+        return wrapCall('deleteInbox', () =>
+            this.inboxes.deleteInbox({ inboxId })
+        );
+    }
+
+    async emptyInbox(inboxId: string): Promise<void> {
+        return wrapCall('emptyInbox', () =>
+            this.common.emptyInbox({ inboxId })
+        );
+    }
+
+    async getInbox(inboxId: string): Promise<Inbox> {
+        return wrapCall('getInbox', () =>
+            this.inboxes.getInbox({ inboxId })
+        );
+    }
+
+    /**
+     * Get all inboxes
+     *
+     * [[include: list-inboxes.md]]
+     */
+    async getInboxes(): Promise<Inbox[]> {
+        return wrapCall('getInboxes', () => this.inboxes.getInboxes());
+    }
+
+    /**
+     * Get all inboxes paginated
+     * Returns paginated inbox previews
+     */
+    async getAllInboxes(
+        page?: number,
+        size?: number,
+        favourite?: boolean,
+        search?: string,
+        sort?: GetAllInboxesSortEnum
+    ): Promise<PageInboxProjection> {
+        return wrapCall('getAllInboxes', () =>
+            this.inboxes.getAllInboxes({
+                page,
+                size,
+                favourite,
+                search,
+                sort,
+            })
+        );
+    }
+
+    // waitFor methods
+
+    async waitForLatestEmail(
+        inboxId?: string,
+        timeout?: number,
+        unreadOnly?: boolean
+    ): Promise<Email> {
+        return wrapCall('waitForLatestEmail', () =>
+            this.waitFor.waitForLatestEmail({
+                inboxId,
+                timeout,
+                unreadOnly,
+            })
+        );
+    }
+
+    async waitForNthEmail(
+        inboxId: string,
+        index: number,
+        timeout?: number,
+        unreadOnly?: boolean
+    ): Promise<Email> {
+        return wrapCall('waitForNthEmail', () =>
+            this.waitFor.waitForNthEmail({
+                inboxId,
+                index,
+                timeout,
+                unreadOnly,
+            })
+        );
+    }
+
+    async waitForMatchingEmails(
+        matchOptions: MatchOptions,
+        count?: number,
+        inboxId?: string,
+        timeout?: number,
+        unreadOnly?: boolean
+    ): Promise<EmailPreview[]> {
+        return wrapCall('waitForMatchingEmail', () =>
+            this.waitFor.waitForMatchingEmail({
+                matchOptions,
+                count,
+                inboxId,
+                timeout,
+                unreadOnly,
+            })
+        );
+    }
+
+    async waitForEmailCount(
+        count?: number,
+        inboxId?: string,
+        timeout?: number,
+        unreadOnly?: boolean
+    ): Promise<EmailPreview[]> {
+        return wrapCall('waitForEmailCount', () =>
+            this.waitFor.waitForEmailCount({
+                count,
+                inboxId,
+                timeout,
+                unreadOnly,
+            })
+        );
+    }
+
+    // email methods
+    async deleteEmail(emailId: string): Promise<void> {
+        return wrapCall('deleteEmail', () =>
+            this.emails.deleteEmail({ emailId })
+        );
+    }
+
+    /**
+     * Get all emails
+     * Returns paginated email previews
+     */
+    async getAllEmails(
+        page?: number,
+        size?: number,
+        inboxId?: Array<string>,
+        sort?: GetEmailsPaginatedSortEnum,
+        unreadOnly?: boolean
+    ) {
+        return wrapCall('getAllEmails', () =>
+            this.emails.getEmailsPaginated({
+                page,
+                size,
+                inboxId,
+                sort,
+                unreadOnly,
+            })
+        );
+    }
+
+    /**
+     * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
+     *
+     * [[include: get-emails.md]]
+     *
+     * @param inboxId
+     * @param args
+     */
+    async getEmails(
+        inboxId: string,
+        args: GetMessagesOptions = {}
+    ): Promise<EmailPreview[]> {
+        return wrapCall('getEmails', () =>
+            this.inboxes.getEmails({
+                inboxId,
+                limit: args.limit,
+                minCount: args.minCount,
+                retryTimeout: args.retryTimeout,
+                since: args.since,
+                sort: args.sort,
+            })
+        );
+    }
+
+    /**
+     * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
+     *
+     * [[include: get-email.md]]
+     *
+     * @param emailId
+     */
+    async getEmail(emailId: string): Promise<Email> {
+        return wrapCall('getEmail', () =>
+            this.emails.getEmail({ emailId })
+        );
+    }
+
+    /**
+     * Get an email's raw contents from by id
+     * @param emailId
+     */
+    async getRawEmail(emailId: string): Promise<string> {
+        return wrapCall('getRawEmail', () =>
+            this.emails.getRawEmailContents({ emailId })
+        );
+    }
+
+    /**
+     * Send and email from a given inbox
+     *
+     * [[include: send-email.md]]
+     * @param inboxId
+     * @param sendEmailOptions
+     */
+    async sendEmail(
+        inboxId: string,
+        sendEmailOptions: SendEmailOptions
+    ): Promise<void> {
+        return wrapCall('sendEmail', () =>
+            this.inboxes.sendEmail({ inboxId, sendEmailOptions })
+        );
+    }
+
+    /**
+     * Get email attachment by id
+     *
+     * Returns HTTP response containing byte stream
+     */
+    async downloadAttachment(
+        emailId: string,
+        attachmentId: string
+    ): Promise<String> {
+        return wrapCall('downloadAttachment', () =>
+            this.emails.downloadAttachment({ attachmentId, emailId })
+        );
+    }
+
+    /**
+     * Upload an attachment for use in email sending
+     *
+     * Attachment contents must be a base64 encoded string
+     */
+    async uploadAttachment(
+        options: UploadAttachmentOptions
+    ): Promise<Array<String>> {
+        return wrapCall('uploadAttachment', () =>
+            this.attachments.uploadAttachment({
+                uploadOptions: options,
+            })
+        );
+    }
+
+    /**
+     * Get attachment MetaData
+     *
+     * MetaData includes name, size (bytes) and content-type.
+     */
+    async getAttachmentMetaData(
+        attachmentId: string,
+        emailId: string
+    ): Promise<AttachmentMetaData> {
+        return wrapCall('getAttachmentMetaData', () =>
+            this.emails.getAttachmentMetaData({
+                attachmentId,
+                emailId,
+            })
+        );
+    }
+}
 
 /**
  * Options for advanced message fetching
@@ -53,509 +386,26 @@ export type Config = {
  * For more control over fetching. See also Webhook endpoints
  */
 export type GetMessagesOptions = {
-  // max emails to return
-  limit?: number;
-  // minimum number of emails to expect.
-  // when give, server will retry databases until this number is met or the retry timeout is exceeded
-  minCount?: number;
-  // maximum time to wait for conditions to be met
-  retryTimeout?: number;
-  // ignore emails received before this ISO-8601 date time
-  since?: Date;
+    // max emails to return
+    limit?: number;
+    // minimum number of emails to expect.
+    // when give, server will retry databases until this number is met or the retry timeout is exceeded
+    minCount?: number;
+    // maximum time to wait for conditions to be met
+    retryTimeout?: number;
+    // ignore emails received before this ISO-8601 date time
+    since?: Date;
+    // sort direction
+    sort?: GetEmailsSortEnum;
 };
 
 // helper
 async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
-  log('[%s] executing', tag);
-  try {
-    const result = await fn();
-    log('[%s] returned %O', tag, result);
-    return result;
-  } catch (e) {
-    log('[%s] threw exception %O', tag, e);
-    throw e.json ? await e.json() : e;
-  }
-}
-
-/**
- * Official MailSlurp Client
- *
- * This is the recommended client for [mailslurp.com](https://www.mailslurp.com).
- *
- * ## Features
- *
- *  - Create email addresses on demand
- *  - Receive emails and attachments in code
- *  - Send emails and attachments
- *  - Create custom domains and webhooks
- *
- * ## Get started
- *
- * MailSlurp is free for personal use but you must have an [account](https://app.mailslurp.com) and an [API Key](https://app.mailslurp.com).
- *
- * ## Installing
- * First you'll need to install the MailSlurp package from [npm](https://npmjs.com/package/mailslurp-client).
- *
- * `npm install --save mailslurp-client`
- *
- * ## Importing
- * Next import the client into your application or test.
- *
- * #### Typescript or ES6
- *
- * [[include: import.md]]
- *
- * #### NodeJS require
- *
- * [[include: require.md]]
- *
- * ## Configure
- * Next configure an instance of MailSlurp using your API Key.
- *
- * [[include: configure.md]]
- *
- * ## Example usage
- * Now that you have a configured client you can use it to interact with MailSlurp. Here are some common examples:
- *
- * #### Create an inbox
- * [[include: create-inbox.md]]
- *
- * #### List your inboxes
- * [[include: list-inboxes.md]]
- *
- * #### List emails in an inbox
- * [[include: list-emails.md]]
- *
- * #### Get an email
- * One way to receive an email is to fetch it by ID. You can find an emails ID by listing the emails in an inbox.
- * [[include: get-email.md]]
- *
- * #### WaitFor methods
- * Another way to receive an email is by using a `waitFor` method. WaitFor methods hold open a connection until a condition is met.
- * This is useful for situation in which an email has been sent and you expect it to arrive within a given time period.
- * [[include: wait-for-methods.md]]
- *
- * #### WaitFor in action
- * Here is an example of a `waitFor` method in action.
- * [[include: wait-for-test.md]]
- *
- * #### Send an email
- * [[include: send-email.md]]
- *
- * ## Next steps
- * See the methods below for more details.
- */
-export class MailSlurp {
-  private commonActionsController: CommonActionsControllerApi;
-  private inboxController: InboxControllerApi;
-  private emailController: EmailControllerApi;
-  private domainController: DomainControllerApi;
-  private attachmentController: AttachmentControllerApi;
-  private bulkActionsController: BulkActionsControllerApi;
-
-  private callOptions: any = {};
-
-  /**
-   * Create a new MailSlurp instance
-   * @param opts
-   */
-  constructor(opts: Config) {
-    // check options
-    if (!opts.apiKey) {
-      throw 'Missing apiKey config parameter';
+    try {
+        return await fn();
+    } catch (e) {
+        throw e.json ? await e.json() : e;
     }
-    // set call options if required
-    const headers = {
-      'x-client': 'mailslurp-client-ts-js',
-      'x-attribution': opts.attribution
-    };
-    this.callOptions['headers'] = headers;
-
-    // instantiate api clients
-    const clientConfiguration = {apiKey: opts.apiKey, basePath: opts.basePath} as any;
-    this.commonActionsController = new CommonActionsControllerApi(clientConfiguration);
-    this.inboxController = new InboxControllerApi(clientConfiguration);
-    this.emailController = new EmailControllerApi(clientConfiguration);
-    this.domainController = new DomainControllerApi(clientConfiguration);
-    this.attachmentController = new AttachmentControllerApi(clientConfiguration);
-    this.bulkActionsController = new BulkActionsControllerApi(clientConfiguration);
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async createNewEmailAddress(): Promise<Inbox> {
-    return wrapCall('createNewEmailAddress', () =>
-      this.commonActionsController.createNewEmailAddress(this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async sendEmailSimple(
-    sendEmailOptions: SendEmailOptions,
-  ): Promise<Response> {
-    return wrapCall('sendEmailSimple', () =>
-      this.commonActionsController.sendEmailSimple(sendEmailOptions, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async waitForLatestEmail(
-    inboxId?: string,
-    timeout?: number,
-  ): Promise<Email> {
-    return wrapCall('waitForLatestEmail', () =>
-      this.commonActionsController.waitForLatestEmail(inboxId, timeout, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async waitForNthEmail(
-    inboxId: string,
-    index: number,
-    timeout?: number,
-  ): Promise<Email> {
-    return wrapCall('waitForNthEmail', () =>
-      this.commonActionsController.waitForNthEmail(inboxId, index, timeout, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async waitForMatchingEmails(
-    matchOptions: MatchOptions,
-    count?: number,
-    inboxId?: string,
-    timeout?: number,
-  ): Promise<EmailPreview[]> {
-    return wrapCall('waitForMatchingEmail', () =>
-      this.commonActionsController.waitForMatchingEmail(
-        matchOptions,
-        count,
-        inboxId,
-        timeout,
-        this.callOptions,
-      ),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async waitForEmailCount(
-    count?: number,
-    inboxId?: string,
-    timeout?: number,
-  ): Promise<EmailPreview[]> {
-    return wrapCall('waitForEmailCount', () =>
-      this.commonActionsController.waitForEmailCount(count, inboxId, timeout, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async emptyInbox(inboxId: string): Promise<Response> {
-    return wrapCall('emptyInbox', () =>
-      this.commonActionsController.emptyInbox(inboxId, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async deleteEmail(emailId: string): Promise<Response> {
-    return wrapCall('deleteEmail', () =>
-      this.commonActionsController.deleteEmail(emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async deleteEmailAddress(emailId: string): Promise<Response> {
-    return wrapCall('deleteEmailAddress', () =>
-      this.commonActionsController.deleteEmailAddress(emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * @ignore
-   * @deprecated
-   */
-  async createInbox(emailAddress?: string): Promise<Inbox> {
-    return wrapCall('createInbox', () =>
-      this.inboxController.createInbox(emailAddress, this.callOptions),
-    );
-  }
-
-  /**
-   * Delete an inbox by id
-   * @param inboxId
-   */
-  async deleteInbox(inboxId: string): Promise<Response> {
-    return wrapCall('createInbox', () =>
-      this.inboxController.deleteInbox(inboxId, this.callOptions),
-    );
-  }
-
-  /**
-   * Get an inbox by id
-   * @param inboxId
-   */
-  async getInbox(inboxId: string): Promise<Inbox> {
-    return wrapCall('getInbox', () =>
-      this.inboxController.getInbox(inboxId, this.callOptions),
-    );
-  }
-
-  /**
-   * Get all inboxes
-   *
-   * [[include: list-inboxes.md]]
-   */
-  async getInboxes(): Promise<Inbox[]> {
-    return wrapCall('getInboxes', () =>
-      this.inboxController.getInboxes(this.callOptions),
-    );
-  }
-
-
-  /**
-   * Get all inboxes paginated
-   * Returns paginated inbox previews
-   */
-  async getAllInboxes(page?: number, size?: number) {
-    return wrapCall('getAllInboxes', () =>
-      this.inboxController.getAllInboxes(page, size, this.callOptions),
-    );
-  }
-
-  /**
-   * Get all emails
-   * Returns paginated email previews
-   */
-  async getAllEmails(page?: number, size?: number) {
-    return wrapCall('getAllEmails', () =>
-      this.emailController.getEmailsPaginated(page, size, this.callOptions),
-    );
-  }
-
-  /**
-   * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
-   *
-   * [[include: get-emails.md]]
-   *
-   * @param inboxId
-   * @param args
-   */
-  async getEmails(
-    inboxId: string,
-    args: GetMessagesOptions = {},
-  ): Promise<EmailPreview[]> {
-    return wrapCall('getEmails', () =>
-      this.inboxController.getEmails(
-        inboxId,
-        args.limit,
-        args.minCount,
-        args.retryTimeout,
-        args.since,
-        this.callOptions,
-      ),
-    );
-  }
-
-  /**
-   * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
-   *
-   * [[include: get-email.md]]
-   *
-   * @param emailId
-   */
-  async getEmail(emailId: string): Promise<Email> {
-    return wrapCall('getEmail', () =>
-      this.emailController.getEmail(emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * Get an email's raw contents from by id
-   * @param emailId
-   */
-  async getRawEmail(emailId: string): Promise<string> {
-    return wrapCall('getRawEmail', () =>
-      this.emailController.getRawEmailContents(emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * Send and email from a given inbox
-   *
-   * [[include: send-email.md]]
-   * @param inboxId
-   * @param sendEmailOptions
-   */
-  async sendEmail(
-    inboxId: string,
-    sendEmailOptions: SendEmailOptions,
-  ): Promise<Response> {
-    return wrapCall('sendEmail', () =>
-      this.inboxController.sendEmail(inboxId, sendEmailOptions, this.callOptions),
-    );
-  }
-
-  /**
-   * Bulk send emails
-   */
-  async bulkSendEmails(
-    bulkSendEmailOptions: BulkSendEmailOptions,
-  ): Promise<Response> {
-    return wrapCall('bulkSendEmails', () =>
-      this.bulkActionsController.bulkSendEmails(bulkSendEmailOptions, this.callOptions),
-    );
-  }
-
-  /**
-   * Bulk create inboxes
-   */
-  async bulkCreateInboxes(count: number): Promise<Inbox[]> {
-    return wrapCall('bulkCreateInboxes', () =>
-      this.bulkActionsController.bulkCreateInboxes(count, this.callOptions),
-    );
-  }
-
-  /**
-   * Bulk delete inboxes
-   */
-  async bulkDeleteInboxes(inboxIds: string[]): Promise<Response> {
-    return wrapCall('bulkDeleteInboxes', () =>
-      this.bulkActionsController.bulkDeleteInboxes(inboxIds, this.callOptions),
-    );
-  }
-
-  /**
-   * Create a webhook for notifications
-   */
-  async createWebhook(
-    inboxId: string,
-    createWebhookOptions: CreateWebhookOptions,
-  ): Promise<Webhook> {
-    return wrapCall('createWebhook', () =>
-      this.inboxController.createWebhook(inboxId, createWebhookOptions, this.callOptions),
-    );
-  }
-
-  /**
-   * Get webhooks for an inbox
-   * @param inboxId
-   */
-  async getWebhooks(
-    inboxId: string,
-  ): Promise<Webhook[]> {
-    return wrapCall('getWebhooks', () => {
-      return this.inboxController.getWebhooks(inboxId, this.callOptions);
-    });
-  }
-
-  /**
-   * Remove a webhook from an inbox
-   */
-  async deleteWebhook(inboxId: string, webhookId: string): Promise<Response> {
-    return wrapCall('deleteWebhook', () =>
-      this.inboxController.deleteWebhook(inboxId, webhookId, this.callOptions),
-    );
-  }
-
-  /**
-   * Get email attachment by id
-   *
-   * Returns HTTP response containing byte stream
-   */
-  async downloadAttachment(
-    emailId: string,
-    attachmentId: string,
-  ): Promise<Response> {
-    return wrapCall('downloadAttachment', () =>
-      this.emailController.downloadAttachment(attachmentId, emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * Upload an attachment for use in email sending
-   *
-   * Attachment contents must be a base64 encoded string
-   */
-  async uploadAttachment(options: UploadAttachmentOptions): Promise<Array<String>> {
-    return wrapCall('uploadAttachment', () =>
-      this.attachmentController.uploadAttachment(options, this.callOptions),
-    );
-  }
-
-  /**
-   * Get attachment MetaData
-   *
-   * MetaData includes name, size (bytes) and content-type.
-   */
-  async getAttachmentMetaData(attachmentId: string, emailId: string): Promise<AttachmentMetaData> {
-    return wrapCall('getAttachmentMetaData', () =>
-      this.emailController.getAttachmentMetaData(attachmentId, emailId, this.callOptions),
-    );
-  }
-
-  /**
-   * Create a custom domain for use with MailSlurp
-   * You must own and have access to DNS setup for the domain in order to verify it
-   * @param options
-   */
-  async createDomain(options: CreateDomainOptions): Promise<DomainPlusVerificationRecordsAndStatus> {
-    return wrapCall('createDomain', () => {
-      return this.domainController.createDomain(options, this.callOptions);
-    });
-  }
-
-  /**
-   * Get domains
-   */
-  async getDomains(): Promise<Array<DomainPreview>> {
-    return wrapCall('getDomains', () => {
-      return this.domainController.getDomains(this.callOptions);
-    });
-  }
-
-  /**
-   * Get domain
-   */
-  async getDomain(domainId: string): Promise<DomainPlusVerificationRecordsAndStatus> {
-    return wrapCall('getDomain', () => {
-      return this.domainController.getDomain(domainId, this.callOptions);
-    });
-  }
-
-  /**
-   * Delete domain
-   */
-  async deleteDomain(domainId: string): Promise<Response> {
-    return wrapCall('deleteDomain', () => {
-      return this.domainController.deleteDomain(domainId, this.callOptions);
-    });
-  }
 }
 
 export default MailSlurp;
-
