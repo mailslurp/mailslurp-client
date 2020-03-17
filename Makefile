@@ -1,3 +1,5 @@
+.PHONY: docs
+
 node_modules:
 	npm install
 
@@ -13,14 +15,7 @@ docs:
 	npm run docs
 	cp config/DOC.md docs/README.md
 
-clean:
-	rm -rf docs/classes/_node_modules__type*
-	rm -rf docs/modules/_node_modules__type*
-	rm -rf docs/interfaces/_node_modules__type*
-	rm -rf docs/interfaces/_node_modules_type*
-	rm -rf docs/modules/_node_modules_jest*
-
 # manually bump package version first
-deploy: test build docs clean 
+deploy: test build docs 
 	npm publish
 

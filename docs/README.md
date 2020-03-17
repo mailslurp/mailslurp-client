@@ -1,9 +1,3 @@
----
-title: Javascript
-featured: true
-icon: devicon-javascript-plain
-
----
 # MailSlurp Javascript Client
 
 Official MailSlurp Javascript client.
