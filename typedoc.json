@@ -3,8 +3,5 @@
     "theme": "markdown",
     "out": "docs",
     "hideGenerator": true,
-    "includeDeclarations": true,
-    "excludeExternals": true,
-    "includes": "./snippets",
     "tsconfig": "./tsconfig.json"
 }

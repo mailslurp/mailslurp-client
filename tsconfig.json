@@ -7,5 +7,6 @@
         "types": ["jest", "node"],
         "skipLibCheck": true,
         "noImplicitAny": true
-    }
+    },
+    "include": ["src/index.ts"]
 }

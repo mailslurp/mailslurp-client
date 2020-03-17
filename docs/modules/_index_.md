@@ -23,7 +23,7 @@
 
 Ƭ **Config**: *object*
 
-*Defined in [index.ts:34](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L34)*
+*Defined in [src/index.ts:34](https://github.com/mailslurp/mailslurp-client-ts-js/blob/fc9510a/src/index.ts#L34)*
 
 MailSlurp config
 
@@ -38,7 +38,7 @@ MailSlurp config
 
 * **basePath**? : *string*
 
-* **fetchApi**? : *FetchAPI*
+* **fetchApi**? : *[FetchAPI](_lib_runtime_.md#fetchapi)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Ƭ **GetMessagesOptions**: *object*
 
-*Defined in [index.ts:407](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L407)*
+*Defined in [src/index.ts:407](https://github.com/mailslurp/mailslurp-client-ts-js/blob/fc9510a/src/index.ts#L407)*
 
 Options for advanced message fetching
 
@@ -63,7 +63,7 @@ For more control over fetching. See also Webhook endpoints
 
 * **since**? : *Date*
 
-* **sort**? : *GetEmailsSortEnum*
+* **sort**? : *[GetEmailsSortEnum](../enums/_lib_apis_inboxcontrollerapi_.getemailssortenum.md)*
 
 ## Functions
 
@@ -71,7 +71,7 @@ For more control over fetching. See also Webhook endpoints
 
 ▸ **wrapCall**<**T**>(`tag`: String, `fn`: function): *Promise‹T›*
 
-*Defined in [index.ts:422](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L422)*
+*Defined in [src/index.ts:422](https://github.com/mailslurp/mailslurp-client-ts-js/blob/fc9510a/src/index.ts#L422)*
 
 **Type parameters:**
 

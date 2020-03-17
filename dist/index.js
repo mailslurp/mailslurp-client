@@ -38,9 +38,8 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("./generated/index");
-__export(require("./generated/index"));
 require("isomorphic-fetch");
+var lib_1 = require("./lib");
 /**
  * Official MailSlurp Client
  *
@@ -78,34 +77,34 @@ var MailSlurp = /** @class */ (function () {
             throw 'Missing apiKey config parameter';
         }
         // create credentials
-        var clientConfiguration = new index_1.Configuration({
+        var clientConfiguration = new lib_1.Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath,
             headers: {
                 'x-client': 'mailslurp-client-ts-js',
                 'x-attribution': opts.attribution,
             },
-            fetchApi: opts.fetchApi || fetch
+            fetchApi: opts.fetchApi || fetch,
         });
         // instantiate api clients
-        this.emails = new index_1.EmailControllerApi(clientConfiguration);
-        this.inboxes = new index_1.InboxControllerApi(clientConfiguration);
-        this.attachments = new index_1.AttachmentControllerApi(clientConfiguration);
-        this.domains = new index_1.DomainControllerApi(clientConfiguration);
-        this.contacts = new index_1.ContactControllerApi(clientConfiguration);
-        this.groups = new index_1.GroupControllerApi(clientConfiguration);
-        this.templates = new index_1.TemplateControllerApi(clientConfiguration);
-        this.webhooks = new index_1.WebhookControllerApi(clientConfiguration);
-        this.common = new index_1.CommonActionsControllerApi(clientConfiguration);
-        this.bulk = new index_1.BulkActionsControllerApi(clientConfiguration);
-        this.waitFor = new index_1.WaitForControllerApi(clientConfiguration);
+        this.emailController = new lib_1.EmailControllerApi(clientConfiguration);
+        this.inboxController = new lib_1.InboxControllerApi(clientConfiguration);
+        this.attachmentController = new lib_1.AttachmentControllerApi(clientConfiguration);
+        this.domainController = new lib_1.DomainControllerApi(clientConfiguration);
+        this.contactController = new lib_1.ContactControllerApi(clientConfiguration);
+        this.groupController = new lib_1.GroupControllerApi(clientConfiguration);
+        this.templateController = new lib_1.TemplateControllerApi(clientConfiguration);
+        this.webhookController = new lib_1.WebhookControllerApi(clientConfiguration);
+        this.commonController = new lib_1.CommonActionsControllerApi(clientConfiguration);
+        this.bulkController = new lib_1.BulkActionsControllerApi(clientConfiguration);
+        this.waitController = new lib_1.WaitForControllerApi(clientConfiguration);
     }
     MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxes.createInbox({
+                        return _this.inboxController.createInbox({
                             emailAddress: emailAddress,
                             name: name,
                             description: description,
@@ -122,7 +121,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteInbox', function () {
-                        return _this.inboxes.deleteInbox({ inboxId: inboxId });
+                        return _this.inboxController.deleteInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -132,7 +131,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('emptyInbox', function () {
-                        return _this.common.emptyInbox({ inboxId: inboxId });
+                        return _this.commonController.emptyInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -142,7 +141,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getInbox', function () {
-                        return _this.inboxes.getInbox({ inboxId: inboxId });
+                        return _this.inboxController.getInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -156,7 +155,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxes.getInboxes(); })];
+                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxController.getInboxes(); })];
             });
         });
     };
@@ -169,7 +168,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllInboxes', function () {
-                        return _this.inboxes.getAllInboxes({
+                        return _this.inboxController.getAllInboxes({
                             page: page,
                             size: size,
                             favourite: favourite,
@@ -186,7 +185,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.waitFor.waitForLatestEmail({
+                        return _this.waitController.waitForLatestEmail({
                             inboxId: inboxId,
                             timeout: timeout,
                             unreadOnly: unreadOnly,
@@ -200,7 +199,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.waitFor.waitForNthEmail({
+                        return _this.waitController.waitForNthEmail({
                             inboxId: inboxId,
                             index: index,
                             timeout: timeout,
@@ -215,7 +214,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitFor.waitForMatchingEmail({
+                        return _this.waitController.waitForMatchingEmail({
                             matchOptions: matchOptions,
                             count: count,
                             inboxId: inboxId,
@@ -231,7 +230,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.waitFor.waitForEmailCount({
+                        return _this.waitController.waitForEmailCount({
                             count: count,
                             inboxId: inboxId,
                             timeout: timeout,
@@ -247,7 +246,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteEmail', function () {
-                        return _this.emails.deleteEmail({ emailId: emailId });
+                        return _this.emailController.deleteEmail({ emailId: emailId });
                     })];
             });
         });
@@ -261,7 +260,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emails.getEmailsPaginated({
+                        return _this.emailController.getEmailsPaginated({
                             page: page,
                             size: size,
                             inboxId: inboxId,
@@ -286,7 +285,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxes.getEmails({
+                        return _this.inboxController.getEmails({
                             inboxId: inboxId,
                             limit: args.limit,
                             minCount: args.minCount,
@@ -310,7 +309,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmail', function () {
-                        return _this.emails.getEmail({ emailId: emailId });
+                        return _this.emailController.getEmail({ emailId: emailId });
                     })];
             });
         });
@@ -324,7 +323,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getRawEmail', function () {
-                        return _this.emails.getRawEmailContents({ emailId: emailId });
+                        return _this.emailController.getRawEmailContents({ emailId: emailId });
                     })];
             });
         });
@@ -341,7 +340,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('sendEmail', function () {
-                        return _this.inboxes.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
+                        return _this.inboxController.sendEmail({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
                     })];
             });
         });
@@ -356,7 +355,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('downloadAttachment', function () {
-                        return _this.emails.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
+                        return _this.emailController.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
                     })];
             });
         });
@@ -371,7 +370,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('uploadAttachment', function () {
-                        return _this.attachments.uploadAttachment({
+                        return _this.attachmentController.uploadAttachment({
                             uploadOptions: options,
                         });
                     })];
@@ -388,7 +387,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAttachmentMetaData', function () {
-                        return _this.emails.getAttachmentMetaData({
+                        return _this.emailController.getAttachmentMetaData({
                             attachmentId: attachmentId,
                             emailId: emailId,
                         });
@@ -425,4 +424,5 @@ function wrapCall(tag, fn) {
         });
     });
 }
+__export(require("./lib"));
 exports.default = MailSlurp;
