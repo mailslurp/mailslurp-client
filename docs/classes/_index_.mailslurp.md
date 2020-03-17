@@ -77,7 +77,7 @@ Read [quick start guide](https://www.mailslurp.com/guides/) for more examples or
 
 \+ **new MailSlurp**(`opts`: [Config](../modules/_index_.md#config)): *[MailSlurp](_index_.mailslurp.md)*
 
-*Defined in [index.ts:87](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L87)*
+*Defined in [index.ts:84](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L84)*
 
 Create a new MailSlurp instance
 
@@ -93,97 +93,97 @@ Name | Type | Description |
 
 ###  attachments
 
-• **attachments**: *[AttachmentControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_attachmentcontrollerapi_d_.attachmentcontrollerapi.md)*
+• **attachments**: *AttachmentControllerApi*
 
-*Defined in [index.ts:77](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L77)*
+*Defined in [index.ts:74](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L74)*
 
 ___
 
 ###  bulk
 
-• **bulk**: *[BulkActionsControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_bulkactionscontrollerapi_d_.bulkactionscontrollerapi.md)*
+• **bulk**: *BulkActionsControllerApi*
 
-*Defined in [index.ts:80](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L80)*
+*Defined in [index.ts:77](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L77)*
 
 ___
 
 ###  common
 
-• **common**: *[CommonActionsControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_commonactionscontrollerapi_d_.commonactionscontrollerapi.md)*
+• **common**: *CommonActionsControllerApi*
 
-*Defined in [index.ts:79](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L79)*
+*Defined in [index.ts:76](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L76)*
 
 ___
 
 ###  contacts
 
-• **contacts**: *[ContactControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_contactcontrollerapi_d_.contactcontrollerapi.md)*
+• **contacts**: *ContactControllerApi*
 
-*Defined in [index.ts:84](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L84)*
+*Defined in [index.ts:81](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L81)*
 
 ___
 
 ###  domains
 
-• **domains**: *[DomainControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_domaincontrollerapi_d_.domaincontrollerapi.md)*
+• **domains**: *DomainControllerApi*
 
-*Defined in [index.ts:83](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L83)*
+*Defined in [index.ts:80](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L80)*
 
 ___
 
 ###  emails
 
-• **emails**: *[EmailControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_emailcontrollerapi_d_.emailcontrollerapi.md)*
+• **emails**: *EmailControllerApi*
 
-*Defined in [index.ts:75](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L75)*
+*Defined in [index.ts:72](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L72)*
 
 ___
 
 ###  groups
 
-• **groups**: *[GroupControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_groupcontrollerapi_d_.groupcontrollerapi.md)*
+• **groups**: *GroupControllerApi*
 
-*Defined in [index.ts:85](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L85)*
+*Defined in [index.ts:82](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L82)*
 
 ___
 
 ###  inboxes
 
-• **inboxes**: *[InboxControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_inboxcontrollerapi_d_.inboxcontrollerapi.md)*
+• **inboxes**: *InboxControllerApi*
 
-*Defined in [index.ts:76](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L76)*
+*Defined in [index.ts:73](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L73)*
 
 ___
 
 ###  templates
 
-• **templates**: *[TemplateControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_templatecontrollerapi_d_.templatecontrollerapi.md)*
+• **templates**: *TemplateControllerApi*
 
-*Defined in [index.ts:86](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L86)*
+*Defined in [index.ts:83](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L83)*
 
 ___
 
 ###  waitFor
 
-• **waitFor**: *[WaitForControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_waitforcontrollerapi_d_.waitforcontrollerapi.md)*
+• **waitFor**: *WaitForControllerApi*
 
-*Defined in [index.ts:81](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L81)*
+*Defined in [index.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L78)*
 
 ___
 
 ###  webhooks
 
-• **webhooks**: *[WebhookControllerApi](_node_modules_mailslurp_swagger_sdk_ts_dist_apis_webhookcontrollerapi_d_.webhookcontrollerapi.md)*
+• **webhooks**: *WebhookControllerApi*
 
-*Defined in [index.ts:87](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L87)*
+*Defined in [index.ts:84](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L84)*
 
 ## Methods
 
 ###  createInbox
 
-▸ **createInbox**(`emailAddress?`: string, `name?`: string, `description?`: string, `expiresAt?`: Date, `favourite?`: boolean, `tags?`: Array‹string›): *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)›*
+▸ **createInbox**(`emailAddress?`: string, `name?`: string, `description?`: string, `expiresAt?`: Date, `favourite?`: boolean, `tags?`: Array‹string›): *Promise‹Inbox›*
 
-*Defined in [index.ts:130](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L130)*
+*Defined in [index.ts:127](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L127)*
 
 **Parameters:**
 
@@ -196,7 +196,7 @@ Name | Type |
 `favourite?` | boolean |
 `tags?` | Array‹string› |
 
-**Returns:** *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)›*
+**Returns:** *Promise‹Inbox›*
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 ▸ **deleteEmail**(`emailId`: string): *Promise‹void›*
 
-*Defined in [index.ts:266](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L266)*
+*Defined in [index.ts:263](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L263)*
 
 **Parameters:**
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **deleteInbox**(`inboxId`: string): *Promise‹void›*
 
-*Defined in [index.ts:150](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L150)*
+*Defined in [index.ts:147](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L147)*
 
 **Parameters:**
 
@@ -236,7 +236,7 @@ ___
 
 ▸ **downloadAttachment**(`emailId`: string, `attachmentId`: string): *Promise‹String›*
 
-*Defined in [index.ts:362](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L362)*
+*Defined in [index.ts:359](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L359)*
 
 Get email attachment by id
 
@@ -257,7 +257,7 @@ ___
 
 ▸ **emptyInbox**(`inboxId`: string): *Promise‹void›*
 
-*Defined in [index.ts:156](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L156)*
+*Defined in [index.ts:153](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L153)*
 
 **Parameters:**
 
@@ -271,9 +271,9 @@ ___
 
 ###  getAllEmails
 
-▸ **getAllEmails**(`page?`: number, `size?`: number, `inboxId?`: Array‹string›, `sort?`: [GetEmailsPaginatedSortEnum](../enums/_node_modules_mailslurp_swagger_sdk_ts_dist_apis_emailcontrollerapi_d_.getemailspaginatedsortenum.md), `unreadOnly?`: boolean): *Promise‹[PageEmailProjection](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_pageemailprojection_d_.pageemailprojection.md)›*
+▸ **getAllEmails**(`page?`: number, `size?`: number, `inboxId?`: Array‹string›, `sort?`: GetEmailsPaginatedSortEnum, `unreadOnly?`: boolean): *Promise‹PageEmailProjection›*
 
-*Defined in [index.ts:276](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L276)*
+*Defined in [index.ts:273](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L273)*
 
 Get all emails
 Returns paginated email previews
@@ -285,18 +285,18 @@ Name | Type |
 `page?` | number |
 `size?` | number |
 `inboxId?` | Array‹string› |
-`sort?` | [GetEmailsPaginatedSortEnum](../enums/_node_modules_mailslurp_swagger_sdk_ts_dist_apis_emailcontrollerapi_d_.getemailspaginatedsortenum.md) |
+`sort?` | GetEmailsPaginatedSortEnum |
 `unreadOnly?` | boolean |
 
-**Returns:** *Promise‹[PageEmailProjection](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_pageemailprojection_d_.pageemailprojection.md)›*
+**Returns:** *Promise‹PageEmailProjection›*
 
 ___
 
 ###  getAllInboxes
 
-▸ **getAllInboxes**(`page?`: number, `size?`: number, `favourite?`: boolean, `search?`: string, `sort?`: [GetAllInboxesSortEnum](../enums/_node_modules_mailslurp_swagger_sdk_ts_dist_apis_inboxcontrollerapi_d_.getallinboxessortenum.md)): *Promise‹[PageInboxProjection](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_pageinboxprojection_d_.pageinboxprojection.md)›*
+▸ **getAllInboxes**(`page?`: number, `size?`: number, `favourite?`: boolean, `search?`: string, `sort?`: GetAllInboxesSortEnum): *Promise‹PageInboxProjection›*
 
-*Defined in [index.ts:181](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L181)*
+*Defined in [index.ts:178](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L178)*
 
 Get all inboxes paginated
 Returns paginated inbox previews
@@ -309,17 +309,17 @@ Name | Type |
 `size?` | number |
 `favourite?` | boolean |
 `search?` | string |
-`sort?` | [GetAllInboxesSortEnum](../enums/_node_modules_mailslurp_swagger_sdk_ts_dist_apis_inboxcontrollerapi_d_.getallinboxessortenum.md) |
+`sort?` | GetAllInboxesSortEnum |
 
-**Returns:** *Promise‹[PageInboxProjection](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_pageinboxprojection_d_.pageinboxprojection.md)›*
+**Returns:** *Promise‹PageInboxProjection›*
 
 ___
 
 ###  getAttachmentMetaData
 
-▸ **getAttachmentMetaData**(`attachmentId`: string, `emailId`: string): *Promise‹[AttachmentMetaData](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_attachmentmetadata_d_.attachmentmetadata.md)›*
+▸ **getAttachmentMetaData**(`attachmentId`: string, `emailId`: string): *Promise‹AttachmentMetaData›*
 
-*Defined in [index.ts:391](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L391)*
+*Defined in [index.ts:388](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L388)*
 
 Get attachment MetaData
 
@@ -332,15 +332,15 @@ Name | Type |
 `attachmentId` | string |
 `emailId` | string |
 
-**Returns:** *Promise‹[AttachmentMetaData](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_attachmentmetadata_d_.attachmentmetadata.md)›*
+**Returns:** *Promise‹AttachmentMetaData›*
 
 ___
 
 ###  getEmail
 
-▸ **getEmail**(`emailId`: string): *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+▸ **getEmail**(`emailId`: string): *Promise‹Email›*
 
-*Defined in [index.ts:325](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L325)*
+*Defined in [index.ts:322](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L322)*
 
 Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
 
@@ -359,15 +359,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `emailId` | string |   |
 
-**Returns:** *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+**Returns:** *Promise‹Email›*
 
 ___
 
 ###  getEmails
 
-▸ **getEmails**(`inboxId`: string, `args`: [GetMessagesOptions](../modules/_index_.md#getmessagesoptions)): *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+▸ **getEmails**(`inboxId`: string, `args`: [GetMessagesOptions](../modules/_index_.md#getmessagesoptions)): *Promise‹EmailPreview[]›*
 
-*Defined in [index.ts:302](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L302)*
+*Defined in [index.ts:299](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L299)*
 
 Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
 
@@ -392,15 +392,15 @@ Name | Type | Default | Description |
 `inboxId` | string | - | - |
 `args` | [GetMessagesOptions](../modules/_index_.md#getmessagesoptions) |  {} |   |
 
-**Returns:** *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+**Returns:** *Promise‹EmailPreview[]›*
 
 ___
 
 ###  getInbox
 
-▸ **getInbox**(`inboxId`: string): *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)›*
+▸ **getInbox**(`inboxId`: string): *Promise‹Inbox›*
 
-*Defined in [index.ts:162](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L162)*
+*Defined in [index.ts:159](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L159)*
 
 **Parameters:**
 
@@ -408,15 +408,15 @@ Name | Type |
 ------ | ------ |
 `inboxId` | string |
 
-**Returns:** *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)›*
+**Returns:** *Promise‹Inbox›*
 
 ___
 
 ###  getInboxes
 
-▸ **getInboxes**(): *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)[]›*
+▸ **getInboxes**(): *Promise‹Inbox[]›*
 
-*Defined in [index.ts:173](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L173)*
+*Defined in [index.ts:170](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L170)*
 
 Get all inboxes
 
@@ -429,7 +429,7 @@ try {
 }
 ```
 
-**Returns:** *Promise‹[Inbox](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_inbox_d_.inbox.md)[]›*
+**Returns:** *Promise‹Inbox[]›*
 
 ___
 
@@ -437,7 +437,7 @@ ___
 
 ▸ **getRawEmail**(`emailId`: string): *Promise‹string›*
 
-*Defined in [index.ts:335](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L335)*
+*Defined in [index.ts:332](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L332)*
 
 Get an email's raw contents from by id
 
@@ -453,9 +453,9 @@ ___
 
 ###  sendEmail
 
-▸ **sendEmail**(`inboxId`: string, `sendEmailOptions`: [SendEmailOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_sendemailoptions_d_.sendemailoptions.md)): *Promise‹void›*
+▸ **sendEmail**(`inboxId`: string, `sendEmailOptions`: SendEmailOptions): *Promise‹void›*
 
-*Defined in [index.ts:348](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L348)*
+*Defined in [index.ts:345](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L345)*
 
 Send and email from a given inbox
 
@@ -476,7 +476,7 @@ try {
 Name | Type | Description |
 ------ | ------ | ------ |
 `inboxId` | string | - |
-`sendEmailOptions` | [SendEmailOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_sendemailoptions_d_.sendemailoptions.md) |   |
+`sendEmailOptions` | SendEmailOptions |   |
 
 **Returns:** *Promise‹void›*
 
@@ -484,9 +484,9 @@ ___
 
 ###  uploadAttachment
 
-▸ **uploadAttachment**(`options`: [UploadAttachmentOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_uploadattachmentoptions_d_.uploadattachmentoptions.md)): *Promise‹Array‹String››*
+▸ **uploadAttachment**(`options`: UploadAttachmentOptions): *Promise‹Array‹String››*
 
-*Defined in [index.ts:376](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L376)*
+*Defined in [index.ts:373](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L373)*
 
 Upload an attachment for use in email sending
 
@@ -496,7 +496,7 @@ Attachment contents must be a base64 encoded string
 
 Name | Type |
 ------ | ------ |
-`options` | [UploadAttachmentOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_uploadattachmentoptions_d_.uploadattachmentoptions.md) |
+`options` | UploadAttachmentOptions |
 
 **Returns:** *Promise‹Array‹String››*
 
@@ -504,9 +504,9 @@ ___
 
 ###  waitForEmailCount
 
-▸ **waitForEmailCount**(`count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+▸ **waitForEmailCount**(`count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹EmailPreview[]›*
 
-*Defined in [index.ts:249](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L249)*
+*Defined in [index.ts:246](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L246)*
 
 **Parameters:**
 
@@ -517,15 +517,15 @@ Name | Type |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 
-**Returns:** *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+**Returns:** *Promise‹EmailPreview[]›*
 
 ___
 
 ###  waitForLatestEmail
 
-▸ **waitForLatestEmail**(`inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+▸ **waitForLatestEmail**(`inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹Email›*
 
-*Defined in [index.ts:201](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L201)*
+*Defined in [index.ts:198](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L198)*
 
 **Parameters:**
 
@@ -535,35 +535,35 @@ Name | Type |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 
-**Returns:** *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+**Returns:** *Promise‹Email›*
 
 ___
 
 ###  waitForMatchingEmails
 
-▸ **waitForMatchingEmails**(`matchOptions`: [MatchOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_matchoptions_d_.matchoptions.md), `count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+▸ **waitForMatchingEmails**(`matchOptions`: MatchOptions, `count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹EmailPreview[]›*
 
-*Defined in [index.ts:231](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L231)*
+*Defined in [index.ts:228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L228)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`matchOptions` | [MatchOptions](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_matchoptions_d_.matchoptions.md) |
+`matchOptions` | MatchOptions |
 `count?` | number |
 `inboxId?` | string |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 
-**Returns:** *Promise‹[EmailPreview](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_emailpreview_d_.emailpreview.md)[]›*
+**Returns:** *Promise‹EmailPreview[]›*
 
 ___
 
 ###  waitForNthEmail
 
-▸ **waitForNthEmail**(`inboxId`: string, `index`: number, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+▸ **waitForNthEmail**(`inboxId`: string, `index`: number, `timeout?`: number, `unreadOnly?`: boolean): *Promise‹Email›*
 
-*Defined in [index.ts:215](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c475456/index.ts#L215)*
+*Defined in [index.ts:212](https://github.com/mailslurp/mailslurp-client-ts-js/blob/496b962/index.ts#L212)*
 
 **Parameters:**
 
@@ -574,4 +574,4 @@ Name | Type |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 
-**Returns:** *Promise‹[Email](../interfaces/_node_modules_mailslurp_swagger_sdk_ts_dist_models_email_d_.email.md)›*
+**Returns:** *Promise‹Email›*

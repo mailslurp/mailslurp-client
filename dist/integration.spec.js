@@ -44,6 +44,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __importStar(require("./index"));
+var apiKey = process.env.API_KEY;
 var mailslurpRequire = require('./index').MailSlurp;
 var createInbox = jest.fn();
 var sendEmail = jest.fn();
@@ -111,17 +112,17 @@ describe('importing client', function () {
         expect(index_1.default).not.toBeNull();
     });
     test('client can be instantiated', function () {
-        var client = new index_1.MailSlurp({ apiKey: 'test' });
+        var client = new index_1.MailSlurp({ apiKey: apiKey });
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
     });
     test('default client can be instantiated', function () {
-        var client = new index_1.default({ apiKey: 'test' });
+        var client = new index_1.default({ apiKey: apiKey });
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
     });
     test('require client can be instantiated', function () {
-        var client = new mailslurpRequire({ apiKey: 'test' });
+        var client = new mailslurpRequire({ apiKey: apiKey });
         expect(client).not.toBeNull();
         expect(client.createNewEmailAddress).not.toBeNull();
     });
@@ -132,7 +133,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     return [4 /*yield*/, client.createInbox()];
                 case 1:
                     _a.sent();
@@ -146,7 +147,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     return [4 /*yield*/, client.createInbox('test@gmail.com')];
                 case 1:
                     _a.sent();
@@ -170,7 +171,7 @@ describe('functions are mapped correctly to common operations api', function () 
                     createInbox.mockRejectedValue({
                         json: jest.fn().mockReturnValue('error-json'),
                     });
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     threw = false;
                     _a.label = 1;
                 case 1:
@@ -198,7 +199,7 @@ describe('functions are mapped correctly to common operations api', function () 
                 case 0:
                     createInbox.mockRejectedValue('error-text');
                     client = new index_1.MailSlurp({
-                        apiKey: 'test',
+                        apiKey: apiKey,
                         attribution: 'test-attribution',
                     });
                     threw = false;
@@ -233,7 +234,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     inboxId = '';
                     options = {
                         to: [''],
@@ -254,7 +255,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     return [4 /*yield*/, client.getAllEmails()];
                 case 1:
                     _a.sent();
@@ -274,7 +275,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     return [4 /*yield*/, client.getAllEmails(1, 2)];
                 case 1:
                     _a.sent();
@@ -294,7 +295,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     inboxId = 'inboxId';
                     timeout = 123;
                     return [4 /*yield*/, client.waitForLatestEmail(inboxId, timeout)];
@@ -314,7 +315,7 @@ describe('functions are mapped correctly to common operations api', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    client = new index_1.MailSlurp({ apiKey: 'test' });
+                    client = new index_1.MailSlurp({ apiKey: apiKey });
                     inboxId = 'inboxId';
                     index = 2;
                     return [4 /*yield*/, client.waitForNthEmail(inboxId, index)];
@@ -331,7 +332,7 @@ describe('functions are mapped correctly to common operations api', function () 
             switch (_a.label) {
                 case 0:
                     client = new index_1.MailSlurp({
-                        apiKey: 'test',
+                        apiKey: apiKey,
                         attribution: 'test-attribution',
                     });
                     options = {};

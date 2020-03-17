@@ -2,10 +2,9 @@
     "name": "MailSlurp JS",
     "theme": "markdown",
     "out": "docs",
-    "externalPattern": ["**/node_modules/@types/**"],
     "hideGenerator": true,
-    "excludePrivate": true,
     "includeDeclarations": true,
+    "excludeExternals": true,
     "includes": "./snippets",
     "tsconfig": "./tsconfig.json"
 }

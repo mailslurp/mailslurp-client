@@ -42,7 +42,7 @@
         "prettier": "^1.18.2",
         "ts-jest": "^24.0.0",
         "typedoc": "^0.15.3",
-        "typescript": "^3.5.3"
+        "typescript": "~3.5.2"
     },
     "prettier": {
         "trailingComma": "es5",

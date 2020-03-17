@@ -34,12 +34,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * This library is a convenience wrapper around the generated swagger sdk
- * @see https://www.mailslurp.com/js/ for documentation
- */
-var mailslurp_swagger_sdk_ts_1 = require("mailslurp-swagger-sdk-ts");
+var index_1 = require("./generated/index");
+__export(require("./generated/index"));
 require("isomorphic-fetch");
 /**
  * Official MailSlurp Client
@@ -78,7 +78,7 @@ var MailSlurp = /** @class */ (function () {
             throw 'Missing apiKey config parameter';
         }
         // create credentials
-        var clientConfiguration = new mailslurp_swagger_sdk_ts_1.Configuration({
+        var clientConfiguration = new index_1.Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath,
             headers: {
@@ -88,17 +88,17 @@ var MailSlurp = /** @class */ (function () {
             fetchApi: opts.fetchApi || fetch
         });
         // instantiate api clients
-        this.emails = new mailslurp_swagger_sdk_ts_1.EmailControllerApi(clientConfiguration);
-        this.inboxes = new mailslurp_swagger_sdk_ts_1.InboxControllerApi(clientConfiguration);
-        this.attachments = new mailslurp_swagger_sdk_ts_1.AttachmentControllerApi(clientConfiguration);
-        this.domains = new mailslurp_swagger_sdk_ts_1.DomainControllerApi(clientConfiguration);
-        this.contacts = new mailslurp_swagger_sdk_ts_1.ContactControllerApi(clientConfiguration);
-        this.groups = new mailslurp_swagger_sdk_ts_1.GroupControllerApi(clientConfiguration);
-        this.templates = new mailslurp_swagger_sdk_ts_1.TemplateControllerApi(clientConfiguration);
-        this.webhooks = new mailslurp_swagger_sdk_ts_1.WebhookControllerApi(clientConfiguration);
-        this.common = new mailslurp_swagger_sdk_ts_1.CommonActionsControllerApi(clientConfiguration);
-        this.bulk = new mailslurp_swagger_sdk_ts_1.BulkActionsControllerApi(clientConfiguration);
-        this.waitFor = new mailslurp_swagger_sdk_ts_1.WaitForControllerApi(clientConfiguration);
+        this.emails = new index_1.EmailControllerApi(clientConfiguration);
+        this.inboxes = new index_1.InboxControllerApi(clientConfiguration);
+        this.attachments = new index_1.AttachmentControllerApi(clientConfiguration);
+        this.domains = new index_1.DomainControllerApi(clientConfiguration);
+        this.contacts = new index_1.ContactControllerApi(clientConfiguration);
+        this.groups = new index_1.GroupControllerApi(clientConfiguration);
+        this.templates = new index_1.TemplateControllerApi(clientConfiguration);
+        this.webhooks = new index_1.WebhookControllerApi(clientConfiguration);
+        this.common = new index_1.CommonActionsControllerApi(clientConfiguration);
+        this.bulk = new index_1.BulkActionsControllerApi(clientConfiguration);
+        this.waitFor = new index_1.WaitForControllerApi(clientConfiguration);
     }
     MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
         return __awaiter(this, void 0, void 0, function () {

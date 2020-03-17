@@ -1,5 +1,6 @@
 import Default, { MailSlurp } from './index';
 
+const apiKey = process.env.API_KEY;
 const mailslurpRequire = require('./index').MailSlurp;
 
 const createInbox = jest.fn();
@@ -71,17 +72,17 @@ describe('importing client', () => {
         expect(Default).not.toBeNull();
     });
     test('client can be instantiated', () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey });
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
     });
     test('default client can be instantiated', () => {
-        const client = new Default({ apiKey: 'test' });
+        const client = new Default({ apiKey: apiKey });
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
     });
     test('require client can be instantiated', () => {
-        const client = new mailslurpRequire({ apiKey: 'test' });
+        const client = new mailslurpRequire({ apiKey: apiKey });
         expect(client).not.toBeNull();
         expect(client.createNewEmailAddress).not.toBeNull();
     });
@@ -89,12 +90,12 @@ describe('importing client', () => {
 
 describe('functions are mapped correctly to common operations api', () => {
     test('can create a new email address', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         await client.createInbox();
         expect(createInbox).toHaveBeenCalledTimes(1);
     });
     test('can create a new email address with specific address', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         await client.createInbox('test@gmail.com');
         expect(createInbox).toHaveBeenCalledWith({
             description: undefined,
@@ -109,7 +110,7 @@ describe('functions are mapped correctly to common operations api', () => {
         createInbox.mockRejectedValue({
             json: jest.fn().mockReturnValue('error-json'),
         });
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         let threw = false;
         try {
             await client.createInbox();
@@ -123,7 +124,7 @@ describe('functions are mapped correctly to common operations api', () => {
     test('can wrap a non json error', async () => {
         createInbox.mockRejectedValue('error-text');
         const client = new MailSlurp({
-            apiKey: 'test',
+            apiKey: apiKey,
             attribution: 'test-attribution',
         });
         let threw = false;
@@ -144,7 +145,7 @@ describe('functions are mapped correctly to common operations api', () => {
         });
     });
     test('can send email', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         const inboxId = '';
         const options = {
             to: [''],
@@ -156,7 +157,7 @@ describe('functions are mapped correctly to common operations api', () => {
         });
     });
     test('can get all emails', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         await client.getAllEmails();
         expect(getEmailsPaginated).toHaveBeenCalledWith({
             inboxId: undefined,
@@ -167,7 +168,7 @@ describe('functions are mapped correctly to common operations api', () => {
         });
     });
     test('can get all emails with pagination', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         await client.getAllEmails(1, 2);
         expect(getEmailsPaginated).toHaveBeenCalledWith({
             page: 1,
@@ -178,7 +179,7 @@ describe('functions are mapped correctly to common operations api', () => {
         });
     });
     test('can wait for latest email', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         const inboxId = 'inboxId';
         const timeout = 123;
         await client.waitForLatestEmail(inboxId, timeout);
@@ -189,7 +190,7 @@ describe('functions are mapped correctly to common operations api', () => {
         });
     });
     test('can wait for nth email', async () => {
-        const client = new MailSlurp({ apiKey: 'test' });
+        const client = new MailSlurp({ apiKey: apiKey });
         const inboxId = 'inboxId';
         const index = 2;
         await client.waitForNthEmail(inboxId, index);
@@ -197,7 +198,7 @@ describe('functions are mapped correctly to common operations api', () => {
     });
     test('can wait for matching email', async () => {
         const client = new MailSlurp({
-            apiKey: 'test',
+            apiKey: apiKey,
             attribution: 'test-attribution',
         });
         const options = {};

@@ -1,7 +1,4 @@
-/**
- * This library is a convenience wrapper around the generated swagger sdk
- * @see https://www.mailslurp.com/js/ for documentation
- */
+export * from './generated/index';
 import {
   AttachmentControllerApi,
   AttachmentMetaData,
@@ -26,7 +23,7 @@ import {
   UploadAttachmentOptions,
   WaitForControllerApi,
   WebhookControllerApi,
-} from 'mailslurp-swagger-sdk-ts';
+} from './generated/index';
 import "isomorphic-fetch"
 /**
  * MailSlurp config
