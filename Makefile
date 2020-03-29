@@ -7,7 +7,7 @@ node_modules:
 
 bin/openapi-generator-cli.jar:
 	mkdir -p bin
-	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/4.2.3/openapi-generator-cli-4.2.3.jar -O ./bin/openapi-generator-cli.jar
+	wget https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.12/swagger-codegen-cli-2.4.12.jar -O bin/openapi-generator-cli.jar
 
 test: node_modules
 	npm run integration
@@ -17,9 +17,8 @@ generate: bin/openapi-generator-cli.jar
 	mkdir -p src/generated
 	java -jar ./bin/openapi-generator-cli.jar generate \
 		--input-spec $(SPEC_URL) \
-		--generator-name typescript-fetch \
+		--lang typescript-fetch \
 		--output src/generated \
-		--skip-validate-spec
 
 fmt: node_modules
 	npm run fmt

@@ -1,4 +1,5 @@
-import 'isomorphic-fetch';
+// @ts-ignore
+import * as isomorphicFetch from 'node-fetch';
 import {
     AttachmentControllerApi,
     AttachmentMetaData,
@@ -11,9 +12,6 @@ import {
     EmailControllerApi,
     EmailPreview,
     FetchAPI,
-    GetAllInboxesSortEnum,
-    GetEmailsPaginatedSortEnum,
-    GetEmailsSortEnum,
     GroupControllerApi,
     Inbox,
     InboxControllerApi,
@@ -24,7 +22,9 @@ import {
     UploadAttachmentOptions,
     WaitForControllerApi,
     WebhookControllerApi,
-} from './lib';
+} from './generated';
+
+type SortEnum = 'ASC' | 'DESC';
 /**
  * MailSlurp config
  *
@@ -92,36 +92,71 @@ export class MailSlurp {
         if (!opts.apiKey) {
             throw 'Missing apiKey config parameter';
         }
+        const fetch: any = opts.fetchApi || isomorphicFetch;
         // create credentials
         const clientConfiguration = new Configuration({
             apiKey: opts.apiKey,
-            basePath: opts.basePath,
-            headers: {
-                'x-client': 'mailslurp-client-ts-js',
-                'x-attribution': opts.attribution,
-            },
-            fetchApi: opts.fetchApi || fetch,
+            basePath: opts.basePath || 'https://api.mailslurp.com',
         });
-        // instantiate api clients
-        this.emailController = new EmailControllerApi(clientConfiguration);
-        this.inboxController = new InboxControllerApi(clientConfiguration);
-        this.attachmentController = new AttachmentControllerApi(
-            clientConfiguration
-        );
-        this.domainController = new DomainControllerApi(clientConfiguration);
 
-        this.contactController = new ContactControllerApi(clientConfiguration);
-        this.groupController = new GroupControllerApi(clientConfiguration);
-        this.templateController = new TemplateControllerApi(
-            clientConfiguration
+        // instantiate api clients
+        this.emailController = new EmailControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
         );
-        this.webhookController = new WebhookControllerApi(clientConfiguration);
+        this.inboxController = new InboxControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.attachmentController = new AttachmentControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.domainController = new DomainControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+
+        this.contactController = new ContactControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.groupController = new GroupControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.templateController = new TemplateControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.webhookController = new WebhookControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
 
         this.commonController = new CommonActionsControllerApi(
-            clientConfiguration
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
         );
-        this.bulkController = new BulkActionsControllerApi(clientConfiguration);
-        this.waitController = new WaitForControllerApi(clientConfiguration);
+        this.bulkController = new BulkActionsControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
+        this.waitController = new WaitForControllerApi(
+            clientConfiguration,
+            clientConfiguration.basePath,
+            fetch
+        );
     }
 
     async createInbox(
@@ -133,32 +168,32 @@ export class MailSlurp {
         tags?: Array<string>
     ): Promise<Inbox> {
         return wrapCall('createInbox', () =>
-            this.inboxController.createInbox({
-                emailAddress,
-                name,
+            this.inboxController.createInbox(
                 description,
+                emailAddress,
                 expiresAt,
                 favourite,
-                tags,
-            })
+                name,
+                tags
+            )
         );
     }
 
-    async deleteInbox(inboxId: string): Promise<void> {
+    async deleteInbox(inboxId: string): Promise<Response> {
         return wrapCall('deleteInbox', () =>
-            this.inboxController.deleteInbox({ inboxId })
+            this.inboxController.deleteInbox(inboxId)
         );
     }
 
-    async emptyInbox(inboxId: string): Promise<void> {
+    async emptyInbox(inboxId: string): Promise<Response> {
         return wrapCall('emptyInbox', () =>
-            this.commonController.emptyInbox({ inboxId })
+            this.commonController.emptyInbox(inboxId)
         );
     }
 
     async getInbox(inboxId: string): Promise<Inbox> {
         return wrapCall('getInbox', () =>
-            this.inboxController.getInbox({ inboxId })
+            this.inboxController.getInbox(inboxId)
         );
     }
 
@@ -180,16 +215,18 @@ export class MailSlurp {
         size?: number,
         favourite?: boolean,
         search?: string,
-        sort?: GetAllInboxesSortEnum
+        sort?: SortEnum,
+        tag?: string
     ): Promise<PageInboxProjection> {
         return wrapCall('getAllInboxes', () =>
-            this.inboxController.getAllInboxes({
-                page,
-                size,
+            this.inboxController.getAllInboxes(
                 favourite,
+                page,
                 search,
+                size,
                 sort,
-            })
+                tag
+            )
         );
     }
 
@@ -201,11 +238,7 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<Email> {
         return wrapCall('waitForLatestEmail', () =>
-            this.waitController.waitForLatestEmail({
-                inboxId,
-                timeout,
-                unreadOnly,
-            })
+            this.waitController.waitForLatestEmail(inboxId, timeout, unreadOnly)
         );
     }
 
@@ -216,12 +249,12 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<Email> {
         return wrapCall('waitForNthEmail', () =>
-            this.waitController.waitForNthEmail({
+            this.waitController.waitForNthEmail(
                 inboxId,
                 index,
                 timeout,
-                unreadOnly,
-            })
+                unreadOnly
+            )
         );
     }
 
@@ -233,13 +266,13 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<EmailPreview[]> {
         return wrapCall('waitForMatchingEmail', () =>
-            this.waitController.waitForMatchingEmail({
+            this.waitController.waitForMatchingEmail(
                 matchOptions,
                 count,
                 inboxId,
                 timeout,
-                unreadOnly,
-            })
+                unreadOnly
+            )
         );
     }
 
@@ -250,19 +283,19 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<EmailPreview[]> {
         return wrapCall('waitForEmailCount', () =>
-            this.waitController.waitForEmailCount({
+            this.waitController.waitForEmailCount(
                 count,
                 inboxId,
                 timeout,
-                unreadOnly,
-            })
+                unreadOnly
+            )
         );
     }
 
     // email methods
-    async deleteEmail(emailId: string): Promise<void> {
+    async deleteEmail(emailId: string): Promise<Response> {
         return wrapCall('deleteEmail', () =>
-            this.emailController.deleteEmail({ emailId })
+            this.emailController.deleteEmail(emailId)
         );
     }
 
@@ -274,17 +307,17 @@ export class MailSlurp {
         page?: number,
         size?: number,
         inboxId?: Array<string>,
-        sort?: GetEmailsPaginatedSortEnum,
+        sort?: SortEnum,
         unreadOnly?: boolean
     ) {
         return wrapCall('getAllEmails', () =>
-            this.emailController.getEmailsPaginated({
+            this.emailController.getEmailsPaginated(
+                inboxId,
                 page,
                 size,
-                inboxId,
                 sort,
-                unreadOnly,
-            })
+                unreadOnly
+            )
         );
     }
 
@@ -301,14 +334,14 @@ export class MailSlurp {
         args: GetMessagesOptions = {}
     ): Promise<EmailPreview[]> {
         return wrapCall('getEmails', () =>
-            this.inboxController.getEmails({
+            this.inboxController.getEmails(
                 inboxId,
-                limit: args.limit,
-                minCount: args.minCount,
-                retryTimeout: args.retryTimeout,
-                since: args.since,
-                sort: args.sort,
-            })
+                args.limit,
+                args.minCount,
+                args.retryTimeout,
+                args.since,
+                args.sort
+            )
         );
     }
 
@@ -321,7 +354,7 @@ export class MailSlurp {
      */
     async getEmail(emailId: string): Promise<Email> {
         return wrapCall('getEmail', () =>
-            this.emailController.getEmail({ emailId })
+            this.emailController.getEmail(emailId)
         );
     }
 
@@ -331,7 +364,7 @@ export class MailSlurp {
      */
     async getRawEmail(emailId: string): Promise<string> {
         return wrapCall('getRawEmail', () =>
-            this.emailController.getRawEmailContents({ emailId })
+            this.emailController.getRawEmailContents(emailId)
         );
     }
 
@@ -345,9 +378,9 @@ export class MailSlurp {
     async sendEmail(
         inboxId: string,
         sendEmailOptions: SendEmailOptions
-    ): Promise<void> {
+    ): Promise<Response> {
         return wrapCall('sendEmail', () =>
-            this.inboxController.sendEmail({ inboxId, sendEmailOptions })
+            this.inboxController.sendEmail(inboxId, sendEmailOptions)
         );
     }
 
@@ -361,7 +394,7 @@ export class MailSlurp {
         attachmentId: string
     ): Promise<String> {
         return wrapCall('downloadAttachment', () =>
-            this.emailController.downloadAttachment({ attachmentId, emailId })
+            this.emailController.downloadAttachment(attachmentId, emailId)
         );
     }
 
@@ -374,9 +407,7 @@ export class MailSlurp {
         options: UploadAttachmentOptions
     ): Promise<Array<String>> {
         return wrapCall('uploadAttachment', () =>
-            this.attachmentController.uploadAttachment({
-                uploadOptions: options,
-            })
+            this.attachmentController.uploadAttachment(options)
         );
     }
 
@@ -390,10 +421,7 @@ export class MailSlurp {
         emailId: string
     ): Promise<AttachmentMetaData> {
         return wrapCall('getAttachmentMetaData', () =>
-            this.emailController.getAttachmentMetaData({
-                attachmentId,
-                emailId,
-            })
+            this.emailController.getAttachmentMetaData(attachmentId, emailId)
         );
     }
 }
@@ -415,7 +443,7 @@ export type GetMessagesOptions = {
     // ignore emails received before this ISO-8601 date time
     since?: Date;
     // sort direction
-    sort?: GetEmailsSortEnum;
+    sort?: SortEnum;
 };
 
 // helper
@@ -427,5 +455,4 @@ async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
     }
 }
 
-export * from './lib';
 export default MailSlurp;

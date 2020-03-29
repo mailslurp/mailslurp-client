@@ -21,9 +21,11 @@ describe('importing client', () => {
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
     });
-    test('require client can be instantiated', () => {
+    test('require client can be instantiated', async () => {
         const client = new mailslurpRequire({ apiKey: process.env.API_KEY });
         expect(client).not.toBeNull();
         expect(client.createInbox).not.toBeNull();
+        const inbox = await client.createInbox();
+        expect(inbox.emailAddress).toBeTruthy();
     });
 });
