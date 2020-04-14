@@ -1,14 +1,27 @@
-<p align="center">
-  <img src="https://www.mailslurp.com/logo.svg" height="46px" alt="">
+<p align="center" class="d-none">
+  <img src="https://www.mailslurp.com/logo.svg" height="80x" alt="">
 </p>
 
 # MailSlurp Javascript Client
-Create real email addresses on demand. Send and receive emails and attachments from code and tests.
+> Create real email addresses on demand. Send and receive emails and attachments from code and tests.
 
-### Features
-- Free for personal use
-- Typescript and promises supported
-- Use server or client side
+## Features
+
+| ✔ | Free for personal use |
+|---|-----------------------------------------------------------|
+| ✔ | Create email accounts in code |
+| ✔ | Send and **receive** emails and attachments in Javascript |
+| ✔ | Powerful `waitFor` and email search functionality |
+| ✔ | Typescript and promises supported |
+
+## Resources
+
+| Resource | Description |
+|---------------|------------------------------------------------|
+| [Dashboard App](https://app.mailslurp.com) | Sign-up and visually manage emails |
+| [Documentation](./docs/classes/_index_.mailslurp.md) | Javascript SDK documentation |
+| [Github](https://github.com/mailslurp/mailslurp-client)| Github source code |
+| [PM](https://www.npmjs.com/package/mailslurp-client) | NPM MailSlurp package |
 
 ## Get started
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy they key from your dashboard.
@@ -19,7 +32,7 @@ npm install --save mailslurp-client
 ```
 
 ### Import MailSlurp
-```html
+```javascript
 const MailSlurp = require("mailslurp-client").default;
 
 // or
@@ -34,7 +47,7 @@ Create a MailSlurp instance by instantiating a class with your API Key.
 const mailslurp = new MailSlurp({ apiKey: "your_api_key" })
 ```
 
-### Common use case examples
+## Common use case examples
 For all the MailSlurp features please see the [method documentation](./docs/classes/_index_.mailslurp.md) included with this project.
 
 #### Create an email address
