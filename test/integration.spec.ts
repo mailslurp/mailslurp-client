@@ -3,14 +3,14 @@ import Default, { MailSlurp } from '../src/index';
 const mailslurpRequire = require('../dist/index').MailSlurp;
 
 describe('importing client', () => {
-    if (!process.env.API_KEY) {
-        console.warn('Skipping integration test no API KEY');
-        return;
-    }
     test('that import was successful', () => {
         expect(MailSlurp).not.toBeNull();
         expect(Default).not.toBeNull();
     });
+    if (!process.env.API_KEY) {
+        console.warn('Skipping integration test no API KEY');
+        return;
+    }
     test('client can be instantiated', () => {
         const client = new MailSlurp({ apiKey: process.env.API_KEY });
         expect(client).not.toBeNull();

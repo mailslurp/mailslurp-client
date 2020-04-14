@@ -23,7 +23,7 @@
 
 • **content**: *string*
 
-Defined in src/generated/api.ts:363
+*Defined in [src/generated/api.ts:453](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L453)*
 
 **`type`** {string}
 
@@ -35,7 +35,7 @@ ___
 
 • **name**: *string*
 
-Defined in src/generated/api.ts:357
+*Defined in [src/generated/api.ts:447](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L447)*
 
 **`type`** {string}
 

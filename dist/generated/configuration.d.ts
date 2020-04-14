@@ -1,4 +1,3 @@
-// tslint:disable
 /**
  * MailSlurp API
  * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It's designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.   ## Resources - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
@@ -10,7 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-
 export interface ConfigurationParameters {
     apiKey?: string | ((name: string) => string);
     username?: string;
@@ -18,8 +16,7 @@ export interface ConfigurationParameters {
     accessToken?: string | ((name: string, scopes?: string[]) => string);
     basePath?: string;
 }
-
-export class Configuration {
+export declare class Configuration {
     /**
      * parameter for apiKey security
      * @param name security name
@@ -54,12 +51,5 @@ export class Configuration {
      * @memberof Configuration
      */
     basePath?: string;
-
-    constructor(param: ConfigurationParameters = {}) {
-        this.apiKey = param.apiKey;
-        this.username = param.username;
-        this.password = param.password;
-        this.accessToken = param.accessToken;
-        this.basePath = param.basePath;
-    }
+    constructor(param?: ConfigurationParameters);
 }

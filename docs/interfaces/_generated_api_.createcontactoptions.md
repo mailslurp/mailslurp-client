@@ -29,7 +29,7 @@
 
 • **company**? : *string*
 
-Defined in src/generated/api.ts:309
+*Defined in [src/generated/api.ts:373](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L373)*
 
 **`type`** {string}
 
@@ -41,7 +41,7 @@ ___
 
 • **emailAddresses**? : *Array‹string›*
 
-Defined in src/generated/api.ts:267
+*Defined in [src/generated/api.ts:331](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L331)*
 
 Set of email addresses belonging to the contact
 
@@ -55,7 +55,7 @@ ___
 
 • **firstName**? : *string*
 
-Defined in src/generated/api.ts:273
+*Defined in [src/generated/api.ts:337](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L337)*
 
 **`type`** {string}
 
@@ -67,7 +67,7 @@ ___
 
 • **groupId**? : *string*
 
-Defined in src/generated/api.ts:279
+*Defined in [src/generated/api.ts:343](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L343)*
 
 Group IDs that contact belongs to
 
@@ -81,7 +81,7 @@ ___
 
 • **lastName**? : *string*
 
-Defined in src/generated/api.ts:303
+*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L367)*
 
 **`type`** {string}
 
@@ -93,7 +93,7 @@ ___
 
 • **metaData**? : *[JsonNode](../modules/_generated_api_.jsonnode.md)*
 
-Defined in src/generated/api.ts:285
+*Defined in [src/generated/api.ts:349](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L349)*
 
 User metadata key value pairs to save for this contact. Can be any values you like.
 
@@ -107,7 +107,7 @@ ___
 
 • **optOut**? : *boolean*
 
-Defined in src/generated/api.ts:291
+*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L355)*
 
 Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
 
@@ -121,7 +121,7 @@ ___
 
 • **tags**? : *Array‹string›*
 
-Defined in src/generated/api.ts:297
+*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L361)*
 
 Tags that can be used to search and group contacts
 

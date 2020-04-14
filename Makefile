@@ -1,5 +1,7 @@
 .PHONY: docs test
 
+include .env
+
 SPEC_URL=https://api.mailslurp.com/v2/api-docs
 
 node_modules:
@@ -10,7 +12,7 @@ bin/openapi-generator-cli.jar:
 	wget https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.12/swagger-codegen-cli-2.4.12.jar -O bin/openapi-generator-cli.jar
 
 test: node_modules
-	npm run integration
+	API_KEY=$(API_KEY) npm run integration
 
 generate: bin/openapi-generator-cli.jar
 	sudo rm -rf src/generated

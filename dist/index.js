@@ -87,18 +87,21 @@ var MailSlurp = /** @class */ (function () {
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
+        var args = [clientConfiguration, clientConfiguration.basePath, fetch];
         // instantiate api clients
-        this.emailController = new generated_1.EmailControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.inboxController = new generated_1.InboxControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.attachmentController = new generated_1.AttachmentControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.domainController = new generated_1.DomainControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.contactController = new generated_1.ContactControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.groupController = new generated_1.GroupControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.templateController = new generated_1.TemplateControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.webhookController = new generated_1.WebhookControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.commonController = new generated_1.CommonActionsControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.bulkController = new generated_1.BulkActionsControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
-        this.waitController = new generated_1.WaitForControllerApi(clientConfiguration, clientConfiguration.basePath, fetch);
+        this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, [void 0].concat(args)))();
+        this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, [void 0].concat(args)))();
+        this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, [void 0].concat(args)))();
+        this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, [void 0].concat(args)))();
+        this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, [void 0].concat(args)))();
+        this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, [void 0].concat(args)))();
+        this.contactController = new (generated_1.ContactControllerApi.bind.apply(generated_1.ContactControllerApi, [void 0].concat(args)))();
+        this.groupController = new (generated_1.GroupControllerApi.bind.apply(generated_1.GroupControllerApi, [void 0].concat(args)))();
+        this.templateController = new (generated_1.TemplateControllerApi.bind.apply(generated_1.TemplateControllerApi, [void 0].concat(args)))();
+        this.webhookController = new (generated_1.WebhookControllerApi.bind.apply(generated_1.WebhookControllerApi, [void 0].concat(args)))();
+        this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, [void 0].concat(args)))();
+        this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, [void 0].concat(args)))();
+        this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, [void 0].concat(args)))();
     }
     MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
         return __awaiter(this, void 0, void 0, function () {

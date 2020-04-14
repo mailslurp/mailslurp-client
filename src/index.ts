@@ -1,6 +1,7 @@
 // @ts-ignore
 import * as isomorphicFetch from 'node-fetch';
 import {
+    AliasControllerApi,
     AttachmentControllerApi,
     AttachmentMetaData,
     BulkActionsControllerApi,
@@ -12,6 +13,7 @@ import {
     EmailControllerApi,
     EmailPreview,
     FetchAPI,
+    FormControllerApi,
     GroupControllerApi,
     Inbox,
     InboxControllerApi,
@@ -77,6 +79,8 @@ export class MailSlurp {
     public readonly bulkController: BulkActionsControllerApi;
     public readonly waitController: WaitForControllerApi;
 
+    public readonly aliasController: AliasControllerApi;
+    public readonly formController: FormControllerApi;
     public readonly domainController: DomainControllerApi;
     public readonly contactController: ContactControllerApi;
     public readonly groupController: GroupControllerApi;
@@ -98,65 +102,24 @@ export class MailSlurp {
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
+        const args = [clientConfiguration, clientConfiguration.basePath, fetch];
 
         // instantiate api clients
-        this.emailController = new EmailControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.inboxController = new InboxControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.attachmentController = new AttachmentControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.domainController = new DomainControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
+        this.emailController = new EmailControllerApi(...args);
+        this.inboxController = new InboxControllerApi(...args);
+        this.attachmentController = new AttachmentControllerApi(...args);
+        this.domainController = new DomainControllerApi(...args);
 
-        this.contactController = new ContactControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.groupController = new GroupControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.templateController = new TemplateControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.webhookController = new WebhookControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
+        this.aliasController = new AliasControllerApi(...args);
+        this.formController = new FormControllerApi(...args);
+        this.contactController = new ContactControllerApi(...args);
+        this.groupController = new GroupControllerApi(...args);
+        this.templateController = new TemplateControllerApi(...args);
+        this.webhookController = new WebhookControllerApi(...args);
 
-        this.commonController = new CommonActionsControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.bulkController = new BulkActionsControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
-        this.waitController = new WaitForControllerApi(
-            clientConfiguration,
-            clientConfiguration.basePath,
-            fetch
-        );
+        this.commonController = new CommonActionsControllerApi(...args);
+        this.bulkController = new BulkActionsControllerApi(...args);
+        this.waitController = new WaitForControllerApi(...args);
     }
 
     async createInbox(
