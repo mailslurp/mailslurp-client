@@ -24,7 +24,7 @@ Create anonymous email alias options. Email aliases can be used to mask real ema
 
 • **emailAddress**: *string*
 
-*Defined in [src/generated/api.ts:317](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/api.ts#L317)*
+*Defined in [src/generated/api.ts:317](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L317)*
 
 **`type`** {string}
 

@@ -31,7 +31,7 @@ Do not edit the class manually.
 
 • **accessToken**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:18](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/configuration.ts#L18)*
+*Defined in [src/generated/configuration.ts:18](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/configuration.ts#L18)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **apiKey**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:15](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/configuration.ts#L15)*
+*Defined in [src/generated/configuration.ts:15](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/configuration.ts#L15)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **basePath**? : *string*
 
-*Defined in [src/generated/configuration.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/configuration.ts#L19)*
+*Defined in [src/generated/configuration.ts:19](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/configuration.ts#L19)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **password**? : *string*
 
-*Defined in [src/generated/configuration.ts:17](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/configuration.ts#L17)*
+*Defined in [src/generated/configuration.ts:17](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/configuration.ts#L17)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **username**? : *string*
 
-*Defined in [src/generated/configuration.ts:16](https://github.com/mailslurp/mailslurp-client-ts-js/blob/e9348f1/src/generated/configuration.ts#L16)*
+*Defined in [src/generated/configuration.ts:16](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/configuration.ts#L16)*
