@@ -26,7 +26,7 @@
 
 • **ARRAY**: =  <any>'ARRAY'
 
-*Defined in [src/generated/api.ts:1228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1228)*
+*Defined in [src/generated/api.ts:1228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1228)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **BINARY**: =  <any>'BINARY'
 
-*Defined in [src/generated/api.ts:1229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1229)*
+*Defined in [src/generated/api.ts:1229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1229)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **BOOLEAN**: =  <any>'BOOLEAN'
 
-*Defined in [src/generated/api.ts:1230](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1230)*
+*Defined in [src/generated/api.ts:1230](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1230)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **MISSING**: =  <any>'MISSING'
 
-*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1231)*
+*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1231)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **NULL**: =  <any>'NULL'
 
-*Defined in [src/generated/api.ts:1232](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1232)*
+*Defined in [src/generated/api.ts:1232](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1232)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **NUMBER**: =  <any>'NUMBER'
 
-*Defined in [src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1233)*
+*Defined in [src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1233)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **OBJECT**: =  <any>'OBJECT'
 
-*Defined in [src/generated/api.ts:1234](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1234)*
+*Defined in [src/generated/api.ts:1234](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1234)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **POJO**: =  <any>'POJO'
 
-*Defined in [src/generated/api.ts:1235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1235)*
+*Defined in [src/generated/api.ts:1235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1235)*
 
 ___
 
@@ -90,4 +90,4 @@ ___
 
 • **STRING**: =  <any>'STRING'
 
-*Defined in [src/generated/api.ts:1236](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L1236)*
+*Defined in [src/generated/api.ts:1236](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L1236)*

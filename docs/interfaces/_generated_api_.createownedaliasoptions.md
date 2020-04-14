@@ -26,7 +26,7 @@ Create email alias options. Email aliases can be used to mask real email address
 
 • **emailAddress**: *string*
 
-*Defined in [src/generated/api.ts:421](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L421)*
+*Defined in [src/generated/api.ts:421](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L421)*
 
 **`type`** {string}
 
@@ -38,7 +38,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L427)*
+*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L427)*
 
 **`type`** {string}
 
@@ -50,7 +50,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L433)*
+*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L433)*
 
 **`type`** {string}
 

@@ -23,7 +23,7 @@
 
 • **emailId**: *string*
 
-*Defined in [src/generated/api.ts:2321](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L2321)*
+*Defined in [src/generated/api.ts:2321](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L2321)*
 
 **`type`** {string}
 
@@ -35,7 +35,7 @@ ___
 
 • **html**: *[HTMLValidationResult](_generated_api_.htmlvalidationresult.md)*
 
-*Defined in [src/generated/api.ts:2327](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7518dcd/src/generated/api.ts#L2327)*
+*Defined in [src/generated/api.ts:2327](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L2327)*
 
 **`type`** {HTMLValidationResult}
 

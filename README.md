@@ -3,25 +3,9 @@
 </p>
 
 # MailSlurp Javascript Client
-> Create real email addresses on demand. Send and receive emails and attachments from code and tests.
+> Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
-## Features
-
-| ✔ | Free for personal use |
-|---|-----------------------------------------------------------|
-| ✔ | Create email accounts in code |
-| ✔ | Send and **receive** emails and attachments in Javascript |
-| ✔ | Powerful `waitFor` and email search functionality |
-| ✔ | Typescript and promises supported |
-
-## Resources
-
-| Resource | Description |
-|---------------|------------------------------------------------|
-| [Dashboard App](https://app.mailslurp.com) | Sign-up and visually manage emails |
-| [Documentation](./docs/classes/_index_.mailslurp.md) | Javascript SDK documentation |
-| [Github](https://github.com/mailslurp/mailslurp-client)| Github source code |
-| [PM](https://www.npmjs.com/package/mailslurp-client) | NPM MailSlurp package |
+MailSlurp is an email API service that let's you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests.
 
 ## Get started
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy they key from your dashboard.
@@ -86,6 +70,12 @@ await mailslurp.sendEmail(inbox.id, options)
 - [API Key](https://app.mailslurp.com/sign-up/)
 - [Example repositories](https://www.mailslurp.com/examples/)
 
+## Resources
 
-
+| Resource | Description |
+|---------------|------------------------------------------------|
+| [Dashboard App](https://app.mailslurp.com) | Sign-up and visually manage emails |
+| [Documentation](./docs/classes/_index_.mailslurp.md) | Javascript SDK documentation |
+| [Github](https://github.com/mailslurp/mailslurp-client)| Github source code |
+| [PM](https://www.npmjs.com/package/mailslurp-client) | NPM MailSlurp package |
 
