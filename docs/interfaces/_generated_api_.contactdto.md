@@ -29,7 +29,7 @@
 
 • **company**? : *string*
 
-*Defined in [src/generated/api.ts:217](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L217)*
+*Defined in [src/generated/api.ts:217](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L217)*
 
 **`type`** {string}
 
@@ -41,7 +41,7 @@ ___
 
 • **emailAddresses**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:223](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L223)*
+*Defined in [src/generated/api.ts:223](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L223)*
 
 **`type`** {Array<string>}
 
@@ -53,7 +53,7 @@ ___
 
 • **firstName**? : *string*
 
-*Defined in [src/generated/api.ts:229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L229)*
+*Defined in [src/generated/api.ts:229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L229)*
 
 **`type`** {string}
 
@@ -65,7 +65,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L235)*
+*Defined in [src/generated/api.ts:235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L235)*
 
 **`type`** {string}
 
@@ -77,7 +77,7 @@ ___
 
 • **lastName**? : *string*
 
-*Defined in [src/generated/api.ts:241](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L241)*
+*Defined in [src/generated/api.ts:241](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L241)*
 
 **`type`** {string}
 
@@ -89,7 +89,7 @@ ___
 
 • **metaData**? : *[JsonNode](../modules/_generated_api_.jsonnode.md)*
 
-*Defined in [src/generated/api.ts:247](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L247)*
+*Defined in [src/generated/api.ts:247](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L247)*
 
 **`type`** {JsonNode}
 
@@ -101,7 +101,7 @@ ___
 
 • **optOut**? : *boolean*
 
-*Defined in [src/generated/api.ts:253](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L253)*
+*Defined in [src/generated/api.ts:253](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L253)*
 
 **`type`** {boolean}
 
@@ -113,7 +113,7 @@ ___
 
 • **tags**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:259](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L259)*
+*Defined in [src/generated/api.ts:259](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L259)*
 
 **`type`** {Array<string>}
 

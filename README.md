@@ -71,11 +71,8 @@ await mailslurp.sendEmail(inbox.id, options)
 - [Example repositories](https://www.mailslurp.com/examples/)
 
 ## Resources
-
-| Resource | Description |
-|---------------|------------------------------------------------|
-| [Dashboard App](https://app.mailslurp.com) | Sign-up and visually manage emails |
-| [Documentation](./docs/classes/_index_.mailslurp.md) | Javascript SDK documentation |
-| [Github](https://github.com/mailslurp/mailslurp-client)| Github source code |
-| [PM](https://www.npmjs.com/package/mailslurp-client) | NPM MailSlurp package |
+- [Dashboard App](https://app.mailslurp.com) 
+- [Documentation](./docs/classes/_index_.mailslurp.md)
+- [Github](https://github.com/mailslurp/mailslurp-client)
+- [PM](https://www.npmjs.com/package/mailslurp-client)
 

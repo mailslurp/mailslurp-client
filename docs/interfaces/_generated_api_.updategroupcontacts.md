@@ -22,7 +22,7 @@
 
 • **contactIds**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:2243](https://github.com/mailslurp/mailslurp-client-ts-js/blob/26ccbd6/src/generated/api.ts#L2243)*
+*Defined in [src/generated/api.ts:2243](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2243)*
 
 **`type`** {Array<string>}
 
