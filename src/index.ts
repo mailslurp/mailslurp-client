@@ -45,30 +45,40 @@ export type Config = {
 };
 
 /**
- * Official MailSlurp Client
+ * > Create an instance of this class to call MailSlurp API methods.
  *
+ * Contains top level convenience functions. Access the full API controllers as properties on the instance.
  *
+ * ## Create instance
+ * You must provide a configuration object with [your API Key](https://app.mailslurp.com) as the `apiKey` property
+ * when creating a new instance.
  *
- * ## Install
- * `npm install --save mailslurp-client`
- *
- * ## Configure
- * Create a MailSlurp account to get an [API Key](https://app.mailslurp.com/sign-up/).
- *
- * ```typescript
+ * ```javascript
  * const MailSlurp = require('mailslurp-client').default;
- * const mailslurp = new MailSlurp({ apiKey: 'xxxx' })
+ * const mailslurp = new MailSlurp({
+ *  apiKey: 'xxxx'
+ * })
  * ```
+ * ## Call methods
+ * Most methods are asynchronous and return Promises. You can `await` the results or use `.then(result => {})`
  *
- * ## Make requests
+ * ```javascript
+ * // call convenience functions
+ * const email = await mailslurp.waitForLatestEmail(...args)
  *
- * ```typescript
- * const inbox = await mailslurp.createInbox()
- * await mailslurp.sendEmail({ to: [inbox.emailAddress] })
- * const email = await mailslurp.waitForLatestEmail(inbox.id)
+ * // call controllers to access full API methods
+ * const alias = await mailslurp.aliasController.createAlias(...args)
+ *
+ * // or create a controller
+ * const inboxController = mailslurp.inboxController
+ * const inbox = await inboxController.createInbox()
+ *
+ * // use Promises methods if you prefer
+ * mailslurp.getEmails(inbox.id).then(emails => {
+ *    // handle emails
+ *    console.log(emails))
+ *  }
  * ```
- *
- * Read [quick start guide](https://www.mailslurp.com/guides/) for more examples or see the methods below.
  */
 export class MailSlurp {
     public readonly emailController: EmailControllerApi;
@@ -88,18 +98,14 @@ export class MailSlurp {
     public readonly webhookController: WebhookControllerApi;
 
     /**
-     * Create a new MailSlurp instance. Contains top level convenience functions. Access full API controllers as properties on the instance.
+     * Create a new MailSlurp instance.
+     *
+     * Contains top level convenience functions. Access the full API controllers as properties on the instance.
      *
      * ```javascript
+     * const MailSlurp = require('mailslurp-client').default
      * const mailslurp = new MailSlurp({ apiKey })
-     *
-     * // convenience functions
-     * const email = await mailslurp.waitForLatestEmail(...args)
-     *
-     * // full controllers accessed through methods
-     * const alias = await mailslurp.aliasController.createAlias(...args)
      * ```
-     *
      * @param opts
      */
     constructor(opts: Config) {

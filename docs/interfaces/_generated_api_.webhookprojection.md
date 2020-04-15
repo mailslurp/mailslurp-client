@@ -16,7 +16,7 @@ Representation of a webhook
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:2529](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2529)*
+*Defined in [src/generated/api.ts:2526](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2526)*
 
 **`type`** {Date}
 
@@ -28,7 +28,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:2535](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2535)*
+*Defined in [src/generated/api.ts:2532](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2532)*
 
 **`type`** {string}
 
@@ -40,7 +40,7 @@ ___
 
 • **inboxId**: *string*
 
-*Defined in [src/generated/api.ts:2541](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2541)*
+*Defined in [src/generated/api.ts:2538](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2538)*
 
 **`type`** {string}
 
@@ -52,7 +52,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:2547](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2547)*
+*Defined in [src/generated/api.ts:2544](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2544)*
 
 **`type`** {string}
 
@@ -64,7 +64,7 @@ ___
 
 • **updatedAt**: *Date*
 
-*Defined in [src/generated/api.ts:2553](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2553)*
+*Defined in [src/generated/api.ts:2550](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2550)*
 
 **`type`** {Date}
 
@@ -76,7 +76,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [src/generated/api.ts:2559](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2559)*
+*Defined in [src/generated/api.ts:2556](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2556)*
 
 **`type`** {string}
 

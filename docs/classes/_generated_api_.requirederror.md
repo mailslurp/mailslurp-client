@@ -18,7 +18,7 @@
 
 \+ **new RequiredError**(`field`: string, `msg?`: string): *[RequiredError](_generated_api_.requirederror.md)*
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:75](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L75)*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@ Name | Type |
 
 • **field**: *string*
 
-*Defined in [src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L79)*
+*Defined in [src/generated/api.ts:76](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L76)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 *Overrides void*
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:75](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L75)*
 
 ___
 
