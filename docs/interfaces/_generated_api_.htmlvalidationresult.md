@@ -14,7 +14,7 @@
 
 • **errors**: *Array‹[ValidationMessage](_generated_api_.validationmessage.md)›*
 
-*Defined in [src/generated/api.ts:948](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L948)*
+*Defined in [src/generated/api.ts:951](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L951)*
 
 **`type`** {Array<ValidationMessage>}
 
@@ -26,7 +26,7 @@ ___
 
 • **isValid**: *boolean*
 
-*Defined in [src/generated/api.ts:954](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L954)*
+*Defined in [src/generated/api.ts:957](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L957)*
 
 **`type`** {boolean}
 
@@ -38,7 +38,7 @@ ___
 
 • **warnings**: *Array‹[ValidationMessage](_generated_api_.validationmessage.md)›*
 
-*Defined in [src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L960)*
+*Defined in [src/generated/api.ts:963](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L963)*
 
 **`type`** {Array<ValidationMessage>}
 

@@ -10,7 +10,7 @@
 
 • **count**? : *number*
 
-*Defined in [src/generated/api.ts:2358](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2358)*
+*Defined in [src/generated/api.ts:2361](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2361)*
 
 Number of results that should match conditions
 
@@ -24,7 +24,7 @@ ___
 
 • **countType**? : *[CountTypeEnum](../enums/_generated_api_.waitforconditions.counttypeenum.md)*
 
-*Defined in [src/generated/api.ts:2364](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2364)*
+*Defined in [src/generated/api.ts:2367](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2367)*
 
 Should exactly count number of results be returned or at least that many.
 
@@ -38,7 +38,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:2370](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2370)*
+*Defined in [src/generated/api.ts:2373](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2373)*
 
 Inbox to search within
 
@@ -52,7 +52,7 @@ ___
 
 • **matches**? : *Array‹[MatchOption](_generated_api_.matchoption.md)›*
 
-*Defined in [src/generated/api.ts:2376](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2376)*
+*Defined in [src/generated/api.ts:2379](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2379)*
 
 Conditions that should be matched
 
@@ -66,7 +66,7 @@ ___
 
 • **sortDirection**? : *[SortDirectionEnum](../enums/_generated_api_.waitforconditions.sortdirectionenum.md)*
 
-*Defined in [src/generated/api.ts:2382](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2382)*
+*Defined in [src/generated/api.ts:2385](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2385)*
 
 Direction to sort matching emails by created time
 
@@ -80,7 +80,7 @@ ___
 
 • **timeout**? : *number*
 
-*Defined in [src/generated/api.ts:2388](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2388)*
+*Defined in [src/generated/api.ts:2391](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2391)*
 
 Max time in milliseconds to wait until conditions are met
 
@@ -94,7 +94,7 @@ ___
 
 • **unreadOnly**? : *boolean*
 
-*Defined in [src/generated/api.ts:2394](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2394)*
+*Defined in [src/generated/api.ts:2397](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2397)*
 
 Apply only to unread emails
 

@@ -88,7 +88,18 @@ export class MailSlurp {
     public readonly webhookController: WebhookControllerApi;
 
     /**
-     * Create a new MailSlurp instance
+     * Create a new MailSlurp instance. Contains top level convenience functions. Access full API controllers as properties on the instance.
+     *
+     * ```javascript
+     * const mailslurp = new MailSlurp({ apiKey })
+     *
+     * // convenience functions
+     * const email = await mailslurp.waitForLatestEmail(...args)
+     *
+     * // full controllers accessed through methods
+     * const alias = await mailslurp.aliasController.createAlias(...args)
+     * ```
+     *
      * @param opts
      */
     constructor(opts: Config) {
@@ -122,6 +133,16 @@ export class MailSlurp {
         this.waitController = new WaitForControllerApi(...args);
     }
 
+    /**
+     * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
+     * @summary Create an Inbox (email address)
+     * @param {string} [description] Optional description for an inbox.
+     * @param {string} [emailAddress] Optional email address including domain you wish inbox to use (eg: test123@mydomain.com). Only supports domains that you have registered and verified with MailSlurp using dashboard or &#x60;createDomain&#x60; method.
+     * @param {Date} [expiresAt] Optional expires at timestamp. If your plan supports this feature you can specify when an inbox should expire. If left empty inbox will exist permanently or expire when your plan dictates
+     * @param {boolean} [favourite] Is inbox favourited.
+     * @param {string} [name] Optional name for an inbox.
+     * @param {Array<string>} [tags] Optional tags for an inbox. Can be used for searching and filtering inboxes.
+     */
     async createInbox(
         emailAddress?: string,
         name?: string,
@@ -142,18 +163,33 @@ export class MailSlurp {
         );
     }
 
+    /**
+     * Permanently delete an inbox and associated email address aswell as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * @summary Delete inbox
+     * @param {string} inboxId inboxId
+     */
     async deleteInbox(inboxId: string): Promise<Response> {
         return wrapCall('deleteInbox', () =>
             this.inboxController.deleteInbox(inboxId)
         );
     }
 
+    /**
+     * Deletes all emails
+     * @summary Delete all emails in an inbox
+     * @param {string} inboxId inboxId
+     */
     async emptyInbox(inboxId: string): Promise<Response> {
         return wrapCall('emptyInbox', () =>
             this.commonController.emptyInbox(inboxId)
         );
     }
 
+    /**
+     * Returns an inbox's properties, including its email address and ID.
+     * @summary Get Inbox
+     * @param {string} inboxId inboxId
+     */
     async getInbox(inboxId: string): Promise<Inbox> {
         return wrapCall('getInbox', () =>
             this.inboxController.getInbox(inboxId)
@@ -161,17 +197,22 @@ export class MailSlurp {
     }
 
     /**
-     * Get all inboxes
-     *
-     * [[include: list-inboxes.md]]
+     * List the inboxes you have created
+     * @summary List Inboxes / Email Addresses
      */
     async getInboxes(): Promise<Inbox[]> {
         return wrapCall('getInboxes', () => this.inboxController.getInboxes());
     }
 
     /**
-     * Get all inboxes paginated
-     * Returns paginated inbox previews
+     * List inboxes in paginated form. Allows for page index, page size, and sort direction. Can also filter by favourited or email address like pattern.
+     * @summary List Inboxes Paginated
+     * @param {boolean} [favourite] Optionally filter results for favourites only
+     * @param {number} [page] Optional page index in inbox list pagination
+     * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {number} [size] Optional page size in inbox list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {string} [tag] Optionally filter by tag
      */
     async getAllInboxes(
         page?: number,
@@ -194,7 +235,13 @@ export class MailSlurp {
     }
 
     // waitFor methods
-
+    /**
+     * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox see the other receive methods such as waitForNthEmail or waitForEmailCount.
+     * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {number} [timeout] Max milliseconds to wait
+     * @param {boolean} [unreadOnly] Optional filter for unread only
+     */
     async waitForLatestEmail(
         inboxId?: string,
         timeout?: number,
@@ -204,7 +251,14 @@ export class MailSlurp {
             this.waitController.waitForLatestEmail(inboxId, timeout, unreadOnly)
         );
     }
-
+    /**
+     * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
+     * @summary Wait for or fetch the email with a given index in the inbox specified
+     * @param {string} [inboxId] Id of the inbox you are fetching emails from
+     * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {number} [timeout] Max milliseconds to wait for the nth email if not already present
+     * @param {boolean} [unreadOnly] Optional filter for unread only
+     */
     async waitForNthEmail(
         inboxId: string,
         index: number,
@@ -220,7 +274,15 @@ export class MailSlurp {
             )
         );
     }
-
+    /**
+     * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options.
+     * @summary Wait or return list of emails that match simple matching patterns
+     * @param {MatchOptions} matchOptions matchOptions
+     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {number} [timeout] Max milliseconds to wait
+     * @param {boolean} [unreadOnly] Optional filter for unread only
+     */
     async waitForMatchingEmails(
         matchOptions: MatchOptions,
         count?: number,
@@ -238,7 +300,14 @@ export class MailSlurp {
             )
         );
     }
-
+    /**
+     * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
+     * @summary Wait for and return count number of emails
+     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {number} [timeout] Max milliseconds to wait
+     * @param {boolean} [unreadOnly] Optional filter for unread only
+     */
     async waitForEmailCount(
         count?: number,
         inboxId?: string,
@@ -255,7 +324,11 @@ export class MailSlurp {
         );
     }
 
-    // email methods
+    /**
+     * Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
+     * @summary Delete an email
+     * @param {string} emailId emailId
+     */
     async deleteEmail(emailId: string): Promise<Response> {
         return wrapCall('deleteEmail', () =>
             this.emailController.deleteEmail(emailId)
@@ -263,8 +336,13 @@ export class MailSlurp {
     }
 
     /**
-     * Get all emails
-     * Returns paginated email previews
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * @summary Get all emails
+     * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
+     * @param {number} [page] Optional page index in email list pagination
+     * @param {number} [size] Optional page size in email list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      */
     async getAllEmails(
         page?: number,
@@ -285,12 +363,10 @@ export class MailSlurp {
     }
 
     /**
-     * Get all emails in an inbox as EmailPreviews. To get the full email, use the getEmail endpoint
-     *
-     * [[include: get-emails.md]]
-     *
-     * @param inboxId
-     * @param args
+     * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
+     * @summary Get emails in an Inbox
+     * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Object} GetMessagesOptions see `GetMessagesOptions` details
      */
     async getEmails(
         inboxId: string,
@@ -309,11 +385,9 @@ export class MailSlurp {
     }
 
     /**
-     * Get a full email from by id. To get an emails ID use the getEmails or waitFor methods with an inbox
-     *
-     * [[include: get-email.md]]
-     *
-     * @param emailId
+     * Returns an EmailDto object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
+     * @summary Get email content
+     * @param {string} emailId emailId
      */
     async getEmail(emailId: string): Promise<Email> {
         return wrapCall('getEmail', () =>
@@ -322,8 +396,9 @@ export class MailSlurp {
     }
 
     /**
-     * Get an email's raw contents from by id
-     * @param emailId
+     * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
+     * @summary Get raw email string
+     * @param {string} emailId emailId
      */
     async getRawEmail(emailId: string): Promise<string> {
         return wrapCall('getRawEmail', () =>
@@ -332,11 +407,10 @@ export class MailSlurp {
     }
 
     /**
-     * Send and email from a given inbox
-     *
-     * [[include: send-email.md]]
-     * @param inboxId
-     * @param sendEmailOptions
+     * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails.
+     * @summary Send Email
+     * @param {string} inboxId ID of the inbox you want to send the email from
+     * @param {SendEmailOptions} [sendEmailOptions] Options for the email
      */
     async sendEmail(
         inboxId: string,
@@ -348,9 +422,10 @@ export class MailSlurp {
     }
 
     /**
-     * Get email attachment by id
-     *
-     * Returns HTTP response containing byte stream
+     * Returns the specified attachment for a given email as a byte stream (file download). You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+     * @summary Get email attachment bytes
+     * @param {string} emailId emailId
+     * @param {string} attachmentId attachmentId
      */
     async downloadAttachment(
         emailId: string,
@@ -362,9 +437,12 @@ export class MailSlurp {
     }
 
     /**
-     * Upload an attachment for use in email sending
-     *
-     * Attachment contents must be a base64 encoded string
+     * Upload an attachment for use in email sending. Attachment contents must be a base64 encoded string.
+     * When sending emails with attachments first upload each attachment with this endpoint.
+     * Record the returned attachment IDs. Then use these attachment IDs in the SendEmailOptions when sending an email.
+     * This means that attachments can easily be reused.
+     * @summary Upload an attachment for sending
+     * @param {UploadAttachmentOptions} uploadOptions uploadOptions
      */
     async uploadAttachment(
         options: UploadAttachmentOptions
@@ -378,6 +456,9 @@ export class MailSlurp {
      * Get attachment MetaData
      *
      * MetaData includes name, size (bytes) and content-type.
+     * @summary Get email attachment metadata
+     * @param {string} attachmentId attachmentId
+     * @param {string} emailId emailId
      */
     async getAttachmentMetaData(
         attachmentId: string,

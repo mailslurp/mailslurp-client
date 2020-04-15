@@ -14,7 +14,7 @@
 
 • **count**: *number*
 
-*Defined in [src/generated/api.ts:2226](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2226)*
+*Defined in [src/generated/api.ts:2229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2229)*
 
 **`type`** {number}
 

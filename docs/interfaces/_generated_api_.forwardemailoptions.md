@@ -16,7 +16,7 @@ Options for forwarding an email
 
 • **bcc**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:850](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L850)*
+*Defined in [src/generated/api.ts:853](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L853)*
 
 **`type`** {Array<string>}
 
@@ -28,7 +28,7 @@ ___
 
 • **cc**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:844](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L844)*
+*Defined in [src/generated/api.ts:847](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L847)*
 
 **`type`** {Array<string>}
 
@@ -40,7 +40,7 @@ ___
 
 • **subject**? : *string*
 
-*Defined in [src/generated/api.ts:838](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L838)*
+*Defined in [src/generated/api.ts:841](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L841)*
 
 **`type`** {string}
 
@@ -52,7 +52,7 @@ ___
 
 • **to**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:832](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L832)*
+*Defined in [src/generated/api.ts:835](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L835)*
 
 **`type`** {Array<string>}
 

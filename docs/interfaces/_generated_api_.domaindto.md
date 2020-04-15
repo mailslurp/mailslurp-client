@@ -16,7 +16,7 @@ Domain plus verification records and status
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:490](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L490)*
+*Defined in [src/generated/api.ts:493](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L493)*
 
 **`type`** {Date}
 
@@ -28,7 +28,7 @@ ___
 
 • **domain**: *string*
 
-*Defined in [src/generated/api.ts:496](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L496)*
+*Defined in [src/generated/api.ts:499](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L499)*
 
 **`type`** {string}
 
@@ -40,7 +40,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:502](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L502)*
+*Defined in [src/generated/api.ts:505](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L505)*
 
 **`type`** {string}
 
@@ -52,7 +52,7 @@ ___
 
 • **isVerified**: *boolean*
 
-*Defined in [src/generated/api.ts:508](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L508)*
+*Defined in [src/generated/api.ts:511](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L511)*
 
 **`type`** {boolean}
 
@@ -64,7 +64,7 @@ ___
 
 • **updatedAt**: *Date*
 
-*Defined in [src/generated/api.ts:514](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L514)*
+*Defined in [src/generated/api.ts:517](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L517)*
 
 **`type`** {Date}
 
@@ -76,7 +76,7 @@ ___
 
 • **userId**: *string*
 
-*Defined in [src/generated/api.ts:520](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L520)*
+*Defined in [src/generated/api.ts:523](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L523)*
 
 **`type`** {string}
 
@@ -88,7 +88,7 @@ ___
 
 • **verificationToken**: *string*
 
-*Defined in [src/generated/api.ts:526](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L526)*
+*Defined in [src/generated/api.ts:529](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L529)*
 
 **`type`** {string}
 

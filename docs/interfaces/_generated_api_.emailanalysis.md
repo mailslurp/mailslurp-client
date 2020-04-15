@@ -16,7 +16,7 @@ Analysis of email
 
 • **dkimVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:676](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L676)*
+*Defined in [src/generated/api.ts:679](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L679)*
 
 **`type`** {string}
 
@@ -28,7 +28,7 @@ ___
 
 • **dmarcVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:682](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L682)*
+*Defined in [src/generated/api.ts:685](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L685)*
 
 **`type`** {string}
 
@@ -40,7 +40,7 @@ ___
 
 • **spamVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:688](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L688)*
+*Defined in [src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L691)*
 
 **`type`** {string}
 
@@ -52,7 +52,7 @@ ___
 
 • **spfVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:694](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L694)*
+*Defined in [src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L697)*
 
 **`type`** {string}
 
@@ -64,7 +64,7 @@ ___
 
 • **virusVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:700](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L700)*
+*Defined in [src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L703)*
 
 **`type`** {string}
 

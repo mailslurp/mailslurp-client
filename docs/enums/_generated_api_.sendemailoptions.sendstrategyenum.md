@@ -8,6 +8,6 @@
 
 ###  SINGLEMESSAGE
 
-• **SINGLEMESSAGE**: =  <any> 'SINGLE_MESSAGE'
+• **SINGLEMESSAGE**: =  <any>'SINGLE_MESSAGE'
 
-*Defined in [src/generated/api.ts:2061](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2061)*
+*Defined in [src/generated/api.ts:2064](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2064)*

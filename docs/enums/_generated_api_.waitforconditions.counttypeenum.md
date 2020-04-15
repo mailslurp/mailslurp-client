@@ -8,14 +8,14 @@
 
 ###  ATLEAST
 
-• **ATLEAST**: =  <any> 'ATLEAST'
+• **ATLEAST**: =  <any>'ATLEAST'
 
-*Defined in [src/generated/api.ts:2408](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2408)*
+*Defined in [src/generated/api.ts:2411](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2411)*
 
 ___
 
 ###  EXACTLY
 
-• **EXACTLY**: =  <any> 'EXACTLY'
+• **EXACTLY**: =  <any>'EXACTLY'
 
-*Defined in [src/generated/api.ts:2407](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2407)*
+*Defined in [src/generated/api.ts:2410](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2410)*
