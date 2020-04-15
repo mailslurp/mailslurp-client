@@ -1,6 +1,6 @@
 # Interface: UploadAttachmentOptions
 
-Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your SendEmailOptions when sending an email. This way you can use attachments multiple times once they have been uploaded.
+Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your `SendEmailOptions` when sending an email. This way you can use attachments multiple times once they have been uploaded.
 
 **`export`** 
 
@@ -16,7 +16,7 @@ Options for uploading files for attachments. When sending emails with the API th
 
 • **base64Contents**? : *string*
 
-*Defined in [src/generated/api.ts:2295](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2295)*
+*Defined in [src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2307)*
 
 Base64 encoded string of file contents
 
@@ -30,7 +30,7 @@ ___
 
 • **contentType**? : *string*
 
-*Defined in [src/generated/api.ts:2301](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2301)*
+*Defined in [src/generated/api.ts:2313](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2313)*
 
 Optional contentType for file. For instance `application/pdf`
 
@@ -44,7 +44,7 @@ ___
 
 • **filename**? : *string*
 
-*Defined in [src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2307)*
+*Defined in [src/generated/api.ts:2319](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2319)*
 
 Optional filename to save upload with
 

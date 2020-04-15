@@ -14,7 +14,7 @@
 
 • **message**? : *string*
 
-*Defined in [src/generated/api.ts:2614](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2614)*
+*Defined in [src/generated/api.ts:2626](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2626)*
 
 **`type`** {string}
 
@@ -26,7 +26,7 @@ ___
 
 • **statusCode**? : *number*
 
-*Defined in [src/generated/api.ts:2620](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2620)*
+*Defined in [src/generated/api.ts:2632](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2632)*
 
 **`type`** {number}
 

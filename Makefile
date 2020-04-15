@@ -2,7 +2,9 @@
 
 include .env
 
-SPEC_URL=https://api.mailslurp.com/v2/api-docs
+ifeq ($(SPEC_URL),)
+SPEC_URL := https://api.mailslurp.com/v2/api-docs
+endif
 
 node_modules:
 	npm install
@@ -22,6 +24,9 @@ generate: bin/openapi-generator-cli.jar
 		--lang typescript-fetch \
 		--output src/generated
 	rm src/generated/git_push.sh
+
+generate-local:
+	SPEC_URL="~/projects/ms2/ms2-api/build/swagger/swagger.json" $(MAKE) generate
 
 fmt: node_modules
 	npm run fmt

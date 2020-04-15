@@ -14,7 +14,7 @@
 
 • **company**? : *string*
 
-*Defined in [src/generated/api.ts:273](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L273)*
+*Defined in [src/generated/api.ts:279](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L279)*
 
 **`type`** {string}
 
@@ -26,7 +26,7 @@ ___
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:279](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L279)*
+*Defined in [src/generated/api.ts:285](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L285)*
 
 **`type`** {Date}
 
@@ -38,7 +38,7 @@ ___
 
 • **firstName**? : *string*
 
-*Defined in [src/generated/api.ts:285](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L285)*
+*Defined in [src/generated/api.ts:291](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L291)*
 
 **`type`** {string}
 
@@ -50,7 +50,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:291](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L291)*
+*Defined in [src/generated/api.ts:297](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L297)*
 
 **`type`** {string}
 
@@ -62,7 +62,7 @@ ___
 
 • **lastName**? : *string*
 
-*Defined in [src/generated/api.ts:297](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L297)*
+*Defined in [src/generated/api.ts:303](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L303)*
 
 **`type`** {string}
 
@@ -74,7 +74,7 @@ ___
 
 • **optOut**? : *boolean*
 
-*Defined in [src/generated/api.ts:303](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L303)*
+*Defined in [src/generated/api.ts:309](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L309)*
 
 **`type`** {boolean}
 

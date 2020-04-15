@@ -16,7 +16,7 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 • **password**: *string*
 
-*Defined in [src/generated/api.ts:183](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L183)*
+*Defined in [src/generated/api.ts:189](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L189)*
 
 **`type`** {string}
 
@@ -28,7 +28,7 @@ ___
 
 • **username**: *string*
 
-*Defined in [src/generated/api.ts:177](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L177)*
+*Defined in [src/generated/api.ts:183](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L183)*
 
 **`type`** {string}
 

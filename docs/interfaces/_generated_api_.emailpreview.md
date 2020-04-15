@@ -1,6 +1,6 @@
 # Interface: EmailPreview
 
-Preview of an email message. For full message call the email endpoints with the provided email id.
+Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
 
 **`export`** 
 
@@ -16,7 +16,7 @@ Preview of an email message. For full message call the email endpoints with the 
 
 • **attachments**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:717](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L717)*
+*Defined in [src/generated/api.ts:729](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L729)*
 
 List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
 
@@ -30,7 +30,7 @@ ___
 
 • **bcc**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:723](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L723)*
+*Defined in [src/generated/api.ts:735](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L735)*
 
 List of `BCC` recipients email was addressed to
 
@@ -44,7 +44,7 @@ ___
 
 • **cc**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:729](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L729)*
+*Defined in [src/generated/api.ts:741](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L741)*
 
 List of `CC` recipients email was addressed to
 
@@ -58,7 +58,7 @@ ___
 
 • **createdAt**? : *Date*
 
-*Defined in [src/generated/api.ts:735](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L735)*
+*Defined in [src/generated/api.ts:747](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L747)*
 
 When was the email received by MailSlurp
 
@@ -72,7 +72,7 @@ ___
 
 • **id**? : *string*
 
-*Defined in [src/generated/api.ts:741](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L741)*
+*Defined in [src/generated/api.ts:753](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L753)*
 
 ID of the email
 
@@ -86,7 +86,7 @@ ___
 
 • **read**? : *boolean*
 
-*Defined in [src/generated/api.ts:747](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L747)*
+*Defined in [src/generated/api.ts:759](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L759)*
 
 Has the email been viewed ever
 
@@ -100,7 +100,7 @@ ___
 
 • **subject**? : *string*
 
-*Defined in [src/generated/api.ts:753](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L753)*
+*Defined in [src/generated/api.ts:765](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L765)*
 
 The subject line of the email message
 
@@ -114,7 +114,7 @@ ___
 
 • **to**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:759](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L759)*
+*Defined in [src/generated/api.ts:771](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L771)*
 
 List of `To` recipients email was addressed to
 

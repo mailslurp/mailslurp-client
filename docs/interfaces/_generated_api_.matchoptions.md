@@ -1,6 +1,6 @@
 # Interface: MatchOptions
 
-Optional filter for matching emails based on fields
+Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value.
 
 **`export`** 
 
@@ -16,7 +16,7 @@ Optional filter for matching emails based on fields
 
 • **matches**? : *Array‹[MatchOption](../modules/_generated_api_.matchoption.md)›*
 
-*Defined in [src/generated/api.ts:1303](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L1303)*
+*Defined in [src/generated/api.ts:1315](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L1315)*
 
 1 or more match options. Options are additive so if one does not match the email is excluded from results
 

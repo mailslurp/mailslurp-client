@@ -10,7 +10,7 @@
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:2195](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2195)*
+*Defined in [src/generated/api.ts:2207](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2207)*
 
 **`type`** {string}
 
@@ -22,7 +22,7 @@ ___
 
 • **variableType**: *[VariableTypeEnum](../enums/_generated_api_.templatevariable.variabletypeenum.md)*
 
-*Defined in [src/generated/api.ts:2201](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2201)*
+*Defined in [src/generated/api.ts:2213](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2213)*
 
 **`type`** {string}
 

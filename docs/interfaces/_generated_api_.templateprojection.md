@@ -14,7 +14,7 @@
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:2157](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2157)*
+*Defined in [src/generated/api.ts:2169](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2169)*
 
 **`type`** {Date}
 
@@ -26,7 +26,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:2163](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2163)*
+*Defined in [src/generated/api.ts:2175](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2175)*
 
 **`type`** {string}
 
@@ -38,7 +38,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:2169](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2169)*
+*Defined in [src/generated/api.ts:2181](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2181)*
 
 **`type`** {string}
 
@@ -50,7 +50,7 @@ ___
 
 • **updatedAt**: *Date*
 
-*Defined in [src/generated/api.ts:2175](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2175)*
+*Defined in [src/generated/api.ts:2187](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2187)*
 
 **`type`** {Date}
 
@@ -62,7 +62,7 @@ ___
 
 • **variables**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:2181](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2181)*
+*Defined in [src/generated/api.ts:2193](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2193)*
 
 **`type`** {Array<string>}
 

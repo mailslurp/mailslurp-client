@@ -14,7 +14,7 @@
 
 • **empty**? : *boolean*
 
-*Defined in [src/generated/api.ts:2093](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2093)*
+*Defined in [src/generated/api.ts:2105](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2105)*
 
 **`type`** {boolean}
 
@@ -26,7 +26,7 @@ ___
 
 • **sorted**? : *boolean*
 
-*Defined in [src/generated/api.ts:2099](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2099)*
+*Defined in [src/generated/api.ts:2111](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2111)*
 
 **`type`** {boolean}
 
@@ -38,7 +38,7 @@ ___
 
 • **unsorted**? : *boolean*
 
-*Defined in [src/generated/api.ts:2105](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2105)*
+*Defined in [src/generated/api.ts:2117](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2117)*
 
 **`type`** {boolean}
 

@@ -14,7 +14,7 @@
 
 • **contactIds**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:2243](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2243)*
+*Defined in [src/generated/api.ts:2255](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2255)*
 
 **`type`** {Array<string>}
 

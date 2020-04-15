@@ -1,5 +1,7 @@
 # Interface: ValidationDto
 
+Response object for email validation operation
+
 **`export`** 
 
 **`interface`** ValidationDto
@@ -10,11 +12,13 @@
 
 ## Properties
 
-###  emailId
+### `Optional` emailId
 
-• **emailId**: *string*
+• **emailId**? : *string*
 
-*Defined in [src/generated/api.ts:2321](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2321)*
+*Defined in [src/generated/api.ts:2333](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2333)*
+
+ID of the email validated
 
 **`type`** {string}
 
@@ -22,11 +26,13 @@
 
 ___
 
-###  html
+### `Optional` html
 
-• **html**: *[HTMLValidationResult](_generated_api_.htmlvalidationresult.md)*
+• **html**? : *[HTMLValidationResult](_generated_api_.htmlvalidationresult.md)*
 
-*Defined in [src/generated/api.ts:2327](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L2327)*
+*Defined in [src/generated/api.ts:2339](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L2339)*
+
+Result of HTML validation
 
 **`type`** {HTMLValidationResult}
 

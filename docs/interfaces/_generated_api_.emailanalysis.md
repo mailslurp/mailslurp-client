@@ -1,6 +1,6 @@
 # Interface: EmailAnalysis
 
-Analysis of email
+Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or dynamic error message
 
 **`export`** 
 
@@ -16,7 +16,9 @@ Analysis of email
 
 • **dkimVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:679](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L679)*
+*Defined in [src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L691)*
+
+Verdict of DomainKeys Identified Mail analysis
 
 **`type`** {string}
 
@@ -28,7 +30,9 @@ ___
 
 • **dmarcVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:685](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L685)*
+*Defined in [src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L697)*
+
+Verdict of Domain-based Message Authentication Reporting and Conformance analysis
 
 **`type`** {string}
 
@@ -40,7 +44,9 @@ ___
 
 • **spamVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L691)*
+*Defined in [src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L703)*
+
+Verdict of spam ranking analysis
 
 **`type`** {string}
 
@@ -52,7 +58,9 @@ ___
 
 • **spfVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L697)*
+*Defined in [src/generated/api.ts:709](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L709)*
+
+Verdict of Send Policy Framework record spoofing analysis
 
 **`type`** {string}
 
@@ -64,7 +72,9 @@ ___
 
 • **virusVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L703)*
+*Defined in [src/generated/api.ts:715](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L715)*
+
+Verdict of virus scan analysis
 
 **`type`** {string}
 

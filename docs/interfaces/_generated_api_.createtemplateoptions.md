@@ -14,7 +14,7 @@
 
 • **content**: *string*
 
-*Defined in [src/generated/api.ts:453](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L453)*
+*Defined in [src/generated/api.ts:465](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L465)*
 
 **`type`** {string}
 
@@ -26,7 +26,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:447](https://github.com/mailslurp/mailslurp-client-ts-js/blob/6b83217/src/generated/api.ts#L447)*
+*Defined in [src/generated/api.ts:459](https://github.com/mailslurp/mailslurp-client-ts-js/blob/5d485ad/src/generated/api.ts#L459)*
 
 **`type`** {string}
 
