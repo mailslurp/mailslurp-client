@@ -1,24 +1,8 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/configuration"](../modules/_generated_configuration_.md) › [Configuration](_generated_configuration_.configuration.md)
-
 # Class: Configuration
 
 ## Hierarchy
 
 * **Configuration**
-
-## Index
-
-### Constructors
-
-* [constructor](_generated_configuration_.configuration.md#constructor)
-
-### Properties
-
-* [accessToken](_generated_configuration_.configuration.md#optional-accesstoken)
-* [apiKey](_generated_configuration_.configuration.md#optional-apikey)
-* [basePath](_generated_configuration_.configuration.md#optional-basepath)
-* [password](_generated_configuration_.configuration.md#optional-password)
-* [username](_generated_configuration_.configuration.md#optional-username)
 
 ## Constructors
 
@@ -26,7 +10,7 @@
 
 \+ **new Configuration**(`param`: [ConfigurationParameters](../interfaces/_generated_configuration_.configurationparameters.md)): *[Configuration](_generated_configuration_.configuration.md)*
 
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L56)*
+*Defined in [src/generated/configuration.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L57)*
 
 **Parameters:**
 
@@ -42,7 +26,7 @@ Name | Type | Default |
 
 • **accessToken**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L49)*
+*Defined in [src/generated/configuration.ts:50](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L50)*
 
 parameter for oauth2 security
 
@@ -58,7 +42,7 @@ ___
 
 • **apiKey**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L28)*
+*Defined in [src/generated/configuration.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L29)*
 
 parameter for apiKey security
 
@@ -72,7 +56,7 @@ ___
 
 • **basePath**? : *string*
 
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L56)*
+*Defined in [src/generated/configuration.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L57)*
 
 override base path
 
@@ -86,7 +70,7 @@ ___
 
 • **password**? : *string*
 
-*Defined in [src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L42)*
+*Defined in [src/generated/configuration.ts:43](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L43)*
 
 parameter for basic security
 
@@ -100,7 +84,7 @@ ___
 
 • **username**? : *string*
 
-*Defined in [src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/configuration.ts#L35)*
+*Defined in [src/generated/configuration.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/configuration.ts#L36)*
 
 parameter for basic security
 

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [CommonActionsControllerApi](_generated_api_.commonactionscontrollerapi.md)
-
 # Class: CommonActionsControllerApi
 
 CommonActionsControllerApi - object-oriented interface
@@ -16,24 +14,6 @@ CommonActionsControllerApi - object-oriented interface
 
   ↳ **CommonActionsControllerApi**
 
-## Index
-
-### Constructors
-
-* [constructor](_generated_api_.commonactionscontrollerapi.md#constructor)
-
-### Properties
-
-* [basePath](_generated_api_.commonactionscontrollerapi.md#protected-basepath)
-* [configuration](_generated_api_.commonactionscontrollerapi.md#protected-configuration)
-* [fetch](_generated_api_.commonactionscontrollerapi.md#protected-fetch)
-
-### Methods
-
-* [createNewEmailAddress](_generated_api_.commonactionscontrollerapi.md#createnewemailaddress)
-* [emptyInbox](_generated_api_.commonactionscontrollerapi.md#emptyinbox)
-* [sendEmailSimple](_generated_api_.commonactionscontrollerapi.md#sendemailsimple)
-
 ## Constructors
 
 ###  constructor
@@ -42,7 +22,7 @@ CommonActionsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[constructor](_generated_api_.baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L58)*
 
 **Parameters:**
 
@@ -62,7 +42,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[basePath](_generated_api_.baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L60)*
 
 ___
 
@@ -72,7 +52,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[configuration](_generated_api_.baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L58)*
 
 ___
 
@@ -82,7 +62,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[fetch](_generated_api_.baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L60)*
 
 ## Methods
 
@@ -90,7 +70,7 @@ ___
 
 ▸ **createNewEmailAddress**(`options?`: any): *Promise‹[Inbox](../interfaces/_generated_api_.inbox.md)›*
 
-*Defined in [src/generated/api.ts:4587](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4587)*
+*Defined in [src/generated/api.ts:3934](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3934)*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -114,7 +94,7 @@ ___
 
 ▸ **emptyInbox**(`inboxId`: string, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:4601](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4601)*
+*Defined in [src/generated/api.ts:3946](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3946)*
 
 Deletes all emails
 
@@ -139,7 +119,7 @@ ___
 
 ▸ **sendEmailSimple**(`sendEmailOptions`: [SendEmailOptions](../modules/_generated_api_.sendemailoptions.md), `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:4616](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4616)*
+*Defined in [src/generated/api.ts:3958](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3958)*
 
 To specify an email address first create an inbox and use that with the other send email methods
 

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [CreateOwnedAliasOptions](_generated_api_.createownedaliasoptions.md)
-
 # Interface: CreateOwnedAliasOptions
 
 Create email alias options. Email aliases can be used to mask real email addresses behind an ID. You can also attach an inbox to an alias so that any email received by the inbox email address if forwarded to the alias email address.
@@ -12,21 +10,13 @@ Create email alias options. Email aliases can be used to mask real email address
 
 * **CreateOwnedAliasOptions**
 
-## Index
-
-### Properties
-
-* [emailAddress](_generated_api_.createownedaliasoptions.md#emailaddress)
-* [inboxId](_generated_api_.createownedaliasoptions.md#optional-inboxid)
-* [name](_generated_api_.createownedaliasoptions.md#optional-name)
-
 ## Properties
 
 ###  emailAddress
 
 • **emailAddress**: *string*
 
-*Defined in [src/generated/api.ts:421](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L421)*
+*Defined in [src/generated/api.ts:418](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L418)*
 
 **`type`** {string}
 
@@ -38,7 +28,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L427)*
+*Defined in [src/generated/api.ts:424](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L424)*
 
 **`type`** {string}
 
@@ -50,7 +40,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L433)*
+*Defined in [src/generated/api.ts:430](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L430)*
 
 **`type`** {string}
 

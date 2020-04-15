@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [ValidationMessage](_generated_api_.validationmessage.md)
-
 # Interface: ValidationMessage
 
 **`export`** 
@@ -10,20 +8,13 @@
 
 * **ValidationMessage**
 
-## Index
-
-### Properties
-
-* [lineNumber](_generated_api_.validationmessage.md#linenumber)
-* [message](_generated_api_.validationmessage.md#optional-message)
-
 ## Properties
 
 ###  lineNumber
 
 • **lineNumber**: *number*
 
-*Defined in [src/generated/api.ts:2341](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2341)*
+*Defined in [src/generated/api.ts:2338](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2338)*
 
 **`type`** {number}
 
@@ -35,7 +26,7 @@ ___
 
 • **message**? : *string*
 
-*Defined in [src/generated/api.ts:2347](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2347)*
+*Defined in [src/generated/api.ts:2344](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2344)*
 
 **`type`** {string}
 

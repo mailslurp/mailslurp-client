@@ -1,22 +1,4 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["index"](_index_.md)
-
 # External module: "index"
-
-## Index
-
-### Classes
-
-* [MailSlurp](../classes/_index_.mailslurp.md)
-
-### Type aliases
-
-* [Config](_index_.md#config)
-* [GetMessagesOptions](_index_.md#getmessagesoptions)
-* [SortEnum](_index_.md#sortenum)
-
-### Functions
-
-* [wrapCall](_index_.md#wrapcall)
 
 ## Type aliases
 
@@ -24,7 +6,7 @@
 
 Ƭ **Config**: *object*
 
-*Defined in [src/index.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/index.ts#L36)*
+*Defined in [src/index.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/index.ts#L36)*
 
 MailSlurp config
 
@@ -47,7 +29,7 @@ ___
 
 Ƭ **GetMessagesOptions**: *object*
 
-*Defined in [src/index.ts:398](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/index.ts#L398)*
+*Defined in [src/index.ts:398](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/index.ts#L398)*
 
 Options for advanced message fetching
 
@@ -72,7 +54,7 @@ ___
 
 Ƭ **SortEnum**: *"ASC" | "DESC"*
 
-*Defined in [src/index.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/index.ts#L29)*
+*Defined in [src/index.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/index.ts#L29)*
 
 ## Functions
 
@@ -80,7 +62,7 @@ ___
 
 ▸ **wrapCall**<**T**>(`tag`: String, `fn`: function): *Promise‹T›*
 
-*Defined in [src/index.ts:413](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/index.ts#L413)*
+*Defined in [src/index.ts:413](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/index.ts#L413)*
 
 **Type parameters:**
 

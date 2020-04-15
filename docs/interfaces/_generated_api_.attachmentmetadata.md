@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [AttachmentMetaData](_generated_api_.attachmentmetadata.md)
-
 # Interface: AttachmentMetaData
 
 **`export`** 
@@ -10,22 +8,13 @@
 
 * **AttachmentMetaData**
 
-## Index
-
-### Properties
-
-* [contentLength](_generated_api_.attachmentmetadata.md#contentlength)
-* [contentType](_generated_api_.attachmentmetadata.md#contenttype)
-* [id](_generated_api_.attachmentmetadata.md#id)
-* [name](_generated_api_.attachmentmetadata.md#name)
-
 ## Properties
 
 ###  contentLength
 
 • **contentLength**: *number*
 
-*Defined in [src/generated/api.ts:145](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L145)*
+*Defined in [src/generated/api.ts:142](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L142)*
 
 **`type`** {number}
 
@@ -37,7 +26,7 @@ ___
 
 • **contentType**: *string*
 
-*Defined in [src/generated/api.ts:151](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L151)*
+*Defined in [src/generated/api.ts:148](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L148)*
 
 **`type`** {string}
 
@@ -49,7 +38,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:157](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L157)*
+*Defined in [src/generated/api.ts:154](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L154)*
 
 **`type`** {string}
 
@@ -61,7 +50,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:163](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L163)*
+*Defined in [src/generated/api.ts:160](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L160)*
 
 **`type`** {string}
 

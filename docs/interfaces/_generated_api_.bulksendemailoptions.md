@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [BulkSendEmailOptions](_generated_api_.bulksendemailoptions.md)
-
 # Interface: BulkSendEmailOptions
 
 Options for bulk sending an email from multiple addresses
@@ -12,20 +10,13 @@ Options for bulk sending an email from multiple addresses
 
 * **BulkSendEmailOptions**
 
-## Index
-
-### Properties
-
-* [inboxIds](_generated_api_.bulksendemailoptions.md#optional-inboxids)
-* [sendEmailOptions](_generated_api_.bulksendemailoptions.md#sendemailoptions)
-
 ## Properties
 
 ### `Optional` inboxIds
 
 • **inboxIds**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:197](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L197)*
+*Defined in [src/generated/api.ts:194](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L194)*
 
 Inboxes to send the email from
 
@@ -39,7 +30,7 @@ ___
 
 • **sendEmailOptions**: *[SendEmailOptions](../modules/_generated_api_.sendemailoptions.md)*
 
-*Defined in [src/generated/api.ts:203](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L203)*
+*Defined in [src/generated/api.ts:200](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L200)*
 
 **`type`** {SendEmailOptions}
 

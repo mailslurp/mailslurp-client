@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [RequiredError](_generated_api_.requirederror.md)
-
 # Class: RequiredError
 
 **`export`** 
@@ -14,27 +12,13 @@
 
   ↳ **RequiredError**
 
-## Index
-
-### Constructors
-
-* [constructor](_generated_api_.requirederror.md#constructor)
-
-### Properties
-
-* [field](_generated_api_.requirederror.md#field)
-* [message](_generated_api_.requirederror.md#message)
-* [name](_generated_api_.requirederror.md#name)
-* [stack](_generated_api_.requirederror.md#optional-stack)
-* [Error](_generated_api_.requirederror.md#static-error)
-
 ## Constructors
 
 ###  constructor
 
 \+ **new RequiredError**(`field`: string, `msg?`: string): *[RequiredError](_generated_api_.requirederror.md)*
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:75](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L75)*
 
 **Parameters:**
 
@@ -51,7 +35,7 @@ Name | Type |
 
 • **field**: *string*
 
-*Defined in [src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L79)*
+*Defined in [src/generated/api.ts:76](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L76)*
 
 ___
 
@@ -71,7 +55,7 @@ ___
 
 *Overrides void*
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:75](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L75)*
 
 ___
 

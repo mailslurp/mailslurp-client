@@ -1,30 +1,21 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [WaitForConditions](../modules/_generated_api_.waitforconditions.md) › [SortDirectionEnum](_generated_api_.waitforconditions.sortdirectionenum.md)
-
 # Enumeration: SortDirectionEnum
 
 **`export`** 
 
 **`enum`** {string}
 
-## Index
-
-### Enumeration members
-
-* [ASC](_generated_api_.waitforconditions.sortdirectionenum.md#asc)
-* [DESC](_generated_api_.waitforconditions.sortdirectionenum.md#desc)
-
 ## Enumeration members
 
 ###  ASC
 
-• **ASC**: =  <any>'ASC'
+• **ASC**: =  <any> 'ASC'
 
-*Defined in [src/generated/api.ts:2418](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2418)*
+*Defined in [src/generated/api.ts:2415](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2415)*
 
 ___
 
 ###  DESC
 
-• **DESC**: =  <any>'DESC'
+• **DESC**: =  <any> 'DESC'
 
-*Defined in [src/generated/api.ts:2419](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2419)*
+*Defined in [src/generated/api.ts:2416](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2416)*

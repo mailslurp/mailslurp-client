@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [GroupContactsDto](_generated_api_.groupcontactsdto.md)
-
 # Interface: GroupContactsDto
 
 **`export`** 
@@ -10,20 +8,13 @@
 
 * **GroupContactsDto**
 
-## Index
-
-### Properties
-
-* [contacts](_generated_api_.groupcontactsdto.md#contacts)
-* [group](_generated_api_.groupcontactsdto.md#group)
-
 ## Properties
 
 ###  contacts
 
 • **contacts**: *Array‹[ContactDto](_generated_api_.contactdto.md)›*
 
-*Defined in [src/generated/api.ts:867](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L867)*
+*Defined in [src/generated/api.ts:864](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L864)*
 
 **`type`** {Array<ContactDto>}
 
@@ -35,7 +26,7 @@ ___
 
 • **group**: *[GroupDto](_generated_api_.groupdto.md)*
 
-*Defined in [src/generated/api.ts:873](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L873)*
+*Defined in [src/generated/api.ts:870](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L870)*
 
 **`type`** {GroupDto}
 

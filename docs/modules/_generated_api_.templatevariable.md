@@ -1,21 +1,8 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](_generated_api_.md) › [TemplateVariable](_generated_api_.templatevariable.md)
-
 # Module: TemplateVariable
 
 **`export`** 
 
 **`namespace`** TemplateVariable
-
-## Index
-
-### Enumerations
-
-* [VariableTypeEnum](../enums/_generated_api_.templatevariable.variabletypeenum.md)
-
-### Properties
-
-* [name](_generated_api_.templatevariable.md#name)
-* [variableType](_generated_api_.templatevariable.md#variabletype)
 
 ## Properties
 
@@ -23,7 +10,7 @@
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:2195](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2195)*
+*Defined in [src/generated/api.ts:2192](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2192)*
 
 **`type`** {string}
 
@@ -35,7 +22,7 @@ ___
 
 • **variableType**: *[VariableTypeEnum](../enums/_generated_api_.templatevariable.variabletypeenum.md)*
 
-*Defined in [src/generated/api.ts:2201](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2201)*
+*Defined in [src/generated/api.ts:2198](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2198)*
 
 **`type`** {string}
 

@@ -1,93 +1,77 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [JsonNode](../modules/_generated_api_.jsonnode.md) › [NodeTypeEnum](_generated_api_.jsonnode.nodetypeenum.md)
-
 # Enumeration: NodeTypeEnum
 
 **`export`** 
 
 **`enum`** {string}
 
-## Index
-
-### Enumeration members
-
-* [ARRAY](_generated_api_.jsonnode.nodetypeenum.md#array)
-* [BINARY](_generated_api_.jsonnode.nodetypeenum.md#binary)
-* [BOOLEAN](_generated_api_.jsonnode.nodetypeenum.md#boolean)
-* [MISSING](_generated_api_.jsonnode.nodetypeenum.md#missing)
-* [NULL](_generated_api_.jsonnode.nodetypeenum.md#null)
-* [NUMBER](_generated_api_.jsonnode.nodetypeenum.md#number)
-* [OBJECT](_generated_api_.jsonnode.nodetypeenum.md#object)
-* [POJO](_generated_api_.jsonnode.nodetypeenum.md#pojo)
-* [STRING](_generated_api_.jsonnode.nodetypeenum.md#string)
-
 ## Enumeration members
 
 ###  ARRAY
 
-• **ARRAY**: =  <any>'ARRAY'
+• **ARRAY**: =  <any> 'ARRAY'
 
-*Defined in [src/generated/api.ts:1228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1228)*
+*Defined in [src/generated/api.ts:1225](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1225)*
 
 ___
 
 ###  BINARY
 
-• **BINARY**: =  <any>'BINARY'
+• **BINARY**: =  <any> 'BINARY'
 
-*Defined in [src/generated/api.ts:1229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1229)*
+*Defined in [src/generated/api.ts:1226](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1226)*
 
 ___
 
 ###  BOOLEAN
 
-• **BOOLEAN**: =  <any>'BOOLEAN'
+• **BOOLEAN**: =  <any> 'BOOLEAN'
 
-*Defined in [src/generated/api.ts:1230](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1230)*
+*Defined in [src/generated/api.ts:1227](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1227)*
 
 ___
 
 ###  MISSING
 
-• **MISSING**: =  <any>'MISSING'
+• **MISSING**: =  <any> 'MISSING'
 
-*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1231)*
+*Defined in [src/generated/api.ts:1228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1228)*
 
 ___
 
 ###  NULL
 
-• **NULL**: =  <any>'NULL'
+• **NULL**: =  <any> 'NULL'
 
-*Defined in [src/generated/api.ts:1232](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1232)*
+*Defined in [src/generated/api.ts:1229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1229)*
 
 ___
 
 ###  NUMBER
 
-• **NUMBER**: =  <any>'NUMBER'
+• **NUMBER**: =  <any> 'NUMBER'
 
-*Defined in [src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1233)*
+*Defined in [src/generated/api.ts:1230](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1230)*
 
 ___
 
 ###  OBJECT
 
-• **OBJECT**: =  <any>'OBJECT'
+• **OBJECT**: =  <any> 'OBJECT'
 
-*Defined in [src/generated/api.ts:1234](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1234)*
+*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1231)*
 
 ___
 
 ###  POJO
 
-• **POJO**: =  <any>'POJO'
+• **POJO**: =  <any> 'POJO'
 
-*Defined in [src/generated/api.ts:1235](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1235)*
+*Defined in [src/generated/api.ts:1232](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1232)*
 
 ___
 
 ###  STRING
 
-• **STRING**: =  <any>'STRING'
+• **STRING**: =  <any> 'STRING'
 
-*Defined in [src/generated/api.ts:1236](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1236)*
+*Defined in [src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1233)*

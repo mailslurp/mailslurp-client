@@ -1,23 +1,8 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](_generated_api_.md) › [WebhookTestRequest](_generated_api_.webhooktestrequest.md)
-
 # Module: WebhookTestRequest
 
 **`export`** 
 
 **`namespace`** WebhookTestRequest
-
-## Index
-
-### Enumerations
-
-* [MethodEnum](../enums/_generated_api_.webhooktestrequest.methodenum.md)
-
-### Properties
-
-* [headers](_generated_api_.webhooktestrequest.md#headers)
-* [method](_generated_api_.webhooktestrequest.md#method)
-* [payload](_generated_api_.webhooktestrequest.md#optional-payload)
-* [url](_generated_api_.webhooktestrequest.md#url)
 
 ## Properties
 
@@ -25,7 +10,7 @@
 
 • **headers**: *object*
 
-*Defined in [src/generated/api.ts:2561](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2561)*
+*Defined in [src/generated/api.ts:2558](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2558)*
 
 **`type`** {{ [key: string]: string; }}
 
@@ -41,7 +26,7 @@ ___
 
 • **method**: *[MethodEnum](../enums/_generated_api_.webhooktestrequest.methodenum.md)*
 
-*Defined in [src/generated/api.ts:2567](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2567)*
+*Defined in [src/generated/api.ts:2564](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2564)*
 
 **`type`** {string}
 
@@ -53,7 +38,7 @@ ___
 
 • **payload**? : *string*
 
-*Defined in [src/generated/api.ts:2573](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2573)*
+*Defined in [src/generated/api.ts:2570](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2570)*
 
 **`type`** {string}
 
@@ -65,7 +50,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [src/generated/api.ts:2579](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2579)*
+*Defined in [src/generated/api.ts:2576](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2576)*
 
 **`type`** {string}
 

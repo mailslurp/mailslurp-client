@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [EmailAnalysis](_generated_api_.emailanalysis.md)
-
 # Interface: EmailAnalysis
 
 Analysis of email
@@ -12,23 +10,13 @@ Analysis of email
 
 * **EmailAnalysis**
 
-## Index
-
-### Properties
-
-* [dkimVerdict](_generated_api_.emailanalysis.md#optional-dkimverdict)
-* [dmarcVerdict](_generated_api_.emailanalysis.md#optional-dmarcverdict)
-* [spamVerdict](_generated_api_.emailanalysis.md#optional-spamverdict)
-* [spfVerdict](_generated_api_.emailanalysis.md#optional-spfverdict)
-* [virusVerdict](_generated_api_.emailanalysis.md#optional-virusverdict)
-
 ## Properties
 
 ### `Optional` dkimVerdict
 
 • **dkimVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:679](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L679)*
+*Defined in [src/generated/api.ts:676](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L676)*
 
 **`type`** {string}
 
@@ -40,7 +28,7 @@ ___
 
 • **dmarcVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:685](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L685)*
+*Defined in [src/generated/api.ts:682](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L682)*
 
 **`type`** {string}
 
@@ -52,7 +40,7 @@ ___
 
 • **spamVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L691)*
+*Defined in [src/generated/api.ts:688](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L688)*
 
 **`type`** {string}
 
@@ -64,7 +52,7 @@ ___
 
 • **spfVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L697)*
+*Defined in [src/generated/api.ts:694](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L694)*
 
 **`type`** {string}
 
@@ -76,7 +64,7 @@ ___
 
 • **virusVerdict**? : *string*
 
-*Defined in [src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L703)*
+*Defined in [src/generated/api.ts:700](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L700)*
 
 **`type`** {string}
 

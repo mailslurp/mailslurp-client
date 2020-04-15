@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [FetchAPI](_generated_api_.fetchapi.md)
-
 # Interface: FetchAPI
 
 **`export`** 
@@ -14,7 +12,7 @@
 
 ▸ (`url`: string, `init?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:37](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L37)*
+*Defined in [src/generated/api.ts:38](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L38)*
 
 **Parameters:**
 

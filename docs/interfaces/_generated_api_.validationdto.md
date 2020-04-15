@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [ValidationDto](_generated_api_.validationdto.md)
-
 # Interface: ValidationDto
 
 **`export`** 
@@ -10,20 +8,13 @@
 
 * **ValidationDto**
 
-## Index
-
-### Properties
-
-* [emailId](_generated_api_.validationdto.md#emailid)
-* [html](_generated_api_.validationdto.md#html)
-
 ## Properties
 
 ###  emailId
 
 • **emailId**: *string*
 
-*Defined in [src/generated/api.ts:2321](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2321)*
+*Defined in [src/generated/api.ts:2318](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2318)*
 
 **`type`** {string}
 
@@ -35,7 +26,7 @@ ___
 
 • **html**: *[HTMLValidationResult](_generated_api_.htmlvalidationresult.md)*
 
-*Defined in [src/generated/api.ts:2327](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2327)*
+*Defined in [src/generated/api.ts:2324](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2324)*
 
 **`type`** {HTMLValidationResult}
 

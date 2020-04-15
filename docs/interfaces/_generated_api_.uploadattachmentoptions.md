@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [UploadAttachmentOptions](_generated_api_.uploadattachmentoptions.md)
-
 # Interface: UploadAttachmentOptions
 
 Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your SendEmailOptions when sending an email. This way you can use attachments multiple times once they have been uploaded.
@@ -12,21 +10,13 @@ Options for uploading files for attachments. When sending emails with the API th
 
 * **UploadAttachmentOptions**
 
-## Index
-
-### Properties
-
-* [base64Contents](_generated_api_.uploadattachmentoptions.md#optional-base64contents)
-* [contentType](_generated_api_.uploadattachmentoptions.md#optional-contenttype)
-* [filename](_generated_api_.uploadattachmentoptions.md#optional-filename)
-
 ## Properties
 
 ### `Optional` base64Contents
 
 • **base64Contents**? : *string*
 
-*Defined in [src/generated/api.ts:2295](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2295)*
+*Defined in [src/generated/api.ts:2292](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2292)*
 
 Base64 encoded string of file contents
 
@@ -40,7 +30,7 @@ ___
 
 • **contentType**? : *string*
 
-*Defined in [src/generated/api.ts:2301](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2301)*
+*Defined in [src/generated/api.ts:2298](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2298)*
 
 Optional contentType for file. For instance `application/pdf`
 
@@ -54,7 +44,7 @@ ___
 
 • **filename**? : *string*
 
-*Defined in [src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2307)*
+*Defined in [src/generated/api.ts:2304](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2304)*
 
 Optional filename to save upload with
 

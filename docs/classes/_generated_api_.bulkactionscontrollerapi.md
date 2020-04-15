@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [BulkActionsControllerApi](_generated_api_.bulkactionscontrollerapi.md)
-
 # Class: BulkActionsControllerApi
 
 BulkActionsControllerApi - object-oriented interface
@@ -16,24 +14,6 @@ BulkActionsControllerApi - object-oriented interface
 
   ↳ **BulkActionsControllerApi**
 
-## Index
-
-### Constructors
-
-* [constructor](_generated_api_.bulkactionscontrollerapi.md#constructor)
-
-### Properties
-
-* [basePath](_generated_api_.bulkactionscontrollerapi.md#protected-basepath)
-* [configuration](_generated_api_.bulkactionscontrollerapi.md#protected-configuration)
-* [fetch](_generated_api_.bulkactionscontrollerapi.md#protected-fetch)
-
-### Methods
-
-* [bulkCreateInboxes](_generated_api_.bulkactionscontrollerapi.md#bulkcreateinboxes)
-* [bulkDeleteInboxes](_generated_api_.bulkactionscontrollerapi.md#bulkdeleteinboxes)
-* [bulkSendEmails](_generated_api_.bulkactionscontrollerapi.md#bulksendemails)
-
 ## Constructors
 
 ###  constructor
@@ -42,7 +22,7 @@ BulkActionsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[constructor](_generated_api_.baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L58)*
 
 **Parameters:**
 
@@ -62,7 +42,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[basePath](_generated_api_.baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L60)*
 
 ___
 
@@ -72,7 +52,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[configuration](_generated_api_.baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L58)*
 
 ___
 
@@ -82,7 +62,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[fetch](_generated_api_.baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L60)*
 
 ## Methods
 
@@ -90,7 +70,7 @@ ___
 
 ▸ **bulkCreateInboxes**(`count`: number, `options?`: any): *Promise‹[Inbox](../interfaces/_generated_api_.inbox.md)[]›*
 
-*Defined in [src/generated/api.ts:4208](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4208)*
+*Defined in [src/generated/api.ts:3667](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3667)*
 
 **`summary`** Bulk create Inboxes (email addresses)
 
@@ -113,7 +93,7 @@ ___
 
 ▸ **bulkDeleteInboxes**(`ids`: Array‹string›, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:4223](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4223)*
+*Defined in [src/generated/api.ts:3679](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3679)*
 
 **`summary`** Bulk Delete Inboxes
 
@@ -136,7 +116,7 @@ ___
 
 ▸ **bulkSendEmails**(`bulkSendEmailOptions`: [BulkSendEmailOptions](../interfaces/_generated_api_.bulksendemailoptions.md), `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:4238](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L4238)*
+*Defined in [src/generated/api.ts:3691](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L3691)*
 
 **`summary`** Bulk Send Emails
 

@@ -20,7 +20,8 @@ generate: bin/openapi-generator-cli.jar
 	java -jar ./bin/openapi-generator-cli.jar generate \
 		--input-spec $(SPEC_URL) \
 		--lang typescript-fetch \
-		--output src/generated \
+		--output src/generated
+	rm src/generated/git_push.sh
 
 fmt: node_modules
 	npm run fmt

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [PageInboxProjection](_generated_api_.pageinboxprojection.md)
-
 # Interface: PageInboxProjection
 
 **`export`** 
@@ -10,29 +8,13 @@
 
 * **PageInboxProjection**
 
-## Index
-
-### Properties
-
-* [content](_generated_api_.pageinboxprojection.md#optional-content)
-* [empty](_generated_api_.pageinboxprojection.md#optional-empty)
-* [first](_generated_api_.pageinboxprojection.md#optional-first)
-* [last](_generated_api_.pageinboxprojection.md#optional-last)
-* [number](_generated_api_.pageinboxprojection.md#optional-number)
-* [numberOfElements](_generated_api_.pageinboxprojection.md#optional-numberofelements)
-* [pageable](_generated_api_.pageinboxprojection.md#optional-pageable)
-* [size](_generated_api_.pageinboxprojection.md#optional-size)
-* [sort](_generated_api_.pageinboxprojection.md#optional-sort)
-* [totalElements](_generated_api_.pageinboxprojection.md#optional-totalelements)
-* [totalPages](_generated_api_.pageinboxprojection.md#optional-totalpages)
-
 ## Properties
 
 ### `Optional` content
 
 • **content**? : *Array‹[InboxProjection](_generated_api_.inboxprojection.md)›*
 
-*Defined in [src/generated/api.ts:1687](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1687)*
+*Defined in [src/generated/api.ts:1684](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1684)*
 
 **`type`** {Array<InboxProjection>}
 
@@ -44,7 +26,7 @@ ___
 
 • **empty**? : *boolean*
 
-*Defined in [src/generated/api.ts:1693](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1693)*
+*Defined in [src/generated/api.ts:1690](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1690)*
 
 **`type`** {boolean}
 
@@ -56,7 +38,7 @@ ___
 
 • **first**? : *boolean*
 
-*Defined in [src/generated/api.ts:1699](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1699)*
+*Defined in [src/generated/api.ts:1696](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1696)*
 
 **`type`** {boolean}
 
@@ -68,7 +50,7 @@ ___
 
 • **last**? : *boolean*
 
-*Defined in [src/generated/api.ts:1705](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1705)*
+*Defined in [src/generated/api.ts:1702](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1702)*
 
 **`type`** {boolean}
 
@@ -80,7 +62,7 @@ ___
 
 • **number**? : *number*
 
-*Defined in [src/generated/api.ts:1711](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1711)*
+*Defined in [src/generated/api.ts:1708](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1708)*
 
 **`type`** {number}
 
@@ -92,7 +74,7 @@ ___
 
 • **numberOfElements**? : *number*
 
-*Defined in [src/generated/api.ts:1717](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1717)*
+*Defined in [src/generated/api.ts:1714](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1714)*
 
 **`type`** {number}
 
@@ -104,7 +86,7 @@ ___
 
 • **pageable**? : *[Pageable](_generated_api_.pageable.md)*
 
-*Defined in [src/generated/api.ts:1723](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1723)*
+*Defined in [src/generated/api.ts:1720](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1720)*
 
 **`type`** {Pageable}
 
@@ -116,7 +98,7 @@ ___
 
 • **size**? : *number*
 
-*Defined in [src/generated/api.ts:1729](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1729)*
+*Defined in [src/generated/api.ts:1726](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1726)*
 
 **`type`** {number}
 
@@ -128,7 +110,7 @@ ___
 
 • **sort**? : *[Sort](_generated_api_.sort.md)*
 
-*Defined in [src/generated/api.ts:1735](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1735)*
+*Defined in [src/generated/api.ts:1732](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1732)*
 
 **`type`** {Sort}
 
@@ -140,7 +122,7 @@ ___
 
 • **totalElements**? : *number*
 
-*Defined in [src/generated/api.ts:1741](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1741)*
+*Defined in [src/generated/api.ts:1738](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1738)*
 
 **`type`** {number}
 
@@ -152,7 +134,7 @@ ___
 
 • **totalPages**? : *number*
 
-*Defined in [src/generated/api.ts:1747](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1747)*
+*Defined in [src/generated/api.ts:1744](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1744)*
 
 **`type`** {number}
 

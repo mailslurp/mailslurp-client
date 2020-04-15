@@ -1,6 +1,6 @@
 {
     "name": "MailSlurp JS",
-    "theme": "markdown",
+    "theme": "vuepress",
     "out": "docs",
     "hideGenerator": true,
     "tsconfig": "./tsconfig.json"

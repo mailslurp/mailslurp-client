@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [UpdateInboxOptions](_generated_api_.updateinboxoptions.md)
-
 # Interface: UpdateInboxOptions
 
 Options for updating inbox properties
@@ -12,23 +10,13 @@ Options for updating inbox properties
 
 * **UpdateInboxOptions**
 
-## Index
-
-### Properties
-
-* [description](_generated_api_.updateinboxoptions.md#optional-description)
-* [expiresAt](_generated_api_.updateinboxoptions.md#optional-expiresat)
-* [favourite](_generated_api_.updateinboxoptions.md#optional-favourite)
-* [name](_generated_api_.updateinboxoptions.md#optional-name)
-* [tags](_generated_api_.updateinboxoptions.md#optional-tags)
-
 ## Properties
 
 ### `Optional` description
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:2257](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2257)*
+*Defined in [src/generated/api.ts:2254](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2254)*
 
 Optional description of an inbox for labelling purposes
 
@@ -42,7 +30,7 @@ ___
 
 • **expiresAt**? : *Date*
 
-*Defined in [src/generated/api.ts:2263](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2263)*
+*Defined in [src/generated/api.ts:2260](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2260)*
 
 When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted.
 
@@ -56,7 +44,7 @@ ___
 
 • **favourite**? : *boolean*
 
-*Defined in [src/generated/api.ts:2269](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2269)*
+*Defined in [src/generated/api.ts:2266](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2266)*
 
 Is the inbox favourited
 
@@ -70,7 +58,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:2275](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2275)*
+*Defined in [src/generated/api.ts:2272](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2272)*
 
 Optional name of the inbox. Displayed in the dashboard for easier search
 
@@ -84,7 +72,7 @@ ___
 
 • **tags**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:2281](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2281)*
+*Defined in [src/generated/api.ts:2278](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2278)*
 
 Tags that inbox has been tagged with
 

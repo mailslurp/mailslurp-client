@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [SetInboxFavouritedOptions](_generated_api_.setinboxfavouritedoptions.md)
-
 # Interface: SetInboxFavouritedOptions
 
 Options for setting inbox favourite state
@@ -12,19 +10,13 @@ Options for setting inbox favourite state
 
 * **SetInboxFavouritedOptions**
 
-## Index
-
-### Properties
-
-* [state](_generated_api_.setinboxfavouritedoptions.md#optional-state)
-
 ## Properties
 
 ### `Optional` state
 
 • **state**? : *boolean*
 
-*Defined in [src/generated/api.ts:2079](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2079)*
+*Defined in [src/generated/api.ts:2076](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2076)*
 
 Should the inbox be favourited?
 

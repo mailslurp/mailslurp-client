@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [TemplateDto](_generated_api_.templatedto.md)
-
 # Interface: TemplateDto
 
 **`export`** 
@@ -10,23 +8,13 @@
 
 * **TemplateDto**
 
-## Index
-
-### Properties
-
-* [content](_generated_api_.templatedto.md#content)
-* [createdAt](_generated_api_.templatedto.md#createdat)
-* [id](_generated_api_.templatedto.md#id)
-* [name](_generated_api_.templatedto.md#name)
-* [variables](_generated_api_.templatedto.md#variables)
-
 ## Properties
 
 ###  content
 
 • **content**: *string*
 
-*Defined in [src/generated/api.ts:2119](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2119)*
+*Defined in [src/generated/api.ts:2116](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2116)*
 
 **`type`** {string}
 
@@ -38,7 +26,7 @@ ___
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:2125](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2125)*
+*Defined in [src/generated/api.ts:2122](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2122)*
 
 **`type`** {Date}
 
@@ -50,7 +38,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:2131](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2131)*
+*Defined in [src/generated/api.ts:2128](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2128)*
 
 **`type`** {string}
 
@@ -62,7 +50,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:2137](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2137)*
+*Defined in [src/generated/api.ts:2134](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2134)*
 
 **`type`** {string}
 
@@ -74,7 +62,7 @@ ___
 
 • **variables**: *Array‹[TemplateVariable](../modules/_generated_api_.templatevariable.md)›*
 
-*Defined in [src/generated/api.ts:2143](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L2143)*
+*Defined in [src/generated/api.ts:2140](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L2140)*
 
 **`type`** {Array<TemplateVariable>}
 

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [CreateGroupOptions](_generated_api_.creategroupoptions.md)
-
 # Interface: CreateGroupOptions
 
 **`export`** 
@@ -10,20 +8,13 @@
 
 * **CreateGroupOptions**
 
-## Index
-
-### Properties
-
-* [description](_generated_api_.creategroupoptions.md#optional-description)
-* [name](_generated_api_.creategroupoptions.md#name)
-
 ## Properties
 
 ### `Optional` description
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:407](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L407)*
+*Defined in [src/generated/api.ts:404](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L404)*
 
 **`type`** {string}
 
@@ -35,7 +26,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:401](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L401)*
+*Defined in [src/generated/api.ts:398](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L398)*
 
 **`type`** {string}
 

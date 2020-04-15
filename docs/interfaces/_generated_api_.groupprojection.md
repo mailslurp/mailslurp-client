@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [GroupProjection](_generated_api_.groupprojection.md)
-
 # Interface: GroupProjection
 
 **`export`** 
@@ -10,22 +8,13 @@
 
 * **GroupProjection**
 
-## Index
-
-### Properties
-
-* [createdAt](_generated_api_.groupprojection.md#createdat)
-* [description](_generated_api_.groupprojection.md#optional-description)
-* [id](_generated_api_.groupprojection.md#id)
-* [name](_generated_api_.groupprojection.md#name)
-
 ## Properties
 
 ###  createdAt
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:919](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L919)*
+*Defined in [src/generated/api.ts:916](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L916)*
 
 **`type`** {Date}
 
@@ -37,7 +26,7 @@ ___
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:925](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L925)*
+*Defined in [src/generated/api.ts:922](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L922)*
 
 **`type`** {string}
 
@@ -49,7 +38,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:931](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L931)*
+*Defined in [src/generated/api.ts:928](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L928)*
 
 **`type`** {string}
 
@@ -61,7 +50,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:937](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L937)*
+*Defined in [src/generated/api.ts:934](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L934)*
 
 **`type`** {string}
 

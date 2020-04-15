@@ -1,57 +1,45 @@
-[MailSlurp JS](../README.md) › [Globals](../globals.md) › ["generated/api"](../modules/_generated_api_.md) › [MatchOption](../modules/_generated_api_.matchoption.md) › [FieldEnum](_generated_api_.matchoption.fieldenum.md)
-
 # Enumeration: FieldEnum
 
 **`export`** 
 
 **`enum`** {string}
 
-## Index
-
-### Enumeration members
-
-* [BCC](_generated_api_.matchoption.fieldenum.md#bcc)
-* [CC](_generated_api_.matchoption.fieldenum.md#cc)
-* [FROM](_generated_api_.matchoption.fieldenum.md#from)
-* [SUBJECT](_generated_api_.matchoption.fieldenum.md#subject)
-* [TO](_generated_api_.matchoption.fieldenum.md#to)
-
 ## Enumeration members
 
 ###  BCC
 
-• **BCC**: =  <any>'BCC'
+• **BCC**: =  <any> 'BCC'
 
-*Defined in [src/generated/api.ts:1278](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1278)*
+*Defined in [src/generated/api.ts:1275](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1275)*
 
 ___
 
 ###  CC
 
-• **CC**: =  <any>'CC'
+• **CC**: =  <any> 'CC'
 
-*Defined in [src/generated/api.ts:1279](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1279)*
+*Defined in [src/generated/api.ts:1276](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1276)*
 
 ___
 
 ###  FROM
 
-• **FROM**: =  <any>'FROM'
+• **FROM**: =  <any> 'FROM'
 
-*Defined in [src/generated/api.ts:1280](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1280)*
+*Defined in [src/generated/api.ts:1277](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1277)*
 
 ___
 
 ###  SUBJECT
 
-• **SUBJECT**: =  <any>'SUBJECT'
+• **SUBJECT**: =  <any> 'SUBJECT'
 
-*Defined in [src/generated/api.ts:1276](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1276)*
+*Defined in [src/generated/api.ts:1273](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1273)*
 
 ___
 
 ###  TO
 
-• **TO**: =  <any>'TO'
+• **TO**: =  <any> 'TO'
 
-*Defined in [src/generated/api.ts:1277](https://github.com/mailslurp/mailslurp-client-ts-js/blob/7141c32/src/generated/api.ts#L1277)*
+*Defined in [src/generated/api.ts:1274](https://github.com/mailslurp/mailslurp-client-ts-js/blob/c5d4ad1/src/generated/api.ts#L1274)*
