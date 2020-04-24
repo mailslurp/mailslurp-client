@@ -16,7 +16,7 @@ Results of testing a webhook
 
 • **message**? : *string*
 
-*Defined in [src/generated/api.ts:2643](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2643)*
+*Defined in [src/generated/api.ts:2646](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2646)*
 
 **`type`** {string}
 
@@ -28,7 +28,7 @@ ___
 
 • **request**: *[WebhookTestRequest](../modules/_generated_api_.webhooktestrequest.md)*
 
-*Defined in [src/generated/api.ts:2649](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2649)*
+*Defined in [src/generated/api.ts:2652](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2652)*
 
 **`type`** {WebhookTestRequest}
 
@@ -40,7 +40,7 @@ ___
 
 • **response**: *[WebhookTestResponse](_generated_api_.webhooktestresponse.md)*
 
-*Defined in [src/generated/api.ts:2655](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2655)*
+*Defined in [src/generated/api.ts:2658](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2658)*
 
 **`type`** {WebhookTestResponse}
 

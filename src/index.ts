@@ -1,5 +1,6 @@
 // @ts-ignore
-import * as isomorphicFetch from 'node-fetch';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import {
     AliasControllerApi,
     AttachmentControllerApi,
@@ -113,13 +114,17 @@ export class MailSlurp {
         if (!opts.apiKey) {
             throw 'Missing apiKey config parameter';
         }
-        const fetch: any = opts.fetchApi || isomorphicFetch;
+        const _fetch: any = opts.fetchApi || fetch;
         // create credentials
         const clientConfiguration = new Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
-        const args = [clientConfiguration, clientConfiguration.basePath, fetch];
+        const args = [
+            clientConfiguration,
+            clientConfiguration.basePath,
+            _fetch,
+        ];
 
         // instantiate api clients
         this.emailController = new EmailControllerApi(...args);

@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Send and receive emails in code",
-  "version": "8.7.5",
+  "version": "8.7.8",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -28,9 +28,10 @@
     "fmt": "prettier --write {src,test}/**/*.{ts,json,js}"
   },
   "dependencies": {
+    "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
-    "node-fetch": "^2.6.0",
-    "portable-fetch": "^3.0.0"
+    "portable-fetch": "^3.0.0",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.5",

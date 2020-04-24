@@ -6,7 +6,7 @@
 
 Ƭ **Config**: *object*
 
-*Defined in [src/index.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/index.ts#L36)*
+*Defined in [src/index.ts:37](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/index.ts#L37)*
 
 MailSlurp config
 
@@ -29,7 +29,7 @@ ___
 
 Ƭ **GetMessagesOptions**: *object*
 
-*Defined in [src/index.ts:485](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/index.ts#L485)*
+*Defined in [src/index.ts:490](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/index.ts#L490)*
 
 Options for advanced message fetching
 
@@ -54,7 +54,7 @@ ___
 
 Ƭ **SortEnum**: *"ASC" | "DESC"*
 
-*Defined in [src/index.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/index.ts#L29)*
+*Defined in [src/index.ts:30](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/index.ts#L30)*
 
 ## Functions
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **wrapCall**<**T**>(`tag`: String, `fn`: function): *Promise‹T›*
 
-*Defined in [src/index.ts:500](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/index.ts#L500)*
+*Defined in [src/index.ts:505](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/index.ts#L505)*
 
 **Type parameters:**
 

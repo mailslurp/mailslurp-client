@@ -14,7 +14,7 @@
 
 • **lineNumber**: *number*
 
-*Defined in [src/generated/api.ts:2350](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2350)*
+*Defined in [src/generated/api.ts:2353](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2353)*
 
 **`type`** {number}
 
@@ -26,7 +26,7 @@ ___
 
 • **message**? : *string*
 
-*Defined in [src/generated/api.ts:2356](https://github.com/mailslurp/mailslurp-client-ts-js/blob/45dbdd8/src/generated/api.ts#L2356)*
+*Defined in [src/generated/api.ts:2359](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2359)*
 
 **`type`** {string}
 

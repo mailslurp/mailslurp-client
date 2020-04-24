@@ -34,16 +34,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
-var isomorphicFetch = __importStar(require("node-fetch"));
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 var generated_1 = require("./generated");
 /**
  * > Create an instance of this class to call MailSlurp API methods.
@@ -98,13 +92,17 @@ var MailSlurp = /** @class */ (function () {
         if (!opts.apiKey) {
             throw 'Missing apiKey config parameter';
         }
-        var fetch = opts.fetchApi || isomorphicFetch;
+        var _fetch = opts.fetchApi || fetch;
         // create credentials
         var clientConfiguration = new generated_1.Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
-        var args = [clientConfiguration, clientConfiguration.basePath, fetch];
+        var args = [
+            clientConfiguration,
+            clientConfiguration.basePath,
+            _fetch,
+        ];
         // instantiate api clients
         this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, [void 0].concat(args)))();
         this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, [void 0].concat(args)))();

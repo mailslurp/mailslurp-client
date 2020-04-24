@@ -1,13 +1,24 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "target": "es5",
-        "declaration": true,
-        "lib": ["es2015", "es2017", "dom"],
-        "module": "CommonJS",
-        "types": ["jest", "node"],
-        "skipLibCheck": true,
-        "noImplicitAny": true
-    },
-    "include": ["src/index.ts"]
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es5",
+    "declaration": true,
+    "lib": [
+      "es6",
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "module": "commonjs",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "strict": false
+  },
+  "include": [
+    "src/index.ts"
+  ]
 }
