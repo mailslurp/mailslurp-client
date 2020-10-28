@@ -1,9 +1,5 @@
 # Interface: ContactDto
 
-**`export`** 
-
-**`interface`** ContactDto
-
 ## Hierarchy
 
 * **ContactDto**
@@ -14,11 +10,7 @@
 
 • **company**? : *string*
 
-*Defined in [src/generated/api.ts:223](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L223)*
-
-**`type`** {string}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:223](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L223)*
 
 ___
 
@@ -26,11 +18,7 @@ ___
 
 • **emailAddresses**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:229](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L229)*
-
-**`type`** {Array<string>}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:229](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L229)*
 
 ___
 
@@ -38,11 +26,7 @@ ___
 
 • **firstName**? : *string*
 
-*Defined in [src/generated/api.ts:235](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L235)*
-
-**`type`** {string}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:235](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L235)*
 
 ___
 
@@ -50,11 +34,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:241](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L241)*
-
-**`type`** {string}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:241](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L241)*
 
 ___
 
@@ -62,11 +42,7 @@ ___
 
 • **lastName**? : *string*
 
-*Defined in [src/generated/api.ts:247](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L247)*
-
-**`type`** {string}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:247](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L247)*
 
 ___
 
@@ -74,11 +50,7 @@ ___
 
 • **metaData**? : *[JsonNode](_generated_api_.jsonnode.md)*
 
-*Defined in [src/generated/api.ts:253](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L253)*
-
-**`type`** {JsonNode}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:253](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L253)*
 
 ___
 
@@ -86,11 +58,7 @@ ___
 
 • **optOut**? : *boolean*
 
-*Defined in [src/generated/api.ts:259](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L259)*
-
-**`type`** {boolean}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:259](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L259)*
 
 ___
 
@@ -98,8 +66,4 @@ ___
 
 • **tags**: *Array‹string›*
 
-*Defined in [src/generated/api.ts:265](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L265)*
-
-**`type`** {Array<string>}
-
-**`memberof`** ContactDto
+*Defined in [src/generated/api.ts:265](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L265)*

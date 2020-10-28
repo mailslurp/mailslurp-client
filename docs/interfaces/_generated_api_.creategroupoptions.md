@@ -1,9 +1,5 @@
 # Interface: CreateGroupOptions
 
-**`export`** 
-
-**`interface`** CreateGroupOptions
-
 ## Hierarchy
 
 * **CreateGroupOptions**
@@ -14,11 +10,7 @@
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:413](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L413)*
-
-**`type`** {string}
-
-**`memberof`** CreateGroupOptions
+*Defined in [src/generated/api.ts:413](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L413)*
 
 ___
 
@@ -26,8 +18,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:407](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L407)*
-
-**`type`** {string}
-
-**`memberof`** CreateGroupOptions
+*Defined in [src/generated/api.ts:407](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L407)*

@@ -1,11 +1,5 @@
 # Interface: CreateDomainOptions
 
-Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it.
-
-**`export`** 
-
-**`interface`** CreateDomainOptions
-
 ## Hierarchy
 
 * **CreateDomainOptions**
@@ -16,10 +10,4 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 • **domain**? : *string*
 
-*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L393)*
-
-The top level domain you wish to use with MailSlurp
-
-**`type`** {string}
-
-**`memberof`** CreateDomainOptions
+*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L393)*

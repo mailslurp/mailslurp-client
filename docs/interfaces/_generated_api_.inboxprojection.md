@@ -1,9 +1,5 @@
 # Interface: InboxProjection
 
-**`export`** 
-
-**`interface`** InboxProjection
-
 ## Hierarchy
 
 * **InboxProjection**
@@ -14,11 +10,7 @@
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:1077](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1077)*
-
-**`type`** {Date}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1077](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1077)*
 
 ___
 
@@ -26,11 +18,7 @@ ___
 
 • **emailAddress**? : *string*
 
-*Defined in [src/generated/api.ts:1083](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1083)*
-
-**`type`** {string}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1083](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1083)*
 
 ___
 
@@ -38,11 +26,7 @@ ___
 
 • **favourite**? : *boolean*
 
-*Defined in [src/generated/api.ts:1089](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1089)*
-
-**`type`** {boolean}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1089](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1089)*
 
 ___
 
@@ -50,11 +34,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:1095](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1095)*
-
-**`type`** {string}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1095](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1095)*
 
 ___
 
@@ -62,11 +42,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:1101](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1101)*
-
-**`type`** {string}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1101](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1101)*
 
 ___
 
@@ -74,8 +50,4 @@ ___
 
 • **tags**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:1107](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1107)*
-
-**`type`** {Array<string>}
-
-**`memberof`** InboxProjection
+*Defined in [src/generated/api.ts:1107](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1107)*

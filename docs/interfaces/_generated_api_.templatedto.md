@@ -1,9 +1,5 @@
 # Interface: TemplateDto
 
-**`export`** 
-
-**`interface`** TemplateDto
-
 ## Hierarchy
 
 * **TemplateDto**
@@ -14,11 +10,7 @@
 
 • **content**: *string*
 
-*Defined in [src/generated/api.ts:2256](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2256)*
-
-**`type`** {string}
-
-**`memberof`** TemplateDto
+*Defined in [src/generated/api.ts:2256](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2256)*
 
 ___
 
@@ -26,11 +18,7 @@ ___
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:2262](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2262)*
-
-**`type`** {Date}
-
-**`memberof`** TemplateDto
+*Defined in [src/generated/api.ts:2262](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2262)*
 
 ___
 
@@ -38,11 +26,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:2268](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2268)*
-
-**`type`** {string}
-
-**`memberof`** TemplateDto
+*Defined in [src/generated/api.ts:2268](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2268)*
 
 ___
 
@@ -50,11 +34,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:2274](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2274)*
-
-**`type`** {string}
-
-**`memberof`** TemplateDto
+*Defined in [src/generated/api.ts:2274](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2274)*
 
 ___
 
@@ -62,8 +42,4 @@ ___
 
 • **variables**: *Array‹[TemplateVariable](../modules/_generated_api_.templatevariable.md)›*
 
-*Defined in [src/generated/api.ts:2280](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2280)*
-
-**`type`** {Array<TemplateVariable>}
-
-**`memberof`** TemplateDto
+*Defined in [src/generated/api.ts:2280](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2280)*

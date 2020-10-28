@@ -1,9 +1,5 @@
 # Interface: GroupDto
 
-**`export`** 
-
-**`interface`** GroupDto
-
 ## Hierarchy
 
 * **GroupDto**
@@ -14,11 +10,7 @@
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:925](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L925)*
-
-**`type`** {Date}
-
-**`memberof`** GroupDto
+*Defined in [src/generated/api.ts:925](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L925)*
 
 ___
 
@@ -26,11 +18,7 @@ ___
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:931](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L931)*
-
-**`type`** {string}
-
-**`memberof`** GroupDto
+*Defined in [src/generated/api.ts:931](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L931)*
 
 ___
 
@@ -38,11 +26,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:937](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L937)*
-
-**`type`** {string}
-
-**`memberof`** GroupDto
+*Defined in [src/generated/api.ts:937](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L937)*
 
 ___
 
@@ -50,8 +34,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:943](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L943)*
-
-**`type`** {string}
-
-**`memberof`** GroupDto
+*Defined in [src/generated/api.ts:943](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L943)*

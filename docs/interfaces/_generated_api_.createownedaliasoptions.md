@@ -1,11 +1,5 @@
 # Interface: CreateOwnedAliasOptions
 
-Create email alias options. Email aliases can be used to mask real email addresses behind an ID. You can also attach an inbox to an alias so that any email received by the inbox email address if forwarded to the alias email address.
-
-**`export`** 
-
-**`interface`** CreateOwnedAliasOptions
-
 ## Hierarchy
 
 * **CreateOwnedAliasOptions**
@@ -16,13 +10,7 @@ Create email alias options. Email aliases can be used to mask real email address
 
 • **emailAddress**? : *string*
 
-*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L427)*
-
-Email address to be hidden behind alias
-
-**`type`** {string}
-
-**`memberof`** CreateOwnedAliasOptions
+*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L427)*
 
 ___
 
@@ -30,13 +18,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L433)*
-
-Optional inbox ID to attach to alias. Emails received by this inbox will be forwarded to the alias email address
-
-**`type`** {string}
-
-**`memberof`** CreateOwnedAliasOptions
+*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L433)*
 
 ___
 
@@ -44,13 +26,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:439](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L439)*
-
-Optional name for alias
-
-**`type`** {string}
-
-**`memberof`** CreateOwnedAliasOptions
+*Defined in [src/generated/api.ts:439](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L439)*
 
 ___
 
@@ -58,10 +34,4 @@ ___
 
 • **proxied**? : *boolean*
 
-*Defined in [src/generated/api.ts:445](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L445)*
-
-Optional proxied flag. When proxied is true alias will forward the incoming emails to the aliased email address via a proxy inbox. A new proxy is created for every new email thread. By replying to the proxy you can correspond with using your email alias without revealing your real email address.
-
-**`type`** {boolean}
-
-**`memberof`** CreateOwnedAliasOptions
+*Defined in [src/generated/api.ts:445](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L445)*

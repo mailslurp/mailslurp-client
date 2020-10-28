@@ -1,9 +1,5 @@
 # Class: BaseAPI
 
-**`export`** 
-
-**`class`** BaseAPI
-
 ## Hierarchy
 
 * **BaseAPI**
@@ -44,7 +40,7 @@
 
 \+ **new BaseAPI**(`configuration?`: [Configuration](_generated_configuration_.configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/_generated_api_.fetchapi.md)): *[BaseAPI](_generated_api_.baseapi.md)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -62,7 +58,7 @@ Name | Type | Default |
 
 • **basePath**: *string*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +66,7 @@ ___
 
 • **configuration**: *[Configuration](_generated_configuration_.configuration.md)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 ___
 
@@ -78,4 +74,4 @@ ___
 
 • **fetch**: *[FetchAPI](../interfaces/_generated_api_.fetchapi.md)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L62)*

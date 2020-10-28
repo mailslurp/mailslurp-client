@@ -1,11 +1,5 @@
 # Interface: DomainPreview
 
-Preview object for domain entity
-
-**`export`** 
-
-**`interface`** DomainPreview
-
 ## Hierarchy
 
 * **DomainPreview**
@@ -16,11 +10,7 @@ Preview object for domain entity
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:569](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L569)*
-
-**`type`** {Date}
-
-**`memberof`** DomainPreview
+*Defined in [src/generated/api.ts:569](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L569)*
 
 ___
 
@@ -28,11 +18,7 @@ ___
 
 • **domain**: *string*
 
-*Defined in [src/generated/api.ts:575](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L575)*
-
-**`type`** {string}
-
-**`memberof`** DomainPreview
+*Defined in [src/generated/api.ts:575](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L575)*
 
 ___
 
@@ -40,8 +26,4 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:581](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L581)*
-
-**`type`** {string}
-
-**`memberof`** DomainPreview
+*Defined in [src/generated/api.ts:581](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L581)*

@@ -1,16 +1,12 @@
 # Enumeration: FieldEnum
 
-**`export`** 
-
-**`enum`** {string}
-
 ## Enumeration members
 
 ###  BCC
 
 • **BCC**: =  <any>'BCC'
 
-*Defined in [src/generated/api.ts:1155](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1155)*
+*Defined in [src/generated/api.ts:1155](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1155)*
 
 ___
 
@@ -18,7 +14,7 @@ ___
 
 • **CC**: =  <any>'CC'
 
-*Defined in [src/generated/api.ts:1156](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1156)*
+*Defined in [src/generated/api.ts:1156](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1156)*
 
 ___
 
@@ -26,7 +22,7 @@ ___
 
 • **FROM**: =  <any>'FROM'
 
-*Defined in [src/generated/api.ts:1157](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1157)*
+*Defined in [src/generated/api.ts:1157](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1157)*
 
 ___
 
@@ -34,7 +30,7 @@ ___
 
 • **SUBJECT**: =  <any>'SUBJECT'
 
-*Defined in [src/generated/api.ts:1153](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1153)*
+*Defined in [src/generated/api.ts:1153](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1153)*
 
 ___
 
@@ -42,4 +38,4 @@ ___
 
 • **TO**: =  <any>'TO'
 
-*Defined in [src/generated/api.ts:1154](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1154)*
+*Defined in [src/generated/api.ts:1154](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1154)*

@@ -1,13 +1,5 @@
 # Class: WaitForControllerApi
 
-WaitForControllerApi - object-oriented interface
-
-**`export`** 
-
-**`class`** WaitForControllerApi
-
-**`extends`** {BaseAPI}
-
 ## Hierarchy
 
 * [BaseAPI](_generated_api_.baseapi.md)
@@ -22,7 +14,7 @@ WaitForControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[constructor](_generated_api_.baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -42,7 +34,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[basePath](_generated_api_.baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L61)*
 
 ___
 
@@ -52,7 +44,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[configuration](_generated_api_.baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 ___
 
@@ -62,7 +54,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[fetch](_generated_api_.baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -70,15 +62,7 @@ ___
 
 ▸ **waitFor**(`waitForConditions?`: [WaitForConditions](../modules/_generated_api_.waitforconditions.md), `options?`: any): *Promise‹[EmailPreview](../interfaces/_generated_api_.emailpreview.md)[]›*
 
-*Defined in [src/generated/api.ts:12932](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12932)*
-
-Generic waitFor method that will wait until an inbox meets given conditions or return immediately if already met
-
-**`summary`** Wait for conditions to be met
-
-**`throws`** {RequiredError}
-
-**`memberof`** WaitForControllerApi
+*Defined in [src/generated/api.ts:12932](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12932)*
 
 **Parameters:**
 
@@ -95,15 +79,7 @@ ___
 
 ▸ **waitForEmailCount**(`count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): *Promise‹[EmailPreview](../interfaces/_generated_api_.emailpreview.md)[]›*
 
-*Defined in [src/generated/api.ts:12950](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12950)*
-
-If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
-
-**`summary`** Wait for and return count number of emails
-
-**`throws`** {RequiredError}
-
-**`memberof`** WaitForControllerApi
+*Defined in [src/generated/api.ts:12950](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12950)*
 
 **Parameters:**
 
@@ -123,15 +99,7 @@ ___
 
 ▸ **waitForLatestEmail**(`inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): *Promise‹[Email](../interfaces/_generated_api_.email.md)›*
 
-*Defined in [src/generated/api.ts:12976](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12976)*
-
-Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
-
-**`summary`** Fetch inbox's latest email or if empty wait for an email to arrive
-
-**`throws`** {RequiredError}
-
-**`memberof`** WaitForControllerApi
+*Defined in [src/generated/api.ts:12976](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12976)*
 
 **Parameters:**
 
@@ -150,15 +118,7 @@ ___
 
 ▸ **waitForMatchingEmail**(`matchOptions`: [MatchOptions](../interfaces/_generated_api_.matchoptions.md), `count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): *Promise‹[EmailPreview](../interfaces/_generated_api_.emailpreview.md)[]›*
 
-*Defined in [src/generated/api.ts:13002](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L13002)*
-
-Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options.
-
-**`summary`** Wait or return list of emails that match simple matching patterns
-
-**`throws`** {RequiredError}
-
-**`memberof`** WaitForControllerApi
+*Defined in [src/generated/api.ts:13002](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L13002)*
 
 **Parameters:**
 
@@ -179,15 +139,7 @@ ___
 
 ▸ **waitForNthEmail**(`inboxId?`: string, `index?`: number, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): *Promise‹[Email](../interfaces/_generated_api_.email.md)›*
 
-*Defined in [src/generated/api.ts:13031](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L13031)*
-
-If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
-
-**`summary`** Wait for or fetch the email with a given index in the inbox specified
-
-**`throws`** {RequiredError}
-
-**`memberof`** WaitForControllerApi
+*Defined in [src/generated/api.ts:13031](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L13031)*
 
 **Parameters:**
 

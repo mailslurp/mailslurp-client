@@ -1,9 +1,5 @@
 # Interface: HTMLValidationResult
 
-**`export`** 
-
-**`interface`** HTMLValidationResult
-
 ## Hierarchy
 
 * **HTMLValidationResult**
@@ -14,11 +10,7 @@
 
 • **errors**: *Array‹[ValidationMessage](_generated_api_.validationmessage.md)›*
 
-*Defined in [src/generated/api.ts:989](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L989)*
-
-**`type`** {Array<ValidationMessage>}
-
-**`memberof`** HTMLValidationResult
+*Defined in [src/generated/api.ts:989](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L989)*
 
 ___
 
@@ -26,11 +18,7 @@ ___
 
 • **isValid**: *boolean*
 
-*Defined in [src/generated/api.ts:995](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L995)*
-
-**`type`** {boolean}
-
-**`memberof`** HTMLValidationResult
+*Defined in [src/generated/api.ts:995](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L995)*
 
 ___
 
@@ -38,8 +26,4 @@ ___
 
 • **warnings**: *Array‹[ValidationMessage](_generated_api_.validationmessage.md)›*
 
-*Defined in [src/generated/api.ts:1001](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L1001)*
-
-**`type`** {Array<ValidationMessage>}
-
-**`memberof`** HTMLValidationResult
+*Defined in [src/generated/api.ts:1001](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L1001)*

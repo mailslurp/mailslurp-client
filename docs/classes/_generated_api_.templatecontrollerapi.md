@@ -1,13 +1,5 @@
 # Class: TemplateControllerApi
 
-TemplateControllerApi - object-oriented interface
-
-**`export`** 
-
-**`class`** TemplateControllerApi
-
-**`extends`** {BaseAPI}
-
 ## Hierarchy
 
 * [BaseAPI](_generated_api_.baseapi.md)
@@ -22,7 +14,7 @@ TemplateControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[constructor](_generated_api_.baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -42,7 +34,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[basePath](_generated_api_.baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L61)*
 
 ___
 
@@ -52,7 +44,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[configuration](_generated_api_.baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L57)*
 
 ___
 
@@ -62,7 +54,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[fetch](_generated_api_.baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -70,13 +62,7 @@ ___
 
 ▸ **createTemplate**(`createTemplateOptions`: [CreateTemplateOptions](../interfaces/_generated_api_.createtemplateoptions.md), `options?`: any): *Promise‹[TemplateDto](../interfaces/_generated_api_.templatedto.md)›*
 
-*Defined in [src/generated/api.ts:12154](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12154)*
-
-**`summary`** Create a Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+*Defined in [src/generated/api.ts:12154](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12154)*
 
 **Parameters:**
 
@@ -93,13 +79,7 @@ ___
 
 ▸ **deleteTemplate**(`templateId`: string, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:12172](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12172)*
-
-**`summary`** Delete Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+*Defined in [src/generated/api.ts:12172](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12172)*
 
 **Parameters:**
 
@@ -116,13 +96,7 @@ ___
 
 ▸ **getAllTemplates**(`page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageTemplateProjection](../interfaces/_generated_api_.pagetemplateprojection.md)›*
 
-*Defined in [src/generated/api.ts:12189](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12189)*
-
-**`summary`** Get all Templates in paginated format
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+*Defined in [src/generated/api.ts:12189](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12189)*
 
 **Parameters:**
 
@@ -141,13 +115,7 @@ ___
 
 ▸ **getTemplate**(`templateId`: string, `options?`: any): *Promise‹[TemplateDto](../interfaces/_generated_api_.templatedto.md)›*
 
-*Defined in [src/generated/api.ts:12211](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12211)*
-
-**`summary`** Get Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+*Defined in [src/generated/api.ts:12211](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12211)*
 
 **Parameters:**
 
@@ -164,13 +132,7 @@ ___
 
 ▸ **getTemplates**(`options?`: any): *Promise‹[TemplateProjection](../interfaces/_generated_api_.templateprojection.md)[]›*
 
-*Defined in [src/generated/api.ts:12225](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L12225)*
-
-**`summary`** Get all Templates
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+*Defined in [src/generated/api.ts:12225](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L12225)*
 
 **Parameters:**
 

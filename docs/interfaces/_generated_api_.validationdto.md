@@ -1,11 +1,5 @@
 # Interface: ValidationDto
 
-Response object for email validation operation
-
-**`export`** 
-
-**`interface`** ValidationDto
-
 ## Hierarchy
 
 * **ValidationDto**
@@ -16,13 +10,7 @@ Response object for email validation operation
 
 • **emailId**? : *string*
 
-*Defined in [src/generated/api.ts:2458](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2458)*
-
-ID of the email validated
-
-**`type`** {string}
-
-**`memberof`** ValidationDto
+*Defined in [src/generated/api.ts:2458](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2458)*
 
 ___
 
@@ -30,10 +18,4 @@ ___
 
 • **html**? : *[HTMLValidationResult](_generated_api_.htmlvalidationresult.md)*
 
-*Defined in [src/generated/api.ts:2464](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2464)*
-
-Result of HTML validation
-
-**`type`** {HTMLValidationResult}
-
-**`memberof`** ValidationDto
+*Defined in [src/generated/api.ts:2464](https://github.com/mailslurp/mailslurp-client/blob/a26884c/src/generated/api.ts#L2464)*
