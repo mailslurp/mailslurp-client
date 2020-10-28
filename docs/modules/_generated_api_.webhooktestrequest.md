@@ -10,7 +10,7 @@
 
 • **headers**: *object*
 
-*Defined in [src/generated/api.ts:2573](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2573)*
+*Defined in [src/generated/api.ts:2730](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2730)*
 
 **`type`** {{ [key: string]: string; }}
 
@@ -26,7 +26,7 @@ ___
 
 • **method**: *[MethodEnum](../enums/_generated_api_.webhooktestrequest.methodenum.md)*
 
-*Defined in [src/generated/api.ts:2579](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2579)*
+*Defined in [src/generated/api.ts:2736](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2736)*
 
 **`type`** {string}
 
@@ -38,7 +38,7 @@ ___
 
 • **payload**? : *string*
 
-*Defined in [src/generated/api.ts:2585](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2585)*
+*Defined in [src/generated/api.ts:2742](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2742)*
 
 **`type`** {string}
 
@@ -50,7 +50,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [src/generated/api.ts:2591](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2591)*
+*Defined in [src/generated/api.ts:2748](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2748)*
 
 **`type`** {string}
 

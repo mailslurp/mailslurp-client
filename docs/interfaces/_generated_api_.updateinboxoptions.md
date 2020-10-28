@@ -16,7 +16,7 @@ Options for updating inbox properties
 
 • **description**? : *string*
 
-*Defined in [src/generated/api.ts:2269](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2269)*
+*Defined in [src/generated/api.ts:2394](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2394)*
 
 Optional description of an inbox for labelling purposes
 
@@ -30,9 +30,9 @@ ___
 
 • **expiresAt**? : *Date*
 
-*Defined in [src/generated/api.ts:2275](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2275)*
+*Defined in [src/generated/api.ts:2400](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2400)*
 
-When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted.
+When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. Timestamp passed as string.
 
 **`type`** {Date}
 
@@ -44,7 +44,7 @@ ___
 
 • **favourite**? : *boolean*
 
-*Defined in [src/generated/api.ts:2281](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2281)*
+*Defined in [src/generated/api.ts:2406](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2406)*
 
 Is the inbox favourited
 
@@ -58,7 +58,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:2287](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2287)*
+*Defined in [src/generated/api.ts:2412](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2412)*
 
 Optional name of the inbox. Displayed in the dashboard for easier search
 
@@ -72,7 +72,7 @@ ___
 
 • **tags**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:2293](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2293)*
+*Defined in [src/generated/api.ts:2418](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2418)*
 
 Tags that inbox has been tagged with
 

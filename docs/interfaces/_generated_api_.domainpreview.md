@@ -16,7 +16,7 @@ Preview object for domain entity
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:555](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L555)*
+*Defined in [src/generated/api.ts:569](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L569)*
 
 **`type`** {Date}
 
@@ -28,7 +28,7 @@ ___
 
 • **domain**: *string*
 
-*Defined in [src/generated/api.ts:561](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L561)*
+*Defined in [src/generated/api.ts:575](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L575)*
 
 **`type`** {string}
 
@@ -40,7 +40,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:567](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L567)*
+*Defined in [src/generated/api.ts:581](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L581)*
 
 **`type`** {string}
 

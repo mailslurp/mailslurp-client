@@ -10,4 +10,4 @@
 
 • **SINGLEMESSAGE**: =  <any>'SINGLE_MESSAGE'
 
-*Defined in [src/generated/api.ts:2076](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L2076)*
+*Defined in [src/generated/api.ts:2015](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L2015)*

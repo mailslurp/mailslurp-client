@@ -1,5 +1,8 @@
 # Changelog
 
+## [8.8.0]
+- Add mail server endpoints to base client
+
 ## [8.7.x]
 ### Added aliases
 - Create email aliases that can hide your email address and act as inbox proxies.

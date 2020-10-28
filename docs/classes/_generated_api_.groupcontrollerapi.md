@@ -22,7 +22,7 @@ GroupControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[constructor](_generated_api_.baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[basePath](_generated_api_.baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L61)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[configuration](_generated_api_.baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L57)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 *Inherited from [BaseAPI](_generated_api_.baseapi.md).[fetch](_generated_api_.baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **addContactsToGroup**(`groupId`: string, `updateGroupContactsOption`: [UpdateGroupContacts](../interfaces/_generated_api_.updategroupcontacts.md), `options?`: any): *Promise‹[GroupContactsDto](../interfaces/_generated_api_.groupcontactsdto.md)›*
 
-*Defined in [src/generated/api.ts:8665](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8665)*
+*Defined in [src/generated/api.ts:8921](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L8921)*
 
 **`summary`** Add contacts to a group
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **createGroup**(`createGroupOptions`: [CreateGroupOptions](../interfaces/_generated_api_.creategroupoptions.md), `options?`: any): *Promise‹[GroupDto](../interfaces/_generated_api_.groupdto.md)›*
 
-*Defined in [src/generated/api.ts:8685](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8685)*
+*Defined in [src/generated/api.ts:8941](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L8941)*
 
 **`summary`** Create a group
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **deleteGroup**(`groupId`: string, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:8700](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8700)*
+*Defined in [src/generated/api.ts:8956](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L8956)*
 
 **`summary`** Delete group
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **getAllGroups**(`page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageGroupProjection](../interfaces/_generated_api_.pagegroupprojection.md)›*
 
-*Defined in [src/generated/api.ts:8717](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8717)*
+*Defined in [src/generated/api.ts:8973](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L8973)*
 
 **`summary`** Get all Contact Groups in paginated format
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **getGroup**(`groupId`: string, `options?`: any): *Promise‹[GroupDto](../interfaces/_generated_api_.groupdto.md)›*
 
-*Defined in [src/generated/api.ts:8739](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8739)*
+*Defined in [src/generated/api.ts:8995](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L8995)*
 
 **`summary`** Get group
 
@@ -188,7 +188,7 @@ ___
 
 ▸ **getGroupWithContacts**(`groupId`: string, `options?`: any): *Promise‹[GroupContactsDto](../interfaces/_generated_api_.groupcontactsdto.md)›*
 
-*Defined in [src/generated/api.ts:8754](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8754)*
+*Defined in [src/generated/api.ts:9010](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L9010)*
 
 **`summary`** Get group and contacts belonging to it
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **getGroups**(`options?`: any): *Promise‹[GroupProjection](../interfaces/_generated_api_.groupprojection.md)[]›*
 
-*Defined in [src/generated/api.ts:8768](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8768)*
+*Defined in [src/generated/api.ts:9024](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L9024)*
 
 **`summary`** Get all groups
 
@@ -233,7 +233,7 @@ ___
 
 ▸ **removeContactsFromGroup**(`groupId`: string, `updateGroupContactsOption`: [UpdateGroupContacts](../interfaces/_generated_api_.updategroupcontacts.md), `options?`: any): *Promise‹[GroupContactsDto](../interfaces/_generated_api_.groupcontactsdto.md)›*
 
-*Defined in [src/generated/api.ts:8784](https://github.com/mailslurp/mailslurp-client-ts-js/blob/507ad2d/src/generated/api.ts#L8784)*
+*Defined in [src/generated/api.ts:9040](https://github.com/mailslurp/mailslurp-client/blob/2f39d3c/src/generated/api.ts#L9040)*
 
 **`summary`** Remove contacts from a group
 
