@@ -1,3 +1,0 @@
-# External module: "generated/configuration"
-
-

@@ -1,5 +1,5 @@
 <p align="center" class="d-none">
-  <img src="https://www.mailslurp.com/logo.svg" height="80x" alt="">
+  <img src="https://www.mailslurp.com/logo.svg" height="80px" alt="">
 </p>
 
 # MailSlurp Javascript Client

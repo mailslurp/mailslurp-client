@@ -38,7 +38,9 @@ docs: node_modules
 	npm run build
 	rm -rf docs
 	npm run docs
-	cp config/DOC.md docs/README.md
+
+docs-lint: node_modules
+	npm run docs:lint
 
 # manually bump package version first
 deploy: generate fmt build docs test

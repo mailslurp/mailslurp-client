@@ -25,6 +25,7 @@
     "integration": "jest",
     "validate": "check-md",
     "docs": "typedoc --options ./typedoc.json ./src/index.ts",
+    "docs:lint": "check-md --fix --cwd ./docs --preset vuepress",
     "fmt": "prettier --write {src,test}/**/*.{ts,json,js}"
   },
   "dependencies": {
