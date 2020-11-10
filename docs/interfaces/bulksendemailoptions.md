@@ -10,7 +10,7 @@
 
 • **inboxIds**? : *Array‹string›*
 
-*Defined in [src/generated/api.ts:200](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L200)*
+*Defined in [src/generated/api.ts:203](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L203)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **sendEmailOptions**? : *[SendEmailOptions](../modules/sendemailoptions.md)*
 
-*Defined in [src/generated/api.ts:206](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L206)*
+*Defined in [src/generated/api.ts:209](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L209)*

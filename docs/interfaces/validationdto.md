@@ -10,7 +10,7 @@
 
 • **emailId**? : *string*
 
-*Defined in [src/generated/api.ts:2594](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2594)*
+*Defined in [src/generated/api.ts:2596](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2596)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **html**? : *[HTMLValidationResult](htmlvalidationresult.md)*
 
-*Defined in [src/generated/api.ts:2600](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2600)*
+*Defined in [src/generated/api.ts:2602](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2602)*

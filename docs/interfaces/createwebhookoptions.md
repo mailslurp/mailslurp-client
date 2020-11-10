@@ -10,7 +10,7 @@
 
 • **basicAuth**? : *[BasicAuthOptions](basicauthoptions.md)*
 
-*Defined in [src/generated/api.ts:494](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L494)*
+*Defined in [src/generated/api.ts:497](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L497)*
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:500](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L500)*
+*Defined in [src/generated/api.ts:503](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L503)*
 
 ___
 
@@ -26,4 +26,4 @@ ___
 
 • **url**? : *string*
 
-*Defined in [src/generated/api.ts:506](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L506)*
+*Defined in [src/generated/api.ts:509](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L509)*

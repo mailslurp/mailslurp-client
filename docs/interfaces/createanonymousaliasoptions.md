@@ -10,4 +10,4 @@
 
 • **emailAddress**? : *string*
 
-*Defined in [src/generated/api.ts:338](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L338)*
+*Defined in [src/generated/api.ts:341](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L341)*

@@ -8,7 +8,7 @@
 
 ▸ (`url`: string, `init?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:38](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L38)*
+*Defined in [src/generated/api.ts:37](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L37)*
 
 **Parameters:**
 

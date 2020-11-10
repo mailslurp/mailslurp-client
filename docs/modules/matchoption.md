@@ -6,7 +6,7 @@
 
 • **field**? : *[FieldEnum](../enums/matchoption.fieldenum.md)*
 
-*Defined in [src/generated/api.ts:1220](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L1220)*
+*Defined in [src/generated/api.ts:1222](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1222)*
 
 ___
 
@@ -14,7 +14,7 @@ ___
 
 • **should**? : *[ShouldEnum](../enums/matchoption.shouldenum.md)*
 
-*Defined in [src/generated/api.ts:1226](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L1226)*
+*Defined in [src/generated/api.ts:1228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1228)*
 
 ___
 
@@ -22,4 +22,4 @@ ___
 
 • **value**? : *string*
 
-*Defined in [src/generated/api.ts:1232](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L1232)*
+*Defined in [src/generated/api.ts:1234](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1234)*

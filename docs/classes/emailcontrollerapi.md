@@ -14,7 +14,7 @@
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L58)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -34,7 +34,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L60)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L58)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L60)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **deleteAllEmails**(`options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:6076](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6076)*
+*Defined in [src/generated/api.ts:7631](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7631)*
 
 **Parameters:**
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **deleteEmail**(`emailId`: string, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:6088](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6088)*
+*Defined in [src/generated/api.ts:7645](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7645)*
 
 **Parameters:**
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **downloadAttachment**(`attachmentId`: string, `emailId`: string, `apiKey?`: string, `options?`: any): *Promise‹string›*
 
-*Defined in [src/generated/api.ts:6102](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6102)*
+*Defined in [src/generated/api.ts:7662](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7662)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **forwardEmail**(`emailId`: string, `forwardEmailOptions`: [ForwardEmailOptions](../interfaces/forwardemailoptions.md), `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:6115](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6115)*
+*Defined in [src/generated/api.ts:7685](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7685)*
 
 **Parameters:**
 
@@ -132,7 +132,7 @@ ___
 
 ▸ **getAttachmentMetaData**(`attachmentId`: string, `emailId`: string, `options?`: any): *Promise‹[AttachmentMetaData](../interfaces/attachmentmetadata.md)›*
 
-*Defined in [src/generated/api.ts:6128](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6128)*
+*Defined in [src/generated/api.ts:7706](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7706)*
 
 **Parameters:**
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **getAttachments**(`emailId`: string, `options?`: any): *Promise‹[AttachmentMetaData](../interfaces/attachmentmetadata.md)[]›*
 
-*Defined in [src/generated/api.ts:6140](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6140)*
+*Defined in [src/generated/api.ts:7726](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7726)*
 
 **Parameters:**
 
@@ -167,7 +167,7 @@ ___
 
 ▸ **getEmail**(`emailId`: string, `decode?`: boolean, `options?`: any): *Promise‹[Email](../interfaces/email.md)›*
 
-*Defined in [src/generated/api.ts:6153](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6153)*
+*Defined in [src/generated/api.ts:7742](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7742)*
 
 **Parameters:**
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **getEmailHTML**(`emailId`: string, `decode?`: boolean, `options?`: any): *Promise‹string›*
 
-*Defined in [src/generated/api.ts:6166](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6166)*
+*Defined in [src/generated/api.ts:7759](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7759)*
 
 **Parameters:**
 
@@ -203,7 +203,7 @@ ___
 
 ▸ **getEmailsPaginated**(`inboxId?`: Array‹string›, `page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `unreadOnly?`: boolean, `options?`: any): *Promise‹[PageEmailProjection](../interfaces/pageemailprojection.md)›*
 
-*Defined in [src/generated/api.ts:6182](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6182)*
+*Defined in [src/generated/api.ts:7779](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7779)*
 
 **Parameters:**
 
@@ -224,7 +224,7 @@ ___
 
 ▸ **getRawEmailContents**(`emailId`: string, `options?`: any): *Promise‹string›*
 
-*Defined in [src/generated/api.ts:6194](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6194)*
+*Defined in [src/generated/api.ts:7805](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7805)*
 
 **Parameters:**
 
@@ -241,7 +241,7 @@ ___
 
 ▸ **getRawEmailJson**(`emailId`: string, `options?`: any): *Promise‹[RawEmailJson](../interfaces/rawemailjson.md)›*
 
-*Defined in [src/generated/api.ts:6206](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6206)*
+*Defined in [src/generated/api.ts:7820](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7820)*
 
 **Parameters:**
 
@@ -258,7 +258,7 @@ ___
 
 ▸ **getUnreadEmailCount**(`options?`: any): *Promise‹[UnreadCount](../interfaces/unreadcount.md)›*
 
-*Defined in [src/generated/api.ts:6217](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6217)*
+*Defined in [src/generated/api.ts:7834](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7834)*
 
 **Parameters:**
 
@@ -274,7 +274,7 @@ ___
 
 ▸ **validateEmail**(`emailId`: string, `options?`: any): *Promise‹[ValidationDto](../interfaces/validationdto.md)›*
 
-*Defined in [src/generated/api.ts:6229](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L6229)*
+*Defined in [src/generated/api.ts:7848](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L7848)*
 
 **Parameters:**
 

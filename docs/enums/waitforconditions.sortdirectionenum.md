@@ -4,14 +4,14 @@
 
 ###  ASC
 
-• **ASC**: =  <any> 'ASC'
+• **ASC**: =  <any>'ASC'
 
-*Defined in [src/generated/api.ts:2723](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2723)*
+*Defined in [src/generated/api.ts:2725](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2725)*
 
 ___
 
 ###  DESC
 
-• **DESC**: =  <any> 'DESC'
+• **DESC**: =  <any>'DESC'
 
-*Defined in [src/generated/api.ts:2724](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2724)*
+*Defined in [src/generated/api.ts:2726](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2726)*

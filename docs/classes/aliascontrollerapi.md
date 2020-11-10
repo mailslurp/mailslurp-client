@@ -14,7 +14,7 @@
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L58)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
 
 **Parameters:**
 
@@ -34,7 +34,7 @@ Name | Type | Default |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
 
-*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L60)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
 
-*Defined in [src/generated/api.ts:58](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L58)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
 
-*Defined in [src/generated/api.ts:60](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L60)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **createAlias**(`createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:3423](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3423)*
+*Defined in [src/generated/api.ts:3676](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3676)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **createAnonymousAlias**(`createAnonymousAliasOptions`: [CreateAnonymousAliasOptions](../interfaces/createanonymousaliasoptions.md), `options?`: any): *Promise‹[Alias](../interfaces/alias.md)›*
 
-*Defined in [src/generated/api.ts:3435](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3435)*
+*Defined in [src/generated/api.ts:3694](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3694)*
 
 **Parameters:**
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **deleteAlias**(`aliasId`: string, `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:3447](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3447)*
+*Defined in [src/generated/api.ts:3712](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3712)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **getAlias**(`aliasId`: string, `options?`: any): *Promise‹[Alias](../interfaces/alias.md)›*
 
-*Defined in [src/generated/api.ts:3459](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3459)*
+*Defined in [src/generated/api.ts:3727](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3727)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **getAliases**(`page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageAlias](../interfaces/pagealias.md)›*
 
-*Defined in [src/generated/api.ts:3473](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3473)*
+*Defined in [src/generated/api.ts:3744](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3744)*
 
 **Parameters:**
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **updateAlias**(`aliasId`: string, `createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): *Promise‹Response›*
 
-*Defined in [src/generated/api.ts:3486](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L3486)*
+*Defined in [src/generated/api.ts:3767](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L3767)*
 
 **Parameters:**
 

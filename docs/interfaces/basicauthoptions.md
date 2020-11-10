@@ -10,7 +10,7 @@
 
 • **password**: *string*
 
-*Defined in [src/generated/api.ts:186](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L186)*
+*Defined in [src/generated/api.ts:189](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L189)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [src/generated/api.ts:180](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L180)*
+*Defined in [src/generated/api.ts:183](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L183)*

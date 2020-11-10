@@ -10,7 +10,7 @@
 
 • **createdAt**: *Date*
 
-*Defined in [src/generated/api.ts:560](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L560)*
+*Defined in [src/generated/api.ts:563](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L563)*
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 • **domain**: *string*
 
-*Defined in [src/generated/api.ts:566](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L566)*
+*Defined in [src/generated/api.ts:569](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L569)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/generated/api.ts:572](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L572)*
+*Defined in [src/generated/api.ts:575](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L575)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **isVerified**: *boolean*
 
-*Defined in [src/generated/api.ts:578](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L578)*
+*Defined in [src/generated/api.ts:581](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L581)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **updatedAt**: *Date*
 
-*Defined in [src/generated/api.ts:584](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L584)*
+*Defined in [src/generated/api.ts:587](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L587)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **userId**: *string*
 
-*Defined in [src/generated/api.ts:590](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L590)*
+*Defined in [src/generated/api.ts:593](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L593)*
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 • **verificationToken**: *string*
 
-*Defined in [src/generated/api.ts:596](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L596)*
+*Defined in [src/generated/api.ts:599](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L599)*

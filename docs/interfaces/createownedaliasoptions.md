@@ -10,7 +10,7 @@
 
 • **emailAddress**? : *string*
 
-*Defined in [src/generated/api.ts:442](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L442)*
+*Defined in [src/generated/api.ts:445](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L445)*
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:448](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L448)*
+*Defined in [src/generated/api.ts:451](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L451)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [src/generated/api.ts:454](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L454)*
+*Defined in [src/generated/api.ts:457](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L457)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **proxied**? : *boolean*
 
-*Defined in [src/generated/api.ts:460](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L460)*
+*Defined in [src/generated/api.ts:463](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L463)*

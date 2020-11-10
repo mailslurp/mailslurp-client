@@ -6,7 +6,7 @@
 
 • **count**? : *number*
 
-*Defined in [src/generated/api.ts:2666](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2666)*
+*Defined in [src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2668)*
 
 ___
 
@@ -14,7 +14,7 @@ ___
 
 • **countType**? : *[CountTypeEnum](../enums/waitforconditions.counttypeenum.md)*
 
-*Defined in [src/generated/api.ts:2672](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2672)*
+*Defined in [src/generated/api.ts:2674](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2674)*
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 • **inboxId**? : *string*
 
-*Defined in [src/generated/api.ts:2678](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2678)*
+*Defined in [src/generated/api.ts:2680](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2680)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **matches**? : *Array‹[MatchOption](matchoption.md)›*
 
-*Defined in [src/generated/api.ts:2684](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2684)*
+*Defined in [src/generated/api.ts:2686](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2686)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **sortDirection**? : *[SortDirectionEnum](../enums/waitforconditions.sortdirectionenum.md)*
 
-*Defined in [src/generated/api.ts:2690](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2690)*
+*Defined in [src/generated/api.ts:2692](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2692)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **timeout**? : *number*
 
-*Defined in [src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2696)*
+*Defined in [src/generated/api.ts:2698](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2698)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **unreadOnly**? : *boolean*
 
-*Defined in [src/generated/api.ts:2702](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2702)*
+*Defined in [src/generated/api.ts:2704](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2704)*

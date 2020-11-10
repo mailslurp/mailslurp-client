@@ -4,6 +4,6 @@
 
 ###  STRING
 
-• **STRING**: =  <any> 'STRING'
+• **STRING**: =  <any>'STRING'
 
-*Defined in [src/generated/api.ts:2487](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2487)*
+*Defined in [src/generated/api.ts:2489](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2489)*

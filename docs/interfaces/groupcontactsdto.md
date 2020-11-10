@@ -10,7 +10,7 @@
 
 • **contacts**: *Array‹[ContactDto](contactdto.md)›*
 
-*Defined in [src/generated/api.ts:996](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L996)*
+*Defined in [src/generated/api.ts:999](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L999)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **group**: *[GroupDto](groupdto.md)*
 
-*Defined in [src/generated/api.ts:1002](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L1002)*
+*Defined in [src/generated/api.ts:1005](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1005)*

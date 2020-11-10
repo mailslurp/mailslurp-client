@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /// <reference path="../../src/generated/custom.d.ts" />
-import { Configuration } from "./configuration";
+import { Configuration } from './configuration';
 /**
  *
  * @export
@@ -57,7 +57,7 @@ export declare class BaseAPI {
  */
 export declare class RequiredError extends Error {
     field: string;
-    name: "RequiredError";
+    name: 'RequiredError';
     constructor(field: string, msg?: string);
 }
 /**

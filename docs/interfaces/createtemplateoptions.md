@@ -10,7 +10,7 @@
 
 • **content**: *string*
 
-*Defined in [src/generated/api.ts:480](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L480)*
+*Defined in [src/generated/api.ts:483](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L483)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/generated/api.ts:474](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L474)*
+*Defined in [src/generated/api.ts:477](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L477)*

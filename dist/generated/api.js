@@ -35,16 +35,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var url = __importStar(require("url"));
 var portableFetch = __importStar(require("portable-fetch"));
-var BASE_PATH = "https://api.mailslurp.com".replace(/\/+$/, "");
+var BASE_PATH = 'https://api.mailslurp.com'.replace(/\/+$/, '');
 /**
  *
  * @export
  */
 exports.COLLECTION_FORMATS = {
-    csv: ",",
-    ssv: " ",
-    tsv: "\t",
-    pipes: "|",
+    csv: ',',
+    ssv: ' ',
+    tsv: '\t',
+    pipes: '|',
 };
 /**
  *
@@ -65,7 +65,6 @@ var BaseAPI = /** @class */ (function () {
     return BaseAPI;
 }());
 exports.BaseAPI = BaseAPI;
-;
 /**
  *
  * @export
@@ -225,7 +224,8 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
         createAlias: function (createOwnedAliasOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'createOwnedAliasOptions' is not null or undefined
-            if (createOwnedAliasOptions === null || createOwnedAliasOptions === undefined) {
+            if (createOwnedAliasOptions === null ||
+                createOwnedAliasOptions === undefined) {
                 throw new RequiredError('createOwnedAliasOptions', 'Required parameter createOwnedAliasOptions was null or undefined when calling createAlias.');
             }
             var localVarPath = "/aliases";
@@ -236,17 +236,21 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateOwnedAliasOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createOwnedAliasOptions || {}) : (createOwnedAliasOptions || "");
+            var needsSerialization = 'CreateOwnedAliasOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createOwnedAliasOptions || {})
+                : createOwnedAliasOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -262,7 +266,8 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
         createAnonymousAlias: function (createAnonymousAliasOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'createAnonymousAliasOptions' is not null or undefined
-            if (createAnonymousAliasOptions === null || createAnonymousAliasOptions === undefined) {
+            if (createAnonymousAliasOptions === null ||
+                createAnonymousAliasOptions === undefined) {
                 throw new RequiredError('createAnonymousAliasOptions', 'Required parameter createAnonymousAliasOptions was null or undefined when calling createAnonymousAlias.');
             }
             var localVarPath = "/aliases/anonymous";
@@ -273,17 +278,21 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateAnonymousAliasOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createAnonymousAliasOptions || {}) : (createAnonymousAliasOptions || "");
+            var needsSerialization = 'CreateAnonymousAliasOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createAnonymousAliasOptions || {})
+                : createAnonymousAliasOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -302,8 +311,7 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             if (aliasId === null || aliasId === undefined) {
                 throw new RequiredError('aliasId', 'Required parameter aliasId was null or undefined when calling deleteAlias.');
             }
-            var localVarPath = "/aliases/{aliasId}"
-                .replace("{" + "aliasId" + "}", encodeURIComponent(String(aliasId)));
+            var localVarPath = "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(aliasId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -311,9 +319,9 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -337,8 +345,7 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             if (aliasId === null || aliasId === undefined) {
                 throw new RequiredError('aliasId', 'Required parameter aliasId was null or undefined when calling getAlias.');
             }
-            var localVarPath = "/aliases/{aliasId}"
-                .replace("{" + "aliasId" + "}", encodeURIComponent(String(aliasId)));
+            var localVarPath = "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(aliasId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -346,9 +353,9 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -378,9 +385,9 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -415,11 +422,11 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('aliasId', 'Required parameter aliasId was null or undefined when calling updateAlias.');
             }
             // verify required parameter 'createOwnedAliasOptions' is not null or undefined
-            if (createOwnedAliasOptions === null || createOwnedAliasOptions === undefined) {
+            if (createOwnedAliasOptions === null ||
+                createOwnedAliasOptions === undefined) {
                 throw new RequiredError('createOwnedAliasOptions', 'Required parameter createOwnedAliasOptions was null or undefined when calling updateAlias.');
             }
-            var localVarPath = "/aliases/{aliasId}"
-                .replace("{" + "aliasId" + "}", encodeURIComponent(String(aliasId)));
+            var localVarPath = "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(aliasId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
             var localVarHeaderParameter = {};
@@ -427,17 +434,21 @@ exports.AliasControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateOwnedAliasOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createOwnedAliasOptions || {}) : (createOwnedAliasOptions || "");
+            var needsSerialization = 'CreateOwnedAliasOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createOwnedAliasOptions || {})
+                : createOwnedAliasOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -769,17 +780,21 @@ exports.AttachmentControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("UploadAttachmentOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(uploadOptions || {}) : (uploadOptions || "");
+            var needsSerialization = 'UploadAttachmentOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(uploadOptions || {})
+                : uploadOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -811,9 +826,9 @@ exports.AttachmentControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (contentType !== undefined) {
                 localVarQueryParameter['contentType'] = contentType;
@@ -827,15 +842,20 @@ exports.AttachmentControllerApiFetchParamCreator = function (configuration) {
             if (file !== undefined) {
                 localVarFormParams.set('file', file);
             }
-            localVarHeaderParameter['Content-Type'] = 'application/x-www-form-urlencoded';
+            localVarHeaderParameter['Content-Type'] =
+                'application/x-www-form-urlencoded';
             localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
             localVarRequestOptions.body = localVarFormParams.toString();
-            var needsSerialization = ("string" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(contentTypeHeader || {}) : (contentTypeHeader || "");
+            var needsSerialization = 'string' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(contentTypeHeader || {})
+                : contentTypeHeader || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -998,9 +1018,9 @@ exports.BulkActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -1035,17 +1055,21 @@ exports.BulkActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("Array&lt;string&gt;" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(ids || {}) : (ids || "");
+            var needsSerialization = 'Array&lt;string&gt;' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(ids || {})
+                : ids || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -1061,7 +1085,8 @@ exports.BulkActionsControllerApiFetchParamCreator = function (configuration) {
         bulkSendEmails: function (bulkSendEmailOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'bulkSendEmailOptions' is not null or undefined
-            if (bulkSendEmailOptions === null || bulkSendEmailOptions === undefined) {
+            if (bulkSendEmailOptions === null ||
+                bulkSendEmailOptions === undefined) {
                 throw new RequiredError('bulkSendEmailOptions', 'Required parameter bulkSendEmailOptions was null or undefined when calling bulkSendEmails.');
             }
             var localVarPath = "/bulk/send";
@@ -1072,17 +1097,21 @@ exports.BulkActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("BulkSendEmailOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(bulkSendEmailOptions || {}) : (bulkSendEmailOptions || "");
+            var needsSerialization = 'BulkSendEmailOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(bulkSendEmailOptions || {})
+                : bulkSendEmailOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -1271,9 +1300,9 @@ exports.CommonActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -1300,9 +1329,9 @@ exports.CommonActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -1334,9 +1363,9 @@ exports.CommonActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
@@ -1371,17 +1400,21 @@ exports.CommonActionsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("SimpleSendEmailOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(emailOptions || {}) : (emailOptions || "");
+            var needsSerialization = 'SimpleSendEmailOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(emailOptions || {})
+                : emailOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -1601,7 +1634,8 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
         createContact: function (createContactOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'createContactOptions' is not null or undefined
-            if (createContactOptions === null || createContactOptions === undefined) {
+            if (createContactOptions === null ||
+                createContactOptions === undefined) {
                 throw new RequiredError('createContactOptions', 'Required parameter createContactOptions was null or undefined when calling createContact.');
             }
             var localVarPath = "/contacts";
@@ -1612,17 +1646,21 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateContactOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createContactOptions || {}) : (createContactOptions || "");
+            var needsSerialization = 'CreateContactOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createContactOptions || {})
+                : createContactOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -1641,8 +1679,7 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             if (contactId === null || contactId === undefined) {
                 throw new RequiredError('contactId', 'Required parameter contactId was null or undefined when calling deleteContact.');
             }
-            var localVarPath = "/contacts/{contactId}"
-                .replace("{" + "contactId" + "}", encodeURIComponent(String(contactId)));
+            var localVarPath = "/contacts/{contactId}".replace("{" + 'contactId' + "}", encodeURIComponent(String(contactId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -1650,9 +1687,9 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -1682,9 +1719,9 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -1717,8 +1754,7 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             if (contactId === null || contactId === undefined) {
                 throw new RequiredError('contactId', 'Required parameter contactId was null or undefined when calling getContact.');
             }
-            var localVarPath = "/contacts/{contactId}"
-                .replace("{" + "contactId" + "}", encodeURIComponent(String(contactId)));
+            var localVarPath = "/contacts/{contactId}".replace("{" + 'contactId' + "}", encodeURIComponent(String(contactId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -1726,9 +1762,9 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -1755,9 +1791,9 @@ exports.ContactControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2045,17 +2081,21 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateDomainOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(domainOptions || {}) : (domainOptions || "");
+            var needsSerialization = 'CreateDomainOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(domainOptions || {})
+                : domainOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -2074,8 +2114,7 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             if (id === null || id === undefined) {
                 throw new RequiredError('id', 'Required parameter id was null or undefined when calling deleteDomain.');
             }
-            var localVarPath = "/domains/{id}"
-                .replace("{" + "id" + "}", encodeURIComponent(String(id)));
+            var localVarPath = "/domains/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -2083,9 +2122,9 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2109,8 +2148,7 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             if (id === null || id === undefined) {
                 throw new RequiredError('id', 'Required parameter id was null or undefined when calling getDomain.');
             }
-            var localVarPath = "/domains/{id}"
-                .replace("{" + "id" + "}", encodeURIComponent(String(id)));
+            var localVarPath = "/domains/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2118,9 +2156,9 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2147,9 +2185,9 @@ exports.DomainControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2383,9 +2421,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2409,8 +2447,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling deleteEmail.');
             }
-            var localVarPath = "/emails/{emailId}"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -2418,9 +2455,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2451,8 +2488,8 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling downloadAttachment.');
             }
             var localVarPath = "/emails/{emailId}/attachments/{attachmentId}"
-                .replace("{" + "attachmentId" + "}", encodeURIComponent(String(attachmentId)))
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+                .replace("{" + 'attachmentId' + "}", encodeURIComponent(String(attachmentId)))
+                .replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2460,9 +2497,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (apiKey !== undefined) {
                 localVarQueryParameter['apiKey'] = apiKey;
@@ -2491,11 +2528,11 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling forwardEmail.');
             }
             // verify required parameter 'forwardEmailOptions' is not null or undefined
-            if (forwardEmailOptions === null || forwardEmailOptions === undefined) {
+            if (forwardEmailOptions === null ||
+                forwardEmailOptions === undefined) {
                 throw new RequiredError('forwardEmailOptions', 'Required parameter forwardEmailOptions was null or undefined when calling forwardEmail.');
             }
-            var localVarPath = "/emails/{emailId}/forward"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/forward".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             var localVarHeaderParameter = {};
@@ -2503,17 +2540,21 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("ForwardEmailOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(forwardEmailOptions || {}) : (forwardEmailOptions || "");
+            var needsSerialization = 'ForwardEmailOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(forwardEmailOptions || {})
+                : forwardEmailOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -2538,8 +2579,8 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getAttachmentMetaData.');
             }
             var localVarPath = "/emails/{emailId}/attachments/{attachmentId}/metadata"
-                .replace("{" + "attachmentId" + "}", encodeURIComponent(String(attachmentId)))
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+                .replace("{" + 'attachmentId' + "}", encodeURIComponent(String(attachmentId)))
+                .replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2547,9 +2588,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2573,8 +2614,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getAttachments.');
             }
-            var localVarPath = "/emails/{emailId}/attachments"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/attachments".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2582,9 +2622,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2609,8 +2649,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getEmail.');
             }
-            var localVarPath = "/emails/{emailId}"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2618,9 +2657,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (decode !== undefined) {
                 localVarQueryParameter['decode'] = decode;
@@ -2648,8 +2687,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getEmailHTML.');
             }
-            var localVarPath = "/emails/{emailId}/html"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/html".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2657,9 +2695,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (decode !== undefined) {
                 localVarQueryParameter['decode'] = decode;
@@ -2694,9 +2732,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (inboxId) {
                 localVarQueryParameter['inboxId'] = inboxId;
@@ -2735,8 +2773,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getRawEmailContents.');
             }
-            var localVarPath = "/emails/{emailId}/raw"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/raw".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2744,9 +2781,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2770,8 +2807,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling getRawEmailJson.');
             }
-            var localVarPath = "/emails/{emailId}/raw/json"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/raw/json".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -2779,9 +2815,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2808,9 +2844,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2834,8 +2870,7 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             if (emailId === null || emailId === undefined) {
                 throw new RequiredError('emailId', 'Required parameter emailId was null or undefined when calling validateEmail.');
             }
-            var localVarPath = "/emails/{emailId}/validate"
-                .replace("{" + "emailId" + "}", encodeURIComponent(String(emailId)));
+            var localVarPath = "/emails/{emailId}/validate".replace("{" + 'emailId' + "}", encodeURIComponent(String(emailId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             var localVarHeaderParameter = {};
@@ -2843,9 +2878,9 @@ exports.EmailControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -3502,9 +3537,9 @@ exports.FormControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (emailAddress !== undefined) {
                 localVarFormParams.set('_emailAddress', emailAddress);
@@ -3530,7 +3565,8 @@ exports.FormControllerApiFetchParamCreator = function (configuration) {
             if (otherParameters !== undefined) {
                 localVarFormParams.set('otherParameters', otherParameters);
             }
-            localVarHeaderParameter['Content-Type'] = 'application/x-www-form-urlencoded';
+            localVarHeaderParameter['Content-Type'] =
+                'application/x-www-form-urlencoded';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
@@ -3658,11 +3694,11 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling addContactsToGroup.');
             }
             // verify required parameter 'updateGroupContactsOption' is not null or undefined
-            if (updateGroupContactsOption === null || updateGroupContactsOption === undefined) {
+            if (updateGroupContactsOption === null ||
+                updateGroupContactsOption === undefined) {
                 throw new RequiredError('updateGroupContactsOption', 'Required parameter updateGroupContactsOption was null or undefined when calling addContactsToGroup.');
             }
-            var localVarPath = "/groups/{groupId}/contacts"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}/contacts".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
             var localVarHeaderParameter = {};
@@ -3670,17 +3706,21 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("UpdateGroupContacts" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(updateGroupContactsOption || {}) : (updateGroupContactsOption || "");
+            var needsSerialization = 'UpdateGroupContacts' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(updateGroupContactsOption || {})
+                : updateGroupContactsOption || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -3696,7 +3736,8 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
         createGroup: function (createGroupOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'createGroupOptions' is not null or undefined
-            if (createGroupOptions === null || createGroupOptions === undefined) {
+            if (createGroupOptions === null ||
+                createGroupOptions === undefined) {
                 throw new RequiredError('createGroupOptions', 'Required parameter createGroupOptions was null or undefined when calling createGroup.');
             }
             var localVarPath = "/groups";
@@ -3707,17 +3748,21 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateGroupOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createGroupOptions || {}) : (createGroupOptions || "");
+            var needsSerialization = 'CreateGroupOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createGroupOptions || {})
+                : createGroupOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -3736,8 +3781,7 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             if (groupId === null || groupId === undefined) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling deleteGroup.');
             }
-            var localVarPath = "/groups/{groupId}"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -3745,9 +3789,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -3777,9 +3821,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -3812,8 +3856,7 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             if (groupId === null || groupId === undefined) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling getGroup.');
             }
-            var localVarPath = "/groups/{groupId}"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -3821,9 +3864,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -3847,8 +3890,7 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             if (groupId === null || groupId === undefined) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling getGroupWithContacts.');
             }
-            var localVarPath = "/groups/{groupId}/contacts"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}/contacts".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -3856,9 +3898,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -3885,8 +3927,7 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             if (groupId === null || groupId === undefined) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling getGroupWithContactsPaginated.');
             }
-            var localVarPath = "/groups/{groupId}/contacts-paginated"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}/contacts-paginated".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -3894,9 +3935,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -3932,9 +3973,9 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -3960,11 +4001,11 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('groupId', 'Required parameter groupId was null or undefined when calling removeContactsFromGroup.');
             }
             // verify required parameter 'updateGroupContactsOption' is not null or undefined
-            if (updateGroupContactsOption === null || updateGroupContactsOption === undefined) {
+            if (updateGroupContactsOption === null ||
+                updateGroupContactsOption === undefined) {
                 throw new RequiredError('updateGroupContactsOption', 'Required parameter updateGroupContactsOption was null or undefined when calling removeContactsFromGroup.');
             }
-            var localVarPath = "/groups/{groupId}/contacts"
-                .replace("{" + "groupId" + "}", encodeURIComponent(String(groupId)));
+            var localVarPath = "/groups/{groupId}/contacts".replace("{" + 'groupId' + "}", encodeURIComponent(String(groupId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -3972,17 +4013,21 @@ exports.GroupControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("UpdateGroupContacts" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(updateGroupContactsOption || {}) : (updateGroupContactsOption || "");
+            var needsSerialization = 'UpdateGroupContacts' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(updateGroupContactsOption || {})
+                : updateGroupContactsOption || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -4453,9 +4498,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (description !== undefined) {
                 localVarQueryParameter['description'] = description;
@@ -4500,9 +4545,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -4526,8 +4571,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling deleteInbox.');
             }
-            var localVarPath = "/inboxes/{inboxId}"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -4535,9 +4579,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -4570,9 +4614,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (favourite !== undefined) {
                 localVarQueryParameter['favourite'] = favourite;
@@ -4619,8 +4663,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getEmails.');
             }
-            var localVarPath = "/inboxes/{inboxId}/emails"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/emails".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -4628,9 +4671,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
@@ -4669,8 +4712,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getInbox.');
             }
-            var localVarPath = "/inboxes/{inboxId}"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -4678,9 +4720,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -4707,8 +4749,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getInboxEmailsPaginated.');
             }
-            var localVarPath = "/inboxes/{inboxId}/emails/paginated"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/emails/paginated".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -4716,9 +4757,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -4754,8 +4795,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getInboxSentEmails.');
             }
-            var localVarPath = "/inboxes/{inboxId}/sent"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/sent".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -4763,9 +4803,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -4801,9 +4841,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -4830,9 +4870,9 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -4857,8 +4897,7 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling sendEmail.');
             }
-            var localVarPath = "/inboxes/{inboxId}"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             var localVarHeaderParameter = {};
@@ -4866,17 +4905,21 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("SendEmailOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(sendEmailOptions || {}) : (sendEmailOptions || "");
+            var needsSerialization = 'SendEmailOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(sendEmailOptions || {})
+                : sendEmailOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -4897,11 +4940,11 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling setInboxFavourited.');
             }
             // verify required parameter 'setInboxFavouritedOptions' is not null or undefined
-            if (setInboxFavouritedOptions === null || setInboxFavouritedOptions === undefined) {
+            if (setInboxFavouritedOptions === null ||
+                setInboxFavouritedOptions === undefined) {
                 throw new RequiredError('setInboxFavouritedOptions', 'Required parameter setInboxFavouritedOptions was null or undefined when calling setInboxFavourited.');
             }
-            var localVarPath = "/inboxes/{inboxId}/favourite"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/favourite".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
             var localVarHeaderParameter = {};
@@ -4909,17 +4952,21 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("SetInboxFavouritedOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(setInboxFavouritedOptions || {}) : (setInboxFavouritedOptions || "");
+            var needsSerialization = 'SetInboxFavouritedOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(setInboxFavouritedOptions || {})
+                : setInboxFavouritedOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -4940,11 +4987,11 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling updateInbox.');
             }
             // verify required parameter 'updateInboxOptions' is not null or undefined
-            if (updateInboxOptions === null || updateInboxOptions === undefined) {
+            if (updateInboxOptions === null ||
+                updateInboxOptions === undefined) {
                 throw new RequiredError('updateInboxOptions', 'Required parameter updateInboxOptions was null or undefined when calling updateInbox.');
             }
-            var localVarPath = "/inboxes/{inboxId}"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'PATCH' }, options);
             var localVarHeaderParameter = {};
@@ -4952,17 +4999,21 @@ exports.InboxControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("UpdateInboxOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(updateInboxOptions || {}) : (updateInboxOptions || "");
+            var needsSerialization = 'UpdateInboxOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(updateInboxOptions || {})
+                : updateInboxOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -5649,17 +5700,21 @@ exports.MailServerControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("DescribeDomainOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(describeOptions || {}) : (describeOptions || "");
+            var needsSerialization = 'DescribeDomainOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(describeOptions || {})
+                : describeOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -5686,17 +5741,21 @@ exports.MailServerControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("VerifyEmailAddressOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(verifyOptions || {}) : (verifyOptions || "");
+            var needsSerialization = 'VerifyEmailAddressOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(verifyOptions || {})
+                : verifyOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -5839,8 +5898,7 @@ exports.SentEmailsControllerApiFetchParamCreator = function (configuration) {
             if (id === null || id === undefined) {
                 throw new RequiredError('id', 'Required parameter id was null or undefined when calling getSentEmail.');
             }
-            var localVarPath = "/sent/{id}"
-                .replace("{" + "id" + "}", encodeURIComponent(String(id)));
+            var localVarPath = "/sent/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -5848,9 +5906,9 @@ exports.SentEmailsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -5881,9 +5939,9 @@ exports.SentEmailsControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
@@ -6049,7 +6107,8 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
         createTemplate: function (createTemplateOptions, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'createTemplateOptions' is not null or undefined
-            if (createTemplateOptions === null || createTemplateOptions === undefined) {
+            if (createTemplateOptions === null ||
+                createTemplateOptions === undefined) {
                 throw new RequiredError('createTemplateOptions', 'Required parameter createTemplateOptions was null or undefined when calling createTemplate.');
             }
             var localVarPath = "/templates";
@@ -6060,17 +6119,21 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateTemplateOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(createTemplateOptions || {}) : (createTemplateOptions || "");
+            var needsSerialization = 'CreateTemplateOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createTemplateOptions || {})
+                : createTemplateOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -6089,8 +6152,7 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             if (templateId === null || templateId === undefined) {
                 throw new RequiredError('templateId', 'Required parameter templateId was null or undefined when calling deleteTemplate.');
             }
-            var localVarPath = "/templates/{TemplateId}"
-                .replace("{" + "TemplateId" + "}", encodeURIComponent(String(templateId)));
+            var localVarPath = "/templates/{TemplateId}".replace("{" + 'TemplateId' + "}", encodeURIComponent(String(templateId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -6098,9 +6160,9 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -6130,9 +6192,9 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -6165,8 +6227,7 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             if (templateId === null || templateId === undefined) {
                 throw new RequiredError('templateId', 'Required parameter templateId was null or undefined when calling getTemplate.');
             }
-            var localVarPath = "/templates/{TemplateId}"
-                .replace("{" + "TemplateId" + "}", encodeURIComponent(String(templateId)));
+            var localVarPath = "/templates/{TemplateId}".replace("{" + 'TemplateId' + "}", encodeURIComponent(String(templateId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -6174,9 +6235,9 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -6203,9 +6264,9 @@ exports.TemplateControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -6489,17 +6550,21 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("WaitForConditions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(waitForConditions || {}) : (waitForConditions || "");
+            var needsSerialization = 'WaitForConditions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(waitForConditions || {})
+                : waitForConditions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -6525,9 +6590,9 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -6569,9 +6634,9 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
@@ -6616,9 +6681,9 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -6637,8 +6702,12 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("MatchOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(matchOptions || {}) : (matchOptions || "");
+            var needsSerialization = 'MatchOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(matchOptions || {})
+                : matchOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -6664,9 +6733,9 @@ exports.WaitForControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
@@ -6996,8 +7065,7 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             if (webhookOptions === null || webhookOptions === undefined) {
                 throw new RequiredError('webhookOptions', 'Required parameter webhookOptions was null or undefined when calling createWebhook.');
             }
-            var localVarPath = "/inboxes/{inboxId}/webhooks"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             var localVarHeaderParameter = {};
@@ -7005,17 +7073,21 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            var needsSerialization = ("CreateWebhookOptions" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.body = needsSerialization ? JSON.stringify(webhookOptions || {}) : (webhookOptions || "");
+            var needsSerialization = 'CreateWebhookOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(webhookOptions || {})
+                : webhookOptions || '';
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -7040,8 +7112,8 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
                 throw new RequiredError('webhookId', 'Required parameter webhookId was null or undefined when calling deleteWebhook.');
             }
             var localVarPath = "/inboxes/{inboxId}/webhooks/{webhookId}"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)))
-                .replace("{" + "webhookId" + "}", encodeURIComponent(String(webhookId)));
+                .replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)))
+                .replace("{" + 'webhookId' + "}", encodeURIComponent(String(webhookId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -7049,9 +7121,9 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -7081,9 +7153,9 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -7116,8 +7188,7 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             if (webhookId === null || webhookId === undefined) {
                 throw new RequiredError('webhookId', 'Required parameter webhookId was null or undefined when calling getWebhook.');
             }
-            var localVarPath = "/webhooks/{webhookId}"
-                .replace("{" + "webhookId" + "}", encodeURIComponent(String(webhookId)));
+            var localVarPath = "/webhooks/{webhookId}".replace("{" + 'webhookId' + "}", encodeURIComponent(String(webhookId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -7125,9 +7196,9 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -7151,8 +7222,7 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             if (inboxId === null || inboxId === undefined) {
                 throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getWebhooks.');
             }
-            var localVarPath = "/inboxes/{inboxId}/webhooks"
-                .replace("{" + "inboxId" + "}", encodeURIComponent(String(inboxId)));
+            var localVarPath = "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -7160,9 +7230,9 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -7186,8 +7256,7 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             if (webhookId === null || webhookId === undefined) {
                 throw new RequiredError('webhookId', 'Required parameter webhookId was null or undefined when calling sendTestData.');
             }
-            var localVarPath = "/webhooks/{webhookId}/test"
-                .replace("{" + "webhookId" + "}", encodeURIComponent(String(webhookId)));
+            var localVarPath = "/webhooks/{webhookId}/test".replace("{" + 'webhookId' + "}", encodeURIComponent(String(webhookId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             var localVarHeaderParameter = {};
@@ -7195,9 +7264,9 @@ exports.WebhookControllerApiFetchParamCreator = function (configuration) {
             // authentication API_KEY required
             if (configuration && configuration.apiKey) {
                 var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("x-api-key")
+                    ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
-                localVarHeaderParameter["x-api-key"] = localVarApiKeyValue;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943

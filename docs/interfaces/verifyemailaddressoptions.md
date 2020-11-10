@@ -10,7 +10,7 @@
 
 • **emailAddress**: *string*
 
-*Defined in [src/generated/api.ts:2640](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2640)*
+*Defined in [src/generated/api.ts:2642](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2642)*
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 • **mailServerDomain**? : *string*
 
-*Defined in [src/generated/api.ts:2634](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2634)*
+*Defined in [src/generated/api.ts:2636](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2636)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **port**? : *number*
 
-*Defined in [src/generated/api.ts:2652](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2652)*
+*Defined in [src/generated/api.ts:2654](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2654)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **senderEmailAddress**? : *string*
 
-*Defined in [src/generated/api.ts:2646](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2646)*
+*Defined in [src/generated/api.ts:2648](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2648)*

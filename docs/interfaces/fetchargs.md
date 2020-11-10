@@ -10,7 +10,7 @@
 
 • **options**: *any*
 
-*Defined in [src/generated/api.ts:49](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L49)*
+*Defined in [src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L48)*
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 • **url**: *string*
 
-*Defined in [src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L48)*
+*Defined in [src/generated/api.ts:47](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L47)*

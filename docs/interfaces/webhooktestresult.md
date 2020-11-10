@@ -10,7 +10,7 @@
 
 • **message**? : *string*
 
-*Defined in [src/generated/api.ts:2939](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2939)*
+*Defined in [src/generated/api.ts:2941](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2941)*
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 • **request**: *[WebhookTestRequest](../modules/webhooktestrequest.md)*
 
-*Defined in [src/generated/api.ts:2945](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2945)*
+*Defined in [src/generated/api.ts:2947](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2947)*
 
 ___
 
@@ -26,4 +26,4 @@ ___
 
 • **response**: *[WebhookTestResponse](webhooktestresponse.md)*
 
-*Defined in [src/generated/api.ts:2951](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2951)*
+*Defined in [src/generated/api.ts:2953](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2953)*

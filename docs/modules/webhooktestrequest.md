@@ -6,7 +6,7 @@
 
 • **headers**: *object*
 
-*Defined in [src/generated/api.ts:2866](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2866)*
+*Defined in [src/generated/api.ts:2868](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2868)*
 
 #### Type declaration:
 
@@ -18,7 +18,7 @@ ___
 
 • **method**: *[MethodEnum](../enums/webhooktestrequest.methodenum.md)*
 
-*Defined in [src/generated/api.ts:2872](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2872)*
+*Defined in [src/generated/api.ts:2874](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2874)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **payload**? : *string*
 
-*Defined in [src/generated/api.ts:2878](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2878)*
+*Defined in [src/generated/api.ts:2880](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2880)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **url**: *string*
 
-*Defined in [src/generated/api.ts:2884](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/api.ts#L2884)*
+*Defined in [src/generated/api.ts:2886](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2886)*

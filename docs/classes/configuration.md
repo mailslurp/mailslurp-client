@@ -10,7 +10,7 @@
 
 \+ **new Configuration**(`param`: [ConfigurationParameters](../interfaces/configurationparameters.md)): *[Configuration](configuration.md)*
 
-*Defined in [src/generated/configuration.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L57)*
+*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L56)*
 
 **Parameters:**
 
@@ -26,7 +26,7 @@ Name | Type | Default |
 
 • **accessToken**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:50](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L50)*
+*Defined in [src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L49)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **apiKey**? : *string | function*
 
-*Defined in [src/generated/configuration.ts:29](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L29)*
+*Defined in [src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L28)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **basePath**? : *string*
 
-*Defined in [src/generated/configuration.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L57)*
+*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L56)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **password**? : *string*
 
-*Defined in [src/generated/configuration.ts:43](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L43)*
+*Defined in [src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L42)*
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 • **username**? : *string*
 
-*Defined in [src/generated/configuration.ts:36](https://github.com/mailslurp/mailslurp-client-ts-js/blob/4ca018b/src/generated/configuration.ts#L36)*
+*Defined in [src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/configuration.ts#L35)*
