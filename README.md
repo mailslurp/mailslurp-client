@@ -2,7 +2,8 @@
   <img src="https://www.mailslurp.com/logo.svg" height="80px" alt="">
 </p>
 
-# MailSlurp Javascript Client
+# MailSlurp Email API Official Javascript Client
+
 > Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
 MailSlurp is an email API service that let's you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests.
@@ -65,14 +66,14 @@ await mailslurp.sendEmail(inbox.id, options)
 ```
 
 ## Documentation 
-- [Method documentation](./docs/classes/_index_.mailslurp.md)
+- [Method documentation](./docs)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)
 - [Example repositories](https://www.mailslurp.com/examples/)
 
 ## Resources
 - [Dashboard App](https://app.mailslurp.com) 
-- [Documentation](./docs/classes/_index_.mailslurp.md)
+- [Documentation](./docs)
 - [Github](https://github.com/mailslurp/mailslurp-client)
 - [PM](https://www.npmjs.com/package/mailslurp-client)
 
