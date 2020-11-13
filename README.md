@@ -2,10 +2,11 @@
 label: Javascript SDK
 subtitle: Official Javascript MailSlurp client. Supports Typescript and Webpack.
 title: Javascript
-icon: devicon-javascript-plain
+icon: /assets/icons/javascript.svg
+iconType: asset
 featured: true
 expose: true
-weight: 1
+weight: -1
 meta:
   - name: description
     content: Send and receive emails in Javascript and Typescript. Node email libraries and SDK.
