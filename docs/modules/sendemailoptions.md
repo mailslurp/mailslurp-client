@@ -1,121 +1,213 @@
-# Module: SendEmailOptions
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / SendEmailOptions
+
+# Namespace: SendEmailOptions
+
+**`export`** 
+
+**`namespace`** SendEmailOptions
+
+## Index
+
+### Enumerations
+
+* [SendStrategyEnum](../enums/sendemailoptions.sendstrategyenum.md)
+
+### Properties
+
+* [attachments](sendemailoptions.md#attachments)
+* [bcc](sendemailoptions.md#bcc)
+* [body](sendemailoptions.md#body)
+* [cc](sendemailoptions.md#cc)
+* [charset](sendemailoptions.md#charset)
+* [from](sendemailoptions.md#from)
+* [isHTML](sendemailoptions.md#ishtml)
+* [replyTo](sendemailoptions.md#replyto)
+* [sendStrategy](sendemailoptions.md#sendstrategy)
+* [subject](sendemailoptions.md#subject)
+* [template](sendemailoptions.md#template)
+* [templateVariables](sendemailoptions.md#templatevariables)
+* [to](sendemailoptions.md#to)
+* [toContacts](sendemailoptions.md#tocontacts)
+* [toGroup](sendemailoptions.md#togroup)
 
 ## Properties
 
-### `Optional` attachments
+### attachments
 
-• **attachments**? : *Array‹string›*
+• `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:2044](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2044)*
+*Defined in [src/generated/api.ts:2070](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2070)*
 
-___
+Optional list of attachment IDs to send with this email. You must first upload each attachment separately in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded.
 
-### `Optional` bcc
-
-• **bcc**? : *Array‹string›*
-
-*Defined in [src/generated/api.ts:2050](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2050)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` body
+### bcc
 
-• **body**? : *string*
+• `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2056](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2056)*
+*Defined in [src/generated/api.ts:2076](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2076)*
 
-___
+Optional list of bcc destination email addresses
 
-### `Optional` cc
-
-• **cc**? : *Array‹string›*
-
-*Defined in [src/generated/api.ts:2062](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2062)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` charset
+### body
 
-• **charset**? : *string*
+• `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:2068](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2068)*
+*Defined in [src/generated/api.ts:2082](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2082)*
 
-___
+Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.
 
-### `Optional` from
-
-• **from**? : *string*
-
-*Defined in [src/generated/api.ts:2074](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2074)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` isHTML
+### cc
 
-• **isHTML**? : *boolean*
+• `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2080](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2080)*
+*Defined in [src/generated/api.ts:2088](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2088)*
 
-___
+Optional list of cc destination email addresses
 
-### `Optional` replyTo
-
-• **replyTo**? : *string*
-
-*Defined in [src/generated/api.ts:2086](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2086)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` sendStrategy
+### charset
 
-• **sendStrategy**? : *[SendStrategyEnum](../enums/sendemailoptions.sendstrategyenum.md)*
+• `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:2092](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2092)*
+*Defined in [src/generated/api.ts:2094](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2094)*
 
-___
+Optional charset
 
-### `Optional` subject
-
-• **subject**? : *string*
-
-*Defined in [src/generated/api.ts:2098](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2098)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` template
+### from
 
-• **template**? : *string*
+• `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:2104](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2104)*
+*Defined in [src/generated/api.ts:2100](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2100)*
 
-___
+Optional from address. If not set the source inbox address will be used for this field. Beware of potential spam penalties when setting this field to an address not used by the inbox. For custom email addresses use a custom domain.
 
-### `Optional` templateVariables
-
-• **templateVariables**? : *any*
-
-*Defined in [src/generated/api.ts:2110](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2110)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` to
+### isHTML
 
-• **to**? : *Array‹string›*
+• `Optional` **isHTML**: boolean
 
-*Defined in [src/generated/api.ts:2116](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2116)*
+*Defined in [src/generated/api.ts:2106](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2106)*
 
-___
+Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients
 
-### `Optional` toContacts
-
-• **toContacts**? : *Array‹string›*
-
-*Defined in [src/generated/api.ts:2122](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2122)*
+**`memberof`** SendEmailOptions
 
 ___
 
-### `Optional` toGroup
+### replyTo
 
-• **toGroup**? : *string*
+• `Optional` **replyTo**: string
 
-*Defined in [src/generated/api.ts:2128](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2128)*
+*Defined in [src/generated/api.ts:2112](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2112)*
+
+Optional replyTo header
+
+**`memberof`** SendEmailOptions
+
+___
+
+### sendStrategy
+
+• `Optional` **sendStrategy**: [SendStrategyEnum](../enums/sendemailoptions.sendstrategyenum.md)
+
+*Defined in [src/generated/api.ts:2118](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2118)*
+
+Optional strategy to use when sending the email
+
+**`memberof`** SendEmailOptions
+
+___
+
+### subject
+
+• `Optional` **subject**: string
+
+*Defined in [src/generated/api.ts:2124](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2124)*
+
+Optional email subject line
+
+**`memberof`** SendEmailOptions
+
+___
+
+### template
+
+• `Optional` **template**: string
+
+*Defined in [src/generated/api.ts:2130](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2130)*
+
+Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of `templateVariables`. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.
+
+**`memberof`** SendEmailOptions
+
+___
+
+### templateVariables
+
+• `Optional` **templateVariables**: any
+
+*Defined in [src/generated/api.ts:2136](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2136)*
+
+Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.
+
+**`memberof`** SendEmailOptions
+
+___
+
+### to
+
+• `Optional` **to**: Array\<string>
+
+*Defined in [src/generated/api.ts:2142](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2142)*
+
+List of destination email addresses. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating).
+
+**`memberof`** SendEmailOptions
+
+___
+
+### toContacts
+
+• `Optional` **toContacts**: Array\<string>
+
+*Defined in [src/generated/api.ts:2148](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2148)*
+
+Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.
+
+**`memberof`** SendEmailOptions
+
+___
+
+### toGroup
+
+• `Optional` **toGroup**: string
+
+*Defined in [src/generated/api.ts:2154](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2154)*
+
+Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients
+
+**`memberof`** SendEmailOptions

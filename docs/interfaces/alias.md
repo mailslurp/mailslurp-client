@@ -1,69 +1,106 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / Alias
+
 # Interface: Alias
+
+**`export`** 
+
+**`interface`** Alias
 
 ## Hierarchy
 
 * **Alias**
 
+## Index
+
+### Properties
+
+* [createdAt](alias.md#createdat)
+* [emailAddress](alias.md#emailaddress)
+* [id](alias.md#id)
+* [inboxId](alias.md#inboxid)
+* [name](alias.md#name)
+* [proxied](alias.md#proxied)
+* [updatedAt](alias.md#updatedat)
+* [userId](alias.md#userid)
+
 ## Properties
 
-###  createdAt
+### createdAt
 
-• **createdAt**: *Date*
+•  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L95)*
+*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L95)*
 
-___
-
-###  emailAddress
-
-• **emailAddress**: *string*
-
-*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L101)*
+**`memberof`** Alias
 
 ___
 
-### `Optional` id
+### emailAddress
 
-• **id**? : *string*
+•  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L107)*
+*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L101)*
 
-___
-
-### `Optional` inboxId
-
-• **inboxId**? : *string*
-
-*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L113)*
+**`memberof`** Alias
 
 ___
 
-### `Optional` name
+### id
 
-• **name**? : *string*
+• `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:119](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L119)*
+*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L107)*
 
-___
-
-### `Optional` proxied
-
-• **proxied**? : *boolean*
-
-*Defined in [src/generated/api.ts:125](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L125)*
+**`memberof`** Alias
 
 ___
 
-###  updatedAt
+### inboxId
 
-• **updatedAt**: *Date*
+• `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:131](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L131)*
+*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L113)*
+
+**`memberof`** Alias
 
 ___
 
-### `Optional` userId
+### name
 
-• **userId**? : *string*
+• `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:137](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L137)*
+*Defined in [src/generated/api.ts:119](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L119)*
+
+**`memberof`** Alias
+
+___
+
+### proxied
+
+• `Optional` **proxied**: boolean
+
+*Defined in [src/generated/api.ts:125](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L125)*
+
+**`memberof`** Alias
+
+___
+
+### updatedAt
+
+•  **updatedAt**: Date
+
+*Defined in [src/generated/api.ts:131](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L131)*
+
+**`memberof`** Alias
+
+___
+
+### userId
+
+• `Optional` **userId**: string
+
+*Defined in [src/generated/api.ts:137](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L137)*
+
+**`memberof`** Alias

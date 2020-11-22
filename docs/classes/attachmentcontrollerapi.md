@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / AttachmentControllerApi
+
 # Class: AttachmentControllerApi
+
+AttachmentControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,82 +14,143 @@
 
   ↳ **AttachmentControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](attachmentcontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](attachmentcontrollerapi.md#basepath)
+* [configuration](attachmentcontrollerapi.md#configuration)
+* [fetch](attachmentcontrollerapi.md#fetch)
+
+### Methods
+
+* [uploadAttachment](attachmentcontrollerapi.md#uploadattachment)
+* [uploadAttachmentBytes](attachmentcontrollerapi.md#uploadattachmentbytes)
+* [uploadMultipartForm](attachmentcontrollerapi.md#uploadmultipartform)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new AttachmentControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[AttachmentControllerApi](attachmentcontrollerapi.md)*
+\+ **new AttachmentControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [AttachmentControllerApi](attachmentcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[AttachmentControllerApi](attachmentcontrollerapi.md)*
+**Returns:** [AttachmentControllerApi](attachmentcontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  uploadAttachment
+### uploadAttachment
 
-▸ **uploadAttachment**(`uploadOptions`: [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md), `options?`: any): *Promise‹string[]›*
+▸ **uploadAttachment**(`uploadOptions`: [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md), `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:4106](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L4106)*
+*Defined in [src/generated/api.ts:4356](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L4356)*
 
-**Parameters:**
+When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment IDs. For legacy reasons the ID is returned in an array. Only a single ID is ever returned at one time. To send the attachments pass a list of attachment IDs with SendEmailOptions when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+
+**`summary`** Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `uploadOptions` | [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md) | uploadOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹string[]›*
+**Returns:** Promise\<string[]>
 
 ___
 
-###  uploadMultipartForm
+### uploadAttachmentBytes
 
-▸ **uploadMultipartForm**(`file`: any, `contentType?`: string, `contentTypeHeader?`: string, `filename?`: string, `xFilename?`: string, `options?`: any): *Promise‹string[]›*
+▸ **uploadAttachmentBytes**(`string?`: string, `byteArray?`: string, `filename?`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:4128](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L4128)*
+*Defined in [src/generated/api.ts:4376](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L4376)*
 
-**Parameters:**
+When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment IDs. For legacy reasons the ID is returned in an array. Only a single ID is ever returned at one time. To send the attachments pass a list of attachment IDs with SendEmailOptions when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+
+**`summary`** Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`string?` | string |
+`byteArray?` | string |
+`filename?` | string |
+`options?` | any |
+
+**Returns:** Promise\<string[]>
+
+___
+
+### uploadMultipartForm
+
+▸ **uploadMultipartForm**(`file`: any, `contentType?`: string, `contentTypeHeader?`: string, `filename?`: string, `xFilename?`: string, `options?`: any): Promise\<string[]>
+
+*Defined in [src/generated/api.ts:4402](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L4402)*
+
+When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment IDs. For legacy reasons the ID is returned in an array. Only a single ID is ever returned at one time. To send the attachments pass a list of attachment IDs with SendEmailOptions when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+
+**`summary`** Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
@@ -92,4 +161,4 @@ Name | Type | Description |
 `xFilename?` | string | - |
 `options?` | any | - |
 
-**Returns:** *Promise‹string[]›*
+**Returns:** Promise\<string[]>

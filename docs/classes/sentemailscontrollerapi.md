@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / SentEmailsControllerApi
+
 # Class: SentEmailsControllerApi
+
+SentEmailsControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,89 +14,118 @@
 
   ↳ **SentEmailsControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](sentemailscontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](sentemailscontrollerapi.md#basepath)
+* [configuration](sentemailscontrollerapi.md#configuration)
+* [fetch](sentemailscontrollerapi.md#fetch)
+
+### Methods
+
+* [getSentEmail](sentemailscontrollerapi.md#getsentemail)
+* [getSentEmails](sentemailscontrollerapi.md#getsentemails)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new SentEmailsControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[SentEmailsControllerApi](sentemailscontrollerapi.md)*
+\+ **new SentEmailsControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [SentEmailsControllerApi](sentemailscontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[SentEmailsControllerApi](sentemailscontrollerapi.md)*
+**Returns:** [SentEmailsControllerApi](sentemailscontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  getSentEmail
+### getSentEmail
 
-▸ **getSentEmail**(`id`: string, `options?`: any): *Promise‹[SentEmailDto](../interfaces/sentemaildto.md)›*
+▸ **getSentEmail**(`id`: string, `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:11868](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L11868)*
+*Defined in [src/generated/api.ts:12428](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L12428)*
 
-**Parameters:**
+**`summary`** Get sent email receipt
+
+**`throws`** {RequiredError}
+
+**`memberof`** SentEmailsControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `id` | string | id |
 `options?` | any | - |
 
-**Returns:** *Promise‹[SentEmailDto](../interfaces/sentemaildto.md)›*
+**Returns:** Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
 ___
 
-###  getSentEmails
+### getSentEmails
 
-▸ **getSentEmails**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)›*
+▸ **getSentEmails**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:11886](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L11886)*
+*Defined in [src/generated/api.ts:12446](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L12446)*
 
-**Parameters:**
+**`summary`** Get all sent emails in paginated form
+
+**`throws`** {RequiredError}
+
+**`memberof`** SentEmailsControllerApi
+
+#### Parameters:
 
 Name | Type |
 ------ | ------ |
 `inboxId?` | string |
 `page?` | number |
 `size?` | number |
-`sort?` | "ASC" &#124; "DESC" |
+`sort?` | \"ASC\" \| \"DESC\" |
 `options?` | any |
 
-**Returns:** *Promise‹[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)›*
+**Returns:** Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>

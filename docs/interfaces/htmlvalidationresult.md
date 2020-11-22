@@ -1,29 +1,53 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / HTMLValidationResult
+
 # Interface: HTMLValidationResult
+
+HTML Validation Results
+
+**`export`** 
+
+**`interface`** HTMLValidationResult
 
 ## Hierarchy
 
 * **HTMLValidationResult**
 
+## Index
+
+### Properties
+
+* [errors](htmlvalidationresult.md#errors)
+* [isValid](htmlvalidationresult.md#isvalid)
+* [warnings](htmlvalidationresult.md#warnings)
+
 ## Properties
 
-###  errors
+### errors
 
-• **errors**: *Array‹[ValidationMessage](validationmessage.md)›*
+•  **errors**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:1083](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1083)*
+*Defined in [src/generated/api.ts:1109](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1109)*
 
-___
-
-###  isValid
-
-• **isValid**: *boolean*
-
-*Defined in [src/generated/api.ts:1089](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1089)*
+**`memberof`** HTMLValidationResult
 
 ___
 
-###  warnings
+### isValid
 
-• **warnings**: *Array‹[ValidationMessage](validationmessage.md)›*
+•  **isValid**: boolean
 
-*Defined in [src/generated/api.ts:1095](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1095)*
+*Defined in [src/generated/api.ts:1115](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1115)*
+
+**`memberof`** HTMLValidationResult
+
+___
+
+### warnings
+
+•  **warnings**: Array\<[ValidationMessage](validationmessage.md)>
+
+*Defined in [src/generated/api.ts:1121](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1121)*
+
+**`memberof`** HTMLValidationResult

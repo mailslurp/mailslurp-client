@@ -1,7 +1,5 @@
 .PHONY: docs test
 
-include .env
-
 ifeq ($(SPEC_URL),)
 SPEC_URL := https://api.mailslurp.com/v2/api-docs
 endif

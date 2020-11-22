@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / WebhookControllerApi
+
 # Class: WebhookControllerApi
+
+WebhookControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,65 +14,94 @@
 
   ↳ **WebhookControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](webhookcontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](webhookcontrollerapi.md#basepath)
+* [configuration](webhookcontrollerapi.md#configuration)
+* [fetch](webhookcontrollerapi.md#fetch)
+
+### Methods
+
+* [createWebhook](webhookcontrollerapi.md#createwebhook)
+* [deleteWebhook](webhookcontrollerapi.md#deletewebhook)
+* [getAllWebhooks](webhookcontrollerapi.md#getallwebhooks)
+* [getWebhook](webhookcontrollerapi.md#getwebhook)
+* [getWebhooks](webhookcontrollerapi.md#getwebhooks)
+* [sendTestData](webhookcontrollerapi.md#sendtestdata)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new WebhookControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[WebhookControllerApi](webhookcontrollerapi.md)*
+\+ **new WebhookControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [WebhookControllerApi](webhookcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[WebhookControllerApi](webhookcontrollerapi.md)*
+**Returns:** [WebhookControllerApi](webhookcontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  createWebhook
+### createWebhook
 
-▸ **createWebhook**(`inboxId`: string, `webhookOptions`: [CreateWebhookOptions](../interfaces/createwebhookoptions.md), `options?`: any): *Promise‹[WebhookDto](../modules/webhookdto.md)›*
+▸ **createWebhook**(`inboxId`: string, `webhookOptions`: [CreateWebhookOptions](../interfaces/createwebhookoptions.md), `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)>
 
-*Defined in [src/generated/api.ts:14073](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14073)*
+*Defined in [src/generated/api.ts:14633](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14633)*
 
-**Parameters:**
+Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
+
+**`summary`** Attach a WebHook URL to an inbox
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
@@ -72,17 +109,23 @@ Name | Type | Description |
 `webhookOptions` | [CreateWebhookOptions](../interfaces/createwebhookoptions.md) | webhookOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹[WebhookDto](../modules/webhookdto.md)›*
+**Returns:** Promise\<[WebhookDto](../modules/webhookdto.md)>
 
 ___
 
-###  deleteWebhook
+### deleteWebhook
 
-▸ **deleteWebhook**(`inboxId`: string, `webhookId`: string, `options?`: any): *Promise‹Response›*
+▸ **deleteWebhook**(`inboxId`: string, `webhookId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:14094](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14094)*
+*Defined in [src/generated/api.ts:14654](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14654)*
 
-**Parameters:**
+**`summary`** Delete and disable a Webhook for an Inbox
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
@@ -90,74 +133,100 @@ Name | Type | Description |
 `webhookId` | string | webhookId |
 `options?` | any | - |
 
-**Returns:** *Promise‹Response›*
+**Returns:** Promise\<Response>
 
 ___
 
-###  getAllWebhooks
+### getAllWebhooks
 
-▸ **getAllWebhooks**(`page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageWebhookProjection](../interfaces/pagewebhookprojection.md)›*
+▸ **getAllWebhooks**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageWebhookProjection](../interfaces/pagewebhookprojection.md)>
 
-*Defined in [src/generated/api.ts:14112](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14112)*
+*Defined in [src/generated/api.ts:14672](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14672)*
 
-**Parameters:**
+List webhooks in paginated form. Allows for page index, page size, and sort direction.
+
+**`summary`** List Webhooks Paginated
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type |
 ------ | ------ |
 `page?` | number |
 `size?` | number |
-`sort?` | "ASC" &#124; "DESC" |
+`sort?` | \"ASC\" \| \"DESC\" |
 `options?` | any |
 
-**Returns:** *Promise‹[PageWebhookProjection](../interfaces/pagewebhookprojection.md)›*
+**Returns:** Promise\<[PageWebhookProjection](../interfaces/pagewebhookprojection.md)>
 
 ___
 
-###  getWebhook
+### getWebhook
 
-▸ **getWebhook**(`webhookId`: string, `options?`: any): *Promise‹[WebhookDto](../modules/webhookdto.md)›*
+▸ **getWebhook**(`webhookId`: string, `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)>
 
-*Defined in [src/generated/api.ts:14134](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14134)*
+*Defined in [src/generated/api.ts:14694](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14694)*
 
-**Parameters:**
+**`summary`** Get a webhook for an Inbox
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `webhookId` | string | webhookId |
 `options?` | any | - |
 
-**Returns:** *Promise‹[WebhookDto](../modules/webhookdto.md)›*
+**Returns:** Promise\<[WebhookDto](../modules/webhookdto.md)>
 
 ___
 
-###  getWebhooks
+### getWebhooks
 
-▸ **getWebhooks**(`inboxId`: string, `options?`: any): *Promise‹[WebhookDto](../modules/webhookdto.md)[]›*
+▸ **getWebhooks**(`inboxId`: string, `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)[]>
 
-*Defined in [src/generated/api.ts:14149](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14149)*
+*Defined in [src/generated/api.ts:14709](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14709)*
 
-**Parameters:**
+**`summary`** Get all Webhooks for an Inbox
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `inboxId` | string | inboxId |
 `options?` | any | - |
 
-**Returns:** *Promise‹[WebhookDto](../modules/webhookdto.md)[]›*
+**Returns:** Promise\<[WebhookDto](../modules/webhookdto.md)[]>
 
 ___
 
-###  sendTestData
+### sendTestData
 
-▸ **sendTestData**(`webhookId`: string, `options?`: any): *Promise‹[WebhookTestResult](../interfaces/webhooktestresult.md)›*
+▸ **sendTestData**(`webhookId`: string, `options?`: any): Promise\<[WebhookTestResult](../interfaces/webhooktestresult.md)>
 
-*Defined in [src/generated/api.ts:14164](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L14164)*
+*Defined in [src/generated/api.ts:14724](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L14724)*
 
-**Parameters:**
+**`summary`** Send webhook test data
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `webhookId` | string | webhookId |
 `options?` | any | - |
 
-**Returns:** *Promise‹[WebhookTestResult](../interfaces/webhooktestresult.md)›*
+**Returns:** Promise\<[WebhookTestResult](../interfaces/webhooktestresult.md)>

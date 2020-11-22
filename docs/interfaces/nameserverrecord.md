@@ -1,37 +1,64 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / NameServerRecord
+
 # Interface: NameServerRecord
+
+Name Server Record
+
+**`export`** 
+
+**`interface`** NameServerRecord
 
 ## Hierarchy
 
 * **NameServerRecord**
 
+## Index
+
+### Properties
+
+* [priority](nameserverrecord.md#priority)
+* [raw](nameserverrecord.md#raw)
+* [recordType](nameserverrecord.md#recordtype)
+* [value](nameserverrecord.md#value)
+
 ## Properties
 
-###  priority
+### priority
 
-• **priority**: *string*
+•  **priority**: string
 
-*Defined in [src/generated/api.ts:1288](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1288)*
+*Defined in [src/generated/api.ts:1314](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1314)*
 
-___
-
-###  raw
-
-• **raw**: *string*
-
-*Defined in [src/generated/api.ts:1294](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1294)*
+**`memberof`** NameServerRecord
 
 ___
 
-###  recordType
+### raw
 
-• **recordType**: *string*
+•  **raw**: string
 
-*Defined in [src/generated/api.ts:1300](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1300)*
+*Defined in [src/generated/api.ts:1320](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1320)*
+
+**`memberof`** NameServerRecord
 
 ___
 
-###  value
+### recordType
 
-• **value**: *string*
+•  **recordType**: string
 
-*Defined in [src/generated/api.ts:1306](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1306)*
+*Defined in [src/generated/api.ts:1326](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1326)*
+
+**`memberof`** NameServerRecord
+
+___
+
+### value
+
+•  **value**: string
+
+*Defined in [src/generated/api.ts:1332](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1332)*
+
+**`memberof`** NameServerRecord

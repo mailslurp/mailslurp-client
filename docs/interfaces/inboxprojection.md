@@ -1,53 +1,84 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / InboxProjection
+
 # Interface: InboxProjection
+
+**`export`** 
+
+**`interface`** InboxProjection
 
 ## Hierarchy
 
 * **InboxProjection**
 
+## Index
+
+### Properties
+
+* [createdAt](inboxprojection.md#createdat)
+* [emailAddress](inboxprojection.md#emailaddress)
+* [favourite](inboxprojection.md#favourite)
+* [id](inboxprojection.md#id)
+* [name](inboxprojection.md#name)
+* [tags](inboxprojection.md#tags)
+
 ## Properties
 
-###  createdAt
+### createdAt
 
-• **createdAt**: *Date*
+•  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1171](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1171)*
+*Defined in [src/generated/api.ts:1197](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1197)*
 
-___
-
-### `Optional` emailAddress
-
-• **emailAddress**? : *string*
-
-*Defined in [src/generated/api.ts:1177](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1177)*
+**`memberof`** InboxProjection
 
 ___
 
-### `Optional` favourite
+### emailAddress
 
-• **favourite**? : *boolean*
+• `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:1183](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1183)*
+*Defined in [src/generated/api.ts:1203](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1203)*
 
-___
-
-###  id
-
-• **id**: *string*
-
-*Defined in [src/generated/api.ts:1189](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1189)*
+**`memberof`** InboxProjection
 
 ___
 
-### `Optional` name
+### favourite
 
-• **name**? : *string*
+•  **favourite**: boolean
 
-*Defined in [src/generated/api.ts:1195](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1195)*
+*Defined in [src/generated/api.ts:1209](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1209)*
+
+**`memberof`** InboxProjection
 
 ___
 
-### `Optional` tags
+### id
 
-• **tags**? : *Array‹string›*
+•  **id**: string
 
-*Defined in [src/generated/api.ts:1201](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1201)*
+*Defined in [src/generated/api.ts:1215](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1215)*
+
+**`memberof`** InboxProjection
+
+___
+
+### name
+
+• `Optional` **name**: string
+
+*Defined in [src/generated/api.ts:1221](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1221)*
+
+**`memberof`** InboxProjection
+
+___
+
+### tags
+
+• `Optional` **tags**: Array\<string>
+
+*Defined in [src/generated/api.ts:1227](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1227)*
+
+**`memberof`** InboxProjection

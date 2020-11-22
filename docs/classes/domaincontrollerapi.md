@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / DomainControllerApi
+
 # Class: DomainControllerApi
+
+DomainControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,119 +14,170 @@
 
   ↳ **DomainControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](domaincontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](domaincontrollerapi.md#basepath)
+* [configuration](domaincontrollerapi.md#configuration)
+* [fetch](domaincontrollerapi.md#fetch)
+
+### Methods
+
+* [createDomain](domaincontrollerapi.md#createdomain)
+* [deleteDomain](domaincontrollerapi.md#deletedomain)
+* [getDomain](domaincontrollerapi.md#getdomain)
+* [getDomains](domaincontrollerapi.md#getdomains)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new DomainControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[DomainControllerApi](domaincontrollerapi.md)*
+\+ **new DomainControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [DomainControllerApi](domaincontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[DomainControllerApi](domaincontrollerapi.md)*
+**Returns:** [DomainControllerApi](domaincontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  createDomain
+### createDomain
 
-▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../interfaces/createdomainoptions.md), `options?`: any): *Promise‹[DomainDto](../interfaces/domaindto.md)›*
+▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../interfaces/createdomainoptions.md), `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
 
-*Defined in [src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L6114)*
+*Defined in [src/generated/api.ts:6388](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L6388)*
 
-**Parameters:**
+Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider's DNS setup to verify the domain.
+
+**`summary`** Create Domain
+
+**`throws`** {RequiredError}
+
+**`memberof`** DomainControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `domainOptions` | [CreateDomainOptions](../interfaces/createdomainoptions.md) | domainOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹[DomainDto](../interfaces/domaindto.md)›*
+**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
 
 ___
 
-###  deleteDomain
+### deleteDomain
 
-▸ **deleteDomain**(`id`: string, `options?`: any): *Promise‹Response›*
+▸ **deleteDomain**(`id`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:6129](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L6129)*
+*Defined in [src/generated/api.ts:6403](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L6403)*
 
-**Parameters:**
+Delete a domain. This will disable any existing inboxes that use this domain.
+
+**`summary`** Delete a domain
+
+**`throws`** {RequiredError}
+
+**`memberof`** DomainControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `id` | string | id |
 `options?` | any | - |
 
-**Returns:** *Promise‹Response›*
+**Returns:** Promise\<Response>
 
 ___
 
-###  getDomain
+### getDomain
 
-▸ **getDomain**(`id`: string, `options?`: any): *Promise‹[DomainDto](../interfaces/domaindto.md)›*
+▸ **getDomain**(`id`: string, `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
 
-*Defined in [src/generated/api.ts:6144](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L6144)*
+*Defined in [src/generated/api.ts:6418](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L6418)*
 
-**Parameters:**
+Returns domain verification status and tokens for a given domain
+
+**`summary`** Get a domain
+
+**`throws`** {RequiredError}
+
+**`memberof`** DomainControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `id` | string | id |
 `options?` | any | - |
 
-**Returns:** *Promise‹[DomainDto](../interfaces/domaindto.md)›*
+**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
 
 ___
 
-###  getDomains
+### getDomains
 
-▸ **getDomains**(`options?`: any): *Promise‹[DomainPreview](../interfaces/domainpreview.md)[]›*
+▸ **getDomains**(`options?`: any): Promise\<[DomainPreview](../interfaces/domainpreview.md)[]>
 
-*Defined in [src/generated/api.ts:6158](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L6158)*
+*Defined in [src/generated/api.ts:6432](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L6432)*
 
-**Parameters:**
+List all custom domains you have created
+
+**`summary`** Get domains
+
+**`throws`** {RequiredError}
+
+**`memberof`** DomainControllerApi
+
+#### Parameters:
 
 Name | Type |
 ------ | ------ |
 `options?` | any |
 
-**Returns:** *Promise‹[DomainPreview](../interfaces/domainpreview.md)[]›*
+**Returns:** Promise\<[DomainPreview](../interfaces/domainpreview.md)[]>

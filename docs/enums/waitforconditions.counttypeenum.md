@@ -1,17 +1,30 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / [WaitForConditions](../modules/waitforconditions.md) / CountTypeEnum
+
 # Enumeration: CountTypeEnum
+
+**`export`** 
+
+## Index
+
+### Enumeration members
+
+* [ATLEAST](waitforconditions.counttypeenum.md#atleast)
+* [EXACTLY](waitforconditions.counttypeenum.md#exactly)
 
 ## Enumeration members
 
-###  ATLEAST
+### ATLEAST
 
-• **ATLEAST**: =  <any>'ATLEAST'
+•  **ATLEAST**:  = \<any>'ATLEAST'
 
-*Defined in [src/generated/api.ts:2718](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2718)*
+*Defined in [src/generated/api.ts:2842](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2842)*
 
 ___
 
-###  EXACTLY
+### EXACTLY
 
-• **EXACTLY**: =  <any>'EXACTLY'
+•  **EXACTLY**:  = \<any>'EXACTLY'
 
-*Defined in [src/generated/api.ts:2717](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2717)*
+*Defined in [src/generated/api.ts:2841](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2841)*

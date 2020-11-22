@@ -1,117 +1,172 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / SentEmailDto
+
 # Interface: SentEmailDto
+
+**`export`** 
+
+**`interface`** SentEmailDto
 
 ## Hierarchy
 
 * **SentEmailDto**
 
+## Index
+
+### Properties
+
+* [attachments](sentemaildto.md#attachments)
+* [bcc](sentemaildto.md#bcc)
+* [body](sentemaildto.md#body)
+* [bodyMD5Hash](sentemaildto.md#bodymd5hash)
+* [cc](sentemaildto.md#cc)
+* [charset](sentemaildto.md#charset)
+* [from](sentemaildto.md#from)
+* [id](sentemaildto.md#id)
+* [inboxId](sentemaildto.md#inboxid)
+* [isHTML](sentemaildto.md#ishtml)
+* [sentAt](sentemaildto.md#sentat)
+* [subject](sentemaildto.md#subject)
+* [to](sentemaildto.md#to)
+* [userId](sentemaildto.md#userid)
+
 ## Properties
 
-### `Optional` attachments
+### attachments
 
-• **attachments**? : *Array‹string›*
+• `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:2156](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2156)*
+*Defined in [src/generated/api.ts:2280](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2280)*
 
-___
-
-### `Optional` bcc
-
-• **bcc**? : *Array‹string›*
-
-*Defined in [src/generated/api.ts:2162](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2162)*
+**`memberof`** SentEmailDto
 
 ___
 
-### `Optional` body
+### bcc
 
-• **body**? : *string*
+• `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2168](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2168)*
+*Defined in [src/generated/api.ts:2286](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2286)*
 
-___
-
-### `Optional` bodyMD5Hash
-
-• **bodyMD5Hash**? : *string*
-
-*Defined in [src/generated/api.ts:2174](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2174)*
+**`memberof`** SentEmailDto
 
 ___
 
-### `Optional` cc
+### body
 
-• **cc**? : *Array‹string›*
+• `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:2180](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2180)*
+*Defined in [src/generated/api.ts:2292](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2292)*
 
-___
-
-### `Optional` charset
-
-• **charset**? : *string*
-
-*Defined in [src/generated/api.ts:2186](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2186)*
+**`memberof`** SentEmailDto
 
 ___
 
-### `Optional` from
+### bodyMD5Hash
 
-• **from**? : *string*
+• `Optional` **bodyMD5Hash**: string
 
-*Defined in [src/generated/api.ts:2192](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2192)*
+*Defined in [src/generated/api.ts:2298](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2298)*
 
-___
-
-###  id
-
-• **id**: *string*
-
-*Defined in [src/generated/api.ts:2198](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2198)*
+**`memberof`** SentEmailDto
 
 ___
 
-###  inboxId
+### cc
 
-• **inboxId**: *string*
+• `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2204](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2204)*
+*Defined in [src/generated/api.ts:2304](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2304)*
 
-___
-
-### `Optional` isHTML
-
-• **isHTML**? : *boolean*
-
-*Defined in [src/generated/api.ts:2210](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2210)*
+**`memberof`** SentEmailDto
 
 ___
 
-###  sentAt
+### charset
 
-• **sentAt**: *Date*
+• `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:2216](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2216)*
+*Defined in [src/generated/api.ts:2310](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2310)*
 
-___
-
-### `Optional` subject
-
-• **subject**? : *string*
-
-*Defined in [src/generated/api.ts:2222](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2222)*
+**`memberof`** SentEmailDto
 
 ___
 
-### `Optional` to
+### from
 
-• **to**? : *Array‹string›*
+• `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:2228](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2228)*
+*Defined in [src/generated/api.ts:2316](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2316)*
+
+**`memberof`** SentEmailDto
 
 ___
 
-###  userId
+### id
 
-• **userId**: *string*
+•  **id**: string
 
-*Defined in [src/generated/api.ts:2234](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2234)*
+*Defined in [src/generated/api.ts:2322](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2322)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### inboxId
+
+•  **inboxId**: string
+
+*Defined in [src/generated/api.ts:2328](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2328)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### isHTML
+
+• `Optional` **isHTML**: boolean
+
+*Defined in [src/generated/api.ts:2334](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2334)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### sentAt
+
+•  **sentAt**: Date
+
+*Defined in [src/generated/api.ts:2340](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2340)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### subject
+
+• `Optional` **subject**: string
+
+*Defined in [src/generated/api.ts:2346](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2346)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### to
+
+• `Optional` **to**: Array\<string>
+
+*Defined in [src/generated/api.ts:2352](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2352)*
+
+**`memberof`** SentEmailDto
+
+___
+
+### userId
+
+•  **userId**: string
+
+*Defined in [src/generated/api.ts:2358](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2358)*
+
+**`memberof`** SentEmailDto

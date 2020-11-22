@@ -1,29 +1,59 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / CreateWebhookOptions
+
 # Interface: CreateWebhookOptions
+
+Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the inbox receives an email. Webhooks are great for processing many inbound emails.
+
+**`export`** 
+
+**`interface`** CreateWebhookOptions
 
 ## Hierarchy
 
 * **CreateWebhookOptions**
 
+## Index
+
+### Properties
+
+* [basicAuth](createwebhookoptions.md#basicauth)
+* [name](createwebhookoptions.md#name)
+* [url](createwebhookoptions.md#url)
+
 ## Properties
 
-### `Optional` basicAuth
+### basicAuth
 
-• **basicAuth**? : *[BasicAuthOptions](basicauthoptions.md)*
+• `Optional` **basicAuth**: [BasicAuthOptions](basicauthoptions.md)
 
-*Defined in [src/generated/api.ts:497](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L497)*
+*Defined in [src/generated/api.ts:497](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L497)*
 
-___
+Optional basic authentication that MailSlurp should use when calling the URL. For instance if your URL is https://example.com then basic auth will call a URL like https://{username}@{password}:example.com
 
-### `Optional` name
-
-• **name**? : *string*
-
-*Defined in [src/generated/api.ts:503](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L503)*
+**`memberof`** CreateWebhookOptions
 
 ___
 
-### `Optional` url
+### name
 
-• **url**? : *string*
+• `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:509](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L509)*
+*Defined in [src/generated/api.ts:503](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L503)*
+
+Optional name for the webhook
+
+**`memberof`** CreateWebhookOptions
+
+___
+
+### url
+
+• `Optional` **url**: string
+
+*Defined in [src/generated/api.ts:509](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L509)*
+
+Public URL on your server that MailSlurp can post WebhookNotification payload to when an email is received. The payload of the submitted JSON is described by https://api.mailslurp.com/schemas/webhook-payload
+
+**`memberof`** CreateWebhookOptions

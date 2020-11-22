@@ -1,93 +1,141 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / PageContactProjection
+
 # Interface: PageContactProjection
+
+Paginated contact results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full inbox entity use the projection ID with individual method calls.
+
+**`export`** 
+
+**`interface`** PageContactProjection
 
 ## Hierarchy
 
 * **PageContactProjection**
 
+## Index
+
+### Properties
+
+* [content](pagecontactprojection.md#content)
+* [empty](pagecontactprojection.md#empty)
+* [first](pagecontactprojection.md#first)
+* [last](pagecontactprojection.md#last)
+* [number](pagecontactprojection.md#number)
+* [numberOfElements](pagecontactprojection.md#numberofelements)
+* [pageable](pagecontactprojection.md#pageable)
+* [size](pagecontactprojection.md#size)
+* [sort](pagecontactprojection.md#sort)
+* [totalElements](pagecontactprojection.md#totalelements)
+* [totalPages](pagecontactprojection.md#totalpages)
+
 ## Properties
 
-### `Optional` content
+### content
 
-• **content**? : *Array‹[ContactProjection](contactprojection.md)›*
+• `Optional` **content**: Array\<[ContactProjection](contactprojection.md)>
 
-*Defined in [src/generated/api.ts:1394](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1394)*
+*Defined in [src/generated/api.ts:1420](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1420)*
 
-___
-
-### `Optional` empty
-
-• **empty**? : *boolean*
-
-*Defined in [src/generated/api.ts:1400](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1400)*
+**`memberof`** PageContactProjection
 
 ___
 
-### `Optional` first
+### empty
 
-• **first**? : *boolean*
+• `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:1406](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1406)*
+*Defined in [src/generated/api.ts:1426](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1426)*
 
-___
-
-### `Optional` last
-
-• **last**? : *boolean*
-
-*Defined in [src/generated/api.ts:1412](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1412)*
+**`memberof`** PageContactProjection
 
 ___
 
-### `Optional` number
+### first
 
-• **number**? : *number*
+• `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:1418](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1418)*
+*Defined in [src/generated/api.ts:1432](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1432)*
 
-___
-
-### `Optional` numberOfElements
-
-• **numberOfElements**? : *number*
-
-*Defined in [src/generated/api.ts:1424](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1424)*
+**`memberof`** PageContactProjection
 
 ___
 
-### `Optional` pageable
+### last
 
-• **pageable**? : *[Pageable](pageable.md)*
+• `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:1430](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1430)*
+*Defined in [src/generated/api.ts:1438](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1438)*
 
-___
-
-### `Optional` size
-
-• **size**? : *number*
-
-*Defined in [src/generated/api.ts:1436](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1436)*
+**`memberof`** PageContactProjection
 
 ___
 
-### `Optional` sort
+### number
 
-• **sort**? : *[Sort](sort.md)*
+• `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:1442](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1442)*
+*Defined in [src/generated/api.ts:1444](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1444)*
 
-___
-
-### `Optional` totalElements
-
-• **totalElements**? : *number*
-
-*Defined in [src/generated/api.ts:1448](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1448)*
+**`memberof`** PageContactProjection
 
 ___
 
-### `Optional` totalPages
+### numberOfElements
 
-• **totalPages**? : *number*
+• `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:1454](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1454)*
+*Defined in [src/generated/api.ts:1450](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1450)*
+
+**`memberof`** PageContactProjection
+
+___
+
+### pageable
+
+• `Optional` **pageable**: [Pageable](pageable.md)
+
+*Defined in [src/generated/api.ts:1456](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1456)*
+
+**`memberof`** PageContactProjection
+
+___
+
+### size
+
+• `Optional` **size**: number
+
+*Defined in [src/generated/api.ts:1462](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1462)*
+
+**`memberof`** PageContactProjection
+
+___
+
+### sort
+
+• `Optional` **sort**: [Sort](sort.md)
+
+*Defined in [src/generated/api.ts:1468](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1468)*
+
+**`memberof`** PageContactProjection
+
+___
+
+### totalElements
+
+• `Optional` **totalElements**: number
+
+*Defined in [src/generated/api.ts:1474](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1474)*
+
+**`memberof`** PageContactProjection
+
+___
+
+### totalPages
+
+• `Optional` **totalPages**: number
+
+*Defined in [src/generated/api.ts:1480](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1480)*
+
+**`memberof`** PageContactProjection

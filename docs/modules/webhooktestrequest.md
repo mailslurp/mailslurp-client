@@ -1,37 +1,62 @@
-# Module: WebhookTestRequest
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / WebhookTestRequest
+
+# Namespace: WebhookTestRequest
+
+**`export`** 
+
+**`namespace`** WebhookTestRequest
+
+## Index
+
+### Enumerations
+
+* [MethodEnum](../enums/webhooktestrequest.methodenum.md)
+
+### Properties
+
+* [headers](webhooktestrequest.md#headers)
+* [method](webhooktestrequest.md#method)
+* [payload](webhooktestrequest.md#payload)
+* [url](webhooktestrequest.md#url)
 
 ## Properties
 
-###  headers
+### headers
 
-• **headers**: *object*
+•  **headers**: { [key:string]: string;  }
 
-*Defined in [src/generated/api.ts:2868](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2868)*
+*Defined in [src/generated/api.ts:2992](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2992)*
 
-#### Type declaration:
-
-* \[ **key**: *string*\]: string
+**`memberof`** WebhookTestRequest
 
 ___
 
-###  method
+### method
 
-• **method**: *[MethodEnum](../enums/webhooktestrequest.methodenum.md)*
+•  **method**: [MethodEnum](../enums/webhooktestrequest.methodenum.md)
 
-*Defined in [src/generated/api.ts:2874](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2874)*
+*Defined in [src/generated/api.ts:2998](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2998)*
 
-___
-
-### `Optional` payload
-
-• **payload**? : *string*
-
-*Defined in [src/generated/api.ts:2880](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2880)*
+**`memberof`** WebhookTestRequest
 
 ___
 
-###  url
+### payload
 
-• **url**: *string*
+• `Optional` **payload**: string
 
-*Defined in [src/generated/api.ts:2886](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2886)*
+*Defined in [src/generated/api.ts:3004](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L3004)*
+
+**`memberof`** WebhookTestRequest
+
+___
+
+### url
+
+•  **url**: string
+
+*Defined in [src/generated/api.ts:3010](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L3010)*
+
+**`memberof`** WebhookTestRequest

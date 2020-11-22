@@ -1,29 +1,53 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / WebhookTestResult
+
 # Interface: WebhookTestResult
+
+Results of testing a webhook
+
+**`export`** 
+
+**`interface`** WebhookTestResult
 
 ## Hierarchy
 
 * **WebhookTestResult**
 
+## Index
+
+### Properties
+
+* [message](webhooktestresult.md#message)
+* [request](webhooktestresult.md#request)
+* [response](webhooktestresult.md#response)
+
 ## Properties
 
-### `Optional` message
+### message
 
-• **message**? : *string*
+• `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:2941](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2941)*
+*Defined in [src/generated/api.ts:3065](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L3065)*
 
-___
-
-###  request
-
-• **request**: *[WebhookTestRequest](../modules/webhooktestrequest.md)*
-
-*Defined in [src/generated/api.ts:2947](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2947)*
+**`memberof`** WebhookTestResult
 
 ___
 
-###  response
+### request
 
-• **response**: *[WebhookTestResponse](webhooktestresponse.md)*
+•  **request**: [WebhookTestRequest](../modules/webhooktestrequest.md)
 
-*Defined in [src/generated/api.ts:2953](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2953)*
+*Defined in [src/generated/api.ts:3071](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L3071)*
+
+**`memberof`** WebhookTestResult
+
+___
+
+### response
+
+•  **response**: [WebhookTestResponse](webhooktestresponse.md)
+
+*Defined in [src/generated/api.ts:3077](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L3077)*
+
+**`memberof`** WebhookTestResult

@@ -1,37 +1,70 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / SimpleSendEmailOptions
+
 # Interface: SimpleSendEmailOptions
+
+**`export`** 
+
+**`interface`** SimpleSendEmailOptions
 
 ## Hierarchy
 
 * **SimpleSendEmailOptions**
 
+## Index
+
+### Properties
+
+* [body](simplesendemailoptions.md#body)
+* [senderId](simplesendemailoptions.md#senderid)
+* [subject](simplesendemailoptions.md#subject)
+* [to](simplesendemailoptions.md#to)
+
 ## Properties
 
-### `Optional` body
+### body
 
-• **body**? : *string*
+• `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:2336](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2336)*
+*Defined in [src/generated/api.ts:2460](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2460)*
 
-___
+Body of the email message. Supports HTML
 
-### `Optional` senderId
-
-• **senderId**? : *string*
-
-*Defined in [src/generated/api.ts:2342](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2342)*
+**`memberof`** SimpleSendEmailOptions
 
 ___
 
-### `Optional` subject
+### senderId
 
-• **subject**? : *string*
+• `Optional` **senderId**: string
 
-*Defined in [src/generated/api.ts:2348](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2348)*
+*Defined in [src/generated/api.ts:2466](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2466)*
+
+ID of inbox to send from
+
+**`memberof`** SimpleSendEmailOptions
 
 ___
 
-### `Optional` to
+### subject
 
-• **to**? : *string*
+• `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:2354](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2354)*
+*Defined in [src/generated/api.ts:2472](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2472)*
+
+Subject line of the email
+
+**`memberof`** SimpleSendEmailOptions
+
+___
+
+### to
+
+• `Optional` **to**: string
+
+*Defined in [src/generated/api.ts:2478](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2478)*
+
+Email address to send to
+
+**`memberof`** SimpleSendEmailOptions

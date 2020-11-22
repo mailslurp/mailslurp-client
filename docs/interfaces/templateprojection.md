@@ -1,45 +1,73 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / TemplateProjection
+
 # Interface: TemplateProjection
+
+**`export`** 
+
+**`interface`** TemplateProjection
 
 ## Hierarchy
 
 * **TemplateProjection**
 
+## Index
+
+### Properties
+
+* [createdAt](templateprojection.md#createdat)
+* [id](templateprojection.md#id)
+* [name](templateprojection.md#name)
+* [updatedAt](templateprojection.md#updatedat)
+* [variables](templateprojection.md#variables)
+
 ## Properties
 
-###  createdAt
+### createdAt
 
-• **createdAt**: *Date*
+•  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2432](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2432)*
+*Defined in [src/generated/api.ts:2556](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2556)*
 
-___
-
-###  id
-
-• **id**: *string*
-
-*Defined in [src/generated/api.ts:2438](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2438)*
+**`memberof`** TemplateProjection
 
 ___
 
-###  name
+### id
 
-• **name**: *string*
+•  **id**: string
 
-*Defined in [src/generated/api.ts:2444](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2444)*
+*Defined in [src/generated/api.ts:2562](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2562)*
 
-___
-
-###  updatedAt
-
-• **updatedAt**: *Date*
-
-*Defined in [src/generated/api.ts:2450](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2450)*
+**`memberof`** TemplateProjection
 
 ___
 
-###  variables
+### name
 
-• **variables**: *Array‹string›*
+•  **name**: string
 
-*Defined in [src/generated/api.ts:2456](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2456)*
+*Defined in [src/generated/api.ts:2568](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2568)*
+
+**`memberof`** TemplateProjection
+
+___
+
+### updatedAt
+
+•  **updatedAt**: Date
+
+*Defined in [src/generated/api.ts:2574](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2574)*
+
+**`memberof`** TemplateProjection
+
+___
+
+### variables
+
+•  **variables**: Array\<string>
+
+*Defined in [src/generated/api.ts:2580](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2580)*
+
+**`memberof`** TemplateProjection

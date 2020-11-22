@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / MailServerControllerApi
+
 # Class: MailServerControllerApi
+
+MailServerControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,86 +14,115 @@
 
   ↳ **MailServerControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](mailservercontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](mailservercontrollerapi.md#basepath)
+* [configuration](mailservercontrollerapi.md#configuration)
+* [fetch](mailservercontrollerapi.md#fetch)
+
+### Methods
+
+* [describeMailServerDomain](mailservercontrollerapi.md#describemailserverdomain)
+* [verifyEmailAddress](mailservercontrollerapi.md#verifyemailaddress)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new MailServerControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[MailServerControllerApi](mailservercontrollerapi.md)*
+\+ **new MailServerControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [MailServerControllerApi](mailservercontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[MailServerControllerApi](mailservercontrollerapi.md)*
+**Returns:** [MailServerControllerApi](mailservercontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  describeMailServerDomain
+### describeMailServerDomain
 
-▸ **describeMailServerDomain**(`describeOptions`: [DescribeDomainOptions](../interfaces/describedomainoptions.md), `options?`: any): *Promise‹[DescribeMailServerDomainResult](../interfaces/describemailserverdomainresult.md)›*
+▸ **describeMailServerDomain**(`describeOptions`: [DescribeDomainOptions](../interfaces/describedomainoptions.md), `options?`: any): Promise\<[DescribeMailServerDomainResult](../interfaces/describemailserverdomainresult.md)>
 
-*Defined in [src/generated/api.ts:11555](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L11555)*
+*Defined in [src/generated/api.ts:12115](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L12115)*
 
-**Parameters:**
+**`summary`** Get DNS Mail Server records for a domain
+
+**`throws`** {RequiredError}
+
+**`memberof`** MailServerControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `describeOptions` | [DescribeDomainOptions](../interfaces/describedomainoptions.md) | describeOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹[DescribeMailServerDomainResult](../interfaces/describemailserverdomainresult.md)›*
+**Returns:** Promise\<[DescribeMailServerDomainResult](../interfaces/describemailserverdomainresult.md)>
 
 ___
 
-###  verifyEmailAddress
+### verifyEmailAddress
 
-▸ **verifyEmailAddress**(`verifyOptions`: [VerifyEmailAddressOptions](../interfaces/verifyemailaddressoptions.md), `options?`: any): *Promise‹[EmailVerificationResult](../interfaces/emailverificationresult.md)›*
+▸ **verifyEmailAddress**(`verifyOptions`: [VerifyEmailAddressOptions](../interfaces/verifyemailaddressoptions.md), `options?`: any): Promise\<[EmailVerificationResult](../interfaces/emailverificationresult.md)>
 
-*Defined in [src/generated/api.ts:11575](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L11575)*
+*Defined in [src/generated/api.ts:12135](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L12135)*
 
-**Parameters:**
+**`summary`** Verify the existence of an email address at a given mail server.
+
+**`throws`** {RequiredError}
+
+**`memberof`** MailServerControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `verifyOptions` | [VerifyEmailAddressOptions](../interfaces/verifyemailaddressoptions.md) | verifyOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹[EmailVerificationResult](../interfaces/emailverificationresult.md)›*
+**Returns:** Promise\<[EmailVerificationResult](../interfaces/emailverificationresult.md)>

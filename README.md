@@ -43,7 +43,7 @@ See the method documentation for a [list of all functions](./docs/classes/_index
 
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy the key from your dashboard.
 
-### Install NPM dependency
+## Install NPM dependency
 
 Install MailSlurp using NPM (NodeJS) or by including the [source code](https://github.com/mailslurp/mailslurp-client) in your project.
 
@@ -51,7 +51,7 @@ Install MailSlurp using NPM (NodeJS) or by including the [source code](https://g
 npm install --save mailslurp-client
 ```
 
-### Import MailSlurp
+## Import MailSlurp
 ```javascript
 const MailSlurp = require("mailslurp-client").default;
 
@@ -60,7 +60,7 @@ const MailSlurp = require("mailslurp-client").default;
 import { MailSlurp } from "mailslurp-client";
 ```
 
-### Instantiate a client
+## Instantiate a client
 
 Create a MailSlurp instance by instantiating a class with [your API Key](https://app.mailslurp.com).
 
@@ -68,31 +68,25 @@ Create a MailSlurp instance by instantiating a class with [your API Key](https:/
 const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 ```
 
-::: tip 
-
 Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
 Use individual controllers like so:
 
 ```javascript
+// controllers are available on the instance itself or using imports
+const { MailSlurp, InboxControllerApi } = require('mailslurp-client');
 
-const { MailSlurp } = require("mailslurp-client")
-async function test() {
-    const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
+it('can use inbox controller methods', async () => {
+  // inbox actions using instance controllers
+  const mailslurp = new MailSlurp(config);
+  const inboxController = mailslurp.inboxController;
+  expect(inboxController.getInboxes).toBeDefined();
 
-    // create inbox with direct method call 
-    await mailslurp.createInbox()
-    // or create inbox using controller
-    const inboxController = mailslurp.inboxController;
-    await inboxController.createInbox()
-    // controllers have methods that match the full MailSlurp API
-    await inboxController.getInboxSentEmails('inboxId')
-    await inboxController.deleteAllInboxes()
-    // see the docs for all methods
-}
+  // get inboxes via import
+  const inboxControllerImport = new InboxControllerApi(config);
+  expect(inboxControllerImport.getInboxes).toBeDefined();
+});
 ```
-
-::: 
 
 ## Common usage
 
@@ -169,7 +163,7 @@ describe("inbox pagination", () => {
   });
 });
 ```
-### Extra operations
+### Access controllers
 A MailSlurp instance has properties for access all the API endpoints as controllers. See these for futher inbox operations.
 ```javascript
 describe("inbox pagination", () => {
@@ -212,6 +206,125 @@ const options = {
   body: "Welcome",
 };
 await mailslurp.sendEmail(inbox.id, options);
+```
+
+### Upload attachment
+Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions.
+
+```javascript
+/**
+ * Upload base 64 encoded file
+ * Return array containing attachment ID as first element
+ * @returns {Promise<string[]>}
+ */
+async function uploadAttachment() {
+    const fileBase64Encoded = await readFile(pathToAttachment, { encoding: 'base64' });
+    const attachmentController = new MailSlurp(config).attachmentController;
+
+    return attachmentController.uploadAttachment({
+        base64Contents: fileBase64Encoded,
+        contentType: 'text/plain',
+        filename: basename(pathToAttachment)
+    })
+}
+```
+
+### Send attachment
+You can send attachments by including their IDs in the attachments options when sending.
+```javascript
+it("can send attachment", async () => {
+    const attachmentIds = await uploadAttachment()
+    expect(attachmentIds.length).toEqual(1);
+
+    const inboxController = new MailSlurp(config).inboxController;
+    const inbox1 = await inboxController.createInbox();
+    const inbox2 = await inboxController.createInbox();
+
+    // send email and get saved result
+    const sentEmail = await inboxController.sendEmailAndConfirm(inbox1.id, {
+        attachments: attachmentIds,
+        subject: "Send attachments",
+        body: "Here are your files",
+        to: [inbox2.emailAddress]
+    });
+
+    expect(sentEmail.attachments.length).toEqual(1)
+});
+```
+### Wait for multiple emails
+
+```javascript
+it('can wait for multiple emails', async () => {
+    const mailslurp = new MailSlurp(config);
+
+    // example of creating inboxes simultaneously
+    const inbox1 = await mailslurp.createInbox();
+    const inbox2 = await mailslurp.createInbox();
+
+    // send two emails
+    await mailslurp.sendEmail(inbox1.id, { to: [inbox2.emailAddress], subject: "Hello Dogs" })
+    await mailslurp.sendEmail(inbox1.id, { to: [inbox2.emailAddress], subject: "Hello Cats" })
+
+    // wait for 2 emails
+    const emails = await mailslurp.waitController.waitForEmailCount(2, inbox2.id, timeoutMillis, true)
+
+    const subjects = emails.map(e => e.subject)
+    expect(subjects).toContain("Hello Dogs")
+    expect(subjects).toContain("Hello Cats")
+})
+```
+
+### Receive attachments
+
+```javascript
+async function canReceiveAttachment(inboxId) {
+    const waitForController = new MailSlurp(config).waitController;
+
+    const email = await waitForController.waitForLatestEmail(inboxId, 30000, true)
+
+    expect(email.attachments.length).toEqual(1);
+
+    const emailController = new MailSlurp(config).emailController
+    const attachmentDto = await emailController.downloadAttachmentBase64(email.attachments[0], email.id)
+
+    expect(attachmentDto.base64FileContents).toBeTruthy()
+    expect(attachmentDto.sizeBytes).toBeTruthy()
+    expect(attachmentDto.contentType).toBeTruthy()
+}
+```
+
+### Match emails
+MailSlurp allows one to wait for emails that match certain parameters. Here is an example:
+
+```javascript
+it('can wait for matching emails', async () => {
+    const mailslurp = new MailSlurp(config);
+
+    const inbox1 = await mailslurp.createInbox();
+    const inbox2 = await mailslurp.createInbox();
+
+    // specify recipient (must be array)
+    const to = [inbox2.emailAddress];
+
+    // send two emails
+    await mailslurp.sendEmail(inbox1.id, { to, subject: "Apples" });
+    await mailslurp.sendEmail(inbox1.id, { to, subject: "Oranges" });
+
+    // wait for matching email based on subject (see MatchOptions for all options)
+    const matchOptions = {
+       matches: [
+           {
+               field: "SUBJECT",
+               should: "CONTAIN",
+               value: "Apples"
+           }
+       ]
+    };
+    const expectCount = 1;
+    const matchingEmails = await mailslurp.waitController.waitForMatchingEmail(matchOptions, expectCount, inbox2.id, timeoutMillis, true)
+    expect(matchingEmails.length).toEqual(1);
+    expect(matchingEmails[0].subject).toEqual("Apples");
+})
 ```
 
 ## Documentation

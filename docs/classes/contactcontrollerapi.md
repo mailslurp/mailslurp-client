@@ -1,4 +1,12 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / ContactControllerApi
+
 # Class: ContactControllerApi
+
+ContactControllerApi - object-oriented interface
+
+**`export`** 
 
 ## Hierarchy
 
@@ -6,138 +14,188 @@
 
   ↳ **ContactControllerApi**
 
+## Index
+
+### Constructors
+
+* [constructor](contactcontrollerapi.md#constructor)
+
+### Properties
+
+* [basePath](contactcontrollerapi.md#basepath)
+* [configuration](contactcontrollerapi.md#configuration)
+* [fetch](contactcontrollerapi.md#fetch)
+
+### Methods
+
+* [createContact](contactcontrollerapi.md#createcontact)
+* [deleteContact](contactcontrollerapi.md#deletecontact)
+* [getAllContacts](contactcontrollerapi.md#getallcontacts)
+* [getContact](contactcontrollerapi.md#getcontact)
+* [getContacts](contactcontrollerapi.md#getcontacts)
+
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new ContactControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath`: string, `fetch`: [FetchAPI](../interfaces/fetchapi.md)): *[ContactControllerApi](contactcontrollerapi.md)*
+\+ **new ContactControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [ContactControllerApi](contactcontrollerapi.md)
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
 
-**Parameters:**
+#### Parameters:
 
-Name | Type | Default |
+Name | Type | Default value |
 ------ | ------ | ------ |
 `configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string |  BASE_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) |  portableFetch |
+`basePath` | string | BASE\_PATH |
+`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
 
-**Returns:** *[ContactControllerApi](contactcontrollerapi.md)*
+**Returns:** [ContactControllerApi](contactcontrollerapi.md)
 
 ## Properties
 
-### `Protected` basePath
+### basePath
 
-• **basePath**: *string*
+• `Protected` **basePath**: string
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#protected-basepath)*
+*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L61)*
-
-___
-
-### `Protected` configuration
-
-• **configuration**: *[Configuration](configuration.md)*
-
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#protected-configuration)*
-
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L61)*
 
 ___
 
-### `Protected` fetch
+### configuration
 
-• **fetch**: *[FetchAPI](../interfaces/fetchapi.md)*
+• `Protected` **configuration**: [Configuration](configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#protected-fetch)*
+*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L57)*
+
+___
+
+### fetch
+
+• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+
+*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L62)*
 
 ## Methods
 
-###  createContact
+### createContact
 
-▸ **createContact**(`createContactOptions`: [CreateContactOptions](../interfaces/createcontactoptions.md), `options?`: any): *Promise‹[ContactDto](../interfaces/contactdto.md)›*
+▸ **createContact**(`createContactOptions`: [CreateContactOptions](../interfaces/createcontactoptions.md), `options?`: any): Promise\<[ContactDto](../interfaces/contactdto.md)>
 
-*Defined in [src/generated/api.ts:5597](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L5597)*
+*Defined in [src/generated/api.ts:5871](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L5871)*
 
-**Parameters:**
+**`summary`** Create a contact
+
+**`throws`** {RequiredError}
+
+**`memberof`** ContactControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `createContactOptions` | [CreateContactOptions](../interfaces/createcontactoptions.md) | createContactOptions |
 `options?` | any | - |
 
-**Returns:** *Promise‹[ContactDto](../interfaces/contactdto.md)›*
+**Returns:** Promise\<[ContactDto](../interfaces/contactdto.md)>
 
 ___
 
-###  deleteContact
+### deleteContact
 
-▸ **deleteContact**(`contactId`: string, `options?`: any): *Promise‹Response›*
+▸ **deleteContact**(`contactId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:5615](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L5615)*
+*Defined in [src/generated/api.ts:5889](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L5889)*
 
-**Parameters:**
+**`summary`** Delete contact
+
+**`throws`** {RequiredError}
+
+**`memberof`** ContactControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `contactId` | string | contactId |
 `options?` | any | - |
 
-**Returns:** *Promise‹Response›*
+**Returns:** Promise\<Response>
 
 ___
 
-###  getAllContacts
+### getAllContacts
 
-▸ **getAllContacts**(`page?`: number, `size?`: number, `sort?`: "ASC" | "DESC", `options?`: any): *Promise‹[PageContactProjection](../interfaces/pagecontactprojection.md)›*
+▸ **getAllContacts**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageContactProjection](../interfaces/pagecontactprojection.md)>
 
-*Defined in [src/generated/api.ts:5632](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L5632)*
+*Defined in [src/generated/api.ts:5906](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L5906)*
 
-**Parameters:**
+**`summary`** Get all contacts
+
+**`throws`** {RequiredError}
+
+**`memberof`** ContactControllerApi
+
+#### Parameters:
 
 Name | Type |
 ------ | ------ |
 `page?` | number |
 `size?` | number |
-`sort?` | "ASC" &#124; "DESC" |
+`sort?` | \"ASC\" \| \"DESC\" |
 `options?` | any |
 
-**Returns:** *Promise‹[PageContactProjection](../interfaces/pagecontactprojection.md)›*
+**Returns:** Promise\<[PageContactProjection](../interfaces/pagecontactprojection.md)>
 
 ___
 
-###  getContact
+### getContact
 
-▸ **getContact**(`contactId`: string, `options?`: any): *Promise‹[ContactDto](../interfaces/contactdto.md)›*
+▸ **getContact**(`contactId`: string, `options?`: any): Promise\<[ContactDto](../interfaces/contactdto.md)>
 
-*Defined in [src/generated/api.ts:5654](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L5654)*
+*Defined in [src/generated/api.ts:5928](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L5928)*
 
-**Parameters:**
+**`summary`** Get contact
+
+**`throws`** {RequiredError}
+
+**`memberof`** ContactControllerApi
+
+#### Parameters:
 
 Name | Type | Description |
 ------ | ------ | ------ |
 `contactId` | string | contactId |
 `options?` | any | - |
 
-**Returns:** *Promise‹[ContactDto](../interfaces/contactdto.md)›*
+**Returns:** Promise\<[ContactDto](../interfaces/contactdto.md)>
 
 ___
 
-###  getContacts
+### getContacts
 
-▸ **getContacts**(`options?`: any): *Promise‹[ContactProjection](../interfaces/contactprojection.md)[]›*
+▸ **getContacts**(`options?`: any): Promise\<[ContactProjection](../interfaces/contactprojection.md)[]>
 
-*Defined in [src/generated/api.ts:5668](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L5668)*
+*Defined in [src/generated/api.ts:5942](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L5942)*
 
-**Parameters:**
+**`summary`** Get all contacts
+
+**`throws`** {RequiredError}
+
+**`memberof`** ContactControllerApi
+
+#### Parameters:
 
 Name | Type |
 ------ | ------ |
 `options?` | any |
 
-**Returns:** *Promise‹[ContactProjection](../interfaces/contactprojection.md)[]›*
+**Returns:** Promise\<[ContactProjection](../interfaces/contactprojection.md)[]>

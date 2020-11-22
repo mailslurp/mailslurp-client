@@ -1,29 +1,51 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / Sort
+
 # Interface: Sort
+
+**`export`** 
+
+**`interface`** Sort
 
 ## Hierarchy
 
 * **Sort**
 
+## Index
+
+### Properties
+
+* [empty](sort.md#empty)
+* [sorted](sort.md#sorted)
+* [unsorted](sort.md#unsorted)
+
 ## Properties
 
-### `Optional` empty
+### empty
 
-• **empty**? : *boolean*
+• `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:2368](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2368)*
+*Defined in [src/generated/api.ts:2492](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2492)*
 
-___
-
-### `Optional` sorted
-
-• **sorted**? : *boolean*
-
-*Defined in [src/generated/api.ts:2374](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2374)*
+**`memberof`** Sort
 
 ___
 
-### `Optional` unsorted
+### sorted
 
-• **unsorted**? : *boolean*
+• `Optional` **sorted**: boolean
 
-*Defined in [src/generated/api.ts:2380](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2380)*
+*Defined in [src/generated/api.ts:2498](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2498)*
+
+**`memberof`** Sort
+
+___
+
+### unsorted
+
+• `Optional` **unsorted**: boolean
+
+*Defined in [src/generated/api.ts:2504](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2504)*
+
+**`memberof`** Sort

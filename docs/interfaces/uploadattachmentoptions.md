@@ -1,29 +1,59 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / UploadAttachmentOptions
+
 # Interface: UploadAttachmentOptions
+
+Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your `SendEmailOptions` when sending an email. This way you can use attachments multiple times once they have been uploaded.
+
+**`export`** 
+
+**`interface`** UploadAttachmentOptions
 
 ## Hierarchy
 
 * **UploadAttachmentOptions**
 
+## Index
+
+### Properties
+
+* [base64Contents](uploadattachmentoptions.md#base64contents)
+* [contentType](uploadattachmentoptions.md#contenttype)
+* [filename](uploadattachmentoptions.md#filename)
+
 ## Properties
 
-### `Optional` base64Contents
+### base64Contents
 
-• **base64Contents**? : *string*
+• `Optional` **base64Contents**: string
 
-*Defined in [src/generated/api.ts:2570](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2570)*
+*Defined in [src/generated/api.ts:2694](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2694)*
 
-___
+Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string.
 
-### `Optional` contentType
-
-• **contentType**? : *string*
-
-*Defined in [src/generated/api.ts:2576](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2576)*
+**`memberof`** UploadAttachmentOptions
 
 ___
 
-### `Optional` filename
+### contentType
 
-• **filename**? : *string*
+• `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:2582](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2582)*
+*Defined in [src/generated/api.ts:2700](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2700)*
+
+Optional contentType for file. For instance `application/pdf`
+
+**`memberof`** UploadAttachmentOptions
+
+___
+
+### filename
+
+• `Optional` **filename**: string
+
+*Defined in [src/generated/api.ts:2706](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2706)*
+
+Optional filename to save upload with
+
+**`memberof`** UploadAttachmentOptions

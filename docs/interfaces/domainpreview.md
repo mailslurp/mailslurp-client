@@ -1,29 +1,53 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / DomainPreview
+
 # Interface: DomainPreview
+
+Preview object for domain entity
+
+**`export`** 
+
+**`interface`** DomainPreview
 
 ## Hierarchy
 
 * **DomainPreview**
 
+## Index
+
+### Properties
+
+* [createdAt](domainpreview.md#createdat)
+* [domain](domainpreview.md#domain)
+* [id](domainpreview.md#id)
+
 ## Properties
 
-###  createdAt
+### createdAt
 
-• **createdAt**: *Date*
+•  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L613)*
+*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L613)*
 
-___
-
-###  domain
-
-• **domain**: *string*
-
-*Defined in [src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L619)*
+**`memberof`** DomainPreview
 
 ___
 
-###  id
+### domain
 
-• **id**: *string*
+•  **domain**: string
 
-*Defined in [src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L625)*
+*Defined in [src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L619)*
+
+**`memberof`** DomainPreview
+
+___
+
+### id
+
+•  **id**: string
+
+*Defined in [src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L625)*
+
+**`memberof`** DomainPreview

@@ -1,69 +1,116 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / CreateContactOptions
+
 # Interface: CreateContactOptions
+
+**`export`** 
+
+**`interface`** CreateContactOptions
 
 ## Hierarchy
 
 * **CreateContactOptions**
 
+## Index
+
+### Properties
+
+* [company](createcontactoptions.md#company)
+* [emailAddresses](createcontactoptions.md#emailaddresses)
+* [firstName](createcontactoptions.md#firstname)
+* [groupId](createcontactoptions.md#groupid)
+* [lastName](createcontactoptions.md#lastname)
+* [metaData](createcontactoptions.md#metadata)
+* [optOut](createcontactoptions.md#optout)
+* [tags](createcontactoptions.md#tags)
+
 ## Properties
 
-### `Optional` company
+### company
 
-• **company**? : *string*
+• `Optional` **company**: string
 
-*Defined in [src/generated/api.ts:397](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L397)*
+*Defined in [src/generated/api.ts:397](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L397)*
 
-___
-
-### `Optional` emailAddresses
-
-• **emailAddresses**? : *Array‹string›*
-
-*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L355)*
+**`memberof`** CreateContactOptions
 
 ___
 
-### `Optional` firstName
+### emailAddresses
 
-• **firstName**? : *string*
+• `Optional` **emailAddresses**: Array\<string>
 
-*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L361)*
+*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L355)*
 
-___
+Set of email addresses belonging to the contact
 
-### `Optional` groupId
-
-• **groupId**? : *string*
-
-*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L367)*
+**`memberof`** CreateContactOptions
 
 ___
 
-### `Optional` lastName
+### firstName
 
-• **lastName**? : *string*
+• `Optional` **firstName**: string
 
-*Defined in [src/generated/api.ts:391](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L391)*
+*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L361)*
 
-___
-
-### `Optional` metaData
-
-• **metaData**? : *[JsonNode](jsonnode.md)*
-
-*Defined in [src/generated/api.ts:373](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L373)*
+**`memberof`** CreateContactOptions
 
 ___
 
-### `Optional` optOut
+### groupId
 
-• **optOut**? : *boolean*
+• `Optional` **groupId**: string
 
-*Defined in [src/generated/api.ts:379](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L379)*
+*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L367)*
+
+Group IDs that contact belongs to
+
+**`memberof`** CreateContactOptions
 
 ___
 
-### `Optional` tags
+### lastName
 
-• **tags**? : *Array‹string›*
+• `Optional` **lastName**: string
 
-*Defined in [src/generated/api.ts:385](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L385)*
+*Defined in [src/generated/api.ts:391](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L391)*
+
+**`memberof`** CreateContactOptions
+
+___
+
+### metaData
+
+• `Optional` **metaData**: [JsonNode](jsonnode.md)
+
+*Defined in [src/generated/api.ts:373](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L373)*
+
+User metadata key value pairs to save for this contact. Can be any values you like.
+
+**`memberof`** CreateContactOptions
+
+___
+
+### optOut
+
+• `Optional` **optOut**: boolean
+
+*Defined in [src/generated/api.ts:379](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L379)*
+
+Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
+
+**`memberof`** CreateContactOptions
+
+___
+
+### tags
+
+• `Optional` **tags**: Array\<string>
+
+*Defined in [src/generated/api.ts:385](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L385)*
+
+Tags that can be used to search and group contacts
+
+**`memberof`** CreateContactOptions

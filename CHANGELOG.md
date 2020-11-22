@@ -1,5 +1,8 @@
 # Changelog
 
+## [10.0.0]
+- Add sent email controllers and export all api endpoints
+
 ## [8.8.0]
 - Add mail server endpoints to base client
 

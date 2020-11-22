@@ -27,6 +27,8 @@ import {
     WebhookControllerApi,
 } from './generated';
 
+export * from './generated';
+
 type SortEnum = 'ASC' | 'DESC';
 /**
  * MailSlurp config

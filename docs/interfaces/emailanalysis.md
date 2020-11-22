@@ -1,45 +1,85 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / EmailAnalysis
+
 # Interface: EmailAnalysis
+
+Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or dynamic error message
+
+**`export`** 
+
+**`interface`** EmailAnalysis
 
 ## Hierarchy
 
 * **EmailAnalysis**
 
+## Index
+
+### Properties
+
+* [dkimVerdict](emailanalysis.md#dkimverdict)
+* [dmarcVerdict](emailanalysis.md#dmarcverdict)
+* [spamVerdict](emailanalysis.md#spamverdict)
+* [spfVerdict](emailanalysis.md#spfverdict)
+* [virusVerdict](emailanalysis.md#virusverdict)
+
 ## Properties
 
-### `Optional` dkimVerdict
+### dkimVerdict
 
-• **dkimVerdict**? : *string*
+• `Optional` **dkimVerdict**: string
 
-*Defined in [src/generated/api.ts:755](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L755)*
+*Defined in [src/generated/api.ts:781](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L781)*
 
-___
+Verdict of DomainKeys Identified Mail analysis
 
-### `Optional` dmarcVerdict
-
-• **dmarcVerdict**? : *string*
-
-*Defined in [src/generated/api.ts:761](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L761)*
+**`memberof`** EmailAnalysis
 
 ___
 
-### `Optional` spamVerdict
+### dmarcVerdict
 
-• **spamVerdict**? : *string*
+• `Optional` **dmarcVerdict**: string
 
-*Defined in [src/generated/api.ts:767](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L767)*
+*Defined in [src/generated/api.ts:787](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L787)*
 
-___
+Verdict of Domain-based Message Authentication Reporting and Conformance analysis
 
-### `Optional` spfVerdict
-
-• **spfVerdict**? : *string*
-
-*Defined in [src/generated/api.ts:773](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L773)*
+**`memberof`** EmailAnalysis
 
 ___
 
-### `Optional` virusVerdict
+### spamVerdict
 
-• **virusVerdict**? : *string*
+• `Optional` **spamVerdict**: string
 
-*Defined in [src/generated/api.ts:779](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L779)*
+*Defined in [src/generated/api.ts:793](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L793)*
+
+Verdict of spam ranking analysis
+
+**`memberof`** EmailAnalysis
+
+___
+
+### spfVerdict
+
+• `Optional` **spfVerdict**: string
+
+*Defined in [src/generated/api.ts:799](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L799)*
+
+Verdict of Send Policy Framework record spoofing analysis
+
+**`memberof`** EmailAnalysis
+
+___
+
+### virusVerdict
+
+• `Optional` **virusVerdict**: string
+
+*Defined in [src/generated/api.ts:805](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L805)*
+
+Verdict of virus scan analysis
+
+**`memberof`** EmailAnalysis

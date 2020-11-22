@@ -1,37 +1,62 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / GroupProjection
+
 # Interface: GroupProjection
+
+**`export`** 
+
+**`interface`** GroupProjection
 
 ## Hierarchy
 
 * **GroupProjection**
 
+## Index
+
+### Properties
+
+* [createdAt](groupprojection.md#createdat)
+* [description](groupprojection.md#description)
+* [id](groupprojection.md#id)
+* [name](groupprojection.md#name)
+
 ## Properties
 
-###  createdAt
+### createdAt
 
-• **createdAt**: *Date*
+•  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1051](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1051)*
+*Defined in [src/generated/api.ts:1077](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1077)*
 
-___
-
-### `Optional` description
-
-• **description**? : *string*
-
-*Defined in [src/generated/api.ts:1057](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1057)*
+**`memberof`** GroupProjection
 
 ___
 
-###  id
+### description
 
-• **id**: *string*
+• `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:1063](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1063)*
+*Defined in [src/generated/api.ts:1083](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1083)*
+
+**`memberof`** GroupProjection
 
 ___
 
-###  name
+### id
 
-• **name**: *string*
+•  **id**: string
 
-*Defined in [src/generated/api.ts:1069](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L1069)*
+*Defined in [src/generated/api.ts:1089](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1089)*
+
+**`memberof`** GroupProjection
+
+___
+
+### name
+
+•  **name**: string
+
+*Defined in [src/generated/api.ts:1095](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L1095)*
+
+**`memberof`** GroupProjection

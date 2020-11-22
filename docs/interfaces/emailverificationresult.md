@@ -1,45 +1,75 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / EmailVerificationResult
+
 # Interface: EmailVerificationResult
+
+Email verification result. Valid means email address exists according to response from mail server running at the domian and port given.
+
+**`export`** 
+
+**`interface`** EmailVerificationResult
 
 ## Hierarchy
 
 * **EmailVerificationResult**
 
+## Index
+
+### Properties
+
+* [domainName](emailverificationresult.md#domainname)
+* [emailAddress](emailverificationresult.md#emailaddress)
+* [error](emailverificationresult.md#error)
+* [isValid](emailverificationresult.md#isvalid)
+* [port](emailverificationresult.md#port)
+
 ## Properties
 
-###  domainName
+### domainName
 
-• **domainName**: *string*
+•  **domainName**: string
 
-*Defined in [src/generated/api.ts:929](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L929)*
+*Defined in [src/generated/api.ts:955](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L955)*
 
-___
-
-###  emailAddress
-
-• **emailAddress**: *string*
-
-*Defined in [src/generated/api.ts:935](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L935)*
+**`memberof`** EmailVerificationResult
 
 ___
 
-### `Optional` error
+### emailAddress
 
-• **error**? : *string*
+•  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:941](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L941)*
+*Defined in [src/generated/api.ts:961](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L961)*
 
-___
-
-###  isValid
-
-• **isValid**: *boolean*
-
-*Defined in [src/generated/api.ts:947](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L947)*
+**`memberof`** EmailVerificationResult
 
 ___
 
-###  port
+### error
 
-• **port**: *number*
+• `Optional` **error**: string
 
-*Defined in [src/generated/api.ts:953](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L953)*
+*Defined in [src/generated/api.ts:967](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L967)*
+
+**`memberof`** EmailVerificationResult
+
+___
+
+### isValid
+
+•  **isValid**: boolean
+
+*Defined in [src/generated/api.ts:973](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L973)*
+
+**`memberof`** EmailVerificationResult
+
+___
+
+### port
+
+•  **port**: number
+
+*Defined in [src/generated/api.ts:979](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L979)*
+
+**`memberof`** EmailVerificationResult

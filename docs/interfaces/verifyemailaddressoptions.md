@@ -1,37 +1,64 @@
+**[MailSlurp JS](../README.md)**
+
+> [Globals](../README.md) / VerifyEmailAddressOptions
+
 # Interface: VerifyEmailAddressOptions
+
+Options for verifying that an email address exists at a remote mail server.
+
+**`export`** 
+
+**`interface`** VerifyEmailAddressOptions
 
 ## Hierarchy
 
 * **VerifyEmailAddressOptions**
 
+## Index
+
+### Properties
+
+* [emailAddress](verifyemailaddressoptions.md#emailaddress)
+* [mailServerDomain](verifyemailaddressoptions.md#mailserverdomain)
+* [port](verifyemailaddressoptions.md#port)
+* [senderEmailAddress](verifyemailaddressoptions.md#senderemailaddress)
+
 ## Properties
 
-###  emailAddress
+### emailAddress
 
-• **emailAddress**: *string*
+•  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2642](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2642)*
+*Defined in [src/generated/api.ts:2766](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2766)*
 
-___
-
-### `Optional` mailServerDomain
-
-• **mailServerDomain**? : *string*
-
-*Defined in [src/generated/api.ts:2636](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2636)*
+**`memberof`** VerifyEmailAddressOptions
 
 ___
 
-### `Optional` port
+### mailServerDomain
 
-• **port**? : *number*
+• `Optional` **mailServerDomain**: string
 
-*Defined in [src/generated/api.ts:2654](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2654)*
+*Defined in [src/generated/api.ts:2760](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2760)*
+
+**`memberof`** VerifyEmailAddressOptions
 
 ___
 
-### `Optional` senderEmailAddress
+### port
 
-• **senderEmailAddress**? : *string*
+• `Optional` **port**: number
 
-*Defined in [src/generated/api.ts:2648](https://github.com/mailslurp/mailslurp-client-ts-js/blob/9736ebe/src/generated/api.ts#L2648)*
+*Defined in [src/generated/api.ts:2778](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2778)*
+
+**`memberof`** VerifyEmailAddressOptions
+
+___
+
+### senderEmailAddress
+
+• `Optional` **senderEmailAddress**: string
+
+*Defined in [src/generated/api.ts:2772](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2772)*
+
+**`memberof`** VerifyEmailAddressOptions
