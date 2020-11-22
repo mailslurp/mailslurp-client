@@ -32,7 +32,7 @@ Domain plus verification records and status
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:577](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L577)*
+*Defined in [src/generated/api.ts:577](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L577)*
 
 **`memberof`** DomainDto
 
@@ -42,7 +42,7 @@ ___
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:583](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L583)*
+*Defined in [src/generated/api.ts:583](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L583)*
 
 **`memberof`** DomainDto
 
@@ -52,7 +52,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:589](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L589)*
+*Defined in [src/generated/api.ts:589](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L589)*
 
 **`memberof`** DomainDto
 
@@ -62,7 +62,7 @@ ___
 
 •  **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:595](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L595)*
+*Defined in [src/generated/api.ts:595](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L595)*
 
 **`memberof`** DomainDto
 
@@ -72,7 +72,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:601](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L601)*
+*Defined in [src/generated/api.ts:601](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L601)*
 
 **`memberof`** DomainDto
 
@@ -82,7 +82,7 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:607](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L607)*
+*Defined in [src/generated/api.ts:607](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L607)*
 
 **`memberof`** DomainDto
 
@@ -92,6 +92,6 @@ ___
 
 •  **verificationToken**: string
 
-*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L613)*
+*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L613)*
 
 **`memberof`** DomainDto

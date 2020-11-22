@@ -22,7 +22,7 @@
 
 •  **BCC**:  = \<any>'BCC'
 
-*Defined in [src/generated/api.ts:1309](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1309)*
+*Defined in [src/generated/api.ts:1309](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1309)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **CC**:  = \<any>'CC'
 
-*Defined in [src/generated/api.ts:1310](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1310)*
+*Defined in [src/generated/api.ts:1310](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1310)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **FROM**:  = \<any>'FROM'
 
-*Defined in [src/generated/api.ts:1311](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1311)*
+*Defined in [src/generated/api.ts:1311](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1311)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **SUBJECT**:  = \<any>'SUBJECT'
 
-*Defined in [src/generated/api.ts:1307](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1307)*
+*Defined in [src/generated/api.ts:1307](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1307)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **TO**:  = \<any>'TO'
 
-*Defined in [src/generated/api.ts:1308](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1308)*
+*Defined in [src/generated/api.ts:1308](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1308)*

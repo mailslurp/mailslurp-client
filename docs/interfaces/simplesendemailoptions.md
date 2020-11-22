@@ -27,7 +27,7 @@
 
 • `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:2494](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2494)*
+*Defined in [src/generated/api.ts:2396](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2396)*
 
 Body of the email message. Supports HTML
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **senderId**: string
 
-*Defined in [src/generated/api.ts:2500](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2500)*
+*Defined in [src/generated/api.ts:2402](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2402)*
 
 ID of inbox to send from
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:2506](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2506)*
+*Defined in [src/generated/api.ts:2408](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2408)*
 
 Subject line of the email
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **to**: string
 
-*Defined in [src/generated/api.ts:2512](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2512)*
+*Defined in [src/generated/api.ts:2414](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2414)*
 
 Email address to send to
 

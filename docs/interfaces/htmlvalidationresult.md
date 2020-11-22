@@ -28,7 +28,7 @@ HTML Validation Results
 
 •  **errors**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:1143](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1143)*
+*Defined in [src/generated/api.ts:1143](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1143)*
 
 **`memberof`** HTMLValidationResult
 
@@ -38,7 +38,7 @@ ___
 
 •  **isValid**: boolean
 
-*Defined in [src/generated/api.ts:1149](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1149)*
+*Defined in [src/generated/api.ts:1149](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1149)*
 
 **`memberof`** HTMLValidationResult
 
@@ -48,6 +48,6 @@ ___
 
 •  **warnings**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:1155](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L1155)*
+*Defined in [src/generated/api.ts:1155](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1155)*
 
 **`memberof`** HTMLValidationResult

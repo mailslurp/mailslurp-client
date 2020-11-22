@@ -29,7 +29,7 @@ Options for verifying that an email address exists at a remote mail server.
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2800](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2800)*
+*Defined in [src/generated/api.ts:2702](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2702)*
 
 **`memberof`** VerifyEmailAddressOptions
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **mailServerDomain**: string
 
-*Defined in [src/generated/api.ts:2794](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2794)*
+*Defined in [src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2696)*
 
 **`memberof`** VerifyEmailAddressOptions
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **port**: number
 
-*Defined in [src/generated/api.ts:2812](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2812)*
+*Defined in [src/generated/api.ts:2714](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2714)*
 
 **`memberof`** VerifyEmailAddressOptions
 
@@ -59,6 +59,6 @@ ___
 
 • `Optional` **senderEmailAddress**: string
 
-*Defined in [src/generated/api.ts:2806](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2806)*
+*Defined in [src/generated/api.ts:2708](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2708)*
 
 **`memberof`** VerifyEmailAddressOptions

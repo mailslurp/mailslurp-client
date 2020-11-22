@@ -25,7 +25,7 @@
 
 •  **DELETE**:  = \<any>'DELETE'
 
-*Defined in [src/generated/api.ts:3062](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3062)*
+*Defined in [src/generated/api.ts:2964](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2964)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 •  **GET**:  = \<any>'GET'
 
-*Defined in [src/generated/api.ts:3057](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3057)*
+*Defined in [src/generated/api.ts:2959](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2959)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 •  **HEAD**:  = \<any>'HEAD'
 
-*Defined in [src/generated/api.ts:3058](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3058)*
+*Defined in [src/generated/api.ts:2960](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2960)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 •  **OPTIONS**:  = \<any>'OPTIONS'
 
-*Defined in [src/generated/api.ts:3063](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3063)*
+*Defined in [src/generated/api.ts:2965](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2965)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 •  **PATCH**:  = \<any>'PATCH'
 
-*Defined in [src/generated/api.ts:3061](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3061)*
+*Defined in [src/generated/api.ts:2963](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2963)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 •  **POST**:  = \<any>'POST'
 
-*Defined in [src/generated/api.ts:3059](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3059)*
+*Defined in [src/generated/api.ts:2961](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2961)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 •  **PUT**:  = \<any>'PUT'
 
-*Defined in [src/generated/api.ts:3060](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3060)*
+*Defined in [src/generated/api.ts:2962](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2962)*
 
 ___
 
@@ -81,4 +81,4 @@ ___
 
 •  **TRACE**:  = \<any>'TRACE'
 
-*Defined in [src/generated/api.ts:3064](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3064)*
+*Defined in [src/generated/api.ts:2966](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2966)*

@@ -16,7 +16,7 @@
 
 ▸ (`url`: string, `init?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:37](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L37)*
+*Defined in [src/generated/api.ts:37](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L37)*
 
 **`export`** 
 

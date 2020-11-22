@@ -23,6 +23,8 @@ MailSlurp is an email API service that lets you create real email addresses in c
 - [Method Documentation](./docs/classes/mailslurp/)
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
+
+## Examples
 - [CypressJS Example](https://www.mailslurp.com/examples/cypress-js/)
 - [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
 - [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
@@ -293,7 +295,7 @@ async function canReceiveAttachment(inboxId) {
 }
 ```
 
-### Match emails
+### Wait for matching emails
 MailSlurp allows one to wait for emails that match certain parameters. Here is an example:
 
 ```javascript
