@@ -4,6 +4,8 @@
 
 # Interface: RawEmailJson
 
+Content in raw format
+
 **`export`** 
 
 **`interface`** RawEmailJson
@@ -24,6 +26,6 @@
 
 •  **content**: string
 
-*Defined in [src/generated/api.ts:2056](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2056)*
+*Defined in [src/generated/api.ts:2090](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2090)*
 
 **`memberof`** RawEmailJson

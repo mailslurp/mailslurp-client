@@ -30,7 +30,7 @@ Options for updating inbox properties
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:2656](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2656)*
+*Defined in [src/generated/api.ts:2690](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2690)*
 
 Optional description of an inbox for labelling purposes
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **expiresAt**: Date
 
-*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2662)*
+*Defined in [src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2696)*
 
 When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. Timestamp passed as string.
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **favourite**: boolean
 
-*Defined in [src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2668)*
+*Defined in [src/generated/api.ts:2702](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2702)*
 
 Is the inbox favourited
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:2674](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2674)*
+*Defined in [src/generated/api.ts:2708](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2708)*
 
 Optional name of the inbox. Displayed in the dashboard for easier search
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:2680](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L2680)*
+*Defined in [src/generated/api.ts:2714](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2714)*
 
 Tags that inbox has been tagged with
 

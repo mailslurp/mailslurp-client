@@ -43,7 +43,7 @@ Email model (also referred to as EmailDto). Represents an email that was receive
 
 • `Optional` **analysis**: [EmailAnalysis](emailanalysis.md)
 
-*Defined in [src/generated/api.ts:665](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L665)*
+*Defined in [src/generated/api.ts:679](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L679)*
 
 Smart analysis of email content including spam ratings\"
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:671](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L671)*
+*Defined in [src/generated/api.ts:685](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L685)*
 
 List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:677](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L677)*
+*Defined in [src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L691)*
 
 List of `BCC` recipients email was addressed to
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:683](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L683)*
+*Defined in [src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L697)*
 
 The body of the email message
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **bodyMD5Hash**: string
 
-*Defined in [src/generated/api.ts:689](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L689)*
+*Defined in [src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L703)*
 
 A hash signature of the email message
 
@@ -103,7 +103,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:695](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L695)*
+*Defined in [src/generated/api.ts:709](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L709)*
 
 List of `CC` recipients email was addressed to
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:701](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L701)*
+*Defined in [src/generated/api.ts:715](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L715)*
 
 Detected character set of the email body such as UTF-8
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:707](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L707)*
+*Defined in [src/generated/api.ts:721](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L721)*
 
 When was the email received by MailSlurp
 
@@ -139,7 +139,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:713](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L713)*
+*Defined in [src/generated/api.ts:727](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L727)*
 
 Who the email was sent from
 
@@ -151,7 +151,7 @@ ___
 
 • `Optional` **headers**: { [key:string]: string;  }
 
-*Defined in [src/generated/api.ts:719](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L719)*
+*Defined in [src/generated/api.ts:733](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L733)*
 
 **`memberof`** Email
 
@@ -161,7 +161,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:725](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L725)*
+*Defined in [src/generated/api.ts:739](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L739)*
 
 ID of the email
 
@@ -173,7 +173,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:731](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L731)*
+*Defined in [src/generated/api.ts:745](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L745)*
 
 ID of the inbox that received the email
 
@@ -185,7 +185,7 @@ ___
 
 • `Optional` **isHTML**: boolean
 
-*Defined in [src/generated/api.ts:737](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L737)*
+*Defined in [src/generated/api.ts:751](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L751)*
 
 Was HTML sent in the email body
 
@@ -197,7 +197,7 @@ ___
 
 • `Optional` **read**: boolean
 
-*Defined in [src/generated/api.ts:743](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L743)*
+*Defined in [src/generated/api.ts:757](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L757)*
 
 Has the email been viewed ever
 
@@ -209,7 +209,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:749](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L749)*
+*Defined in [src/generated/api.ts:763](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L763)*
 
 The subject line of the email message
 
@@ -221,7 +221,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:755](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L755)*
+*Defined in [src/generated/api.ts:769](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L769)*
 
 List of `To` recipients email was addressed to
 
@@ -233,7 +233,7 @@ ___
 
 • `Optional` **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:761](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L761)*
+*Defined in [src/generated/api.ts:775](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L775)*
 
 When was the email last updated
 
@@ -245,7 +245,7 @@ ___
 
 • `Optional` **userId**: string
 
-*Defined in [src/generated/api.ts:767](https://github.com/mailslurp/mailslurp-client/blob/f5ab9d3/src/generated/api.ts#L767)*
+*Defined in [src/generated/api.ts:781](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L781)*
 
 ID of user that email belongs
 
