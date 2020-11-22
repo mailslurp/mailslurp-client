@@ -24,6 +24,6 @@
 
 •  **count**: number
 
-*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L2662)*
+*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L2662)*
 
 **`memberof`** UnreadCount

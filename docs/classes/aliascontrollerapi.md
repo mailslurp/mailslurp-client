@@ -43,7 +43,7 @@ AliasControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **createAlias**(`createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:3834](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3834)*
+*Defined in [src/generated/api.ts:3834](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3834)*
 
 Create an email alias belonging to a user ID. To create anonymous aliases use the `createAnonymousAlias` method.
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **createAnonymousAlias**(`createAnonymousAliasOptions`: [CreateAnonymousAliasOptions](../interfaces/createanonymousaliasoptions.md), `options?`: any): Promise\<[Alias](../interfaces/alias.md)>
 
-*Defined in [src/generated/api.ts:3852](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3852)*
+*Defined in [src/generated/api.ts:3852](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3852)*
 
 **`summary`** Create an anonymous email alias
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **deleteAlias**(`aliasId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:3870](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3870)*
+*Defined in [src/generated/api.ts:3870](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3870)*
 
 **`summary`** Delete an owned alias
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **getAlias**(`aliasId`: string, `options?`: any): Promise\<[Alias](../interfaces/alias.md)>
 
-*Defined in [src/generated/api.ts:3885](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3885)*
+*Defined in [src/generated/api.ts:3885](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3885)*
 
 Get an email alias by ID
 
@@ -187,7 +187,7 @@ ___
 
 ▸ **getAliases**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageAlias](../interfaces/pagealias.md)>
 
-*Defined in [src/generated/api.ts:3902](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3902)*
+*Defined in [src/generated/api.ts:3902](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3902)*
 
 Get all email aliases in paginated form
 
@@ -214,7 +214,7 @@ ___
 
 ▸ **updateAlias**(`aliasId`: string, `createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:3925](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L3925)*
+*Defined in [src/generated/api.ts:3925](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L3925)*
 
 **`summary`** Update an owned alias
 

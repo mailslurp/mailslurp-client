@@ -30,7 +30,7 @@
 
 • `Optional` **company**: string
 
-*Defined in [src/generated/api.ts:291](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L291)*
+*Defined in [src/generated/api.ts:291](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L291)*
 
 **`memberof`** ContactProjection
 
@@ -40,7 +40,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:297](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L297)*
+*Defined in [src/generated/api.ts:297](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L297)*
 
 **`memberof`** ContactProjection
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **firstName**: string
 
-*Defined in [src/generated/api.ts:303](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L303)*
+*Defined in [src/generated/api.ts:303](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L303)*
 
 **`memberof`** ContactProjection
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **groupId**: string
 
-*Defined in [src/generated/api.ts:309](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L309)*
+*Defined in [src/generated/api.ts:309](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L309)*
 
 **`memberof`** ContactProjection
 
@@ -70,7 +70,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:315](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L315)*
+*Defined in [src/generated/api.ts:315](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L315)*
 
 **`memberof`** ContactProjection
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **lastName**: string
 
-*Defined in [src/generated/api.ts:321](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L321)*
+*Defined in [src/generated/api.ts:321](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L321)*
 
 **`memberof`** ContactProjection
 
@@ -90,6 +90,6 @@ ___
 
 • `Optional` **optOut**: boolean
 
-*Defined in [src/generated/api.ts:327](https://github.com/mailslurp/mailslurp-client/blob/ff09436/src/generated/api.ts#L327)*
+*Defined in [src/generated/api.ts:327](https://github.com/mailslurp/mailslurp-client/blob/717d89d/src/generated/api.ts#L327)*
 
 **`memberof`** ContactProjection

@@ -327,6 +327,31 @@ it('can wait for matching emails', async () => {
 })
 ```
 
+### Extract email content
+You can extract useful information from emails using regular expressions:
+
+```javascript
+it('can extract email content', async () => {
+    const mailslurp = new MailSlurp(config);
+
+    const inbox1 = await mailslurp.createInbox();
+    const inbox2 = await mailslurp.createInbox();
+
+    const to = [inbox2.emailAddress]
+    const body = "Hi there. Your code is: 123456"
+    await mailslurp.sendEmail(inbox1.id, { to, body })
+
+    // wait for email
+    const email = await mailslurp.waitController.waitForLatestEmail(inbox2.id, timeoutMillis, true)
+    const pattern = "code is: (\\d{6})"
+
+    // can be used to extract confirmation codes etc
+    const matches = await mailslurp.emailController.getEmailContentMatch({ pattern }, email.id)
+    expect(matches[0]).toEqual("code is: 123456")
+    expect(matches[1]).toEqual("123456")
+})
+```
+
 ## Documentation
 
 - [Method documentation](./docs/)
