@@ -32,7 +32,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L95)*
+*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L95)*
 
 **`memberof`** Alias
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L101)*
+*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L101)*
 
 **`memberof`** Alias
 
@@ -52,7 +52,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L107)*
+*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L107)*
 
 **`memberof`** Alias
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L113)*
+*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L113)*
 
 **`memberof`** Alias
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **pendingEmailAddress**: string
 
-*Defined in [src/generated/api.ts:119](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L119)*
+*Defined in [src/generated/api.ts:119](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L119)*
 
 **`memberof`** Alias
 
@@ -82,7 +82,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:125](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L125)*
+*Defined in [src/generated/api.ts:125](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L125)*
 
 **`memberof`** Alias
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **useThreads**: boolean
 
-*Defined in [src/generated/api.ts:131](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L131)*
+*Defined in [src/generated/api.ts:131](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L131)*
 
 **`memberof`** Alias
 
@@ -102,7 +102,7 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:137](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L137)*
+*Defined in [src/generated/api.ts:137](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L137)*
 
 **`memberof`** Alias
 
@@ -112,6 +112,6 @@ ___
 
 • `Optional` **verifiedEmailAddress**: string
 
-*Defined in [src/generated/api.ts:143](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L143)*
+*Defined in [src/generated/api.ts:143](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L143)*
 
 **`memberof`** Alias

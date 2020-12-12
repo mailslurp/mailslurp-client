@@ -26,7 +26,7 @@
 
 •  **aliasId**: string
 
-*Defined in [src/generated/api.ts:257](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L257)*
+*Defined in [src/generated/api.ts:257](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L257)*
 
 **`memberof`** AliasVerificationResult
 
@@ -36,7 +36,7 @@ ___
 
 •  **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:263](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L263)*
+*Defined in [src/generated/api.ts:263](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L263)*
 
 **`memberof`** AliasVerificationResult
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:269](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L269)*
+*Defined in [src/generated/api.ts:269](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L269)*
 
 **`memberof`** AliasVerificationResult

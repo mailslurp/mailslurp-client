@@ -38,7 +38,7 @@
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:2644](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2644)*
+*Defined in [src/generated/api.ts:2644](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2644)*
 
 Optional list of attachment IDs to send with this email. You must first upload each attachment separately in order to obtain attachment IDs. This way you can reuse attachments with different emails once uploaded.
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2650](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2650)*
+*Defined in [src/generated/api.ts:2650](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2650)*
 
 Optional list of bcc destination email addresses
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:2656](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2656)*
+*Defined in [src/generated/api.ts:2656](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2656)*
 
 Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2662)*
+*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2662)*
 
 Optional list of cc destination email addresses
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2668)*
+*Defined in [src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2668)*
 
 Optional charset
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:2674](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2674)*
+*Defined in [src/generated/api.ts:2674](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2674)*
 
 Optional from address. If not set the source inbox address will be used for this field. Beware of potential spam penalties when setting this field to an address not used by the inbox. For custom email addresses use a custom domain.
 
@@ -110,7 +110,7 @@ ___
 
 • `Optional` **isHTML**: boolean
 
-*Defined in [src/generated/api.ts:2680](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2680)*
+*Defined in [src/generated/api.ts:2680](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2680)*
 
 Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients
 
@@ -122,7 +122,7 @@ ___
 
 • `Optional` **replyTo**: string
 
-*Defined in [src/generated/api.ts:2686](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2686)*
+*Defined in [src/generated/api.ts:2686](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2686)*
 
 Optional replyTo header
 
@@ -134,7 +134,7 @@ ___
 
 • `Optional` **sendStrategy**: [SendStrategyEnum](../enums/sendemailoptions.sendstrategyenum.md)
 
-*Defined in [src/generated/api.ts:2692](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2692)*
+*Defined in [src/generated/api.ts:2692](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2692)*
 
 Optional strategy to use when sending the email
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:2698](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2698)*
+*Defined in [src/generated/api.ts:2698](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2698)*
 
 Optional email subject line
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **template**: string
 
-*Defined in [src/generated/api.ts:2704](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2704)*
+*Defined in [src/generated/api.ts:2704](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2704)*
 
 Optional template ID to use for body. Will override body if provided. When using a template make sure you pass the corresponding map of `templateVariables`. You can find which variables are needed by fetching the template itself or viewing it in the dashboard.
 
@@ -170,7 +170,7 @@ ___
 
 • `Optional` **templateVariables**: any
 
-*Defined in [src/generated/api.ts:2710](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2710)*
+*Defined in [src/generated/api.ts:2710](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2710)*
 
 Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.
 
@@ -182,7 +182,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:2716](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2716)*
+*Defined in [src/generated/api.ts:2716](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2716)*
 
 List of destination email addresses. Even single recipients must be in array form. Maximum recipients per email depends on your plan. If you need to send many emails try using contacts or contact groups or use a non standard sendStrategy to ensure that spam filters are not triggered (many recipients in one email can affect your spam rating).
 
@@ -194,7 +194,7 @@ ___
 
 • `Optional` **toContacts**: Array\<string>
 
-*Defined in [src/generated/api.ts:2722](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2722)*
+*Defined in [src/generated/api.ts:2722](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2722)*
 
 Optional list of contact IDs to send email to. Manage your contacts via the API or dashboard. When contacts are used the email is sent to each contact separately so they will not see other recipients.
 
@@ -206,7 +206,7 @@ ___
 
 • `Optional` **toGroup**: string
 
-*Defined in [src/generated/api.ts:2728](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L2728)*
+*Defined in [src/generated/api.ts:2728](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L2728)*
 
 Optional contact group ID to send email to. You can create contacts and contact groups in the API or dashboard and use them for email campaigns. When contact groups are used the email is sent to each contact separately so they will not see other recipients
 

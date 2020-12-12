@@ -28,7 +28,7 @@
 
 \+ **new Configuration**(`param?`: [ConfigurationParameters](../interfaces/configurationparameters.md)): [Configuration](configuration.md)
 
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L56)*
+*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L56)*
 
 #### Parameters:
 
@@ -44,7 +44,7 @@ Name | Type | Default value |
 
 • `Optional` **accessToken**: string \| (name: string, scopes?: string[]) => string
 
-*Defined in [src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L49)*
+*Defined in [src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L49)*
 
 parameter for oauth2 security
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **apiKey**: string \| (name: string) => string
 
-*Defined in [src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L28)*
+*Defined in [src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L28)*
 
 parameter for apiKey security
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **basePath**: string
 
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L56)*
+*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L56)*
 
 override base path
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **password**: string
 
-*Defined in [src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L42)*
+*Defined in [src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L42)*
 
 parameter for basic security
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **username**: string
 
-*Defined in [src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/configuration.ts#L35)*
+*Defined in [src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/configuration.ts#L35)*
 
 parameter for basic security
 
