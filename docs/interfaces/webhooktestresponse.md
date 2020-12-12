@@ -25,7 +25,7 @@
 
 • `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:2981](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2981)*
+*Defined in [src/generated/api.ts:3535](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3535)*
 
 **`memberof`** WebhookTestResponse
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **statusCode**: number
 
-*Defined in [src/generated/api.ts:2987](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2987)*
+*Defined in [src/generated/api.ts:3541](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3541)*
 
 **`memberof`** WebhookTestResponse

@@ -29,9 +29,9 @@ AliasControllerApi - object-oriented interface
 ### Methods
 
 * [createAlias](aliascontrollerapi.md#createalias)
-* [createAnonymousAlias](aliascontrollerapi.md#createanonymousalias)
 * [deleteAlias](aliascontrollerapi.md#deletealias)
 * [getAlias](aliascontrollerapi.md#getalias)
+* [getAliasVerification](aliascontrollerapi.md#getaliasverification)
 * [getAliases](aliascontrollerapi.md#getaliases)
 * [updateAlias](aliascontrollerapi.md#updatealias)
 
@@ -43,7 +43,7 @@ AliasControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,42 +83,19 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L62)*
 
 ## Methods
 
 ### createAlias
 
-▸ **createAlias**(`createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): Promise\<Response>
+▸ **createAlias**(`createAliasOptions`: [CreateAliasOptions](../interfaces/createaliasoptions.md), `options?`: any): Promise\<[Alias](../interfaces/alias.md)>
 
-*Defined in [src/generated/api.ts:3736](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3736)*
+*Defined in [src/generated/api.ts:4322](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4322)*
 
-Create an email alias belonging to a user ID. To create anonymous aliases use the `createAnonymousAlias` method.
+Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
 
-**`summary`** Create an email alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`createOwnedAliasOptions` | [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md) | createOwnedAliasOptions |
-`options?` | any | - |
-
-**Returns:** Promise\<Response>
-
-___
-
-### createAnonymousAlias
-
-▸ **createAnonymousAlias**(`createAnonymousAliasOptions`: [CreateAnonymousAliasOptions](../interfaces/createanonymousaliasoptions.md), `options?`: any): Promise\<[Alias](../interfaces/alias.md)>
-
-*Defined in [src/generated/api.ts:3754](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3754)*
-
-**`summary`** Create an anonymous email alias
+**`summary`** Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
 
 **`throws`** {RequiredError}
 
@@ -128,7 +105,7 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`createAnonymousAliasOptions` | [CreateAnonymousAliasOptions](../interfaces/createanonymousaliasoptions.md) | createAnonymousAliasOptions |
+`createAliasOptions` | [CreateAliasOptions](../interfaces/createaliasoptions.md) | createAliasOptions |
 `options?` | any | - |
 
 **Returns:** Promise\<[Alias](../interfaces/alias.md)>
@@ -139,9 +116,9 @@ ___
 
 ▸ **deleteAlias**(`aliasId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:3772](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3772)*
+*Defined in [src/generated/api.ts:4337](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4337)*
 
-**`summary`** Delete an owned alias
+**`summary`** Delete an email alias
 
 **`throws`** {RequiredError}
 
@@ -160,9 +137,9 @@ ___
 
 ### getAlias
 
-▸ **getAlias**(`aliasId`: string, `options?`: any): Promise\<[Alias](../interfaces/alias.md)>
+▸ **getAlias**(`aliasId`: string, `options?`: any): Promise\<[AliasDto](../interfaces/aliasdto.md)>
 
-*Defined in [src/generated/api.ts:3787](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3787)*
+*Defined in [src/generated/api.ts:4352](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4352)*
 
 Get an email alias by ID
 
@@ -179,7 +156,34 @@ Name | Type | Description |
 `aliasId` | string | aliasId |
 `options?` | any | - |
 
-**Returns:** Promise\<[Alias](../interfaces/alias.md)>
+**Returns:** Promise\<[AliasDto](../interfaces/aliasdto.md)>
+
+___
+
+### getAliasVerification
+
+▸ **getAliasVerification**(`aliasId`: string, `emailAddress`: string, `verificationToken`: string, `options?`: any): Promise\<[AliasVerificationResult](../interfaces/aliasverificationresult.md)>
+
+*Defined in [src/generated/api.ts:4369](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4369)*
+
+Verify an email alias email address with the verification token that was emailed to the address
+
+**`summary`** Get validation result from alias verification
+
+**`throws`** {RequiredError}
+
+**`memberof`** AliasControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`aliasId` | string | aliasId |
+`emailAddress` | string | emailAddress |
+`verificationToken` | string | verificationToken |
+`options?` | any | - |
+
+**Returns:** Promise\<[AliasVerificationResult](../interfaces/aliasverificationresult.md)>
 
 ___
 
@@ -187,11 +191,11 @@ ___
 
 ▸ **getAliases**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageAlias](../interfaces/pagealias.md)>
 
-*Defined in [src/generated/api.ts:3804](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3804)*
+*Defined in [src/generated/api.ts:4393](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4393)*
 
 Get all email aliases in paginated form
 
-**`summary`** Get all email aliases
+**`summary`** Get all email aliases you have created
 
 **`throws`** {RequiredError}
 
@@ -212,11 +216,11 @@ ___
 
 ### updateAlias
 
-▸ **updateAlias**(`aliasId`: string, `createOwnedAliasOptions`: [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md), `options?`: any): Promise\<Response>
+▸ **updateAlias**(`aliasId`: string, `updateAliasOptions`: [UpdateAliasOptions](../interfaces/updatealiasoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:3827](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L3827)*
+*Defined in [src/generated/api.ts:4416](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L4416)*
 
-**`summary`** Update an owned alias
+**`summary`** Update an email alias
 
 **`throws`** {RequiredError}
 
@@ -227,7 +231,7 @@ ___
 Name | Type | Description |
 ------ | ------ | ------ |
 `aliasId` | string | aliasId |
-`createOwnedAliasOptions` | [CreateOwnedAliasOptions](../interfaces/createownedaliasoptions.md) | createOwnedAliasOptions |
+`updateAliasOptions` | [UpdateAliasOptions](../interfaces/updatealiasoptions.md) | updateAliasOptions |
 `options?` | any | - |
 
 **Returns:** Promise\<Response>

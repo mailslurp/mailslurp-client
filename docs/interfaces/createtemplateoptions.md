@@ -25,7 +25,7 @@
 
 •  **content**: string
 
-*Defined in [src/generated/api.ts:497](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L497)*
+*Defined in [src/generated/api.ts:659](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L659)*
 
 **`memberof`** CreateTemplateOptions
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:491](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L491)*
+*Defined in [src/generated/api.ts:653](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L653)*
 
 **`memberof`** CreateTemplateOptions

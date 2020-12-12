@@ -32,7 +32,7 @@
 
 • `Optional` **basicAuth**: boolean
 
-*Defined in [src/generated/api.ts:2801](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2801)*
+*Defined in [src/generated/api.ts:3355](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3355)*
 
 Does webhook expect basic authentication? If true it means you created this webhook with a username and password. MailSlurp will use these in the URL to authenticate itself.
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2807](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2807)*
+*Defined in [src/generated/api.ts:3361](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3361)*
 
 When the webhook was created
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:2813](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2813)*
+*Defined in [src/generated/api.ts:3367](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3367)*
 
 ID of the Webhook
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:2819](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2819)*
+*Defined in [src/generated/api.ts:3373](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3373)*
 
 The inbox that the Webhook will be triggered by
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **method**: [MethodEnum](../enums/webhookdto.methodenum.md)
 
-*Defined in [src/generated/api.ts:2825](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2825)*
+*Defined in [src/generated/api.ts:3379](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3379)*
 
 HTTP method that your server endpoint must listen for
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:2831](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2831)*
+*Defined in [src/generated/api.ts:3385](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3385)*
 
 Name of the webhook
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **payloadJsonSchema**: string
 
-*Defined in [src/generated/api.ts:2837](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2837)*
+*Defined in [src/generated/api.ts:3391](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3391)*
 
 JSON Schema for the payload that will be sent to your URL via the HTTP method described.
 
@@ -116,7 +116,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:2843](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2843)*
+*Defined in [src/generated/api.ts:3397](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3397)*
 
 **`memberof`** WebhookDto
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in [src/generated/api.ts:2849](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2849)*
+*Defined in [src/generated/api.ts:3403](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3403)*
 
 URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
 

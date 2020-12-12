@@ -26,9 +26,11 @@ HTML Validation Results
 
 ### errors
 
-•  **errors**: Array\<[ValidationMessage](validationmessage.md)>
+• `Optional` **errors**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:1143](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1143)*
+*Defined in [src/generated/api.ts:1593](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L1593)*
+
+Optional errors resulting from HTML validation
 
 **`memberof`** HTMLValidationResult
 
@@ -36,9 +38,11 @@ ___
 
 ### isValid
 
-•  **isValid**: boolean
+• `Optional` **isValid**: boolean
 
-*Defined in [src/generated/api.ts:1149](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1149)*
+*Defined in [src/generated/api.ts:1599](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L1599)*
+
+Is HTML validation result valid
 
 **`memberof`** HTMLValidationResult
 
@@ -46,8 +50,10 @@ ___
 
 ### warnings
 
-•  **warnings**: Array\<[ValidationMessage](validationmessage.md)>
+• `Optional` **warnings**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:1155](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L1155)*
+*Defined in [src/generated/api.ts:1605](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L1605)*
+
+Optional warnings resulting from HTML validation
 
 **`memberof`** HTMLValidationResult

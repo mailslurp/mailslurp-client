@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Official client for MailSlurp Email API. Create email addresses in Javascript. Then send and receive real emails.",
-  "version": "10.0.4",
+  "version": "10.1.0",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",

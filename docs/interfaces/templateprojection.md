@@ -28,7 +28,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2492](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2492)*
+*Defined in [src/generated/api.ts:3032](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3032)*
 
 **`memberof`** TemplateProjection
 
@@ -38,7 +38,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2498](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2498)*
+*Defined in [src/generated/api.ts:3038](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3038)*
 
 **`memberof`** TemplateProjection
 
@@ -48,7 +48,7 @@ ___
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:2504](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2504)*
+*Defined in [src/generated/api.ts:3044](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3044)*
 
 **`memberof`** TemplateProjection
 
@@ -58,7 +58,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:2510](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2510)*
+*Defined in [src/generated/api.ts:3050](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3050)*
 
 **`memberof`** TemplateProjection
 
@@ -68,6 +68,6 @@ ___
 
 •  **variables**: Array\<string>
 
-*Defined in [src/generated/api.ts:2516](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2516)*
+*Defined in [src/generated/api.ts:3056](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3056)*
 
 **`memberof`** TemplateProjection

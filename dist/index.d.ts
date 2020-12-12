@@ -236,5 +236,6 @@ export declare type GetMessagesOptions = {
     retryTimeout?: number;
     since?: Date;
     sort?: SortEnum;
+    size?: number;
 };
 export default MailSlurp;

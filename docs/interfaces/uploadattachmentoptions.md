@@ -28,7 +28,7 @@ Options for uploading files for attachments. When sending emails with the API th
 
 • `Optional` **base64Contents**: string
 
-*Defined in [src/generated/api.ts:2630](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2630)*
+*Defined in [src/generated/api.ts:3184](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3184)*
 
 Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string.
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:2636](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2636)*
+*Defined in [src/generated/api.ts:3190](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3190)*
 
 Optional contentType for file. For instance `application/pdf`
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **filename**: string
 
-*Defined in [src/generated/api.ts:2642](https://github.com/mailslurp/mailslurp-client/blob/c6aef6d/src/generated/api.ts#L2642)*
+*Defined in [src/generated/api.ts:3196](https://github.com/mailslurp/mailslurp-client/blob/8726614/src/generated/api.ts#L3196)*
 
 Optional filename to save upload with. Will be the name that is shown in email clients
 

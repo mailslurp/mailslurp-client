@@ -392,6 +392,7 @@ export class MailSlurp {
                 args.minCount,
                 args.retryTimeout,
                 args.since,
+                args.size,
                 args.sort
             )
         );
@@ -501,6 +502,8 @@ export type GetMessagesOptions = {
     since?: Date;
     // sort direction
     sort?: SortEnum;
+    // page size of results
+    size?: number;
 };
 
 // helper
