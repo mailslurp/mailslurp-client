@@ -20,7 +20,7 @@ MailSlurp is an email API service that lets you create real email addresses in c
 
 ## Quick links
 
-- [Method Documentation](./docs/classes/mailslurp/)
+- [Method Documentation](./docs/classes/mailslurp.md)
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
 
