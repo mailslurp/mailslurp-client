@@ -31,7 +31,7 @@
 
 • `Optional` **count**: number
 
-*Defined in [src/generated/api.ts:3282](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3282)*
+*Defined in [src/generated/api.ts:3280](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3280)*
 
 Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **countType**: [CountTypeEnum](../enums/waitforconditions.counttypeenum.md)
 
-*Defined in [src/generated/api.ts:3288](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3288)*
+*Defined in [src/generated/api.ts:3286](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3286)*
 
 How should the found count be compared to the expected count.
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:3294](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3294)*
+*Defined in [src/generated/api.ts:3292](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3292)*
 
 ID of inbox to search within and apply conditions to. Essentially filtering the emails found to give a count.
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **matches**: Array\<[MatchOption](matchoption.md)>
 
-*Defined in [src/generated/api.ts:3300](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3300)*
+*Defined in [src/generated/api.ts:3298](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3298)*
 
 Conditions that should be matched for an email to qualify for results. Each condition will be applied in order to each email within an inbox to filter a result list of matching emails you are waiting for.
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **sortDirection**: [SortDirectionEnum](../enums/waitforconditions.sortdirectionenum.md)
 
-*Defined in [src/generated/api.ts:3306](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3306)*
+*Defined in [src/generated/api.ts:3304](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3304)*
 
 Direction to sort matching emails by created time
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **timeout**: number
 
-*Defined in [src/generated/api.ts:3312](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3312)*
+*Defined in [src/generated/api.ts:3310](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3310)*
 
 Max time in milliseconds to retry the `waitFor` operation until conditions are met.
 
@@ -103,7 +103,7 @@ ___
 
 • `Optional` **unreadOnly**: boolean
 
-*Defined in [src/generated/api.ts:3318](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L3318)*
+*Defined in [src/generated/api.ts:3316](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3316)*
 
 Apply conditions only to **unread** emails. All emails begin with `read=false`. An email is marked `read=true` when an `EmailDto` representation of it has been returned to the user at least once. For example you have called `getEmail` or `waitForLatestEmail` etc., or you have viewed the email in the dashboard.
 

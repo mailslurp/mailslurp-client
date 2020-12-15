@@ -1,5 +1,10 @@
 # Changelog
 
+## [10.1.3]
+- Alter README
+- Add replyTo method on emailController
+- Add AliasController
+
 ## [10.0.0]
 - Add sent email controllers and export all api endpoints
 

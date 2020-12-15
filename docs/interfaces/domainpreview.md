@@ -28,7 +28,7 @@ Preview object for domain entity
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1071](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1071)*
+*Defined in [src/generated/api.ts:1063](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1063)*
 
 **`memberof`** DomainPreview
 
@@ -38,7 +38,7 @@ ___
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:1077](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1077)*
+*Defined in [src/generated/api.ts:1069](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1069)*
 
 **`memberof`** DomainPreview
 
@@ -48,6 +48,6 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1083](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1083)*
+*Defined in [src/generated/api.ts:1075](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1075)*
 
 **`memberof`** DomainPreview

@@ -7,27 +7,13 @@ iconType: asset
 featured: true
 expose: true
 weight: -1
-meta:
-  - name: description
-    content: Send and receive emails in Javascript and Typescript. Node email libraries and SDK.
 ---
 
 # MailSlurp Javascript Client
 
 > Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
-MailSlurp is an email API service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests.
-
-## Quick links
-
-- [Method Documentation](./docs/classes/mailslurp.md)
-- [NPM Package](https://www.npmjs.com/package/mailslurp-client)
-- [Github Source](https://github.com/mailslurp/mailslurp-client)
-
-## Examples
-- [CypressJS Example](https://www.mailslurp.com/examples/cypress-js/)
-- [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
-- [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
+[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. 
 
 ## Get started
 
@@ -89,12 +75,36 @@ it('can use inbox controller methods', async () => {
   expect(inboxControllerImport.getInboxes).toBeDefined();
 });
 ```
+## Quick links
+Here are some links to get started (or see below for code examples).
+
+- [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
+- [NPM Package](https://www.npmjs.com/package/mailslurp-client)
+- [Github Source](https://github.com/mailslurp/mailslurp-client)
+
+## Examples
+- [CypressJS Example](https://www.mailslurp.com/examples/cypress-js/)
+- [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
+- [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
+
+### Quick links
+- [Creating inboxes](/guides/creating-inboxes)
+- [Sending emails](/guides/sending-emails)
+- [Receiving email](/guides/receiving-emails)
+- [Attachments](/guides/fetching-email-content)
+- [Webhooks](/guides/email-webhooks)
+- [Aliases](/guides/alias-email-address-proxy)
+- [Domains](/guides/custom-domains)
+- [Organizations](/guides/organizations)
+- [DNS and IP Lookup](/guides/dns-lookup-nameservers)
+- [Documentation](/docs)
 
 ## Common usage
 
 Here are some snippets of common usage. Read
 
 ### Create an email address
+You can create an inbox with a randomly assigned email address ending in `@mailslurp.com` like so:
 
 ```javascript
 const inbox = await mailslurp.createInbox();
@@ -129,6 +139,12 @@ describe('inbox method usage', () => {
 });
 ```
 
+::: tip
+
+To use custom domains see the [domain verification guide](https://www.mailslurp.com/guides/custom-domains/)
+
+:::
+
 ### Get an inbox
 
 ```javascript
@@ -145,6 +161,8 @@ it('can get a full inbox', async () => {
     expect(inbox.emailAddress).toBeDefined();
 });
 ```
+
+
 
 ### List inboxes
 Inbox lists are paginated and sortable.
@@ -351,6 +369,87 @@ const result = await mailslurp.emailController.getEmailContentMatch({ pattern },
 expect(result.matches).toHaveLength(2);
 expect(result.matches[0]).toEqual("code is: 123456")
 expect(result.matches[1]).toEqual("123456");
+```
+
+## Aliases
+You can mask an email address using an alias. An alias is like a proxy. It can receive emails and forward them to any address. You can generate many to one aliases for any email address. You must verify the email address upon first use by cliking a link in the email that is sent to the address. Here is a code example:
+
+```typescript
+/**
+ * Example of using an email alias to mask an address and forward emails to hidden address
+ */
+import 'jest';
+
+import fetchApi from 'isomorphic-fetch';
+import {
+  AliasControllerApi,
+  InboxControllerApi,
+  AliasDto,
+  Configuration,
+  WaitForControllerApi,
+  SendEmailOptions,
+  EmailControllerApi,
+  ReplyToEmailOptions,
+} from 'mailslurp-admin-sdk';
+
+// setup mailslurp config
+const apiKey = process.env.apiKey;
+const config = new Configuration({ apiKey, fetchApi });
+
+// create controllers
+const inboxControllerApi = new InboxControllerApi(config);
+const aliasControllerApi = new AliasControllerApi(config);
+const waitForController = new WaitForControllerApi(config);
+const emailControllerApi = new EmailControllerApi(config);
+
+// set test timeout to allow wait 
+jest.setTimeout(60000);
+
+test('aliases', async () => {
+    // create two different email addresses for testing
+    const inboxA = await inboxControllerApi.createInbox({});
+    const inboxB = await inboxControllerApi.createInbox({});
+    const emailAddressA = inboxA.emailAddress!!;
+    const emailAddressB = inboxB.emailAddress!!;
+
+    // create an alias
+    const alias: AliasDto = await aliasControllerApi.createAlias({
+        createAliasOptions: {
+            emailAddress: emailAddressA,
+            useThreads: true,
+        },
+    });
+    
+    expect(alias.maskedEmailAddress).toEqual(emailAddressA);
+    expect(alias.emailAddress).not.toEqual(emailAddressA);
+    expect(alias.isVerified).toEqual(true);
+
+    // can send email from inboxB to alias that should be delivered to inboxA
+    const sent = await inboxControllerApi.sendEmailAndConfirm({
+        inboxId: inboxB.id!!,
+        sendEmailOptions: {
+            to: [alias.emailAddress!!],
+            subject: 'Hello inbox A',
+            body: 'From inbox B',
+        },
+    });
+    
+    expect(sent['from']).toContain(inboxB.emailAddress);
+    expect(sent.to).toContain(alias.emailAddress);
+
+    // now expect email is forwarded by alias to InboxA
+    const forwardedEmail = await waitForController.waitForLatestEmail({
+        inboxId: inboxA.id,
+        unreadOnly: true,
+        timeout: 30000,
+    });
+    
+    // received message
+    expect(forwardedEmail.subject).toContain('Hello inbox A');
+    // reply to is a thread address meaning your replies can be routed through a thread
+    expect(forwardedEmail.replyTo).not.toEqual(emailAddressA);
+    expect(forwardedEmail.replyTo).not.toEqual(emailAddressB);
+});
 ```
 
 ## Documentation

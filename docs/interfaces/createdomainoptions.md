@@ -26,7 +26,7 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 • `Optional` **domain**: string
 
-*Defined in [src/generated/api.ts:575](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L575)*
+*Defined in [src/generated/api.ts:567](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L567)*
 
 The top level domain you wish to use with MailSlurp
 

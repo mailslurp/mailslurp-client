@@ -29,7 +29,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1701](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1701)*
+*Defined in [src/generated/api.ts:1693](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1693)*
 
 **`memberof`** InboxProjection
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:1707](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1707)*
+*Defined in [src/generated/api.ts:1699](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1699)*
 
 **`memberof`** InboxProjection
 
@@ -49,7 +49,7 @@ ___
 
 •  **favourite**: boolean
 
-*Defined in [src/generated/api.ts:1713](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1713)*
+*Defined in [src/generated/api.ts:1705](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1705)*
 
 **`memberof`** InboxProjection
 
@@ -59,7 +59,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1719](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1719)*
+*Defined in [src/generated/api.ts:1711](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1711)*
 
 **`memberof`** InboxProjection
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:1725](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1725)*
+*Defined in [src/generated/api.ts:1717](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1717)*
 
 **`memberof`** InboxProjection
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:1731](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1731)*
+*Defined in [src/generated/api.ts:1723](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1723)*
 
 **`memberof`** InboxProjection

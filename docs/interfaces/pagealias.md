@@ -36,7 +36,7 @@ Paginated email alias results. Page index starts at zero. Projection results may
 
 • `Optional` **content**: Array\<[AliasProjection](aliasprojection.md)>
 
-*Defined in [src/generated/api.ts:1850](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1850)*
+*Defined in [src/generated/api.ts:1842](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1842)*
 
 **`memberof`** PageAlias
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:1856](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1856)*
+*Defined in [src/generated/api.ts:1848](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1848)*
 
 **`memberof`** PageAlias
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:1862](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1862)*
+*Defined in [src/generated/api.ts:1854](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1854)*
 
 **`memberof`** PageAlias
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:1868](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1868)*
+*Defined in [src/generated/api.ts:1860](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1860)*
 
 **`memberof`** PageAlias
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:1874](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1874)*
+*Defined in [src/generated/api.ts:1866](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1866)*
 
 **`memberof`** PageAlias
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:1880](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1880)*
+*Defined in [src/generated/api.ts:1872](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1872)*
 
 **`memberof`** PageAlias
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:1886](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1886)*
+*Defined in [src/generated/api.ts:1878](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1878)*
 
 **`memberof`** PageAlias
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:1892](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1892)*
+*Defined in [src/generated/api.ts:1884](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1884)*
 
 **`memberof`** PageAlias
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:1898](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1898)*
+*Defined in [src/generated/api.ts:1890](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1890)*
 
 **`memberof`** PageAlias
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:1904](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1904)*
+*Defined in [src/generated/api.ts:1896](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1896)*
 
 **`memberof`** PageAlias
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:1910](https://github.com/mailslurp/mailslurp-client/blob/cdc62f8/src/generated/api.ts#L1910)*
+*Defined in [src/generated/api.ts:1902](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1902)*
 
 **`memberof`** PageAlias
