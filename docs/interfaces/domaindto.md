@@ -33,7 +33,7 @@ Domain plus verification records and status
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1007](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1007)*
+*Defined in [src/generated/api.ts:1013](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1013)*
 
 **`memberof`** DomainDto
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **dkimTokens**: Array\<string>
 
-*Defined in [src/generated/api.ts:1013](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1013)*
+*Defined in [src/generated/api.ts:1019](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1019)*
 
 DNS records for DKIM approval
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **domain**: string
 
-*Defined in [src/generated/api.ts:1019](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1019)*
+*Defined in [src/generated/api.ts:1025](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1025)*
 
 Custom domain name
 
@@ -67,7 +67,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1025](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1025)*
+*Defined in [src/generated/api.ts:1031](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1031)*
 
 **`memberof`** DomainDto
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:1031](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1031)*
+*Defined in [src/generated/api.ts:1037](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1037)*
 
 Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
 
@@ -89,7 +89,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:1037](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1037)*
+*Defined in [src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1043)*
 
 **`memberof`** DomainDto
 
@@ -99,7 +99,7 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1043)*
+*Defined in [src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1049)*
 
 **`memberof`** DomainDto
 
@@ -109,7 +109,7 @@ ___
 
 • `Optional` **verificationToken**: string
 
-*Defined in [src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1049)*
+*Defined in [src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1055)*
 
 A TXT record that you must place in the DNS settings of the domain to complete domain verification
 

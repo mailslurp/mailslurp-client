@@ -29,7 +29,7 @@
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:601](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L601)*
+*Defined in [src/generated/api.ts:607](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L607)*
 
 Optional description of an inbox for labelling purposes
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:607](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L607)*
+*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L613)*
 
 Optionally specify an email address you want the inbox to have. When left blank an email address will be randomly assigned to the inbox usually ending in `@mailslurp.com`. Custom email addresses must include your own custom domain that you have configured in MailSlurp. So if your domain is `mysite.com` you can created any email address ending in `@mysite.com`. All email addresses are transformed to lowercase!
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **expiresAt**: Date
 
-*Defined in [src/generated/api.ts:613](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L613)*
+*Defined in [src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L619)*
 
 When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. Timestamp passed as string.
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **favourite**: boolean
 
-*Defined in [src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L619)*
+*Defined in [src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L625)*
 
 Is the inbox favorited. Favouriting inboxes is typically done in the dashboard for quick access
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L625)*
+*Defined in [src/generated/api.ts:631](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L631)*
 
 Optional name of the inbox. Displayed in the dashboard for easier search
 
@@ -89,7 +89,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:631](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L631)*
+*Defined in [src/generated/api.ts:637](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L637)*
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 

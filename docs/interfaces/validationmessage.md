@@ -25,7 +25,7 @@
 
 •  **lineNumber**: number
 
-*Defined in [src/generated/api.ts:3228](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3228)*
+*Defined in [src/generated/api.ts:3452](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L3452)*
 
 **`memberof`** ValidationMessage
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:3234](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L3234)*
+*Defined in [src/generated/api.ts:3458](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L3458)*
 
 **`memberof`** ValidationMessage

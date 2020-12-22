@@ -34,7 +34,7 @@ Representation of an inbox with an email address. Emails can be sent to or from 
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1631](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1631)*
+*Defined in [src/generated/api.ts:1637](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1637)*
 
 When was the inbox created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:1637](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1637)*
+*Defined in [src/generated/api.ts:1643](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1643)*
 
 Optional description of an inbox for labelling purposes
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:1643](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1643)*
+*Defined in [src/generated/api.ts:1649](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1649)*
 
 The inbox's email address. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **expiresAt**: string
 
-*Defined in [src/generated/api.ts:1649](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1649)*
+*Defined in [src/generated/api.ts:1655](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1655)*
 
 When, if ever, will the inbox expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. Timestamp passed as string.
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **favourite**: boolean
 
-*Defined in [src/generated/api.ts:1655](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1655)*
+*Defined in [src/generated/api.ts:1661](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1661)*
 
 Is the inbox favorited. Favouriting inboxes is typically done in the dashboard for quick access
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:1661](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1661)*
+*Defined in [src/generated/api.ts:1667](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1667)*
 
 ID of the inbox. The ID is a UUID-V4 string. See the emailAddress property for the email address.
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:1667](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1667)*
+*Defined in [src/generated/api.ts:1673](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1673)*
 
 Optional name of the inbox. Displayed in the dashboard for easier search
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:1673](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1673)*
+*Defined in [src/generated/api.ts:1679](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1679)*
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 
@@ -130,7 +130,7 @@ ___
 
 • `Optional` **userId**: string
 
-*Defined in [src/generated/api.ts:1679](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L1679)*
+*Defined in [src/generated/api.ts:1685](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L1685)*
 
 ID of user that inbox belongs to
 

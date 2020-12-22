@@ -41,7 +41,7 @@ CommonActionsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -61,7 +61,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L61)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L57)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **createNewEmailAddress**(`options?`: any): Promise\<[Inbox](../interfaces/inbox.md)>
 
-*Defined in [src/generated/api.ts:5602](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L5602)*
+*Defined in [src/generated/api.ts:6473](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L6473)*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **createNewEmailAddress1**(`options?`: any): Promise\<[Inbox](../interfaces/inbox.md)>
 
-*Defined in [src/generated/api.ts:5615](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L5615)*
+*Defined in [src/generated/api.ts:6486](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L6486)*
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **emptyInbox**(`inboxId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:5629](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L5629)*
+*Defined in [src/generated/api.ts:6500](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L6500)*
 
 Deletes all emails
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **sendEmailSimple**(`emailOptions`: [SimpleSendEmailOptions](../interfaces/simplesendemailoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:5644](https://github.com/mailslurp/mailslurp-client/blob/36fa2ad/src/generated/api.ts#L5644)*
+*Defined in [src/generated/api.ts:6515](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L6515)*
 
 If no senderId or inboxId provided a random email address will be used to send from.
 

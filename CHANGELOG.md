@@ -1,5 +1,9 @@
 # Changelog
 
+
+## [10.2.0]
+- Add more alias methods
+
 ## [10.1.3]
 - Alter README
 - Add replyTo method on emailController
