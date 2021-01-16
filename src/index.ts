@@ -169,6 +169,7 @@ export class MailSlurp {
                 description,
                 emailAddress,
                 expiresAt,
+                undefined,
                 favourite,
                 name,
                 tags

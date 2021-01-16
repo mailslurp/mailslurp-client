@@ -153,7 +153,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox(description, emailAddress, expiresAt, favourite, name, tags);
+                        return _this.inboxController.createInbox(description, emailAddress, expiresAt, undefined, favourite, name, tags);
                     })];
             });
         });

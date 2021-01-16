@@ -36,7 +36,7 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 
 • `Optional` **content**: Array\<[SentEmailProjection](sentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:2292](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2292)*
+*Defined in [src/generated/api.ts:2596](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2596)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:2298](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2298)*
+*Defined in [src/generated/api.ts:2602](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2602)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:2304](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2304)*
+*Defined in [src/generated/api.ts:2608](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2608)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:2310](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2310)*
+*Defined in [src/generated/api.ts:2614](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2614)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:2316](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2316)*
+*Defined in [src/generated/api.ts:2620](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2620)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:2322](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2322)*
+*Defined in [src/generated/api.ts:2626](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2626)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:2328](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2328)*
+*Defined in [src/generated/api.ts:2632](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2632)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:2334](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2334)*
+*Defined in [src/generated/api.ts:2638](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2638)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:2340](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2340)*
+*Defined in [src/generated/api.ts:2644](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2644)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:2346](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2346)*
+*Defined in [src/generated/api.ts:2650](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2650)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:2352](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L2352)*
+*Defined in [src/generated/api.ts:2656](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2656)*
 
 **`memberof`** PageSentEmailProjection

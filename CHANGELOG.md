@@ -1,6 +1,9 @@
 # Changelog
 
 
+## [11.2.0]
+- Add HTML query and text lines email methods
+
 ## [10.2.0]
 - Add more alias methods
 

@@ -43,7 +43,7 @@ WebhookControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **createWebhook**(`inboxId`: string, `webhookOptions`: [CreateWebhookOptions](../interfaces/createwebhookoptions.md), `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)>
 
-*Defined in [src/generated/api.ts:16725](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16725)*
+*Defined in [src/generated/api.ts:17853](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17853)*
 
 Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **deleteWebhook**(`inboxId`: string, `webhookId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:16746](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16746)*
+*Defined in [src/generated/api.ts:17874](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17874)*
 
 **`summary`** Delete and disable a Webhook for an Inbox
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **getAllWebhooks**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageWebhookProjection](../interfaces/pagewebhookprojection.md)>
 
-*Defined in [src/generated/api.ts:16764](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16764)*
+*Defined in [src/generated/api.ts:17892](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17892)*
 
 List webhooks in paginated form. Allows for page index, page size, and sort direction.
 
@@ -168,7 +168,7 @@ ___
 
 ▸ **getWebhook**(`webhookId`: string, `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)>
 
-*Defined in [src/generated/api.ts:16786](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16786)*
+*Defined in [src/generated/api.ts:17914](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17914)*
 
 **`summary`** Get a webhook for an Inbox
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **getWebhooks**(`inboxId`: string, `options?`: any): Promise\<[WebhookDto](../modules/webhookdto.md)[]>
 
-*Defined in [src/generated/api.ts:16801](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16801)*
+*Defined in [src/generated/api.ts:17929](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17929)*
 
 **`summary`** Get all Webhooks for an Inbox
 
@@ -214,7 +214,7 @@ ___
 
 ▸ **sendTestData**(`webhookId`: string, `options?`: any): Promise\<[WebhookTestResult](../interfaces/webhooktestresult.md)>
 
-*Defined in [src/generated/api.ts:16816](https://github.com/mailslurp/mailslurp-client/blob/c889afa/src/generated/api.ts#L16816)*
+*Defined in [src/generated/api.ts:17944](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L17944)*
 
 **`summary`** Send webhook test data
 
