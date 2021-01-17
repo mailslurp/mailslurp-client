@@ -55,7 +55,7 @@ EmailControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -75,7 +75,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L61)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L57)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **deleteAllEmails**(`options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:10185](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10185)*
+*Defined in [src/generated/api.ts:10185](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10185)*
 
 Deletes all emails in your account. Be careful as emails cannot be recovered
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **deleteEmail**(`emailId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:10199](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10199)*
+*Defined in [src/generated/api.ts:10199](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10199)*
 
 Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **downloadAttachment**(`attachmentId`: string, `emailId`: string, `apiKey?`: string, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:10216](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10216)*
+*Defined in [src/generated/api.ts:10216](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10216)*
 
 Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **downloadAttachmentBase64**(`attachmentId`: string, `emailId`: string, `options?`: any): Promise\<[DownloadAttachmentDto](../interfaces/downloadattachmentdto.md)>
 
-*Defined in [src/generated/api.ts:10239](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10239)*
+*Defined in [src/generated/api.ts:10239](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10239)*
 
 Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **forwardEmail**(`emailId`: string, `forwardEmailOptions`: [ForwardEmailOptions](../interfaces/forwardemailoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:10261](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10261)*
+*Defined in [src/generated/api.ts:10261](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10261)*
 
 Forward an existing email to new recipients.
 
@@ -231,7 +231,7 @@ ___
 
 ▸ **getAttachmentMetaData**(`attachmentId`: string, `emailId`: string, `options?`: any): Promise\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)>
 
-*Defined in [src/generated/api.ts:10282](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10282)*
+*Defined in [src/generated/api.ts:10282](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10282)*
 
 Returns the metadata such as name and content-type for a given attachment and email.
 
@@ -257,7 +257,7 @@ ___
 
 ▸ **getAttachments**(`emailId`: string, `options?`: any): Promise\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)[]>
 
-*Defined in [src/generated/api.ts:10302](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10302)*
+*Defined in [src/generated/api.ts:10302](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10302)*
 
 Returns an array of attachment metadata such as name and content-type for a given email if present.
 
@@ -282,7 +282,7 @@ ___
 
 ▸ **getEmail**(`emailId`: string, `decode?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
 
-*Defined in [src/generated/api.ts:10318](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10318)*
+*Defined in [src/generated/api.ts:10318](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10318)*
 
 Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
 
@@ -308,7 +308,7 @@ ___
 
 ▸ **getEmailContentMatch**(`contentMatchOptions`: [ContentMatchOptions](../interfaces/contentmatchoptions.md), `emailId`: string, `options?`: any): Promise\<[EmailContentMatchResult](../interfaces/emailcontentmatchresult.md)>
 
-*Defined in [src/generated/api.ts:10335](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10335)*
+*Defined in [src/generated/api.ts:10335](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10335)*
 
 Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `['code is: 123456', '123456']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
 
@@ -334,7 +334,7 @@ ___
 
 ▸ **getEmailHTML**(`emailId`: string, `decode?`: boolean, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:10356](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10356)*
+*Defined in [src/generated/api.ts:10356](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10356)*
 
 Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
 
@@ -360,7 +360,7 @@ ___
 
 ▸ **getEmailHTMLQuery**(`emailId`: string, `htmlSelector?`: string, `options?`: any): Promise\<[EmailTextLinesResult](../interfaces/emailtextlinesresult.md)>
 
-*Defined in [src/generated/api.ts:10373](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10373)*
+*Defined in [src/generated/api.ts:10373](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10373)*
 
 Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
 
@@ -386,7 +386,7 @@ ___
 
 ▸ **getEmailTextLines**(`emailId`: string, `decodeHtmlEntities?`: boolean, `lineSeparator?`: string, `options?`: any): Promise\<[EmailTextLinesResult](../interfaces/emailtextlinesresult.md)>
 
-*Defined in [src/generated/api.ts:10395](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10395)*
+*Defined in [src/generated/api.ts:10395](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10395)*
 
 Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
 
@@ -413,7 +413,7 @@ ___
 
 ▸ **getEmailsPaginated**(`inboxId?`: Array\<string>, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `unreadOnly?`: boolean, `options?`: any): Promise\<[PageEmailProjection](../interfaces/pageemailprojection.md)>
 
-*Defined in [src/generated/api.ts:10421](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10421)*
+*Defined in [src/generated/api.ts:10421](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10421)*
 
 By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
 
@@ -442,7 +442,7 @@ ___
 
 ▸ **getRawEmailContents**(`emailId`: string, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:10447](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10447)*
+*Defined in [src/generated/api.ts:10447](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10447)*
 
 Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
 
@@ -467,7 +467,7 @@ ___
 
 ▸ **getRawEmailJson**(`emailId`: string, `options?`: any): Promise\<[RawEmailJson](../interfaces/rawemailjson.md)>
 
-*Defined in [src/generated/api.ts:10462](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10462)*
+*Defined in [src/generated/api.ts:10462](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10462)*
 
 Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
 
@@ -492,7 +492,7 @@ ___
 
 ▸ **getUnreadEmailCount**(`options?`: any): Promise\<[UnreadCount](../interfaces/unreadcount.md)>
 
-*Defined in [src/generated/api.ts:10476](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10476)*
+*Defined in [src/generated/api.ts:10476](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10476)*
 
 Get number of emails unread
 
@@ -516,7 +516,7 @@ ___
 
 ▸ **replyToEmail**(`emailId`: string, `replyToEmailOptions`: [ReplyToEmailOptions](../modules/replytoemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:10491](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10491)*
+*Defined in [src/generated/api.ts:10491](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10491)*
 
 Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
 
@@ -542,7 +542,7 @@ ___
 
 ▸ **validateEmail**(`emailId`: string, `options?`: any): Promise\<[ValidationDto](../interfaces/validationdto.md)>
 
-*Defined in [src/generated/api.ts:10511](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L10511)*
+*Defined in [src/generated/api.ts:10511](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L10511)*
 
 Validate the HTML content of email if HTML is found. Considered valid if no HTML.
 

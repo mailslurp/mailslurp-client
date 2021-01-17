@@ -25,6 +25,7 @@ import {
     UploadAttachmentOptions,
     WaitForControllerApi,
     WebhookControllerApi,
+    ExpiredControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -91,6 +92,7 @@ export class MailSlurp {
     public readonly commonController: CommonActionsControllerApi;
     public readonly bulkController: BulkActionsControllerApi;
     public readonly waitController: WaitForControllerApi;
+    public readonly expiredController: ExpiredControllerApi;
 
     public readonly aliasController: AliasControllerApi;
     public readonly formController: FormControllerApi;
@@ -132,6 +134,7 @@ export class MailSlurp {
         this.emailController = new EmailControllerApi(...args);
         this.inboxController = new InboxControllerApi(...args);
         this.attachmentController = new AttachmentControllerApi(...args);
+        this.expiredController = new ExpiredControllerApi(...args);
         this.domainController = new DomainControllerApi(...args);
 
         this.aliasController = new AliasControllerApi(...args);

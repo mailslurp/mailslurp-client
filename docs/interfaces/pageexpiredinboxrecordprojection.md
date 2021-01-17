@@ -36,7 +36,7 @@ Paginated expired inbox results. Page index starts at zero. Projection results m
 
 • `Optional` **content**: Array\<[ExpiredInboxRecordProjection](expiredinboxrecordprojection.md)>
 
-*Defined in [src/generated/api.ts:2374](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2374)*
+*Defined in [src/generated/api.ts:2374](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2374)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:2380](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2380)*
+*Defined in [src/generated/api.ts:2380](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2380)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:2386](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2386)*
+*Defined in [src/generated/api.ts:2386](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2386)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:2392](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2392)*
+*Defined in [src/generated/api.ts:2392](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2392)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:2398](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2398)*
+*Defined in [src/generated/api.ts:2398](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2398)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:2404](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2404)*
+*Defined in [src/generated/api.ts:2404](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2404)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:2410](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2410)*
+*Defined in [src/generated/api.ts:2410](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2410)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:2416](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2416)*
+*Defined in [src/generated/api.ts:2416](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2416)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:2422](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2422)*
+*Defined in [src/generated/api.ts:2422](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2422)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:2428](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2428)*
+*Defined in [src/generated/api.ts:2428](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2428)*
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:2434](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2434)*
+*Defined in [src/generated/api.ts:2434](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2434)*
 
 **`memberof`** PageExpiredInboxRecordProjection

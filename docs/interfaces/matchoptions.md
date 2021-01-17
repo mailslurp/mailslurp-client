@@ -26,7 +26,7 @@ Optional filter for matching emails based on fields. For instance filter results
 
 • `Optional` **matches**: Array\<[MatchOption](../modules/matchoption.md)>
 
-*Defined in [src/generated/api.ts:2032](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2032)*
+*Defined in [src/generated/api.ts:2032](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2032)*
 
 1 or more match options. Options are additive so if one does not match the email is excluded from results
 

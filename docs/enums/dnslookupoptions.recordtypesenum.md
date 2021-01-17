@@ -106,7 +106,7 @@
 
 •  **A**:  = \<any>'A'
 
-*Defined in [src/generated/api.ts:734](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L734)*
+*Defined in [src/generated/api.ts:734](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L734)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 •  **A6**:  = \<any>'A6'
 
-*Defined in [src/generated/api.ts:771](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L771)*
+*Defined in [src/generated/api.ts:771](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L771)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 •  **AAAA**:  = \<any>'AAAA'
 
-*Defined in [src/generated/api.ts:761](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L761)*
+*Defined in [src/generated/api.ts:761](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L761)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 •  **AFSDB**:  = \<any>'AFSDB'
 
-*Defined in [src/generated/api.ts:751](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L751)*
+*Defined in [src/generated/api.ts:751](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L751)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 •  **AMTRELAY**:  = \<any>'AMTRELAY'
 
-*Defined in [src/generated/api.ts:820](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L820)*
+*Defined in [src/generated/api.ts:820](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L820)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 •  **ANY**:  = \<any>'ANY'
 
-*Defined in [src/generated/api.ts:815](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L815)*
+*Defined in [src/generated/api.ts:815](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L815)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 •  **APL**:  = \<any>'APL'
 
-*Defined in [src/generated/api.ts:775](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L775)*
+*Defined in [src/generated/api.ts:775](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L775)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 •  **ATMA**:  = \<any>'ATMA'
 
-*Defined in [src/generated/api.ts:767](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L767)*
+*Defined in [src/generated/api.ts:767](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L767)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 •  **AVC**:  = \<any>'AVC'
 
-*Defined in [src/generated/api.ts:818](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L818)*
+*Defined in [src/generated/api.ts:818](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L818)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 •  **AXFR**:  = \<any>'AXFR'
 
-*Defined in [src/generated/api.ts:812](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L812)*
+*Defined in [src/generated/api.ts:812](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L812)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 •  **CAA**:  = \<any>'CAA'
 
-*Defined in [src/generated/api.ts:817](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L817)*
+*Defined in [src/generated/api.ts:817](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L817)*
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 •  **CDNSKEY**:  = \<any>'CDNSKEY'
 
-*Defined in [src/generated/api.ts:792](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L792)*
+*Defined in [src/generated/api.ts:792](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L792)*
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 •  **CDS**:  = \<any>'CDS'
 
-*Defined in [src/generated/api.ts:791](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L791)*
+*Defined in [src/generated/api.ts:791](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L791)*
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 •  **CERT**:  = \<any>'CERT'
 
-*Defined in [src/generated/api.ts:770](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L770)*
+*Defined in [src/generated/api.ts:770](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L770)*
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 •  **CNAME**:  = \<any>'CNAME'
 
-*Defined in [src/generated/api.ts:738](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L738)*
+*Defined in [src/generated/api.ts:738](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L738)*
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 •  **CSYNC**:  = \<any>'CSYNC'
 
-*Defined in [src/generated/api.ts:794](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L794)*
+*Defined in [src/generated/api.ts:794](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L794)*
 
 ___
 
@@ -234,7 +234,7 @@ ___
 
 •  **DHCID**:  = \<any>'DHCID'
 
-*Defined in [src/generated/api.ts:782](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L782)*
+*Defined in [src/generated/api.ts:782](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L782)*
 
 ___
 
@@ -242,7 +242,7 @@ ___
 
 •  **DLV**:  = \<any>'DLV'
 
-*Defined in [src/generated/api.ts:822](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L822)*
+*Defined in [src/generated/api.ts:822](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L822)*
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 •  **DNAME**:  = \<any>'DNAME'
 
-*Defined in [src/generated/api.ts:772](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L772)*
+*Defined in [src/generated/api.ts:772](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L772)*
 
 ___
 
@@ -258,7 +258,7 @@ ___
 
 •  **DNSKEY**:  = \<any>'DNSKEY'
 
-*Defined in [src/generated/api.ts:781](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L781)*
+*Defined in [src/generated/api.ts:781](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L781)*
 
 ___
 
@@ -266,7 +266,7 @@ ___
 
 •  **DOA**:  = \<any>'DOA'
 
-*Defined in [src/generated/api.ts:819](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L819)*
+*Defined in [src/generated/api.ts:819](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L819)*
 
 ___
 
@@ -274,7 +274,7 @@ ___
 
 •  **DS**:  = \<any>'DS'
 
-*Defined in [src/generated/api.ts:776](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L776)*
+*Defined in [src/generated/api.ts:776](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L776)*
 
 ___
 
@@ -282,7 +282,7 @@ ___
 
 •  **EID**:  = \<any>'EID'
 
-*Defined in [src/generated/api.ts:764](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L764)*
+*Defined in [src/generated/api.ts:764](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L764)*
 
 ___
 
@@ -290,7 +290,7 @@ ___
 
 •  **EUI48**:  = \<any>'EUI48'
 
-*Defined in [src/generated/api.ts:807](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L807)*
+*Defined in [src/generated/api.ts:807](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L807)*
 
 ___
 
@@ -298,7 +298,7 @@ ___
 
 •  **EUI64**:  = \<any>'EUI64'
 
-*Defined in [src/generated/api.ts:808](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L808)*
+*Defined in [src/generated/api.ts:808](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L808)*
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 •  **GID**:  = \<any>'GID'
 
-*Defined in [src/generated/api.ts:801](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L801)*
+*Defined in [src/generated/api.ts:801](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L801)*
 
 ___
 
@@ -314,7 +314,7 @@ ___
 
 •  **GPOS**:  = \<any>'GPOS'
 
-*Defined in [src/generated/api.ts:760](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L760)*
+*Defined in [src/generated/api.ts:760](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L760)*
 
 ___
 
@@ -322,7 +322,7 @@ ___
 
 •  **HINFO**:  = \<any>'HINFO'
 
-*Defined in [src/generated/api.ts:746](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L746)*
+*Defined in [src/generated/api.ts:746](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L746)*
 
 ___
 
@@ -330,7 +330,7 @@ ___
 
 •  **HIP**:  = \<any>'HIP'
 
-*Defined in [src/generated/api.ts:787](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L787)*
+*Defined in [src/generated/api.ts:787](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L787)*
 
 ___
 
@@ -338,7 +338,7 @@ ___
 
 •  **HTTPS**:  = \<any>'HTTPS'
 
-*Defined in [src/generated/api.ts:797](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L797)*
+*Defined in [src/generated/api.ts:797](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L797)*
 
 ___
 
@@ -346,7 +346,7 @@ ___
 
 •  **IPSECKEY**:  = \<any>'IPSECKEY'
 
-*Defined in [src/generated/api.ts:778](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L778)*
+*Defined in [src/generated/api.ts:778](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L778)*
 
 ___
 
@@ -354,7 +354,7 @@ ___
 
 •  **ISDN**:  = \<any>'ISDN'
 
-*Defined in [src/generated/api.ts:753](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L753)*
+*Defined in [src/generated/api.ts:753](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L753)*
 
 ___
 
@@ -362,7 +362,7 @@ ___
 
 •  **IXFR**:  = \<any>'IXFR'
 
-*Defined in [src/generated/api.ts:811](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L811)*
+*Defined in [src/generated/api.ts:811](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L811)*
 
 ___
 
@@ -370,7 +370,7 @@ ___
 
 •  **KEY**:  = \<any>'KEY'
 
-*Defined in [src/generated/api.ts:758](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L758)*
+*Defined in [src/generated/api.ts:758](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L758)*
 
 ___
 
@@ -378,7 +378,7 @@ ___
 
 •  **KX**:  = \<any>'KX'
 
-*Defined in [src/generated/api.ts:769](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L769)*
+*Defined in [src/generated/api.ts:769](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L769)*
 
 ___
 
@@ -386,7 +386,7 @@ ___
 
 •  **L32**:  = \<any>'L32'
 
-*Defined in [src/generated/api.ts:804](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L804)*
+*Defined in [src/generated/api.ts:804](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L804)*
 
 ___
 
@@ -394,7 +394,7 @@ ___
 
 •  **L64**:  = \<any>'L64'
 
-*Defined in [src/generated/api.ts:805](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L805)*
+*Defined in [src/generated/api.ts:805](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L805)*
 
 ___
 
@@ -402,7 +402,7 @@ ___
 
 •  **LOC**:  = \<any>'LOC'
 
-*Defined in [src/generated/api.ts:762](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L762)*
+*Defined in [src/generated/api.ts:762](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L762)*
 
 ___
 
@@ -410,7 +410,7 @@ ___
 
 •  **LP**:  = \<any>'LP'
 
-*Defined in [src/generated/api.ts:806](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L806)*
+*Defined in [src/generated/api.ts:806](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L806)*
 
 ___
 
@@ -418,7 +418,7 @@ ___
 
 •  **MAILA**:  = \<any>'MAILA'
 
-*Defined in [src/generated/api.ts:814](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L814)*
+*Defined in [src/generated/api.ts:814](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L814)*
 
 ___
 
@@ -426,7 +426,7 @@ ___
 
 •  **MAILB**:  = \<any>'MAILB'
 
-*Defined in [src/generated/api.ts:813](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L813)*
+*Defined in [src/generated/api.ts:813](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L813)*
 
 ___
 
@@ -434,7 +434,7 @@ ___
 
 •  **MB**:  = \<any>'MB'
 
-*Defined in [src/generated/api.ts:740](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L740)*
+*Defined in [src/generated/api.ts:740](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L740)*
 
 ___
 
@@ -442,7 +442,7 @@ ___
 
 •  **MD**:  = \<any>'MD'
 
-*Defined in [src/generated/api.ts:736](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L736)*
+*Defined in [src/generated/api.ts:736](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L736)*
 
 ___
 
@@ -450,7 +450,7 @@ ___
 
 •  **MF**:  = \<any>'MF'
 
-*Defined in [src/generated/api.ts:737](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L737)*
+*Defined in [src/generated/api.ts:737](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L737)*
 
 ___
 
@@ -458,7 +458,7 @@ ___
 
 •  **MG**:  = \<any>'MG'
 
-*Defined in [src/generated/api.ts:741](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L741)*
+*Defined in [src/generated/api.ts:741](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L741)*
 
 ___
 
@@ -466,7 +466,7 @@ ___
 
 •  **MINFO**:  = \<any>'MINFO'
 
-*Defined in [src/generated/api.ts:747](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L747)*
+*Defined in [src/generated/api.ts:747](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L747)*
 
 ___
 
@@ -474,7 +474,7 @@ ___
 
 •  **MR**:  = \<any>'MR'
 
-*Defined in [src/generated/api.ts:742](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L742)*
+*Defined in [src/generated/api.ts:742](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L742)*
 
 ___
 
@@ -482,7 +482,7 @@ ___
 
 •  **MX**:  = \<any>'MX'
 
-*Defined in [src/generated/api.ts:748](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L748)*
+*Defined in [src/generated/api.ts:748](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L748)*
 
 ___
 
@@ -490,7 +490,7 @@ ___
 
 •  **NAPTR**:  = \<any>'NAPTR'
 
-*Defined in [src/generated/api.ts:768](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L768)*
+*Defined in [src/generated/api.ts:768](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L768)*
 
 ___
 
@@ -498,7 +498,7 @@ ___
 
 •  **NID**:  = \<any>'NID'
 
-*Defined in [src/generated/api.ts:803](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L803)*
+*Defined in [src/generated/api.ts:803](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L803)*
 
 ___
 
@@ -506,7 +506,7 @@ ___
 
 •  **NIMLOC**:  = \<any>'NIMLOC'
 
-*Defined in [src/generated/api.ts:765](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L765)*
+*Defined in [src/generated/api.ts:765](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L765)*
 
 ___
 
@@ -514,7 +514,7 @@ ___
 
 •  **NINFO**:  = \<any>'NINFO'
 
-*Defined in [src/generated/api.ts:788](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L788)*
+*Defined in [src/generated/api.ts:788](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L788)*
 
 ___
 
@@ -522,7 +522,7 @@ ___
 
 •  **NS**:  = \<any>'NS'
 
-*Defined in [src/generated/api.ts:735](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L735)*
+*Defined in [src/generated/api.ts:735](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L735)*
 
 ___
 
@@ -530,7 +530,7 @@ ___
 
 •  **NSAP**:  = \<any>'NSAP'
 
-*Defined in [src/generated/api.ts:755](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L755)*
+*Defined in [src/generated/api.ts:755](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L755)*
 
 ___
 
@@ -538,7 +538,7 @@ ___
 
 •  **NSAPPTR**:  = \<any>'NSAP\_PTR'
 
-*Defined in [src/generated/api.ts:756](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L756)*
+*Defined in [src/generated/api.ts:756](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L756)*
 
 ___
 
@@ -546,7 +546,7 @@ ___
 
 •  **NSEC**:  = \<any>'NSEC'
 
-*Defined in [src/generated/api.ts:780](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L780)*
+*Defined in [src/generated/api.ts:780](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L780)*
 
 ___
 
@@ -554,7 +554,7 @@ ___
 
 •  **NSEC3**:  = \<any>'NSEC3'
 
-*Defined in [src/generated/api.ts:783](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L783)*
+*Defined in [src/generated/api.ts:783](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L783)*
 
 ___
 
@@ -562,7 +562,7 @@ ___
 
 •  **NSEC3PARAM**:  = \<any>'NSEC3PARAM'
 
-*Defined in [src/generated/api.ts:784](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L784)*
+*Defined in [src/generated/api.ts:784](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L784)*
 
 ___
 
@@ -570,7 +570,7 @@ ___
 
 •  **NULL**:  = \<any>'NULL'
 
-*Defined in [src/generated/api.ts:743](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L743)*
+*Defined in [src/generated/api.ts:743](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L743)*
 
 ___
 
@@ -578,7 +578,7 @@ ___
 
 •  **NXT**:  = \<any>'NXT'
 
-*Defined in [src/generated/api.ts:763](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L763)*
+*Defined in [src/generated/api.ts:763](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L763)*
 
 ___
 
@@ -586,7 +586,7 @@ ___
 
 •  **OPENPGPKEY**:  = \<any>'OPENPGPKEY'
 
-*Defined in [src/generated/api.ts:793](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L793)*
+*Defined in [src/generated/api.ts:793](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L793)*
 
 ___
 
@@ -594,7 +594,7 @@ ___
 
 •  **OPT**:  = \<any>'OPT'
 
-*Defined in [src/generated/api.ts:774](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L774)*
+*Defined in [src/generated/api.ts:774](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L774)*
 
 ___
 
@@ -602,7 +602,7 @@ ___
 
 •  **PTR**:  = \<any>'PTR'
 
-*Defined in [src/generated/api.ts:745](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L745)*
+*Defined in [src/generated/api.ts:745](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L745)*
 
 ___
 
@@ -610,7 +610,7 @@ ___
 
 •  **PX**:  = \<any>'PX'
 
-*Defined in [src/generated/api.ts:759](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L759)*
+*Defined in [src/generated/api.ts:759](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L759)*
 
 ___
 
@@ -618,7 +618,7 @@ ___
 
 •  **RKEY**:  = \<any>'RKEY'
 
-*Defined in [src/generated/api.ts:789](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L789)*
+*Defined in [src/generated/api.ts:789](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L789)*
 
 ___
 
@@ -626,7 +626,7 @@ ___
 
 •  **RP**:  = \<any>'RP'
 
-*Defined in [src/generated/api.ts:750](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L750)*
+*Defined in [src/generated/api.ts:750](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L750)*
 
 ___
 
@@ -634,7 +634,7 @@ ___
 
 •  **RRSIG**:  = \<any>'RRSIG'
 
-*Defined in [src/generated/api.ts:779](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L779)*
+*Defined in [src/generated/api.ts:779](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L779)*
 
 ___
 
@@ -642,7 +642,7 @@ ___
 
 •  **RT**:  = \<any>'RT'
 
-*Defined in [src/generated/api.ts:754](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L754)*
+*Defined in [src/generated/api.ts:754](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L754)*
 
 ___
 
@@ -650,7 +650,7 @@ ___
 
 •  **SIG**:  = \<any>'SIG'
 
-*Defined in [src/generated/api.ts:757](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L757)*
+*Defined in [src/generated/api.ts:757](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L757)*
 
 ___
 
@@ -658,7 +658,7 @@ ___
 
 •  **SINK**:  = \<any>'SINK'
 
-*Defined in [src/generated/api.ts:773](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L773)*
+*Defined in [src/generated/api.ts:773](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L773)*
 
 ___
 
@@ -666,7 +666,7 @@ ___
 
 •  **SMIMEA**:  = \<any>'SMIMEA'
 
-*Defined in [src/generated/api.ts:786](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L786)*
+*Defined in [src/generated/api.ts:786](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L786)*
 
 ___
 
@@ -674,7 +674,7 @@ ___
 
 •  **SOA**:  = \<any>'SOA'
 
-*Defined in [src/generated/api.ts:739](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L739)*
+*Defined in [src/generated/api.ts:739](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L739)*
 
 ___
 
@@ -682,7 +682,7 @@ ___
 
 •  **SPF**:  = \<any>'SPF'
 
-*Defined in [src/generated/api.ts:798](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L798)*
+*Defined in [src/generated/api.ts:798](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L798)*
 
 ___
 
@@ -690,7 +690,7 @@ ___
 
 •  **SRV**:  = \<any>'SRV'
 
-*Defined in [src/generated/api.ts:766](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L766)*
+*Defined in [src/generated/api.ts:766](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L766)*
 
 ___
 
@@ -698,7 +698,7 @@ ___
 
 •  **SSHFP**:  = \<any>'SSHFP'
 
-*Defined in [src/generated/api.ts:777](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L777)*
+*Defined in [src/generated/api.ts:777](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L777)*
 
 ___
 
@@ -706,7 +706,7 @@ ___
 
 •  **SVCB**:  = \<any>'SVCB'
 
-*Defined in [src/generated/api.ts:796](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L796)*
+*Defined in [src/generated/api.ts:796](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L796)*
 
 ___
 
@@ -714,7 +714,7 @@ ___
 
 •  **TA**:  = \<any>'TA'
 
-*Defined in [src/generated/api.ts:821](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L821)*
+*Defined in [src/generated/api.ts:821](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L821)*
 
 ___
 
@@ -722,7 +722,7 @@ ___
 
 •  **TALINK**:  = \<any>'TALINK'
 
-*Defined in [src/generated/api.ts:790](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L790)*
+*Defined in [src/generated/api.ts:790](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L790)*
 
 ___
 
@@ -730,7 +730,7 @@ ___
 
 •  **TKEY**:  = \<any>'TKEY'
 
-*Defined in [src/generated/api.ts:809](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L809)*
+*Defined in [src/generated/api.ts:809](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L809)*
 
 ___
 
@@ -738,7 +738,7 @@ ___
 
 •  **TLSA**:  = \<any>'TLSA'
 
-*Defined in [src/generated/api.ts:785](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L785)*
+*Defined in [src/generated/api.ts:785](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L785)*
 
 ___
 
@@ -746,7 +746,7 @@ ___
 
 •  **TSIG**:  = \<any>'TSIG'
 
-*Defined in [src/generated/api.ts:810](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L810)*
+*Defined in [src/generated/api.ts:810](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L810)*
 
 ___
 
@@ -754,7 +754,7 @@ ___
 
 •  **TXT**:  = \<any>'TXT'
 
-*Defined in [src/generated/api.ts:749](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L749)*
+*Defined in [src/generated/api.ts:749](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L749)*
 
 ___
 
@@ -762,7 +762,7 @@ ___
 
 •  **UID**:  = \<any>'UID'
 
-*Defined in [src/generated/api.ts:800](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L800)*
+*Defined in [src/generated/api.ts:800](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L800)*
 
 ___
 
@@ -770,7 +770,7 @@ ___
 
 •  **UINFO**:  = \<any>'UINFO'
 
-*Defined in [src/generated/api.ts:799](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L799)*
+*Defined in [src/generated/api.ts:799](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L799)*
 
 ___
 
@@ -778,7 +778,7 @@ ___
 
 •  **UNSPEC**:  = \<any>'UNSPEC'
 
-*Defined in [src/generated/api.ts:802](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L802)*
+*Defined in [src/generated/api.ts:802](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L802)*
 
 ___
 
@@ -786,7 +786,7 @@ ___
 
 •  **URI**:  = \<any>'URI'
 
-*Defined in [src/generated/api.ts:816](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L816)*
+*Defined in [src/generated/api.ts:816](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L816)*
 
 ___
 
@@ -794,7 +794,7 @@ ___
 
 •  **WKS**:  = \<any>'WKS'
 
-*Defined in [src/generated/api.ts:744](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L744)*
+*Defined in [src/generated/api.ts:744](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L744)*
 
 ___
 
@@ -802,7 +802,7 @@ ___
 
 •  **X25**:  = \<any>'X25'
 
-*Defined in [src/generated/api.ts:752](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L752)*
+*Defined in [src/generated/api.ts:752](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L752)*
 
 ___
 
@@ -810,4 +810,4 @@ ___
 
 •  **ZONEMD**:  = \<any>'ZONEMD'
 
-*Defined in [src/generated/api.ts:795](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L795)*
+*Defined in [src/generated/api.ts:795](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L795)*

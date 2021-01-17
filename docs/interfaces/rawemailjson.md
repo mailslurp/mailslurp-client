@@ -26,6 +26,6 @@ Content in raw format
 
 •  **content**: string
 
-*Defined in [src/generated/api.ts:2936](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2936)*
+*Defined in [src/generated/api.ts:2936](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L2936)*
 
 **`memberof`** RawEmailJson

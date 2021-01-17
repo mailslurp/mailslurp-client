@@ -127,6 +127,7 @@ var MailSlurp = /** @class */ (function () {
         this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArrays([void 0], args)))();
         this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArrays([void 0], args)))();
         this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArrays([void 0], args)))();
+        this.expiredController = new (generated_1.ExpiredControllerApi.bind.apply(generated_1.ExpiredControllerApi, __spreadArrays([void 0], args)))();
         this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, __spreadArrays([void 0], args)))();
         this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, __spreadArrays([void 0], args)))();
         this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, __spreadArrays([void 0], args)))();

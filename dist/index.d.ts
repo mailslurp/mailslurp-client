@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, ExpiredControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -56,6 +56,7 @@ export declare class MailSlurp {
     readonly commonController: CommonActionsControllerApi;
     readonly bulkController: BulkActionsControllerApi;
     readonly waitController: WaitForControllerApi;
+    readonly expiredController: ExpiredControllerApi;
     readonly aliasController: AliasControllerApi;
     readonly formController: FormControllerApi;
     readonly domainController: DomainControllerApi;

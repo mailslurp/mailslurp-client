@@ -30,7 +30,7 @@ Options for updating inbox properties
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:3672](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L3672)*
+*Defined in [src/generated/api.ts:3672](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L3672)*
 
 Description of an inbox for labelling and searching purposes
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **expiresAt**: Date
 
-*Defined in [src/generated/api.ts:3678](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L3678)*
+*Defined in [src/generated/api.ts:3678](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L3678)*
 
 Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **favourite**: boolean
 
-*Defined in [src/generated/api.ts:3684](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L3684)*
+*Defined in [src/generated/api.ts:3684](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L3684)*
 
 Is the inbox favorited. Favouriting inboxes is typically done in the dashboard for quick access or filtering
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:3690](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L3690)*
+*Defined in [src/generated/api.ts:3690](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L3690)*
 
 Name of the inbox. Displayed in the dashboard for easier search
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:3696](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L3696)*
+*Defined in [src/generated/api.ts:3696](https://github.com/mailslurp/mailslurp-client/blob/65d1444/src/generated/api.ts#L3696)*
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 
