@@ -6,7 +6,7 @@ icon: /assets/icons/javascript.svg
 iconType: asset
 featured: true
 expose: true
-weight: -1
+weight: -100
 ---
 
 # MailSlurp Javascript Client
