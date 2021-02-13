@@ -5,6 +5,7 @@ title: Javascript
 icon: /assets/icons/javascript.svg
 iconType: asset
 featured: true
+feature: docs_recommended
 expose: true
 weight: -100
 ---
