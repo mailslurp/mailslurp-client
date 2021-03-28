@@ -6,15 +6,12 @@
 
 ## Get started
 
-::: tip
-
 This section describes how to get up and running with the Javascript client.
 
 See the [guides page](https://www.mailslurp.com/guides/) for more examples and use with common frameworks.
 
 See the method documentation for a [list of all functions](./docs/classes/_index_.mailslurp/)
 
-:::
 
 ### Create API Key
 
