@@ -147,13 +147,16 @@ var MailSlurp = /** @class */ (function () {
      * @param {boolean} [favourite] Is inbox favourited.
      * @param {string} [name] Optional name for an inbox.
      * @param {Array<string>} [tags] Optional tags for an inbox. Can be used for searching and filtering inboxes.
+     * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
+     * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
+     * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
      */
-    MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags) {
+    MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags, teamAccess, expiresIn, useDomainPool) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox(description, emailAddress, expiresAt, favourite, name, tags);
+                        return _this.inboxController.createInbox(teamAccess, description, emailAddress, expiresAt, expiresIn, favourite, name, tags, useDomainPool);
                     })];
             });
         });

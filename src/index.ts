@@ -155,6 +155,9 @@ export class MailSlurp {
      * @param {boolean} [favourite] Is inbox favourited.
      * @param {string} [name] Optional name for an inbox.
      * @param {Array<string>} [tags] Optional tags for an inbox. Can be used for searching and filtering inboxes.
+     * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
+     * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
+     * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
      */
     async createInbox(
         emailAddress?: string,
@@ -162,16 +165,22 @@ export class MailSlurp {
         description?: string,
         expiresAt?: Date,
         favourite?: boolean,
-        tags?: Array<string>
+        tags?: Array<string>,
+        teamAccess?: boolean,
+        expiresIn?: number,
+        useDomainPool?: boolean
     ): Promise<Inbox> {
         return wrapCall('createInbox', () =>
             this.inboxController.createInbox(
+                teamAccess,
                 description,
                 emailAddress,
                 expiresAt,
+                expiresIn,
                 favourite,
                 name,
-                tags
+                tags,
+                useDomainPool
             )
         );
     }

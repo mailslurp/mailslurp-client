@@ -17,19 +17,17 @@ weight: -1
 
 ## Get started
 
-::: tip
-
 This section describes how to get up and running with the Javascript client.
 
-See the [guides page](https://www.mailslurp.com/guides/) for more examples and use with common frameworks.
+See the [guides page](https://www.mailslurp.com/guides/) for more examples and use with common frameworks. For use with CypressJS see the official [Cypress MailSlurp plugin](https://www.npmjs.com/package/cypress-mailslurp).
 
-See the method documentation for a [list of all functions](./docs/classes/_index_.mailslurp/)
-
-:::
+See the method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/)
 
 ### Create API Key
 
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy the key from your dashboard.
+
+![api-key](https://mailslurp.com/assets/guides/find-api-key.png)
 
 ## Install NPM dependency
 
@@ -82,12 +80,13 @@ Here are some links to get started (or see below for code examples).
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
 
-## Examples
-- [CypressJS Example](https://www.mailslurp.com/examples/cypress-js/)
+### Examples
+- [CypressJS Example](https://www.mailslurp.com/examples/cypress-test-email-plugin-js/)
 - [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
 - [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
+- [TestCafe Selenium Example](https://www.mailslurp.com/examples/testcafe-mfa-user-sign-up/)
 
-### Quick links
+### Guides
 - [Creating inboxes](/guides/creating-inboxes)
 - [Sending emails](/guides/sending-emails)
 - [Receiving email](/guides/receiving-emails)
@@ -104,6 +103,7 @@ Here are some links to get started (or see below for code examples).
 Here are some snippets of common usage. Read
 
 ### Create an email address
+MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/interfaces/inbox/).
 You can create an inbox with a randomly assigned email address ending in `@mailslurp.com` like so:
 
 ```javascript
@@ -139,13 +139,10 @@ describe('inbox method usage', () => {
 });
 ```
 
-::: tip
-
-To use custom domains see the [domain verification guide](https://www.mailslurp.com/guides/custom-domains/)
-
-:::
+> To use custom domains see the [domain verification guide](https://www.mailslurp.com/guides/custom-domains/)
 
 ### Get an inbox
+Inboxes have real email addresses. See the [inbox reference](https://www.mailslurp.com/docs/js/docs/interfaces/inbox/) for all properties.
 
 ```javascript
 /**
@@ -162,10 +159,8 @@ it('can get a full inbox', async () => {
 });
 ```
 
-
-
 ### List inboxes
-Inbox lists are paginated and sortable.
+Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/interfaces/inboxprojection/) for properties.
 
 ```javascript
 describe("inbox pagination", () => {
@@ -183,6 +178,7 @@ describe("inbox pagination", () => {
   });
 });
 ```
+
 ### Access controllers
 A MailSlurp instance has properties for access all the API endpoints as controllers. See these for futher inbox operations.
 ```javascript
@@ -201,11 +197,11 @@ describe("inbox pagination", () => {
 });
 ```
 
-See method documentation for a [list of all functions](./docs/classes/mailslurp/).
+See method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/).
 
 ### Fetch emails from inbox
 
-There are many ways to receive and fetch emails in MailSlurp.
+There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/email/).
 
 ```javascript
 const latestEmail = await mailslurp.waitForLatestEmail(inbox.id);
@@ -229,8 +225,7 @@ await mailslurp.sendEmail(inbox.id, options);
 ```
 
 ### Upload attachment
-Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions.
-
+Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions. See the [upload attachment options](https://www.mailslurp.com/docs/js/docs/interfaces/uploadattachmentoptions/) for more information.
 ```javascript
 /**
  * Upload base 64 encoded file
@@ -272,6 +267,7 @@ it("can send attachment", async () => {
 });
 ```
 ### Wait for multiple emails
+The WaitForController contains many methods for waiting for emails to arrive in an inbox. See the [waitFor controller reference](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/) for more information.
 
 ```javascript
 it('can wait for multiple emails', async () => {
@@ -346,6 +342,8 @@ it('can wait for matching emails', async () => {
     expect(matchingEmails[0].subject).toEqual("Apples");
 })
 ```
+
+See the [MatchOptions documentation](https://www.mailslurp.com/docs/js/docs/interfaces/matchoptions/) for reference.
 
 ### Extract email content
 You can extract useful information from emails using regular expressions:
@@ -454,7 +452,7 @@ test('aliases', async () => {
 
 ## Documentation
 
-- [Method documentation](./docs/)
+- [Method documentation](https://www.mailslurp.com/docs/js/docs/)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)
 - [Example repositories](https://www.mailslurp.com/examples/)
@@ -462,6 +460,6 @@ test('aliases', async () => {
 ## Resources
 
 - [Dashboard App](https://app.mailslurp.com)
-- [Documentation](./docs/)
+- [Documentation](https://www.mailslurp.com/docs/js/docs/)
 - [Github](https://github.com/mailslurp/mailslurp-client)
-- [PM](https://www.npmjs.com/package/mailslurp-client)
+- [NPM package](https://www.npmjs.com/package/mailslurp-client)

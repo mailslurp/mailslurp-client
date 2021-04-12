@@ -84,8 +84,11 @@ export declare class MailSlurp {
      * @param {boolean} [favourite] Is inbox favourited.
      * @param {string} [name] Optional name for an inbox.
      * @param {Array<string>} [tags] Optional tags for an inbox. Can be used for searching and filtering inboxes.
+     * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
+     * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
+     * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
      */
-    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>): Promise<Inbox>;
+    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>, teamAccess?: boolean, expiresIn?: number, useDomainPool?: boolean): Promise<Inbox>;
     /**
      * Permanently delete an inbox and associated email address aswell as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox
