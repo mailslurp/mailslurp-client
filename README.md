@@ -1,14 +1,3 @@
----
-label: Javascript SDK
-subtitle: Official Javascript MailSlurp client. Supports Typescript and Webpack.
-title: Javascript
-icon: /assets/icons/javascript.svg
-iconType: asset
-featured: true
-expose: true
-weight: -1
----
-
 # MailSlurp Javascript Client
 
 > Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
