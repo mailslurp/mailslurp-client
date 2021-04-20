@@ -4,6 +4,32 @@
 
 [MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. 
 
+## Quick links
+Here are some links to get started (or see below for code examples).
+
+- [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
+- [NPM Package](https://www.npmjs.com/package/mailslurp-client)
+- [Github Source](https://github.com/mailslurp/mailslurp-client)
+
+### Examples
+- [CypressJS Example](https://www.mailslurp.com/examples/cypress-test-email-plugin-js/)
+- [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
+- [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
+- [TestCafe Selenium Example](https://www.mailslurp.com/examples/testcafe-mfa-user-sign-up/)
+
+### Guides
+- [Creating inboxes](/guides/creating-inboxes)
+- [Sending emails](/guides/sending-emails)
+- [Receiving email](/guides/receiving-emails)
+- [Attachments](/guides/fetching-email-content)
+- [Webhooks](/guides/email-webhooks)
+- [Aliases](/guides/alias-email-address-proxy)
+- [Domains](/guides/custom-domains)
+- [Organizations](/guides/organizations)
+- [DNS and IP Lookup](/guides/dns-lookup-nameservers)
+- [Documentation](/docs)
+
+
 ## Get started
 
 This section describes how to get up and running with the Javascript client.
@@ -62,30 +88,6 @@ it('can use inbox controller methods', async () => {
   expect(inboxControllerImport.getInboxes).toBeDefined();
 });
 ```
-## Quick links
-Here are some links to get started (or see below for code examples).
-
-- [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
-- [NPM Package](https://www.npmjs.com/package/mailslurp-client)
-- [Github Source](https://github.com/mailslurp/mailslurp-client)
-
-### Examples
-- [CypressJS Example](https://www.mailslurp.com/examples/cypress-test-email-plugin-js/)
-- [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
-- [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
-- [TestCafe Selenium Example](https://www.mailslurp.com/examples/testcafe-mfa-user-sign-up/)
-
-### Guides
-- [Creating inboxes](/guides/creating-inboxes)
-- [Sending emails](/guides/sending-emails)
-- [Receiving email](/guides/receiving-emails)
-- [Attachments](/guides/fetching-email-content)
-- [Webhooks](/guides/email-webhooks)
-- [Aliases](/guides/alias-email-address-proxy)
-- [Domains](/guides/custom-domains)
-- [Organizations](/guides/organizations)
-- [DNS and IP Lookup](/guides/dns-lookup-nameservers)
-- [Documentation](/docs)
 
 ## Common usage
 
