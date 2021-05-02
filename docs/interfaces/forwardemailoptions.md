@@ -29,7 +29,7 @@ Options for forwarding an email
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1821](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1821)*
+*Defined in [src/generated/api.ts:1821](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1821)*
 
 Optional bcc recipients
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1827](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1827)*
+*Defined in [src/generated/api.ts:1827](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1827)*
 
 Optional cc recipients
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:1833](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1833)*
+*Defined in [src/generated/api.ts:1833](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1833)*
 
 Subject for forwarded email
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:1839](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1839)*
+*Defined in [src/generated/api.ts:1839](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1839)*
 
 To recipients for forwarded email
 
