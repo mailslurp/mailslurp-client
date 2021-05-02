@@ -27,7 +27,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1831](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L1831)*
+*Defined in [src/generated/api.ts:1873](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1873)*
 
 **`memberof`** GroupDto
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:1837](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L1837)*
+*Defined in [src/generated/api.ts:1879](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1879)*
 
 **`memberof`** GroupDto
 
@@ -47,7 +47,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1843](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L1843)*
+*Defined in [src/generated/api.ts:1885](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1885)*
 
 **`memberof`** GroupDto
 
@@ -57,6 +57,6 @@ ___
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:1849](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L1849)*
+*Defined in [src/generated/api.ts:1891](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1891)*
 
 **`memberof`** GroupDto

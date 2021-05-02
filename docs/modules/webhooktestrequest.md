@@ -27,7 +27,7 @@
 
 •  **headers**: { [key:string]: string;  }
 
-*Defined in [src/generated/api.ts:4244](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4244)*
+*Defined in [src/generated/api.ts:4578](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4578)*
 
 **`memberof`** WebhookTestRequest
 
@@ -37,7 +37,7 @@ ___
 
 •  **method**: [MethodEnum](../enums/webhooktestrequest.methodenum.md)
 
-*Defined in [src/generated/api.ts:4250](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4250)*
+*Defined in [src/generated/api.ts:4584](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4584)*
 
 **`memberof`** WebhookTestRequest
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **payload**: string
 
-*Defined in [src/generated/api.ts:4256](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4256)*
+*Defined in [src/generated/api.ts:4590](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4590)*
 
 **`memberof`** WebhookTestRequest
 
@@ -57,6 +57,6 @@ ___
 
 •  **url**: string
 
-*Defined in [src/generated/api.ts:4262](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4262)*
+*Defined in [src/generated/api.ts:4596](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4596)*
 
 **`memberof`** WebhookTestRequest

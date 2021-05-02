@@ -24,6 +24,6 @@
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:1003](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L1003)*
+*Defined in [src/generated/api.ts:1045](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L1045)*
 
 **`memberof`** DescribeDomainOptions

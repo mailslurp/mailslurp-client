@@ -29,7 +29,7 @@ Name Server Record
 
 •  **priority**: string
 
-*Defined in [src/generated/api.ts:2138](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2138)*
+*Defined in [src/generated/api.ts:2298](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L2298)*
 
 **`memberof`** NameServerRecord
 
@@ -39,7 +39,7 @@ ___
 
 •  **raw**: string
 
-*Defined in [src/generated/api.ts:2144](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2144)*
+*Defined in [src/generated/api.ts:2304](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L2304)*
 
 **`memberof`** NameServerRecord
 
@@ -49,7 +49,7 @@ ___
 
 •  **recordType**: string
 
-*Defined in [src/generated/api.ts:2150](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2150)*
+*Defined in [src/generated/api.ts:2310](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L2310)*
 
 **`memberof`** NameServerRecord
 
@@ -59,6 +59,6 @@ ___
 
 •  **value**: string
 
-*Defined in [src/generated/api.ts:2156](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L2156)*
+*Defined in [src/generated/api.ts:2316](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L2316)*
 
 **`memberof`** NameServerRecord

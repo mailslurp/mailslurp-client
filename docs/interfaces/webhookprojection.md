@@ -31,7 +31,7 @@ Representation of a webhook
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:4200](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4200)*
+*Defined in [src/generated/api.ts:4534](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4534)*
 
 **`memberof`** WebhookProjection
 
@@ -41,7 +41,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:4206](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4206)*
+*Defined in [src/generated/api.ts:4540](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4540)*
 
 **`memberof`** WebhookProjection
 
@@ -51,7 +51,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:4212](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4212)*
+*Defined in [src/generated/api.ts:4546](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4546)*
 
 **`memberof`** WebhookProjection
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:4218](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4218)*
+*Defined in [src/generated/api.ts:4552](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4552)*
 
 **`memberof`** WebhookProjection
 
@@ -71,7 +71,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:4224](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4224)*
+*Defined in [src/generated/api.ts:4558](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4558)*
 
 **`memberof`** WebhookProjection
 
@@ -81,6 +81,6 @@ ___
 
 •  **url**: string
 
-*Defined in [src/generated/api.ts:4230](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L4230)*
+*Defined in [src/generated/api.ts:4564](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L4564)*
 
 **`memberof`** WebhookProjection

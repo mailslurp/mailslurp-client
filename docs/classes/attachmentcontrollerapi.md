@@ -28,6 +28,9 @@ AttachmentControllerApi - object-oriented interface
 
 ### Methods
 
+* [downloadAttachmentAsBase64Encoded](attachmentcontrollerapi.md#downloadattachmentasbase64encoded)
+* [downloadAttachmentAsBytes](attachmentcontrollerapi.md#downloadattachmentasbytes)
+* [getAttachmentInfo](attachmentcontrollerapi.md#getattachmentinfo)
 * [uploadAttachment](attachmentcontrollerapi.md#uploadattachment)
 * [uploadAttachmentBytes](attachmentcontrollerapi.md#uploadattachmentbytes)
 * [uploadMultipartForm](attachmentcontrollerapi.md#uploadmultipartform)
@@ -40,7 +43,7 @@ AttachmentControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -60,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L57)*
 
 ___
 
@@ -80,15 +83,90 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L62)*
 
 ## Methods
+
+### downloadAttachmentAsBase64Encoded
+
+▸ **downloadAttachmentAsBase64Encoded**(`attachmentId`: string, `options?`: any): Promise\<[DownloadAttachmentDto](../interfaces/downloadattachmentdto.md)>
+
+*Defined in [src/generated/api.ts:6759](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6759)*
+
+Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+
+**`summary`** Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`attachmentId` | string | ID of attachment |
+`options?` | any | - |
+
+**Returns:** Promise\<[DownloadAttachmentDto](../interfaces/downloadattachmentdto.md)>
+
+___
+
+### downloadAttachmentAsBytes
+
+▸ **downloadAttachmentAsBytes**(`attachmentId`: string, `options?`: any): Promise\<string>
+
+*Defined in [src/generated/api.ts:6779](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6779)*
+
+Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+
+**`summary`** Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`attachmentId` | string | ID of attachment |
+`options?` | any | - |
+
+**Returns:** Promise\<string>
+
+___
+
+### getAttachmentInfo
+
+▸ **getAttachmentInfo**(`attachmentId`: string, `options?`: any): Promise\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)>
+
+*Defined in [src/generated/api.ts:6796](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6796)*
+
+Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
+
+**`summary`** Get email attachment metadata information
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`attachmentId` | string | ID of attachment |
+`options?` | any | - |
+
+**Returns:** Promise\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)>
+
+___
 
 ### uploadAttachment
 
 ▸ **uploadAttachment**(`uploadOptions`: [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md), `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:6118](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L6118)*
+*Defined in [src/generated/api.ts:6811](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6811)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 
@@ -113,7 +191,7 @@ ___
 
 ▸ **uploadAttachmentBytes**(`string?`: string, `byteArray?`: string, `filename?`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:6138](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L6138)*
+*Defined in [src/generated/api.ts:6831](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6831)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 
@@ -140,7 +218,7 @@ ___
 
 ▸ **uploadMultipartForm**(`file`: any, `contentType?`: string, `contentTypeHeader?`: string, `filename?`: string, `xFilename?`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:6164](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L6164)*
+*Defined in [src/generated/api.ts:6857](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L6857)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 

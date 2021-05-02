@@ -7,6 +7,7 @@
 ## Quick links
 Here are some links to get started (or see below for code examples).
 
+- [Main class methods](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/)
 - [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
@@ -70,6 +71,8 @@ const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 ```
 
 Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
+
+See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/) for all methods.
 
 Use individual controllers like so:
 

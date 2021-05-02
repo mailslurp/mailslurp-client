@@ -28,7 +28,7 @@ Options for creating a webhook. Webhooks can be attached to inboxes and MailSlur
 
 • `Optional` **basicAuth**: [BasicAuthOptions](basicauthoptions.md)
 
-*Defined in [src/generated/api.ts:701](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L701)*
+*Defined in [src/generated/api.ts:743](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L743)*
 
 Optional basic authentication that MailSlurp should use when calling the URL. For instance if your URL is https://example.com then basic auth will call a URL like https://{username}@{password}:example.com
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:707](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L707)*
+*Defined in [src/generated/api.ts:749](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L749)*
 
 Optional name for the webhook
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in [src/generated/api.ts:713](https://github.com/mailslurp/mailslurp-client/blob/359c034/src/generated/api.ts#L713)*
+*Defined in [src/generated/api.ts:755](https://github.com/mailslurp/mailslurp-client/blob/fb74c9f/src/generated/api.ts#L755)*
 
 Public URL on your server that MailSlurp can post WebhookNotification payload to when an email is received. The payload of the submitted JSON is described by https://api.mailslurp.com/schemas/webhook-payload
 
