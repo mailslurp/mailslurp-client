@@ -174,7 +174,7 @@ describe("inbox pagination", () => {
 ```
 
 ### Access controllers
-A MailSlurp instance has properties for access all the API endpoints as controllers. See these for futher inbox operations.
+A [MailSlurp instance](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/) has properties for access all the API endpoints as controllers. See these for further inbox operations.
 ```javascript
 describe("inbox pagination", () => {
   /**
@@ -194,6 +194,7 @@ describe("inbox pagination", () => {
 See method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/).
 
 ### Fetch emails from inbox
+To read emails that already exist in an inbox use the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/emailcontrollerapi/) `getEmail` method. To wait for expected emails that may not have arrived yet use the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/).
 
 There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/email/).
 
@@ -207,7 +208,10 @@ const secondEmail = await mailslurp.waitForNthEmail(inbox.id, 1);
 const allEmails = await mailslurp.getInboxEmailsPaginated(inbox.id);
 ```
 
+For more fetching methods see the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/) and the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/emailcontrollerapi/)
+
 ### Send emails
+To send emails use the [SendEmailOptions](https://www.mailslurp.com/docs/js/docs/modules/sendemailoptions/) arguments with the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/inboxcontrollerapi/) or MailSlurp [instance methods](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/).
 
 ```javascript
 const options = {
@@ -219,6 +223,8 @@ await mailslurp.sendEmail(inbox.id, options);
 ```
 
 ### Upload attachment
+Upload attachment using the [AttachmentController](https://www.mailslurp.com/docs/js/docs/classes/attachmentcontrollerapi/).
+
 Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions. See the [upload attachment options](https://www.mailslurp.com/docs/js/docs/interfaces/uploadattachmentoptions/) for more information.
 ```javascript
 /**
@@ -239,6 +245,8 @@ async function uploadAttachment() {
 ```
 
 ### Send attachment
+To send an attachment first upload the file using the [AttachmentController](https://www.mailslurp.com/docs/js/docs/classes/attachmentcontrollerapi/) then send an email containing the attachment ID with the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/attachmentcontrollerapi/).
+
 You can send attachments by including their IDs in the attachments options when sending.
 ```javascript
 it("can send attachment", async () => {
@@ -285,6 +293,7 @@ it('can wait for multiple emails', async () => {
 ```
 
 ### Receive attachments
+To wait for expected emails to arrive and read their contents use the [WaitFor controller](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/) endpoints.
 
 ```javascript
 async function canReceiveAttachment(inboxId) {
@@ -340,7 +349,7 @@ it('can wait for matching emails', async () => {
 See the [MatchOptions documentation](https://www.mailslurp.com/docs/js/docs/interfaces/matchoptions/) for reference.
 
 ### Extract email content
-You can extract useful information from emails using regular expressions:
+You can extract useful information from emails using regular expressions. See the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/emailcontrollerapi/) for more information:
 
 ```javascript
 const mailslurp = new MailSlurp(config);
@@ -364,7 +373,7 @@ expect(result.matches[1]).toEqual("123456");
 ```
 
 ## Aliases
-You can mask an email address using an alias. An alias is like a proxy. It can receive emails and forward them to any address. You can generate many to one aliases for any email address. You must verify the email address upon first use by cliking a link in the email that is sent to the address. Here is a code example:
+You can mask an email address using an alias and the [AliasController](https://www.mailslurp.com/docs/js/docs/classes/aliascontrollerapi/). An alias is like a proxy. It can receive emails and forward them to any address. You can generate many to one aliases for any email address. You must verify the email address upon first use by clicking a link in the email that is sent to the address. Here is a code example:
 
 ```typescript
 /**
@@ -443,6 +452,9 @@ test('aliases', async () => {
     expect(forwardedEmail.replyTo).not.toEqual(emailAddressB);
 });
 ```
+
+## Webhooks
+To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://www.mailslurp.com/docs/js/docs/classes/webhookcontrollerapi/) or see the [webhook email guide](https://www.mailslurp.com/guides/email-webhooks/).
 
 ## Documentation
 
