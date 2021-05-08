@@ -18,4 +18,4 @@
 
 •  **SINGLEMESSAGE**:  = \<any>'SINGLE\_MESSAGE'
 
-*Defined in [src/generated/api.ts:3455](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L3455)*
+*Defined in [src/generated/api.ts:3585](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3585)*

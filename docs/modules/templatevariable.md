@@ -25,7 +25,7 @@
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:3978](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L3978)*
+*Defined in [src/generated/api.ts:4108](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L4108)*
 
 **`memberof`** TemplateVariable
 
@@ -35,6 +35,6 @@ ___
 
 •  **variableType**: [VariableTypeEnum](../enums/templatevariable.variabletypeenum.md)
 
-*Defined in [src/generated/api.ts:3984](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L3984)*
+*Defined in [src/generated/api.ts:4114](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L4114)*
 
 **`memberof`** TemplateVariable

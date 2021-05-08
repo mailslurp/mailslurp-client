@@ -40,7 +40,7 @@ SentEmailsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **getSentEmail**(`id`: string, `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:17940](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L17940)*
+*Defined in [src/generated/api.ts:18330](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L18330)*
 
 **`summary`** Get sent email receipt
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **getSentEmails**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:17958](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L17958)*
+*Defined in [src/generated/api.ts:18348](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L18348)*
 
 **`summary`** Get all sent emails in paginated form
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **getSentOrganizationEmails**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:17985](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L17985)*
+*Defined in [src/generated/api.ts:18375](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L18375)*
 
 **`summary`** Get all sent organization emails in paginated form
 

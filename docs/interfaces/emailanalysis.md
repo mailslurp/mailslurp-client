@@ -30,7 +30,7 @@ Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or d
 
 • `Optional` **dkimVerdict**: string
 
-*Defined in [src/generated/api.ts:1473](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1473)*
+*Defined in [src/generated/api.ts:1529](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L1529)*
 
 Verdict of DomainKeys Identified Mail analysis
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **dmarcVerdict**: string
 
-*Defined in [src/generated/api.ts:1479](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1479)*
+*Defined in [src/generated/api.ts:1535](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L1535)*
 
 Verdict of Domain-based Message Authentication Reporting and Conformance analysis
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **spamVerdict**: string
 
-*Defined in [src/generated/api.ts:1485](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1485)*
+*Defined in [src/generated/api.ts:1541](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L1541)*
 
 Verdict of spam ranking analysis
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **spfVerdict**: string
 
-*Defined in [src/generated/api.ts:1491](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1491)*
+*Defined in [src/generated/api.ts:1547](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L1547)*
 
 Verdict of Send Policy Framework record spoofing analysis
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **virusVerdict**: string
 
-*Defined in [src/generated/api.ts:1497](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L1497)*
+*Defined in [src/generated/api.ts:1553](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L1553)*
 
 Verdict of virus scan analysis
 

@@ -27,7 +27,7 @@
 
 • `Optional` **createdCatchAllInbox**: boolean
 
-*Defined in [src/generated/api.ts:573](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L573)*
+*Defined in [src/generated/api.ts:629](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L629)*
 
 Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:579](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L579)*
+*Defined in [src/generated/api.ts:635](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L635)*
 
 Optional description of the domain.
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **domain**: string
 
-*Defined in [src/generated/api.ts:585](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L585)*
+*Defined in [src/generated/api.ts:641](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L641)*
 
 The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **domainType**: [DomainTypeEnum](../enums/createdomainoptions.domaintypeenum.md)
 
-*Defined in [src/generated/api.ts:591](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L591)*
+*Defined in [src/generated/api.ts:647](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L647)*
 
 Domain type to create. HTTP or SMTP domain. HTTP domain uses MailSlurps SES MX records. SMTP uses a custom SMTP server MX record
 

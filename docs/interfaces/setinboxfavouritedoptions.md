@@ -26,7 +26,7 @@ Options for setting inbox favourite state
 
 • `Optional` **state**: boolean
 
-*Defined in [src/generated/api.ts:3830](https://github.com/mailslurp/mailslurp-client/blob/aab6cee/src/generated/api.ts#L3830)*
+*Defined in [src/generated/api.ts:3960](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3960)*
 
 Is the inbox favorited. Favouriting inboxes is typically done in the dashboard for quick access or filtering
 
