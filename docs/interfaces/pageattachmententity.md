@@ -36,7 +36,7 @@ Paginated attachment entity results. Page index starts at zero. Projection resul
 
 • `Optional` **content**: Array\<[AttachmentEntity](attachmententity.md)>
 
-*Defined in [src/generated/api.ts:2516](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2516)*
+*Defined in [src/generated/api.ts:2678](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2678)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:2522](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2522)*
+*Defined in [src/generated/api.ts:2684](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2684)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:2528](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2528)*
+*Defined in [src/generated/api.ts:2690](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2690)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:2534](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2534)*
+*Defined in [src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2696)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:2540](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2540)*
+*Defined in [src/generated/api.ts:2702](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2702)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:2546](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2546)*
+*Defined in [src/generated/api.ts:2708](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2708)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:2552](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2552)*
+*Defined in [src/generated/api.ts:2714](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2714)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:2558](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2558)*
+*Defined in [src/generated/api.ts:2720](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2720)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:2564](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2564)*
+*Defined in [src/generated/api.ts:2726](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2726)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:2570](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2570)*
+*Defined in [src/generated/api.ts:2732](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2732)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:2576](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L2576)*
+*Defined in [src/generated/api.ts:2738](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L2738)*
 
 **`memberof`** PageAttachmentEntity

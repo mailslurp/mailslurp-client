@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -89,10 +89,16 @@ export declare class MailSlurp {
      * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
      * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
      * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
+     * @param {string} inboxType Optional inbox type HTTP or SMTP
      */
-    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>, teamAccess?: boolean, expiresIn?: number, useDomainPool?: boolean): Promise<Inbox>;
+    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>, teamAccess?: boolean, expiresIn?: number, useDomainPool?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX'): Promise<Inbox>;
     /**
-     * Permanently delete an inbox and associated email address aswell as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
+     * @param createInboxOptions
+     */
+    createInboxWithOptions(createInboxOptions: CreateInboxDto): Promise<Inbox>;
+    /**
+     * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox
      * @param {string} inboxId inboxId
      */

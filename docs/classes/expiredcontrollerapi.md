@@ -41,7 +41,7 @@ ExpiredControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -61,7 +61,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L61)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L57)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **getExpirationDefaults**(`options?`: any): Promise\<[ExpirationDefaults](../interfaces/expirationdefaults.md)>
 
-*Defined in [src/generated/api.ts:12985](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L12985)*
+*Defined in [src/generated/api.ts:13402](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L13402)*
 
 Return default times used for inbox expiration
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **getExpiredInboxByInboxId**(`inboxId`: string, `options?`: any): Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
 
-*Defined in [src/generated/api.ts:12999](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L12999)*
+*Defined in [src/generated/api.ts:13416](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L13416)*
 
 Use the inboxId to return an ExpiredInboxRecord if an inbox has expired. Inboxes expire and are disabled if an expiration date is set or plan requires. Returns 404 if no expired inbox is found for the inboxId
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **getExpiredInboxRecord**(`expiredId`: string, `options?`: any): Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
 
-*Defined in [src/generated/api.ts:13013](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L13013)*
+*Defined in [src/generated/api.ts:13430](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L13430)*
 
 Inboxes created with an expiration date will expire after the given date and be moved to an ExpiredInbox entity. You can still read emails in the inbox but it can no longer send or receive emails. Fetch the expired inboxes to view the old inboxes properties
 
@@ -163,7 +163,7 @@ ___
 
 ▸ **getExpiredInboxes**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageExpiredInboxRecordProjection](../interfaces/pageexpiredinboxrecordprojection.md)>
 
-*Defined in [src/generated/api.ts:13030](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L13030)*
+*Defined in [src/generated/api.ts:13447](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L13447)*
 
 Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
 

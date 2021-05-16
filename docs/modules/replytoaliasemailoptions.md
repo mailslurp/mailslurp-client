@@ -30,7 +30,7 @@
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:3536](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3536)*
+*Defined in [src/generated/api.ts:3698](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3698)*
 
 List of uploaded attachments to send with the reply. Optional.
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:3542](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3542)*
+*Defined in [src/generated/api.ts:3704](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3704)*
 
 Body of the reply email you want to send
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:3548](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3548)*
+*Defined in [src/generated/api.ts:3710](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3710)*
 
 The charset that your message should be sent with. Optional. Default is UTF-8
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **isHTML**: boolean
 
-*Defined in [src/generated/api.ts:3554](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3554)*
+*Defined in [src/generated/api.ts:3716](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3716)*
 
 Is the reply HTML
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **sendStrategy**: [SendStrategyEnum](../enums/replytoaliasemailoptions.sendstrategyenum.md)
 
-*Defined in [src/generated/api.ts:3560](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3560)*
+*Defined in [src/generated/api.ts:3722](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3722)*
 
 When to send the email. Typically immediately
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **template**: string
 
-*Defined in [src/generated/api.ts:3566](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3566)*
+*Defined in [src/generated/api.ts:3728](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3728)*
 
 Template ID to use instead of body. Will use template variable map to fill defined variable slots.
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **templateVariables**: any
 
-*Defined in [src/generated/api.ts:3572](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3572)*
+*Defined in [src/generated/api.ts:3734](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3734)*
 
 Template variables if using a template
 

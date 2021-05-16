@@ -54,7 +54,6 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MailSlurp = void 0;
-// @ts-ignore
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 var generated_1 = require("./generated");
@@ -152,19 +151,34 @@ var MailSlurp = /** @class */ (function () {
      * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
      * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
      * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
+     * @param {string} inboxType Optional inbox type HTTP or SMTP
      */
-    MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags, teamAccess, expiresIn, useDomainPool) {
+    MailSlurp.prototype.createInbox = function (emailAddress, name, description, expiresAt, favourite, tags, teamAccess, expiresIn, useDomainPool, inboxType) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox(teamAccess, description, emailAddress, expiresAt, expiresIn, favourite, name, tags, useDomainPool);
+                        return _this.inboxController.createInbox(teamAccess, description, emailAddress, expiresAt, expiresIn, favourite, inboxType, name, tags, useDomainPool);
                     })];
             });
         });
     };
     /**
-     * Permanently delete an inbox and associated email address aswell as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
+     * @param createInboxOptions
+     */
+    MailSlurp.prototype.createInboxWithOptions = function (createInboxOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('createInbox', function () {
+                        return _this.inboxController.createInboxWithOptions(createInboxOptions);
+                    })];
+            });
+        });
+    };
+    /**
+     * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox
      * @param {string} inboxId inboxId
      */

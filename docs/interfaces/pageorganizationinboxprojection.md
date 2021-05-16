@@ -34,9 +34,9 @@ Paginated organization inbox results. Page index starts at zero. Projection resu
 
 ### content
 
-• `Optional` **content**: Array\<[OrganizationInboxProjection](organizationinboxprojection.md)>
+• `Optional` **content**: Array\<[OrganizationInboxProjection](../modules/organizationinboxprojection.md)>
 
-*Defined in [src/generated/api.ts:3108](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3108)*
+*Defined in [src/generated/api.ts:3270](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3270)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3114](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3114)*
+*Defined in [src/generated/api.ts:3276](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3276)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3120](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3120)*
+*Defined in [src/generated/api.ts:3282](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3282)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3126](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3126)*
+*Defined in [src/generated/api.ts:3288](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3288)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3132](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3132)*
+*Defined in [src/generated/api.ts:3294](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3294)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3138](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3138)*
+*Defined in [src/generated/api.ts:3300](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3300)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3144](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3144)*
+*Defined in [src/generated/api.ts:3306](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3306)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3150](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3150)*
+*Defined in [src/generated/api.ts:3312](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3312)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3156](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3156)*
+*Defined in [src/generated/api.ts:3318](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3318)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3162](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3162)*
+*Defined in [src/generated/api.ts:3324](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3324)*
 
 **`memberof`** PageOrganizationInboxProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3168](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L3168)*
+*Defined in [src/generated/api.ts:3330](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3330)*
 
 **`memberof`** PageOrganizationInboxProjection

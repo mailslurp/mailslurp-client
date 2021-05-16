@@ -10,7 +10,8 @@ import {
     BulkActionsControllerApi,
     CommonActionsControllerApi,
     Configuration,
-    ContactControllerApi, CreateInboxDto,
+    ContactControllerApi,
+    CreateInboxDto,
     DomainControllerApi,
     Email,
     EmailControllerApi,
@@ -174,7 +175,7 @@ export class MailSlurp {
         teamAccess?: boolean,
         expiresIn?: number,
         useDomainPool?: boolean,
-        inboxType?: InboxTypeEnum
+        inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX'
     ): Promise<Inbox> {
         return wrapCall('createInbox', () =>
             this.inboxController.createInbox(
@@ -196,7 +197,9 @@ export class MailSlurp {
      * Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
      * @param createInboxOptions
      */
-    async createInboxWithOptions(createInboxOptions: CreateInboxDto): Promise<Inbox> {
+    async createInboxWithOptions(
+        createInboxOptions: CreateInboxDto
+    ): Promise<Inbox> {
         return wrapCall('createInbox', () =>
             this.inboxController.createInboxWithOptions(createInboxOptions)
         );

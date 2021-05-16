@@ -43,7 +43,7 @@ DomainControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,15 +83,15 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L62)*
 
 ## Methods
 
 ### addDomainWildcardCatchAll
 
-▸ **addDomainWildcardCatchAll**(`id`: string, `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
+▸ **addDomainWildcardCatchAll**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:9605](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9605)*
+*Defined in [src/generated/api.ts:9796](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9796)*
 
 Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
 
@@ -108,15 +108,15 @@ Name | Type | Description |
 `id` | string | id |
 `options?` | any | - |
 
-**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
+**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
 
 ___
 
 ### createDomain
 
-▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../modules/createdomainoptions.md), `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
+▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../modules/createdomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:9619](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9619)*
+*Defined in [src/generated/api.ts:9810](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9810)*
 
 Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider's DNS setup to verify the domain.
 
@@ -133,7 +133,7 @@ Name | Type | Description |
 `domainOptions` | [CreateDomainOptions](../modules/createdomainoptions.md) | domainOptions |
 `options?` | any | - |
 
-**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
+**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **deleteDomain**(`id`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:9634](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9634)*
+*Defined in [src/generated/api.ts:9825](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9825)*
 
 Delete a domain. This will disable any existing inboxes that use this domain.
 
@@ -164,9 +164,9 @@ ___
 
 ### getDomain
 
-▸ **getDomain**(`id`: string, `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
+▸ **getDomain**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:9649](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9649)*
+*Defined in [src/generated/api.ts:9840](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9840)*
 
 Returns domain verification status and tokens for a given domain
 
@@ -183,7 +183,7 @@ Name | Type | Description |
 `id` | string | id |
 `options?` | any | - |
 
-**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
+**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **getDomains**(`options?`: any): Promise\<[DomainPreview](../interfaces/domainpreview.md)[]>
 
-*Defined in [src/generated/api.ts:9663](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9663)*
+*Defined in [src/generated/api.ts:9854](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9854)*
 
 List all custom domains you have created
 
@@ -213,9 +213,9 @@ ___
 
 ### updateDomain
 
-▸ **updateDomain**(`id`: string, `updateDomainDto`: [UpdateDomainOptions](../interfaces/updatedomainoptions.md), `options?`: any): Promise\<[DomainDto](../interfaces/domaindto.md)>
+▸ **updateDomain**(`id`: string, `updateDomainDto`: [UpdateDomainOptions](../interfaces/updatedomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:9679](https://github.com/mailslurp/mailslurp-client/blob/c83a162/src/generated/api.ts#L9679)*
+*Defined in [src/generated/api.ts:9870](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L9870)*
 
 Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
 
@@ -233,4 +233,4 @@ Name | Type | Description |
 `updateDomainDto` | [UpdateDomainOptions](../interfaces/updatedomainoptions.md) | updateDomainDto |
 `options?` | any | - |
 
-**Returns:** Promise\<[DomainDto](../interfaces/domaindto.md)>
+**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
