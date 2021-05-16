@@ -98,6 +98,9 @@ Here are some snippets of common usage. Read
 
 ### Create an email address
 MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/interfaces/inbox/).
+Inboxes can be either `SMTP` or `HTTP` type mailboxes. `HTTP` inboxes are powered by AWS SES and are great for most use cases. `SMTP` inboxes use a custom mail server running at `mx.mailslurp.com` to support older email clients. `SMTP` inboxes are more suitable for public facing usage.
+
+#### Simple usage
 You can create an inbox with a randomly assigned email address ending in `@mailslurp.com` like so:
 
 ```javascript
@@ -105,6 +108,14 @@ const inbox = await mailslurp.createInbox();
 // { id: '123', emailAddress: '123@mailslurp.com' }
 ```
 
+#### Create inbox options
+Use the `createInboxWithOptions` or methods on the `inboxController` property to create email addresses using more options.
+
+```javascript
+const inbox = await mailslurp.createInboxWithOptions({ inboxType: 'SMTP' });
+```
+
+#### Test example
 In a test using Jest:
 
 ```javascript

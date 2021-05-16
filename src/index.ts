@@ -1,4 +1,6 @@
 // @ts-ignore
+import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
+
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import {
@@ -8,7 +10,7 @@ import {
     BulkActionsControllerApi,
     CommonActionsControllerApi,
     Configuration,
-    ContactControllerApi,
+    ContactControllerApi, CreateInboxDto,
     DomainControllerApi,
     Email,
     EmailControllerApi,
@@ -160,6 +162,7 @@ export class MailSlurp {
      * @param {boolean} [teamAccess] Optional flag to allow team access to inbox.
      * @param {number} [expiresIn] Optional number of milliseconds to expire inbox after.
      * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
+     * @param {string} inboxType Optional inbox type HTTP or SMTP
      */
     async createInbox(
         emailAddress?: string,
@@ -170,7 +173,8 @@ export class MailSlurp {
         tags?: Array<string>,
         teamAccess?: boolean,
         expiresIn?: number,
-        useDomainPool?: boolean
+        useDomainPool?: boolean,
+        inboxType?: InboxTypeEnum
     ): Promise<Inbox> {
         return wrapCall('createInbox', () =>
             this.inboxController.createInbox(
@@ -180,6 +184,7 @@ export class MailSlurp {
                 expiresAt,
                 expiresIn,
                 favourite,
+                inboxType,
                 name,
                 tags,
                 useDomainPool
@@ -188,7 +193,17 @@ export class MailSlurp {
     }
 
     /**
-     * Permanently delete an inbox and associated email address aswell as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+     * Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
+     * @param createInboxOptions
+     */
+    async createInboxWithOptions(createInboxOptions: CreateInboxDto): Promise<Inbox> {
+        return wrapCall('createInbox', () =>
+            this.inboxController.createInboxWithOptions(createInboxOptions)
+        );
+    }
+
+    /**
+     * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox
      * @param {string} inboxId inboxId
      */
