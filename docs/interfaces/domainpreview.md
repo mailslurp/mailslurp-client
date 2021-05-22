@@ -29,7 +29,7 @@ Preview object for domain entity
 
 • `Optional` **catchAllInboxId**: string
 
-*Defined in [src/generated/api.ts:1436](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1436)*
+*Defined in [src/generated/api.ts:1436](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1436)*
 
 **`memberof`** DomainPreview
 
@@ -39,7 +39,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1442](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1442)*
+*Defined in [src/generated/api.ts:1442](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1442)*
 
 **`memberof`** DomainPreview
 
@@ -49,7 +49,7 @@ ___
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:1448](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1448)*
+*Defined in [src/generated/api.ts:1448](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1448)*
 
 **`memberof`** DomainPreview
 
@@ -59,6 +59,6 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1454](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1454)*
+*Defined in [src/generated/api.ts:1454](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1454)*
 
 **`memberof`** DomainPreview

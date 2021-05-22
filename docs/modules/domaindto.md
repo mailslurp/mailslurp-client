@@ -34,7 +34,7 @@
 
 • `Optional` **catchAllInboxId**: string
 
-*Defined in [src/generated/api.ts:1213](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1213)*
+*Defined in [src/generated/api.ts:1213](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1213)*
 
 The optional catch all inbox that will receive emails sent to the domain that cannot be matched.
 
@@ -46,7 +46,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1219](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1219)*
+*Defined in [src/generated/api.ts:1219](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1219)*
 
 **`memberof`** DomainDto
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **dkimTokens**: Array\<string>
 
-*Defined in [src/generated/api.ts:1225](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1225)*
+*Defined in [src/generated/api.ts:1225](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1225)*
 
 Unique token DKIM tokens
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **domain**: string
 
-*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1231)*
+*Defined in [src/generated/api.ts:1231](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1231)*
 
 Custom domain name
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **domainNameRecords**: Array\<[DomainNameRecord](domainnamerecord.md)>
 
-*Defined in [src/generated/api.ts:1237](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1237)*
+*Defined in [src/generated/api.ts:1237](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1237)*
 
 List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS server associated with your domain provider.
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **domainType**: [DomainTypeEnum](../enums/domaindto.domaintypeenum.md)
 
-*Defined in [src/generated/api.ts:1243](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1243)*
+*Defined in [src/generated/api.ts:1243](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1243)*
 
 The type of domain. SMTP or HTTP domains differ in what inboxes can be used with them.
 
@@ -104,7 +104,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1249](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1249)*
+*Defined in [src/generated/api.ts:1249](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1249)*
 
 **`memberof`** DomainDto
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:1255](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1255)*
+*Defined in [src/generated/api.ts:1255](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1255)*
 
 Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
 
@@ -126,7 +126,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:1261](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1261)*
+*Defined in [src/generated/api.ts:1261](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1261)*
 
 **`memberof`** DomainDto
 
@@ -136,7 +136,7 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:1267](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1267)*
+*Defined in [src/generated/api.ts:1267](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1267)*
 
 **`memberof`** DomainDto
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **verificationToken**: string
 
-*Defined in [src/generated/api.ts:1273](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1273)*
+*Defined in [src/generated/api.ts:1273](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1273)*
 
 Verification tokens
 

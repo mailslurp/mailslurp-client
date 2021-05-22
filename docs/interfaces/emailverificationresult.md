@@ -30,7 +30,7 @@ Email verification result. Valid means email address exists according to respons
 
 •  **domainName**: string
 
-*Defined in [src/generated/api.ts:1842](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1842)*
+*Defined in [src/generated/api.ts:1842](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1842)*
 
 **`memberof`** EmailVerificationResult
 
@@ -40,7 +40,7 @@ ___
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:1848](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1848)*
+*Defined in [src/generated/api.ts:1848](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1848)*
 
 **`memberof`** EmailVerificationResult
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **error**: string
 
-*Defined in [src/generated/api.ts:1854](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1854)*
+*Defined in [src/generated/api.ts:1854](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1854)*
 
 **`memberof`** EmailVerificationResult
 
@@ -60,7 +60,7 @@ ___
 
 •  **isValid**: boolean
 
-*Defined in [src/generated/api.ts:1860](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1860)*
+*Defined in [src/generated/api.ts:1860](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1860)*
 
 **`memberof`** EmailVerificationResult
 
@@ -70,6 +70,6 @@ ___
 
 •  **port**: number
 
-*Defined in [src/generated/api.ts:1866](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1866)*
+*Defined in [src/generated/api.ts:1866](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1866)*
 
 **`memberof`** EmailVerificationResult
