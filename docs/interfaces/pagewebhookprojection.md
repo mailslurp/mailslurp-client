@@ -36,7 +36,7 @@ Paginated webhook results. Page index starts at zero. Projection results may omi
 
 • `Optional` **content**: Array\<[WebhookProjection](webhookprojection.md)>
 
-*Defined in [src/generated/api.ts:3566](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3566)*
+*Defined in [src/generated/api.ts:3566](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3566)*
 
 **`memberof`** PageWebhookProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3572](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3572)*
+*Defined in [src/generated/api.ts:3572](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3572)*
 
 **`memberof`** PageWebhookProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3578](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3578)*
+*Defined in [src/generated/api.ts:3578](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3578)*
 
 **`memberof`** PageWebhookProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3584](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3584)*
+*Defined in [src/generated/api.ts:3584](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3584)*
 
 **`memberof`** PageWebhookProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3590](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3590)*
+*Defined in [src/generated/api.ts:3590](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3590)*
 
 **`memberof`** PageWebhookProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3596](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3596)*
+*Defined in [src/generated/api.ts:3596](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3596)*
 
 **`memberof`** PageWebhookProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3602](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3602)*
+*Defined in [src/generated/api.ts:3602](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3602)*
 
 **`memberof`** PageWebhookProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3608](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3608)*
+*Defined in [src/generated/api.ts:3608](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3608)*
 
 **`memberof`** PageWebhookProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3614](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3614)*
+*Defined in [src/generated/api.ts:3614](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3614)*
 
 **`memberof`** PageWebhookProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3620](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3620)*
+*Defined in [src/generated/api.ts:3620](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3620)*
 
 **`memberof`** PageWebhookProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3626](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L3626)*
+*Defined in [src/generated/api.ts:3626](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L3626)*
 
 **`memberof`** PageWebhookProjection

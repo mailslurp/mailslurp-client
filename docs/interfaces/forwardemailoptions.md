@@ -20,6 +20,7 @@ Options for forwarding an email
 
 * [bcc](forwardemailoptions.md#bcc)
 * [cc](forwardemailoptions.md#cc)
+* [from](forwardemailoptions.md#from)
 * [subject](forwardemailoptions.md#subject)
 * [to](forwardemailoptions.md#to)
 
@@ -29,7 +30,7 @@ Options for forwarding an email
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1976](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L1976)*
+*Defined in [src/generated/api.ts:1970](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1970)*
 
 Optional bcc recipients
 
@@ -41,9 +42,21 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1982](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L1982)*
+*Defined in [src/generated/api.ts:1976](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1976)*
 
 Optional cc recipients
+
+**`memberof`** ForwardEmailOptions
+
+___
+
+### from
+
+• `Optional` **from**: string
+
+*Defined in [src/generated/api.ts:1982](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1982)*
+
+Optional from override
 
 **`memberof`** ForwardEmailOptions
 
@@ -53,7 +66,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:1988](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L1988)*
+*Defined in [src/generated/api.ts:1988](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1988)*
 
 Subject for forwarded email
 
@@ -65,7 +78,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:1994](https://github.com/mailslurp/mailslurp-client/blob/751f7bb/src/generated/api.ts#L1994)*
+*Defined in [src/generated/api.ts:1994](https://github.com/mailslurp/mailslurp-client/blob/a36d929/src/generated/api.ts#L1994)*
 
 To recipients for forwarded email
 
