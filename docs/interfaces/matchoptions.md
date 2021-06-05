@@ -4,7 +4,7 @@
 
 # Interface: MatchOptions
 
-Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value. An example payload would be `{ matches: [{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }] }`. If you wish to extract regex matches inside the email content see the `getEmailContentMatch` method in the EmailController.
+Optional filter for matching emails based on fields. For instance filter results to only include emails whose `SUBJECT` value does `CONTAIN` given match value. An example payload would be `{ matches: [{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }] }`. You can also pass conditions such as `HAS_ATTACHMENT`. If you wish to extract regex matches inside the email content see the `getEmailContentMatch` method in the EmailController.
 
 **`export`** 
 
@@ -18,16 +18,29 @@ Optional filter for matching emails based on fields. For instance filter results
 
 ### Properties
 
+* [conditions](matchoptions.md#conditions)
 * [matches](matchoptions.md#matches)
 
 ## Properties
+
+### conditions
+
+• `Optional` **conditions**: Array\<[ConditionOption](../modules/conditionoption.md)>
+
+*Defined in [src/generated/api.ts:2411](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L2411)*
+
+Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
+
+**`memberof`** MatchOptions
+
+___
 
 ### matches
 
 • `Optional` **matches**: Array\<[MatchOption](../modules/matchoption.md)>
 
-*Defined in [src/generated/api.ts:2363](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L2363)*
+*Defined in [src/generated/api.ts:2417](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L2417)*
 
-1 or more match options. Options are additive so if one does not match the email is excluded from results
+Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
 
 **`memberof`** MatchOptions

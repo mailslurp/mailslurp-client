@@ -28,7 +28,7 @@ Content of attachment
 
 • `Optional` **base64FileContents**: string
 
-*Defined in [src/generated/api.ts:1468](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1468)*
+*Defined in [src/generated/api.ts:1510](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L1510)*
 
 Base64 encoded string of attachment bytes. Decode the base64 encoded string to get the raw contents. If the file has a content type such as `text/html` you can read the contents directly by converting it to string using `utf-8` encoding.
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:1474](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1474)*
+*Defined in [src/generated/api.ts:1516](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L1516)*
 
 Content type of attachment. Examples are `image/png`, `application/msword`, `text/csv` etc.
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **sizeBytes**: number
 
-*Defined in [src/generated/api.ts:1480](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L1480)*
+*Defined in [src/generated/api.ts:1522](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L1522)*
 
 Size in bytes of attachment content
 

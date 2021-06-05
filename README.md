@@ -97,7 +97,7 @@ it('can use inbox controller methods', async () => {
 Here are some snippets of common usage. Read
 
 ### Create an email address
-MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/interfaces/inbox/).
+MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/modules/inbox/).
 Inboxes can be either `SMTP` or `HTTP` type mailboxes. `HTTP` inboxes are powered by AWS SES and are great for most use cases. `SMTP` inboxes use a custom mail server running at `mx.mailslurp.com` to support older email clients. `SMTP` inboxes are more suitable for public facing usage.
 
 #### Simple usage
@@ -147,7 +147,7 @@ describe('inbox method usage', () => {
 > To use custom domains see the [domain verification guide](https://www.mailslurp.com/guides/custom-domains/)
 
 ### Get an inbox
-Inboxes have real email addresses. See the [inbox reference](https://www.mailslurp.com/docs/js/docs/interfaces/inbox/) for all properties.
+Inboxes have real email addresses. See the [inbox reference](https://www.mailslurp.com/docs/js/docs/modules/inbox/) for all properties.
 
 ```javascript
 /**
@@ -165,7 +165,7 @@ it('can get a full inbox', async () => {
 ```
 
 ### List inboxes
-Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/interfaces/inboxprojection/) for properties.
+Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/modules/inboxprojection/) for properties.
 
 ```javascript
 describe("inbox pagination", () => {

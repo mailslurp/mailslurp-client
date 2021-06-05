@@ -27,7 +27,7 @@ IP Address look up result for a given domain / hostname
 
 •  **address**: string
 
-*Defined in [src/generated/api.ts:2118](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L2118)*
+*Defined in [src/generated/api.ts:2166](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L2166)*
 
 **`memberof`** IPAddressResult
 
@@ -37,6 +37,6 @@ ___
 
 •  **hostname**: string
 
-*Defined in [src/generated/api.ts:2124](https://github.com/mailslurp/mailslurp-client/blob/8d5c17f/src/generated/api.ts#L2124)*
+*Defined in [src/generated/api.ts:2172](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L2172)*
 
 **`memberof`** IPAddressResult
