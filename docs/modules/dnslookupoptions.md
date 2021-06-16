@@ -26,7 +26,7 @@
 
 • `Optional` **hostname**: string
 
-*Defined in [src/generated/api.ts:939](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L939)*
+*Defined in [src/generated/api.ts:946](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L946)*
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **omitFinalDNSDot**: boolean
 
-*Defined in [src/generated/api.ts:945](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L945)*
+*Defined in [src/generated/api.ts:952](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L952)*
 
 Optionally control whether to omit the final dot in full DNS name values.
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **recordTypes**: Array\<[RecordTypesEnum](../enums/dnslookupoptions.recordtypesenum.md)>
 
-*Defined in [src/generated/api.ts:951](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L951)*
+*Defined in [src/generated/api.ts:958](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L958)*
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 

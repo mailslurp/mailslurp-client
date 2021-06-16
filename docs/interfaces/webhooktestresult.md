@@ -28,7 +28,7 @@ Results of testing a webhook
 
 • `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:4937](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4937)*
+*Defined in [src/generated/api.ts:5505](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L5505)*
 
 **`memberof`** WebhookTestResult
 
@@ -38,7 +38,7 @@ ___
 
 •  **request**: [WebhookTestRequest](../modules/webhooktestrequest.md)
 
-*Defined in [src/generated/api.ts:4943](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4943)*
+*Defined in [src/generated/api.ts:5511](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L5511)*
 
 **`memberof`** WebhookTestResult
 
@@ -48,6 +48,6 @@ ___
 
 •  **response**: [WebhookTestResponse](webhooktestresponse.md)
 
-*Defined in [src/generated/api.ts:4949](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4949)*
+*Defined in [src/generated/api.ts:5517](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L5517)*
 
 **`memberof`** WebhookTestResult

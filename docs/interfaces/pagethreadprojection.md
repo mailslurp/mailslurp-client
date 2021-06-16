@@ -36,7 +36,7 @@ Paginated email projection results. EmailProjections and EmailPreviews are essen
 
 • `Optional` **content**: Array\<[ThreadProjection](threadprojection.md)>
 
-*Defined in [src/generated/api.ts:3546](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3546)*
+*Defined in [src/generated/api.ts:3626](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3626)*
 
 **`memberof`** PageThreadProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3552](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3552)*
+*Defined in [src/generated/api.ts:3632](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3632)*
 
 **`memberof`** PageThreadProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3558](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3558)*
+*Defined in [src/generated/api.ts:3638](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3638)*
 
 **`memberof`** PageThreadProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3564](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3564)*
+*Defined in [src/generated/api.ts:3644](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3644)*
 
 **`memberof`** PageThreadProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3570](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3570)*
+*Defined in [src/generated/api.ts:3650](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3650)*
 
 **`memberof`** PageThreadProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3576](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3576)*
+*Defined in [src/generated/api.ts:3656](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3656)*
 
 **`memberof`** PageThreadProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3582](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3582)*
+*Defined in [src/generated/api.ts:3662](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3662)*
 
 **`memberof`** PageThreadProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3588](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3588)*
+*Defined in [src/generated/api.ts:3668](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3668)*
 
 **`memberof`** PageThreadProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3594](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3594)*
+*Defined in [src/generated/api.ts:3674](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3674)*
 
 **`memberof`** PageThreadProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3600](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3600)*
+*Defined in [src/generated/api.ts:3680](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3680)*
 
 **`memberof`** PageThreadProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3606](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L3606)*
+*Defined in [src/generated/api.ts:3686](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3686)*
 
 **`memberof`** PageThreadProjection

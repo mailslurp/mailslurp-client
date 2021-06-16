@@ -17,6 +17,7 @@
 * [DNSLookupResult](modules/dnslookupresult.md)
 * [DomainDto](modules/domaindto.md)
 * [DomainNameRecord](modules/domainnamerecord.md)
+* [ExportOptions](modules/exportoptions.md)
 * [Inbox](modules/inbox.md)
 * [InboxProjection](modules/inboxprojection.md)
 * [MatchOption](modules/matchoption.md)
@@ -27,6 +28,10 @@
 * [TemplateVariable](modules/templatevariable.md)
 * [WaitForConditions](modules/waitforconditions.md)
 * [WebhookDto](modules/webhookdto.md)
+* [WebhookNewAttachmentPayload](modules/webhooknewattachmentpayload.md)
+* [WebhookNewContactPayload](modules/webhooknewcontactpayload.md)
+* [WebhookNewEmailPayload](modules/webhooknewemailpayload.md)
+* [WebhookResultEntity](modules/webhookresultentity.md)
 * [WebhookTestRequest](modules/webhooktestrequest.md)
 
 ### Classes
@@ -41,6 +46,7 @@
 * [DomainControllerApi](classes/domaincontrollerapi.md)
 * [EmailControllerApi](classes/emailcontrollerapi.md)
 * [ExpiredControllerApi](classes/expiredcontrollerapi.md)
+* [ExportControllerApi](classes/exportcontrollerapi.md)
 * [FormControllerApi](classes/formcontrollerapi.md)
 * [GroupControllerApi](classes/groupcontrollerapi.md)
 * [InboxControllerApi](classes/inboxcontrollerapi.md)
@@ -62,6 +68,7 @@
 * [AttachmentProjection](interfaces/attachmentprojection.md)
 * [BasicAuthOptions](interfaces/basicauthoptions.md)
 * [BulkSendEmailOptions](interfaces/bulksendemailoptions.md)
+* [Character](interfaces/character.md)
 * [ConfigurationParameters](interfaces/configurationparameters.md)
 * [ContactDto](interfaces/contactdto.md)
 * [ContactProjection](interfaces/contactprojection.md)
@@ -85,6 +92,7 @@
 * [ExpirationDefaults](interfaces/expirationdefaults.md)
 * [ExpiredInboxDto](interfaces/expiredinboxdto.md)
 * [ExpiredInboxRecordProjection](interfaces/expiredinboxrecordprojection.md)
+* [ExportLink](interfaces/exportlink.md)
 * [FetchAPI](interfaces/fetchapi.md)
 * [FetchArgs](interfaces/fetchargs.md)
 * [ForwardEmailOptions](interfaces/forwardemailoptions.md)
@@ -112,6 +120,7 @@
 * [PageTemplateProjection](interfaces/pagetemplateprojection.md)
 * [PageThreadProjection](interfaces/pagethreadprojection.md)
 * [PageWebhookProjection](interfaces/pagewebhookprojection.md)
+* [PageWebhookResult](interfaces/pagewebhookresult.md)
 * [Pageable](interfaces/pageable.md)
 * [RawEmailJson](interfaces/rawemailjson.md)
 * [SentEmailDto](interfaces/sentemaildto.md)
@@ -172,6 +181,9 @@
 * [ExpiredControllerApiFactory](README.md#expiredcontrollerapifactory)
 * [ExpiredControllerApiFetchParamCreator](README.md#expiredcontrollerapifetchparamcreator)
 * [ExpiredControllerApiFp](README.md#expiredcontrollerapifp)
+* [ExportControllerApiFactory](README.md#exportcontrollerapifactory)
+* [ExportControllerApiFetchParamCreator](README.md#exportcontrollerapifetchparamcreator)
+* [ExportControllerApiFp](README.md#exportcontrollerapifp)
 * [FormControllerApiFactory](README.md#formcontrollerapifactory)
 * [FormControllerApiFetchParamCreator](README.md#formcontrollerapifetchparamcreator)
 * [FormControllerApiFp](README.md#formcontrollerapifp)
@@ -211,7 +223,7 @@
 
 Ƭ  **Config**: { apiKey: string ; attribution?: string ; basePath?: string ; fetchApi?: [FetchAPI](interfaces/fetchapi.md)  }
 
-*Defined in [src/index.ts:42](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/index.ts#L42)*
+*Defined in [src/index.ts:42](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/index.ts#L42)*
 
 MailSlurp config
 
@@ -233,7 +245,7 @@ ___
 
 Ƭ  **GetMessagesOptions**: { limit?: number ; minCount?: number ; retryTimeout?: number ; since?: Date ; size?: number ; sort?: [SortEnum](README.md#sortenum)  }
 
-*Defined in [src/index.ts:522](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/index.ts#L522)*
+*Defined in [src/index.ts:522](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/index.ts#L522)*
 
 Options for advanced message fetching
 
@@ -257,7 +269,7 @@ ___
 
 Ƭ  **SortEnum**: \"ASC\" \| \"DESC\"
 
-*Defined in [src/index.ts:35](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/index.ts#L35)*
+*Defined in [src/index.ts:35](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/index.ts#L35)*
 
 ## Variables
 
@@ -265,7 +277,7 @@ ___
 
 • `Const` **BASE\_PATH**: string = 'https://api.mailslurp.com'.replace(/\/+$/, '')
 
-*Defined in [src/generated/api.ts:19](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L19)*
+*Defined in [src/generated/api.ts:19](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19)*
 
 ___
 
@@ -273,7 +285,7 @@ ___
 
 •  **InboxTypeEnum**: [InboxTypeEnum](enums/createinboxdto.inboxtypeenum.md)
 
-*Defined in [src/index.ts:2](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/index.ts#L2)*
+*Defined in [src/index.ts:2](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/index.ts#L2)*
 
 ## Functions
 
@@ -281,7 +293,7 @@ ___
 
 ▸ `Const`**AliasControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:5909](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L5909)*
+*Defined in [src/generated/api.ts:6477](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L6477)*
 
 AliasControllerApi - factory interface
 
@@ -315,7 +327,7 @@ ___
 
 ▸ `Const`**AliasControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:4956](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4956)*
+*Defined in [src/generated/api.ts:5524](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L5524)*
 
 AliasControllerApi - fetch parameter creator
 
@@ -347,7 +359,7 @@ ___
 
 ▸ `Const`**AliasControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:5595](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L5595)*
+*Defined in [src/generated/api.ts:6163](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L6163)*
 
 AliasControllerApi - functional programming interface
 
@@ -379,7 +391,7 @@ ___
 
 ▸ `Const`**AttachmentControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:7109](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L7109)*
+*Defined in [src/generated/api.ts:7677](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L7677)*
 
 AttachmentControllerApi - factory interface
 
@@ -412,7 +424,7 @@ ___
 
 ▸ `Const`**AttachmentControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:6290](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L6290)*
+*Defined in [src/generated/api.ts:6858](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L6858)*
 
 AttachmentControllerApi - fetch parameter creator
 
@@ -443,7 +455,7 @@ ___
 
 ▸ `Const`**AttachmentControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:6824](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L6824)*
+*Defined in [src/generated/api.ts:7392](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L7392)*
 
 AttachmentControllerApi - functional programming interface
 
@@ -474,7 +486,7 @@ ___
 
 ▸ `Const`**BulkActionsControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:7738](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L7738)*
+*Defined in [src/generated/api.ts:8306](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8306)*
 
 BulkActionsControllerApi - factory interface
 
@@ -502,7 +514,7 @@ ___
 
 ▸ `Const`**BulkActionsControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:7442](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L7442)*
+*Defined in [src/generated/api.ts:8010](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8010)*
 
 BulkActionsControllerApi - fetch parameter creator
 
@@ -528,7 +540,7 @@ ___
 
 ▸ `Const`**BulkActionsControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:7637](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L7637)*
+*Defined in [src/generated/api.ts:8205](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8205)*
 
 BulkActionsControllerApi - functional programming interface
 
@@ -554,7 +566,7 @@ ___
 
 ▸ `Const`**CommonActionsControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:8279](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L8279)*
+*Defined in [src/generated/api.ts:8847](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8847)*
 
 CommonActionsControllerApi - factory interface
 
@@ -583,7 +595,7 @@ ___
 
 ▸ `Const`**CommonActionsControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:7849](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L7849)*
+*Defined in [src/generated/api.ts:8417](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8417)*
 
 CommonActionsControllerApi - fetch parameter creator
 
@@ -610,7 +622,7 @@ ___
 
 ▸ `Const`**CommonActionsControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:8124](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L8124)*
+*Defined in [src/generated/api.ts:8692](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L8692)*
 
 CommonActionsControllerApi - functional programming interface
 
@@ -637,7 +649,7 @@ ___
 
 ▸ `Const`**ContactControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:9019](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L9019)*
+*Defined in [src/generated/api.ts:9587](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L9587)*
 
 ContactControllerApi - factory interface
 
@@ -668,7 +680,7 @@ ___
 
 ▸ `Const`**ContactControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:8471](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L8471)*
+*Defined in [src/generated/api.ts:9039](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L9039)*
 
 ContactControllerApi - fetch parameter creator
 
@@ -697,7 +709,7 @@ ___
 
 ▸ `Const`**ContactControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:8822](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L8822)*
+*Defined in [src/generated/api.ts:9390](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L9390)*
 
 ContactControllerApi - functional programming interface
 
@@ -726,7 +738,7 @@ ___
 
 ▸ `Const`**DomainControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:9782](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L9782)*
+*Defined in [src/generated/api.ts:10350](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L10350)*
 
 DomainControllerApi - factory interface
 
@@ -757,7 +769,7 @@ ___
 
 ▸ `Const`**DomainControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:9230](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L9230)*
+*Defined in [src/generated/api.ts:9798](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L9798)*
 
 DomainControllerApi - fetch parameter creator
 
@@ -786,7 +798,7 @@ ___
 
 ▸ `Const`**DomainControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:9590](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L9590)*
+*Defined in [src/generated/api.ts:10158](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L10158)*
 
 DomainControllerApi - functional programming interface
 
@@ -815,7 +827,7 @@ ___
 
 ▸ `Const`**EmailControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:12205](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L12205)*
+*Defined in [src/generated/api.ts:12773](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L12773)*
 
 EmailControllerApi - factory interface
 
@@ -863,7 +875,7 @@ ___
 
 ▸ `Const`**EmailControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:9979](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L9979)*
+*Defined in [src/generated/api.ts:10547](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L10547)*
 
 EmailControllerApi - fetch parameter creator
 
@@ -909,7 +921,7 @@ ___
 
 ▸ `Const`**EmailControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:11427](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L11427)*
+*Defined in [src/generated/api.ts:11995](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L11995)*
 
 EmailControllerApi - functional programming interface
 
@@ -955,7 +967,7 @@ ___
 
 ▸ `Const`**ExpiredControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:13413](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13413)*
+*Defined in [src/generated/api.ts:13981](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L13981)*
 
 ExpiredControllerApi - factory interface
 
@@ -984,7 +996,7 @@ ___
 
 ▸ `Const`**ExpiredControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:13044](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13044)*
+*Defined in [src/generated/api.ts:13612](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L13612)*
 
 ExpiredControllerApi - fetch parameter creator
 
@@ -1011,7 +1023,7 @@ ___
 
 ▸ `Const`**ExpiredControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:13276](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13276)*
+*Defined in [src/generated/api.ts:13844](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L13844)*
 
 ExpiredControllerApi - functional programming interface
 
@@ -1034,11 +1046,88 @@ Name | Type |
 
 ___
 
+### ExportControllerApiFactory
+
+▸ `Const`**ExportControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
+
+*Defined in [src/generated/api.ts:14440](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14440)*
+
+ExportControllerApi - factory interface
+
+**`export`** 
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`configuration?` | [Configuration](classes/configuration.md) |
+`fetch?` | [FetchAPI](interfaces/fetchapi.md) |
+`basePath?` | string |
+
+**Returns:** object
+
+Name | Type |
+------ | ------ |
+`exportEntities` | (apiKey: string, exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", outputFormat: \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\", createdEarliestTime?: Date, createdOldestTime?: Date, excludePreviouslyExported?: boolean, filter?: string, listSeparatorToken?: string, options?: any) => Promise\<string> |
+`getExportLink` | (exportOptions: [ExportOptions](modules/exportoptions.md), exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", apiKey?: string, options?: any) => Promise\<[ExportLink](interfaces/exportlink.md)> |
+
+___
+
+### ExportControllerApiFetchParamCreator
+
+▸ `Const`**ExportControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
+
+*Defined in [src/generated/api.ts:14126](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14126)*
+
+ExportControllerApi - fetch parameter creator
+
+**`export`** 
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`configuration?` | [Configuration](classes/configuration.md) |
+
+**Returns:** object
+
+Name | Type |
+------ | ------ |
+`exportEntities` | (apiKey: string, exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", outputFormat: \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\", createdEarliestTime?: Date, createdOldestTime?: Date, excludePreviouslyExported?: boolean, filter?: string, listSeparatorToken?: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getExportLink` | (exportOptions: [ExportOptions](modules/exportoptions.md), exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", apiKey?: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
+
+___
+
+### ExportControllerApiFp
+
+▸ `Const`**ExportControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
+
+*Defined in [src/generated/api.ts:14343](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14343)*
+
+ExportControllerApi - functional programming interface
+
+**`export`** 
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`configuration?` | [Configuration](classes/configuration.md) |
+
+**Returns:** object
+
+Name | Type |
+------ | ------ |
+`exportEntities` | (apiKey: string, exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", outputFormat: \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\", createdEarliestTime?: Date, createdOldestTime?: Date, excludePreviouslyExported?: boolean, filter?: string, listSeparatorToken?: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<string> |
+`getExportLink` | (exportOptions: [ExportOptions](modules/exportoptions.md), exportType: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", apiKey?: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[ExportLink](interfaces/exportlink.md)> |
+
+___
+
 ### FormControllerApiFactory
 
 ▸ `Const`**FormControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:13728](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13728)*
+*Defined in [src/generated/api.ts:14753](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14753)*
 
 FormControllerApi - factory interface
 
@@ -1064,7 +1153,7 @@ ___
 
 ▸ `Const`**FormControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:13558](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13558)*
+*Defined in [src/generated/api.ts:14583](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14583)*
 
 FormControllerApi - fetch parameter creator
 
@@ -1088,7 +1177,7 @@ ___
 
 ▸ `Const`**FormControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:13668](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13668)*
+*Defined in [src/generated/api.ts:14693](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14693)*
 
 FormControllerApi - functional programming interface
 
@@ -1112,7 +1201,7 @@ ___
 
 ▸ `Const`**GroupControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:14708](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L14708)*
+*Defined in [src/generated/api.ts:15733](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L15733)*
 
 GroupControllerApi - factory interface
 
@@ -1146,7 +1235,7 @@ ___
 
 ▸ `Const`**GroupControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:13819](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L13819)*
+*Defined in [src/generated/api.ts:14844](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L14844)*
 
 GroupControllerApi - fetch parameter creator
 
@@ -1178,7 +1267,7 @@ ___
 
 ▸ `Const`**GroupControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:14404](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L14404)*
+*Defined in [src/generated/api.ts:15429](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L15429)*
 
 GroupControllerApi - functional programming interface
 
@@ -1210,7 +1299,7 @@ ___
 
 ▸ `Const`**InboxControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:16928](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L16928)*
+*Defined in [src/generated/api.ts:17953](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L17953)*
 
 InboxControllerApi - factory interface
 
@@ -1253,7 +1342,7 @@ ___
 
 ▸ `Const`**InboxControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:15043](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L15043)*
+*Defined in [src/generated/api.ts:16068](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L16068)*
 
 InboxControllerApi - fetch parameter creator
 
@@ -1294,7 +1383,7 @@ ___
 
 ▸ `Const`**InboxControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:16275](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L16275)*
+*Defined in [src/generated/api.ts:17300](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L17300)*
 
 InboxControllerApi - functional programming interface
 
@@ -1335,7 +1424,7 @@ ___
 
 ▸ `Const`**MailServerControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:18104](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18104)*
+*Defined in [src/generated/api.ts:19129](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19129)*
 
 MailServerControllerApi - factory interface
 
@@ -1364,7 +1453,7 @@ ___
 
 ▸ `Const`**MailServerControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:17708](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L17708)*
+*Defined in [src/generated/api.ts:18733](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L18733)*
 
 MailServerControllerApi - fetch parameter creator
 
@@ -1391,7 +1480,7 @@ ___
 
 ▸ `Const`**MailServerControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:17967](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L17967)*
+*Defined in [src/generated/api.ts:18992](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L18992)*
 
 MailServerControllerApi - functional programming interface
 
@@ -1418,7 +1507,7 @@ ___
 
 ▸ `Const`**MissedEmailControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:18461](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18461)*
+*Defined in [src/generated/api.ts:19486](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19486)*
 
 MissedEmailControllerApi - factory interface
 
@@ -1445,7 +1534,7 @@ ___
 
 ▸ `Const`**MissedEmailControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:18253](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18253)*
+*Defined in [src/generated/api.ts:19278](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19278)*
 
 MissedEmailControllerApi - fetch parameter creator
 
@@ -1470,7 +1559,7 @@ ___
 
 ▸ `Const`**MissedEmailControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:18383](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18383)*
+*Defined in [src/generated/api.ts:19408](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19408)*
 
 MissedEmailControllerApi - functional programming interface
 
@@ -1495,7 +1584,7 @@ ___
 
 ▸ `Const`**SentEmailsControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:18881](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18881)*
+*Defined in [src/generated/api.ts:19906](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19906)*
 
 SentEmailsControllerApi - factory interface
 
@@ -1523,7 +1612,7 @@ ___
 
 ▸ `Const`**SentEmailsControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:18556](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18556)*
+*Defined in [src/generated/api.ts:19581](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19581)*
 
 SentEmailsControllerApi - fetch parameter creator
 
@@ -1549,7 +1638,7 @@ ___
 
 ▸ `Const`**SentEmailsControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:18762](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L18762)*
+*Defined in [src/generated/api.ts:19787](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L19787)*
 
 SentEmailsControllerApi - functional programming interface
 
@@ -1575,7 +1664,7 @@ ___
 
 ▸ `Const`**TemplateControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:19495](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L19495)*
+*Defined in [src/generated/api.ts:20520](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L20520)*
 
 TemplateControllerApi - factory interface
 
@@ -1605,7 +1694,7 @@ ___
 
 ▸ `Const`**TemplateControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:19032](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L19032)*
+*Defined in [src/generated/api.ts:20057](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L20057)*
 
 TemplateControllerApi - fetch parameter creator
 
@@ -1633,7 +1722,7 @@ ___
 
 ▸ `Const`**TemplateControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:19328](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L19328)*
+*Defined in [src/generated/api.ts:20353](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L20353)*
 
 TemplateControllerApi - functional programming interface
 
@@ -1661,7 +1750,7 @@ ___
 
 ▸ `Const`**WaitForControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:20360](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L20360)*
+*Defined in [src/generated/api.ts:21385](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L21385)*
 
 WaitForControllerApi - factory interface
 
@@ -1692,7 +1781,7 @@ ___
 
 ▸ `Const`**WaitForControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:19677](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L19677)*
+*Defined in [src/generated/api.ts:20702](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L20702)*
 
 WaitForControllerApi - fetch parameter creator
 
@@ -1721,7 +1810,7 @@ ___
 
 ▸ `Const`**WaitForControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:20119](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L20119)*
+*Defined in [src/generated/api.ts:21144](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L21144)*
 
 WaitForControllerApi - functional programming interface
 
@@ -1750,7 +1839,7 @@ ___
 
 ▸ `Const`**WebhookControllerApiFactory**(`configuration?`: [Configuration](classes/configuration.md), `fetch?`: [FetchAPI](interfaces/fetchapi.md), `basePath?`: string): object
 
-*Defined in [src/generated/api.ts:21351](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L21351)*
+*Defined in [src/generated/api.ts:22902](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L22902)*
 
 WebhookControllerApi - factory interface
 
@@ -1770,9 +1859,15 @@ Name | Type |
 ------ | ------ |
 `createWebhook` | (inboxId: string, webhookOptions: [CreateWebhookOptions](modules/createwebhookoptions.md), options?: any) => Promise\<[WebhookDto](modules/webhookdto.md)> |
 `deleteWebhook` | (inboxId: string, webhookId: string, options?: any) => Promise\<Response> |
+`getAllWebhookResults` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => Promise\<[PageWebhookResult](interfaces/pagewebhookresult.md)> |
 `getAllWebhooks` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => Promise\<[PageWebhookProjection](interfaces/pagewebhookprojection.md)> |
 `getTestWebhookPayload` | (eventName?: \"EMAIL\_RECEIVED\" \| \"NEW\_EMAIL\" \| \"NEW\_CONTACT\" \| \"NEW\_ATTACHMENT\", options?: any) => Promise\<[AbstractWebhookPayload](modules/abstractwebhookpayload.md)> |
+`getTestWebhookPayloadNewAttachment` | (options?: any) => Promise\<[WebhookNewAttachmentPayload](modules/webhooknewattachmentpayload.md)> |
+`getTestWebhookPayloadNewContact` | (options?: any) => Promise\<[WebhookNewContactPayload](modules/webhooknewcontactpayload.md)> |
+`getTestWebhookPayloadNewEmail` | (options?: any) => Promise\<[WebhookNewEmailPayload](modules/webhooknewemailpayload.md)> |
 `getWebhook` | (webhookId: string, options?: any) => Promise\<[WebhookDto](modules/webhookdto.md)> |
+`getWebhookResult` | (webhookResultId: string, options?: any) => Promise\<[WebhookResultEntity](modules/webhookresultentity.md)> |
+`getWebhookResults` | (webhookId: string, page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => Promise\<[PageWebhookResult](interfaces/pagewebhookresult.md)> |
 `getWebhooks` | (inboxId: string, options?: any) => Promise\<[WebhookDto](modules/webhookdto.md)[]> |
 `sendTestData` | (webhookId: string, options?: any) => Promise\<[WebhookTestResult](interfaces/webhooktestresult.md)> |
 
@@ -1782,7 +1877,7 @@ ___
 
 ▸ `Const`**WebhookControllerApiFetchParamCreator**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:20673](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L20673)*
+*Defined in [src/generated/api.ts:21698](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L21698)*
 
 WebhookControllerApi - fetch parameter creator
 
@@ -1800,9 +1895,15 @@ Name | Type |
 ------ | ------ |
 `createWebhook` | (inboxId: string, webhookOptions: [CreateWebhookOptions](modules/createwebhookoptions.md), options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `deleteWebhook` | (inboxId: string, webhookId: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getAllWebhookResults` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `getAllWebhooks` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `getTestWebhookPayload` | (eventName?: \"EMAIL\_RECEIVED\" \| \"NEW\_EMAIL\" \| \"NEW\_CONTACT\" \| \"NEW\_ATTACHMENT\", options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getTestWebhookPayloadNewAttachment` | (options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getTestWebhookPayloadNewContact` | (options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getTestWebhookPayloadNewEmail` | (options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `getWebhook` | (webhookId: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getWebhookResult` | (webhookResultId: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
+`getWebhookResults` | (webhookId: string, page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `getWebhooks` | (inboxId: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
 `sendTestData` | (webhookId: string, options: any) => [FetchArgs](interfaces/fetchargs.md) |
 
@@ -1812,7 +1913,7 @@ ___
 
 ▸ `Const`**WebhookControllerApiFp**(`configuration?`: [Configuration](classes/configuration.md)): object
 
-*Defined in [src/generated/api.ts:21114](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L21114)*
+*Defined in [src/generated/api.ts:22469](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L22469)*
 
 WebhookControllerApi - functional programming interface
 
@@ -1830,9 +1931,15 @@ Name | Type |
 ------ | ------ |
 `createWebhook` | (inboxId: string, webhookOptions: [CreateWebhookOptions](modules/createwebhookoptions.md), options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookDto](modules/webhookdto.md)> |
 `deleteWebhook` | (inboxId: string, webhookId: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<Response> |
+`getAllWebhookResults` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[PageWebhookResult](interfaces/pagewebhookresult.md)> |
 `getAllWebhooks` | (page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[PageWebhookProjection](interfaces/pagewebhookprojection.md)> |
 `getTestWebhookPayload` | (eventName?: \"EMAIL\_RECEIVED\" \| \"NEW\_EMAIL\" \| \"NEW\_CONTACT\" \| \"NEW\_ATTACHMENT\", options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[AbstractWebhookPayload](modules/abstractwebhookpayload.md)> |
+`getTestWebhookPayloadNewAttachment` | (options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookNewAttachmentPayload](modules/webhooknewattachmentpayload.md)> |
+`getTestWebhookPayloadNewContact` | (options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookNewContactPayload](modules/webhooknewcontactpayload.md)> |
+`getTestWebhookPayloadNewEmail` | (options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookNewEmailPayload](modules/webhooknewemailpayload.md)> |
 `getWebhook` | (webhookId: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookDto](modules/webhookdto.md)> |
+`getWebhookResult` | (webhookResultId: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookResultEntity](modules/webhookresultentity.md)> |
+`getWebhookResults` | (webhookId: string, page?: number, size?: number, sort?: \"ASC\" \| \"DESC\", options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[PageWebhookResult](interfaces/pagewebhookresult.md)> |
 `getWebhooks` | (inboxId: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<Array\<[WebhookDto](modules/webhookdto.md)>> |
 `sendTestData` | (webhookId: string, options?: any) => (fetch?: [FetchAPI](interfaces/fetchapi.md), basePath?: string) => Promise\<[WebhookTestResult](interfaces/webhooktestresult.md)> |
 
@@ -1842,7 +1949,7 @@ ___
 
 ▸ **wrapCall**\<T>(`tag`: String, `fn`: () => Promise\<T>): Promise\<T>
 
-*Defined in [src/index.ts:539](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/index.ts#L539)*
+*Defined in [src/index.ts:539](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/index.ts#L539)*
 
 #### Type parameters:
 
@@ -1865,7 +1972,7 @@ Name | Type |
 
 ▪ `Const` **COLLECTION\_FORMATS**: object
 
-*Defined in [src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L25)*
+*Defined in [src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L25)*
 
 **`export`** 
 

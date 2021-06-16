@@ -25,7 +25,7 @@
 
 •  **options**: any
 
-*Defined in [src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L48)*
+*Defined in [src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L48)*
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 •  **url**: string
 
-*Defined in [src/generated/api.ts:47](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L47)*
+*Defined in [src/generated/api.ts:47](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L47)*

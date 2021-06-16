@@ -19,7 +19,7 @@
 
 •  **ATLEAST**:  = \<any>'ATLEAST'
 
-*Defined in [src/generated/api.ts:4698](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4698)*
+*Defined in [src/generated/api.ts:4852](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L4852)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **EXACTLY**:  = \<any>'EXACTLY'
 
-*Defined in [src/generated/api.ts:4697](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4697)*
+*Defined in [src/generated/api.ts:4851](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L4851)*

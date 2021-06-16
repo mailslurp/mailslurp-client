@@ -24,6 +24,6 @@
 
 •  **contactIds**: Array\<string>
 
-*Defined in [src/generated/api.ts:4498](https://github.com/mailslurp/mailslurp-client/blob/6b679b8/src/generated/api.ts#L4498)*
+*Defined in [src/generated/api.ts:4652](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L4652)*
 
 **`memberof`** UpdateGroupContacts

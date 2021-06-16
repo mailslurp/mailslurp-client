@@ -2,7 +2,9 @@
 
 > Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
-[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. 
+[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading.
+
+![email testing](https://www.mailslurp.com/assets/slurpie-vibrant.png)
 
 ## Quick links
 Here are some links to get started (or see below for code examples).
@@ -112,7 +114,7 @@ const inbox = await mailslurp.createInbox();
 Use the `createInboxWithOptions` or methods on the `inboxController` property to create email addresses using more options.
 
 ```javascript
-const inbox = await mailslurp.createInboxWithOptions({ inboxType: 'SMTP' });
+const inbox = await mailslurp.createInboxWithOptions({ inboxType: 'SMTP_INBOX' });
 ```
 
 #### Test example
