@@ -88,10 +88,54 @@ it('can use inbox controller methods', async () => {
   const inboxController = mailslurp.inboxController;
   expect(inboxController.getInboxes).toBeDefined();
 
+});
+```
+
+You can also instantiate controllers directly. See the [API controllers](https://www.mailslurp.com/docs/js/docs/classes/) for method details.
+
+```typescript
+it('can use inbox controller methods', async () => {
   // get inboxes via import
   const inboxControllerImport = new InboxControllerApi(config);
   expect(inboxControllerImport.getInboxes).toBeDefined();
 });
+```
+
+## Fetch and error handling
+The MailSlurp client uses `fetch` to call throws exceptions for non 2xx response status codes.
+
+### Configure custom fetch
+You can pass the MailSlurp constructor a custom fetch implementation if you wish to control the library used. 
+
+```typescript
+const fetchApi = require('isomorphic-fetch') // or window.fetch
+const mailslurp = new MailSlurp({ apiKey: process.env.apiKey, fetchApi });
+```
+
+### Catch exceptions
+Any non-2xx response throws an exception. There are valid 404 responses that you should handle, these include the 404 returned from waitFor methods when the required matching emails could not be found.
+
+- `4xx` (400, 404...) response codes indicate a client error. Access the error message on the response body
+- `5xx` (500, 501...) response codes indicate a server error. If encountered please contact support.
+
+Use `try{}catch(e){}` around MailSlurp methods and use `await e.text()` to access the exception error message and `e.status` to access the status code.
+
+```typescript
+describe("handling mailslurp errors", () => {
+  test("try catch and read error", async () => {
+    try {
+      await mailslurp.inboxController.sendEmailAndConfirm('badInboxId', {})
+    } catch (e) {
+      // handle the error and status code in your code
+      // 404 is returned when emails cannot be found for a given condition for instance
+      const message = await e.text();
+      const statusCode = e.status;
+      // test action
+      expect(e.status).toEqual(400)
+      expect(message).toContain("Invalid ID passed")
+    }
+  })
+})
 ```
 
 ## Common usage
