@@ -469,7 +469,57 @@ test('aliases', async () => {
 ## Webhooks
 To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://www.mailslurp.com/docs/js/docs/classes/webhookcontrollerapi/) or see the [webhook email guide](https://www.mailslurp.com/guides/email-webhooks/).
 
-## Documentation
+### Create webhooks
+```typescript
+mailslurp.webhookController.createWebhook(inboxId, {
+    url: "https://my-server.com/webhook",
+    eventName: "NEW_EMAIL"
+})
+```
+
+### Listen to webhooks
+To consume webhooks first create a webhook for an inbox and a given [webhook event](https://www.mailslurp.com/docs/webhooks). Set the webhook URL to an endpoint on your server. Your server must be publicly accessible and return a 200 or 201 status code in 30 seconds. To test locally use a service like ngrok.io to tunnel your local machine to a public URL. [The payload](https://www.mailslurp.com/guides/email-webhooks) posted to your end point will depend on the event type. Here is a listen example using express
+
+> **Note:** you can use any framework or language you like with webhooks.
+
+```typescript
+const express = require("express");
+const app = express.createServer();
+app.use(express.bodyParser());
+
+/**
+ * define your endpoint
+ * here your webhook url should include the full protocol and domain.
+ * i.e.: https://myserver.com/my-webhook-endpoint
+ */
+app.post("/my-webhook-endpoint", function (request, response) {
+  // access the data on request body
+  console.log(request.body.inboxId);
+  
+  // do something with with inboxId like `mailslurp.waitForLatestEmail(inboxId)`
+
+  // return a 2xx status code so MailSlurp knows you received it
+  response.sendStatus(200);
+});
+
+app.listen(80);
+```
+
+## Verify email address
+You can verify the existence of an email address using the MailServer controller. MailSlurp derives a host for an email address by digging the MX records for the domain. It then connects via telnet to the server and sends the `rcpt to:<emailaddress>` command to check that the email exists on the server. 
+
+```typescript
+describe('can manage smtp inboxes', () => {
+    it('can verify an external email address with a provider like gmail', async () => {
+        const result = await mailslurp.mailServerController.verifyEmailAddress({
+            emailAddress: "contact@mailslurp.dev"
+        })
+        expect(result.isValid).toEqual(true)
+    });
+});
+```
+
+## More Documentation
 
 - [Method documentation](https://www.mailslurp.com/docs/js/docs/)
 - [Guides](https://www.mailslurp/guides/)
@@ -482,3 +532,6 @@ To have received emails sent to your server using HTTP webhook push create a web
 - [Documentation](https://www.mailslurp.com/docs/js/docs/)
 - [Github](https://github.com/mailslurp/mailslurp-client)
 - [NPM package](https://www.npmjs.com/package/mailslurp-client)
+
+## Feedback, support, and feature requests
+The MailSlurp team welcomes any [feedback and feature requests](https://www.mailslurp.com/feedback/). Please use the [support portal to report any bugs](https://www.mailslurp.com/support/) or speak with support.

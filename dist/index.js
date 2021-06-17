@@ -138,6 +138,7 @@ var MailSlurp = /** @class */ (function () {
         this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, __spreadArrays([void 0], args)))();
         this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArrays([void 0], args)))();
         this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArrays([void 0], args)))();
+        this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArrays([void 0], args)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.

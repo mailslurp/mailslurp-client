@@ -36,7 +36,7 @@ Paginated MissedEmail results. Page index starts at zero. Projection results may
 
 • `Optional` **content**: Array\<[MissedEmailProjection](missedemailprojection.md)>
 
-*Defined in [src/generated/api.ts:3330](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3330)*
+*Defined in [src/generated/api.ts:3330](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3330)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3336](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3336)*
+*Defined in [src/generated/api.ts:3336](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3336)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3342](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3342)*
+*Defined in [src/generated/api.ts:3342](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3342)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3348](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3348)*
+*Defined in [src/generated/api.ts:3348](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3348)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3354](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3354)*
+*Defined in [src/generated/api.ts:3354](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3354)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3360](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3360)*
+*Defined in [src/generated/api.ts:3360](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3360)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3366](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3366)*
+*Defined in [src/generated/api.ts:3366](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3366)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3372](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3372)*
+*Defined in [src/generated/api.ts:3372](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3372)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3378](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3378)*
+*Defined in [src/generated/api.ts:3378](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3378)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3384](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3384)*
+*Defined in [src/generated/api.ts:3384](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3384)*
 
 **`memberof`** PageMissedEmailProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3390](https://github.com/mailslurp/mailslurp-client/blob/24bff2e/src/generated/api.ts#L3390)*
+*Defined in [src/generated/api.ts:3390](https://github.com/mailslurp/mailslurp-client/blob/85c640b/src/generated/api.ts#L3390)*
 
 **`memberof`** PageMissedEmailProjection

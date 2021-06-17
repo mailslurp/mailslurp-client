@@ -28,6 +28,7 @@ import {
     UploadAttachmentOptions,
     WaitForControllerApi,
     WebhookControllerApi,
+    MailServerControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -104,6 +105,7 @@ export class MailSlurp {
     public readonly groupController: GroupControllerApi;
     public readonly templateController: TemplateControllerApi;
     public readonly webhookController: WebhookControllerApi;
+    public readonly mailServerController: MailServerControllerApi;
 
     /**
      * Create a new MailSlurp instance.
@@ -149,6 +151,7 @@ export class MailSlurp {
         this.commonController = new CommonActionsControllerApi(...args);
         this.bulkController = new BulkActionsControllerApi(...args);
         this.waitController = new WaitForControllerApi(...args);
+        this.mailServerController = new MailServerControllerApi(...args);
     }
 
     /**
