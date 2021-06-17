@@ -250,4 +250,13 @@ export declare type GetMessagesOptions = {
     sort?: SortEnum;
     size?: number;
 };
+export declare function wrapException<T>(fn: () => Promise<T>): Promise<T>;
+export interface Result<T> {
+    content?: T;
+    error?: {
+        statusCode: number;
+        message: string;
+    };
+}
+export declare function wrapResult<T>(fn: () => Promise<T>): Promise<Result<T>>;
 export default MailSlurp;

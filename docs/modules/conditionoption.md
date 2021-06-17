@@ -26,7 +26,7 @@
 
 • `Optional` **condition**: [ConditionEnum](../enums/conditionoption.conditionenum.md)
 
-*Defined in [src/generated/api.ts:453](https://github.com/mailslurp/mailslurp-client/blob/a8663d0/src/generated/api.ts#L453)*
+*Defined in [src/generated/api.ts:453](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L453)*
 
 The condition to evaluate against the email
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **value**: [ValueEnum](../enums/conditionoption.valueenum.md)
 
-*Defined in [src/generated/api.ts:459](https://github.com/mailslurp/mailslurp-client/blob/a8663d0/src/generated/api.ts#L459)*
+*Defined in [src/generated/api.ts:459](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L459)*
 
 What the condition should evaluate to. A string 'TRUE|FALSE' not a boolean.
 

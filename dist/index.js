@@ -53,7 +53,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
     return r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MailSlurp = void 0;
+exports.wrapResult = exports.wrapException = exports.MailSlurp = void 0;
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 var generated_1 = require("./generated");
@@ -506,4 +506,50 @@ function wrapCall(tag, fn) {
         });
     });
 }
+function wrapException(fn) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, wrapCall('wrapped exception', fn)];
+        });
+    });
+}
+exports.wrapException = wrapException;
+function wrapResult(fn) {
+    return __awaiter(this, void 0, void 0, function () {
+        var content, e_2, statusCode, message, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 2, , 6]);
+                    return [4 /*yield*/, fn()];
+                case 1:
+                    content = _b.sent();
+                    return [2 /*return*/, {
+                            content: content,
+                        }];
+                case 2:
+                    e_2 = _b.sent();
+                    statusCode = e_2.status ? e_2.status : 500;
+                    if (!e_2.json) return [3 /*break*/, 4];
+                    return [4 /*yield*/, e_2.json()];
+                case 3:
+                    _a = _b.sent();
+                    return [3 /*break*/, 5];
+                case 4:
+                    _a = e_2;
+                    _b.label = 5;
+                case 5:
+                    message = _a;
+                    return [2 /*return*/, {
+                            error: {
+                                statusCode: statusCode,
+                                message: message,
+                            },
+                        }];
+                case 6: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.wrapResult = wrapResult;
 exports.default = MailSlurp;

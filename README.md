@@ -118,7 +118,7 @@ Any non-2xx response throws an exception. There are valid 404 responses that you
 - `4xx` (400, 404...) response codes indicate a client error. Access the error message on the response body
 - `5xx` (500, 501...) response codes indicate a server error. If encountered please contact support.
 
-Use `try{}catch(e){}` around MailSlurp methods and use `await e.text()` to access the exception error message and `e.status` to access the status code.
+Use `try{}catch(e){}` around MailSlurp methods and use `await e.text()` to access the exception error message and `e.status` to access the status code. If you don't like try catch use the `wrapResult` helper method to wrap results in a `Result<T>` type with an `error` property.
 
 ```typescript
 describe("handling mailslurp errors", () => {
@@ -135,6 +135,24 @@ describe("handling mailslurp errors", () => {
       expect(message).toContain("Invalid ID passed")
     }
   })
+})
+```
+
+### Use `wrapResult` helper
+To make exception error handling easier you can call methods using the `wrapResult` method.
+
+```typescript
+test('can use wrapResult to avoid try catch', async () => {
+    // can wrap a bad response and read the error - notice use of anonymous function!
+    const res1 = await wrapResult(() => mailslurp.createInboxWithOptions({ emailAddress: 'foo' }))
+    expect(res1.error).toBeTruthy()
+    expect(res1.error.message).toContain("Invalid ID")
+    expect(res1.error.statusCode).toEqual(400)
+
+    // can use successful result
+    const res2 = await wrapResult(() => mailslurp.createInbox())
+    expect(res2.error).toBeUndefined()
+    expect(res2.content.emailAddress).toContain('mailslurp')
 })
 ```
 
