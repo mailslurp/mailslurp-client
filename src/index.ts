@@ -28,6 +28,8 @@ import {
     UploadAttachmentOptions,
     WaitForControllerApi,
     WebhookControllerApi,
+    MissedEmailControllerApi,
+    InboxRulesetControllerApi,
     MailServerControllerApi,
 } from './generated';
 
@@ -106,6 +108,8 @@ export class MailSlurp {
     public readonly templateController: TemplateControllerApi;
     public readonly webhookController: WebhookControllerApi;
     public readonly mailServerController: MailServerControllerApi;
+    public readonly missedEmailControllerApi: MissedEmailControllerApi;
+    public readonly inboxRulesetControllerApi: InboxRulesetControllerApi;
 
     /**
      * Create a new MailSlurp instance.
@@ -152,6 +156,8 @@ export class MailSlurp {
         this.bulkController = new BulkActionsControllerApi(...args);
         this.waitController = new WaitForControllerApi(...args);
         this.mailServerController = new MailServerControllerApi(...args);
+        this.missedEmailControllerApi = new MissedEmailControllerApi(...args);
+        this.inboxRulesetControllerApi = new InboxRulesetControllerApi(...args);
     }
 
     /**
@@ -388,18 +394,21 @@ export class MailSlurp {
      * @param {number} [size] Optional page size in email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
+     * @param searchFilter Optional search filter
      */
     async getAllEmails(
         page?: number,
         size?: number,
         inboxId?: Array<string>,
         sort?: SortEnum,
-        unreadOnly?: boolean
+        unreadOnly?: boolean,
+        searchFilter?: string
     ) {
         return wrapCall('getAllEmails', () =>
             this.emailController.getEmailsPaginated(
                 inboxId,
                 page,
+                searchFilter,
                 size,
                 sort,
                 unreadOnly

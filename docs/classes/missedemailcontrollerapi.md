@@ -39,7 +39,7 @@ MissedEmailControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -59,7 +59,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L61)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
 
 ___
 
@@ -79,15 +79,15 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L62)*
 
 ## Methods
 
 ### getAllMissedEmails
 
-▸ **getAllMissedEmails**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageMissedEmailProjection](../interfaces/pagemissedemailprojection.md)>
+▸ **getAllMissedEmails**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageMissedEmailProjection](../interfaces/pagemissedemailprojection.md)>
 
-*Defined in [src/generated/api.ts:19547](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L19547)*
+*Defined in [src/generated/api.ts:20898](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20898)*
 
 **`summary`** Get all MissedEmails in paginated format
 
@@ -100,6 +100,7 @@ ___
 Name | Type |
 ------ | ------ |
 `page?` | number |
+`searchFilter?` | string |
 `size?` | number |
 `sort?` | \"ASC\" \| \"DESC\" |
 `options?` | any |
@@ -112,7 +113,7 @@ ___
 
 ▸ **getMissedEmail**(`missedEmailId`: string, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
 
-*Defined in [src/generated/api.ts:19569](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L19569)*
+*Defined in [src/generated/api.ts:20921](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20921)*
 
 **`summary`** Get MissedEmail
 

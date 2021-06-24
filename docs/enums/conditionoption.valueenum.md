@@ -19,7 +19,7 @@
 
 •  **FALSE**:  = \<any>'FALSE'
 
-*Defined in [src/generated/api.ts:480](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L480)*
+*Defined in [src/generated/api.ts:480](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L480)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **TRUE**:  = \<any>'TRUE'
 
-*Defined in [src/generated/api.ts:479](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L479)*
+*Defined in [src/generated/api.ts:479](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L479)*

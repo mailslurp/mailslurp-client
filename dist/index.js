@@ -139,6 +139,8 @@ var MailSlurp = /** @class */ (function () {
         this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArrays([void 0], args)))();
         this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArrays([void 0], args)))();
         this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArrays([void 0], args)))();
+        this.missedEmailControllerApi = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArrays([void 0], args)))();
+        this.inboxRulesetControllerApi = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArrays([void 0], args)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
@@ -351,13 +353,14 @@ var MailSlurp = /** @class */ (function () {
      * @param {number} [size] Optional page size in email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
+     * @param searchFilter Optional search filter
      */
-    MailSlurp.prototype.getAllEmails = function (page, size, inboxId, sort, unreadOnly) {
+    MailSlurp.prototype.getAllEmails = function (page, size, inboxId, sort, unreadOnly, searchFilter) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emailController.getEmailsPaginated(inboxId, page, size, sort, unreadOnly);
+                        return _this.emailController.getEmailsPaginated(inboxId, page, searchFilter, size, sort, unreadOnly);
                     })];
             });
         });

@@ -4,3 +4,5 @@ docs
 bin
 config
 typedoc.json
+.idea
+.env.sample

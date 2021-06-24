@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, MailServerControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, MissedEmailControllerApi, InboxRulesetControllerApi, MailServerControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -66,6 +66,8 @@ export declare class MailSlurp {
     readonly templateController: TemplateControllerApi;
     readonly webhookController: WebhookControllerApi;
     readonly mailServerController: MailServerControllerApi;
+    readonly missedEmailControllerApi: MissedEmailControllerApi;
+    readonly inboxRulesetControllerApi: InboxRulesetControllerApi;
     /**
      * Create a new MailSlurp instance.
      *
@@ -182,8 +184,9 @@ export declare class MailSlurp {
      * @param {number} [size] Optional page size in email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
+     * @param searchFilter Optional search filter
      */
-    getAllEmails(page?: number, size?: number, inboxId?: Array<string>, sort?: SortEnum, unreadOnly?: boolean): Promise<import("./generated").PageEmailProjection>;
+    getAllEmails(page?: number, size?: number, inboxId?: Array<string>, sort?: SortEnum, unreadOnly?: boolean, searchFilter?: string): Promise<import("./generated").PageEmailProjection>;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox

@@ -36,7 +36,7 @@ Paginated attachment entity results. Page index starts at zero. Projection resul
 
 • `Optional` **content**: Array\<[AttachmentProjection](attachmentprojection.md)>
 
-*Defined in [src/generated/api.ts:2812](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2812)*
+*Defined in [src/generated/api.ts:3012](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3012)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:2818](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2818)*
+*Defined in [src/generated/api.ts:3018](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3018)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:2824](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2824)*
+*Defined in [src/generated/api.ts:3024](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3024)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:2830](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2830)*
+*Defined in [src/generated/api.ts:3030](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3030)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:2836](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2836)*
+*Defined in [src/generated/api.ts:3036](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3036)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:2842](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2842)*
+*Defined in [src/generated/api.ts:3042](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3042)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:2848](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2848)*
+*Defined in [src/generated/api.ts:3048](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3048)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:2854](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2854)*
+*Defined in [src/generated/api.ts:3054](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3054)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:2860](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2860)*
+*Defined in [src/generated/api.ts:3060](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3060)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:2866](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2866)*
+*Defined in [src/generated/api.ts:3066](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3066)*
 
 **`memberof`** PageAttachmentEntity
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:2872](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L2872)*
+*Defined in [src/generated/api.ts:3072](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3072)*
 
 **`memberof`** PageAttachmentEntity

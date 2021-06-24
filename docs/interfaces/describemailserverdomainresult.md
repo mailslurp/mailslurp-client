@@ -28,7 +28,7 @@ Name Server lookup result
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:1236](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L1236)*
+*Defined in [src/generated/api.ts:1286](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1286)*
 
 **`memberof`** DescribeMailServerDomainResult
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **message**: string
 
-*Defined in [src/generated/api.ts:1242](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L1242)*
+*Defined in [src/generated/api.ts:1292](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1292)*
 
 **`memberof`** DescribeMailServerDomainResult
 
@@ -48,6 +48,6 @@ ___
 
 •  **mxRecords**: Array\<[NameServerRecord](nameserverrecord.md)>
 
-*Defined in [src/generated/api.ts:1248](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L1248)*
+*Defined in [src/generated/api.ts:1298](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1298)*
 
 **`memberof`** DescribeMailServerDomainResult

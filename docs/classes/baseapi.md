@@ -34,6 +34,8 @@
 
   ↳ [InboxControllerApi](inboxcontrollerapi.md)
 
+  ↳ [InboxRulesetControllerApi](inboxrulesetcontrollerapi.md)
+
   ↳ [MailServerControllerApi](mailservercontrollerapi.md)
 
   ↳ [MissedEmailControllerApi](missedemailcontrollerapi.md)
@@ -64,7 +66,7 @@
 
 \+ **new BaseAPI**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [BaseAPI](baseapi.md)
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -82,7 +84,7 @@ Name | Type | Default value |
 
 • `Protected` **basePath**: string
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L61)*
 
 ___
 
@@ -90,7 +92,7 @@ ___
 
 • `Protected` **configuration**: [Configuration](configuration.md)
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
 
 ___
 
@@ -98,4 +100,4 @@ ___
 
 • `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L62)*

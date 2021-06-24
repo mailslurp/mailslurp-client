@@ -36,7 +36,7 @@ Paginated email template results. Page index starts at zero. Projection results 
 
 • `Optional` **content**: Array\<[TemplateProjection](templateprojection.md)>
 
-*Defined in [src/generated/api.ts:3552](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3552)*
+*Defined in [src/generated/api.ts:3826](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3826)*
 
 **`memberof`** PageTemplateProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3558](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3558)*
+*Defined in [src/generated/api.ts:3832](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3832)*
 
 **`memberof`** PageTemplateProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3564](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3564)*
+*Defined in [src/generated/api.ts:3838](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3838)*
 
 **`memberof`** PageTemplateProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3570](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3570)*
+*Defined in [src/generated/api.ts:3844](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3844)*
 
 **`memberof`** PageTemplateProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3576](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3576)*
+*Defined in [src/generated/api.ts:3850](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3850)*
 
 **`memberof`** PageTemplateProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3582](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3582)*
+*Defined in [src/generated/api.ts:3856](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3856)*
 
 **`memberof`** PageTemplateProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3588](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3588)*
+*Defined in [src/generated/api.ts:3862](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3862)*
 
 **`memberof`** PageTemplateProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3594](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3594)*
+*Defined in [src/generated/api.ts:3868](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3868)*
 
 **`memberof`** PageTemplateProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3600](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3600)*
+*Defined in [src/generated/api.ts:3874](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3874)*
 
 **`memberof`** PageTemplateProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3606](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3606)*
+*Defined in [src/generated/api.ts:3880](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3880)*
 
 **`memberof`** PageTemplateProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3612](https://github.com/mailslurp/mailslurp-client/blob/aa918cc/src/generated/api.ts#L3612)*
+*Defined in [src/generated/api.ts:3886](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3886)*
 
 **`memberof`** PageTemplateProjection
