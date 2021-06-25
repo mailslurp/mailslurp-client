@@ -31,7 +31,7 @@
 
 •  **action**: [ActionEnum](../enums/inboxrulesetprojection.actionenum.md)
 
-*Defined in [src/generated/api.ts:2557](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2557)*
+*Defined in [src/generated/api.ts:2559](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2559)*
 
 **`memberof`** InboxRulesetProjection
 
@@ -41,7 +41,7 @@ ___
 
 •  **handler**: [HandlerEnum](../enums/inboxrulesetprojection.handlerenum.md)
 
-*Defined in [src/generated/api.ts:2563](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2563)*
+*Defined in [src/generated/api.ts:2565](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2565)*
 
 **`memberof`** InboxRulesetProjection
 
@@ -51,7 +51,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2569](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2569)*
+*Defined in [src/generated/api.ts:2571](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2571)*
 
 **`memberof`** InboxRulesetProjection
 
@@ -61,7 +61,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:2575](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2575)*
+*Defined in [src/generated/api.ts:2577](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2577)*
 
 **`memberof`** InboxRulesetProjection
 
@@ -71,7 +71,7 @@ ___
 
 •  **scope**: [ScopeEnum](../enums/inboxrulesetprojection.scopeenum.md)
 
-*Defined in [src/generated/api.ts:2581](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2581)*
+*Defined in [src/generated/api.ts:2583](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2583)*
 
 **`memberof`** InboxRulesetProjection
 
@@ -81,6 +81,6 @@ ___
 
 •  **target**: string
 
-*Defined in [src/generated/api.ts:2587](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2587)*
+*Defined in [src/generated/api.ts:2589](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2589)*
 
 **`memberof`** InboxRulesetProjection

@@ -30,6 +30,7 @@ MissedEmailControllerApi - object-oriented interface
 
 * [getAllMissedEmails](missedemailcontrollerapi.md#getallmissedemails)
 * [getMissedEmail](missedemailcontrollerapi.md#getmissedemail)
+* [waitForNthMissedEmail](missedemailcontrollerapi.md#waitfornthmissedemail)
 
 ## Constructors
 
@@ -39,7 +40,7 @@ MissedEmailControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -59,7 +60,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
 
 ___
 
@@ -69,7 +70,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 ___
 
@@ -79,15 +80,15 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
 
 ## Methods
 
 ### getAllMissedEmails
 
-▸ **getAllMissedEmails**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageMissedEmailProjection](../interfaces/pagemissedemailprojection.md)>
+▸ **getAllMissedEmails**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageMissedEmailProjection](../interfaces/pagemissedemailprojection.md)>
 
-*Defined in [src/generated/api.ts:20898](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20898)*
+*Defined in [src/generated/api.ts:21048](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L21048)*
 
 **`summary`** Get all MissedEmails in paginated format
 
@@ -99,6 +100,7 @@ ___
 
 Name | Type |
 ------ | ------ |
+`inboxId?` | string |
 `page?` | number |
 `searchFilter?` | string |
 `size?` | number |
@@ -113,7 +115,7 @@ ___
 
 ▸ **getMissedEmail**(`missedEmailId`: string, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
 
-*Defined in [src/generated/api.ts:20921](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20921)*
+*Defined in [src/generated/api.ts:21072](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L21072)*
 
 **`summary`** Get MissedEmail
 
@@ -125,7 +127,34 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`missedEmailId` | string | MissedEmailId |
+`missedEmailId` | string | missedEmailId |
+`options?` | any | - |
+
+**Returns:** Promise\<[MissedEmail](../interfaces/missedemail.md)>
+
+___
+
+### waitForNthMissedEmail
+
+▸ **waitForNthMissedEmail**(`inboxId`: string, `timeout`: number, `index?`: number, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
+
+*Defined in [src/generated/api.ts:21089](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L21089)*
+
+Wait for 0 based index missed email
+
+**`summary`** Wait for Nth missed email
+
+**`throws`** {RequiredError}
+
+**`memberof`** MissedEmailControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`inboxId` | string | Optional inbox ID filter |
+`timeout` | number | Optional timeout milliseconds |
+`index?` | number | - |
 `options?` | any | - |
 
 **Returns:** Promise\<[MissedEmail](../interfaces/missedemail.md)>

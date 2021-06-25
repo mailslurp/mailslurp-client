@@ -37,7 +37,7 @@ A compact representation of a full email. Used in list endpoints to keep respons
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:1841](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1841)*
+*Defined in [src/generated/api.ts:1842](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1842)*
 
 **`memberof`** EmailProjection
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1847](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1847)*
+*Defined in [src/generated/api.ts:1848](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1848)*
 
 **`memberof`** EmailProjection
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **bodyMD5Hash**: string
 
-*Defined in [src/generated/api.ts:1853](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1853)*
+*Defined in [src/generated/api.ts:1854](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1854)*
 
 **`memberof`** EmailProjection
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1859](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1859)*
+*Defined in [src/generated/api.ts:1860](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1860)*
 
 **`memberof`** EmailProjection
 
@@ -77,7 +77,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1865](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1865)*
+*Defined in [src/generated/api.ts:1866](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1866)*
 
 **`memberof`** EmailProjection
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:1871](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1871)*
+*Defined in [src/generated/api.ts:1872](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1872)*
 
 **`memberof`** EmailProjection
 
@@ -97,7 +97,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1877](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1877)*
+*Defined in [src/generated/api.ts:1878](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1878)*
 
 **`memberof`** EmailProjection
 
@@ -107,7 +107,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:1883](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1883)*
+*Defined in [src/generated/api.ts:1884](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1884)*
 
 **`memberof`** EmailProjection
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **read**: boolean
 
-*Defined in [src/generated/api.ts:1889](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1889)*
+*Defined in [src/generated/api.ts:1890](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1890)*
 
 **`memberof`** EmailProjection
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:1895](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1895)*
+*Defined in [src/generated/api.ts:1896](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1896)*
 
 **`memberof`** EmailProjection
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **teamAccess**: boolean
 
-*Defined in [src/generated/api.ts:1901](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1901)*
+*Defined in [src/generated/api.ts:1902](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1902)*
 
 **`memberof`** EmailProjection
 
@@ -147,6 +147,6 @@ ___
 
 •  **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:1907](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L1907)*
+*Defined in [src/generated/api.ts:1908](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1908)*
 
 **`memberof`** EmailProjection

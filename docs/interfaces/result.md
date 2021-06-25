@@ -27,7 +27,7 @@ Name |
 
 • `Optional` **content**: T
 
-*Defined in [src/index.ts:564](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/index.ts#L564)*
+*Defined in [src/index.ts:564](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/index.ts#L564)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • `Optional` **error**: { message: string ; statusCode: number  }
 
-*Defined in [src/index.ts:565](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/index.ts#L565)*
+*Defined in [src/index.ts:565](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/index.ts#L565)*
 
 #### Type declaration:
 

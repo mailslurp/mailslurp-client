@@ -42,7 +42,7 @@ InboxRulesetControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -62,7 +62,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **createNewInboxRuleset**(`createInboxRulesetOptions`: [CreateInboxRulesetOptions](../modules/createinboxrulesetoptions.md), `inboxId?`: string, `options?`: any): Promise\<[InboxRulesetDto](../modules/inboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:19984](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19984)*
+*Defined in [src/generated/api.ts:19987](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19987)*
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **deleteInboxRuleset**(`id`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:20005](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20005)*
+*Defined in [src/generated/api.ts:20008](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20008)*
 
 Delete inbox ruleset
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **deleteInboxRulesets**(`inboxId?`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:20019](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20019)*
+*Defined in [src/generated/api.ts:20022](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20022)*
 
 Delete inbox rulesets. Accepts optional inboxId filter.
 
@@ -166,7 +166,7 @@ ___
 
 ▸ **getInboxRuleset**(`id`: string, `options?`: any): Promise\<[InboxRulesetDto](../modules/inboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:20033](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20033)*
+*Defined in [src/generated/api.ts:20036](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20036)*
 
 Get inbox ruleset
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **getInboxRulesets**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageInboxRulesetProjection](../interfaces/pageinboxrulesetprojection.md)>
 
-*Defined in [src/generated/api.ts:20051](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L20051)*
+*Defined in [src/generated/api.ts:20054](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20054)*
 
 List all rulesets attached to an inbox
 

@@ -28,7 +28,7 @@ Expired inbox
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2011](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2011)*
+*Defined in [src/generated/api.ts:2012](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2012)*
 
 **`memberof`** ExpiredInboxDto
 
@@ -38,7 +38,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2017](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2017)*
+*Defined in [src/generated/api.ts:2018](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2018)*
 
 **`memberof`** ExpiredInboxDto
 
@@ -48,6 +48,6 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:2023](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2023)*
+*Defined in [src/generated/api.ts:2024](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2024)*
 
 **`memberof`** ExpiredInboxDto

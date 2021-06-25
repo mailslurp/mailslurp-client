@@ -34,7 +34,7 @@
 
 • `Optional` **content**: Array\<[WebhookProjection](webhookprojection.md)>
 
-*Defined in [src/generated/api.ts:3974](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3974)*
+*Defined in [src/generated/api.ts:3977](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3977)*
 
 **`memberof`** PageWebhookProjection
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3980](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3980)*
+*Defined in [src/generated/api.ts:3983](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3983)*
 
 **`memberof`** PageWebhookProjection
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3986](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3986)*
+*Defined in [src/generated/api.ts:3989](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3989)*
 
 **`memberof`** PageWebhookProjection
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3992](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3992)*
+*Defined in [src/generated/api.ts:3995](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3995)*
 
 **`memberof`** PageWebhookProjection
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3998](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3998)*
+*Defined in [src/generated/api.ts:4001](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4001)*
 
 **`memberof`** PageWebhookProjection
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:4004](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4004)*
+*Defined in [src/generated/api.ts:4007](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4007)*
 
 **`memberof`** PageWebhookProjection
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:4010](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4010)*
+*Defined in [src/generated/api.ts:4013](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4013)*
 
 **`memberof`** PageWebhookProjection
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:4016](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4016)*
+*Defined in [src/generated/api.ts:4019](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4019)*
 
 **`memberof`** PageWebhookProjection
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:4022](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4022)*
+*Defined in [src/generated/api.ts:4025](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4025)*
 
 **`memberof`** PageWebhookProjection
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:4028](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4028)*
+*Defined in [src/generated/api.ts:4031](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4031)*
 
 **`memberof`** PageWebhookProjection
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:4034](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L4034)*
+*Defined in [src/generated/api.ts:4037](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4037)*
 
 **`memberof`** PageWebhookProjection

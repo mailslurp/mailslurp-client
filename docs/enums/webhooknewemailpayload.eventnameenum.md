@@ -21,7 +21,7 @@
 
 •  **EMAILRECEIVED**:  = \<any>'EMAIL\_RECEIVED'
 
-*Defined in [src/generated/api.ts:5527](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L5527)*
+*Defined in [src/generated/api.ts:5530](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5530)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **NEWATTACHMENT**:  = \<any>'NEW\_ATTACHMENT'
 
-*Defined in [src/generated/api.ts:5530](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L5530)*
+*Defined in [src/generated/api.ts:5533](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5533)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **NEWCONTACT**:  = \<any>'NEW\_CONTACT'
 
-*Defined in [src/generated/api.ts:5529](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L5529)*
+*Defined in [src/generated/api.ts:5532](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5532)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **NEWEMAIL**:  = \<any>'NEW\_EMAIL'
 
-*Defined in [src/generated/api.ts:5528](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L5528)*
+*Defined in [src/generated/api.ts:5531](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5531)*

@@ -36,7 +36,7 @@ Paginated inbox ruleset results. Page index starts at zero. Projection results m
 
 • `Optional` **content**: Array\<[InboxRulesetProjection](../modules/inboxrulesetprojection.md)>
 
-*Defined in [src/generated/api.ts:3530](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3530)*
+*Defined in [src/generated/api.ts:3533](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3533)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3536](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3536)*
+*Defined in [src/generated/api.ts:3539](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3539)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3542](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3542)*
+*Defined in [src/generated/api.ts:3545](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3545)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3548](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3548)*
+*Defined in [src/generated/api.ts:3551](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3551)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3554](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3554)*
+*Defined in [src/generated/api.ts:3557](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3557)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3560](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3560)*
+*Defined in [src/generated/api.ts:3563](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3563)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3566](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3566)*
+*Defined in [src/generated/api.ts:3569](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3569)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3572](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3572)*
+*Defined in [src/generated/api.ts:3575](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3575)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3578](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3578)*
+*Defined in [src/generated/api.ts:3581](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3581)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3584](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3584)*
+*Defined in [src/generated/api.ts:3587](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3587)*
 
 **`memberof`** PageInboxRulesetProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3590](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L3590)*
+*Defined in [src/generated/api.ts:3593](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L3593)*
 
 **`memberof`** PageInboxRulesetProjection

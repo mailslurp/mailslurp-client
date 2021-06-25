@@ -25,7 +25,7 @@
 
 •  **contacts**: Array\<[ContactDto](contactdto.md)>
 
-*Defined in [src/generated/api.ts:2186](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2186)*
+*Defined in [src/generated/api.ts:2187](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2187)*
 
 **`memberof`** GroupContactsDto
 
@@ -35,6 +35,6 @@ ___
 
 •  **group**: [GroupDto](groupdto.md)
 
-*Defined in [src/generated/api.ts:2192](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L2192)*
+*Defined in [src/generated/api.ts:2193](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2193)*
 
 **`memberof`** GroupContactsDto

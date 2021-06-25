@@ -27,7 +27,7 @@
 
 • `Optional` **basicAuth**: [BasicAuthOptions](../interfaces/basicauthoptions.md)
 
-*Defined in [src/generated/api.ts:947](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L947)*
+*Defined in [src/generated/api.ts:948](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L948)*
 
 Optional basic authentication that MailSlurp should use when calling the URL. For instance if your URL is https://example.com then basic auth will call a URL like https://{username}@{password}:example.com
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/createwebhookoptions.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:953](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L953)*
+*Defined in [src/generated/api.ts:954](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L954)*
 
 Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when an email is received by the inbox associated with the webhook. Payload differ according to the webhook event name. The other events are `NEW_EMAIL`, `NEW_CONTACT`, and `NEW_ATTACHMENT`.
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:959](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L959)*
+*Defined in [src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L960)*
 
 Optional name for the webhook
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in [src/generated/api.ts:965](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L965)*
+*Defined in [src/generated/api.ts:966](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L966)*
 
 Public URL on your server that MailSlurp can post WebhookNotification payload to when an email is received or an event is trigger. The payload of the submitted JSON is dependent on the webhook event type. The default `EMAIL_RECEIVED` payload is described by `https://api.mailslurp.com/schemas/webhook-payload`. The other events, `NEW_EMAIL`, `NEW_CONTACT`, and `NEW_ATTACHMENT` are described by `https://api.mailslurp.com/schemas/webhook-new-email-payload`, `https://api.mailslurp.com/schemas/webhook-new-contact-payload`,`https://api.mailslurp.com/schemas/webhook-new-attachment-payload` respectively.
 

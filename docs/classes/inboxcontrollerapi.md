@@ -57,7 +57,7 @@ InboxControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -77,7 +77,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **createInbox**(`allowTeamAccess?`: boolean, `description?`: string, `emailAddress?`: string, `expiresAt?`: Date, `expiresIn?`: number, `favourite?`: boolean, `inboxType?`: \"HTTP\_INBOX\" \| \"SMTP\_INBOX\", `name?`: string, `tags?`: Array\<string>, `useDomainPool?`: boolean, `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:18946](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L18946)*
+*Defined in [src/generated/api.ts:18949](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L18949)*
 
 Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **createInboxRuleset**(`createInboxRulesetOptions`: [CreateInboxRulesetOptions](../modules/createinboxrulesetoptions.md), `inboxId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:18983](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L18983)*
+*Defined in [src/generated/api.ts:18986](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L18986)*
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **createInboxWithDefaults**(`options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:19002](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19002)*
+*Defined in [src/generated/api.ts:19005](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19005)*
 
 **`summary`** Create an inbox with default options. Uses MailSlurp domain pool address and is private.
 
@@ -187,7 +187,7 @@ ___
 
 ▸ **createInboxWithOptions**(`createInboxDto`: [CreateInboxDto](../modules/createinboxdto.md), `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:19016](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19016)*
+*Defined in [src/generated/api.ts:19019](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19019)*
 
 Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **deleteAllInboxes**(`options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:19033](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19033)*
+*Defined in [src/generated/api.ts:19036](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19036)*
 
 Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
 
@@ -236,7 +236,7 @@ ___
 
 ▸ **deleteInbox**(`inboxId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:19047](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19047)*
+*Defined in [src/generated/api.ts:19050](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19050)*
 
 Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
 
@@ -261,7 +261,7 @@ ___
 
 ▸ **getAllInboxes**(`favourite?`: boolean, `page?`: number, `search?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `tag?`: string, `teamAccess?`: boolean, `options?`: any): Promise\<[PageInboxProjection](../interfaces/pageinboxprojection.md)>
 
-*Defined in [src/generated/api.ts:19068](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19068)*
+*Defined in [src/generated/api.ts:19071](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19071)*
 
 List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
 
@@ -292,7 +292,7 @@ ___
 
 ▸ **getEmails**(`inboxId`: string, `limit?`: number, `minCount?`: number, `retryTimeout?`: number, `since?`: Date, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in [src/generated/api.ts:19104](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19104)*
+*Defined in [src/generated/api.ts:19107](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19107)*
 
 List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **getInbox**(`inboxId`: string, `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:19134](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19134)*
+*Defined in [src/generated/api.ts:19137](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19137)*
 
 Returns an inbox's properties, including its email address and ID.
 
@@ -348,7 +348,7 @@ ___
 
 ▸ **getInboxEmailsPaginated**(`inboxId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageEmailPreview](../interfaces/pageemailpreview.md)>
 
-*Defined in [src/generated/api.ts:19152](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19152)*
+*Defined in [src/generated/api.ts:19155](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19155)*
 
 Get a paginated list of emails in an inbox. Does not hold connections open.
 
@@ -376,7 +376,7 @@ ___
 
 ▸ **getInboxSentEmails**(`inboxId`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:19180](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19180)*
+*Defined in [src/generated/api.ts:19183](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19183)*
 
 Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
 
@@ -405,7 +405,7 @@ ___
 
 ▸ **getInboxTags**(`options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:19205](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19205)*
+*Defined in [src/generated/api.ts:19208](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19208)*
 
 Get all inbox tags
 
@@ -429,7 +429,7 @@ ___
 
 ▸ **getInboxes**(`size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[Inbox](../modules/inbox.md)[]>
 
-*Defined in [src/generated/api.ts:19221](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19221)*
+*Defined in [src/generated/api.ts:19224](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19224)*
 
 List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
 
@@ -455,7 +455,7 @@ ___
 
 ▸ **getOrganizationInboxes**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageOrganizationInboxProjection](../interfaces/pageorganizationinboxprojection.md)>
 
-*Defined in [src/generated/api.ts:19240](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19240)*
+*Defined in [src/generated/api.ts:19243](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19243)*
 
 List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
 
@@ -483,7 +483,7 @@ ___
 
 ▸ **listInboxRulesets**(`inboxId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:19267](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19267)*
+*Defined in [src/generated/api.ts:19270](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19270)*
 
 List all rulesets attached to an inbox
 
@@ -511,7 +511,7 @@ ___
 
 ▸ **sendEmail**(`inboxId`: string, `sendEmailOptions?`: [SendEmailOptions](../modules/sendemailoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:19292](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19292)*
+*Defined in [src/generated/api.ts:19295](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19295)*
 
 Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
 
@@ -537,7 +537,7 @@ ___
 
 ▸ **sendEmailAndConfirm**(`inboxId`: string, `sendEmailOptions?`: [SendEmailOptions](../modules/sendemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:19313](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19313)*
+*Defined in [src/generated/api.ts:19316](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19316)*
 
 Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
 
@@ -563,7 +563,7 @@ ___
 
 ▸ **sendTestEmail**(`inboxId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:19333](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19333)*
+*Defined in [src/generated/api.ts:19336](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19336)*
 
 Send an inbox a test email to test email receiving is working
 
@@ -588,7 +588,7 @@ ___
 
 ▸ **setInboxFavourited**(`inboxId`: string, `setInboxFavouritedOptions`: [SetInboxFavouritedOptions](../interfaces/setinboxfavouritedoptions.md), `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:19349](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19349)*
+*Defined in [src/generated/api.ts:19352](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19352)*
 
 Set and return new favourite state for an inbox
 
@@ -614,7 +614,7 @@ ___
 
 ▸ **updateInbox**(`inboxId`: string, `updateInboxOptions`: [UpdateInboxOptions](../interfaces/updateinboxoptions.md), `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
 
-*Defined in [src/generated/api.ts:19370](https://github.com/mailslurp/mailslurp-client/blob/05090ce/src/generated/api.ts#L19370)*
+*Defined in [src/generated/api.ts:19373](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19373)*
 
 Update editable fields on an inbox
 
