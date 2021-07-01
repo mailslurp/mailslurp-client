@@ -33,6 +33,9 @@ InboxRulesetControllerApi - object-oriented interface
 * [deleteInboxRulesets](inboxrulesetcontrollerapi.md#deleteinboxrulesets)
 * [getInboxRuleset](inboxrulesetcontrollerapi.md#getinboxruleset)
 * [getInboxRulesets](inboxrulesetcontrollerapi.md#getinboxrulesets)
+* [testInboxRuleset](inboxrulesetcontrollerapi.md#testinboxruleset)
+* [testInboxRulesetsForInbox](inboxrulesetcontrollerapi.md#testinboxrulesetsforinbox)
+* [testNewInboxRuleset](inboxrulesetcontrollerapi.md#testnewinboxruleset)
 
 ## Constructors
 
@@ -42,7 +45,7 @@ InboxRulesetControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -62,7 +65,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L61)*
 
 ___
 
@@ -72,7 +75,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 ___
 
@@ -82,7 +85,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -90,7 +93,7 @@ ___
 
 ▸ **createNewInboxRuleset**(`createInboxRulesetOptions`: [CreateInboxRulesetOptions](../modules/createinboxrulesetoptions.md), `inboxId?`: string, `options?`: any): Promise\<[InboxRulesetDto](../modules/inboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:19987](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L19987)*
+*Defined in [src/generated/api.ts:20735](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20735)*
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 
@@ -116,7 +119,7 @@ ___
 
 ▸ **deleteInboxRuleset**(`id`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:20008](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20008)*
+*Defined in [src/generated/api.ts:20756](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20756)*
 
 Delete inbox ruleset
 
@@ -141,7 +144,7 @@ ___
 
 ▸ **deleteInboxRulesets**(`inboxId?`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:20022](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20022)*
+*Defined in [src/generated/api.ts:20770](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20770)*
 
 Delete inbox rulesets. Accepts optional inboxId filter.
 
@@ -166,7 +169,7 @@ ___
 
 ▸ **getInboxRuleset**(`id`: string, `options?`: any): Promise\<[InboxRulesetDto](../modules/inboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:20036](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20036)*
+*Defined in [src/generated/api.ts:20784](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20784)*
 
 Get inbox ruleset
 
@@ -189,9 +192,9 @@ ___
 
 ### getInboxRulesets
 
-▸ **getInboxRulesets**(`inboxId?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageInboxRulesetProjection](../interfaces/pageinboxrulesetprojection.md)>
+▸ **getInboxRulesets**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageInboxRulesetDto](../interfaces/pageinboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:20054](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L20054)*
+*Defined in [src/generated/api.ts:20803](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20803)*
 
 List all rulesets attached to an inbox
 
@@ -207,8 +210,86 @@ Name | Type |
 ------ | ------ |
 `inboxId?` | string |
 `page?` | number |
+`searchFilter?` | string |
 `size?` | number |
 `sort?` | \"ASC\" \| \"DESC\" |
 `options?` | any |
 
-**Returns:** Promise\<[PageInboxRulesetProjection](../interfaces/pageinboxrulesetprojection.md)>
+**Returns:** Promise\<[PageInboxRulesetDto](../interfaces/pageinboxrulesetdto.md)>
+
+___
+
+### testInboxRuleset
+
+▸ **testInboxRuleset**(`id`: string, `inboxRulesetTestOptions`: [InboxRulesetTestOptions](../interfaces/inboxrulesettestoptions.md), `options?`: any): Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>
+
+*Defined in [src/generated/api.ts:20830](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20830)*
+
+Test an inbox ruleset
+
+**`summary`** Test an inbox ruleset
+
+**`throws`** {RequiredError}
+
+**`memberof`** InboxRulesetControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`id` | string | ID of inbox ruleset |
+`inboxRulesetTestOptions` | [InboxRulesetTestOptions](../interfaces/inboxrulesettestoptions.md) | inboxRulesetTestOptions |
+`options?` | any | - |
+
+**Returns:** Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>
+
+___
+
+### testInboxRulesetsForInbox
+
+▸ **testInboxRulesetsForInbox**(`inboxId`: string, `inboxRulesetTestOptions`: [InboxRulesetTestOptions](../interfaces/inboxrulesettestoptions.md), `options?`: any): Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>
+
+*Defined in [src/generated/api.ts:20851](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20851)*
+
+Test inbox rulesets for inbox
+
+**`summary`** Test inbox rulesets for inbox
+
+**`throws`** {RequiredError}
+
+**`memberof`** InboxRulesetControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`inboxId` | string | ID of inbox |
+`inboxRulesetTestOptions` | [InboxRulesetTestOptions](../interfaces/inboxrulesettestoptions.md) | inboxRulesetTestOptions |
+`options?` | any | - |
+
+**Returns:** Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>
+
+___
+
+### testNewInboxRuleset
+
+▸ **testNewInboxRuleset**(`testNewInboxRulesetOptions`: [TestNewInboxRulesetOptions](../interfaces/testnewinboxrulesetoptions.md), `options?`: any): Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>
+
+*Defined in [src/generated/api.ts:20872](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L20872)*
+
+Test new inbox ruleset
+
+**`summary`** Test new inbox ruleset
+
+**`throws`** {RequiredError}
+
+**`memberof`** InboxRulesetControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`testNewInboxRulesetOptions` | [TestNewInboxRulesetOptions](../interfaces/testnewinboxrulesetoptions.md) | testNewInboxRulesetOptions |
+`options?` | any | - |
+
+**Returns:** Promise\<[InboxRulesetTestResult](../interfaces/inboxrulesettestresult.md)>

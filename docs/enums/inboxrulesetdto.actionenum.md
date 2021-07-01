@@ -13,7 +13,6 @@
 * [ALLOW](inboxrulesetdto.actionenum.md#allow)
 * [BLOCK](inboxrulesetdto.actionenum.md#block)
 * [FILTERREMOVE](inboxrulesetdto.actionenum.md#filterremove)
-* [FORWARD](inboxrulesetdto.actionenum.md#forward)
 
 ## Enumeration members
 
@@ -21,7 +20,7 @@
 
 •  **ALLOW**:  = \<any>'ALLOW'
 
-*Defined in [src/generated/api.ts:2527](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2527)*
+*Defined in [src/generated/api.ts:2552](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2552)*
 
 ___
 
@@ -29,7 +28,7 @@ ___
 
 •  **BLOCK**:  = \<any>'BLOCK'
 
-*Defined in [src/generated/api.ts:2526](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2526)*
+*Defined in [src/generated/api.ts:2551](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2551)*
 
 ___
 
@@ -37,12 +36,4 @@ ___
 
 •  **FILTERREMOVE**:  = \<any>'FILTER\_REMOVE'
 
-*Defined in [src/generated/api.ts:2528](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2528)*
-
-___
-
-### FORWARD
-
-•  **FORWARD**:  = \<any>'FORWARD'
-
-*Defined in [src/generated/api.ts:2529](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2529)*
+*Defined in [src/generated/api.ts:2553](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2553)*

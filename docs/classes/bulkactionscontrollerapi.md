@@ -40,7 +40,7 @@ BulkActionsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **bulkCreateInboxes**(`count`: number, `options?`: any): Promise\<[Inbox](../modules/inbox.md)[]>
 
-*Defined in [src/generated/api.ts:8649](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L8649)*
+*Defined in [src/generated/api.ts:8813](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L8813)*
 
 **`summary`** Bulk create Inboxes (email addresses)
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **bulkDeleteInboxes**(`ids`: Array\<string>, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:8664](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L8664)*
+*Defined in [src/generated/api.ts:8828](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L8828)*
 
 **`summary`** Bulk Delete Inboxes
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **bulkSendEmails**(`bulkSendEmailOptions`: [BulkSendEmailOptions](../interfaces/bulksendemailoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:8679](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L8679)*
+*Defined in [src/generated/api.ts:8843](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L8843)*
 
 **`summary`** Bulk Send Emails
 

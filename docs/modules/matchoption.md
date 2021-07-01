@@ -27,7 +27,7 @@
 
 • `Optional` **field**: [FieldEnum](../enums/matchoption.fieldenum.md)
 
-*Defined in [src/generated/api.ts:2642](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2642)*
+*Defined in [src/generated/api.ts:2624](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2624)*
 
 The email property to match on. One of SUBJECT, TO, BCC, CC or FROM
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **should**: [ShouldEnum](../enums/matchoption.shouldenum.md)
 
-*Defined in [src/generated/api.ts:2648](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2648)*
+*Defined in [src/generated/api.ts:2630](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2630)*
 
 What criteria to apply. CONTAIN or EQUAL. Note CONTAIN is recommended due to some SMTP servers adding new lines to fields and body content.
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **value**: string
 
-*Defined in [src/generated/api.ts:2654](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2654)*
+*Defined in [src/generated/api.ts:2636](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2636)*
 
 The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
 

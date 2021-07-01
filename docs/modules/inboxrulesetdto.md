@@ -19,6 +19,7 @@
 ### Properties
 
 * [action](inboxrulesetdto.md#action)
+* [createdAt](inboxrulesetdto.md#createdat)
 * [handler](inboxrulesetdto.md#handler)
 * [id](inboxrulesetdto.md#id)
 * [inboxId](inboxrulesetdto.md#inboxid)
@@ -31,7 +32,17 @@
 
 •  **action**: [ActionEnum](../enums/inboxrulesetdto.actionenum.md)
 
-*Defined in [src/generated/api.ts:2483](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2483)*
+*Defined in [src/generated/api.ts:2502](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2502)*
+
+**`memberof`** InboxRulesetDto
+
+___
+
+### createdAt
+
+•  **createdAt**: Date
+
+*Defined in [src/generated/api.ts:2508](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2508)*
 
 **`memberof`** InboxRulesetDto
 
@@ -41,7 +52,7 @@ ___
 
 •  **handler**: [HandlerEnum](../enums/inboxrulesetdto.handlerenum.md)
 
-*Defined in [src/generated/api.ts:2489](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2489)*
+*Defined in [src/generated/api.ts:2514](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2514)*
 
 **`memberof`** InboxRulesetDto
 
@@ -51,7 +62,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2495](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2495)*
+*Defined in [src/generated/api.ts:2520](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2520)*
 
 **`memberof`** InboxRulesetDto
 
@@ -61,7 +72,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:2501](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2501)*
+*Defined in [src/generated/api.ts:2526](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2526)*
 
 **`memberof`** InboxRulesetDto
 
@@ -71,7 +82,7 @@ ___
 
 •  **scope**: [ScopeEnum](../enums/inboxrulesetdto.scopeenum.md)
 
-*Defined in [src/generated/api.ts:2507](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2507)*
+*Defined in [src/generated/api.ts:2532](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2532)*
 
 **`memberof`** InboxRulesetDto
 
@@ -81,6 +92,6 @@ ___
 
 •  **target**: string
 
-*Defined in [src/generated/api.ts:2513](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L2513)*
+*Defined in [src/generated/api.ts:2538](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2538)*
 
 **`memberof`** InboxRulesetDto

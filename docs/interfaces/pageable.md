@@ -29,7 +29,7 @@
 
 • `Optional` **offset**: number
 
-*Defined in [src/generated/api.ts:4125](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4125)*
+*Defined in [src/generated/api.ts:4181](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4181)*
 
 **`memberof`** Pageable
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **pageNumber**: number
 
-*Defined in [src/generated/api.ts:4131](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4131)*
+*Defined in [src/generated/api.ts:4187](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4187)*
 
 **`memberof`** Pageable
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **pageSize**: number
 
-*Defined in [src/generated/api.ts:4137](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4137)*
+*Defined in [src/generated/api.ts:4193](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4193)*
 
 **`memberof`** Pageable
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **paged**: boolean
 
-*Defined in [src/generated/api.ts:4143](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4143)*
+*Defined in [src/generated/api.ts:4199](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4199)*
 
 **`memberof`** Pageable
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:4149](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4149)*
+*Defined in [src/generated/api.ts:4205](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4205)*
 
 **`memberof`** Pageable
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **unpaged**: boolean
 
-*Defined in [src/generated/api.ts:4155](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L4155)*
+*Defined in [src/generated/api.ts:4211](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4211)*
 
 **`memberof`** Pageable

@@ -43,7 +43,7 @@ DomainControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **addDomainWildcardCatchAll**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:10733](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10733)*
+*Defined in [src/generated/api.ts:10897](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10897)*
 
 Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../modules/createdomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:10747](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10747)*
+*Defined in [src/generated/api.ts:10911](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10911)*
 
 Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider's DNS setup to verify the domain.
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **deleteDomain**(`id`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:10762](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10762)*
+*Defined in [src/generated/api.ts:10926](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10926)*
 
 Delete a domain. This will disable any existing inboxes that use this domain.
 
@@ -166,7 +166,7 @@ ___
 
 ▸ **getDomain**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:10777](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10777)*
+*Defined in [src/generated/api.ts:10941](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10941)*
 
 Returns domain verification status and tokens for a given domain
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **getDomains**(`options?`: any): Promise\<[DomainPreview](../interfaces/domainpreview.md)[]>
 
-*Defined in [src/generated/api.ts:10791](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10791)*
+*Defined in [src/generated/api.ts:10955](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10955)*
 
 List all custom domains you have created
 
@@ -215,7 +215,7 @@ ___
 
 ▸ **updateDomain**(`id`: string, `updateDomainDto`: [UpdateDomainOptions](../interfaces/updatedomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
 
-*Defined in [src/generated/api.ts:10807](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L10807)*
+*Defined in [src/generated/api.ts:10971](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L10971)*
 
 Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
 

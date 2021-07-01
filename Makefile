@@ -1,8 +1,6 @@
 .PHONY: docs test
 
-ifeq ($(SPEC_URL),)
-SPEC_URL := https://api.mailslurp.com/v2/api-docs
-endif
+SPEC_URL=/tmp/swagger.json
 
 node_modules:
 	npm install
@@ -14,7 +12,10 @@ bin/openapi-generator-cli.jar:
 test: node_modules
 	API_KEY=$(API_KEY) npm run integration
 
-generate: bin/openapi-generator-cli.jar
+spec:
+	aws s3 cp s3://api-spec.mailslurp.com/swagger.json $(SPEC_URL)
+
+generate: spec bin/openapi-generator-cli.jar
 	sudo rm -rf src/generated
 	mkdir -p src/generated
 	java -jar ./bin/openapi-generator-cli.jar generate \

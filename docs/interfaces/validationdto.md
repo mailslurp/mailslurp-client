@@ -27,7 +27,7 @@ Response object for email validation operation
 
 • `Optional` **emailId**: string
 
-*Defined in [src/generated/api.ts:5007](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5007)*
+*Defined in [src/generated/api.ts:5171](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5171)*
 
 ID of the email validated
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **html**: [HTMLValidationResult](htmlvalidationresult.md)
 
-*Defined in [src/generated/api.ts:5013](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L5013)*
+*Defined in [src/generated/api.ts:5177](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5177)*
 
 Result of HTML validation
 

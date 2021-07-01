@@ -29,7 +29,7 @@ Expiration defaults for your account
 
 •  **canPermanentInbox**: boolean
 
-*Defined in [src/generated/api.ts:1980](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1980)*
+*Defined in [src/generated/api.ts:1999](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L1999)*
 
 **`memberof`** ExpirationDefaults
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **defaultExpirationMillis**: number
 
-*Defined in [src/generated/api.ts:1986](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1986)*
+*Defined in [src/generated/api.ts:2005](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2005)*
 
 **`memberof`** ExpirationDefaults
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **defaultExpiresAt**: Date
 
-*Defined in [src/generated/api.ts:1992](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1992)*
+*Defined in [src/generated/api.ts:2011](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2011)*
 
 **`memberof`** ExpirationDefaults
 
@@ -59,6 +59,6 @@ ___
 
 • `Optional` **maxExpirationMillis**: number
 
-*Defined in [src/generated/api.ts:1998](https://github.com/mailslurp/mailslurp-client/blob/67ec74c/src/generated/api.ts#L1998)*
+*Defined in [src/generated/api.ts:2017](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2017)*
 
 **`memberof`** ExpirationDefaults
