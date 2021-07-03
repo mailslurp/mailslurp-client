@@ -40,7 +40,7 @@ MissedEmailControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L57)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **getAllMissedEmails**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageMissedEmailProjection](../interfaces/pagemissedemailprojection.md)>
 
-*Defined in [src/generated/api.ts:22182](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L22182)*
+*Defined in [src/generated/api.ts:22174](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L22174)*
 
 **`summary`** Get all MissedEmails in paginated format
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **getMissedEmail**(`missedEmailId`: string, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
 
-*Defined in [src/generated/api.ts:22206](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L22206)*
+*Defined in [src/generated/api.ts:22198](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L22198)*
 
 **`summary`** Get MissedEmail
 
@@ -136,9 +136,9 @@ ___
 
 ### waitForNthMissedEmail
 
-▸ **waitForNthMissedEmail**(`inboxId`: string, `timeout`: number, `index?`: number, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
+▸ **waitForNthMissedEmail**(`inboxId?`: string, `index?`: number, `timeout?`: number, `options?`: any): Promise\<[MissedEmail](../interfaces/missedemail.md)>
 
-*Defined in [src/generated/api.ts:22223](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L22223)*
+*Defined in [src/generated/api.ts:22215](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L22215)*
 
 Wait for 0 based index missed email
 
@@ -150,11 +150,11 @@ Wait for 0 based index missed email
 
 #### Parameters:
 
-Name | Type | Description |
------- | ------ | ------ |
-`inboxId` | string | Optional inbox ID filter |
-`timeout` | number | Optional timeout milliseconds |
-`index?` | number | - |
-`options?` | any | - |
+Name | Type |
+------ | ------ |
+`inboxId?` | string |
+`index?` | number |
+`timeout?` | number |
+`options?` | any |
 
 **Returns:** Promise\<[MissedEmail](../interfaces/missedemail.md)>

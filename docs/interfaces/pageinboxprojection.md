@@ -36,7 +36,7 @@ Paginated inbox results. Page index starts at zero. Projection results may omit 
 
 • `Optional` **content**: Array\<[InboxProjection](../modules/inboxprojection.md)>
 
-*Defined in [src/generated/api.ts:3443](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3443)*
+*Defined in [src/generated/api.ts:3443](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3443)*
 
 **`memberof`** PageInboxProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3449](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3449)*
+*Defined in [src/generated/api.ts:3449](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3449)*
 
 **`memberof`** PageInboxProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3455](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3455)*
+*Defined in [src/generated/api.ts:3455](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3455)*
 
 **`memberof`** PageInboxProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3461](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3461)*
+*Defined in [src/generated/api.ts:3461](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3461)*
 
 **`memberof`** PageInboxProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3467](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3467)*
+*Defined in [src/generated/api.ts:3467](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3467)*
 
 **`memberof`** PageInboxProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3473](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3473)*
+*Defined in [src/generated/api.ts:3473](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3473)*
 
 **`memberof`** PageInboxProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3479](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3479)*
+*Defined in [src/generated/api.ts:3479](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3479)*
 
 **`memberof`** PageInboxProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3485](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3485)*
+*Defined in [src/generated/api.ts:3485](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3485)*
 
 **`memberof`** PageInboxProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3491](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3491)*
+*Defined in [src/generated/api.ts:3491](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3491)*
 
 **`memberof`** PageInboxProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3497](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3497)*
+*Defined in [src/generated/api.ts:3497](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3497)*
 
 **`memberof`** PageInboxProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3503](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L3503)*
+*Defined in [src/generated/api.ts:3503](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L3503)*
 
 **`memberof`** PageInboxProjection

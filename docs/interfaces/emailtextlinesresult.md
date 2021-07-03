@@ -27,7 +27,7 @@ Parsed text of an email
 
 •  **body**: string
 
-*Defined in [src/generated/api.ts:1943](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L1943)*
+*Defined in [src/generated/api.ts:1943](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L1943)*
 
 **`memberof`** EmailTextLinesResult
 
@@ -37,6 +37,6 @@ ___
 
 •  **lines**: Array\<string>
 
-*Defined in [src/generated/api.ts:1949](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L1949)*
+*Defined in [src/generated/api.ts:1949](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L1949)*
 
 **`memberof`** EmailTextLinesResult

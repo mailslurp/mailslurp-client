@@ -20,7 +20,7 @@
 
 •  **ALLOW**:  = \<any>'ALLOW'
 
-*Defined in [src/generated/api.ts:904](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L904)*
+*Defined in [src/generated/api.ts:904](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L904)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **BLOCK**:  = \<any>'BLOCK'
 
-*Defined in [src/generated/api.ts:903](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L903)*
+*Defined in [src/generated/api.ts:903](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L903)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **FILTERREMOVE**:  = \<any>'FILTER\_REMOVE'
 
-*Defined in [src/generated/api.ts:905](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L905)*
+*Defined in [src/generated/api.ts:905](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L905)*

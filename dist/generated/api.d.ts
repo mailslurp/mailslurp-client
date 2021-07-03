@@ -10404,13 +10404,13 @@ export declare const MissedEmailControllerApiFetchParamCreator: (configuration?:
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
-     * @param {string} inboxId Optional inbox ID filter
-     * @param {number} timeout Optional timeout milliseconds
+     * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId: string, timeout: number, index?: number, options?: any): FetchArgs;
+    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): FetchArgs;
 };
 /**
  * MissedEmailControllerApi - functional programming interface
@@ -10440,13 +10440,13 @@ export declare const MissedEmailControllerApiFp: (configuration?: Configuration)
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
-     * @param {string} inboxId Optional inbox ID filter
-     * @param {number} timeout Optional timeout milliseconds
+     * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId: string, timeout: number, index?: number, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<MissedEmail>;
+    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<MissedEmail>;
 };
 /**
  * MissedEmailControllerApi - factory interface
@@ -10476,13 +10476,13 @@ export declare const MissedEmailControllerApiFactory: (configuration?: Configura
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
-     * @param {string} inboxId Optional inbox ID filter
-     * @param {number} timeout Optional timeout milliseconds
+     * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId: string, timeout: number, index?: number, options?: any): Promise<MissedEmail>;
+    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): Promise<MissedEmail>;
 };
 /**
  * MissedEmailControllerApi - object-oriented interface
@@ -10516,14 +10516,14 @@ export declare class MissedEmailControllerApi extends BaseAPI {
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
-     * @param {string} inboxId Optional inbox ID filter
-     * @param {number} timeout Optional timeout milliseconds
+     * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MissedEmailControllerApi
      */
-    waitForNthMissedEmail(inboxId: string, timeout: number, index?: number, options?: any): Promise<MissedEmail>;
+    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): Promise<MissedEmail>;
 }
 /**
  * SentEmailsControllerApi - fetch parameter creator
