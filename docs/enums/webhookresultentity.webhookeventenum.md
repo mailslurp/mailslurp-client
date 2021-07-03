@@ -10,6 +10,7 @@
 
 ### Enumeration members
 
+* [EMAILOPENED](webhookresultentity.webhookeventenum.md#emailopened)
 * [EMAILRECEIVED](webhookresultentity.webhookeventenum.md#emailreceived)
 * [NEWATTACHMENT](webhookresultentity.webhookeventenum.md#newattachment)
 * [NEWCONTACT](webhookresultentity.webhookeventenum.md#newcontact)
@@ -17,11 +18,19 @@
 
 ## Enumeration members
 
+### EMAILOPENED
+
+•  **EMAILOPENED**:  = \<any>'EMAIL\_OPENED'
+
+*Defined in [src/generated/api.ts:5987](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5987)*
+
+___
+
 ### EMAILRECEIVED
 
 •  **EMAILRECEIVED**:  = \<any>'EMAIL\_RECEIVED'
 
-*Defined in [src/generated/api.ts:5855](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5855)*
+*Defined in [src/generated/api.ts:5983](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5983)*
 
 ___
 
@@ -29,7 +38,7 @@ ___
 
 •  **NEWATTACHMENT**:  = \<any>'NEW\_ATTACHMENT'
 
-*Defined in [src/generated/api.ts:5858](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5858)*
+*Defined in [src/generated/api.ts:5986](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5986)*
 
 ___
 
@@ -37,7 +46,7 @@ ___
 
 •  **NEWCONTACT**:  = \<any>'NEW\_CONTACT'
 
-*Defined in [src/generated/api.ts:5857](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5857)*
+*Defined in [src/generated/api.ts:5985](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5985)*
 
 ___
 
@@ -45,4 +54,4 @@ ___
 
 •  **NEWEMAIL**:  = \<any>'NEW\_EMAIL'
 
-*Defined in [src/generated/api.ts:5856](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5856)*
+*Defined in [src/generated/api.ts:5984](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5984)*

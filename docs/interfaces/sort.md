@@ -26,7 +26,7 @@
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:4745](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4745)*
+*Defined in [src/generated/api.ts:4747](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L4747)*
 
 **`memberof`** Sort
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **sorted**: boolean
 
-*Defined in [src/generated/api.ts:4751](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4751)*
+*Defined in [src/generated/api.ts:4753](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L4753)*
 
 **`memberof`** Sort
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **unsorted**: boolean
 
-*Defined in [src/generated/api.ts:4757](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L4757)*
+*Defined in [src/generated/api.ts:4759](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L4759)*
 
 **`memberof`** Sort

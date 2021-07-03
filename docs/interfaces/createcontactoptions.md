@@ -31,7 +31,7 @@
 
 • `Optional` **company**: string
 
-*Defined in [src/generated/api.ts:713](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L713)*
+*Defined in [src/generated/api.ts:714](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L714)*
 
 **`memberof`** CreateContactOptions
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **emailAddresses**: Array\<string>
 
-*Defined in [src/generated/api.ts:671](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L671)*
+*Defined in [src/generated/api.ts:672](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L672)*
 
 Set of email addresses belonging to the contact
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **firstName**: string
 
-*Defined in [src/generated/api.ts:677](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L677)*
+*Defined in [src/generated/api.ts:678](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L678)*
 
 **`memberof`** CreateContactOptions
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **groupId**: string
 
-*Defined in [src/generated/api.ts:683](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L683)*
+*Defined in [src/generated/api.ts:684](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L684)*
 
 Group IDs that contact belongs to
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **lastName**: string
 
-*Defined in [src/generated/api.ts:707](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L707)*
+*Defined in [src/generated/api.ts:708](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L708)*
 
 **`memberof`** CreateContactOptions
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **metaData**: [JsonNode](jsonnode.md)
 
-*Defined in [src/generated/api.ts:689](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L689)*
+*Defined in [src/generated/api.ts:690](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L690)*
 
 User metadata key value pairs to save for this contact. Can be any values you like.
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **optOut**: boolean
 
-*Defined in [src/generated/api.ts:695](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L695)*
+*Defined in [src/generated/api.ts:696](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L696)*
 
 Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
 
@@ -109,7 +109,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:701](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L701)*
+*Defined in [src/generated/api.ts:702](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L702)*
 
 Tags that can be used to search and group contacts
 

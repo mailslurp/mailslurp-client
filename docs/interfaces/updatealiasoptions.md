@@ -26,7 +26,7 @@ Update an email alias
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:5065](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5065)*
+*Defined in [src/generated/api.ts:5109](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5109)*
 
 Optional name for alias
 

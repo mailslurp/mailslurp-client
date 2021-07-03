@@ -45,9 +45,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactControllerApi = exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = exports.BulkActionsControllerApiFactory = exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultEntity = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.Inbox = exports.ExportOptions = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
-exports.TrackingControllerApiFp = exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = exports.MissedEmailControllerApiFetchParamCreator = exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = void 0;
-exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = void 0;
+exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = exports.BulkActionsControllerApiFactory = exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultEntity = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.Inbox = exports.ExportOptions = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = exports.MissedEmailControllerApiFetchParamCreator = exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = exports.ContactControllerApi = void 0;
+exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = exports.TrackingControllerApiFp = void 0;
 var url = __importStar(require("url"));
 var portableFetch = __importStar(require("portable-fetch"));
 var BASE_PATH = 'https://api.mailslurp.com'.replace(/\/+$/, '');
@@ -112,6 +112,7 @@ var AbstractWebhookPayload;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = AbstractWebhookPayload.EventNameEnum || (AbstractWebhookPayload.EventNameEnum = {}));
 })(AbstractWebhookPayload = exports.AbstractWebhookPayload || (exports.AbstractWebhookPayload = {}));
 /**
@@ -212,6 +213,7 @@ var CreateWebhookOptions;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = CreateWebhookOptions.EventNameEnum || (CreateWebhookOptions.EventNameEnum = {}));
 })(CreateWebhookOptions = exports.CreateWebhookOptions || (exports.CreateWebhookOptions = {}));
 /**
@@ -766,6 +768,7 @@ var WebhookDto;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = WebhookDto.EventNameEnum || (WebhookDto.EventNameEnum = {}));
     /**
      * @export
@@ -785,6 +788,25 @@ var WebhookDto;
 })(WebhookDto = exports.WebhookDto || (exports.WebhookDto = {}));
 /**
  * @export
+ * @namespace WebhookEmailOpenedPayload
+ */
+var WebhookEmailOpenedPayload;
+(function (WebhookEmailOpenedPayload) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    var EventNameEnum;
+    (function (EventNameEnum) {
+        EventNameEnum[EventNameEnum["EMAILRECEIVED"] = 'EMAIL_RECEIVED'] = "EMAILRECEIVED";
+        EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
+        EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
+        EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+    })(EventNameEnum = WebhookEmailOpenedPayload.EventNameEnum || (WebhookEmailOpenedPayload.EventNameEnum = {}));
+})(WebhookEmailOpenedPayload = exports.WebhookEmailOpenedPayload || (exports.WebhookEmailOpenedPayload = {}));
+/**
+ * @export
  * @namespace WebhookNewAttachmentPayload
  */
 var WebhookNewAttachmentPayload;
@@ -799,6 +821,7 @@ var WebhookNewAttachmentPayload;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = WebhookNewAttachmentPayload.EventNameEnum || (WebhookNewAttachmentPayload.EventNameEnum = {}));
 })(WebhookNewAttachmentPayload = exports.WebhookNewAttachmentPayload || (exports.WebhookNewAttachmentPayload = {}));
 /**
@@ -817,6 +840,7 @@ var WebhookNewContactPayload;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = WebhookNewContactPayload.EventNameEnum || (WebhookNewContactPayload.EventNameEnum = {}));
 })(WebhookNewContactPayload = exports.WebhookNewContactPayload || (exports.WebhookNewContactPayload = {}));
 /**
@@ -835,6 +859,7 @@ var WebhookNewEmailPayload;
         EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(EventNameEnum = WebhookNewEmailPayload.EventNameEnum || (WebhookNewEmailPayload.EventNameEnum = {}));
 })(WebhookNewEmailPayload = exports.WebhookNewEmailPayload || (exports.WebhookNewEmailPayload = {}));
 /**
@@ -868,6 +893,7 @@ var WebhookResultEntity;
         WebhookEventEnum[WebhookEventEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
         WebhookEventEnum[WebhookEventEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         WebhookEventEnum[WebhookEventEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        WebhookEventEnum[WebhookEventEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
     })(WebhookEventEnum = WebhookResultEntity.WebhookEventEnum || (WebhookResultEntity.WebhookEventEnum = {}));
 })(WebhookResultEntity = exports.WebhookResultEntity || (exports.WebhookResultEntity = {}));
 /**
@@ -8540,6 +8566,56 @@ var InboxControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * List all tracking pixels sent from an inbox
+         * @summary List inbox tracking pixels
+         * @param {string} inboxId inboxId
+         * @param {number} [page] Optional page index in inbox tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInboxTrackingPixels: function (inboxId, page, searchFilter, size, sort, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'inboxId' is not null or undefined
+            if (inboxId === null || inboxId === undefined) {
+                throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling listInboxTrackingPixels.');
+            }
+            var localVarPath = "/inboxes/{inboxId}/tracking-pixels".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
          * @summary Send Email
          * @param {string} inboxId ID of the inbox you want to send the email from
@@ -8806,7 +8882,7 @@ var InboxControllerApiFp = function (configuration) {
                 if (basePath === void 0) { basePath = BASE_PATH; }
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
                     }
                     else {
                         throw response;
@@ -9116,7 +9192,33 @@ var InboxControllerApiFp = function (configuration) {
                 if (basePath === void 0) { basePath = BASE_PATH; }
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * List all tracking pixels sent from an inbox
+         * @summary List inbox tracking pixels
+         * @param {string} inboxId inboxId
+         * @param {number} [page] Optional page index in inbox tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInboxTrackingPixels: function (inboxId, page, searchFilter, size, sort, options) {
+            var localVarFetchArgs = exports.InboxControllerApiFetchParamCreator(configuration).listInboxTrackingPixels(inboxId, page, searchFilter, size, sort, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
                     }
                     else {
                         throw response;
@@ -9432,6 +9534,20 @@ var InboxControllerApiFactory = function (configuration, fetch, basePath) {
             return exports.InboxControllerApiFp(configuration).listInboxRulesets(inboxId, page, searchFilter, size, sort, options)(fetch, basePath);
         },
         /**
+         * List all tracking pixels sent from an inbox
+         * @summary List inbox tracking pixels
+         * @param {string} inboxId inboxId
+         * @param {number} [page] Optional page index in inbox tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInboxTrackingPixels: function (inboxId, page, searchFilter, size, sort, options) {
+            return exports.InboxControllerApiFp(configuration).listInboxTrackingPixels(inboxId, page, searchFilter, size, sort, options)(fetch, basePath);
+        },
+        /**
          * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
          * @summary Send Email
          * @param {string} inboxId ID of the inbox you want to send the email from
@@ -9697,6 +9813,21 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.listInboxRulesets = function (inboxId, page, searchFilter, size, sort, options) {
         return exports.InboxControllerApiFp(this.configuration).listInboxRulesets(inboxId, page, searchFilter, size, sort, options)(this.fetch, this.basePath);
+    };
+    /**
+     * List all tracking pixels sent from an inbox
+     * @summary List inbox tracking pixels
+     * @param {string} inboxId inboxId
+     * @param {number} [page] Optional page index in inbox tracking pixel list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox tracking pixel list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxControllerApi
+     */
+    InboxControllerApi.prototype.listInboxTrackingPixels = function (inboxId, page, searchFilter, size, sort, options) {
+        return exports.InboxControllerApiFp(this.configuration).listInboxTrackingPixels(inboxId, page, searchFilter, size, sort, options)(this.fetch, this.basePath);
     };
     /**
      * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
@@ -11198,6 +11329,51 @@ var SentEmailsControllerApiFetchParamCreator = function (configuration) {
     return {
         /**
          *
+         * @summary Get all sent email tracking pixels in paginated form
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSentTrackingPixels: function (page, searchFilter, size, sort, options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/sent/tracking-pixels";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
          * @summary Get sent email receipt
          * @param {string} id id
          * @param {*} [options] Override http request option.
@@ -11220,6 +11396,56 @@ var SentEmailsControllerApiFetchParamCreator = function (configuration) {
                     ? configuration.apiKey('x-api-key')
                     : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get all tracking pixels for a sent email in paginated form
+         * @param {string} id id
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSentEmailTrackingPixels: function (id, page, searchFilter, size, sort, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling getSentEmailTrackingPixels.');
+            }
+            var localVarPath = "/sent/{id}/tracking-pixels".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -11283,9 +11509,9 @@ var SentEmailsControllerApiFetchParamCreator = function (configuration) {
          *
          * @summary Get all sent organization emails in paginated form
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
-         * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in inbox sent email list pagination
+         * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -11339,6 +11565,31 @@ var SentEmailsControllerApiFp = function (configuration) {
     return {
         /**
          *
+         * @summary Get all sent email tracking pixels in paginated form
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSentTrackingPixels: function (page, searchFilter, size, sort, options) {
+            var localVarFetchArgs = exports.SentEmailsControllerApiFetchParamCreator(configuration).getAllSentTrackingPixels(page, searchFilter, size, sort, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
          * @summary Get sent email receipt
          * @param {string} id id
          * @param {*} [options] Override http request option.
@@ -11346,6 +11597,32 @@ var SentEmailsControllerApiFp = function (configuration) {
          */
         getSentEmail: function (id, options) {
             var localVarFetchArgs = exports.SentEmailsControllerApiFetchParamCreator(configuration).getSentEmail(id, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get all tracking pixels for a sent email in paginated form
+         * @param {string} id id
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSentEmailTrackingPixels: function (id, page, searchFilter, size, sort, options) {
+            var localVarFetchArgs = exports.SentEmailsControllerApiFetchParamCreator(configuration).getSentEmailTrackingPixels(id, page, searchFilter, size, sort, options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -11389,9 +11666,9 @@ var SentEmailsControllerApiFp = function (configuration) {
          *
          * @summary Get all sent organization emails in paginated form
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
-         * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in inbox sent email list pagination
+         * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -11422,6 +11699,19 @@ var SentEmailsControllerApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          *
+         * @summary Get all sent email tracking pixels in paginated form
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSentTrackingPixels: function (page, searchFilter, size, sort, options) {
+            return exports.SentEmailsControllerApiFp(configuration).getAllSentTrackingPixels(page, searchFilter, size, sort, options)(fetch, basePath);
+        },
+        /**
+         *
          * @summary Get sent email receipt
          * @param {string} id id
          * @param {*} [options] Override http request option.
@@ -11429,6 +11719,20 @@ var SentEmailsControllerApiFactory = function (configuration, fetch, basePath) {
          */
         getSentEmail: function (id, options) {
             return exports.SentEmailsControllerApiFp(configuration).getSentEmail(id, options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get all tracking pixels for a sent email in paginated form
+         * @param {string} id id
+         * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSentEmailTrackingPixels: function (id, page, searchFilter, size, sort, options) {
+            return exports.SentEmailsControllerApiFp(configuration).getSentEmailTrackingPixels(id, page, searchFilter, size, sort, options)(fetch, basePath);
         },
         /**
          *
@@ -11448,9 +11752,9 @@ var SentEmailsControllerApiFactory = function (configuration, fetch, basePath) {
          *
          * @summary Get all sent organization emails in paginated form
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
-         * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in inbox sent email list pagination
+         * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -11474,6 +11778,20 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
     }
     /**
      *
+     * @summary Get all sent email tracking pixels in paginated form
+     * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SentEmailsControllerApi
+     */
+    SentEmailsControllerApi.prototype.getAllSentTrackingPixels = function (page, searchFilter, size, sort, options) {
+        return exports.SentEmailsControllerApiFp(this.configuration).getAllSentTrackingPixels(page, searchFilter, size, sort, options)(this.fetch, this.basePath);
+    };
+    /**
+     *
      * @summary Get sent email receipt
      * @param {string} id id
      * @param {*} [options] Override http request option.
@@ -11482,6 +11800,21 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
      */
     SentEmailsControllerApi.prototype.getSentEmail = function (id, options) {
         return exports.SentEmailsControllerApiFp(this.configuration).getSentEmail(id, options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Get all tracking pixels for a sent email in paginated form
+     * @param {string} id id
+     * @param {number} [page] Optional page index in sent email tracking pixel list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in sent email tracking pixel list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SentEmailsControllerApi
+     */
+    SentEmailsControllerApi.prototype.getSentEmailTrackingPixels = function (id, page, searchFilter, size, sort, options) {
+        return exports.SentEmailsControllerApiFp(this.configuration).getSentEmailTrackingPixels(id, page, searchFilter, size, sort, options)(this.fetch, this.basePath);
     };
     /**
      *
@@ -11502,9 +11835,9 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
      *
      * @summary Get all sent organization emails in paginated form
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
-     * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in inbox sent email list pagination
+     * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -11962,7 +12295,7 @@ exports.TemplateControllerApi = TemplateControllerApi;
 var TrackingControllerApiFetchParamCreator = function (configuration) {
     return {
         /**
-         * Create a tracking pixel
+         * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
          * @summary Create tracking pixel
          * @param {CreateTrackingPixelOptions} createTrackingPixelOptions createTrackingPixelOptions
          * @param {*} [options] Override http request option.
@@ -12007,12 +12340,13 @@ var TrackingControllerApiFetchParamCreator = function (configuration) {
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
          * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllTrackingPixels: function (page, size, sort, options) {
+        getAllTrackingPixels: function (page, searchFilter, size, sort, options) {
             if (options === void 0) { options = {}; }
             var localVarPath = "/tracking/pixels";
             var localVarUrlObj = url.parse(localVarPath, true);
@@ -12028,6 +12362,9 @@ var TrackingControllerApiFetchParamCreator = function (configuration) {
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
             }
             if (size !== undefined) {
                 localVarQueryParameter['size'] = size;
@@ -12088,7 +12425,7 @@ exports.TrackingControllerApiFetchParamCreator = TrackingControllerApiFetchParam
 var TrackingControllerApiFp = function (configuration) {
     return {
         /**
-         * Create a tracking pixel
+         * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
          * @summary Create tracking pixel
          * @param {CreateTrackingPixelOptions} createTrackingPixelOptions createTrackingPixelOptions
          * @param {*} [options] Override http request option.
@@ -12113,13 +12450,14 @@ var TrackingControllerApiFp = function (configuration) {
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
          * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllTrackingPixels: function (page, size, sort, options) {
-            var localVarFetchArgs = exports.TrackingControllerApiFetchParamCreator(configuration).getAllTrackingPixels(page, size, sort, options);
+        getAllTrackingPixels: function (page, searchFilter, size, sort, options) {
+            var localVarFetchArgs = exports.TrackingControllerApiFetchParamCreator(configuration).getAllTrackingPixels(page, searchFilter, size, sort, options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -12165,7 +12503,7 @@ exports.TrackingControllerApiFp = TrackingControllerApiFp;
 var TrackingControllerApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
-         * Create a tracking pixel
+         * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
          * @summary Create tracking pixel
          * @param {CreateTrackingPixelOptions} createTrackingPixelOptions createTrackingPixelOptions
          * @param {*} [options] Override http request option.
@@ -12178,13 +12516,14 @@ var TrackingControllerApiFactory = function (configuration, fetch, basePath) {
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
          * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllTrackingPixels: function (page, size, sort, options) {
-            return exports.TrackingControllerApiFp(configuration).getAllTrackingPixels(page, size, sort, options)(fetch, basePath);
+        getAllTrackingPixels: function (page, searchFilter, size, sort, options) {
+            return exports.TrackingControllerApiFp(configuration).getAllTrackingPixels(page, searchFilter, size, sort, options)(fetch, basePath);
         },
         /**
          *
@@ -12211,7 +12550,7 @@ var TrackingControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Create a tracking pixel
+     * Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
      * @summary Create tracking pixel
      * @param {CreateTrackingPixelOptions} createTrackingPixelOptions createTrackingPixelOptions
      * @param {*} [options] Override http request option.
@@ -12225,14 +12564,15 @@ var TrackingControllerApi = /** @class */ (function (_super) {
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
      * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TrackingControllerApi
      */
-    TrackingControllerApi.prototype.getAllTrackingPixels = function (page, size, sort, options) {
-        return exports.TrackingControllerApiFp(this.configuration).getAllTrackingPixels(page, size, sort, options)(this.fetch, this.basePath);
+    TrackingControllerApi.prototype.getAllTrackingPixels = function (page, searchFilter, size, sort, options) {
+        return exports.TrackingControllerApiFp(this.configuration).getAllTrackingPixels(page, searchFilter, size, sort, options)(this.fetch, this.basePath);
     };
     /**
      *
@@ -13106,7 +13446,7 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13126,6 +13466,35 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
             }
             if (eventName !== undefined) {
                 localVarQueryParameter['eventName'] = eventName;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailOpened: function (options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/webhooks/test/email-opened-payload";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -13543,12 +13912,33 @@ var WebhookControllerApiFp = function (configuration) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getTestWebhookPayload: function (eventName, options) {
             var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getTestWebhookPayload(eventName, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailOpened: function (options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getTestWebhookPayloadEmailOpened(options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -13813,12 +14203,21 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getTestWebhookPayload: function (eventName, options) {
             return exports.WebhookControllerApiFp(configuration).getTestWebhookPayload(eventName, options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailOpened: function (options) {
+            return exports.WebhookControllerApiFp(configuration).getTestWebhookPayloadEmailOpened(options)(fetch, basePath);
         },
         /**
          *
@@ -13985,13 +14384,23 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
     WebhookControllerApi.prototype.getTestWebhookPayload = function (eventName, options) {
         return exports.WebhookControllerApiFp(this.configuration).getTestWebhookPayload(eventName, options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadEmailOpened = function (options) {
+        return exports.WebhookControllerApiFp(this.configuration).getTestWebhookPayloadEmailOpened(options)(this.fetch, this.basePath);
     };
     /**
      *

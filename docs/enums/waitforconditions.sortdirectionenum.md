@@ -19,7 +19,7 @@
 
 •  **ASC**:  = \<any>'ASC'
 
-*Defined in [src/generated/api.ts:5300](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5300)*
+*Defined in [src/generated/api.ts:5344](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5344)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **DESC**:  = \<any>'DESC'
 
-*Defined in [src/generated/api.ts:5301](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L5301)*
+*Defined in [src/generated/api.ts:5345](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L5345)*

@@ -31,7 +31,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:144](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L144)*
+*Defined in [src/generated/api.ts:145](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L145)*
 
 **`memberof`** Alias
 
@@ -41,7 +41,7 @@ ___
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:150](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L150)*
+*Defined in [src/generated/api.ts:151](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L151)*
 
 **`memberof`** Alias
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:156](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L156)*
+*Defined in [src/generated/api.ts:157](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L157)*
 
 **`memberof`** Alias
 
@@ -61,7 +61,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:162](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L162)*
+*Defined in [src/generated/api.ts:163](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L163)*
 
 **`memberof`** Alias
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:168](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L168)*
+*Defined in [src/generated/api.ts:169](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L169)*
 
 **`memberof`** Alias
 
@@ -81,7 +81,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:174](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L174)*
+*Defined in [src/generated/api.ts:175](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L175)*
 
 **`memberof`** Alias
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **useThreads**: boolean
 
-*Defined in [src/generated/api.ts:180](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L180)*
+*Defined in [src/generated/api.ts:181](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L181)*
 
 **`memberof`** Alias
 
@@ -101,6 +101,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:186](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L186)*
+*Defined in [src/generated/api.ts:187](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L187)*
 
 **`memberof`** Alias

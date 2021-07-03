@@ -24,6 +24,6 @@
 
 •  **testTarget**: string
 
-*Defined in [src/generated/api.ts:2583](https://github.com/mailslurp/mailslurp-client/blob/b27590b/src/generated/api.ts#L2583)*
+*Defined in [src/generated/api.ts:2585](https://github.com/mailslurp/mailslurp-client/blob/e4d4355/src/generated/api.ts#L2585)*
 
 **`memberof`** InboxRulesetTestOptions
