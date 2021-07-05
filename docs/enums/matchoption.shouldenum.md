@@ -19,7 +19,7 @@
 
 •  **CONTAIN**:  = \<any>'CONTAIN'
 
-*Defined in [src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2662)*
+*Defined in [src/generated/api.ts:2674](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2674)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **EQUAL**:  = \<any>'EQUAL'
 
-*Defined in [src/generated/api.ts:2663](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2663)*
+*Defined in [src/generated/api.ts:2675](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2675)*

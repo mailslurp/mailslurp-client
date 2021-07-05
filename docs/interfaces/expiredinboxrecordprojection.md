@@ -27,7 +27,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2059](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2059)*
+*Defined in [src/generated/api.ts:2071](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2071)*
 
 **`memberof`** ExpiredInboxRecordProjection
 
@@ -37,7 +37,7 @@ ___
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2065](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2065)*
+*Defined in [src/generated/api.ts:2077](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2077)*
 
 **`memberof`** ExpiredInboxRecordProjection
 
@@ -47,7 +47,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2071](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2071)*
+*Defined in [src/generated/api.ts:2083](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2083)*
 
 **`memberof`** ExpiredInboxRecordProjection
 
@@ -57,6 +57,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:2077](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2077)*
+*Defined in [src/generated/api.ts:2089](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2089)*
 
 **`memberof`** ExpiredInboxRecordProjection

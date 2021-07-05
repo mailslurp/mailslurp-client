@@ -27,7 +27,7 @@
 
 •  **eventName**: [EventNameEnum](../enums/abstractwebhookpayload.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L95)*
+*Defined in [src/generated/api.ts:95](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L95)*
 
 **`memberof`** AbstractWebhookPayload
 
@@ -37,7 +37,7 @@ ___
 
 •  **messageId**: string
 
-*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L101)*
+*Defined in [src/generated/api.ts:101](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L101)*
 
 **`memberof`** AbstractWebhookPayload
 
@@ -47,7 +47,7 @@ ___
 
 •  **webhookId**: string
 
-*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L107)*
+*Defined in [src/generated/api.ts:107](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L107)*
 
 **`memberof`** AbstractWebhookPayload
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **webhookName**: string
 
-*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L113)*
+*Defined in [src/generated/api.ts:113](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L113)*
 
 **`memberof`** AbstractWebhookPayload

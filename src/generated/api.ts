@@ -1632,6 +1632,12 @@ export interface Email {
      */
     body?: string;
     /**
+     * An excerpt of the body of the email message
+     * @type {string}
+     * @memberof Email
+     */
+    bodyExcerpt?: string;
+    /**
      * A hash signature of the email message
      * @type {string}
      * @memberof Email
@@ -1867,6 +1873,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bcc?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyExcerpt?: string;
     /**
      *
      * @type {string}
@@ -17657,8 +17669,8 @@ export const InboxControllerApiFetchParamCreator = function(
             };
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -18767,8 +18779,8 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -19361,8 +19373,8 @@ export const InboxControllerApiFactory = function(
             );
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -19839,8 +19851,8 @@ export class InboxControllerApi extends BaseAPI {
     }
 
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.

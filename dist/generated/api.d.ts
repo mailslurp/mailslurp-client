@@ -1571,6 +1571,12 @@ export interface Email {
      */
     body?: string;
     /**
+     * An excerpt of the body of the email message
+     * @type {string}
+     * @memberof Email
+     */
+    bodyExcerpt?: string;
+    /**
      * A hash signature of the email message
      * @type {string}
      * @memberof Email
@@ -1804,6 +1810,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bcc?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyExcerpt?: string;
     /**
      *
      * @type {string}
@@ -9141,8 +9153,8 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      */
     getInboxTags(options?: any): FetchArgs;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -9357,8 +9369,8 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      */
     getInboxTags(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<string>>;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -9573,8 +9585,8 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      */
     getInboxTags(options?: any): Promise<string[]>;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -9803,8 +9815,8 @@ export declare class InboxControllerApi extends BaseAPI {
      */
     getInboxTags(options?: any): Promise<string[]>;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.

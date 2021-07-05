@@ -27,7 +27,7 @@ Optional filter for matching emails based on fields. For instance filter results
 
 • `Optional` **conditions**: Array\<[ConditionOption](../modules/conditionoption.md)>
 
-*Defined in [src/generated/api.ts:2678](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2678)*
+*Defined in [src/generated/api.ts:2690](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2690)*
 
 Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **matches**: Array\<[MatchOption](../modules/matchoption.md)>
 
-*Defined in [src/generated/api.ts:2684](https://github.com/mailslurp/mailslurp-client/blob/d7397d3/src/generated/api.ts#L2684)*
+*Defined in [src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2696)*
 
 Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
 

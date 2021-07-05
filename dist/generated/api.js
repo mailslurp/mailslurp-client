@@ -8434,8 +8434,8 @@ var InboxControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -9127,8 +9127,8 @@ var InboxControllerApiFp = function (configuration) {
             };
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -9496,8 +9496,8 @@ var InboxControllerApiFactory = function (configuration, fetch, basePath) {
             return exports.InboxControllerApiFp(configuration).getInboxTags(options)(fetch, basePath);
         },
         /**
-         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-         * @summary List Inboxes and email eddresses
+         * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+         * @summary List Inboxes and email addresses
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -9774,8 +9774,8 @@ var InboxControllerApi = /** @class */ (function (_super) {
         return exports.InboxControllerApiFp(this.configuration).getInboxTags(options)(this.fetch, this.basePath);
     };
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended. You can provide a limit and sort parameter.
-     * @summary List Inboxes and email eddresses
+     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * @summary List Inboxes and email addresses
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
