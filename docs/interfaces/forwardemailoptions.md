@@ -31,7 +31,7 @@ Options for forwarding an email
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2176](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2176)*
+*Defined in [src/generated/api.ts:2246](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2246)*
 
 Optional bcc recipients
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:2182](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2182)*
+*Defined in [src/generated/api.ts:2252](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2252)*
 
 Optional cc recipients
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:2188](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2188)*
+*Defined in [src/generated/api.ts:2258](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2258)*
 
 Optional from override
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:2194](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2194)*
+*Defined in [src/generated/api.ts:2264](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2264)*
 
 Subject for forwarded email
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:2200](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2200)*
+*Defined in [src/generated/api.ts:2270](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2270)*
 
 To recipients for forwarded email
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **useInboxName**: boolean
 
-*Defined in [src/generated/api.ts:2206](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2206)*
+*Defined in [src/generated/api.ts:2276](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2276)*
 
 Optionally use inbox name as display name for sender email address
 

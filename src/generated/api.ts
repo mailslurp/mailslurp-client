@@ -865,6 +865,49 @@ export namespace CreateInboxDto {
 }
 
 /**
+ *
+ * @export
+ * @interface CreateInboxForwarderOptions
+ */
+export interface CreateInboxForwarderOptions {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    field: CreateInboxForwarderOptions.FieldEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    match: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateInboxForwarderOptions
+     */
+    forwardToRecipients: Array<string>;
+}
+
+/**
+ * @export
+ * @namespace CreateInboxForwarderOptions
+ */
+export namespace CreateInboxForwarderOptions {
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum FieldEnum {
+        RECIPIENTS = <any>'RECIPIENTS',
+        SENDER = <any>'SENDER',
+        SUBJECT = <any>'SUBJECT',
+        ATTACHMENTS = <any>'ATTACHMENTS',
+    }
+}
+
+/**
  * Options for creating inbox rulesets. Inbox rulesets can be used to block, allow, filter, or forward emails when sending or receiving using the inbox.
  * @export
  * @interface CreateInboxRulesetOptions
@@ -1572,7 +1615,34 @@ export interface DomainPreview {
      * @type {string}
      * @memberof DomainPreview
      */
+    domainType: DomainPreview.DomainTypeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof DomainPreview
+     */
     id: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    isVerified: boolean;
+}
+
+/**
+ * @export
+ * @namespace DomainPreview
+ */
+export namespace DomainPreview {
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum DomainTypeEnum {
+        HTTPINBOX = <any>'HTTP_INBOX',
+        SMTPDOMAIN = <any>'SMTP_DOMAIN',
+    }
 }
 
 /**
@@ -2429,6 +2499,101 @@ export namespace Inbox {
         HTTPINBOX = <any>'HTTP_INBOX',
         SMTPINBOX = <any>'SMTP_INBOX',
     }
+}
+
+/**
+ *
+ * @export
+ * @interface InboxForwarderDto
+ */
+export interface InboxForwarderDto {
+    /**
+     *
+     * @type {Date}
+     * @memberof InboxForwarderDto
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    field: InboxForwarderDto.FieldEnum;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxForwarderDto
+     */
+    forwardToRecipients: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    match: string;
+}
+
+/**
+ * @export
+ * @namespace InboxForwarderDto
+ */
+export namespace InboxForwarderDto {
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum FieldEnum {
+        RECIPIENTS = <any>'RECIPIENTS',
+        SENDER = <any>'SENDER',
+        SUBJECT = <any>'SUBJECT',
+        ATTACHMENTS = <any>'ATTACHMENTS',
+    }
+}
+
+/**
+ *
+ * @export
+ * @interface InboxForwarderTestOptions
+ */
+export interface InboxForwarderTestOptions {
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderTestOptions
+     */
+    testValue: string;
+}
+
+/**
+ *
+ * @export
+ * @interface InboxForwarderTestResult
+ */
+export interface InboxForwarderTestResult {
+    /**
+     *
+     * @type {boolean}
+     * @memberof InboxForwarderTestResult
+     */
+    doesMatch: boolean;
+    /**
+     *
+     * @type {{ [key: string]: boolean; }}
+     * @memberof InboxForwarderTestResult
+     */
+    matches: { [key: string]: boolean };
 }
 
 /**
@@ -3437,6 +3602,80 @@ export interface PageGroupProjection {
      *
      * @type {number}
      * @memberof PageGroupProjection
+     */
+    totalPages?: number;
+}
+
+/**
+ * Paginated inbox forwarder results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
+ * @export
+ * @interface PageInboxForwarderDto
+ */
+export interface PageInboxForwarderDto {
+    /**
+     *
+     * @type {Array<InboxForwarderDto>}
+     * @memberof PageInboxForwarderDto
+     */
+    content?: Array<InboxForwarderDto>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    number?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {Pageable}
+     * @memberof PageInboxForwarderDto
+     */
+    pageable?: Pageable;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    size?: number;
+    /**
+     *
+     * @type {Sort}
+     * @memberof PageInboxForwarderDto
+     */
+    sort?: Sort;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    totalElements?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
      */
     totalPages?: number;
 }
@@ -4879,6 +5118,26 @@ export namespace TemplateVariable {
     export enum VariableTypeEnum {
         STRING = <any>'STRING',
     }
+}
+
+/**
+ *
+ * @export
+ * @interface TestNewInboxForwarderOptions
+ */
+export interface TestNewInboxForwarderOptions {
+    /**
+     *
+     * @type {InboxForwarderTestOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    inboxForwarderTestOptions: InboxForwarderTestOptions;
+    /**
+     *
+     * @type {CreateInboxForwarderOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
 
 /**
@@ -12856,7 +13115,7 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
             emailId: string,
             forwardEmailOptions: ForwardEmailOptions,
             options?: any
-        ): (fetch?: FetchAPI, basePath?: string) => Promise<Response> {
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<SentEmailDto> {
             const localVarFetchArgs = EmailControllerApiFetchParamCreator(
                 configuration
             ).forwardEmail(emailId, forwardEmailOptions, options);
@@ -12869,7 +13128,7 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
                     localVarFetchArgs.options
                 ).then(response => {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
                     } else {
                         throw response;
                     }
@@ -20051,6 +20310,1168 @@ export class InboxControllerApi extends BaseAPI {
             updateInboxOptions,
             options
         )(this.fetch, this.basePath);
+    }
+}
+
+/**
+ * InboxForwarderControllerApi - fetch parameter creator
+ * @export
+ */
+export const InboxForwarderControllerApiFetchParamCreator = function(
+    configuration?: Configuration
+) {
+    return {
+        /**
+         * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+         * @summary Create an inbox forwarder
+         * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+         * @param {string} [inboxId] Inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createNewInboxForwarder(
+            createInboxForwarderOptions: CreateInboxForwarderOptions,
+            inboxId?: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'createInboxForwarderOptions' is not null or undefined
+            if (
+                createInboxForwarderOptions === null ||
+                createInboxForwarderOptions === undefined
+            ) {
+                throw new RequiredError(
+                    'createInboxForwarderOptions',
+                    'Required parameter createInboxForwarderOptions was null or undefined when calling createNewInboxForwarder.'
+                );
+            }
+            const localVarPath = `/forwarders`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'POST' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (inboxId !== undefined) {
+                localVarQueryParameter['inboxId'] = inboxId;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+            const needsSerialization =
+                <any>'CreateInboxForwarderOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createInboxForwarderOptions || {})
+                : createInboxForwarderOptions || '';
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete inbox forwarder
+         * @summary Delete an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarder(id: string, options: any = {}): FetchArgs {
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError(
+                    'id',
+                    'Required parameter id was null or undefined when calling deleteInboxForwarder.'
+                );
+            }
+            const localVarPath = `/forwarders/{id}`.replace(
+                `{${'id'}}`,
+                encodeURIComponent(String(id))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'DELETE' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete inbox forwarders. Accepts optional inboxId filter.
+         * @summary Delete inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarders(inboxId?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/forwarders`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'DELETE' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (inboxId !== undefined) {
+                localVarQueryParameter['inboxId'] = inboxId;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get inbox ruleset
+         * @summary Get an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarder(id: string, options: any = {}): FetchArgs {
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError(
+                    'id',
+                    'Required parameter id was null or undefined when calling getInboxForwarder.'
+                );
+            }
+            const localVarPath = `/forwarders/{id}`.replace(
+                `{${'id'}}`,
+                encodeURIComponent(String(id))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List all forwarders attached to an inbox
+         * @summary List inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to get forwarders from
+         * @param {number} [page] Optional page index in inbox forwarder list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox forwarder list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarders(
+            inboxId?: string,
+            page?: number,
+            searchFilter?: string,
+            size?: number,
+            sort?: 'ASC' | 'DESC',
+            options: any = {}
+        ): FetchArgs {
+            const localVarPath = `/forwarders`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (inboxId !== undefined) {
+                localVarQueryParameter['inboxId'] = inboxId;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Test an inbox forwarder
+         * @summary Test an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwarder(
+            id: string,
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError(
+                    'id',
+                    'Required parameter id was null or undefined when calling testInboxForwarder.'
+                );
+            }
+            // verify required parameter 'inboxForwarderTestOptions' is not null or undefined
+            if (
+                inboxForwarderTestOptions === null ||
+                inboxForwarderTestOptions === undefined
+            ) {
+                throw new RequiredError(
+                    'inboxForwarderTestOptions',
+                    'Required parameter inboxForwarderTestOptions was null or undefined when calling testInboxForwarder.'
+                );
+            }
+            const localVarPath = `/forwarders/{id}/test`.replace(
+                `{${'id'}}`,
+                encodeURIComponent(String(id))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'POST' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+            const needsSerialization =
+                <any>'InboxForwarderTestOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(inboxForwarderTestOptions || {})
+                : inboxForwarderTestOptions || '';
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Test inbox forwarders for inbox
+         * @summary Test inbox forwarders for inbox
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {string} inboxId ID of inbox
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwardersForInbox(
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            inboxId: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'inboxForwarderTestOptions' is not null or undefined
+            if (
+                inboxForwarderTestOptions === null ||
+                inboxForwarderTestOptions === undefined
+            ) {
+                throw new RequiredError(
+                    'inboxForwarderTestOptions',
+                    'Required parameter inboxForwarderTestOptions was null or undefined when calling testInboxForwardersForInbox.'
+                );
+            }
+            // verify required parameter 'inboxId' is not null or undefined
+            if (inboxId === null || inboxId === undefined) {
+                throw new RequiredError(
+                    'inboxId',
+                    'Required parameter inboxId was null or undefined when calling testInboxForwardersForInbox.'
+                );
+            }
+            const localVarPath = `/forwarders`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'PUT' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (inboxId !== undefined) {
+                localVarQueryParameter['inboxId'] = inboxId;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+            const needsSerialization =
+                <any>'InboxForwarderTestOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(inboxForwarderTestOptions || {})
+                : inboxForwarderTestOptions || '';
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Test new inbox forwarder
+         * @summary Test new inbox forwarder
+         * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testNewInboxForwarder(
+            testNewInboxForwarderOptions: TestNewInboxForwarderOptions,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'testNewInboxForwarderOptions' is not null or undefined
+            if (
+                testNewInboxForwarderOptions === null ||
+                testNewInboxForwarderOptions === undefined
+            ) {
+                throw new RequiredError(
+                    'testNewInboxForwarderOptions',
+                    'Required parameter testNewInboxForwarderOptions was null or undefined when calling testNewInboxForwarder.'
+                );
+            }
+            const localVarPath = `/forwarders`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'PATCH' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+            const needsSerialization =
+                <any>'TestNewInboxForwarderOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(testNewInboxForwarderOptions || {})
+                : testNewInboxForwarderOptions || '';
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+
+/**
+ * InboxForwarderControllerApi - functional programming interface
+ * @export
+ */
+export const InboxForwarderControllerApiFp = function(
+    configuration?: Configuration
+) {
+    return {
+        /**
+         * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+         * @summary Create an inbox forwarder
+         * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+         * @param {string} [inboxId] Inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createNewInboxForwarder(
+            createInboxForwarderOptions: CreateInboxForwarderOptions,
+            inboxId?: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderDto> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).createNewInboxForwarder(
+                createInboxForwarderOptions,
+                inboxId,
+                options
+            );
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Delete inbox forwarder
+         * @summary Delete an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarder(
+            id: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<Response> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).deleteInboxForwarder(id, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Delete inbox forwarders. Accepts optional inboxId filter.
+         * @summary Delete inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarders(
+            inboxId?: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<Response> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).deleteInboxForwarders(inboxId, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Get inbox ruleset
+         * @summary Get an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarder(
+            id: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderDto> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).getInboxForwarder(id, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * List all forwarders attached to an inbox
+         * @summary List inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to get forwarders from
+         * @param {number} [page] Optional page index in inbox forwarder list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox forwarder list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarders(
+            inboxId?: string,
+            page?: number,
+            searchFilter?: string,
+            size?: number,
+            sort?: 'ASC' | 'DESC',
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<PageInboxForwarderDto> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).getInboxForwarders(
+                inboxId,
+                page,
+                searchFilter,
+                size,
+                sort,
+                options
+            );
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Test an inbox forwarder
+         * @summary Test an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwarder(
+            id: string,
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<InboxForwarderTestResult> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).testInboxForwarder(id, inboxForwarderTestOptions, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Test inbox forwarders for inbox
+         * @summary Test inbox forwarders for inbox
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {string} inboxId ID of inbox
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwardersForInbox(
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            inboxId: string,
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<InboxForwarderTestResult> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).testInboxForwardersForInbox(
+                inboxForwarderTestOptions,
+                inboxId,
+                options
+            );
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Test new inbox forwarder
+         * @summary Test new inbox forwarder
+         * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testNewInboxForwarder(
+            testNewInboxForwarderOptions: TestNewInboxForwarderOptions,
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<InboxForwarderTestResult> {
+            const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
+                configuration
+            ).testNewInboxForwarder(testNewInboxForwarderOptions, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+
+/**
+ * InboxForwarderControllerApi - factory interface
+ * @export
+ */
+export const InboxForwarderControllerApiFactory = function(
+    configuration?: Configuration,
+    fetch?: FetchAPI,
+    basePath?: string
+) {
+    return {
+        /**
+         * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+         * @summary Create an inbox forwarder
+         * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+         * @param {string} [inboxId] Inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createNewInboxForwarder(
+            createInboxForwarderOptions: CreateInboxForwarderOptions,
+            inboxId?: string,
+            options?: any
+        ) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).createNewInboxForwarder(
+                createInboxForwarderOptions,
+                inboxId,
+                options
+            )(fetch, basePath);
+        },
+        /**
+         * Delete inbox forwarder
+         * @summary Delete an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarder(id: string, options?: any) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).deleteInboxForwarder(id, options)(fetch, basePath);
+        },
+        /**
+         * Delete inbox forwarders. Accepts optional inboxId filter.
+         * @summary Delete inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to attach forwarder to
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteInboxForwarders(inboxId?: string, options?: any) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).deleteInboxForwarders(inboxId, options)(fetch, basePath);
+        },
+        /**
+         * Get inbox ruleset
+         * @summary Get an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarder(id: string, options?: any) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).getInboxForwarder(id, options)(fetch, basePath);
+        },
+        /**
+         * List all forwarders attached to an inbox
+         * @summary List inbox forwarders
+         * @param {string} [inboxId] Optional inbox id to get forwarders from
+         * @param {number} [page] Optional page index in inbox forwarder list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in inbox forwarder list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInboxForwarders(
+            inboxId?: string,
+            page?: number,
+            searchFilter?: string,
+            size?: number,
+            sort?: 'ASC' | 'DESC',
+            options?: any
+        ) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).getInboxForwarders(
+                inboxId,
+                page,
+                searchFilter,
+                size,
+                sort,
+                options
+            )(fetch, basePath);
+        },
+        /**
+         * Test an inbox forwarder
+         * @summary Test an inbox forwarder
+         * @param {string} id ID of inbox forwarder
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwarder(
+            id: string,
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            options?: any
+        ) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).testInboxForwarder(id, inboxForwarderTestOptions, options)(
+                fetch,
+                basePath
+            );
+        },
+        /**
+         * Test inbox forwarders for inbox
+         * @summary Test inbox forwarders for inbox
+         * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+         * @param {string} inboxId ID of inbox
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testInboxForwardersForInbox(
+            inboxForwarderTestOptions: InboxForwarderTestOptions,
+            inboxId: string,
+            options?: any
+        ) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).testInboxForwardersForInbox(
+                inboxForwarderTestOptions,
+                inboxId,
+                options
+            )(fetch, basePath);
+        },
+        /**
+         * Test new inbox forwarder
+         * @summary Test new inbox forwarder
+         * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        testNewInboxForwarder(
+            testNewInboxForwarderOptions: TestNewInboxForwarderOptions,
+            options?: any
+        ) {
+            return InboxForwarderControllerApiFp(
+                configuration
+            ).testNewInboxForwarder(testNewInboxForwarderOptions, options)(
+                fetch,
+                basePath
+            );
+        },
+    };
+};
+
+/**
+ * InboxForwarderControllerApi - object-oriented interface
+ * @export
+ * @class InboxForwarderControllerApi
+ * @extends {BaseAPI}
+ */
+export class InboxForwarderControllerApi extends BaseAPI {
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * @summary Create an inbox forwarder
+     * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+     * @param {string} [inboxId] Inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public createNewInboxForwarder(
+        createInboxForwarderOptions: CreateInboxForwarderOptions,
+        inboxId?: string,
+        options?: any
+    ) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).createNewInboxForwarder(
+            createInboxForwarderOptions,
+            inboxId,
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
+     * Delete inbox forwarder
+     * @summary Delete an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public deleteInboxForwarder(id: string, options?: any) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).deleteInboxForwarder(id, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * @summary Delete inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public deleteInboxForwarders(inboxId?: string, options?: any) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).deleteInboxForwarders(inboxId, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * Get inbox ruleset
+     * @summary Get an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public getInboxForwarder(id: string, options?: any) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).getInboxForwarder(id, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * List all forwarders attached to an inbox
+     * @summary List inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to get forwarders from
+     * @param {number} [page] Optional page index in inbox forwarder list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox forwarder list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public getInboxForwarders(
+        inboxId?: string,
+        page?: number,
+        searchFilter?: string,
+        size?: number,
+        sort?: 'ASC' | 'DESC',
+        options?: any
+    ) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).getInboxForwarders(inboxId, page, searchFilter, size, sort, options)(
+            this.fetch,
+            this.basePath
+        );
+    }
+
+    /**
+     * Test an inbox forwarder
+     * @summary Test an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public testInboxForwarder(
+        id: string,
+        inboxForwarderTestOptions: InboxForwarderTestOptions,
+        options?: any
+    ) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).testInboxForwarder(id, inboxForwarderTestOptions, options)(
+            this.fetch,
+            this.basePath
+        );
+    }
+
+    /**
+     * Test inbox forwarders for inbox
+     * @summary Test inbox forwarders for inbox
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {string} inboxId ID of inbox
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public testInboxForwardersForInbox(
+        inboxForwarderTestOptions: InboxForwarderTestOptions,
+        inboxId: string,
+        options?: any
+    ) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).testInboxForwardersForInbox(
+            inboxForwarderTestOptions,
+            inboxId,
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
+     * Test new inbox forwarder
+     * @summary Test new inbox forwarder
+     * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    public testNewInboxForwarder(
+        testNewInboxForwarderOptions: TestNewInboxForwarderOptions,
+        options?: any
+    ) {
+        return InboxForwarderControllerApiFp(
+            this.configuration
+        ).testNewInboxForwarder(testNewInboxForwarderOptions, options)(
+            this.fetch,
+            this.basePath
+        );
     }
 }
 

@@ -43,7 +43,7 @@ ContactControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **createContact**(`createContactOptions`: [CreateContactOptions](../interfaces/createcontactoptions.md), `options?`: any): Promise\<[ContactDto](../interfaces/contactdto.md)>
 
-*Defined in [src/generated/api.ts:10282](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10282)*
+*Defined in [src/generated/api.ts:10541](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10541)*
 
 **`summary`** Create a contact
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **deleteContact**(`contactId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:10300](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10300)*
+*Defined in [src/generated/api.ts:10559](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10559)*
 
 **`summary`** Delete contact
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **getAllContacts**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageContactProjection](../interfaces/pagecontactprojection.md)>
 
-*Defined in [src/generated/api.ts:10317](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10317)*
+*Defined in [src/generated/api.ts:10576](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10576)*
 
 **`summary`** Get all contacts
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **getContact**(`contactId`: string, `options?`: any): Promise\<[ContactDto](../interfaces/contactdto.md)>
 
-*Defined in [src/generated/api.ts:10339](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10339)*
+*Defined in [src/generated/api.ts:10598](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10598)*
 
 **`summary`** Get contact
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **getContactVCard**(`contactId`: string, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:10354](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10354)*
+*Defined in [src/generated/api.ts:10613](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10613)*
 
 **`summary`** Get contact vCard vcf file
 
@@ -208,7 +208,7 @@ ___
 
 ▸ **getContacts**(`options?`: any): Promise\<[ContactProjection](../interfaces/contactprojection.md)[]>
 
-*Defined in [src/generated/api.ts:10368](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L10368)*
+*Defined in [src/generated/api.ts:10627](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L10627)*
 
 **`summary`** Get all contacts
 

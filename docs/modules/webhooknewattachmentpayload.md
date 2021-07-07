@@ -31,7 +31,7 @@
 
 • `Optional` **attachmentId**: string
 
-*Defined in [src/generated/api.ts:5558](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5558)*
+*Defined in [src/generated/api.ts:5817](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5817)*
 
 ID of attachment. Use the `AttachmentController` to
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **contentLength**: number
 
-*Defined in [src/generated/api.ts:5564](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5564)*
+*Defined in [src/generated/api.ts:5823](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5823)*
 
 Size of attachment in bytes
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:5570](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5570)*
+*Defined in [src/generated/api.ts:5829](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5829)*
 
 Content type of attachment such as 'image/png' or 'application/pdf
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/webhooknewattachmentpayload.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:5576](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5576)*
+*Defined in [src/generated/api.ts:5835](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5835)*
 
 Name of the event type webhook is being triggered for.
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **messageId**: string
 
-*Defined in [src/generated/api.ts:5582](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5582)*
+*Defined in [src/generated/api.ts:5841](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5841)*
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:5588](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5588)*
+*Defined in [src/generated/api.ts:5847](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5847)*
 
 Filename of the attachment if present
 
@@ -103,7 +103,7 @@ ___
 
 • `Optional` **webhookId**: string
 
-*Defined in [src/generated/api.ts:5594](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5594)*
+*Defined in [src/generated/api.ts:5853](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5853)*
 
 ID of webhook entity being triggered
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **webhookName**: string
 
-*Defined in [src/generated/api.ts:5600](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L5600)*
+*Defined in [src/generated/api.ts:5859](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L5859)*
 
 Name of the webhook being triggered
 

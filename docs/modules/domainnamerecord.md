@@ -27,7 +27,7 @@
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:1423](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L1423)*
+*Defined in [src/generated/api.ts:1466](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L1466)*
 
 **`memberof`** DomainNameRecord
 
@@ -37,7 +37,7 @@ ___
 
 •  **recordEntries**: Array\<string>
 
-*Defined in [src/generated/api.ts:1429](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L1429)*
+*Defined in [src/generated/api.ts:1472](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L1472)*
 
 **`memberof`** DomainNameRecord
 
@@ -47,7 +47,7 @@ ___
 
 •  **recordType**: [RecordTypeEnum](../enums/domainnamerecord.recordtypeenum.md)
 
-*Defined in [src/generated/api.ts:1435](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L1435)*
+*Defined in [src/generated/api.ts:1478](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L1478)*
 
 **`memberof`** DomainNameRecord
 
@@ -57,6 +57,6 @@ ___
 
 •  **ttl**: number
 
-*Defined in [src/generated/api.ts:1441](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L1441)*
+*Defined in [src/generated/api.ts:1484](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L1484)*
 
 **`memberof`** DomainNameRecord

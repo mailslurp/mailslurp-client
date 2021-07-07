@@ -33,7 +33,7 @@ Representation of a alias
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:269](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L269)*
+*Defined in [src/generated/api.ts:269](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L269)*
 
 **`memberof`** AliasProjection
 
@@ -43,7 +43,7 @@ ___
 
 •  **emailAddress**: string
 
-*Defined in [src/generated/api.ts:275](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L275)*
+*Defined in [src/generated/api.ts:275](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L275)*
 
 **`memberof`** AliasProjection
 
@@ -53,7 +53,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:281](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L281)*
+*Defined in [src/generated/api.ts:281](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L281)*
 
 **`memberof`** AliasProjection
 
@@ -63,7 +63,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:287](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L287)*
+*Defined in [src/generated/api.ts:287](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L287)*
 
 **`memberof`** AliasProjection
 
@@ -73,7 +73,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:293](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L293)*
+*Defined in [src/generated/api.ts:293](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L293)*
 
 **`memberof`** AliasProjection
 
@@ -83,7 +83,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:299](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L299)*
+*Defined in [src/generated/api.ts:299](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L299)*
 
 **`memberof`** AliasProjection
 
@@ -93,7 +93,7 @@ ___
 
 • `Optional` **useThreads**: boolean
 
-*Defined in [src/generated/api.ts:305](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L305)*
+*Defined in [src/generated/api.ts:305](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L305)*
 
 **`memberof`** AliasProjection
 
@@ -103,6 +103,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:311](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L311)*
+*Defined in [src/generated/api.ts:311](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L311)*
 
 **`memberof`** AliasProjection

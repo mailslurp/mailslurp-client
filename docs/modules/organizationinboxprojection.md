@@ -32,7 +32,7 @@
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2860](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2860)*
+*Defined in [src/generated/api.ts:3025](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3025)*
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2866](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2866)*
+*Defined in [src/generated/api.ts:3031](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3031)*
 
 The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **favourite**: boolean
 
-*Defined in [src/generated/api.ts:2872](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2872)*
+*Defined in [src/generated/api.ts:3037](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3037)*
 
 Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:2878](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2878)*
+*Defined in [src/generated/api.ts:3043](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3043)*
 
 ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **inboxType**: [InboxTypeEnum](../enums/organizationinboxprojection.inboxtypeenum.md)
 
-*Defined in [src/generated/api.ts:2884](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2884)*
+*Defined in [src/generated/api.ts:3049](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3049)*
 
 Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testing. SMTP inboxes are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:2890](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2890)*
+*Defined in [src/generated/api.ts:3055](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3055)*
 
 Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **readOnly**: boolean
 
-*Defined in [src/generated/api.ts:2896](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2896)*
+*Defined in [src/generated/api.ts:3061](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3061)*
 
 Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:2902](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2902)*
+*Defined in [src/generated/api.ts:3067](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3067)*
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **teamAccess**: boolean
 
-*Defined in [src/generated/api.ts:2908](https://github.com/mailslurp/mailslurp-client/blob/5a4fc29/src/generated/api.ts#L2908)*
+*Defined in [src/generated/api.ts:3073](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L3073)*
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
 

@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, MissedEmailControllerApi, InboxRulesetControllerApi, MailServerControllerApi, TrackingControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, MissedEmailControllerApi, InboxRulesetControllerApi, MailServerControllerApi, TrackingControllerApi, InboxForwarderControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -66,9 +66,10 @@ export declare class MailSlurp {
     readonly templateController: TemplateControllerApi;
     readonly webhookController: WebhookControllerApi;
     readonly mailServerController: MailServerControllerApi;
-    readonly missedEmailControllerApi: MissedEmailControllerApi;
-    readonly inboxRulesetControllerApi: InboxRulesetControllerApi;
-    readonly trackingControllerApi: TrackingControllerApi;
+    readonly missedEmailController: MissedEmailControllerApi;
+    readonly inboxRulesetController: InboxRulesetControllerApi;
+    readonly inboxForwarderController: InboxForwarderControllerApi;
+    readonly trackingController: TrackingControllerApi;
     /**
      * Create a new MailSlurp instance.
      *

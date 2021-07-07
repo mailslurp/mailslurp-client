@@ -823,6 +823,47 @@ export declare namespace CreateInboxDto {
     }
 }
 /**
+ *
+ * @export
+ * @interface CreateInboxForwarderOptions
+ */
+export interface CreateInboxForwarderOptions {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    field: CreateInboxForwarderOptions.FieldEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    match: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CreateInboxForwarderOptions
+     */
+    forwardToRecipients: Array<string>;
+}
+/**
+ * @export
+ * @namespace CreateInboxForwarderOptions
+ */
+export declare namespace CreateInboxForwarderOptions {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum FieldEnum {
+        RECIPIENTS,
+        SENDER,
+        SUBJECT,
+        ATTACHMENTS
+    }
+}
+/**
  * Options for creating inbox rulesets. Inbox rulesets can be used to block, allow, filter, or forward emails when sending or receiving using the inbox.
  * @export
  * @interface CreateInboxRulesetOptions
@@ -1513,7 +1554,33 @@ export interface DomainPreview {
      * @type {string}
      * @memberof DomainPreview
      */
+    domainType: DomainPreview.DomainTypeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof DomainPreview
+     */
     id: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    isVerified: boolean;
+}
+/**
+ * @export
+ * @namespace DomainPreview
+ */
+export declare namespace DomainPreview {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum DomainTypeEnum {
+        HTTPINBOX,
+        SMTPDOMAIN
+    }
 }
 /**
  * Content of attachment
@@ -2350,6 +2417,99 @@ export declare namespace Inbox {
         HTTPINBOX,
         SMTPINBOX
     }
+}
+/**
+ *
+ * @export
+ * @interface InboxForwarderDto
+ */
+export interface InboxForwarderDto {
+    /**
+     *
+     * @type {Date}
+     * @memberof InboxForwarderDto
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    field: InboxForwarderDto.FieldEnum;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxForwarderDto
+     */
+    forwardToRecipients: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
+    match: string;
+}
+/**
+ * @export
+ * @namespace InboxForwarderDto
+ */
+export declare namespace InboxForwarderDto {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum FieldEnum {
+        RECIPIENTS,
+        SENDER,
+        SUBJECT,
+        ATTACHMENTS
+    }
+}
+/**
+ *
+ * @export
+ * @interface InboxForwarderTestOptions
+ */
+export interface InboxForwarderTestOptions {
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderTestOptions
+     */
+    testValue: string;
+}
+/**
+ *
+ * @export
+ * @interface InboxForwarderTestResult
+ */
+export interface InboxForwarderTestResult {
+    /**
+     *
+     * @type {boolean}
+     * @memberof InboxForwarderTestResult
+     */
+    doesMatch: boolean;
+    /**
+     *
+     * @type {{ [key: string]: boolean; }}
+     * @memberof InboxForwarderTestResult
+     */
+    matches: {
+        [key: string]: boolean;
+    };
 }
 /**
  *
@@ -3339,6 +3499,79 @@ export interface PageGroupProjection {
      *
      * @type {number}
      * @memberof PageGroupProjection
+     */
+    totalPages?: number;
+}
+/**
+ * Paginated inbox forwarder results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
+ * @export
+ * @interface PageInboxForwarderDto
+ */
+export interface PageInboxForwarderDto {
+    /**
+     *
+     * @type {Array<InboxForwarderDto>}
+     * @memberof PageInboxForwarderDto
+     */
+    content?: Array<InboxForwarderDto>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    number?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {Pageable}
+     * @memberof PageInboxForwarderDto
+     */
+    pageable?: Pageable;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    size?: number;
+    /**
+     *
+     * @type {Sort}
+     * @memberof PageInboxForwarderDto
+     */
+    sort?: Sort;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
+     */
+    totalElements?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxForwarderDto
      */
     totalPages?: number;
 }
@@ -4754,6 +4987,25 @@ export declare namespace TemplateVariable {
     enum VariableTypeEnum {
         STRING
     }
+}
+/**
+ *
+ * @export
+ * @interface TestNewInboxForwarderOptions
+ */
+export interface TestNewInboxForwarderOptions {
+    /**
+     *
+     * @type {InboxForwarderTestOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    inboxForwarderTestOptions: InboxForwarderTestOptions;
+    /**
+     *
+     * @type {CreateInboxForwarderOptions}
+     * @memberof TestNewInboxForwarderOptions
+     */
+    createInboxForwarderOptions: CreateInboxForwarderOptions;
 }
 /**
  *
@@ -7682,7 +7934,7 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<SentEmailDto>;
     /**
      * Returns the metadata such as name and content-type for a given attachment and email.
      * @summary Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
@@ -7902,7 +8154,7 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): Promise<Response>;
+    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): Promise<SentEmailDto>;
     /**
      * Returns the metadata such as name and content-type for a given attachment and email.
      * @summary Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
@@ -8131,7 +8383,7 @@ export declare class EmailControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EmailControllerApi
      */
-    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): Promise<Response>;
+    forwardEmail(emailId: string, forwardEmailOptions: ForwardEmailOptions, options?: any): Promise<SentEmailDto>;
     /**
      * Returns the metadata such as name and content-type for a given attachment and email.
      * @summary Get email attachment metadata. This is the `contentType` and `contentLength` of an attachment. To get the individual attachments  use the `downloadAttachment` methods.
@@ -9911,6 +10163,324 @@ export declare class InboxControllerApi extends BaseAPI {
      * @memberof InboxControllerApi
      */
     updateInbox(inboxId: string, updateInboxOptions: UpdateInboxOptions, options?: any): Promise<Inbox>;
+}
+/**
+ * InboxForwarderControllerApi - fetch parameter creator
+ * @export
+ */
+export declare const InboxForwarderControllerApiFetchParamCreator: (configuration?: Configuration) => {
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * @summary Create an inbox forwarder
+     * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+     * @param {string} [inboxId] Inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createNewInboxForwarder(createInboxForwarderOptions: CreateInboxForwarderOptions, inboxId?: string, options?: any): FetchArgs;
+    /**
+     * Delete inbox forwarder
+     * @summary Delete an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarder(id: string, options?: any): FetchArgs;
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * @summary Delete inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarders(inboxId?: string, options?: any): FetchArgs;
+    /**
+     * Get inbox ruleset
+     * @summary Get an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarder(id: string, options?: any): FetchArgs;
+    /**
+     * List all forwarders attached to an inbox
+     * @summary List inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to get forwarders from
+     * @param {number} [page] Optional page index in inbox forwarder list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox forwarder list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    /**
+     * Test an inbox forwarder
+     * @summary Test an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwarder(id: string, inboxForwarderTestOptions: InboxForwarderTestOptions, options?: any): FetchArgs;
+    /**
+     * Test inbox forwarders for inbox
+     * @summary Test inbox forwarders for inbox
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {string} inboxId ID of inbox
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwardersForInbox(inboxForwarderTestOptions: InboxForwarderTestOptions, inboxId: string, options?: any): FetchArgs;
+    /**
+     * Test new inbox forwarder
+     * @summary Test new inbox forwarder
+     * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testNewInboxForwarder(testNewInboxForwarderOptions: TestNewInboxForwarderOptions, options?: any): FetchArgs;
+};
+/**
+ * InboxForwarderControllerApi - functional programming interface
+ * @export
+ */
+export declare const InboxForwarderControllerApiFp: (configuration?: Configuration) => {
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * @summary Create an inbox forwarder
+     * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+     * @param {string} [inboxId] Inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createNewInboxForwarder(createInboxForwarderOptions: CreateInboxForwarderOptions, inboxId?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderDto>;
+    /**
+     * Delete inbox forwarder
+     * @summary Delete an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarder(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * @summary Delete inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarders(inboxId?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     * Get inbox ruleset
+     * @summary Get an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarder(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderDto>;
+    /**
+     * List all forwarders attached to an inbox
+     * @summary List inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to get forwarders from
+     * @param {number} [page] Optional page index in inbox forwarder list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox forwarder list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxForwarderDto>;
+    /**
+     * Test an inbox forwarder
+     * @summary Test an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwarder(id: string, inboxForwarderTestOptions: InboxForwarderTestOptions, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderTestResult>;
+    /**
+     * Test inbox forwarders for inbox
+     * @summary Test inbox forwarders for inbox
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {string} inboxId ID of inbox
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwardersForInbox(inboxForwarderTestOptions: InboxForwarderTestOptions, inboxId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderTestResult>;
+    /**
+     * Test new inbox forwarder
+     * @summary Test new inbox forwarder
+     * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testNewInboxForwarder(testNewInboxForwarderOptions: TestNewInboxForwarderOptions, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<InboxForwarderTestResult>;
+};
+/**
+ * InboxForwarderControllerApi - factory interface
+ * @export
+ */
+export declare const InboxForwarderControllerApiFactory: (configuration?: Configuration, fetch?: FetchAPI, basePath?: string) => {
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * @summary Create an inbox forwarder
+     * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+     * @param {string} [inboxId] Inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    createNewInboxForwarder(createInboxForwarderOptions: CreateInboxForwarderOptions, inboxId?: string, options?: any): Promise<InboxForwarderDto>;
+    /**
+     * Delete inbox forwarder
+     * @summary Delete an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarder(id: string, options?: any): Promise<Response>;
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * @summary Delete inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteInboxForwarders(inboxId?: string, options?: any): Promise<Response>;
+    /**
+     * Get inbox ruleset
+     * @summary Get an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarder(id: string, options?: any): Promise<InboxForwarderDto>;
+    /**
+     * List all forwarders attached to an inbox
+     * @summary List inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to get forwarders from
+     * @param {number} [page] Optional page index in inbox forwarder list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox forwarder list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
+    /**
+     * Test an inbox forwarder
+     * @summary Test an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwarder(id: string, inboxForwarderTestOptions: InboxForwarderTestOptions, options?: any): Promise<InboxForwarderTestResult>;
+    /**
+     * Test inbox forwarders for inbox
+     * @summary Test inbox forwarders for inbox
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {string} inboxId ID of inbox
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testInboxForwardersForInbox(inboxForwarderTestOptions: InboxForwarderTestOptions, inboxId: string, options?: any): Promise<InboxForwarderTestResult>;
+    /**
+     * Test new inbox forwarder
+     * @summary Test new inbox forwarder
+     * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    testNewInboxForwarder(testNewInboxForwarderOptions: TestNewInboxForwarderOptions, options?: any): Promise<InboxForwarderTestResult>;
+};
+/**
+ * InboxForwarderControllerApi - object-oriented interface
+ * @export
+ * @class InboxForwarderControllerApi
+ * @extends {BaseAPI}
+ */
+export declare class InboxForwarderControllerApi extends BaseAPI {
+    /**
+     * Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+     * @summary Create an inbox forwarder
+     * @param {CreateInboxForwarderOptions} createInboxForwarderOptions createInboxForwarderOptions
+     * @param {string} [inboxId] Inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    createNewInboxForwarder(createInboxForwarderOptions: CreateInboxForwarderOptions, inboxId?: string, options?: any): Promise<InboxForwarderDto>;
+    /**
+     * Delete inbox forwarder
+     * @summary Delete an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    deleteInboxForwarder(id: string, options?: any): Promise<Response>;
+    /**
+     * Delete inbox forwarders. Accepts optional inboxId filter.
+     * @summary Delete inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to attach forwarder to
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    deleteInboxForwarders(inboxId?: string, options?: any): Promise<Response>;
+    /**
+     * Get inbox ruleset
+     * @summary Get an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    getInboxForwarder(id: string, options?: any): Promise<InboxForwarderDto>;
+    /**
+     * List all forwarders attached to an inbox
+     * @summary List inbox forwarders
+     * @param {string} [inboxId] Optional inbox id to get forwarders from
+     * @param {number} [page] Optional page index in inbox forwarder list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in inbox forwarder list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
+    /**
+     * Test an inbox forwarder
+     * @summary Test an inbox forwarder
+     * @param {string} id ID of inbox forwarder
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    testInboxForwarder(id: string, inboxForwarderTestOptions: InboxForwarderTestOptions, options?: any): Promise<InboxForwarderTestResult>;
+    /**
+     * Test inbox forwarders for inbox
+     * @summary Test inbox forwarders for inbox
+     * @param {InboxForwarderTestOptions} inboxForwarderTestOptions inboxForwarderTestOptions
+     * @param {string} inboxId ID of inbox
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    testInboxForwardersForInbox(inboxForwarderTestOptions: InboxForwarderTestOptions, inboxId: string, options?: any): Promise<InboxForwarderTestResult>;
+    /**
+     * Test new inbox forwarder
+     * @summary Test new inbox forwarder
+     * @param {TestNewInboxForwarderOptions} testNewInboxForwarderOptions testNewInboxForwarderOptions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxForwarderControllerApi
+     */
+    testNewInboxForwarder(testNewInboxForwarderOptions: TestNewInboxForwarderOptions, options?: any): Promise<InboxForwarderTestResult>;
 }
 /**
  * InboxRulesetControllerApi - fetch parameter creator

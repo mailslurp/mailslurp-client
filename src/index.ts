@@ -32,6 +32,7 @@ import {
     InboxRulesetControllerApi,
     MailServerControllerApi,
     TrackingControllerApi,
+    InboxForwarderControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -109,9 +110,10 @@ export class MailSlurp {
     public readonly templateController: TemplateControllerApi;
     public readonly webhookController: WebhookControllerApi;
     public readonly mailServerController: MailServerControllerApi;
-    public readonly missedEmailControllerApi: MissedEmailControllerApi;
-    public readonly inboxRulesetControllerApi: InboxRulesetControllerApi;
-    public readonly trackingControllerApi: TrackingControllerApi;
+    public readonly missedEmailController: MissedEmailControllerApi;
+    public readonly inboxRulesetController: InboxRulesetControllerApi;
+    public readonly inboxForwarderController: InboxForwarderControllerApi;
+    public readonly trackingController: TrackingControllerApi;
 
     /**
      * Create a new MailSlurp instance.
@@ -158,9 +160,12 @@ export class MailSlurp {
         this.bulkController = new BulkActionsControllerApi(...args);
         this.waitController = new WaitForControllerApi(...args);
         this.mailServerController = new MailServerControllerApi(...args);
-        this.missedEmailControllerApi = new MissedEmailControllerApi(...args);
-        this.inboxRulesetControllerApi = new InboxRulesetControllerApi(...args);
-        this.trackingControllerApi = new TrackingControllerApi(...args);
+        this.missedEmailController = new MissedEmailControllerApi(...args);
+        this.inboxRulesetController = new InboxRulesetControllerApi(...args);
+        this.inboxForwarderController = new InboxForwarderControllerApi(
+            ...args
+        );
+        this.trackingController = new TrackingControllerApi(...args);
     }
 
     /**
