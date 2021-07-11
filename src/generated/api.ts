@@ -5349,6 +5349,12 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
+    sentEmailId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
     userId: string;
 }
 
@@ -6114,6 +6120,12 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    eventName?: WebhookProjection.EventNameEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     id: string;
     /**
      *
@@ -6139,6 +6151,24 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     url: string;
+}
+
+/**
+ * @export
+ * @namespace WebhookProjection
+ */
+export namespace WebhookProjection {
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum EventNameEnum {
+        EMAILRECEIVED = <any>'EMAIL_RECEIVED',
+        NEWEMAIL = <any>'NEW_EMAIL',
+        NEWCONTACT = <any>'NEW_CONTACT',
+        NEWATTACHMENT = <any>'NEW_ATTACHMENT',
+        EMAILOPENED = <any>'EMAIL_OPENED',
+    }
 }
 
 /**
@@ -6197,6 +6227,12 @@ export interface WebhookResultEntity {
     responseTimeMillis: number;
     /**
      *
+     * @type {string}
+     * @memberof WebhookResultEntity
+     */
+    resultType?: WebhookResultEntity.ResultTypeEnum;
+    /**
+     *
      * @type {Date}
      * @memberof WebhookResultEntity
      */
@@ -6245,6 +6281,15 @@ export namespace WebhookResultEntity {
         DELETE = <any>'DELETE',
         OPTIONS = <any>'OPTIONS',
         TRACE = <any>'TRACE',
+    }
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum ResultTypeEnum {
+        BADRESPONSE = <any>'BAD_RESPONSE',
+        EXCEPTION = <any>'EXCEPTION',
+        SUCCESS = <any>'SUCCESS',
     }
     /**
      * @export

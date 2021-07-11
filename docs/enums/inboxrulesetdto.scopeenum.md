@@ -19,7 +19,7 @@
 
 •  **RECEIVINGEMAILS**:  = \<any>'RECEIVING\_EMAILS'
 
-*Defined in [src/generated/api.ts:2746](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2746)*
+*Defined in [src/generated/api.ts:2746](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L2746)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **SENDINGEMAILS**:  = \<any>'SENDING\_EMAILS'
 
-*Defined in [src/generated/api.ts:2747](https://github.com/mailslurp/mailslurp-client/blob/eace919/src/generated/api.ts#L2747)*
+*Defined in [src/generated/api.ts:2747](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L2747)*

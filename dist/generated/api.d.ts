@@ -5213,6 +5213,12 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
+    sentEmailId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
     userId: string;
 }
 /**
@@ -5956,6 +5962,12 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    eventName?: WebhookProjection.EventNameEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     id: string;
     /**
      *
@@ -5981,6 +5993,23 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     url: string;
+}
+/**
+ * @export
+ * @namespace WebhookProjection
+ */
+export declare namespace WebhookProjection {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum EventNameEnum {
+        EMAILRECEIVED,
+        NEWEMAIL,
+        NEWCONTACT,
+        NEWATTACHMENT,
+        EMAILOPENED
+    }
 }
 /**
  *
@@ -6038,6 +6067,12 @@ export interface WebhookResultEntity {
     responseTimeMillis: number;
     /**
      *
+     * @type {string}
+     * @memberof WebhookResultEntity
+     */
+    resultType?: WebhookResultEntity.ResultTypeEnum;
+    /**
+     *
      * @type {Date}
      * @memberof WebhookResultEntity
      */
@@ -6085,6 +6120,15 @@ export declare namespace WebhookResultEntity {
         DELETE,
         OPTIONS,
         TRACE
+    }
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum ResultTypeEnum {
+        BADRESPONSE,
+        EXCEPTION,
+        SUCCESS
     }
     /**
      * @export
