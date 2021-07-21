@@ -25,7 +25,7 @@
 
 •  **createInboxRulesetOptions**: [CreateInboxRulesetOptions](../modules/createinboxrulesetoptions.md)
 
-*Defined in [src/generated/api.ts:5160](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5160)*
+*Defined in [src/generated/api.ts:5446](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5446)*
 
 **`memberof`** TestNewInboxRulesetOptions
 
@@ -35,6 +35,6 @@ ___
 
 •  **inboxRulesetTestOptions**: [InboxRulesetTestOptions](inboxrulesettestoptions.md)
 
-*Defined in [src/generated/api.ts:5154](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5154)*
+*Defined in [src/generated/api.ts:5440](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5440)*
 
 **`memberof`** TestNewInboxRulesetOptions

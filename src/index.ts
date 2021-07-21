@@ -33,6 +33,7 @@ import {
     MailServerControllerApi,
     TrackingControllerApi,
     InboxForwarderControllerApi,
+    BounceControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -114,6 +115,7 @@ export class MailSlurp {
     public readonly inboxRulesetController: InboxRulesetControllerApi;
     public readonly inboxForwarderController: InboxForwarderControllerApi;
     public readonly trackingController: TrackingControllerApi;
+    public readonly bounceController: BounceControllerApi;
 
     /**
      * Create a new MailSlurp instance.
@@ -166,6 +168,7 @@ export class MailSlurp {
             ...args
         );
         this.trackingController = new TrackingControllerApi(...args);
+        this.bounceController = new BounceControllerApi(...args);
     }
 
     /**

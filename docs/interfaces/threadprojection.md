@@ -36,7 +36,7 @@ A thread is a message thread created for a message received by an alias
 
 •  **aliasId**: string
 
-*Defined in [src/generated/api.ts:5174](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5174)*
+*Defined in [src/generated/api.ts:5460](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5460)*
 
 **`memberof`** ThreadProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:5180](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5180)*
+*Defined in [src/generated/api.ts:5466](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5466)*
 
 **`memberof`** ThreadProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:5186](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5186)*
+*Defined in [src/generated/api.ts:5472](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5472)*
 
 **`memberof`** ThreadProjection
 
@@ -66,7 +66,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:5192](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5192)*
+*Defined in [src/generated/api.ts:5478](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5478)*
 
 **`memberof`** ThreadProjection
 
@@ -76,7 +76,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:5198](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5198)*
+*Defined in [src/generated/api.ts:5484](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5484)*
 
 **`memberof`** ThreadProjection
 
@@ -86,7 +86,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:5204](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5204)*
+*Defined in [src/generated/api.ts:5490](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5490)*
 
 **`memberof`** ThreadProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:5210](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5210)*
+*Defined in [src/generated/api.ts:5496](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5496)*
 
 **`memberof`** ThreadProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:5216](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5216)*
+*Defined in [src/generated/api.ts:5502](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5502)*
 
 **`memberof`** ThreadProjection
 
@@ -116,7 +116,7 @@ ___
 
 •  **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:5222](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5222)*
+*Defined in [src/generated/api.ts:5508](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5508)*
 
 **`memberof`** ThreadProjection
 
@@ -126,7 +126,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:5228](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5228)*
+*Defined in [src/generated/api.ts:5514](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5514)*
 
 **`memberof`** ThreadProjection
 
@@ -136,6 +136,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:5234](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L5234)*
+*Defined in [src/generated/api.ts:5520](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L5520)*
 
 **`memberof`** ThreadProjection

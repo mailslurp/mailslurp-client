@@ -143,6 +143,7 @@ var MailSlurp = /** @class */ (function () {
         this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArrays([void 0], args)))();
         this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArrays([void 0], args)))();
         this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArrays([void 0], args)))();
+        this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArrays([void 0], args)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.

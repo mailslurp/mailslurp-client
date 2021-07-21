@@ -46,7 +46,7 @@ AliasControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -66,7 +66,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L61)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L57)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **createAlias**(`createAliasOptions`: [CreateAliasOptions](../interfaces/createaliasoptions.md), `options?`: any): Promise\<[AliasDto](../interfaces/aliasdto.md)>
 
-*Defined in [src/generated/api.ts:7558](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7558)*
+*Defined in [src/generated/api.ts:7844](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7844)*
 
 Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **deleteAlias**(`aliasId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:7573](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7573)*
+*Defined in [src/generated/api.ts:7859](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7859)*
 
 **`summary`** Delete an email alias
 
@@ -142,7 +142,7 @@ ___
 
 ▸ **getAlias**(`aliasId`: string, `options?`: any): Promise\<[AliasDto](../interfaces/aliasdto.md)>
 
-*Defined in [src/generated/api.ts:7588](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7588)*
+*Defined in [src/generated/api.ts:7874](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7874)*
 
 Get an email alias by ID
 
@@ -167,7 +167,7 @@ ___
 
 ▸ **getAliasEmails**(`aliasId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageEmailProjection](../interfaces/pageemailprojection.md)>
 
-*Defined in [src/generated/api.ts:7606](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7606)*
+*Defined in [src/generated/api.ts:7892](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7892)*
 
 Get paginated emails for an alias by ID
 
@@ -195,7 +195,7 @@ ___
 
 ▸ **getAliasThreads**(`aliasId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageThreadProjection](../interfaces/pagethreadprojection.md)>
 
-*Defined in [src/generated/api.ts:7633](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7633)*
+*Defined in [src/generated/api.ts:7919](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7919)*
 
 Returns threads created for an email alias in paginated form
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **getAliases**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageAlias](../interfaces/pagealias.md)>
 
-*Defined in [src/generated/api.ts:7659](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7659)*
+*Defined in [src/generated/api.ts:7945](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7945)*
 
 Get all email aliases in paginated form
 
@@ -250,7 +250,7 @@ ___
 
 ▸ **replyToAliasEmail**(`aliasId`: string, `emailId`: string, `replyToAliasEmailOptions`: [ReplyToAliasEmailOptions](../modules/replytoaliasemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:7683](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7683)*
+*Defined in [src/generated/api.ts:7969](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7969)*
 
 Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
 
@@ -277,7 +277,7 @@ ___
 
 ▸ **sendAliasEmail**(`aliasId`: string, `sendEmailOptions?`: [SendEmailOptions](../modules/sendemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:7706](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7706)*
+*Defined in [src/generated/api.ts:7992](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L7992)*
 
 Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
 
@@ -303,7 +303,7 @@ ___
 
 ▸ **updateAlias**(`aliasId`: string, `updateAliasOptions`: [UpdateAliasOptions](../interfaces/updatealiasoptions.md), `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:7727](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L7727)*
+*Defined in [src/generated/api.ts:8013](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L8013)*
 
 **`summary`** Update an email alias
 

@@ -30,6 +30,7 @@ SentEmailsControllerApi - object-oriented interface
 
 * [getAllSentTrackingPixels](sentemailscontrollerapi.md#getallsenttrackingpixels)
 * [getSentEmail](sentemailscontrollerapi.md#getsentemail)
+* [getSentEmailHTMLContent](sentemailscontrollerapi.md#getsentemailhtmlcontent)
 * [getSentEmailTrackingPixels](sentemailscontrollerapi.md#getsentemailtrackingpixels)
 * [getSentEmails](sentemailscontrollerapi.md#getsentemails)
 * [getSentOrganizationEmails](sentemailscontrollerapi.md#getsentorganizationemails)
@@ -42,7 +43,7 @@ SentEmailsControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -62,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L61)*
 
 ___
 
@@ -72,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L57)*
 
 ___
 
@@ -82,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -90,7 +91,7 @@ ___
 
 ▸ **getAllSentTrackingPixels**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageTrackingPixelProjection](../interfaces/pagetrackingpixelprojection.md)>
 
-*Defined in [src/generated/api.ts:24451](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L24451)*
+*Defined in [src/generated/api.ts:25389](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25389)*
 
 **`summary`** Get all sent email tracking pixels in paginated form
 
@@ -116,7 +117,7 @@ ___
 
 ▸ **getSentEmail**(`id`: string, `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
 
-*Defined in [src/generated/api.ts:24474](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L24474)*
+*Defined in [src/generated/api.ts:25412](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25412)*
 
 **`summary`** Get sent email receipt
 
@@ -135,11 +136,34 @@ Name | Type | Description |
 
 ___
 
+### getSentEmailHTMLContent
+
+▸ **getSentEmailHTMLContent**(`id`: string, `options?`: any): Promise\<string>
+
+*Defined in [src/generated/api.ts:25427](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25427)*
+
+**`summary`** Get sent email HTML content
+
+**`throws`** {RequiredError}
+
+**`memberof`** SentEmailsControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`id` | string | id |
+`options?` | any | - |
+
+**Returns:** Promise\<string>
+
+___
+
 ### getSentEmailTrackingPixels
 
 ▸ **getSentEmailTrackingPixels**(`id`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageTrackingPixelProjection](../interfaces/pagetrackingpixelprojection.md)>
 
-*Defined in [src/generated/api.ts:24493](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L24493)*
+*Defined in [src/generated/api.ts:25445](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25445)*
 
 **`summary`** Get all tracking pixels for a sent email in paginated form
 
@@ -166,7 +190,7 @@ ___
 
 ▸ **getSentEmails**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:24525](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L24525)*
+*Defined in [src/generated/api.ts:25477](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25477)*
 
 **`summary`** Get all sent emails in paginated form
 
@@ -193,7 +217,7 @@ ___
 
 ▸ **getSentOrganizationEmails**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageSentEmailProjection](../interfaces/pagesentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:24555](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L24555)*
+*Defined in [src/generated/api.ts:25507](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L25507)*
 
 **`summary`** Get all sent organization emails in paginated form
 

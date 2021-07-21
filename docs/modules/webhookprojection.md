@@ -30,7 +30,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:6117](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6117)*
+*Defined in [src/generated/api.ts:6403](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6403)*
 
 **`memberof`** WebhookProjection
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/webhookprojection.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:6123](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6123)*
+*Defined in [src/generated/api.ts:6409](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6409)*
 
 **`memberof`** WebhookProjection
 
@@ -50,7 +50,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:6129](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6129)*
+*Defined in [src/generated/api.ts:6415](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6415)*
 
 **`memberof`** WebhookProjection
 
@@ -60,7 +60,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:6135](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6135)*
+*Defined in [src/generated/api.ts:6421](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6421)*
 
 **`memberof`** WebhookProjection
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:6141](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6141)*
+*Defined in [src/generated/api.ts:6427](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6427)*
 
 **`memberof`** WebhookProjection
 
@@ -80,7 +80,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:6147](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6147)*
+*Defined in [src/generated/api.ts:6433](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6433)*
 
 **`memberof`** WebhookProjection
 
@@ -90,6 +90,6 @@ ___
 
 •  **url**: string
 
-*Defined in [src/generated/api.ts:6153](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L6153)*
+*Defined in [src/generated/api.ts:6439](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L6439)*
 
 **`memberof`** WebhookProjection

@@ -385,6 +385,141 @@ export interface BasicAuthOptions {
     password: string;
 }
 /**
+ *
+ * @export
+ * @interface Bounce
+ */
+export interface Bounce {
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    bounceMta?: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof Bounce
+     */
+    bounceRecipients?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    bounceSubType?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    bounceType?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof Bounce
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    notificationType: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    sender: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof Bounce
+     */
+    sentToRecipients?: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof Bounce
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof Bounce
+     */
+    userId: string;
+}
+/**
+ *
+ * @export
+ * @interface BounceProjection
+ */
+export interface BounceProjection {
+    /**
+     *
+     * @type {Date}
+     * @memberof BounceProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    sender: string;
+}
+/**
+ *
+ * @export
+ * @interface BounceRecipient
+ */
+export interface BounceRecipient {
+    /**
+     *
+     * @type {Date}
+     * @memberof BounceRecipient
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceRecipient
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceRecipient
+     */
+    recipient: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof BounceRecipient
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceRecipient
+     */
+    userId: string;
+}
+/**
  * Options for bulk sending an email from multiple addresses. See regular `sendEmail` methods for more information.
  * @export
  * @interface BulkSendEmailOptions
@@ -3134,6 +3269,152 @@ export interface PageAttachmentEntity {
      *
      * @type {number}
      * @memberof PageAttachmentEntity
+     */
+    totalPages?: number;
+}
+/**
+ * Paginated bounced email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
+ * @export
+ * @interface PageBouncedEmail
+ */
+export interface PageBouncedEmail {
+    /**
+     *
+     * @type {Array<BounceProjection>}
+     * @memberof PageBouncedEmail
+     */
+    content?: Array<BounceProjection>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    number?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {Pageable}
+     * @memberof PageBouncedEmail
+     */
+    pageable?: Pageable;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    size?: number;
+    /**
+     *
+     * @type {Sort}
+     * @memberof PageBouncedEmail
+     */
+    sort?: Sort;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    totalElements?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
+    totalPages?: number;
+}
+/**
+ * Paginated bounced recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
+ * @export
+ * @interface PageBouncedRecipients
+ */
+export interface PageBouncedRecipients {
+    /**
+     *
+     * @type {Array<BounceRecipient>}
+     * @memberof PageBouncedRecipients
+     */
+    content?: Array<BounceRecipient>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedRecipients
+     */
+    number?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedRecipients
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {Pageable}
+     * @memberof PageBouncedRecipients
+     */
+    pageable?: Pageable;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedRecipients
+     */
+    size?: number;
+    /**
+     *
+     * @type {Sort}
+     * @memberof PageBouncedRecipients
+     */
+    sort?: Sort;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedRecipients
+     */
+    totalElements?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedRecipients
      */
     totalPages?: number;
 }
@@ -6935,6 +7216,180 @@ export declare class AttachmentControllerApi extends BaseAPI {
      * @memberof AttachmentControllerApi
      */
     uploadMultipartForm(file: any, contentType?: string, contentTypeHeader?: string, filename?: string, xFilename?: string, options?: any): Promise<string[]>;
+}
+/**
+ * BounceControllerApi - fetch parameter creator
+ * @export
+ */
+export declare const BounceControllerApiFetchParamCreator: (configuration?: Configuration) => {
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced email to fetch
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail(id: string, options?: any): FetchArgs;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail1(id: string, options?: any): FetchArgs;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get paginated list of bounced emails.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    /**
+     * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
+     * @summary Get paginated list of bounced recipients.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+};
+/**
+ * BounceControllerApi - functional programming interface
+ * @export
+ */
+export declare const BounceControllerApiFp: (configuration?: Configuration) => {
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced email to fetch
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail1(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get paginated list of bounced emails.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
+     * @summary Get paginated list of bounced recipients.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+};
+/**
+ * BounceControllerApi - factory interface
+ * @export
+ */
+export declare const BounceControllerApiFactory: (configuration?: Configuration, fetch?: FetchAPI, basePath?: string) => {
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced email to fetch
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail(id: string, options?: any): Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmail1(id: string, options?: any): Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get paginated list of bounced emails.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    /**
+     * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
+     * @summary Get paginated list of bounced recipients.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+};
+/**
+ * BounceControllerApi - object-oriented interface
+ * @export
+ * @class BounceControllerApi
+ * @extends {BaseAPI}
+ */
+export declare class BounceControllerApi extends BaseAPI {
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced email to fetch
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    getBouncedEmail(id: string, options?: any): Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    getBouncedEmail1(id: string, options?: any): Promise<Response>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get paginated list of bounced emails.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    /**
+     * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
+     * @summary Get paginated list of bounced recipients.
+     * @param {number} [page] Optional page index
+     * @param {number} [size] Optional page size
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
 }
 /**
  * BulkActionsControllerApi - fetch parameter creator
@@ -11177,6 +11632,14 @@ export declare const SentEmailsControllerApiFetchParamCreator: (configuration?: 
     getSentEmail(id: string, options?: any): FetchArgs;
     /**
      *
+     * @summary Get sent email HTML content
+     * @param {string} id id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSentEmailHTMLContent(id: string, options?: any): FetchArgs;
+    /**
+     *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
@@ -11238,6 +11701,14 @@ export declare const SentEmailsControllerApiFp: (configuration?: Configuration) 
     getSentEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<SentEmailDto>;
     /**
      *
+     * @summary Get sent email HTML content
+     * @param {string} id id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSentEmailHTMLContent(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<string>;
+    /**
+     *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
@@ -11297,6 +11768,14 @@ export declare const SentEmailsControllerApiFactory: (configuration?: Configurat
      * @throws {RequiredError}
      */
     getSentEmail(id: string, options?: any): Promise<SentEmailDto>;
+    /**
+     *
+     * @summary Get sent email HTML content
+     * @param {string} id id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getSentEmailHTMLContent(id: string, options?: any): Promise<string>;
     /**
      *
      * @summary Get all tracking pixels for a sent email in paginated form
@@ -11362,6 +11841,15 @@ export declare class SentEmailsControllerApi extends BaseAPI {
      * @memberof SentEmailsControllerApi
      */
     getSentEmail(id: string, options?: any): Promise<SentEmailDto>;
+    /**
+     *
+     * @summary Get sent email HTML content
+     * @param {string} id id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SentEmailsControllerApi
+     */
+    getSentEmailHTMLContent(id: string, options?: any): Promise<string>;
     /**
      *
      * @summary Get all tracking pixels for a sent email in paginated form

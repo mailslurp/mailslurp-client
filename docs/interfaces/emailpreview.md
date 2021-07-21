@@ -34,7 +34,7 @@ Preview of an email message. For full message (including body and attachments) c
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:1877](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1877)*
+*Defined in [src/generated/api.ts:2015](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2015)*
 
 List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1883](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1883)*
+*Defined in [src/generated/api.ts:2021](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2021)*
 
 List of `BCC` recipients email was addressed to
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:1889](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1889)*
+*Defined in [src/generated/api.ts:2027](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2027)*
 
 List of `CC` recipients email was addressed to
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1895](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1895)*
+*Defined in [src/generated/api.ts:2033](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2033)*
 
 When was the email received by MailSlurp
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:1901](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1901)*
+*Defined in [src/generated/api.ts:2039](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2039)*
 
 Who the email was sent from
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:1907](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1907)*
+*Defined in [src/generated/api.ts:2045](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2045)*
 
 ID of the email entity
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **read**: boolean
 
-*Defined in [src/generated/api.ts:1913](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1913)*
+*Defined in [src/generated/api.ts:2051](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2051)*
 
 Read flag. Has the email ever been viewed in the dashboard or fetched via the API? If so the email is marked as read.
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:1919](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1919)*
+*Defined in [src/generated/api.ts:2057](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2057)*
 
 The subject line of the email message
 
@@ -130,7 +130,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:1925](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L1925)*
+*Defined in [src/generated/api.ts:2063](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2063)*
 
 List of `To` recipients that email was addressed to
 

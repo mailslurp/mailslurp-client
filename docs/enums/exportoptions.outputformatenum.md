@@ -19,7 +19,7 @@
 
 •  **DEFAULT**:  = \<any>'CSV\_DEFAULT'
 
-*Defined in [src/generated/api.ts:2230](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L2230)*
+*Defined in [src/generated/api.ts:2368](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2368)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **EXCEL**:  = \<any>'CSV\_EXCEL'
 
-*Defined in [src/generated/api.ts:2231](https://github.com/mailslurp/mailslurp-client/blob/730b817/src/generated/api.ts#L2231)*
+*Defined in [src/generated/api.ts:2369](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L2369)*
