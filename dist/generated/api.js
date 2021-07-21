@@ -2632,40 +2632,6 @@ var BounceControllerApiFetchParamCreator = function (configuration) {
         },
         /**
          * Bounced emails are email you have sent that were rejected by a recipient
-         * @summary Get a bounced email.
-         * @param {string} id ID of the bounced recipient
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getBouncedEmail1: function (id, options) {
-            if (options === void 0) { options = {}; }
-            // verify required parameter 'id' is not null or undefined
-            if (id === null || id === undefined) {
-                throw new RequiredError('id', 'Required parameter id was null or undefined when calling getBouncedEmail1.');
-            }
-            var localVarPath = "/bounce/recipients/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
-            var localVarUrlObj = url.parse(localVarPath, true);
-            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
-            var localVarHeaderParameter = {};
-            var localVarQueryParameter = {};
-            // authentication API_KEY required
-            if (configuration && configuration.apiKey) {
-                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey('x-api-key')
-                    : configuration.apiKey;
-                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
-            }
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Bounced emails are email you have sent that were rejected by a recipient
          * @summary Get paginated list of bounced emails.
          * @param {number} [page] Optional page index
          * @param {number} [size] Optional page size
@@ -2695,6 +2661,40 @@ var BounceControllerApiFetchParamCreator = function (configuration) {
             }
             if (sort !== undefined) {
                 localVarQueryParameter['sort'] = sort;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Bounced emails are email you have sent that were rejected by a recipient
+         * @summary Get a bounced email.
+         * @param {string} id ID of the bounced recipient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBouncedRecipient: function (id, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling getBouncedRecipient.');
+            }
+            var localVarPath = "/bounce/recipients/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(id)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -2769,29 +2769,7 @@ var BounceControllerApiFp = function (configuration) {
                 if (basePath === void 0) { basePath = BASE_PATH; }
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
-                    }
-                    else {
-                        throw response;
-                    }
-                });
-            };
-        },
-        /**
-         * Bounced emails are email you have sent that were rejected by a recipient
-         * @summary Get a bounced email.
-         * @param {string} id ID of the bounced recipient
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getBouncedEmail1: function (id, options) {
-            var localVarFetchArgs = exports.BounceControllerApiFetchParamCreator(configuration).getBouncedEmail1(id, options);
-            return function (fetch, basePath) {
-                if (fetch === void 0) { fetch = portableFetch; }
-                if (basePath === void 0) { basePath = BASE_PATH; }
-                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
-                    if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
                     }
                     else {
                         throw response;
@@ -2815,7 +2793,29 @@ var BounceControllerApiFp = function (configuration) {
                 if (basePath === void 0) { basePath = BASE_PATH; }
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Bounced emails are email you have sent that were rejected by a recipient
+         * @summary Get a bounced email.
+         * @param {string} id ID of the bounced recipient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBouncedRecipient: function (id, options) {
+            var localVarFetchArgs = exports.BounceControllerApiFetchParamCreator(configuration).getBouncedRecipient(id, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
                     }
                     else {
                         throw response;
@@ -2839,7 +2839,7 @@ var BounceControllerApiFp = function (configuration) {
                 if (basePath === void 0) { basePath = BASE_PATH; }
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
                     if (response.status >= 200 && response.status < 300) {
-                        return response;
+                        return response.json();
                     }
                     else {
                         throw response;
@@ -2868,16 +2868,6 @@ var BounceControllerApiFactory = function (configuration, fetch, basePath) {
         },
         /**
          * Bounced emails are email you have sent that were rejected by a recipient
-         * @summary Get a bounced email.
-         * @param {string} id ID of the bounced recipient
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getBouncedEmail1: function (id, options) {
-            return exports.BounceControllerApiFp(configuration).getBouncedEmail1(id, options)(fetch, basePath);
-        },
-        /**
-         * Bounced emails are email you have sent that were rejected by a recipient
          * @summary Get paginated list of bounced emails.
          * @param {number} [page] Optional page index
          * @param {number} [size] Optional page size
@@ -2887,6 +2877,16 @@ var BounceControllerApiFactory = function (configuration, fetch, basePath) {
          */
         getBouncedEmails: function (page, size, sort, options) {
             return exports.BounceControllerApiFp(configuration).getBouncedEmails(page, size, sort, options)(fetch, basePath);
+        },
+        /**
+         * Bounced emails are email you have sent that were rejected by a recipient
+         * @summary Get a bounced email.
+         * @param {string} id ID of the bounced recipient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getBouncedRecipient: function (id, options) {
+            return exports.BounceControllerApiFp(configuration).getBouncedRecipient(id, options)(fetch, basePath);
         },
         /**
          * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
@@ -2927,17 +2927,6 @@ var BounceControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
-     * @summary Get a bounced email.
-     * @param {string} id ID of the bounced recipient
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BounceControllerApi
-     */
-    BounceControllerApi.prototype.getBouncedEmail1 = function (id, options) {
-        return exports.BounceControllerApiFp(this.configuration).getBouncedEmail1(id, options)(this.fetch, this.basePath);
-    };
-    /**
-     * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
      * @param {number} [page] Optional page index
      * @param {number} [size] Optional page size
@@ -2948,6 +2937,17 @@ var BounceControllerApi = /** @class */ (function (_super) {
      */
     BounceControllerApi.prototype.getBouncedEmails = function (page, size, sort, options) {
         return exports.BounceControllerApiFp(this.configuration).getBouncedEmails(page, size, sort, options)(this.fetch, this.basePath);
+    };
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    BounceControllerApi.prototype.getBouncedRecipient = function (id, options) {
+        return exports.BounceControllerApiFp(this.configuration).getBouncedRecipient(id, options)(this.fetch, this.basePath);
     };
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.

@@ -25,7 +25,7 @@
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:1129](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L1129)*
+*Defined in [src/generated/api.ts:1129](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L1129)*
 
 **`memberof`** CreateTrackingPixelOptions
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **recipient**: string
 
-*Defined in [src/generated/api.ts:1135](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L1135)*
+*Defined in [src/generated/api.ts:1135](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L1135)*
 
 **`memberof`** CreateTrackingPixelOptions

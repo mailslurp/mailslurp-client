@@ -34,7 +34,7 @@
 
 • `Optional` **bounceMta**: string
 
-*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L427)*
+*Defined in [src/generated/api.ts:427](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L427)*
 
 **`memberof`** Bounce
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **bounceRecipients**: Array\<string>
 
-*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L433)*
+*Defined in [src/generated/api.ts:433](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L433)*
 
 **`memberof`** Bounce
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **bounceSubType**: string
 
-*Defined in [src/generated/api.ts:439](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L439)*
+*Defined in [src/generated/api.ts:439](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L439)*
 
 **`memberof`** Bounce
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **bounceType**: string
 
-*Defined in [src/generated/api.ts:445](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L445)*
+*Defined in [src/generated/api.ts:445](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L445)*
 
 **`memberof`** Bounce
 
@@ -74,7 +74,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:451](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L451)*
+*Defined in [src/generated/api.ts:451](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L451)*
 
 **`memberof`** Bounce
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:457](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L457)*
+*Defined in [src/generated/api.ts:457](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L457)*
 
 **`memberof`** Bounce
 
@@ -94,7 +94,7 @@ ___
 
 •  **notificationType**: string
 
-*Defined in [src/generated/api.ts:463](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L463)*
+*Defined in [src/generated/api.ts:463](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L463)*
 
 **`memberof`** Bounce
 
@@ -104,7 +104,7 @@ ___
 
 •  **sender**: string
 
-*Defined in [src/generated/api.ts:469](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L469)*
+*Defined in [src/generated/api.ts:469](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L469)*
 
 **`memberof`** Bounce
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **sentToRecipients**: Array\<string>
 
-*Defined in [src/generated/api.ts:475](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L475)*
+*Defined in [src/generated/api.ts:475](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L475)*
 
 **`memberof`** Bounce
 
@@ -124,7 +124,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:481](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L481)*
+*Defined in [src/generated/api.ts:481](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L481)*
 
 **`memberof`** Bounce
 
@@ -134,6 +134,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:487](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L487)*
+*Defined in [src/generated/api.ts:487](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L487)*
 
 **`memberof`** Bounce

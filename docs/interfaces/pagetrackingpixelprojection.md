@@ -36,7 +36,7 @@ Paginated TrackingPixel results. Page index starts at zero. Projection results m
 
 • `Optional` **content**: Array\<[TrackingPixelProjection](trackingpixelprojection.md)>
 
-*Defined in [src/generated/api.ts:4498](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4498)*
+*Defined in [src/generated/api.ts:4498](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4498)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:4504](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4504)*
+*Defined in [src/generated/api.ts:4504](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4504)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:4510](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4510)*
+*Defined in [src/generated/api.ts:4510](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4510)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:4516](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4516)*
+*Defined in [src/generated/api.ts:4516](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4516)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:4522](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4522)*
+*Defined in [src/generated/api.ts:4522](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4522)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:4528](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4528)*
+*Defined in [src/generated/api.ts:4528](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4528)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:4534](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4534)*
+*Defined in [src/generated/api.ts:4534](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4534)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:4540](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4540)*
+*Defined in [src/generated/api.ts:4540](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4540)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:4546](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4546)*
+*Defined in [src/generated/api.ts:4546](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4546)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:4552](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4552)*
+*Defined in [src/generated/api.ts:4552](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4552)*
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:4558](https://github.com/mailslurp/mailslurp-client/blob/2c659a7/src/generated/api.ts#L4558)*
+*Defined in [src/generated/api.ts:4558](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L4558)*
 
 **`memberof`** PageTrackingPixelProjection

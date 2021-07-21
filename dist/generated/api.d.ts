@@ -7232,14 +7232,6 @@ export declare const BounceControllerApiFetchParamCreator: (configuration?: Conf
     getBouncedEmail(id: string, options?: any): FetchArgs;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
-     * @summary Get a bounced email.
-     * @param {string} id ID of the bounced recipient
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getBouncedEmail1(id: string, options?: any): FetchArgs;
-    /**
-     * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
      * @param {number} [page] Optional page index
      * @param {number} [size] Optional page size
@@ -7248,6 +7240,14 @@ export declare const BounceControllerApiFetchParamCreator: (configuration?: Conf
      * @throws {RequiredError}
      */
     getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipient(id: string, options?: any): FetchArgs;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7271,15 +7271,7 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
-    /**
-     * Bounced emails are email you have sent that were rejected by a recipient
-     * @summary Get a bounced email.
-     * @param {string} id ID of the bounced recipient
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getBouncedEmail1(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    getBouncedEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Bounce>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7289,7 +7281,15 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedEmail>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipient(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<BounceRecipient>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7299,7 +7299,7 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedRecipients>;
 };
 /**
  * BounceControllerApi - factory interface
@@ -7313,15 +7313,7 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmail(id: string, options?: any): Promise<Response>;
-    /**
-     * Bounced emails are email you have sent that were rejected by a recipient
-     * @summary Get a bounced email.
-     * @param {string} id ID of the bounced recipient
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    getBouncedEmail1(id: string, options?: any): Promise<Response>;
+    getBouncedEmail(id: string, options?: any): Promise<Bounce>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7331,7 +7323,15 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getBouncedRecipient(id: string, options?: any): Promise<BounceRecipient>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7341,7 +7341,7 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
 };
 /**
  * BounceControllerApi - object-oriented interface
@@ -7358,16 +7358,7 @@ export declare class BounceControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedEmail(id: string, options?: any): Promise<Response>;
-    /**
-     * Bounced emails are email you have sent that were rejected by a recipient
-     * @summary Get a bounced email.
-     * @param {string} id ID of the bounced recipient
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BounceControllerApi
-     */
-    getBouncedEmail1(id: string, options?: any): Promise<Response>;
+    getBouncedEmail(id: string, options?: any): Promise<Bounce>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7378,7 +7369,16 @@ export declare class BounceControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
+    /**
+     * Bounced emails are email you have sent that were rejected by a recipient
+     * @summary Get a bounced email.
+     * @param {string} id ID of the bounced recipient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BounceControllerApi
+     */
+    getBouncedRecipient(id: string, options?: any): Promise<BounceRecipient>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7389,7 +7389,7 @@ export declare class BounceControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Response>;
+    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
 }
 /**
  * BulkActionsControllerApi - fetch parameter creator
