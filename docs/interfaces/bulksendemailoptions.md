@@ -27,7 +27,7 @@ Options for bulk sending an email from multiple addresses. See regular `sendEmai
 
 • `Optional` **inboxIds**: Array\<string>
 
-*Defined in [src/generated/api.ts:565](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L565)*
+*Defined in [src/generated/api.ts:591](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L591)*
 
 Inboxes to send the email from
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **sendEmailOptions**: [SendEmailOptions](../modules/sendemailoptions.md)
 
-*Defined in [src/generated/api.ts:571](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L571)*
+*Defined in [src/generated/api.ts:597](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L597)*
 
 Options for the email to be sent
 

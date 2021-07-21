@@ -26,6 +26,6 @@ Results of query on domain name servers
 
 •  **results**: Array\<[DNSLookupResult](../modules/dnslookupresult.md)>
 
-*Defined in [src/generated/api.ts:1461](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L1461)*
+*Defined in [src/generated/api.ts:1487](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L1487)*
 
 **`memberof`** DNSLookupResults

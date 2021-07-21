@@ -45,7 +45,7 @@ InboxForwarderControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -65,7 +65,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L61)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -93,7 +93,7 @@ ___
 
 ▸ **createNewInboxForwarder**(`createInboxForwarderOptions`: [CreateInboxForwarderOptions](../modules/createinboxforwarderoptions.md), `inboxId?`: string, `options?`: any): Promise\<[InboxForwarderDto](../modules/inboxforwarderdto.md)>
 
-*Defined in [src/generated/api.ts:22217](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22217)*
+*Defined in [src/generated/api.ts:22246](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22246)*
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **deleteInboxForwarder**(`id`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:22239](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22239)*
+*Defined in [src/generated/api.ts:22268](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22268)*
 
 Delete inbox forwarder
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **deleteInboxForwarders**(`inboxId?`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:22253](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22253)*
+*Defined in [src/generated/api.ts:22282](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22282)*
 
 Delete inbox forwarders. Accepts optional inboxId filter.
 
@@ -169,7 +169,7 @@ ___
 
 ▸ **getInboxForwarder**(`id`: string, `options?`: any): Promise\<[InboxForwarderDto](../modules/inboxforwarderdto.md)>
 
-*Defined in [src/generated/api.ts:22267](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22267)*
+*Defined in [src/generated/api.ts:22296](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22296)*
 
 Get inbox ruleset
 
@@ -194,7 +194,7 @@ ___
 
 ▸ **getInboxForwarders**(`inboxId?`: string, `page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageInboxForwarderDto](../interfaces/pageinboxforwarderdto.md)>
 
-*Defined in [src/generated/api.ts:22285](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22285)*
+*Defined in [src/generated/api.ts:22314](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22314)*
 
 List all forwarders attached to an inbox
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **testInboxForwarder**(`id`: string, `inboxForwarderTestOptions`: [InboxForwarderTestOptions](../interfaces/inboxforwardertestoptions.md), `options?`: any): Promise\<[InboxForwarderTestResult](../interfaces/inboxforwardertestresult.md)>
 
-*Defined in [src/generated/api.ts:22310](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22310)*
+*Defined in [src/generated/api.ts:22339](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22339)*
 
 Test an inbox forwarder
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **testInboxForwardersForInbox**(`inboxForwarderTestOptions`: [InboxForwarderTestOptions](../interfaces/inboxforwardertestoptions.md), `inboxId`: string, `options?`: any): Promise\<[InboxForwarderTestResult](../interfaces/inboxforwardertestresult.md)>
 
-*Defined in [src/generated/api.ts:22332](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22332)*
+*Defined in [src/generated/api.ts:22361](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22361)*
 
 Test inbox forwarders for inbox
 
@@ -275,7 +275,7 @@ ___
 
 ▸ **testNewInboxForwarder**(`testNewInboxForwarderOptions`: [TestNewInboxForwarderOptions](../interfaces/testnewinboxforwarderoptions.md), `options?`: any): Promise\<[InboxForwarderTestResult](../interfaces/inboxforwardertestresult.md)>
 
-*Defined in [src/generated/api.ts:22354](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L22354)*
+*Defined in [src/generated/api.ts:22383](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L22383)*
 
 Test new inbox forwarder
 

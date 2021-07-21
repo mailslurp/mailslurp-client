@@ -28,7 +28,7 @@ HTML Validation Results
 
 • `Optional` **errors**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:2512](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2512)*
+*Defined in [src/generated/api.ts:2538](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2538)*
 
 Optional errors resulting from HTML validation
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **isValid**: boolean
 
-*Defined in [src/generated/api.ts:2518](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2518)*
+*Defined in [src/generated/api.ts:2544](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2544)*
 
 Is HTML validation result valid
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **warnings**: Array\<[ValidationMessage](validationmessage.md)>
 
-*Defined in [src/generated/api.ts:2524](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2524)*
+*Defined in [src/generated/api.ts:2550](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2550)*
 
 Optional warnings resulting from HTML validation
 

@@ -25,7 +25,7 @@
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:919](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L919)*
+*Defined in [src/generated/api.ts:945](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L945)*
 
 **`memberof`** CreateGroupOptions
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in [src/generated/api.ts:913](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L913)*
+*Defined in [src/generated/api.ts:939](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L939)*
 
 **`memberof`** CreateGroupOptions

@@ -36,7 +36,7 @@ Paginated inbox forwarder results. Page index starts at zero. Projection results
 
 • `Optional` **content**: Array\<[InboxForwarderDto](../modules/inboxforwarderdto.md)>
 
-*Defined in [src/generated/api.ts:3906](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3906)*
+*Defined in [src/generated/api.ts:3932](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3932)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3912](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3912)*
+*Defined in [src/generated/api.ts:3938](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3938)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3918](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3918)*
+*Defined in [src/generated/api.ts:3944](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3944)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3924](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3924)*
+*Defined in [src/generated/api.ts:3950](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3950)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3930](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3930)*
+*Defined in [src/generated/api.ts:3956](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3956)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3936](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3936)*
+*Defined in [src/generated/api.ts:3962](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3962)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3942](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3942)*
+*Defined in [src/generated/api.ts:3968](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3968)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3948](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3948)*
+*Defined in [src/generated/api.ts:3974](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3974)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3954](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3954)*
+*Defined in [src/generated/api.ts:3980](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3980)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3960](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3960)*
+*Defined in [src/generated/api.ts:3986](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3986)*
 
 **`memberof`** PageInboxForwarderDto
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3966](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3966)*
+*Defined in [src/generated/api.ts:3992](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3992)*
 
 **`memberof`** PageInboxForwarderDto

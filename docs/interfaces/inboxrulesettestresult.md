@@ -25,7 +25,7 @@
 
 •  **matches**: boolean
 
-*Defined in [src/generated/api.ts:2914](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2914)*
+*Defined in [src/generated/api.ts:2940](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2940)*
 
 **`memberof`** InboxRulesetTestResult
 
@@ -35,7 +35,7 @@ ___
 
 • `Optional` **rulesetMatches**: { [key:string]: boolean;  }
 
-*Defined in [src/generated/api.ts:2920](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2920)*
+*Defined in [src/generated/api.ts:2946](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2946)*
 
 Map of inbox ruleset ID to boolean of if target matches
 

@@ -41,7 +41,7 @@ MailServerControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -61,7 +61,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L61)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **describeMailServerDomain**(`describeOptions`: [DescribeDomainOptions](../interfaces/describedomainoptions.md), `options?`: any): Promise\<[DescribeMailServerDomainResult](../interfaces/describemailserverdomainresult.md)>
 
-*Defined in [src/generated/api.ts:24011](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L24011)*
+*Defined in [src/generated/api.ts:24040](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L24040)*
 
 **`summary`** Get DNS Mail Server records for a domain
 
@@ -112,7 +112,7 @@ ___
 
 ▸ **getDnsLookup**(`dnsLookupOptions`: [DNSLookupOptions](../modules/dnslookupoptions.md), `options?`: any): Promise\<[DNSLookupResults](../interfaces/dnslookupresults.md)>
 
-*Defined in [src/generated/api.ts:24031](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L24031)*
+*Defined in [src/generated/api.ts:24060](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L24060)*
 
 **`summary`** Lookup DNS records for a domain
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **getIpAddress**(`name`: string, `options?`: any): Promise\<[IPAddressResult](../interfaces/ipaddressresult.md)>
 
-*Defined in [src/generated/api.ts:24046](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L24046)*
+*Defined in [src/generated/api.ts:24075](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L24075)*
 
 **`summary`** Get IP address for a domain
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **verifyEmailAddress**(`verifyOptions`: [VerifyEmailAddressOptions](../interfaces/verifyemailaddressoptions.md), `options?`: any): Promise\<[EmailVerificationResult](../interfaces/emailverificationresult.md)>
 
-*Defined in [src/generated/api.ts:24061](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L24061)*
+*Defined in [src/generated/api.ts:24090](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L24090)*
 
 **`summary`** Verify the existence of an email address at a given mail server.
 

@@ -387,79 +387,6 @@ export interface BasicAuthOptions {
 /**
  *
  * @export
- * @interface Bounce
- */
-export interface Bounce {
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    bounceMta?: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof Bounce
-     */
-    bounceRecipients?: Array<string>;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    bounceSubType?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    bounceType?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof Bounce
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    notificationType: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    sender: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof Bounce
-     */
-    sentToRecipients?: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof Bounce
-     */
-    updatedAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof Bounce
-     */
-    userId: string;
-}
-/**
- *
- * @export
  * @interface BounceProjection
  */
 export interface BounceProjection {
@@ -516,6 +443,104 @@ export interface BounceRecipient {
      *
      * @type {string}
      * @memberof BounceRecipient
+     */
+    userId: string;
+}
+/**
+ * Bounced email
+ * @export
+ * @interface BouncedEmailDto
+ */
+export interface BouncedEmailDto {
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceMta?: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof BouncedEmailDto
+     */
+    bounceRecipients?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceSubType?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    bounceType?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof BouncedEmailDto
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    notificationType: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    sender: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof BouncedEmailDto
+     */
+    sentToRecipients?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    userId: string;
+}
+/**
+ * Bounced recipient
+ * @export
+ * @interface BouncedRecipientDto
+ */
+export interface BouncedRecipientDto {
+    /**
+     *
+     * @type {Date}
+     * @memberof BouncedRecipientDto
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
+    recipient: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
      */
     userId: string;
 }
@@ -7271,7 +7296,7 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Bounce>;
+    getBouncedEmail(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<BouncedEmailDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7289,7 +7314,7 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipient(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<BounceRecipient>;
+    getBouncedRecipient(id: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<BouncedRecipientDto>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7313,7 +7338,7 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmail(id: string, options?: any): Promise<Bounce>;
+    getBouncedEmail(id: string, options?: any): Promise<BouncedEmailDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7331,7 +7356,7 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipient(id: string, options?: any): Promise<BounceRecipient>;
+    getBouncedRecipient(id: string, options?: any): Promise<BouncedRecipientDto>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
@@ -7358,7 +7383,7 @@ export declare class BounceControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedEmail(id: string, options?: any): Promise<Bounce>;
+    getBouncedEmail(id: string, options?: any): Promise<BouncedEmailDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
@@ -7378,7 +7403,7 @@ export declare class BounceControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedRecipient(id: string, options?: any): Promise<BounceRecipient>;
+    getBouncedRecipient(id: string, options?: any): Promise<BouncedRecipientDto>;
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.

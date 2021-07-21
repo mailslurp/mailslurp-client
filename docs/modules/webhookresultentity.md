@@ -39,7 +39,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:6471](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6471)*
+*Defined in [src/generated/api.ts:6497](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6497)*
 
 **`memberof`** WebhookResultEntity
 
@@ -49,7 +49,7 @@ ___
 
 •  **httpMethod**: [HttpMethodEnum](../enums/webhookresultentity.httpmethodenum.md)
 
-*Defined in [src/generated/api.ts:6477](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6477)*
+*Defined in [src/generated/api.ts:6503](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6503)*
 
 **`memberof`** WebhookResultEntity
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:6483](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6483)*
+*Defined in [src/generated/api.ts:6509](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6509)*
 
 **`memberof`** WebhookResultEntity
 
@@ -69,7 +69,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:6489](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6489)*
+*Defined in [src/generated/api.ts:6515](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6515)*
 
 **`memberof`** WebhookResultEntity
 
@@ -79,7 +79,7 @@ ___
 
 •  **messageId**: string
 
-*Defined in [src/generated/api.ts:6495](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6495)*
+*Defined in [src/generated/api.ts:6521](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6521)*
 
 **`memberof`** WebhookResultEntity
 
@@ -89,7 +89,7 @@ ___
 
 • `Optional` **responseBodyExtract**: string
 
-*Defined in [src/generated/api.ts:6501](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6501)*
+*Defined in [src/generated/api.ts:6527](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6527)*
 
 **`memberof`** WebhookResultEntity
 
@@ -99,7 +99,7 @@ ___
 
 • `Optional` **responseStatus**: number
 
-*Defined in [src/generated/api.ts:6507](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6507)*
+*Defined in [src/generated/api.ts:6533](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6533)*
 
 **`memberof`** WebhookResultEntity
 
@@ -109,7 +109,7 @@ ___
 
 •  **responseTimeMillis**: number
 
-*Defined in [src/generated/api.ts:6513](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6513)*
+*Defined in [src/generated/api.ts:6539](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6539)*
 
 **`memberof`** WebhookResultEntity
 
@@ -119,7 +119,7 @@ ___
 
 • `Optional` **resultType**: [ResultTypeEnum](../enums/webhookresultentity.resulttypeenum.md)
 
-*Defined in [src/generated/api.ts:6519](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6519)*
+*Defined in [src/generated/api.ts:6545](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6545)*
 
 **`memberof`** WebhookResultEntity
 
@@ -129,7 +129,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:6525](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6525)*
+*Defined in [src/generated/api.ts:6551](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6551)*
 
 **`memberof`** WebhookResultEntity
 
@@ -139,7 +139,7 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:6531](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6531)*
+*Defined in [src/generated/api.ts:6557](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6557)*
 
 **`memberof`** WebhookResultEntity
 
@@ -149,7 +149,7 @@ ___
 
 •  **webhookEvent**: [WebhookEventEnum](../enums/webhookresultentity.webhookeventenum.md)
 
-*Defined in [src/generated/api.ts:6537](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6537)*
+*Defined in [src/generated/api.ts:6563](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6563)*
 
 **`memberof`** WebhookResultEntity
 
@@ -159,7 +159,7 @@ ___
 
 •  **webhookId**: string
 
-*Defined in [src/generated/api.ts:6543](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6543)*
+*Defined in [src/generated/api.ts:6569](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6569)*
 
 **`memberof`** WebhookResultEntity
 
@@ -169,6 +169,6 @@ ___
 
 •  **webhookUrl**: string
 
-*Defined in [src/generated/api.ts:6549](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L6549)*
+*Defined in [src/generated/api.ts:6575](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6575)*
 
 **`memberof`** WebhookResultEntity

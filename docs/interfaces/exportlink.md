@@ -26,6 +26,6 @@ Export download link
 
 •  **downloadLink**: string
 
-*Defined in [src/generated/api.ts:2311](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2311)*
+*Defined in [src/generated/api.ts:2337](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2337)*
 
 **`memberof`** ExportLink

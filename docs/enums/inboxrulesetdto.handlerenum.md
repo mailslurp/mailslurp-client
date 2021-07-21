@@ -18,4 +18,4 @@
 
 •  **EXCEPTION**:  = \<any>'EXCEPTION'
 
-*Defined in [src/generated/api.ts:2877](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L2877)*
+*Defined in [src/generated/api.ts:2903](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2903)*

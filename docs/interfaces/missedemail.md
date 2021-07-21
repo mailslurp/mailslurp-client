@@ -35,7 +35,7 @@
 
 •  **attachmentCount**: number
 
-*Defined in [src/generated/api.ts:3013](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3013)*
+*Defined in [src/generated/api.ts:3039](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3039)*
 
 **`memberof`** MissedEmail
 
@@ -45,7 +45,7 @@ ___
 
 •  **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:3019](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3019)*
+*Defined in [src/generated/api.ts:3045](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3045)*
 
 **`memberof`** MissedEmail
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **bodyExcerpt**: string
 
-*Defined in [src/generated/api.ts:3025](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3025)*
+*Defined in [src/generated/api.ts:3051](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3051)*
 
 **`memberof`** MissedEmail
 
@@ -65,7 +65,7 @@ ___
 
 •  **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:3031](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3031)*
+*Defined in [src/generated/api.ts:3057](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3057)*
 
 **`memberof`** MissedEmail
 
@@ -75,7 +75,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:3037](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3037)*
+*Defined in [src/generated/api.ts:3063](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3063)*
 
 **`memberof`** MissedEmail
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:3043](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3043)*
+*Defined in [src/generated/api.ts:3069](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3069)*
 
 **`memberof`** MissedEmail
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:3049](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3049)*
+*Defined in [src/generated/api.ts:3075](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3075)*
 
 **`memberof`** MissedEmail
 
@@ -105,7 +105,7 @@ ___
 
 •  **inboxIds**: Array\<string>
 
-*Defined in [src/generated/api.ts:3055](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3055)*
+*Defined in [src/generated/api.ts:3081](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3081)*
 
 **`memberof`** MissedEmail
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:3061](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3061)*
+*Defined in [src/generated/api.ts:3087](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3087)*
 
 **`memberof`** MissedEmail
 
@@ -125,7 +125,7 @@ ___
 
 •  **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:3067](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3067)*
+*Defined in [src/generated/api.ts:3093](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3093)*
 
 **`memberof`** MissedEmail
 
@@ -135,7 +135,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:3073](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3073)*
+*Defined in [src/generated/api.ts:3099](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3099)*
 
 **`memberof`** MissedEmail
 
@@ -145,6 +145,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:3079](https://github.com/mailslurp/mailslurp-client/blob/3871a9e/src/generated/api.ts#L3079)*
+*Defined in [src/generated/api.ts:3105](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3105)*
 
 **`memberof`** MissedEmail
