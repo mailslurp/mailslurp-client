@@ -18,4 +18,4 @@
 
 •  **HASATTACHMENTS**:  = \<any>'HAS\_ATTACHMENTS'
 
-*Defined in [src/generated/api.ts:637](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L637)*
+*Defined in [src/generated/api.ts:693](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L693)*

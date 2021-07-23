@@ -28,9 +28,11 @@ AttachmentControllerApi - object-oriented interface
 
 ### Methods
 
+* [deleteAllAttachments](attachmentcontrollerapi.md#deleteallattachments)
 * [deleteAttachment](attachmentcontrollerapi.md#deleteattachment)
 * [downloadAttachmentAsBase64Encoded](attachmentcontrollerapi.md#downloadattachmentasbase64encoded)
 * [downloadAttachmentAsBytes](attachmentcontrollerapi.md#downloadattachmentasbytes)
+* [getAttachment](attachmentcontrollerapi.md#getattachment)
 * [getAttachmentInfo](attachmentcontrollerapi.md#getattachmentinfo)
 * [getAttachments](attachmentcontrollerapi.md#getattachments)
 * [uploadAttachment](attachmentcontrollerapi.md#uploadattachment)
@@ -45,7 +47,7 @@ AttachmentControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -65,7 +67,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L61)*
 
 ___
 
@@ -75,7 +77,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L57)*
 
 ___
 
@@ -85,15 +87,37 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L62)*
 
 ## Methods
+
+### deleteAllAttachments
+
+▸ **deleteAllAttachments**(`options?`: any): Promise\<Response>
+
+*Defined in [src/generated/api.ts:9279](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9279)*
+
+**`summary`** Delete all attachments
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`options?` | any |
+
+**Returns:** Promise\<Response>
+
+___
 
 ### deleteAttachment
 
 ▸ **deleteAttachment**(`attachmentId`: string, `options?`: any): Promise\<Response>
 
-*Defined in [src/generated/api.ts:9043](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9043)*
+*Defined in [src/generated/api.ts:9293](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9293)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 
@@ -118,7 +142,7 @@ ___
 
 ▸ **downloadAttachmentAsBase64Encoded**(`attachmentId`: string, `options?`: any): Promise\<[DownloadAttachmentDto](../interfaces/downloadattachmentdto.md)>
 
-*Defined in [src/generated/api.ts:9058](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9058)*
+*Defined in [src/generated/api.ts:9308](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9308)*
 
 Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
 
@@ -143,7 +167,7 @@ ___
 
 ▸ **downloadAttachmentAsBytes**(`attachmentId`: string, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:9078](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9078)*
+*Defined in [src/generated/api.ts:9328](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9328)*
 
 Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
 
@@ -164,11 +188,36 @@ Name | Type | Description |
 
 ___
 
+### getAttachment
+
+▸ **getAttachment**(`attachmentId`: string, `options?`: any): Promise\<[AttachmentEntity](../interfaces/attachmententity.md)>
+
+*Defined in [src/generated/api.ts:9345](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9345)*
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+
+**`summary`** Get an attachment entity
+
+**`throws`** {RequiredError}
+
+**`memberof`** AttachmentControllerApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`attachmentId` | string | ID of attachment |
+`options?` | any | - |
+
+**Returns:** Promise\<[AttachmentEntity](../interfaces/attachmententity.md)>
+
+___
+
 ### getAttachmentInfo
 
 ▸ **getAttachmentInfo**(`attachmentId`: string, `options?`: any): Promise\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)>
 
-*Defined in [src/generated/api.ts:9095](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9095)*
+*Defined in [src/generated/api.ts:9360](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9360)*
 
 Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
 
@@ -193,7 +242,7 @@ ___
 
 ▸ **getAttachments**(`fileNameFilter?`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageAttachmentEntity](../interfaces/pageattachmententity.md)>
 
-*Defined in [src/generated/api.ts:9113](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9113)*
+*Defined in [src/generated/api.ts:9378](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9378)*
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 
@@ -221,7 +270,7 @@ ___
 
 ▸ **uploadAttachment**(`uploadOptions`: [UploadAttachmentOptions](../interfaces/uploadattachmentoptions.md), `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:9137](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9137)*
+*Defined in [src/generated/api.ts:9402](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9402)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 
@@ -244,9 +293,9 @@ ___
 
 ### uploadAttachmentBytes
 
-▸ **uploadAttachmentBytes**(`string?`: string, `byteArray?`: string, `filename?`: string, `options?`: any): Promise\<string[]>
+▸ **uploadAttachmentBytes**(`byteArray?`: string, `contentType?`: string, `filename?`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:9157](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9157)*
+*Defined in [src/generated/api.ts:9422](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9422)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 
@@ -260,8 +309,8 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 Name | Type |
 ------ | ------ |
-`string?` | string |
 `byteArray?` | string |
+`contentType?` | string |
 `filename?` | string |
 `options?` | any |
 
@@ -273,7 +322,7 @@ ___
 
 ▸ **uploadMultipartForm**(`file`: any, `contentType?`: string, `contentTypeHeader?`: string, `filename?`: string, `xFilename?`: string, `options?`: any): Promise\<string[]>
 
-*Defined in [src/generated/api.ts:9183](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L9183)*
+*Defined in [src/generated/api.ts:9448](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L9448)*
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 

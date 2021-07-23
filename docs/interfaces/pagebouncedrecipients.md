@@ -36,7 +36,7 @@ Paginated bounced recipients. Page index starts at zero. Projection results may 
 
 • `Optional` **content**: Array\<[BounceRecipient](bouncerecipient.md)>
 
-*Defined in [src/generated/api.ts:3488](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3488)*
+*Defined in [src/generated/api.ts:3544](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3544)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3494](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3494)*
+*Defined in [src/generated/api.ts:3550](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3550)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3500](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3500)*
+*Defined in [src/generated/api.ts:3556](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3556)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3506](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3506)*
+*Defined in [src/generated/api.ts:3562](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3562)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3512](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3512)*
+*Defined in [src/generated/api.ts:3568](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3568)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3518](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3518)*
+*Defined in [src/generated/api.ts:3574](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3574)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3524](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3524)*
+*Defined in [src/generated/api.ts:3580](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3580)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3530](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3530)*
+*Defined in [src/generated/api.ts:3586](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3586)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3536](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3536)*
+*Defined in [src/generated/api.ts:3592](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3592)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3542](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3542)*
+*Defined in [src/generated/api.ts:3598](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3598)*
 
 **`memberof`** PageBouncedRecipients
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3548](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L3548)*
+*Defined in [src/generated/api.ts:3604](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3604)*
 
 **`memberof`** PageBouncedRecipients

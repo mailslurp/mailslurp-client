@@ -39,7 +39,7 @@ ExportControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -59,7 +59,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L61)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L57)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **exportEntities**(`apiKey`: string, `exportType`: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", `outputFormat`: \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\", `createdEarliestTime?`: Date, `createdOldestTime?`: Date, `excludePreviouslyExported?`: boolean, `filter?`: string, `listSeparatorToken?`: string, `options?`: any): Promise\<string>
 
-*Defined in [src/generated/api.ts:16473](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L16473)*
+*Defined in [src/generated/api.ts:16738](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L16738)*
 
 **`summary`** Export inboxes link callable via browser
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **getExportLink**(`exportOptions`: [ExportOptions](../modules/exportoptions.md), `exportType`: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", `apiKey?`: string, `options?`: any): Promise\<[ExportLink](../interfaces/exportlink.md)>
 
-*Defined in [src/generated/api.ts:16507](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L16507)*
+*Defined in [src/generated/api.ts:16772](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L16772)*
 
 **`summary`** Get export link
 

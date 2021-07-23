@@ -38,7 +38,7 @@
 
 • `Optional` **company**: string
 
-*Defined in [src/generated/api.ts:6209](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6209)*
+*Defined in [src/generated/api.ts:6265](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6265)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -48,7 +48,7 @@ ___
 
 •  **contactId**: string
 
-*Defined in [src/generated/api.ts:6215](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6215)*
+*Defined in [src/generated/api.ts:6271](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6271)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -58,7 +58,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:6221](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6221)*
+*Defined in [src/generated/api.ts:6277](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6277)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -68,7 +68,7 @@ ___
 
 •  **emailAddresses**: Array\<string>
 
-*Defined in [src/generated/api.ts:6227](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6227)*
+*Defined in [src/generated/api.ts:6283](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6283)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/webhooknewcontactpayload.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:6233](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6233)*
+*Defined in [src/generated/api.ts:6289](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6289)*
 
 Name of the event type webhook is being triggered for.
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **firstName**: string
 
-*Defined in [src/generated/api.ts:6239](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6239)*
+*Defined in [src/generated/api.ts:6295](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6295)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -100,7 +100,7 @@ ___
 
 • `Optional` **groupId**: string
 
-*Defined in [src/generated/api.ts:6245](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6245)*
+*Defined in [src/generated/api.ts:6301](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6301)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -110,7 +110,7 @@ ___
 
 • `Optional` **lastName**: string
 
-*Defined in [src/generated/api.ts:6251](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6251)*
+*Defined in [src/generated/api.ts:6307](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6307)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -120,7 +120,7 @@ ___
 
 • `Optional` **messageId**: string
 
-*Defined in [src/generated/api.ts:6257](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6257)*
+*Defined in [src/generated/api.ts:6313](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6313)*
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -132,7 +132,7 @@ ___
 
 • `Optional` **metaData**: [JsonNode](../interfaces/jsonnode.md)
 
-*Defined in [src/generated/api.ts:6263](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6263)*
+*Defined in [src/generated/api.ts:6319](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6319)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -142,7 +142,7 @@ ___
 
 • `Optional` **optOut**: boolean
 
-*Defined in [src/generated/api.ts:6269](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6269)*
+*Defined in [src/generated/api.ts:6325](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6325)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -152,7 +152,7 @@ ___
 
 • `Optional` **primaryEmailAddress**: string
 
-*Defined in [src/generated/api.ts:6275](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6275)*
+*Defined in [src/generated/api.ts:6331](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6331)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -162,7 +162,7 @@ ___
 
 •  **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:6281](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6281)*
+*Defined in [src/generated/api.ts:6337](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6337)*
 
 **`memberof`** WebhookNewContactPayload
 
@@ -172,7 +172,7 @@ ___
 
 • `Optional` **webhookId**: string
 
-*Defined in [src/generated/api.ts:6287](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6287)*
+*Defined in [src/generated/api.ts:6343](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6343)*
 
 ID of webhook entity being triggered
 
@@ -184,7 +184,7 @@ ___
 
 • `Optional` **webhookName**: string
 
-*Defined in [src/generated/api.ts:6293](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6293)*
+*Defined in [src/generated/api.ts:6349](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6349)*
 
 Name of the webhook being triggered
 

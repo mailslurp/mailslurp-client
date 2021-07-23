@@ -312,6 +312,62 @@ export interface AliasProjection {
 }
 
 /**
+ *
+ * @export
+ * @interface AttachmentEntity
+ */
+export interface AttachmentEntity {
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    attachmentId: string;
+    /**
+     *
+     * @type {number}
+     * @memberof AttachmentEntity
+     */
+    contentLength?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    contentType?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentEntity
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    name?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentEntity
+     */
+    updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    userId: string;
+}
+
+/**
  * Meta data associated with an attachment. Attachments are stored as byte blobs so the meta data is stored separately.
  * @export
  * @interface AttachmentMetaData
@@ -8058,6 +8114,50 @@ export const AttachmentControllerApiFetchParamCreator = function(
 ) {
     return {
         /**
+         *
+         * @summary Delete all attachments
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllAttachments(options: any = {}): FetchArgs {
+            const localVarPath = `/attachments`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'DELETE' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Delete an attachment
          * @param {string} attachmentId ID of attachment
@@ -8189,6 +8289,61 @@ export const AttachmentControllerApiFetchParamCreator = function(
                 );
             }
             const localVarPath = `/attachments/{attachmentId}/bytes`.replace(
+                `{${'attachmentId'}}`,
+                encodeURIComponent(String(attachmentId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+         * @summary Get an attachment entity
+         * @param {string} attachmentId ID of attachment
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttachment(attachmentId: string, options: any = {}): FetchArgs {
+            // verify required parameter 'attachmentId' is not null or undefined
+            if (attachmentId === null || attachmentId === undefined) {
+                throw new RequiredError(
+                    'attachmentId',
+                    'Required parameter attachmentId was null or undefined when calling getAttachment.'
+                );
+            }
+            const localVarPath = `/attachments/{attachmentId}`.replace(
                 `{${'attachmentId'}}`,
                 encodeURIComponent(String(attachmentId))
             );
@@ -8420,15 +8575,15 @@ export const AttachmentControllerApiFetchParamCreator = function(
         /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-         * @param {string} [string] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [byteArray] Byte array request body
+         * @param {string} [contentType] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [filename] Optional filename to save upload with
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         uploadAttachmentBytes(
-            string?: string,
             byteArray?: string,
+            contentType?: string,
             filename?: string,
             options: any = {}
         ): FetchArgs {
@@ -8450,8 +8605,8 @@ export const AttachmentControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
-            if (string !== undefined) {
-                localVarQueryParameter['String'] = string;
+            if (contentType !== undefined) {
+                localVarQueryParameter['contentType'] = contentType;
             }
 
             if (filename !== undefined) {
@@ -8592,6 +8747,34 @@ export const AttachmentControllerApiFp = function(
 ) {
     return {
         /**
+         *
+         * @summary Delete all attachments
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllAttachments(
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<Response> {
+            const localVarFetchArgs = AttachmentControllerApiFetchParamCreator(
+                configuration
+            ).deleteAllAttachments(options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Delete an attachment
          * @param {string} attachmentId ID of attachment
@@ -8668,6 +8851,36 @@ export const AttachmentControllerApiFp = function(
             const localVarFetchArgs = AttachmentControllerApiFetchParamCreator(
                 configuration
             ).downloadAttachmentAsBytes(attachmentId, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+         * @summary Get an attachment entity
+         * @param {string} attachmentId ID of attachment
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttachment(
+            attachmentId: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<AttachmentEntity> {
+            const localVarFetchArgs = AttachmentControllerApiFetchParamCreator(
+                configuration
+            ).getAttachment(attachmentId, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -8789,21 +9002,21 @@ export const AttachmentControllerApiFp = function(
         /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-         * @param {string} [string] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [byteArray] Byte array request body
+         * @param {string} [contentType] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [filename] Optional filename to save upload with
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         uploadAttachmentBytes(
-            string?: string,
             byteArray?: string,
+            contentType?: string,
             filename?: string,
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<Array<string>> {
             const localVarFetchArgs = AttachmentControllerApiFetchParamCreator(
                 configuration
-            ).uploadAttachmentBytes(string, byteArray, filename, options);
+            ).uploadAttachmentBytes(byteArray, contentType, filename, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -8879,6 +9092,17 @@ export const AttachmentControllerApiFactory = function(
 ) {
     return {
         /**
+         *
+         * @summary Delete all attachments
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllAttachments(options?: any) {
+            return AttachmentControllerApiFp(
+                configuration
+            ).deleteAllAttachments(options)(fetch, basePath);
+        },
+        /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Delete an attachment
          * @param {string} attachmentId ID of attachment
@@ -8917,6 +9141,19 @@ export const AttachmentControllerApiFactory = function(
             return AttachmentControllerApiFp(
                 configuration
             ).downloadAttachmentAsBytes(attachmentId, options)(fetch, basePath);
+        },
+        /**
+         * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+         * @summary Get an attachment entity
+         * @param {string} attachmentId ID of attachment
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttachment(attachmentId: string, options?: any) {
+            return AttachmentControllerApiFp(configuration).getAttachment(
+                attachmentId,
+                options
+            )(fetch, basePath);
         },
         /**
          * Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
@@ -8975,21 +9212,21 @@ export const AttachmentControllerApiFactory = function(
         /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
          * @summary Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-         * @param {string} [string] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [byteArray] Byte array request body
+         * @param {string} [contentType] Optional contentType for file. For instance &#x60;application/pdf&#x60;
          * @param {string} [filename] Optional filename to save upload with
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         uploadAttachmentBytes(
-            string?: string,
             byteArray?: string,
+            contentType?: string,
             filename?: string,
             options?: any
         ) {
             return AttachmentControllerApiFp(
                 configuration
-            ).uploadAttachmentBytes(string, byteArray, filename, options)(
+            ).uploadAttachmentBytes(byteArray, contentType, filename, options)(
                 fetch,
                 basePath
             );
@@ -9032,6 +9269,19 @@ export const AttachmentControllerApiFactory = function(
  * @extends {BaseAPI}
  */
 export class AttachmentControllerApi extends BaseAPI {
+    /**
+     *
+     * @summary Delete all attachments
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AttachmentControllerApi
+     */
+    public deleteAllAttachments(options?: any) {
+        return AttachmentControllerApiFp(
+            this.configuration
+        ).deleteAllAttachments(options)(this.fetch, this.basePath);
+    }
+
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Delete an attachment
@@ -9082,6 +9332,21 @@ export class AttachmentControllerApi extends BaseAPI {
             this.fetch,
             this.basePath
         );
+    }
+
+    /**
+     * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+     * @summary Get an attachment entity
+     * @param {string} attachmentId ID of attachment
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AttachmentControllerApi
+     */
+    public getAttachment(attachmentId: string, options?: any) {
+        return AttachmentControllerApiFp(this.configuration).getAttachment(
+            attachmentId,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -9147,22 +9412,22 @@ export class AttachmentControllerApi extends BaseAPI {
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-     * @param {string} [string] Optional contentType for file. For instance &#x60;application/pdf&#x60;
      * @param {string} [byteArray] Byte array request body
+     * @param {string} [contentType] Optional contentType for file. For instance &#x60;application/pdf&#x60;
      * @param {string} [filename] Optional filename to save upload with
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AttachmentControllerApi
      */
     public uploadAttachmentBytes(
-        string?: string,
         byteArray?: string,
+        contentType?: string,
         filename?: string,
         options?: any
     ) {
         return AttachmentControllerApiFp(
             this.configuration
-        ).uploadAttachmentBytes(string, byteArray, filename, options)(
+        ).uploadAttachmentBytes(byteArray, contentType, filename, options)(
             this.fetch,
             this.basePath
         );

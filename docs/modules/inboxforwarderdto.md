@@ -29,7 +29,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2679](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2679)*
+*Defined in [src/generated/api.ts:2735](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2735)*
 
 **`memberof`** InboxForwarderDto
 
@@ -39,7 +39,7 @@ ___
 
 •  **field**: [FieldEnum](../enums/inboxforwarderdto.fieldenum.md)
 
-*Defined in [src/generated/api.ts:2685](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2685)*
+*Defined in [src/generated/api.ts:2741](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2741)*
 
 **`memberof`** InboxForwarderDto
 
@@ -49,7 +49,7 @@ ___
 
 •  **forwardToRecipients**: Array\<string>
 
-*Defined in [src/generated/api.ts:2691](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2691)*
+*Defined in [src/generated/api.ts:2747](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2747)*
 
 **`memberof`** InboxForwarderDto
 
@@ -59,7 +59,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2697](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2697)*
+*Defined in [src/generated/api.ts:2753](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2753)*
 
 **`memberof`** InboxForwarderDto
 
@@ -69,7 +69,7 @@ ___
 
 •  **inboxId**: string
 
-*Defined in [src/generated/api.ts:2703](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2703)*
+*Defined in [src/generated/api.ts:2759](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2759)*
 
 **`memberof`** InboxForwarderDto
 
@@ -79,6 +79,6 @@ ___
 
 •  **match**: string
 
-*Defined in [src/generated/api.ts:2709](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2709)*
+*Defined in [src/generated/api.ts:2765](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2765)*
 
 **`memberof`** InboxForwarderDto

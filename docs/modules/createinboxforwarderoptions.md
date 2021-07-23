@@ -26,7 +26,7 @@
 
 •  **field**: [FieldEnum](../enums/createinboxforwarderoptions.fieldenum.md)
 
-*Defined in [src/generated/api.ts:1042](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L1042)*
+*Defined in [src/generated/api.ts:1098](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1098)*
 
 **`memberof`** CreateInboxForwarderOptions
 
@@ -36,7 +36,7 @@ ___
 
 •  **forwardToRecipients**: Array\<string>
 
-*Defined in [src/generated/api.ts:1054](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L1054)*
+*Defined in [src/generated/api.ts:1110](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1110)*
 
 **`memberof`** CreateInboxForwarderOptions
 
@@ -46,6 +46,6 @@ ___
 
 •  **match**: string
 
-*Defined in [src/generated/api.ts:1048](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L1048)*
+*Defined in [src/generated/api.ts:1104](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1104)*
 
 **`memberof`** CreateInboxForwarderOptions

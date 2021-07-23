@@ -25,7 +25,7 @@
 
 •  **createInboxForwarderOptions**: [CreateInboxForwarderOptions](../modules/createinboxforwarderoptions.md)
 
-*Defined in [src/generated/api.ts:5452](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L5452)*
+*Defined in [src/generated/api.ts:5508](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5508)*
 
 **`memberof`** TestNewInboxForwarderOptions
 
@@ -35,6 +35,6 @@ ___
 
 •  **inboxForwarderTestOptions**: [InboxForwarderTestOptions](inboxforwardertestoptions.md)
 
-*Defined in [src/generated/api.ts:5446](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L5446)*
+*Defined in [src/generated/api.ts:5502](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5502)*
 
 **`memberof`** TestNewInboxForwarderOptions

@@ -20,7 +20,7 @@
 
 •  **BADRESPONSE**:  = \<any>'BAD\_RESPONSE'
 
-*Defined in [src/generated/api.ts:6602](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6602)*
+*Defined in [src/generated/api.ts:6658](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6658)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **EXCEPTION**:  = \<any>'EXCEPTION'
 
-*Defined in [src/generated/api.ts:6603](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6603)*
+*Defined in [src/generated/api.ts:6659](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6659)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **SUCCESS**:  = \<any>'SUCCESS'
 
-*Defined in [src/generated/api.ts:6604](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L6604)*
+*Defined in [src/generated/api.ts:6660](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6660)*

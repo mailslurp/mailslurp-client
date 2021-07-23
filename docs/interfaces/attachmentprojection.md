@@ -30,7 +30,7 @@
 
 • `Optional` **attachmentId**: string
 
-*Defined in [src/generated/api.ts:357](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L357)*
+*Defined in [src/generated/api.ts:413](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L413)*
 
 Attachment ID
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **contentLength**: number
 
-*Defined in [src/generated/api.ts:363](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L363)*
+*Defined in [src/generated/api.ts:419](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L419)*
 
 Content length of attachment in bytes
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:369](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L369)*
+*Defined in [src/generated/api.ts:425](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L425)*
 
 Content type of attachment.
 
@@ -66,7 +66,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:375](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L375)*
+*Defined in [src/generated/api.ts:431](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L431)*
 
 **`memberof`** AttachmentProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:381](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L381)*
+*Defined in [src/generated/api.ts:437](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L437)*
 
 **`memberof`** AttachmentProjection
 
@@ -86,7 +86,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:387](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L387)*
+*Defined in [src/generated/api.ts:443](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L443)*
 
 **`memberof`** AttachmentProjection
 
@@ -96,6 +96,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L393)*
+*Defined in [src/generated/api.ts:449](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L449)*
 
 **`memberof`** AttachmentProjection

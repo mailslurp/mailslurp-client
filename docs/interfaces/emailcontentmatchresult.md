@@ -27,7 +27,7 @@ Matches for the given pattern
 
 •  **matches**: Array\<string>
 
-*Defined in [src/generated/api.ts:2021](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2021)*
+*Defined in [src/generated/api.ts:2077](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2077)*
 
 **`memberof`** EmailContentMatchResult
 
@@ -37,6 +37,6 @@ ___
 
 •  **pattern**: string
 
-*Defined in [src/generated/api.ts:2027](https://github.com/mailslurp/mailslurp-client/blob/37bf78e/src/generated/api.ts#L2027)*
+*Defined in [src/generated/api.ts:2083](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2083)*
 
 **`memberof`** EmailContentMatchResult
