@@ -31,7 +31,7 @@
 
 •  **attachmentId**: string
 
-*Defined in [src/generated/api.ts:325](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L325)*
+*Defined in [src/generated/api.ts:325](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L325)*
 
 **`memberof`** AttachmentEntity
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **contentLength**: number
 
-*Defined in [src/generated/api.ts:331](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L331)*
+*Defined in [src/generated/api.ts:331](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L331)*
 
 **`memberof`** AttachmentEntity
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:337](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L337)*
+*Defined in [src/generated/api.ts:337](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L337)*
 
 **`memberof`** AttachmentEntity
 
@@ -61,7 +61,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:343](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L343)*
+*Defined in [src/generated/api.ts:343](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L343)*
 
 **`memberof`** AttachmentEntity
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:349](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L349)*
+*Defined in [src/generated/api.ts:349](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L349)*
 
 **`memberof`** AttachmentEntity
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L355)*
+*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L355)*
 
 **`memberof`** AttachmentEntity
 
@@ -91,7 +91,7 @@ ___
 
 •  **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L361)*
+*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L361)*
 
 **`memberof`** AttachmentEntity
 
@@ -101,6 +101,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L367)*
+*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L367)*
 
 **`memberof`** AttachmentEntity

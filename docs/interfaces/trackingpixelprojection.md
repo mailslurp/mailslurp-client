@@ -32,7 +32,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:5678](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5678)*
+*Defined in [src/generated/api.ts:5718](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5718)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -42,7 +42,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:5684](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5684)*
+*Defined in [src/generated/api.ts:5724](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5724)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:5690](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5690)*
+*Defined in [src/generated/api.ts:5730](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5730)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:5696](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5696)*
+*Defined in [src/generated/api.ts:5736](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5736)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **recipient**: string
 
-*Defined in [src/generated/api.ts:5702](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5702)*
+*Defined in [src/generated/api.ts:5742](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5742)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -82,7 +82,7 @@ ___
 
 •  **seen**: boolean
 
-*Defined in [src/generated/api.ts:5708](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5708)*
+*Defined in [src/generated/api.ts:5748](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5748)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **seenAt**: Date
 
-*Defined in [src/generated/api.ts:5714](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5714)*
+*Defined in [src/generated/api.ts:5754](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5754)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **sentEmailId**: string
 
-*Defined in [src/generated/api.ts:5720](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5720)*
+*Defined in [src/generated/api.ts:5760](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5760)*
 
 **`memberof`** TrackingPixelProjection
 
@@ -112,6 +112,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:5726](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5726)*
+*Defined in [src/generated/api.ts:5766](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5766)*
 
 **`memberof`** TrackingPixelProjection

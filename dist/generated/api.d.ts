@@ -2014,6 +2014,25 @@ export interface EmailContentMatchResult {
     pattern: string;
 }
 /**
+ * Links found in HTML
+ * @export
+ * @interface EmailLinksResult
+ */
+export interface EmailLinksResult {
+    /**
+     *
+     * @type {string}
+     * @memberof EmailLinksResult
+     */
+    body: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailLinksResult
+     */
+    links: Array<string>;
+}
+/**
  * Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
  * @export
  * @interface EmailPreview
@@ -2414,6 +2433,25 @@ export interface ForwardEmailOptions {
      * @memberof ForwardEmailOptions
      */
     useInboxName?: boolean;
+}
+/**
+ *
+ * @export
+ * @interface GravatarUrl
+ */
+export interface GravatarUrl {
+    /**
+     *
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    hash: string;
+    /**
+     *
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    url: string;
 }
 /**
  *
@@ -8410,6 +8448,14 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
      */
     getEmailHTMLQuery(emailId: string, htmlSelector?: string, options?: any): FetchArgs;
     /**
+     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+     * @summary Parse and return list of links found in an email (only works for HTML content)
+     * @param {string} emailId ID of email to fetch text for
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getEmailLinks(emailId: string, options?: any): FetchArgs;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
      * @param {string} emailId ID of email to fetch text for
@@ -8432,6 +8478,15 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
      * @throws {RequiredError}
      */
     getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
+    /**
+     *
+     * @summary Get gravatar url for email address
+     * @param {string} emailAddress emailAddress
+     * @param {string} [size] size
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getGravatarUrlForEmailAddress(emailAddress: string, size?: string, options?: any): FetchArgs;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
@@ -8630,6 +8685,14 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
      */
     getEmailHTMLQuery(emailId: string, htmlSelector?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<EmailTextLinesResult>;
     /**
+     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+     * @summary Parse and return list of links found in an email (only works for HTML content)
+     * @param {string} emailId ID of email to fetch text for
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getEmailLinks(emailId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<EmailLinksResult>;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
      * @param {string} emailId ID of email to fetch text for
@@ -8652,6 +8715,15 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
+    /**
+     *
+     * @summary Get gravatar url for email address
+     * @param {string} emailAddress emailAddress
+     * @param {string} [size] size
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getGravatarUrlForEmailAddress(emailAddress: string, size?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<GravatarUrl>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
@@ -8850,6 +8922,14 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
      */
     getEmailHTMLQuery(emailId: string, htmlSelector?: string, options?: any): Promise<EmailTextLinesResult>;
     /**
+     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+     * @summary Parse and return list of links found in an email (only works for HTML content)
+     * @param {string} emailId ID of email to fetch text for
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getEmailLinks(emailId: string, options?: any): Promise<EmailLinksResult>;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
      * @param {string} emailId ID of email to fetch text for
@@ -8872,6 +8952,15 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
      * @throws {RequiredError}
      */
     getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    /**
+     *
+     * @summary Get gravatar url for email address
+     * @param {string} emailAddress emailAddress
+     * @param {string} [size] size
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getGravatarUrlForEmailAddress(emailAddress: string, size?: string, options?: any): Promise<GravatarUrl>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
@@ -9085,6 +9174,15 @@ export declare class EmailControllerApi extends BaseAPI {
      */
     getEmailHTMLQuery(emailId: string, htmlSelector?: string, options?: any): Promise<EmailTextLinesResult>;
     /**
+     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+     * @summary Parse and return list of links found in an email (only works for HTML content)
+     * @param {string} emailId ID of email to fetch text for
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof EmailControllerApi
+     */
+    getEmailLinks(emailId: string, options?: any): Promise<EmailLinksResult>;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
      * @param {string} emailId ID of email to fetch text for
@@ -9109,6 +9207,16 @@ export declare class EmailControllerApi extends BaseAPI {
      * @memberof EmailControllerApi
      */
     getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    /**
+     *
+     * @summary Get gravatar url for email address
+     * @param {string} emailAddress emailAddress
+     * @param {string} [size] size
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof EmailControllerApi
+     */
+    getGravatarUrlForEmailAddress(emailAddress: string, size?: string, options?: any): Promise<GravatarUrl>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.

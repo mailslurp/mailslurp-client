@@ -32,7 +32,7 @@
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:6111](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6111)*
+*Defined in [src/generated/api.ts:6151](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6151)*
 
 Date time of event creation
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/webhookemailopenedpayload.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:6117](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6117)*
+*Defined in [src/generated/api.ts:6157](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6157)*
 
 Name of the event type webhook is being triggered for.
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:6123](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6123)*
+*Defined in [src/generated/api.ts:6163](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6163)*
 
 Id of the inbox that received an email
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **messageId**: string
 
-*Defined in [src/generated/api.ts:6129](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6129)*
+*Defined in [src/generated/api.ts:6169](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6169)*
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **pixelId**: string
 
-*Defined in [src/generated/api.ts:6135](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6135)*
+*Defined in [src/generated/api.ts:6175](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6175)*
 
 ID of the tracking pixel
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **recipient**: string
 
-*Defined in [src/generated/api.ts:6141](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6141)*
+*Defined in [src/generated/api.ts:6181](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6181)*
 
 Email address for the recipient of the tracking pixel
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **sentEmailId**: string
 
-*Defined in [src/generated/api.ts:6147](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6147)*
+*Defined in [src/generated/api.ts:6187](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6187)*
 
 ID of sent email
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **webhookId**: string
 
-*Defined in [src/generated/api.ts:6153](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6153)*
+*Defined in [src/generated/api.ts:6193](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6193)*
 
 ID of webhook entity being triggered
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **webhookName**: string
 
-*Defined in [src/generated/api.ts:6159](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L6159)*
+*Defined in [src/generated/api.ts:6199](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6199)*
 
 Name of the webhook being triggered
 

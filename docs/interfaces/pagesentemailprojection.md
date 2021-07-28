@@ -36,7 +36,7 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 
 • `Optional` **content**: Array\<[SentEmailProjection](sentemailprojection.md)>
 
-*Defined in [src/generated/api.ts:4358](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4358)*
+*Defined in [src/generated/api.ts:4398](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4398)*
 
 Collection of items
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:4364](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4364)*
+*Defined in [src/generated/api.ts:4404](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4404)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:4370](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4370)*
+*Defined in [src/generated/api.ts:4410](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4410)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:4376](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4376)*
+*Defined in [src/generated/api.ts:4416](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4416)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:4382](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4382)*
+*Defined in [src/generated/api.ts:4422](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4422)*
 
 Page number starting at 0
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:4388](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4388)*
+*Defined in [src/generated/api.ts:4428](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4428)*
 
 Number of items returned
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:4394](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4394)*
+*Defined in [src/generated/api.ts:4434](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4434)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -112,7 +112,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:4400](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4400)*
+*Defined in [src/generated/api.ts:4440](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4440)*
 
 Size of page requested
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:4406](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4406)*
+*Defined in [src/generated/api.ts:4446](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4446)*
 
 **`memberof`** PageSentEmailProjection
 
@@ -134,7 +134,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:4412](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4412)*
+*Defined in [src/generated/api.ts:4452](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4452)*
 
 Total number of items available for querying
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:4418](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L4418)*
+*Defined in [src/generated/api.ts:4458](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L4458)*
 
 Total number of pages available
 

@@ -36,7 +36,7 @@ Paginated contact results. Page index starts at zero. Projection results may omi
 
 • `Optional` **content**: Array\<[ContactProjection](contactprojection.md)>
 
-*Defined in [src/generated/api.ts:3618](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3618)*
+*Defined in [src/generated/api.ts:3658](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3658)*
 
 **`memberof`** PageContactProjection
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:3624](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3624)*
+*Defined in [src/generated/api.ts:3664](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3664)*
 
 **`memberof`** PageContactProjection
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:3630](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3630)*
+*Defined in [src/generated/api.ts:3670](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3670)*
 
 **`memberof`** PageContactProjection
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:3636](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3636)*
+*Defined in [src/generated/api.ts:3676](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3676)*
 
 **`memberof`** PageContactProjection
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:3642](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3642)*
+*Defined in [src/generated/api.ts:3682](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3682)*
 
 **`memberof`** PageContactProjection
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:3648](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3648)*
+*Defined in [src/generated/api.ts:3688](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3688)*
 
 **`memberof`** PageContactProjection
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:3654](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3654)*
+*Defined in [src/generated/api.ts:3694](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3694)*
 
 **`memberof`** PageContactProjection
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:3660](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3660)*
+*Defined in [src/generated/api.ts:3700](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3700)*
 
 **`memberof`** PageContactProjection
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:3666](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3666)*
+*Defined in [src/generated/api.ts:3706](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3706)*
 
 **`memberof`** PageContactProjection
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:3672](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3672)*
+*Defined in [src/generated/api.ts:3712](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3712)*
 
 **`memberof`** PageContactProjection
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:3678](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L3678)*
+*Defined in [src/generated/api.ts:3718](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L3718)*
 
 **`memberof`** PageContactProjection

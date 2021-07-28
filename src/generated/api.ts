@@ -2084,6 +2084,26 @@ export interface EmailContentMatchResult {
 }
 
 /**
+ * Links found in HTML
+ * @export
+ * @interface EmailLinksResult
+ */
+export interface EmailLinksResult {
+    /**
+     *
+     * @type {string}
+     * @memberof EmailLinksResult
+     */
+    body: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailLinksResult
+     */
+    links: Array<string>;
+}
+
+/**
  * Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
  * @export
  * @interface EmailPreview
@@ -2494,6 +2514,26 @@ export interface ForwardEmailOptions {
      * @memberof ForwardEmailOptions
      */
     useInboxName?: boolean;
+}
+
+/**
+ *
+ * @export
+ * @interface GravatarUrl
+ */
+export interface GravatarUrl {
+    /**
+     *
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    hash: string;
+    /**
+     *
+     * @type {string}
+     * @memberof GravatarUrl
+     */
+    url: string;
 }
 
 /**
@@ -13400,6 +13440,61 @@ export const EmailControllerApiFetchParamCreator = function(
             };
         },
         /**
+         * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+         * @summary Parse and return list of links found in an email (only works for HTML content)
+         * @param {string} emailId ID of email to fetch text for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getEmailLinks(emailId: string, options: any = {}): FetchArgs {
+            // verify required parameter 'emailId' is not null or undefined
+            if (emailId === null || emailId === undefined) {
+                throw new RequiredError(
+                    'emailId',
+                    'Required parameter emailId was null or undefined when calling getEmailLinks.'
+                );
+            }
+            const localVarPath = `/emails/{emailId}/links`.replace(
+                `{${'emailId'}}`,
+                encodeURIComponent(String(emailId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
          * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
          * @param {string} emailId ID of email to fetch text for
@@ -13532,6 +13627,71 @@ export const EmailControllerApiFetchParamCreator = function(
 
             if (unreadOnly !== undefined) {
                 localVarQueryParameter['unreadOnly'] = unreadOnly;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get gravatar url for email address
+         * @param {string} emailAddress emailAddress
+         * @param {string} [size] size
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGravatarUrlForEmailAddress(
+            emailAddress: string,
+            size?: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'emailAddress' is not null or undefined
+            if (emailAddress === null || emailAddress === undefined) {
+                throw new RequiredError(
+                    'emailAddress',
+                    'Required parameter emailAddress was null or undefined when calling getGravatarUrlForEmailAddress.'
+                );
+            }
+            const localVarPath = `/emails/gravatarFor`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (emailAddress !== undefined) {
+                localVarQueryParameter['emailAddress'] = emailAddress;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
             }
 
             localVarUrlObj.query = Object.assign(
@@ -14521,6 +14681,36 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+         * @summary Parse and return list of links found in an email (only works for HTML content)
+         * @param {string} emailId ID of email to fetch text for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getEmailLinks(
+            emailId: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<EmailLinksResult> {
+            const localVarFetchArgs = EmailControllerApiFetchParamCreator(
+                configuration
+            ).getEmailLinks(emailId, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
          * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
          * @param {string} emailId ID of email to fetch text for
@@ -14597,6 +14787,38 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
                 unreadOnly,
                 options
             );
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get gravatar url for email address
+         * @param {string} emailAddress emailAddress
+         * @param {string} [size] size
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGravatarUrlForEmailAddress(
+            emailAddress: string,
+            size?: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<GravatarUrl> {
+            const localVarFetchArgs = EmailControllerApiFetchParamCreator(
+                configuration
+            ).getGravatarUrlForEmailAddress(emailAddress, size, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -15138,6 +15360,19 @@ export const EmailControllerApiFactory = function(
             )(fetch, basePath);
         },
         /**
+         * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+         * @summary Parse and return list of links found in an email (only works for HTML content)
+         * @param {string} emailId ID of email to fetch text for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getEmailLinks(emailId: string, options?: any) {
+            return EmailControllerApiFp(configuration).getEmailLinks(
+                emailId,
+                options
+            )(fetch, basePath);
+        },
+        /**
          * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
          * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
          * @param {string} emailId ID of email to fetch text for
@@ -15189,6 +15424,26 @@ export const EmailControllerApiFactory = function(
                 unreadOnly,
                 options
             )(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get gravatar url for email address
+         * @param {string} emailAddress emailAddress
+         * @param {string} [size] size
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getGravatarUrlForEmailAddress(
+            emailAddress: string,
+            size?: string,
+            options?: any
+        ) {
+            return EmailControllerApiFp(
+                configuration
+            ).getGravatarUrlForEmailAddress(emailAddress, size, options)(
+                fetch,
+                basePath
+            );
         },
         /**
          * Get the newest email in all inboxes or in a passed set of inbox IDs
@@ -15588,6 +15843,21 @@ export class EmailControllerApi extends BaseAPI {
     }
 
     /**
+     * HTML parsing uses JSoup and UNIX line separators. Searches content for href attributes
+     * @summary Parse and return list of links found in an email (only works for HTML content)
+     * @param {string} emailId ID of email to fetch text for
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof EmailControllerApi
+     */
+    public getEmailLinks(emailId: string, options?: any) {
+        return EmailControllerApiFp(this.configuration).getEmailLinks(
+            emailId,
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * @summary Parse and return text from an email, stripping HTML and decoding encoded characters
      * @param {string} emailId ID of email to fetch text for
@@ -15642,6 +15912,28 @@ export class EmailControllerApi extends BaseAPI {
             unreadOnly,
             options
         )(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Get gravatar url for email address
+     * @param {string} emailAddress emailAddress
+     * @param {string} [size] size
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof EmailControllerApi
+     */
+    public getGravatarUrlForEmailAddress(
+        emailAddress: string,
+        size?: string,
+        options?: any
+    ) {
+        return EmailControllerApiFp(
+            this.configuration
+        ).getGravatarUrlForEmailAddress(emailAddress, size, options)(
+            this.fetch,
+            this.basePath
+        );
     }
 
     /**

@@ -18,4 +18,4 @@
 
 •  **STRING**:  = \<any>'STRING'
 
-*Defined in [src/generated/api.ts:5487](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5487)*
+*Defined in [src/generated/api.ts:5527](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5527)*

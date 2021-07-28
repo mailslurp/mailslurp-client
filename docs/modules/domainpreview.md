@@ -29,7 +29,7 @@
 
 • `Optional` **catchAllInboxId**: string
 
-*Defined in [src/generated/api.ts:1820](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1820)*
+*Defined in [src/generated/api.ts:1820](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1820)*
 
 **`memberof`** DomainPreview
 
@@ -39,7 +39,7 @@ ___
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:1826](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1826)*
+*Defined in [src/generated/api.ts:1826](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1826)*
 
 **`memberof`** DomainPreview
 
@@ -49,7 +49,7 @@ ___
 
 •  **domain**: string
 
-*Defined in [src/generated/api.ts:1832](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1832)*
+*Defined in [src/generated/api.ts:1832](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1832)*
 
 **`memberof`** DomainPreview
 
@@ -59,7 +59,7 @@ ___
 
 •  **domainType**: [DomainTypeEnum](../enums/domainpreview.domaintypeenum.md)
 
-*Defined in [src/generated/api.ts:1838](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1838)*
+*Defined in [src/generated/api.ts:1838](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1838)*
 
 **`memberof`** DomainPreview
 
@@ -69,7 +69,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:1844](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1844)*
+*Defined in [src/generated/api.ts:1844](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1844)*
 
 **`memberof`** DomainPreview
 
@@ -79,6 +79,6 @@ ___
 
 •  **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:1850](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L1850)*
+*Defined in [src/generated/api.ts:1850](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1850)*
 
 **`memberof`** DomainPreview

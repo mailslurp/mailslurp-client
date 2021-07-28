@@ -25,7 +25,7 @@
 
 •  **doesMatch**: boolean
 
-*Defined in [src/generated/api.ts:2810](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2810)*
+*Defined in [src/generated/api.ts:2850](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2850)*
 
 **`memberof`** InboxForwarderTestResult
 
@@ -35,6 +35,6 @@ ___
 
 •  **matches**: { [key:string]: boolean;  }
 
-*Defined in [src/generated/api.ts:2816](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2816)*
+*Defined in [src/generated/api.ts:2856](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2856)*
 
 **`memberof`** InboxForwarderTestResult

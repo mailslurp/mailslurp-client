@@ -19,7 +19,7 @@
 
 •  **HTTPINBOX**:  = \<any>'HTTP\_INBOX'
 
-*Defined in [src/generated/api.ts:2885](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2885)*
+*Defined in [src/generated/api.ts:2925](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2925)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **SMTPINBOX**:  = \<any>'SMTP\_INBOX'
 
-*Defined in [src/generated/api.ts:2886](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L2886)*
+*Defined in [src/generated/api.ts:2926](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2926)*

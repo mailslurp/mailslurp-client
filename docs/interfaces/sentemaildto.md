@@ -41,7 +41,7 @@ Sent email details
 
 • `Optional` **attachments**: Array\<string>
 
-*Defined in [src/generated/api.ts:5142](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5142)*
+*Defined in [src/generated/api.ts:5182](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5182)*
 
 Array of IDs of attachments that were sent with this email
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:5148](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5148)*
+*Defined in [src/generated/api.ts:5188](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5188)*
 
 **`memberof`** SentEmailDto
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **body**: string
 
-*Defined in [src/generated/api.ts:5154](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5154)*
+*Defined in [src/generated/api.ts:5194](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5194)*
 
 **`memberof`** SentEmailDto
 
@@ -73,7 +73,7 @@ ___
 
 • `Optional` **bodyMD5Hash**: string
 
-*Defined in [src/generated/api.ts:5160](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5160)*
+*Defined in [src/generated/api.ts:5200](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5200)*
 
 MD5 Hash
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:5166](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5166)*
+*Defined in [src/generated/api.ts:5206](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5206)*
 
 **`memberof`** SentEmailDto
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **charset**: string
 
-*Defined in [src/generated/api.ts:5172](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5172)*
+*Defined in [src/generated/api.ts:5212](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5212)*
 
 **`memberof`** SentEmailDto
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:5178](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5178)*
+*Defined in [src/generated/api.ts:5218](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5218)*
 
 **`memberof`** SentEmailDto
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:5184](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5184)*
+*Defined in [src/generated/api.ts:5224](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5224)*
 
 ID of sent email
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:5190](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5190)*
+*Defined in [src/generated/api.ts:5230](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5230)*
 
 Inbox ID email was sent from
 
@@ -139,7 +139,7 @@ ___
 
 • `Optional` **isHTML**: boolean
 
-*Defined in [src/generated/api.ts:5196](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5196)*
+*Defined in [src/generated/api.ts:5236](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5236)*
 
 **`memberof`** SentEmailDto
 
@@ -149,7 +149,7 @@ ___
 
 • `Optional` **pixelIds**: Array\<string>
 
-*Defined in [src/generated/api.ts:5202](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5202)*
+*Defined in [src/generated/api.ts:5242](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5242)*
 
 **`memberof`** SentEmailDto
 
@@ -159,7 +159,7 @@ ___
 
 • `Optional` **replyTo**: string
 
-*Defined in [src/generated/api.ts:5208](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5208)*
+*Defined in [src/generated/api.ts:5248](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5248)*
 
 **`memberof`** SentEmailDto
 
@@ -169,7 +169,7 @@ ___
 
 •  **sentAt**: Date
 
-*Defined in [src/generated/api.ts:5214](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5214)*
+*Defined in [src/generated/api.ts:5254](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5254)*
 
 **`memberof`** SentEmailDto
 
@@ -179,7 +179,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:5220](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5220)*
+*Defined in [src/generated/api.ts:5260](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5260)*
 
 **`memberof`** SentEmailDto
 
@@ -189,7 +189,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:5226](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5226)*
+*Defined in [src/generated/api.ts:5266](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5266)*
 
 Recipients email was sent to
 
@@ -201,7 +201,7 @@ ___
 
 • `Optional` **userId**: string
 
-*Defined in [src/generated/api.ts:5232](https://github.com/mailslurp/mailslurp-client/blob/c5e5f20/src/generated/api.ts#L5232)*
+*Defined in [src/generated/api.ts:5272](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L5272)*
 
 User ID
 
