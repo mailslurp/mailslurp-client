@@ -29,7 +29,7 @@ Meta data associated with an attachment. Attachments are stored as byte blobs so
 
 • `Optional` **contentLength**: number
 
-*Defined in [src/generated/api.ts:381](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L381)*
+*Defined in [src/generated/api.ts:381](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L381)*
 
 Size of attachment in bytes
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **contentType**: string
 
-*Defined in [src/generated/api.ts:387](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L387)*
+*Defined in [src/generated/api.ts:387](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L387)*
 
 Content type of attachment such as `image/png`
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L393)*
+*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L393)*
 
 ID of attachment
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:399](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L399)*
+*Defined in [src/generated/api.ts:399](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L399)*
 
 Name of attachment if given
 

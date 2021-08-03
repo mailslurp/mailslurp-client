@@ -8490,7 +8490,7 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
-     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs
+     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs. If not provided will search across all inboxes
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -8539,6 +8539,15 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
      * @throws {RequiredError}
      */
     getUnreadEmailCount(options?: any): FetchArgs;
+    /**
+     * Marks an email as read or unread. Pass boolean read flag to set value.
+     * @summary Mark an email as read
+     * @param {string} emailId emailId
+     * @param {boolean} [read] What value to assign to email read property. Default true.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    markAsRead(emailId: string, read?: boolean, options?: any): FetchArgs;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -8727,7 +8736,7 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
-     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs
+     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs. If not provided will search across all inboxes
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -8776,6 +8785,15 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
      * @throws {RequiredError}
      */
     getUnreadEmailCount(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UnreadCount>;
+    /**
+     * Marks an email as read or unread. Pass boolean read flag to set value.
+     * @summary Mark an email as read
+     * @param {string} emailId emailId
+     * @param {boolean} [read] What value to assign to email read property. Default true.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    markAsRead(emailId: string, read?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<EmailPreview>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -8964,7 +8982,7 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
-     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs
+     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs. If not provided will search across all inboxes
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -9013,6 +9031,15 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
      * @throws {RequiredError}
      */
     getUnreadEmailCount(options?: any): Promise<UnreadCount>;
+    /**
+     * Marks an email as read or unread. Pass boolean read flag to set value.
+     * @summary Mark an email as read
+     * @param {string} emailId emailId
+     * @param {boolean} [read] What value to assign to email read property. Default true.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    markAsRead(emailId: string, read?: boolean, options?: any): Promise<EmailPreview>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -9220,7 +9247,7 @@ export declare class EmailControllerApi extends BaseAPI {
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * @summary Get latest email in all inboxes. Most recently received.
-     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs
+     * @param {Array<string>} [inboxIds] Optional set of inboxes to filter by. Only get the latest email from these inbox IDs. If not provided will search across all inboxes
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EmailControllerApi
@@ -9275,6 +9302,16 @@ export declare class EmailControllerApi extends BaseAPI {
      * @memberof EmailControllerApi
      */
     getUnreadEmailCount(options?: any): Promise<UnreadCount>;
+    /**
+     * Marks an email as read or unread. Pass boolean read flag to set value.
+     * @summary Mark an email as read
+     * @param {string} emailId emailId
+     * @param {boolean} [read] What value to assign to email read property. Default true.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof EmailControllerApi
+     */
+    markAsRead(emailId: string, read?: boolean, options?: any): Promise<EmailPreview>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -10105,16 +10142,18 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
      * @param {number} [retryTimeout] Maximum milliseconds to spend retrying inbox database until minCount emails are returned
      * @param {Date} [since] Exclude emails received before this ISO 8601 date time
      * @param {number} [size] Alias for limit. Assessed first before assessing any passed limit.
      * @param {'ASC' | 'DESC'} [sort] Sort the results by received date and direction ASC or DESC
+     * @param {boolean} [unreadOnly] unreadOnly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10321,16 +10360,18 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
      * @param {number} [retryTimeout] Maximum milliseconds to spend retrying inbox database until minCount emails are returned
      * @param {Date} [since] Exclude emails received before this ISO 8601 date time
      * @param {number} [size] Alias for limit. Assessed first before assessing any passed limit.
      * @param {'ASC' | 'DESC'} [sort] Sort the results by received date and direction ASC or DESC
+     * @param {boolean} [unreadOnly] unreadOnly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10537,16 +10578,18 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
      * @param {number} [retryTimeout] Maximum milliseconds to spend retrying inbox database until minCount emails are returned
      * @param {Date} [since] Exclude emails received before this ISO 8601 date time
      * @param {number} [size] Alias for limit. Assessed first before assessing any passed limit.
      * @param {'ASC' | 'DESC'} [sort] Sort the results by received date and direction ASC or DESC
+     * @param {boolean} [unreadOnly] unreadOnly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10762,17 +10805,19 @@ export declare class InboxControllerApi extends BaseAPI {
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
      * @param {number} [retryTimeout] Maximum milliseconds to spend retrying inbox database until minCount emails are returned
      * @param {Date} [since] Exclude emails received before this ISO 8601 date time
      * @param {number} [size] Alias for limit. Assessed first before assessing any passed limit.
      * @param {'ASC' | 'DESC'} [sort] Sort the results by received date and direction ASC or DESC
+     * @param {boolean} [unreadOnly] unreadOnly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getEmails(inboxId: string, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -12489,57 +12534,72 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
-     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait for the nth email if not already present
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(inboxId?: string, index?: number, timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
 };
 /**
  * WaitForControllerApi - functional programming interface
@@ -12558,57 +12618,72 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
-     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait for the nth email if not already present
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(inboxId?: string, index?: number, timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
 };
 /**
  * WaitForControllerApi - factory interface
@@ -12627,57 +12702,72 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
-     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait for the nth email if not already present
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(inboxId?: string, index?: number, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
 };
 /**
  * WaitForControllerApi - object-oriented interface
@@ -12699,62 +12789,77 @@ export declare class WaitForControllerApi extends BaseAPI {
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForEmailCount(count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForLatestEmail(inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
-     * @param {number} [count] Number of emails to wait for. Must be greater that 1
+     * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, inboxId?: string, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter for emails that were received after the given timestamp
+     * @param {'ASC' | 'DESC'} [sort] Sort direction
      * @param {number} [timeout] Max milliseconds to wait for the nth email if not already present
      * @param {boolean} [unreadOnly] Optional filter for unread only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForNthEmail(inboxId?: string, index?: number, timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
 }
 /**
  * WebhookControllerApi - fetch parameter creator

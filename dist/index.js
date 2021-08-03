@@ -273,7 +273,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.waitController.waitForLatestEmail(inboxId, timeout, unreadOnly);
+                        return _this.waitController.waitForLatestEmail(undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -291,7 +291,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.waitController.waitForNthEmail(inboxId, index, timeout, unreadOnly);
+                        return _this.waitController.waitForNthEmail(undefined, inboxId, index, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -310,7 +310,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitController.waitForMatchingEmail(matchOptions, count, inboxId, timeout, unreadOnly);
+                        return _this.waitController.waitForMatchingEmail(matchOptions, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -328,7 +328,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.waitController.waitForEmailCount(count, inboxId, timeout, unreadOnly);
+                        return _this.waitController.waitForEmailCount(count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -380,7 +380,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails(inboxId, args.limit, args.minCount, args.retryTimeout, args.since, args.size, args.sort);
+                        return _this.inboxController.getEmails(inboxId, undefined, args.limit, args.minCount, args.retryTimeout, args.since, args.size, args.sort, undefined);
                     })];
             });
         });

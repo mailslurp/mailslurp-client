@@ -25,7 +25,7 @@
 
 •  **hash**: string
 
-*Defined in [src/generated/api.ts:2530](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2530)*
+*Defined in [src/generated/api.ts:2530](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2530)*
 
 **`memberof`** GravatarUrl
 
@@ -35,6 +35,6 @@ ___
 
 •  **url**: string
 
-*Defined in [src/generated/api.ts:2536](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2536)*
+*Defined in [src/generated/api.ts:2536](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2536)*
 
 **`memberof`** GravatarUrl

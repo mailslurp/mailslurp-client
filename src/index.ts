@@ -310,7 +310,14 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<Email> {
         return wrapCall('waitForLatestEmail', () =>
-            this.waitController.waitForLatestEmail(inboxId, timeout, unreadOnly)
+            this.waitController.waitForLatestEmail(
+                undefined,
+                inboxId,
+                undefined,
+                undefined,
+                timeout,
+                unreadOnly
+            )
         );
     }
     /**
@@ -329,8 +336,11 @@ export class MailSlurp {
     ): Promise<Email> {
         return wrapCall('waitForNthEmail', () =>
             this.waitController.waitForNthEmail(
+                undefined,
                 inboxId,
                 index,
+                undefined,
+                undefined,
                 timeout,
                 unreadOnly
             )
@@ -356,7 +366,10 @@ export class MailSlurp {
             this.waitController.waitForMatchingEmail(
                 matchOptions,
                 count,
+                undefined,
                 inboxId,
+                undefined,
+                undefined,
                 timeout,
                 unreadOnly
             )
@@ -379,7 +392,10 @@ export class MailSlurp {
         return wrapCall('waitForEmailCount', () =>
             this.waitController.waitForEmailCount(
                 count,
+                undefined,
                 inboxId,
+                undefined,
+                undefined,
                 timeout,
                 unreadOnly
             )
@@ -440,12 +456,14 @@ export class MailSlurp {
         return wrapCall('getEmails', () =>
             this.inboxController.getEmails(
                 inboxId,
+                undefined,
                 args.limit,
                 args.minCount,
                 args.retryTimeout,
                 args.since,
                 args.size,
-                args.sort
+                args.sort,
+                undefined
             )
         );
     }

@@ -43,7 +43,7 @@ WaitForControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -63,7 +63,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L61)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L57)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **waitFor**(`waitForConditions?`: [WaitForConditions](../modules/waitforconditions.md), `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in [src/generated/api.ts:28059](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28059)*
+*Defined in [src/generated/api.ts:28414](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28414)*
 
 Generic waitFor method that will wait until an inbox meets given conditions or return immediately if already met
 
@@ -114,9 +114,9 @@ ___
 
 ### waitForEmailCount
 
-▸ **waitForEmailCount**(`count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
+▸ **waitForEmailCount**(`count?`: number, `delay?`: number, `inboxId?`: string, `since?`: Date, `sort?`: \"ASC\" \| \"DESC\", `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in [src/generated/api.ts:28077](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28077)*
+*Defined in [src/generated/api.ts:28435](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28435)*
 
 If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
 
@@ -131,7 +131,10 @@ If inbox contains count or more emails at time of request then return count wort
 Name | Type |
 ------ | ------ |
 `count?` | number |
+`delay?` | number |
 `inboxId?` | string |
+`since?` | Date |
+`sort?` | \"ASC\" \| \"DESC\" |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 `options?` | any |
@@ -142,9 +145,9 @@ ___
 
 ### waitForLatestEmail
 
-▸ **waitForLatestEmail**(`inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
+▸ **waitForLatestEmail**(`delay?`: number, `inboxId?`: string, `since?`: Date, `sort?`: \"ASC\" \| \"DESC\", `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
 
-*Defined in [src/generated/api.ts:28103](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28103)*
+*Defined in [src/generated/api.ts:28470](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28470)*
 
 Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
 
@@ -158,7 +161,10 @@ Will return either the last received email or wait for an email to arrive and re
 
 Name | Type |
 ------ | ------ |
+`delay?` | number |
 `inboxId?` | string |
+`since?` | Date |
+`sort?` | \"ASC\" \| \"DESC\" |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 `options?` | any |
@@ -169,9 +175,9 @@ ___
 
 ### waitForMatchingEmail
 
-▸ **waitForMatchingEmail**(`matchOptions`: [MatchOptions](../interfaces/matchoptions.md), `count?`: number, `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
+▸ **waitForMatchingEmail**(`matchOptions`: [MatchOptions](../interfaces/matchoptions.md), `count?`: number, `delay?`: number, `inboxId?`: string, `since?`: Date, `sort?`: \"ASC\" \| \"DESC\", `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[EmailPreview](../interfaces/emailpreview.md)[]>
 
-*Defined in [src/generated/api.ts:28129](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28129)*
+*Defined in [src/generated/api.ts:28505](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28505)*
 
 Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
 
@@ -187,7 +193,10 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `matchOptions` | [MatchOptions](../interfaces/matchoptions.md) | matchOptions |
 `count?` | number | - |
+`delay?` | number | - |
 `inboxId?` | string | - |
+`since?` | Date | - |
+`sort?` | \"ASC\" \| \"DESC\" | - |
 `timeout?` | number | - |
 `unreadOnly?` | boolean | - |
 `options?` | any | - |
@@ -198,9 +207,9 @@ ___
 
 ### waitForMatchingFirstEmail
 
-▸ **waitForMatchingFirstEmail**(`matchOptions`: [MatchOptions](../interfaces/matchoptions.md), `inboxId?`: string, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
+▸ **waitForMatchingFirstEmail**(`matchOptions`: [MatchOptions](../interfaces/matchoptions.md), `delay?`: number, `inboxId?`: string, `since?`: Date, `sort?`: \"ASC\" \| \"DESC\", `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
 
-*Defined in [src/generated/api.ts:28158](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28158)*
+*Defined in [src/generated/api.ts:28543](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28543)*
 
 Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
 
@@ -215,7 +224,10 @@ Perform a search of emails in an inbox with the given patterns. If a result if f
 Name | Type | Description |
 ------ | ------ | ------ |
 `matchOptions` | [MatchOptions](../interfaces/matchoptions.md) | matchOptions |
+`delay?` | number | - |
 `inboxId?` | string | - |
+`since?` | Date | - |
+`sort?` | \"ASC\" \| \"DESC\" | - |
 `timeout?` | number | - |
 `unreadOnly?` | boolean | - |
 `options?` | any | - |
@@ -226,9 +238,9 @@ ___
 
 ### waitForNthEmail
 
-▸ **waitForNthEmail**(`inboxId?`: string, `index?`: number, `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
+▸ **waitForNthEmail**(`delay?`: number, `inboxId?`: string, `index?`: number, `since?`: Date, `sort?`: \"ASC\" \| \"DESC\", `timeout?`: number, `unreadOnly?`: boolean, `options?`: any): Promise\<[Email](../interfaces/email.md)>
 
-*Defined in [src/generated/api.ts:28187](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L28187)*
+*Defined in [src/generated/api.ts:28581](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L28581)*
 
 If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
 
@@ -242,8 +254,11 @@ If nth email is already present in inbox then return it. If not hold the connect
 
 Name | Type |
 ------ | ------ |
+`delay?` | number |
 `inboxId?` | string |
 `index?` | number |
+`since?` | Date |
+`sort?` | \"ASC\" \| \"DESC\" |
 `timeout?` | number |
 `unreadOnly?` | boolean |
 `options?` | any |

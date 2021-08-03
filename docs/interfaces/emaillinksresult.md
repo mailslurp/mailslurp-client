@@ -27,7 +27,7 @@ Links found in HTML
 
 •  **body**: string
 
-*Defined in [src/generated/api.ts:2097](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2097)*
+*Defined in [src/generated/api.ts:2097](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2097)*
 
 **`memberof`** EmailLinksResult
 
@@ -37,6 +37,6 @@ ___
 
 •  **links**: Array\<string>
 
-*Defined in [src/generated/api.ts:2103](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2103)*
+*Defined in [src/generated/api.ts:2103](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2103)*
 
 **`memberof`** EmailLinksResult

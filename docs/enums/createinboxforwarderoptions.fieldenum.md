@@ -21,7 +21,7 @@
 
 •  **ATTACHMENTS**:  = \<any>'ATTACHMENTS'
 
-*Defined in [src/generated/api.ts:1126](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1126)*
+*Defined in [src/generated/api.ts:1126](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L1126)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **RECIPIENTS**:  = \<any>'RECIPIENTS'
 
-*Defined in [src/generated/api.ts:1123](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1123)*
+*Defined in [src/generated/api.ts:1123](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L1123)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **SENDER**:  = \<any>'SENDER'
 
-*Defined in [src/generated/api.ts:1124](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1124)*
+*Defined in [src/generated/api.ts:1124](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L1124)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **SUBJECT**:  = \<any>'SUBJECT'
 
-*Defined in [src/generated/api.ts:1125](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L1125)*
+*Defined in [src/generated/api.ts:1125](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L1125)*

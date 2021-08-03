@@ -36,7 +36,7 @@
 
 • `Optional` **attachmentMetaDatas**: Array\<[AttachmentMetaData](../interfaces/attachmentmetadata.md)>
 
-*Defined in [src/generated/api.ts:6421](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6421)*
+*Defined in [src/generated/api.ts:6421](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6421)*
 
 List of attachment meta data objects if attachments present
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **bcc**: Array\<string>
 
-*Defined in [src/generated/api.ts:6427](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6427)*
+*Defined in [src/generated/api.ts:6427](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6427)*
 
 List of `BCC` recipients email was addressed to
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **cc**: Array\<string>
 
-*Defined in [src/generated/api.ts:6433](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6433)*
+*Defined in [src/generated/api.ts:6433](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6433)*
 
 List of `CC` recipients email was addressed to
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:6439](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6439)*
+*Defined in [src/generated/api.ts:6439](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6439)*
 
 Date time of event creation
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **emailId**: string
 
-*Defined in [src/generated/api.ts:6445](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6445)*
+*Defined in [src/generated/api.ts:6445](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6445)*
 
 ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **eventName**: [EventNameEnum](../enums/webhooknewemailpayload.eventnameenum.md)
 
-*Defined in [src/generated/api.ts:6451](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6451)*
+*Defined in [src/generated/api.ts:6451](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6451)*
 
 Name of the event type webhook is being triggered for.
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **from**: string
 
-*Defined in [src/generated/api.ts:6457](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6457)*
+*Defined in [src/generated/api.ts:6457](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6457)*
 
 Who the email was sent from
 
@@ -120,7 +120,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:6463](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6463)*
+*Defined in [src/generated/api.ts:6463](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6463)*
 
 Id of the inbox that received an email
 
@@ -132,7 +132,7 @@ ___
 
 • `Optional` **messageId**: string
 
-*Defined in [src/generated/api.ts:6469](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6469)*
+*Defined in [src/generated/api.ts:6469](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6469)*
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -144,7 +144,7 @@ ___
 
 • `Optional` **subject**: string
 
-*Defined in [src/generated/api.ts:6475](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6475)*
+*Defined in [src/generated/api.ts:6475](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6475)*
 
 The subject line of the email message
 
@@ -156,7 +156,7 @@ ___
 
 • `Optional` **to**: Array\<string>
 
-*Defined in [src/generated/api.ts:6481](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6481)*
+*Defined in [src/generated/api.ts:6481](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6481)*
 
 List of `To` recipients that email was addressed to
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **webhookId**: string
 
-*Defined in [src/generated/api.ts:6487](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6487)*
+*Defined in [src/generated/api.ts:6487](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6487)*
 
 ID of webhook entity being triggered
 
@@ -180,7 +180,7 @@ ___
 
 • `Optional` **webhookName**: string
 
-*Defined in [src/generated/api.ts:6493](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L6493)*
+*Defined in [src/generated/api.ts:6493](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L6493)*
 
 Name of the webhook being triggered
 

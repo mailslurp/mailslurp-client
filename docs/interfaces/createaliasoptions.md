@@ -29,7 +29,7 @@ Create email alias options. Email aliases can be used to mask real email address
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:860](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L860)*
+*Defined in [src/generated/api.ts:860](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L860)*
 
 Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread.
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:866](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L866)*
+*Defined in [src/generated/api.ts:866](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L866)*
 
 Optional inbox ID to attach to alias. Null by default means an a new inbox will be created for the alias. Use a custom inbox to control what email address the alias uses. To use custom email addresses create a domain and an inbox, the use the inbox ID with this call. Emails received by this inbox will be forwarded to the alias email address
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:872](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L872)*
+*Defined in [src/generated/api.ts:872](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L872)*
 
 Optional name for alias
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **useThreads**: boolean
 
-*Defined in [src/generated/api.ts:878](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L878)*
+*Defined in [src/generated/api.ts:878](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L878)*
 
 Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
 

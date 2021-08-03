@@ -29,7 +29,7 @@
 
 • `Optional` **createdEarliestTime**: Date
 
-*Defined in [src/generated/api.ts:2439](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2439)*
+*Defined in [src/generated/api.ts:2439](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2439)*
 
 **`memberof`** ExportOptions
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **createdOldestTime**: Date
 
-*Defined in [src/generated/api.ts:2445](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2445)*
+*Defined in [src/generated/api.ts:2445](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2445)*
 
 **`memberof`** ExportOptions
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **excludePreviouslyExported**: boolean
 
-*Defined in [src/generated/api.ts:2433](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2433)*
+*Defined in [src/generated/api.ts:2433](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2433)*
 
 **`memberof`** ExportOptions
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **filter**: string
 
-*Defined in [src/generated/api.ts:2451](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2451)*
+*Defined in [src/generated/api.ts:2451](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2451)*
 
 **`memberof`** ExportOptions
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **listSeparatorToken**: [Character](../interfaces/character.md)
 
-*Defined in [src/generated/api.ts:2457](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2457)*
+*Defined in [src/generated/api.ts:2457](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2457)*
 
 **`memberof`** ExportOptions
 
@@ -79,6 +79,6 @@ ___
 
 •  **outputFormat**: [OutputFormatEnum](../enums/exportoptions.outputformatenum.md)
 
-*Defined in [src/generated/api.ts:2427](https://github.com/mailslurp/mailslurp-client/blob/98c6efc/src/generated/api.ts#L2427)*
+*Defined in [src/generated/api.ts:2427](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2427)*
 
 **`memberof`** ExportOptions
