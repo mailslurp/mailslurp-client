@@ -274,7 +274,7 @@ To read emails that already exist in an inbox use the [EmailController](https://
 There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/email/).
 
 ```javascript
-const latestEmail = await mailslurp.waitForLatestEmail(inbox.id);
+const latestEmail = await mailslurp.waitForLatestEmail(undefined, inbox.id);
 
 expect(latestEmail.subject).toContain("Hello");
 expect(latestEmail.body).toContain("Welcome");
@@ -359,7 +359,7 @@ it('can wait for multiple emails', async () => {
     await mailslurp.sendEmail(inbox1.id, { to: [inbox2.emailAddress], subject: "Hello Cats" })
 
     // wait for 2 emails
-    const emails = await mailslurp.waitController.waitForEmailCount(2, inbox2.id, timeoutMillis, true)
+    const emails = await mailslurp.waitController.waitForEmailCount(2, undefined, inbox2.id, undefined, undefined, timeoutMillis, true)
 
     const subjects = emails.map(e => e.subject)
     expect(subjects).toContain("Hello Dogs")
@@ -374,7 +374,7 @@ To wait for expected emails to arrive and read their contents use the [WaitFor c
 async function canReceiveAttachment(inboxId) {
     const waitForController = new MailSlurp(config).waitController;
 
-    const email = await waitForController.waitForLatestEmail(inboxId, 30000, true)
+    const email = await waitForController.waitForLatestEmail(undefined, inboxId, undefined, undefined, 30000, true)
 
     expect(email.attachments.length).toEqual(1);
 
@@ -437,7 +437,7 @@ const body = "Hi there. Your code is: 123456"
 await mailslurp.sendEmail(inbox1.id, { to, body })
 
 // wait for email
-const email = await mailslurp.waitController.waitForLatestEmail(inbox2.id, timeoutMillis, true)
+const email = await mailslurp.waitController.waitForLatestEmail(undefined, inbox2.id, undefined, undefined, timeoutMillis, true)
 const pattern = "code is: ([0-9]{6})"
 expect(email.body).toContain("Your code is")
 
@@ -514,11 +514,14 @@ test('aliases', async () => {
     expect(sent.to).toContain(alias.emailAddress);
 
     // now expect email is forwarded by alias to InboxA
-    const forwardedEmail = await waitForController.waitForLatestEmail({
-        inboxId: inboxA.id,
-        unreadOnly: true,
-        timeout: 30000,
-    });
+    const forwardedEmail = await waitForController.waitForLatestEmail(
+        undefined,
+        inboxA.id,
+        undefined,
+        undefined,
+        30000,
+        true
+    );
     
     // received message
     expect(forwardedEmail.subject).toContain('Hello inbox A');
@@ -558,7 +561,7 @@ app.post("/my-webhook-endpoint", function (request, response) {
   // access the data on request body
   console.log(request.body.inboxId);
   
-  // do something with with inboxId like `mailslurp.waitForLatestEmail(inboxId)`
+  // do something with with inboxId like `mailslurp.waitForLatestEmail(undefined,inboxId)`
 
   // return a 2xx status code so MailSlurp knows you received it
   response.sendStatus(200);

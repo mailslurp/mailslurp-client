@@ -26,7 +26,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:483](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L483)*
+*Defined in [src/generated/api.ts:483](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L483)*
 
 **`memberof`** BounceProjection
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [src/generated/api.ts:489](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L489)*
+*Defined in [src/generated/api.ts:489](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L489)*
 
 **`memberof`** BounceProjection
 
@@ -46,6 +46,6 @@ ___
 
 •  **sender**: string
 
-*Defined in [src/generated/api.ts:495](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L495)*
+*Defined in [src/generated/api.ts:495](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L495)*
 
 **`memberof`** BounceProjection

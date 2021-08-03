@@ -35,7 +35,7 @@ Email alias representation
 
 • `Optional` **createdAt**: Date
 
-*Defined in [src/generated/api.ts:201](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L201)*
+*Defined in [src/generated/api.ts:201](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L201)*
 
 **`memberof`** AliasDto
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:207](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L207)*
+*Defined in [src/generated/api.ts:207](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L207)*
 
 The alias's email address for receiving email
 
@@ -57,7 +57,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:213](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L213)*
+*Defined in [src/generated/api.ts:213](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L213)*
 
 **`memberof`** AliasDto
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **inboxId**: string
 
-*Defined in [src/generated/api.ts:219](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L219)*
+*Defined in [src/generated/api.ts:219](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L219)*
 
 Inbox that is associated with the alias
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **isVerified**: boolean
 
-*Defined in [src/generated/api.ts:225](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L225)*
+*Defined in [src/generated/api.ts:225](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L225)*
 
 Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **maskedEmailAddress**: string
 
-*Defined in [src/generated/api.ts:231](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L231)*
+*Defined in [src/generated/api.ts:231](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L231)*
 
 The underlying email address that is hidden and will received forwarded email
 
@@ -103,7 +103,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:237](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L237)*
+*Defined in [src/generated/api.ts:237](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L237)*
 
 **`memberof`** AliasDto
 
@@ -113,7 +113,7 @@ ___
 
 • `Optional` **updatedAt**: Date
 
-*Defined in [src/generated/api.ts:243](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L243)*
+*Defined in [src/generated/api.ts:243](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L243)*
 
 **`memberof`** AliasDto
 
@@ -123,7 +123,7 @@ ___
 
 • `Optional` **useThreads**: boolean
 
-*Defined in [src/generated/api.ts:249](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L249)*
+*Defined in [src/generated/api.ts:249](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L249)*
 
 If alias will generate response threads or not when email are received by it
 
@@ -135,6 +135,6 @@ ___
 
 •  **userId**: string
 
-*Defined in [src/generated/api.ts:255](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L255)*
+*Defined in [src/generated/api.ts:255](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L255)*
 
 **`memberof`** AliasDto

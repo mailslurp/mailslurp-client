@@ -26,6 +26,6 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 • `Optional` **catchAllInboxId**: string
 
-*Defined in [src/generated/api.ts:5808](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L5808)*
+*Defined in [src/generated/api.ts:5808](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5808)*
 
 **`memberof`** UpdateDomainOptions

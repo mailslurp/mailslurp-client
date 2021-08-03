@@ -40,7 +40,7 @@ TrackingControllerApi - object-oriented interface
 
 *Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
 
 #### Parameters:
 
@@ -60,7 +60,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L61)*
+*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L57)*
+*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L62)*
+*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **createTrackingPixel**(`createTrackingPixelOptions`: [CreateTrackingPixelOptions](../interfaces/createtrackingpixeloptions.md), `options?`: any): Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
 
-*Defined in [src/generated/api.ts:27313](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L27313)*
+*Defined in [src/generated/api.ts:27313](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27313)*
 
 Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **getAllTrackingPixels**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageTrackingPixelProjection](../interfaces/pagetrackingpixelprojection.md)>
 
-*Defined in [src/generated/api.ts:27334](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L27334)*
+*Defined in [src/generated/api.ts:27334](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27334)*
 
 List tracking pixels in paginated form
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **getTrackingPixel**(`id`: string, `options?`: any): Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
 
-*Defined in [src/generated/api.ts:27358](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L27358)*
+*Defined in [src/generated/api.ts:27358](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27358)*
 
 **`summary`** Get pixel
 

@@ -32,7 +32,7 @@
 
 \+ **new RequiredError**(`field`: string, `msg?`: string): [RequiredError](requirederror.md)
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L78)*
 
 #### Parameters:
 
@@ -49,7 +49,7 @@ Name | Type |
 
 •  **field**: string
 
-*Defined in [src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L79)*
+*Defined in [src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L79)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Overrides void*
 
-*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L78)*
+*Defined in [src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L78)*
 
 ___
 

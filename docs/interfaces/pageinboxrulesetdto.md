@@ -36,7 +36,7 @@ Paginated inbox ruleset results. Page index starts at zero. Projection results m
 
 • `Optional` **content**: Array\<[InboxRulesetDto](../modules/inboxrulesetdto.md)>
 
-*Defined in [src/generated/api.ts:4176](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4176)*
+*Defined in [src/generated/api.ts:4176](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4176)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **empty**: boolean
 
-*Defined in [src/generated/api.ts:4182](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4182)*
+*Defined in [src/generated/api.ts:4182](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4182)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **first**: boolean
 
-*Defined in [src/generated/api.ts:4188](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4188)*
+*Defined in [src/generated/api.ts:4188](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4188)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **last**: boolean
 
-*Defined in [src/generated/api.ts:4194](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4194)*
+*Defined in [src/generated/api.ts:4194](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4194)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **number**: number
 
-*Defined in [src/generated/api.ts:4200](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4200)*
+*Defined in [src/generated/api.ts:4200](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4200)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **numberOfElements**: number
 
-*Defined in [src/generated/api.ts:4206](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4206)*
+*Defined in [src/generated/api.ts:4206](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4206)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **pageable**: [Pageable](pageable.md)
 
-*Defined in [src/generated/api.ts:4212](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4212)*
+*Defined in [src/generated/api.ts:4212](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4212)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in [src/generated/api.ts:4218](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4218)*
+*Defined in [src/generated/api.ts:4218](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4218)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **sort**: [Sort](sort.md)
 
-*Defined in [src/generated/api.ts:4224](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4224)*
+*Defined in [src/generated/api.ts:4224](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4224)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **totalElements**: number
 
-*Defined in [src/generated/api.ts:4230](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4230)*
+*Defined in [src/generated/api.ts:4230](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4230)*
 
 **`memberof`** PageInboxRulesetDto
 
@@ -136,6 +136,6 @@ ___
 
 • `Optional` **totalPages**: number
 
-*Defined in [src/generated/api.ts:4236](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L4236)*
+*Defined in [src/generated/api.ts:4236](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4236)*
 
 **`memberof`** PageInboxRulesetDto

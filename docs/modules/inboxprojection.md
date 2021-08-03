@@ -31,7 +31,7 @@
 
 •  **createdAt**: Date
 
-*Defined in [src/generated/api.ts:2870](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2870)*
+*Defined in [src/generated/api.ts:2870](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2870)*
 
 **`memberof`** InboxProjection
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **emailAddress**: string
 
-*Defined in [src/generated/api.ts:2876](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2876)*
+*Defined in [src/generated/api.ts:2876](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2876)*
 
 **`memberof`** InboxProjection
 
@@ -51,7 +51,7 @@ ___
 
 •  **favourite**: boolean
 
-*Defined in [src/generated/api.ts:2882](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2882)*
+*Defined in [src/generated/api.ts:2882](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2882)*
 
 **`memberof`** InboxProjection
 
@@ -61,7 +61,7 @@ ___
 
 •  **id**: string
 
-*Defined in [src/generated/api.ts:2888](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2888)*
+*Defined in [src/generated/api.ts:2888](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2888)*
 
 **`memberof`** InboxProjection
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **inboxType**: [InboxTypeEnum](../enums/inboxprojection.inboxtypeenum.md)
 
-*Defined in [src/generated/api.ts:2894](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2894)*
+*Defined in [src/generated/api.ts:2894](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2894)*
 
 **`memberof`** InboxProjection
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [src/generated/api.ts:2900](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2900)*
+*Defined in [src/generated/api.ts:2900](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2900)*
 
 **`memberof`** InboxProjection
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [src/generated/api.ts:2906](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2906)*
+*Defined in [src/generated/api.ts:2906](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2906)*
 
 **`memberof`** InboxProjection
 
@@ -101,6 +101,6 @@ ___
 
 •  **teamAccess**: boolean
 
-*Defined in [src/generated/api.ts:2912](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L2912)*
+*Defined in [src/generated/api.ts:2912](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2912)*
 
 **`memberof`** InboxProjection

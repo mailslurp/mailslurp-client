@@ -27,7 +27,7 @@
 
 • `Optional` **createdCatchAllInbox**: boolean
 
-*Defined in [src/generated/api.ts:948](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L948)*
+*Defined in [src/generated/api.ts:948](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L948)*
 
 Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in [src/generated/api.ts:954](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L954)*
+*Defined in [src/generated/api.ts:954](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L954)*
 
 Optional description of the domain.
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **domain**: string
 
-*Defined in [src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L960)*
+*Defined in [src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L960)*
 
 The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **domainType**: [DomainTypeEnum](../enums/createdomainoptions.domaintypeenum.md)
 
-*Defined in [src/generated/api.ts:966](https://github.com/mailslurp/mailslurp-client/blob/cce5bf2/src/generated/api.ts#L966)*
+*Defined in [src/generated/api.ts:966](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L966)*
 
 Domain type to create. HTTP or SMTP domain. HTTP domain uses MailSlurps SES MX records. SMTP uses a custom SMTP server MX record. SMTP domains can only be used with SMTP inboxes. SMTP inboxes are more reliable for public inbound emails while HTTP inboxes are more suitable for testing.
 
