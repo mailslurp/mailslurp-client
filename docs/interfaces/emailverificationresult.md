@@ -1,75 +1,79 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / EmailVerificationResult
+[MailSlurp JS](../README.md) / EmailVerificationResult
 
 # Interface: EmailVerificationResult
 
-Email verification result. Valid means email address exists according to response from mail server running at the domian and port given.
+Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.
 
-**`export`** 
+**`export`**
 
 **`interface`** EmailVerificationResult
 
-## Hierarchy
-
-* **EmailVerificationResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [domainName](emailverificationresult.md#domainname)
-* [emailAddress](emailverificationresult.md#emailaddress)
-* [error](emailverificationresult.md#error)
-* [isValid](emailverificationresult.md#isvalid)
-* [port](emailverificationresult.md#port)
+- [domainName](EmailVerificationResult.md#domainname)
+- [emailAddress](EmailVerificationResult.md#emailaddress)
+- [error](EmailVerificationResult.md#error)
+- [isValid](EmailVerificationResult.md#isvalid)
+- [port](EmailVerificationResult.md#port)
 
 ## Properties
 
 ### domainName
 
-•  **domainName**: string
-
-*Defined in [src/generated/api.ts:2285](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2285)*
+• **domainName**: `string`
 
 **`memberof`** EmailVerificationResult
+
+#### Defined in
+
+[src/generated/api.ts:2287](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2287)
 
 ___
 
 ### emailAddress
 
-•  **emailAddress**: string
-
-*Defined in [src/generated/api.ts:2291](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2291)*
+• **emailAddress**: `string`
 
 **`memberof`** EmailVerificationResult
+
+#### Defined in
+
+[src/generated/api.ts:2293](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2293)
 
 ___
 
 ### error
 
-• `Optional` **error**: string
-
-*Defined in [src/generated/api.ts:2297](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2297)*
+• `Optional` **error**: `string`
 
 **`memberof`** EmailVerificationResult
+
+#### Defined in
+
+[src/generated/api.ts:2299](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2299)
 
 ___
 
 ### isValid
 
-•  **isValid**: boolean
-
-*Defined in [src/generated/api.ts:2303](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2303)*
+• **isValid**: `boolean`
 
 **`memberof`** EmailVerificationResult
+
+#### Defined in
+
+[src/generated/api.ts:2305](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2305)
 
 ___
 
 ### port
 
-•  **port**: number
-
-*Defined in [src/generated/api.ts:2309](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2309)*
+• **port**: `number`
 
 **`memberof`** EmailVerificationResult
+
+#### Defined in
+
+[src/generated/api.ts:2311](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2311)

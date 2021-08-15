@@ -1,21 +1,23 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [InboxRulesetDto](../modules/inboxrulesetdto.md) / HandlerEnum
+[MailSlurp JS](../README.md) / [InboxRulesetDto](../modules/InboxRulesetDto.md) / HandlerEnum
 
 # Enumeration: HandlerEnum
 
-**`export`** 
+[InboxRulesetDto](../modules/InboxRulesetDto.md).HandlerEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [EXCEPTION](inboxrulesetdto.handlerenum.md#exception)
+- [EXCEPTION](InboxRulesetDto.HandlerEnum.md#exception)
 
 ## Enumeration members
 
 ### EXCEPTION
 
-•  **EXCEPTION**:  = \<any>'EXCEPTION'
+• **EXCEPTION**
 
-*Defined in [src/generated/api.ts:2999](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2999)*
+#### Defined in
+
+[src/generated/api.ts:3001](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3001)

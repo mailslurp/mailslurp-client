@@ -1,48 +1,56 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [CreateInboxForwarderOptions](../modules/createinboxforwarderoptions.md) / FieldEnum
+[MailSlurp JS](../README.md) / [CreateInboxForwarderOptions](../modules/CreateInboxForwarderOptions.md) / FieldEnum
 
 # Enumeration: FieldEnum
 
-**`export`** 
+[CreateInboxForwarderOptions](../modules/CreateInboxForwarderOptions.md).FieldEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [ATTACHMENTS](createinboxforwarderoptions.fieldenum.md#attachments)
-* [RECIPIENTS](createinboxforwarderoptions.fieldenum.md#recipients)
-* [SENDER](createinboxforwarderoptions.fieldenum.md#sender)
-* [SUBJECT](createinboxforwarderoptions.fieldenum.md#subject)
+- [ATTACHMENTS](CreateInboxForwarderOptions.FieldEnum.md#attachments)
+- [RECIPIENTS](CreateInboxForwarderOptions.FieldEnum.md#recipients)
+- [SENDER](CreateInboxForwarderOptions.FieldEnum.md#sender)
+- [SUBJECT](CreateInboxForwarderOptions.FieldEnum.md#subject)
 
 ## Enumeration members
 
 ### ATTACHMENTS
 
-•  **ATTACHMENTS**:  = \<any>'ATTACHMENTS'
+• **ATTACHMENTS**
 
-*Defined in [src/generated/api.ts:1126](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1126)*
+#### Defined in
+
+[src/generated/api.ts:1127](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1127)
 
 ___
 
 ### RECIPIENTS
 
-•  **RECIPIENTS**:  = \<any>'RECIPIENTS'
+• **RECIPIENTS**
 
-*Defined in [src/generated/api.ts:1123](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1123)*
+#### Defined in
+
+[src/generated/api.ts:1124](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1124)
 
 ___
 
 ### SENDER
 
-•  **SENDER**:  = \<any>'SENDER'
+• **SENDER**
 
-*Defined in [src/generated/api.ts:1124](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1124)*
+#### Defined in
+
+[src/generated/api.ts:1125](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1125)
 
 ___
 
 ### SUBJECT
 
-•  **SUBJECT**:  = \<any>'SUBJECT'
+• **SUBJECT**
 
-*Defined in [src/generated/api.ts:1125](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1125)*
+#### Defined in
+
+[src/generated/api.ts:1126](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1126)

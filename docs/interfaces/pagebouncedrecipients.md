@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageBouncedRecipients
+[MailSlurp JS](../README.md) / PageBouncedRecipients
 
 # Interface: PageBouncedRecipients
 
 Paginated bounced recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageBouncedRecipients
 
-## Hierarchy
-
-* **PageBouncedRecipients**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pagebouncedrecipients.md#content)
-* [empty](pagebouncedrecipients.md#empty)
-* [first](pagebouncedrecipients.md#first)
-* [last](pagebouncedrecipients.md#last)
-* [number](pagebouncedrecipients.md#number)
-* [numberOfElements](pagebouncedrecipients.md#numberofelements)
-* [pageable](pagebouncedrecipients.md#pageable)
-* [size](pagebouncedrecipients.md#size)
-* [sort](pagebouncedrecipients.md#sort)
-* [totalElements](pagebouncedrecipients.md#totalelements)
-* [totalPages](pagebouncedrecipients.md#totalpages)
+- [content](PageBouncedRecipients.md#content)
+- [empty](PageBouncedRecipients.md#empty)
+- [first](PageBouncedRecipients.md#first)
+- [last](PageBouncedRecipients.md#last)
+- [number](PageBouncedRecipients.md#number)
+- [numberOfElements](PageBouncedRecipients.md#numberofelements)
+- [pageable](PageBouncedRecipients.md#pageable)
+- [size](PageBouncedRecipients.md#size)
+- [sort](PageBouncedRecipients.md#sort)
+- [totalElements](PageBouncedRecipients.md#totalelements)
+- [totalPages](PageBouncedRecipients.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[BounceRecipient](bouncerecipient.md)>
-
-*Defined in [src/generated/api.ts:3584](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3584)*
+• `Optional` **content**: [`BounceRecipient`](BounceRecipient.md)[]
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3586](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3586)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:3590](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3590)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3592](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3592)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:3596](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3596)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3598](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3598)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:3602](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3602)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3604](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3604)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:3608](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3608)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3610](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3610)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:3614](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3614)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3616](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3616)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:3620](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3620)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3622](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3622)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:3626](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3626)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3628](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3628)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:3632](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3632)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3634](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3634)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:3638](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3638)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3640](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3640)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:3644](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3644)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageBouncedRecipients
+
+#### Defined in
+
+[src/generated/api.ts:3646](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3646)

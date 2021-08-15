@@ -1,106 +1,116 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / Alias
+[MailSlurp JS](../README.md) / Alias
 
 # Interface: Alias
 
-**`export`** 
+**`export`**
 
 **`interface`** Alias
 
-## Hierarchy
-
-* **Alias**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](alias.md#createdat)
-* [emailAddress](alias.md#emailaddress)
-* [id](alias.md#id)
-* [inboxId](alias.md#inboxid)
-* [name](alias.md#name)
-* [updatedAt](alias.md#updatedat)
-* [useThreads](alias.md#usethreads)
-* [userId](alias.md#userid)
+- [createdAt](Alias.md#createdat)
+- [emailAddress](Alias.md#emailaddress)
+- [id](Alias.md#id)
+- [inboxId](Alias.md#inboxid)
+- [name](Alias.md#name)
+- [updatedAt](Alias.md#updatedat)
+- [useThreads](Alias.md#usethreads)
+- [userId](Alias.md#userid)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:145](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L145)*
+• **createdAt**: `Date`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:146](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L146)
 
 ___
 
 ### emailAddress
 
-•  **emailAddress**: string
-
-*Defined in [src/generated/api.ts:151](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L151)*
+• **emailAddress**: `string`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:152](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L152)
 
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:157](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L157)*
+• `Optional` **id**: `string`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:158](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L158)
 
 ___
 
 ### inboxId
 
-•  **inboxId**: string
-
-*Defined in [src/generated/api.ts:163](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L163)*
+• **inboxId**: `string`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:164](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L164)
 
 ___
 
 ### name
 
-• `Optional` **name**: string
-
-*Defined in [src/generated/api.ts:169](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L169)*
+• `Optional` **name**: `string`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:170](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L170)
 
 ___
 
 ### updatedAt
 
-•  **updatedAt**: Date
-
-*Defined in [src/generated/api.ts:175](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L175)*
+• **updatedAt**: `Date`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:176](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L176)
 
 ___
 
 ### useThreads
 
-• `Optional` **useThreads**: boolean
-
-*Defined in [src/generated/api.ts:181](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L181)*
+• `Optional` **useThreads**: `boolean`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:182](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L182)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:187](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L187)*
+• **userId**: `string`
 
 **`memberof`** Alias
+
+#### Defined in
+
+[src/generated/api.ts:188](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L188)

@@ -1,106 +1,116 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ContactProjection
+[MailSlurp JS](../README.md) / ContactProjection
 
 # Interface: ContactProjection
 
-**`export`** 
+**`export`**
 
 **`interface`** ContactProjection
 
-## Hierarchy
-
-* **ContactProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [company](contactprojection.md#company)
-* [createdAt](contactprojection.md#createdat)
-* [emailAddresses](contactprojection.md#emailaddresses)
-* [firstName](contactprojection.md#firstname)
-* [groupId](contactprojection.md#groupid)
-* [id](contactprojection.md#id)
-* [lastName](contactprojection.md#lastname)
-* [optOut](contactprojection.md#optout)
+- [company](ContactProjection.md#company)
+- [createdAt](ContactProjection.md#createdat)
+- [emailAddresses](ContactProjection.md#emailaddresses)
+- [firstName](ContactProjection.md#firstname)
+- [groupId](ContactProjection.md#groupid)
+- [id](ContactProjection.md#id)
+- [lastName](ContactProjection.md#lastname)
+- [optOut](ContactProjection.md#optout)
 
 ## Properties
 
 ### company
 
-• `Optional` **company**: string
-
-*Defined in [src/generated/api.ts:790](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L790)*
+• `Optional` **company**: `string`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:791](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L791)
 
 ___
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:796](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L796)*
+• **createdAt**: `Date`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:797](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L797)
 
 ___
 
 ### emailAddresses
 
-• `Optional` **emailAddresses**: Array\<string>
-
-*Defined in [src/generated/api.ts:802](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L802)*
+• `Optional` **emailAddresses**: `string`[]
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:803](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L803)
 
 ___
 
 ### firstName
 
-• `Optional` **firstName**: string
-
-*Defined in [src/generated/api.ts:808](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L808)*
+• `Optional` **firstName**: `string`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:809](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L809)
 
 ___
 
 ### groupId
 
-• `Optional` **groupId**: string
-
-*Defined in [src/generated/api.ts:814](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L814)*
+• `Optional` **groupId**: `string`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:815](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L815)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:820](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L820)*
+• **id**: `string`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:821](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L821)
 
 ___
 
 ### lastName
 
-• `Optional` **lastName**: string
-
-*Defined in [src/generated/api.ts:826](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L826)*
+• `Optional` **lastName**: `string`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:827](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L827)
 
 ___
 
 ### optOut
 
-• `Optional` **optOut**: boolean
-
-*Defined in [src/generated/api.ts:832](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L832)*
+• `Optional` **optOut**: `boolean`
 
 **`memberof`** ContactProjection
+
+#### Defined in
+
+[src/generated/api.ts:833](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L833)

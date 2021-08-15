@@ -1,53 +1,53 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExpiredInboxDto
+[MailSlurp JS](../README.md) / ExpiredInboxDto
 
 # Interface: ExpiredInboxDto
 
 Expired inbox
 
-**`export`** 
+**`export`**
 
 **`interface`** ExpiredInboxDto
 
-## Hierarchy
-
-* **ExpiredInboxDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [emailAddress](expiredinboxdto.md#emailaddress)
-* [id](expiredinboxdto.md#id)
-* [inboxId](expiredinboxdto.md#inboxid)
+- [emailAddress](ExpiredInboxDto.md#emailaddress)
+- [id](ExpiredInboxDto.md#id)
+- [inboxId](ExpiredInboxDto.md#inboxid)
 
 ## Properties
 
 ### emailAddress
 
-•  **emailAddress**: string
-
-*Defined in [src/generated/api.ts:2355](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2355)*
+• **emailAddress**: `string`
 
 **`memberof`** ExpiredInboxDto
+
+#### Defined in
+
+[src/generated/api.ts:2357](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2357)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:2361](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2361)*
+• **id**: `string`
 
 **`memberof`** ExpiredInboxDto
+
+#### Defined in
+
+[src/generated/api.ts:2363](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2363)
 
 ___
 
 ### inboxId
 
-•  **inboxId**: string
-
-*Defined in [src/generated/api.ts:2367](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2367)*
+• **inboxId**: `string`
 
 **`memberof`** ExpiredInboxDto
+
+#### Defined in
+
+[src/generated/api.ts:2369](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2369)

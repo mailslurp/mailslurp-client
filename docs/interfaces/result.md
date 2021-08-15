@@ -1,45 +1,43 @@
-**[MailSlurp JS](../README.md)**
+[MailSlurp JS](../README.md) / Result
 
-> [Globals](../README.md) / Result
-
-# Interface: Result\<T>
+# Interface: Result<T\>
 
 ## Type parameters
 
-Name |
------- |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
-## Hierarchy
-
-* **Result**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](result.md#content)
-* [error](result.md#error)
+- [content](Result.md#content)
+- [error](Result.md#error)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: T
+• `Optional` **content**: `T`
 
-*Defined in [src/index.ts:593](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/index.ts#L593)*
+#### Defined in
+
+[src/index.ts:593](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/index.ts#L593)
 
 ___
 
 ### error
 
-• `Optional` **error**: { message: string ; statusCode: number  }
+• `Optional` **error**: `Object`
 
-*Defined in [src/index.ts:594](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/index.ts#L594)*
+#### Type declaration
 
-#### Type declaration:
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` |
+| `statusCode` | `number` |
 
-Name | Type |
------- | ------ |
-`message` | string |
-`statusCode` | number |
+#### Defined in
+
+[src/index.ts:594](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/index.ts#L594)

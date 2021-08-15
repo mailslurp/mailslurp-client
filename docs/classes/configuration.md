@@ -1,50 +1,42 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / Configuration
+[MailSlurp JS](../README.md) / Configuration
 
 # Class: Configuration
 
-## Hierarchy
-
-* **Configuration**
-
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](configuration.md#constructor)
+- [constructor](Configuration.md#constructor)
 
 ### Properties
 
-* [accessToken](configuration.md#accesstoken)
-* [apiKey](configuration.md#apikey)
-* [basePath](configuration.md#basepath)
-* [password](configuration.md#password)
-* [username](configuration.md#username)
+- [accessToken](Configuration.md#accesstoken)
+- [apiKey](Configuration.md#apikey)
+- [basePath](Configuration.md#basepath)
+- [password](Configuration.md#password)
+- [username](Configuration.md#username)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Configuration**(`param?`: [ConfigurationParameters](../interfaces/configurationparameters.md)): [Configuration](configuration.md)
+• **new Configuration**(`param?`)
 
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L56)*
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `param` | [`ConfigurationParameters`](../interfaces/ConfigurationParameters.md) |
 
-Name | Type | Default value |
------- | ------ | ------ |
-`param` | [ConfigurationParameters](../interfaces/configurationparameters.md) | {} |
+#### Defined in
 
-**Returns:** [Configuration](configuration.md)
+[src/generated/configuration.ts:58](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L58)
 
 ## Properties
 
 ### accessToken
 
-• `Optional` **accessToken**: string \| (name: string, scopes?: string[]) => string
-
-*Defined in [src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L49)*
+• `Optional` **accessToken**: `string` \| (`name`: `string`, `scopes?`: `string`[]) => `string`
 
 parameter for oauth2 security
 
@@ -54,13 +46,15 @@ parameter for oauth2 security
 
 **`memberof`** Configuration
 
+#### Defined in
+
+[src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L49)
+
 ___
 
 ### apiKey
 
-• `Optional` **apiKey**: string \| (name: string) => string
-
-*Defined in [src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L28)*
+• `Optional` **apiKey**: `string` \| (`name`: `string`) => `string`
 
 parameter for apiKey security
 
@@ -68,38 +62,48 @@ parameter for apiKey security
 
 **`memberof`** Configuration
 
+#### Defined in
+
+[src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L28)
+
 ___
 
 ### basePath
 
-• `Optional` **basePath**: string
-
-*Defined in [src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L56)*
+• `Optional` **basePath**: `string`
 
 override base path
 
 **`memberof`** Configuration
 
+#### Defined in
+
+[src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L56)
+
 ___
 
 ### password
 
-• `Optional` **password**: string
-
-*Defined in [src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L42)*
+• `Optional` **password**: `string`
 
 parameter for basic security
 
 **`memberof`** Configuration
+
+#### Defined in
+
+[src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L42)
 
 ___
 
 ### username
 
-• `Optional` **username**: string
-
-*Defined in [src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/configuration.ts#L35)*
+• `Optional` **username**: `string`
 
 parameter for basic security
 
 **`memberof`** Configuration
+
+#### Defined in
+
+[src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/configuration.ts#L35)

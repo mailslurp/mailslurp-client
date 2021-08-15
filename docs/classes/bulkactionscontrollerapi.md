@@ -1,94 +1,96 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BulkActionsControllerApi
+[MailSlurp JS](../README.md) / BulkActionsControllerApi
 
 # Class: BulkActionsControllerApi
 
 BulkActionsControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **BulkActionsControllerApi**
+  ↳ **`BulkActionsControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](bulkactionscontrollerapi.md#constructor)
+- [constructor](BulkActionsControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](bulkactionscontrollerapi.md#basepath)
-* [configuration](bulkactionscontrollerapi.md#configuration)
-* [fetch](bulkactionscontrollerapi.md#fetch)
+- [basePath](BulkActionsControllerApi.md#basepath)
+- [configuration](BulkActionsControllerApi.md#configuration)
+- [fetch](BulkActionsControllerApi.md#fetch)
 
 ### Methods
 
-* [bulkCreateInboxes](bulkactionscontrollerapi.md#bulkcreateinboxes)
-* [bulkDeleteInboxes](bulkactionscontrollerapi.md#bulkdeleteinboxes)
-* [bulkSendEmails](bulkactionscontrollerapi.md#bulksendemails)
+- [bulkCreateInboxes](BulkActionsControllerApi.md#bulkcreateinboxes)
+- [bulkDeleteInboxes](BulkActionsControllerApi.md#bulkdeleteinboxes)
+- [bulkSendEmails](BulkActionsControllerApi.md#bulksendemails)
 
 ## Constructors
 
 ### constructor
 
-\+ **new BulkActionsControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [BulkActionsControllerApi](bulkactionscontrollerapi.md)
+• **new BulkActionsControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [BulkActionsControllerApi](bulkactionscontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### bulkCreateInboxes
 
-▸ **bulkCreateInboxes**(`count`: number, `options?`: any): Promise\<[Inbox](../modules/inbox.md)[]>
-
-*Defined in [src/generated/api.ts:10436](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10436)*
+▸ **bulkCreateInboxes**(`count`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
 
 **`summary`** Bulk create Inboxes (email addresses)
 
@@ -96,22 +98,26 @@ ___
 
 **`memberof`** BulkActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`count` | number | Number of inboxes to be created in bulk |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `count` | `number` | Number of inboxes to be created in bulk |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[Inbox](../modules/inbox.md)[]>
+#### Returns
+
+`Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+
+#### Defined in
+
+[src/generated/api.ts:10557](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10557)
 
 ___
 
 ### bulkDeleteInboxes
 
-▸ **bulkDeleteInboxes**(`ids`: Array\<string>, `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:10451](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10451)*
+▸ **bulkDeleteInboxes**(`ids`, `options?`): `Promise`<`Response`\>
 
 **`summary`** Bulk Delete Inboxes
 
@@ -119,22 +125,26 @@ ___
 
 **`memberof`** BulkActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`ids` | Array\<string> | ids |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `ids` | `string`[] | ids |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:10572](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10572)
 
 ___
 
 ### bulkSendEmails
 
-▸ **bulkSendEmails**(`bulkSendEmailOptions`: [BulkSendEmailOptions](../interfaces/bulksendemailoptions.md), `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:10466](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10466)*
+▸ **bulkSendEmails**(`bulkSendEmailOptions`, `options?`): `Promise`<`Response`\>
 
 **`summary`** Bulk Send Emails
 
@@ -142,11 +152,17 @@ ___
 
 **`memberof`** BulkActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`bulkSendEmailOptions` | [BulkSendEmailOptions](../interfaces/bulksendemailoptions.md) | bulkSendEmailOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bulkSendEmailOptions` | [`BulkSendEmailOptions`](../interfaces/BulkSendEmailOptions.md) | bulkSendEmailOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:10587](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10587)

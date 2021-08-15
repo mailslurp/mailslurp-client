@@ -1,57 +1,78 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [AbstractWebhookPayload](../modules/abstractwebhookpayload.md) / EventNameEnum
+[MailSlurp JS](../README.md) / [AbstractWebhookPayload](../modules/AbstractWebhookPayload.md) / EventNameEnum
 
 # Enumeration: EventNameEnum
 
-**`export`** 
+[AbstractWebhookPayload](../modules/AbstractWebhookPayload.md).EventNameEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [EMAILOPENED](abstractwebhookpayload.eventnameenum.md#emailopened)
-* [EMAILRECEIVED](abstractwebhookpayload.eventnameenum.md#emailreceived)
-* [NEWATTACHMENT](abstractwebhookpayload.eventnameenum.md#newattachment)
-* [NEWCONTACT](abstractwebhookpayload.eventnameenum.md#newcontact)
-* [NEWEMAIL](abstractwebhookpayload.eventnameenum.md#newemail)
+- [EMAILOPENED](AbstractWebhookPayload.EventNameEnum.md#emailopened)
+- [EMAILREAD](AbstractWebhookPayload.EventNameEnum.md#emailread)
+- [EMAILRECEIVED](AbstractWebhookPayload.EventNameEnum.md#emailreceived)
+- [NEWATTACHMENT](AbstractWebhookPayload.EventNameEnum.md#newattachment)
+- [NEWCONTACT](AbstractWebhookPayload.EventNameEnum.md#newcontact)
+- [NEWEMAIL](AbstractWebhookPayload.EventNameEnum.md#newemail)
 
 ## Enumeration members
 
 ### EMAILOPENED
 
-•  **EMAILOPENED**:  = \<any>'EMAIL\_OPENED'
+• **EMAILOPENED**
 
-*Defined in [src/generated/api.ts:130](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L130)*
+#### Defined in
+
+[src/generated/api.ts:130](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L130)
+
+___
+
+### EMAILREAD
+
+• **EMAILREAD**
+
+#### Defined in
+
+[src/generated/api.ts:131](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L131)
 
 ___
 
 ### EMAILRECEIVED
 
-•  **EMAILRECEIVED**:  = \<any>'EMAIL\_RECEIVED'
+• **EMAILRECEIVED**
 
-*Defined in [src/generated/api.ts:126](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L126)*
+#### Defined in
+
+[src/generated/api.ts:126](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L126)
 
 ___
 
 ### NEWATTACHMENT
 
-•  **NEWATTACHMENT**:  = \<any>'NEW\_ATTACHMENT'
+• **NEWATTACHMENT**
 
-*Defined in [src/generated/api.ts:129](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L129)*
+#### Defined in
+
+[src/generated/api.ts:129](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L129)
 
 ___
 
 ### NEWCONTACT
 
-•  **NEWCONTACT**:  = \<any>'NEW\_CONTACT'
+• **NEWCONTACT**
 
-*Defined in [src/generated/api.ts:128](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L128)*
+#### Defined in
+
+[src/generated/api.ts:128](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L128)
 
 ___
 
 ### NEWEMAIL
 
-•  **NEWEMAIL**:  = \<any>'NEW\_EMAIL'
+• **NEWEMAIL**
 
-*Defined in [src/generated/api.ts:127](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L127)*
+#### Defined in
+
+[src/generated/api.ts:127](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L127)

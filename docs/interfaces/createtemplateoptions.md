@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CreateTemplateOptions
+[MailSlurp JS](../README.md) / CreateTemplateOptions
 
 # Interface: CreateTemplateOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** CreateTemplateOptions
 
-## Hierarchy
-
-* **CreateTemplateOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](createtemplateoptions.md#content)
-* [name](createtemplateoptions.md#name)
+- [content](CreateTemplateOptions.md#content)
+- [name](CreateTemplateOptions.md#name)
 
 ## Properties
 
 ### content
 
-•  **content**: string
-
-*Defined in [src/generated/api.ts:1197](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1197)*
+• **content**: `string`
 
 **`memberof`** CreateTemplateOptions
+
+#### Defined in
+
+[src/generated/api.ts:1198](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1198)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [src/generated/api.ts:1191](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1191)*
+• **name**: `string`
 
 **`memberof`** CreateTemplateOptions
+
+#### Defined in
+
+[src/generated/api.ts:1192](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1192)

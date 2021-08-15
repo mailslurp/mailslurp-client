@@ -1,39 +1,45 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [WebhookResultEntity](../modules/webhookresultentity.md) / ResultTypeEnum
+[MailSlurp JS](../README.md) / [WebhookResultEntity](../modules/WebhookResultEntity.md) / ResultTypeEnum
 
 # Enumeration: ResultTypeEnum
 
-**`export`** 
+[WebhookResultEntity](../modules/WebhookResultEntity.md).ResultTypeEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [BADRESPONSE](webhookresultentity.resulttypeenum.md#badresponse)
-* [EXCEPTION](webhookresultentity.resulttypeenum.md#exception)
-* [SUCCESS](webhookresultentity.resulttypeenum.md#success)
+- [BADRESPONSE](WebhookResultEntity.ResultTypeEnum.md#badresponse)
+- [EXCEPTION](WebhookResultEntity.ResultTypeEnum.md#exception)
+- [SUCCESS](WebhookResultEntity.ResultTypeEnum.md#success)
 
 ## Enumeration members
 
 ### BADRESPONSE
 
-•  **BADRESPONSE**:  = \<any>'BAD\_RESPONSE'
+• **BADRESPONSE**
 
-*Defined in [src/generated/api.ts:6698](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6698)*
+#### Defined in
+
+[src/generated/api.ts:6818](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6818)
 
 ___
 
 ### EXCEPTION
 
-•  **EXCEPTION**:  = \<any>'EXCEPTION'
+• **EXCEPTION**
 
-*Defined in [src/generated/api.ts:6699](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6699)*
+#### Defined in
+
+[src/generated/api.ts:6819](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6819)
 
 ___
 
 ### SUCCESS
 
-•  **SUCCESS**:  = \<any>'SUCCESS'
+• **SUCCESS**
 
-*Defined in [src/generated/api.ts:6700](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6700)*
+#### Defined in
+
+[src/generated/api.ts:6820](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6820)

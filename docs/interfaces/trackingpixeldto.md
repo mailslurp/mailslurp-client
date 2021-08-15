@@ -1,117 +1,129 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / TrackingPixelDto
+[MailSlurp JS](../README.md) / TrackingPixelDto
 
 # Interface: TrackingPixelDto
 
-**`export`** 
+**`export`**
 
 **`interface`** TrackingPixelDto
 
-## Hierarchy
-
-* **TrackingPixelDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](trackingpixeldto.md#createdat)
-* [html](trackingpixeldto.md#html)
-* [id](trackingpixeldto.md#id)
-* [inboxId](trackingpixeldto.md#inboxid)
-* [recipient](trackingpixeldto.md#recipient)
-* [seen](trackingpixeldto.md#seen)
-* [seenAt](trackingpixeldto.md#seenat)
-* [sentEmailId](trackingpixeldto.md#sentemailid)
-* [url](trackingpixeldto.md#url)
+- [createdAt](TrackingPixelDto.md#createdat)
+- [html](TrackingPixelDto.md#html)
+- [id](TrackingPixelDto.md#id)
+- [inboxId](TrackingPixelDto.md#inboxid)
+- [recipient](TrackingPixelDto.md#recipient)
+- [seen](TrackingPixelDto.md#seen)
+- [seenAt](TrackingPixelDto.md#seenat)
+- [sentEmailId](TrackingPixelDto.md#sentemailid)
+- [url](TrackingPixelDto.md#url)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:5656](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5656)*
+• **createdAt**: `Date`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5732](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5732)
 
 ___
 
 ### html
 
-•  **html**: string
-
-*Defined in [src/generated/api.ts:5662](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5662)*
+• **html**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5738](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5738)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:5668](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5668)*
+• **id**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5744](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5744)
 
 ___
 
 ### inboxId
 
-• `Optional` **inboxId**: string
-
-*Defined in [src/generated/api.ts:5674](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5674)*
+• `Optional` **inboxId**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5750](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5750)
 
 ___
 
 ### recipient
 
-• `Optional` **recipient**: string
-
-*Defined in [src/generated/api.ts:5680](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5680)*
+• `Optional` **recipient**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5756](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5756)
 
 ___
 
 ### seen
 
-•  **seen**: boolean
-
-*Defined in [src/generated/api.ts:5686](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5686)*
+• **seen**: `boolean`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5762](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5762)
 
 ___
 
 ### seenAt
 
-• `Optional` **seenAt**: Date
-
-*Defined in [src/generated/api.ts:5692](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5692)*
+• `Optional` **seenAt**: `Date`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5768](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5768)
 
 ___
 
 ### sentEmailId
 
-• `Optional` **sentEmailId**: string
-
-*Defined in [src/generated/api.ts:5698](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5698)*
+• `Optional` **sentEmailId**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5774](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5774)
 
 ___
 
 ### url
 
-•  **url**: string
-
-*Defined in [src/generated/api.ts:5704](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5704)*
+• **url**: `string`
 
 **`memberof`** TrackingPixelDto
+
+#### Defined in
+
+[src/generated/api.ts:5780](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5780)

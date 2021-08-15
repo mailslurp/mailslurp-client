@@ -1,29 +1,25 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / DescribeDomainOptions
+[MailSlurp JS](../README.md) / DescribeDomainOptions
 
 # Interface: DescribeDomainOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** DescribeDomainOptions
 
-## Hierarchy
-
-* **DescribeDomainOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [domain](describedomainoptions.md#domain)
+- [domain](DescribeDomainOptions.md#domain)
 
 ## Properties
 
 ### domain
 
-•  **domain**: string
-
-*Defined in [src/generated/api.ts:1557](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1557)*
+• **domain**: `string`
 
 **`memberof`** DescribeDomainOptions
+
+#### Defined in
+
+[src/generated/api.ts:1559](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1559)

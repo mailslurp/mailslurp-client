@@ -1,13 +1,7 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / Character
+[MailSlurp JS](../README.md) / Character
 
 # Interface: Character
 
-**`export`** 
+**`export`**
 
 **`interface`** Character
-
-## Hierarchy
-
-* **Character**

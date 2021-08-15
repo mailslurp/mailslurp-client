@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageBouncedEmail
+[MailSlurp JS](../README.md) / PageBouncedEmail
 
 # Interface: PageBouncedEmail
 
 Paginated bounced email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageBouncedEmail
 
-## Hierarchy
-
-* **PageBouncedEmail**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pagebouncedemail.md#content)
-* [empty](pagebouncedemail.md#empty)
-* [first](pagebouncedemail.md#first)
-* [last](pagebouncedemail.md#last)
-* [number](pagebouncedemail.md#number)
-* [numberOfElements](pagebouncedemail.md#numberofelements)
-* [pageable](pagebouncedemail.md#pageable)
-* [size](pagebouncedemail.md#size)
-* [sort](pagebouncedemail.md#sort)
-* [totalElements](pagebouncedemail.md#totalelements)
-* [totalPages](pagebouncedemail.md#totalpages)
+- [content](PageBouncedEmail.md#content)
+- [empty](PageBouncedEmail.md#empty)
+- [first](PageBouncedEmail.md#first)
+- [last](PageBouncedEmail.md#last)
+- [number](PageBouncedEmail.md#number)
+- [numberOfElements](PageBouncedEmail.md#numberofelements)
+- [pageable](PageBouncedEmail.md#pageable)
+- [size](PageBouncedEmail.md#size)
+- [sort](PageBouncedEmail.md#sort)
+- [totalElements](PageBouncedEmail.md#totalelements)
+- [totalPages](PageBouncedEmail.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[BounceProjection](bounceprojection.md)>
-
-*Defined in [src/generated/api.ts:3510](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3510)*
+• `Optional` **content**: [`BounceProjection`](BounceProjection.md)[]
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3512](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3512)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:3516](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3516)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3518](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3518)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:3522](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3522)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3524](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3524)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:3528](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3528)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3530](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3530)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:3534](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3534)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3536](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3536)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:3540](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3540)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3542](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3542)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:3546](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3546)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3548](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3548)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:3552](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3552)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3554](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3554)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:3558](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3558)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3560](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3560)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:3564](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3564)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3566](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3566)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:3570](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3570)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageBouncedEmail
+
+#### Defined in
+
+[src/generated/api.ts:3572](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3572)

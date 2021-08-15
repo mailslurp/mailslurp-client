@@ -1,153 +1,169 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageSentEmailProjection
+[MailSlurp JS](../README.md) / PageSentEmailProjection
 
 # Interface: PageSentEmailProjection
 
 Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageSentEmailProjection
 
-## Hierarchy
-
-* **PageSentEmailProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pagesentemailprojection.md#content)
-* [empty](pagesentemailprojection.md#empty)
-* [first](pagesentemailprojection.md#first)
-* [last](pagesentemailprojection.md#last)
-* [number](pagesentemailprojection.md#number)
-* [numberOfElements](pagesentemailprojection.md#numberofelements)
-* [pageable](pagesentemailprojection.md#pageable)
-* [size](pagesentemailprojection.md#size)
-* [sort](pagesentemailprojection.md#sort)
-* [totalElements](pagesentemailprojection.md#totalelements)
-* [totalPages](pagesentemailprojection.md#totalpages)
+- [content](PageSentEmailProjection.md#content)
+- [empty](PageSentEmailProjection.md#empty)
+- [first](PageSentEmailProjection.md#first)
+- [last](PageSentEmailProjection.md#last)
+- [number](PageSentEmailProjection.md#number)
+- [numberOfElements](PageSentEmailProjection.md#numberofelements)
+- [pageable](PageSentEmailProjection.md#pageable)
+- [size](PageSentEmailProjection.md#size)
+- [sort](PageSentEmailProjection.md#sort)
+- [totalElements](PageSentEmailProjection.md#totalelements)
+- [totalPages](PageSentEmailProjection.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[SentEmailProjection](sentemailprojection.md)>
-
-*Defined in [src/generated/api.ts:4398](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4398)*
+• `Optional` **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
 
 Collection of items
 
 **`memberof`** PageSentEmailProjection
 
+#### Defined in
+
+[src/generated/api.ts:4400](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4400)
+
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:4404](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4404)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4406](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4406)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:4410](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4410)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4412](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4412)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:4416](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4416)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4418](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4418)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:4422](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4422)*
+• `Optional` **number**: `number`
 
 Page number starting at 0
 
 **`memberof`** PageSentEmailProjection
 
+#### Defined in
+
+[src/generated/api.ts:4424](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4424)
+
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:4428](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4428)*
+• `Optional` **numberOfElements**: `number`
 
 Number of items returned
 
 **`memberof`** PageSentEmailProjection
 
+#### Defined in
+
+[src/generated/api.ts:4430](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4430)
+
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:4434](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4434)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4436](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4436)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:4440](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4440)*
+• `Optional` **size**: `number`
 
 Size of page requested
 
 **`memberof`** PageSentEmailProjection
 
+#### Defined in
+
+[src/generated/api.ts:4442](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4442)
+
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:4446](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4446)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4448](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4448)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:4452](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4452)*
+• `Optional` **totalElements**: `number`
 
 Total number of items available for querying
 
 **`memberof`** PageSentEmailProjection
 
+#### Defined in
+
+[src/generated/api.ts:4454](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4454)
+
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:4458](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4458)*
+• `Optional` **totalPages**: `number`
 
 Total number of pages available
 
 **`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4460](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4460)

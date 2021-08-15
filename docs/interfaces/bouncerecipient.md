@@ -1,73 +1,77 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BounceRecipient
+[MailSlurp JS](../README.md) / BounceRecipient
 
 # Interface: BounceRecipient
 
-**`export`** 
+**`export`**
 
 **`interface`** BounceRecipient
 
-## Hierarchy
-
-* **BounceRecipient**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](bouncerecipient.md#createdat)
-* [id](bouncerecipient.md#id)
-* [recipient](bouncerecipient.md#recipient)
-* [updatedAt](bouncerecipient.md#updatedat)
-* [userId](bouncerecipient.md#userid)
+- [createdAt](BounceRecipient.md#createdat)
+- [id](BounceRecipient.md#id)
+- [recipient](BounceRecipient.md#recipient)
+- [updatedAt](BounceRecipient.md#updatedat)
+- [userId](BounceRecipient.md#userid)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:509](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L509)*
+• **createdAt**: `Date`
 
 **`memberof`** BounceRecipient
+
+#### Defined in
+
+[src/generated/api.ts:510](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L510)
 
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:515](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L515)*
+• `Optional` **id**: `string`
 
 **`memberof`** BounceRecipient
+
+#### Defined in
+
+[src/generated/api.ts:516](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L516)
 
 ___
 
 ### recipient
 
-•  **recipient**: string
-
-*Defined in [src/generated/api.ts:521](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L521)*
+• **recipient**: `string`
 
 **`memberof`** BounceRecipient
+
+#### Defined in
+
+[src/generated/api.ts:522](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L522)
 
 ___
 
 ### updatedAt
 
-•  **updatedAt**: Date
-
-*Defined in [src/generated/api.ts:527](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L527)*
+• **updatedAt**: `Date`
 
 **`memberof`** BounceRecipient
+
+#### Defined in
+
+[src/generated/api.ts:528](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L528)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:533](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L533)*
+• **userId**: `string`
 
 **`memberof`** BounceRecipient
+
+#### Defined in
+
+[src/generated/api.ts:534](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L534)

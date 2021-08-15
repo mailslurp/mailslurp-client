@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [OrganizationInboxProjection](../modules/organizationinboxprojection.md) / InboxTypeEnum
+[MailSlurp JS](../README.md) / [OrganizationInboxProjection](../modules/OrganizationInboxProjection.md) / InboxTypeEnum
 
 # Enumeration: InboxTypeEnum
 
-**`export`** 
+[OrganizationInboxProjection](../modules/OrganizationInboxProjection.md).InboxTypeEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [HTTPINBOX](organizationinboxprojection.inboxtypeenum.md#httpinbox)
-* [SMTPINBOX](organizationinboxprojection.inboxtypeenum.md#smtpinbox)
+- [HTTPINBOX](OrganizationInboxProjection.InboxTypeEnum.md#httpinbox)
+- [SMTPINBOX](OrganizationInboxProjection.InboxTypeEnum.md#smtpinbox)
 
 ## Enumeration members
 
 ### HTTPINBOX
 
-•  **HTTPINBOX**:  = \<any>'HTTP\_INBOX'
+• **HTTPINBOX**
 
-*Defined in [src/generated/api.ts:3346](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3346)*
+#### Defined in
+
+[src/generated/api.ts:3348](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3348)
 
 ___
 
 ### SMTPINBOX
 
-•  **SMTPINBOX**:  = \<any>'SMTP\_INBOX'
+• **SMTPINBOX**
 
-*Defined in [src/generated/api.ts:3347](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3347)*
+#### Defined in
+
+[src/generated/api.ts:3349](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3349)

@@ -1,51 +1,13 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CreateInboxForwarderOptions
+[MailSlurp JS](../README.md) / CreateInboxForwarderOptions
 
 # Namespace: CreateInboxForwarderOptions
 
-**`export`** 
+**`export`**
 
 **`namespace`** CreateInboxForwarderOptions
 
-## Index
+## Table of contents
 
 ### Enumerations
 
-* [FieldEnum](../enums/createinboxforwarderoptions.fieldenum.md)
-
-### Properties
-
-* [field](createinboxforwarderoptions.md#field)
-* [forwardToRecipients](createinboxforwarderoptions.md#forwardtorecipients)
-* [match](createinboxforwarderoptions.md#match)
-
-## Properties
-
-### field
-
-•  **field**: [FieldEnum](../enums/createinboxforwarderoptions.fieldenum.md)
-
-*Defined in [src/generated/api.ts:1098](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1098)*
-
-**`memberof`** CreateInboxForwarderOptions
-
-___
-
-### forwardToRecipients
-
-•  **forwardToRecipients**: Array\<string>
-
-*Defined in [src/generated/api.ts:1110](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1110)*
-
-**`memberof`** CreateInboxForwarderOptions
-
-___
-
-### match
-
-•  **match**: string
-
-*Defined in [src/generated/api.ts:1104](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1104)*
-
-**`memberof`** CreateInboxForwarderOptions
+- [FieldEnum](../enums/CreateInboxForwarderOptions.FieldEnum.md)

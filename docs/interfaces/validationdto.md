@@ -1,46 +1,44 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ValidationDto
+[MailSlurp JS](../README.md) / ValidationDto
 
 # Interface: ValidationDto
 
 Response object for email validation operation
 
-**`export`** 
+**`export`**
 
 **`interface`** ValidationDto
 
-## Hierarchy
-
-* **ValidationDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [emailId](validationdto.md#emailid)
-* [html](validationdto.md#html)
+- [emailId](ValidationDto.md#emailid)
+- [html](ValidationDto.md#html)
 
 ## Properties
 
 ### emailId
 
-• `Optional` **emailId**: string
-
-*Defined in [src/generated/api.ts:5900](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5900)*
+• `Optional` **emailId**: `string`
 
 ID of the email validated
 
 **`memberof`** ValidationDto
 
+#### Defined in
+
+[src/generated/api.ts:6014](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6014)
+
 ___
 
 ### html
 
-• `Optional` **html**: [HTMLValidationResult](htmlvalidationresult.md)
-
-*Defined in [src/generated/api.ts:5906](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5906)*
+• `Optional` **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
 
 Result of HTML validation
 
 **`memberof`** ValidationDto
+
+#### Defined in
+
+[src/generated/api.ts:6020](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6020)

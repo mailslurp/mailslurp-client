@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageAttachmentEntity
+[MailSlurp JS](../README.md) / PageAttachmentEntity
 
 # Interface: PageAttachmentEntity
 
 Paginated attachment entity results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageAttachmentEntity
 
-## Hierarchy
-
-* **PageAttachmentEntity**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pageattachmententity.md#content)
-* [empty](pageattachmententity.md#empty)
-* [first](pageattachmententity.md#first)
-* [last](pageattachmententity.md#last)
-* [number](pageattachmententity.md#number)
-* [numberOfElements](pageattachmententity.md#numberofelements)
-* [pageable](pageattachmententity.md#pageable)
-* [size](pageattachmententity.md#size)
-* [sort](pageattachmententity.md#sort)
-* [totalElements](pageattachmententity.md#totalelements)
-* [totalPages](pageattachmententity.md#totalpages)
+- [content](PageAttachmentEntity.md#content)
+- [empty](PageAttachmentEntity.md#empty)
+- [first](PageAttachmentEntity.md#first)
+- [last](PageAttachmentEntity.md#last)
+- [number](PageAttachmentEntity.md#number)
+- [numberOfElements](PageAttachmentEntity.md#numberofelements)
+- [pageable](PageAttachmentEntity.md#pageable)
+- [size](PageAttachmentEntity.md#size)
+- [sort](PageAttachmentEntity.md#sort)
+- [totalElements](PageAttachmentEntity.md#totalelements)
+- [totalPages](PageAttachmentEntity.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[AttachmentProjection](attachmentprojection.md)>
-
-*Defined in [src/generated/api.ts:3436](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3436)*
+• `Optional` **content**: [`AttachmentProjection`](AttachmentProjection.md)[]
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3438](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3438)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:3442](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3442)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3444](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3444)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:3448](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3448)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3450](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3450)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:3454](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3454)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3456](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3456)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:3460](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3460)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3462](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3462)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:3466](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3466)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3468](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3468)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:3472](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3472)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3474](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3474)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:3478](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3478)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3480](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3480)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:3484](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3484)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3486](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3486)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:3490](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3490)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3492](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3492)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:3496](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3496)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageAttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:3498](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3498)

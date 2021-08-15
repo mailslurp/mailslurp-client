@@ -1,72 +1,74 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CreateAliasOptions
+[MailSlurp JS](../README.md) / CreateAliasOptions
 
 # Interface: CreateAliasOptions
 
 Create email alias options. Email aliases can be used to mask real email addresses behind an ID. You can also attach an inbox to an alias so that any email received by the inbox email address if forwarded to the alias email address.
 
-**`export`** 
+**`export`**
 
 **`interface`** CreateAliasOptions
 
-## Hierarchy
-
-* **CreateAliasOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [emailAddress](createaliasoptions.md#emailaddress)
-* [inboxId](createaliasoptions.md#inboxid)
-* [name](createaliasoptions.md#name)
-* [useThreads](createaliasoptions.md#usethreads)
+- [emailAddress](CreateAliasOptions.md#emailaddress)
+- [inboxId](CreateAliasOptions.md#inboxid)
+- [name](CreateAliasOptions.md#name)
+- [useThreads](CreateAliasOptions.md#usethreads)
 
 ## Properties
 
 ### emailAddress
 
-• `Optional` **emailAddress**: string
-
-*Defined in [src/generated/api.ts:860](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L860)*
+• `Optional` **emailAddress**: `string`
 
 Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread.
 
 **`memberof`** CreateAliasOptions
 
+#### Defined in
+
+[src/generated/api.ts:861](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L861)
+
 ___
 
 ### inboxId
 
-• `Optional` **inboxId**: string
-
-*Defined in [src/generated/api.ts:866](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L866)*
+• `Optional` **inboxId**: `string`
 
 Optional inbox ID to attach to alias. Null by default means an a new inbox will be created for the alias. Use a custom inbox to control what email address the alias uses. To use custom email addresses create a domain and an inbox, the use the inbox ID with this call. Emails received by this inbox will be forwarded to the alias email address
 
 **`memberof`** CreateAliasOptions
 
+#### Defined in
+
+[src/generated/api.ts:867](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L867)
+
 ___
 
 ### name
 
-• `Optional` **name**: string
-
-*Defined in [src/generated/api.ts:872](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L872)*
+• `Optional` **name**: `string`
 
 Optional name for alias
 
 **`memberof`** CreateAliasOptions
 
+#### Defined in
+
+[src/generated/api.ts:873](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L873)
+
 ___
 
 ### useThreads
 
-• `Optional` **useThreads**: boolean
-
-*Defined in [src/generated/api.ts:878](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L878)*
+• `Optional` **useThreads**: `boolean`
 
 Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
 
 **`memberof`** CreateAliasOptions
+
+#### Defined in
+
+[src/generated/api.ts:879](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L879)

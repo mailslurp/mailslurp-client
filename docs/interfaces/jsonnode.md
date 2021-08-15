@@ -1,13 +1,7 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / JsonNode
+[MailSlurp JS](../README.md) / JsonNode
 
 # Interface: JsonNode
 
-**`export`** 
+**`export`**
 
 **`interface`** JsonNode
-
-## Hierarchy
-
-* **JsonNode**

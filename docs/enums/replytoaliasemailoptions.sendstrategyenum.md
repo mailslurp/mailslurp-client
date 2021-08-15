@@ -1,21 +1,23 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [ReplyToAliasEmailOptions](../modules/replytoaliasemailoptions.md) / SendStrategyEnum
+[MailSlurp JS](../README.md) / [ReplyToAliasEmailOptions](../modules/ReplyToAliasEmailOptions.md) / SendStrategyEnum
 
 # Enumeration: SendStrategyEnum
 
-**`export`** 
+[ReplyToAliasEmailOptions](../modules/ReplyToAliasEmailOptions.md).SendStrategyEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [SINGLEMESSAGE](replytoaliasemailoptions.sendstrategyenum.md#singlemessage)
+- [SINGLEMESSAGE](ReplyToAliasEmailOptions.SendStrategyEnum.md#singlemessage)
 
 ## Enumeration members
 
 ### SINGLEMESSAGE
 
-•  **SINGLEMESSAGE**:  = \<any>'SINGLE\_MESSAGE'
+• **SINGLEMESSAGE**
 
-*Defined in [src/generated/api.ts:4955](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4955)*
+#### Defined in
+
+[src/generated/api.ts:5031](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5031)

@@ -1,42 +1,40 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / EmailTextLinesResult
+[MailSlurp JS](../README.md) / EmailTextLinesResult
 
 # Interface: EmailTextLinesResult
 
 Parsed text of an email
 
-**`export`** 
+**`export`**
 
 **`interface`** EmailTextLinesResult
 
-## Hierarchy
-
-* **EmailTextLinesResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [body](emailtextlinesresult.md#body)
-* [lines](emailtextlinesresult.md#lines)
+- [body](EmailTextLinesResult.md#body)
+- [lines](EmailTextLinesResult.md#lines)
 
 ## Properties
 
 ### body
 
-•  **body**: string
-
-*Defined in [src/generated/api.ts:2265](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2265)*
+• **body**: `string`
 
 **`memberof`** EmailTextLinesResult
+
+#### Defined in
+
+[src/generated/api.ts:2267](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2267)
 
 ___
 
 ### lines
 
-•  **lines**: Array\<string>
-
-*Defined in [src/generated/api.ts:2271](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2271)*
+• **lines**: `string`[]
 
 **`memberof`** EmailTextLinesResult
+
+#### Defined in
+
+[src/generated/api.ts:2273](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2273)

@@ -1,31 +1,27 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / DNSLookupResults
+[MailSlurp JS](../README.md) / DNSLookupResults
 
 # Interface: DNSLookupResults
 
 Results of query on domain name servers
 
-**`export`** 
+**`export`**
 
 **`interface`** DNSLookupResults
 
-## Hierarchy
-
-* **DNSLookupResults**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [results](dnslookupresults.md#results)
+- [results](DNSLookupResults.md#results)
 
 ## Properties
 
 ### results
 
-•  **results**: Array\<[DNSLookupResult](../modules/dnslookupresult.md)>
-
-*Defined in [src/generated/api.ts:1543](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1543)*
+• **results**: [`DNSLookupResult`](DNSLookupResult.md)[]
 
 **`memberof`** DNSLookupResults
+
+#### Defined in
+
+[src/generated/api.ts:1545](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1545)

@@ -1,29 +1,25 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / InboxRulesetTestOptions
+[MailSlurp JS](../README.md) / InboxRulesetTestOptions
 
 # Interface: InboxRulesetTestOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** InboxRulesetTestOptions
 
-## Hierarchy
-
-* **InboxRulesetTestOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [testTarget](inboxrulesettestoptions.md#testtarget)
+- [testTarget](InboxRulesetTestOptions.md#testtarget)
 
 ## Properties
 
 ### testTarget
 
-•  **testTarget**: string
-
-*Defined in [src/generated/api.ts:3022](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3022)*
+• **testTarget**: `string`
 
 **`memberof`** InboxRulesetTestOptions
+
+#### Defined in
+
+[src/generated/api.ts:3024](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3024)

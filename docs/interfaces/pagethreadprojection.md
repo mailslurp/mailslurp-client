@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageThreadProjection
+[MailSlurp JS](../README.md) / PageThreadProjection
 
 # Interface: PageThreadProjection
 
 Paginated email projection results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full email entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageThreadProjection
 
-## Hierarchy
-
-* **PageThreadProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pagethreadprojection.md#content)
-* [empty](pagethreadprojection.md#empty)
-* [first](pagethreadprojection.md#first)
-* [last](pagethreadprojection.md#last)
-* [number](pagethreadprojection.md#number)
-* [numberOfElements](pagethreadprojection.md#numberofelements)
-* [pageable](pagethreadprojection.md#pageable)
-* [size](pagethreadprojection.md#size)
-* [sort](pagethreadprojection.md#sort)
-* [totalElements](pagethreadprojection.md#totalelements)
-* [totalPages](pagethreadprojection.md#totalpages)
+- [content](PageThreadProjection.md#content)
+- [empty](PageThreadProjection.md#empty)
+- [first](PageThreadProjection.md#first)
+- [last](PageThreadProjection.md#last)
+- [number](PageThreadProjection.md#number)
+- [numberOfElements](PageThreadProjection.md#numberofelements)
+- [pageable](PageThreadProjection.md#pageable)
+- [size](PageThreadProjection.md#size)
+- [sort](PageThreadProjection.md#sort)
+- [totalElements](PageThreadProjection.md#totalelements)
+- [totalPages](PageThreadProjection.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[ThreadProjection](threadprojection.md)>
-
-*Defined in [src/generated/api.ts:4546](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4546)*
+• `Optional` **content**: [`ThreadProjection`](ThreadProjection.md)[]
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4548](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4548)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:4552](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4552)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4554](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4554)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:4558](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4558)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4560](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4560)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:4564](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4564)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4566](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4566)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:4570](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4570)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4572](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4572)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:4576](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4576)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4578](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4578)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:4582](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4582)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4584](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4584)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:4588](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4588)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4590](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4590)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:4594](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4594)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4596](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4596)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:4600](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4600)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4602](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4602)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:4606](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4606)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageThreadProjection
+
+#### Defined in
+
+[src/generated/api.ts:4608](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4608)

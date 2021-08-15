@@ -1,106 +1,116 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / AttachmentEntity
+[MailSlurp JS](../README.md) / AttachmentEntity
 
 # Interface: AttachmentEntity
 
-**`export`** 
+**`export`**
 
 **`interface`** AttachmentEntity
 
-## Hierarchy
-
-* **AttachmentEntity**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [attachmentId](attachmententity.md#attachmentid)
-* [contentLength](attachmententity.md#contentlength)
-* [contentType](attachmententity.md#contenttype)
-* [createdAt](attachmententity.md#createdat)
-* [id](attachmententity.md#id)
-* [name](attachmententity.md#name)
-* [updatedAt](attachmententity.md#updatedat)
-* [userId](attachmententity.md#userid)
+- [attachmentId](AttachmentEntity.md#attachmentid)
+- [contentLength](AttachmentEntity.md#contentlength)
+- [contentType](AttachmentEntity.md#contenttype)
+- [createdAt](AttachmentEntity.md#createdat)
+- [id](AttachmentEntity.md#id)
+- [name](AttachmentEntity.md#name)
+- [updatedAt](AttachmentEntity.md#updatedat)
+- [userId](AttachmentEntity.md#userid)
 
 ## Properties
 
 ### attachmentId
 
-•  **attachmentId**: string
-
-*Defined in [src/generated/api.ts:325](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L325)*
+• **attachmentId**: `string`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:326](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L326)
 
 ___
 
 ### contentLength
 
-• `Optional` **contentLength**: number
-
-*Defined in [src/generated/api.ts:331](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L331)*
+• `Optional` **contentLength**: `number`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:332](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L332)
 
 ___
 
 ### contentType
 
-• `Optional` **contentType**: string
-
-*Defined in [src/generated/api.ts:337](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L337)*
+• `Optional` **contentType**: `string`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:338](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L338)
 
 ___
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:343](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L343)*
+• **createdAt**: `Date`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:344](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L344)
 
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:349](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L349)*
+• `Optional` **id**: `string`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:350](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L350)
 
 ___
 
 ### name
 
-• `Optional` **name**: string
-
-*Defined in [src/generated/api.ts:355](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L355)*
+• `Optional` **name**: `string`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:356](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L356)
 
 ___
 
 ### updatedAt
 
-•  **updatedAt**: Date
-
-*Defined in [src/generated/api.ts:361](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L361)*
+• **updatedAt**: `Date`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:362](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L362)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:367](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L367)*
+• **userId**: `string`
 
 **`memberof`** AttachmentEntity
+
+#### Defined in
+
+[src/generated/api.ts:368](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L368)

@@ -1,42 +1,44 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / InboxRulesetTestResult
+[MailSlurp JS](../README.md) / InboxRulesetTestResult
 
 # Interface: InboxRulesetTestResult
 
-**`export`** 
+**`export`**
 
 **`interface`** InboxRulesetTestResult
 
-## Hierarchy
-
-* **InboxRulesetTestResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [matches](inboxrulesettestresult.md#matches)
-* [rulesetMatches](inboxrulesettestresult.md#rulesetmatches)
+- [matches](InboxRulesetTestResult.md#matches)
+- [rulesetMatches](InboxRulesetTestResult.md#rulesetmatches)
 
 ## Properties
 
 ### matches
 
-•  **matches**: boolean
-
-*Defined in [src/generated/api.ts:3036](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3036)*
+• **matches**: `boolean`
 
 **`memberof`** InboxRulesetTestResult
+
+#### Defined in
+
+[src/generated/api.ts:3038](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3038)
 
 ___
 
 ### rulesetMatches
 
-• `Optional` **rulesetMatches**: { [key:string]: boolean;  }
-
-*Defined in [src/generated/api.ts:3042](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3042)*
+• `Optional` **rulesetMatches**: `Object`
 
 Map of inbox ruleset ID to boolean of if target matches
 
 **`memberof`** InboxRulesetTestResult
+
+#### Index signature
+
+▪ [key: `string`]: `boolean`
+
+#### Defined in
+
+[src/generated/api.ts:3044](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3044)

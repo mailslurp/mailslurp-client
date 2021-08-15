@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageInboxProjection
+[MailSlurp JS](../README.md) / PageInboxProjection
 
 # Interface: PageInboxProjection
 
 Paginated inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageInboxProjection
 
-## Hierarchy
-
-* **PageInboxProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pageinboxprojection.md#content)
-* [empty](pageinboxprojection.md#empty)
-* [first](pageinboxprojection.md#first)
-* [last](pageinboxprojection.md#last)
-* [number](pageinboxprojection.md#number)
-* [numberOfElements](pageinboxprojection.md#numberofelements)
-* [pageable](pageinboxprojection.md#pageable)
-* [size](pageinboxprojection.md#size)
-* [sort](pageinboxprojection.md#sort)
-* [totalElements](pageinboxprojection.md#totalelements)
-* [totalPages](pageinboxprojection.md#totalpages)
+- [content](PageInboxProjection.md#content)
+- [empty](PageInboxProjection.md#empty)
+- [first](PageInboxProjection.md#first)
+- [last](PageInboxProjection.md#last)
+- [number](PageInboxProjection.md#number)
+- [numberOfElements](PageInboxProjection.md#numberofelements)
+- [pageable](PageInboxProjection.md#pageable)
+- [size](PageInboxProjection.md#size)
+- [sort](PageInboxProjection.md#sort)
+- [totalElements](PageInboxProjection.md#totalelements)
+- [totalPages](PageInboxProjection.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[InboxProjection](../modules/inboxprojection.md)>
-
-*Defined in [src/generated/api.ts:4102](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4102)*
+• `Optional` **content**: [`InboxProjection`](InboxProjection.md)[]
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4104](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4104)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:4108](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4108)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4110](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4110)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:4114](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4114)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4116](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4116)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:4120](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4120)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4122](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4122)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:4126](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4126)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4128](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4128)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:4132](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4132)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4134](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4134)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:4138](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4138)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4140](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4140)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:4144](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4144)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4146](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4146)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:4150](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4150)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4152](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4152)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:4156](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4156)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4158](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4158)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:4162](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4162)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageInboxProjection
+
+#### Defined in
+
+[src/generated/api.ts:4164](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4164)

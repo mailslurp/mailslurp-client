@@ -1,73 +1,77 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / TemplateDto
+[MailSlurp JS](../README.md) / TemplateDto
 
 # Interface: TemplateDto
 
-**`export`** 
+**`export`**
 
 **`interface`** TemplateDto
 
-## Hierarchy
-
-* **TemplateDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](templatedto.md#content)
-* [createdAt](templatedto.md#createdat)
-* [id](templatedto.md#id)
-* [name](templatedto.md#name)
-* [variables](templatedto.md#variables)
+- [content](TemplateDto.md#content)
+- [createdAt](TemplateDto.md#createdat)
+- [id](TemplateDto.md#id)
+- [name](TemplateDto.md#name)
+- [variables](TemplateDto.md#variables)
 
 ## Properties
 
 ### content
 
-•  **content**: string
-
-*Defined in [src/generated/api.ts:5432](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5432)*
+• **content**: `string`
 
 **`memberof`** TemplateDto
+
+#### Defined in
+
+[src/generated/api.ts:5508](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5508)
 
 ___
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:5438](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5438)*
+• **createdAt**: `Date`
 
 **`memberof`** TemplateDto
+
+#### Defined in
+
+[src/generated/api.ts:5514](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5514)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:5444](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5444)*
+• **id**: `string`
 
 **`memberof`** TemplateDto
+
+#### Defined in
+
+[src/generated/api.ts:5520](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5520)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [src/generated/api.ts:5450](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5450)*
+• **name**: `string`
 
 **`memberof`** TemplateDto
+
+#### Defined in
+
+[src/generated/api.ts:5526](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5526)
 
 ___
 
 ### variables
 
-•  **variables**: Array\<[TemplateVariable](../modules/templatevariable.md)>
-
-*Defined in [src/generated/api.ts:5456](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5456)*
+• **variables**: [`TemplateVariable`](TemplateVariable.md)[]
 
 **`memberof`** TemplateDto
+
+#### Defined in
+
+[src/generated/api.ts:5532](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5532)

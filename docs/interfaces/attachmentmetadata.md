@@ -1,72 +1,74 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / AttachmentMetaData
+[MailSlurp JS](../README.md) / AttachmentMetaData
 
 # Interface: AttachmentMetaData
 
 Meta data associated with an attachment. Attachments are stored as byte blobs so the meta data is stored separately.
 
-**`export`** 
+**`export`**
 
 **`interface`** AttachmentMetaData
 
-## Hierarchy
-
-* **AttachmentMetaData**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [contentLength](attachmentmetadata.md#contentlength)
-* [contentType](attachmentmetadata.md#contenttype)
-* [id](attachmentmetadata.md#id)
-* [name](attachmentmetadata.md#name)
+- [contentLength](AttachmentMetaData.md#contentlength)
+- [contentType](AttachmentMetaData.md#contenttype)
+- [id](AttachmentMetaData.md#id)
+- [name](AttachmentMetaData.md#name)
 
 ## Properties
 
 ### contentLength
 
-• `Optional` **contentLength**: number
-
-*Defined in [src/generated/api.ts:381](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L381)*
+• `Optional` **contentLength**: `number`
 
 Size of attachment in bytes
 
 **`memberof`** AttachmentMetaData
 
+#### Defined in
+
+[src/generated/api.ts:382](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L382)
+
 ___
 
 ### contentType
 
-• `Optional` **contentType**: string
-
-*Defined in [src/generated/api.ts:387](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L387)*
+• `Optional` **contentType**: `string`
 
 Content type of attachment such as `image/png`
 
 **`memberof`** AttachmentMetaData
 
+#### Defined in
+
+[src/generated/api.ts:388](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L388)
+
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:393](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L393)*
+• `Optional` **id**: `string`
 
 ID of attachment
 
 **`memberof`** AttachmentMetaData
 
+#### Defined in
+
+[src/generated/api.ts:394](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L394)
+
 ___
 
 ### name
 
-• `Optional` **name**: string
-
-*Defined in [src/generated/api.ts:399](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L399)*
+• `Optional` **name**: `string`
 
 Name of attachment if given
 
 **`memberof`** AttachmentMetaData
+
+#### Defined in
+
+[src/generated/api.ts:400](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L400)

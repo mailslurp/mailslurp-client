@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ValidationMessage
+[MailSlurp JS](../README.md) / ValidationMessage
 
 # Interface: ValidationMessage
 
-**`export`** 
+**`export`**
 
 **`interface`** ValidationMessage
 
-## Hierarchy
-
-* **ValidationMessage**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [lineNumber](validationmessage.md#linenumber)
-* [message](validationmessage.md#message)
+- [lineNumber](ValidationMessage.md#linenumber)
+- [message](ValidationMessage.md#message)
 
 ## Properties
 
 ### lineNumber
 
-•  **lineNumber**: number
-
-*Defined in [src/generated/api.ts:5920](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5920)*
+• **lineNumber**: `number`
 
 **`memberof`** ValidationMessage
+
+#### Defined in
+
+[src/generated/api.ts:6034](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6034)
 
 ___
 
 ### message
 
-• `Optional` **message**: string
-
-*Defined in [src/generated/api.ts:5926](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5926)*
+• `Optional` **message**: `string`
 
 **`memberof`** ValidationMessage
+
+#### Defined in
+
+[src/generated/api.ts:6040](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6040)

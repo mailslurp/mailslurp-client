@@ -1,42 +1,40 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / EmailLinksResult
+[MailSlurp JS](../README.md) / EmailLinksResult
 
 # Interface: EmailLinksResult
 
 Links found in HTML
 
-**`export`** 
+**`export`**
 
 **`interface`** EmailLinksResult
 
-## Hierarchy
-
-* **EmailLinksResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [body](emaillinksresult.md#body)
-* [links](emaillinksresult.md#links)
+- [body](EmailLinksResult.md#body)
+- [links](EmailLinksResult.md#links)
 
 ## Properties
 
 ### body
 
-•  **body**: string
-
-*Defined in [src/generated/api.ts:2097](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2097)*
+• **body**: `string`
 
 **`memberof`** EmailLinksResult
+
+#### Defined in
+
+[src/generated/api.ts:2099](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2099)
 
 ___
 
 ### links
 
-•  **links**: Array\<string>
-
-*Defined in [src/generated/api.ts:2103](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2103)*
+• **links**: `string`[]
 
 **`memberof`** EmailLinksResult
+
+#### Defined in
+
+[src/generated/api.ts:2105](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2105)

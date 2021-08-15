@@ -1,95 +1,97 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CommonActionsControllerApi
+[MailSlurp JS](../README.md) / CommonActionsControllerApi
 
 # Class: CommonActionsControllerApi
 
 CommonActionsControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **CommonActionsControllerApi**
+  ↳ **`CommonActionsControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](commonactionscontrollerapi.md#constructor)
+- [constructor](CommonActionsControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](commonactionscontrollerapi.md#basepath)
-* [configuration](commonactionscontrollerapi.md#configuration)
-* [fetch](commonactionscontrollerapi.md#fetch)
+- [basePath](CommonActionsControllerApi.md#basepath)
+- [configuration](CommonActionsControllerApi.md#configuration)
+- [fetch](CommonActionsControllerApi.md#fetch)
 
 ### Methods
 
-* [createNewEmailAddress](commonactionscontrollerapi.md#createnewemailaddress)
-* [createNewEmailAddress1](commonactionscontrollerapi.md#createnewemailaddress1)
-* [emptyInbox](commonactionscontrollerapi.md#emptyinbox)
-* [sendEmailSimple](commonactionscontrollerapi.md#sendemailsimple)
+- [createNewEmailAddress](CommonActionsControllerApi.md#createnewemailaddress)
+- [createNewEmailAddress1](CommonActionsControllerApi.md#createnewemailaddress1)
+- [emptyInbox](CommonActionsControllerApi.md#emptyinbox)
+- [sendEmailSimple](CommonActionsControllerApi.md#sendemailsimple)
 
 ## Constructors
 
 ### constructor
 
-\+ **new CommonActionsControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [CommonActionsControllerApi](commonactionscontrollerapi.md)
+• **new CommonActionsControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [CommonActionsControllerApi](commonactionscontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### createNewEmailAddress
 
-▸ **createNewEmailAddress**(`allowTeamAccess?`: boolean, `expiresAt?`: Date, `expiresIn?`: number, `useDomainPool?`: boolean, `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
-
-*Defined in [src/generated/api.ts:11018](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L11018)*
+▸ **createNewEmailAddress**(`allowTeamAccess?`, `expiresAt?`, `expiresIn?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -99,25 +101,29 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 **`memberof`** CommonActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`allowTeamAccess?` | boolean |
-`expiresAt?` | Date |
-`expiresIn?` | number |
-`useDomainPool?` | boolean |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `allowTeamAccess?` | `boolean` |
+| `expiresAt?` | `Date` |
+| `expiresIn?` | `number` |
+| `useDomainPool?` | `boolean` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[Inbox](../modules/inbox.md)>
+#### Returns
+
+`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:11139](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L11139)
 
 ___
 
 ### createNewEmailAddress1
 
-▸ **createNewEmailAddress1**(`allowTeamAccess?`: boolean, `expiresAt?`: Date, `expiresIn?`: number, `useDomainPool?`: boolean, `options?`: any): Promise\<[Inbox](../modules/inbox.md)>
-
-*Defined in [src/generated/api.ts:11047](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L11047)*
+▸ **createNewEmailAddress1**(`allowTeamAccess?`, `expiresAt?`, `expiresIn?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -127,25 +133,29 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 **`memberof`** CommonActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`allowTeamAccess?` | boolean |
-`expiresAt?` | Date |
-`expiresIn?` | number |
-`useDomainPool?` | boolean |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `allowTeamAccess?` | `boolean` |
+| `expiresAt?` | `Date` |
+| `expiresIn?` | `number` |
+| `useDomainPool?` | `boolean` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[Inbox](../modules/inbox.md)>
+#### Returns
+
+`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:11168](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L11168)
 
 ___
 
 ### emptyInbox
 
-▸ **emptyInbox**(`inboxId`: string, `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:11073](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L11073)*
+▸ **emptyInbox**(`inboxId`, `options?`): `Promise`<`Response`\>
 
 Deletes all emails
 
@@ -155,22 +165,26 @@ Deletes all emails
 
 **`memberof`** CommonActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`inboxId` | string | inboxId |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `inboxId` | `string` | inboxId |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:11194](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L11194)
 
 ___
 
 ### sendEmailSimple
 
-▸ **sendEmailSimple**(`emailOptions`: [SimpleSendEmailOptions](../interfaces/simplesendemailoptions.md), `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:11088](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L11088)*
+▸ **sendEmailSimple**(`emailOptions`, `options?`): `Promise`<`Response`\>
 
 If no senderId or inboxId provided a random email address will be used to send from.
 
@@ -180,11 +194,17 @@ If no senderId or inboxId provided a random email address will be used to send f
 
 **`memberof`** CommonActionsControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`emailOptions` | [SimpleSendEmailOptions](../interfaces/simplesendemailoptions.md) | emailOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `emailOptions` | [`SimpleSendEmailOptions`](../interfaces/SimpleSendEmailOptions.md) | emailOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:11209](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L11209)

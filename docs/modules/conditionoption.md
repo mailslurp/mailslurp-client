@@ -1,45 +1,14 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ConditionOption
+[MailSlurp JS](../README.md) / ConditionOption
 
 # Namespace: ConditionOption
 
-**`export`** 
+**`export`**
 
 **`namespace`** ConditionOption
 
-## Index
+## Table of contents
 
 ### Enumerations
 
-* [ConditionEnum](../enums/conditionoption.conditionenum.md)
-* [ValueEnum](../enums/conditionoption.valueenum.md)
-
-### Properties
-
-* [condition](conditionoption.md#condition)
-* [value](conditionoption.md#value)
-
-## Properties
-
-### condition
-
-• `Optional` **condition**: [ConditionEnum](../enums/conditionoption.conditionenum.md)
-
-*Defined in [src/generated/api.ts:674](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L674)*
-
-The condition to evaluate against the email
-
-**`memberof`** ConditionOption
-
-___
-
-### value
-
-• `Optional` **value**: [ValueEnum](../enums/conditionoption.valueenum.md)
-
-*Defined in [src/generated/api.ts:680](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L680)*
-
-What the condition should evaluate to. A string 'TRUE|FALSE' not a boolean.
-
-**`memberof`** ConditionOption
+- [ConditionEnum](../enums/ConditionOption.ConditionEnum.md)
+- [ValueEnum](../enums/ConditionOption.ValueEnum.md)

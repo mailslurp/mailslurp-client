@@ -1,29 +1,25 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / UnreadCount
+[MailSlurp JS](../README.md) / UnreadCount
 
 # Interface: UnreadCount
 
-**`export`** 
+**`export`**
 
 **`interface`** UnreadCount
 
-## Hierarchy
-
-* **UnreadCount**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [count](unreadcount.md#count)
+- [count](UnreadCount.md#count)
 
 ## Properties
 
 ### count
 
-•  **count**: number
-
-*Defined in [src/generated/api.ts:5780](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5780)*
+• **count**: `number`
 
 **`memberof`** UnreadCount
+
+#### Defined in
+
+[src/generated/api.ts:5894](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5894)

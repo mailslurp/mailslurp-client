@@ -1,29 +1,25 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / UpdateGroupContacts
+[MailSlurp JS](../README.md) / UpdateGroupContacts
 
 # Interface: UpdateGroupContacts
 
-**`export`** 
+**`export`**
 
 **`interface`** UpdateGroupContacts
 
-## Hierarchy
-
-* **UpdateGroupContacts**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [contactIds](updategroupcontacts.md#contactids)
+- [contactIds](UpdateGroupContacts.md#contactids)
 
 ## Properties
 
 ### contactIds
 
-•  **contactIds**: Array\<string>
-
-*Defined in [src/generated/api.ts:5822](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5822)*
+• **contactIds**: `string`[]
 
 **`memberof`** UpdateGroupContacts
+
+#### Defined in
+
+[src/generated/api.ts:5936](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5936)

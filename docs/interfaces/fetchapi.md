@@ -1,32 +1,24 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / FetchAPI
+[MailSlurp JS](../README.md) / FetchAPI
 
 # Interface: FetchAPI
 
-**`export`** 
-
-**`interface`** FetchAPI
-
-## Hierarchy
-
-* **FetchAPI**
-
 ## Callable
 
-▸ (`url`: string, `init?`: any): Promise\<Response>
+### FetchAPI
 
-*Defined in [src/generated/api.ts:37](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L37)*
+▸ **FetchAPI**(`url`, `init?`): `Promise`<`Response`\>
 
-**`export`** 
+#### Parameters
 
-**`interface`** FetchAPI
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `init?` | `any` |
 
-#### Parameters:
+#### Returns
 
-Name | Type |
------- | ------ |
-`url` | string |
-`init?` | any |
+`Promise`<`Response`\>
 
-**Returns:** Promise\<Response>
+#### Defined in
+
+[src/generated/api.ts:38](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L38)

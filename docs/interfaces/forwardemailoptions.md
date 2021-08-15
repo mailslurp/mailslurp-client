@@ -1,98 +1,104 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ForwardEmailOptions
+[MailSlurp JS](../README.md) / ForwardEmailOptions
 
 # Interface: ForwardEmailOptions
 
 Options for forwarding an email
 
-**`export`** 
+**`export`**
 
 **`interface`** ForwardEmailOptions
 
-## Hierarchy
-
-* **ForwardEmailOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [bcc](forwardemailoptions.md#bcc)
-* [cc](forwardemailoptions.md#cc)
-* [from](forwardemailoptions.md#from)
-* [subject](forwardemailoptions.md#subject)
-* [to](forwardemailoptions.md#to)
-* [useInboxName](forwardemailoptions.md#useinboxname)
+- [bcc](ForwardEmailOptions.md#bcc)
+- [cc](ForwardEmailOptions.md#cc)
+- [from](ForwardEmailOptions.md#from)
+- [subject](ForwardEmailOptions.md#subject)
+- [to](ForwardEmailOptions.md#to)
+- [useInboxName](ForwardEmailOptions.md#useinboxname)
 
 ## Properties
 
 ### bcc
 
-• `Optional` **bcc**: Array\<string>
-
-*Defined in [src/generated/api.ts:2486](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2486)*
+• `Optional` **bcc**: `string`[]
 
 Optional bcc recipients
 
 **`memberof`** ForwardEmailOptions
 
+#### Defined in
+
+[src/generated/api.ts:2488](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2488)
+
 ___
 
 ### cc
 
-• `Optional` **cc**: Array\<string>
-
-*Defined in [src/generated/api.ts:2492](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2492)*
+• `Optional` **cc**: `string`[]
 
 Optional cc recipients
 
 **`memberof`** ForwardEmailOptions
 
+#### Defined in
+
+[src/generated/api.ts:2494](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2494)
+
 ___
 
 ### from
 
-• `Optional` **from**: string
-
-*Defined in [src/generated/api.ts:2498](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2498)*
+• `Optional` **from**: `string`
 
 Optional from override
 
 **`memberof`** ForwardEmailOptions
 
+#### Defined in
+
+[src/generated/api.ts:2500](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2500)
+
 ___
 
 ### subject
 
-• `Optional` **subject**: string
-
-*Defined in [src/generated/api.ts:2504](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2504)*
+• `Optional` **subject**: `string`
 
 Subject for forwarded email
 
 **`memberof`** ForwardEmailOptions
 
+#### Defined in
+
+[src/generated/api.ts:2506](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2506)
+
 ___
 
 ### to
 
-• `Optional` **to**: Array\<string>
-
-*Defined in [src/generated/api.ts:2510](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2510)*
+• `Optional` **to**: `string`[]
 
 To recipients for forwarded email
 
 **`memberof`** ForwardEmailOptions
 
+#### Defined in
+
+[src/generated/api.ts:2512](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2512)
+
 ___
 
 ### useInboxName
 
-• `Optional` **useInboxName**: boolean
-
-*Defined in [src/generated/api.ts:2516](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2516)*
+• `Optional` **useInboxName**: `boolean`
 
 Optionally use inbox name as display name for sender email address
 
 **`memberof`** ForwardEmailOptions
+
+#### Defined in
+
+[src/generated/api.ts:2518](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2518)

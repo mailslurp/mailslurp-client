@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / GravatarUrl
+[MailSlurp JS](../README.md) / GravatarUrl
 
 # Interface: GravatarUrl
 
-**`export`** 
+**`export`**
 
 **`interface`** GravatarUrl
 
-## Hierarchy
-
-* **GravatarUrl**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [hash](gravatarurl.md#hash)
-* [url](gravatarurl.md#url)
+- [hash](GravatarUrl.md#hash)
+- [url](GravatarUrl.md#url)
 
 ## Properties
 
 ### hash
 
-•  **hash**: string
-
-*Defined in [src/generated/api.ts:2530](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2530)*
+• **hash**: `string`
 
 **`memberof`** GravatarUrl
+
+#### Defined in
+
+[src/generated/api.ts:2532](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2532)
 
 ___
 
 ### url
 
-•  **url**: string
-
-*Defined in [src/generated/api.ts:2536](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2536)*
+• **url**: `string`
 
 **`memberof`** GravatarUrl
+
+#### Defined in
+
+[src/generated/api.ts:2538](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2538)

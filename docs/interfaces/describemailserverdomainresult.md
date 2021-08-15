@@ -1,53 +1,53 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / DescribeMailServerDomainResult
+[MailSlurp JS](../README.md) / DescribeMailServerDomainResult
 
 # Interface: DescribeMailServerDomainResult
 
 Name Server lookup result
 
-**`export`** 
+**`export`**
 
 **`interface`** DescribeMailServerDomainResult
 
-## Hierarchy
-
-* **DescribeMailServerDomainResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [domain](describemailserverdomainresult.md#domain)
-* [message](describemailserverdomainresult.md#message)
-* [mxRecords](describemailserverdomainresult.md#mxrecords)
+- [domain](DescribeMailServerDomainResult.md#domain)
+- [message](DescribeMailServerDomainResult.md#message)
+- [mxRecords](DescribeMailServerDomainResult.md#mxrecords)
 
 ## Properties
 
 ### domain
 
-•  **domain**: string
-
-*Defined in [src/generated/api.ts:1571](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1571)*
+• **domain**: `string`
 
 **`memberof`** DescribeMailServerDomainResult
+
+#### Defined in
+
+[src/generated/api.ts:1573](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1573)
 
 ___
 
 ### message
 
-• `Optional` **message**: string
-
-*Defined in [src/generated/api.ts:1577](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1577)*
+• `Optional` **message**: `string`
 
 **`memberof`** DescribeMailServerDomainResult
+
+#### Defined in
+
+[src/generated/api.ts:1579](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1579)
 
 ___
 
 ### mxRecords
 
-•  **mxRecords**: Array\<[NameServerRecord](nameserverrecord.md)>
-
-*Defined in [src/generated/api.ts:1583](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1583)*
+• **mxRecords**: [`NameServerRecord`](NameServerRecord.md)[]
 
 **`memberof`** DescribeMailServerDomainResult
+
+#### Defined in
+
+[src/generated/api.ts:1585](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1585)

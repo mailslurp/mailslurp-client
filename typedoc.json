@@ -1,7 +1,5 @@
 {
     "name": "MailSlurp JS",
-    "theme": "vuepress",
-    "mode": "file",
     "readme": "none",
     "out": "docs",
     "hideGenerator": true,

@@ -1,36 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / FetchArgs
+[MailSlurp JS](../README.md) / FetchArgs
 
 # Interface: FetchArgs
 
-**`export`** 
+**`export`**
 
 **`interface`** FetchArgs
 
-## Hierarchy
-
-* **FetchArgs**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [options](fetchargs.md#options)
-* [url](fetchargs.md#url)
+- [options](FetchArgs.md#options)
+- [url](FetchArgs.md#url)
 
 ## Properties
 
 ### options
 
-•  **options**: any
+• **options**: `any`
 
-*Defined in [src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L48)*
+#### Defined in
+
+[src/generated/api.ts:48](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L48)
 
 ___
 
 ### url
 
-•  **url**: string
+• **url**: `string`
 
-*Defined in [src/generated/api.ts:47](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L47)*
+#### Defined in
+
+[src/generated/api.ts:47](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L47)

@@ -1,42 +1,40 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / IPAddressResult
+[MailSlurp JS](../README.md) / IPAddressResult
 
 # Interface: IPAddressResult
 
 IP Address look up result for a given domain / hostname
 
-**`export`** 
+**`export`**
 
 **`interface`** IPAddressResult
 
-## Hierarchy
-
-* **IPAddressResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [address](ipaddressresult.md#address)
-* [hostname](ipaddressresult.md#hostname)
+- [address](IPAddressResult.md#address)
+- [hostname](IPAddressResult.md#hostname)
 
 ## Properties
 
 ### address
 
-•  **address**: string
-
-*Defined in [src/generated/api.ts:2660](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2660)*
+• **address**: `string`
 
 **`memberof`** IPAddressResult
+
+#### Defined in
+
+[src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2662)
 
 ___
 
 ### hostname
 
-•  **hostname**: string
-
-*Defined in [src/generated/api.ts:2666](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2666)*
+• **hostname**: `string`
 
 **`memberof`** IPAddressResult
+
+#### Defined in
+
+[src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2668)

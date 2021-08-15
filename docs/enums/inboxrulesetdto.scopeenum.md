@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [InboxRulesetDto](../modules/inboxrulesetdto.md) / ScopeEnum
+[MailSlurp JS](../README.md) / [InboxRulesetDto](../modules/InboxRulesetDto.md) / ScopeEnum
 
 # Enumeration: ScopeEnum
 
-**`export`** 
+[InboxRulesetDto](../modules/InboxRulesetDto.md).ScopeEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [RECEIVINGEMAILS](inboxrulesetdto.scopeenum.md#receivingemails)
-* [SENDINGEMAILS](inboxrulesetdto.scopeenum.md#sendingemails)
+- [RECEIVINGEMAILS](InboxRulesetDto.ScopeEnum.md#receivingemails)
+- [SENDINGEMAILS](InboxRulesetDto.ScopeEnum.md#sendingemails)
 
 ## Enumeration members
 
 ### RECEIVINGEMAILS
 
-•  **RECEIVINGEMAILS**:  = \<any>'RECEIVING\_EMAILS'
+• **RECEIVINGEMAILS**
 
-*Defined in [src/generated/api.ts:3006](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3006)*
+#### Defined in
+
+[src/generated/api.ts:3008](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3008)
 
 ___
 
 ### SENDINGEMAILS
 
-•  **SENDINGEMAILS**:  = \<any>'SENDING\_EMAILS'
+• **SENDINGEMAILS**
 
-*Defined in [src/generated/api.ts:3007](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3007)*
+#### Defined in
+
+[src/generated/api.ts:3009](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3009)

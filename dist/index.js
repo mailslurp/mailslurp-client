@@ -45,12 +45,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapResult = exports.wrapException = exports.MailSlurp = void 0;
@@ -125,25 +123,25 @@ var MailSlurp = /** @class */ (function () {
             _fetch,
         ];
         // instantiate api clients
-        this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArrays([void 0], args)))();
-        this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArrays([void 0], args)))();
-        this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArrays([void 0], args)))();
-        this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, __spreadArrays([void 0], args)))();
-        this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, __spreadArrays([void 0], args)))();
-        this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, __spreadArrays([void 0], args)))();
-        this.contactController = new (generated_1.ContactControllerApi.bind.apply(generated_1.ContactControllerApi, __spreadArrays([void 0], args)))();
-        this.groupController = new (generated_1.GroupControllerApi.bind.apply(generated_1.GroupControllerApi, __spreadArrays([void 0], args)))();
-        this.templateController = new (generated_1.TemplateControllerApi.bind.apply(generated_1.TemplateControllerApi, __spreadArrays([void 0], args)))();
-        this.webhookController = new (generated_1.WebhookControllerApi.bind.apply(generated_1.WebhookControllerApi, __spreadArrays([void 0], args)))();
-        this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, __spreadArrays([void 0], args)))();
-        this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArrays([void 0], args)))();
-        this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArrays([void 0], args)))();
-        this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArrays([void 0], args)))();
-        this.missedEmailController = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArrays([void 0], args)))();
-        this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArrays([void 0], args)))();
-        this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArrays([void 0], args)))();
-        this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArrays([void 0], args)))();
-        this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArrays([void 0], args)))();
+        this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArray([void 0], args)))();
+        this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArray([void 0], args)))();
+        this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArray([void 0], args)))();
+        this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, __spreadArray([void 0], args)))();
+        this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, __spreadArray([void 0], args)))();
+        this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, __spreadArray([void 0], args)))();
+        this.contactController = new (generated_1.ContactControllerApi.bind.apply(generated_1.ContactControllerApi, __spreadArray([void 0], args)))();
+        this.groupController = new (generated_1.GroupControllerApi.bind.apply(generated_1.GroupControllerApi, __spreadArray([void 0], args)))();
+        this.templateController = new (generated_1.TemplateControllerApi.bind.apply(generated_1.TemplateControllerApi, __spreadArray([void 0], args)))();
+        this.webhookController = new (generated_1.WebhookControllerApi.bind.apply(generated_1.WebhookControllerApi, __spreadArray([void 0], args)))();
+        this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, __spreadArray([void 0], args)))();
+        this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArray([void 0], args)))();
+        this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArray([void 0], args)))();
+        this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArray([void 0], args)))();
+        this.missedEmailController = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArray([void 0], args)))();
+        this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArray([void 0], args)))();
+        this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArray([void 0], args)))();
+        this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], args)))();
+        this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], args)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
@@ -310,7 +308,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitController.waitForMatchingEmail(matchOptions, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForMatchingEmails(matchOptions, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });

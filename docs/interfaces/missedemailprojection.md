@@ -1,73 +1,77 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / MissedEmailProjection
+[MailSlurp JS](../README.md) / MissedEmailProjection
 
 # Interface: MissedEmailProjection
 
-**`export`** 
+**`export`**
 
 **`interface`** MissedEmailProjection
 
-## Hierarchy
-
-* **MissedEmailProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](missedemailprojection.md#createdat)
-* [from](missedemailprojection.md#from)
-* [id](missedemailprojection.md#id)
-* [subject](missedemailprojection.md#subject)
-* [userId](missedemailprojection.md#userid)
+- [createdAt](MissedEmailProjection.md#createdat)
+- [from](MissedEmailProjection.md#from)
+- [id](MissedEmailProjection.md#id)
+- [subject](MissedEmailProjection.md#subject)
+- [userId](MissedEmailProjection.md#userid)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:3215](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3215)*
+• **createdAt**: `Date`
 
 **`memberof`** MissedEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:3217](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3217)
 
 ___
 
 ### from
 
-• `Optional` **from**: string
-
-*Defined in [src/generated/api.ts:3221](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3221)*
+• `Optional` **from**: `string`
 
 **`memberof`** MissedEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:3223](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3223)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:3227](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3227)*
+• **id**: `string`
 
 **`memberof`** MissedEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:3229](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3229)
 
 ___
 
 ### subject
 
-• `Optional` **subject**: string
-
-*Defined in [src/generated/api.ts:3233](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3233)*
+• `Optional` **subject**: `string`
 
 **`memberof`** MissedEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:3235](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3235)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:3239](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3239)*
+• `Optional` **userId**: `string`
 
 **`memberof`** MissedEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:3241](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3241)

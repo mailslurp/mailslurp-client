@@ -1,137 +1,149 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / EmailPreview
+[MailSlurp JS](../README.md) / EmailPreview
 
 # Interface: EmailPreview
 
 Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
 
-**`export`** 
+**`export`**
 
 **`interface`** EmailPreview
 
-## Hierarchy
-
-* **EmailPreview**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [attachments](emailpreview.md#attachments)
-* [bcc](emailpreview.md#bcc)
-* [cc](emailpreview.md#cc)
-* [createdAt](emailpreview.md#createdat)
-* [from](emailpreview.md#from)
-* [id](emailpreview.md#id)
-* [read](emailpreview.md#read)
-* [subject](emailpreview.md#subject)
-* [to](emailpreview.md#to)
+- [attachments](EmailPreview.md#attachments)
+- [bcc](EmailPreview.md#bcc)
+- [cc](EmailPreview.md#cc)
+- [createdAt](EmailPreview.md#createdat)
+- [from](EmailPreview.md#from)
+- [id](EmailPreview.md#id)
+- [read](EmailPreview.md#read)
+- [subject](EmailPreview.md#subject)
+- [to](EmailPreview.md#to)
 
 ## Properties
 
 ### attachments
 
-• `Optional` **attachments**: Array\<string>
-
-*Defined in [src/generated/api.ts:2117](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2117)*
+• `Optional` **attachments**: `string`[]
 
 List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2119](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2119)
+
 ___
 
 ### bcc
 
-• `Optional` **bcc**: Array\<string>
-
-*Defined in [src/generated/api.ts:2123](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2123)*
+• `Optional` **bcc**: `string`[]
 
 List of `BCC` recipients email was addressed to
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2125](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2125)
+
 ___
 
 ### cc
 
-• `Optional` **cc**: Array\<string>
-
-*Defined in [src/generated/api.ts:2129](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2129)*
+• `Optional` **cc**: `string`[]
 
 List of `CC` recipients email was addressed to
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2131](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2131)
+
 ___
 
 ### createdAt
 
-• `Optional` **createdAt**: Date
-
-*Defined in [src/generated/api.ts:2135](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2135)*
+• `Optional` **createdAt**: `Date`
 
 When was the email received by MailSlurp
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2137](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2137)
+
 ___
 
 ### from
 
-• `Optional` **from**: string
-
-*Defined in [src/generated/api.ts:2141](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2141)*
+• `Optional` **from**: `string`
 
 Who the email was sent from
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2143](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2143)
+
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:2147](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2147)*
+• `Optional` **id**: `string`
 
 ID of the email entity
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2149](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2149)
+
 ___
 
 ### read
 
-• `Optional` **read**: boolean
-
-*Defined in [src/generated/api.ts:2153](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2153)*
+• `Optional` **read**: `boolean`
 
 Read flag. Has the email ever been viewed in the dashboard or fetched via the API? If so the email is marked as read.
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2155](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2155)
+
 ___
 
 ### subject
 
-• `Optional` **subject**: string
-
-*Defined in [src/generated/api.ts:2159](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2159)*
+• `Optional` **subject**: `string`
 
 The subject line of the email message
 
 **`memberof`** EmailPreview
 
+#### Defined in
+
+[src/generated/api.ts:2161](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2161)
+
 ___
 
 ### to
 
-• `Optional` **to**: Array\<string>
-
-*Defined in [src/generated/api.ts:2165](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2165)*
+• `Optional` **to**: `string`[]
 
 List of `To` recipients that email was addressed to
 
 **`memberof`** EmailPreview
+
+#### Defined in
+
+[src/generated/api.ts:2167](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2167)

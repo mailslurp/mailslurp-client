@@ -1,95 +1,97 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExpiredControllerApi
+[MailSlurp JS](../README.md) / ExpiredControllerApi
 
 # Class: ExpiredControllerApi
 
 ExpiredControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **ExpiredControllerApi**
+  ↳ **`ExpiredControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](expiredcontrollerapi.md#constructor)
+- [constructor](ExpiredControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](expiredcontrollerapi.md#basepath)
-* [configuration](expiredcontrollerapi.md#configuration)
-* [fetch](expiredcontrollerapi.md#fetch)
+- [basePath](ExpiredControllerApi.md#basepath)
+- [configuration](ExpiredControllerApi.md#configuration)
+- [fetch](ExpiredControllerApi.md#fetch)
 
 ### Methods
 
-* [getExpirationDefaults](expiredcontrollerapi.md#getexpirationdefaults)
-* [getExpiredInboxByInboxId](expiredcontrollerapi.md#getexpiredinboxbyinboxid)
-* [getExpiredInboxRecord](expiredcontrollerapi.md#getexpiredinboxrecord)
-* [getExpiredInboxes](expiredcontrollerapi.md#getexpiredinboxes)
+- [getExpirationDefaults](ExpiredControllerApi.md#getexpirationdefaults)
+- [getExpiredInboxByInboxId](ExpiredControllerApi.md#getexpiredinboxbyinboxid)
+- [getExpiredInboxRecord](ExpiredControllerApi.md#getexpiredinboxrecord)
+- [getExpiredInboxes](ExpiredControllerApi.md#getexpiredinboxes)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ExpiredControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [ExpiredControllerApi](expiredcontrollerapi.md)
+• **new ExpiredControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [ExpiredControllerApi](expiredcontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### getExpirationDefaults
 
-▸ **getExpirationDefaults**(`options?`: any): Promise\<[ExpirationDefaults](../interfaces/expirationdefaults.md)>
-
-*Defined in [src/generated/api.ts:16690](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L16690)*
+▸ **getExpirationDefaults**(`options?`): `Promise`<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>
 
 Return default times used for inbox expiration
 
@@ -99,21 +101,25 @@ Return default times used for inbox expiration
 
 **`memberof`** ExpiredControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `options?` | `any` |
 
-**Returns:** Promise\<[ExpirationDefaults](../interfaces/expirationdefaults.md)>
+#### Returns
+
+`Promise`<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:16811](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L16811)
 
 ___
 
 ### getExpiredInboxByInboxId
 
-▸ **getExpiredInboxByInboxId**(`inboxId`: string, `options?`: any): Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
-
-*Defined in [src/generated/api.ts:16704](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L16704)*
+▸ **getExpiredInboxByInboxId**(`inboxId`, `options?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
 Use the inboxId to return an ExpiredInboxRecord if an inbox has expired. Inboxes expire and are disabled if an expiration date is set or plan requires. Returns 404 if no expired inbox is found for the inboxId
 
@@ -123,22 +129,26 @@ Use the inboxId to return an ExpiredInboxRecord if an inbox has expired. Inboxes
 
 **`memberof`** ExpiredControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`inboxId` | string | ID of inbox you want to retrieve (not the inbox ID) |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `inboxId` | `string` | ID of inbox you want to retrieve (not the inbox ID) |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
+#### Returns
+
+`Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:16825](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L16825)
 
 ___
 
 ### getExpiredInboxRecord
 
-▸ **getExpiredInboxRecord**(`expiredId`: string, `options?`: any): Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
-
-*Defined in [src/generated/api.ts:16718](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L16718)*
+▸ **getExpiredInboxRecord**(`expiredId`, `options?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
 Inboxes created with an expiration date will expire after the given date and be moved to an ExpiredInbox entity. You can still read emails in the inbox but it can no longer send or receive emails. Fetch the expired inboxes to view the old inboxes properties
 
@@ -148,22 +158,26 @@ Inboxes created with an expiration date will expire after the given date and be 
 
 **`memberof`** ExpiredControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`expiredId` | string | ID of the ExpiredInboxRecord you want to retrieve. This is different from the ID of the inbox you are interested in. See other methods for getting ExpiredInboxRecord for an inbox inboxId) |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `expiredId` | `string` | ID of the ExpiredInboxRecord you want to retrieve. This is different from the ID of the inbox you are interested in. See other methods for getting ExpiredInboxRecord for an inbox inboxId) |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[ExpiredInboxDto](../interfaces/expiredinboxdto.md)>
+#### Returns
+
+`Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:16839](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L16839)
 
 ___
 
 ### getExpiredInboxes
 
-▸ **getExpiredInboxes**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageExpiredInboxRecordProjection](../interfaces/pageexpiredinboxrecordprojection.md)>
-
-*Defined in [src/generated/api.ts:16735](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L16735)*
+▸ **getExpiredInboxes**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
 
 Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
 
@@ -173,13 +187,19 @@ Inboxes created with an expiration date will expire after the given date. An Exp
 
 **`memberof`** ExpiredControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`page?` | number |
-`size?` | number |
-`sort?` | \"ASC\" \| \"DESC\" |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `page?` | `number` |
+| `size?` | `number` |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[PageExpiredInboxRecordProjection](../interfaces/pageexpiredinboxrecordprojection.md)>
+#### Returns
+
+`Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:16856](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L16856)

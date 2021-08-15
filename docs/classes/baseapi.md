@@ -1,109 +1,105 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BaseAPI
+[MailSlurp JS](../README.md) / BaseAPI
 
 # Class: BaseAPI
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* **BaseAPI**
+- **`BaseAPI`**
 
-  ↳ [AliasControllerApi](aliascontrollerapi.md)
+  ↳ [`AliasControllerApi`](AliasControllerApi.md)
 
-  ↳ [AttachmentControllerApi](attachmentcontrollerapi.md)
+  ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
-  ↳ [BounceControllerApi](bouncecontrollerapi.md)
+  ↳ [`BounceControllerApi`](BounceControllerApi.md)
 
-  ↳ [BulkActionsControllerApi](bulkactionscontrollerapi.md)
+  ↳ [`BulkActionsControllerApi`](BulkActionsControllerApi.md)
 
-  ↳ [CommonActionsControllerApi](commonactionscontrollerapi.md)
+  ↳ [`CommonActionsControllerApi`](CommonActionsControllerApi.md)
 
-  ↳ [ContactControllerApi](contactcontrollerapi.md)
+  ↳ [`ContactControllerApi`](ContactControllerApi.md)
 
-  ↳ [DomainControllerApi](domaincontrollerapi.md)
+  ↳ [`DomainControllerApi`](DomainControllerApi.md)
 
-  ↳ [EmailControllerApi](emailcontrollerapi.md)
+  ↳ [`EmailControllerApi`](EmailControllerApi.md)
 
-  ↳ [ExpiredControllerApi](expiredcontrollerapi.md)
+  ↳ [`ExpiredControllerApi`](ExpiredControllerApi.md)
 
-  ↳ [ExportControllerApi](exportcontrollerapi.md)
+  ↳ [`ExportControllerApi`](ExportControllerApi.md)
 
-  ↳ [FormControllerApi](formcontrollerapi.md)
+  ↳ [`FormControllerApi`](FormControllerApi.md)
 
-  ↳ [GroupControllerApi](groupcontrollerapi.md)
+  ↳ [`GroupControllerApi`](GroupControllerApi.md)
 
-  ↳ [InboxControllerApi](inboxcontrollerapi.md)
+  ↳ [`InboxControllerApi`](InboxControllerApi.md)
 
-  ↳ [InboxForwarderControllerApi](inboxforwardercontrollerapi.md)
+  ↳ [`InboxForwarderControllerApi`](InboxForwarderControllerApi.md)
 
-  ↳ [InboxRulesetControllerApi](inboxrulesetcontrollerapi.md)
+  ↳ [`InboxRulesetControllerApi`](InboxRulesetControllerApi.md)
 
-  ↳ [MailServerControllerApi](mailservercontrollerapi.md)
+  ↳ [`MailServerControllerApi`](MailServerControllerApi.md)
 
-  ↳ [MissedEmailControllerApi](missedemailcontrollerapi.md)
+  ↳ [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
 
-  ↳ [SentEmailsControllerApi](sentemailscontrollerapi.md)
+  ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 
-  ↳ [TemplateControllerApi](templatecontrollerapi.md)
+  ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 
-  ↳ [TrackingControllerApi](trackingcontrollerapi.md)
+  ↳ [`TrackingControllerApi`](TrackingControllerApi.md)
 
-  ↳ [WaitForControllerApi](waitforcontrollerapi.md)
+  ↳ [`WaitForControllerApi`](WaitForControllerApi.md)
 
-  ↳ [WebhookControllerApi](webhookcontrollerapi.md)
+  ↳ [`WebhookControllerApi`](WebhookControllerApi.md)
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](baseapi.md#constructor)
+- [constructor](BaseAPI.md#constructor)
 
 ### Properties
 
-* [basePath](baseapi.md#basepath)
-* [configuration](baseapi.md#configuration)
-* [fetch](baseapi.md#fetch)
+- [basePath](BaseAPI.md#basepath)
+- [configuration](BaseAPI.md#configuration)
+- [fetch](BaseAPI.md#fetch)
 
 ## Constructors
 
 ### constructor
 
-\+ **new BaseAPI**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [BaseAPI](baseapi.md)
+• **new BaseAPI**(`configuration?`, `basePath?`, `fetch?`)
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+#### Parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+#### Defined in
 
-**Returns:** [BaseAPI](baseapi.md)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
-
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+• `Protected` **basePath**: `string`
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
-
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)

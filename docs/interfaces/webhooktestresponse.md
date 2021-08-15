@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / WebhookTestResponse
+[MailSlurp JS](../README.md) / WebhookTestResponse
 
 # Interface: WebhookTestResponse
 
-**`export`** 
+**`export`**
 
 **`interface`** WebhookTestResponse
 
-## Hierarchy
-
-* **WebhookTestResponse**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [message](webhooktestresponse.md#message)
-* [statusCode](webhooktestresponse.md#statuscode)
+- [message](WebhookTestResponse.md#message)
+- [statusCode](WebhookTestResponse.md#statuscode)
 
 ## Properties
 
 ### message
 
-• `Optional` **message**: string
-
-*Defined in [src/generated/api.ts:6779](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6779)*
+• `Optional` **message**: `string`
 
 **`memberof`** WebhookTestResponse
+
+#### Defined in
+
+[src/generated/api.ts:6900](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6900)
 
 ___
 
 ### statusCode
 
-• `Optional` **statusCode**: number
-
-*Defined in [src/generated/api.ts:6785](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6785)*
+• `Optional` **statusCode**: `number`
 
 **`memberof`** WebhookTestResponse
+
+#### Defined in
+
+[src/generated/api.ts:6906](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6906)

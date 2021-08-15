@@ -1,64 +1,66 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExpirationDefaults
+[MailSlurp JS](../README.md) / ExpirationDefaults
 
 # Interface: ExpirationDefaults
 
 Expiration defaults for your account
 
-**`export`** 
+**`export`**
 
 **`interface`** ExpirationDefaults
 
-## Hierarchy
-
-* **ExpirationDefaults**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [canPermanentInbox](expirationdefaults.md#canpermanentinbox)
-* [defaultExpirationMillis](expirationdefaults.md#defaultexpirationmillis)
-* [defaultExpiresAt](expirationdefaults.md#defaultexpiresat)
-* [maxExpirationMillis](expirationdefaults.md#maxexpirationmillis)
+- [canPermanentInbox](ExpirationDefaults.md#canpermanentinbox)
+- [defaultExpirationMillis](ExpirationDefaults.md#defaultexpirationmillis)
+- [defaultExpiresAt](ExpirationDefaults.md#defaultexpiresat)
+- [maxExpirationMillis](ExpirationDefaults.md#maxexpirationmillis)
 
 ## Properties
 
 ### canPermanentInbox
 
-•  **canPermanentInbox**: boolean
-
-*Defined in [src/generated/api.ts:2323](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2323)*
+• **canPermanentInbox**: `boolean`
 
 **`memberof`** ExpirationDefaults
+
+#### Defined in
+
+[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2325)
 
 ___
 
 ### defaultExpirationMillis
 
-• `Optional` **defaultExpirationMillis**: number
-
-*Defined in [src/generated/api.ts:2329](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2329)*
+• `Optional` **defaultExpirationMillis**: `number`
 
 **`memberof`** ExpirationDefaults
+
+#### Defined in
+
+[src/generated/api.ts:2331](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2331)
 
 ___
 
 ### defaultExpiresAt
 
-• `Optional` **defaultExpiresAt**: Date
-
-*Defined in [src/generated/api.ts:2335](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2335)*
+• `Optional` **defaultExpiresAt**: `Date`
 
 **`memberof`** ExpirationDefaults
+
+#### Defined in
+
+[src/generated/api.ts:2337](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2337)
 
 ___
 
 ### maxExpirationMillis
 
-• `Optional` **maxExpirationMillis**: number
-
-*Defined in [src/generated/api.ts:2341](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2341)*
+• `Optional` **maxExpirationMillis**: `number`
 
 **`memberof`** ExpirationDefaults
+
+#### Defined in
+
+[src/generated/api.ts:2343](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2343)

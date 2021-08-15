@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CreateGroupOptions
+[MailSlurp JS](../README.md) / CreateGroupOptions
 
 # Interface: CreateGroupOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** CreateGroupOptions
 
-## Hierarchy
-
-* **CreateGroupOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](creategroupoptions.md#description)
-* [name](creategroupoptions.md#name)
+- [description](CreateGroupOptions.md#description)
+- [name](CreateGroupOptions.md#name)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: string
-
-*Defined in [src/generated/api.ts:1001](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1001)*
+• `Optional` **description**: `string`
 
 **`memberof`** CreateGroupOptions
+
+#### Defined in
+
+[src/generated/api.ts:1002](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1002)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [src/generated/api.ts:995](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L995)*
+• **name**: `string`
 
 **`memberof`** CreateGroupOptions
+
+#### Defined in
+
+[src/generated/api.ts:996](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L996)

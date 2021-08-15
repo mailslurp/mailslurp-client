@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [WaitForConditions](../modules/waitforconditions.md) / SortDirectionEnum
+[MailSlurp JS](../README.md) / [WaitForConditions](../modules/WaitForConditions.md) / SortDirectionEnum
 
 # Enumeration: SortDirectionEnum
 
-**`export`** 
+[WaitForConditions](../modules/WaitForConditions.md).SortDirectionEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [ASC](waitforconditions.sortdirectionenum.md#asc)
-* [DESC](waitforconditions.sortdirectionenum.md#desc)
+- [ASC](WaitForConditions.SortDirectionEnum.md#asc)
+- [DESC](WaitForConditions.SortDirectionEnum.md#desc)
 
 ## Enumeration members
 
 ### ASC
 
-•  **ASC**:  = \<any>'ASC'
+• **ASC**
 
-*Defined in [src/generated/api.ts:6029](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6029)*
+#### Defined in
+
+[src/generated/api.ts:6143](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6143)
 
 ___
 
 ### DESC
 
-•  **DESC**:  = \<any>'DESC'
+• **DESC**
 
-*Defined in [src/generated/api.ts:6030](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6030)*
+#### Defined in
+
+[src/generated/api.ts:6144](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6144)

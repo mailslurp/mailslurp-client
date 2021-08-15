@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / TestNewInboxRulesetOptions
+[MailSlurp JS](../README.md) / TestNewInboxRulesetOptions
 
 # Interface: TestNewInboxRulesetOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** TestNewInboxRulesetOptions
 
-## Hierarchy
-
-* **TestNewInboxRulesetOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createInboxRulesetOptions](testnewinboxrulesetoptions.md#createinboxrulesetoptions)
-* [inboxRulesetTestOptions](testnewinboxrulesetoptions.md#inboxrulesettestoptions)
+- [createInboxRulesetOptions](TestNewInboxRulesetOptions.md#createinboxrulesetoptions)
+- [inboxRulesetTestOptions](TestNewInboxRulesetOptions.md#inboxrulesettestoptions)
 
 ## Properties
 
 ### createInboxRulesetOptions
 
-•  **createInboxRulesetOptions**: [CreateInboxRulesetOptions](../modules/createinboxrulesetoptions.md)
-
-*Defined in [src/generated/api.ts:5568](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5568)*
+• **createInboxRulesetOptions**: [`CreateInboxRulesetOptions`](CreateInboxRulesetOptions.md)
 
 **`memberof`** TestNewInboxRulesetOptions
+
+#### Defined in
+
+[src/generated/api.ts:5644](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5644)
 
 ___
 
 ### inboxRulesetTestOptions
 
-•  **inboxRulesetTestOptions**: [InboxRulesetTestOptions](inboxrulesettestoptions.md)
-
-*Defined in [src/generated/api.ts:5562](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5562)*
+• **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)
 
 **`memberof`** TestNewInboxRulesetOptions
+
+#### Defined in
+
+[src/generated/api.ts:5638](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5638)

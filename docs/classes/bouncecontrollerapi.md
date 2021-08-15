@@ -1,95 +1,97 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BounceControllerApi
+[MailSlurp JS](../README.md) / BounceControllerApi
 
 # Class: BounceControllerApi
 
 BounceControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **BounceControllerApi**
+  ↳ **`BounceControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](bouncecontrollerapi.md#constructor)
+- [constructor](BounceControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](bouncecontrollerapi.md#basepath)
-* [configuration](bouncecontrollerapi.md#configuration)
-* [fetch](bouncecontrollerapi.md#fetch)
+- [basePath](BounceControllerApi.md#basepath)
+- [configuration](BounceControllerApi.md#configuration)
+- [fetch](BounceControllerApi.md#fetch)
 
 ### Methods
 
-* [getBouncedEmail](bouncecontrollerapi.md#getbouncedemail)
-* [getBouncedEmails](bouncecontrollerapi.md#getbouncedemails)
-* [getBouncedRecipient](bouncecontrollerapi.md#getbouncedrecipient)
-* [getBouncedRecipients](bouncecontrollerapi.md#getbouncedrecipients)
+- [getBouncedEmail](BounceControllerApi.md#getbouncedemail)
+- [getBouncedEmails](BounceControllerApi.md#getbouncedemails)
+- [getBouncedRecipient](BounceControllerApi.md#getbouncedrecipient)
+- [getBouncedRecipients](BounceControllerApi.md#getbouncedrecipients)
 
 ## Constructors
 
 ### constructor
 
-\+ **new BounceControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [BounceControllerApi](bouncecontrollerapi.md)
+• **new BounceControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [BounceControllerApi](bouncecontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### getBouncedEmail
 
-▸ **getBouncedEmail**(`id`: string, `options?`: any): Promise\<[BouncedEmailDto](../interfaces/bouncedemaildto.md)>
-
-*Defined in [src/generated/api.ts:9999](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L9999)*
+▸ **getBouncedEmail**(`id`, `options?`): `Promise`<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>
 
 Bounced emails are email you have sent that were rejected by a recipient
 
@@ -99,22 +101,26 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 **`memberof`** BounceControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | ID of the bounced email to fetch |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | ID of the bounced email to fetch |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[BouncedEmailDto](../interfaces/bouncedemaildto.md)>
+#### Returns
+
+`Promise`<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:10120](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10120)
 
 ___
 
 ### getBouncedEmails
 
-▸ **getBouncedEmails**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageBouncedEmail](../interfaces/pagebouncedemail.md)>
-
-*Defined in [src/generated/api.ts:10016](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10016)*
+▸ **getBouncedEmails**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
 
 Bounced emails are email you have sent that were rejected by a recipient
 
@@ -124,24 +130,28 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 **`memberof`** BounceControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`page?` | number |
-`size?` | number |
-`sort?` | \"ASC\" \| \"DESC\" |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `page?` | `number` |
+| `size?` | `number` |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[PageBouncedEmail](../interfaces/pagebouncedemail.md)>
+#### Returns
+
+`Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:10137](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10137)
 
 ___
 
 ### getBouncedRecipient
 
-▸ **getBouncedRecipient**(`id`: string, `options?`: any): Promise\<[BouncedRecipientDto](../interfaces/bouncedrecipientdto.md)>
-
-*Defined in [src/generated/api.ts:10038](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10038)*
+▸ **getBouncedRecipient**(`id`, `options?`): `Promise`<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>
 
 Bounced emails are email you have sent that were rejected by a recipient
 
@@ -151,22 +161,26 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 **`memberof`** BounceControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | ID of the bounced recipient |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | ID of the bounced recipient |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[BouncedRecipientDto](../interfaces/bouncedrecipientdto.md)>
+#### Returns
+
+`Promise`<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:10159](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10159)
 
 ___
 
 ### getBouncedRecipients
 
-▸ **getBouncedRecipients**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageBouncedRecipients](../interfaces/pagebouncedrecipients.md)>
-
-*Defined in [src/generated/api.ts:10055](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L10055)*
+▸ **getBouncedRecipients**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
 
 Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
 
@@ -176,13 +190,19 @@ Bounced recipients are email addresses that you have sent emails to that did not
 
 **`memberof`** BounceControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`page?` | number |
-`size?` | number |
-`sort?` | \"ASC\" \| \"DESC\" |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `page?` | `number` |
+| `size?` | `number` |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[PageBouncedRecipients](../interfaces/pagebouncedrecipients.md)>
+#### Returns
+
+`Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:10176](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L10176)

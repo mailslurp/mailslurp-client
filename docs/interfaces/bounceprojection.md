@@ -1,51 +1,51 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BounceProjection
+[MailSlurp JS](../README.md) / BounceProjection
 
 # Interface: BounceProjection
 
-**`export`** 
+**`export`**
 
 **`interface`** BounceProjection
 
-## Hierarchy
-
-* **BounceProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](bounceprojection.md#createdat)
-* [id](bounceprojection.md#id)
-* [sender](bounceprojection.md#sender)
+- [createdAt](BounceProjection.md#createdat)
+- [id](BounceProjection.md#id)
+- [sender](BounceProjection.md#sender)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:483](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L483)*
+• **createdAt**: `Date`
 
 **`memberof`** BounceProjection
+
+#### Defined in
+
+[src/generated/api.ts:484](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L484)
 
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:489](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L489)*
+• `Optional` **id**: `string`
 
 **`memberof`** BounceProjection
+
+#### Defined in
+
+[src/generated/api.ts:490](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L490)
 
 ___
 
 ### sender
 
-•  **sender**: string
-
-*Defined in [src/generated/api.ts:495](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L495)*
+• **sender**: `string`
 
 **`memberof`** BounceProjection
+
+#### Defined in
+
+[src/generated/api.ts:496](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L496)

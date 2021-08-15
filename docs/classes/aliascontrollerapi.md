@@ -1,100 +1,102 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / AliasControllerApi
+[MailSlurp JS](../README.md) / AliasControllerApi
 
 # Class: AliasControllerApi
 
 AliasControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **AliasControllerApi**
+  ↳ **`AliasControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](aliascontrollerapi.md#constructor)
+- [constructor](AliasControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](aliascontrollerapi.md#basepath)
-* [configuration](aliascontrollerapi.md#configuration)
-* [fetch](aliascontrollerapi.md#fetch)
+- [basePath](AliasControllerApi.md#basepath)
+- [configuration](AliasControllerApi.md#configuration)
+- [fetch](AliasControllerApi.md#fetch)
 
 ### Methods
 
-* [createAlias](aliascontrollerapi.md#createalias)
-* [deleteAlias](aliascontrollerapi.md#deletealias)
-* [getAlias](aliascontrollerapi.md#getalias)
-* [getAliasEmails](aliascontrollerapi.md#getaliasemails)
-* [getAliasThreads](aliascontrollerapi.md#getaliasthreads)
-* [getAliases](aliascontrollerapi.md#getaliases)
-* [replyToAliasEmail](aliascontrollerapi.md#replytoaliasemail)
-* [sendAliasEmail](aliascontrollerapi.md#sendaliasemail)
-* [updateAlias](aliascontrollerapi.md#updatealias)
+- [createAlias](AliasControllerApi.md#createalias)
+- [deleteAlias](AliasControllerApi.md#deletealias)
+- [getAlias](AliasControllerApi.md#getalias)
+- [getAliasEmails](AliasControllerApi.md#getaliasemails)
+- [getAliasThreads](AliasControllerApi.md#getaliasthreads)
+- [getAliases](AliasControllerApi.md#getaliases)
+- [replyToAliasEmail](AliasControllerApi.md#replytoaliasemail)
+- [sendAliasEmail](AliasControllerApi.md#sendaliasemail)
+- [updateAlias](AliasControllerApi.md#updatealias)
 
 ## Constructors
 
 ### constructor
 
-\+ **new AliasControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [AliasControllerApi](aliascontrollerapi.md)
+• **new AliasControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [AliasControllerApi](aliascontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### createAlias
 
-▸ **createAlias**(`createAliasOptions`: [CreateAliasOptions](../interfaces/createaliasoptions.md), `options?`: any): Promise\<[AliasDto](../interfaces/aliasdto.md)>
-
-*Defined in [src/generated/api.ts:7966](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L7966)*
+▸ **createAlias**(`createAliasOptions`, `options?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
 Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
 
@@ -104,22 +106,26 @@ Email aliases use a MailSlurp randomly generated email address (or a custom doma
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`createAliasOptions` | [CreateAliasOptions](../interfaces/createaliasoptions.md) | createAliasOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `createAliasOptions` | [`CreateAliasOptions`](../interfaces/CreateAliasOptions.md) | createAliasOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[AliasDto](../interfaces/aliasdto.md)>
+#### Returns
+
+`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8087](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8087)
 
 ___
 
 ### deleteAlias
 
-▸ **deleteAlias**(`aliasId`: string, `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:7981](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L7981)*
+▸ **deleteAlias**(`aliasId`, `options?`): `Promise`<`Response`\>
 
 **`summary`** Delete an email alias
 
@@ -127,22 +133,26 @@ ___
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:8102](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8102)
 
 ___
 
 ### getAlias
 
-▸ **getAlias**(`aliasId`: string, `options?`: any): Promise\<[AliasDto](../interfaces/aliasdto.md)>
-
-*Defined in [src/generated/api.ts:7996](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L7996)*
+▸ **getAlias**(`aliasId`, `options?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
 Get an email alias by ID
 
@@ -152,22 +162,26 @@ Get an email alias by ID
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[AliasDto](../interfaces/aliasdto.md)>
+#### Returns
+
+`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8117](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8117)
 
 ___
 
 ### getAliasEmails
 
-▸ **getAliasEmails**(`aliasId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageEmailProjection](../interfaces/pageemailprojection.md)>
-
-*Defined in [src/generated/api.ts:8014](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8014)*
+▸ **getAliasEmails**(`aliasId`, `page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
 Get paginated emails for an alias by ID
 
@@ -177,25 +191,29 @@ Get paginated emails for an alias by ID
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`page?` | number | - |
-`size?` | number | - |
-`sort?` | \"ASC\" \| \"DESC\" | - |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `page?` | `number` | - |
+| `size?` | `number` | - |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[PageEmailProjection](../interfaces/pageemailprojection.md)>
+#### Returns
+
+`Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8135](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8135)
 
 ___
 
 ### getAliasThreads
 
-▸ **getAliasThreads**(`aliasId`: string, `page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageThreadProjection](../interfaces/pagethreadprojection.md)>
-
-*Defined in [src/generated/api.ts:8041](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8041)*
+▸ **getAliasThreads**(`aliasId`, `page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
 
 Returns threads created for an email alias in paginated form
 
@@ -205,25 +223,29 @@ Returns threads created for an email alias in paginated form
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`page?` | number | - |
-`size?` | number | - |
-`sort?` | \"ASC\" \| \"DESC\" | - |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `page?` | `number` | - |
+| `size?` | `number` | - |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[PageThreadProjection](../interfaces/pagethreadprojection.md)>
+#### Returns
+
+`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8162](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8162)
 
 ___
 
 ### getAliases
 
-▸ **getAliases**(`page?`: number, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageAlias](../interfaces/pagealias.md)>
-
-*Defined in [src/generated/api.ts:8067](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8067)*
+▸ **getAliases**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
 
 Get all email aliases in paginated form
 
@@ -233,24 +255,28 @@ Get all email aliases in paginated form
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`page?` | number |
-`size?` | number |
-`sort?` | \"ASC\" \| \"DESC\" |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `page?` | `number` |
+| `size?` | `number` |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[PageAlias](../interfaces/pagealias.md)>
+#### Returns
+
+`Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8188](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8188)
 
 ___
 
 ### replyToAliasEmail
 
-▸ **replyToAliasEmail**(`aliasId`: string, `emailId`: string, `replyToAliasEmailOptions`: [ReplyToAliasEmailOptions](../modules/replytoaliasemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
-
-*Defined in [src/generated/api.ts:8091](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8091)*
+▸ **replyToAliasEmail**(`aliasId`, `emailId`, `replyToAliasEmailOptions`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
 
@@ -260,24 +286,28 @@ Send the reply to the email sender or reply-to and include same subject cc bcc e
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | ID of the alias that email belongs to |
-`emailId` | string | ID of the email that should be replied to |
-`replyToAliasEmailOptions` | [ReplyToAliasEmailOptions](../modules/replytoaliasemailoptions.md) | replyToAliasEmailOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | ID of the alias that email belongs to |
+| `emailId` | `string` | ID of the email that should be replied to |
+| `replyToAliasEmailOptions` | [`ReplyToAliasEmailOptions`](../interfaces/ReplyToAliasEmailOptions.md) | replyToAliasEmailOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8212](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8212)
 
 ___
 
 ### sendAliasEmail
 
-▸ **sendAliasEmail**(`aliasId`: string, `sendEmailOptions?`: [SendEmailOptions](../modules/sendemailoptions.md), `options?`: any): Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
-
-*Defined in [src/generated/api.ts:8114](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8114)*
+▸ **sendAliasEmail**(`aliasId`, `sendEmailOptions?`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
 
@@ -287,23 +317,27 @@ Send an email from an alias. Replies to the email will be forwarded to the alias
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`sendEmailOptions?` | [SendEmailOptions](../modules/sendemailoptions.md) | - |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `sendEmailOptions?` | [`SendEmailOptions`](../interfaces/SendEmailOptions.md) | - |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[SentEmailDto](../interfaces/sentemaildto.md)>
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:8235](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8235)
 
 ___
 
 ### updateAlias
 
-▸ **updateAlias**(`aliasId`: string, `updateAliasOptions`: [UpdateAliasOptions](../interfaces/updatealiasoptions.md), `options?`: any): Promise\<Response>
-
-*Defined in [src/generated/api.ts:8135](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L8135)*
+▸ **updateAlias**(`aliasId`, `updateAliasOptions`, `options?`): `Promise`<`Response`\>
 
 **`summary`** Update an email alias
 
@@ -311,12 +345,18 @@ ___
 
 **`memberof`** AliasControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`aliasId` | string | aliasId |
-`updateAliasOptions` | [UpdateAliasOptions](../interfaces/updatealiasoptions.md) | updateAliasOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `aliasId` | `string` | aliasId |
+| `updateAliasOptions` | [`UpdateAliasOptions`](../interfaces/UpdateAliasOptions.md) | updateAliasOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<Response>
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/generated/api.ts:8256](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L8256)

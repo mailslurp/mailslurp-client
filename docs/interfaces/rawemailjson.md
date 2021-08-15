@@ -1,31 +1,27 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / RawEmailJson
+[MailSlurp JS](../README.md) / RawEmailJson
 
 # Interface: RawEmailJson
 
 Content in raw format
 
-**`export`** 
+**`export`**
 
 **`interface`** RawEmailJson
 
-## Hierarchy
-
-* **RawEmailJson**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](rawemailjson.md#content)
+- [content](RawEmailJson.md#content)
 
 ## Properties
 
 ### content
 
-•  **content**: string
-
-*Defined in [src/generated/api.ts:4886](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4886)*
+• **content**: `string`
 
 **`memberof`** RawEmailJson
+
+#### Defined in
+
+[src/generated/api.ts:4962](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4962)

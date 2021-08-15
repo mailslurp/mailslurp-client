@@ -1,94 +1,96 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / TrackingControllerApi
+[MailSlurp JS](../README.md) / TrackingControllerApi
 
 # Class: TrackingControllerApi
 
 TrackingControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **TrackingControllerApi**
+  ↳ **`TrackingControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](trackingcontrollerapi.md#constructor)
+- [constructor](TrackingControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](trackingcontrollerapi.md#basepath)
-* [configuration](trackingcontrollerapi.md#configuration)
-* [fetch](trackingcontrollerapi.md#fetch)
+- [basePath](TrackingControllerApi.md#basepath)
+- [configuration](TrackingControllerApi.md#configuration)
+- [fetch](TrackingControllerApi.md#fetch)
 
 ### Methods
 
-* [createTrackingPixel](trackingcontrollerapi.md#createtrackingpixel)
-* [getAllTrackingPixels](trackingcontrollerapi.md#getalltrackingpixels)
-* [getTrackingPixel](trackingcontrollerapi.md#gettrackingpixel)
+- [createTrackingPixel](TrackingControllerApi.md#createtrackingpixel)
+- [getAllTrackingPixels](TrackingControllerApi.md#getalltrackingpixels)
+- [getTrackingPixel](TrackingControllerApi.md#gettrackingpixel)
 
 ## Constructors
 
 ### constructor
 
-\+ **new TrackingControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [TrackingControllerApi](trackingcontrollerapi.md)
+• **new TrackingControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [TrackingControllerApi](trackingcontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### createTrackingPixel
 
-▸ **createTrackingPixel**(`createTrackingPixelOptions`: [CreateTrackingPixelOptions](../interfaces/createtrackingpixeloptions.md), `options?`: any): Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
-
-*Defined in [src/generated/api.ts:27313](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27313)*
+▸ **createTrackingPixel**(`createTrackingPixelOptions`, `options?`): `Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
 
 Create a tracking pixel. A tracking pixel is an image that can be embedded in an email. When the email is viewed and the image is seen MailSlurp will mark the pixel as seen. Use tracking pixels to monitor email open events. You can receive open notifications via webhook or by fetching the pixel.
 
@@ -98,22 +100,26 @@ Create a tracking pixel. A tracking pixel is an image that can be embedded in an
 
 **`memberof`** TrackingControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`createTrackingPixelOptions` | [CreateTrackingPixelOptions](../interfaces/createtrackingpixeloptions.md) | createTrackingPixelOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `createTrackingPixelOptions` | [`CreateTrackingPixelOptions`](../interfaces/CreateTrackingPixelOptions.md) | createTrackingPixelOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
+#### Returns
+
+`Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:27620](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L27620)
 
 ___
 
 ### getAllTrackingPixels
 
-▸ **getAllTrackingPixels**(`page?`: number, `searchFilter?`: string, `size?`: number, `sort?`: \"ASC\" \| \"DESC\", `options?`: any): Promise\<[PageTrackingPixelProjection](../interfaces/pagetrackingpixelprojection.md)>
-
-*Defined in [src/generated/api.ts:27334](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27334)*
+▸ **getAllTrackingPixels**(`page?`, `searchFilter?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
 List tracking pixels in paginated form
 
@@ -123,25 +129,29 @@ List tracking pixels in paginated form
 
 **`memberof`** TrackingControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`page?` | number |
-`searchFilter?` | string |
-`size?` | number |
-`sort?` | \"ASC\" \| \"DESC\" |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `page?` | `number` |
+| `searchFilter?` | `string` |
+| `size?` | `number` |
+| `sort?` | ``"ASC"`` \| ``"DESC"`` |
+| `options?` | `any` |
 
-**Returns:** Promise\<[PageTrackingPixelProjection](../interfaces/pagetrackingpixelprojection.md)>
+#### Returns
+
+`Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:27641](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L27641)
 
 ___
 
 ### getTrackingPixel
 
-▸ **getTrackingPixel**(`id`: string, `options?`: any): Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
-
-*Defined in [src/generated/api.ts:27358](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L27358)*
+▸ **getTrackingPixel**(`id`, `options?`): `Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
 
 **`summary`** Get pixel
 
@@ -149,11 +159,17 @@ ___
 
 **`memberof`** TrackingControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | id |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[TrackingPixelDto](../interfaces/trackingpixeldto.md)>
+#### Returns
+
+`Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:27665](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L27665)

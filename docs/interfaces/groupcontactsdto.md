@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / GroupContactsDto
+[MailSlurp JS](../README.md) / GroupContactsDto
 
 # Interface: GroupContactsDto
 
-**`export`** 
+**`export`**
 
 **`interface`** GroupContactsDto
 
-## Hierarchy
-
-* **GroupContactsDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [contacts](groupcontactsdto.md#contacts)
-* [group](groupcontactsdto.md#group)
+- [contacts](GroupContactsDto.md#contacts)
+- [group](GroupContactsDto.md#group)
 
 ## Properties
 
 ### contacts
 
-•  **contacts**: Array\<[ContactDto](contactdto.md)>
-
-*Defined in [src/generated/api.ts:2550](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2550)*
+• **contacts**: [`ContactDto`](ContactDto.md)[]
 
 **`memberof`** GroupContactsDto
+
+#### Defined in
+
+[src/generated/api.ts:2552](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2552)
 
 ___
 
 ### group
 
-•  **group**: [GroupDto](groupdto.md)
-
-*Defined in [src/generated/api.ts:2556](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2556)*
+• **group**: [`GroupDto`](GroupDto.md)
 
 **`memberof`** GroupContactsDto
+
+#### Defined in
+
+[src/generated/api.ts:2558](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2558)

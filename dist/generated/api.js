@@ -20,6 +20,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -113,6 +115,7 @@ var AbstractWebhookPayload;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = AbstractWebhookPayload.EventNameEnum || (AbstractWebhookPayload.EventNameEnum = {}));
 })(AbstractWebhookPayload = exports.AbstractWebhookPayload || (exports.AbstractWebhookPayload = {}));
 /**
@@ -232,6 +235,7 @@ var CreateWebhookOptions;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = CreateWebhookOptions.EventNameEnum || (CreateWebhookOptions.EventNameEnum = {}));
 })(CreateWebhookOptions = exports.CreateWebhookOptions || (exports.CreateWebhookOptions = {}));
 /**
@@ -821,6 +825,7 @@ var WebhookDto;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookDto.EventNameEnum || (WebhookDto.EventNameEnum = {}));
     /**
      * @export
@@ -855,6 +860,7 @@ var WebhookEmailOpenedPayload;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookEmailOpenedPayload.EventNameEnum || (WebhookEmailOpenedPayload.EventNameEnum = {}));
 })(WebhookEmailOpenedPayload = exports.WebhookEmailOpenedPayload || (exports.WebhookEmailOpenedPayload = {}));
 /**
@@ -874,6 +880,7 @@ var WebhookNewAttachmentPayload;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookNewAttachmentPayload.EventNameEnum || (WebhookNewAttachmentPayload.EventNameEnum = {}));
 })(WebhookNewAttachmentPayload = exports.WebhookNewAttachmentPayload || (exports.WebhookNewAttachmentPayload = {}));
 /**
@@ -893,6 +900,7 @@ var WebhookNewContactPayload;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookNewContactPayload.EventNameEnum || (WebhookNewContactPayload.EventNameEnum = {}));
 })(WebhookNewContactPayload = exports.WebhookNewContactPayload || (exports.WebhookNewContactPayload = {}));
 /**
@@ -912,6 +920,7 @@ var WebhookNewEmailPayload;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookNewEmailPayload.EventNameEnum || (WebhookNewEmailPayload.EventNameEnum = {}));
 })(WebhookNewEmailPayload = exports.WebhookNewEmailPayload || (exports.WebhookNewEmailPayload = {}));
 /**
@@ -931,6 +940,7 @@ var WebhookProjection;
         EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookProjection.EventNameEnum || (WebhookProjection.EventNameEnum = {}));
 })(WebhookProjection = exports.WebhookProjection || (exports.WebhookProjection = {}));
 /**
@@ -975,6 +985,7 @@ var WebhookResultEntity;
         WebhookEventEnum[WebhookEventEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
         WebhookEventEnum[WebhookEventEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         WebhookEventEnum[WebhookEventEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        WebhookEventEnum[WebhookEventEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(WebhookEventEnum = WebhookResultEntity.WebhookEventEnum || (WebhookResultEntity.WebhookEventEnum = {}));
 })(WebhookResultEntity = exports.WebhookResultEntity || (exports.WebhookResultEntity = {}));
 /**
@@ -5726,8 +5737,8 @@ var EmailControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
-         * Marks an email as read or unread. Pass boolean read flag to set value.
-         * @summary Mark an email as read
+         * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+         * @summary Mark an email as read on unread
          * @param {string} emailId emailId
          * @param {boolean} [read] What value to assign to email read property. Default true.
          * @param {*} [options] Override http request option.
@@ -6425,8 +6436,8 @@ var EmailControllerApiFp = function (configuration) {
             };
         },
         /**
-         * Marks an email as read or unread. Pass boolean read flag to set value.
-         * @summary Mark an email as read
+         * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+         * @summary Mark an email as read on unread
          * @param {string} emailId emailId
          * @param {boolean} [read] What value to assign to email read property. Default true.
          * @param {*} [options] Override http request option.
@@ -6776,8 +6787,8 @@ var EmailControllerApiFactory = function (configuration, fetch, basePath) {
             return exports.EmailControllerApiFp(configuration).getUnreadEmailCount(options)(fetch, basePath);
         },
         /**
-         * Marks an email as read or unread. Pass boolean read flag to set value.
-         * @summary Mark an email as read
+         * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+         * @summary Mark an email as read on unread
          * @param {string} emailId emailId
          * @param {boolean} [read] What value to assign to email read property. Default true.
          * @param {*} [options] Override http request option.
@@ -7107,8 +7118,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
         return exports.EmailControllerApiFp(this.configuration).getUnreadEmailCount(options)(this.fetch, this.basePath);
     };
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value.
-     * @summary Mark an email as read
+     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * @summary Mark an email as read on unread
      * @param {string} emailId emailId
      * @param {boolean} [read] What value to assign to email read property. Default true.
      * @param {*} [options] Override http request option.
@@ -12666,6 +12677,55 @@ var MissedEmailControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+         * @summary Get all unknown missed emails in paginated format
+         * @param {string} [inboxId] Optional inbox ID filter
+         * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllUnknownMissedEmails: function (inboxId, page, searchFilter, size, sort, options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/missed-emails/unknown";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            if (inboxId !== undefined) {
+                localVarQueryParameter['inboxId'] = inboxId;
+            }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+            if (searchFilter !== undefined) {
+                localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          *
          * @summary Get MissedEmail
          * @param {string} missedEmailId missedEmailId
@@ -12776,6 +12836,32 @@ var MissedEmailControllerApiFp = function (configuration) {
             };
         },
         /**
+         * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+         * @summary Get all unknown missed emails in paginated format
+         * @param {string} [inboxId] Optional inbox ID filter
+         * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllUnknownMissedEmails: function (inboxId, page, searchFilter, size, sort, options) {
+            var localVarFetchArgs = exports.MissedEmailControllerApiFetchParamCreator(configuration).getAllUnknownMissedEmails(inboxId, page, searchFilter, size, sort, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          *
          * @summary Get MissedEmail
          * @param {string} missedEmailId missedEmailId
@@ -12845,6 +12931,20 @@ var MissedEmailControllerApiFactory = function (configuration, fetch, basePath) 
             return exports.MissedEmailControllerApiFp(configuration).getAllMissedEmails(inboxId, page, searchFilter, size, sort, options)(fetch, basePath);
         },
         /**
+         * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+         * @summary Get all unknown missed emails in paginated format
+         * @param {string} [inboxId] Optional inbox ID filter
+         * @param {number} [page] Optional page index in list pagination
+         * @param {string} [searchFilter] Optional search filter
+         * @param {number} [size] Optional page size in list pagination
+         * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllUnknownMissedEmails: function (inboxId, page, searchFilter, size, sort, options) {
+            return exports.MissedEmailControllerApiFp(configuration).getAllUnknownMissedEmails(inboxId, page, searchFilter, size, sort, options)(fetch, basePath);
+        },
+        /**
          *
          * @summary Get MissedEmail
          * @param {string} missedEmailId missedEmailId
@@ -12894,6 +12994,21 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
      */
     MissedEmailControllerApi.prototype.getAllMissedEmails = function (inboxId, page, searchFilter, size, sort, options) {
         return exports.MissedEmailControllerApiFp(this.configuration).getAllMissedEmails(inboxId, page, searchFilter, size, sort, options)(this.fetch, this.basePath);
+    };
+    /**
+     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+     * @summary Get all unknown missed emails in paginated format
+     * @param {string} [inboxId] Optional inbox ID filter
+     * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MissedEmailControllerApi
+     */
+    MissedEmailControllerApi.prototype.getAllUnknownMissedEmails = function (inboxId, page, searchFilter, size, sort, options) {
+        return exports.MissedEmailControllerApiFp(this.configuration).getAllUnknownMissedEmails(inboxId, page, searchFilter, size, sort, options)(this.fetch, this.basePath);
     };
     /**
      *
@@ -14433,11 +14548,11 @@ var WaitForControllerApiFetchParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        waitForMatchingEmail: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
+        waitForMatchingEmails: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'matchOptions' is not null or undefined
             if (matchOptions === null || matchOptions === undefined) {
-                throw new RequiredError('matchOptions', 'Required parameter matchOptions was null or undefined when calling waitForMatchingEmail.');
+                throw new RequiredError('matchOptions', 'Required parameter matchOptions was null or undefined when calling waitForMatchingEmails.');
             }
             var localVarPath = "/waitForMatchingEmails";
             var localVarUrlObj = url.parse(localVarPath, true);
@@ -14710,8 +14825,8 @@ var WaitForControllerApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        waitForMatchingEmail: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
-            var localVarFetchArgs = exports.WaitForControllerApiFetchParamCreator(configuration).waitForMatchingEmail(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options);
+        waitForMatchingEmails: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
+            var localVarFetchArgs = exports.WaitForControllerApiFetchParamCreator(configuration).waitForMatchingEmails(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -14845,8 +14960,8 @@ var WaitForControllerApiFactory = function (configuration, fetch, basePath) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        waitForMatchingEmail: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
-            return exports.WaitForControllerApiFp(configuration).waitForMatchingEmail(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options)(fetch, basePath);
+        waitForMatchingEmails: function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
+            return exports.WaitForControllerApiFp(configuration).waitForMatchingEmails(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options)(fetch, basePath);
         },
         /**
          * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
@@ -14953,8 +15068,8 @@ var WaitForControllerApi = /** @class */ (function (_super) {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    WaitForControllerApi.prototype.waitForMatchingEmail = function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
-        return exports.WaitForControllerApiFp(this.configuration).waitForMatchingEmail(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options)(this.fetch, this.basePath);
+    WaitForControllerApi.prototype.waitForMatchingEmails = function (matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options) {
+        return exports.WaitForControllerApiFp(this.configuration).waitForMatchingEmails(matchOptions, count, delay, inboxId, since, sort, timeout, unreadOnly, options)(this.fetch, this.basePath);
     };
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
@@ -15229,7 +15344,7 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -15695,7 +15810,7 @@ var WebhookControllerApiFp = function (configuration) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -15986,7 +16101,7 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
         /**
          *
          * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+         * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -16167,7 +16282,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi

@@ -1,59 +1,59 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / HTMLValidationResult
+[MailSlurp JS](../README.md) / HTMLValidationResult
 
 # Interface: HTMLValidationResult
 
 HTML Validation Results
 
-**`export`** 
+**`export`**
 
 **`interface`** HTMLValidationResult
 
-## Hierarchy
-
-* **HTMLValidationResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [errors](htmlvalidationresult.md#errors)
-* [isValid](htmlvalidationresult.md#isvalid)
-* [warnings](htmlvalidationresult.md#warnings)
+- [errors](HTMLValidationResult.md#errors)
+- [isValid](HTMLValidationResult.md#isvalid)
+- [warnings](HTMLValidationResult.md#warnings)
 
 ## Properties
 
 ### errors
 
-• `Optional` **errors**: Array\<[ValidationMessage](validationmessage.md)>
-
-*Defined in [src/generated/api.ts:2634](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2634)*
+• `Optional` **errors**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional errors resulting from HTML validation
 
 **`memberof`** HTMLValidationResult
 
+#### Defined in
+
+[src/generated/api.ts:2636](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2636)
+
 ___
 
 ### isValid
 
-• `Optional` **isValid**: boolean
-
-*Defined in [src/generated/api.ts:2640](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2640)*
+• `Optional` **isValid**: `boolean`
 
 Is HTML validation result valid
 
 **`memberof`** HTMLValidationResult
 
+#### Defined in
+
+[src/generated/api.ts:2642](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2642)
+
 ___
 
 ### warnings
 
-• `Optional` **warnings**: Array\<[ValidationMessage](validationmessage.md)>
-
-*Defined in [src/generated/api.ts:2646](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2646)*
+• `Optional` **warnings**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional warnings resulting from HTML validation
 
 **`memberof`** HTMLValidationResult
+
+#### Defined in
+
+[src/generated/api.ts:2648](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2648)

@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / TestNewInboxForwarderOptions
+[MailSlurp JS](../README.md) / TestNewInboxForwarderOptions
 
 # Interface: TestNewInboxForwarderOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** TestNewInboxForwarderOptions
 
-## Hierarchy
-
-* **TestNewInboxForwarderOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createInboxForwarderOptions](testnewinboxforwarderoptions.md#createinboxforwarderoptions)
-* [inboxForwarderTestOptions](testnewinboxforwarderoptions.md#inboxforwardertestoptions)
+- [createInboxForwarderOptions](TestNewInboxForwarderOptions.md#createinboxforwarderoptions)
+- [inboxForwarderTestOptions](TestNewInboxForwarderOptions.md#inboxforwardertestoptions)
 
 ## Properties
 
 ### createInboxForwarderOptions
 
-•  **createInboxForwarderOptions**: [CreateInboxForwarderOptions](../modules/createinboxforwarderoptions.md)
-
-*Defined in [src/generated/api.ts:5548](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5548)*
+• **createInboxForwarderOptions**: [`CreateInboxForwarderOptions`](CreateInboxForwarderOptions.md)
 
 **`memberof`** TestNewInboxForwarderOptions
+
+#### Defined in
+
+[src/generated/api.ts:5624](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5624)
 
 ___
 
 ### inboxForwarderTestOptions
 
-•  **inboxForwarderTestOptions**: [InboxForwarderTestOptions](inboxforwardertestoptions.md)
-
-*Defined in [src/generated/api.ts:5542](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L5542)*
+• **inboxForwarderTestOptions**: [`InboxForwarderTestOptions`](InboxForwarderTestOptions.md)
 
 **`memberof`** TestNewInboxForwarderOptions
+
+#### Defined in
+
+[src/generated/api.ts:5618](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5618)

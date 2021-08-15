@@ -1,31 +1,27 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExportLink
+[MailSlurp JS](../README.md) / ExportLink
 
 # Interface: ExportLink
 
 Export download link
 
-**`export`** 
+**`export`**
 
 **`interface`** ExportLink
 
-## Hierarchy
-
-* **ExportLink**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [downloadLink](exportlink.md#downloadlink)
+- [downloadLink](ExportLink.md#downloadlink)
 
 ## Properties
 
 ### downloadLink
 
-•  **downloadLink**: string
-
-*Defined in [src/generated/api.ts:2413](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2413)*
+• **downloadLink**: `string`
 
 **`memberof`** ExportLink
+
+#### Defined in
+
+[src/generated/api.ts:2415](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2415)

@@ -1,97 +1,99 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / DomainControllerApi
+[MailSlurp JS](../README.md) / DomainControllerApi
 
 # Class: DomainControllerApi
 
 DomainControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **DomainControllerApi**
+  ↳ **`DomainControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](domaincontrollerapi.md#constructor)
+- [constructor](DomainControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](domaincontrollerapi.md#basepath)
-* [configuration](domaincontrollerapi.md#configuration)
-* [fetch](domaincontrollerapi.md#fetch)
+- [basePath](DomainControllerApi.md#basepath)
+- [configuration](DomainControllerApi.md#configuration)
+- [fetch](DomainControllerApi.md#fetch)
 
 ### Methods
 
-* [addDomainWildcardCatchAll](domaincontrollerapi.md#adddomainwildcardcatchall)
-* [createDomain](domaincontrollerapi.md#createdomain)
-* [deleteDomain](domaincontrollerapi.md#deletedomain)
-* [getDomain](domaincontrollerapi.md#getdomain)
-* [getDomains](domaincontrollerapi.md#getdomains)
-* [updateDomain](domaincontrollerapi.md#updatedomain)
+- [addDomainWildcardCatchAll](DomainControllerApi.md#adddomainwildcardcatchall)
+- [createDomain](DomainControllerApi.md#createdomain)
+- [deleteDomain](DomainControllerApi.md#deletedomain)
+- [getDomain](DomainControllerApi.md#getdomain)
+- [getDomains](DomainControllerApi.md#getdomains)
+- [updateDomain](DomainControllerApi.md#updatedomain)
 
 ## Constructors
 
 ### constructor
 
-\+ **new DomainControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [DomainControllerApi](domaincontrollerapi.md)
+• **new DomainControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [DomainControllerApi](domaincontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### addDomainWildcardCatchAll
 
-▸ **addDomainWildcardCatchAll**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
-
-*Defined in [src/generated/api.ts:12520](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12520)*
+▸ **addDomainWildcardCatchAll**(`id`, `options?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
 Add a catch all inbox to a domain so that any emails sent to it that cannot be matched will be sent to the catch all inbox generated
 
@@ -101,22 +103,26 @@ Add a catch all inbox to a domain so that any emails sent to it that cannot be m
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | id |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
+#### Returns
+
+`Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:12641](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12641)
 
 ___
 
 ### createDomain
 
-▸ **createDomain**(`domainOptions`: [CreateDomainOptions](../modules/createdomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
-
-*Defined in [src/generated/api.ts:12534](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12534)*
+▸ **createDomain**(`domainOptions`, `options?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
 Link a domain that you own with MailSlurp so you can create email addresses using it. Endpoint returns DNS records used for validation. You must add these verification records to your host provider's DNS setup to verify the domain.
 
@@ -126,22 +132,26 @@ Link a domain that you own with MailSlurp so you can create email addresses usin
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`domainOptions` | [CreateDomainOptions](../modules/createdomainoptions.md) | domainOptions |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `domainOptions` | [`CreateDomainOptions`](../interfaces/CreateDomainOptions.md) | domainOptions |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
+#### Returns
+
+`Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:12655](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12655)
 
 ___
 
 ### deleteDomain
 
-▸ **deleteDomain**(`id`: string, `options?`: any): Promise\<string[]>
-
-*Defined in [src/generated/api.ts:12549](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12549)*
+▸ **deleteDomain**(`id`, `options?`): `Promise`<`string`[]\>
 
 Delete a domain. This will disable any existing inboxes that use this domain.
 
@@ -151,22 +161,26 @@ Delete a domain. This will disable any existing inboxes that use this domain.
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | id |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<string[]>
+#### Returns
+
+`Promise`<`string`[]\>
+
+#### Defined in
+
+[src/generated/api.ts:12670](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12670)
 
 ___
 
 ### getDomain
 
-▸ **getDomain**(`id`: string, `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
-
-*Defined in [src/generated/api.ts:12564](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12564)*
+▸ **getDomain**(`id`, `options?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
 Returns domain verification status and tokens for a given domain
 
@@ -176,22 +190,26 @@ Returns domain verification status and tokens for a given domain
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | id |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
+#### Returns
+
+`Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:12685](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12685)
 
 ___
 
 ### getDomains
 
-▸ **getDomains**(`options?`: any): Promise\<[DomainPreview](../modules/domainpreview.md)[]>
-
-*Defined in [src/generated/api.ts:12578](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12578)*
+▸ **getDomains**(`options?`): `Promise`<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>
 
 List all custom domains you have created
 
@@ -201,21 +219,25 @@ List all custom domains you have created
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
------- | ------ |
-`options?` | any |
+| Name | Type |
+| :------ | :------ |
+| `options?` | `any` |
 
-**Returns:** Promise\<[DomainPreview](../modules/domainpreview.md)[]>
+#### Returns
+
+`Promise`<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>
+
+#### Defined in
+
+[src/generated/api.ts:12699](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12699)
 
 ___
 
 ### updateDomain
 
-▸ **updateDomain**(`id`: string, `updateDomainDto`: [UpdateDomainOptions](../interfaces/updatedomainoptions.md), `options?`: any): Promise\<[DomainDto](../modules/domaindto.md)>
-
-*Defined in [src/generated/api.ts:12594](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L12594)*
+▸ **updateDomain**(`id`, `updateDomainDto`, `options?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
 Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
 
@@ -225,12 +247,18 @@ Update values on a domain. Note you cannot change the domain name as it is immut
 
 **`memberof`** DomainControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`id` | string | id |
-`updateDomainDto` | [UpdateDomainOptions](../interfaces/updatedomainoptions.md) | updateDomainDto |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | id |
+| `updateDomainDto` | [`UpdateDomainOptions`](../interfaces/UpdateDomainOptions.md) | updateDomainDto |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[DomainDto](../modules/domaindto.md)>
+#### Returns
+
+`Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:12715](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L12715)

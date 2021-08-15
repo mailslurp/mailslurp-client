@@ -1,42 +1,40 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BasicAuthOptions
+[MailSlurp JS](../README.md) / BasicAuthOptions
 
 # Interface: BasicAuthOptions
 
 Basic Authentication options for webhooks. Will be used is present when calling webhook endpoints.
 
-**`export`** 
+**`export`**
 
 **`interface`** BasicAuthOptions
 
-## Hierarchy
-
-* **BasicAuthOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [password](basicauthoptions.md#password)
-* [username](basicauthoptions.md#username)
+- [password](BasicAuthOptions.md#password)
+- [username](BasicAuthOptions.md#username)
 
 ## Properties
 
 ### password
 
-•  **password**: string
-
-*Defined in [src/generated/api.ts:469](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L469)*
+• **password**: `string`
 
 **`memberof`** BasicAuthOptions
+
+#### Defined in
+
+[src/generated/api.ts:470](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L470)
 
 ___
 
 ### username
 
-•  **username**: string
-
-*Defined in [src/generated/api.ts:463](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L463)*
+• **username**: `string`
 
 **`memberof`** BasicAuthOptions
+
+#### Defined in
+
+[src/generated/api.ts:464](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L464)

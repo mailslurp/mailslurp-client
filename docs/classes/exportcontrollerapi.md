@@ -1,93 +1,95 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExportControllerApi
+[MailSlurp JS](../README.md) / ExportControllerApi
 
 # Class: ExportControllerApi
 
 ExportControllerApi - object-oriented interface
 
-**`export`** 
+**`export`**
 
 ## Hierarchy
 
-* [BaseAPI](baseapi.md)
+- [`BaseAPI`](BaseAPI.md)
 
-  ↳ **ExportControllerApi**
+  ↳ **`ExportControllerApi`**
 
-## Index
+## Table of contents
 
 ### Constructors
 
-* [constructor](exportcontrollerapi.md#constructor)
+- [constructor](ExportControllerApi.md#constructor)
 
 ### Properties
 
-* [basePath](exportcontrollerapi.md#basepath)
-* [configuration](exportcontrollerapi.md#configuration)
-* [fetch](exportcontrollerapi.md#fetch)
+- [basePath](ExportControllerApi.md#basepath)
+- [configuration](ExportControllerApi.md#configuration)
+- [fetch](ExportControllerApi.md#fetch)
 
 ### Methods
 
-* [exportEntities](exportcontrollerapi.md#exportentities)
-* [getExportLink](exportcontrollerapi.md#getexportlink)
+- [exportEntities](ExportControllerApi.md#exportentities)
+- [getExportLink](ExportControllerApi.md#getexportlink)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ExportControllerApi**(`configuration?`: [Configuration](configuration.md), `basePath?`: string, `fetch?`: [FetchAPI](../interfaces/fetchapi.md)): [ExportControllerApi](exportcontrollerapi.md)
+• **new ExportControllerApi**(`configuration?`, `basePath?`, `fetch?`)
 
-*Inherited from [BaseAPI](baseapi.md).[constructor](baseapi.md#constructor)*
+#### Parameters
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | [`Configuration`](Configuration.md) |
+| `basePath` | `string` |
+| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
 
-#### Parameters:
+#### Inherited from
 
-Name | Type | Default value |
------- | ------ | ------ |
-`configuration?` | [Configuration](configuration.md) | - |
-`basePath` | string | BASE\_PATH |
-`fetch` | [FetchAPI](../interfaces/fetchapi.md) | portableFetch |
+[BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-**Returns:** [ExportControllerApi](exportcontrollerapi.md)
+#### Defined in
+
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L59)
 
 ## Properties
 
 ### basePath
 
-• `Protected` **basePath**: string
+• `Protected` **basePath**: `string`
 
-*Inherited from [BaseAPI](baseapi.md).[basePath](baseapi.md#basepath)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:61](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L61)*
+[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
 
 ___
 
 ### configuration
 
-• `Protected` **configuration**: [Configuration](configuration.md)
+• `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-*Inherited from [BaseAPI](baseapi.md).[configuration](baseapi.md#configuration)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L57)*
+[BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
+
+#### Defined in
+
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L57)
 
 ___
 
 ### fetch
 
-• `Protected` **fetch**: [FetchAPI](../interfaces/fetchapi.md)
+• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
 
-*Inherited from [BaseAPI](baseapi.md).[fetch](baseapi.md#fetch)*
+#### Inherited from
 
-*Defined in [src/generated/api.ts:62](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L62)*
+[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
 
 ## Methods
 
 ### exportEntities
 
-▸ **exportEntities**(`apiKey`: string, `exportType`: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", `outputFormat`: \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\", `createdEarliestTime?`: Date, `createdOldestTime?`: Date, `excludePreviouslyExported?`: boolean, `filter?`: string, `listSeparatorToken?`: string, `options?`: any): Promise\<string>
-
-*Defined in [src/generated/api.ts:17158](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L17158)*
+▸ **exportEntities**(`apiKey`, `exportType`, `outputFormat`, `createdEarliestTime?`, `createdOldestTime?`, `excludePreviouslyExported?`, `filter?`, `listSeparatorToken?`, `options?`): `Promise`<`string`\>
 
 **`summary`** Export inboxes link callable via browser
 
@@ -95,29 +97,33 @@ ___
 
 **`memberof`** ExportControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`apiKey` | string | apiKey |
-`exportType` | \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\" | exportType |
-`outputFormat` | \"CSV\_DEFAULT\" \| \"CSV\_EXCEL\" | outputFormat |
-`createdEarliestTime?` | Date | - |
-`createdOldestTime?` | Date | - |
-`excludePreviouslyExported?` | boolean | - |
-`filter?` | string | - |
-`listSeparatorToken?` | string | - |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `apiKey` | `string` | apiKey |
+| `exportType` | ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"`` | exportType |
+| `outputFormat` | ``"CSV_DEFAULT"`` \| ``"CSV_EXCEL"`` | outputFormat |
+| `createdEarliestTime?` | `Date` | - |
+| `createdOldestTime?` | `Date` | - |
+| `excludePreviouslyExported?` | `boolean` | - |
+| `filter?` | `string` | - |
+| `listSeparatorToken?` | `string` | - |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<string>
+#### Returns
+
+`Promise`<`string`\>
+
+#### Defined in
+
+[src/generated/api.ts:17279](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L17279)
 
 ___
 
 ### getExportLink
 
-▸ **getExportLink**(`exportOptions`: [ExportOptions](../modules/exportoptions.md), `exportType`: \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\", `apiKey?`: string, `options?`: any): Promise\<[ExportLink](../interfaces/exportlink.md)>
-
-*Defined in [src/generated/api.ts:17192](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L17192)*
+▸ **getExportLink**(`exportOptions`, `exportType`, `apiKey?`, `options?`): `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
 
 **`summary`** Get export link
 
@@ -125,13 +131,19 @@ ___
 
 **`memberof`** ExportControllerApi
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`exportOptions` | [ExportOptions](../modules/exportoptions.md) | exportOptions |
-`exportType` | \"INBOXES\" \| \"CONTACTS\" \| \"ATTACHMENTS\" \| \"EMAILS\" | exportType |
-`apiKey?` | string | - |
-`options?` | any | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `exportOptions` | [`ExportOptions`](../interfaces/ExportOptions.md) | exportOptions |
+| `exportType` | ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"`` | exportType |
+| `apiKey?` | `string` | - |
+| `options?` | `any` | - |
 
-**Returns:** Promise\<[ExportLink](../interfaces/exportlink.md)>
+#### Returns
+
+`Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:17313](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L17313)

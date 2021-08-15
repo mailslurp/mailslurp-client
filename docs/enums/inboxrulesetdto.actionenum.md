@@ -1,39 +1,45 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [InboxRulesetDto](../modules/inboxrulesetdto.md) / ActionEnum
+[MailSlurp JS](../README.md) / [InboxRulesetDto](../modules/InboxRulesetDto.md) / ActionEnum
 
 # Enumeration: ActionEnum
 
-**`export`** 
+[InboxRulesetDto](../modules/InboxRulesetDto.md).ActionEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [ALLOW](inboxrulesetdto.actionenum.md#allow)
-* [BLOCK](inboxrulesetdto.actionenum.md#block)
-* [FILTERREMOVE](inboxrulesetdto.actionenum.md#filterremove)
+- [ALLOW](InboxRulesetDto.ActionEnum.md#allow)
+- [BLOCK](InboxRulesetDto.ActionEnum.md#block)
+- [FILTERREMOVE](InboxRulesetDto.ActionEnum.md#filterremove)
 
 ## Enumeration members
 
 ### ALLOW
 
-•  **ALLOW**:  = \<any>'ALLOW'
+• **ALLOW**
 
-*Defined in [src/generated/api.ts:2991](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2991)*
+#### Defined in
+
+[src/generated/api.ts:2993](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2993)
 
 ___
 
 ### BLOCK
 
-•  **BLOCK**:  = \<any>'BLOCK'
+• **BLOCK**
 
-*Defined in [src/generated/api.ts:2990](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2990)*
+#### Defined in
+
+[src/generated/api.ts:2992](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2992)
 
 ___
 
 ### FILTERREMOVE
 
-•  **FILTERREMOVE**:  = \<any>'FILTER\_REMOVE'
+• **FILTERREMOVE**
 
-*Defined in [src/generated/api.ts:2992](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2992)*
+#### Defined in
+
+[src/generated/api.ts:2994](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2994)

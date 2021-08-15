@@ -1,64 +1,66 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / NameServerRecord
+[MailSlurp JS](../README.md) / NameServerRecord
 
 # Interface: NameServerRecord
 
 Name Server Record
 
-**`export`** 
+**`export`**
 
 **`interface`** NameServerRecord
 
-## Hierarchy
-
-* **NameServerRecord**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [priority](nameserverrecord.md#priority)
-* [raw](nameserverrecord.md#raw)
-* [recordType](nameserverrecord.md#recordtype)
-* [value](nameserverrecord.md#value)
+- [priority](NameServerRecord.md#priority)
+- [raw](NameServerRecord.md#raw)
+- [recordType](NameServerRecord.md#recordtype)
+- [value](NameServerRecord.md#value)
 
 ## Properties
 
 ### priority
 
-•  **priority**: string
-
-*Defined in [src/generated/api.ts:3253](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3253)*
+• **priority**: `string`
 
 **`memberof`** NameServerRecord
+
+#### Defined in
+
+[src/generated/api.ts:3255](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3255)
 
 ___
 
 ### raw
 
-•  **raw**: string
-
-*Defined in [src/generated/api.ts:3259](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3259)*
+• **raw**: `string`
 
 **`memberof`** NameServerRecord
+
+#### Defined in
+
+[src/generated/api.ts:3261](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3261)
 
 ___
 
 ### recordType
 
-•  **recordType**: string
-
-*Defined in [src/generated/api.ts:3265](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3265)*
+• **recordType**: `string`
 
 **`memberof`** NameServerRecord
+
+#### Defined in
+
+[src/generated/api.ts:3267](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3267)
 
 ___
 
 ### value
 
-•  **value**: string
-
-*Defined in [src/generated/api.ts:3271](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3271)*
+• **value**: `string`
 
 **`memberof`** NameServerRecord
+
+#### Defined in
+
+[src/generated/api.ts:3273](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3273)

@@ -105,7 +105,8 @@ export declare namespace AbstractWebhookPayload {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -1209,7 +1210,8 @@ export declare namespace CreateWebhookOptions {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -2198,7 +2200,7 @@ export interface EmailTextLinesResult {
     lines: Array<string>;
 }
 /**
- * Email verification result. Valid means email address exists according to response from mail server running at the domian and port given.
+ * Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.
  * @export
  * @interface EmailVerificationResult
  */
@@ -3099,7 +3101,7 @@ export interface MissedEmail {
      * @type {string}
      * @memberof MissedEmail
      */
-    userId: string;
+    userId?: string;
 }
 /**
  *
@@ -3136,7 +3138,7 @@ export interface MissedEmailProjection {
      * @type {string}
      * @memberof MissedEmailProjection
      */
-    userId: string;
+    userId?: string;
 }
 /**
  * Name Server Record
@@ -4559,6 +4561,79 @@ export interface PageTrackingPixelProjection {
     totalPages?: number;
 }
 /**
+ * Paginated unknown MissedEmail results. Unknown missed emails are emails that were sent to MailSlurp /Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
+ * @export
+ * @interface PageUnknownMissedEmailProjection
+ */
+export interface PageUnknownMissedEmailProjection {
+    /**
+     *
+     * @type {Array<UnknownMissedEmailProjection>}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    content?: Array<UnknownMissedEmailProjection>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    number?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {Pageable}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    pageable?: Pageable;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    size?: number;
+    /**
+     *
+     * @type {Sort}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    sort?: Sort;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    totalElements?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    totalPages?: number;
+}
+/**
  *
  * @export
  * @interface PageWebhookProjection
@@ -5623,6 +5698,43 @@ export interface TrackingPixelProjection {
 /**
  *
  * @export
+ * @interface UnknownMissedEmailProjection
+ */
+export interface UnknownMissedEmailProjection {
+    /**
+     *
+     * @type {Date}
+     * @memberof UnknownMissedEmailProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    from?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    subject?: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof UnknownMissedEmailProjection
+     */
+    to?: Array<string>;
+}
+/**
+ *
+ * @export
  * @interface UnreadCount
  */
 export interface UnreadCount {
@@ -5716,7 +5828,7 @@ export interface UpdateInboxOptions {
  */
 export interface UploadAttachmentOptions {
     /**
-     * Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string.
+     * Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
      * @type {string}
      * @memberof UploadAttachmentOptions
      */
@@ -5961,7 +6073,8 @@ export declare namespace WebhookDto {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
     /**
      * @export
@@ -6053,7 +6166,8 @@ export declare namespace WebhookEmailOpenedPayload {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -6125,7 +6239,8 @@ export declare namespace WebhookNewAttachmentPayload {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -6239,7 +6354,8 @@ export declare namespace WebhookNewContactPayload {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -6341,7 +6457,8 @@ export declare namespace WebhookNewEmailPayload {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -6407,7 +6524,8 @@ export declare namespace WebhookProjection {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -6538,7 +6656,8 @@ export declare namespace WebhookResultEntity {
         NEWEMAIL,
         NEWCONTACT,
         NEWATTACHMENT,
-        EMAILOPENED
+        EMAILOPENED,
+        EMAILREAD
     }
 }
 /**
@@ -8540,8 +8659,8 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
      */
     getUnreadEmailCount(options?: any): FetchArgs;
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value.
-     * @summary Mark an email as read
+     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * @summary Mark an email as read on unread
      * @param {string} emailId emailId
      * @param {boolean} [read] What value to assign to email read property. Default true.
      * @param {*} [options] Override http request option.
@@ -8786,8 +8905,8 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
      */
     getUnreadEmailCount(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UnreadCount>;
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value.
-     * @summary Mark an email as read
+     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * @summary Mark an email as read on unread
      * @param {string} emailId emailId
      * @param {boolean} [read] What value to assign to email read property. Default true.
      * @param {*} [options] Override http request option.
@@ -9032,8 +9151,8 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
      */
     getUnreadEmailCount(options?: any): Promise<UnreadCount>;
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value.
-     * @summary Mark an email as read
+     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * @summary Mark an email as read on unread
      * @param {string} emailId emailId
      * @param {boolean} [read] What value to assign to email read property. Default true.
      * @param {*} [options] Override http request option.
@@ -9303,8 +9422,8 @@ export declare class EmailControllerApi extends BaseAPI {
      */
     getUnreadEmailCount(options?: any): Promise<UnreadCount>;
     /**
-     * Marks an email as read or unread. Pass boolean read flag to set value.
-     * @summary Mark an email as read
+     * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * @summary Mark an email as read on unread
      * @param {string} emailId emailId
      * @param {boolean} [read] What value to assign to email read property. Default true.
      * @param {*} [options] Override http request option.
@@ -11770,6 +11889,18 @@ export declare const MissedEmailControllerApiFetchParamCreator: (configuration?:
      */
     getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
+     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+     * @summary Get all unknown missed emails in paginated format
+     * @param {string} [inboxId] Optional inbox ID filter
+     * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    /**
      *
      * @summary Get MissedEmail
      * @param {string} missedEmailId missedEmailId
@@ -11806,6 +11937,18 @@ export declare const MissedEmailControllerApiFp: (configuration?: Configuration)
      */
     getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageMissedEmailProjection>;
     /**
+     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+     * @summary Get all unknown missed emails in paginated format
+     * @param {string} [inboxId] Optional inbox ID filter
+     * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageUnknownMissedEmailProjection>;
+    /**
      *
      * @summary Get MissedEmail
      * @param {string} missedEmailId missedEmailId
@@ -11841,6 +11984,18 @@ export declare const MissedEmailControllerApiFactory: (configuration?: Configura
      * @throws {RequiredError}
      */
     getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
+    /**
+     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+     * @summary Get all unknown missed emails in paginated format
+     * @param {string} [inboxId] Optional inbox ID filter
+     * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
     /**
      *
      * @summary Get MissedEmail
@@ -11880,6 +12035,19 @@ export declare class MissedEmailControllerApi extends BaseAPI {
      * @memberof MissedEmailControllerApi
      */
     getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
+    /**
+     * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+     * @summary Get all unknown missed emails in paginated format
+     * @param {string} [inboxId] Optional inbox ID filter
+     * @param {number} [page] Optional page index in list pagination
+     * @param {string} [searchFilter] Optional search filter
+     * @param {number} [size] Optional page size in list pagination
+     * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MissedEmailControllerApi
+     */
+    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
     /**
      *
      * @summary Get MissedEmail
@@ -12571,7 +12739,7 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
@@ -12655,7 +12823,7 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
@@ -12739,7 +12907,7 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
@@ -12829,7 +12997,7 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForMatchingEmail(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
@@ -12921,11 +13089,11 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED', options?: any): FetchArgs;
+    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ', options?: any): FetchArgs;
     /**
      *
      * @summary Get webhook test payload for email opened event
@@ -13059,11 +13227,11 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AbstractWebhookPayload>;
+    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for email opened event
@@ -13197,11 +13365,11 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED', options?: any): Promise<AbstractWebhookPayload>;
+    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ', options?: any): Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for email opened event
@@ -13342,12 +13510,12 @@ export declare class WebhookControllerApi extends BaseAPI {
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
-     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED'} [eventName] eventName
+     * @param {'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ'} [eventName] eventName
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED', options?: any): Promise<AbstractWebhookPayload>;
+    getTestWebhookPayload(eventName?: 'EMAIL_RECEIVED' | 'NEW_EMAIL' | 'NEW_CONTACT' | 'NEW_ATTACHMENT' | 'EMAIL_OPENED' | 'EMAIL_READ', options?: any): Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for email opened event

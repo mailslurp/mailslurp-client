@@ -1,130 +1,144 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / BouncedEmailDto
+[MailSlurp JS](../README.md) / BouncedEmailDto
 
 # Interface: BouncedEmailDto
 
 Bounced email
 
-**`export`** 
+**`export`**
 
 **`interface`** BouncedEmailDto
 
-## Hierarchy
-
-* **BouncedEmailDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [bounceMta](bouncedemaildto.md#bouncemta)
-* [bounceRecipients](bouncedemaildto.md#bouncerecipients)
-* [bounceSubType](bouncedemaildto.md#bouncesubtype)
-* [bounceType](bouncedemaildto.md#bouncetype)
-* [createdAt](bouncedemaildto.md#createdat)
-* [id](bouncedemaildto.md#id)
-* [notificationType](bouncedemaildto.md#notificationtype)
-* [sender](bouncedemaildto.md#sender)
-* [sentToRecipients](bouncedemaildto.md#senttorecipients)
-* [userId](bouncedemaildto.md#userid)
+- [bounceMta](BouncedEmailDto.md#bouncemta)
+- [bounceRecipients](BouncedEmailDto.md#bouncerecipients)
+- [bounceSubType](BouncedEmailDto.md#bouncesubtype)
+- [bounceType](BouncedEmailDto.md#bouncetype)
+- [createdAt](BouncedEmailDto.md#createdat)
+- [id](BouncedEmailDto.md#id)
+- [notificationType](BouncedEmailDto.md#notificationtype)
+- [sender](BouncedEmailDto.md#sender)
+- [sentToRecipients](BouncedEmailDto.md#senttorecipients)
+- [userId](BouncedEmailDto.md#userid)
 
 ## Properties
 
 ### bounceMta
 
-• `Optional` **bounceMta**: string
-
-*Defined in [src/generated/api.ts:547](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L547)*
+• `Optional` **bounceMta**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:548](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L548)
 
 ___
 
 ### bounceRecipients
 
-• `Optional` **bounceRecipients**: Array\<string>
-
-*Defined in [src/generated/api.ts:553](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L553)*
+• `Optional` **bounceRecipients**: `string`[]
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:554](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L554)
 
 ___
 
 ### bounceSubType
 
-• `Optional` **bounceSubType**: string
-
-*Defined in [src/generated/api.ts:559](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L559)*
+• `Optional` **bounceSubType**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:560](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L560)
 
 ___
 
 ### bounceType
 
-• `Optional` **bounceType**: string
-
-*Defined in [src/generated/api.ts:565](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L565)*
+• `Optional` **bounceType**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:566](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L566)
 
 ___
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:571](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L571)*
+• **createdAt**: `Date`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:572](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L572)
 
 ___
 
 ### id
 
-• `Optional` **id**: string
-
-*Defined in [src/generated/api.ts:577](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L577)*
+• `Optional` **id**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:578](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L578)
 
 ___
 
 ### notificationType
 
-•  **notificationType**: string
-
-*Defined in [src/generated/api.ts:583](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L583)*
+• **notificationType**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:584](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L584)
 
 ___
 
 ### sender
 
-•  **sender**: string
-
-*Defined in [src/generated/api.ts:589](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L589)*
+• **sender**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:590](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L590)
 
 ___
 
 ### sentToRecipients
 
-• `Optional` **sentToRecipients**: Array\<string>
-
-*Defined in [src/generated/api.ts:595](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L595)*
+• `Optional` **sentToRecipients**: `string`[]
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:596](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L596)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:601](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L601)*
+• **userId**: `string`
 
 **`memberof`** BouncedEmailDto
+
+#### Defined in
+
+[src/generated/api.ts:602](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L602)

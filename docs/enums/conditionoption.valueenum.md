@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [ConditionOption](../modules/conditionoption.md) / ValueEnum
+[MailSlurp JS](../README.md) / [ConditionOption](../modules/ConditionOption.md) / ValueEnum
 
 # Enumeration: ValueEnum
 
-**`export`** 
+[ConditionOption](../modules/ConditionOption.md).ValueEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [FALSE](conditionoption.valueenum.md#false)
-* [TRUE](conditionoption.valueenum.md#true)
+- [FALSE](ConditionOption.ValueEnum.md#false)
+- [TRUE](ConditionOption.ValueEnum.md#true)
 
 ## Enumeration members
 
 ### FALSE
 
-•  **FALSE**:  = \<any>'FALSE'
+• **FALSE**
 
-*Defined in [src/generated/api.ts:701](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L701)*
+#### Defined in
+
+[src/generated/api.ts:702](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L702)
 
 ___
 
 ### TRUE
 
-•  **TRUE**:  = \<any>'TRUE'
+• **TRUE**
 
-*Defined in [src/generated/api.ts:700](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L700)*
+#### Defined in
+
+[src/generated/api.ts:701](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L701)

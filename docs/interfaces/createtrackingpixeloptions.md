@@ -1,40 +1,38 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / CreateTrackingPixelOptions
+[MailSlurp JS](../README.md) / CreateTrackingPixelOptions
 
 # Interface: CreateTrackingPixelOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** CreateTrackingPixelOptions
 
-## Hierarchy
-
-* **CreateTrackingPixelOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [name](createtrackingpixeloptions.md#name)
-* [recipient](createtrackingpixeloptions.md#recipient)
+- [name](CreateTrackingPixelOptions.md#name)
+- [recipient](CreateTrackingPixelOptions.md#recipient)
 
 ## Properties
 
 ### name
 
-• `Optional` **name**: string
-
-*Defined in [src/generated/api.ts:1211](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1211)*
+• `Optional` **name**: `string`
 
 **`memberof`** CreateTrackingPixelOptions
+
+#### Defined in
+
+[src/generated/api.ts:1212](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1212)
 
 ___
 
 ### recipient
 
-• `Optional` **recipient**: string
-
-*Defined in [src/generated/api.ts:1217](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1217)*
+• `Optional` **recipient**: `string`
 
 **`memberof`** CreateTrackingPixelOptions
+
+#### Defined in
+
+[src/generated/api.ts:1218](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1218)

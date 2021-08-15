@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [DomainPreview](../modules/domainpreview.md) / DomainTypeEnum
+[MailSlurp JS](../README.md) / [DomainPreview](../modules/DomainPreview.md) / DomainTypeEnum
 
 # Enumeration: DomainTypeEnum
 
-**`export`** 
+[DomainPreview](../modules/DomainPreview.md).DomainTypeEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [HTTPINBOX](domainpreview.domaintypeenum.md#httpinbox)
-* [SMTPDOMAIN](domainpreview.domaintypeenum.md#smtpdomain)
+- [HTTPINBOX](DomainPreview.DomainTypeEnum.md#httpinbox)
+- [SMTPDOMAIN](DomainPreview.DomainTypeEnum.md#smtpdomain)
 
 ## Enumeration members
 
 ### HTTPINBOX
 
-•  **HTTPINBOX**:  = \<any>'HTTP\_INBOX'
+• **HTTPINBOX**
 
-*Defined in [src/generated/api.ts:1863](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1863)*
+#### Defined in
+
+[src/generated/api.ts:1865](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1865)
 
 ___
 
 ### SMTPDOMAIN
 
-•  **SMTPDOMAIN**:  = \<any>'SMTP\_DOMAIN'
+• **SMTPDOMAIN**
 
-*Defined in [src/generated/api.ts:1864](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L1864)*
+#### Defined in
+
+[src/generated/api.ts:1866](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1866)

@@ -1,21 +1,23 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [ConditionOption](../modules/conditionoption.md) / ConditionEnum
+[MailSlurp JS](../README.md) / [ConditionOption](../modules/ConditionOption.md) / ConditionEnum
 
 # Enumeration: ConditionEnum
 
-**`export`** 
+[ConditionOption](../modules/ConditionOption.md).ConditionEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [HASATTACHMENTS](conditionoption.conditionenum.md#hasattachments)
+- [HASATTACHMENTS](ConditionOption.ConditionEnum.md#hasattachments)
 
 ## Enumeration members
 
 ### HASATTACHMENTS
 
-•  **HASATTACHMENTS**:  = \<any>'HAS\_ATTACHMENTS'
+• **HASATTACHMENTS**
 
-*Defined in [src/generated/api.ts:693](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L693)*
+#### Defined in
+
+[src/generated/api.ts:694](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L694)

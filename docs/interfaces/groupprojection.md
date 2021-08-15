@@ -1,62 +1,64 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / GroupProjection
+[MailSlurp JS](../README.md) / GroupProjection
 
 # Interface: GroupProjection
 
-**`export`** 
+**`export`**
 
 **`interface`** GroupProjection
 
-## Hierarchy
-
-* **GroupProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](groupprojection.md#createdat)
-* [description](groupprojection.md#description)
-* [id](groupprojection.md#id)
-* [name](groupprojection.md#name)
+- [createdAt](GroupProjection.md#createdat)
+- [description](GroupProjection.md#description)
+- [id](GroupProjection.md#id)
+- [name](GroupProjection.md#name)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:2602](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2602)*
+• **createdAt**: `Date`
 
 **`memberof`** GroupProjection
+
+#### Defined in
+
+[src/generated/api.ts:2604](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2604)
 
 ___
 
 ### description
 
-• `Optional` **description**: string
-
-*Defined in [src/generated/api.ts:2608](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2608)*
+• `Optional` **description**: `string`
 
 **`memberof`** GroupProjection
+
+#### Defined in
+
+[src/generated/api.ts:2610](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2610)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:2614](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2614)*
+• **id**: `string`
 
 **`memberof`** GroupProjection
+
+#### Defined in
+
+[src/generated/api.ts:2616](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2616)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [src/generated/api.ts:2620](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2620)*
+• **name**: `string`
 
 **`memberof`** GroupProjection
+
+#### Defined in
+
+[src/generated/api.ts:2622](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2622)

@@ -1,84 +1,100 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [WebhookTestRequest](../modules/webhooktestrequest.md) / MethodEnum
+[MailSlurp JS](../README.md) / [WebhookTestRequest](../modules/WebhookTestRequest.md) / MethodEnum
 
 # Enumeration: MethodEnum
 
-**`export`** 
+[WebhookTestRequest](../modules/WebhookTestRequest.md).MethodEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [DELETE](webhooktestrequest.methodenum.md#delete)
-* [GET](webhooktestrequest.methodenum.md#get)
-* [HEAD](webhooktestrequest.methodenum.md#head)
-* [OPTIONS](webhooktestrequest.methodenum.md#options)
-* [PATCH](webhooktestrequest.methodenum.md#patch)
-* [POST](webhooktestrequest.methodenum.md#post)
-* [PUT](webhooktestrequest.methodenum.md#put)
-* [TRACE](webhooktestrequest.methodenum.md#trace)
+- [DELETE](WebhookTestRequest.MethodEnum.md#delete)
+- [GET](WebhookTestRequest.MethodEnum.md#get)
+- [HEAD](WebhookTestRequest.MethodEnum.md#head)
+- [OPTIONS](WebhookTestRequest.MethodEnum.md#options)
+- [PATCH](WebhookTestRequest.MethodEnum.md#patch)
+- [POST](WebhookTestRequest.MethodEnum.md#post)
+- [PUT](WebhookTestRequest.MethodEnum.md#put)
+- [TRACE](WebhookTestRequest.MethodEnum.md#trace)
 
 ## Enumeration members
 
 ### DELETE
 
-•  **DELETE**:  = \<any>'DELETE'
+• **DELETE**
 
-*Defined in [src/generated/api.ts:6762](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6762)*
+#### Defined in
+
+[src/generated/api.ts:6883](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6883)
 
 ___
 
 ### GET
 
-•  **GET**:  = \<any>'GET'
+• **GET**
 
-*Defined in [src/generated/api.ts:6757](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6757)*
+#### Defined in
+
+[src/generated/api.ts:6878](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6878)
 
 ___
 
 ### HEAD
 
-•  **HEAD**:  = \<any>'HEAD'
+• **HEAD**
 
-*Defined in [src/generated/api.ts:6758](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6758)*
+#### Defined in
+
+[src/generated/api.ts:6879](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6879)
 
 ___
 
 ### OPTIONS
 
-•  **OPTIONS**:  = \<any>'OPTIONS'
+• **OPTIONS**
 
-*Defined in [src/generated/api.ts:6763](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6763)*
+#### Defined in
+
+[src/generated/api.ts:6884](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6884)
 
 ___
 
 ### PATCH
 
-•  **PATCH**:  = \<any>'PATCH'
+• **PATCH**
 
-*Defined in [src/generated/api.ts:6761](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6761)*
+#### Defined in
+
+[src/generated/api.ts:6882](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6882)
 
 ___
 
 ### POST
 
-•  **POST**:  = \<any>'POST'
+• **POST**
 
-*Defined in [src/generated/api.ts:6759](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6759)*
+#### Defined in
+
+[src/generated/api.ts:6880](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6880)
 
 ___
 
 ### PUT
 
-•  **PUT**:  = \<any>'PUT'
+• **PUT**
 
-*Defined in [src/generated/api.ts:6760](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6760)*
+#### Defined in
+
+[src/generated/api.ts:6881](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6881)
 
 ___
 
 ### TRACE
 
-•  **TRACE**:  = \<any>'TRACE'
+• **TRACE**
 
-*Defined in [src/generated/api.ts:6764](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L6764)*
+#### Defined in
+
+[src/generated/api.ts:6885](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6885)

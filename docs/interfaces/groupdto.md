@@ -1,62 +1,64 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / GroupDto
+[MailSlurp JS](../README.md) / GroupDto
 
 # Interface: GroupDto
 
-**`export`** 
+**`export`**
 
 **`interface`** GroupDto
 
-## Hierarchy
-
-* **GroupDto**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](groupdto.md#createdat)
-* [description](groupdto.md#description)
-* [id](groupdto.md#id)
-* [name](groupdto.md#name)
+- [createdAt](GroupDto.md#createdat)
+- [description](GroupDto.md#description)
+- [id](GroupDto.md#id)
+- [name](GroupDto.md#name)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:2570](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2570)*
+• **createdAt**: `Date`
 
 **`memberof`** GroupDto
+
+#### Defined in
+
+[src/generated/api.ts:2572](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2572)
 
 ___
 
 ### description
 
-• `Optional` **description**: string
-
-*Defined in [src/generated/api.ts:2576](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2576)*
+• `Optional` **description**: `string`
 
 **`memberof`** GroupDto
+
+#### Defined in
+
+[src/generated/api.ts:2578](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2578)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:2582](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2582)*
+• **id**: `string`
 
 **`memberof`** GroupDto
+
+#### Defined in
+
+[src/generated/api.ts:2584](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2584)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [src/generated/api.ts:2588](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2588)*
+• **name**: `string`
 
 **`memberof`** GroupDto
+
+#### Defined in
+
+[src/generated/api.ts:2590](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2590)

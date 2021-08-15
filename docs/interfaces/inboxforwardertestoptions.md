@@ -1,29 +1,25 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / InboxForwarderTestOptions
+[MailSlurp JS](../README.md) / InboxForwarderTestOptions
 
 # Interface: InboxForwarderTestOptions
 
-**`export`** 
+**`export`**
 
 **`interface`** InboxForwarderTestOptions
 
-## Hierarchy
-
-* **InboxForwarderTestOptions**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [testValue](inboxforwardertestoptions.md#testvalue)
+- [testValue](InboxForwarderTestOptions.md#testvalue)
 
 ## Properties
 
 ### testValue
 
-•  **testValue**: string
-
-*Defined in [src/generated/api.ts:2836](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2836)*
+• **testValue**: `string`
 
 **`memberof`** InboxForwarderTestOptions
+
+#### Defined in
+
+[src/generated/api.ts:2838](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2838)

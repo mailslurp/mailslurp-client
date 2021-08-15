@@ -1,84 +1,90 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / Pageable
+[MailSlurp JS](../README.md) / Pageable
 
 # Interface: Pageable
 
-**`export`** 
+**`export`**
 
 **`interface`** Pageable
 
-## Hierarchy
-
-* **Pageable**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [offset](pageable.md#offset)
-* [pageNumber](pageable.md#pagenumber)
-* [pageSize](pageable.md#pagesize)
-* [paged](pageable.md#paged)
-* [sort](pageable.md#sort)
-* [unpaged](pageable.md#unpaged)
+- [offset](Pageable.md#offset)
+- [pageNumber](Pageable.md#pagenumber)
+- [pageSize](Pageable.md#pagesize)
+- [paged](Pageable.md#paged)
+- [sort](Pageable.md#sort)
+- [unpaged](Pageable.md#unpaged)
 
 ## Properties
 
 ### offset
 
-• `Optional` **offset**: number
-
-*Defined in [src/generated/api.ts:4842](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4842)*
+• `Optional` **offset**: `number`
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4918](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4918)
 
 ___
 
 ### pageNumber
 
-• `Optional` **pageNumber**: number
-
-*Defined in [src/generated/api.ts:4848](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4848)*
+• `Optional` **pageNumber**: `number`
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4924](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4924)
 
 ___
 
 ### pageSize
 
-• `Optional` **pageSize**: number
-
-*Defined in [src/generated/api.ts:4854](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4854)*
+• `Optional` **pageSize**: `number`
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4930](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4930)
 
 ___
 
 ### paged
 
-• `Optional` **paged**: boolean
-
-*Defined in [src/generated/api.ts:4860](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4860)*
+• `Optional` **paged**: `boolean`
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4936](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4936)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:4866](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4866)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4942](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4942)
 
 ___
 
 ### unpaged
 
-• `Optional` **unpaged**: boolean
-
-*Defined in [src/generated/api.ts:4872](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4872)*
+• `Optional` **unpaged**: `boolean`
 
 **`memberof`** Pageable
+
+#### Defined in
+
+[src/generated/api.ts:4948](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4948)

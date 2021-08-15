@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [CreateDomainOptions](../modules/createdomainoptions.md) / DomainTypeEnum
+[MailSlurp JS](../README.md) / [CreateDomainOptions](../modules/CreateDomainOptions.md) / DomainTypeEnum
 
 # Enumeration: DomainTypeEnum
 
-**`export`** 
+[CreateDomainOptions](../modules/CreateDomainOptions.md).DomainTypeEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [HTTPINBOX](createdomainoptions.domaintypeenum.md#httpinbox)
-* [SMTPDOMAIN](createdomainoptions.domaintypeenum.md#smtpdomain)
+- [HTTPINBOX](CreateDomainOptions.DomainTypeEnum.md#httpinbox)
+- [SMTPDOMAIN](CreateDomainOptions.DomainTypeEnum.md#smtpdomain)
 
 ## Enumeration members
 
 ### HTTPINBOX
 
-•  **HTTPINBOX**:  = \<any>'HTTP\_INBOX'
+• **HTTPINBOX**
 
-*Defined in [src/generated/api.ts:979](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L979)*
+#### Defined in
+
+[src/generated/api.ts:980](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L980)
 
 ___
 
 ### SMTPDOMAIN
 
-•  **SMTPDOMAIN**:  = \<any>'SMTP\_DOMAIN'
+• **SMTPDOMAIN**
 
-*Defined in [src/generated/api.ts:980](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L980)*
+#### Defined in
+
+[src/generated/api.ts:981](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L981)

@@ -1,141 +1,157 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / PageTrackingPixelProjection
+[MailSlurp JS](../README.md) / PageTrackingPixelProjection
 
 # Interface: PageTrackingPixelProjection
 
 Paginated TrackingPixel results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`** 
+**`export`**
 
 **`interface`** PageTrackingPixelProjection
 
-## Hierarchy
-
-* **PageTrackingPixelProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [content](pagetrackingpixelprojection.md#content)
-* [empty](pagetrackingpixelprojection.md#empty)
-* [first](pagetrackingpixelprojection.md#first)
-* [last](pagetrackingpixelprojection.md#last)
-* [number](pagetrackingpixelprojection.md#number)
-* [numberOfElements](pagetrackingpixelprojection.md#numberofelements)
-* [pageable](pagetrackingpixelprojection.md#pageable)
-* [size](pagetrackingpixelprojection.md#size)
-* [sort](pagetrackingpixelprojection.md#sort)
-* [totalElements](pagetrackingpixelprojection.md#totalelements)
-* [totalPages](pagetrackingpixelprojection.md#totalpages)
+- [content](PageTrackingPixelProjection.md#content)
+- [empty](PageTrackingPixelProjection.md#empty)
+- [first](PageTrackingPixelProjection.md#first)
+- [last](PageTrackingPixelProjection.md#last)
+- [number](PageTrackingPixelProjection.md#number)
+- [numberOfElements](PageTrackingPixelProjection.md#numberofelements)
+- [pageable](PageTrackingPixelProjection.md#pageable)
+- [size](PageTrackingPixelProjection.md#size)
+- [sort](PageTrackingPixelProjection.md#sort)
+- [totalElements](PageTrackingPixelProjection.md#totalelements)
+- [totalPages](PageTrackingPixelProjection.md#totalpages)
 
 ## Properties
 
 ### content
 
-• `Optional` **content**: Array\<[TrackingPixelProjection](trackingpixelprojection.md)>
-
-*Defined in [src/generated/api.ts:4620](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4620)*
+• `Optional` **content**: [`TrackingPixelProjection`](TrackingPixelProjection.md)[]
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4622](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4622)
 
 ___
 
 ### empty
 
-• `Optional` **empty**: boolean
-
-*Defined in [src/generated/api.ts:4626](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4626)*
+• `Optional` **empty**: `boolean`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4628](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4628)
 
 ___
 
 ### first
 
-• `Optional` **first**: boolean
-
-*Defined in [src/generated/api.ts:4632](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4632)*
+• `Optional` **first**: `boolean`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4634](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4634)
 
 ___
 
 ### last
 
-• `Optional` **last**: boolean
-
-*Defined in [src/generated/api.ts:4638](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4638)*
+• `Optional` **last**: `boolean`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4640](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4640)
 
 ___
 
 ### number
 
-• `Optional` **number**: number
-
-*Defined in [src/generated/api.ts:4644](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4644)*
+• `Optional` **number**: `number`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4646](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4646)
 
 ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: number
-
-*Defined in [src/generated/api.ts:4650](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4650)*
+• `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4652](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4652)
 
 ___
 
 ### pageable
 
-• `Optional` **pageable**: [Pageable](pageable.md)
-
-*Defined in [src/generated/api.ts:4656](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4656)*
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4658](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4658)
 
 ___
 
 ### size
 
-• `Optional` **size**: number
-
-*Defined in [src/generated/api.ts:4662](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4662)*
+• `Optional` **size**: `number`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4664](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4664)
 
 ___
 
 ### sort
 
-• `Optional` **sort**: [Sort](sort.md)
-
-*Defined in [src/generated/api.ts:4668](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4668)*
+• `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4670](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4670)
 
 ___
 
 ### totalElements
 
-• `Optional` **totalElements**: number
-
-*Defined in [src/generated/api.ts:4674](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4674)*
+• `Optional` **totalElements**: `number`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4676](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4676)
 
 ___
 
 ### totalPages
 
-• `Optional` **totalPages**: number
-
-*Defined in [src/generated/api.ts:4680](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L4680)*
+• `Optional` **totalPages**: `number`
 
 **`memberof`** PageTrackingPixelProjection
+
+#### Defined in
+
+[src/generated/api.ts:4682](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4682)

@@ -363,7 +363,7 @@ export class MailSlurp {
         unreadOnly?: boolean
     ): Promise<EmailPreview[]> {
         return wrapCall('waitForMatchingEmail', () =>
-            this.waitController.waitForMatchingEmail(
+            this.waitController.waitForMatchingEmails(
                 matchOptions,
                 count,
                 undefined,

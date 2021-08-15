@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [MatchOption](../modules/matchoption.md) / ShouldEnum
+[MailSlurp JS](../README.md) / [MatchOption](../modules/MatchOption.md) / ShouldEnum
 
 # Enumeration: ShouldEnum
 
-**`export`** 
+[MatchOption](../modules/MatchOption.md).ShouldEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [CONTAIN](matchoption.shouldenum.md#contain)
-* [EQUAL](matchoption.shouldenum.md#equal)
+- [CONTAIN](MatchOption.ShouldEnum.md#contain)
+- [EQUAL](MatchOption.ShouldEnum.md#equal)
 
 ## Enumeration members
 
 ### CONTAIN
 
-•  **CONTAIN**:  = \<any>'CONTAIN'
+• **CONTAIN**
 
-*Defined in [src/generated/api.ts:3099](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3099)*
+#### Defined in
+
+[src/generated/api.ts:3101](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3101)
 
 ___
 
 ### EQUAL
 
-•  **EQUAL**:  = \<any>'EQUAL'
+• **EQUAL**
 
-*Defined in [src/generated/api.ts:3100](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L3100)*
+#### Defined in
+
+[src/generated/api.ts:3102](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L3102)

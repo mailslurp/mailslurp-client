@@ -1,30 +1,34 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / [ExportOptions](../modules/exportoptions.md) / OutputFormatEnum
+[MailSlurp JS](../README.md) / [ExportOptions](../modules/ExportOptions.md) / OutputFormatEnum
 
 # Enumeration: OutputFormatEnum
 
-**`export`** 
+[ExportOptions](../modules/ExportOptions.md).OutputFormatEnum
 
-## Index
+**`export`**
+
+## Table of contents
 
 ### Enumeration members
 
-* [DEFAULT](exportoptions.outputformatenum.md#default)
-* [EXCEL](exportoptions.outputformatenum.md#excel)
+- [DEFAULT](ExportOptions.OutputFormatEnum.md#default)
+- [EXCEL](ExportOptions.OutputFormatEnum.md#excel)
 
 ## Enumeration members
 
 ### DEFAULT
 
-•  **DEFAULT**:  = \<any>'CSV\_DEFAULT'
+• **DEFAULT**
 
-*Defined in [src/generated/api.ts:2470](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2470)*
+#### Defined in
+
+[src/generated/api.ts:2472](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2472)
 
 ___
 
 ### EXCEL
 
-•  **EXCEL**:  = \<any>'CSV\_EXCEL'
+• **EXCEL**
 
-*Defined in [src/generated/api.ts:2471](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2471)*
+#### Defined in
+
+[src/generated/api.ts:2473](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2473)

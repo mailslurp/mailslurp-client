@@ -1,62 +1,64 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / ExpiredInboxRecordProjection
+[MailSlurp JS](../README.md) / ExpiredInboxRecordProjection
 
 # Interface: ExpiredInboxRecordProjection
 
-**`export`** 
+**`export`**
 
 **`interface`** ExpiredInboxRecordProjection
 
-## Hierarchy
-
-* **ExpiredInboxRecordProjection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createdAt](expiredinboxrecordprojection.md#createdat)
-* [emailAddress](expiredinboxrecordprojection.md#emailaddress)
-* [id](expiredinboxrecordprojection.md#id)
-* [userId](expiredinboxrecordprojection.md#userid)
+- [createdAt](ExpiredInboxRecordProjection.md#createdat)
+- [emailAddress](ExpiredInboxRecordProjection.md#emailaddress)
+- [id](ExpiredInboxRecordProjection.md#id)
+- [userId](ExpiredInboxRecordProjection.md#userid)
 
 ## Properties
 
 ### createdAt
 
-•  **createdAt**: Date
-
-*Defined in [src/generated/api.ts:2381](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2381)*
+• **createdAt**: `Date`
 
 **`memberof`** ExpiredInboxRecordProjection
+
+#### Defined in
+
+[src/generated/api.ts:2383](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2383)
 
 ___
 
 ### emailAddress
 
-•  **emailAddress**: string
-
-*Defined in [src/generated/api.ts:2387](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2387)*
+• **emailAddress**: `string`
 
 **`memberof`** ExpiredInboxRecordProjection
+
+#### Defined in
+
+[src/generated/api.ts:2389](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2389)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [src/generated/api.ts:2393](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2393)*
+• **id**: `string`
 
 **`memberof`** ExpiredInboxRecordProjection
+
+#### Defined in
+
+[src/generated/api.ts:2395](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2395)
 
 ___
 
 ### userId
 
-•  **userId**: string
-
-*Defined in [src/generated/api.ts:2399](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2399)*
+• **userId**: `string`
 
 **`memberof`** ExpiredInboxRecordProjection
+
+#### Defined in
+
+[src/generated/api.ts:2401](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2401)

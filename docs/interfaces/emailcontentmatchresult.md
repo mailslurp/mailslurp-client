@@ -1,42 +1,40 @@
-**[MailSlurp JS](../README.md)**
-
-> [Globals](../README.md) / EmailContentMatchResult
+[MailSlurp JS](../README.md) / EmailContentMatchResult
 
 # Interface: EmailContentMatchResult
 
 Matches for the given pattern
 
-**`export`** 
+**`export`**
 
 **`interface`** EmailContentMatchResult
 
-## Hierarchy
-
-* **EmailContentMatchResult**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [matches](emailcontentmatchresult.md#matches)
-* [pattern](emailcontentmatchresult.md#pattern)
+- [matches](EmailContentMatchResult.md#matches)
+- [pattern](EmailContentMatchResult.md#pattern)
 
 ## Properties
 
 ### matches
 
-•  **matches**: Array\<string>
-
-*Defined in [src/generated/api.ts:2077](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2077)*
+• **matches**: `string`[]
 
 **`memberof`** EmailContentMatchResult
+
+#### Defined in
+
+[src/generated/api.ts:2079](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2079)
 
 ___
 
 ### pattern
 
-•  **pattern**: string
-
-*Defined in [src/generated/api.ts:2083](https://github.com/mailslurp/mailslurp-client/blob/ad6aa3d/src/generated/api.ts#L2083)*
+• **pattern**: `string`
 
 **`memberof`** EmailContentMatchResult
+
+#### Defined in
+
+[src/generated/api.ts:2085](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L2085)
