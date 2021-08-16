@@ -1,0 +1,169 @@
+[MailSlurp JS](../README.md) / PageSentEmailProjection
+
+# Interface: PageSentEmailProjection
+
+Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
+
+**`export`**
+
+**`interface`** PageSentEmailProjection
+
+## Table of contents
+
+### Properties
+
+- [content](PageSentEmailProjection.md#content)
+- [empty](PageSentEmailProjection.md#empty)
+- [first](PageSentEmailProjection.md#first)
+- [last](PageSentEmailProjection.md#last)
+- [number](PageSentEmailProjection.md#number)
+- [numberOfElements](PageSentEmailProjection.md#numberofelements)
+- [pageable](PageSentEmailProjection.md#pageable)
+- [size](PageSentEmailProjection.md#size)
+- [sort](PageSentEmailProjection.md#sort)
+- [totalElements](PageSentEmailProjection.md#totalelements)
+- [totalPages](PageSentEmailProjection.md#totalpages)
+
+## Properties
+
+### content
+
+• `Optional` **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
+
+Collection of items
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4400](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4400)
+
+___
+
+### empty
+
+• `Optional` **empty**: `boolean`
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4406](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4406)
+
+___
+
+### first
+
+• `Optional` **first**: `boolean`
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4412](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4412)
+
+___
+
+### last
+
+• `Optional` **last**: `boolean`
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4418](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4418)
+
+___
+
+### number
+
+• `Optional` **number**: `number`
+
+Page number starting at 0
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4424](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4424)
+
+___
+
+### numberOfElements
+
+• `Optional` **numberOfElements**: `number`
+
+Number of items returned
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4430](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4430)
+
+___
+
+### pageable
+
+• `Optional` **pageable**: [`Pageable`](Pageable.md)
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4436](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4436)
+
+___
+
+### size
+
+• `Optional` **size**: `number`
+
+Size of page requested
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4442](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4442)
+
+___
+
+### sort
+
+• `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4448](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4448)
+
+___
+
+### totalElements
+
+• `Optional` **totalElements**: `number`
+
+Total number of items available for querying
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4454](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4454)
+
+___
+
+### totalPages
+
+• `Optional` **totalPages**: `number`
+
+Total number of pages available
+
+**`memberof`** PageSentEmailProjection
+
+#### Defined in
+
+[src/generated/api.ts:4460](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4460)

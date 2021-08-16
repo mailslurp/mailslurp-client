@@ -6171,6 +6171,79 @@ export declare namespace WebhookEmailOpenedPayload {
     }
 }
 /**
+ * EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.
+ * @export
+ * @interface WebhookEmailReadPayload
+ */
+export interface WebhookEmailReadPayload {
+    /**
+     * Date time of event creation
+     * @type {Date}
+     * @memberof WebhookEmailReadPayload
+     */
+    createdAt?: Date;
+    /**
+     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailId?: string;
+    /**
+     * Is the email read
+     * @type {boolean}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailIsRead?: boolean;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    eventName?: WebhookEmailReadPayload.EventNameEnum;
+    /**
+     * Id of the inbox that received an email
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    inboxId?: string;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    messageId?: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookId?: string;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookName?: string;
+}
+/**
+ * @export
+ * @namespace WebhookEmailReadPayload
+ */
+export declare namespace WebhookEmailReadPayload {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum EventNameEnum {
+        EMAILRECEIVED,
+        NEWEMAIL,
+        NEWCONTACT,
+        NEWATTACHMENT,
+        EMAILOPENED,
+        EMAILREAD
+    }
+}
+/**
  * NEW_ATTACHMENT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to that contains an attachment. You can use the attachmentId to download the attachment.
  * @export
  * @interface WebhookNewAttachmentPayload
@@ -13103,6 +13176,13 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
     getTestWebhookPayloadEmailOpened(options?: any): FetchArgs;
     /**
      *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadEmailRead(options?: any): FetchArgs;
+    /**
+     *
      * @summary Get webhook test payload for new attachment event
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13241,6 +13321,13 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
     getTestWebhookPayloadEmailOpened(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookEmailOpenedPayload>;
     /**
      *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadEmailRead(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookEmailReadPayload>;
+    /**
+     *
      * @summary Get webhook test payload for new attachment event
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13377,6 +13464,13 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @throws {RequiredError}
      */
     getTestWebhookPayloadEmailOpened(options?: any): Promise<WebhookEmailOpenedPayload>;
+    /**
+     *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadEmailRead(options?: any): Promise<WebhookEmailReadPayload>;
     /**
      *
      * @summary Get webhook test payload for new attachment event
@@ -13524,6 +13618,14 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     getTestWebhookPayloadEmailOpened(options?: any): Promise<WebhookEmailOpenedPayload>;
+    /**
+     *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    getTestWebhookPayloadEmailRead(options?: any): Promise<WebhookEmailReadPayload>;
     /**
      *
      * @summary Get webhook test payload for new attachment event

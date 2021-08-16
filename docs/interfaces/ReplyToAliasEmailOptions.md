@@ -33,7 +33,7 @@ List of uploaded attachments to send with the reply. Optional.
 
 #### Defined in
 
-[src/generated/api.ts:4976](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4976)
+[src/generated/api.ts:4976](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4976)
 
 ___
 
@@ -47,7 +47,7 @@ Body of the reply email you want to send
 
 #### Defined in
 
-[src/generated/api.ts:4982](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4982)
+[src/generated/api.ts:4982](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4982)
 
 ___
 
@@ -61,7 +61,7 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 
 #### Defined in
 
-[src/generated/api.ts:4988](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4988)
+[src/generated/api.ts:4988](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4988)
 
 ___
 
@@ -75,7 +75,7 @@ Is the reply HTML
 
 #### Defined in
 
-[src/generated/api.ts:4994](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L4994)
+[src/generated/api.ts:4994](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4994)
 
 ___
 
@@ -89,7 +89,7 @@ When to send the email. Typically immediately
 
 #### Defined in
 
-[src/generated/api.ts:5000](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5000)
+[src/generated/api.ts:5000](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5000)
 
 ___
 
@@ -103,7 +103,7 @@ Template ID to use instead of body. Will use template variable map to fill defin
 
 #### Defined in
 
-[src/generated/api.ts:5006](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5006)
+[src/generated/api.ts:5006](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5006)
 
 ___
 
@@ -117,7 +117,7 @@ Template variables if using a template
 
 #### Defined in
 
-[src/generated/api.ts:5012](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5012)
+[src/generated/api.ts:5012](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5012)
 
 ___
 
@@ -131,4 +131,4 @@ Optionally use inbox name as display name for sender email address
 
 #### Defined in
 
-[src/generated/api.ts:5018](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L5018)
+[src/generated/api.ts:5018](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5018)

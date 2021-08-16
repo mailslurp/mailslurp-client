@@ -32,7 +32,7 @@ Number of results that should match conditions. Either exactly or at least this 
 
 #### Defined in
 
-[src/generated/api.ts:6086](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6086)
+[src/generated/api.ts:6086](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6086)
 
 ___
 
@@ -46,7 +46,7 @@ How should the found count be compared to the expected count.
 
 #### Defined in
 
-[src/generated/api.ts:6092](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6092)
+[src/generated/api.ts:6092](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6092)
 
 ___
 
@@ -60,7 +60,7 @@ ID of inbox to search within and apply conditions to. Essentially filtering the 
 
 #### Defined in
 
-[src/generated/api.ts:6098](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6098)
+[src/generated/api.ts:6098](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6098)
 
 ___
 
@@ -74,7 +74,7 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 #### Defined in
 
-[src/generated/api.ts:6104](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6104)
+[src/generated/api.ts:6104](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6104)
 
 ___
 
@@ -88,7 +88,7 @@ Direction to sort matching emails by created time
 
 #### Defined in
 
-[src/generated/api.ts:6110](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6110)
+[src/generated/api.ts:6110](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6110)
 
 ___
 
@@ -102,7 +102,7 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 #### Defined in
 
-[src/generated/api.ts:6116](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6116)
+[src/generated/api.ts:6116](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6116)
 
 ___
 
@@ -116,4 +116,4 @@ Apply conditions only to **unread** emails. All emails begin with `read=false`. 
 
 #### Defined in
 
-[src/generated/api.ts:6122](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L6122)
+[src/generated/api.ts:6122](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6122)

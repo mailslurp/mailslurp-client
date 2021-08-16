@@ -47,9 +47,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkActionsControllerApiFactory = exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultEntity = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
-exports.MissedEmailControllerApiFetchParamCreator = exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxForwarderControllerApi = exports.InboxForwarderControllerApiFactory = exports.InboxForwarderControllerApiFp = exports.InboxForwarderControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = exports.ContactControllerApi = exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = void 0;
-exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = exports.TrackingControllerApiFp = exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = void 0;
+exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultEntity = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailReadPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxForwarderControllerApi = exports.InboxForwarderControllerApiFactory = exports.InboxForwarderControllerApiFp = exports.InboxForwarderControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = exports.ContactControllerApi = exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = exports.BulkActionsControllerApiFactory = void 0;
+exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = exports.TrackingControllerApiFp = exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = exports.MissedEmailControllerApiFetchParamCreator = void 0;
 var url = __importStar(require("url"));
 var portableFetch = __importStar(require("portable-fetch"));
 var BASE_PATH = 'https://api.mailslurp.com'.replace(/\/+$/, '');
@@ -863,6 +863,26 @@ var WebhookEmailOpenedPayload;
         EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
     })(EventNameEnum = WebhookEmailOpenedPayload.EventNameEnum || (WebhookEmailOpenedPayload.EventNameEnum = {}));
 })(WebhookEmailOpenedPayload = exports.WebhookEmailOpenedPayload || (exports.WebhookEmailOpenedPayload = {}));
+/**
+ * @export
+ * @namespace WebhookEmailReadPayload
+ */
+var WebhookEmailReadPayload;
+(function (WebhookEmailReadPayload) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    var EventNameEnum;
+    (function (EventNameEnum) {
+        EventNameEnum[EventNameEnum["EMAILRECEIVED"] = 'EMAIL_RECEIVED'] = "EMAILRECEIVED";
+        EventNameEnum[EventNameEnum["NEWEMAIL"] = 'NEW_EMAIL'] = "NEWEMAIL";
+        EventNameEnum[EventNameEnum["NEWCONTACT"] = 'NEW_CONTACT'] = "NEWCONTACT";
+        EventNameEnum[EventNameEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
+        EventNameEnum[EventNameEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
+        EventNameEnum[EventNameEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
+    })(EventNameEnum = WebhookEmailReadPayload.EventNameEnum || (WebhookEmailReadPayload.EventNameEnum = {}));
+})(WebhookEmailReadPayload = exports.WebhookEmailReadPayload || (exports.WebhookEmailReadPayload = {}));
 /**
  * @export
  * @namespace WebhookNewAttachmentPayload
@@ -15405,6 +15425,35 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead: function (options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/webhooks/test/email-read-payload";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -15852,6 +15901,27 @@ var WebhookControllerApiFp = function (configuration) {
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead: function (options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getTestWebhookPayloadEmailRead(options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -16119,6 +16189,15 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead: function (options) {
+            return exports.WebhookControllerApiFp(configuration).getTestWebhookPayloadEmailRead(options)(fetch, basePath);
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -16299,6 +16378,16 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      */
     WebhookControllerApi.prototype.getTestWebhookPayloadEmailOpened = function (options) {
         return exports.WebhookControllerApiFp(this.configuration).getTestWebhookPayloadEmailOpened(options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadEmailRead = function (options) {
+        return exports.WebhookControllerApiFp(this.configuration).getTestWebhookPayloadEmailRead(options)(this.fetch, this.basePath);
     };
     /**
      *

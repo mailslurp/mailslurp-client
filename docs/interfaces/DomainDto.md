@@ -36,7 +36,7 @@ The optional catch all inbox that will receive emails sent to the domain that ca
 
 #### Defined in
 
-[src/generated/api.ts:1599](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1599)
+[src/generated/api.ts:1599](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1599)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1605](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1605)
+[src/generated/api.ts:1605](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1605)
 
 ___
 
@@ -62,7 +62,7 @@ Unique token DKIM tokens
 
 #### Defined in
 
-[src/generated/api.ts:1611](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1611)
+[src/generated/api.ts:1611](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1611)
 
 ___
 
@@ -76,7 +76,7 @@ Custom domain name
 
 #### Defined in
 
-[src/generated/api.ts:1617](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1617)
+[src/generated/api.ts:1617](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1617)
 
 ___
 
@@ -90,7 +90,7 @@ List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS se
 
 #### Defined in
 
-[src/generated/api.ts:1623](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1623)
+[src/generated/api.ts:1623](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1623)
 
 ___
 
@@ -104,7 +104,7 @@ The type of domain. SMTP or HTTP domains differ in what inboxes can be used with
 
 #### Defined in
 
-[src/generated/api.ts:1629](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1629)
+[src/generated/api.ts:1629](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1629)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1635](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1635)
+[src/generated/api.ts:1635](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1635)
 
 ___
 
@@ -130,7 +130,7 @@ Whether domain has been verified or not. If the domain is not verified after 72 
 
 #### Defined in
 
-[src/generated/api.ts:1641](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1641)
+[src/generated/api.ts:1641](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1641)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1647](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1647)
+[src/generated/api.ts:1647](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1647)
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1653](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1653)
+[src/generated/api.ts:1653](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1653)
 
 ___
 
@@ -168,4 +168,4 @@ Verification tokens
 
 #### Defined in
 
-[src/generated/api.ts:1659](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L1659)
+[src/generated/api.ts:1659](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1659)

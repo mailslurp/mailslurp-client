@@ -6334,6 +6334,81 @@ export namespace WebhookEmailOpenedPayload {
 }
 
 /**
+ * EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.
+ * @export
+ * @interface WebhookEmailReadPayload
+ */
+export interface WebhookEmailReadPayload {
+    /**
+     * Date time of event creation
+     * @type {Date}
+     * @memberof WebhookEmailReadPayload
+     */
+    createdAt?: Date;
+    /**
+     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailId?: string;
+    /**
+     * Is the email read
+     * @type {boolean}
+     * @memberof WebhookEmailReadPayload
+     */
+    emailIsRead?: boolean;
+    /**
+     * Name of the event type webhook is being triggered for.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    eventName?: WebhookEmailReadPayload.EventNameEnum;
+    /**
+     * Id of the inbox that received an email
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    inboxId?: string;
+    /**
+     * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    messageId?: string;
+    /**
+     * ID of webhook entity being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookId?: string;
+    /**
+     * Name of the webhook being triggered
+     * @type {string}
+     * @memberof WebhookEmailReadPayload
+     */
+    webhookName?: string;
+}
+
+/**
+ * @export
+ * @namespace WebhookEmailReadPayload
+ */
+export namespace WebhookEmailReadPayload {
+    /**
+     * @export
+     * @enum {string}
+     */
+    export enum EventNameEnum {
+        EMAILRECEIVED = <any>'EMAIL_RECEIVED',
+        NEWEMAIL = <any>'NEW_EMAIL',
+        NEWCONTACT = <any>'NEW_CONTACT',
+        NEWATTACHMENT = <any>'NEW_ATTACHMENT',
+        EMAILOPENED = <any>'EMAIL_OPENED',
+        EMAILREAD = <any>'EMAIL_READ',
+    }
+}
+
+/**
  * NEW_ATTACHMENT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to that contains an attachment. You can use the attachmentId to download the attachment.
  * @export
  * @interface WebhookNewAttachmentPayload
@@ -9387,10 +9462,12 @@ export const AttachmentControllerApiFactory = function(
         ) {
             return AttachmentControllerApiFp(
                 configuration
-            ).uploadAttachmentBytes(byteArray, contentType, filename, options)(
-                fetch,
-                basePath
-            );
+            ).uploadAttachmentBytes(
+                byteArray,
+                contentType,
+                filename,
+                options
+            )(fetch, basePath);
         },
         /**
          * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
@@ -9588,10 +9665,12 @@ export class AttachmentControllerApi extends BaseAPI {
     ) {
         return AttachmentControllerApiFp(
             this.configuration
-        ).uploadAttachmentBytes(byteArray, contentType, filename, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).uploadAttachmentBytes(
+            byteArray,
+            contentType,
+            filename,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -15657,10 +15736,11 @@ export const EmailControllerApiFactory = function(
         ) {
             return EmailControllerApiFp(
                 configuration
-            ).getGravatarUrlForEmailAddress(emailAddress, size, options)(
-                fetch,
-                basePath
-            );
+            ).getGravatarUrlForEmailAddress(
+                emailAddress,
+                size,
+                options
+            )(fetch, basePath);
         },
         /**
          * Get the newest email in all inboxes or in a passed set of inbox IDs
@@ -15905,10 +15985,11 @@ export class EmailControllerApi extends BaseAPI {
     ) {
         return EmailControllerApiFp(
             this.configuration
-        ).downloadAttachmentBase64(attachmentId, emailId, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).downloadAttachmentBase64(
+            attachmentId,
+            emailId,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -16162,10 +16243,11 @@ export class EmailControllerApi extends BaseAPI {
     ) {
         return EmailControllerApiFp(
             this.configuration
-        ).getGravatarUrlForEmailAddress(emailAddress, size, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).getGravatarUrlForEmailAddress(
+            emailAddress,
+            size,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -18597,10 +18679,13 @@ export const GroupControllerApiFactory = function(
         ) {
             return GroupControllerApiFp(
                 configuration
-            ).getGroupWithContactsPaginated(groupId, page, size, sort, options)(
-                fetch,
-                basePath
-            );
+            ).getGroupWithContactsPaginated(
+                groupId,
+                page,
+                size,
+                sort,
+                options
+            )(fetch, basePath);
         },
         /**
          *
@@ -18768,10 +18853,13 @@ export class GroupControllerApi extends BaseAPI {
     ) {
         return GroupControllerApiFp(
             this.configuration
-        ).getGroupWithContactsPaginated(groupId, page, size, sort, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).getGroupWithContactsPaginated(
+            groupId,
+            page,
+            size,
+            sort,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -23016,10 +23104,11 @@ export const InboxForwarderControllerApiFactory = function(
         ) {
             return InboxForwarderControllerApiFp(
                 configuration
-            ).testInboxForwarder(id, inboxForwarderTestOptions, options)(
-                fetch,
-                basePath
-            );
+            ).testInboxForwarder(
+                id,
+                inboxForwarderTestOptions,
+                options
+            )(fetch, basePath);
         },
         /**
          * Test inbox forwarders for inbox
@@ -23157,10 +23246,14 @@ export class InboxForwarderControllerApi extends BaseAPI {
     ) {
         return InboxForwarderControllerApiFp(
             this.configuration
-        ).getInboxForwarders(inboxId, page, searchFilter, size, sort, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).getInboxForwarders(
+            inboxId,
+            page,
+            searchFilter,
+            size,
+            sort,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -23179,10 +23272,11 @@ export class InboxForwarderControllerApi extends BaseAPI {
     ) {
         return InboxForwarderControllerApiFp(
             this.configuration
-        ).testInboxForwarder(id, inboxForwarderTestOptions, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).testInboxForwarder(
+            id,
+            inboxForwarderTestOptions,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -24246,10 +24340,11 @@ export class InboxRulesetControllerApi extends BaseAPI {
     ) {
         return InboxRulesetControllerApiFp(
             this.configuration
-        ).createNewInboxRuleset(createInboxRulesetOptions, inboxId, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).createNewInboxRuleset(
+            createInboxRulesetOptions,
+            inboxId,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -24362,10 +24457,11 @@ export class InboxRulesetControllerApi extends BaseAPI {
     ) {
         return InboxRulesetControllerApiFp(
             this.configuration
-        ).testInboxRulesetsForInbox(inboxId, inboxRulesetTestOptions, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).testInboxRulesetsForInbox(
+            inboxId,
+            inboxRulesetTestOptions,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -25485,10 +25581,12 @@ export const MissedEmailControllerApiFactory = function(
         ) {
             return MissedEmailControllerApiFp(
                 configuration
-            ).waitForNthMissedEmail(inboxId, index, timeout, options)(
-                fetch,
-                basePath
-            );
+            ).waitForNthMissedEmail(
+                inboxId,
+                index,
+                timeout,
+                options
+            )(fetch, basePath);
         },
     };
 };
@@ -25522,10 +25620,14 @@ export class MissedEmailControllerApi extends BaseAPI {
     ) {
         return MissedEmailControllerApiFp(
             this.configuration
-        ).getAllMissedEmails(inboxId, page, searchFilter, size, sort, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).getAllMissedEmails(
+            inboxId,
+            page,
+            searchFilter,
+            size,
+            sort,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -25593,10 +25695,12 @@ export class MissedEmailControllerApi extends BaseAPI {
     ) {
         return MissedEmailControllerApiFp(
             this.configuration
-        ).waitForNthMissedEmail(inboxId, index, timeout, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).waitForNthMissedEmail(
+            inboxId,
+            index,
+            timeout,
+            options
+        )(this.fetch, this.basePath);
     }
 }
 
@@ -26301,10 +26405,13 @@ export const SentEmailsControllerApiFactory = function(
         ) {
             return SentEmailsControllerApiFp(
                 configuration
-            ).getAllSentTrackingPixels(page, searchFilter, size, sort, options)(
-                fetch,
-                basePath
-            );
+            ).getAllSentTrackingPixels(
+                page,
+                searchFilter,
+                size,
+                sort,
+                options
+            )(fetch, basePath);
         },
         /**
          *
@@ -26449,10 +26556,13 @@ export class SentEmailsControllerApi extends BaseAPI {
     ) {
         return SentEmailsControllerApiFp(
             this.configuration
-        ).getAllSentTrackingPixels(page, searchFilter, size, sort, options)(
-            this.fetch,
-            this.basePath
-        );
+        ).getAllSentTrackingPixels(
+            page,
+            searchFilter,
+            size,
+            sort,
+            options
+        )(this.fetch, this.basePath);
     }
 
     /**
@@ -29387,6 +29497,50 @@ export const WebhookControllerApiFetchParamCreator = function(
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead(options: any = {}): FetchArgs {
+            const localVarPath = `/webhooks/test/email-read-payload`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30090,6 +30244,37 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead(
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<WebhookEmailReadPayload> {
+            const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
+                configuration
+            ).getTestWebhookPayloadEmailRead(options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30511,6 +30696,17 @@ export const WebhookControllerApiFactory = function(
         },
         /**
          *
+         * @summary Get webhook test payload for email opened event
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadEmailRead(options?: any) {
+            return WebhookControllerApiFp(
+                configuration
+            ).getTestWebhookPayloadEmailRead(options)(fetch, basePath);
+        },
+        /**
+         *
          * @summary Get webhook test payload for new attachment event
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30791,6 +30987,19 @@ export class WebhookControllerApi extends BaseAPI {
         return WebhookControllerApiFp(
             this.configuration
         ).getTestWebhookPayloadEmailOpened(options)(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Get webhook test payload for email opened event
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    public getTestWebhookPayloadEmailRead(options?: any) {
+        return WebhookControllerApiFp(
+            this.configuration
+        ).getTestWebhookPayloadEmailRead(options)(this.fetch, this.basePath);
     }
 
     /**

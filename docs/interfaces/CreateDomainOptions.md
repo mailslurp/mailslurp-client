@@ -29,7 +29,7 @@ Whether to create a catch all inbox for the domain. Any email sent to an address
 
 #### Defined in
 
-[src/generated/api.ts:949](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L949)
+[src/generated/api.ts:949](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L949)
 
 ___
 
@@ -43,7 +43,7 @@ Optional description of the domain.
 
 #### Defined in
 
-[src/generated/api.ts:955](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L955)
+[src/generated/api.ts:955](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L955)
 
 ___
 
@@ -57,7 +57,7 @@ The top level domain you wish to use with MailSlurp. Do not specify subdomain ju
 
 #### Defined in
 
-[src/generated/api.ts:961](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L961)
+[src/generated/api.ts:961](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L961)
 
 ___
 
@@ -71,4 +71,4 @@ Domain type to create. HTTP or SMTP domain. HTTP domain uses MailSlurps SES MX r
 
 #### Defined in
 
-[src/generated/api.ts:967](https://github.com/mailslurp/mailslurp-client/blob/75eefbf/src/generated/api.ts#L967)
+[src/generated/api.ts:967](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L967)
