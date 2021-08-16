@@ -41,7 +41,7 @@ Array of IDs of attachments that were sent with this email
 
 #### Defined in
 
-[src/generated/api.ts:5258](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5258)
+[src/generated/api.ts:5348](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5348)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5264](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5264)
+[src/generated/api.ts:5354](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5354)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5270](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5270)
+[src/generated/api.ts:5360](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5360)
 
 ___
 
@@ -79,7 +79,7 @@ MD5 Hash
 
 #### Defined in
 
-[src/generated/api.ts:5276](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5276)
+[src/generated/api.ts:5366](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5366)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5282](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5282)
+[src/generated/api.ts:5372](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5372)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5288](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5288)
+[src/generated/api.ts:5378](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5378)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5294](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5294)
+[src/generated/api.ts:5384](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5384)
 
 ___
 
@@ -129,7 +129,7 @@ ID of sent email
 
 #### Defined in
 
-[src/generated/api.ts:5300](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5300)
+[src/generated/api.ts:5390](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5390)
 
 ___
 
@@ -143,7 +143,7 @@ Inbox ID email was sent from
 
 #### Defined in
 
-[src/generated/api.ts:5306](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5306)
+[src/generated/api.ts:5396](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5396)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5312](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5312)
+[src/generated/api.ts:5402](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5402)
 
 ___
 
@@ -167,7 +167,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5318](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5318)
+[src/generated/api.ts:5408](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5408)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5324](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5324)
+[src/generated/api.ts:5414](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5414)
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5330](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5330)
+[src/generated/api.ts:5420](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5420)
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5336](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5336)
+[src/generated/api.ts:5426](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5426)
 
 ___
 
@@ -217,7 +217,7 @@ Recipients email was sent to
 
 #### Defined in
 
-[src/generated/api.ts:5342](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5342)
+[src/generated/api.ts:5432](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5432)
 
 ___
 
@@ -231,4 +231,4 @@ User ID
 
 #### Defined in
 
-[src/generated/api.ts:5348](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5348)
+[src/generated/api.ts:5438](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5438)

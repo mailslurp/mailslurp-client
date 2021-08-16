@@ -29,7 +29,7 @@ Size of attachment in bytes
 
 #### Defined in
 
-[src/generated/api.ts:382](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L382)
+[src/generated/api.ts:382](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L382)
 
 ___
 
@@ -43,7 +43,7 @@ Content type of attachment such as `image/png`
 
 #### Defined in
 
-[src/generated/api.ts:388](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L388)
+[src/generated/api.ts:388](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L388)
 
 ___
 
@@ -57,7 +57,7 @@ ID of attachment
 
 #### Defined in
 
-[src/generated/api.ts:394](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L394)
+[src/generated/api.ts:394](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L394)
 
 ___
 
@@ -71,4 +71,4 @@ Name of attachment if given
 
 #### Defined in
 
-[src/generated/api.ts:400](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L400)
+[src/generated/api.ts:400](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L400)

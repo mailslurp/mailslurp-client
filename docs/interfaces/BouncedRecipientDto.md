@@ -27,7 +27,7 @@ Bounced recipient
 
 #### Defined in
 
-[src/generated/api.ts:616](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L616)
+[src/generated/api.ts:616](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L616)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:622](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L622)
+[src/generated/api.ts:622](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L622)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:628](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L628)
+[src/generated/api.ts:628](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L628)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:634](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L634)
+[src/generated/api.ts:634](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L634)

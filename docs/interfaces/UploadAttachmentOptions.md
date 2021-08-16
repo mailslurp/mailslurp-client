@@ -28,7 +28,7 @@ Base64 encoded string of file contents. Typically this means reading the bytes o
 
 #### Defined in
 
-[src/generated/api.ts:5988](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5988)
+[src/generated/api.ts:6078](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6078)
 
 ___
 
@@ -42,7 +42,7 @@ Optional contentType for file. For instance `application/pdf`
 
 #### Defined in
 
-[src/generated/api.ts:5994](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5994)
+[src/generated/api.ts:6084](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6084)
 
 ___
 
@@ -56,4 +56,4 @@ Optional filename to save upload with. Will be the name that is shown in email c
 
 #### Defined in
 
-[src/generated/api.ts:6000](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6000)
+[src/generated/api.ts:6090](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6090)

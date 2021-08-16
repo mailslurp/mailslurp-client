@@ -27,7 +27,7 @@ Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }
 
 #### Defined in
 
-[src/generated/api.ts:3117](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3117)
+[src/generated/api.ts:3155](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3155)
 
 ___
 
@@ -41,4 +41,4 @@ Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value
 
 #### Defined in
 
-[src/generated/api.ts:3123](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3123)
+[src/generated/api.ts:3161](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3161)

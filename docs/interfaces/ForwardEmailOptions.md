@@ -31,7 +31,7 @@ Optional bcc recipients
 
 #### Defined in
 
-[src/generated/api.ts:2488](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2488)
+[src/generated/api.ts:2526](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2526)
 
 ___
 
@@ -45,7 +45,7 @@ Optional cc recipients
 
 #### Defined in
 
-[src/generated/api.ts:2494](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2494)
+[src/generated/api.ts:2532](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2532)
 
 ___
 
@@ -59,7 +59,7 @@ Optional from override
 
 #### Defined in
 
-[src/generated/api.ts:2500](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2500)
+[src/generated/api.ts:2538](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2538)
 
 ___
 
@@ -73,7 +73,7 @@ Subject for forwarded email
 
 #### Defined in
 
-[src/generated/api.ts:2506](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2506)
+[src/generated/api.ts:2544](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2544)
 
 ___
 
@@ -87,7 +87,7 @@ To recipients for forwarded email
 
 #### Defined in
 
-[src/generated/api.ts:2512](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2512)
+[src/generated/api.ts:2550](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2550)
 
 ___
 
@@ -101,4 +101,4 @@ Optionally use inbox name as display name for sender email address
 
 #### Defined in
 
-[src/generated/api.ts:2518](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2518)
+[src/generated/api.ts:2556](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2556)

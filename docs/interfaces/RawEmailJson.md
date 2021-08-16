@@ -24,4 +24,4 @@ Content in raw format
 
 #### Defined in
 
-[src/generated/api.ts:4962](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L4962)
+[src/generated/api.ts:5000](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5000)

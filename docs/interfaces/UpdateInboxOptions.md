@@ -30,7 +30,7 @@ Description of an inbox for labelling and searching purposes
 
 #### Defined in
 
-[src/generated/api.ts:5950](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5950)
+[src/generated/api.ts:6040](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6040)
 
 ___
 
@@ -44,7 +44,7 @@ Inbox expiration time. When, if ever, the inbox should expire and be deleted. If
 
 #### Defined in
 
-[src/generated/api.ts:5956](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5956)
+[src/generated/api.ts:6046](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6046)
 
 ___
 
@@ -58,7 +58,7 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 #### Defined in
 
-[src/generated/api.ts:5962](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5962)
+[src/generated/api.ts:6052](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6052)
 
 ___
 
@@ -72,7 +72,7 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 #### Defined in
 
-[src/generated/api.ts:5968](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5968)
+[src/generated/api.ts:6058](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6058)
 
 ___
 
@@ -86,4 +86,4 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 #### Defined in
 
-[src/generated/api.ts:5974](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5974)
+[src/generated/api.ts:6064](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6064)

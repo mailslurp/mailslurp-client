@@ -51,7 +51,7 @@ CommonActionsControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
 
 ___
 
@@ -117,7 +117,7 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 #### Defined in
 
-[src/generated/api.ts:11218](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L11218)
+[src/generated/api.ts:11308](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L11308)
 
 ___
 
@@ -149,7 +149,7 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 #### Defined in
 
-[src/generated/api.ts:11247](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L11247)
+[src/generated/api.ts:11337](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L11337)
 
 ___
 
@@ -178,7 +178,7 @@ Deletes all emails
 
 #### Defined in
 
-[src/generated/api.ts:11273](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L11273)
+[src/generated/api.ts:11363](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L11363)
 
 ___
 
@@ -207,4 +207,4 @@ If no senderId or inboxId provided a random email address will be used to send f
 
 #### Defined in
 
-[src/generated/api.ts:11288](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L11288)
+[src/generated/api.ts:11378](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L11378)

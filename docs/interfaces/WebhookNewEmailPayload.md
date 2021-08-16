@@ -38,7 +38,7 @@ List of attachment meta data objects if attachments present
 
 #### Defined in
 
-[src/generated/api.ts:6614](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6614)
+[src/generated/api.ts:6704](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6704)
 
 ___
 
@@ -46,13 +46,13 @@ ___
 
 • `Optional` **bcc**: `string`[]
 
-List of `BCC` recipients email was addressed to
+List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** WebhookNewEmailPayload
 
 #### Defined in
 
-[src/generated/api.ts:6620](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6620)
+[src/generated/api.ts:6710](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6710)
 
 ___
 
@@ -60,13 +60,13 @@ ___
 
 • `Optional` **cc**: `string`[]
 
-List of `CC` recipients email was addressed to
+List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** WebhookNewEmailPayload
 
 #### Defined in
 
-[src/generated/api.ts:6626](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6626)
+[src/generated/api.ts:6716](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6716)
 
 ___
 
@@ -80,7 +80,7 @@ Date time of event creation
 
 #### Defined in
 
-[src/generated/api.ts:6632](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6632)
+[src/generated/api.ts:6722](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6722)
 
 ___
 
@@ -94,7 +94,7 @@ ID of the email that was received. Use this ID for fetching the email with the `
 
 #### Defined in
 
-[src/generated/api.ts:6638](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6638)
+[src/generated/api.ts:6728](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6728)
 
 ___
 
@@ -108,7 +108,7 @@ Name of the event type webhook is being triggered for.
 
 #### Defined in
 
-[src/generated/api.ts:6644](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6644)
+[src/generated/api.ts:6734](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6734)
 
 ___
 
@@ -116,13 +116,13 @@ ___
 
 • `Optional` **from**: `string`
 
-Who the email was sent from
+Who the email was sent from. An email address - see fromName for the sender name.
 
 **`memberof`** WebhookNewEmailPayload
 
 #### Defined in
 
-[src/generated/api.ts:6650](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6650)
+[src/generated/api.ts:6740](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6740)
 
 ___
 
@@ -136,7 +136,7 @@ Id of the inbox that received an email
 
 #### Defined in
 
-[src/generated/api.ts:6656](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6656)
+[src/generated/api.ts:6746](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6746)
 
 ___
 
@@ -150,7 +150,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 #### Defined in
 
-[src/generated/api.ts:6662](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6662)
+[src/generated/api.ts:6752](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6752)
 
 ___
 
@@ -158,13 +158,13 @@ ___
 
 • `Optional` **subject**: `string`
 
-The subject line of the email message
+The subject line of the email message as specified by SMTP subject header
 
 **`memberof`** WebhookNewEmailPayload
 
 #### Defined in
 
-[src/generated/api.ts:6668](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6668)
+[src/generated/api.ts:6758](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6758)
 
 ___
 
@@ -172,13 +172,13 @@ ___
 
 • `Optional` **to**: `string`[]
 
-List of `To` recipients that email was addressed to
+List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** WebhookNewEmailPayload
 
 #### Defined in
 
-[src/generated/api.ts:6674](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6674)
+[src/generated/api.ts:6764](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6764)
 
 ___
 
@@ -192,7 +192,7 @@ ID of webhook entity being triggered
 
 #### Defined in
 
-[src/generated/api.ts:6680](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6680)
+[src/generated/api.ts:6770](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6770)
 
 ___
 
@@ -206,4 +206,4 @@ Name of the webhook being triggered
 
 #### Defined in
 
-[src/generated/api.ts:6686](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6686)
+[src/generated/api.ts:6776](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6776)

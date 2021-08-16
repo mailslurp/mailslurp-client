@@ -53,7 +53,7 @@ WaitForControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
 
 ___
 
@@ -116,7 +116,7 @@ Generic waitFor method that will wait until an inbox meets given conditions or r
 
 #### Defined in
 
-[src/generated/api.ts:28831](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28831)
+[src/generated/api.ts:28921](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L28921)
 
 ___
 
@@ -151,7 +151,7 @@ If inbox contains count or more emails at time of request then return count wort
 
 #### Defined in
 
-[src/generated/api.ts:28852](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28852)
+[src/generated/api.ts:28942](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L28942)
 
 ___
 
@@ -185,7 +185,7 @@ Will return either the last received email or wait for an email to arrive and re
 
 #### Defined in
 
-[src/generated/api.ts:28887](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28887)
+[src/generated/api.ts:28977](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L28977)
 
 ___
 
@@ -221,7 +221,7 @@ Perform a search of emails in an inbox with the given patterns. If results match
 
 #### Defined in
 
-[src/generated/api.ts:28922](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28922)
+[src/generated/api.ts:29012](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L29012)
 
 ___
 
@@ -256,7 +256,7 @@ Perform a search of emails in an inbox with the given patterns. If a result if f
 
 #### Defined in
 
-[src/generated/api.ts:28960](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28960)
+[src/generated/api.ts:29050](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L29050)
 
 ___
 
@@ -291,4 +291,4 @@ If nth email is already present in inbox then return it. If not hold the connect
 
 #### Defined in
 
-[src/generated/api.ts:28998](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L28998)
+[src/generated/api.ts:29088](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L29088)

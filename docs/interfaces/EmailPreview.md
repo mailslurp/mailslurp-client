@@ -34,7 +34,7 @@ List of IDs of attachments found in the email. Use these IDs with the Inbox and 
 
 #### Defined in
 
-[src/generated/api.ts:2119](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2119)
+[src/generated/api.ts:2131](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2131)
 
 ___
 
@@ -42,13 +42,13 @@ ___
 
 • `Optional` **bcc**: `string`[]
 
-List of `BCC` recipients email was addressed to
+List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2125](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2125)
+[src/generated/api.ts:2137](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2137)
 
 ___
 
@@ -56,13 +56,13 @@ ___
 
 • `Optional` **cc**: `string`[]
 
-List of `CC` recipients email was addressed to
+List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2131](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2131)
+[src/generated/api.ts:2143](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2143)
 
 ___
 
@@ -76,7 +76,7 @@ When was the email received by MailSlurp
 
 #### Defined in
 
-[src/generated/api.ts:2137](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2137)
+[src/generated/api.ts:2149](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2149)
 
 ___
 
@@ -84,13 +84,13 @@ ___
 
 • `Optional` **from**: `string`
 
-Who the email was sent from
+Who the email was sent from. An email address - see fromName for the sender name.
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2143](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2143)
+[src/generated/api.ts:2155](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2155)
 
 ___
 
@@ -104,7 +104,7 @@ ID of the email entity
 
 #### Defined in
 
-[src/generated/api.ts:2149](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2149)
+[src/generated/api.ts:2161](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2161)
 
 ___
 
@@ -112,13 +112,13 @@ ___
 
 • `Optional` **read**: `boolean`
 
-Read flag. Has the email ever been viewed in the dashboard or fetched via the API? If so the email is marked as read.
+Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2155](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2155)
+[src/generated/api.ts:2167](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2167)
 
 ___
 
@@ -126,13 +126,13 @@ ___
 
 • `Optional` **subject**: `string`
 
-The subject line of the email message
+The subject line of the email message as specified by SMTP subject header
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2161](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2161)
+[src/generated/api.ts:2173](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2173)
 
 ___
 
@@ -140,10 +140,10 @@ ___
 
 • `Optional` **to**: `string`[]
 
-List of `To` recipients that email was addressed to
+List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** EmailPreview
 
 #### Defined in
 
-[src/generated/api.ts:2167](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2167)
+[src/generated/api.ts:2179](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2179)

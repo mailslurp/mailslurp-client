@@ -34,7 +34,7 @@ Paginated email preview results. EmailProjections and EmailPreviews are essentia
 
 #### Defined in
 
-[src/generated/api.ts:3734](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3734)
+[src/generated/api.ts:3772](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3772)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3740](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3740)
+[src/generated/api.ts:3778](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3778)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3746](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3746)
+[src/generated/api.ts:3784](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3784)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3752](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3752)
+[src/generated/api.ts:3790](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3790)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3758](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3758)
+[src/generated/api.ts:3796](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3796)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3764](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3764)
+[src/generated/api.ts:3802](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3802)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3770](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3770)
+[src/generated/api.ts:3808](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3808)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3776](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3776)
+[src/generated/api.ts:3814](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3814)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3782](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3782)
+[src/generated/api.ts:3820](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3820)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3788](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3788)
+[src/generated/api.ts:3826](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3826)
 
 ___
 
@@ -154,4 +154,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3794](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3794)
+[src/generated/api.ts:3832](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3832)

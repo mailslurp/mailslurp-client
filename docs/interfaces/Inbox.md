@@ -37,7 +37,7 @@ When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T
 
 #### Defined in
 
-[src/generated/api.ts:2682](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2682)
+[src/generated/api.ts:2720](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2720)
 
 ___
 
@@ -51,7 +51,7 @@ Description of an inbox for labelling and searching purposes
 
 #### Defined in
 
-[src/generated/api.ts:2688](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2688)
+[src/generated/api.ts:2726](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2726)
 
 ___
 
@@ -65,7 +65,7 @@ The inbox's email address. Inbox projections and previews may not include the em
 
 #### Defined in
 
-[src/generated/api.ts:2694](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2694)
+[src/generated/api.ts:2732](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2732)
 
 ___
 
@@ -79,7 +79,7 @@ Inbox expiration time. When, if ever, the inbox should expire and be deleted. If
 
 #### Defined in
 
-[src/generated/api.ts:2700](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2700)
+[src/generated/api.ts:2738](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2738)
 
 ___
 
@@ -93,7 +93,7 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 #### Defined in
 
-[src/generated/api.ts:2706](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2706)
+[src/generated/api.ts:2744](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2744)
 
 ___
 
@@ -107,7 +107,7 @@ ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to
 
 #### Defined in
 
-[src/generated/api.ts:2712](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2712)
+[src/generated/api.ts:2750](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2750)
 
 ___
 
@@ -121,7 +121,7 @@ Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testin
 
 #### Defined in
 
-[src/generated/api.ts:2718](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2718)
+[src/generated/api.ts:2756](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2756)
 
 ___
 
@@ -135,7 +135,7 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 #### Defined in
 
-[src/generated/api.ts:2724](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2724)
+[src/generated/api.ts:2762](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2762)
 
 ___
 
@@ -149,7 +149,7 @@ Is the inbox readOnly for the caller. Read only means can not be deleted or modi
 
 #### Defined in
 
-[src/generated/api.ts:2730](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2730)
+[src/generated/api.ts:2768](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2768)
 
 ___
 
@@ -163,7 +163,7 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 #### Defined in
 
-[src/generated/api.ts:2736](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2736)
+[src/generated/api.ts:2774](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2774)
 
 ___
 
@@ -177,7 +177,7 @@ Does inbox permit team access for organization team members. If so team users ca
 
 #### Defined in
 
-[src/generated/api.ts:2742](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2742)
+[src/generated/api.ts:2780](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2780)
 
 ___
 
@@ -191,4 +191,4 @@ ID of user that inbox belongs to
 
 #### Defined in
 
-[src/generated/api.ts:2748](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2748)
+[src/generated/api.ts:2786](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2786)

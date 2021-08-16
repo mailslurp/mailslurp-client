@@ -27,7 +27,7 @@ DNS lookup result. Includes record type, time to live, raw response, and name va
 
 #### Defined in
 
-[src/generated/api.ts:1411](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1411)
+[src/generated/api.ts:1411](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1411)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1417](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1417)
+[src/generated/api.ts:1417](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1417)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1423](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1423)
+[src/generated/api.ts:1423](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1423)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1429](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1429)
+[src/generated/api.ts:1429](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1429)

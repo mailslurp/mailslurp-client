@@ -113,7 +113,7 @@ const mailslurp = new MailSlurp({ apiKey })
 
 #### Defined in
 
-[src/index.ts:131](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L131)
+[src/index.ts:131](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L131)
 
 ## Properties
 
@@ -123,7 +123,7 @@ const mailslurp = new MailSlurp({ apiKey })
 
 #### Defined in
 
-[src/index.ts:106](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L106)
+[src/index.ts:106](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L106)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:100](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L100)
+[src/index.ts:100](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L100)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:118](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L118)
+[src/index.ts:118](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L118)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:103](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L103)
+[src/index.ts:103](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L103)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:102](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L102)
+[src/index.ts:102](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L102)
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:109](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L109)
+[src/index.ts:109](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L109)
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:108](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L108)
+[src/index.ts:108](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L108)
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:98](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L98)
+[src/index.ts:98](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L98)
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:107](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L107)
+[src/index.ts:107](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L107)
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:110](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L110)
+[src/index.ts:110](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L110)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:99](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L99)
+[src/index.ts:99](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L99)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:116](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L116)
+[src/index.ts:116](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L116)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:115](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L115)
+[src/index.ts:115](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L115)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:113](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L113)
+[src/index.ts:113](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L113)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:114](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L114)
+[src/index.ts:114](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L114)
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:111](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L111)
+[src/index.ts:111](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L111)
 
 ___
 
@@ -283,7 +283,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:117](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L117)
+[src/index.ts:117](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L117)
 
 ___
 
@@ -293,7 +293,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:104](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L104)
+[src/index.ts:104](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L104)
 
 ___
 
@@ -303,7 +303,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:112](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L112)
+[src/index.ts:112](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L112)
 
 ## Methods
 
@@ -336,7 +336,7 @@ Create a new inbox and with a randomized email address to send and receive from.
 
 #### Defined in
 
-[src/index.ts:188](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L188)
+[src/index.ts:188](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L188)
 
 ___
 
@@ -358,7 +358,7 @@ Create an inbox using CreateInboxDto options. More convenient that `createInbox`
 
 #### Defined in
 
-[src/index.ts:220](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L220)
+[src/index.ts:220](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L220)
 
 ___
 
@@ -382,7 +382,7 @@ Deletes an email and removes it from the inbox. Deleted emails cannot be recover
 
 #### Defined in
 
-[src/index.ts:410](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L410)
+[src/index.ts:410](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L410)
 
 ___
 
@@ -406,7 +406,7 @@ Permanently delete an inbox and associated email address as well as all emails w
 
 #### Defined in
 
-[src/index.ts:233](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L233)
+[src/index.ts:233](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L233)
 
 ___
 
@@ -431,7 +431,7 @@ Returns the specified attachment for a given email as a byte stream (file downlo
 
 #### Defined in
 
-[src/index.ts:514](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L514)
+[src/index.ts:514](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L514)
 
 ___
 
@@ -455,7 +455,7 @@ Deletes all emails
 
 #### Defined in
 
-[src/index.ts:244](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L244)
+[src/index.ts:244](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L244)
 
 ___
 
@@ -484,7 +484,7 @@ By default returns all emails across all inboxes sorted by ascending created at 
 
 #### Defined in
 
-[src/index.ts:426](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L426)
+[src/index.ts:426](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L426)
 
 ___
 
@@ -513,7 +513,7 @@ List inboxes in paginated form. Allows for page index, page size, and sort direc
 
 #### Defined in
 
-[src/index.ts:279](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L279)
+[src/index.ts:279](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L279)
 
 ___
 
@@ -540,7 +540,7 @@ MetaData includes name, size (bytes) and content-type.
 
 #### Defined in
 
-[src/index.ts:547](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L547)
+[src/index.ts:547](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L547)
 
 ___
 
@@ -564,7 +564,7 @@ Returns an EmailDto object with headers and content. To retrieve the raw unparse
 
 #### Defined in
 
-[src/index.ts:476](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L476)
+[src/index.ts:476](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L476)
 
 ___
 
@@ -589,7 +589,7 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 
 #### Defined in
 
-[src/index.ts:452](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L452)
+[src/index.ts:452](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L452)
 
 ___
 
@@ -613,7 +613,7 @@ Returns an inbox's properties, including its email address and ID.
 
 #### Defined in
 
-[src/index.ts:255](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L255)
+[src/index.ts:255](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L255)
 
 ___
 
@@ -631,7 +631,7 @@ List the inboxes you have created
 
 #### Defined in
 
-[src/index.ts:265](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L265)
+[src/index.ts:265](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L265)
 
 ___
 
@@ -655,7 +655,7 @@ Returns a raw, unparsed, and unprocessed email. If your client has issues proces
 
 #### Defined in
 
-[src/index.ts:487](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L487)
+[src/index.ts:487](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L487)
 
 ___
 
@@ -680,7 +680,7 @@ Send an email from an inbox's email address.  The request body should contain th
 
 #### Defined in
 
-[src/index.ts:499](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L499)
+[src/index.ts:499](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L499)
 
 ___
 
@@ -707,7 +707,7 @@ This means that attachments can easily be reused.
 
 #### Defined in
 
-[src/index.ts:531](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L531)
+[src/index.ts:531](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L531)
 
 ___
 
@@ -734,7 +734,7 @@ If inbox contains count or more emails at time of request then return count wort
 
 #### Defined in
 
-[src/index.ts:386](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L386)
+[src/index.ts:386](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L386)
 
 ___
 
@@ -760,7 +760,7 @@ Will return either the last received email or wait for an email to arrive and re
 
 #### Defined in
 
-[src/index.ts:307](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L307)
+[src/index.ts:307](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L307)
 
 ___
 
@@ -788,7 +788,7 @@ Perform a search of emails in an inbox with the given patterns. If results match
 
 #### Defined in
 
-[src/index.ts:358](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L358)
+[src/index.ts:358](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L358)
 
 ___
 
@@ -815,4 +815,4 @@ If nth email is already present in inbox then return it. If not hold the connect
 
 #### Defined in
 
-[src/index.ts:331](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/index.ts#L331)
+[src/index.ts:331](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/index.ts#L331)

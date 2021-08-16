@@ -51,7 +51,7 @@ MissedEmailControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:25613](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L25613)
+[src/generated/api.ts:25703](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L25703)
 
 ___
 
@@ -149,7 +149,7 @@ Unknown missed emails are emails that were sent to MailSlurp but could not be as
 
 #### Defined in
 
-[src/generated/api.ts:25645](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L25645)
+[src/generated/api.ts:25735](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L25735)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:25673](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L25673)
+[src/generated/api.ts:25763](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L25763)
 
 ___
 
@@ -207,4 +207,4 @@ Wait for 0 based index missed email
 
 #### Defined in
 
-[src/generated/api.ts:25690](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L25690)
+[src/generated/api.ts:25780](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L25780)

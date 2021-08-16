@@ -27,7 +27,7 @@ Name Server Record
 
 #### Defined in
 
-[src/generated/api.ts:3255](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3255)
+[src/generated/api.ts:3293](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3293)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3261](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3261)
+[src/generated/api.ts:3299](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3299)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3267](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3267)
+[src/generated/api.ts:3305](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3305)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3273](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L3273)
+[src/generated/api.ts:3311](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3311)

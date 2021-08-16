@@ -27,7 +27,7 @@ Body of the email message. Supports HTML
 
 #### Defined in
 
-[src/generated/api.ts:5450](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5450)
+[src/generated/api.ts:5540](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5540)
 
 ___
 
@@ -41,7 +41,7 @@ ID of inbox to send from. If null an inbox will be created for sending
 
 #### Defined in
 
-[src/generated/api.ts:5456](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5456)
+[src/generated/api.ts:5546](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5546)
 
 ___
 
@@ -55,7 +55,7 @@ Subject line of the email
 
 #### Defined in
 
-[src/generated/api.ts:5462](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5462)
+[src/generated/api.ts:5552](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5552)
 
 ___
 
@@ -69,4 +69,4 @@ Email address to send to
 
 #### Defined in
 
-[src/generated/api.ts:5468](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5468)
+[src/generated/api.ts:5558](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5558)

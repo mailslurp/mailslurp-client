@@ -34,7 +34,7 @@ A thread is a message thread created for a message received by an alias
 
 #### Defined in
 
-[src/generated/api.ts:5658](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5658)
+[src/generated/api.ts:5748](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5748)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5664](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5664)
+[src/generated/api.ts:5754](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5754)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5670](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5670)
+[src/generated/api.ts:5760](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5760)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5676](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5676)
+[src/generated/api.ts:5766](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5766)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5682](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5682)
+[src/generated/api.ts:5772](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5772)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5688](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5688)
+[src/generated/api.ts:5778](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5778)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5694](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5694)
+[src/generated/api.ts:5784](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5784)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5700](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5700)
+[src/generated/api.ts:5790](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5790)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5706](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5706)
+[src/generated/api.ts:5796](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5796)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5712](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5712)
+[src/generated/api.ts:5802](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5802)
 
 ___
 
@@ -154,4 +154,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:5718](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L5718)
+[src/generated/api.ts:5808](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L5808)

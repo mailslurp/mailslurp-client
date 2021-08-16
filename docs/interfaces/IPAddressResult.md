@@ -25,7 +25,7 @@ IP Address look up result for a given domain / hostname
 
 #### Defined in
 
-[src/generated/api.ts:2662](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2662)
+[src/generated/api.ts:2700](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2700)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2668](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2668)
+[src/generated/api.ts:2706](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2706)

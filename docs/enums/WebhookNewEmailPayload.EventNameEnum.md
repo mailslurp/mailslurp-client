@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[src/generated/api.ts:6703](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6703)
+[src/generated/api.ts:6793](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6793)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6704](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6704)
+[src/generated/api.ts:6794](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6794)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6699](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6699)
+[src/generated/api.ts:6789](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6789)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6702](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6702)
+[src/generated/api.ts:6792](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6792)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6701](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6701)
+[src/generated/api.ts:6791](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6791)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6700](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L6700)
+[src/generated/api.ts:6790](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6790)

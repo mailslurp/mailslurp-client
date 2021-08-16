@@ -27,7 +27,7 @@ DNS Record required for verification of a domain. Record vary depending on domai
 
 #### Defined in
 
-[src/generated/api.ts:1688](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1688)
+[src/generated/api.ts:1688](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1688)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1694](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1694)
+[src/generated/api.ts:1694](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1694)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1700](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1700)
+[src/generated/api.ts:1700](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1700)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1706](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L1706)
+[src/generated/api.ts:1706](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1706)

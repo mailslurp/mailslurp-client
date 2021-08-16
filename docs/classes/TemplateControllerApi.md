@@ -52,7 +52,7 @@ TemplateControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27259](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L27259)
+[src/generated/api.ts:27349](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27349)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27277](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L27277)
+[src/generated/api.ts:27367](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27367)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27294](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L27294)
+[src/generated/api.ts:27384](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27384)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27316](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L27316)
+[src/generated/api.ts:27406](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27406)
 
 ___
 
@@ -222,4 +222,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27330](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L27330)
+[src/generated/api.ts:27420](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27420)

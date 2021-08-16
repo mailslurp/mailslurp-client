@@ -1843,31 +1843,31 @@ export interface Email {
      */
     attachments?: Array<string>;
     /**
-     * List of `BCC` recipients email was addressed to
+     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof Email
      */
     bcc?: Array<string>;
     /**
-     * The body of the email message
+     * The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.
      * @type {string}
      * @memberof Email
      */
     body?: string;
     /**
-     * An excerpt of the body of the email message
+     * An excerpt of the body of the email message for quick preview .
      * @type {string}
      * @memberof Email
      */
     bodyExcerpt?: string;
     /**
-     * A hash signature of the email message
+     * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
      * @type {string}
      * @memberof Email
      */
     bodyMD5Hash?: string;
     /**
-     * List of `CC` recipients email was addressed to
+     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof Email
      */
@@ -1885,7 +1885,7 @@ export interface Email {
      */
     createdAt?: Date;
     /**
-     * Who the email was sent from
+     * Who the email was sent from. An email address - see fromName for the sender name.
      * @type {string}
      * @memberof Email
      */
@@ -1917,11 +1917,17 @@ export interface Email {
      */
     isHTML?: boolean;
     /**
-     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API? If so the email is marked as read.
+     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
      * @type {boolean}
      * @memberof Email
      */
     read?: boolean;
+    /**
+     * The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
+     * @type {EmailRecipients}
+     * @memberof Email
+     */
+    recipients?: EmailRecipients;
     /**
      * The `replyTo` field on the received email message
      * @type {string}
@@ -1929,7 +1935,13 @@ export interface Email {
      */
     replyTo?: string;
     /**
-     * The subject line of the email message
+     * Sender object containing from email address and from personal name if provided in address
+     * @type {Sender}
+     * @memberof Email
+     */
+    sender?: Sender;
+    /**
+     * The subject line of the email message as specified by SMTP subject header
      * @type {string}
      * @memberof Email
      */
@@ -1941,7 +1953,7 @@ export interface Email {
      */
     teamAccess?: boolean;
     /**
-     * List of `To` recipients that email was addressed to
+     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof Email
      */
@@ -2047,13 +2059,13 @@ export interface EmailPreview {
      */
     attachments?: Array<string>;
     /**
-     * List of `BCC` recipients email was addressed to
+     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof EmailPreview
      */
     bcc?: Array<string>;
     /**
-     * List of `CC` recipients email was addressed to
+     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof EmailPreview
      */
@@ -2065,7 +2077,7 @@ export interface EmailPreview {
      */
     createdAt?: Date;
     /**
-     * Who the email was sent from
+     * Who the email was sent from. An email address - see fromName for the sender name.
      * @type {string}
      * @memberof EmailPreview
      */
@@ -2077,19 +2089,19 @@ export interface EmailPreview {
      */
     id?: string;
     /**
-     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API? If so the email is marked as read.
+     * Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
      * @type {boolean}
      * @memberof EmailPreview
      */
     read?: boolean;
     /**
-     * The subject line of the email message
+     * The subject line of the email message as specified by SMTP subject header
      * @type {string}
      * @memberof EmailPreview
      */
     subject?: string;
     /**
-     * List of `To` recipients that email was addressed to
+     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof EmailPreview
      */
@@ -2179,6 +2191,31 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     to: Array<string>;
+}
+/**
+ *
+ * @export
+ * @interface EmailRecipients
+ */
+export interface EmailRecipients {
+    /**
+     *
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    bcc?: Array<Recipient>;
+    /**
+     *
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    cc?: Array<Recipient>;
+    /**
+     *
+     * @type {Array<Recipient>}
+     * @memberof EmailRecipients
+     */
+    to?: Array<Recipient>;
 }
 /**
  * Parsed text of an email
@@ -4836,6 +4873,31 @@ export interface RawEmailJson {
     content: string;
 }
 /**
+ *
+ * @export
+ * @interface Recipient
+ */
+export interface Recipient {
+    /**
+     *
+     * @type {string}
+     * @memberof Recipient
+     */
+    emailAddress: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Recipient
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Recipient
+     */
+    rawValue: string;
+}
+/**
  * Options for replying to an alias email using the alias inbox
  * @export
  * @interface ReplyToAliasEmailOptions
@@ -5110,6 +5172,31 @@ export declare namespace SendEmailOptions {
     enum SendStrategyEnum {
         SINGLEMESSAGE
     }
+}
+/**
+ *
+ * @export
+ * @interface Sender
+ */
+export interface Sender {
+    /**
+     *
+     * @type {string}
+     * @memberof Sender
+     */
+    emailAddress: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Sender
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Sender
+     */
+    rawValue: string;
 }
 /**
  * Sent email details
@@ -6444,13 +6531,13 @@ export interface WebhookNewEmailPayload {
      */
     attachmentMetaDatas?: Array<AttachmentMetaData>;
     /**
-     * List of `BCC` recipients email was addressed to
+     * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof WebhookNewEmailPayload
      */
     bcc?: Array<string>;
     /**
-     * List of `CC` recipients email was addressed to
+     * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof WebhookNewEmailPayload
      */
@@ -6474,7 +6561,7 @@ export interface WebhookNewEmailPayload {
      */
     eventName?: WebhookNewEmailPayload.EventNameEnum;
     /**
-     * Who the email was sent from
+     * Who the email was sent from. An email address - see fromName for the sender name.
      * @type {string}
      * @memberof WebhookNewEmailPayload
      */
@@ -6492,13 +6579,13 @@ export interface WebhookNewEmailPayload {
      */
     messageId?: string;
     /**
-     * The subject line of the email message
+     * The subject line of the email message as specified by SMTP subject header
      * @type {string}
      * @memberof WebhookNewEmailPayload
      */
     subject?: string;
     /**
-     * List of `To` recipients that email was addressed to
+     * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof WebhookNewEmailPayload
      */

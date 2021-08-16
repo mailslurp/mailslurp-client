@@ -27,7 +27,7 @@ Inboxes to send the email from
 
 #### Defined in
 
-[src/generated/api.ts:648](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L648)
+[src/generated/api.ts:648](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L648)
 
 ___
 
@@ -41,4 +41,4 @@ Options for the email to be sent
 
 #### Defined in
 
-[src/generated/api.ts:654](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L654)
+[src/generated/api.ts:654](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L654)

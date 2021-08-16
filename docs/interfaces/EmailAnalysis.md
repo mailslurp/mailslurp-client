@@ -30,7 +30,7 @@ Verdict of DomainKeys Identified Mail analysis
 
 #### Defined in
 
-[src/generated/api.ts:2041](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2041)
+[src/generated/api.ts:2053](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2053)
 
 ___
 
@@ -44,7 +44,7 @@ Verdict of Domain-based Message Authentication Reporting and Conformance analysi
 
 #### Defined in
 
-[src/generated/api.ts:2047](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2047)
+[src/generated/api.ts:2059](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2059)
 
 ___
 
@@ -58,7 +58,7 @@ Verdict of spam ranking analysis
 
 #### Defined in
 
-[src/generated/api.ts:2053](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2053)
+[src/generated/api.ts:2065](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2065)
 
 ___
 
@@ -72,7 +72,7 @@ Verdict of Send Policy Framework record spoofing analysis
 
 #### Defined in
 
-[src/generated/api.ts:2059](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2059)
+[src/generated/api.ts:2071](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2071)
 
 ___
 
@@ -86,4 +86,4 @@ Verdict of virus scan analysis
 
 #### Defined in
 
-[src/generated/api.ts:2065](https://github.com/mailslurp/mailslurp-client/blob/1460b4d/src/generated/api.ts#L2065)
+[src/generated/api.ts:2077](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2077)
