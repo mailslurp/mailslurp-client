@@ -1,30 +1,75 @@
-import Default, {
-    MailSlurp,
-    InboxControllerApi,
+// es imports
+import MailSlurp_defaultImport, {
+    CreateInboxDto,
     EmailControllerApi,
+    InboxControllerApi,
+    MailSlurp as MailSlurp_import,
+    MailSlurp,
 } from '../src/index';
+import { WaitForControllerApi } from '../dist';
+import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 
-const mailslurpRequire = require('../dist/index').MailSlurp;
+// node require style
+const { MailSlurp: MailSlurp_nodeRequire } = require('../dist/index');
 
-describe('importing client', () => {
-    test('that import was successful', () => {
-        expect(InboxControllerApi).not.toBeNull();
-        expect(EmailControllerApi).not.toBeNull();
-        expect(MailSlurp).not.toBeNull();
-        expect(Default).not.toBeNull();
+describe('different ways to import and instantiate a MailSlurp client', () => {
+    test('a standard client can be instantiated by importing/requiring the default MailSlurp class', () => {
+        const apiKey = process.env.API_KEY || 'your-api-key';
+        // using imported mailslurp
+        const client = new MailSlurp_import({apiKey});
+        expect(client?.createInbox).toBeTruthy();
+
+        // using default import style
+        const clientDefault = new MailSlurp_defaultImport({apiKey});
+        expect(clientDefault?.createInbox).toBeTruthy();
+        //
+        const clientRequire = new MailSlurp_nodeRequire({apiKey});
+        expect(clientRequire?.createInbox).toBeTruthy();
+        expect(clientRequire?.inboxController).toBeTruthy();
     });
 
-    test('client can be instantiated', () => {
+    test("the standard client doesn't have all functions so importing individual api controllers is recommended", () => {
         const apiKey = process.env.API_KEY || 'your-api-key';
-        const client = new MailSlurp({ apiKey });
-        expect(client).not.toBeNull();
-        expect(client.createInbox).not.toBeNull();
-        const clientDefault = new Default({ apiKey });
-        expect(clientDefault).not.toBeNull();
-        expect(clientDefault.createInbox).not.toBeNull();
-        const clientRequire = new mailslurpRequire({ apiKey });
-        expect(clientRequire).not.toBeNull();
-        expect(clientRequire.createInbox).toBeDefined();
-        expect(clientRequire.inboxController).toBeDefined();
+        // use individual controllers for more methods
+        const inboxController = new InboxControllerApi({apiKey});
+        const emailController = new EmailControllerApi({apiKey});
+        const waitController = new WaitForControllerApi({apiKey});
+        // etc
+        expect(inboxController).toBeTruthy();
+        expect(emailController).toBeTruthy();
+        expect(waitController).toBeTruthy();
+    });
+})
+describe("common usage patterns", () => {
+    integrationTest('can create inboxes', async (mailslurp: MailSlurp) => {
+        // default
+        const inbox = await mailslurp.createInbox();
+        await mailslurp.deleteInbox(inbox.id);
+        // with options
+        const inboxWithOptions = await mailslurp.createInboxWithOptions({
+            name: 'Test inbox',
+            description: 'My inbox',
+            inboxType: InboxTypeEnum.HTTPINBOX,
+            useDomainPool: true,
+            tags: ['test', 'ci'],
+        });
+        await mailslurp.deleteInbox(inboxWithOptions.id);
     });
 });
+
+/**
+ * Helper function to run a test with a configured mailslurp client if an API_KEY env variable is present
+ */
+async function integrationTest(
+    name: string,
+    fn: (mailslurp: MailSlurp) => Promise<any>
+) {
+    const apiKey = process.env.API_KEY;
+    test(name, async () => {
+        if (apiKey && apiKey.length > 0) {
+            await fn(new MailSlurp({ apiKey }));
+        } else {
+            console.warn('Skipping test with api key API KEY missing');
+        }
+    });
+}

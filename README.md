@@ -39,7 +39,9 @@ This section describes how to get up and running with the Javascript client.
 
 See the [guides page](https://www.mailslurp.com/guides/) for more examples and use with common frameworks. For use with CypressJS see the official [Cypress MailSlurp plugin](https://www.npmjs.com/package/cypress-mailslurp).
 
-See the method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/)
+See the method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/). 
+
+> See the `test/integration.spec.ts` in this package for usage examples of this client.
 
 ### Create API Key
 
@@ -74,7 +76,8 @@ const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 
 Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
-See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/) for all methods.
+See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/) for all methods or
+see the `test/integration.spec.ts` file for usage examples.
 
 Use individual controllers like so:
 
