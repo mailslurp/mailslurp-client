@@ -10,6 +10,8 @@ import { WaitForControllerApi } from '../dist';
 import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 
 // node require style
+const TIMEOUT = 60000
+jest.setTimeout(TIMEOUT)
 const { MailSlurp: MailSlurp_nodeRequire } = require('../dist/index');
 
 describe('different ways to import and instantiate a MailSlurp client', () => {
@@ -40,7 +42,7 @@ describe('different ways to import and instantiate a MailSlurp client', () => {
         expect(waitController).toBeTruthy();
     });
 })
-describe("common usage patterns", () => {
+describe("common usage patterns using default client", () => {
     integrationTest('can create inboxes', async (mailslurp: MailSlurp) => {
         // default
         const inbox = await mailslurp.createInbox();
@@ -55,6 +57,23 @@ describe("common usage patterns", () => {
         });
         await mailslurp.deleteInbox(inboxWithOptions.id);
     });
+});
+describe("using controller instances for more features", () => {
+    integrationTest('can wait for emails', async (mailslurp: MailSlurp) => {
+        const now = new Date()
+        const inbox = await mailslurp.inboxController.createInbox()
+        const sent = await mailslurp.inboxController.sendEmailAndConfirm(inbox.id!, {
+            to: [inbox.emailAddress!],
+            subject: 'test',
+            body: '<html>hello</html>',
+            isHTML: true
+        })
+        expect(sent.to).toContain(inbox.emailAddress)
+
+        // can receive sent email
+        const email = await mailslurp.waitController.waitForLatestEmail(undefined,inbox.id, now, "DESC", TIMEOUT, true)
+        expect(email.subject).toContain('test')
+    })
 });
 
 /**
