@@ -30,7 +30,7 @@ Attachment ID
 
 #### Defined in
 
-[src/generated/api.ts:414](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L414)
+[src/generated/api.ts:358](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L358)
 
 ___
 
@@ -44,7 +44,7 @@ Content length of attachment in bytes
 
 #### Defined in
 
-[src/generated/api.ts:420](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L420)
+[src/generated/api.ts:364](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L364)
 
 ___
 
@@ -58,7 +58,7 @@ Content type of attachment.
 
 #### Defined in
 
-[src/generated/api.ts:426](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L426)
+[src/generated/api.ts:370](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L370)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:432](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L432)
+[src/generated/api.ts:376](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L376)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:438](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L438)
+[src/generated/api.ts:382](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L382)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:444](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L444)
+[src/generated/api.ts:388](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L388)
 
 ___
 
@@ -106,4 +106,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:450](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L450)
+[src/generated/api.ts:394](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L394)

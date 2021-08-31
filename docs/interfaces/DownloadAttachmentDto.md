@@ -28,7 +28,7 @@ Base64 encoded string of attachment bytes. Decode the base64 encoded string to g
 
 #### Defined in
 
-[src/generated/api.ts:1881](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1881)
+[src/generated/api.ts:1825](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1825)
 
 ___
 
@@ -42,7 +42,7 @@ Content type of attachment. Examples are `image/png`, `application/msword`, `tex
 
 #### Defined in
 
-[src/generated/api.ts:1887](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1887)
+[src/generated/api.ts:1831](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1831)
 
 ___
 
@@ -56,4 +56,4 @@ Size in bytes of attachment content
 
 #### Defined in
 
-[src/generated/api.ts:1893](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1893)
+[src/generated/api.ts:1837](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1837)

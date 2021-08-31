@@ -27,7 +27,7 @@ The condition to evaluate against the email
 
 #### Defined in
 
-[src/generated/api.ts:675](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L675)
+[src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L619)
 
 ___
 
@@ -41,4 +41,4 @@ What the condition should evaluate to. A string 'TRUE|FALSE' not a boolean.
 
 #### Defined in
 
-[src/generated/api.ts:681](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L681)
+[src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L625)

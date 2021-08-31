@@ -110,61 +110,6 @@ export declare namespace AbstractWebhookPayload {
     }
 }
 /**
- *
- * @export
- * @interface Alias
- */
-export interface Alias {
-    /**
-     *
-     * @type {Date}
-     * @memberof Alias
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    emailAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    inboxId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    name?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof Alias
-     */
-    updatedAt: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof Alias
-     */
-    useThreads?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    userId: string;
-}
-/**
  * Email alias representation
  * @export
  * @interface AliasDto
@@ -4671,7 +4616,7 @@ export interface PageUnknownMissedEmailProjection {
     totalPages?: number;
 }
 /**
- *
+ * Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
  * @interface PageWebhookProjection
  */
@@ -4751,10 +4696,10 @@ export interface PageWebhookProjection {
 export interface PageWebhookResult {
     /**
      *
-     * @type {Array<WebhookResultEntity>}
+     * @type {Array<WebhookResultDto>}
      * @memberof PageWebhookResult
      */
-    content?: Array<WebhookResultEntity>;
+    content?: Array<WebhookResultDto>;
     /**
      *
      * @type {boolean}
@@ -6013,7 +5958,7 @@ export interface WaitForConditions {
      * @type {number}
      * @memberof WaitForConditions
      */
-    count?: number;
+    count: number;
     /**
      * How should the found count be compared to the expected count.
      * @type {string}
@@ -6025,13 +5970,19 @@ export interface WaitForConditions {
      * @type {string}
      * @memberof WaitForConditions
      */
-    inboxId?: string;
+    inboxId: string;
     /**
      * Conditions that should be matched for an email to qualify for results. Each condition will be applied in order to each email within an inbox to filter a result list of matching emails you are waiting for.
      * @type {Array<MatchOption>}
      * @memberof WaitForConditions
      */
     matches?: Array<MatchOption>;
+    /**
+     * ISO Date Time earliest time of email to consider. Filter for matching emails that were received after this date
+     * @type {Date}
+     * @memberof WaitForConditions
+     */
+    since?: Date;
     /**
      * Direction to sort matching emails by created time
      * @type {string}
@@ -6043,7 +5994,7 @@ export interface WaitForConditions {
      * @type {number}
      * @memberof WaitForConditions
      */
-    timeout?: number;
+    timeout: number;
     /**
      * Apply conditions only to **unread** emails. All emails begin with `read=false`. An email is marked `read=true` when an `EmailDto` representation of it has been returned to the user at least once. For example you have called `getEmail` or `waitForLatestEmail` etc., or you have viewed the email in the dashboard.
      * @type {boolean}
@@ -6691,99 +6642,130 @@ export declare namespace WebhookProjection {
 /**
  *
  * @export
- * @interface WebhookResultEntity
+ * @interface WebhookRedriveResult
  */
-export interface WebhookResultEntity {
+export interface WebhookRedriveResult {
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookRedriveResult
+     */
+    message?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof WebhookRedriveResult
+     */
+    success: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookRedriveResult
+     */
+    webhookResultId: string;
+}
+/**
+ *
+ * @export
+ * @interface WebhookResultDto
+ */
+export interface WebhookResultDto {
     /**
      *
      * @type {Date}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     createdAt: Date;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    httpMethod: WebhookResultEntity.HttpMethodEnum;
+    httpMethod: WebhookResultDto.HttpMethodEnum;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     id?: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     inboxId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     messageId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
+     */
+    redriveId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
      */
     responseBodyExtract?: string;
     /**
      *
      * @type {number}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     responseStatus?: number;
     /**
      *
      * @type {number}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     responseTimeMillis: number;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    resultType?: WebhookResultEntity.ResultTypeEnum;
+    resultType?: WebhookResultDto.ResultTypeEnum;
     /**
      *
      * @type {Date}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     updatedAt: Date;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     userId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    webhookEvent: WebhookResultEntity.WebhookEventEnum;
+    webhookEvent: WebhookResultDto.WebhookEventEnum;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     webhookId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     webhookUrl: string;
 }
 /**
  * @export
- * @namespace WebhookResultEntity
+ * @namespace WebhookResultDto
  */
-export declare namespace WebhookResultEntity {
+export declare namespace WebhookResultDto {
     /**
      * @export
      * @enum {string}
@@ -12529,7 +12511,7 @@ export declare const TemplateControllerApiFetchParamCreator: (configuration?: Co
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12547,7 +12529,7 @@ export declare const TemplateControllerApiFetchParamCreator: (configuration?: Co
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12559,6 +12541,15 @@ export declare const TemplateControllerApiFetchParamCreator: (configuration?: Co
      * @throws {RequiredError}
      */
     getTemplates(options?: any): FetchArgs;
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTemplate(createTemplateOptions: CreateTemplateOptions, templateId: string, options?: any): FetchArgs;
 };
 /**
  * TemplateControllerApi - functional programming interface
@@ -12576,7 +12567,7 @@ export declare const TemplateControllerApiFp: (configuration?: Configuration) =>
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12594,7 +12585,7 @@ export declare const TemplateControllerApiFp: (configuration?: Configuration) =>
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12606,6 +12597,15 @@ export declare const TemplateControllerApiFp: (configuration?: Configuration) =>
      * @throws {RequiredError}
      */
     getTemplates(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<TemplateProjection>>;
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTemplate(createTemplateOptions: CreateTemplateOptions, templateId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<TemplateDto>;
 };
 /**
  * TemplateControllerApi - factory interface
@@ -12623,7 +12623,7 @@ export declare const TemplateControllerApiFactory: (configuration?: Configuratio
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12641,7 +12641,7 @@ export declare const TemplateControllerApiFactory: (configuration?: Configuratio
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -12653,6 +12653,15 @@ export declare const TemplateControllerApiFactory: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     getTemplates(options?: any): Promise<TemplateProjection[]>;
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateTemplate(createTemplateOptions: CreateTemplateOptions, templateId: string, options?: any): Promise<TemplateDto>;
 };
 /**
  * TemplateControllerApi - object-oriented interface
@@ -12673,7 +12682,7 @@ export declare class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -12693,7 +12702,7 @@ export declare class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -12707,6 +12716,16 @@ export declare class TemplateControllerApi extends BaseAPI {
      * @memberof TemplateControllerApi
      */
     getTemplates(options?: any): Promise<TemplateProjection[]>;
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TemplateControllerApi
+     */
+    updateTemplate(createTemplateOptions: CreateTemplateOptions, templateId: string, options?: any): Promise<TemplateDto>;
 }
 /**
  * TrackingControllerApi - fetch parameter creator
@@ -13228,7 +13247,7 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13326,6 +13345,14 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      */
     getWebhooks(inboxId: string, options?: any): FetchArgs;
     /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    redriveWebhookResult(webhookResultId: string, options?: any): FetchArgs;
+    /**
      *
      * @summary Send webhook test data
      * @param {string} webhookId webhookId
@@ -13373,7 +13400,7 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13449,7 +13476,7 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResult(webhookResultId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookResultEntity>;
+    getWebhookResult(webhookResultId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookResultDto>;
     /**
      *
      * @summary Get a webhook results for a webhook
@@ -13470,6 +13497,14 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @throws {RequiredError}
      */
     getWebhooks(inboxId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<WebhookDto>>;
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    redriveWebhookResult(webhookResultId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookRedriveResult>;
     /**
      *
      * @summary Send webhook test data
@@ -13518,7 +13553,7 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13594,7 +13629,7 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResult(webhookResultId: string, options?: any): Promise<WebhookResultEntity>;
+    getWebhookResult(webhookResultId: string, options?: any): Promise<WebhookResultDto>;
     /**
      *
      * @summary Get a webhook results for a webhook
@@ -13615,6 +13650,14 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @throws {RequiredError}
      */
     getWebhooks(inboxId: string, options?: any): Promise<WebhookDto[]>;
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    redriveWebhookResult(webhookResultId: string, options?: any): Promise<WebhookRedriveResult>;
     /**
      *
      * @summary Send webhook test data
@@ -13668,7 +13711,7 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -13754,7 +13797,7 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getWebhookResult(webhookResultId: string, options?: any): Promise<WebhookResultEntity>;
+    getWebhookResult(webhookResultId: string, options?: any): Promise<WebhookResultDto>;
     /**
      *
      * @summary Get a webhook results for a webhook
@@ -13777,6 +13820,15 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     getWebhooks(inboxId: string, options?: any): Promise<WebhookDto[]>;
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    redriveWebhookResult(webhookResultId: string, options?: any): Promise<WebhookRedriveResult>;
     /**
      *
      * @summary Send webhook test data

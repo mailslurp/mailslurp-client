@@ -57,7 +57,7 @@ AttachmentControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:9607](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9607)
+[src/generated/api.ts:9589](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9589)
 
 ___
 
@@ -146,7 +146,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9621](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9621)
+[src/generated/api.ts:9603](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9603)
 
 ___
 
@@ -175,7 +175,7 @@ Returns the specified attachment for a given email as a base 64 encoded string. 
 
 #### Defined in
 
-[src/generated/api.ts:9636](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9636)
+[src/generated/api.ts:9618](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9618)
 
 ___
 
@@ -204,7 +204,7 @@ Returns the specified attachment for a given email as a stream / array of bytes.
 
 #### Defined in
 
-[src/generated/api.ts:9656](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9656)
+[src/generated/api.ts:9638](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9638)
 
 ___
 
@@ -233,7 +233,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9673](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9673)
+[src/generated/api.ts:9655](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9655)
 
 ___
 
@@ -262,7 +262,7 @@ Returns the metadata for an attachment. It is saved separately to the content of
 
 #### Defined in
 
-[src/generated/api.ts:9688](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9688)
+[src/generated/api.ts:9670](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9670)
 
 ___
 
@@ -294,7 +294,7 @@ Get all attachments in paginated response. Each entity contains meta data for th
 
 #### Defined in
 
-[src/generated/api.ts:9706](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9706)
+[src/generated/api.ts:9688](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9688)
 
 ___
 
@@ -323,7 +323,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9730](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9730)
+[src/generated/api.ts:9712](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9712)
 
 ___
 
@@ -354,7 +354,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9750](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9750)
+[src/generated/api.ts:9732](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9732)
 
 ___
 
@@ -387,4 +387,4 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9778](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L9778)
+[src/generated/api.ts:9760](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9760)

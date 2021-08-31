@@ -25,7 +25,7 @@ Parsed text of an email
 
 #### Defined in
 
-[src/generated/api.ts:2305](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2305)
+[src/generated/api.ts:2249](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2249)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2311](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2311)
+[src/generated/api.ts:2255](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2255)

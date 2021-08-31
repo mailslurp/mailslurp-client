@@ -31,6 +31,7 @@ TemplateControllerApi - object-oriented interface
 - [getAllTemplates](TemplateControllerApi.md#getalltemplates)
 - [getTemplate](TemplateControllerApi.md#gettemplate)
 - [getTemplates](TemplateControllerApi.md#gettemplates)
+- [updateTemplate](TemplateControllerApi.md#updatetemplate)
 
 ## Constructors
 
@@ -52,7 +53,7 @@ TemplateControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -76,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -113,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27349](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27349)
+[src/generated/api.ts:27461](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27461)
 
 ___
 
@@ -131,7 +132,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `templateId` | `string` | TemplateId |
+| `templateId` | `string` | templateId |
 | `options?` | `any` | - |
 
 #### Returns
@@ -140,7 +141,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27367](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27367)
+[src/generated/api.ts:27479](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27479)
 
 ___
 
@@ -169,7 +170,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27384](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27384)
+[src/generated/api.ts:27496](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27496)
 
 ___
 
@@ -187,7 +188,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `templateId` | `string` | TemplateId |
+| `templateId` | `string` | templateId |
 | `options?` | `any` | - |
 
 #### Returns
@@ -196,7 +197,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27406](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27406)
+[src/generated/api.ts:27518](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27518)
 
 ___
 
@@ -222,4 +223,32 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27420](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L27420)
+[src/generated/api.ts:27532](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27532)
+
+___
+
+### updateTemplate
+
+▸ **updateTemplate**(`createTemplateOptions`, `templateId`, `options?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+
+**`summary`** Update a Template
+
+**`throws`** {RequiredError}
+
+**`memberof`** TemplateControllerApi
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `createTemplateOptions` | [`CreateTemplateOptions`](../interfaces/CreateTemplateOptions.md) | createTemplateOptions |
+| `templateId` | `string` | templateId |
+| `options?` | `any` | - |
+
+#### Returns
+
+`Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:27547](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27547)

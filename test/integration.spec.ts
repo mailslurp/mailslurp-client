@@ -10,22 +10,22 @@ import { WaitForControllerApi } from '../dist';
 import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 
 // node require style
-const TIMEOUT = 60000
-jest.setTimeout(TIMEOUT)
+const TIMEOUT = 60000;
+jest.setTimeout(TIMEOUT);
 const { MailSlurp: MailSlurp_nodeRequire } = require('../dist/index');
 
 describe('different ways to import and instantiate a MailSlurp client', () => {
     test('a standard client can be instantiated by importing/requiring the default MailSlurp class', () => {
         const apiKey = process.env.API_KEY || 'your-api-key';
         // using imported mailslurp
-        const client = new MailSlurp_import({apiKey});
+        const client = new MailSlurp_import({ apiKey });
         expect(client?.createInbox).toBeTruthy();
 
         // using default import style
-        const clientDefault = new MailSlurp_defaultImport({apiKey});
+        const clientDefault = new MailSlurp_defaultImport({ apiKey });
         expect(clientDefault?.createInbox).toBeTruthy();
         //
-        const clientRequire = new MailSlurp_nodeRequire({apiKey});
+        const clientRequire = new MailSlurp_nodeRequire({ apiKey });
         expect(clientRequire?.createInbox).toBeTruthy();
         expect(clientRequire?.inboxController).toBeTruthy();
     });
@@ -33,16 +33,16 @@ describe('different ways to import and instantiate a MailSlurp client', () => {
     test("the standard client doesn't have all functions so importing individual api controllers is recommended", () => {
         const apiKey = process.env.API_KEY || 'your-api-key';
         // use individual controllers for more methods
-        const inboxController = new InboxControllerApi({apiKey});
-        const emailController = new EmailControllerApi({apiKey});
-        const waitController = new WaitForControllerApi({apiKey});
+        const inboxController = new InboxControllerApi({ apiKey });
+        const emailController = new EmailControllerApi({ apiKey });
+        const waitController = new WaitForControllerApi({ apiKey });
         // etc
         expect(inboxController).toBeTruthy();
         expect(emailController).toBeTruthy();
         expect(waitController).toBeTruthy();
     });
-})
-describe("common usage patterns using default client", () => {
+});
+describe('common usage patterns using default client', () => {
     integrationTest('can create inboxes', async (mailslurp: MailSlurp) => {
         // default
         const inbox = await mailslurp.createInbox();
@@ -58,22 +58,32 @@ describe("common usage patterns using default client", () => {
         await mailslurp.deleteInbox(inboxWithOptions.id);
     });
 });
-describe("using controller instances for more features", () => {
+describe('using controller instances for more features', () => {
     integrationTest('can wait for emails', async (mailslurp: MailSlurp) => {
-        const now = new Date()
-        const inbox = await mailslurp.inboxController.createInbox()
-        const sent = await mailslurp.inboxController.sendEmailAndConfirm(inbox.id!, {
-            to: [inbox.emailAddress!],
-            subject: 'test',
-            body: '<html>hello</html>',
-            isHTML: true
-        })
-        expect(sent.to).toContain(inbox.emailAddress)
+        const now = new Date();
+        const inbox = await mailslurp.inboxController.createInbox();
+        const sent = await mailslurp.inboxController.sendEmailAndConfirm(
+            inbox.id!,
+            {
+                to: [inbox.emailAddress!],
+                subject: 'test',
+                body: '<html>hello</html>',
+                isHTML: true,
+            }
+        );
+        expect(sent.to).toContain(inbox.emailAddress);
 
         // can receive sent email
-        const email = await mailslurp.waitController.waitForLatestEmail(undefined,inbox.id, now, "DESC", TIMEOUT, true)
-        expect(email.subject).toContain('test')
-    })
+        const email = await mailslurp.waitController.waitForLatestEmail(
+            undefined,
+            inbox.id,
+            now,
+            'DESC',
+            TIMEOUT,
+            true
+        );
+        expect(email.subject).toContain('test');
+    });
 });
 
 /**

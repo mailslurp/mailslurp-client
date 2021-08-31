@@ -133,62 +133,6 @@ export namespace AbstractWebhookPayload {
 }
 
 /**
- *
- * @export
- * @interface Alias
- */
-export interface Alias {
-    /**
-     *
-     * @type {Date}
-     * @memberof Alias
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    emailAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    inboxId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    name?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof Alias
-     */
-    updatedAt: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof Alias
-     */
-    useThreads?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof Alias
-     */
-    userId: string;
-}
-
-/**
  * Email alias representation
  * @export
  * @interface AliasDto
@@ -4795,7 +4739,7 @@ export interface PageUnknownMissedEmailProjection {
 }
 
 /**
- *
+ * Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
  * @interface PageWebhookProjection
  */
@@ -4876,10 +4820,10 @@ export interface PageWebhookProjection {
 export interface PageWebhookResult {
     /**
      *
-     * @type {Array<WebhookResultEntity>}
+     * @type {Array<WebhookResultDto>}
      * @memberof PageWebhookResult
      */
-    content?: Array<WebhookResultEntity>;
+    content?: Array<WebhookResultDto>;
     /**
      *
      * @type {boolean}
@@ -6173,7 +6117,7 @@ export interface WaitForConditions {
      * @type {number}
      * @memberof WaitForConditions
      */
-    count?: number;
+    count: number;
     /**
      * How should the found count be compared to the expected count.
      * @type {string}
@@ -6185,13 +6129,19 @@ export interface WaitForConditions {
      * @type {string}
      * @memberof WaitForConditions
      */
-    inboxId?: string;
+    inboxId: string;
     /**
      * Conditions that should be matched for an email to qualify for results. Each condition will be applied in order to each email within an inbox to filter a result list of matching emails you are waiting for.
      * @type {Array<MatchOption>}
      * @memberof WaitForConditions
      */
     matches?: Array<MatchOption>;
+    /**
+     * ISO Date Time earliest time of email to consider. Filter for matching emails that were received after this date
+     * @type {Date}
+     * @memberof WaitForConditions
+     */
+    since?: Date;
     /**
      * Direction to sort matching emails by created time
      * @type {string}
@@ -6203,7 +6153,7 @@ export interface WaitForConditions {
      * @type {number}
      * @memberof WaitForConditions
      */
-    timeout?: number;
+    timeout: number;
     /**
      * Apply conditions only to **unread** emails. All emails begin with `read=false`. An email is marked `read=true` when an `EmailDto` representation of it has been returned to the user at least once. For example you have called `getEmail` or `waitForLatestEmail` etc., or you have viewed the email in the dashboard.
      * @type {boolean}
@@ -6867,100 +6817,132 @@ export namespace WebhookProjection {
 /**
  *
  * @export
- * @interface WebhookResultEntity
+ * @interface WebhookRedriveResult
  */
-export interface WebhookResultEntity {
+export interface WebhookRedriveResult {
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookRedriveResult
+     */
+    message?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof WebhookRedriveResult
+     */
+    success: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookRedriveResult
+     */
+    webhookResultId: string;
+}
+
+/**
+ *
+ * @export
+ * @interface WebhookResultDto
+ */
+export interface WebhookResultDto {
     /**
      *
      * @type {Date}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     createdAt: Date;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    httpMethod: WebhookResultEntity.HttpMethodEnum;
+    httpMethod: WebhookResultDto.HttpMethodEnum;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     id?: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     inboxId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     messageId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
+     */
+    redriveId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
      */
     responseBodyExtract?: string;
     /**
      *
      * @type {number}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     responseStatus?: number;
     /**
      *
      * @type {number}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     responseTimeMillis: number;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    resultType?: WebhookResultEntity.ResultTypeEnum;
+    resultType?: WebhookResultDto.ResultTypeEnum;
     /**
      *
      * @type {Date}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     updatedAt: Date;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     userId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
-    webhookEvent: WebhookResultEntity.WebhookEventEnum;
+    webhookEvent: WebhookResultDto.WebhookEventEnum;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     webhookId: string;
     /**
      *
      * @type {string}
-     * @memberof WebhookResultEntity
+     * @memberof WebhookResultDto
      */
     webhookUrl: string;
 }
 
 /**
  * @export
- * @namespace WebhookResultEntity
+ * @namespace WebhookResultDto
  */
-export namespace WebhookResultEntity {
+export namespace WebhookResultDto {
     /**
      * @export
      * @enum {string}
@@ -26857,7 +26839,7 @@ export const TemplateControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -26869,8 +26851,8 @@ export const TemplateControllerApiFetchParamCreator = function(
                     'Required parameter templateId was null or undefined when calling deleteTemplate.'
                 );
             }
-            const localVarPath = `/templates/{TemplateId}`.replace(
-                `{${'TemplateId'}}`,
+            const localVarPath = `/templates/{templateId}`.replace(
+                `{${'templateId'}}`,
                 encodeURIComponent(String(templateId))
             );
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -26976,7 +26958,7 @@ export const TemplateControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -26988,8 +26970,8 @@ export const TemplateControllerApiFetchParamCreator = function(
                     'Required parameter templateId was null or undefined when calling getTemplate.'
                 );
             }
-            const localVarPath = `/templates/{TemplateId}`.replace(
-                `{${'TemplateId'}}`,
+            const localVarPath = `/templates/{templateId}`.replace(
+                `{${'templateId'}}`,
                 encodeURIComponent(String(templateId))
             );
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -27072,6 +27054,85 @@ export const TemplateControllerApiFetchParamCreator = function(
                 options: localVarRequestOptions,
             };
         },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate(
+            createTemplateOptions: CreateTemplateOptions,
+            templateId: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'createTemplateOptions' is not null or undefined
+            if (
+                createTemplateOptions === null ||
+                createTemplateOptions === undefined
+            ) {
+                throw new RequiredError(
+                    'createTemplateOptions',
+                    'Required parameter createTemplateOptions was null or undefined when calling updateTemplate.'
+                );
+            }
+            // verify required parameter 'templateId' is not null or undefined
+            if (templateId === null || templateId === undefined) {
+                throw new RequiredError(
+                    'templateId',
+                    'Required parameter templateId was null or undefined when calling updateTemplate.'
+                );
+            }
+            const localVarPath = `/templates/{templateId}`.replace(
+                `{${'templateId'}}`,
+                encodeURIComponent(String(templateId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'PUT' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+            const needsSerialization =
+                <any>'CreateTemplateOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createTemplateOptions || {})
+                : createTemplateOptions || '';
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     };
 };
 
@@ -27114,7 +27175,7 @@ export const TemplateControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -27181,7 +27242,7 @@ export const TemplateControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -27239,6 +27300,38 @@ export const TemplateControllerApiFp = function(configuration?: Configuration) {
                 });
             };
         },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate(
+            createTemplateOptions: CreateTemplateOptions,
+            templateId: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<TemplateDto> {
+            const localVarFetchArgs = TemplateControllerApiFetchParamCreator(
+                configuration
+            ).updateTemplate(createTemplateOptions, templateId, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
     };
 };
 
@@ -27271,7 +27364,7 @@ export const TemplateControllerApiFactory = function(
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -27306,7 +27399,7 @@ export const TemplateControllerApiFactory = function(
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -27327,6 +27420,25 @@ export const TemplateControllerApiFactory = function(
                 fetch,
                 basePath
             );
+        },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate(
+            createTemplateOptions: CreateTemplateOptions,
+            templateId: string,
+            options?: any
+        ) {
+            return TemplateControllerApiFp(configuration).updateTemplate(
+                createTemplateOptions,
+                templateId,
+                options
+            )(fetch, basePath);
         },
     };
 };
@@ -27359,7 +27471,7 @@ export class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -27398,7 +27510,7 @@ export class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -27419,6 +27531,27 @@ export class TemplateControllerApi extends BaseAPI {
      */
     public getTemplates(options?: any) {
         return TemplateControllerApiFp(this.configuration).getTemplates(
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TemplateControllerApi
+     */
+    public updateTemplate(
+        createTemplateOptions: CreateTemplateOptions,
+        templateId: string,
+        options?: any
+    ) {
+        return TemplateControllerApiFp(this.configuration).updateTemplate(
+            createTemplateOptions,
+            templateId,
             options
         )(this.fetch, this.basePath);
     }
@@ -29336,7 +29469,7 @@ export const WebhookControllerApiFetchParamCreator = function(
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30012,6 +30145,64 @@ export const WebhookControllerApiFetchParamCreator = function(
             };
         },
         /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult(
+            webhookResultId: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'webhookResultId' is not null or undefined
+            if (webhookResultId === null || webhookResultId === undefined) {
+                throw new RequiredError(
+                    'webhookResultId',
+                    'Required parameter webhookResultId was null or undefined when calling redriveWebhookResult.'
+                );
+            }
+            const localVarPath = `/webhooks/results/{webhookResultId}/redrive`.replace(
+                `{${'webhookResultId'}}`,
+                encodeURIComponent(String(webhookResultId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'POST' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          *
          * @summary Send webhook test data
          * @param {string} webhookId webhookId
@@ -30180,7 +30371,7 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30496,10 +30687,7 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         getWebhookResult(
             webhookResultId: string,
             options?: any
-        ): (
-            fetch?: FetchAPI,
-            basePath?: string
-        ) => Promise<WebhookResultEntity> {
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookResultDto> {
             const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
                 configuration
             ).getWebhookResult(webhookResultId, options);
@@ -30578,6 +30766,39 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
                 configuration
             ).getWebhooks(inboxId, options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult(
+            webhookResultId: string,
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<WebhookRedriveResult> {
+            const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
+                configuration
+            ).redriveWebhookResult(webhookResultId, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -30701,7 +30922,7 @@ export const WebhookControllerApiFactory = function(
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -30896,6 +31117,19 @@ export const WebhookControllerApiFactory = function(
             )(fetch, basePath);
         },
         /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult(webhookResultId: string, options?: any) {
+            return WebhookControllerApiFp(configuration).redriveWebhookResult(
+                webhookResultId,
+                options
+            )(fetch, basePath);
+        },
+        /**
          *
          * @summary Send webhook test data
          * @param {string} webhookId webhookId
@@ -30988,7 +31222,7 @@ export class WebhookControllerApi extends BaseAPI {
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -31205,6 +31439,21 @@ export class WebhookControllerApi extends BaseAPI {
     public getWebhooks(inboxId: string, options?: any) {
         return WebhookControllerApiFp(this.configuration).getWebhooks(
             inboxId,
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    public redriveWebhookResult(webhookResultId: string, options?: any) {
+        return WebhookControllerApiFp(this.configuration).redriveWebhookResult(
+            webhookResultId,
             options
         )(this.fetch, this.basePath);
     }

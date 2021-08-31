@@ -25,7 +25,7 @@ Matches for the given pattern
 
 #### Defined in
 
-[src/generated/api.ts:2091](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2091)
+[src/generated/api.ts:2035](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2035)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2097](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2097)
+[src/generated/api.ts:2041](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2041)

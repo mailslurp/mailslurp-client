@@ -53,7 +53,7 @@ ContactControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12054](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12054)
+[src/generated/api.ts:12036](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12036)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12072](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12072)
+[src/generated/api.ts:12054](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12054)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12089](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12089)
+[src/generated/api.ts:12071](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12071)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12111](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12111)
+[src/generated/api.ts:12093](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12093)
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12126](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12126)
+[src/generated/api.ts:12108](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12108)
 
 ___
 
@@ -250,4 +250,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12140](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L12140)
+[src/generated/api.ts:12122](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12122)

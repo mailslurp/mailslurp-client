@@ -55,7 +55,7 @@ InboxForwarderControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -119,7 +119,7 @@ Create a new inbox rule for forwarding, blocking, and allowing emails when sendi
 
 #### Defined in
 
-[src/generated/api.ts:23261](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23261)
+[src/generated/api.ts:23243](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23243)
 
 ___
 
@@ -148,7 +148,7 @@ Delete inbox forwarder
 
 #### Defined in
 
-[src/generated/api.ts:23283](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23283)
+[src/generated/api.ts:23265](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23265)
 
 ___
 
@@ -177,7 +177,7 @@ Delete inbox forwarders. Accepts optional inboxId filter.
 
 #### Defined in
 
-[src/generated/api.ts:23297](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23297)
+[src/generated/api.ts:23279](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23279)
 
 ___
 
@@ -206,7 +206,7 @@ Get inbox ruleset
 
 #### Defined in
 
-[src/generated/api.ts:23311](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23311)
+[src/generated/api.ts:23293](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23293)
 
 ___
 
@@ -239,7 +239,7 @@ List all forwarders attached to an inbox
 
 #### Defined in
 
-[src/generated/api.ts:23329](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23329)
+[src/generated/api.ts:23311](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23311)
 
 ___
 
@@ -269,7 +269,7 @@ Test an inbox forwarder
 
 #### Defined in
 
-[src/generated/api.ts:23358](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23358)
+[src/generated/api.ts:23340](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23340)
 
 ___
 
@@ -299,7 +299,7 @@ Test inbox forwarders for inbox
 
 #### Defined in
 
-[src/generated/api.ts:23381](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23381)
+[src/generated/api.ts:23363](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23363)
 
 ___
 
@@ -328,4 +328,4 @@ Test new inbox forwarder
 
 #### Defined in
 
-[src/generated/api.ts:23403](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L23403)
+[src/generated/api.ts:23385](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23385)

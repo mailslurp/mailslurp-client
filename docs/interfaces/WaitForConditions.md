@@ -16,6 +16,7 @@ Conditions that a `waitForXEmails` endpoint operates on. The methods wait until 
 - [countType](WaitForConditions.md#counttype)
 - [inboxId](WaitForConditions.md#inboxid)
 - [matches](WaitForConditions.md#matches)
+- [since](WaitForConditions.md#since)
 - [sortDirection](WaitForConditions.md#sortdirection)
 - [timeout](WaitForConditions.md#timeout)
 - [unreadOnly](WaitForConditions.md#unreadonly)
@@ -24,7 +25,7 @@ Conditions that a `waitForXEmails` endpoint operates on. The methods wait until 
 
 ### count
 
-• `Optional` **count**: `number`
+• **count**: `number`
 
 Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
 
@@ -32,7 +33,7 @@ Number of results that should match conditions. Either exactly or at least this 
 
 #### Defined in
 
-[src/generated/api.ts:6176](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6176)
+[src/generated/api.ts:6120](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6120)
 
 ___
 
@@ -46,13 +47,13 @@ How should the found count be compared to the expected count.
 
 #### Defined in
 
-[src/generated/api.ts:6182](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6182)
+[src/generated/api.ts:6126](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6126)
 
 ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 ID of inbox to search within and apply conditions to. Essentially filtering the emails found to give a count.
 
@@ -60,7 +61,7 @@ ID of inbox to search within and apply conditions to. Essentially filtering the 
 
 #### Defined in
 
-[src/generated/api.ts:6188](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6188)
+[src/generated/api.ts:6132](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6132)
 
 ___
 
@@ -74,7 +75,21 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 #### Defined in
 
-[src/generated/api.ts:6194](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6194)
+[src/generated/api.ts:6138](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6138)
+
+___
+
+### since
+
+• `Optional` **since**: `Date`
+
+ISO Date Time earliest time of email to consider. Filter for matching emails that were received after this date
+
+**`memberof`** WaitForConditions
+
+#### Defined in
+
+[src/generated/api.ts:6144](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6144)
 
 ___
 
@@ -88,13 +103,13 @@ Direction to sort matching emails by created time
 
 #### Defined in
 
-[src/generated/api.ts:6200](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6200)
+[src/generated/api.ts:6150](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6150)
 
 ___
 
 ### timeout
 
-• `Optional` **timeout**: `number`
+• **timeout**: `number`
 
 Max time in milliseconds to retry the `waitFor` operation until conditions are met.
 
@@ -102,7 +117,7 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 #### Defined in
 
-[src/generated/api.ts:6206](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6206)
+[src/generated/api.ts:6156](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6156)
 
 ___
 
@@ -116,4 +131,4 @@ Apply conditions only to **unread** emails. All emails begin with `read=false`. 
 
 #### Defined in
 
-[src/generated/api.ts:6212](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L6212)
+[src/generated/api.ts:6162](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6162)

@@ -26,7 +26,7 @@ Name Server lookup result
 
 #### Defined in
 
-[src/generated/api.ts:1573](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1573)
+[src/generated/api.ts:1517](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1517)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1579](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1579)
+[src/generated/api.ts:1523](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1523)
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:1585](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1585)
+[src/generated/api.ts:1529](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1529)

@@ -51,7 +51,7 @@ ExpiredControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -113,7 +113,7 @@ Return default times used for inbox expiration
 
 #### Defined in
 
-[src/generated/api.ts:16983](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L16983)
+[src/generated/api.ts:16965](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16965)
 
 ___
 
@@ -142,7 +142,7 @@ Use the inboxId to return an ExpiredInboxRecord if an inbox has expired. Inboxes
 
 #### Defined in
 
-[src/generated/api.ts:16997](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L16997)
+[src/generated/api.ts:16979](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16979)
 
 ___
 
@@ -171,7 +171,7 @@ Inboxes created with an expiration date will expire after the given date and be 
 
 #### Defined in
 
-[src/generated/api.ts:17011](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L17011)
+[src/generated/api.ts:16993](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16993)
 
 ___
 
@@ -202,4 +202,4 @@ Inboxes created with an expiration date will expire after the given date. An Exp
 
 #### Defined in
 
-[src/generated/api.ts:17028](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L17028)
+[src/generated/api.ts:17010](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17010)

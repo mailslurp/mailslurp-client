@@ -25,7 +25,7 @@ Links found in HTML
 
 #### Defined in
 
-[src/generated/api.ts:2111](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2111)
+[src/generated/api.ts:2055](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2055)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2117](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2117)
+[src/generated/api.ts:2061](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2061)

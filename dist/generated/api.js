@@ -47,7 +47,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultEntity = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailReadPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultDto = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailReadPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
 exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxForwarderControllerApi = exports.InboxForwarderControllerApiFactory = exports.InboxForwarderControllerApiFp = exports.InboxForwarderControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = exports.ContactControllerApi = exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = exports.BulkActionsControllerApiFactory = void 0;
 exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = exports.TrackingControllerApiFp = exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = exports.MissedEmailControllerApiFetchParamCreator = void 0;
 var url = __importStar(require("url"));
@@ -965,10 +965,10 @@ var WebhookProjection;
 })(WebhookProjection = exports.WebhookProjection || (exports.WebhookProjection = {}));
 /**
  * @export
- * @namespace WebhookResultEntity
+ * @namespace WebhookResultDto
  */
-var WebhookResultEntity;
-(function (WebhookResultEntity) {
+var WebhookResultDto;
+(function (WebhookResultDto) {
     /**
      * @export
      * @enum {string}
@@ -983,7 +983,7 @@ var WebhookResultEntity;
         HttpMethodEnum[HttpMethodEnum["DELETE"] = 'DELETE'] = "DELETE";
         HttpMethodEnum[HttpMethodEnum["OPTIONS"] = 'OPTIONS'] = "OPTIONS";
         HttpMethodEnum[HttpMethodEnum["TRACE"] = 'TRACE'] = "TRACE";
-    })(HttpMethodEnum = WebhookResultEntity.HttpMethodEnum || (WebhookResultEntity.HttpMethodEnum = {}));
+    })(HttpMethodEnum = WebhookResultDto.HttpMethodEnum || (WebhookResultDto.HttpMethodEnum = {}));
     /**
      * @export
      * @enum {string}
@@ -993,7 +993,7 @@ var WebhookResultEntity;
         ResultTypeEnum[ResultTypeEnum["BADRESPONSE"] = 'BAD_RESPONSE'] = "BADRESPONSE";
         ResultTypeEnum[ResultTypeEnum["EXCEPTION"] = 'EXCEPTION'] = "EXCEPTION";
         ResultTypeEnum[ResultTypeEnum["SUCCESS"] = 'SUCCESS'] = "SUCCESS";
-    })(ResultTypeEnum = WebhookResultEntity.ResultTypeEnum || (WebhookResultEntity.ResultTypeEnum = {}));
+    })(ResultTypeEnum = WebhookResultDto.ResultTypeEnum || (WebhookResultDto.ResultTypeEnum = {}));
     /**
      * @export
      * @enum {string}
@@ -1006,8 +1006,8 @@ var WebhookResultEntity;
         WebhookEventEnum[WebhookEventEnum["NEWATTACHMENT"] = 'NEW_ATTACHMENT'] = "NEWATTACHMENT";
         WebhookEventEnum[WebhookEventEnum["EMAILOPENED"] = 'EMAIL_OPENED'] = "EMAILOPENED";
         WebhookEventEnum[WebhookEventEnum["EMAILREAD"] = 'EMAIL_READ'] = "EMAILREAD";
-    })(WebhookEventEnum = WebhookResultEntity.WebhookEventEnum || (WebhookResultEntity.WebhookEventEnum = {}));
-})(WebhookResultEntity = exports.WebhookResultEntity || (exports.WebhookResultEntity = {}));
+    })(WebhookEventEnum = WebhookResultDto.WebhookEventEnum || (WebhookResultDto.WebhookEventEnum = {}));
+})(WebhookResultDto = exports.WebhookResultDto || (exports.WebhookResultDto = {}));
 /**
  * @export
  * @namespace WebhookTestRequest
@@ -13713,7 +13713,7 @@ var TemplateControllerApiFetchParamCreator = function (configuration) {
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13723,7 +13723,7 @@ var TemplateControllerApiFetchParamCreator = function (configuration) {
             if (templateId === null || templateId === undefined) {
                 throw new RequiredError('templateId', 'Required parameter templateId was null or undefined when calling deleteTemplate.');
             }
-            var localVarPath = "/templates/{TemplateId}".replace("{" + 'TemplateId' + "}", encodeURIComponent(String(templateId)));
+            var localVarPath = "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(templateId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             var localVarHeaderParameter = {};
@@ -13788,7 +13788,7 @@ var TemplateControllerApiFetchParamCreator = function (configuration) {
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13798,7 +13798,7 @@ var TemplateControllerApiFetchParamCreator = function (configuration) {
             if (templateId === null || templateId === undefined) {
                 throw new RequiredError('templateId', 'Required parameter templateId was null or undefined when calling getTemplate.');
             }
-            var localVarPath = "/templates/{TemplateId}".replace("{" + 'TemplateId' + "}", encodeURIComponent(String(templateId)));
+            var localVarPath = "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(templateId)));
             var localVarUrlObj = url.parse(localVarPath, true);
             var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             var localVarHeaderParameter = {};
@@ -13848,6 +13848,53 @@ var TemplateControllerApiFetchParamCreator = function (configuration) {
                 options: localVarRequestOptions,
             };
         },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate: function (createTemplateOptions, templateId, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'createTemplateOptions' is not null or undefined
+            if (createTemplateOptions === null ||
+                createTemplateOptions === undefined) {
+                throw new RequiredError('createTemplateOptions', 'Required parameter createTemplateOptions was null or undefined when calling updateTemplate.');
+            }
+            // verify required parameter 'templateId' is not null or undefined
+            if (templateId === null || templateId === undefined) {
+                throw new RequiredError('templateId', 'Required parameter templateId was null or undefined when calling updateTemplate.');
+            }
+            var localVarPath = "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(templateId)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            var needsSerialization = 'CreateTemplateOptions' !== 'string' ||
+                localVarRequestOptions.headers['Content-Type'] ===
+                    'application/json';
+            localVarRequestOptions.body = needsSerialization
+                ? JSON.stringify(createTemplateOptions || {})
+                : createTemplateOptions || '';
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     };
 };
 exports.TemplateControllerApiFetchParamCreator = TemplateControllerApiFetchParamCreator;
@@ -13882,7 +13929,7 @@ var TemplateControllerApiFp = function (configuration) {
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13928,7 +13975,7 @@ var TemplateControllerApiFp = function (configuration) {
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -13968,6 +14015,29 @@ var TemplateControllerApiFp = function (configuration) {
                 });
             };
         },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate: function (createTemplateOptions, templateId, options) {
+            var localVarFetchArgs = exports.TemplateControllerApiFetchParamCreator(configuration).updateTemplate(createTemplateOptions, templateId, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
     };
 };
 exports.TemplateControllerApiFp = TemplateControllerApiFp;
@@ -13990,7 +14060,7 @@ var TemplateControllerApiFactory = function (configuration, fetch, basePath) {
         /**
          *
          * @summary Delete Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -14012,7 +14082,7 @@ var TemplateControllerApiFactory = function (configuration, fetch, basePath) {
         /**
          *
          * @summary Get Template
-         * @param {string} templateId TemplateId
+         * @param {string} templateId templateId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -14027,6 +14097,17 @@ var TemplateControllerApiFactory = function (configuration, fetch, basePath) {
          */
         getTemplates: function (options) {
             return exports.TemplateControllerApiFp(configuration).getTemplates(options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Update a Template
+         * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+         * @param {string} templateId templateId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateTemplate: function (createTemplateOptions, templateId, options) {
+            return exports.TemplateControllerApiFp(configuration).updateTemplate(createTemplateOptions, templateId, options)(fetch, basePath);
         },
     };
 };
@@ -14056,7 +14137,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
     /**
      *
      * @summary Delete Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -14080,7 +14161,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
     /**
      *
      * @summary Get Template
-     * @param {string} templateId TemplateId
+     * @param {string} templateId templateId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
@@ -14097,6 +14178,18 @@ var TemplateControllerApi = /** @class */ (function (_super) {
      */
     TemplateControllerApi.prototype.getTemplates = function (options) {
         return exports.TemplateControllerApiFp(this.configuration).getTemplates(options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Update a Template
+     * @param {CreateTemplateOptions} createTemplateOptions createTemplateOptions
+     * @param {string} templateId templateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TemplateControllerApi
+     */
+    TemplateControllerApi.prototype.updateTemplate = function (createTemplateOptions, templateId, options) {
+        return exports.TemplateControllerApiFp(this.configuration).updateTemplate(createTemplateOptions, templateId, options)(this.fetch, this.basePath);
     };
     return TemplateControllerApi;
 }(BaseAPI));
@@ -15271,7 +15364,7 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -15692,6 +15785,40 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult: function (webhookResultId, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'webhookResultId' is not null or undefined
+            if (webhookResultId === null || webhookResultId === undefined) {
+                throw new RequiredError('webhookResultId', 'Required parameter webhookResultId was null or undefined when calling redriveWebhookResult.');
+            }
+            var localVarPath = "/webhooks/results/{webhookResultId}/redrive".replace("{" + 'webhookResultId' + "}", encodeURIComponent(String(webhookResultId)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          *
          * @summary Send webhook test data
          * @param {string} webhookId webhookId
@@ -15810,7 +15937,7 @@ var WebhookControllerApiFp = function (configuration) {
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -16076,6 +16203,28 @@ var WebhookControllerApiFp = function (configuration) {
             };
         },
         /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult: function (webhookResultId, options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).redriveWebhookResult(webhookResultId, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          *
          * @summary Send webhook test data
          * @param {string} webhookId webhookId
@@ -16146,7 +16295,7 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
          * @summary List Webhooks Paginated
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
-         * @param {number} [size] Optional page size in list pagination
+         * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -16268,6 +16417,16 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
             return exports.WebhookControllerApiFp(configuration).getWebhooks(inboxId, options)(fetch, basePath);
         },
         /**
+         * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+         * @summary Get a webhook result and try to resend the original webhook payload
+         * @param {string} webhookResultId Webhook Result ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        redriveWebhookResult: function (webhookResultId, options) {
+            return exports.WebhookControllerApiFp(configuration).redriveWebhookResult(webhookResultId, options)(fetch, basePath);
+        },
+        /**
          *
          * @summary Send webhook test data
          * @param {string} webhookId webhookId
@@ -16334,7 +16493,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      * @summary List Webhooks Paginated
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
-     * @param {number} [size] Optional page size in list pagination
+     * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -16466,6 +16625,17 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      */
     WebhookControllerApi.prototype.getWebhooks = function (inboxId, options) {
         return exports.WebhookControllerApiFp(this.configuration).getWebhooks(inboxId, options)(this.fetch, this.basePath);
+    };
+    /**
+     * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+     * @summary Get a webhook result and try to resend the original webhook payload
+     * @param {string} webhookResultId Webhook Result ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    WebhookControllerApi.prototype.redriveWebhookResult = function (webhookResultId, options) {
+        return exports.WebhookControllerApiFp(this.configuration).redriveWebhookResult(webhookResultId, options)(this.fetch, this.basePath);
     };
     /**
      *

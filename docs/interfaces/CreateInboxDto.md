@@ -35,7 +35,7 @@ Grant team access to this inbox and the emails that belong to it for team member
 
 #### Defined in
 
-[src/generated/api.ts:1016](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1016)
+[src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L960)
 
 ___
 
@@ -49,7 +49,7 @@ Optional description of the inbox for labelling purposes. Is shown in the dashbo
 
 #### Defined in
 
-[src/generated/api.ts:1022](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1022)
+[src/generated/api.ts:966](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L966)
 
 ___
 
@@ -63,7 +63,7 @@ A custom email address to use with the inbox. Defaults to null. When null MailSl
 
 #### Defined in
 
-[src/generated/api.ts:1028](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1028)
+[src/generated/api.ts:972](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L972)
 
 ___
 
@@ -77,7 +77,7 @@ Optional inbox expiration date. If null then this inbox is permanent and the ema
 
 #### Defined in
 
-[src/generated/api.ts:1034](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1034)
+[src/generated/api.ts:978](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L978)
 
 ___
 
@@ -91,7 +91,7 @@ Number of milliseconds that inbox should exist for
 
 #### Defined in
 
-[src/generated/api.ts:1040](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1040)
+[src/generated/api.ts:984](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L984)
 
 ___
 
@@ -105,7 +105,7 @@ Is the inbox a favorite. Marking an inbox as a favorite is typically done in the
 
 #### Defined in
 
-[src/generated/api.ts:1046](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1046)
+[src/generated/api.ts:990](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L990)
 
 ___
 
@@ -119,7 +119,7 @@ HTTP (default) or SMTP inbox type. HTTP inboxes are best for testing while SMTP 
 
 #### Defined in
 
-[src/generated/api.ts:1052](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1052)
+[src/generated/api.ts:996](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L996)
 
 ___
 
@@ -133,7 +133,7 @@ Optional name of the inbox. Displayed in the dashboard for easier search and use
 
 #### Defined in
 
-[src/generated/api.ts:1058](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1058)
+[src/generated/api.ts:1002](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1002)
 
 ___
 
@@ -147,7 +147,7 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 #### Defined in
 
-[src/generated/api.ts:1064](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1064)
+[src/generated/api.ts:1008](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1008)
 
 ___
 
@@ -161,4 +161,4 @@ Use the MailSlurp domain name pool with this inbox when creating the email addre
 
 #### Defined in
 
-[src/generated/api.ts:1070](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L1070)
+[src/generated/api.ts:1014](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L1014)

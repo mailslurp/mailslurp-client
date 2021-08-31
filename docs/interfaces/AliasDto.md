@@ -33,7 +33,7 @@ Email alias representation
 
 #### Defined in
 
-[src/generated/api.ts:202](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L202)
+[src/generated/api.ts:146](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L146)
 
 ___
 
@@ -47,7 +47,7 @@ The alias's email address for receiving email
 
 #### Defined in
 
-[src/generated/api.ts:208](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L208)
+[src/generated/api.ts:152](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L152)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:214](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L214)
+[src/generated/api.ts:158](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L158)
 
 ___
 
@@ -73,7 +73,7 @@ Inbox that is associated with the alias
 
 #### Defined in
 
-[src/generated/api.ts:220](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L220)
+[src/generated/api.ts:164](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L164)
 
 ___
 
@@ -87,7 +87,7 @@ Has the alias been verified. You must verify an alias if the masked email addres
 
 #### Defined in
 
-[src/generated/api.ts:226](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L226)
+[src/generated/api.ts:170](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L170)
 
 ___
 
@@ -101,7 +101,7 @@ The underlying email address that is hidden and will received forwarded email
 
 #### Defined in
 
-[src/generated/api.ts:232](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L232)
+[src/generated/api.ts:176](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L176)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:238](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L238)
+[src/generated/api.ts:182](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L182)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:244](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L244)
+[src/generated/api.ts:188](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L188)
 
 ___
 
@@ -139,7 +139,7 @@ If alias will generate response threads or not when email are received by it
 
 #### Defined in
 
-[src/generated/api.ts:250](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L250)
+[src/generated/api.ts:194](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L194)
 
 ___
 
@@ -151,4 +151,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:256](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L256)
+[src/generated/api.ts:200](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L200)

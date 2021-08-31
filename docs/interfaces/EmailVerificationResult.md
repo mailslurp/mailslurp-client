@@ -28,7 +28,7 @@ Email verification result. Valid means email address exists according to respons
 
 #### Defined in
 
-[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2325)
+[src/generated/api.ts:2269](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2269)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2331](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2331)
+[src/generated/api.ts:2275](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2275)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2337](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2337)
+[src/generated/api.ts:2281](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2281)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2343](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2343)
+[src/generated/api.ts:2287](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2287)
 
 ___
 
@@ -76,4 +76,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2349](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L2349)
+[src/generated/api.ts:2293](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L2293)

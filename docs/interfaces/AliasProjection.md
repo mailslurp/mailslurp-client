@@ -31,7 +31,7 @@ Representation of a alias
 
 #### Defined in
 
-[src/generated/api.ts:270](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L270)
+[src/generated/api.ts:214](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L214)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:276](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L276)
+[src/generated/api.ts:220](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L220)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:282](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L282)
+[src/generated/api.ts:226](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L226)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:288](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L288)
+[src/generated/api.ts:232](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L232)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:294](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L294)
+[src/generated/api.ts:238](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L238)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:300](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L300)
+[src/generated/api.ts:244](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L244)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:306](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L306)
+[src/generated/api.ts:250](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L250)
 
 ___
 
@@ -115,4 +115,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:312](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L312)
+[src/generated/api.ts:256](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L256)

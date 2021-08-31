@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/generated/api.ts:3076](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3076)
+[src/generated/api.ts:3020](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L3020)
 
 ___
 
@@ -41,4 +41,4 @@ Map of inbox ruleset ID to boolean of if target matches
 
 #### Defined in
 
-[src/generated/api.ts:3082](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L3082)
+[src/generated/api.ts:3026](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L3026)

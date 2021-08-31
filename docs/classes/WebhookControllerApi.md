@@ -41,6 +41,7 @@ WebhookControllerApi - object-oriented interface
 - [getWebhookResult](WebhookControllerApi.md#getwebhookresult)
 - [getWebhookResults](WebhookControllerApi.md#getwebhookresults)
 - [getWebhooks](WebhookControllerApi.md#getwebhooks)
+- [redriveWebhookResult](WebhookControllerApi.md#redrivewebhookresult)
 - [sendTestData](WebhookControllerApi.md#sendtestdata)
 
 ## Constructors
@@ -63,7 +64,7 @@ WebhookControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -87,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
 
 ___
 
@@ -127,7 +128,7 @@ Get notified whenever an inbox receives an email via a WebHook URL. An emailID w
 
 #### Defined in
 
-[src/generated/api.ts:30930](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L30930)
+[src/generated/api.ts:31164](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31164)
 
 ___
 
@@ -155,7 +156,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:30951](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L30951)
+[src/generated/api.ts:31185](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31185)
 
 ___
 
@@ -185,7 +186,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:30970](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L30970)
+[src/generated/api.ts:31204](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31204)
 
 ___
 
@@ -217,7 +218,7 @@ List webhooks in paginated form. Allows for page index, page size, and sort dire
 
 #### Defined in
 
-[src/generated/api.ts:30997](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L30997)
+[src/generated/api.ts:31231](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31231)
 
 ___
 
@@ -248,7 +249,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31025](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31025)
+[src/generated/api.ts:31259](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31259)
 
 ___
 
@@ -275,7 +276,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31053](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31053)
+[src/generated/api.ts:31287](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31287)
 
 ___
 
@@ -301,7 +302,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31076](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31076)
+[src/generated/api.ts:31310](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31310)
 
 ___
 
@@ -327,7 +328,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31089](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31089)
+[src/generated/api.ts:31323](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31323)
 
 ___
 
@@ -353,7 +354,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31102](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31102)
+[src/generated/api.ts:31336](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31336)
 
 ___
 
@@ -379,7 +380,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31118](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31118)
+[src/generated/api.ts:31352](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31352)
 
 ___
 
@@ -405,7 +406,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31131](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31131)
+[src/generated/api.ts:31365](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31365)
 
 ___
 
@@ -432,13 +433,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31145](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31145)
+[src/generated/api.ts:31379](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31379)
 
 ___
 
 ### getWebhookResult
 
-▸ **getWebhookResult**(`webhookResultId`, `options?`): `Promise`<[`WebhookResultEntity`](../interfaces/WebhookResultEntity.md)\>
+▸ **getWebhookResult**(`webhookResultId`, `options?`): `Promise`<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)\>
 
 **`summary`** Get a webhook result for a webhook
 
@@ -455,11 +456,11 @@ ___
 
 #### Returns
 
-`Promise`<[`WebhookResultEntity`](../interfaces/WebhookResultEntity.md)\>
+`Promise`<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)\>
 
 #### Defined in
 
-[src/generated/api.ts:31160](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31160)
+[src/generated/api.ts:31394](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31394)
 
 ___
 
@@ -490,7 +491,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31179](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31179)
+[src/generated/api.ts:31413](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31413)
 
 ___
 
@@ -517,7 +518,36 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31205](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31205)
+[src/generated/api.ts:31439](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31439)
+
+___
+
+### redriveWebhookResult
+
+▸ **redriveWebhookResult**(`webhookResultId`, `options?`): `Promise`<[`WebhookRedriveResult`](../interfaces/WebhookRedriveResult.md)\>
+
+Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
+
+**`summary`** Get a webhook result and try to resend the original webhook payload
+
+**`throws`** {RequiredError}
+
+**`memberof`** WebhookControllerApi
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `webhookResultId` | `string` | Webhook Result ID |
+| `options?` | `any` | - |
+
+#### Returns
+
+`Promise`<[`WebhookRedriveResult`](../interfaces/WebhookRedriveResult.md)\>
+
+#### Defined in
+
+[src/generated/api.ts:31454](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31454)
 
 ___
 
@@ -544,4 +574,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:31220](https://github.com/mailslurp/mailslurp-client/blob/6bcf839/src/generated/api.ts#L31220)
+[src/generated/api.ts:31469](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L31469)
