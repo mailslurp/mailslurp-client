@@ -51,7 +51,7 @@ CommonActionsControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 ### createNewEmailAddress
 
-▸ **createNewEmailAddress**(`allowTeamAccess?`, `expiresAt?`, `expiresIn?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createNewEmailAddress**(`allowTeamAccess?`, `description?`, `emailAddress?`, `expiresAt?`, `expiresIn?`, `favourite?`, `inboxType?`, `name?`, `tags?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -106,8 +106,14 @@ Returns an Inbox with an `id` and an `emailAddress`
 | Name | Type |
 | :------ | :------ |
 | `allowTeamAccess?` | `boolean` |
+| `description?` | `string` |
+| `emailAddress?` | `string` |
 | `expiresAt?` | `Date` |
 | `expiresIn?` | `number` |
+| `favourite?` | `boolean` |
+| `inboxType?` | ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"`` |
+| `name?` | `string` |
+| `tags?` | `string`[] |
 | `useDomainPool?` | `boolean` |
 | `options?` | `any` |
 
@@ -117,13 +123,13 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 #### Defined in
 
-[src/generated/api.ts:11290](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11290)
+[src/generated/api.ts:11662](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11662)
 
 ___
 
 ### createNewEmailAddress1
 
-▸ **createNewEmailAddress1**(`allowTeamAccess?`, `expiresAt?`, `expiresIn?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createNewEmailAddress1**(`allowTeamAccess?`, `description?`, `emailAddress?`, `expiresAt?`, `expiresIn?`, `favourite?`, `inboxType?`, `name?`, `tags?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Returns an Inbox with an `id` and an `emailAddress`
 
@@ -138,8 +144,14 @@ Returns an Inbox with an `id` and an `emailAddress`
 | Name | Type |
 | :------ | :------ |
 | `allowTeamAccess?` | `boolean` |
+| `description?` | `string` |
+| `emailAddress?` | `string` |
 | `expiresAt?` | `Date` |
 | `expiresIn?` | `number` |
+| `favourite?` | `boolean` |
+| `inboxType?` | ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"`` |
+| `name?` | `string` |
+| `tags?` | `string`[] |
 | `useDomainPool?` | `boolean` |
 | `options?` | `any` |
 
@@ -149,7 +161,7 @@ Returns an Inbox with an `id` and an `emailAddress`
 
 #### Defined in
 
-[src/generated/api.ts:11319](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11319)
+[src/generated/api.ts:11709](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11709)
 
 ___
 
@@ -178,7 +190,7 @@ Deletes all emails
 
 #### Defined in
 
-[src/generated/api.ts:11345](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11345)
+[src/generated/api.ts:11747](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11747)
 
 ___
 
@@ -207,4 +219,4 @@ If no senderId or inboxId provided a random email address will be used to send f
 
 #### Defined in
 
-[src/generated/api.ts:11360](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11360)
+[src/generated/api.ts:11762](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11762)

@@ -1,8 +1,10 @@
 # Changelog
 
+## [14.0.0]
+- Add before and since parameters to paginated methods. Parameter count and order has changed for some non-single-parameter functions like `waitForLatestEmail`. Will migrate to all single parameter functions in a later version.
 
 ## [10.2.0]
-- Add more alias methods
+- add more alias methods
 
 ## [10.1.3]
 - Alter README

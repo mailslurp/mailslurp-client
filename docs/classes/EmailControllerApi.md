@@ -74,7 +74,7 @@ EmailControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -136,7 +136,7 @@ Deletes all emails in your account. Be careful as emails cannot be recovered
 
 #### Defined in
 
-[src/generated/api.ts:15999](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L15999)
+[src/generated/api.ts:16483](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16483)
 
 ___
 
@@ -165,7 +165,7 @@ Deletes an email and removes it from the inbox. Deleted emails cannot be recover
 
 #### Defined in
 
-[src/generated/api.ts:16013](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16013)
+[src/generated/api.ts:16497](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16497)
 
 ___
 
@@ -196,7 +196,7 @@ Returns the specified attachment for a given email as a stream / array of bytes.
 
 #### Defined in
 
-[src/generated/api.ts:16030](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16030)
+[src/generated/api.ts:16514](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16514)
 
 ___
 
@@ -226,7 +226,7 @@ Returns the specified attachment for a given email as a base 64 encoded string. 
 
 #### Defined in
 
-[src/generated/api.ts:16053](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16053)
+[src/generated/api.ts:16537](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16537)
 
 ___
 
@@ -255,7 +255,7 @@ Returns the specified email body for a given email as a string
 
 #### Defined in
 
-[src/generated/api.ts:16075](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16075)
+[src/generated/api.ts:16559](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16559)
 
 ___
 
@@ -284,7 +284,7 @@ Returns the specified email body for a given email as a stream / array of bytes.
 
 #### Defined in
 
-[src/generated/api.ts:16090](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16090)
+[src/generated/api.ts:16574](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16574)
 
 ___
 
@@ -314,7 +314,7 @@ Forward an existing email to new recipients. The sender of the email will be the
 
 #### Defined in
 
-[src/generated/api.ts:16106](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16106)
+[src/generated/api.ts:16590](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16590)
 
 ___
 
@@ -344,7 +344,7 @@ Returns the metadata such as name and content-type for a given attachment and em
 
 #### Defined in
 
-[src/generated/api.ts:16127](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16127)
+[src/generated/api.ts:16611](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16611)
 
 ___
 
@@ -373,7 +373,7 @@ Returns an array of attachment metadata such as name and content-type for a give
 
 #### Defined in
 
-[src/generated/api.ts:16147](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16147)
+[src/generated/api.ts:16631](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16631)
 
 ___
 
@@ -403,7 +403,7 @@ Returns a email summary object with headers and content. To retrieve the raw unp
 
 #### Defined in
 
-[src/generated/api.ts:16163](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16163)
+[src/generated/api.ts:16647](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16647)
 
 ___
 
@@ -433,7 +433,7 @@ Return the matches for a given Java style regex pattern. Do not include the typi
 
 #### Defined in
 
-[src/generated/api.ts:16180](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16180)
+[src/generated/api.ts:16664](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16664)
 
 ___
 
@@ -463,7 +463,7 @@ Retrieve email content as HTML response for viewing in browsers. Decodes quoted-
 
 #### Defined in
 
-[src/generated/api.ts:16201](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16201)
+[src/generated/api.ts:16685](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16685)
 
 ___
 
@@ -493,7 +493,7 @@ Parse an email body and return the content as an array of text. HTML parsing use
 
 #### Defined in
 
-[src/generated/api.ts:16218](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16218)
+[src/generated/api.ts:16702](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16702)
 
 ___
 
@@ -522,7 +522,7 @@ HTML parsing uses JSoup and UNIX line separators. Searches content for href attr
 
 #### Defined in
 
-[src/generated/api.ts:16238](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16238)
+[src/generated/api.ts:16722](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16722)
 
 ___
 
@@ -553,13 +553,13 @@ Parse an email body and return the content as an array of strings. HTML parsing 
 
 #### Defined in
 
-[src/generated/api.ts:16255](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16255)
+[src/generated/api.ts:16739](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16739)
 
 ___
 
 ### getEmailsPaginated
 
-▸ **getEmailsPaginated**(`inboxId?`, `page?`, `searchFilter?`, `size?`, `sort?`, `unreadOnly?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+▸ **getEmailsPaginated**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `unreadOnly?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
 By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
 
@@ -573,9 +573,11 @@ By default returns all emails across all inboxes sorted by ascending created at 
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `inboxId?` | `string`[] |
 | `page?` | `number` |
 | `searchFilter?` | `string` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `unreadOnly?` | `boolean` |
@@ -587,7 +589,7 @@ By default returns all emails across all inboxes sorted by ascending created at 
 
 #### Defined in
 
-[src/generated/api.ts:16282](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16282)
+[src/generated/api.ts:16768](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16768)
 
 ___
 
@@ -615,7 +617,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:16311](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16311)
+[src/generated/api.ts:16801](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16801)
 
 ___
 
@@ -644,7 +646,7 @@ Get the newest email in all inboxes or in a passed set of inbox IDs
 
 #### Defined in
 
-[src/generated/api.ts:16333](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16333)
+[src/generated/api.ts:16823](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16823)
 
 ___
 
@@ -673,13 +675,13 @@ Get the newest email in all inboxes or in a passed set of inbox IDs
 
 #### Defined in
 
-[src/generated/api.ts:16348](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16348)
+[src/generated/api.ts:16838](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16838)
 
 ___
 
 ### getOrganizationEmailsPaginated
 
-▸ **getOrganizationEmailsPaginated**(`inboxId?`, `page?`, `searchFilter?`, `size?`, `sort?`, `unreadOnly?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+▸ **getOrganizationEmailsPaginated**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `unreadOnly?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
 By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
 
@@ -693,9 +695,11 @@ By default returns all emails across all team inboxes sorted by ascending create
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `inboxId?` | `string`[] |
 | `page?` | `number` |
 | `searchFilter?` | `string` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `unreadOnly?` | `boolean` |
@@ -707,7 +711,7 @@ By default returns all emails across all team inboxes sorted by ascending create
 
 #### Defined in
 
-[src/generated/api.ts:16368](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16368)
+[src/generated/api.ts:16860](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16860)
 
 ___
 
@@ -736,7 +740,7 @@ Returns a raw, unparsed, and unprocessed email. If your client has issues proces
 
 #### Defined in
 
-[src/generated/api.ts:16398](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16398)
+[src/generated/api.ts:16894](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16894)
 
 ___
 
@@ -765,7 +769,7 @@ Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object
 
 #### Defined in
 
-[src/generated/api.ts:16413](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16413)
+[src/generated/api.ts:16909](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16909)
 
 ___
 
@@ -793,7 +797,7 @@ Get number of emails unread. Unread means has not been viewed in dashboard or re
 
 #### Defined in
 
-[src/generated/api.ts:16427](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16427)
+[src/generated/api.ts:16923](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16923)
 
 ___
 
@@ -823,7 +827,7 @@ Marks an email as read or unread. Pass boolean read flag to set value. This is u
 
 #### Defined in
 
-[src/generated/api.ts:16442](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16442)
+[src/generated/api.ts:16938](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16938)
 
 ___
 
@@ -853,7 +857,7 @@ Send the reply to the email sender or reply-to and include same subject cc bcc e
 
 #### Defined in
 
-[src/generated/api.ts:16459](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16459)
+[src/generated/api.ts:16955](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16955)
 
 ___
 
@@ -884,7 +888,7 @@ Alias for `InboxController.sendEmail` method - see original method for full deta
 
 #### Defined in
 
-[src/generated/api.ts:16481](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16481)
+[src/generated/api.ts:16977](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16977)
 
 ___
 
@@ -913,4 +917,4 @@ Validate the HTML content of email if HTML is found. Considered valid if no HTML
 
 #### Defined in
 
-[src/generated/api.ts:16503](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16503)
+[src/generated/api.ts:16999](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L16999)

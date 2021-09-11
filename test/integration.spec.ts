@@ -76,6 +76,7 @@ describe('using controller instances for more features', () => {
         // can receive sent email
         const email = await mailslurp.waitController.waitForLatestEmail(
             undefined,
+            undefined,
             inbox.id,
             now,
             'DESC',

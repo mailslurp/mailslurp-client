@@ -253,7 +253,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllInboxes', function () {
-                        return _this.inboxController.getAllInboxes(favourite, page, search, size, sort, tag);
+                        return _this.inboxController.getAllInboxes(undefined, favourite, page, search, undefined, size, sort, tag);
                     })];
             });
         });
@@ -271,7 +271,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.waitController.waitForLatestEmail(undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForLatestEmail(undefined, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -289,7 +289,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.waitController.waitForNthEmail(undefined, inboxId, index, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForNthEmail(undefined, undefined, inboxId, index, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -308,7 +308,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitController.waitForMatchingEmails(matchOptions, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForMatchingEmails(matchOptions, undefined, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -326,7 +326,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.waitController.waitForEmailCount(count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForEmailCount(undefined, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
                     })];
             });
         });
@@ -361,7 +361,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emailController.getEmailsPaginated(inboxId, page, searchFilter, size, sort, unreadOnly);
+                        return _this.emailController.getEmailsPaginated(undefined, inboxId, page, searchFilter, undefined, size, sort, unreadOnly);
                     })];
             });
         });
@@ -378,7 +378,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails(inboxId, undefined, args.limit, args.minCount, args.retryTimeout, args.since, args.size, args.sort, undefined);
+                        return _this.inboxController.getEmails(inboxId, undefined, args.limit, args.minCount, args.retryTimeout, undefined, args.since, args.size, args.sort, undefined);
                     })];
             });
         });

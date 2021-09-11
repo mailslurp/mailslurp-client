@@ -286,9 +286,11 @@ export class MailSlurp {
     ): Promise<PageInboxProjection> {
         return wrapCall('getAllInboxes', () =>
             this.inboxController.getAllInboxes(
+                undefined,
                 favourite,
                 page,
                 search,
+                undefined,
                 size,
                 sort,
                 tag
@@ -311,6 +313,7 @@ export class MailSlurp {
     ): Promise<Email> {
         return wrapCall('waitForLatestEmail', () =>
             this.waitController.waitForLatestEmail(
+                undefined,
                 undefined,
                 inboxId,
                 undefined,
@@ -336,6 +339,7 @@ export class MailSlurp {
     ): Promise<Email> {
         return wrapCall('waitForNthEmail', () =>
             this.waitController.waitForNthEmail(
+                undefined,
                 undefined,
                 inboxId,
                 index,
@@ -365,6 +369,7 @@ export class MailSlurp {
         return wrapCall('waitForMatchingEmail', () =>
             this.waitController.waitForMatchingEmails(
                 matchOptions,
+                undefined,
                 count,
                 undefined,
                 inboxId,
@@ -391,6 +396,7 @@ export class MailSlurp {
     ): Promise<EmailPreview[]> {
         return wrapCall('waitForEmailCount', () =>
             this.waitController.waitForEmailCount(
+                undefined,
                 count,
                 undefined,
                 inboxId,
@@ -433,9 +439,11 @@ export class MailSlurp {
     ) {
         return wrapCall('getAllEmails', () =>
             this.emailController.getEmailsPaginated(
+                undefined,
                 inboxId,
                 page,
                 searchFilter,
+                undefined,
                 size,
                 sort,
                 unreadOnly
@@ -460,6 +468,7 @@ export class MailSlurp {
                 args.limit,
                 args.minCount,
                 args.retryTimeout,
+                undefined,
                 args.since,
                 args.size,
                 args.sort,

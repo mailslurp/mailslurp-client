@@ -53,7 +53,7 @@ ContactControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12036](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12036)
+[src/generated/api.ts:12462](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12462)
 
 ___
 
@@ -141,13 +141,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12054](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12054)
+[src/generated/api.ts:12480](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12480)
 
 ___
 
 ### getAllContacts
 
-▸ **getAllContacts**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
+▸ **getAllContacts**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
 **`summary`** Get all contacts
 
@@ -159,7 +159,9 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -170,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12071](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12071)
+[src/generated/api.ts:12499](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12499)
 
 ___
 
@@ -197,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12093](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12093)
+[src/generated/api.ts:12525](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12525)
 
 ___
 
@@ -224,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12108](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12108)
+[src/generated/api.ts:12540](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12540)
 
 ___
 
@@ -250,4 +252,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:12122](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12122)
+[src/generated/api.ts:12554](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12554)

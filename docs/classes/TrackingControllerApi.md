@@ -50,7 +50,7 @@ TrackingControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -113,13 +113,13 @@ Create a tracking pixel. A tracking pixel is an image that can be embedded in an
 
 #### Defined in
 
-[src/generated/api.ts:27953](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27953)
+[src/generated/api.ts:29174](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29174)
 
 ___
 
 ### getAllTrackingPixels
 
-▸ **getAllTrackingPixels**(`page?`, `searchFilter?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
+▸ **getAllTrackingPixels**(`before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
 List tracking pixels in paginated form
 
@@ -133,8 +133,10 @@ List tracking pixels in paginated form
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
 | `searchFilter?` | `string` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -145,7 +147,7 @@ List tracking pixels in paginated form
 
 #### Defined in
 
-[src/generated/api.ts:27974](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27974)
+[src/generated/api.ts:29197](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29197)
 
 ___
 
@@ -172,4 +174,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:27998](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27998)
+[src/generated/api.ts:29225](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29225)

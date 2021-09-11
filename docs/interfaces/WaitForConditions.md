@@ -12,8 +12,10 @@ Conditions that a `waitForXEmails` endpoint operates on. The methods wait until 
 
 ### Properties
 
+- [before](WaitForConditions.md#before)
 - [count](WaitForConditions.md#count)
 - [countType](WaitForConditions.md#counttype)
+- [delayTimeout](WaitForConditions.md#delaytimeout)
 - [inboxId](WaitForConditions.md#inboxid)
 - [matches](WaitForConditions.md#matches)
 - [since](WaitForConditions.md#since)
@@ -23,9 +25,23 @@ Conditions that a `waitForXEmails` endpoint operates on. The methods wait until 
 
 ## Properties
 
+### before
+
+• `Optional` **before**: `Date`
+
+ISO Date Time latest time of email to consider. Filter for matching emails that were received before this date
+
+**`memberof`** WaitForConditions
+
+#### Defined in
+
+[src/generated/api.ts:6134](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6134)
+
+___
+
 ### count
 
-• **count**: `number`
+• `Optional` **count**: `number`
 
 Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
 
@@ -33,7 +49,7 @@ Number of results that should match conditions. Either exactly or at least this 
 
 #### Defined in
 
-[src/generated/api.ts:6120](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6120)
+[src/generated/api.ts:6140](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6140)
 
 ___
 
@@ -47,7 +63,21 @@ How should the found count be compared to the expected count.
 
 #### Defined in
 
-[src/generated/api.ts:6126](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6126)
+[src/generated/api.ts:6146](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6146)
+
+___
+
+### delayTimeout
+
+• `Optional` **delayTimeout**: `number`
+
+Max time in milliseconds to wait between retries if a `timeout` is specified.
+
+**`memberof`** WaitForConditions
+
+#### Defined in
+
+[src/generated/api.ts:6152](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6152)
 
 ___
 
@@ -61,7 +91,7 @@ ID of inbox to search within and apply conditions to. Essentially filtering the 
 
 #### Defined in
 
-[src/generated/api.ts:6132](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6132)
+[src/generated/api.ts:6158](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6158)
 
 ___
 
@@ -75,7 +105,7 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 #### Defined in
 
-[src/generated/api.ts:6138](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6138)
+[src/generated/api.ts:6164](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6164)
 
 ___
 
@@ -89,7 +119,7 @@ ISO Date Time earliest time of email to consider. Filter for matching emails tha
 
 #### Defined in
 
-[src/generated/api.ts:6144](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6144)
+[src/generated/api.ts:6170](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6170)
 
 ___
 
@@ -103,7 +133,7 @@ Direction to sort matching emails by created time
 
 #### Defined in
 
-[src/generated/api.ts:6150](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6150)
+[src/generated/api.ts:6176](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6176)
 
 ___
 
@@ -117,7 +147,7 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 #### Defined in
 
-[src/generated/api.ts:6156](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6156)
+[src/generated/api.ts:6182](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6182)
 
 ___
 
@@ -131,4 +161,4 @@ Apply conditions only to **unread** emails. All emails begin with `read=false`. 
 
 #### Defined in
 
-[src/generated/api.ts:6162](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6162)
+[src/generated/api.ts:6188](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6188)

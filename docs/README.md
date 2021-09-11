@@ -143,6 +143,7 @@ MailSlurp JS
 - [InboxRulesetDto](interfaces/InboxRulesetDto.md)
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
+- [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [JsonNode](interfaces/JsonNode.md)
 - [MatchOption](interfaces/MatchOption.md)
 - [MatchOptions](interfaces/MatchOptions.md)
@@ -324,7 +325,7 @@ MailSlurp config
 
 #### Defined in
 
-[src/index.ts:48](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/index.ts#L48)
+[src/index.ts:48](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/index.ts#L48)
 
 ___
 
@@ -350,7 +351,7 @@ For more control over fetching. See also Webhook endpoints
 
 #### Defined in
 
-[src/index.ts:563](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/index.ts#L563)
+[src/index.ts:572](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/index.ts#L572)
 
 ## Variables
 
@@ -371,7 +372,7 @@ For more control over fetching. See also Webhook endpoints
 
 #### Defined in
 
-[src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25)
+[src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L25)
 
 ## Functions
 
@@ -400,16 +401,16 @@ AliasControllerApi - factory interface
 | `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options?`: `any`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
 | `deleteAlias` | (`aliasId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `getAlias` | (`aliasId`: `string`, `options?`: `any`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `getAliasEmails` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getAliasThreads` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
-| `getAliases` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
+| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
+| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
 | `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
 
 #### Defined in
 
-[src/generated/api.ts:8039](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L8039)
+[src/generated/api.ts:8127](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L8127)
 
 ___
 
@@ -436,16 +437,16 @@ AliasControllerApi - fetch parameter creator
 | `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteAlias` | (`aliasId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getAlias` | (`aliasId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliasEmails` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliasThreads` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliases` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:7086](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L7086)
+[src/generated/api.ts:7112](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L7112)
 
 ___
 
@@ -472,16 +473,16 @@ AliasControllerApi - functional programming interface
 | `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
 | `deleteAlias` | (`aliasId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `getAlias` | (`aliasId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `getAliasEmails` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getAliasThreads` | (`aliasId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
-| `getAliases` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
+| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
+| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
 | `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 
 #### Defined in
 
-[src/generated/api.ts:7725](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L7725)
+[src/generated/api.ts:7793](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L7793)
 
 ___
 
@@ -513,14 +514,14 @@ AttachmentControllerApi - factory interface
 | `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
 | `getAttachment` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentEntity`](interfaces/AttachmentEntity.md)\> |
 | `getAttachmentInfo` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments` | (`fileNameFilter?`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
+| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
 | `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options?`: `any`) => `Promise`<`string`[]\> |
 | `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options?`: `any`) => `Promise`<`string`[]\> |
 | `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options?`: `any`) => `Promise`<`string`[]\> |
 
 #### Defined in
 
-[src/generated/api.ts:9396](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9396)
+[src/generated/api.ts:9546](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9546)
 
 ___
 
@@ -550,14 +551,14 @@ AttachmentControllerApi - fetch parameter creator
 | `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getAttachment` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getAttachmentInfo` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachments` | (`fileNameFilter?`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:8420](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L8420)
+[src/generated/api.ts:8544](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L8544)
 
 ___
 
@@ -587,14 +588,14 @@ AttachmentControllerApi - functional programming interface
 | `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
 | `getAttachment` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentEntity`](interfaces/AttachmentEntity.md)\> |
 | `getAttachmentInfo` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments` | (`fileNameFilter?`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
+| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
 | `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
 | `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
 | `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
 
 #### Defined in
 
-[src/generated/api.ts:9053](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9053)
+[src/generated/api.ts:9191](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9191)
 
 ___
 
@@ -621,13 +622,13 @@ BounceControllerApi - factory interface
 | Name | Type |
 | :------ | :------ |
 | `getBouncedEmail` | (`id`: `string`, `options?`: `any`) => `Promise`<[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)\> |
-| `getBouncedEmails` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
+| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
 | `getBouncedRecipient` | (`id`: `string`, `options?`: `any`) => `Promise`<[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)\> |
-| `getBouncedRecipients` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
+| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:10177](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10177)
+[src/generated/api.ts:10375](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10375)
 
 ___
 
@@ -652,13 +653,13 @@ BounceControllerApi - fetch parameter creator
 | Name | Type |
 | :------ | :------ |
 | `getBouncedEmail` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getBouncedEmails` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getBouncedRecipient` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getBouncedRecipients` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:9785](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9785)
+[src/generated/api.ts:9947](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9947)
 
 ___
 
@@ -683,13 +684,13 @@ BounceControllerApi - functional programming interface
 | Name | Type |
 | :------ | :------ |
 | `getBouncedEmail` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)\> |
-| `getBouncedEmails` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
+| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
 | `getBouncedRecipient` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)\> |
-| `getBouncedRecipients` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
+| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:10034](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10034)
+[src/generated/api.ts:10224](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10224)
 
 ___
 
@@ -721,7 +722,7 @@ BulkActionsControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:10642](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10642)
+[src/generated/api.ts:10864](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10864)
 
 ___
 
@@ -751,7 +752,7 @@ BulkActionsControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:10346](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10346)
+[src/generated/api.ts:10568](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10568)
 
 ___
 
@@ -781,7 +782,7 @@ BulkActionsControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:10541](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10541)
+[src/generated/api.ts:10763](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10763)
 
 ___
 
@@ -807,14 +808,14 @@ CommonActionsControllerApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `emptyInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
 
 #### Defined in
 
-[src/generated/api.ts:11183](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11183)
+[src/generated/api.ts:11513](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11513)
 
 ___
 
@@ -838,14 +839,14 @@ CommonActionsControllerApi - fetch parameter creator
 
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `emptyInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:10753](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10753)
+[src/generated/api.ts:10975](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10975)
 
 ___
 
@@ -869,14 +870,14 @@ CommonActionsControllerApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `emptyInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 
 #### Defined in
 
-[src/generated/api.ts:11028](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11028)
+[src/generated/api.ts:11322](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11322)
 
 ___
 
@@ -904,14 +905,14 @@ ContactControllerApi - factory interface
 | :------ | :------ |
 | `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options?`: `any`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
 | `deleteContact` | (`contactId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllContacts` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
+| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
 | `getContact` | (`contactId`: `string`, `options?`: `any`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
 | `getContactVCard` | (`contactId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
 | `getContacts` | (`options?`: `any`) => `Promise`<[`ContactProjection`](interfaces/ContactProjection.md)[]\> |
 
 #### Defined in
 
-[src/generated/api.ts:11923](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11923)
+[src/generated/api.ts:12343](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12343)
 
 ___
 
@@ -937,14 +938,14 @@ ContactControllerApi - fetch parameter creator
 | :------ | :------ |
 | `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteContact` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllContacts` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getContact` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getContactVCard` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getContacts` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:11375](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11375)
+[src/generated/api.ts:11777](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L11777)
 
 ___
 
@@ -970,14 +971,14 @@ ContactControllerApi - functional programming interface
 | :------ | :------ |
 | `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
 | `deleteContact` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllContacts` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
+| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
 | `getContact` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
 | `getContactVCard` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
 | `getContacts` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactProjection`](interfaces/ContactProjection.md)[]\> |
 
 #### Defined in
 
-[src/generated/api.ts:11726](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L11726)
+[src/generated/api.ts:12142](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12142)
 
 ___
 
@@ -1012,7 +1013,7 @@ DomainControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:12686](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12686)
+[src/generated/api.ts:13118](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L13118)
 
 ___
 
@@ -1045,7 +1046,7 @@ DomainControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:12134](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12134)
+[src/generated/api.ts:12566](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12566)
 
 ___
 
@@ -1078,7 +1079,7 @@ DomainControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:12494](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12494)
+[src/generated/api.ts:12926](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L12926)
 
 ___
 
@@ -1119,11 +1120,11 @@ EmailControllerApi - factory interface
 | `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options?`: `any`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
 | `getEmailLinks` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`EmailLinksResult`](interfaces/EmailLinksResult.md)\> |
 | `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options?`: `any`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
 | `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options?`: `any`) => `Promise`<[`GravatarUrl`](interfaces/GravatarUrl.md)\> |
 | `getLatestEmail` | (`inboxIds?`: `string`[], `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
 | `getLatestEmailInInbox` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getOrganizationEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
 | `getRawEmailContents` | (`emailId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
 | `getRawEmailJson` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`RawEmailJson`](interfaces/RawEmailJson.md)\> |
 | `getUnreadEmailCount` | (`options?`: `any`) => `Promise`<[`UnreadCount`](interfaces/UnreadCount.md)\> |
@@ -1134,7 +1135,7 @@ EmailControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:15513](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L15513)
+[src/generated/api.ts:15985](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L15985)
 
 ___
 
@@ -1173,11 +1174,11 @@ EmailControllerApi - fetch parameter creator
 | `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getEmailLinks` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getLatestEmail` | (`inboxIds?`: `string`[], `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getLatestEmailInInbox` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getOrganizationEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getRawEmailContents` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getRawEmailJson` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getUnreadEmailCount` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
@@ -1188,7 +1189,7 @@ EmailControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:12883](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L12883)
+[src/generated/api.ts:13315](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L13315)
 
 ___
 
@@ -1227,11 +1228,11 @@ EmailControllerApi - functional programming interface
 | `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
 | `getEmailLinks` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailLinksResult`](interfaces/EmailLinksResult.md)\> |
 | `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
 | `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GravatarUrl`](interfaces/GravatarUrl.md)\> |
 | `getLatestEmail` | (`inboxIds?`: `string`[], `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
 | `getLatestEmailInInbox` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getOrganizationEmailsPaginated` | (`inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
+| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
 | `getRawEmailContents` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
 | `getRawEmailJson` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`RawEmailJson`](interfaces/RawEmailJson.md)\> |
 | `getUnreadEmailCount` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`UnreadCount`](interfaces/UnreadCount.md)\> |
@@ -1242,7 +1243,7 @@ EmailControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:14596](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L14596)
+[src/generated/api.ts:15056](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L15056)
 
 ___
 
@@ -1271,11 +1272,11 @@ ExpiredControllerApi - factory interface
 | `getExpirationDefaults` | (`options?`: `any`) => `Promise`<[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)\> |
 | `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
 | `getExpiredInboxRecord` | (`expiredId`: `string`, `options?`: `any`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxes` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
+| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:16884](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16884)
+[src/generated/api.ts:17398](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17398)
 
 ___
 
@@ -1302,11 +1303,11 @@ ExpiredControllerApi - fetch parameter creator
 | `getExpirationDefaults` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getExpiredInboxRecord` | (`expiredId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getExpiredInboxes` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:16515](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16515)
+[src/generated/api.ts:17011](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17011)
 
 ___
 
@@ -1333,11 +1334,11 @@ ExpiredControllerApi - functional programming interface
 | `getExpirationDefaults` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)\> |
 | `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
 | `getExpiredInboxRecord` | (`expiredId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxes` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
+| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:16747](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16747)
+[src/generated/api.ts:17257](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17257)
 
 ___
 
@@ -1368,7 +1369,7 @@ ExportControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:17343](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17343)
+[src/generated/api.ts:17869](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17869)
 
 ___
 
@@ -1397,7 +1398,7 @@ ExportControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:17029](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17029)
+[src/generated/api.ts:17555](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17555)
 
 ___
 
@@ -1426,7 +1427,7 @@ ExportControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:17246](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17246)
+[src/generated/api.ts:17772](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17772)
 
 ___
 
@@ -1456,7 +1457,7 @@ FormControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:17656](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17656)
+[src/generated/api.ts:18182](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L18182)
 
 ___
 
@@ -1484,7 +1485,7 @@ FormControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:17486](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17486)
+[src/generated/api.ts:18012](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L18012)
 
 ___
 
@@ -1512,7 +1513,7 @@ FormControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:17596](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17596)
+[src/generated/api.ts:18122](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L18122)
 
 ___
 
@@ -1541,16 +1542,16 @@ GroupControllerApi - factory interface
 | `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
 | `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options?`: `any`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
 | `deleteGroup` | (`groupId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllGroups` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
+| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
 | `getGroup` | (`groupId`: `string`, `options?`: `any`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
 | `getGroupWithContacts` | (`groupId`: `string`, `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
+| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
 | `getGroups` | (`options?`: `any`) => `Promise`<[`GroupProjection`](interfaces/GroupProjection.md)[]\> |
 | `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:18636](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18636)
+[src/generated/api.ts:19206](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19206)
 
 ___
 
@@ -1577,16 +1578,16 @@ GroupControllerApi - fetch parameter creator
 | `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteGroup` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllGroups` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getGroup` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getGroupWithContacts` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getGroups` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:17747](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17747)
+[src/generated/api.ts:18273](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L18273)
 
 ___
 
@@ -1613,16 +1614,16 @@ GroupControllerApi - functional programming interface
 | `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
 | `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
 | `deleteGroup` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllGroups` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
+| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
 | `getGroup` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
 | `getGroupWithContacts` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
+| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
 | `getGroups` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupProjection`](interfaces/GroupProjection.md)[]\> |
 | `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:18332](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18332)
+[src/generated/api.ts:18886](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L18886)
 
 ___
 
@@ -1654,16 +1655,16 @@ InboxControllerApi - factory interface
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `deleteAllInboxes` | (`options?`: `any`) => `Promise`<`Response`\> |
 | `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllInboxes` | (`favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
-| `getEmails` | (`inboxId`: `string`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
+| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
 | `getInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
-| `getInboxSentEmails` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
+| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
 | `getInboxTags` | (`options?`: `any`) => `Promise`<`string`[]\> |
-| `getInboxes` | (`size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `getOrganizationInboxes` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
-| `listInboxRulesets` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
+| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
+| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
+| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
 | `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `sendTestEmail` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
@@ -1672,7 +1673,7 @@ InboxControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:21274](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L21274)
+[src/generated/api.ts:22029](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L22029)
 
 ___
 
@@ -1702,16 +1703,16 @@ InboxControllerApi - fetch parameter creator
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteAllInboxes` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllInboxes` | (`favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmails` | (`inboxId`: `string`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxSentEmails` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInboxTags` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxes` | (`size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getOrganizationInboxes` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `listInboxRulesets` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendTestEmail` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
@@ -1720,7 +1721,7 @@ InboxControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:18977](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18977)
+[src/generated/api.ts:19571](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19571)
 
 ___
 
@@ -1750,16 +1751,16 @@ InboxControllerApi - functional programming interface
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `deleteAllInboxes` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllInboxes` | (`favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
-| `getEmails` | (`inboxId`: `string`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
+| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
 | `getInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
-| `getInboxSentEmails` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
+| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
 | `getInboxTags` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
-| `getInboxes` | (`size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `getOrganizationInboxes` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
-| `listInboxRulesets` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
+| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
+| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
+| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `sendTestEmail` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
@@ -1768,7 +1769,7 @@ InboxControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:20476](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L20476)
+[src/generated/api.ts:21176](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L21176)
 
 ___
 
@@ -1798,14 +1799,14 @@ InboxForwarderControllerApi - factory interface
 | `deleteInboxForwarder` | (`id`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `deleteInboxForwarders` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `getInboxForwarder` | (`id`: `string`, `options?`: `any`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `getInboxForwarders` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
+| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
 | `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 | `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 | `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:23071](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23071)
+[src/generated/api.ts:23944](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L23944)
 
 ___
 
@@ -1833,14 +1834,14 @@ InboxForwarderControllerApi - fetch parameter creator
 | `deleteInboxForwarder` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteInboxForwarders` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInboxForwarder` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxForwarders` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:22234](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L22234)
+[src/generated/api.ts:23087](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L23087)
 
 ___
 
@@ -1868,14 +1869,14 @@ InboxForwarderControllerApi - functional programming interface
 | `deleteInboxForwarder` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `deleteInboxForwarders` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `getInboxForwarder` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `getInboxForwarders` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
+| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
 | `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 | `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 | `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:22779](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L22779)
+[src/generated/api.ts:23646](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L23646)
 
 ___
 
@@ -1905,14 +1906,14 @@ InboxRulesetControllerApi - factory interface
 | `deleteInboxRuleset` | (`id`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `deleteInboxRulesets` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
 | `getInboxRuleset` | (`id`: `string`, `options?`: `any`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `getInboxRulesets` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
+| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
 | `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 | `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 | `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:24239](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L24239)
+[src/generated/api.ts:25144](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L25144)
 
 ___
 
@@ -1940,14 +1941,14 @@ InboxRulesetControllerApi - fetch parameter creator
 | `deleteInboxRuleset` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteInboxRulesets` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInboxRuleset` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxRulesets` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:23402](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23402)
+[src/generated/api.ts:24287](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L24287)
 
 ___
 
@@ -1975,14 +1976,14 @@ InboxRulesetControllerApi - functional programming interface
 | `deleteInboxRuleset` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `deleteInboxRulesets` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `getInboxRuleset` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `getInboxRulesets` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
+| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
 | `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 | `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 | `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:23947](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L23947)
+[src/generated/api.ts:24846](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L24846)
 
 ___
 
@@ -2015,7 +2016,7 @@ MailServerControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:24960](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L24960)
+[src/generated/api.ts:25877](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L25877)
 
 ___
 
@@ -2046,7 +2047,7 @@ MailServerControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:24564](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L24564)
+[src/generated/api.ts:25481](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L25481)
 
 ___
 
@@ -2077,7 +2078,7 @@ MailServerControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:24823](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L24823)
+[src/generated/api.ts:25740](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L25740)
 
 ___
 
@@ -2103,14 +2104,14 @@ MissedEmailControllerApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
-| `getAllUnknownMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
+| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
+| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
 | `getMissedEmail` | (`missedEmailId`: `string`, `options?`: `any`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
-| `waitForNthMissedEmail` | (`inboxId?`: `string`, `index?`: `number`, `timeout?`: `number`, `options?`: `any`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
+| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options?`: `any`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:25562](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25562)
+[src/generated/api.ts:26544](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26544)
 
 ___
 
@@ -2134,14 +2135,14 @@ MissedEmailControllerApi - fetch parameter creator
 
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllUnknownMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getMissedEmail` | (`missedEmailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForNthMissedEmail` | (`inboxId?`: `string`, `index?`: `number`, `timeout?`: `number`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:25109](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25109)
+[src/generated/api.ts:26026](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26026)
 
 ___
 
@@ -2165,14 +2166,14 @@ MissedEmailControllerApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
-| `getAllUnknownMissedEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
+| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
+| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
 | `getMissedEmail` | (`missedEmailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
-| `waitForNthMissedEmail` | (`inboxId?`: `string`, `index?`: `number`, `timeout?`: `number`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
+| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:25391](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25391)
+[src/generated/api.ts:26350](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26350)
 
 ___
 
@@ -2198,16 +2199,16 @@ SentEmailsControllerApi - factory interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `getSentEmail` | (`id`: `string`, `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `getSentEmailHTMLContent` | (`id`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getSentOrganizationEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:26455](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L26455)
+[src/generated/api.ts:27566](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L27566)
 
 ___
 
@@ -2231,16 +2232,16 @@ SentEmailsControllerApi - fetch parameter creator
 
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getSentEmail` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getSentEmailHTMLContent` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentOrganizationEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:25783](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25783)
+[src/generated/api.ts:26801](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26801)
 
 ___
 
@@ -2264,16 +2265,16 @@ SentEmailsControllerApi - functional programming interface
 
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `getSentEmail` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
 | `getSentEmailHTMLContent` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getSentOrganizationEmails` | (`inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:26208](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L26208)
+[src/generated/api.ts:27282](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L27282)
 
 ___
 
@@ -2301,14 +2302,14 @@ TemplateControllerApi - factory interface
 | :------ | :------ |
 | `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 | `deleteTemplate` | (`templateId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllTemplates` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
+| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
 | `getTemplate` | (`templateId`: `string`, `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 | `getTemplates` | (`options?`: `any`) => `Promise`<[`TemplateProjection`](interfaces/TemplateProjection.md)[]\> |
 | `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:27342](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27342)
+[src/generated/api.ts:28519](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L28519)
 
 ___
 
@@ -2334,14 +2335,14 @@ TemplateControllerApi - fetch parameter creator
 | :------ | :------ |
 | `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteTemplate` | (`templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllTemplates` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTemplate` | (`templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTemplates` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:26768](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L26768)
+[src/generated/api.ts:27927](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L27927)
 
 ___
 
@@ -2367,14 +2368,14 @@ TemplateControllerApi - functional programming interface
 | :------ | :------ |
 | `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 | `deleteTemplate` | (`templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllTemplates` | (`page?`: `number`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
+| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
 | `getTemplate` | (`templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 | `getTemplates` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateProjection`](interfaces/TemplateProjection.md)[]\> |
 | `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:27143](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27143)
+[src/generated/api.ts:28316](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L28316)
 
 ___
 
@@ -2401,12 +2402,12 @@ TrackingControllerApi - factory interface
 | Name | Type |
 | :------ | :------ |
 | `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options?`: `any`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
-| `getAllTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `getTrackingPixel` | (`id`: `string`, `options?`: `any`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:27875](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27875)
+[src/generated/api.ts:29090](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29090)
 
 ___
 
@@ -2431,12 +2432,12 @@ TrackingControllerApi - fetch parameter creator
 | Name | Type |
 | :------ | :------ |
 | `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTrackingPixel` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:27564](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27564)
+[src/generated/api.ts:28753](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L28753)
 
 ___
 
@@ -2461,12 +2462,12 @@ TrackingControllerApi - functional programming interface
 | Name | Type |
 | :------ | :------ |
 | `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
-| `getAllTrackingPixels` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
+| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
 | `getTrackingPixel` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:27767](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L27767)
+[src/generated/api.ts:28970](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L28970)
 
 ___
 
@@ -2493,15 +2494,15 @@ WaitForControllerApi - factory interface
 | Name | Type |
 | :------ | :------ |
 | `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForEmailCount` | (`count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForLatestEmail` | (`delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForNthEmail` | (`delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:28845](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L28845)
+[src/generated/api.ts:30127](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L30127)
 
 ___
 
@@ -2526,15 +2527,15 @@ WaitForControllerApi - fetch parameter creator
 | Name | Type |
 | :------ | :------ |
 | `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForEmailCount` | (`count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForLatestEmail` | (`delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForNthEmail` | (`delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:28010](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L28010)
+[src/generated/api.ts:29237](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29237)
 
 ___
 
@@ -2559,15 +2560,15 @@ WaitForControllerApi - functional programming interface
 | Name | Type |
 | :------ | :------ |
 | `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForEmailCount` | (`count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForLatestEmail` | (`delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForNthEmail` | (`delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
+| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:28542](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L28542)
+[src/generated/api.ts:29809](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L29809)
 
 ___
 
@@ -2595,25 +2596,27 @@ WebhookControllerApi - factory interface
 | :------ | :------ |
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getAllWebhooks` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
 | `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options?`: `any`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
 | `getTestWebhookPayloadEmailOpened` | (`options?`: `any`) => `Promise`<[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)\> |
 | `getTestWebhookPayloadEmailRead` | (`options?`: `any`) => `Promise`<[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)\> |
+| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
 | `getTestWebhookPayloadNewAttachment` | (`options?`: `any`) => `Promise`<[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)\> |
 | `getTestWebhookPayloadNewContact` | (`options?`: `any`) => `Promise`<[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)\> |
 | `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
 | `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
 | `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
 | `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:30855](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L30855)
+[src/generated/api.ts:32438](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L32438)
 
 ___
 
@@ -2639,25 +2642,27 @@ WebhookControllerApi - fetch parameter creator
 | :------ | :------ |
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllWebhookResults` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllWebhooks` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayloadEmailOpened` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayloadEmailRead` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayloadNewAttachment` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayloadNewContact` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getTestWebhookPayloadNewEmail` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhook` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhookResults` | (`webhookId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhooks` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendTestData` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:29248](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L29248)
+[src/generated/api.ts:30560](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L30560)
 
 ___
 
@@ -2683,25 +2688,27 @@ WebhookControllerApi - functional programming interface
 | :------ | :------ |
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getAllWebhooks` | (`page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
+| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
 | `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
 | `getTestWebhookPayloadEmailOpened` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)\> |
 | `getTestWebhookPayloadEmailRead` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)\> |
+| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
 | `getTestWebhookPayloadNewAttachment` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)\> |
 | `getTestWebhookPayloadNewContact` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)\> |
 | `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
 | `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `page?`: `number`, `searchFilter?`: `string`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
 | `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
 | `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:30267](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L30267)
+[src/generated/api.ts:31751](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L31751)
 
 ___
 
@@ -2727,7 +2734,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:588](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/index.ts#L588)
+[src/index.ts:597](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/index.ts#L597)
 
 ___
 
@@ -2753,4 +2760,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:600](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/index.ts#L600)
+[src/index.ts:609](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/index.ts#L609)

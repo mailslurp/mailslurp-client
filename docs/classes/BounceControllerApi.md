@@ -51,7 +51,7 @@ BounceControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -114,13 +114,13 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10271](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10271)
+[src/generated/api.ts:10481](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10481)
 
 ___
 
 ### getBouncedEmails
 
-▸ **getBouncedEmails**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
+▸ **getBouncedEmails**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
 
 Bounced emails are email you have sent that were rejected by a recipient
 
@@ -134,7 +134,9 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -145,7 +147,7 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10288](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10288)
+[src/generated/api.ts:10500](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10500)
 
 ___
 
@@ -174,13 +176,13 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10310](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10310)
+[src/generated/api.ts:10526](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10526)
 
 ___
 
 ### getBouncedRecipients
 
-▸ **getBouncedRecipients**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
+▸ **getBouncedRecipients**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
 
 Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
 
@@ -194,7 +196,9 @@ Bounced recipients are email addresses that you have sent emails to that did not
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -205,4 +209,4 @@ Bounced recipients are email addresses that you have sent emails to that did not
 
 #### Defined in
 
-[src/generated/api.ts:10327](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L10327)
+[src/generated/api.ts:10545](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10545)

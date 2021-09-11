@@ -56,7 +56,7 @@ GroupControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18812](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18812)
+[src/generated/api.ts:19394](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19394)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18832](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18832)
+[src/generated/api.ts:19414](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19414)
 
 ___
 
@@ -172,13 +172,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18847](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18847)
+[src/generated/api.ts:19429](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19429)
 
 ___
 
 ### getAllGroups
 
-▸ **getAllGroups**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageGroupProjection`](../interfaces/PageGroupProjection.md)\>
+▸ **getAllGroups**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageGroupProjection`](../interfaces/PageGroupProjection.md)\>
 
 **`summary`** Get all Contact Groups in paginated format
 
@@ -190,7 +190,9 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -201,7 +203,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18864](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18864)
+[src/generated/api.ts:19448](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19448)
 
 ___
 
@@ -228,7 +230,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18886](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18886)
+[src/generated/api.ts:19474](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19474)
 
 ___
 
@@ -255,13 +257,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18901](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18901)
+[src/generated/api.ts:19489](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19489)
 
 ___
 
 ### getGroupWithContactsPaginated
 
-▸ **getGroupWithContactsPaginated**(`groupId`, `page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
+▸ **getGroupWithContactsPaginated**(`groupId`, `before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
 **`summary`** Get group and paginated contacts belonging to it
 
@@ -274,7 +276,9 @@ ___
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `groupId` | `string` | groupId |
+| `before?` | `Date` | - |
 | `page?` | `number` | - |
+| `since?` | `Date` | - |
 | `size?` | `number` | - |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
 | `options?` | `any` | - |
@@ -285,7 +289,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18919](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18919)
+[src/generated/api.ts:19509](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19509)
 
 ___
 
@@ -311,7 +315,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18944](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18944)
+[src/generated/api.ts:19538](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19538)
 
 ___
 
@@ -339,4 +343,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18960](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L18960)
+[src/generated/api.ts:19554](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L19554)

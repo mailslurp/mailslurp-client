@@ -48,7 +48,7 @@ Error.constructor
 
 #### Defined in
 
-[src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L79)
+[src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L79)
 
 ## Properties
 
@@ -82,7 +82,7 @@ Error.name
 
 #### Defined in
 
-[src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L78)
+[src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L78)
 
 ___
 

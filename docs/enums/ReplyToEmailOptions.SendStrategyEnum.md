@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/generated/api.ts:5121](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L5121)
+[src/generated/api.ts:5135](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L5135)

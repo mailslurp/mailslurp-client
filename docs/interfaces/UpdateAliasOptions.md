@@ -26,4 +26,4 @@ Optional name for alias
 
 #### Defined in
 
-[src/generated/api.ts:5942](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L5942)
+[src/generated/api.ts:5956](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L5956)

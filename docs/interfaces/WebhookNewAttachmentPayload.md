@@ -33,7 +33,7 @@ ID of attachment. Use the `AttachmentController` to
 
 #### Defined in
 
-[src/generated/api.ts:6462](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6462)
+[src/generated/api.ts:6488](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6488)
 
 ___
 
@@ -47,7 +47,7 @@ Size of attachment in bytes
 
 #### Defined in
 
-[src/generated/api.ts:6468](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6468)
+[src/generated/api.ts:6494](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6494)
 
 ___
 
@@ -61,7 +61,7 @@ Content type of attachment such as 'image/png' or 'application/pdf
 
 #### Defined in
 
-[src/generated/api.ts:6474](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6474)
+[src/generated/api.ts:6500](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6500)
 
 ___
 
@@ -75,7 +75,7 @@ Name of the event type webhook is being triggered for.
 
 #### Defined in
 
-[src/generated/api.ts:6480](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6480)
+[src/generated/api.ts:6506](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6506)
 
 ___
 
@@ -89,7 +89,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 #### Defined in
 
-[src/generated/api.ts:6486](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6486)
+[src/generated/api.ts:6512](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6512)
 
 ___
 
@@ -103,7 +103,7 @@ Filename of the attachment if present
 
 #### Defined in
 
-[src/generated/api.ts:6492](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6492)
+[src/generated/api.ts:6518](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6518)
 
 ___
 
@@ -117,7 +117,7 @@ ID of webhook entity being triggered
 
 #### Defined in
 
-[src/generated/api.ts:6498](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6498)
+[src/generated/api.ts:6524](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6524)
 
 ___
 
@@ -131,4 +131,4 @@ Name of the webhook being triggered
 
 #### Defined in
 
-[src/generated/api.ts:6504](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L6504)
+[src/generated/api.ts:6530](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6530)

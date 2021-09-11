@@ -26,4 +26,4 @@ Is the inbox a favorite. Marking an inbox as a favorite is typically done in the
 
 #### Defined in
 
-[src/generated/api.ts:5470](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L5470)
+[src/generated/api.ts:5484](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L5484)

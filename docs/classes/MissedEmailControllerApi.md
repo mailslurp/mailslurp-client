@@ -51,7 +51,7 @@ MissedEmailControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 ### getAllMissedEmails
 
-▸ **getAllMissedEmails**(`inboxId?`, `page?`, `searchFilter?`, `size?`, `sort?`, `options?`): `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
+▸ **getAllMissedEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
 
 **`summary`** Get all MissedEmails in paginated format
 
@@ -103,9 +103,11 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `inboxId?` | `string` |
 | `page?` | `number` |
 | `searchFilter?` | `string` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -116,13 +118,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:25685](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25685)
+[src/generated/api.ts:26687](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26687)
 
 ___
 
 ### getAllUnknownMissedEmails
 
-▸ **getAllUnknownMissedEmails**(`inboxId?`, `page?`, `searchFilter?`, `size?`, `sort?`, `options?`): `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
+▸ **getAllUnknownMissedEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
 
 Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
 
@@ -136,9 +138,11 @@ Unknown missed emails are emails that were sent to MailSlurp but could not be as
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `inboxId?` | `string` |
 | `page?` | `number` |
 | `searchFilter?` | `string` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -149,7 +153,7 @@ Unknown missed emails are emails that were sent to MailSlurp but could not be as
 
 #### Defined in
 
-[src/generated/api.ts:25717](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25717)
+[src/generated/api.ts:26725](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26725)
 
 ___
 
@@ -176,13 +180,13 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:25745](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25745)
+[src/generated/api.ts:26757](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26757)
 
 ___
 
 ### waitForNthMissedEmail
 
-▸ **waitForNthMissedEmail**(`inboxId?`, `index?`, `timeout?`, `options?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+▸ **waitForNthMissedEmail**(`before?`, `inboxId?`, `index?`, `since?`, `timeout?`, `options?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
 
 Wait for 0 based index missed email
 
@@ -196,8 +200,10 @@ Wait for 0 based index missed email
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `inboxId?` | `string` |
 | `index?` | `number` |
+| `since?` | `Date` |
 | `timeout?` | `number` |
 | `options?` | `any` |
 
@@ -207,4 +213,4 @@ Wait for 0 based index missed email
 
 #### Defined in
 
-[src/generated/api.ts:25762](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L25762)
+[src/generated/api.ts:26776](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L26776)

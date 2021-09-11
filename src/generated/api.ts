@@ -953,7 +953,7 @@ export interface CreateGroupOptions {
  */
 export interface CreateInboxDto {
     /**
-     * Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @type {boolean}
      * @memberof CreateInboxDto
      */
@@ -3024,6 +3024,20 @@ export interface InboxRulesetTestResult {
      * @memberof InboxRulesetTestResult
      */
     rulesetMatches?: { [key: string]: boolean };
+}
+
+/**
+ *
+ * @export
+ * @interface JSONSchemaDto
+ */
+export interface JSONSchemaDto {
+    /**
+     *
+     * @type {string}
+     * @memberof JSONSchemaDto
+     */
+    value: string;
 }
 
 /**
@@ -6113,17 +6127,29 @@ export interface VerifyEmailAddressOptions {
  */
 export interface WaitForConditions {
     /**
+     * ISO Date Time latest time of email to consider. Filter for matching emails that were received before this date
+     * @type {Date}
+     * @memberof WaitForConditions
+     */
+    before?: Date;
+    /**
      * Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
      * @type {number}
      * @memberof WaitForConditions
      */
-    count: number;
+    count?: number;
     /**
      * How should the found count be compared to the expected count.
      * @type {string}
      * @memberof WaitForConditions
      */
     countType?: WaitForConditions.CountTypeEnum;
+    /**
+     * Max time in milliseconds to wait between retries if a `timeout` is specified.
+     * @type {number}
+     * @memberof WaitForConditions
+     */
+    delayTimeout?: number;
     /**
      * ID of inbox to search within and apply conditions to. Essentially filtering the emails found to give a count.
      * @type {string}
@@ -6234,7 +6260,7 @@ export interface WebhookDto {
      */
     name?: string;
     /**
-     * JSON Schema for the payload that will be sent to your URL via the HTTP method described.
+     * Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
      * @type {string}
      * @memberof WebhookDto
      */
@@ -7268,7 +7294,9 @@ export const AliasControllerApiFetchParamCreator = function(
          * Get paginated emails for an alias by ID
          * @summary Get emails for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index alias email list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size alias email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -7276,7 +7304,9 @@ export const AliasControllerApiFetchParamCreator = function(
          */
         getAliasEmails(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -7309,8 +7339,18 @@ export const AliasControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -7344,7 +7384,9 @@ export const AliasControllerApiFetchParamCreator = function(
          * Returns threads created for an email alias in paginated form
          * @summary Get threads created for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in thread list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in thread list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -7352,7 +7394,9 @@ export const AliasControllerApiFetchParamCreator = function(
          */
         getAliasThreads(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -7385,8 +7429,18 @@ export const AliasControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -7419,14 +7473,18 @@ export const AliasControllerApiFetchParamCreator = function(
         /**
          * Get all email aliases in paginated form
          * @summary Get all email aliases you have created
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in alias list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in alias list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAliases(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -7449,8 +7507,18 @@ export const AliasControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -7818,7 +7886,9 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
          * Get paginated emails for an alias by ID
          * @summary Get emails for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index alias email list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size alias email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -7826,7 +7896,9 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
          */
         getAliasEmails(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -7836,7 +7908,7 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageEmailProjection> {
             const localVarFetchArgs = AliasControllerApiFetchParamCreator(
                 configuration
-            ).getAliasEmails(aliasId, page, size, sort, options);
+            ).getAliasEmails(aliasId, before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -7857,7 +7929,9 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
          * Returns threads created for an email alias in paginated form
          * @summary Get threads created for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in thread list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in thread list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -7865,7 +7939,9 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
          */
         getAliasThreads(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -7875,7 +7951,15 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageThreadProjection> {
             const localVarFetchArgs = AliasControllerApiFetchParamCreator(
                 configuration
-            ).getAliasThreads(aliasId, page, size, sort, options);
+            ).getAliasThreads(
+                aliasId,
+                before,
+                page,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -7895,21 +7979,25 @@ export const AliasControllerApiFp = function(configuration?: Configuration) {
         /**
          * Get all email aliases in paginated form
          * @summary Get all email aliases you have created
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in alias list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in alias list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAliases(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<PageAlias> {
             const localVarFetchArgs = AliasControllerApiFetchParamCreator(
                 configuration
-            ).getAliases(page, size, sort, options);
+            ).getAliases(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -8085,7 +8173,9 @@ export const AliasControllerApiFactory = function(
          * Get paginated emails for an alias by ID
          * @summary Get emails for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index alias email list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size alias email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -8093,14 +8183,18 @@ export const AliasControllerApiFactory = function(
          */
         getAliasEmails(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return AliasControllerApiFp(configuration).getAliasEmails(
                 aliasId,
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -8110,7 +8204,9 @@ export const AliasControllerApiFactory = function(
          * Returns threads created for an email alias in paginated form
          * @summary Get threads created for an alias
          * @param {string} aliasId aliasId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in thread list pagination
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in thread list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -8118,14 +8214,18 @@ export const AliasControllerApiFactory = function(
          */
         getAliasThreads(
             aliasId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return AliasControllerApiFp(configuration).getAliasThreads(
                 aliasId,
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -8134,20 +8234,26 @@ export const AliasControllerApiFactory = function(
         /**
          * Get all email aliases in paginated form
          * @summary Get all email aliases you have created
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in alias list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in alias list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAliases(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return AliasControllerApiFp(configuration).getAliases(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -8272,7 +8378,9 @@ export class AliasControllerApi extends BaseAPI {
      * Get paginated emails for an alias by ID
      * @summary Get emails for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index alias email list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size alias email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -8281,14 +8389,18 @@ export class AliasControllerApi extends BaseAPI {
      */
     public getAliasEmails(
         aliasId: string,
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return AliasControllerApiFp(this.configuration).getAliasEmails(
             aliasId,
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -8299,7 +8411,9 @@ export class AliasControllerApi extends BaseAPI {
      * Returns threads created for an email alias in paginated form
      * @summary Get threads created for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in thread list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in thread list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -8308,14 +8422,18 @@ export class AliasControllerApi extends BaseAPI {
      */
     public getAliasThreads(
         aliasId: string,
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return AliasControllerApiFp(this.configuration).getAliasThreads(
             aliasId,
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -8325,7 +8443,9 @@ export class AliasControllerApi extends BaseAPI {
     /**
      * Get all email aliases in paginated form
      * @summary Get all email aliases you have created
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in alias list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in alias list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -8333,13 +8453,17 @@ export class AliasControllerApi extends BaseAPI {
      * @memberof AliasControllerApi
      */
     public getAliases(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return AliasControllerApiFp(this.configuration).getAliases(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -8749,16 +8873,20 @@ export const AttachmentControllerApiFetchParamCreator = function(
         /**
          * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
          * @summary Get email attachments
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [fileNameFilter] Optional file name and content type search filter
          * @param {number} [page] Optional page index event list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size event list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAttachments(
+            before?: Date,
             fileNameFilter?: string,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -8781,12 +8909,22 @@ export const AttachmentControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (fileNameFilter !== undefined) {
                 localVarQueryParameter['fileNameFilter'] = fileNameFilter;
             }
 
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -9241,16 +9379,20 @@ export const AttachmentControllerApiFp = function(
         /**
          * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
          * @summary Get email attachments
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [fileNameFilter] Optional file name and content type search filter
          * @param {number} [page] Optional page index event list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size event list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAttachments(
+            before?: Date,
             fileNameFilter?: string,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -9260,7 +9402,15 @@ export const AttachmentControllerApiFp = function(
         ) => Promise<PageAttachmentEntity> {
             const localVarFetchArgs = AttachmentControllerApiFetchParamCreator(
                 configuration
-            ).getAttachments(fileNameFilter, page, size, sort, options);
+            ).getAttachments(
+                before,
+                fileNameFilter,
+                page,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -9479,23 +9629,29 @@ export const AttachmentControllerApiFactory = function(
         /**
          * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
          * @summary Get email attachments
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [fileNameFilter] Optional file name and content type search filter
          * @param {number} [page] Optional page index event list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size event list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAttachments(
+            before?: Date,
             fileNameFilter?: string,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return AttachmentControllerApiFp(configuration).getAttachments(
+                before,
                 fileNameFilter,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -9677,8 +9833,10 @@ export class AttachmentControllerApi extends BaseAPI {
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * @summary Get email attachments
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [fileNameFilter] Optional file name and content type search filter
      * @param {number} [page] Optional page index event list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size event list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -9686,15 +9844,19 @@ export class AttachmentControllerApi extends BaseAPI {
      * @memberof AttachmentControllerApi
      */
     public getAttachments(
+        before?: Date,
         fileNameFilter?: string,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return AttachmentControllerApiFp(this.configuration).getAttachments(
+            before,
             fileNameFilter,
             page,
+            since,
             size,
             sort,
             options
@@ -9844,14 +10006,18 @@ export const BounceControllerApiFetchParamCreator = function(
         /**
          * Bounced emails are email you have sent that were rejected by a recipient
          * @summary Get paginated list of bounced emails.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedEmails(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -9874,8 +10040,18 @@ export const BounceControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -9963,14 +10139,18 @@ export const BounceControllerApiFetchParamCreator = function(
         /**
          * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
          * @summary Get paginated list of bounced recipients.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedRecipients(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -9993,8 +10173,18 @@ export const BounceControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -10066,21 +10256,25 @@ export const BounceControllerApiFp = function(configuration?: Configuration) {
         /**
          * Bounced emails are email you have sent that were rejected by a recipient
          * @summary Get paginated list of bounced emails.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedEmails(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedEmail> {
             const localVarFetchArgs = BounceControllerApiFetchParamCreator(
                 configuration
-            ).getBouncedEmails(page, size, sort, options);
+            ).getBouncedEmails(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -10133,14 +10327,18 @@ export const BounceControllerApiFp = function(configuration?: Configuration) {
         /**
          * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
          * @summary Get paginated list of bounced recipients.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedRecipients(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -10150,7 +10348,7 @@ export const BounceControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageBouncedRecipients> {
             const localVarFetchArgs = BounceControllerApiFetchParamCreator(
                 configuration
-            ).getBouncedRecipients(page, size, sort, options);
+            ).getBouncedRecipients(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -10196,20 +10394,26 @@ export const BounceControllerApiFactory = function(
         /**
          * Bounced emails are email you have sent that were rejected by a recipient
          * @summary Get paginated list of bounced emails.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedEmails(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return BounceControllerApiFp(configuration).getBouncedEmails(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -10231,20 +10435,26 @@ export const BounceControllerApiFactory = function(
         /**
          * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
          * @summary Get paginated list of bounced recipients.
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getBouncedRecipients(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return BounceControllerApiFp(configuration).getBouncedRecipients(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -10278,7 +10488,9 @@ export class BounceControllerApi extends BaseAPI {
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -10286,13 +10498,17 @@ export class BounceControllerApi extends BaseAPI {
      * @memberof BounceControllerApi
      */
     public getBouncedEmails(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return BounceControllerApiFp(this.configuration).getBouncedEmails(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -10317,7 +10533,9 @@ export class BounceControllerApi extends BaseAPI {
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -10325,13 +10543,17 @@ export class BounceControllerApi extends BaseAPI {
      * @memberof BounceControllerApi
      */
     public getBouncedRecipients(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return BounceControllerApiFp(this.configuration).getBouncedRecipients(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -10758,16 +10980,28 @@ export const CommonActionsControllerApiFetchParamCreator = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options: any = {}
         ): FetchArgs {
@@ -10793,6 +11027,14 @@ export const CommonActionsControllerApiFetchParamCreator = function(
                 localVarQueryParameter['allowTeamAccess'] = allowTeamAccess;
             }
 
+            if (description !== undefined) {
+                localVarQueryParameter['description'] = description;
+            }
+
+            if (emailAddress !== undefined) {
+                localVarQueryParameter['emailAddress'] = emailAddress;
+            }
+
             if (expiresAt !== undefined) {
                 localVarQueryParameter[
                     'expiresAt'
@@ -10801,6 +11043,22 @@ export const CommonActionsControllerApiFetchParamCreator = function(
 
             if (expiresIn !== undefined) {
                 localVarQueryParameter['expiresIn'] = expiresIn;
+            }
+
+            if (favourite !== undefined) {
+                localVarQueryParameter['favourite'] = favourite;
+            }
+
+            if (inboxType !== undefined) {
+                localVarQueryParameter['inboxType'] = inboxType;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            if (tags) {
+                localVarQueryParameter['tags'] = tags;
             }
 
             if (useDomainPool !== undefined) {
@@ -10830,16 +11088,28 @@ export const CommonActionsControllerApiFetchParamCreator = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress1(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options: any = {}
         ): FetchArgs {
@@ -10865,6 +11135,14 @@ export const CommonActionsControllerApiFetchParamCreator = function(
                 localVarQueryParameter['allowTeamAccess'] = allowTeamAccess;
             }
 
+            if (description !== undefined) {
+                localVarQueryParameter['description'] = description;
+            }
+
+            if (emailAddress !== undefined) {
+                localVarQueryParameter['emailAddress'] = emailAddress;
+            }
+
             if (expiresAt !== undefined) {
                 localVarQueryParameter[
                     'expiresAt'
@@ -10873,6 +11151,22 @@ export const CommonActionsControllerApiFetchParamCreator = function(
 
             if (expiresIn !== undefined) {
                 localVarQueryParameter['expiresIn'] = expiresIn;
+            }
+
+            if (favourite !== undefined) {
+                localVarQueryParameter['favourite'] = favourite;
+            }
+
+            if (inboxType !== undefined) {
+                localVarQueryParameter['inboxType'] = inboxType;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            if (tags) {
+                localVarQueryParameter['tags'] = tags;
             }
 
             if (useDomainPool !== undefined) {
@@ -11033,16 +11327,28 @@ export const CommonActionsControllerApiFp = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox> {
@@ -11050,8 +11356,14 @@ export const CommonActionsControllerApiFp = function(
                 configuration
             ).createNewEmailAddress(
                 allowTeamAccess,
+                description,
+                emailAddress,
                 expiresAt,
                 expiresIn,
+                favourite,
+                inboxType,
+                name,
+                tags,
                 useDomainPool,
                 options
             );
@@ -11075,16 +11387,28 @@ export const CommonActionsControllerApiFp = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress1(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox> {
@@ -11092,8 +11416,14 @@ export const CommonActionsControllerApiFp = function(
                 configuration
             ).createNewEmailAddress1(
                 allowTeamAccess,
+                description,
+                emailAddress,
                 expiresAt,
                 expiresIn,
+                favourite,
+                inboxType,
+                name,
+                tags,
                 useDomainPool,
                 options
             );
@@ -11190,16 +11520,28 @@ export const CommonActionsControllerApiFactory = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options?: any
         ) {
@@ -11207,8 +11549,14 @@ export const CommonActionsControllerApiFactory = function(
                 configuration
             ).createNewEmailAddress(
                 allowTeamAccess,
+                description,
+                emailAddress,
                 expiresAt,
                 expiresIn,
+                favourite,
+                inboxType,
+                name,
+                tags,
                 useDomainPool,
                 options
             )(fetch, basePath);
@@ -11217,16 +11565,28 @@ export const CommonActionsControllerApiFactory = function(
          * Returns an Inbox with an `id` and an `emailAddress`
          * @summary Create new random inbox
          * @param {boolean} [allowTeamAccess] allowTeamAccess
+         * @param {string} [description] description
+         * @param {string} [emailAddress] emailAddress
          * @param {Date} [expiresAt] expiresAt
          * @param {number} [expiresIn] expiresIn
+         * @param {boolean} [favourite] favourite
+         * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+         * @param {string} [name] name
+         * @param {Array<string>} [tags] tags
          * @param {boolean} [useDomainPool] useDomainPool
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         createNewEmailAddress1(
             allowTeamAccess?: boolean,
+            description?: string,
+            emailAddress?: string,
             expiresAt?: Date,
             expiresIn?: number,
+            favourite?: boolean,
+            inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+            name?: string,
+            tags?: Array<string>,
             useDomainPool?: boolean,
             options?: any
         ) {
@@ -11234,8 +11594,14 @@ export const CommonActionsControllerApiFactory = function(
                 configuration
             ).createNewEmailAddress1(
                 allowTeamAccess,
+                description,
+                emailAddress,
                 expiresAt,
                 expiresIn,
+                favourite,
+                inboxType,
+                name,
+                tags,
                 useDomainPool,
                 options
             )(fetch, basePath);
@@ -11280,8 +11646,14 @@ export class CommonActionsControllerApi extends BaseAPI {
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -11289,8 +11661,14 @@ export class CommonActionsControllerApi extends BaseAPI {
      */
     public createNewEmailAddress(
         allowTeamAccess?: boolean,
+        description?: string,
+        emailAddress?: string,
         expiresAt?: Date,
         expiresIn?: number,
+        favourite?: boolean,
+        inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+        name?: string,
+        tags?: Array<string>,
         useDomainPool?: boolean,
         options?: any
     ) {
@@ -11298,8 +11676,14 @@ export class CommonActionsControllerApi extends BaseAPI {
             this.configuration
         ).createNewEmailAddress(
             allowTeamAccess,
+            description,
+            emailAddress,
             expiresAt,
             expiresIn,
+            favourite,
+            inboxType,
+            name,
+            tags,
             useDomainPool,
             options
         )(this.fetch, this.basePath);
@@ -11309,8 +11693,14 @@ export class CommonActionsControllerApi extends BaseAPI {
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -11318,8 +11708,14 @@ export class CommonActionsControllerApi extends BaseAPI {
      */
     public createNewEmailAddress1(
         allowTeamAccess?: boolean,
+        description?: string,
+        emailAddress?: string,
         expiresAt?: Date,
         expiresIn?: number,
+        favourite?: boolean,
+        inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX',
+        name?: string,
+        tags?: Array<string>,
         useDomainPool?: boolean,
         options?: any
     ) {
@@ -11327,8 +11723,14 @@ export class CommonActionsControllerApi extends BaseAPI {
             this.configuration
         ).createNewEmailAddress1(
             allowTeamAccess,
+            description,
+            emailAddress,
             expiresAt,
             expiresIn,
+            favourite,
+            inboxType,
+            name,
+            tags,
             useDomainPool,
             options
         )(this.fetch, this.basePath);
@@ -11501,14 +11903,18 @@ export const ContactControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all contacts
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllContacts(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -11531,8 +11937,18 @@ export const ContactControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -11788,14 +12204,18 @@ export const ContactControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Get all contacts
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllContacts(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -11805,7 +12225,7 @@ export const ContactControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageContactProjection> {
             const localVarFetchArgs = ContactControllerApiFetchParamCreator(
                 configuration
-            ).getAllContacts(page, size, sort, options);
+            ).getAllContacts(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -11958,20 +12378,26 @@ export const ContactControllerApiFactory = function(
         /**
          *
          * @summary Get all contacts
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllContacts(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return ContactControllerApiFp(configuration).getAllContacts(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -12061,7 +12487,9 @@ export class ContactControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all contacts
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -12069,13 +12497,17 @@ export class ContactControllerApi extends BaseAPI {
      * @memberof ContactControllerApi
      */
     public getAllContacts(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return ContactControllerApiFp(this.configuration).getAllContacts(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -13841,9 +14273,11 @@ export const EmailControllerApiFetchParamCreator = function(
         /**
          * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all emails in all inboxes in paginated form. Email API list all.
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -13851,9 +14285,11 @@ export const EmailControllerApiFetchParamCreator = function(
          * @throws {RequiredError}
          */
         getEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
@@ -13877,6 +14313,12 @@ export const EmailControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -13887,6 +14329,10 @@ export const EmailControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -14086,9 +14532,11 @@ export const EmailControllerApiFetchParamCreator = function(
         /**
          * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all organization emails. List team or shared test email accounts
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter search filter for emails.
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -14096,9 +14544,11 @@ export const EmailControllerApiFetchParamCreator = function(
          * @throws {RequiredError}
          */
         getOrganizationEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
@@ -14122,6 +14572,12 @@ export const EmailControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -14132,6 +14588,10 @@ export const EmailControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -15091,9 +15551,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
         /**
          * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all emails in all inboxes in paginated form. Email API list all.
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -15101,9 +15563,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         getEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
@@ -15115,9 +15579,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = EmailControllerApiFetchParamCreator(
                 configuration
             ).getEmailsPaginated(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 unreadOnly,
@@ -15234,9 +15700,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
         /**
          * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all organization emails. List team or shared test email accounts
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter search filter for emails.
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -15244,9 +15712,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         getOrganizationEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
@@ -15258,9 +15728,11 @@ export const EmailControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = EmailControllerApiFetchParamCreator(
                 configuration
             ).getOrganizationEmailsPaginated(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 unreadOnly,
@@ -15765,9 +16237,11 @@ export const EmailControllerApiFactory = function(
         /**
          * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all emails in all inboxes in paginated form. Email API list all.
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -15775,18 +16249,22 @@ export const EmailControllerApiFactory = function(
          * @throws {RequiredError}
          */
         getEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
             options?: any
         ) {
             return EmailControllerApiFp(configuration).getEmailsPaginated(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 unreadOnly,
@@ -15843,9 +16321,11 @@ export const EmailControllerApiFactory = function(
         /**
          * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
          * @summary Get all organization emails. List team or shared test email accounts
+         * @param {Date} [before] Optional filter emails received before given date time
          * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
          * @param {number} [page] Optional page index in email list pagination
          * @param {string} [searchFilter] Optional search filter search filter for emails.
+         * @param {Date} [since] Optional filter emails received after given date time
          * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -15853,9 +16333,11 @@ export const EmailControllerApiFactory = function(
          * @throws {RequiredError}
          */
         getOrganizationEmailsPaginated(
+            before?: Date,
             inboxId?: Array<string>,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             unreadOnly?: boolean,
@@ -15864,9 +16346,11 @@ export const EmailControllerApiFactory = function(
             return EmailControllerApiFp(
                 configuration
             ).getOrganizationEmailsPaginated(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 unreadOnly,
@@ -16269,9 +16753,11 @@ export class EmailControllerApi extends BaseAPI {
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails in all inboxes in paginated form. Email API list all.
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -16280,18 +16766,22 @@ export class EmailControllerApi extends BaseAPI {
      * @memberof EmailControllerApi
      */
     public getEmailsPaginated(
+        before?: Date,
         inboxId?: Array<string>,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         unreadOnly?: boolean,
         options?: any
     ) {
         return EmailControllerApiFp(this.configuration).getEmailsPaginated(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             unreadOnly,
@@ -16355,9 +16845,11 @@ export class EmailControllerApi extends BaseAPI {
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all organization emails. List team or shared test email accounts
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter search filter for emails.
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -16366,9 +16858,11 @@ export class EmailControllerApi extends BaseAPI {
      * @memberof EmailControllerApi
      */
     public getOrganizationEmailsPaginated(
+        before?: Date,
         inboxId?: Array<string>,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         unreadOnly?: boolean,
@@ -16377,9 +16871,11 @@ export class EmailControllerApi extends BaseAPI {
         return EmailControllerApiFp(
             this.configuration
         ).getOrganizationEmailsPaginated(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             unreadOnly,
@@ -16676,14 +17172,18 @@ export const ExpiredControllerApiFetchParamCreator = function(
         /**
          * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
          * @summary List records of expired inboxes
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getExpiredInboxes(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -16706,8 +17206,18 @@ export const ExpiredControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -16840,14 +17350,18 @@ export const ExpiredControllerApiFp = function(configuration?: Configuration) {
         /**
          * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
          * @summary List records of expired inboxes
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getExpiredInboxes(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -16857,7 +17371,7 @@ export const ExpiredControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageExpiredInboxRecordProjection> {
             const localVarFetchArgs = ExpiredControllerApiFetchParamCreator(
                 configuration
-            ).getExpiredInboxes(page, size, sort, options);
+            ).getExpiredInboxes(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -16926,20 +17440,26 @@ export const ExpiredControllerApiFactory = function(
         /**
          * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
          * @summary List records of expired inboxes
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in inbox sent email list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getExpiredInboxes(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return ExpiredControllerApiFp(configuration).getExpiredInboxes(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -17000,7 +17520,9 @@ export class ExpiredControllerApi extends BaseAPI {
     /**
      * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
      * @summary List records of expired inboxes
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -17008,13 +17530,17 @@ export class ExpiredControllerApi extends BaseAPI {
      * @memberof ExpiredControllerApi
      */
     public getExpiredInboxes(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return ExpiredControllerApiFp(this.configuration).getExpiredInboxes(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -17952,14 +18478,18 @@ export const GroupControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all Contact Groups in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllGroups(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -17982,8 +18512,18 @@ export const GroupControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -18127,7 +18667,9 @@ export const GroupControllerApiFetchParamCreator = function(
          *
          * @summary Get group and paginated contacts belonging to it
          * @param {string} groupId groupId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in group contact pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in group contact pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -18135,7 +18677,9 @@ export const GroupControllerApiFetchParamCreator = function(
          */
         getGroupWithContactsPaginated(
             groupId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -18168,8 +18712,18 @@ export const GroupControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -18426,14 +18980,18 @@ export const GroupControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Get all Contact Groups in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllGroups(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -18443,7 +19001,7 @@ export const GroupControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageGroupProjection> {
             const localVarFetchArgs = GroupControllerApiFetchParamCreator(
                 configuration
-            ).getAllGroups(page, size, sort, options);
+            ).getAllGroups(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -18524,7 +19082,9 @@ export const GroupControllerApiFp = function(configuration?: Configuration) {
          *
          * @summary Get group and paginated contacts belonging to it
          * @param {string} groupId groupId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in group contact pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in group contact pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -18532,7 +19092,9 @@ export const GroupControllerApiFp = function(configuration?: Configuration) {
          */
         getGroupWithContactsPaginated(
             groupId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -18542,7 +19104,15 @@ export const GroupControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageContactProjection> {
             const localVarFetchArgs = GroupControllerApiFetchParamCreator(
                 configuration
-            ).getGroupWithContactsPaginated(groupId, page, size, sort, options);
+            ).getGroupWithContactsPaginated(
+                groupId,
+                before,
+                page,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -18687,20 +19257,26 @@ export const GroupControllerApiFactory = function(
         /**
          *
          * @summary Get all Contact Groups in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllGroups(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return GroupControllerApiFp(configuration).getAllGroups(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -18736,7 +19312,9 @@ export const GroupControllerApiFactory = function(
          *
          * @summary Get group and paginated contacts belonging to it
          * @param {string} groupId groupId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in group contact pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in group contact pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -18744,7 +19322,9 @@ export const GroupControllerApiFactory = function(
          */
         getGroupWithContactsPaginated(
             groupId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -18753,7 +19333,9 @@ export const GroupControllerApiFactory = function(
                 configuration
             ).getGroupWithContactsPaginated(
                 groupId,
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -18854,7 +19436,9 @@ export class GroupControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all Contact Groups in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -18862,13 +19446,17 @@ export class GroupControllerApi extends BaseAPI {
      * @memberof GroupControllerApi
      */
     public getAllGroups(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return GroupControllerApiFp(this.configuration).getAllGroups(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -18909,7 +19497,9 @@ export class GroupControllerApi extends BaseAPI {
      *
      * @summary Get group and paginated contacts belonging to it
      * @param {string} groupId groupId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in group contact pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in group contact pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -18918,7 +19508,9 @@ export class GroupControllerApi extends BaseAPI {
      */
     public getGroupWithContactsPaginated(
         groupId: string,
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -18927,7 +19519,9 @@ export class GroupControllerApi extends BaseAPI {
             this.configuration
         ).getGroupWithContactsPaginated(
             groupId,
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -18981,7 +19575,7 @@ export const InboxControllerApiFetchParamCreator = function(
         /**
          * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
          * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-         * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+         * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
          * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
          * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
          * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -19373,22 +19967,26 @@ export const InboxControllerApiFetchParamCreator = function(
             };
         },
         /**
-         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {boolean} [favourite] Optionally filter results for favourites only
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-         * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+         * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllInboxes(
+            before?: Date,
             favourite?: boolean,
             page?: number,
             search?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             tag?: string,
@@ -19413,6 +20011,12 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (favourite !== undefined) {
                 localVarQueryParameter['favourite'] = favourite;
             }
@@ -19423,6 +20027,10 @@ export const InboxControllerApiFetchParamCreator = function(
 
             if (search !== undefined) {
                 localVarQueryParameter['search'] = search;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -19464,6 +20072,7 @@ export const InboxControllerApiFetchParamCreator = function(
          * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
          * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Exclude emails received after this ISO 8601 date time
          * @param {number} [delayTimeout] delayTimeout
          * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
          * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -19477,6 +20086,7 @@ export const InboxControllerApiFetchParamCreator = function(
          */
         getEmails(
             inboxId: string,
+            before?: Date,
             delayTimeout?: number,
             limit?: number,
             minCount?: number,
@@ -19513,6 +20123,12 @@ export const InboxControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (delayTimeout !== undefined) {
@@ -19625,7 +20241,9 @@ export const InboxControllerApiFetchParamCreator = function(
          * Get a paginated list of emails in an inbox. Does not hold connections open.
          * @summary Get inbox emails paginated
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Optional filter by received before given date time
          * @param {number} [page] Optional page index in inbox emails list pagination
+         * @param {Date} [since] Optional filter by received after given date time
          * @param {number} [size] Optional page size in inbox emails list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -19633,7 +20251,9 @@ export const InboxControllerApiFetchParamCreator = function(
          */
         getInboxEmailsPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -19666,8 +20286,18 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -19701,8 +20331,10 @@ export const InboxControllerApiFetchParamCreator = function(
          * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
          * @summary Get Inbox Sent Emails
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional sent email search
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -19710,8 +20342,10 @@ export const InboxControllerApiFetchParamCreator = function(
          */
         getInboxSentEmails(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -19744,12 +20378,22 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -19826,12 +20470,16 @@ export const InboxControllerApiFetchParamCreator = function(
         /**
          * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
          * @summary List Inboxes and email addresses
+         * @param {Date} [before] Optional filter by created before given date time
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxes(
+            before?: Date,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -19852,6 +20500,16 @@ export const InboxControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -19884,16 +20542,20 @@ export const InboxControllerApiFetchParamCreator = function(
         /**
          * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
          * @summary List Organization Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getOrganizationInboxes(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -19916,12 +20578,22 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -19955,8 +20627,10 @@ export const InboxControllerApiFetchParamCreator = function(
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -19964,8 +20638,10 @@ export const InboxControllerApiFetchParamCreator = function(
          */
         listInboxRulesets(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -19998,12 +20674,22 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -20037,8 +20723,10 @@ export const InboxControllerApiFetchParamCreator = function(
          * List all tracking pixels sent from an inbox
          * @summary List inbox tracking pixels
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -20046,8 +20734,10 @@ export const InboxControllerApiFetchParamCreator = function(
          */
         listInboxTrackingPixels(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -20080,12 +20770,22 @@ export const InboxControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -20478,7 +21178,7 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
         /**
          * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
          * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-         * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+         * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
          * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
          * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
          * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -20684,22 +21384,26 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {boolean} [favourite] Optionally filter results for favourites only
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-         * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+         * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllInboxes(
+            before?: Date,
             favourite?: boolean,
             page?: number,
             search?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             tag?: string,
@@ -20712,9 +21416,11 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = InboxControllerApiFetchParamCreator(
                 configuration
             ).getAllInboxes(
+                before,
                 favourite,
                 page,
                 search,
+                since,
                 size,
                 sort,
                 tag,
@@ -20741,6 +21447,7 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
          * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Exclude emails received after this ISO 8601 date time
          * @param {number} [delayTimeout] delayTimeout
          * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
          * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -20754,6 +21461,7 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          */
         getEmails(
             inboxId: string,
+            before?: Date,
             delayTimeout?: number,
             limit?: number,
             minCount?: number,
@@ -20771,6 +21479,7 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).getEmails(
                 inboxId,
+                before,
                 delayTimeout,
                 limit,
                 minCount,
@@ -20831,7 +21540,9 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          * Get a paginated list of emails in an inbox. Does not hold connections open.
          * @summary Get inbox emails paginated
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Optional filter by received before given date time
          * @param {number} [page] Optional page index in inbox emails list pagination
+         * @param {Date} [since] Optional filter by received after given date time
          * @param {number} [size] Optional page size in inbox emails list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -20839,14 +21550,24 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          */
         getInboxEmailsPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailPreview> {
             const localVarFetchArgs = InboxControllerApiFetchParamCreator(
                 configuration
-            ).getInboxEmailsPaginated(inboxId, page, size, sort, options);
+            ).getInboxEmailsPaginated(
+                inboxId,
+                before,
+                page,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -20867,8 +21588,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
          * @summary Get Inbox Sent Emails
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional sent email search
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -20876,8 +21599,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          */
         getInboxSentEmails(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -20889,8 +21614,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).getInboxSentEmails(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -20942,19 +21669,23 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
         /**
          * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
          * @summary List Inboxes and email addresses
+         * @param {Date} [before] Optional filter by created before given date time
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxes(
+            before?: Date,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<Array<Inbox>> {
             const localVarFetchArgs = InboxControllerApiFetchParamCreator(
                 configuration
-            ).getInboxes(size, sort, options);
+            ).getInboxes(before, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -20974,16 +21705,20 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
         /**
          * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
          * @summary List Organization Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getOrganizationInboxes(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -20993,7 +21728,15 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageOrganizationInboxProjection> {
             const localVarFetchArgs = InboxControllerApiFetchParamCreator(
                 configuration
-            ).getOrganizationInboxes(page, searchFilter, size, sort, options);
+            ).getOrganizationInboxes(
+                before,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -21014,8 +21757,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21023,8 +21768,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          */
         listInboxRulesets(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -21036,8 +21783,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).listInboxRulesets(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21062,8 +21811,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          * List all tracking pixels sent from an inbox
          * @summary List inbox tracking pixels
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21071,8 +21822,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
          */
         listInboxTrackingPixels(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -21084,8 +21837,10 @@ export const InboxControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).listInboxTrackingPixels(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21280,7 +22035,7 @@ export const InboxControllerApiFactory = function(
         /**
          * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
          * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-         * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+         * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
          * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
          * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
          * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -21388,22 +22143,26 @@ export const InboxControllerApiFactory = function(
             )(fetch, basePath);
         },
         /**
-         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+         * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {boolean} [favourite] Optionally filter results for favourites only
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-         * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+         * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllInboxes(
+            before?: Date,
             favourite?: boolean,
             page?: number,
             search?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             tag?: string,
@@ -21411,9 +22170,11 @@ export const InboxControllerApiFactory = function(
             options?: any
         ) {
             return InboxControllerApiFp(configuration).getAllInboxes(
+                before,
                 favourite,
                 page,
                 search,
+                since,
                 size,
                 sort,
                 tag,
@@ -21425,6 +22186,7 @@ export const InboxControllerApiFactory = function(
          * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
          * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Exclude emails received after this ISO 8601 date time
          * @param {number} [delayTimeout] delayTimeout
          * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
          * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -21438,6 +22200,7 @@ export const InboxControllerApiFactory = function(
          */
         getEmails(
             inboxId: string,
+            before?: Date,
             delayTimeout?: number,
             limit?: number,
             minCount?: number,
@@ -21450,6 +22213,7 @@ export const InboxControllerApiFactory = function(
         ) {
             return InboxControllerApiFp(configuration).getEmails(
                 inboxId,
+                before,
                 delayTimeout,
                 limit,
                 minCount,
@@ -21478,7 +22242,9 @@ export const InboxControllerApiFactory = function(
          * Get a paginated list of emails in an inbox. Does not hold connections open.
          * @summary Get inbox emails paginated
          * @param {string} inboxId Id of inbox that emails belongs to
+         * @param {Date} [before] Optional filter by received before given date time
          * @param {number} [page] Optional page index in inbox emails list pagination
+         * @param {Date} [since] Optional filter by received after given date time
          * @param {number} [size] Optional page size in inbox emails list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21486,14 +22252,18 @@ export const InboxControllerApiFactory = function(
          */
         getInboxEmailsPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxControllerApiFp(configuration).getInboxEmailsPaginated(
                 inboxId,
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -21503,8 +22273,10 @@ export const InboxControllerApiFactory = function(
          * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
          * @summary Get Inbox Sent Emails
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by sent before given date time
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional sent email search
+         * @param {Date} [since] Optional filter by sent after given date time
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21512,16 +22284,20 @@ export const InboxControllerApiFactory = function(
          */
         getInboxSentEmails(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxControllerApiFp(configuration).getInboxSentEmails(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21542,13 +22318,23 @@ export const InboxControllerApiFactory = function(
         /**
          * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
          * @summary List Inboxes and email addresses
+         * @param {Date} [before] Optional filter by created before given date time
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any) {
+        getInboxes(
+            before?: Date,
+            since?: Date,
+            size?: number,
+            sort?: 'ASC' | 'DESC',
+            options?: any
+        ) {
             return InboxControllerApiFp(configuration).getInboxes(
+                before,
+                since,
                 size,
                 sort,
                 options
@@ -21557,23 +22343,29 @@ export const InboxControllerApiFactory = function(
         /**
          * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
          * @summary List Organization Inboxes Paginated
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getOrganizationInboxes(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxControllerApiFp(configuration).getOrganizationInboxes(
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21583,8 +22375,10 @@ export const InboxControllerApiFactory = function(
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21592,16 +22386,20 @@ export const InboxControllerApiFactory = function(
          */
         listInboxRulesets(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxControllerApiFp(configuration).listInboxRulesets(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21611,8 +22409,10 @@ export const InboxControllerApiFactory = function(
          * List all tracking pixels sent from an inbox
          * @summary List inbox tracking pixels
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Optional filter by created before given date time
          * @param {number} [page] Optional page index in inbox tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Optional filter by created after given date time
          * @param {number} [size] Optional page size in inbox tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -21620,16 +22420,20 @@ export const InboxControllerApiFactory = function(
          */
         listInboxTrackingPixels(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxControllerApiFp(configuration).listInboxTrackingPixels(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -21737,7 +22541,7 @@ export class InboxControllerApi extends BaseAPI {
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-     * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
      * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -21860,23 +22664,27 @@ export class InboxControllerApi extends BaseAPI {
     }
 
     /**
-     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {boolean} [favourite] Optionally filter results for favourites only
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-     * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+     * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
     public getAllInboxes(
+        before?: Date,
         favourite?: boolean,
         page?: number,
         search?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         tag?: string,
@@ -21884,9 +22692,11 @@ export class InboxControllerApi extends BaseAPI {
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).getAllInboxes(
+            before,
             favourite,
             page,
             search,
+            since,
             size,
             sort,
             tag,
@@ -21899,6 +22709,7 @@ export class InboxControllerApi extends BaseAPI {
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Exclude emails received after this ISO 8601 date time
      * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -21913,6 +22724,7 @@ export class InboxControllerApi extends BaseAPI {
      */
     public getEmails(
         inboxId: string,
+        before?: Date,
         delayTimeout?: number,
         limit?: number,
         minCount?: number,
@@ -21925,6 +22737,7 @@ export class InboxControllerApi extends BaseAPI {
     ) {
         return InboxControllerApiFp(this.configuration).getEmails(
             inboxId,
+            before,
             delayTimeout,
             limit,
             minCount,
@@ -21956,7 +22769,9 @@ export class InboxControllerApi extends BaseAPI {
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * @summary Get inbox emails paginated
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Optional filter by received before given date time
      * @param {number} [page] Optional page index in inbox emails list pagination
+     * @param {Date} [since] Optional filter by received after given date time
      * @param {number} [size] Optional page size in inbox emails list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -21965,14 +22780,18 @@ export class InboxControllerApi extends BaseAPI {
      */
     public getInboxEmailsPaginated(
         inboxId: string,
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).getInboxEmailsPaginated(
             inboxId,
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -21983,8 +22802,10 @@ export class InboxControllerApi extends BaseAPI {
      * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * @summary Get Inbox Sent Emails
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional sent email search
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -21993,16 +22814,20 @@ export class InboxControllerApi extends BaseAPI {
      */
     public getInboxSentEmails(
         inboxId: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).getInboxSentEmails(
             inboxId,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -22026,14 +22851,24 @@ export class InboxControllerApi extends BaseAPI {
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
      * @summary List Inboxes and email addresses
+     * @param {Date} [before] Optional filter by created before given date time
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    public getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any) {
+    public getInboxes(
+        before?: Date,
+        since?: Date,
+        size?: number,
+        sort?: 'ASC' | 'DESC',
+        options?: any
+    ) {
         return InboxControllerApiFp(this.configuration).getInboxes(
+            before,
+            since,
             size,
             sort,
             options
@@ -22043,8 +22878,10 @@ export class InboxControllerApi extends BaseAPI {
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * @summary List Organization Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -22052,15 +22889,19 @@ export class InboxControllerApi extends BaseAPI {
      * @memberof InboxControllerApi
      */
     public getOrganizationInboxes(
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).getOrganizationInboxes(
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -22071,8 +22912,10 @@ export class InboxControllerApi extends BaseAPI {
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -22081,16 +22924,20 @@ export class InboxControllerApi extends BaseAPI {
      */
     public listInboxRulesets(
         inboxId: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).listInboxRulesets(
             inboxId,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -22101,8 +22948,10 @@ export class InboxControllerApi extends BaseAPI {
      * List all tracking pixels sent from an inbox
      * @summary List inbox tracking pixels
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -22111,16 +22960,20 @@ export class InboxControllerApi extends BaseAPI {
      */
     public listInboxTrackingPixels(
         inboxId: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxControllerApiFp(this.configuration).listInboxTrackingPixels(
             inboxId,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -22470,18 +23323,22 @@ export const InboxForwarderControllerApiFetchParamCreator = function(
         /**
          * List all forwarders attached to an inbox
          * @summary List inbox forwarders
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get forwarders from
          * @param {number} [page] Optional page index in inbox forwarder list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox forwarder list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxForwarders(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -22504,6 +23361,12 @@ export const InboxForwarderControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -22514,6 +23377,10 @@ export const InboxForwarderControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -22909,18 +23776,22 @@ export const InboxForwarderControllerApiFp = function(
         /**
          * List all forwarders attached to an inbox
          * @summary List inbox forwarders
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get forwarders from
          * @param {number} [page] Optional page index in inbox forwarder list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox forwarder list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxForwarders(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -22931,9 +23802,11 @@ export const InboxForwarderControllerApiFp = function(
             const localVarFetchArgs = InboxForwarderControllerApiFetchParamCreator(
                 configuration
             ).getInboxForwarders(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -23134,18 +24007,22 @@ export const InboxForwarderControllerApiFactory = function(
         /**
          * List all forwarders attached to an inbox
          * @summary List inbox forwarders
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get forwarders from
          * @param {number} [page] Optional page index in inbox forwarder list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox forwarder list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxForwarders(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -23153,9 +24030,11 @@ export const InboxForwarderControllerApiFactory = function(
             return InboxForwarderControllerApiFp(
                 configuration
             ).getInboxForwarders(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -23299,9 +24178,11 @@ export class InboxForwarderControllerApi extends BaseAPI {
     /**
      * List all forwarders attached to an inbox
      * @summary List inbox forwarders
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get forwarders from
      * @param {number} [page] Optional page index in inbox forwarder list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox forwarder list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -23309,9 +24190,11 @@ export class InboxForwarderControllerApi extends BaseAPI {
      * @memberof InboxForwarderControllerApi
      */
     public getInboxForwarders(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -23319,9 +24202,11 @@ export class InboxForwarderControllerApi extends BaseAPI {
         return InboxForwarderControllerApiFp(
             this.configuration
         ).getInboxForwarders(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -23638,18 +24523,22 @@ export const InboxRulesetControllerApiFetchParamCreator = function(
         /**
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get rulesets from
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxRulesets(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -23672,6 +24561,12 @@ export const InboxRulesetControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -23682,6 +24577,10 @@ export const InboxRulesetControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -24077,18 +24976,22 @@ export const InboxRulesetControllerApiFp = function(
         /**
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get rulesets from
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxRulesets(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -24099,9 +25002,11 @@ export const InboxRulesetControllerApiFp = function(
             const localVarFetchArgs = InboxRulesetControllerApiFetchParamCreator(
                 configuration
             ).getInboxRulesets(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -24303,26 +25208,32 @@ export const InboxRulesetControllerApiFactory = function(
         /**
          * List all rulesets attached to an inbox
          * @summary List inbox rulesets
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox id to get rulesets from
          * @param {number} [page] Optional page index in inbox ruleset list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox ruleset list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getInboxRulesets(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return InboxRulesetControllerApiFp(configuration).getInboxRulesets(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -24465,9 +25376,11 @@ export class InboxRulesetControllerApi extends BaseAPI {
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get rulesets from
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -24475,17 +25388,21 @@ export class InboxRulesetControllerApi extends BaseAPI {
      * @memberof InboxRulesetControllerApi
      */
     public getInboxRulesets(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return InboxRulesetControllerApiFp(this.configuration).getInboxRulesets(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -25113,18 +26030,22 @@ export const MissedEmailControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all MissedEmails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -25147,6 +26068,12 @@ export const MissedEmailControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -25157,6 +26084,10 @@ export const MissedEmailControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -25189,18 +26120,22 @@ export const MissedEmailControllerApiFetchParamCreator = function(
         /**
          * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
          * @summary Get all unknown missed emails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllUnknownMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -25223,6 +26158,12 @@ export const MissedEmailControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -25233,6 +26174,10 @@ export const MissedEmailControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -25320,15 +26265,19 @@ export const MissedEmailControllerApiFetchParamCreator = function(
         /**
          * Wait for 0 based index missed email
          * @summary Wait for Nth missed email
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [timeout] Optional timeout milliseconds
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         waitForNthMissedEmail(
+            before?: Date,
             inboxId?: string,
             index?: number,
+            since?: Date,
             timeout?: number,
             options: any = {}
         ): FetchArgs {
@@ -25350,12 +26299,22 @@ export const MissedEmailControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
 
             if (index !== undefined) {
                 localVarQueryParameter['index'] = index;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (timeout !== undefined) {
@@ -25395,18 +26354,22 @@ export const MissedEmailControllerApiFp = function(
         /**
          *
          * @summary Get all MissedEmails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -25417,9 +26380,11 @@ export const MissedEmailControllerApiFp = function(
             const localVarFetchArgs = MissedEmailControllerApiFetchParamCreator(
                 configuration
             ).getAllMissedEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -25443,18 +26408,22 @@ export const MissedEmailControllerApiFp = function(
         /**
          * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
          * @summary Get all unknown missed emails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllUnknownMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -25465,9 +26434,11 @@ export const MissedEmailControllerApiFp = function(
             const localVarFetchArgs = MissedEmailControllerApiFetchParamCreator(
                 configuration
             ).getAllUnknownMissedEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -25521,21 +26492,32 @@ export const MissedEmailControllerApiFp = function(
         /**
          * Wait for 0 based index missed email
          * @summary Wait for Nth missed email
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [timeout] Optional timeout milliseconds
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         waitForNthMissedEmail(
+            before?: Date,
             inboxId?: string,
             index?: number,
+            since?: Date,
             timeout?: number,
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<MissedEmail> {
             const localVarFetchArgs = MissedEmailControllerApiFetchParamCreator(
                 configuration
-            ).waitForNthMissedEmail(inboxId, index, timeout, options);
+            ).waitForNthMissedEmail(
+                before,
+                inboxId,
+                index,
+                since,
+                timeout,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -25568,26 +26550,32 @@ export const MissedEmailControllerApiFactory = function(
         /**
          *
          * @summary Get all MissedEmails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return MissedEmailControllerApiFp(configuration).getAllMissedEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -25596,18 +26584,22 @@ export const MissedEmailControllerApiFactory = function(
         /**
          * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
          * @summary Get all unknown missed emails in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllUnknownMissedEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -25615,9 +26607,11 @@ export const MissedEmailControllerApiFactory = function(
             return MissedEmailControllerApiFp(
                 configuration
             ).getAllUnknownMissedEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -25639,23 +26633,29 @@ export const MissedEmailControllerApiFactory = function(
         /**
          * Wait for 0 based index missed email
          * @summary Wait for Nth missed email
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inbox ID filter
          * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [timeout] Optional timeout milliseconds
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         waitForNthMissedEmail(
+            before?: Date,
             inboxId?: string,
             index?: number,
+            since?: Date,
             timeout?: number,
             options?: any
         ) {
             return MissedEmailControllerApiFp(
                 configuration
             ).waitForNthMissedEmail(
+                before,
                 inboxId,
                 index,
+                since,
                 timeout,
                 options
             )(fetch, basePath);
@@ -25673,9 +26673,11 @@ export class MissedEmailControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all MissedEmails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -25683,9 +26685,11 @@ export class MissedEmailControllerApi extends BaseAPI {
      * @memberof MissedEmailControllerApi
      */
     public getAllMissedEmails(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -25693,9 +26697,11 @@ export class MissedEmailControllerApi extends BaseAPI {
         return MissedEmailControllerApiFp(
             this.configuration
         ).getAllMissedEmails(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -25705,9 +26711,11 @@ export class MissedEmailControllerApi extends BaseAPI {
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * @summary Get all unknown missed emails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -25715,9 +26723,11 @@ export class MissedEmailControllerApi extends BaseAPI {
      * @memberof MissedEmailControllerApi
      */
     public getAllUnknownMissedEmails(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -25725,9 +26735,11 @@ export class MissedEmailControllerApi extends BaseAPI {
         return MissedEmailControllerApiFp(
             this.configuration
         ).getAllUnknownMissedEmails(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -25752,24 +26764,30 @@ export class MissedEmailControllerApi extends BaseAPI {
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MissedEmailControllerApi
      */
     public waitForNthMissedEmail(
+        before?: Date,
         inboxId?: string,
         index?: number,
+        since?: Date,
         timeout?: number,
         options?: any
     ) {
         return MissedEmailControllerApiFp(
             this.configuration
         ).waitForNthMissedEmail(
+            before,
             inboxId,
             index,
+            since,
             timeout,
             options
         )(this.fetch, this.basePath);
@@ -25787,16 +26805,20 @@ export const SentEmailsControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all sent email tracking pixels in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllSentTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -25819,12 +26841,22 @@ export const SentEmailsControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -25968,8 +27000,10 @@ export const SentEmailsControllerApiFetchParamCreator = function(
          *
          * @summary Get all tracking pixels for a sent email in paginated form
          * @param {string} id id
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -25977,8 +27011,10 @@ export const SentEmailsControllerApiFetchParamCreator = function(
          */
         getSentEmailTrackingPixels(
             id: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -26011,12 +27047,22 @@ export const SentEmailsControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -26049,18 +27095,22 @@ export const SentEmailsControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all sent emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -26083,6 +27133,12 @@ export const SentEmailsControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -26093,6 +27149,10 @@ export const SentEmailsControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -26125,18 +27185,22 @@ export const SentEmailsControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all sent organization emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentOrganizationEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -26159,6 +27223,12 @@ export const SentEmailsControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (inboxId !== undefined) {
                 localVarQueryParameter['inboxId'] = inboxId;
             }
@@ -26169,6 +27239,10 @@ export const SentEmailsControllerApiFetchParamCreator = function(
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -26212,16 +27286,20 @@ export const SentEmailsControllerApiFp = function(
         /**
          *
          * @summary Get all sent email tracking pixels in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllSentTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26231,7 +27309,15 @@ export const SentEmailsControllerApiFp = function(
         ) => Promise<PageTrackingPixelProjection> {
             const localVarFetchArgs = SentEmailsControllerApiFetchParamCreator(
                 configuration
-            ).getAllSentTrackingPixels(page, searchFilter, size, sort, options);
+            ).getAllSentTrackingPixels(
+                before,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -26312,8 +27398,10 @@ export const SentEmailsControllerApiFp = function(
          *
          * @summary Get all tracking pixels for a sent email in paginated form
          * @param {string} id id
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -26321,8 +27409,10 @@ export const SentEmailsControllerApiFp = function(
          */
         getSentEmailTrackingPixels(
             id: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26334,8 +27424,10 @@ export const SentEmailsControllerApiFp = function(
                 configuration
             ).getSentEmailTrackingPixels(
                 id,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26359,18 +27451,22 @@ export const SentEmailsControllerApiFp = function(
         /**
          *
          * @summary Get all sent emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26380,7 +27476,16 @@ export const SentEmailsControllerApiFp = function(
         ) => Promise<PageSentEmailProjection> {
             const localVarFetchArgs = SentEmailsControllerApiFetchParamCreator(
                 configuration
-            ).getSentEmails(inboxId, page, searchFilter, size, sort, options);
+            ).getSentEmails(
+                before,
+                inboxId,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -26400,18 +27505,22 @@ export const SentEmailsControllerApiFp = function(
         /**
          *
          * @summary Get all sent organization emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentOrganizationEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26422,9 +27531,11 @@ export const SentEmailsControllerApiFp = function(
             const localVarFetchArgs = SentEmailsControllerApiFetchParamCreator(
                 configuration
             ).getSentOrganizationEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26461,16 +27572,20 @@ export const SentEmailsControllerApiFactory = function(
         /**
          *
          * @summary Get all sent email tracking pixels in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllSentTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26478,8 +27593,10 @@ export const SentEmailsControllerApiFactory = function(
             return SentEmailsControllerApiFp(
                 configuration
             ).getAllSentTrackingPixels(
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26514,8 +27631,10 @@ export const SentEmailsControllerApiFactory = function(
          *
          * @summary Get all tracking pixels for a sent email in paginated form
          * @param {string} id id
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in sent email tracking pixel list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email tracking pixel list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -26523,8 +27642,10 @@ export const SentEmailsControllerApiFactory = function(
          */
         getSentEmailTrackingPixels(
             id: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26533,8 +27654,10 @@ export const SentEmailsControllerApiFactory = function(
                 configuration
             ).getSentEmailTrackingPixels(
                 id,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26543,26 +27666,32 @@ export const SentEmailsControllerApiFactory = function(
         /**
          *
          * @summary Get all sent emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in inbox sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in inbox sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return SentEmailsControllerApiFp(configuration).getSentEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26571,18 +27700,22 @@ export const SentEmailsControllerApiFactory = function(
         /**
          *
          * @summary Get all sent organization emails in paginated form
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
          * @param {number} [page] Optional page index in sent email list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in sent email list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getSentOrganizationEmails(
+            before?: Date,
             inboxId?: string,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -26590,9 +27723,11 @@ export const SentEmailsControllerApiFactory = function(
             return SentEmailsControllerApiFp(
                 configuration
             ).getSentOrganizationEmails(
+                before,
                 inboxId,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -26611,8 +27746,10 @@ export class SentEmailsControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all sent email tracking pixels in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -26620,8 +27757,10 @@ export class SentEmailsControllerApi extends BaseAPI {
      * @memberof SentEmailsControllerApi
      */
     public getAllSentTrackingPixels(
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -26629,8 +27768,10 @@ export class SentEmailsControllerApi extends BaseAPI {
         return SentEmailsControllerApiFp(
             this.configuration
         ).getAllSentTrackingPixels(
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -26670,8 +27811,10 @@ export class SentEmailsControllerApi extends BaseAPI {
      *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -26680,8 +27823,10 @@ export class SentEmailsControllerApi extends BaseAPI {
      */
     public getSentEmailTrackingPixels(
         id: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -26690,8 +27835,10 @@ export class SentEmailsControllerApi extends BaseAPI {
             this.configuration
         ).getSentEmailTrackingPixels(
             id,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -26701,9 +27848,11 @@ export class SentEmailsControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all sent emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -26711,17 +27860,21 @@ export class SentEmailsControllerApi extends BaseAPI {
      * @memberof SentEmailsControllerApi
      */
     public getSentEmails(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return SentEmailsControllerApiFp(this.configuration).getSentEmails(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -26731,9 +27884,11 @@ export class SentEmailsControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all sent organization emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -26741,9 +27896,11 @@ export class SentEmailsControllerApi extends BaseAPI {
      * @memberof SentEmailsControllerApi
      */
     public getSentOrganizationEmails(
+        before?: Date,
         inboxId?: string,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -26751,9 +27908,11 @@ export class SentEmailsControllerApi extends BaseAPI {
         return SentEmailsControllerApiFp(
             this.configuration
         ).getSentOrganizationEmails(
+            before,
             inboxId,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -26894,14 +28053,18 @@ export const TemplateControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get all Templates in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTemplates(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -26924,8 +28087,18 @@ export const TemplateControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -27205,14 +28378,18 @@ export const TemplateControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Get all Templates in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTemplates(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -27222,7 +28399,7 @@ export const TemplateControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageTemplateProjection> {
             const localVarFetchArgs = TemplateControllerApiFetchParamCreator(
                 configuration
-            ).getAllTemplates(page, size, sort, options);
+            ).getAllTemplates(before, page, since, size, sort, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -27377,20 +28554,26 @@ export const TemplateControllerApiFactory = function(
         /**
          *
          * @summary Get all Templates in paginated format
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTemplates(
+            before?: Date,
             page?: number,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return TemplateControllerApiFp(configuration).getAllTemplates(
+                before,
                 page,
+                since,
                 size,
                 sort,
                 options
@@ -27486,7 +28669,9 @@ export class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all Templates in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -27494,13 +28679,17 @@ export class TemplateControllerApi extends BaseAPI {
      * @memberof TemplateControllerApi
      */
     public getAllTemplates(
+        before?: Date,
         page?: number,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return TemplateControllerApiFp(this.configuration).getAllTemplates(
+            before,
             page,
+            since,
             size,
             sort,
             options
@@ -27635,16 +28824,20 @@ export const TrackingControllerApiFetchParamCreator = function(
         /**
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -27667,12 +28860,22 @@ export const TrackingControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -27799,16 +29002,20 @@ export const TrackingControllerApiFp = function(configuration?: Configuration) {
         /**
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -27818,7 +29025,15 @@ export const TrackingControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageTrackingPixelProjection> {
             const localVarFetchArgs = TrackingControllerApiFetchParamCreator(
                 configuration
-            ).getAllTrackingPixels(page, searchFilter, size, sort, options);
+            ).getAllTrackingPixels(
+                before,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -27897,23 +29112,29 @@ export const TrackingControllerApiFactory = function(
         /**
          * List tracking pixels in paginated form
          * @summary Get tracking pixels
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllTrackingPixels(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return TrackingControllerApiFp(configuration).getAllTrackingPixels(
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -27963,8 +29184,10 @@ export class TrackingControllerApi extends BaseAPI {
     /**
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -27972,15 +29195,19 @@ export class TrackingControllerApi extends BaseAPI {
      * @memberof TrackingControllerApi
      */
     public getAllTrackingPixels(
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return TrackingControllerApiFp(this.configuration).getAllTrackingPixels(
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -28071,6 +29298,7 @@ export const WaitForControllerApiFetchParamCreator = function(
         /**
          * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
          * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater that 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28082,6 +29310,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          * @throws {RequiredError}
          */
         waitForEmailCount(
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28107,6 +29336,12 @@ export const WaitForControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (count !== undefined) {
@@ -28159,6 +29394,7 @@ export const WaitForControllerApiFetchParamCreator = function(
         /**
          * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
          * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+         * @param {Date} [before] Filter for emails that were before after the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28169,6 +29405,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          * @throws {RequiredError}
          */
         waitForLatestEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28193,6 +29430,12 @@ export const WaitForControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (delay !== undefined) {
@@ -28242,6 +29485,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait or return list of emails that match simple matching patterns
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28254,6 +29498,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          */
         waitForMatchingEmails(
             matchOptions: MatchOptions,
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28286,6 +29531,12 @@ export const WaitForControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (count !== undefined) {
@@ -28348,6 +29599,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait for or return the first email that matches provided MatchOptions array
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are matching an email for
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28359,6 +29611,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          */
         waitForMatchingFirstEmail(
             matchOptions: MatchOptions,
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28390,6 +29643,12 @@ export const WaitForControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (delay !== undefined) {
@@ -28447,6 +29706,7 @@ export const WaitForControllerApiFetchParamCreator = function(
         /**
          * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
          * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox you are fetching emails from
          * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -28458,6 +29718,7 @@ export const WaitForControllerApiFetchParamCreator = function(
          * @throws {RequiredError}
          */
         waitForNthEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             index?: number,
@@ -28483,6 +29744,12 @@ export const WaitForControllerApiFetchParamCreator = function(
                         ? configuration.apiKey('x-api-key')
                         : configuration.apiKey;
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
             }
 
             if (delay !== undefined) {
@@ -28577,6 +29844,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
         /**
          * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
          * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater that 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28588,6 +29856,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         waitForEmailCount(
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28603,6 +29872,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = WaitForControllerApiFetchParamCreator(
                 configuration
             ).waitForEmailCount(
+                before,
                 count,
                 delay,
                 inboxId,
@@ -28631,6 +29901,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
         /**
          * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
          * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+         * @param {Date} [before] Filter for emails that were before after the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28641,6 +29912,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         waitForLatestEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28652,6 +29924,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = WaitForControllerApiFetchParamCreator(
                 configuration
             ).waitForLatestEmail(
+                before,
                 delay,
                 inboxId,
                 since,
@@ -28680,6 +29953,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait or return list of emails that match simple matching patterns
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28692,6 +29966,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          */
         waitForMatchingEmails(
             matchOptions: MatchOptions,
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28708,6 +29983,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).waitForMatchingEmails(
                 matchOptions,
+                before,
                 count,
                 delay,
                 inboxId,
@@ -28737,6 +30013,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait for or return the first email that matches provided MatchOptions array
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are matching an email for
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28748,6 +30025,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          */
         waitForMatchingFirstEmail(
             matchOptions: MatchOptions,
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28760,6 +30038,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).waitForMatchingFirstEmail(
                 matchOptions,
+                before,
                 delay,
                 inboxId,
                 since,
@@ -28787,6 +30066,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
         /**
          * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
          * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox you are fetching emails from
          * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -28798,6 +30078,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         waitForNthEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             index?: number,
@@ -28810,6 +30091,7 @@ export const WaitForControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = WaitForControllerApiFetchParamCreator(
                 configuration
             ).waitForNthEmail(
+                before,
                 delay,
                 inboxId,
                 index,
@@ -28864,6 +30146,7 @@ export const WaitForControllerApiFactory = function(
         /**
          * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
          * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater that 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28875,6 +30158,7 @@ export const WaitForControllerApiFactory = function(
          * @throws {RequiredError}
          */
         waitForEmailCount(
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28885,6 +30169,7 @@ export const WaitForControllerApiFactory = function(
             options?: any
         ) {
             return WaitForControllerApiFp(configuration).waitForEmailCount(
+                before,
                 count,
                 delay,
                 inboxId,
@@ -28898,6 +30183,7 @@ export const WaitForControllerApiFactory = function(
         /**
          * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
          * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+         * @param {Date} [before] Filter for emails that were before after the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28908,6 +30194,7 @@ export const WaitForControllerApiFactory = function(
          * @throws {RequiredError}
          */
         waitForLatestEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28917,6 +30204,7 @@ export const WaitForControllerApiFactory = function(
             options?: any
         ) {
             return WaitForControllerApiFp(configuration).waitForLatestEmail(
+                before,
                 delay,
                 inboxId,
                 since,
@@ -28930,6 +30218,7 @@ export const WaitForControllerApiFactory = function(
          * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait or return list of emails that match simple matching patterns
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -28942,6 +30231,7 @@ export const WaitForControllerApiFactory = function(
          */
         waitForMatchingEmails(
             matchOptions: MatchOptions,
+            before?: Date,
             count?: number,
             delay?: number,
             inboxId?: string,
@@ -28953,6 +30243,7 @@ export const WaitForControllerApiFactory = function(
         ) {
             return WaitForControllerApiFp(configuration).waitForMatchingEmails(
                 matchOptions,
+                before,
                 count,
                 delay,
                 inboxId,
@@ -28967,6 +30258,7 @@ export const WaitForControllerApiFactory = function(
          * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
          * @summary Wait for or return the first email that matches provided MatchOptions array
          * @param {MatchOptions} matchOptions matchOptions
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox we are matching an email for
          * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -28978,6 +30270,7 @@ export const WaitForControllerApiFactory = function(
          */
         waitForMatchingFirstEmail(
             matchOptions: MatchOptions,
+            before?: Date,
             delay?: number,
             inboxId?: string,
             since?: Date,
@@ -28990,6 +30283,7 @@ export const WaitForControllerApiFactory = function(
                 configuration
             ).waitForMatchingFirstEmail(
                 matchOptions,
+                before,
                 delay,
                 inboxId,
                 since,
@@ -29002,6 +30296,7 @@ export const WaitForControllerApiFactory = function(
         /**
          * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
          * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+         * @param {Date} [before] Filter for emails that were received before the given timestamp
          * @param {number} [delay] Max milliseconds delay between calls
          * @param {string} [inboxId] Id of the inbox you are fetching emails from
          * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -29013,6 +30308,7 @@ export const WaitForControllerApiFactory = function(
          * @throws {RequiredError}
          */
         waitForNthEmail(
+            before?: Date,
             delay?: number,
             inboxId?: string,
             index?: number,
@@ -29023,6 +30319,7 @@ export const WaitForControllerApiFactory = function(
             options?: any
         ) {
             return WaitForControllerApiFp(configuration).waitForNthEmail(
+                before,
                 delay,
                 inboxId,
                 index,
@@ -29061,6 +30358,7 @@ export class WaitForControllerApi extends BaseAPI {
     /**
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -29073,6 +30371,7 @@ export class WaitForControllerApi extends BaseAPI {
      * @memberof WaitForControllerApi
      */
     public waitForEmailCount(
+        before?: Date,
         count?: number,
         delay?: number,
         inboxId?: string,
@@ -29083,6 +30382,7 @@ export class WaitForControllerApi extends BaseAPI {
         options?: any
     ) {
         return WaitForControllerApiFp(this.configuration).waitForEmailCount(
+            before,
             count,
             delay,
             inboxId,
@@ -29097,6 +30397,7 @@ export class WaitForControllerApi extends BaseAPI {
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {Date} [before] Filter for emails that were before after the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -29108,6 +30409,7 @@ export class WaitForControllerApi extends BaseAPI {
      * @memberof WaitForControllerApi
      */
     public waitForLatestEmail(
+        before?: Date,
         delay?: number,
         inboxId?: string,
         since?: Date,
@@ -29117,6 +30419,7 @@ export class WaitForControllerApi extends BaseAPI {
         options?: any
     ) {
         return WaitForControllerApiFp(this.configuration).waitForLatestEmail(
+            before,
             delay,
             inboxId,
             since,
@@ -29131,6 +30434,7 @@ export class WaitForControllerApi extends BaseAPI {
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -29144,6 +30448,7 @@ export class WaitForControllerApi extends BaseAPI {
      */
     public waitForMatchingEmails(
         matchOptions: MatchOptions,
+        before?: Date,
         count?: number,
         delay?: number,
         inboxId?: string,
@@ -29155,6 +30460,7 @@ export class WaitForControllerApi extends BaseAPI {
     ) {
         return WaitForControllerApiFp(this.configuration).waitForMatchingEmails(
             matchOptions,
+            before,
             count,
             delay,
             inboxId,
@@ -29170,6 +30476,7 @@ export class WaitForControllerApi extends BaseAPI {
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -29182,6 +30489,7 @@ export class WaitForControllerApi extends BaseAPI {
      */
     public waitForMatchingFirstEmail(
         matchOptions: MatchOptions,
+        before?: Date,
         delay?: number,
         inboxId?: string,
         since?: Date,
@@ -29194,6 +30502,7 @@ export class WaitForControllerApi extends BaseAPI {
             this.configuration
         ).waitForMatchingFirstEmail(
             matchOptions,
+            before,
             delay,
             inboxId,
             since,
@@ -29207,6 +30516,7 @@ export class WaitForControllerApi extends BaseAPI {
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -29219,6 +30529,7 @@ export class WaitForControllerApi extends BaseAPI {
      * @memberof WaitForControllerApi
      */
     public waitForNthEmail(
+        before?: Date,
         delay?: number,
         inboxId?: string,
         index?: number,
@@ -29229,6 +30540,7 @@ export class WaitForControllerApi extends BaseAPI {
         options?: any
     ) {
         return WaitForControllerApiFp(this.configuration).waitForNthEmail(
+            before,
             delay,
             inboxId,
             index,
@@ -29397,16 +30709,20 @@ export const WebhookControllerApiFetchParamCreator = function(
         /**
          *
          * @summary Get results for all webhooks
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhookResults(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -29429,12 +30745,22 @@ export const WebhookControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -29467,16 +30793,20 @@ export const WebhookControllerApiFetchParamCreator = function(
         /**
          * List webhooks in paginated form. Allows for page index, page size, and sort direction.
          * @summary List Webhooks Paginated
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhooks(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -29499,12 +30829,22 @@ export const WebhookControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -29538,8 +30878,10 @@ export const WebhookControllerApiFetchParamCreator = function(
          *
          * @summary Get paginated webhooks for an Inbox
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -29547,8 +30889,10 @@ export const WebhookControllerApiFetchParamCreator = function(
          */
         getInboxWebhooksPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -29581,6 +30925,12 @@ export const WebhookControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
@@ -29589,12 +30939,74 @@ export const WebhookControllerApiFetchParamCreator = function(
                 localVarQueryParameter['searchFilter'] = searchFilter;
             }
 
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
+            }
+
             if (size !== undefined) {
                 localVarQueryParameter['size'] = size;
             }
 
             if (sort !== undefined) {
                 localVarQueryParameter['sort'] = sort;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get JSON Schema definition for webhook payload
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getJsonSchemaForWebhookPayload(
+            webhookId: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'webhookId' is not null or undefined
+            if (webhookId === null || webhookId === undefined) {
+                throw new RequiredError(
+                    'webhookId',
+                    'Required parameter webhookId was null or undefined when calling getJsonSchemaForWebhookPayload.'
+                );
+            }
+            const localVarPath = `/webhooks/{webhookId}/schema`.replace(
+                `{${'webhookId'}}`,
+                encodeURIComponent(String(webhookId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'POST' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
             localVarUrlObj.query = Object.assign(
@@ -29729,6 +31141,64 @@ export const WebhookControllerApiFetchParamCreator = function(
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign(
                 { method: 'GET' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get example payload for webhook
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadForWebhook(
+            webhookId: string,
+            options: any = {}
+        ): FetchArgs {
+            // verify required parameter 'webhookId' is not null or undefined
+            if (webhookId === null || webhookId === undefined) {
+                throw new RequiredError(
+                    'webhookId',
+                    'Required parameter webhookId was null or undefined when calling getTestWebhookPayloadForWebhook.'
+                );
+            }
+            const localVarPath = `/webhooks/{webhookId}/example`.replace(
+                `{${'webhookId'}}`,
+                encodeURIComponent(String(webhookId))
+            );
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'POST' },
                 options
             );
             const localVarHeaderParameter = {} as any;
@@ -30011,8 +31481,10 @@ export const WebhookControllerApiFetchParamCreator = function(
          *
          * @summary Get a webhook results for a webhook
          * @param {string} webhookId ID of webhook to get results for
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -30020,8 +31492,10 @@ export const WebhookControllerApiFetchParamCreator = function(
          */
         getWebhookResults(
             webhookId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options: any = {}
@@ -30054,12 +31528,22 @@ export const WebhookControllerApiFetchParamCreator = function(
                 localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
 
+            if (before !== undefined) {
+                localVarQueryParameter[
+                    'before'
+                ] = (before as any).toISOString();
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
 
             if (searchFilter !== undefined) {
                 localVarQueryParameter['searchFilter'] = searchFilter;
+            }
+
+            if (since !== undefined) {
+                localVarQueryParameter['since'] = (since as any).toISOString();
             }
 
             if (size !== undefined) {
@@ -30333,23 +31817,35 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         /**
          *
          * @summary Get results for all webhooks
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhookResults(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult> {
             const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
                 configuration
-            ).getAllWebhookResults(page, searchFilter, size, sort, options);
+            ).getAllWebhookResults(
+                before,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -30369,16 +31865,20 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         /**
          * List webhooks in paginated form. Allows for page index, page size, and sort direction.
          * @summary List Webhooks Paginated
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhooks(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -30388,7 +31888,15 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         ) => Promise<PageWebhookProjection> {
             const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
                 configuration
-            ).getAllWebhooks(page, searchFilter, size, sort, options);
+            ).getAllWebhooks(
+                before,
+                page,
+                searchFilter,
+                since,
+                size,
+                sort,
+                options
+            );
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -30409,8 +31917,10 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
          *
          * @summary Get paginated webhooks for an Inbox
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -30418,8 +31928,10 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
          */
         getInboxWebhooksPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -30431,12 +31943,44 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).getInboxWebhooksPaginated(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
             );
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get JSON Schema definition for webhook payload
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getJsonSchemaForWebhookPayload(
+            webhookId: string,
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<JSONSchemaDto> {
+            const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
+                configuration
+            ).getJsonSchemaForWebhookPayload(webhookId, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -30538,6 +32082,39 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
             const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
                 configuration
             ).getTestWebhookPayloadEmailRead(options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get example payload for webhook
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadForWebhook(
+            webhookId: string,
+            options?: any
+        ): (
+            fetch?: FetchAPI,
+            basePath?: string
+        ) => Promise<AbstractWebhookPayload> {
+            const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
+                configuration
+            ).getTestWebhookPayloadForWebhook(webhookId, options);
             return (
                 fetch: FetchAPI = portableFetch,
                 basePath: string = BASE_PATH
@@ -30711,8 +32288,10 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
          *
          * @summary Get a webhook results for a webhook
          * @param {string} webhookId ID of webhook to get results for
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -30720,8 +32299,10 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
          */
         getWebhookResults(
             webhookId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -30730,8 +32311,10 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
                 configuration
             ).getWebhookResults(
                 webhookId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -30895,23 +32478,29 @@ export const WebhookControllerApiFactory = function(
         /**
          *
          * @summary Get results for all webhooks
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhookResults(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return WebhookControllerApiFp(configuration).getAllWebhookResults(
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -30920,23 +32509,29 @@ export const WebhookControllerApiFactory = function(
         /**
          * List webhooks in paginated form. Allows for page index, page size, and sort direction.
          * @summary List Webhooks Paginated
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size for paginated result list.
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         getAllWebhooks(
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return WebhookControllerApiFp(configuration).getAllWebhooks(
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -30946,8 +32541,10 @@ export const WebhookControllerApiFactory = function(
          *
          * @summary Get paginated webhooks for an Inbox
          * @param {string} inboxId inboxId
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -30955,8 +32552,10 @@ export const WebhookControllerApiFactory = function(
          */
         getInboxWebhooksPaginated(
             inboxId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
@@ -30965,12 +32564,29 @@ export const WebhookControllerApiFactory = function(
                 configuration
             ).getInboxWebhooksPaginated(
                 inboxId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
             )(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get JSON Schema definition for webhook payload
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getJsonSchemaForWebhookPayload(webhookId: string, options?: any) {
+            return WebhookControllerApiFp(
+                configuration
+            ).getJsonSchemaForWebhookPayload(webhookId, options)(
+                fetch,
+                basePath
+            );
         },
         /**
          *
@@ -31015,6 +32631,21 @@ export const WebhookControllerApiFactory = function(
             return WebhookControllerApiFp(
                 configuration
             ).getTestWebhookPayloadEmailRead(options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get example payload for webhook
+         * @param {string} webhookId webhookId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestWebhookPayloadForWebhook(webhookId: string, options?: any) {
+            return WebhookControllerApiFp(
+                configuration
+            ).getTestWebhookPayloadForWebhook(webhookId, options)(
+                fetch,
+                basePath
+            );
         },
         /**
          *
@@ -31079,8 +32710,10 @@ export const WebhookControllerApiFactory = function(
          *
          * @summary Get a webhook results for a webhook
          * @param {string} webhookId ID of webhook to get results for
+         * @param {Date} [before] Filter by created at before the given timestamp
          * @param {number} [page] Optional page index in list pagination
          * @param {string} [searchFilter] Optional search filter
+         * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
          * @param {*} [options] Override http request option.
@@ -31088,16 +32721,20 @@ export const WebhookControllerApiFactory = function(
          */
         getWebhookResults(
             webhookId: string,
+            before?: Date,
             page?: number,
             searchFilter?: string,
+            since?: Date,
             size?: number,
             sort?: 'ASC' | 'DESC',
             options?: any
         ) {
             return WebhookControllerApiFp(configuration).getWebhookResults(
                 webhookId,
+                before,
                 page,
                 searchFilter,
+                since,
                 size,
                 sort,
                 options
@@ -31193,8 +32830,10 @@ export class WebhookControllerApi extends BaseAPI {
     /**
      *
      * @summary Get results for all webhooks
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -31202,15 +32841,19 @@ export class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     public getAllWebhookResults(
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return WebhookControllerApiFp(this.configuration).getAllWebhookResults(
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -31220,8 +32863,10 @@ export class WebhookControllerApi extends BaseAPI {
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -31229,15 +32874,19 @@ export class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     public getAllWebhooks(
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return WebhookControllerApiFp(this.configuration).getAllWebhooks(
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
@@ -31248,8 +32897,10 @@ export class WebhookControllerApi extends BaseAPI {
      *
      * @summary Get paginated webhooks for an Inbox
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -31258,8 +32909,10 @@ export class WebhookControllerApi extends BaseAPI {
      */
     public getInboxWebhooksPaginated(
         inboxId: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
@@ -31268,12 +32921,31 @@ export class WebhookControllerApi extends BaseAPI {
             this.configuration
         ).getInboxWebhooksPaginated(
             inboxId,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options
         )(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Get JSON Schema definition for webhook payload
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    public getJsonSchemaForWebhookPayload(webhookId: string, options?: any) {
+        return WebhookControllerApiFp(
+            this.configuration
+        ).getJsonSchemaForWebhookPayload(webhookId, options)(
+            this.fetch,
+            this.basePath
+        );
     }
 
     /**
@@ -31324,6 +32996,23 @@ export class WebhookControllerApi extends BaseAPI {
         return WebhookControllerApiFp(
             this.configuration
         ).getTestWebhookPayloadEmailRead(options)(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Get example payload for webhook
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    public getTestWebhookPayloadForWebhook(webhookId: string, options?: any) {
+        return WebhookControllerApiFp(
+            this.configuration
+        ).getTestWebhookPayloadForWebhook(webhookId, options)(
+            this.fetch,
+            this.basePath
+        );
     }
 
     /**
@@ -31402,8 +33091,10 @@ export class WebhookControllerApi extends BaseAPI {
      *
      * @summary Get a webhook results for a webhook
      * @param {string} webhookId ID of webhook to get results for
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
@@ -31412,16 +33103,20 @@ export class WebhookControllerApi extends BaseAPI {
      */
     public getWebhookResults(
         webhookId: string,
+        before?: Date,
         page?: number,
         searchFilter?: string,
+        since?: Date,
         size?: number,
         sort?: 'ASC' | 'DESC',
         options?: any
     ) {
         return WebhookControllerApiFp(this.configuration).getWebhookResults(
             webhookId,
+            before,
             page,
             searchFilter,
+            since,
             size,
             sort,
             options

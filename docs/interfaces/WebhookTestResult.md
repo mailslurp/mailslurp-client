@@ -26,7 +26,7 @@ Results of testing a webhook
 
 #### Defined in
 
-[src/generated/api.ts:7067](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L7067)
+[src/generated/api.ts:7093](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L7093)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:7073](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L7073)
+[src/generated/api.ts:7099](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L7099)
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:7079](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L7079)
+[src/generated/api.ts:7105](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L7105)

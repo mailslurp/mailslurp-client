@@ -51,7 +51,7 @@ ExpiredControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -113,7 +113,7 @@ Return default times used for inbox expiration
 
 #### Defined in
 
-[src/generated/api.ts:16965](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16965)
+[src/generated/api.ts:17485](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17485)
 
 ___
 
@@ -142,7 +142,7 @@ Use the inboxId to return an ExpiredInboxRecord if an inbox has expired. Inboxes
 
 #### Defined in
 
-[src/generated/api.ts:16979](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16979)
+[src/generated/api.ts:17499](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17499)
 
 ___
 
@@ -171,13 +171,13 @@ Inboxes created with an expiration date will expire after the given date and be 
 
 #### Defined in
 
-[src/generated/api.ts:16993](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L16993)
+[src/generated/api.ts:17513](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17513)
 
 ___
 
 ### getExpiredInboxes
 
-▸ **getExpiredInboxes**(`page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
+▸ **getExpiredInboxes**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
 
 Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
 
@@ -191,7 +191,9 @@ Inboxes created with an expiration date will expire after the given date. An Exp
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -202,4 +204,4 @@ Inboxes created with an expiration date will expire after the given date. An Exp
 
 #### Defined in
 
-[src/generated/api.ts:17010](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L17010)
+[src/generated/api.ts:17532](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L17532)

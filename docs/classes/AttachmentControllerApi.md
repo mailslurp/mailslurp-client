@@ -57,7 +57,7 @@ AttachmentControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:9589](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9589)
+[src/generated/api.ts:9745](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9745)
 
 ___
 
@@ -146,7 +146,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9603](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9603)
+[src/generated/api.ts:9759](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9759)
 
 ___
 
@@ -175,7 +175,7 @@ Returns the specified attachment for a given email as a base 64 encoded string. 
 
 #### Defined in
 
-[src/generated/api.ts:9618](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9618)
+[src/generated/api.ts:9774](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9774)
 
 ___
 
@@ -204,7 +204,7 @@ Returns the specified attachment for a given email as a stream / array of bytes.
 
 #### Defined in
 
-[src/generated/api.ts:9638](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9638)
+[src/generated/api.ts:9794](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9794)
 
 ___
 
@@ -233,7 +233,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9655](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9655)
+[src/generated/api.ts:9811](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9811)
 
 ___
 
@@ -262,13 +262,13 @@ Returns the metadata for an attachment. It is saved separately to the content of
 
 #### Defined in
 
-[src/generated/api.ts:9670](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9670)
+[src/generated/api.ts:9826](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9826)
 
 ___
 
 ### getAttachments
 
-▸ **getAttachments**(`fileNameFilter?`, `page?`, `size?`, `sort?`, `options?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
+▸ **getAttachments**(`before?`, `fileNameFilter?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 
@@ -282,8 +282,10 @@ Get all attachments in paginated response. Each entity contains meta data for th
 
 | Name | Type |
 | :------ | :------ |
+| `before?` | `Date` |
 | `fileNameFilter?` | `string` |
 | `page?` | `number` |
+| `since?` | `Date` |
 | `size?` | `number` |
 | `sort?` | ``"ASC"`` \| ``"DESC"`` |
 | `options?` | `any` |
@@ -294,7 +296,7 @@ Get all attachments in paginated response. Each entity contains meta data for th
 
 #### Defined in
 
-[src/generated/api.ts:9688](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9688)
+[src/generated/api.ts:9846](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9846)
 
 ___
 
@@ -323,7 +325,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9712](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9712)
+[src/generated/api.ts:9874](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9874)
 
 ___
 
@@ -354,7 +356,7 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9732](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9732)
+[src/generated/api.ts:9894](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9894)
 
 ___
 
@@ -387,4 +389,4 @@ Email attachments are essentially files with meta data. Files are byte arrays an
 
 #### Defined in
 
-[src/generated/api.ts:9760](https://github.com/mailslurp/mailslurp-client/blob/6534d6f/src/generated/api.ts#L9760)
+[src/generated/api.ts:9922](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L9922)
