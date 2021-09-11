@@ -7,7 +7,7 @@ node_modules:
 
 bin/openapi-generator-cli.jar:
 	mkdir -p bin
-	wget https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.12/swagger-codegen-cli-2.4.12.jar -O bin/openapi-generator-cli.jar
+	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar -O bin/openapi-generator-cli.jar
 
 test: node_modules
 	API_KEY=$(API_KEY) npm run integration
@@ -19,10 +19,11 @@ generate: spec bin/openapi-generator-cli.jar
 	sudo rm -rf src/generated
 	mkdir -p src/generated
 	java -jar ./bin/openapi-generator-cli.jar generate \
+		--additional-properties='useSingleRequestParameter=true' \
 		--input-spec $(SPEC_URL) \
-		--lang typescript-fetch \
+		--skip-validate-spec \
+		--generator-name typescript-fetch \
 		--output src/generated
-	rm src/generated/git_push.sh
 
 generate-local:
 	SPEC_URL="~/projects/ms2/ms2-api/build/swagger/swagger.json" $(MAKE) generate

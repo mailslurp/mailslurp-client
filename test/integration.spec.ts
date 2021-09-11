@@ -1,13 +1,8 @@
 // es imports
 import MailSlurp_defaultImport, {
-    CreateInboxDto,
-    EmailControllerApi,
-    InboxControllerApi,
     MailSlurp as MailSlurp_import,
     MailSlurp,
 } from '../src/index';
-import { WaitForControllerApi } from '../dist';
-import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 
 // node require style
 const TIMEOUT = 60000;
@@ -74,14 +69,13 @@ describe('using controller instances for more features', () => {
         expect(sent.to).toContain(inbox.emailAddress);
 
         // can receive sent email
-        const email = await mailslurp.waitController.waitForLatestEmail(
-            undefined,
-            inbox.id,
-            now,
-            'DESC',
-            TIMEOUT,
-            true
-        );
+        const email = await mailslurp.waitController.waitForLatestEmail({
+            inboxId: inbox.id,
+            since: now,
+            sort: 'DESC',
+            timeout: TIMEOUT,
+            unreadOnly: true
+        });
         expect(email.subject).toContain('test');
     });
 });

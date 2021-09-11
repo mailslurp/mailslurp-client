@@ -432,14 +432,14 @@ export class MailSlurp {
         searchFilter?: string
     ) {
         return wrapCall('getAllEmails', () =>
-            this.emailController.getEmailsPaginated(
+            this.emailController.getEmailsPaginated({
                 inboxId,
                 page,
                 searchFilter,
                 size,
                 sort,
-                unreadOnly
-            )
+                unreadOnly,
+            })
         );
     }
 

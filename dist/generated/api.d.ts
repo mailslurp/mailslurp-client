@@ -909,7 +909,7 @@ export interface CreateGroupOptions {
  */
 export interface CreateInboxDto {
     /**
-     * Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @type {boolean}
      * @memberof CreateInboxDto
      */
@@ -2929,6 +2929,19 @@ export interface InboxRulesetTestResult {
     rulesetMatches?: {
         [key: string]: boolean;
     };
+}
+/**
+ *
+ * @export
+ * @interface JSONSchemaDto
+ */
+export interface JSONSchemaDto {
+    /**
+     *
+     * @type {string}
+     * @memberof JSONSchemaDto
+     */
+    value: string;
 }
 /**
  *
@@ -5954,17 +5967,29 @@ export interface VerifyEmailAddressOptions {
  */
 export interface WaitForConditions {
     /**
+     * ISO Date Time latest time of email to consider. Filter for matching emails that were received before this date
+     * @type {Date}
+     * @memberof WaitForConditions
+     */
+    before?: Date;
+    /**
      * Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
      * @type {number}
      * @memberof WaitForConditions
      */
-    count: number;
+    count?: number;
     /**
      * How should the found count be compared to the expected count.
      * @type {string}
      * @memberof WaitForConditions
      */
     countType?: WaitForConditions.CountTypeEnum;
+    /**
+     * Max time in milliseconds to wait between retries if a `timeout` is specified.
+     * @type {number}
+     * @memberof WaitForConditions
+     */
+    delayTimeout?: number;
     /**
      * ID of inbox to search within and apply conditions to. Essentially filtering the emails found to give a count.
      * @type {string}
@@ -6073,7 +6098,7 @@ export interface WebhookDto {
      */
     name?: string;
     /**
-     * JSON Schema for the payload that will be sent to your URL via the HTTP method described.
+     * Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
      * @type {string}
      * @memberof WebhookDto
      */
@@ -6932,34 +6957,40 @@ export declare const AliasControllerApiFetchParamCreator: (configuration?: Confi
      * Get paginated emails for an alias by ID
      * @summary Get emails for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index alias email list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size alias email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasEmails(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAliasEmails(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Returns threads created for an email alias in paginated form
      * @summary Get threads created for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in thread list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in thread list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasThreads(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAliasThreads(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Get all email aliases in paginated form
      * @summary Get all email aliases you have created
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in alias list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in alias list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliases(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAliases(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -7022,34 +7053,40 @@ export declare const AliasControllerApiFp: (configuration?: Configuration) => {
      * Get paginated emails for an alias by ID
      * @summary Get emails for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index alias email list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size alias email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasEmails(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
+    getAliasEmails(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
     /**
      * Returns threads created for an email alias in paginated form
      * @summary Get threads created for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in thread list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in thread list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasThreads(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageThreadProjection>;
+    getAliasThreads(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageThreadProjection>;
     /**
      * Get all email aliases in paginated form
      * @summary Get all email aliases you have created
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in alias list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in alias list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliases(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageAlias>;
+    getAliases(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageAlias>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -7112,34 +7149,40 @@ export declare const AliasControllerApiFactory: (configuration?: Configuration, 
      * Get paginated emails for an alias by ID
      * @summary Get emails for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index alias email list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size alias email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasEmails(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailProjection>;
+    getAliasEmails(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailProjection>;
     /**
      * Returns threads created for an email alias in paginated form
      * @summary Get threads created for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in thread list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in thread list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliasThreads(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageThreadProjection>;
+    getAliasThreads(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageThreadProjection>;
     /**
      * Get all email aliases in paginated form
      * @summary Get all email aliases you have created
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in alias list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in alias list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAliases(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAlias>;
+    getAliases(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAlias>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -7207,37 +7250,43 @@ export declare class AliasControllerApi extends BaseAPI {
      * Get paginated emails for an alias by ID
      * @summary Get emails for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index alias email list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size alias email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AliasControllerApi
      */
-    getAliasEmails(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailProjection>;
+    getAliasEmails(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailProjection>;
     /**
      * Returns threads created for an email alias in paginated form
      * @summary Get threads created for an alias
      * @param {string} aliasId aliasId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in thread list pagination
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in thread list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AliasControllerApi
      */
-    getAliasThreads(aliasId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageThreadProjection>;
+    getAliasThreads(aliasId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageThreadProjection>;
     /**
      * Get all email aliases in paginated form
      * @summary Get all email aliases you have created
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in alias list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in alias list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AliasControllerApi
      */
-    getAliases(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAlias>;
+    getAliases(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAlias>;
     /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * @summary Reply to an email
@@ -7325,14 +7374,16 @@ export declare const AttachmentControllerApiFetchParamCreator: (configuration?: 
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * @summary Get email attachments
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [fileNameFilter] Optional file name and content type search filter
      * @param {number} [page] Optional page index event list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size event list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAttachments(fileNameFilter?: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAttachments(before?: Date, fileNameFilter?: string, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
@@ -7419,14 +7470,16 @@ export declare const AttachmentControllerApiFp: (configuration?: Configuration) 
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * @summary Get email attachments
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [fileNameFilter] Optional file name and content type search filter
      * @param {number} [page] Optional page index event list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size event list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAttachments(fileNameFilter?: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageAttachmentEntity>;
+    getAttachments(before?: Date, fileNameFilter?: string, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageAttachmentEntity>;
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
@@ -7513,14 +7566,16 @@ export declare const AttachmentControllerApiFactory: (configuration?: Configurat
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * @summary Get email attachments
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [fileNameFilter] Optional file name and content type search filter
      * @param {number} [page] Optional page index event list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size event list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAttachments(fileNameFilter?: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAttachmentEntity>;
+    getAttachments(before?: Date, fileNameFilter?: string, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAttachmentEntity>;
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
@@ -7615,15 +7670,17 @@ export declare class AttachmentControllerApi extends BaseAPI {
     /**
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * @summary Get email attachments
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [fileNameFilter] Optional file name and content type search filter
      * @param {number} [page] Optional page index event list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size event list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AttachmentControllerApi
      */
-    getAttachments(fileNameFilter?: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAttachmentEntity>;
+    getAttachments(before?: Date, fileNameFilter?: string, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageAttachmentEntity>;
     /**
      * Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
      * @summary Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
@@ -7674,13 +7731,15 @@ export declare const BounceControllerApiFetchParamCreator: (configuration?: Conf
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getBouncedEmails(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get a bounced email.
@@ -7692,13 +7751,15 @@ export declare const BounceControllerApiFetchParamCreator: (configuration?: Conf
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getBouncedRecipients(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
 };
 /**
  * BounceControllerApi - functional programming interface
@@ -7716,13 +7777,15 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedEmail>;
+    getBouncedEmails(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedEmail>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get a bounced email.
@@ -7734,13 +7797,15 @@ export declare const BounceControllerApiFp: (configuration?: Configuration) => {
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedRecipients>;
+    getBouncedRecipients(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageBouncedRecipients>;
 };
 /**
  * BounceControllerApi - factory interface
@@ -7758,13 +7823,15 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
+    getBouncedEmails(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get a bounced email.
@@ -7776,13 +7843,15 @@ export declare const BounceControllerApiFactory: (configuration?: Configuration,
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
+    getBouncedRecipients(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
 };
 /**
  * BounceControllerApi - object-oriented interface
@@ -7803,14 +7872,16 @@ export declare class BounceControllerApi extends BaseAPI {
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get paginated list of bounced emails.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedEmails(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
+    getBouncedEmails(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedEmail>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * @summary Get a bounced email.
@@ -7823,14 +7894,16 @@ export declare class BounceControllerApi extends BaseAPI {
     /**
      * Bounced recipients are email addresses that you have sent emails to that did not accept the sent email. Once a recipient is bounced you cannot send emails to that address.
      * @summary Get paginated list of bounced recipients.
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BounceControllerApi
      */
-    getBouncedRecipients(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
+    getBouncedRecipients(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageBouncedRecipients>;
 }
 /**
  * BulkActionsControllerApi - fetch parameter creator
@@ -7966,24 +8039,36 @@ export declare const CommonActionsControllerApiFetchParamCreator: (configuration
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): FetchArgs;
+    createNewEmailAddress(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): FetchArgs;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress1(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): FetchArgs;
+    createNewEmailAddress1(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): FetchArgs;
     /**
      * Deletes all emails
      * @summary Delete all emails in an inbox
@@ -8010,24 +8095,36 @@ export declare const CommonActionsControllerApiFp: (configuration?: Configuratio
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox>;
+    createNewEmailAddress(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress1(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox>;
+    createNewEmailAddress1(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Inbox>;
     /**
      * Deletes all emails
      * @summary Delete all emails in an inbox
@@ -8054,24 +8151,36 @@ export declare const CommonActionsControllerApiFactory: (configuration?: Configu
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): Promise<Inbox>;
+    createNewEmailAddress(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): Promise<Inbox>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createNewEmailAddress1(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): Promise<Inbox>;
+    createNewEmailAddress1(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): Promise<Inbox>;
     /**
      * Deletes all emails
      * @summary Delete all emails in an inbox
@@ -8100,26 +8209,38 @@ export declare class CommonActionsControllerApi extends BaseAPI {
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CommonActionsControllerApi
      */
-    createNewEmailAddress(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): Promise<Inbox>;
+    createNewEmailAddress(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): Promise<Inbox>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * @summary Create new random inbox
      * @param {boolean} [allowTeamAccess] allowTeamAccess
+     * @param {string} [description] description
+     * @param {string} [emailAddress] emailAddress
      * @param {Date} [expiresAt] expiresAt
      * @param {number} [expiresIn] expiresIn
+     * @param {boolean} [favourite] favourite
+     * @param {'HTTP_INBOX' | 'SMTP_INBOX'} [inboxType] inboxType
+     * @param {string} [name] name
+     * @param {Array<string>} [tags] tags
      * @param {boolean} [useDomainPool] useDomainPool
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CommonActionsControllerApi
      */
-    createNewEmailAddress1(allowTeamAccess?: boolean, expiresAt?: Date, expiresIn?: number, useDomainPool?: boolean, options?: any): Promise<Inbox>;
+    createNewEmailAddress1(allowTeamAccess?: boolean, description?: string, emailAddress?: string, expiresAt?: Date, expiresIn?: number, favourite?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX', name?: string, tags?: Array<string>, useDomainPool?: boolean, options?: any): Promise<Inbox>;
     /**
      * Deletes all emails
      * @summary Delete all emails in an inbox
@@ -8163,13 +8284,15 @@ export declare const ContactControllerApiFetchParamCreator: (configuration?: Con
     /**
      *
      * @summary Get all contacts
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllContacts(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllContacts(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get contact
@@ -8218,13 +8341,15 @@ export declare const ContactControllerApiFp: (configuration?: Configuration) => 
     /**
      *
      * @summary Get all contacts
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllContacts(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageContactProjection>;
+    getAllContacts(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageContactProjection>;
     /**
      *
      * @summary Get contact
@@ -8273,13 +8398,15 @@ export declare const ContactControllerApiFactory: (configuration?: Configuration
     /**
      *
      * @summary Get all contacts
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllContacts(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
+    getAllContacts(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
     /**
      *
      * @summary Get contact
@@ -8332,14 +8459,16 @@ export declare class ContactControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all contacts
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ContactControllerApi
      */
-    getAllContacts(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
+    getAllContacts(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
     /**
      *
      * @summary Get contact
@@ -8729,16 +8858,18 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails in all inboxes in paginated form. Email API list all.
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
+    getEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      *
      * @summary Get gravatar url for email address
@@ -8767,16 +8898,18 @@ export declare const EmailControllerApiFetchParamCreator: (configuration?: Confi
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all organization emails. List team or shared test email accounts
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter search filter for emails.
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
+    getOrganizationEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * @summary Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -8975,16 +9108,18 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails in all inboxes in paginated form. Email API list all.
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
+    getEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
     /**
      *
      * @summary Get gravatar url for email address
@@ -9013,16 +9148,18 @@ export declare const EmailControllerApiFp: (configuration?: Configuration) => {
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all organization emails. List team or shared test email accounts
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter search filter for emails.
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
+    getOrganizationEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailProjection>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * @summary Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -9221,16 +9358,18 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails in all inboxes in paginated form. Email API list all.
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    getEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
     /**
      *
      * @summary Get gravatar url for email address
@@ -9259,16 +9398,18 @@ export declare const EmailControllerApiFactory: (configuration?: Configuration, 
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all organization emails. List team or shared test email accounts
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter search filter for emails.
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    getOrganizationEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * @summary Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -9484,9 +9625,11 @@ export declare class EmailControllerApi extends BaseAPI {
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails in all inboxes in paginated form. Email API list all.
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -9494,7 +9637,7 @@ export declare class EmailControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EmailControllerApi
      */
-    getEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    getEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
     /**
      *
      * @summary Get gravatar url for email address
@@ -9526,9 +9669,11 @@ export declare class EmailControllerApi extends BaseAPI {
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all organization emails. List team or shared test email accounts
+     * @param {Date} [before] Optional filter emails received before given date time
      * @param {Array<string>} [inboxId] Optional inbox ids to filter by. Can be repeated. By default will use all inboxes belonging to your account.
      * @param {number} [page] Optional page index in email list pagination
      * @param {string} [searchFilter] Optional search filter search filter for emails.
+     * @param {Date} [since] Optional filter emails received after given date time
      * @param {number} [size] Optional page size in email list pagination. Maximum size is 100. Use page index and sort to page through larger results
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {boolean} [unreadOnly] Optional filter for unread emails only. All emails are considered unread until they are viewed in the dashboard or requested directly
@@ -9536,7 +9681,7 @@ export declare class EmailControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EmailControllerApi
      */
-    getOrganizationEmailsPaginated(inboxId?: Array<string>, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
+    getOrganizationEmailsPaginated(before?: Date, inboxId?: Array<string>, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<PageEmailProjection>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * @summary Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -9635,13 +9780,15 @@ export declare const ExpiredControllerApiFetchParamCreator: (configuration?: Con
     /**
      * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
      * @summary List records of expired inboxes
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getExpiredInboxes(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getExpiredInboxes(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
 };
 /**
  * ExpiredControllerApi - functional programming interface
@@ -9674,13 +9821,15 @@ export declare const ExpiredControllerApiFp: (configuration?: Configuration) => 
     /**
      * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
      * @summary List records of expired inboxes
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getExpiredInboxes(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageExpiredInboxRecordProjection>;
+    getExpiredInboxes(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageExpiredInboxRecordProjection>;
 };
 /**
  * ExpiredControllerApi - factory interface
@@ -9713,13 +9862,15 @@ export declare const ExpiredControllerApiFactory: (configuration?: Configuration
     /**
      * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
      * @summary List records of expired inboxes
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getExpiredInboxes(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageExpiredInboxRecordProjection>;
+    getExpiredInboxes(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageExpiredInboxRecordProjection>;
 };
 /**
  * ExpiredControllerApi - object-oriented interface
@@ -9757,14 +9908,16 @@ export declare class ExpiredControllerApi extends BaseAPI {
     /**
      * Inboxes created with an expiration date will expire after the given date. An ExpiredInboxRecord is created that records the inboxes old ID and email address. You can still read emails in the inbox (using the inboxes old ID) but the email address associated with the inbox can no longer send or receive emails. Fetch expired inbox records to view the old inboxes properties
      * @summary List records of expired inboxes
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in inbox sent email list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ExpiredControllerApi
      */
-    getExpiredInboxes(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageExpiredInboxRecordProjection>;
+    getExpiredInboxes(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageExpiredInboxRecordProjection>;
 }
 /**
  * ExportControllerApi - fetch parameter creator
@@ -10010,13 +10163,15 @@ export declare const GroupControllerApiFetchParamCreator: (configuration?: Confi
     /**
      *
      * @summary Get all Contact Groups in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllGroups(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllGroups(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get group
@@ -10037,13 +10192,15 @@ export declare const GroupControllerApiFetchParamCreator: (configuration?: Confi
      *
      * @summary Get group and paginated contacts belonging to it
      * @param {string} groupId groupId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in group contact pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in group contact pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getGroupWithContactsPaginated(groupId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getGroupWithContactsPaginated(groupId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get all groups
@@ -10094,13 +10251,15 @@ export declare const GroupControllerApiFp: (configuration?: Configuration) => {
     /**
      *
      * @summary Get all Contact Groups in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllGroups(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageGroupProjection>;
+    getAllGroups(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageGroupProjection>;
     /**
      *
      * @summary Get group
@@ -10121,13 +10280,15 @@ export declare const GroupControllerApiFp: (configuration?: Configuration) => {
      *
      * @summary Get group and paginated contacts belonging to it
      * @param {string} groupId groupId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in group contact pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in group contact pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getGroupWithContactsPaginated(groupId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageContactProjection>;
+    getGroupWithContactsPaginated(groupId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageContactProjection>;
     /**
      *
      * @summary Get all groups
@@ -10178,13 +10339,15 @@ export declare const GroupControllerApiFactory: (configuration?: Configuration, 
     /**
      *
      * @summary Get all Contact Groups in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllGroups(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageGroupProjection>;
+    getAllGroups(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageGroupProjection>;
     /**
      *
      * @summary Get group
@@ -10205,13 +10368,15 @@ export declare const GroupControllerApiFactory: (configuration?: Configuration, 
      *
      * @summary Get group and paginated contacts belonging to it
      * @param {string} groupId groupId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in group contact pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in group contact pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getGroupWithContactsPaginated(groupId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
+    getGroupWithContactsPaginated(groupId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
     /**
      *
      * @summary Get all groups
@@ -10267,14 +10432,16 @@ export declare class GroupControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all Contact Groups in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupControllerApi
      */
-    getAllGroups(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageGroupProjection>;
+    getAllGroups(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageGroupProjection>;
     /**
      *
      * @summary Get group
@@ -10297,14 +10464,16 @@ export declare class GroupControllerApi extends BaseAPI {
      *
      * @summary Get group and paginated contacts belonging to it
      * @param {string} groupId groupId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in group contact pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in group contact pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupControllerApi
      */
-    getGroupWithContactsPaginated(groupId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
+    getGroupWithContactsPaginated(groupId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageContactProjection>;
     /**
      *
      * @summary Get all groups
@@ -10332,7 +10501,7 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-     * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
      * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -10386,23 +10555,26 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      */
     deleteInbox(inboxId: string, options?: any): FetchArgs;
     /**
-     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {boolean} [favourite] Optionally filter results for favourites only
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-     * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+     * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllInboxes(favourite?: boolean, page?: number, search?: string, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): FetchArgs;
+    getAllInboxes(before?: Date, favourite?: boolean, page?: number, search?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): FetchArgs;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Exclude emails received after this ISO 8601 date time
      * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -10414,7 +10586,7 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
+    getEmails(inboxId: string, before?: Date, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10427,25 +10599,29 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * @summary Get inbox emails paginated
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Optional filter by received before given date time
      * @param {number} [page] Optional page index in inbox emails list pagination
+     * @param {Date} [since] Optional filter by received after given date time
      * @param {number} [size] Optional page size in inbox emails list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxEmailsPaginated(inboxId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxEmailsPaginated(inboxId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * @summary Get Inbox Sent Emails
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional sent email search
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxSentEmails(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxSentEmails(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Get all inbox tags
      * @summary Get inbox tags
@@ -10456,47 +10632,55 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
      * @summary List Inboxes and email addresses
+     * @param {Date} [before] Optional filter by created before given date time
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxes(before?: Date, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * @summary List Organization Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationInboxes(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getOrganizationInboxes(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxRulesets(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    listInboxRulesets(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * List all tracking pixels sent from an inbox
      * @summary List inbox tracking pixels
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxTrackingPixels(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    listInboxTrackingPixels(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
      * @summary Send Email
@@ -10550,7 +10734,7 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-     * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
      * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -10604,23 +10788,26 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      */
     deleteInbox(inboxId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
-     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {boolean} [favourite] Optionally filter results for favourites only
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-     * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+     * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllInboxes(favourite?: boolean, page?: number, search?: string, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxProjection>;
+    getAllInboxes(before?: Date, favourite?: boolean, page?: number, search?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxProjection>;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Exclude emails received after this ISO 8601 date time
      * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -10632,7 +10819,7 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    getEmails(inboxId: string, before?: Date, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10645,25 +10832,29 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * @summary Get inbox emails paginated
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Optional filter by received before given date time
      * @param {number} [page] Optional page index in inbox emails list pagination
+     * @param {Date} [since] Optional filter by received after given date time
      * @param {number} [size] Optional page size in inbox emails list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxEmailsPaginated(inboxId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailPreview>;
+    getInboxEmailsPaginated(inboxId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageEmailPreview>;
     /**
      * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * @summary Get Inbox Sent Emails
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional sent email search
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxSentEmails(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
+    getInboxSentEmails(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
     /**
      * Get all inbox tags
      * @summary Get inbox tags
@@ -10674,47 +10865,55 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
      * @summary List Inboxes and email addresses
+     * @param {Date} [before] Optional filter by created before given date time
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<Inbox>>;
+    getInboxes(before?: Date, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<Inbox>>;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * @summary List Organization Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationInboxes(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageOrganizationInboxProjection>;
+    getOrganizationInboxes(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageOrganizationInboxProjection>;
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxRulesets(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxRulesetDto>;
+    listInboxRulesets(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxRulesetDto>;
     /**
      * List all tracking pixels sent from an inbox
      * @summary List inbox tracking pixels
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxTrackingPixels(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
+    listInboxTrackingPixels(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
     /**
      * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
      * @summary Send Email
@@ -10768,7 +10967,7 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-     * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
      * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -10822,23 +11021,26 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      */
     deleteInbox(inboxId: string, options?: any): Promise<Response>;
     /**
-     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {boolean} [favourite] Optionally filter results for favourites only
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-     * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+     * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllInboxes(favourite?: boolean, page?: number, search?: string, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): Promise<PageInboxProjection>;
+    getAllInboxes(before?: Date, favourite?: boolean, page?: number, search?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): Promise<PageInboxProjection>;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Exclude emails received after this ISO 8601 date time
      * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -10850,7 +11052,7 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, before?: Date, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -10863,25 +11065,29 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * @summary Get inbox emails paginated
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Optional filter by received before given date time
      * @param {number} [page] Optional page index in inbox emails list pagination
+     * @param {Date} [since] Optional filter by received after given date time
      * @param {number} [size] Optional page size in inbox emails list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxEmailsPaginated(inboxId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailPreview>;
+    getInboxEmailsPaginated(inboxId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailPreview>;
     /**
      * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * @summary Get Inbox Sent Emails
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional sent email search
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxSentEmails(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getInboxSentEmails(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
     /**
      * Get all inbox tags
      * @summary Get inbox tags
@@ -10892,47 +11098,55 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
      * @summary List Inboxes and email addresses
+     * @param {Date} [before] Optional filter by created before given date time
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Inbox[]>;
+    getInboxes(before?: Date, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Inbox[]>;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * @summary List Organization Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getOrganizationInboxes(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageOrganizationInboxProjection>;
+    getOrganizationInboxes(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageOrganizationInboxProjection>;
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxRulesets(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
+    listInboxRulesets(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
     /**
      * List all tracking pixels sent from an inbox
      * @summary List inbox tracking pixels
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listInboxTrackingPixels(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    listInboxTrackingPixels(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
      * @summary Send Email
@@ -10988,7 +11202,7 @@ export declare class InboxControllerApi extends BaseAPI {
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * @summary Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-     * @param {boolean} [allowTeamAccess] Grant team access to this inbox and the emails that belong to it for team members of your organization.
+     * @param {boolean} [allowTeamAccess] DEPRECATED (team access is always true). Grant team access to this inbox and the emails that belong to it for team members of your organization.
      * @param {string} [description] Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
      * @param {string} [emailAddress] A custom email address to use with the inbox. Defaults to null. When null MailSlurp will assign a random email address to the inbox such as &#x60;123@mailslurp.com&#x60;. If you use the &#x60;useDomainPool&#x60; option when the email address is null it will generate an email address with a more varied domain ending such as &#x60;123@mailslurp.info&#x60; or &#x60;123@mailslurp.biz&#x60;. When a custom email address is provided the address is split into a domain and the domain is queried against your user. If you have created the domain in the MailSlurp dashboard and verified it you can use any email address that ends with the domain. Note domain types must match the inbox type - so &#x60;SMTP&#x60; inboxes will only work with &#x60;SMTP&#x60; type domains. Send an email to this address and the inbox will receive and store it for you. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @param {Date} [expiresAt] Optional inbox expiration date. If null then this inbox is permanent and the emails in it won&#39;t be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSXXX.
@@ -11048,24 +11262,27 @@ export declare class InboxControllerApi extends BaseAPI {
      */
     deleteInbox(inboxId: string, options?: any): Promise<Response>;
     /**
-     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results. Results do not include team access inboxes by default. Use organization method to list team inboxes or set `teamAccess` to true.
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {boolean} [favourite] Optionally filter results for favourites only
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [search] Optionally filter by search words partial matching ID, tags, name, and email address
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {string} [tag] Optionally filter by tags. Will return inboxes that include given tags
-     * @param {boolean} [teamAccess] Optionally filter by team access. Defaults to false so organization inboxes are not included
+     * @param {boolean} [teamAccess] DEPRECATED. Optionally filter by team access.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getAllInboxes(favourite?: boolean, page?: number, search?: string, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): Promise<PageInboxProjection>;
+    getAllInboxes(before?: Date, favourite?: boolean, page?: number, search?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', tag?: string, teamAccess?: boolean, options?: any): Promise<PageInboxProjection>;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * @summary Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Exclude emails received after this ISO 8601 date time
      * @param {number} [delayTimeout] delayTimeout
      * @param {number} [limit] Limit the result set, ordered by received date time sort direction. Maximum 100. For more listing options see the email controller
      * @param {number} [minCount] Minimum acceptable email count. Will cause request to hang (and retry) until minCount is satisfied or retryTimeout is reached.
@@ -11078,7 +11295,7 @@ export declare class InboxControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getEmails(inboxId: string, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    getEmails(inboxId: string, before?: Date, delayTimeout?: number, limit?: number, minCount?: number, retryTimeout?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox. Returns properties of an inbox.
@@ -11092,27 +11309,31 @@ export declare class InboxControllerApi extends BaseAPI {
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * @summary Get inbox emails paginated
      * @param {string} inboxId Id of inbox that emails belongs to
+     * @param {Date} [before] Optional filter by received before given date time
      * @param {number} [page] Optional page index in inbox emails list pagination
+     * @param {Date} [since] Optional filter by received after given date time
      * @param {number} [size] Optional page size in inbox emails list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getInboxEmailsPaginated(inboxId: string, page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailPreview>;
+    getInboxEmailsPaginated(inboxId: string, before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageEmailPreview>;
     /**
      * Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * @summary Get Inbox Sent Emails
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by sent before given date time
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional sent email search
+     * @param {Date} [since] Optional filter by sent after given date time
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getInboxSentEmails(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getInboxSentEmails(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
     /**
      * Get all inbox tags
      * @summary Get inbox tags
@@ -11124,51 +11345,59 @@ export declare class InboxControllerApi extends BaseAPI {
     /**
      * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
      * @summary List Inboxes and email addresses
+     * @param {Date} [before] Optional filter by created before given date time
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional result size limit. Note an automatic limit of 100 results is applied. See the paginated &#x60;getAllEmails&#x60; for larger queries.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getInboxes(size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Inbox[]>;
+    getInboxes(before?: Date, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<Inbox[]>;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * @summary List Organization Inboxes Paginated
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    getOrganizationInboxes(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageOrganizationInboxProjection>;
+    getOrganizationInboxes(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageOrganizationInboxProjection>;
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    listInboxRulesets(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
+    listInboxRulesets(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
     /**
      * List all tracking pixels sent from an inbox
      * @summary List inbox tracking pixels
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Optional filter by created before given date time
      * @param {number} [page] Optional page index in inbox tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Optional filter by created after given date time
      * @param {number} [size] Optional page size in inbox tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxControllerApi
      */
-    listInboxTrackingPixels(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    listInboxTrackingPixels(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      * Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
      * @summary Send Email
@@ -11260,15 +11489,17 @@ export declare const InboxForwarderControllerApiFetchParamCreator: (configuratio
     /**
      * List all forwarders attached to an inbox
      * @summary List inbox forwarders
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get forwarders from
      * @param {number} [page] Optional page index in inbox forwarder list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox forwarder list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxForwarders(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Test an inbox forwarder
      * @summary Test an inbox forwarder
@@ -11337,15 +11568,17 @@ export declare const InboxForwarderControllerApiFp: (configuration?: Configurati
     /**
      * List all forwarders attached to an inbox
      * @summary List inbox forwarders
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get forwarders from
      * @param {number} [page] Optional page index in inbox forwarder list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox forwarder list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxForwarderDto>;
+    getInboxForwarders(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxForwarderDto>;
     /**
      * Test an inbox forwarder
      * @summary Test an inbox forwarder
@@ -11414,15 +11647,17 @@ export declare const InboxForwarderControllerApiFactory: (configuration?: Config
     /**
      * List all forwarders attached to an inbox
      * @summary List inbox forwarders
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get forwarders from
      * @param {number} [page] Optional page index in inbox forwarder list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox forwarder list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
+    getInboxForwarders(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
     /**
      * Test an inbox forwarder
      * @summary Test an inbox forwarder
@@ -11497,16 +11732,18 @@ export declare class InboxForwarderControllerApi extends BaseAPI {
     /**
      * List all forwarders attached to an inbox
      * @summary List inbox forwarders
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get forwarders from
      * @param {number} [page] Optional page index in inbox forwarder list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox forwarder list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxForwarderControllerApi
      */
-    getInboxForwarders(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
+    getInboxForwarders(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxForwarderDto>;
     /**
      * Test an inbox forwarder
      * @summary Test an inbox forwarder
@@ -11578,15 +11815,17 @@ export declare const InboxRulesetControllerApiFetchParamCreator: (configuration?
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get rulesets from
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxRulesets(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxRulesets(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Test an inbox ruleset
      * @summary Test an inbox ruleset
@@ -11655,15 +11894,17 @@ export declare const InboxRulesetControllerApiFp: (configuration?: Configuration
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get rulesets from
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxRulesets(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxRulesetDto>;
+    getInboxRulesets(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageInboxRulesetDto>;
     /**
      * Test an inbox ruleset
      * @summary Test an inbox ruleset
@@ -11732,15 +11973,17 @@ export declare const InboxRulesetControllerApiFactory: (configuration?: Configur
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get rulesets from
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxRulesets(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
+    getInboxRulesets(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
     /**
      * Test an inbox ruleset
      * @summary Test an inbox ruleset
@@ -11815,16 +12058,18 @@ export declare class InboxRulesetControllerApi extends BaseAPI {
     /**
      * List all rulesets attached to an inbox
      * @summary List inbox rulesets
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox id to get rulesets from
      * @param {number} [page] Optional page index in inbox ruleset list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox ruleset list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InboxRulesetControllerApi
      */
-    getInboxRulesets(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
+    getInboxRulesets(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageInboxRulesetDto>;
     /**
      * Test an inbox ruleset
      * @summary Test an inbox ruleset
@@ -12021,27 +12266,31 @@ export declare const MissedEmailControllerApiFetchParamCreator: (configuration?:
     /**
      *
      * @summary Get all MissedEmails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * @summary Get all unknown missed emails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllUnknownMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get MissedEmail
@@ -12053,13 +12302,15 @@ export declare const MissedEmailControllerApiFetchParamCreator: (configuration?:
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): FetchArgs;
+    waitForNthMissedEmail(before?: Date, inboxId?: string, index?: number, since?: Date, timeout?: number, options?: any): FetchArgs;
 };
 /**
  * MissedEmailControllerApi - functional programming interface
@@ -12069,27 +12320,31 @@ export declare const MissedEmailControllerApiFp: (configuration?: Configuration)
     /**
      *
      * @summary Get all MissedEmails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageMissedEmailProjection>;
+    getAllMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageMissedEmailProjection>;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * @summary Get all unknown missed emails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageUnknownMissedEmailProjection>;
+    getAllUnknownMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageUnknownMissedEmailProjection>;
     /**
      *
      * @summary Get MissedEmail
@@ -12101,13 +12356,15 @@ export declare const MissedEmailControllerApiFp: (configuration?: Configuration)
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<MissedEmail>;
+    waitForNthMissedEmail(before?: Date, inboxId?: string, index?: number, since?: Date, timeout?: number, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<MissedEmail>;
 };
 /**
  * MissedEmailControllerApi - factory interface
@@ -12117,27 +12374,31 @@ export declare const MissedEmailControllerApiFactory: (configuration?: Configura
     /**
      *
      * @summary Get all MissedEmails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
+    getAllMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * @summary Get all unknown missed emails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
+    getAllUnknownMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
     /**
      *
      * @summary Get MissedEmail
@@ -12149,13 +12410,15 @@ export declare const MissedEmailControllerApiFactory: (configuration?: Configura
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): Promise<MissedEmail>;
+    waitForNthMissedEmail(before?: Date, inboxId?: string, index?: number, since?: Date, timeout?: number, options?: any): Promise<MissedEmail>;
 };
 /**
  * MissedEmailControllerApi - object-oriented interface
@@ -12167,29 +12430,33 @@ export declare class MissedEmailControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all MissedEmails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MissedEmailControllerApi
      */
-    getAllMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
+    getAllMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageMissedEmailProjection>;
     /**
      * Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
      * @summary Get all unknown missed emails in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MissedEmailControllerApi
      */
-    getAllUnknownMissedEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
+    getAllUnknownMissedEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageUnknownMissedEmailProjection>;
     /**
      *
      * @summary Get MissedEmail
@@ -12202,14 +12469,16 @@ export declare class MissedEmailControllerApi extends BaseAPI {
     /**
      * Wait for 0 based index missed email
      * @summary Wait for Nth missed email
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inbox ID filter
      * @param {number} [index] Zero based index of the email to wait for. If 1 missed email already and you want to wait for the 2nd email pass index&#x3D;1
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [timeout] Optional timeout milliseconds
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MissedEmailControllerApi
      */
-    waitForNthMissedEmail(inboxId?: string, index?: number, timeout?: number, options?: any): Promise<MissedEmail>;
+    waitForNthMissedEmail(before?: Date, inboxId?: string, index?: number, since?: Date, timeout?: number, options?: any): Promise<MissedEmail>;
 }
 /**
  * SentEmailsControllerApi - fetch parameter creator
@@ -12219,14 +12488,16 @@ export declare const SentEmailsControllerApiFetchParamCreator: (configuration?: 
     /**
      *
      * @summary Get all sent email tracking pixels in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllSentTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllSentTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get sent email receipt
@@ -12247,38 +12518,44 @@ export declare const SentEmailsControllerApiFetchParamCreator: (configuration?: 
      *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmailTrackingPixels(id: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getSentEmailTrackingPixels(id: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get all sent emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getSentEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get all sent organization emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentOrganizationEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getSentOrganizationEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
 };
 /**
  * SentEmailsControllerApi - functional programming interface
@@ -12288,14 +12565,16 @@ export declare const SentEmailsControllerApiFp: (configuration?: Configuration) 
     /**
      *
      * @summary Get all sent email tracking pixels in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllSentTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
+    getAllSentTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get sent email receipt
@@ -12316,38 +12595,44 @@ export declare const SentEmailsControllerApiFp: (configuration?: Configuration) 
      *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmailTrackingPixels(id: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
+    getSentEmailTrackingPixels(id: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get all sent emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
+    getSentEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
     /**
      *
      * @summary Get all sent organization emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentOrganizationEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
+    getSentOrganizationEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageSentEmailProjection>;
 };
 /**
  * SentEmailsControllerApi - factory interface
@@ -12357,14 +12642,16 @@ export declare const SentEmailsControllerApiFactory: (configuration?: Configurat
     /**
      *
      * @summary Get all sent email tracking pixels in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllSentTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getAllSentTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get sent email receipt
@@ -12385,38 +12672,44 @@ export declare const SentEmailsControllerApiFactory: (configuration?: Configurat
      *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmailTrackingPixels(id: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getSentEmailTrackingPixels(id: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get all sent emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getSentEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
     /**
      *
      * @summary Get all sent organization emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSentOrganizationEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getSentOrganizationEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
 };
 /**
  * SentEmailsControllerApi - object-oriented interface
@@ -12428,15 +12721,17 @@ export declare class SentEmailsControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all sent email tracking pixels in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SentEmailsControllerApi
      */
-    getAllSentTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getAllSentTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get sent email receipt
@@ -12459,41 +12754,47 @@ export declare class SentEmailsControllerApi extends BaseAPI {
      *
      * @summary Get all tracking pixels for a sent email in paginated form
      * @param {string} id id
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in sent email tracking pixel list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email tracking pixel list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SentEmailsControllerApi
      */
-    getSentEmailTrackingPixels(id: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getSentEmailTrackingPixels(id: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get all sent emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in inbox sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in inbox sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SentEmailsControllerApi
      */
-    getSentEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getSentEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
     /**
      *
      * @summary Get all sent organization emails in paginated form
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {string} [inboxId] Optional inboxId to filter sender of sent emails by
      * @param {number} [page] Optional page index in sent email list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in sent email list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SentEmailsControllerApi
      */
-    getSentOrganizationEmails(inboxId?: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
+    getSentOrganizationEmails(before?: Date, inboxId?: string, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageSentEmailProjection>;
 }
 /**
  * TemplateControllerApi - fetch parameter creator
@@ -12519,13 +12820,15 @@ export declare const TemplateControllerApiFetchParamCreator: (configuration?: Co
     /**
      *
      * @summary Get all Templates in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTemplates(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllTemplates(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get Template
@@ -12575,13 +12878,15 @@ export declare const TemplateControllerApiFp: (configuration?: Configuration) =>
     /**
      *
      * @summary Get all Templates in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTemplates(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTemplateProjection>;
+    getAllTemplates(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTemplateProjection>;
     /**
      *
      * @summary Get Template
@@ -12631,13 +12936,15 @@ export declare const TemplateControllerApiFactory: (configuration?: Configuratio
     /**
      *
      * @summary Get all Templates in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTemplates(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTemplateProjection>;
+    getAllTemplates(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTemplateProjection>;
     /**
      *
      * @summary Get Template
@@ -12691,14 +12998,16 @@ export declare class TemplateControllerApi extends BaseAPI {
     /**
      *
      * @summary Get all Templates in paginated format
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TemplateControllerApi
      */
-    getAllTemplates(page?: number, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTemplateProjection>;
+    getAllTemplates(before?: Date, page?: number, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTemplateProjection>;
     /**
      *
      * @summary Get Template
@@ -12743,14 +13052,16 @@ export declare const TrackingControllerApiFetchParamCreator: (configuration?: Co
     /**
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get pixel
@@ -12776,14 +13087,16 @@ export declare const TrackingControllerApiFp: (configuration?: Configuration) =>
     /**
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
+    getAllTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get pixel
@@ -12809,14 +13122,16 @@ export declare const TrackingControllerApiFactory: (configuration?: Configuratio
     /**
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getAllTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get pixel
@@ -12845,15 +13160,17 @@ export declare class TrackingControllerApi extends BaseAPI {
     /**
      * List tracking pixels in paginated form
      * @summary Get tracking pixels
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TrackingControllerApi
      */
-    getAllTrackingPixels(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
+    getAllTrackingPixels(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageTrackingPixelProjection>;
     /**
      *
      * @summary Get pixel
@@ -12880,6 +13197,7 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
     /**
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -12890,10 +13208,11 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForEmailCount(before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {Date} [before] Filter for emails that were before after the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -12903,11 +13222,12 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForLatestEmail(before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -12918,11 +13238,12 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForMatchingEmails(matchOptions: MatchOptions, before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -12932,10 +13253,11 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -12946,7 +13268,7 @@ export declare const WaitForControllerApiFetchParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
+    waitForNthEmail(before?: Date, delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): FetchArgs;
 };
 /**
  * WaitForControllerApi - functional programming interface
@@ -12964,6 +13286,7 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
     /**
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -12974,10 +13297,11 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    waitForEmailCount(before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {Date} [before] Filter for emails that were before after the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -12987,11 +13311,12 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForLatestEmail(before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -13002,11 +13327,12 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
+    waitForMatchingEmails(matchOptions: MatchOptions, before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<EmailPreview>>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -13016,10 +13342,11 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -13030,7 +13357,7 @@ export declare const WaitForControllerApiFp: (configuration?: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
+    waitForNthEmail(before?: Date, delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Email>;
 };
 /**
  * WaitForControllerApi - factory interface
@@ -13048,6 +13375,7 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
     /**
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -13058,10 +13386,11 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForEmailCount(before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {Date} [before] Filter for emails that were before after the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -13071,11 +13400,12 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForLatestEmail(before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -13086,11 +13416,12 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmails(matchOptions: MatchOptions, before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -13100,10 +13431,11 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -13114,7 +13446,7 @@ export declare const WaitForControllerApiFactory: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForNthEmail(before?: Date, delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
 };
 /**
  * WaitForControllerApi - object-oriented interface
@@ -13135,6 +13467,7 @@ export declare class WaitForControllerApi extends BaseAPI {
     /**
      * If inbox contains count or more emails at time of request then return count worth of emails. If not wait until the count is reached and return those or return an error if timeout is exceeded.
      * @summary Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater that 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -13146,10 +13479,11 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForEmailCount(count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForEmailCount(before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Will return either the last received email or wait for an email to arrive and return that. If you need to wait for an email for a non-empty inbox set `unreadOnly=true` or see the other receive methods such as `waitForNthEmail` or `waitForEmailCount`.
      * @summary Fetch inbox's latest email or if empty wait for an email to arrive
+     * @param {Date} [before] Filter for emails that were before after the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -13160,11 +13494,12 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForLatestEmail(delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForLatestEmail(before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait or return list of emails that match simple matching patterns
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [count] Number of emails to wait for. Must be greater or equal to 1
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are fetching emails from
@@ -13176,11 +13511,12 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForMatchingEmails(matchOptions: MatchOptions, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
+    waitForMatchingEmails(matchOptions: MatchOptions, before?: Date, count?: number, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<EmailPreview[]>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If a result if found then return or else retry the search until a result is found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: 'SUBJECT',should:'CONTAIN',value:'needle'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * @summary Wait for or return the first email that matches provided MatchOptions array
      * @param {MatchOptions} matchOptions matchOptions
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox we are matching an email for
      * @param {Date} [since] Filter for emails that were received after the given timestamp
@@ -13191,10 +13527,11 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForMatchingFirstEmail(matchOptions: MatchOptions, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForMatchingFirstEmail(matchOptions: MatchOptions, before?: Date, delay?: number, inboxId?: string, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * @summary Wait for or fetch the email with a given index in the inbox specified. If index doesn't exist waits for it to exist or timeout to occur.
+     * @param {Date} [before] Filter for emails that were received before the given timestamp
      * @param {number} [delay] Max milliseconds delay between calls
      * @param {string} [inboxId] Id of the inbox you are fetching emails from
      * @param {number} [index] Zero based index of the email to wait for. If an inbox has 1 email already and you want to wait for the 2nd email pass index&#x3D;1
@@ -13206,7 +13543,7 @@ export declare class WaitForControllerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof WaitForControllerApi
      */
-    waitForNthEmail(delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
+    waitForNthEmail(before?: Date, delay?: number, inboxId?: string, index?: number, since?: Date, sort?: 'ASC' | 'DESC', timeout?: number, unreadOnly?: boolean, options?: any): Promise<Email>;
 }
 /**
  * WebhookControllerApi - fetch parameter creator
@@ -13234,37 +13571,51 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
     /**
      *
      * @summary Get results for all webhooks
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhooks(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllWebhooks(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get paginated webhooks for an Inbox
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxWebhooksPaginated(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getInboxWebhooksPaginated(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    /**
+     *
+     * @summary Get JSON Schema definition for webhook payload
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getJsonSchemaForWebhookPayload(webhookId: string, options?: any): FetchArgs;
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
@@ -13287,6 +13638,14 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      * @throws {RequiredError}
      */
     getTestWebhookPayloadEmailRead(options?: any): FetchArgs;
+    /**
+     *
+     * @summary Get example payload for webhook
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadForWebhook(webhookId: string, options?: any): FetchArgs;
     /**
      *
      * @summary Get webhook test payload for new attachment event
@@ -13328,14 +13687,16 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      *
      * @summary Get a webhook results for a webhook
      * @param {string} webhookId ID of webhook to get results for
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -13387,37 +13748,51 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
     /**
      *
      * @summary Get results for all webhooks
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhooks(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookProjection>;
+    getAllWebhooks(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookProjection>;
     /**
      *
      * @summary Get paginated webhooks for an Inbox
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxWebhooksPaginated(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookProjection>;
+    getInboxWebhooksPaginated(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookProjection>;
+    /**
+     *
+     * @summary Get JSON Schema definition for webhook payload
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getJsonSchemaForWebhookPayload(webhookId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<JSONSchemaDto>;
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
@@ -13440,6 +13815,14 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @throws {RequiredError}
      */
     getTestWebhookPayloadEmailRead(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookEmailReadPayload>;
+    /**
+     *
+     * @summary Get example payload for webhook
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadForWebhook(webhookId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for new attachment event
@@ -13481,14 +13864,16 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      *
      * @summary Get a webhook results for a webhook
      * @param {string} webhookId ID of webhook to get results for
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -13540,37 +13925,51 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
     /**
      *
      * @summary Get results for all webhooks
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhooks(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    getAllWebhooks(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
     /**
      *
      * @summary Get paginated webhooks for an Inbox
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getInboxWebhooksPaginated(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    getInboxWebhooksPaginated(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    /**
+     *
+     * @summary Get JSON Schema definition for webhook payload
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getJsonSchemaForWebhookPayload(webhookId: string, options?: any): Promise<JSONSchemaDto>;
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
@@ -13593,6 +13992,14 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @throws {RequiredError}
      */
     getTestWebhookPayloadEmailRead(options?: any): Promise<WebhookEmailReadPayload>;
+    /**
+     *
+     * @summary Get example payload for webhook
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getTestWebhookPayloadForWebhook(webhookId: string, options?: any): Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for new attachment event
@@ -13634,14 +14041,16 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      *
      * @summary Get a webhook results for a webhook
      * @param {string} webhookId ID of webhook to get results for
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -13697,40 +14106,55 @@ export declare class WebhookControllerApi extends BaseAPI {
     /**
      *
      * @summary Get results for all webhooks
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getAllWebhookResults(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size for paginated result list.
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getAllWebhooks(page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    getAllWebhooks(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
     /**
      *
      * @summary Get paginated webhooks for an Inbox
      * @param {string} inboxId inboxId
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getInboxWebhooksPaginated(inboxId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    getInboxWebhooksPaginated(inboxId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookProjection>;
+    /**
+     *
+     * @summary Get JSON Schema definition for webhook payload
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    getJsonSchemaForWebhookPayload(webhookId: string, options?: any): Promise<JSONSchemaDto>;
     /**
      *
      * @summary Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
@@ -13756,6 +14180,15 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     getTestWebhookPayloadEmailRead(options?: any): Promise<WebhookEmailReadPayload>;
+    /**
+     *
+     * @summary Get example payload for webhook
+     * @param {string} webhookId webhookId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    getTestWebhookPayloadForWebhook(webhookId: string, options?: any): Promise<AbstractWebhookPayload>;
     /**
      *
      * @summary Get webhook test payload for new attachment event
@@ -13802,15 +14235,17 @@ export declare class WebhookControllerApi extends BaseAPI {
      *
      * @summary Get a webhook results for a webhook
      * @param {string} webhookId ID of webhook to get results for
+     * @param {Date} [before] Filter by created at before the given timestamp
      * @param {number} [page] Optional page index in list pagination
      * @param {string} [searchFilter] Optional search filter
+     * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getWebhookResults(webhookId: string, page?: number, searchFilter?: string, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
     /**
      *
      * @summary Get all webhooks for an Inbox
