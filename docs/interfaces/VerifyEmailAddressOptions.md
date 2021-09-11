@@ -27,7 +27,7 @@ Options for verifying that an email address exists at a remote mail server.
 
 #### Defined in
 
-[src/generated/api.ts:6108](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6108)
+[src/generated/api.ts:6108](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6108)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6102](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6102)
+[src/generated/api.ts:6102](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6102)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6120](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6120)
+[src/generated/api.ts:6120](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6120)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6114)
+[src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6114)

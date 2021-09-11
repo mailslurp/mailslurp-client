@@ -50,7 +50,7 @@ BulkActionsControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L57)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:10930](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10930)
+[src/generated/api.ts:10930](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L10930)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:10945](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10945)
+[src/generated/api.ts:10945](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L10945)
 
 ___
 
@@ -165,4 +165,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:10960](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L10960)
+[src/generated/api.ts:10960](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L10960)

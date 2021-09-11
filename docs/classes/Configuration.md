@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/generated/configuration.ts:58](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L58)
+[src/generated/configuration.ts:58](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L58)
 
 ## Properties
 
@@ -48,7 +48,7 @@ parameter for oauth2 security
 
 #### Defined in
 
-[src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L49)
+[src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L49)
 
 ___
 
@@ -64,7 +64,7 @@ parameter for apiKey security
 
 #### Defined in
 
-[src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L28)
+[src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L28)
 
 ___
 
@@ -78,7 +78,7 @@ override base path
 
 #### Defined in
 
-[src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L56)
+[src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L56)
 
 ___
 
@@ -92,7 +92,7 @@ parameter for basic security
 
 #### Defined in
 
-[src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L42)
+[src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L42)
 
 ___
 
@@ -106,4 +106,4 @@ parameter for basic security
 
 #### Defined in
 
-[src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/configuration.ts#L35)
+[src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/configuration.ts#L35)

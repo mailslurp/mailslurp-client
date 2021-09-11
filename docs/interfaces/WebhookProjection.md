@@ -30,7 +30,7 @@ Representation of a webhook
 
 #### Defined in
 
-[src/generated/api.ts:6785](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6785)
+[src/generated/api.ts:6785](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6785)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6791](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6791)
+[src/generated/api.ts:6791](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6791)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6797](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6797)
+[src/generated/api.ts:6797](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6797)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6803](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6803)
+[src/generated/api.ts:6803](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6803)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6809](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6809)
+[src/generated/api.ts:6809](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6809)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6815](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6815)
+[src/generated/api.ts:6815](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6815)
 
 ___
 
@@ -102,4 +102,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6821](https://github.com/mailslurp/mailslurp-client/blob/f0f645f/src/generated/api.ts#L6821)
+[src/generated/api.ts:6821](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6821)
