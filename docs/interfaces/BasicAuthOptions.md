@@ -25,7 +25,7 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 #### Defined in
 
-[src/generated/api.ts:414](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L414)
+[src/generated/api.ts:414](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L414)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:408](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L408)
+[src/generated/api.ts:408](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L408)

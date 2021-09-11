@@ -35,7 +35,7 @@ ISO Date Time latest time of email to consider. Filter for matching emails that 
 
 #### Defined in
 
-[src/generated/api.ts:6134](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6134)
+[src/generated/api.ts:6134](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6134)
 
 ___
 
@@ -49,7 +49,7 @@ Number of results that should match conditions. Either exactly or at least this 
 
 #### Defined in
 
-[src/generated/api.ts:6140](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6140)
+[src/generated/api.ts:6140](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6140)
 
 ___
 
@@ -63,7 +63,7 @@ How should the found count be compared to the expected count.
 
 #### Defined in
 
-[src/generated/api.ts:6146](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6146)
+[src/generated/api.ts:6146](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6146)
 
 ___
 
@@ -77,7 +77,7 @@ Max time in milliseconds to wait between retries if a `timeout` is specified.
 
 #### Defined in
 
-[src/generated/api.ts:6152](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6152)
+[src/generated/api.ts:6152](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6152)
 
 ___
 
@@ -91,7 +91,7 @@ ID of inbox to search within and apply conditions to. Essentially filtering the 
 
 #### Defined in
 
-[src/generated/api.ts:6158](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6158)
+[src/generated/api.ts:6158](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6158)
 
 ___
 
@@ -105,7 +105,7 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 #### Defined in
 
-[src/generated/api.ts:6164](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6164)
+[src/generated/api.ts:6164](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6164)
 
 ___
 
@@ -119,7 +119,7 @@ ISO Date Time earliest time of email to consider. Filter for matching emails tha
 
 #### Defined in
 
-[src/generated/api.ts:6170](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6170)
+[src/generated/api.ts:6170](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6170)
 
 ___
 
@@ -133,7 +133,7 @@ Direction to sort matching emails by created time
 
 #### Defined in
 
-[src/generated/api.ts:6176](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6176)
+[src/generated/api.ts:6176](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6176)
 
 ___
 
@@ -147,7 +147,7 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 #### Defined in
 
-[src/generated/api.ts:6182](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6182)
+[src/generated/api.ts:6182](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6182)
 
 ___
 
@@ -161,4 +161,4 @@ Apply conditions only to **unread** emails. All emails begin with `read=false`. 
 
 #### Defined in
 
-[src/generated/api.ts:6188](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L6188)
+[src/generated/api.ts:6188](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L6188)

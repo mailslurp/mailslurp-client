@@ -378,7 +378,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails(inboxId, undefined, args.limit, args.minCount, args.retryTimeout, undefined, args.since, args.size, args.sort, undefined);
+                        return _this.inboxController.getEmails(inboxId, undefined, undefined, args.limit, args.minCount, args.retryTimeout, args.since, args.size, args.sort, undefined);
                     })];
             });
         });

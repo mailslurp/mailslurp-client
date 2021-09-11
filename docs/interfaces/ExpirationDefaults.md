@@ -27,7 +27,7 @@ Expiration defaults for your account
 
 #### Defined in
 
-[src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L2307)
+[src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2307)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2313](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L2313)
+[src/generated/api.ts:2313](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2313)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2319](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L2319)
+[src/generated/api.ts:2319](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2319)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L2325)
+[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2325)

@@ -32,7 +32,7 @@ When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T
 
 #### Defined in
 
-[src/generated/api.ts:3283](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3283)
+[src/generated/api.ts:3283](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3283)
 
 ___
 
@@ -46,7 +46,7 @@ The inbox's email address. Inbox projections and previews may not include the em
 
 #### Defined in
 
-[src/generated/api.ts:3289](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3289)
+[src/generated/api.ts:3289](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3289)
 
 ___
 
@@ -60,7 +60,7 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 #### Defined in
 
-[src/generated/api.ts:3295](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3295)
+[src/generated/api.ts:3295](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3295)
 
 ___
 
@@ -74,7 +74,7 @@ ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to
 
 #### Defined in
 
-[src/generated/api.ts:3301](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3301)
+[src/generated/api.ts:3301](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3301)
 
 ___
 
@@ -88,7 +88,7 @@ Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testin
 
 #### Defined in
 
-[src/generated/api.ts:3307](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3307)
+[src/generated/api.ts:3307](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3307)
 
 ___
 
@@ -102,7 +102,7 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 #### Defined in
 
-[src/generated/api.ts:3313](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3313)
+[src/generated/api.ts:3313](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3313)
 
 ___
 
@@ -116,7 +116,7 @@ Is the inbox readOnly for the caller. Read only means can not be deleted or modi
 
 #### Defined in
 
-[src/generated/api.ts:3319](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3319)
+[src/generated/api.ts:3319](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3319)
 
 ___
 
@@ -130,7 +130,7 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 #### Defined in
 
-[src/generated/api.ts:3325](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3325)
+[src/generated/api.ts:3325](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3325)
 
 ___
 
@@ -144,4 +144,4 @@ Does inbox permit team access for organization team members. If so team users ca
 
 #### Defined in
 
-[src/generated/api.ts:3331](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3331)
+[src/generated/api.ts:3331](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3331)

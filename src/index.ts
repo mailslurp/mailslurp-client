@@ -465,10 +465,10 @@ export class MailSlurp {
             this.inboxController.getEmails(
                 inboxId,
                 undefined,
+                undefined,
                 args.limit,
                 args.minCount,
                 args.retryTimeout,
-                undefined,
                 args.since,
                 args.size,
                 args.sort,

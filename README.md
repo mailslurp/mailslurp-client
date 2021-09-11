@@ -277,7 +277,7 @@ To read emails that already exist in an inbox use the [EmailController](https://
 There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/email/).
 
 ```javascript
-const latestEmail = await mailslurp.waitForLatestEmail(undefined, inbox.id);
+const latestEmail = await mailslurp.waitForLatestEmail(undefined, undefined, inbox.id);
 
 expect(latestEmail.subject).toContain("Hello");
 expect(latestEmail.body).toContain("Welcome");
@@ -377,7 +377,7 @@ To wait for expected emails to arrive and read their contents use the [WaitFor c
 async function canReceiveAttachment(inboxId) {
     const waitForController = new MailSlurp(config).waitController;
 
-    const email = await waitForController.waitForLatestEmail(undefined, inboxId, undefined, undefined, 30000, true)
+    const email = await waitForController.waitForLatestEmail(undefined, undefined, inboxId, undefined, undefined, 30000, true)
 
     expect(email.attachments.length).toEqual(1);
 
@@ -440,7 +440,7 @@ const body = "Hi there. Your code is: 123456"
 await mailslurp.sendEmail(inbox1.id, { to, body })
 
 // wait for email
-const email = await mailslurp.waitController.waitForLatestEmail(undefined, inbox2.id, undefined, undefined, timeoutMillis, true)
+const email = await mailslurp.waitController.waitForLatestEmail(undefined, undefined, inbox2.id, undefined, undefined, timeoutMillis, true)
 const pattern = "code is: ([0-9]{6})"
 expect(email.body).toContain("Your code is")
 

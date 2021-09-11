@@ -28,7 +28,7 @@ The email property to match on. One of SUBJECT, TO, BCC, CC or FROM
 
 #### Defined in
 
-[src/generated/api.ts:3061](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3061)
+[src/generated/api.ts:3061](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3061)
 
 ___
 
@@ -42,7 +42,7 @@ What criteria to apply. CONTAIN or EQUAL. Note CONTAIN is recommended due to som
 
 #### Defined in
 
-[src/generated/api.ts:3067](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3067)
+[src/generated/api.ts:3067](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3067)
 
 ___
 
@@ -56,4 +56,4 @@ The value you wish to compare with the value of the field specified using the `s
 
 #### Defined in
 
-[src/generated/api.ts:3073](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L3073)
+[src/generated/api.ts:3073](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3073)

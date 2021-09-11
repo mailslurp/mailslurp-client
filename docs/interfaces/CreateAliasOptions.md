@@ -29,7 +29,7 @@ Email address to be hidden behind alias. Emails sent to the alias email address 
 
 #### Defined in
 
-[src/generated/api.ts:805](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L805)
+[src/generated/api.ts:805](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L805)
 
 ___
 
@@ -43,7 +43,7 @@ Optional inbox ID to attach to alias. Null by default means an a new inbox will 
 
 #### Defined in
 
-[src/generated/api.ts:811](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L811)
+[src/generated/api.ts:811](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L811)
 
 ___
 
@@ -57,7 +57,7 @@ Optional name for alias
 
 #### Defined in
 
-[src/generated/api.ts:817](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L817)
+[src/generated/api.ts:817](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L817)
 
 ___
 
@@ -71,4 +71,4 @@ Enable threads options. If true emails will be sent with a unique reply-to threa
 
 #### Defined in
 
-[src/generated/api.ts:823](https://github.com/mailslurp/mailslurp-client/blob/20b4039/src/generated/api.ts#L823)
+[src/generated/api.ts:823](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L823)
