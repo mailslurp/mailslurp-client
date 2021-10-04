@@ -2,6 +2,8 @@
 
 # Interface: CreateInboxForwarderOptions
 
+Options for creating an inbox forwarder
+
 **`export`**
 
 **`interface`** CreateInboxForwarderOptions
@@ -18,34 +20,40 @@
 
 ### field
 
-• **field**: [`FieldEnum`](../enums/CreateInboxForwarderOptions.FieldEnum.md)
+• `Optional` **field**: [`FieldEnum`](../enums/CreateInboxForwarderOptions.FieldEnum.md)
+
+Field to match against to trigger inbox forwarding for inbound email
 
 **`memberof`** CreateInboxForwarderOptions
 
 #### Defined in
 
-[src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1043)
+[src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1043)
 
 ___
 
 ### forwardToRecipients
 
-• **forwardToRecipients**: `string`[]
+• `Optional` **forwardToRecipients**: `string`[]
+
+Email addresses to forward an email to if it matches the field and match criteria of the forwarder
 
 **`memberof`** CreateInboxForwarderOptions
 
 #### Defined in
 
-[src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1055)
+[src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1049)
 
 ___
 
 ### match
 
-• **match**: `string`
+• `Optional` **match**: `string`
+
+String or wildcard style match for field specified when evaluating forwarding rules
 
 **`memberof`** CreateInboxForwarderOptions
 
 #### Defined in
 
-[src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1049)
+[src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1055)

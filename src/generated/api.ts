@@ -1030,29 +1030,29 @@ export namespace CreateInboxDto {
 }
 
 /**
- *
+ * Options for creating an inbox forwarder
  * @export
  * @interface CreateInboxForwarderOptions
  */
 export interface CreateInboxForwarderOptions {
     /**
-     *
+     * Field to match against to trigger inbox forwarding for inbound email
      * @type {string}
      * @memberof CreateInboxForwarderOptions
      */
-    field: CreateInboxForwarderOptions.FieldEnum;
+    field?: CreateInboxForwarderOptions.FieldEnum;
     /**
-     *
-     * @type {string}
-     * @memberof CreateInboxForwarderOptions
-     */
-    match: string;
-    /**
-     *
+     * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
      * @type {Array<string>}
      * @memberof CreateInboxForwarderOptions
      */
-    forwardToRecipients: Array<string>;
+    forwardToRecipients?: Array<string>;
+    /**
+     * String or wildcard style match for field specified when evaluating forwarding rules
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    match?: string;
 }
 
 /**
@@ -30639,6 +30639,50 @@ export const WebhookControllerApiFetchParamCreator = function(
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks(options: any = {}): FetchArgs {
+            const localVarPath = `/webhooks`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign(
+                { method: 'DELETE' },
+                options
+            );
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue =
+                    typeof configuration.apiKey === 'function'
+                        ? configuration.apiKey('x-api-key')
+                        : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+
+            localVarUrlObj.query = Object.assign(
+                {},
+                localVarUrlObj.query,
+                localVarQueryParameter,
+                options.query
+            );
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign(
+                {},
+                localVarHeaderParameter,
+                options.headers
+            );
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -31784,6 +31828,34 @@ export const WebhookControllerApiFp = function(configuration?: Configuration) {
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks(
+            options?: any
+        ): (fetch?: FetchAPI, basePath?: string) => Promise<Response> {
+            const localVarFetchArgs = WebhookControllerApiFetchParamCreator(
+                configuration
+            ).deleteAllWebhooks(options);
+            return (
+                fetch: FetchAPI = portableFetch,
+                basePath: string = BASE_PATH
+            ) => {
+                return fetch(
+                    basePath + localVarFetchArgs.url,
+                    localVarFetchArgs.options
+                ).then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -32462,6 +32534,17 @@ export const WebhookControllerApiFactory = function(
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks(options?: any) {
+            return WebhookControllerApiFp(configuration).deleteAllWebhooks(
+                options
+            )(fetch, basePath);
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -32806,6 +32889,19 @@ export class WebhookControllerApi extends BaseAPI {
         return WebhookControllerApiFp(this.configuration).createWebhook(
             inboxId,
             webhookOptions,
+            options
+        )(this.fetch, this.basePath);
+    }
+
+    /**
+     *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    public deleteAllWebhooks(options?: any) {
+        return WebhookControllerApiFp(this.configuration).deleteAllWebhooks(
             options
         )(this.fetch, this.basePath);
     }

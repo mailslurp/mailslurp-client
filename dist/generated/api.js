@@ -15821,6 +15821,35 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks: function (options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/webhooks";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -16532,6 +16561,27 @@ var WebhookControllerApiFp = function (configuration) {
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks: function (options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).deleteAllWebhooks(options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -16966,6 +17016,15 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
         },
         /**
          *
+         * @summary Delete all webhooks
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteAllWebhooks: function (options) {
+            return exports.WebhookControllerApiFp(configuration).deleteAllWebhooks(options)(fetch, basePath);
+        },
+        /**
+         *
          * @summary Delete and disable a Webhook for an Inbox
          * @param {string} inboxId inboxId
          * @param {string} webhookId webhookId
@@ -17187,6 +17246,16 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      */
     WebhookControllerApi.prototype.createWebhook = function (inboxId, webhookOptions, options) {
         return exports.WebhookControllerApiFp(this.configuration).createWebhook(inboxId, webhookOptions, options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    WebhookControllerApi.prototype.deleteAllWebhooks = function (options) {
+        return exports.WebhookControllerApiFp(this.configuration).deleteAllWebhooks(options)(this.fetch, this.basePath);
     };
     /**
      *

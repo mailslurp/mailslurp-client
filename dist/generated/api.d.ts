@@ -984,29 +984,29 @@ export declare namespace CreateInboxDto {
     }
 }
 /**
- *
+ * Options for creating an inbox forwarder
  * @export
  * @interface CreateInboxForwarderOptions
  */
 export interface CreateInboxForwarderOptions {
     /**
-     *
+     * Field to match against to trigger inbox forwarding for inbound email
      * @type {string}
      * @memberof CreateInboxForwarderOptions
      */
-    field: CreateInboxForwarderOptions.FieldEnum;
+    field?: CreateInboxForwarderOptions.FieldEnum;
     /**
-     *
-     * @type {string}
-     * @memberof CreateInboxForwarderOptions
-     */
-    match: string;
-    /**
-     *
+     * Email addresses to forward an email to if it matches the field and match criteria of the forwarder
      * @type {Array<string>}
      * @memberof CreateInboxForwarderOptions
      */
-    forwardToRecipients: Array<string>;
+    forwardToRecipients?: Array<string>;
+    /**
+     * String or wildcard style match for field specified when evaluating forwarding rules
+     * @type {string}
+     * @memberof CreateInboxForwarderOptions
+     */
+    match?: string;
 }
 /**
  * @export
@@ -13561,6 +13561,13 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
     createWebhook(inboxId: string, webhookOptions: CreateWebhookOptions, options?: any): FetchArgs;
     /**
      *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllWebhooks(options?: any): FetchArgs;
+    /**
+     *
      * @summary Delete and disable a Webhook for an Inbox
      * @param {string} inboxId inboxId
      * @param {string} webhookId webhookId
@@ -13738,6 +13745,13 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
     createWebhook(inboxId: string, webhookOptions: CreateWebhookOptions, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<WebhookDto>;
     /**
      *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllWebhooks(options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
+    /**
+     *
      * @summary Delete and disable a Webhook for an Inbox
      * @param {string} inboxId inboxId
      * @param {string} webhookId webhookId
@@ -13913,6 +13927,13 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @throws {RequiredError}
      */
     createWebhook(inboxId: string, webhookOptions: CreateWebhookOptions, options?: any): Promise<WebhookDto>;
+    /**
+     *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteAllWebhooks(options?: any): Promise<Response>;
     /**
      *
      * @summary Delete and disable a Webhook for an Inbox
@@ -14093,6 +14114,14 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @memberof WebhookControllerApi
      */
     createWebhook(inboxId: string, webhookOptions: CreateWebhookOptions, options?: any): Promise<WebhookDto>;
+    /**
+     *
+     * @summary Delete all webhooks
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    deleteAllWebhooks(options?: any): Promise<Response>;
     /**
      *
      * @summary Delete and disable a Webhook for an Inbox

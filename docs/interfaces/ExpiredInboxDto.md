@@ -26,7 +26,7 @@ Expired inbox
 
 #### Defined in
 
-[src/generated/api.ts:2339](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2339)
+[src/generated/api.ts:2339](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L2339)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2345](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2345)
+[src/generated/api.ts:2345](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L2345)
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2351](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L2351)
+[src/generated/api.ts:2351](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L2351)

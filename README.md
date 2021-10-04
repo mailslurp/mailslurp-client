@@ -76,7 +76,7 @@ const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 
 Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
-See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/mailslurp/) for all methods or
+See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/) for all methods or
 see the `test/integration.spec.ts` file for usage examples.
 
 Use individual controllers like so:

@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/generated/api.ts:3344](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3344)
+[src/generated/api.ts:3344](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L3344)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:3345](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L3345)
+[src/generated/api.ts:3345](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L3345)

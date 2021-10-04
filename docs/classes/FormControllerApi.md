@@ -48,7 +48,7 @@ FormControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L57)
 
 ___
 
@@ -117,4 +117,4 @@ This endpoint allows you to submit HTML forms and receive the field values and f
 
 #### Defined in
 
-[src/generated/api.ts:18246](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L18246)
+[src/generated/api.ts:18246](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18246)

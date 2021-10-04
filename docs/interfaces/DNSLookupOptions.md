@@ -28,7 +28,7 @@ List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
 #### Defined in
 
-[src/generated/api.ts:1227](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1227)
+[src/generated/api.ts:1227](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1227)
 
 ___
 
@@ -42,7 +42,7 @@ Optionally control whether to omit the final dot in full DNS name values.
 
 #### Defined in
 
-[src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1233)
+[src/generated/api.ts:1233](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1233)
 
 ___
 
@@ -56,4 +56,4 @@ List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
 #### Defined in
 
-[src/generated/api.ts:1239](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L1239)
+[src/generated/api.ts:1239](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1239)

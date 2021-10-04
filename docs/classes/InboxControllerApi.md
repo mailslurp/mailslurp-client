@@ -68,7 +68,7 @@ InboxControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L57)
 
 ___
 
@@ -140,7 +140,7 @@ Create a new inbox and with a randomized email address to send and receive from.
 
 #### Defined in
 
-[src/generated/api.ts:22558](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22558)
+[src/generated/api.ts:22558](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22558)
 
 ___
 
@@ -170,7 +170,7 @@ Create a new inbox rule for forwarding, blocking, and allowing emails when sendi
 
 #### Defined in
 
-[src/generated/api.ts:22595](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22595)
+[src/generated/api.ts:22595](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22595)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:22614](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22614)
+[src/generated/api.ts:22614](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22614)
 
 ___
 
@@ -225,7 +225,7 @@ Additional endpoint that allows inbox creation with request body options. Can be
 
 #### Defined in
 
-[src/generated/api.ts:22628](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22628)
+[src/generated/api.ts:22628](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22628)
 
 ___
 
@@ -253,7 +253,7 @@ Permanently delete all inboxes and associated email addresses. This will also de
 
 #### Defined in
 
-[src/generated/api.ts:22645](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22645)
+[src/generated/api.ts:22645](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22645)
 
 ___
 
@@ -282,7 +282,7 @@ Permanently delete an inbox and associated email address as well as all emails w
 
 #### Defined in
 
-[src/generated/api.ts:22659](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22659)
+[src/generated/api.ts:22659](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22659)
 
 ___
 
@@ -319,7 +319,7 @@ List inboxes in paginated form. The results are available on the `content` prope
 
 #### Defined in
 
-[src/generated/api.ts:22682](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22682)
+[src/generated/api.ts:22682](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22682)
 
 ___
 
@@ -357,7 +357,7 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 
 #### Defined in
 
-[src/generated/api.ts:22725](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22725)
+[src/generated/api.ts:22725](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22725)
 
 ___
 
@@ -386,7 +386,7 @@ Returns an inbox's properties, including its email address and ID.
 
 #### Defined in
 
-[src/generated/api.ts:22761](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22761)
+[src/generated/api.ts:22761](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22761)
 
 ___
 
@@ -420,7 +420,7 @@ Get a paginated list of emails in an inbox. Does not hold connections open.
 
 #### Defined in
 
-[src/generated/api.ts:22781](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22781)
+[src/generated/api.ts:22781](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22781)
 
 ___
 
@@ -455,7 +455,7 @@ Returns an inbox's sent email receipts. Call individual sent email endpoints for
 
 #### Defined in
 
-[src/generated/api.ts:22815](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22815)
+[src/generated/api.ts:22815](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22815)
 
 ___
 
@@ -483,7 +483,7 @@ Get all inbox tags
 
 #### Defined in
 
-[src/generated/api.ts:22844](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22844)
+[src/generated/api.ts:22844](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22844)
 
 ___
 
@@ -515,7 +515,7 @@ List the inboxes you have created. Note use of the more advanced `getAllEmails` 
 
 #### Defined in
 
-[src/generated/api.ts:22862](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22862)
+[src/generated/api.ts:22862](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22862)
 
 ___
 
@@ -549,7 +549,7 @@ List organization inboxes in paginated form. These are inboxes created with `all
 
 #### Defined in
 
-[src/generated/api.ts:22891](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22891)
+[src/generated/api.ts:22891](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22891)
 
 ___
 
@@ -584,7 +584,7 @@ List all rulesets attached to an inbox
 
 #### Defined in
 
-[src/generated/api.ts:22925](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22925)
+[src/generated/api.ts:22925](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22925)
 
 ___
 
@@ -619,7 +619,7 @@ List all tracking pixels sent from an inbox
 
 #### Defined in
 
-[src/generated/api.ts:22961](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22961)
+[src/generated/api.ts:22961](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22961)
 
 ___
 
@@ -649,7 +649,7 @@ Send an email from an inbox's email address.  The request body should contain th
 
 #### Defined in
 
-[src/generated/api.ts:22992](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L22992)
+[src/generated/api.ts:22992](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22992)
 
 ___
 
@@ -679,7 +679,7 @@ Sister method for standard `sendEmail` method with the benefit of returning a `S
 
 #### Defined in
 
-[src/generated/api.ts:23013](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L23013)
+[src/generated/api.ts:23013](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23013)
 
 ___
 
@@ -708,7 +708,7 @@ Send an inbox a test email to test email receiving is working
 
 #### Defined in
 
-[src/generated/api.ts:23033](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L23033)
+[src/generated/api.ts:23033](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23033)
 
 ___
 
@@ -738,7 +738,7 @@ Set and return new favourite state for an inbox
 
 #### Defined in
 
-[src/generated/api.ts:23049](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L23049)
+[src/generated/api.ts:23049](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23049)
 
 ___
 
@@ -768,4 +768,4 @@ Update editable fields on an inbox
 
 #### Defined in
 
-[src/generated/api.ts:23070](https://github.com/mailslurp/mailslurp-client/blob/8c02983/src/generated/api.ts#L23070)
+[src/generated/api.ts:23070](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23070)
