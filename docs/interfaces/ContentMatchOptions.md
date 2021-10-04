@@ -26,4 +26,4 @@ Java style regex pattern. Do not include the typical `/` at start or end of rege
 
 #### Defined in
 
-[src/generated/api.ts:791](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L791)
+[src/generated/api.ts:791](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L791)

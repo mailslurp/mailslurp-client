@@ -25,7 +25,7 @@ MailSlurp JS
 - [ExportOptions](modules/ExportOptions.md)
 - [Inbox](modules/Inbox.md)
 - [InboxForwarderDto](modules/InboxForwarderDto.md)
-- [InboxProjection](modules/InboxProjection.md)
+- [InboxPreview](modules/InboxPreview.md)
 - [InboxRulesetDto](modules/InboxRulesetDto.md)
 - [MatchOption](modules/MatchOption.md)
 - [OrganizationInboxProjection](modules/OrganizationInboxProjection.md)
@@ -128,6 +128,7 @@ MailSlurp JS
 - [ExportOptions](interfaces/ExportOptions.md)
 - [FetchAPI](interfaces/FetchAPI.md)
 - [FetchArgs](interfaces/FetchArgs.md)
+- [FlushExpiredInboxesResult](interfaces/FlushExpiredInboxesResult.md)
 - [ForwardEmailOptions](interfaces/ForwardEmailOptions.md)
 - [GravatarUrl](interfaces/GravatarUrl.md)
 - [GroupContactsDto](interfaces/GroupContactsDto.md)
@@ -139,7 +140,7 @@ MailSlurp JS
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
 - [InboxForwarderTestResult](interfaces/InboxForwarderTestResult.md)
-- [InboxProjection](interfaces/InboxProjection.md)
+- [InboxPreview](interfaces/InboxPreview.md)
 - [InboxRulesetDto](interfaces/InboxRulesetDto.md)
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
@@ -195,6 +196,7 @@ MailSlurp JS
 - [TrackingPixelProjection](interfaces/TrackingPixelProjection.md)
 - [UnknownMissedEmailProjection](interfaces/UnknownMissedEmailProjection.md)
 - [UnreadCount](interfaces/UnreadCount.md)
+- [UnseenErrorCountDto](interfaces/UnseenErrorCountDto.md)
 - [UpdateAliasOptions](interfaces/UpdateAliasOptions.md)
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
@@ -325,7 +327,7 @@ MailSlurp config
 
 #### Defined in
 
-[src/index.ts:48](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/index.ts#L48)
+[src/index.ts:48](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/index.ts#L48)
 
 ___
 
@@ -351,7 +353,7 @@ For more control over fetching. See also Webhook endpoints
 
 #### Defined in
 
-[src/index.ts:572](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/index.ts#L572)
+[src/index.ts:572](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/index.ts#L572)
 
 ## Variables
 
@@ -372,7 +374,7 @@ For more control over fetching. See also Webhook endpoints
 
 #### Defined in
 
-[src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L25)
+[src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25)
 
 ## Functions
 
@@ -410,7 +412,7 @@ AliasControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:8127](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L8127)
+[src/generated/api.ts:8179](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8179)
 
 ___
 
@@ -446,7 +448,7 @@ AliasControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:7112](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L7112)
+[src/generated/api.ts:7164](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7164)
 
 ___
 
@@ -482,7 +484,7 @@ AliasControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:7793](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L7793)
+[src/generated/api.ts:7845](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7845)
 
 ___
 
@@ -521,7 +523,7 @@ AttachmentControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:9546](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L9546)
+[src/generated/api.ts:9598](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L9598)
 
 ___
 
@@ -558,7 +560,7 @@ AttachmentControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:8544](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L8544)
+[src/generated/api.ts:8596](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8596)
 
 ___
 
@@ -595,7 +597,7 @@ AttachmentControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:9191](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L9191)
+[src/generated/api.ts:9243](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L9243)
 
 ___
 
@@ -628,7 +630,7 @@ BounceControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:10375](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10375)
+[src/generated/api.ts:10427](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10427)
 
 ___
 
@@ -659,7 +661,7 @@ BounceControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:9947](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L9947)
+[src/generated/api.ts:9999](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L9999)
 
 ___
 
@@ -690,7 +692,7 @@ BounceControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:10224](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10224)
+[src/generated/api.ts:10276](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10276)
 
 ___
 
@@ -722,7 +724,7 @@ BulkActionsControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:10864](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10864)
+[src/generated/api.ts:10916](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10916)
 
 ___
 
@@ -752,7 +754,7 @@ BulkActionsControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:10568](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10568)
+[src/generated/api.ts:10620](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10620)
 
 ___
 
@@ -782,7 +784,7 @@ BulkActionsControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:10763](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10763)
+[src/generated/api.ts:10815](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10815)
 
 ___
 
@@ -815,7 +817,7 @@ CommonActionsControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:11513](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L11513)
+[src/generated/api.ts:11565](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L11565)
 
 ___
 
@@ -846,7 +848,7 @@ CommonActionsControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:10975](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L10975)
+[src/generated/api.ts:11027](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L11027)
 
 ___
 
@@ -877,7 +879,7 @@ CommonActionsControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:11322](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L11322)
+[src/generated/api.ts:11374](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L11374)
 
 ___
 
@@ -912,7 +914,7 @@ ContactControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:12343](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L12343)
+[src/generated/api.ts:12395](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L12395)
 
 ___
 
@@ -945,7 +947,7 @@ ContactControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:11777](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L11777)
+[src/generated/api.ts:11829](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L11829)
 
 ___
 
@@ -978,7 +980,7 @@ ContactControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:12142](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L12142)
+[src/generated/api.ts:12194](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L12194)
 
 ___
 
@@ -1013,7 +1015,7 @@ DomainControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:13118](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L13118)
+[src/generated/api.ts:13170](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13170)
 
 ___
 
@@ -1046,7 +1048,7 @@ DomainControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:12566](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L12566)
+[src/generated/api.ts:12618](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L12618)
 
 ___
 
@@ -1079,7 +1081,7 @@ DomainControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:12926](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L12926)
+[src/generated/api.ts:12978](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L12978)
 
 ___
 
@@ -1135,7 +1137,7 @@ EmailControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:15985](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L15985)
+[src/generated/api.ts:16037](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L16037)
 
 ___
 
@@ -1189,7 +1191,7 @@ EmailControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:13315](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L13315)
+[src/generated/api.ts:13367](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13367)
 
 ___
 
@@ -1243,7 +1245,7 @@ EmailControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:15056](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L15056)
+[src/generated/api.ts:15108](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L15108)
 
 ___
 
@@ -1276,7 +1278,7 @@ ExpiredControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:17398](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17398)
+[src/generated/api.ts:17450](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17450)
 
 ___
 
@@ -1307,7 +1309,7 @@ ExpiredControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:17011](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17011)
+[src/generated/api.ts:17063](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17063)
 
 ___
 
@@ -1338,7 +1340,7 @@ ExpiredControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:17257](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17257)
+[src/generated/api.ts:17309](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17309)
 
 ___
 
@@ -1369,7 +1371,7 @@ ExportControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:17869](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17869)
+[src/generated/api.ts:17921](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17921)
 
 ___
 
@@ -1398,7 +1400,7 @@ ExportControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:17555](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17555)
+[src/generated/api.ts:17607](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17607)
 
 ___
 
@@ -1427,7 +1429,7 @@ ExportControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:17772](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L17772)
+[src/generated/api.ts:17824](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L17824)
 
 ___
 
@@ -1457,7 +1459,7 @@ FormControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:18182](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18182)
+[src/generated/api.ts:18234](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L18234)
 
 ___
 
@@ -1485,7 +1487,7 @@ FormControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:18012](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18012)
+[src/generated/api.ts:18064](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L18064)
 
 ___
 
@@ -1513,7 +1515,7 @@ FormControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:18122](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18122)
+[src/generated/api.ts:18174](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L18174)
 
 ___
 
@@ -1551,7 +1553,7 @@ GroupControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:19206](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L19206)
+[src/generated/api.ts:19258](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L19258)
 
 ___
 
@@ -1587,7 +1589,7 @@ GroupControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:18273](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18273)
+[src/generated/api.ts:18325](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L18325)
 
 ___
 
@@ -1623,7 +1625,7 @@ GroupControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:18886](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L18886)
+[src/generated/api.ts:18938](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L18938)
 
 ___
 
@@ -1655,6 +1657,7 @@ InboxControllerApi - factory interface
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `deleteAllInboxes` | (`options?`: `any`) => `Promise`<`Response`\> |
 | `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
+| `flushExpired` | (`before?`: `Date`, `options?`: `any`) => `Promise`<[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)\> |
 | `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
 | `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
 | `getInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
@@ -1673,7 +1676,7 @@ InboxControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:22029](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L22029)
+[src/generated/api.ts:22165](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L22165)
 
 ___
 
@@ -1703,6 +1706,7 @@ InboxControllerApi - fetch parameter creator
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteAllInboxes` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `flushExpired` | (`before?`: `Date`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
@@ -1721,7 +1725,7 @@ InboxControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:19571](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L19571)
+[src/generated/api.ts:19623](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L19623)
 
 ___
 
@@ -1751,6 +1755,7 @@ InboxControllerApi - functional programming interface
 | `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
 | `deleteAllInboxes` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
+| `flushExpired` | (`before?`: `Date`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)\> |
 | `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
 | `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
 | `getInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
@@ -1769,7 +1774,7 @@ InboxControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:21176](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L21176)
+[src/generated/api.ts:21279](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L21279)
 
 ___
 
@@ -1806,7 +1811,7 @@ InboxForwarderControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:23944](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23944)
+[src/generated/api.ts:24108](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L24108)
 
 ___
 
@@ -1841,7 +1846,7 @@ InboxForwarderControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:23087](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23087)
+[src/generated/api.ts:23251](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L23251)
 
 ___
 
@@ -1876,7 +1881,7 @@ InboxForwarderControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:23646](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L23646)
+[src/generated/api.ts:23810](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L23810)
 
 ___
 
@@ -1913,7 +1918,7 @@ InboxRulesetControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:25144](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L25144)
+[src/generated/api.ts:25308](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25308)
 
 ___
 
@@ -1948,7 +1953,7 @@ InboxRulesetControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:24287](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L24287)
+[src/generated/api.ts:24451](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L24451)
 
 ___
 
@@ -1983,7 +1988,7 @@ InboxRulesetControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:24846](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L24846)
+[src/generated/api.ts:25010](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25010)
 
 ___
 
@@ -2016,7 +2021,7 @@ MailServerControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:25877](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L25877)
+[src/generated/api.ts:26041](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L26041)
 
 ___
 
@@ -2047,7 +2052,7 @@ MailServerControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:25481](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L25481)
+[src/generated/api.ts:25645](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25645)
 
 ___
 
@@ -2078,7 +2083,7 @@ MailServerControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:25740](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L25740)
+[src/generated/api.ts:25904](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25904)
 
 ___
 
@@ -2111,7 +2116,7 @@ MissedEmailControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:26544](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L26544)
+[src/generated/api.ts:26708](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L26708)
 
 ___
 
@@ -2142,7 +2147,7 @@ MissedEmailControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:26026](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L26026)
+[src/generated/api.ts:26190](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L26190)
 
 ___
 
@@ -2173,7 +2178,7 @@ MissedEmailControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:26350](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L26350)
+[src/generated/api.ts:26514](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L26514)
 
 ___
 
@@ -2208,7 +2213,7 @@ SentEmailsControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:27566](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L27566)
+[src/generated/api.ts:27730](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L27730)
 
 ___
 
@@ -2241,7 +2246,7 @@ SentEmailsControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:26801](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L26801)
+[src/generated/api.ts:26965](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L26965)
 
 ___
 
@@ -2274,7 +2279,7 @@ SentEmailsControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:27282](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L27282)
+[src/generated/api.ts:27446](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L27446)
 
 ___
 
@@ -2309,7 +2314,7 @@ TemplateControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:28519](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L28519)
+[src/generated/api.ts:28683](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L28683)
 
 ___
 
@@ -2342,7 +2347,7 @@ TemplateControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:27927](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L27927)
+[src/generated/api.ts:28091](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L28091)
 
 ___
 
@@ -2375,7 +2380,7 @@ TemplateControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:28316](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L28316)
+[src/generated/api.ts:28480](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L28480)
 
 ___
 
@@ -2407,7 +2412,7 @@ TrackingControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:29090](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L29090)
+[src/generated/api.ts:29254](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29254)
 
 ___
 
@@ -2437,7 +2442,7 @@ TrackingControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:28753](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L28753)
+[src/generated/api.ts:28917](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L28917)
 
 ___
 
@@ -2467,7 +2472,7 @@ TrackingControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:28970](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L28970)
+[src/generated/api.ts:29134](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29134)
 
 ___
 
@@ -2502,7 +2507,7 @@ WaitForControllerApi - factory interface
 
 #### Defined in
 
-[src/generated/api.ts:30127](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L30127)
+[src/generated/api.ts:30291](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L30291)
 
 ___
 
@@ -2535,7 +2540,7 @@ WaitForControllerApi - fetch parameter creator
 
 #### Defined in
 
-[src/generated/api.ts:29237](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L29237)
+[src/generated/api.ts:29401](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29401)
 
 ___
 
@@ -2568,7 +2573,7 @@ WaitForControllerApi - functional programming interface
 
 #### Defined in
 
-[src/generated/api.ts:29809](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L29809)
+[src/generated/api.ts:29973](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29973)
 
 ___
 
@@ -2597,7 +2602,7 @@ WebhookControllerApi - factory interface
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `deleteAllWebhooks` | (`options?`: `any`) => `Promise`<`Response`\> |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
 | `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
 | `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
 | `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
@@ -2610,14 +2615,15 @@ WebhookControllerApi - factory interface
 | `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
 | `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)\> |
 | `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
 | `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:32510](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L32510)
+[src/generated/api.ts:32783](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L32783)
 
 ___
 
@@ -2644,7 +2650,7 @@ WebhookControllerApi - fetch parameter creator
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteAllWebhooks` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
@@ -2657,14 +2663,15 @@ WebhookControllerApi - fetch parameter creator
 | `getTestWebhookPayloadNewEmail` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhook` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `getWebhooks` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 | `sendTestData` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
 
 #### Defined in
 
-[src/generated/api.ts:30560](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L30560)
+[src/generated/api.ts:30724](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L30724)
 
 ___
 
@@ -2691,7 +2698,7 @@ WebhookControllerApi - functional programming interface
 | `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `deleteAllWebhooks` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
 | `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
 | `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
 | `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
 | `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
@@ -2704,14 +2711,15 @@ WebhookControllerApi - functional programming interface
 | `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
 | `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
 | `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
+| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)\> |
 | `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
 | `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
 | `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
 
 #### Defined in
 
-[src/generated/api.ts:31795](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L31795)
+[src/generated/api.ts:32029](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L32029)
 
 ___
 
@@ -2737,7 +2745,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:597](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/index.ts#L597)
+[src/index.ts:597](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/index.ts#L597)
 
 ___
 
@@ -2763,4 +2771,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:609](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/index.ts#L609)
+[src/index.ts:609](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/index.ts#L609)

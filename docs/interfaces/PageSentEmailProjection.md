@@ -36,7 +36,7 @@ Collection of items
 
 #### Defined in
 
-[src/generated/api.ts:4396](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4396)
+[src/generated/api.ts:4428](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4428)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:4402](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4402)
+[src/generated/api.ts:4434](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4434)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:4408](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4408)
+[src/generated/api.ts:4440](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4440)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:4414](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4414)
+[src/generated/api.ts:4446](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4446)
 
 ___
 
@@ -86,7 +86,7 @@ Page number starting at 0
 
 #### Defined in
 
-[src/generated/api.ts:4420](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4420)
+[src/generated/api.ts:4452](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4452)
 
 ___
 
@@ -100,7 +100,7 @@ Number of items returned
 
 #### Defined in
 
-[src/generated/api.ts:4426](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4426)
+[src/generated/api.ts:4458](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4458)
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:4432](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4432)
+[src/generated/api.ts:4464](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4464)
 
 ___
 
@@ -126,7 +126,7 @@ Size of page requested
 
 #### Defined in
 
-[src/generated/api.ts:4438](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4438)
+[src/generated/api.ts:4470](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4470)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:4444](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4444)
+[src/generated/api.ts:4476](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4476)
 
 ___
 
@@ -152,7 +152,7 @@ Total number of items available for querying
 
 #### Defined in
 
-[src/generated/api.ts:4450](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4450)
+[src/generated/api.ts:4482](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4482)
 
 ___
 
@@ -166,4 +166,4 @@ Total number of pages available
 
 #### Defined in
 
-[src/generated/api.ts:4456](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L4456)
+[src/generated/api.ts:4488](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L4488)

@@ -2248,6 +2248,12 @@ export interface ExpirationDefaults {
      * @memberof ExpirationDefaults
      */
     maxExpirationMillis?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ExpirationDefaults
+     */
+    nextInboxAllowsPermanent: boolean;
 }
 /**
  * Expired inbox
@@ -2374,6 +2380,25 @@ export declare namespace ExportOptions {
         DEFAULT,
         EXCEL
     }
+}
+/**
+ *
+ * @export
+ * @interface FlushExpiredInboxesResult
+ */
+export interface FlushExpiredInboxesResult {
+    /**
+     *
+     * @type {Date}
+     * @memberof FlushExpiredInboxesResult
+     */
+    expireBefore: Date;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof FlushExpiredInboxesResult
+     */
+    inboxIds: Array<string>;
 }
 /**
  * Options for forwarding an email
@@ -2751,63 +2776,69 @@ export interface InboxForwarderTestResult {
 /**
  *
  * @export
- * @interface InboxProjection
+ * @interface InboxPreview
  */
-export interface InboxProjection {
+export interface InboxPreview {
     /**
-     *
+     * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
-    createdAt: Date;
+    createdAt?: Date;
     /**
-     *
+     * The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @type {string}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
     emailAddress?: string;
     /**
-     *
+     * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    expiresAt?: string;
+    /**
+     * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
-    favourite: boolean;
+    favourite?: boolean;
     /**
-     *
+     * ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.
      * @type {string}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
-    id: string;
+    id?: string;
     /**
-     *
+     * Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testing. SMTP inboxes are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
      * @type {string}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
-    inboxType?: InboxProjection.InboxTypeEnum;
+    inboxType?: InboxPreview.InboxTypeEnum;
     /**
-     *
+     * Name of the inbox and used as the sender name when sending emails .Displayed in the dashboard for easier search
      * @type {string}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
     name?: string;
     /**
-     *
+     * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
      * @type {Array<string>}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
     tags?: Array<string>;
     /**
-     *
+     * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
      * @type {boolean}
-     * @memberof InboxProjection
+     * @memberof InboxPreview
      */
-    teamAccess: boolean;
+    teamAccess?: boolean;
 }
 /**
  * @export
- * @namespace InboxProjection
+ * @namespace InboxPreview
  */
-export declare namespace InboxProjection {
+export declare namespace InboxPreview {
     /**
      * @export
      * @enum {string}
@@ -3979,10 +4010,10 @@ export interface PageInboxForwarderDto {
 export interface PageInboxProjection {
     /**
      *
-     * @type {Array<InboxProjection>}
+     * @type {Array<InboxPreview>}
      * @memberof PageInboxProjection
      */
-    content?: Array<InboxProjection>;
+    content?: Array<InboxPreview>;
     /**
      *
      * @type {boolean}
@@ -5791,6 +5822,19 @@ export interface UnreadCount {
     count: number;
 }
 /**
+ *
+ * @export
+ * @interface UnseenErrorCountDto
+ */
+export interface UnseenErrorCountDto {
+    /**
+     *
+     * @type {number}
+     * @memberof UnseenErrorCountDto
+     */
+    count: number;
+}
+/**
  * Update an email alias
  * @export
  * @interface UpdateAliasOptions
@@ -6755,6 +6799,12 @@ export interface WebhookResultDto {
      * @memberof WebhookResultDto
      */
     resultType?: WebhookResultDto.ResultTypeEnum;
+    /**
+     *
+     * @type {boolean}
+     * @memberof WebhookResultDto
+     */
+    seen?: boolean;
     /**
      *
      * @type {Date}
@@ -10555,6 +10605,14 @@ export declare const InboxControllerApiFetchParamCreator: (configuration?: Confi
      */
     deleteInbox(inboxId: string, options?: any): FetchArgs;
     /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * @summary Remove expired inboxes
+     * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    flushExpired(before?: Date, options?: any): FetchArgs;
+    /**
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
      * @param {Date} [before] Optional filter by created before given date time
@@ -10788,6 +10846,14 @@ export declare const InboxControllerApiFp: (configuration?: Configuration) => {
      */
     deleteInbox(inboxId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Response>;
     /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * @summary Remove expired inboxes
+     * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    flushExpired(before?: Date, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<FlushExpiredInboxesResult>;
+    /**
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
      * @param {Date} [before] Optional filter by created before given date time
@@ -11020,6 +11086,14 @@ export declare const InboxControllerApiFactory: (configuration?: Configuration, 
      * @throws {RequiredError}
      */
     deleteInbox(inboxId: string, options?: any): Promise<Response>;
+    /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * @summary Remove expired inboxes
+     * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    flushExpired(before?: Date, options?: any): Promise<FlushExpiredInboxesResult>;
     /**
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
@@ -11261,6 +11335,15 @@ export declare class InboxControllerApi extends BaseAPI {
      * @memberof InboxControllerApi
      */
     deleteInbox(inboxId: string, options?: any): Promise<Response>;
+    /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * @summary Remove expired inboxes
+     * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxControllerApi
+     */
+    flushExpired(before?: Date, options?: any): Promise<FlushExpiredInboxesResult>;
     /**
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
      * @summary List All Inboxes Paginated
@@ -13584,10 +13667,11 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): FetchArgs;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
@@ -13700,10 +13784,19 @@ export declare const WebhookControllerApiFetchParamCreator: (configuration?: Con
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): FetchArgs;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): FetchArgs;
+    /**
+     *
+     * @summary Get count of unseen webhook results with error status
+     * @param {string} inboxId inboxId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getWebhookResultsUnseenErrorCount(inboxId: string, options?: any): FetchArgs;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -13768,10 +13861,11 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
@@ -13884,10 +13978,19 @@ export declare const WebhookControllerApiFp: (configuration?: Configuration) => 
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PageWebhookResult>;
+    /**
+     *
+     * @summary Get count of unseen webhook results with error status
+     * @param {string} inboxId inboxId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getWebhookResultsUnseenErrorCount(inboxId: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<UnseenErrorCountDto>;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -13952,10 +14055,11 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
@@ -14068,10 +14172,19 @@ export declare const WebhookControllerApiFactory: (configuration?: Configuration
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): Promise<PageWebhookResult>;
+    /**
+     *
+     * @summary Get count of unseen webhook results with error status
+     * @param {string} inboxId inboxId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getWebhookResultsUnseenErrorCount(inboxId: string, options?: any): Promise<UnseenErrorCountDto>;
     /**
      *
      * @summary Get all webhooks for an Inbox
@@ -14141,11 +14254,12 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getAllWebhookResults(before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): Promise<PageWebhookResult>;
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
      * @summary List Webhooks Paginated
@@ -14270,11 +14384,21 @@ export declare class WebhookControllerApi extends BaseAPI {
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', options?: any): Promise<PageWebhookResult>;
+    getWebhookResults(webhookId: string, before?: Date, page?: number, searchFilter?: string, since?: Date, size?: number, sort?: 'ASC' | 'DESC', unseenOnly?: boolean, options?: any): Promise<PageWebhookResult>;
+    /**
+     *
+     * @summary Get count of unseen webhook results with error status
+     * @param {string} inboxId inboxId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    getWebhookResultsUnseenErrorCount(inboxId: string, options?: any): Promise<UnseenErrorCountDto>;
     /**
      *
      * @summary Get all webhooks for an Inbox

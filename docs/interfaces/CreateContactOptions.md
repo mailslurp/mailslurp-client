@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/generated/api.ts:879](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L879)
+[src/generated/api.ts:879](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L879)
 
 ___
 
@@ -43,7 +43,7 @@ Set of email addresses belonging to the contact
 
 #### Defined in
 
-[src/generated/api.ts:837](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L837)
+[src/generated/api.ts:837](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L837)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:843](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L843)
+[src/generated/api.ts:843](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L843)
 
 ___
 
@@ -69,7 +69,7 @@ Group IDs that contact belongs to
 
 #### Defined in
 
-[src/generated/api.ts:849](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L849)
+[src/generated/api.ts:849](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L849)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:873](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L873)
+[src/generated/api.ts:873](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L873)
 
 ___
 
@@ -95,7 +95,7 @@ User metadata key value pairs to save for this contact. Can be any values you li
 
 #### Defined in
 
-[src/generated/api.ts:855](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L855)
+[src/generated/api.ts:855](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L855)
 
 ___
 
@@ -109,7 +109,7 @@ Has the user explicitly or implicitly opted out of being contacted? If so MailSl
 
 #### Defined in
 
-[src/generated/api.ts:861](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L861)
+[src/generated/api.ts:861](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L861)
 
 ___
 
@@ -123,4 +123,4 @@ Tags that can be used to search and group contacts
 
 #### Defined in
 
-[src/generated/api.ts:867](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L867)
+[src/generated/api.ts:867](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L867)

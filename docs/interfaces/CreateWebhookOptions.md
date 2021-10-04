@@ -29,7 +29,7 @@ Optional basic authentication that MailSlurp should use when calling the URL. Fo
 
 #### Defined in
 
-[src/generated/api.ts:1176](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1176)
+[src/generated/api.ts:1176](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1176)
 
 ___
 
@@ -43,7 +43,7 @@ Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when a
 
 #### Defined in
 
-[src/generated/api.ts:1182](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1182)
+[src/generated/api.ts:1182](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1182)
 
 ___
 
@@ -57,7 +57,7 @@ Optional name for the webhook
 
 #### Defined in
 
-[src/generated/api.ts:1188](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1188)
+[src/generated/api.ts:1188](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1188)
 
 ___
 
@@ -71,4 +71,4 @@ Public URL on your server that MailSlurp can post WebhookNotification payload to
 
 #### Defined in
 
-[src/generated/api.ts:1194](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L1194)
+[src/generated/api.ts:1194](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1194)

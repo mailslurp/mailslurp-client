@@ -29,7 +29,7 @@ Do not edit the class manually.
 
 #### Defined in
 
-[src/generated/configuration.ts:18](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/configuration.ts#L18)
+[src/generated/configuration.ts:18](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/configuration.ts#L18)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/generated/configuration.ts:15](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/configuration.ts#L15)
+[src/generated/configuration.ts:15](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/configuration.ts#L15)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/generated/configuration.ts:19](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/configuration.ts#L19)
+[src/generated/configuration.ts:19](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/configuration.ts#L19)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/generated/configuration.ts:17](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/configuration.ts#L17)
+[src/generated/configuration.ts:17](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/configuration.ts#L17)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 #### Defined in
 
-[src/generated/configuration.ts:16](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/configuration.ts#L16)
+[src/generated/configuration.ts:16](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/configuration.ts#L16)

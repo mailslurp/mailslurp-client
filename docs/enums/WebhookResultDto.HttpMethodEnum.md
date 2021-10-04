@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[src/generated/api.ts:6982](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6982)
+[src/generated/api.ts:7034](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7034)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6977](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6977)
+[src/generated/api.ts:7029](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7029)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6978](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6978)
+[src/generated/api.ts:7030](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7030)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6983](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6983)
+[src/generated/api.ts:7035](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7035)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6981](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6981)
+[src/generated/api.ts:7033](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7033)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6979](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6979)
+[src/generated/api.ts:7031](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7031)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6980](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6980)
+[src/generated/api.ts:7032](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7032)
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:6984](https://github.com/mailslurp/mailslurp-client/blob/113e801/src/generated/api.ts#L6984)
+[src/generated/api.ts:7036](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L7036)

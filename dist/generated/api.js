@@ -47,7 +47,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultDto = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailReadPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxProjection = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.BulkActionsControllerApiFp = exports.BulkActionsControllerApiFetchParamCreator = exports.BounceControllerApi = exports.BounceControllerApiFactory = exports.BounceControllerApiFp = exports.BounceControllerApiFetchParamCreator = exports.AttachmentControllerApi = exports.AttachmentControllerApiFactory = exports.AttachmentControllerApiFp = exports.AttachmentControllerApiFetchParamCreator = exports.AliasControllerApi = exports.AliasControllerApiFactory = exports.AliasControllerApiFp = exports.AliasControllerApiFetchParamCreator = exports.WebhookTestRequest = exports.WebhookResultDto = exports.WebhookProjection = exports.WebhookNewEmailPayload = exports.WebhookNewContactPayload = exports.WebhookNewAttachmentPayload = exports.WebhookEmailReadPayload = exports.WebhookEmailOpenedPayload = exports.WebhookDto = exports.WaitForConditions = exports.TemplateVariable = exports.SendEmailOptions = exports.ReplyToEmailOptions = exports.ReplyToAliasEmailOptions = exports.OrganizationInboxProjection = exports.MatchOption = exports.InboxRulesetDto = exports.InboxPreview = exports.InboxForwarderDto = exports.Inbox = exports.ExportOptions = exports.DomainPreview = exports.DomainNameRecord = exports.DomainDto = exports.DNSLookupResult = exports.DNSLookupOptions = exports.CreateWebhookOptions = exports.CreateInboxRulesetOptions = exports.CreateInboxForwarderOptions = exports.CreateInboxDto = exports.CreateDomainOptions = exports.ConditionOption = exports.AbstractWebhookPayload = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
 exports.MailServerControllerApi = exports.MailServerControllerApiFactory = exports.MailServerControllerApiFp = exports.MailServerControllerApiFetchParamCreator = exports.InboxRulesetControllerApi = exports.InboxRulesetControllerApiFactory = exports.InboxRulesetControllerApiFp = exports.InboxRulesetControllerApiFetchParamCreator = exports.InboxForwarderControllerApi = exports.InboxForwarderControllerApiFactory = exports.InboxForwarderControllerApiFp = exports.InboxForwarderControllerApiFetchParamCreator = exports.InboxControllerApi = exports.InboxControllerApiFactory = exports.InboxControllerApiFp = exports.InboxControllerApiFetchParamCreator = exports.GroupControllerApi = exports.GroupControllerApiFactory = exports.GroupControllerApiFp = exports.GroupControllerApiFetchParamCreator = exports.FormControllerApi = exports.FormControllerApiFactory = exports.FormControllerApiFp = exports.FormControllerApiFetchParamCreator = exports.ExportControllerApi = exports.ExportControllerApiFactory = exports.ExportControllerApiFp = exports.ExportControllerApiFetchParamCreator = exports.ExpiredControllerApi = exports.ExpiredControllerApiFactory = exports.ExpiredControllerApiFp = exports.ExpiredControllerApiFetchParamCreator = exports.EmailControllerApi = exports.EmailControllerApiFactory = exports.EmailControllerApiFp = exports.EmailControllerApiFetchParamCreator = exports.DomainControllerApi = exports.DomainControllerApiFactory = exports.DomainControllerApiFp = exports.DomainControllerApiFetchParamCreator = exports.ContactControllerApi = exports.ContactControllerApiFactory = exports.ContactControllerApiFp = exports.ContactControllerApiFetchParamCreator = exports.CommonActionsControllerApi = exports.CommonActionsControllerApiFactory = exports.CommonActionsControllerApiFp = exports.CommonActionsControllerApiFetchParamCreator = exports.BulkActionsControllerApi = exports.BulkActionsControllerApiFactory = void 0;
 exports.WebhookControllerApi = exports.WebhookControllerApiFactory = exports.WebhookControllerApiFp = exports.WebhookControllerApiFetchParamCreator = exports.WaitForControllerApi = exports.WaitForControllerApiFactory = exports.WaitForControllerApiFp = exports.WaitForControllerApiFetchParamCreator = exports.TrackingControllerApi = exports.TrackingControllerApiFactory = exports.TrackingControllerApiFp = exports.TrackingControllerApiFetchParamCreator = exports.TemplateControllerApi = exports.TemplateControllerApiFactory = exports.TemplateControllerApiFp = exports.TemplateControllerApiFetchParamCreator = exports.SentEmailsControllerApi = exports.SentEmailsControllerApiFactory = exports.SentEmailsControllerApiFp = exports.SentEmailsControllerApiFetchParamCreator = exports.MissedEmailControllerApi = exports.MissedEmailControllerApiFactory = exports.MissedEmailControllerApiFp = exports.MissedEmailControllerApiFetchParamCreator = void 0;
 var url = __importStar(require("url"));
@@ -631,10 +631,10 @@ var InboxForwarderDto;
 })(InboxForwarderDto = exports.InboxForwarderDto || (exports.InboxForwarderDto = {}));
 /**
  * @export
- * @namespace InboxProjection
+ * @namespace InboxPreview
  */
-var InboxProjection;
-(function (InboxProjection) {
+var InboxPreview;
+(function (InboxPreview) {
     /**
      * @export
      * @enum {string}
@@ -643,8 +643,8 @@ var InboxProjection;
     (function (InboxTypeEnum) {
         InboxTypeEnum[InboxTypeEnum["HTTPINBOX"] = 'HTTP_INBOX'] = "HTTPINBOX";
         InboxTypeEnum[InboxTypeEnum["SMTPINBOX"] = 'SMTP_INBOX'] = "SMTPINBOX";
-    })(InboxTypeEnum = InboxProjection.InboxTypeEnum || (InboxProjection.InboxTypeEnum = {}));
-})(InboxProjection = exports.InboxProjection || (exports.InboxProjection = {}));
+    })(InboxTypeEnum = InboxPreview.InboxTypeEnum || (InboxPreview.InboxTypeEnum = {}));
+})(InboxPreview = exports.InboxPreview || (exports.InboxPreview = {}));
 /**
  * @export
  * @namespace InboxRulesetDto
@@ -9293,6 +9293,39 @@ var InboxControllerApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+         * @summary Remove expired inboxes
+         * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        flushExpired: function (before, options) {
+            if (options === void 0) { options = {}; }
+            var localVarPath = "/inboxes/expired";
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
+            }
+            if (before !== undefined) {
+                localVarQueryParameter['before'] = before.toISOString();
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
          * @param {Date} [before] Optional filter by created before given date time
@@ -10178,6 +10211,28 @@ var InboxControllerApiFp = function (configuration) {
             };
         },
         /**
+         * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+         * @summary Remove expired inboxes
+         * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        flushExpired: function (before, options) {
+            var localVarFetchArgs = exports.InboxControllerApiFetchParamCreator(configuration).flushExpired(before, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
          * @param {Date} [before] Optional filter by created before given date time
@@ -10636,6 +10691,16 @@ var InboxControllerApiFactory = function (configuration, fetch, basePath) {
             return exports.InboxControllerApiFp(configuration).deleteInbox(inboxId, options)(fetch, basePath);
         },
         /**
+         * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+         * @summary Remove expired inboxes
+         * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        flushExpired: function (before, options) {
+            return exports.InboxControllerApiFp(configuration).flushExpired(before, options)(fetch, basePath);
+        },
+        /**
          * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
          * @summary List All Inboxes Paginated
          * @param {Date} [before] Optional filter by created before given date time
@@ -10923,6 +10988,17 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.deleteInbox = function (inboxId, options) {
         return exports.InboxControllerApiFp(this.configuration).deleteInbox(inboxId, options)(this.fetch, this.basePath);
+    };
+    /**
+     * Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+     * @summary Remove expired inboxes
+     * @param {Date} [before] Optional expired at before flag to flush expired inboxes that have expired before the given time
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InboxControllerApi
+     */
+    InboxControllerApi.prototype.flushExpired = function (before, options) {
+        return exports.InboxControllerApiFp(this.configuration).flushExpired(before, options)(this.fetch, this.basePath);
     };
     /**
      * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
@@ -15898,10 +15974,11 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, options) {
+        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, unseenOnly, options) {
             if (options === void 0) { options = {}; }
             var localVarPath = "/webhooks/results";
             var localVarUrlObj = url.parse(localVarPath, true);
@@ -15932,6 +16009,9 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
             }
             if (sort !== undefined) {
                 localVarQueryParameter['sort'] = sort;
+            }
+            if (unseenOnly !== undefined) {
+                localVarQueryParameter['unseenOnly'] = unseenOnly;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -16377,10 +16457,11 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, options) {
+        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options) {
             if (options === void 0) { options = {}; }
             // verify required parameter 'webhookId' is not null or undefined
             if (webhookId === null || webhookId === undefined) {
@@ -16415,6 +16496,43 @@ var WebhookControllerApiFetchParamCreator = function (configuration) {
             }
             if (sort !== undefined) {
                 localVarQueryParameter['sort'] = sort;
+            }
+            if (unseenOnly !== undefined) {
+                localVarQueryParameter['unseenOnly'] = unseenOnly;
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Get count of unseen webhook results with error status
+         * @param {string} inboxId inboxId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getWebhookResultsUnseenErrorCount: function (inboxId, options) {
+            if (options === void 0) { options = {}; }
+            // verify required parameter 'inboxId' is not null or undefined
+            if (inboxId === null || inboxId === undefined) {
+                throw new RequiredError('inboxId', 'Required parameter inboxId was null or undefined when calling getWebhookResultsUnseenErrorCount.');
+            }
+            var localVarPath = "/webhooks/results/unseen-count".replace("{" + 'inboxId' + "}", encodeURIComponent(String(inboxId)));
+            var localVarUrlObj = url.parse(localVarPath, true);
+            var localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            var localVarHeaderParameter = {};
+            var localVarQueryParameter = {};
+            // authentication API_KEY required
+            if (configuration && configuration.apiKey) {
+                var localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey('x-api-key')
+                    : configuration.apiKey;
+                localVarHeaderParameter['x-api-key'] = localVarApiKeyValue;
             }
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -16612,11 +16730,12 @@ var WebhookControllerApiFp = function (configuration) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, options) {
-            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, options);
+        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, unseenOnly, options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, unseenOnly, options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -16910,11 +17029,34 @@ var WebhookControllerApiFp = function (configuration) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, options) {
-            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, options);
+        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options);
+            return function (fetch, basePath) {
+                if (fetch === void 0) { fetch = portableFetch; }
+                if (basePath === void 0) { basePath = BASE_PATH; }
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then(function (response) {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Get count of unseen webhook results with error status
+         * @param {string} inboxId inboxId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getWebhookResultsUnseenErrorCount: function (inboxId, options) {
+            var localVarFetchArgs = exports.WebhookControllerApiFetchParamCreator(configuration).getWebhookResultsUnseenErrorCount(inboxId, options);
             return function (fetch, basePath) {
                 if (fetch === void 0) { fetch = portableFetch; }
                 if (basePath === void 0) { basePath = BASE_PATH; }
@@ -17043,11 +17185,12 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, options) {
-            return exports.WebhookControllerApiFp(configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, options)(fetch, basePath);
+        getAllWebhookResults: function (before, page, searchFilter, since, size, sort, unseenOnly, options) {
+            return exports.WebhookControllerApiFp(configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, unseenOnly, options)(fetch, basePath);
         },
         /**
          * List webhooks in paginated form. Allows for page index, page size, and sort direction.
@@ -17185,11 +17328,22 @@ var WebhookControllerApiFactory = function (configuration, fetch, basePath) {
          * @param {Date} [since] Filter by created at after the given timestamp
          * @param {number} [size] Optional page size in list pagination
          * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+         * @param {boolean} [unseenOnly] Filter for unseen exceptions only
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, options) {
-            return exports.WebhookControllerApiFp(configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, options)(fetch, basePath);
+        getWebhookResults: function (webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options) {
+            return exports.WebhookControllerApiFp(configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Get count of unseen webhook results with error status
+         * @param {string} inboxId inboxId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getWebhookResultsUnseenErrorCount: function (inboxId, options) {
+            return exports.WebhookControllerApiFp(configuration).getWebhookResultsUnseenErrorCount(inboxId, options)(fetch, basePath);
         },
         /**
          *
@@ -17278,12 +17432,13 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    WebhookControllerApi.prototype.getAllWebhookResults = function (before, page, searchFilter, since, size, sort, options) {
-        return exports.WebhookControllerApiFp(this.configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, options)(this.fetch, this.basePath);
+    WebhookControllerApi.prototype.getAllWebhookResults = function (before, page, searchFilter, since, size, sort, unseenOnly, options) {
+        return exports.WebhookControllerApiFp(this.configuration).getAllWebhookResults(before, page, searchFilter, since, size, sort, unseenOnly, options)(this.fetch, this.basePath);
     };
     /**
      * List webhooks in paginated form. Allows for page index, page size, and sort direction.
@@ -17433,12 +17588,24 @@ var WebhookControllerApi = /** @class */ (function (_super) {
      * @param {Date} [since] Filter by created at after the given timestamp
      * @param {number} [size] Optional page size in list pagination
      * @param {'ASC' | 'DESC'} [sort] Optional createdAt sort direction ASC or DESC
+     * @param {boolean} [unseenOnly] Filter for unseen exceptions only
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhookControllerApi
      */
-    WebhookControllerApi.prototype.getWebhookResults = function (webhookId, before, page, searchFilter, since, size, sort, options) {
-        return exports.WebhookControllerApiFp(this.configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, options)(this.fetch, this.basePath);
+    WebhookControllerApi.prototype.getWebhookResults = function (webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options) {
+        return exports.WebhookControllerApiFp(this.configuration).getWebhookResults(webhookId, before, page, searchFilter, since, size, sort, unseenOnly, options)(this.fetch, this.basePath);
+    };
+    /**
+     *
+     * @summary Get count of unseen webhook results with error status
+     * @param {string} inboxId inboxId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebhookControllerApi
+     */
+    WebhookControllerApi.prototype.getWebhookResultsUnseenErrorCount = function (inboxId, options) {
+        return exports.WebhookControllerApiFp(this.configuration).getWebhookResultsUnseenErrorCount(inboxId, options)(this.fetch, this.basePath);
     };
     /**
      *
