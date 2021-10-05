@@ -564,7 +564,7 @@ app.post("/my-webhook-endpoint", function (request, response) {
   // access the data on request body
   console.log(request.body.inboxId);
   
-  // do something with with inboxId like `mailslurp.waitForLatestEmail(undefined,inboxId)`
+  // do something with with inboxId like `mailslurp.waitForLatestEmail(undefined,undefined, inboxId)`
 
   // return a 2xx status code so MailSlurp knows you received it
   response.sendStatus(200);

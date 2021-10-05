@@ -53,7 +53,7 @@ DomainControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -116,7 +116,7 @@ Add a catch all inbox to a domain so that any emails sent to it that cannot be m
 
 #### Defined in
 
-[src/generated/api.ts:13276](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13276)
+[src/generated/api.ts:13276](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13276)
 
 ___
 
@@ -145,7 +145,7 @@ Link a domain that you own with MailSlurp so you can create email addresses usin
 
 #### Defined in
 
-[src/generated/api.ts:13290](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13290)
+[src/generated/api.ts:13290](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13290)
 
 ___
 
@@ -174,7 +174,7 @@ Delete a domain. This will disable any existing inboxes that use this domain.
 
 #### Defined in
 
-[src/generated/api.ts:13305](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13305)
+[src/generated/api.ts:13305](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13305)
 
 ___
 
@@ -203,7 +203,7 @@ Returns domain verification status and tokens for a given domain
 
 #### Defined in
 
-[src/generated/api.ts:13320](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13320)
+[src/generated/api.ts:13320](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13320)
 
 ___
 
@@ -231,7 +231,7 @@ List all custom domains you have created
 
 #### Defined in
 
-[src/generated/api.ts:13334](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13334)
+[src/generated/api.ts:13334](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13334)
 
 ___
 
@@ -261,4 +261,4 @@ Update values on a domain. Note you cannot change the domain name as it is immut
 
 #### Defined in
 
-[src/generated/api.ts:13350](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L13350)
+[src/generated/api.ts:13350](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L13350)

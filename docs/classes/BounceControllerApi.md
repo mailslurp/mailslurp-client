@@ -51,7 +51,7 @@ BounceControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -114,7 +114,7 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10533](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10533)
+[src/generated/api.ts:10533](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L10533)
 
 ___
 
@@ -147,7 +147,7 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10552](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10552)
+[src/generated/api.ts:10552](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L10552)
 
 ___
 
@@ -176,7 +176,7 @@ Bounced emails are email you have sent that were rejected by a recipient
 
 #### Defined in
 
-[src/generated/api.ts:10578](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10578)
+[src/generated/api.ts:10578](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L10578)
 
 ___
 
@@ -209,4 +209,4 @@ Bounced recipients are email addresses that you have sent emails to that did not
 
 #### Defined in
 
-[src/generated/api.ts:10597](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L10597)
+[src/generated/api.ts:10597](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L10597)

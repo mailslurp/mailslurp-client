@@ -55,7 +55,7 @@ InboxRulesetControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -119,7 +119,7 @@ Create a new inbox rule for forwarding, blocking, and allowing emails when sendi
 
 #### Defined in
 
-[src/generated/api.ts:25483](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25483)
+[src/generated/api.ts:25483](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25483)
 
 ___
 
@@ -148,7 +148,7 @@ Delete inbox ruleset
 
 #### Defined in
 
-[src/generated/api.ts:25505](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25505)
+[src/generated/api.ts:25505](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25505)
 
 ___
 
@@ -177,7 +177,7 @@ Delete inbox rulesets. Accepts optional inboxId filter.
 
 #### Defined in
 
-[src/generated/api.ts:25519](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25519)
+[src/generated/api.ts:25519](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25519)
 
 ___
 
@@ -206,7 +206,7 @@ Get inbox ruleset
 
 #### Defined in
 
-[src/generated/api.ts:25533](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25533)
+[src/generated/api.ts:25533](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25533)
 
 ___
 
@@ -241,7 +241,7 @@ List all rulesets attached to an inbox
 
 #### Defined in
 
-[src/generated/api.ts:25554](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25554)
+[src/generated/api.ts:25554](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25554)
 
 ___
 
@@ -271,7 +271,7 @@ Test an inbox ruleset
 
 #### Defined in
 
-[src/generated/api.ts:25585](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25585)
+[src/generated/api.ts:25585](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25585)
 
 ___
 
@@ -301,7 +301,7 @@ Test inbox rulesets for inbox
 
 #### Defined in
 
-[src/generated/api.ts:25606](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25606)
+[src/generated/api.ts:25606](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25606)
 
 ___
 
@@ -330,4 +330,4 @@ Test new inbox ruleset
 
 #### Defined in
 
-[src/generated/api.ts:25628](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L25628)
+[src/generated/api.ts:25628](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L25628)

@@ -24,4 +24,4 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 #### Defined in
 
-[src/generated/api.ts:6016](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L6016)
+[src/generated/api.ts:6016](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L6016)

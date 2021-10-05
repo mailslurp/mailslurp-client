@@ -56,7 +56,7 @@ AliasControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -119,7 +119,7 @@ Email aliases use a MailSlurp randomly generated email address (or a custom doma
 
 #### Defined in
 
-[src/generated/api.ts:8392](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8392)
+[src/generated/api.ts:8392](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8392)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:8407](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8407)
+[src/generated/api.ts:8407](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8407)
 
 ___
 
@@ -175,7 +175,7 @@ Get an email alias by ID
 
 #### Defined in
 
-[src/generated/api.ts:8422](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8422)
+[src/generated/api.ts:8422](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8422)
 
 ___
 
@@ -209,7 +209,7 @@ Get paginated emails for an alias by ID
 
 #### Defined in
 
-[src/generated/api.ts:8442](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8442)
+[src/generated/api.ts:8442](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8442)
 
 ___
 
@@ -243,7 +243,7 @@ Returns threads created for an email alias in paginated form
 
 #### Defined in
 
-[src/generated/api.ts:8475](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8475)
+[src/generated/api.ts:8475](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8475)
 
 ___
 
@@ -276,7 +276,7 @@ Get all email aliases in paginated form
 
 #### Defined in
 
-[src/generated/api.ts:8507](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8507)
+[src/generated/api.ts:8507](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8507)
 
 ___
 
@@ -307,7 +307,7 @@ Send the reply to the email sender or reply-to and include same subject cc bcc e
 
 #### Defined in
 
-[src/generated/api.ts:8535](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8535)
+[src/generated/api.ts:8535](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8535)
 
 ___
 
@@ -337,7 +337,7 @@ Send an email from an alias. Replies to the email will be forwarded to the alias
 
 #### Defined in
 
-[src/generated/api.ts:8558](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8558)
+[src/generated/api.ts:8558](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8558)
 
 ___
 
@@ -365,4 +365,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:8579](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L8579)
+[src/generated/api.ts:8579](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L8579)

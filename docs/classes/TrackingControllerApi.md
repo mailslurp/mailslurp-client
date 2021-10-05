@@ -50,7 +50,7 @@ TrackingControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -113,7 +113,7 @@ Create a tracking pixel. A tracking pixel is an image that can be embedded in an
 
 #### Defined in
 
-[src/generated/api.ts:29338](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29338)
+[src/generated/api.ts:29338](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L29338)
 
 ___
 
@@ -147,7 +147,7 @@ List tracking pixels in paginated form
 
 #### Defined in
 
-[src/generated/api.ts:29361](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29361)
+[src/generated/api.ts:29361](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L29361)
 
 ___
 
@@ -174,4 +174,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:29389](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L29389)
+[src/generated/api.ts:29389](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L29389)

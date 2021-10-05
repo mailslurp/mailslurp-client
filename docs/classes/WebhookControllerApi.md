@@ -68,7 +68,7 @@ WebhookControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
 
 ___
 
@@ -132,7 +132,7 @@ Get notified whenever an inbox receives an email via a WebHook URL. An emailID w
 
 #### Defined in
 
-[src/generated/api.ts:33178](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33178)
+[src/generated/api.ts:33178](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33178)
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33197](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33197)
+[src/generated/api.ts:33197](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33197)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33212](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33212)
+[src/generated/api.ts:33212](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33212)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33234](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33234)
+[src/generated/api.ts:33234](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33234)
 
 ___
 
@@ -253,7 +253,7 @@ List webhooks in paginated form. Allows for page index, page size, and sort dire
 
 #### Defined in
 
-[src/generated/api.ts:33269](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33269)
+[src/generated/api.ts:33269](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33269)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33303](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33303)
+[src/generated/api.ts:33303](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33303)
 
 ___
 
@@ -313,7 +313,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33335](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33335)
+[src/generated/api.ts:33335](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33335)
 
 ___
 
@@ -340,7 +340,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33352](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33352)
+[src/generated/api.ts:33352](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33352)
 
 ___
 
@@ -366,7 +366,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33375](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33375)
+[src/generated/api.ts:33375](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33375)
 
 ___
 
@@ -392,7 +392,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33388](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33388)
+[src/generated/api.ts:33388](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33388)
 
 ___
 
@@ -419,7 +419,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33402](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33402)
+[src/generated/api.ts:33402](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33402)
 
 ___
 
@@ -445,7 +445,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33418](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33418)
+[src/generated/api.ts:33418](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33418)
 
 ___
 
@@ -471,7 +471,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33434](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33434)
+[src/generated/api.ts:33434](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33434)
 
 ___
 
@@ -497,7 +497,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33447](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33447)
+[src/generated/api.ts:33447](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33447)
 
 ___
 
@@ -524,7 +524,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33461](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33461)
+[src/generated/api.ts:33461](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33461)
 
 ___
 
@@ -551,7 +551,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33476](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33476)
+[src/generated/api.ts:33476](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33476)
 
 ___
 
@@ -585,7 +585,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33498](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33498)
+[src/generated/api.ts:33498](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33498)
 
 ___
 
@@ -612,7 +612,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33530](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33530)
+[src/generated/api.ts:33530](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33530)
 
 ___
 
@@ -639,7 +639,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33547](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33547)
+[src/generated/api.ts:33547](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33547)
 
 ___
 
@@ -668,7 +668,7 @@ Allows you to resend a webhook payload that was already sent. Webhooks that fail
 
 #### Defined in
 
-[src/generated/api.ts:33562](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33562)
+[src/generated/api.ts:33562](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33562)
 
 ___
 
@@ -695,4 +695,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:33577](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L33577)
+[src/generated/api.ts:33577](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L33577)

@@ -28,7 +28,7 @@ Field to match against to trigger inbox forwarding for inbound email
 
 #### Defined in
 
-[src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1043)
+[src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1043)
 
 ___
 
@@ -42,7 +42,7 @@ Email addresses to forward an email to if it matches the field and match criteri
 
 #### Defined in
 
-[src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1049)
+[src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1049)
 
 ___
 
@@ -56,4 +56,4 @@ String or wildcard style match for field specified when evaluating forwarding ru
 
 #### Defined in
 
-[src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1055)
+[src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1055)

@@ -28,7 +28,7 @@ Action to be taken when the ruleset matches an email for the given scope. For ex
 
 #### Defined in
 
-[src/generated/api.ts:1086](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1086)
+[src/generated/api.ts:1086](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1086)
 
 ___
 
@@ -42,7 +42,7 @@ What type of emails actions to apply ruleset to. Either `SENDING_EMAILS` or `REC
 
 #### Defined in
 
-[src/generated/api.ts:1092](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1092)
+[src/generated/api.ts:1092](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1092)
 
 ___
 
@@ -56,4 +56,4 @@ Target to match emails with. Can be a wild-card type pattern or a valid email ad
 
 #### Defined in
 
-[src/generated/api.ts:1098](https://github.com/mailslurp/mailslurp-client/blob/5a5ba59/src/generated/api.ts#L1098)
+[src/generated/api.ts:1098](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1098)
