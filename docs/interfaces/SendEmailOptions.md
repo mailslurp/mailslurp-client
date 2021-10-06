@@ -43,7 +43,7 @@ Add tracking pixel to email
 
 #### Defined in
 
-[src/generated/api.ts:5182](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5182)
+[src/generated/api.ts:5182](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5182)
 
 ___
 
@@ -57,7 +57,7 @@ Optional list of attachment IDs to send with this email. You must first upload e
 
 #### Defined in
 
-[src/generated/api.ts:5188](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5188)
+[src/generated/api.ts:5188](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5188)
 
 ___
 
@@ -71,7 +71,7 @@ Optional list of bcc destination email addresses
 
 #### Defined in
 
-[src/generated/api.ts:5194](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5194)
+[src/generated/api.ts:5194](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5194)
 
 ___
 
@@ -85,7 +85,7 @@ Optional contents of email. If body contains HTML then set `isHTML` to true to e
 
 #### Defined in
 
-[src/generated/api.ts:5200](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5200)
+[src/generated/api.ts:5200](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5200)
 
 ___
 
@@ -99,7 +99,7 @@ Optional list of cc destination email addresses
 
 #### Defined in
 
-[src/generated/api.ts:5206](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5206)
+[src/generated/api.ts:5206](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5206)
 
 ___
 
@@ -113,7 +113,7 @@ Optional charset
 
 #### Defined in
 
-[src/generated/api.ts:5212](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5212)
+[src/generated/api.ts:5212](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5212)
 
 ___
 
@@ -127,7 +127,7 @@ Optional from address. Email address is RFC 5322 format and may include a displa
 
 #### Defined in
 
-[src/generated/api.ts:5218](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5218)
+[src/generated/api.ts:5218](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5218)
 
 ___
 
@@ -141,7 +141,7 @@ Optional HTML flag to indicate that contents is HTML. Set's a `content-type: tex
 
 #### Defined in
 
-[src/generated/api.ts:5224](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5224)
+[src/generated/api.ts:5224](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5224)
 
 ___
 
@@ -155,7 +155,7 @@ Optional HTML flag. If true the `content-type` of the email will be `text/html`.
 
 #### Defined in
 
-[src/generated/api.ts:5230](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5230)
+[src/generated/api.ts:5230](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5230)
 
 ___
 
@@ -169,7 +169,7 @@ Optional replyTo header
 
 #### Defined in
 
-[src/generated/api.ts:5236](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5236)
+[src/generated/api.ts:5236](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5236)
 
 ___
 
@@ -183,7 +183,7 @@ Optional strategy to use when sending the email
 
 #### Defined in
 
-[src/generated/api.ts:5242](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5242)
+[src/generated/api.ts:5242](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5242)
 
 ___
 
@@ -197,7 +197,7 @@ Optional email subject line
 
 #### Defined in
 
-[src/generated/api.ts:5248](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5248)
+[src/generated/api.ts:5248](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5248)
 
 ___
 
@@ -211,7 +211,7 @@ Optional template ID to use for body. Will override body if provided. When using
 
 #### Defined in
 
-[src/generated/api.ts:5254](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5254)
+[src/generated/api.ts:5254](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5254)
 
 ___
 
@@ -225,7 +225,7 @@ Optional map of template variables. Will replace moustache syntax variables in s
 
 #### Defined in
 
-[src/generated/api.ts:5260](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5260)
+[src/generated/api.ts:5260](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5260)
 
 ___
 
@@ -239,7 +239,7 @@ List of destination email addresses. Each email address must be RFC 5322 format.
 
 #### Defined in
 
-[src/generated/api.ts:5266](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5266)
+[src/generated/api.ts:5266](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5266)
 
 ___
 
@@ -253,7 +253,7 @@ Optional list of contact IDs to send email to. Manage your contacts via the API 
 
 #### Defined in
 
-[src/generated/api.ts:5272](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5272)
+[src/generated/api.ts:5272](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5272)
 
 ___
 
@@ -267,7 +267,7 @@ Optional contact group ID to send email to. You can create contacts and contact 
 
 #### Defined in
 
-[src/generated/api.ts:5278](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5278)
+[src/generated/api.ts:5278](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5278)
 
 ___
 
@@ -281,4 +281,4 @@ Use name of inbox as sender email address name. Will construct RFC 5322 email ad
 
 #### Defined in
 
-[src/generated/api.ts:5284](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L5284)
+[src/generated/api.ts:5284](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5284)

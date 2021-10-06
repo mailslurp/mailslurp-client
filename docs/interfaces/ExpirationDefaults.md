@@ -28,7 +28,7 @@ Expiration defaults for your account
 
 #### Defined in
 
-[src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L2307)
+[src/generated/api.ts:2307](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2307)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2313](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L2313)
+[src/generated/api.ts:2313](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2313)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2319](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L2319)
+[src/generated/api.ts:2319](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2319)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L2325)
+[src/generated/api.ts:2325](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2325)
 
 ___
 
@@ -76,4 +76,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:2331](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L2331)
+[src/generated/api.ts:2331](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2331)

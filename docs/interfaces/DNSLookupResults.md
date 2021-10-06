@@ -24,4 +24,4 @@ Results of query on domain name servers
 
 #### Defined in
 
-[src/generated/api.ts:1489](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L1489)
+[src/generated/api.ts:1489](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1489)

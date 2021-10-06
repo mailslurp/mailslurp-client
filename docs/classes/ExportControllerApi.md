@@ -49,7 +49,7 @@ ExportControllerApi - object-oriented interface
 
 #### Defined in
 
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L59)
+[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
 
 ## Properties
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L57)
+[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18011](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L18011)
+[src/generated/api.ts:18011](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18011)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[src/generated/api.ts:18045](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L18045)
+[src/generated/api.ts:18045](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18045)

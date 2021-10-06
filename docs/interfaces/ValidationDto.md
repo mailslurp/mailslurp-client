@@ -27,7 +27,7 @@ ID of the email validated
 
 #### Defined in
 
-[src/generated/api.ts:6108](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L6108)
+[src/generated/api.ts:6108](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6108)
 
 ___
 
@@ -41,4 +41,4 @@ Result of HTML validation
 
 #### Defined in
 
-[src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client/blob/004c609/src/generated/api.ts#L6114)
+[src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6114)
