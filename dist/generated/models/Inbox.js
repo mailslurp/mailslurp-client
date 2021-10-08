@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxToJSON = exports.InboxFromJSONTyped = exports.InboxFromJSON = exports.InboxInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxInboxTypeEnum;
 (function (InboxInboxTypeEnum) {
     InboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,22 +29,26 @@ function InboxFromJSON(json) {
 }
 exports.InboxFromJSON = InboxFromJSON;
 function InboxFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'readOnly': !(0, runtime_1.exists)(json, 'readOnly') ? undefined : json['readOnly'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'teamAccess': !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        readOnly: !(0, runtime_1.exists)(json, 'readOnly') ? undefined : json['readOnly'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        teamAccess: !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
     };
 }
 exports.InboxFromJSONTyped = InboxFromJSONTyped;
@@ -56,18 +60,18 @@ function InboxToJSON(value) {
         return null;
     }
     return {
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'description': value.description,
-        'emailAddress': value.emailAddress,
-        'expiresAt': value.expiresAt,
-        'favourite': value.favourite,
-        'id': value.id,
-        'inboxType': value.inboxType,
-        'name': value.name,
-        'readOnly': value.readOnly,
-        'tags': value.tags,
-        'teamAccess': value.teamAccess,
-        'userId': value.userId,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        description: value.description,
+        emailAddress: value.emailAddress,
+        expiresAt: value.expiresAt,
+        favourite: value.favourite,
+        id: value.id,
+        inboxType: value.inboxType,
+        name: value.name,
+        readOnly: value.readOnly,
+        tags: value.tags,
+        teamAccess: value.teamAccess,
+        userId: value.userId,
     };
 }
 exports.InboxToJSON = InboxToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookEmailReadPayloadToJSON = exports.WebhookEmailReadPayloadFromJSONTyped = exports.WebhookEmailReadPayloadFromJSON = exports.WebhookEmailReadPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookEmailReadPayloadEventNameEnum;
 (function (WebhookEmailReadPayloadEventNameEnum) {
     WebhookEmailReadPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -33,18 +33,20 @@ function WebhookEmailReadPayloadFromJSON(json) {
 }
 exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
 function WebhookEmailReadPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'emailId': !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
-        'emailIsRead': !(0, runtime_1.exists)(json, 'emailIsRead') ? undefined : json['emailIsRead'],
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'messageId': !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
-        'webhookId': !(0, runtime_1.exists)(json, 'webhookId') ? undefined : json['webhookId'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        emailIsRead: !(0, runtime_1.exists)(json, 'emailIsRead') ? undefined : json['emailIsRead'],
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        webhookId: !(0, runtime_1.exists)(json, 'webhookId') ? undefined : json['webhookId'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
     };
 }
 exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
@@ -56,14 +58,14 @@ function WebhookEmailReadPayloadToJSON(value) {
         return null;
     }
     return {
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'emailId': value.emailId,
-        'emailIsRead': value.emailIsRead,
-        'eventName': value.eventName,
-        'inboxId': value.inboxId,
-        'messageId': value.messageId,
-        'webhookId': value.webhookId,
-        'webhookName': value.webhookName,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        emailId: value.emailId,
+        emailIsRead: value.emailIsRead,
+        eventName: value.eventName,
+        inboxId: value.inboxId,
+        messageId: value.messageId,
+        webhookId: value.webhookId,
+        webhookName: value.webhookName,
     };
 }
 exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;

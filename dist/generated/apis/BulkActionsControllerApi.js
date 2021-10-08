@@ -103,7 +103,8 @@ var BulkActionsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.count === null || requestParameters.count === undefined) {
+                        if (requestParameters.count === null ||
+                            requestParameters.count === undefined) {
                             throw new runtime.RequiredError('count', 'Required parameter requestParameters.count was null or undefined when calling bulkCreateInboxes.');
                         }
                         queryParameters = {};
@@ -112,7 +113,7 @@ var BulkActionsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bulk/inboxes",
@@ -122,7 +123,9 @@ var BulkActionsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.InboxFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.InboxFromJSON);
+                            })];
                 }
             });
         });
@@ -160,7 +163,7 @@ var BulkActionsControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bulk/inboxes",
@@ -200,14 +203,15 @@ var BulkActionsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.bulkSendEmailOptions === null || requestParameters.bulkSendEmailOptions === undefined) {
+                        if (requestParameters.bulkSendEmailOptions === null ||
+                            requestParameters.bulkSendEmailOptions === undefined) {
                             throw new runtime.RequiredError('bulkSendEmailOptions', 'Required parameter requestParameters.bulkSendEmailOptions was null or undefined when calling bulkSendEmails.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bulk/send",

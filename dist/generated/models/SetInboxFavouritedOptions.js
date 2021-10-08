@@ -20,11 +20,11 @@ function SetInboxFavouritedOptionsFromJSON(json) {
 }
 exports.SetInboxFavouritedOptionsFromJSON = SetInboxFavouritedOptionsFromJSON;
 function SetInboxFavouritedOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'state': !(0, runtime_1.exists)(json, 'state') ? undefined : json['state'],
+        state: !(0, runtime_1.exists)(json, 'state') ? undefined : json['state'],
     };
 }
 exports.SetInboxFavouritedOptionsFromJSONTyped = SetInboxFavouritedOptionsFromJSONTyped;
@@ -36,7 +36,7 @@ function SetInboxFavouritedOptionsToJSON(value) {
         return null;
     }
     return {
-        'state': value.state,
+        state: value.state,
     };
 }
 exports.SetInboxFavouritedOptionsToJSON = SetInboxFavouritedOptionsToJSON;

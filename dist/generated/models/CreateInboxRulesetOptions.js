@@ -16,18 +16,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateInboxRulesetOptionsToJSON = exports.CreateInboxRulesetOptionsFromJSONTyped = exports.CreateInboxRulesetOptionsFromJSON = exports.CreateInboxRulesetOptionsScopeEnum = exports.CreateInboxRulesetOptionsActionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateInboxRulesetOptionsActionEnum;
 (function (CreateInboxRulesetOptionsActionEnum) {
     CreateInboxRulesetOptionsActionEnum["BLOCK"] = "BLOCK";
     CreateInboxRulesetOptionsActionEnum["ALLOW"] = "ALLOW";
     CreateInboxRulesetOptionsActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
-})(CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsActionEnum || (exports.CreateInboxRulesetOptionsActionEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(CreateInboxRulesetOptionsActionEnum = exports.CreateInboxRulesetOptionsActionEnum || (exports.CreateInboxRulesetOptionsActionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var CreateInboxRulesetOptionsScopeEnum;
 (function (CreateInboxRulesetOptionsScopeEnum) {
     CreateInboxRulesetOptionsScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
@@ -38,13 +39,13 @@ function CreateInboxRulesetOptionsFromJSON(json) {
 }
 exports.CreateInboxRulesetOptionsFromJSON = CreateInboxRulesetOptionsFromJSON;
 function CreateInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'action': !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
-        'scope': !(0, runtime_1.exists)(json, 'scope') ? undefined : json['scope'],
-        'target': !(0, runtime_1.exists)(json, 'target') ? undefined : json['target'],
+        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        scope: !(0, runtime_1.exists)(json, 'scope') ? undefined : json['scope'],
+        target: !(0, runtime_1.exists)(json, 'target') ? undefined : json['target'],
     };
 }
 exports.CreateInboxRulesetOptionsFromJSONTyped = CreateInboxRulesetOptionsFromJSONTyped;
@@ -56,9 +57,9 @@ function CreateInboxRulesetOptionsToJSON(value) {
         return null;
     }
     return {
-        'action': value.action,
-        'scope': value.scope,
-        'target': value.target,
+        action: value.action,
+        scope: value.scope,
+        target: value.target,
     };
 }
 exports.CreateInboxRulesetOptionsToJSON = CreateInboxRulesetOptionsToJSON;

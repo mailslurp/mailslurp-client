@@ -77,9 +77,9 @@ export interface CreateInboxDto {
     useDomainPool?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateInboxDtoInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"

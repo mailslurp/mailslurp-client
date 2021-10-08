@@ -262,33 +262,33 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetTestWebhookPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -298,9 +298,9 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     EMAIL_READ = "EMAIL_READ"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

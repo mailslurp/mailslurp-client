@@ -20,13 +20,13 @@ function SortFromJSON(json) {
 }
 exports.SortFromJSON = SortFromJSON;
 function SortFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'empty': !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
-        'sorted': !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
-        'unsorted': !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
+        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        sorted: !(0, runtime_1.exists)(json, 'sorted') ? undefined : json['sorted'],
+        unsorted: !(0, runtime_1.exists)(json, 'unsorted') ? undefined : json['unsorted'],
     };
 }
 exports.SortFromJSONTyped = SortFromJSONTyped;
@@ -38,9 +38,9 @@ function SortToJSON(value) {
         return null;
     }
     return {
-        'empty': value.empty,
-        'sorted': value.sorted,
-        'unsorted': value.unsorted,
+        empty: value.empty,
+        sorted: value.sorted,
+        unsorted: value.unsorted,
     };
 }
 exports.SortToJSON = SortToJSON;

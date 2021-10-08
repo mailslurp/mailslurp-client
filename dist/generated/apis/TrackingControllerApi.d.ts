@@ -59,9 +59,9 @@ export declare class TrackingControllerApi extends runtime.BaseAPI {
     getTrackingPixel(requestParameters: GetTrackingPixelRequest, initOverrides?: RequestInit): Promise<TrackingPixelDto>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllTrackingPixelsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

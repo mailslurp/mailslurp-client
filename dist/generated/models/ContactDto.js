@@ -20,21 +20,23 @@ function ContactDtoFromJSON(json) {
 }
 exports.ContactDtoFromJSON = ContactDtoFromJSON;
 function ContactDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'company': !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        'createdAt': (new Date(json['createdAt'])),
-        'emailAddresses': json['emailAddresses'],
-        'firstName': !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        'groupId': !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        'id': json['id'],
-        'lastName': !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        'metaData': !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        'optOut': !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        'primaryEmailAddress': !(0, runtime_1.exists)(json, 'primaryEmailAddress') ? undefined : json['primaryEmailAddress'],
-        'tags': json['tags'],
+        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
+        createdAt: new Date(json['createdAt']),
+        emailAddresses: json['emailAddresses'],
+        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
+        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        id: json['id'],
+        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
+        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
+        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
+        primaryEmailAddress: !(0, runtime_1.exists)(json, 'primaryEmailAddress')
+            ? undefined
+            : json['primaryEmailAddress'],
+        tags: json['tags'],
     };
 }
 exports.ContactDtoFromJSONTyped = ContactDtoFromJSONTyped;
@@ -46,17 +48,17 @@ function ContactDtoToJSON(value) {
         return null;
     }
     return {
-        'company': value.company,
-        'createdAt': (value.createdAt.toISOString()),
-        'emailAddresses': value.emailAddresses,
-        'firstName': value.firstName,
-        'groupId': value.groupId,
-        'id': value.id,
-        'lastName': value.lastName,
-        'metaData': value.metaData,
-        'optOut': value.optOut,
-        'primaryEmailAddress': value.primaryEmailAddress,
-        'tags': value.tags,
+        company: value.company,
+        createdAt: value.createdAt.toISOString(),
+        emailAddresses: value.emailAddresses,
+        firstName: value.firstName,
+        groupId: value.groupId,
+        id: value.id,
+        lastName: value.lastName,
+        metaData: value.metaData,
+        optOut: value.optOut,
+        primaryEmailAddress: value.primaryEmailAddress,
+        tags: value.tags,
     };
 }
 exports.ContactDtoToJSON = ContactDtoToJSON;

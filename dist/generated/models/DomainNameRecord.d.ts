@@ -41,9 +41,9 @@ export interface DomainNameRecord {
     ttl: number;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum DomainNameRecordRecordTypeEnum {
     A = "A",
     NS = "NS",

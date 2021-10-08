@@ -35,9 +35,9 @@ export interface DNSLookupOptions {
     recordTypes?: Array<DNSLookupOptionsRecordTypesEnum>;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum DNSLookupOptionsRecordTypesEnum {
     A = "A",
     NS = "NS",

@@ -65,9 +65,9 @@ export interface ReplyToAliasEmailOptions {
     useInboxName?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum ReplyToAliasEmailOptionsSendStrategyEnum {
     SINGLE_MESSAGE = "SINGLE_MESSAGE"
 }

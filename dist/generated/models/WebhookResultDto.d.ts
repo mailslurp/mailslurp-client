@@ -113,9 +113,9 @@ export interface WebhookResultDto {
     webhookUrl: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoHttpMethodEnum {
     GET = "GET",
     HEAD = "HEAD",
@@ -125,18 +125,20 @@ export declare enum WebhookResultDtoHttpMethodEnum {
     DELETE = "DELETE",
     OPTIONS = "OPTIONS",
     TRACE = "TRACE"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
     SUCCESS = "SUCCESS"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookResultDtoWebhookEventEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",

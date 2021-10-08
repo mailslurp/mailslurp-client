@@ -83,9 +83,9 @@ export interface WebhookDto {
     userId?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDtoEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
@@ -93,10 +93,11 @@ export declare enum WebhookDtoEventNameEnum {
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookDtoMethodEnum {
     GET = "GET",
     HEAD = "HEAD",

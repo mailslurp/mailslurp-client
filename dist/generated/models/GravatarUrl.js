@@ -19,12 +19,12 @@ function GravatarUrlFromJSON(json) {
 }
 exports.GravatarUrlFromJSON = GravatarUrlFromJSON;
 function GravatarUrlFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'hash': json['hash'],
-        'url': json['url'],
+        hash: json['hash'],
+        url: json['url'],
     };
 }
 exports.GravatarUrlFromJSONTyped = GravatarUrlFromJSONTyped;
@@ -36,8 +36,8 @@ function GravatarUrlToJSON(value) {
         return null;
     }
     return {
-        'hash': value.hash,
-        'url': value.url,
+        hash: value.hash,
+        url: value.url,
     };
 }
 exports.GravatarUrlToJSON = GravatarUrlToJSON;

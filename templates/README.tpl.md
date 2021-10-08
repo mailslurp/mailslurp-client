@@ -1,12 +1,23 @@
 # MailSlurp Javascript Client
 
-> Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
+Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
-[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading.
+[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. MailSlurp is free for personal use but requires an [API KEY](https://app.mailslurp.com). Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading. 
+
+<br/>
 
 ![email testing](https://www.mailslurp.com/assets/slurpie-vibrant.png)
 
-## Quick links
+## Quick start
+Install with npm `npm install --save mailslurp-client` or `yarn add mailslurp-client`
+
+```javascript
+{{quick_start}}
+```
+
+More usage examples are included below.
+
+## Links
 Here are some links to get started (or see below for code examples).
 
 - [Main class methods](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/)
@@ -14,28 +25,6 @@ Here are some links to get started (or see below for code examples).
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
 
-### Examples
-- [CypressJS Example](https://www.mailslurp.com/examples/cypress-test-email-plugin-js/)
-- [WebDriver WDIO Example](https://www.mailslurp.com/examples/test-user-sign-up-wdio-webdriver/)
-- [Jest Puppeteer Example](https://www.mailslurp.com/examples/test-email-in-jest-puppeteer/)
-- [TestCafe Selenium Example](https://www.mailslurp.com/examples/testcafe-mfa-user-sign-up/)
-
-### Guides
-- [Creating inboxes](https://www.mailslurp.com/guides/creating-inboxes)
-- [Sending emails](https://www.mailslurp.com/guides/sending-emails)
-- [Receiving email](https://www.mailslurp.com/guides/receiving-emails)
-- [Attachments](https://www.mailslurp.com/guides/fetching-email-content)
-- [Webhooks](https://www.mailslurp.com/guides/email-webhooks)
-- [Aliases](https://www.mailslurp.com/guides/alias-email-address-proxy)
-- [Domains](https://www.mailslurp.com/guides/custom-domains)
-- [Organizations](https://www.mailslurp.com/guides/organizations)
-- [DNS and IP Lookup](https://www.mailslurp.com/guides/dns-lookup-nameservers)
-- [Documentation](/docs)
-
-
-### Upgrading from v14.x
-Version 15 of MailSlurp client changed code generation properties so that some multi-parameter functions now use a single object parameter instead.
-Please consult the source code when migrating if your older multi-param functions need to be migrated.
 
 ## Get started
 
@@ -53,7 +42,7 @@ First you'll need an API Key. [Create a free account](https://app.mailslurp.com)
 
 ![api-key](https://mailslurp.com/assets/guides/find-api-key.png)
 
-## Install NPM dependency
+### Install NPM dependency
 
 Install MailSlurp using NPM (NodeJS) or by including the [source code](https://github.com/mailslurp/mailslurp-client) in your project.
 
@@ -61,16 +50,17 @@ Install MailSlurp using NPM (NodeJS) or by including the [source code](https://g
 npm install --save mailslurp-client
 ```
 
-## Import MailSlurp
+## Using in code
+Here is how to use MailSlurp in your project.
+
+### Import MailSlurp library
 ```javascript
 const MailSlurp = require("mailslurp-client").default;
-
 // or
-
 import { MailSlurp } from "mailslurp-client";
 ```
 
-## Instantiate a client
+### Instantiate a MailSlurp client
 
 Create a MailSlurp instance by instantiating a class with [your API Key](https://app.mailslurp.com).
 
@@ -78,97 +68,50 @@ Create a MailSlurp instance by instantiating a class with [your API Key](https:/
 const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 ```
 
-Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
-See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/) for all methods or
-see the `test/integration.spec.ts` file for usage examples.
+#### Timeouts
+MailSlurp API endpoints are built to hold a connection open if the query is told to wait for certain conditions - like a new email arriving. For this reason it is important to use appropriate timeouts in tests or when settings up a fetch client.
 
-Use individual controllers like so:
+> MailSlurp recommends a 60_000 ms timeout to ensure emails arrive consistently. SMTP is a slow protocol so you may need to allow time for emails to arrive.
 
-```javascript
-// controllers are available on the instance itself or using imports
-const { MailSlurp, InboxControllerApi } = require('mailslurp-client');
 
-it('can use inbox controller methods', async () => {
-  // inbox actions using instance controllers
-  const mailslurp = new MailSlurp(config);
-  const inboxController = mailslurp.inboxController;
-  expect(inboxController.getInboxes).toBeDefined();
-
-});
-```
-
-You can also instantiate controllers directly. See the [API controllers](https://www.mailslurp.com/docs/js/docs/classes/) for method details.
+#### Fetch settings
+MailSlurp is built on Javascript `fetch`. If you want to override the default `fetch` client you can do so when configuring MailSlurp.
 
 ```typescript
-import {Configuration} from "./runtime";
-
-it('can use inbox controller methods', async () => {
-    // get inboxes via import
-    const config = new Configuration({ apiKey })
-    const inboxControllerImport = new InboxControllerApi(config);
-    expect(inboxControllerImport.getInboxes).toBeDefined();
-});
+{{fetch_setup}}
 ```
 
-## Fetch and error handling
-The MailSlurp client uses `fetch` to call throws exceptions for non 2xx response status codes.
-
-### Configure custom fetch
-You can pass the MailSlurp constructor a custom fetch implementation if you wish to control the library used. 
-
-```typescript
-const fetchApi = require('isomorphic-fetch') // or window.fetch
-const mailslurp = new MailSlurp({ apiKey: process.env.apiKey, fetchApi });
-```
-
-### Catch exceptions
-Any non-2xx response throws an exception. There are valid 404 responses that you should handle, these include the 404 returned from waitFor methods when the required matching emails could not be found.
+#### Fetch handling exceptions
+Any method that returns non-2xx response throws an exception by default (unless you use methods with the `Raw` suffix). There are valid 404 responses that you should handle, these include the 408 returned from `waitFor` methods when the required matching emails could not be found.
 
 - `4xx` (400, 404...) response codes indicate a client error. Access the error message on the response body
 - `5xx` (500, 501...) response codes indicate a server error. If encountered please contact support.
 
-Use `try{}catch(e){}` around MailSlurp methods and use `await e.text()` to access the exception error message and `e.status` to access the status code. If you don't like try catch use the `wrapResult` helper method to wrap results in a `Result<T>` type with an `error` property.
-
 ```typescript
-describe("handling mailslurp errors", () => {
-  test("try catch and read error", async () => {
-    try {
-      await mailslurp.inboxController.sendEmailAndConfirm('badInboxId', {})
-    } catch (e) {
-      // handle the error and status code in your code
-      // 404 is returned when emails cannot be found for a given condition for instance
-      const message = await e.text();
-      const statusCode = e.status;
-      // test action
-      expect(e.status).toEqual(400)
-      expect(message).toContain("Invalid ID passed")
-    }
-  })
-})
+{{fetch_try_catch}}
 ```
 
-### Use `wrapResult` helper
-To make exception error handling easier you can call methods using the `wrapResult` method.
+#### Fetch without exceptions (using ApiResponse)
+If you prefer not to use `try/catch` you can use methods with the `Raw` suffix. These methods return an `ApiResponse<T>` that includes a status and result instead of throwing exceptions.
 
 ```typescript
-test('can use wrapResult to avoid try catch', async () => {
-    // can wrap a bad response and read the error - notice use of anonymous function!
-    const res1 = await wrapResult(() => mailslurp.createInboxWithOptions({ emailAddress: 'foo' }))
-    expect(res1.error).toBeTruthy()
-    expect(res1.error.message).toContain("Invalid ID")
-    expect(res1.error.statusCode).toEqual(400)
-
-    // can use successful result
-    const res2 = await wrapResult(() => mailslurp.createInbox())
-    expect(res2.error).toBeUndefined()
-    expect(res2.content.emailAddress).toContain('mailslurp')
-})
+{{fetch_raw}}
 ```
 
-## Common usage
+### API Controllers
+Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
-Here are some snippets of common usage. Read
+See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/) for all methods or
+see the `test/integration.spec.ts` file for usage examples. You can also instantiate controllers directly. See the [API controllers](https://www.mailslurp.com/docs/js/docs/classes/) for method details.
+
+```javascript
+{{controller_use}}
+```
+
+## Common usage examples
+
+Here are some snippets of common usage.
 
 ### Create an email address
 MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/modules/Inbox/).
@@ -183,12 +126,8 @@ You can create an inbox with a randomly assigned email address ending in `@mails
 
 #### Create inbox options
 Use the `createInboxWithOptions` or methods on the `inboxController` property to create email addresses using more options.
-
 ```javascript
-await mailslurp.createInboxWithOptions({
-    emailAddress: 'me@custom.domain',
-    name: 'John Doe',
-});
+{{create_inbox_controller}}
 ```
 
 #### Test example

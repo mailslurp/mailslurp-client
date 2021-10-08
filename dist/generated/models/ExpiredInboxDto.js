@@ -19,13 +19,13 @@ function ExpiredInboxDtoFromJSON(json) {
 }
 exports.ExpiredInboxDtoFromJSON = ExpiredInboxDtoFromJSON;
 function ExpiredInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'id': json['id'],
-        'inboxId': json['inboxId'],
+        emailAddress: json['emailAddress'],
+        id: json['id'],
+        inboxId: json['inboxId'],
     };
 }
 exports.ExpiredInboxDtoFromJSONTyped = ExpiredInboxDtoFromJSONTyped;
@@ -37,9 +37,9 @@ function ExpiredInboxDtoToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'id': value.id,
-        'inboxId': value.inboxId,
+        emailAddress: value.emailAddress,
+        id: value.id,
+        inboxId: value.inboxId,
     };
 }
 exports.ExpiredInboxDtoToJSON = ExpiredInboxDtoToJSON;

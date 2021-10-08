@@ -20,18 +20,20 @@ function ContactProjectionFromJSON(json) {
 }
 exports.ContactProjectionFromJSON = ContactProjectionFromJSON;
 function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'company': !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
-        'createdAt': (new Date(json['createdAt'])),
-        'emailAddresses': !(0, runtime_1.exists)(json, 'emailAddresses') ? undefined : json['emailAddresses'],
-        'firstName': !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        'groupId': !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        'id': json['id'],
-        'lastName': !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        'optOut': !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
+        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
+        createdAt: new Date(json['createdAt']),
+        emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
+            ? undefined
+            : json['emailAddresses'],
+        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
+        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        id: json['id'],
+        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
+        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
     };
 }
 exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
@@ -43,14 +45,14 @@ function ContactProjectionToJSON(value) {
         return null;
     }
     return {
-        'company': value.company,
-        'createdAt': (value.createdAt.toISOString()),
-        'emailAddresses': value.emailAddresses,
-        'firstName': value.firstName,
-        'groupId': value.groupId,
-        'id': value.id,
-        'lastName': value.lastName,
-        'optOut': value.optOut,
+        company: value.company,
+        createdAt: value.createdAt.toISOString(),
+        emailAddresses: value.emailAddresses,
+        firstName: value.firstName,
+        groupId: value.groupId,
+        id: value.id,
+        lastName: value.lastName,
+        optOut: value.optOut,
     };
 }
 exports.ContactProjectionToJSON = ContactProjectionToJSON;

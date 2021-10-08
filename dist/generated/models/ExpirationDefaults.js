@@ -20,15 +20,21 @@ function ExpirationDefaultsFromJSON(json) {
 }
 exports.ExpirationDefaultsFromJSON = ExpirationDefaultsFromJSON;
 function ExpirationDefaultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'canPermanentInbox': json['canPermanentInbox'],
-        'defaultExpirationMillis': !(0, runtime_1.exists)(json, 'defaultExpirationMillis') ? undefined : json['defaultExpirationMillis'],
-        'defaultExpiresAt': !(0, runtime_1.exists)(json, 'defaultExpiresAt') ? undefined : (new Date(json['defaultExpiresAt'])),
-        'maxExpirationMillis': !(0, runtime_1.exists)(json, 'maxExpirationMillis') ? undefined : json['maxExpirationMillis'],
-        'nextInboxAllowsPermanent': json['nextInboxAllowsPermanent'],
+        canPermanentInbox: json['canPermanentInbox'],
+        defaultExpirationMillis: !(0, runtime_1.exists)(json, 'defaultExpirationMillis')
+            ? undefined
+            : json['defaultExpirationMillis'],
+        defaultExpiresAt: !(0, runtime_1.exists)(json, 'defaultExpiresAt')
+            ? undefined
+            : new Date(json['defaultExpiresAt']),
+        maxExpirationMillis: !(0, runtime_1.exists)(json, 'maxExpirationMillis')
+            ? undefined
+            : json['maxExpirationMillis'],
+        nextInboxAllowsPermanent: json['nextInboxAllowsPermanent'],
     };
 }
 exports.ExpirationDefaultsFromJSONTyped = ExpirationDefaultsFromJSONTyped;
@@ -40,11 +46,13 @@ function ExpirationDefaultsToJSON(value) {
         return null;
     }
     return {
-        'canPermanentInbox': value.canPermanentInbox,
-        'defaultExpirationMillis': value.defaultExpirationMillis,
-        'defaultExpiresAt': value.defaultExpiresAt === undefined ? undefined : (value.defaultExpiresAt.toISOString()),
-        'maxExpirationMillis': value.maxExpirationMillis,
-        'nextInboxAllowsPermanent': value.nextInboxAllowsPermanent,
+        canPermanentInbox: value.canPermanentInbox,
+        defaultExpirationMillis: value.defaultExpirationMillis,
+        defaultExpiresAt: value.defaultExpiresAt === undefined
+            ? undefined
+            : value.defaultExpiresAt.toISOString(),
+        maxExpirationMillis: value.maxExpirationMillis,
+        nextInboxAllowsPermanent: value.nextInboxAllowsPermanent,
     };
 }
 exports.ExpirationDefaultsToJSON = ExpirationDefaultsToJSON;

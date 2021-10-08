@@ -20,12 +20,12 @@ function GroupContactsDtoFromJSON(json) {
 }
 exports.GroupContactsDtoFromJSON = GroupContactsDtoFromJSON;
 function GroupContactsDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'contacts': (json['contacts'].map(_1.ContactDtoFromJSON)),
-        'group': (0, _1.GroupDtoFromJSON)(json['group']),
+        contacts: json['contacts'].map(_1.ContactDtoFromJSON),
+        group: (0, _1.GroupDtoFromJSON)(json['group']),
     };
 }
 exports.GroupContactsDtoFromJSONTyped = GroupContactsDtoFromJSONTyped;
@@ -37,8 +37,8 @@ function GroupContactsDtoToJSON(value) {
         return null;
     }
     return {
-        'contacts': (value.contacts.map(_1.ContactDtoToJSON)),
-        'group': (0, _1.GroupDtoToJSON)(value.group),
+        contacts: value.contacts.map(_1.ContactDtoToJSON),
+        group: (0, _1.GroupDtoToJSON)(value.group),
     };
 }
 exports.GroupContactsDtoToJSON = GroupContactsDtoToJSON;

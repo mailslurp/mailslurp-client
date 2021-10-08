@@ -70,9 +70,9 @@ export declare class ExpiredControllerApi extends runtime.BaseAPI {
     getExpiredInboxes(requestParameters: GetExpiredInboxesRequest, initOverrides?: RequestInit): Promise<PageExpiredInboxRecordProjection>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetExpiredInboxesSortEnum {
     ASC = "ASC",
     DESC = "DESC"

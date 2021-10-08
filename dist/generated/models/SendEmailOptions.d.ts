@@ -125,9 +125,9 @@ export interface SendEmailOptions {
     useInboxName?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum SendEmailOptionsSendStrategyEnum {
     SINGLE_MESSAGE = "SINGLE_MESSAGE"
 }

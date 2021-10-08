@@ -19,12 +19,12 @@ function EmailContentMatchResultFromJSON(json) {
 }
 exports.EmailContentMatchResultFromJSON = EmailContentMatchResultFromJSON;
 function EmailContentMatchResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'matches': json['matches'],
-        'pattern': json['pattern'],
+        matches: json['matches'],
+        pattern: json['pattern'],
     };
 }
 exports.EmailContentMatchResultFromJSONTyped = EmailContentMatchResultFromJSONTyped;
@@ -36,8 +36,8 @@ function EmailContentMatchResultToJSON(value) {
         return null;
     }
     return {
-        'matches': value.matches,
-        'pattern': value.pattern,
+        matches: value.matches,
+        pattern: value.pattern,
     };
 }
 exports.EmailContentMatchResultToJSON = EmailContentMatchResultToJSON;

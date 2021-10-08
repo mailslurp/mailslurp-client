@@ -106,33 +106,33 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
     getSentOrganizationEmails(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit): Promise<PageSentEmailProjection>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllSentTrackingPixelsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetSentEmailTrackingPixelsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetSentEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetSentOrganizationEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

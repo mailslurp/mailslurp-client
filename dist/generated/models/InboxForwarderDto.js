@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoFieldEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxForwarderDtoFieldEnum;
 (function (InboxForwarderDtoFieldEnum) {
     InboxForwarderDtoFieldEnum["RECIPIENTS"] = "RECIPIENTS";
@@ -30,16 +30,16 @@ function InboxForwarderDtoFromJSON(json) {
 }
 exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
 function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'field': json['field'],
-        'forwardToRecipients': json['forwardToRecipients'],
-        'id': json['id'],
-        'inboxId': json['inboxId'],
-        'match': json['match'],
+        createdAt: new Date(json['createdAt']),
+        field: json['field'],
+        forwardToRecipients: json['forwardToRecipients'],
+        id: json['id'],
+        inboxId: json['inboxId'],
+        match: json['match'],
     };
 }
 exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
@@ -51,12 +51,12 @@ function InboxForwarderDtoToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'field': value.field,
-        'forwardToRecipients': value.forwardToRecipients,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'match': value.match,
+        createdAt: value.createdAt.toISOString(),
+        field: value.field,
+        forwardToRecipients: value.forwardToRecipients,
+        id: value.id,
+        inboxId: value.inboxId,
+        match: value.match,
     };
 }
 exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;

@@ -15,25 +15,27 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxRulesetDtoToJSON = exports.InboxRulesetDtoFromJSONTyped = exports.InboxRulesetDtoFromJSON = exports.InboxRulesetDtoScopeEnum = exports.InboxRulesetDtoHandlerEnum = exports.InboxRulesetDtoActionEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxRulesetDtoActionEnum;
 (function (InboxRulesetDtoActionEnum) {
     InboxRulesetDtoActionEnum["BLOCK"] = "BLOCK";
     InboxRulesetDtoActionEnum["ALLOW"] = "ALLOW";
     InboxRulesetDtoActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
-})(InboxRulesetDtoActionEnum = exports.InboxRulesetDtoActionEnum || (exports.InboxRulesetDtoActionEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(InboxRulesetDtoActionEnum = exports.InboxRulesetDtoActionEnum || (exports.InboxRulesetDtoActionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var InboxRulesetDtoHandlerEnum;
 (function (InboxRulesetDtoHandlerEnum) {
     InboxRulesetDtoHandlerEnum["EXCEPTION"] = "EXCEPTION";
-})(InboxRulesetDtoHandlerEnum = exports.InboxRulesetDtoHandlerEnum || (exports.InboxRulesetDtoHandlerEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(InboxRulesetDtoHandlerEnum = exports.InboxRulesetDtoHandlerEnum || (exports.InboxRulesetDtoHandlerEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var InboxRulesetDtoScopeEnum;
 (function (InboxRulesetDtoScopeEnum) {
     InboxRulesetDtoScopeEnum["RECEIVING_EMAILS"] = "RECEIVING_EMAILS";
@@ -44,17 +46,17 @@ function InboxRulesetDtoFromJSON(json) {
 }
 exports.InboxRulesetDtoFromJSON = InboxRulesetDtoFromJSON;
 function InboxRulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'action': json['action'],
-        'createdAt': (new Date(json['createdAt'])),
-        'handler': json['handler'],
-        'id': json['id'],
-        'inboxId': json['inboxId'],
-        'scope': json['scope'],
-        'target': json['target'],
+        action: json['action'],
+        createdAt: new Date(json['createdAt']),
+        handler: json['handler'],
+        id: json['id'],
+        inboxId: json['inboxId'],
+        scope: json['scope'],
+        target: json['target'],
     };
 }
 exports.InboxRulesetDtoFromJSONTyped = InboxRulesetDtoFromJSONTyped;
@@ -66,13 +68,13 @@ function InboxRulesetDtoToJSON(value) {
         return null;
     }
     return {
-        'action': value.action,
-        'createdAt': (value.createdAt.toISOString()),
-        'handler': value.handler,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'scope': value.scope,
-        'target': value.target,
+        action: value.action,
+        createdAt: value.createdAt.toISOString(),
+        handler: value.handler,
+        id: value.id,
+        inboxId: value.inboxId,
+        scope: value.scope,
+        target: value.target,
     };
 }
 exports.InboxRulesetDtoToJSON = InboxRulesetDtoToJSON;

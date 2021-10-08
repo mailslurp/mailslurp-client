@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookResultDtoToJSON = exports.WebhookResultDtoFromJSONTyped = exports.WebhookResultDtoFromJSON = exports.WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoHttpMethodEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookResultDtoHttpMethodEnum;
 (function (WebhookResultDtoHttpMethodEnum) {
     WebhookResultDtoHttpMethodEnum["GET"] = "GET";
@@ -29,19 +29,21 @@ var WebhookResultDtoHttpMethodEnum;
     WebhookResultDtoHttpMethodEnum["DELETE"] = "DELETE";
     WebhookResultDtoHttpMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookResultDtoHttpMethodEnum["TRACE"] = "TRACE";
-})(WebhookResultDtoHttpMethodEnum = exports.WebhookResultDtoHttpMethodEnum || (exports.WebhookResultDtoHttpMethodEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(WebhookResultDtoHttpMethodEnum = exports.WebhookResultDtoHttpMethodEnum || (exports.WebhookResultDtoHttpMethodEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var WebhookResultDtoResultTypeEnum;
 (function (WebhookResultDtoResultTypeEnum) {
     WebhookResultDtoResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
     WebhookResultDtoResultTypeEnum["EXCEPTION"] = "EXCEPTION";
     WebhookResultDtoResultTypeEnum["SUCCESS"] = "SUCCESS";
-})(WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var WebhookResultDtoWebhookEventEnum;
 (function (WebhookResultDtoWebhookEventEnum) {
     WebhookResultDtoWebhookEventEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -56,26 +58,30 @@ function WebhookResultDtoFromJSON(json) {
 }
 exports.WebhookResultDtoFromJSON = WebhookResultDtoFromJSON;
 function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'httpMethod': json['httpMethod'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxId': json['inboxId'],
-        'messageId': json['messageId'],
-        'redriveId': !(0, runtime_1.exists)(json, 'redriveId') ? undefined : json['redriveId'],
-        'responseBodyExtract': !(0, runtime_1.exists)(json, 'responseBodyExtract') ? undefined : json['responseBodyExtract'],
-        'responseStatus': !(0, runtime_1.exists)(json, 'responseStatus') ? undefined : json['responseStatus'],
-        'responseTimeMillis': json['responseTimeMillis'],
-        'resultType': !(0, runtime_1.exists)(json, 'resultType') ? undefined : json['resultType'],
-        'seen': !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': json['userId'],
-        'webhookEvent': json['webhookEvent'],
-        'webhookId': json['webhookId'],
-        'webhookUrl': json['webhookUrl'],
+        createdAt: new Date(json['createdAt']),
+        httpMethod: json['httpMethod'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxId: json['inboxId'],
+        messageId: json['messageId'],
+        redriveId: !(0, runtime_1.exists)(json, 'redriveId') ? undefined : json['redriveId'],
+        responseBodyExtract: !(0, runtime_1.exists)(json, 'responseBodyExtract')
+            ? undefined
+            : json['responseBodyExtract'],
+        responseStatus: !(0, runtime_1.exists)(json, 'responseStatus')
+            ? undefined
+            : json['responseStatus'],
+        responseTimeMillis: json['responseTimeMillis'],
+        resultType: !(0, runtime_1.exists)(json, 'resultType') ? undefined : json['resultType'],
+        seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: json['userId'],
+        webhookEvent: json['webhookEvent'],
+        webhookId: json['webhookId'],
+        webhookUrl: json['webhookUrl'],
     };
 }
 exports.WebhookResultDtoFromJSONTyped = WebhookResultDtoFromJSONTyped;
@@ -87,22 +93,22 @@ function WebhookResultDtoToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'httpMethod': value.httpMethod,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'messageId': value.messageId,
-        'redriveId': value.redriveId,
-        'responseBodyExtract': value.responseBodyExtract,
-        'responseStatus': value.responseStatus,
-        'responseTimeMillis': value.responseTimeMillis,
-        'resultType': value.resultType,
-        'seen': value.seen,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
-        'webhookEvent': value.webhookEvent,
-        'webhookId': value.webhookId,
-        'webhookUrl': value.webhookUrl,
+        createdAt: value.createdAt.toISOString(),
+        httpMethod: value.httpMethod,
+        id: value.id,
+        inboxId: value.inboxId,
+        messageId: value.messageId,
+        redriveId: value.redriveId,
+        responseBodyExtract: value.responseBodyExtract,
+        responseStatus: value.responseStatus,
+        responseTimeMillis: value.responseTimeMillis,
+        resultType: value.resultType,
+        seen: value.seen,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
+        webhookEvent: value.webhookEvent,
+        webhookId: value.webhookId,
+        webhookUrl: value.webhookUrl,
     };
 }
 exports.WebhookResultDtoToJSON = WebhookResultDtoToJSON;

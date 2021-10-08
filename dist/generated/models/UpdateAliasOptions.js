@@ -20,11 +20,11 @@ function UpdateAliasOptionsFromJSON(json) {
 }
 exports.UpdateAliasOptionsFromJSON = UpdateAliasOptionsFromJSON;
 function UpdateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
 exports.UpdateAliasOptionsFromJSONTyped = UpdateAliasOptionsFromJSONTyped;
@@ -36,7 +36,7 @@ function UpdateAliasOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
+        name: value.name,
     };
 }
 exports.UpdateAliasOptionsToJSON = UpdateAliasOptionsToJSON;

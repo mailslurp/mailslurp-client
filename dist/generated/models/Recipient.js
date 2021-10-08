@@ -20,13 +20,13 @@ function RecipientFromJSON(json) {
 }
 exports.RecipientFromJSON = RecipientFromJSON;
 function RecipientFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': json['emailAddress'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'rawValue': json['rawValue'],
+        emailAddress: json['emailAddress'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        rawValue: json['rawValue'],
     };
 }
 exports.RecipientFromJSONTyped = RecipientFromJSONTyped;
@@ -38,9 +38,9 @@ function RecipientToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'name': value.name,
-        'rawValue': value.rawValue,
+        emailAddress: value.emailAddress,
+        name: value.name,
+        rawValue: value.rawValue,
     };
 }
 exports.RecipientToJSON = RecipientToJSON;

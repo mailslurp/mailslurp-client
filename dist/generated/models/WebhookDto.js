@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoMethodEnum = exports.WebhookDtoEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookDtoEventNameEnum;
 (function (WebhookDtoEventNameEnum) {
     WebhookDtoEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -27,10 +27,11 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookDtoEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookDtoEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
-})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var WebhookDtoMethodEnum;
 (function (WebhookDtoMethodEnum) {
     WebhookDtoMethodEnum["GET"] = "GET";
@@ -47,21 +48,25 @@ function WebhookDtoFromJSON(json) {
 }
 exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
 function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'basicAuth': !(0, runtime_1.exists)(json, 'basicAuth') ? undefined : json['basicAuth'],
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'method': !(0, runtime_1.exists)(json, 'method') ? undefined : json['method'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'payloadJsonSchema': !(0, runtime_1.exists)(json, 'payloadJsonSchema') ? undefined : json['payloadJsonSchema'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'url': !(0, runtime_1.exists)(json, 'url') ? undefined : json['url'],
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        basicAuth: !(0, runtime_1.exists)(json, 'basicAuth') ? undefined : json['basicAuth'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        method: !(0, runtime_1.exists)(json, 'method') ? undefined : json['method'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        payloadJsonSchema: !(0, runtime_1.exists)(json, 'payloadJsonSchema')
+            ? undefined
+            : json['payloadJsonSchema'],
+        updatedAt: new Date(json['updatedAt']),
+        url: !(0, runtime_1.exists)(json, 'url') ? undefined : json['url'],
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -73,17 +78,17 @@ function WebhookDtoToJSON(value) {
         return null;
     }
     return {
-        'basicAuth': value.basicAuth,
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'eventName': value.eventName,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'method': value.method,
-        'name': value.name,
-        'payloadJsonSchema': value.payloadJsonSchema,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'url': value.url,
-        'userId': value.userId,
+        basicAuth: value.basicAuth,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        eventName: value.eventName,
+        id: value.id,
+        inboxId: value.inboxId,
+        method: value.method,
+        name: value.name,
+        payloadJsonSchema: value.payloadJsonSchema,
+        updatedAt: value.updatedAt.toISOString(),
+        url: value.url,
+        userId: value.userId,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

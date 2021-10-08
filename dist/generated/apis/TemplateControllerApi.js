@@ -103,14 +103,15 @@ var TemplateControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createTemplateOptions === null || requestParameters.createTemplateOptions === undefined) {
+                        if (requestParameters.createTemplateOptions === null ||
+                            requestParameters.createTemplateOptions === undefined) {
                             throw new runtime.RequiredError('createTemplateOptions', 'Required parameter requestParameters.createTemplateOptions was null or undefined when calling createTemplate.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/templates",
@@ -121,7 +122,9 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TemplateDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TemplateDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -152,16 +155,17 @@ var TemplateControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+                        if (requestParameters.templateId === null ||
+                            requestParameters.templateId === undefined) {
                             throw new runtime.RequiredError('templateId', 'Required parameter requestParameters.templateId was null or undefined when calling deleteTemplate.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/templates/{templateId}".replace("{" + "templateId" + "}", encodeURIComponent(String(requestParameters.templateId))),
+                                path: "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(requestParameters.templateId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -215,7 +219,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/templates/paginated",
@@ -225,7 +229,9 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageTemplateProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTemplateProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -256,23 +262,26 @@ var TemplateControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+                        if (requestParameters.templateId === null ||
+                            requestParameters.templateId === undefined) {
                             throw new runtime.RequiredError('templateId', 'Required parameter requestParameters.templateId was null or undefined when calling getTemplate.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/templates/{templateId}".replace("{" + "templateId" + "}", encodeURIComponent(String(requestParameters.templateId))),
+                                path: "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(requestParameters.templateId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TemplateDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TemplateDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -306,7 +315,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/templates",
@@ -316,7 +325,9 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.TemplateProjectionFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.TemplateProjectionFromJSON);
+                            })];
                 }
             });
         });
@@ -347,20 +358,22 @@ var TemplateControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.templateId === null || requestParameters.templateId === undefined) {
+                        if (requestParameters.templateId === null ||
+                            requestParameters.templateId === undefined) {
                             throw new runtime.RequiredError('templateId', 'Required parameter requestParameters.templateId was null or undefined when calling updateTemplate.');
                         }
-                        if (requestParameters.createTemplateOptions === null || requestParameters.createTemplateOptions === undefined) {
+                        if (requestParameters.createTemplateOptions === null ||
+                            requestParameters.createTemplateOptions === undefined) {
                             throw new runtime.RequiredError('createTemplateOptions', 'Required parameter requestParameters.createTemplateOptions was null or undefined when calling updateTemplate.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/templates/{templateId}".replace("{" + "templateId" + "}", encodeURIComponent(String(requestParameters.templateId))),
+                                path: "/templates/{templateId}".replace("{" + 'templateId' + "}", encodeURIComponent(String(requestParameters.templateId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -368,7 +381,9 @@ var TemplateControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TemplateDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TemplateDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -394,9 +409,9 @@ var TemplateControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.TemplateControllerApi = TemplateControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllTemplatesSortEnum;
 (function (GetAllTemplatesSortEnum) {
     GetAllTemplatesSortEnum["ASC"] = "ASC";

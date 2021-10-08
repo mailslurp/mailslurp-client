@@ -35,9 +35,9 @@ export interface CreateInboxForwarderOptions {
     match?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateInboxForwarderOptionsFieldEnum {
     RECIPIENTS = "RECIPIENTS",
     SENDER = "SENDER",

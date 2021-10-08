@@ -137,11 +137,7 @@ var MailSlurp = /** @class */ (function () {
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
-        var args = [
-            clientConfiguration,
-            clientConfiguration.basePath,
-            _fetch,
-        ];
+        var args = [clientConfiguration, clientConfiguration.basePath, _fetch];
         // instantiate api clients
         this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArray([void 0], __read(args), false)))();
@@ -188,10 +184,14 @@ var MailSlurp = /** @class */ (function () {
                             expiresAt: expiresAt,
                             expiresIn: expiresIn,
                             favourite: favourite,
-                            inboxType: inboxType ? (inboxType === 'HTTP_INBOX' ? generated_1.CreateInboxInboxTypeEnum.HTTP_INBOX : generated_1.CreateInboxInboxTypeEnum.SMTP_INBOX) : undefined,
+                            inboxType: inboxType
+                                ? inboxType === 'HTTP_INBOX'
+                                    ? generated_1.CreateInboxInboxTypeEnum.HTTP_INBOX
+                                    : generated_1.CreateInboxInboxTypeEnum.SMTP_INBOX
+                                : undefined,
                             name: name,
                             tags: tags,
-                            useDomainPool: useDomainPool
+                            useDomainPool: useDomainPool,
                         });
                     })];
             });
@@ -206,7 +206,9 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInboxWithOptions({ createInboxDto: createInboxOptions });
+                        return _this.inboxController.createInboxWithOptions({
+                            createInboxDto: createInboxOptions,
+                        });
                     })];
             });
         });
@@ -288,8 +290,12 @@ var MailSlurp = /** @class */ (function () {
                             page: page,
                             search: search,
                             size: size,
-                            sort: sort ? (sort == "ASC" ? generated_1.GetAllInboxesSortEnum.ASC : generated_1.GetAllInboxesSortEnum.DESC) : undefined,
-                            tag: tag
+                            sort: sort
+                                ? sort == 'ASC'
+                                    ? generated_1.GetAllInboxesSortEnum.ASC
+                                    : generated_1.GetAllInboxesSortEnum.DESC
+                                : undefined,
+                            tag: tag,
                         });
                     })];
             });
@@ -311,7 +317,7 @@ var MailSlurp = /** @class */ (function () {
                         return _this.waitController.waitForLatestEmail({
                             inboxId: inboxId,
                             timeout: timeout,
-                            unreadOnly: unreadOnly
+                            unreadOnly: unreadOnly,
                         });
                     })];
             });
@@ -334,7 +340,7 @@ var MailSlurp = /** @class */ (function () {
                             inboxId: inboxId,
                             index: index,
                             timeout: timeout,
-                            unreadOnly: unreadOnly
+                            unreadOnly: unreadOnly,
                         });
                     })];
             });
@@ -359,7 +365,7 @@ var MailSlurp = /** @class */ (function () {
                             count: count,
                             inboxId: inboxId,
                             timeout: timeout,
-                            unreadOnly: unreadOnly
+                            unreadOnly: unreadOnly,
                         });
                     })];
             });
@@ -382,7 +388,7 @@ var MailSlurp = /** @class */ (function () {
                             count: count,
                             inboxId: inboxId,
                             timeout: timeout,
-                            unreadOnly: unreadOnly
+                            unreadOnly: unreadOnly,
                         });
                     })];
             });
@@ -423,8 +429,12 @@ var MailSlurp = /** @class */ (function () {
                             page: page,
                             searchFilter: searchFilter,
                             size: size,
-                            sort: sort ? (sort === 'DESC' ? generated_1.GetEmailsPaginatedSortEnum.DESC : generated_1.GetEmailsPaginatedSortEnum.ASC) : undefined,
-                            unreadOnly: unreadOnly
+                            sort: sort
+                                ? sort === 'DESC'
+                                    ? generated_1.GetEmailsPaginatedSortEnum.DESC
+                                    : generated_1.GetEmailsPaginatedSortEnum.ASC
+                                : undefined,
+                            unreadOnly: unreadOnly,
                         });
                     })];
             });
@@ -449,7 +459,11 @@ var MailSlurp = /** @class */ (function () {
                             retryTimeout: args.retryTimeout,
                             since: args.since,
                             size: args.size,
-                            sort: args.sort ? (args.sort === 'DESC' ? generated_1.GetEmailsSortEnum.DESC : generated_1.GetEmailsSortEnum.ASC) : undefined,
+                            sort: args.sort
+                                ? args.sort === 'DESC'
+                                    ? generated_1.GetEmailsSortEnum.DESC
+                                    : generated_1.GetEmailsSortEnum.ASC
+                                : undefined,
                         });
                     })];
             });

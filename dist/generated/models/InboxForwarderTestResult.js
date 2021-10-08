@@ -19,12 +19,12 @@ function InboxForwarderTestResultFromJSON(json) {
 }
 exports.InboxForwarderTestResultFromJSON = InboxForwarderTestResultFromJSON;
 function InboxForwarderTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'doesMatch': json['doesMatch'],
-        'matches': json['matches'],
+        doesMatch: json['doesMatch'],
+        matches: json['matches'],
     };
 }
 exports.InboxForwarderTestResultFromJSONTyped = InboxForwarderTestResultFromJSONTyped;
@@ -36,8 +36,8 @@ function InboxForwarderTestResultToJSON(value) {
         return null;
     }
     return {
-        'doesMatch': value.doesMatch,
-        'matches': value.matches,
+        doesMatch: value.doesMatch,
+        matches: value.matches,
     };
 }
 exports.InboxForwarderTestResultToJSON = InboxForwarderTestResultToJSON;

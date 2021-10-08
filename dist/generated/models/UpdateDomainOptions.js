@@ -20,11 +20,13 @@ function UpdateDomainOptionsFromJSON(json) {
 }
 exports.UpdateDomainOptionsFromJSON = UpdateDomainOptionsFromJSON;
 function UpdateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'catchAllInboxId': !(0, runtime_1.exists)(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
+        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
+            ? undefined
+            : json['catchAllInboxId'],
     };
 }
 exports.UpdateDomainOptionsFromJSONTyped = UpdateDomainOptionsFromJSONTyped;
@@ -36,7 +38,7 @@ function UpdateDomainOptionsToJSON(value) {
         return null;
     }
     return {
-        'catchAllInboxId': value.catchAllInboxId,
+        catchAllInboxId: value.catchAllInboxId,
     };
 }
 exports.UpdateDomainOptionsToJSON = UpdateDomainOptionsToJSON;

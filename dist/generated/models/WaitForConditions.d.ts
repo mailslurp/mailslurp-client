@@ -78,16 +78,17 @@ export interface WaitForConditions {
     unreadOnly?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForConditionsCountTypeEnum {
     EXACTLY = "EXACTLY",
     ATLEAST = "ATLEAST"
-} /**
-* @export
-* @enum {string}
-*/
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForConditionsSortDirectionEnum {
     ASC = "ASC",
     DESC = "DESC"

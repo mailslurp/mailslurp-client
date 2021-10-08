@@ -84,9 +84,9 @@ export interface DomainDto {
     verificationToken?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum DomainDtoDomainTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_DOMAIN = "SMTP_DOMAIN"

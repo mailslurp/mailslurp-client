@@ -41,9 +41,9 @@ export interface CreateDomainOptions {
     domainType?: CreateDomainOptionsDomainTypeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum CreateDomainOptionsDomainTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_DOMAIN = "SMTP_DOMAIN"

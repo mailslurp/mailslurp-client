@@ -103,14 +103,15 @@ var MailServerControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.describeOptions === null || requestParameters.describeOptions === undefined) {
+                        if (requestParameters.describeOptions === null ||
+                            requestParameters.describeOptions === undefined) {
                             throw new runtime.RequiredError('describeOptions', 'Required parameter requestParameters.describeOptions was null or undefined when calling describeMailServerDomain.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mail-server/describe/domain",
@@ -121,7 +122,9 @@ var MailServerControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DescribeMailServerDomainResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DescribeMailServerDomainResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -152,14 +155,15 @@ var MailServerControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.dnsLookupOptions === null || requestParameters.dnsLookupOptions === undefined) {
+                        if (requestParameters.dnsLookupOptions === null ||
+                            requestParameters.dnsLookupOptions === undefined) {
                             throw new runtime.RequiredError('dnsLookupOptions', 'Required parameter requestParameters.dnsLookupOptions was null or undefined when calling getDnsLookup.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mail-server/describe/dns-lookup",
@@ -170,7 +174,9 @@ var MailServerControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.DNSLookupResultsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DNSLookupResultsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -201,7 +207,8 @@ var MailServerControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.name === null || requestParameters.name === undefined) {
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
                             throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling getIpAddress.');
                         }
                         queryParameters = {};
@@ -210,7 +217,7 @@ var MailServerControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mail-server/describe/ip-address",
@@ -220,7 +227,9 @@ var MailServerControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.IPAddressResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.IPAddressResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -251,14 +260,15 @@ var MailServerControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.verifyOptions === null || requestParameters.verifyOptions === undefined) {
+                        if (requestParameters.verifyOptions === null ||
+                            requestParameters.verifyOptions === undefined) {
                             throw new runtime.RequiredError('verifyOptions', 'Required parameter requestParameters.verifyOptions was null or undefined when calling verifyEmailAddress.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/mail-server/verify/email-address",
@@ -269,7 +279,9 @@ var MailServerControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailVerificationResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailVerificationResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });

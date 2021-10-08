@@ -19,11 +19,11 @@ function JSONSchemaDtoFromJSON(json) {
 }
 exports.JSONSchemaDtoFromJSON = JSONSchemaDtoFromJSON;
 function JSONSchemaDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'value': json['value'],
+        value: json['value'],
     };
 }
 exports.JSONSchemaDtoFromJSONTyped = JSONSchemaDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function JSONSchemaDtoToJSON(value) {
         return null;
     }
     return {
-        'value': value.value,
+        value: value.value,
     };
 }
 exports.JSONSchemaDtoToJSON = JSONSchemaDtoToJSON;

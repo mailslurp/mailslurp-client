@@ -20,14 +20,14 @@ function GroupDtoFromJSON(json) {
 }
 exports.GroupDtoFromJSON = GroupDtoFromJSON;
 function GroupDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'id': json['id'],
-        'name': json['name'],
+        createdAt: new Date(json['createdAt']),
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        id: json['id'],
+        name: json['name'],
     };
 }
 exports.GroupDtoFromJSONTyped = GroupDtoFromJSONTyped;
@@ -39,10 +39,10 @@ function GroupDtoToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'description': value.description,
-        'id': value.id,
-        'name': value.name,
+        createdAt: value.createdAt.toISOString(),
+        description: value.description,
+        id: value.id,
+        name: value.name,
     };
 }
 exports.GroupDtoToJSON = GroupDtoToJSON;

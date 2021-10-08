@@ -20,20 +20,26 @@ function BouncedEmailDtoFromJSON(json) {
 }
 exports.BouncedEmailDtoFromJSON = BouncedEmailDtoFromJSON;
 function BouncedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'bounceMta': !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
-        'bounceRecipients': !(0, runtime_1.exists)(json, 'bounceRecipients') ? undefined : json['bounceRecipients'],
-        'bounceSubType': !(0, runtime_1.exists)(json, 'bounceSubType') ? undefined : json['bounceSubType'],
-        'bounceType': !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
-        'createdAt': (new Date(json['createdAt'])),
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'notificationType': json['notificationType'],
-        'sender': json['sender'],
-        'sentToRecipients': !(0, runtime_1.exists)(json, 'sentToRecipients') ? undefined : json['sentToRecipients'],
-        'userId': json['userId'],
+        bounceMta: !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
+        bounceRecipients: !(0, runtime_1.exists)(json, 'bounceRecipients')
+            ? undefined
+            : json['bounceRecipients'],
+        bounceSubType: !(0, runtime_1.exists)(json, 'bounceSubType')
+            ? undefined
+            : json['bounceSubType'],
+        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
+        createdAt: new Date(json['createdAt']),
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        notificationType: json['notificationType'],
+        sender: json['sender'],
+        sentToRecipients: !(0, runtime_1.exists)(json, 'sentToRecipients')
+            ? undefined
+            : json['sentToRecipients'],
+        userId: json['userId'],
     };
 }
 exports.BouncedEmailDtoFromJSONTyped = BouncedEmailDtoFromJSONTyped;
@@ -45,16 +51,16 @@ function BouncedEmailDtoToJSON(value) {
         return null;
     }
     return {
-        'bounceMta': value.bounceMta,
-        'bounceRecipients': value.bounceRecipients,
-        'bounceSubType': value.bounceSubType,
-        'bounceType': value.bounceType,
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'notificationType': value.notificationType,
-        'sender': value.sender,
-        'sentToRecipients': value.sentToRecipients,
-        'userId': value.userId,
+        bounceMta: value.bounceMta,
+        bounceRecipients: value.bounceRecipients,
+        bounceSubType: value.bounceSubType,
+        bounceType: value.bounceType,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        notificationType: value.notificationType,
+        sender: value.sender,
+        sentToRecipients: value.sentToRecipients,
+        userId: value.userId,
     };
 }
 exports.BouncedEmailDtoToJSON = BouncedEmailDtoToJSON;

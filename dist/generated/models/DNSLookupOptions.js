@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DNSLookupOptionsToJSON = exports.DNSLookupOptionsFromJSONTyped = exports.DNSLookupOptionsFromJSON = exports.DNSLookupOptionsRecordTypesEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DNSLookupOptionsRecordTypesEnum;
 (function (DNSLookupOptionsRecordTypesEnum) {
     DNSLookupOptionsRecordTypesEnum["A"] = "A";
@@ -116,13 +116,15 @@ function DNSLookupOptionsFromJSON(json) {
 }
 exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
 function DNSLookupOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'hostname': !(0, runtime_1.exists)(json, 'hostname') ? undefined : json['hostname'],
-        'omitFinalDNSDot': !(0, runtime_1.exists)(json, 'omitFinalDNSDot') ? undefined : json['omitFinalDNSDot'],
-        'recordTypes': !(0, runtime_1.exists)(json, 'recordTypes') ? undefined : json['recordTypes'],
+        hostname: !(0, runtime_1.exists)(json, 'hostname') ? undefined : json['hostname'],
+        omitFinalDNSDot: !(0, runtime_1.exists)(json, 'omitFinalDNSDot')
+            ? undefined
+            : json['omitFinalDNSDot'],
+        recordTypes: !(0, runtime_1.exists)(json, 'recordTypes') ? undefined : json['recordTypes'],
     };
 }
 exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
@@ -134,9 +136,9 @@ function DNSLookupOptionsToJSON(value) {
         return null;
     }
     return {
-        'hostname': value.hostname,
-        'omitFinalDNSDot': value.omitFinalDNSDot,
-        'recordTypes': value.recordTypes,
+        hostname: value.hostname,
+        omitFinalDNSDot: value.omitFinalDNSDot,
+        recordTypes: value.recordTypes,
     };
 }
 exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;

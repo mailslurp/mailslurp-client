@@ -20,19 +20,21 @@ function EmailPreviewFromJSON(json) {
 }
 exports.EmailPreviewFromJSON = EmailPreviewFromJSON;
 function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachments': !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'read': !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
     };
 }
 exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
@@ -44,15 +46,15 @@ function EmailPreviewToJSON(value) {
         return null;
     }
     return {
-        'attachments': value.attachments,
-        'bcc': value.bcc,
-        'cc': value.cc,
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'from': value.from,
-        'id': value.id,
-        'read': value.read,
-        'subject': value.subject,
-        'to': value.to,
+        attachments: value.attachments,
+        bcc: value.bcc,
+        cc: value.cc,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        from: value.from,
+        id: value.id,
+        read: value.read,
+        subject: value.subject,
+        to: value.to,
     };
 }
 exports.EmailPreviewToJSON = EmailPreviewToJSON;

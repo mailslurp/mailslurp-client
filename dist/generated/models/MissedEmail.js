@@ -20,22 +20,22 @@ function MissedEmailFromJSON(json) {
 }
 exports.MissedEmailFromJSON = MissedEmailFromJSON;
 function MissedEmailFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachmentCount': json['attachmentCount'],
-        'bcc': json['bcc'],
-        'bodyExcerpt': !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
-        'cc': json['cc'],
-        'createdAt': (new Date(json['createdAt'])),
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxIds': json['inboxIds'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': json['to'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        attachmentCount: json['attachmentCount'],
+        bcc: json['bcc'],
+        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        cc: json['cc'],
+        createdAt: new Date(json['createdAt']),
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxIds: json['inboxIds'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: json['to'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
     };
 }
 exports.MissedEmailFromJSONTyped = MissedEmailFromJSONTyped;
@@ -47,18 +47,18 @@ function MissedEmailToJSON(value) {
         return null;
     }
     return {
-        'attachmentCount': value.attachmentCount,
-        'bcc': value.bcc,
-        'bodyExcerpt': value.bodyExcerpt,
-        'cc': value.cc,
-        'createdAt': (value.createdAt.toISOString()),
-        'from': value.from,
-        'id': value.id,
-        'inboxIds': value.inboxIds,
-        'subject': value.subject,
-        'to': value.to,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
+        attachmentCount: value.attachmentCount,
+        bcc: value.bcc,
+        bodyExcerpt: value.bodyExcerpt,
+        cc: value.cc,
+        createdAt: value.createdAt.toISOString(),
+        from: value.from,
+        id: value.id,
+        inboxIds: value.inboxIds,
+        subject: value.subject,
+        to: value.to,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
     };
 }
 exports.MissedEmailToJSON = MissedEmailToJSON;

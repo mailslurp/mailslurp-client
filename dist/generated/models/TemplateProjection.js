@@ -19,15 +19,15 @@ function TemplateProjectionFromJSON(json) {
 }
 exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
 function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'id': json['id'],
-        'name': json['name'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'variables': json['variables'],
+        createdAt: new Date(json['createdAt']),
+        id: json['id'],
+        name: json['name'],
+        updatedAt: new Date(json['updatedAt']),
+        variables: json['variables'],
     };
 }
 exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
@@ -39,11 +39,11 @@ function TemplateProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'name': value.name,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'variables': value.variables,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        name: value.name,
+        updatedAt: value.updatedAt.toISOString(),
+        variables: value.variables,
     };
 }
 exports.TemplateProjectionToJSON = TemplateProjectionToJSON;

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainPreviewToJSON = exports.DomainPreviewFromJSONTyped = exports.DomainPreviewFromJSON = exports.DomainPreviewDomainTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DomainPreviewDomainTypeEnum;
 (function (DomainPreviewDomainTypeEnum) {
     DomainPreviewDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,16 +29,18 @@ function DomainPreviewFromJSON(json) {
 }
 exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
 function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'catchAllInboxId': !(0, runtime_1.exists)(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'domain': json['domain'],
-        'domainType': json['domainType'],
-        'id': json['id'],
-        'isVerified': json['isVerified'],
+        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
+            ? undefined
+            : json['catchAllInboxId'],
+        createdAt: new Date(json['createdAt']),
+        domain: json['domain'],
+        domainType: json['domainType'],
+        id: json['id'],
+        isVerified: json['isVerified'],
     };
 }
 exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
@@ -50,12 +52,12 @@ function DomainPreviewToJSON(value) {
         return null;
     }
     return {
-        'catchAllInboxId': value.catchAllInboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'domain': value.domain,
-        'domainType': value.domainType,
-        'id': value.id,
-        'isVerified': value.isVerified,
+        catchAllInboxId: value.catchAllInboxId,
+        createdAt: value.createdAt.toISOString(),
+        domain: value.domain,
+        domainType: value.domainType,
+        id: value.id,
+        isVerified: value.isVerified,
     };
 }
 exports.DomainPreviewToJSON = DomainPreviewToJSON;

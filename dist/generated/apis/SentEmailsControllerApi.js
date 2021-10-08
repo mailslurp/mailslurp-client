@@ -124,7 +124,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/sent/tracking-pixels",
@@ -134,7 +134,9 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -171,17 +173,19 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.SentEmailDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -218,10 +222,10 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}/html".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}/html".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -283,17 +287,19 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}/tracking-pixels".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}/tracking-pixels".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -348,7 +354,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/sent",
@@ -358,7 +364,9 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -413,7 +421,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/sent/organization",
@@ -423,7 +431,9 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageSentEmailProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -449,36 +459,36 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.SentEmailsControllerApi = SentEmailsControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllSentTrackingPixelsSortEnum;
 (function (GetAllSentTrackingPixelsSortEnum) {
     GetAllSentTrackingPixelsSortEnum["ASC"] = "ASC";
     GetAllSentTrackingPixelsSortEnum["DESC"] = "DESC";
 })(GetAllSentTrackingPixelsSortEnum = exports.GetAllSentTrackingPixelsSortEnum || (exports.GetAllSentTrackingPixelsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetSentEmailTrackingPixelsSortEnum;
 (function (GetSentEmailTrackingPixelsSortEnum) {
     GetSentEmailTrackingPixelsSortEnum["ASC"] = "ASC";
     GetSentEmailTrackingPixelsSortEnum["DESC"] = "DESC";
 })(GetSentEmailTrackingPixelsSortEnum = exports.GetSentEmailTrackingPixelsSortEnum || (exports.GetSentEmailTrackingPixelsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetSentEmailsSortEnum;
 (function (GetSentEmailsSortEnum) {
     GetSentEmailsSortEnum["ASC"] = "ASC";
     GetSentEmailsSortEnum["DESC"] = "DESC";
 })(GetSentEmailsSortEnum = exports.GetSentEmailsSortEnum || (exports.GetSentEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetSentOrganizationEmailsSortEnum;
 (function (GetSentOrganizationEmailsSortEnum) {
     GetSentOrganizationEmailsSortEnum["ASC"] = "ASC";

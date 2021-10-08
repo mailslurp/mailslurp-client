@@ -80,7 +80,7 @@
     "testResultsProcessor": "jest-junit",
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.ts"
+      "<rootDir>/dist/**/*.js"
     ],
     "coverageReporters": [
       "text",

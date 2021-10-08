@@ -104,20 +104,22 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling createWebhook.');
                         }
-                        if (requestParameters.webhookOptions === null || requestParameters.webhookOptions === undefined) {
+                        if (requestParameters.webhookOptions === null ||
+                            requestParameters.webhookOptions === undefined) {
                             throw new runtime.RequiredError('webhookOptions', 'Required parameter requestParameters.webhookOptions was null or undefined when calling createWebhook.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -125,7 +127,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -160,7 +164,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks",
@@ -199,19 +203,23 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling deleteWebhook.');
                         }
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhook.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks/{webhookId}".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))).replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/inboxes/{inboxId}/webhooks/{webhookId}"
+                                    .replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId)))
+                                    .replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -271,7 +279,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/results",
@@ -281,7 +289,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageWebhookResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -334,7 +344,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/paginated",
@@ -344,7 +354,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -376,7 +388,8 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getInboxWebhooksPaginated.');
                         }
                         queryParameters = {};
@@ -400,17 +413,19 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks/paginated".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks/paginated".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -441,23 +456,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling getJsonSchemaForWebhookPayload.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/schema".replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/schema".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.JSONSchemaDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.JSONSchemaDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -494,7 +512,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test",
@@ -504,7 +522,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AbstractWebhookPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AbstractWebhookPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -538,7 +558,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test/email-opened-payload",
@@ -548,7 +568,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookEmailOpenedPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookEmailOpenedPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -582,7 +604,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test/email-read-payload",
@@ -592,7 +614,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookEmailReadPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookEmailReadPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -623,23 +647,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling getTestWebhookPayloadForWebhook.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/example".replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/example".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.AbstractWebhookPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AbstractWebhookPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -673,7 +700,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test/new-attachment-payload",
@@ -683,7 +710,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookNewAttachmentPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookNewAttachmentPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -717,7 +746,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test/new-contact-payload",
@@ -727,7 +756,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookNewContactPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookNewContactPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -761,7 +792,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/webhooks/test/new-email-payload",
@@ -771,7 +802,9 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookNewEmailPayloadFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookNewEmailPayloadFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -802,23 +835,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling getWebhook.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}".replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -849,23 +885,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookResultId === null || requestParameters.webhookResultId === undefined) {
+                        if (requestParameters.webhookResultId === null ||
+                            requestParameters.webhookResultId === undefined) {
                             throw new runtime.RequiredError('webhookResultId', 'Required parameter requestParameters.webhookResultId was null or undefined when calling getWebhookResult.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/{webhookResultId}".replace("{" + "webhookResultId" + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
+                                path: "/webhooks/results/{webhookResultId}".replace("{" + 'webhookResultId' + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookResultDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookResultDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -896,7 +935,8 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResults.');
                         }
                         queryParameters = {};
@@ -923,17 +963,19 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/results".replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/results".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageWebhookResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -964,23 +1006,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getWebhookResultsUnseenErrorCount.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/unseen-count".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/webhooks/results/unseen-count".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.UnseenErrorCountDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.UnseenErrorCountDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1011,23 +1056,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getWebhooks.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.WebhookDtoFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.WebhookDtoFromJSON);
+                            })];
                 }
             });
         });
@@ -1059,23 +1107,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookResultId === null || requestParameters.webhookResultId === undefined) {
+                        if (requestParameters.webhookResultId === null ||
+                            requestParameters.webhookResultId === undefined) {
                             throw new runtime.RequiredError('webhookResultId', 'Required parameter requestParameters.webhookResultId was null or undefined when calling redriveWebhookResult.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/{webhookResultId}/redrive".replace("{" + "webhookResultId" + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
+                                path: "/webhooks/results/{webhookResultId}/redrive".replace("{" + 'webhookResultId' + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookRedriveResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookRedriveResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1107,23 +1158,26 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.webhookId === null || requestParameters.webhookId === undefined) {
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
                             throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling sendTestData.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/test".replace("{" + "webhookId" + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/test".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.WebhookTestResultFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookTestResultFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -1149,36 +1203,36 @@ var WebhookControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.WebhookControllerApi = WebhookControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllWebhookResultsSortEnum;
 (function (GetAllWebhookResultsSortEnum) {
     GetAllWebhookResultsSortEnum["ASC"] = "ASC";
     GetAllWebhookResultsSortEnum["DESC"] = "DESC";
 })(GetAllWebhookResultsSortEnum = exports.GetAllWebhookResultsSortEnum || (exports.GetAllWebhookResultsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllWebhooksSortEnum;
 (function (GetAllWebhooksSortEnum) {
     GetAllWebhooksSortEnum["ASC"] = "ASC";
     GetAllWebhooksSortEnum["DESC"] = "DESC";
 })(GetAllWebhooksSortEnum = exports.GetAllWebhooksSortEnum || (exports.GetAllWebhooksSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetInboxWebhooksPaginatedSortEnum;
 (function (GetInboxWebhooksPaginatedSortEnum) {
     GetInboxWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetInboxWebhooksPaginatedSortEnum["DESC"] = "DESC";
 })(GetInboxWebhooksPaginatedSortEnum = exports.GetInboxWebhooksPaginatedSortEnum || (exports.GetInboxWebhooksPaginatedSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetTestWebhookPayloadEventNameEnum;
 (function (GetTestWebhookPayloadEventNameEnum) {
     GetTestWebhookPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -1189,9 +1243,9 @@ var GetTestWebhookPayloadEventNameEnum;
     GetTestWebhookPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
 })(GetTestWebhookPayloadEventNameEnum = exports.GetTestWebhookPayloadEventNameEnum || (exports.GetTestWebhookPayloadEventNameEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetWebhookResultsSortEnum;
 (function (GetWebhookResultsSortEnum) {
     GetWebhookResultsSortEnum["ASC"] = "ASC";

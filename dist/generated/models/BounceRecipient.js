@@ -20,15 +20,15 @@ function BounceRecipientFromJSON(json) {
 }
 exports.BounceRecipientFromJSON = BounceRecipientFromJSON;
 function BounceRecipientFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'recipient': json['recipient'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': json['userId'],
+        createdAt: new Date(json['createdAt']),
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        recipient: json['recipient'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: json['userId'],
     };
 }
 exports.BounceRecipientFromJSONTyped = BounceRecipientFromJSONTyped;
@@ -40,11 +40,11 @@ function BounceRecipientToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'recipient': value.recipient,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        recipient: value.recipient,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
     };
 }
 exports.BounceRecipientToJSON = BounceRecipientToJSON;

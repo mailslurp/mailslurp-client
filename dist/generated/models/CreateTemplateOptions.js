@@ -19,12 +19,12 @@ function CreateTemplateOptionsFromJSON(json) {
 }
 exports.CreateTemplateOptionsFromJSON = CreateTemplateOptionsFromJSON;
 function CreateTemplateOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'content': json['content'],
+        name: json['name'],
+        content: json['content'],
     };
 }
 exports.CreateTemplateOptionsFromJSONTyped = CreateTemplateOptionsFromJSONTyped;
@@ -36,8 +36,8 @@ function CreateTemplateOptionsToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'content': value.content,
+        name: value.name,
+        content: value.content,
     };
 }
 exports.CreateTemplateOptionsToJSON = CreateTemplateOptionsToJSON;

@@ -20,21 +20,21 @@ function SentEmailProjectionFromJSON(json) {
 }
 exports.SentEmailProjectionFromJSON = SentEmailProjectionFromJSON;
 function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachments': json['attachments'],
-        'bcc': json['bcc'],
-        'bodyMD5Hash': !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        'cc': json['cc'],
-        'createdAt': (new Date(json['createdAt'])),
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'id': json['id'],
-        'inboxId': json['inboxId'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': json['to'],
-        'userId': json['userId'],
+        attachments: json['attachments'],
+        bcc: json['bcc'],
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        cc: json['cc'],
+        createdAt: new Date(json['createdAt']),
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        id: json['id'],
+        inboxId: json['inboxId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: json['to'],
+        userId: json['userId'],
     };
 }
 exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
@@ -46,17 +46,17 @@ function SentEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        'attachments': value.attachments,
-        'bcc': value.bcc,
-        'bodyMD5Hash': value.bodyMD5Hash,
-        'cc': value.cc,
-        'createdAt': (value.createdAt.toISOString()),
-        'from': value.from,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'subject': value.subject,
-        'to': value.to,
-        'userId': value.userId,
+        attachments: value.attachments,
+        bcc: value.bcc,
+        bodyMD5Hash: value.bodyMD5Hash,
+        cc: value.cc,
+        createdAt: value.createdAt.toISOString(),
+        from: value.from,
+        id: value.id,
+        inboxId: value.inboxId,
+        subject: value.subject,
+        to: value.to,
+        userId: value.userId,
     };
 }
 exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;

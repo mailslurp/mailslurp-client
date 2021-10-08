@@ -16,16 +16,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConditionOptionToJSON = exports.ConditionOptionFromJSONTyped = exports.ConditionOptionFromJSON = exports.ConditionOptionValueEnum = exports.ConditionOptionConditionEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var ConditionOptionConditionEnum;
 (function (ConditionOptionConditionEnum) {
     ConditionOptionConditionEnum["HAS_ATTACHMENTS"] = "HAS_ATTACHMENTS";
-})(ConditionOptionConditionEnum = exports.ConditionOptionConditionEnum || (exports.ConditionOptionConditionEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(ConditionOptionConditionEnum = exports.ConditionOptionConditionEnum || (exports.ConditionOptionConditionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var ConditionOptionValueEnum;
 (function (ConditionOptionValueEnum) {
     ConditionOptionValueEnum["TRUE"] = "TRUE";
@@ -36,12 +37,12 @@ function ConditionOptionFromJSON(json) {
 }
 exports.ConditionOptionFromJSON = ConditionOptionFromJSON;
 function ConditionOptionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'condition': !(0, runtime_1.exists)(json, 'condition') ? undefined : json['condition'],
-        'value': !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
+        condition: !(0, runtime_1.exists)(json, 'condition') ? undefined : json['condition'],
+        value: !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
     };
 }
 exports.ConditionOptionFromJSONTyped = ConditionOptionFromJSONTyped;
@@ -53,8 +54,8 @@ function ConditionOptionToJSON(value) {
         return null;
     }
     return {
-        'condition': value.condition,
-        'value': value.value,
+        condition: value.condition,
+        value: value.value,
     };
 }
 exports.ConditionOptionToJSON = ConditionOptionToJSON;

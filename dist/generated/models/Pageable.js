@@ -21,16 +21,16 @@ function PageableFromJSON(json) {
 }
 exports.PageableFromJSON = PageableFromJSON;
 function PageableFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'offset': !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
-        'pageNumber': !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
-        'pageSize': !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
-        'paged': !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
-        'sort': !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
-        'unpaged': !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
+        offset: !(0, runtime_1.exists)(json, 'offset') ? undefined : json['offset'],
+        pageNumber: !(0, runtime_1.exists)(json, 'pageNumber') ? undefined : json['pageNumber'],
+        pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
+        paged: !(0, runtime_1.exists)(json, 'paged') ? undefined : json['paged'],
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
+        unpaged: !(0, runtime_1.exists)(json, 'unpaged') ? undefined : json['unpaged'],
     };
 }
 exports.PageableFromJSONTyped = PageableFromJSONTyped;
@@ -42,12 +42,12 @@ function PageableToJSON(value) {
         return null;
     }
     return {
-        'offset': value.offset,
-        'pageNumber': value.pageNumber,
-        'pageSize': value.pageSize,
-        'paged': value.paged,
-        'sort': (0, _1.SortToJSON)(value.sort),
-        'unpaged': value.unpaged,
+        offset: value.offset,
+        pageNumber: value.pageNumber,
+        pageSize: value.pageSize,
+        paged: value.paged,
+        sort: (0, _1.SortToJSON)(value.sort),
+        unpaged: value.unpaged,
     };
 }
 exports.PageableToJSON = PageableToJSON;

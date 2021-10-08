@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var OrganizationInboxProjectionInboxTypeEnum;
 (function (OrganizationInboxProjectionInboxTypeEnum) {
     OrganizationInboxProjectionInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,19 +29,23 @@ function OrganizationInboxProjectionFromJSON(json) {
 }
 exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
 function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'readOnly': !(0, runtime_1.exists)(json, 'readOnly') ? undefined : json['readOnly'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'teamAccess': !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        readOnly: !(0, runtime_1.exists)(json, 'readOnly') ? undefined : json['readOnly'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        teamAccess: !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -53,15 +57,15 @@ function OrganizationInboxProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'emailAddress': value.emailAddress,
-        'favourite': value.favourite,
-        'id': value.id,
-        'inboxType': value.inboxType,
-        'name': value.name,
-        'readOnly': value.readOnly,
-        'tags': value.tags,
-        'teamAccess': value.teamAccess,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        emailAddress: value.emailAddress,
+        favourite: value.favourite,
+        id: value.id,
+        inboxType: value.inboxType,
+        name: value.name,
+        readOnly: value.readOnly,
+        tags: value.tags,
+        teamAccess: value.teamAccess,
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

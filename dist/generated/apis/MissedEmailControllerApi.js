@@ -127,7 +127,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/missed-emails",
@@ -137,7 +137,9 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageMissedEmailProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageMissedEmailProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -193,7 +195,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/missed-emails/unknown",
@@ -203,7 +205,9 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageUnknownMissedEmailProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageUnknownMissedEmailProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -235,23 +239,26 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.missedEmailId === null || requestParameters.missedEmailId === undefined) {
+                        if (requestParameters.missedEmailId === null ||
+                            requestParameters.missedEmailId === undefined) {
                             throw new runtime.RequiredError('missedEmailId', 'Required parameter requestParameters.missedEmailId was null or undefined when calling getMissedEmail.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/missed-emails/{missedEmailId}".replace("{" + "missedEmailId" + "}", encodeURIComponent(String(requestParameters.missedEmailId))),
+                                path: "/missed-emails/{missedEmailId}".replace("{" + 'missedEmailId' + "}", encodeURIComponent(String(requestParameters.missedEmailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.MissedEmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.MissedEmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -301,7 +308,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/missed-emails/waitForNthMissedEmail",
@@ -311,7 +318,9 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.MissedEmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.MissedEmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -338,18 +347,18 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.MissedEmailControllerApi = MissedEmailControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllMissedEmailsSortEnum;
 (function (GetAllMissedEmailsSortEnum) {
     GetAllMissedEmailsSortEnum["ASC"] = "ASC";
     GetAllMissedEmailsSortEnum["DESC"] = "DESC";
 })(GetAllMissedEmailsSortEnum = exports.GetAllMissedEmailsSortEnum || (exports.GetAllMissedEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllUnknownMissedEmailsSortEnum;
 (function (GetAllUnknownMissedEmailsSortEnum) {
     GetAllUnknownMissedEmailsSortEnum["ASC"] = "ASC";

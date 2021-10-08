@@ -103,14 +103,15 @@ var ContactControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createContactOptions === null || requestParameters.createContactOptions === undefined) {
+                        if (requestParameters.createContactOptions === null ||
+                            requestParameters.createContactOptions === undefined) {
                             throw new runtime.RequiredError('createContactOptions', 'Required parameter requestParameters.createContactOptions was null or undefined when calling createContact.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/contacts",
@@ -121,7 +122,9 @@ var ContactControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ContactDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ContactDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -152,16 +155,17 @@ var ContactControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
+                        if (requestParameters.contactId === null ||
+                            requestParameters.contactId === undefined) {
                             throw new runtime.RequiredError('contactId', 'Required parameter requestParameters.contactId was null or undefined when calling deleteContact.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/contacts/{contactId}".replace("{" + "contactId" + "}", encodeURIComponent(String(requestParameters.contactId))),
+                                path: "/contacts/{contactId}".replace("{" + 'contactId' + "}", encodeURIComponent(String(requestParameters.contactId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -215,7 +219,7 @@ var ContactControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/contacts/paginated",
@@ -225,7 +229,9 @@ var ContactControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageContactProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageContactProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -256,23 +262,26 @@ var ContactControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
+                        if (requestParameters.contactId === null ||
+                            requestParameters.contactId === undefined) {
                             throw new runtime.RequiredError('contactId', 'Required parameter requestParameters.contactId was null or undefined when calling getContact.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/contacts/{contactId}".replace("{" + "contactId" + "}", encodeURIComponent(String(requestParameters.contactId))),
+                                path: "/contacts/{contactId}".replace("{" + 'contactId' + "}", encodeURIComponent(String(requestParameters.contactId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ContactDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ContactDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -303,16 +312,17 @@ var ContactControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.contactId === null || requestParameters.contactId === undefined) {
+                        if (requestParameters.contactId === null ||
+                            requestParameters.contactId === undefined) {
                             throw new runtime.RequiredError('contactId', 'Required parameter requestParameters.contactId was null or undefined when calling getContactVCard.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/contacts/{contactId}/download".replace("{" + "contactId" + "}", encodeURIComponent(String(requestParameters.contactId))),
+                                path: "/contacts/{contactId}/download".replace("{" + 'contactId' + "}", encodeURIComponent(String(requestParameters.contactId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -353,7 +363,7 @@ var ContactControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/contacts",
@@ -363,7 +373,9 @@ var ContactControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.ContactProjectionFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.ContactProjectionFromJSON);
+                            })];
                 }
             });
         });
@@ -389,9 +401,9 @@ var ContactControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.ContactControllerApi = ContactControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllContactsSortEnum;
 (function (GetAllContactsSortEnum) {
     GetAllContactsSortEnum["ASC"] = "ASC";

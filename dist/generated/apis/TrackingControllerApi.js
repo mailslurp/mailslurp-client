@@ -104,14 +104,15 @@ var TrackingControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.createTrackingPixelOptions === null || requestParameters.createTrackingPixelOptions === undefined) {
+                        if (requestParameters.createTrackingPixelOptions === null ||
+                            requestParameters.createTrackingPixelOptions === undefined) {
                             throw new runtime.RequiredError('createTrackingPixelOptions', 'Required parameter requestParameters.createTrackingPixelOptions was null or undefined when calling createTrackingPixel.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tracking/pixels",
@@ -122,7 +123,9 @@ var TrackingControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TrackingPixelDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TrackingPixelDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -176,7 +179,7 @@ var TrackingControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/tracking/pixels",
@@ -186,7 +189,9 @@ var TrackingControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageTrackingPixelProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -224,17 +229,19 @@ var TrackingControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/tracking/pixels/{id}".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/tracking/pixels/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.TrackingPixelDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TrackingPixelDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -260,9 +267,9 @@ var TrackingControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.TrackingControllerApi = TrackingControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetAllTrackingPixelsSortEnum;
 (function (GetAllTrackingPixelsSortEnum) {
     GetAllTrackingPixelsSortEnum["ASC"] = "ASC";

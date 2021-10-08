@@ -16,11 +16,14 @@
       "jest",
       "node"
     ],
+    "paths": {
+      "mailslurp-client": ["./dist"]
+    },
     "skipLibCheck": true,
     "noImplicitAny": true,
     "strict": false
   },
   "include": [
     "src/index.ts"
-  ]
+    ],
 }

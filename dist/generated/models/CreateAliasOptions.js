@@ -20,14 +20,16 @@ function CreateAliasOptionsFromJSON(json) {
 }
 exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
 function CreateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'useThreads': !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
     };
 }
 exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
@@ -39,10 +41,10 @@ function CreateAliasOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailAddress': value.emailAddress,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'useThreads': value.useThreads,
+        emailAddress: value.emailAddress,
+        inboxId: value.inboxId,
+        name: value.name,
+        useThreads: value.useThreads,
     };
 }
 exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;

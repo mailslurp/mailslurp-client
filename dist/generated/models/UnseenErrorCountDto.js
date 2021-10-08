@@ -19,11 +19,11 @@ function UnseenErrorCountDtoFromJSON(json) {
 }
 exports.UnseenErrorCountDtoFromJSON = UnseenErrorCountDtoFromJSON;
 function UnseenErrorCountDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'count': json['count'],
+        count: json['count'],
     };
 }
 exports.UnseenErrorCountDtoFromJSONTyped = UnseenErrorCountDtoFromJSONTyped;
@@ -35,7 +35,7 @@ function UnseenErrorCountDtoToJSON(value) {
         return null;
     }
     return {
-        'count': value.count,
+        count: value.count,
     };
 }
 exports.UnseenErrorCountDtoToJSON = UnseenErrorCountDtoToJSON;

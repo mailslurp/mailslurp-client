@@ -20,15 +20,17 @@ function UpdateInboxOptionsFromJSON(json) {
 }
 exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
 function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : (new Date(json['expiresAt'])),
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
+            ? undefined
+            : new Date(json['expiresAt']),
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
     };
 }
 exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
@@ -40,11 +42,11 @@ function UpdateInboxOptionsToJSON(value) {
         return null;
     }
     return {
-        'description': value.description,
-        'expiresAt': value.expiresAt === undefined ? undefined : (value.expiresAt.toISOString()),
-        'favourite': value.favourite,
-        'name': value.name,
-        'tags': value.tags,
+        description: value.description,
+        expiresAt: value.expiresAt === undefined ? undefined : value.expiresAt.toISOString(),
+        favourite: value.favourite,
+        name: value.name,
+        tags: value.tags,
     };
 }
 exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;

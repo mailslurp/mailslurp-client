@@ -20,26 +20,26 @@ function SentEmailDtoFromJSON(json) {
 }
 exports.SentEmailDtoFromJSON = SentEmailDtoFromJSON;
 function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachments': !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'body': !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        'bodyMD5Hash': !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'charset': !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'isHTML': !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
-        'pixelIds': !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
-        'replyTo': !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
-        'sentAt': (new Date(json['sentAt'])),
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
-        'userId': !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
+        pixelIds: !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
+        replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
+        sentAt: new Date(json['sentAt']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
+        userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
     };
 }
 exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
@@ -51,22 +51,22 @@ function SentEmailDtoToJSON(value) {
         return null;
     }
     return {
-        'attachments': value.attachments,
-        'bcc': value.bcc,
-        'body': value.body,
-        'bodyMD5Hash': value.bodyMD5Hash,
-        'cc': value.cc,
-        'charset': value.charset,
-        'from': value.from,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'isHTML': value.isHTML,
-        'pixelIds': value.pixelIds,
-        'replyTo': value.replyTo,
-        'sentAt': (value.sentAt.toISOString()),
-        'subject': value.subject,
-        'to': value.to,
-        'userId': value.userId,
+        attachments: value.attachments,
+        bcc: value.bcc,
+        body: value.body,
+        bodyMD5Hash: value.bodyMD5Hash,
+        cc: value.cc,
+        charset: value.charset,
+        from: value.from,
+        id: value.id,
+        inboxId: value.inboxId,
+        isHTML: value.isHTML,
+        pixelIds: value.pixelIds,
+        replyTo: value.replyTo,
+        sentAt: value.sentAt.toISOString(),
+        subject: value.subject,
+        to: value.to,
+        userId: value.userId,
     };
 }
 exports.SentEmailDtoToJSON = SentEmailDtoToJSON;

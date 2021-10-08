@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var InboxPreviewInboxTypeEnum;
 (function (InboxPreviewInboxTypeEnum) {
     InboxPreviewInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -29,19 +29,23 @@ function InboxPreviewFromJSON(json) {
 }
 exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
 function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'expiresAt': !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
-        'favourite': !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'inboxType': !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'teamAccess': !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        teamAccess: !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -53,15 +57,15 @@ function InboxPreviewToJSON(value) {
         return null;
     }
     return {
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'emailAddress': value.emailAddress,
-        'expiresAt': value.expiresAt,
-        'favourite': value.favourite,
-        'id': value.id,
-        'inboxType': value.inboxType,
-        'name': value.name,
-        'tags': value.tags,
-        'teamAccess': value.teamAccess,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        emailAddress: value.emailAddress,
+        expiresAt: value.expiresAt,
+        favourite: value.favourite,
+        id: value.id,
+        inboxType: value.inboxType,
+        name: value.name,
+        tags: value.tags,
+        teamAccess: value.teamAccess,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

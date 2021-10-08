@@ -1,3 +1,5 @@
+# README.md is generated so edit template instead
+
 .PHONY: docs test
 
 SPEC_URL=/tmp/swagger.json

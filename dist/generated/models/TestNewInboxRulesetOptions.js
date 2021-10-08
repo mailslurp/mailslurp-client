@@ -20,12 +20,12 @@ function TestNewInboxRulesetOptionsFromJSON(json) {
 }
 exports.TestNewInboxRulesetOptionsFromJSON = TestNewInboxRulesetOptionsFromJSON;
 function TestNewInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'inboxRulesetTestOptions': (0, _1.InboxRulesetTestOptionsFromJSON)(json['inboxRulesetTestOptions']),
-        'createInboxRulesetOptions': (0, _1.CreateInboxRulesetOptionsFromJSON)(json['createInboxRulesetOptions']),
+        inboxRulesetTestOptions: (0, _1.InboxRulesetTestOptionsFromJSON)(json['inboxRulesetTestOptions']),
+        createInboxRulesetOptions: (0, _1.CreateInboxRulesetOptionsFromJSON)(json['createInboxRulesetOptions']),
     };
 }
 exports.TestNewInboxRulesetOptionsFromJSONTyped = TestNewInboxRulesetOptionsFromJSONTyped;
@@ -37,8 +37,8 @@ function TestNewInboxRulesetOptionsToJSON(value) {
         return null;
     }
     return {
-        'inboxRulesetTestOptions': (0, _1.InboxRulesetTestOptionsToJSON)(value.inboxRulesetTestOptions),
-        'createInboxRulesetOptions': (0, _1.CreateInboxRulesetOptionsToJSON)(value.createInboxRulesetOptions),
+        inboxRulesetTestOptions: (0, _1.InboxRulesetTestOptionsToJSON)(value.inboxRulesetTestOptions),
+        createInboxRulesetOptions: (0, _1.CreateInboxRulesetOptionsToJSON)(value.createInboxRulesetOptions),
     };
 }
 exports.TestNewInboxRulesetOptionsToJSON = TestNewInboxRulesetOptionsToJSON;

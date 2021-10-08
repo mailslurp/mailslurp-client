@@ -71,9 +71,9 @@ export interface OrganizationInboxProjection {
     teamAccess?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum OrganizationInboxProjectionInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"

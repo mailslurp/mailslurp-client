@@ -130,41 +130,41 @@ export declare class WaitForControllerApi extends runtime.BaseAPI {
     waitForNthEmail(requestParameters: WaitForNthEmailRequest, initOverrides?: RequestInit): Promise<Email>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForEmailCountSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForLatestEmailSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForMatchingEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForMatchingFirstEmailSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum WaitForNthEmailSortEnum {
     ASC = "ASC",
     DESC = "DESC"

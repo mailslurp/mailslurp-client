@@ -20,13 +20,13 @@ function UploadAttachmentOptionsFromJSON(json) {
 }
 exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
 function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'base64Contents': json['base64Contents'],
-        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        'filename': !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
+        base64Contents: json['base64Contents'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        filename: !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
     };
 }
 exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
@@ -38,9 +38,9 @@ function UploadAttachmentOptionsToJSON(value) {
         return null;
     }
     return {
-        'base64Contents': value.base64Contents,
-        'contentType': value.contentType,
-        'filename': value.filename,
+        base64Contents: value.base64Contents,
+        contentType: value.contentType,
+        filename: value.filename,
     };
 }
 exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;

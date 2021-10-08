@@ -20,12 +20,14 @@ function InboxRulesetTestResultFromJSON(json) {
 }
 exports.InboxRulesetTestResultFromJSON = InboxRulesetTestResultFromJSON;
 function InboxRulesetTestResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'matches': json['matches'],
-        'rulesetMatches': !(0, runtime_1.exists)(json, 'rulesetMatches') ? undefined : json['rulesetMatches'],
+        matches: json['matches'],
+        rulesetMatches: !(0, runtime_1.exists)(json, 'rulesetMatches')
+            ? undefined
+            : json['rulesetMatches'],
     };
 }
 exports.InboxRulesetTestResultFromJSONTyped = InboxRulesetTestResultFromJSONTyped;
@@ -37,8 +39,8 @@ function InboxRulesetTestResultToJSON(value) {
         return null;
     }
     return {
-        'matches': value.matches,
-        'rulesetMatches': value.rulesetMatches,
+        matches: value.matches,
+        rulesetMatches: value.rulesetMatches,
     };
 }
 exports.InboxRulesetTestResultToJSON = InboxRulesetTestResultToJSON;

@@ -20,16 +20,18 @@ function ForwardEmailOptionsFromJSON(json) {
 }
 exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
 function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'from': !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
-        'useInboxName': !(0, runtime_1.exists)(json, 'useInboxName') ? undefined : json['useInboxName'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
+        useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
+            ? undefined
+            : json['useInboxName'],
     };
 }
 exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
@@ -41,12 +43,12 @@ function ForwardEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        'bcc': value.bcc,
-        'cc': value.cc,
-        'from': value.from,
-        'subject': value.subject,
-        'to': value.to,
-        'useInboxName': value.useInboxName,
+        bcc: value.bcc,
+        cc: value.cc,
+        from: value.from,
+        subject: value.subject,
+        to: value.to,
+        useInboxName: value.useInboxName,
     };
 }
 exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;

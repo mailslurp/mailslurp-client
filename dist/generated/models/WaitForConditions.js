@@ -17,17 +17,18 @@ exports.WaitForConditionsToJSON = exports.WaitForConditionsFromJSONTyped = expor
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WaitForConditionsCountTypeEnum;
 (function (WaitForConditionsCountTypeEnum) {
     WaitForConditionsCountTypeEnum["EXACTLY"] = "EXACTLY";
     WaitForConditionsCountTypeEnum["ATLEAST"] = "ATLEAST";
-})(WaitForConditionsCountTypeEnum = exports.WaitForConditionsCountTypeEnum || (exports.WaitForConditionsCountTypeEnum = {})); /**
-* @export
-* @enum {string}
-*/
+})(WaitForConditionsCountTypeEnum = exports.WaitForConditionsCountTypeEnum || (exports.WaitForConditionsCountTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var WaitForConditionsSortDirectionEnum;
 (function (WaitForConditionsSortDirectionEnum) {
     WaitForConditionsSortDirectionEnum["ASC"] = "ASC";
@@ -38,20 +39,26 @@ function WaitForConditionsFromJSON(json) {
 }
 exports.WaitForConditionsFromJSON = WaitForConditionsFromJSON;
 function WaitForConditionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'before': !(0, runtime_1.exists)(json, 'before') ? undefined : (new Date(json['before'])),
-        'count': !(0, runtime_1.exists)(json, 'count') ? undefined : json['count'],
-        'countType': !(0, runtime_1.exists)(json, 'countType') ? undefined : json['countType'],
-        'delayTimeout': !(0, runtime_1.exists)(json, 'delayTimeout') ? undefined : json['delayTimeout'],
-        'inboxId': json['inboxId'],
-        'matches': !(0, runtime_1.exists)(json, 'matches') ? undefined : (json['matches'].map(_1.MatchOptionFromJSON)),
-        'since': !(0, runtime_1.exists)(json, 'since') ? undefined : (new Date(json['since'])),
-        'sortDirection': !(0, runtime_1.exists)(json, 'sortDirection') ? undefined : json['sortDirection'],
-        'timeout': json['timeout'],
-        'unreadOnly': !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
+        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
+        count: !(0, runtime_1.exists)(json, 'count') ? undefined : json['count'],
+        countType: !(0, runtime_1.exists)(json, 'countType') ? undefined : json['countType'],
+        delayTimeout: !(0, runtime_1.exists)(json, 'delayTimeout')
+            ? undefined
+            : json['delayTimeout'],
+        inboxId: json['inboxId'],
+        matches: !(0, runtime_1.exists)(json, 'matches')
+            ? undefined
+            : json['matches'].map(_1.MatchOptionFromJSON),
+        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
+        sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
+            ? undefined
+            : json['sortDirection'],
+        timeout: json['timeout'],
+        unreadOnly: !(0, runtime_1.exists)(json, 'unreadOnly') ? undefined : json['unreadOnly'],
     };
 }
 exports.WaitForConditionsFromJSONTyped = WaitForConditionsFromJSONTyped;
@@ -63,16 +70,18 @@ function WaitForConditionsToJSON(value) {
         return null;
     }
     return {
-        'before': value.before === undefined ? undefined : (value.before.toISOString()),
-        'count': value.count,
-        'countType': value.countType,
-        'delayTimeout': value.delayTimeout,
-        'inboxId': value.inboxId,
-        'matches': value.matches === undefined ? undefined : (value.matches.map(_1.MatchOptionToJSON)),
-        'since': value.since === undefined ? undefined : (value.since.toISOString()),
-        'sortDirection': value.sortDirection,
-        'timeout': value.timeout,
-        'unreadOnly': value.unreadOnly,
+        before: value.before === undefined ? undefined : value.before.toISOString(),
+        count: value.count,
+        countType: value.countType,
+        delayTimeout: value.delayTimeout,
+        inboxId: value.inboxId,
+        matches: value.matches === undefined
+            ? undefined
+            : value.matches.map(_1.MatchOptionToJSON),
+        since: value.since === undefined ? undefined : value.since.toISOString(),
+        sortDirection: value.sortDirection,
+        timeout: value.timeout,
+        unreadOnly: value.unreadOnly,
     };
 }
 exports.WaitForConditionsToJSON = WaitForConditionsToJSON;

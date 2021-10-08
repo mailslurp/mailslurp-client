@@ -20,12 +20,12 @@ function WebhookTestResponseFromJSON(json) {
 }
 exports.WebhookTestResponseFromJSON = WebhookTestResponseFromJSON;
 function WebhookTestResponseFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'message': !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        'statusCode': !(0, runtime_1.exists)(json, 'statusCode') ? undefined : json['statusCode'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        statusCode: !(0, runtime_1.exists)(json, 'statusCode') ? undefined : json['statusCode'],
     };
 }
 exports.WebhookTestResponseFromJSONTyped = WebhookTestResponseFromJSONTyped;
@@ -37,8 +37,8 @@ function WebhookTestResponseToJSON(value) {
         return null;
     }
     return {
-        'message': value.message,
-        'statusCode': value.statusCode,
+        message: value.message,
+        statusCode: value.statusCode,
     };
 }
 exports.WebhookTestResponseToJSON = WebhookTestResponseToJSON;

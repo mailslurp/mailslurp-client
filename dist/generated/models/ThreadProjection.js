@@ -20,21 +20,21 @@ function ThreadProjectionFromJSON(json) {
 }
 exports.ThreadProjectionFromJSON = ThreadProjectionFromJSON;
 function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'aliasId': json['aliasId'],
-        'bcc': !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
-        'cc': !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        'createdAt': (new Date(json['createdAt'])),
-        'id': json['id'],
-        'inboxId': json['inboxId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': json['to'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': json['userId'],
+        aliasId: json['aliasId'],
+        bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
+        cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
+        createdAt: new Date(json['createdAt']),
+        id: json['id'],
+        inboxId: json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: json['to'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: json['userId'],
     };
 }
 exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
@@ -46,17 +46,17 @@ function ThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        'aliasId': value.aliasId,
-        'bcc': value.bcc,
-        'cc': value.cc,
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'subject': value.subject,
-        'to': value.to,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
+        aliasId: value.aliasId,
+        bcc: value.bcc,
+        cc: value.cc,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        inboxId: value.inboxId,
+        name: value.name,
+        subject: value.subject,
+        to: value.to,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
     };
 }
 exports.ThreadProjectionToJSON = ThreadProjectionToJSON;

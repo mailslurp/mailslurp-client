@@ -29,9 +29,9 @@ export interface TemplateVariable {
     variableType: TemplateVariableVariableTypeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum TemplateVariableVariableTypeEnum {
     STRING = "STRING"
 }

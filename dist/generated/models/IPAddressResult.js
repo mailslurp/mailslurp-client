@@ -19,12 +19,12 @@ function IPAddressResultFromJSON(json) {
 }
 exports.IPAddressResultFromJSON = IPAddressResultFromJSON;
 function IPAddressResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'address': json['address'],
-        'hostname': json['hostname'],
+        address: json['address'],
+        hostname: json['hostname'],
     };
 }
 exports.IPAddressResultFromJSONTyped = IPAddressResultFromJSONTyped;
@@ -36,8 +36,8 @@ function IPAddressResultToJSON(value) {
         return null;
     }
     return {
-        'address': value.address,
-        'hostname': value.hostname,
+        address: value.address,
+        hostname: value.hostname,
     };
 }
 exports.IPAddressResultToJSON = IPAddressResultToJSON;

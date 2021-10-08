@@ -20,13 +20,15 @@ function DownloadAttachmentDtoFromJSON(json) {
 }
 exports.DownloadAttachmentDtoFromJSON = DownloadAttachmentDtoFromJSON;
 function DownloadAttachmentDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'base64FileContents': !(0, runtime_1.exists)(json, 'base64FileContents') ? undefined : json['base64FileContents'],
-        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        'sizeBytes': !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+        base64FileContents: !(0, runtime_1.exists)(json, 'base64FileContents')
+            ? undefined
+            : json['base64FileContents'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     };
 }
 exports.DownloadAttachmentDtoFromJSONTyped = DownloadAttachmentDtoFromJSONTyped;
@@ -38,9 +40,9 @@ function DownloadAttachmentDtoToJSON(value) {
         return null;
     }
     return {
-        'base64FileContents': value.base64FileContents,
-        'contentType': value.contentType,
-        'sizeBytes': value.sizeBytes,
+        base64FileContents: value.base64FileContents,
+        contentType: value.contentType,
+        sizeBytes: value.sizeBytes,
     };
 }
 exports.DownloadAttachmentDtoToJSON = DownloadAttachmentDtoToJSON;

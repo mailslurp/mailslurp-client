@@ -130,9 +130,9 @@ export declare class InboxRulesetControllerApi extends runtime.BaseAPI {
     testNewInboxRuleset(requestParameters: TestNewInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxRulesetsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

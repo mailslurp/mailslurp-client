@@ -21,21 +21,29 @@ function PageWebhookResultFromJSON(json) {
 }
 exports.PageWebhookResultFromJSON = PageWebhookResultFromJSON;
 function PageWebhookResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'content': !(0, runtime_1.exists)(json, 'content') ? undefined : (json['content'].map(_1.WebhookResultDtoFromJSON)),
-        'empty': !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
-        'first': !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
-        'last': !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        'number': !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        'numberOfElements': !(0, runtime_1.exists)(json, 'numberOfElements') ? undefined : json['numberOfElements'],
-        'pageable': !(0, runtime_1.exists)(json, 'pageable') ? undefined : (0, _1.PageableFromJSON)(json['pageable']),
-        'size': !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        'sort': !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
-        'totalElements': !(0, runtime_1.exists)(json, 'totalElements') ? undefined : json['totalElements'],
-        'totalPages': !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
+        content: !(0, runtime_1.exists)(json, 'content')
+            ? undefined
+            : json['content'].map(_1.WebhookResultDtoFromJSON),
+        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
+        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
+        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
+            ? undefined
+            : json['numberOfElements'],
+        pageable: !(0, runtime_1.exists)(json, 'pageable')
+            ? undefined
+            : (0, _1.PageableFromJSON)(json['pageable']),
+        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
+        totalElements: !(0, runtime_1.exists)(json, 'totalElements')
+            ? undefined
+            : json['totalElements'],
+        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
     };
 }
 exports.PageWebhookResultFromJSONTyped = PageWebhookResultFromJSONTyped;
@@ -47,17 +55,19 @@ function PageWebhookResultToJSON(value) {
         return null;
     }
     return {
-        'content': value.content === undefined ? undefined : (value.content.map(_1.WebhookResultDtoToJSON)),
-        'empty': value.empty,
-        'first': value.first,
-        'last': value.last,
-        'number': value.number,
-        'numberOfElements': value.numberOfElements,
-        'pageable': (0, _1.PageableToJSON)(value.pageable),
-        'size': value.size,
-        'sort': (0, _1.SortToJSON)(value.sort),
-        'totalElements': value.totalElements,
-        'totalPages': value.totalPages,
+        content: value.content === undefined
+            ? undefined
+            : value.content.map(_1.WebhookResultDtoToJSON),
+        empty: value.empty,
+        first: value.first,
+        last: value.last,
+        number: value.number,
+        numberOfElements: value.numberOfElements,
+        pageable: (0, _1.PageableToJSON)(value.pageable),
+        size: value.size,
+        sort: (0, _1.SortToJSON)(value.sort),
+        totalElements: value.totalElements,
+        totalPages: value.totalPages,
     };
 }
 exports.PageWebhookResultToJSON = PageWebhookResultToJSON;

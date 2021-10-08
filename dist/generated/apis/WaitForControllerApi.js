@@ -108,7 +108,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitFor",
@@ -119,7 +119,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.EmailPreviewFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.EmailPreviewFromJSON);
+                            })];
                 }
             });
         });
@@ -179,7 +181,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitForEmailCount",
@@ -189,7 +191,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.EmailPreviewFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.EmailPreviewFromJSON);
+                            })];
                 }
             });
         });
@@ -246,7 +250,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitForLatestEmail",
@@ -256,7 +260,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -289,7 +295,8 @@ var WaitForControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.matchOptions === null || requestParameters.matchOptions === undefined) {
+                        if (requestParameters.matchOptions === null ||
+                            requestParameters.matchOptions === undefined) {
                             throw new runtime.RequiredError('matchOptions', 'Required parameter requestParameters.matchOptions was null or undefined when calling waitForMatchingEmails.');
                         }
                         queryParameters = {};
@@ -320,7 +327,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitForMatchingEmails",
@@ -331,7 +338,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return jsonValue.map(models_1.EmailPreviewFromJSON); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.EmailPreviewFromJSON);
+                            })];
                 }
             });
         });
@@ -364,7 +373,8 @@ var WaitForControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.matchOptions === null || requestParameters.matchOptions === undefined) {
+                        if (requestParameters.matchOptions === null ||
+                            requestParameters.matchOptions === undefined) {
                             throw new runtime.RequiredError('matchOptions', 'Required parameter requestParameters.matchOptions was null or undefined when calling waitForMatchingFirstEmail.');
                         }
                         queryParameters = {};
@@ -392,7 +402,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitForMatchingFirstEmail",
@@ -403,7 +413,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -463,7 +475,7 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/waitForNthEmail",
@@ -473,7 +485,9 @@ var WaitForControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.EmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -500,45 +514,45 @@ var WaitForControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.WaitForControllerApi = WaitForControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var WaitForEmailCountSortEnum;
 (function (WaitForEmailCountSortEnum) {
     WaitForEmailCountSortEnum["ASC"] = "ASC";
     WaitForEmailCountSortEnum["DESC"] = "DESC";
 })(WaitForEmailCountSortEnum = exports.WaitForEmailCountSortEnum || (exports.WaitForEmailCountSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var WaitForLatestEmailSortEnum;
 (function (WaitForLatestEmailSortEnum) {
     WaitForLatestEmailSortEnum["ASC"] = "ASC";
     WaitForLatestEmailSortEnum["DESC"] = "DESC";
 })(WaitForLatestEmailSortEnum = exports.WaitForLatestEmailSortEnum || (exports.WaitForLatestEmailSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var WaitForMatchingEmailsSortEnum;
 (function (WaitForMatchingEmailsSortEnum) {
     WaitForMatchingEmailsSortEnum["ASC"] = "ASC";
     WaitForMatchingEmailsSortEnum["DESC"] = "DESC";
 })(WaitForMatchingEmailsSortEnum = exports.WaitForMatchingEmailsSortEnum || (exports.WaitForMatchingEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var WaitForMatchingFirstEmailSortEnum;
 (function (WaitForMatchingFirstEmailSortEnum) {
     WaitForMatchingFirstEmailSortEnum["ASC"] = "ASC";
     WaitForMatchingFirstEmailSortEnum["DESC"] = "DESC";
 })(WaitForMatchingFirstEmailSortEnum = exports.WaitForMatchingFirstEmailSortEnum || (exports.WaitForMatchingFirstEmailSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var WaitForNthEmailSortEnum;
 (function (WaitForNthEmailSortEnum) {
     WaitForNthEmailSortEnum["ASC"] = "ASC";

@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookProjectionToJSON = exports.WebhookProjectionFromJSONTyped = exports.WebhookProjectionFromJSON = exports.WebhookProjectionEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookProjectionEventNameEnum;
 (function (WebhookProjectionEventNameEnum) {
     WebhookProjectionEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -33,17 +33,17 @@ function WebhookProjectionFromJSON(json) {
 }
 exports.WebhookProjectionFromJSON = WebhookProjectionFromJSON;
 function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'id': json['id'],
-        'inboxId': json['inboxId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'url': json['url'],
+        createdAt: new Date(json['createdAt']),
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        id: json['id'],
+        inboxId: json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        updatedAt: new Date(json['updatedAt']),
+        url: json['url'],
     };
 }
 exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
@@ -55,13 +55,13 @@ function WebhookProjectionToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'eventName': value.eventName,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'name': value.name,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'url': value.url,
+        createdAt: value.createdAt.toISOString(),
+        eventName: value.eventName,
+        id: value.id,
+        inboxId: value.inboxId,
+        name: value.name,
+        updatedAt: value.updatedAt.toISOString(),
+        url: value.url,
     };
 }
 exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

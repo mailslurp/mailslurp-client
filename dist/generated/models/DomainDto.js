@@ -17,9 +17,9 @@ exports.DomainDtoToJSON = exports.DomainDtoFromJSONTyped = exports.DomainDtoFrom
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DomainDtoDomainTypeEnum;
 (function (DomainDtoDomainTypeEnum) {
     DomainDtoDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
@@ -30,21 +30,27 @@ function DomainDtoFromJSON(json) {
 }
 exports.DomainDtoFromJSON = DomainDtoFromJSON;
 function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'catchAllInboxId': !(0, runtime_1.exists)(json, 'catchAllInboxId') ? undefined : json['catchAllInboxId'],
-        'createdAt': (new Date(json['createdAt'])),
-        'dkimTokens': !(0, runtime_1.exists)(json, 'dkimTokens') ? undefined : json['dkimTokens'],
-        'domain': !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
-        'domainNameRecords': !(0, runtime_1.exists)(json, 'domainNameRecords') ? undefined : (json['domainNameRecords'].map(_1.DomainNameRecordFromJSON)),
-        'domainType': !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
-        'id': json['id'],
-        'isVerified': !(0, runtime_1.exists)(json, 'isVerified') ? undefined : json['isVerified'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': json['userId'],
-        'verificationToken': !(0, runtime_1.exists)(json, 'verificationToken') ? undefined : json['verificationToken'],
+        catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
+            ? undefined
+            : json['catchAllInboxId'],
+        createdAt: new Date(json['createdAt']),
+        dkimTokens: !(0, runtime_1.exists)(json, 'dkimTokens') ? undefined : json['dkimTokens'],
+        domain: !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
+        domainNameRecords: !(0, runtime_1.exists)(json, 'domainNameRecords')
+            ? undefined
+            : json['domainNameRecords'].map(_1.DomainNameRecordFromJSON),
+        domainType: !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
+        id: json['id'],
+        isVerified: !(0, runtime_1.exists)(json, 'isVerified') ? undefined : json['isVerified'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: json['userId'],
+        verificationToken: !(0, runtime_1.exists)(json, 'verificationToken')
+            ? undefined
+            : json['verificationToken'],
     };
 }
 exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
@@ -56,17 +62,19 @@ function DomainDtoToJSON(value) {
         return null;
     }
     return {
-        'catchAllInboxId': value.catchAllInboxId,
-        'createdAt': (value.createdAt.toISOString()),
-        'dkimTokens': value.dkimTokens,
-        'domain': value.domain,
-        'domainNameRecords': value.domainNameRecords === undefined ? undefined : (value.domainNameRecords.map(_1.DomainNameRecordToJSON)),
-        'domainType': value.domainType,
-        'id': value.id,
-        'isVerified': value.isVerified,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
-        'verificationToken': value.verificationToken,
+        catchAllInboxId: value.catchAllInboxId,
+        createdAt: value.createdAt.toISOString(),
+        dkimTokens: value.dkimTokens,
+        domain: value.domain,
+        domainNameRecords: value.domainNameRecords === undefined
+            ? undefined
+            : value.domainNameRecords.map(_1.DomainNameRecordToJSON),
+        domainType: value.domainType,
+        id: value.id,
+        isVerified: value.isVerified,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
+        verificationToken: value.verificationToken,
     };
 }
 exports.DomainDtoToJSON = DomainDtoToJSON;

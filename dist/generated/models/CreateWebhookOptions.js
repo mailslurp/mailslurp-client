@@ -17,9 +17,9 @@ exports.CreateWebhookOptionsToJSON = exports.CreateWebhookOptionsFromJSONTyped =
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var CreateWebhookOptionsEventNameEnum;
 (function (CreateWebhookOptionsEventNameEnum) {
     CreateWebhookOptionsEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -34,14 +34,16 @@ function CreateWebhookOptionsFromJSON(json) {
 }
 exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
 function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'basicAuth': !(0, runtime_1.exists)(json, 'basicAuth') ? undefined : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'url': !(0, runtime_1.exists)(json, 'url') ? undefined : json['url'],
+        basicAuth: !(0, runtime_1.exists)(json, 'basicAuth')
+            ? undefined
+            : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        url: !(0, runtime_1.exists)(json, 'url') ? undefined : json['url'],
     };
 }
 exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
@@ -53,10 +55,10 @@ function CreateWebhookOptionsToJSON(value) {
         return null;
     }
     return {
-        'basicAuth': (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
-        'eventName': value.eventName,
-        'name': value.name,
-        'url': value.url,
+        basicAuth: (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
+        eventName: value.eventName,
+        name: value.name,
+        url: value.url,
     };
 }
 exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

@@ -20,18 +20,20 @@ function CreateContactOptionsFromJSON(json) {
 }
 exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
 function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'emailAddresses': !(0, runtime_1.exists)(json, 'emailAddresses') ? undefined : json['emailAddresses'],
-        'firstName': !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
-        'groupId': !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
-        'metaData': !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        'optOut': !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
-        'tags': !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
-        'lastName': !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
-        'company': !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
+        emailAddresses: !(0, runtime_1.exists)(json, 'emailAddresses')
+            ? undefined
+            : json['emailAddresses'],
+        firstName: !(0, runtime_1.exists)(json, 'firstName') ? undefined : json['firstName'],
+        groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
+        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
+        tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
+        lastName: !(0, runtime_1.exists)(json, 'lastName') ? undefined : json['lastName'],
+        company: !(0, runtime_1.exists)(json, 'company') ? undefined : json['company'],
     };
 }
 exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
@@ -43,14 +45,14 @@ function CreateContactOptionsToJSON(value) {
         return null;
     }
     return {
-        'emailAddresses': value.emailAddresses,
-        'firstName': value.firstName,
-        'groupId': value.groupId,
-        'metaData': value.metaData,
-        'optOut': value.optOut,
-        'tags': value.tags,
-        'lastName': value.lastName,
-        'company': value.company,
+        emailAddresses: value.emailAddresses,
+        firstName: value.firstName,
+        groupId: value.groupId,
+        metaData: value.metaData,
+        optOut: value.optOut,
+        tags: value.tags,
+        lastName: value.lastName,
+        company: value.company,
     };
 }
 exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;

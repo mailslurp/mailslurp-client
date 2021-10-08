@@ -43,9 +43,9 @@ export interface WebhookTestRequest {
     url: string;
 }
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 export declare enum WebhookTestRequestMethodEnum {
     GET = "GET",
     HEAD = "HEAD",

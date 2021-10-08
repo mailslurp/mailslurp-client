@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookNewAttachmentPayloadToJSON = exports.WebhookNewAttachmentPayloadFromJSONTyped = exports.WebhookNewAttachmentPayloadFromJSON = exports.WebhookNewAttachmentPayloadEventNameEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var WebhookNewAttachmentPayloadEventNameEnum;
 (function (WebhookNewAttachmentPayloadEventNameEnum) {
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
@@ -33,18 +33,22 @@ function WebhookNewAttachmentPayloadFromJSON(json) {
 }
 exports.WebhookNewAttachmentPayloadFromJSON = WebhookNewAttachmentPayloadFromJSON;
 function WebhookNewAttachmentPayloadFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachmentId': !(0, runtime_1.exists)(json, 'attachmentId') ? undefined : json['attachmentId'],
-        'contentLength': !(0, runtime_1.exists)(json, 'contentLength') ? undefined : json['contentLength'],
-        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        'eventName': !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
-        'messageId': !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'webhookId': !(0, runtime_1.exists)(json, 'webhookId') ? undefined : json['webhookId'],
-        'webhookName': !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
+        attachmentId: !(0, runtime_1.exists)(json, 'attachmentId')
+            ? undefined
+            : json['attachmentId'],
+        contentLength: !(0, runtime_1.exists)(json, 'contentLength')
+            ? undefined
+            : json['contentLength'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        webhookId: !(0, runtime_1.exists)(json, 'webhookId') ? undefined : json['webhookId'],
+        webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
     };
 }
 exports.WebhookNewAttachmentPayloadFromJSONTyped = WebhookNewAttachmentPayloadFromJSONTyped;
@@ -56,14 +60,14 @@ function WebhookNewAttachmentPayloadToJSON(value) {
         return null;
     }
     return {
-        'attachmentId': value.attachmentId,
-        'contentLength': value.contentLength,
-        'contentType': value.contentType,
-        'eventName': value.eventName,
-        'messageId': value.messageId,
-        'name': value.name,
-        'webhookId': value.webhookId,
-        'webhookName': value.webhookName,
+        attachmentId: value.attachmentId,
+        contentLength: value.contentLength,
+        contentType: value.contentType,
+        eventName: value.eventName,
+        messageId: value.messageId,
+        name: value.name,
+        webhookId: value.webhookId,
+        webhookName: value.webhookName,
     };
 }
 exports.WebhookNewAttachmentPayloadToJSON = WebhookNewAttachmentPayloadToJSON;

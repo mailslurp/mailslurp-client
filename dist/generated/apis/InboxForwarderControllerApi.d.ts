@@ -130,9 +130,9 @@ export declare class InboxForwarderControllerApi extends runtime.BaseAPI {
     testNewInboxForwarder(requestParameters: TestNewInboxForwarderRequest, initOverrides?: RequestInit): Promise<InboxForwarderTestResult>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetInboxForwardersSortEnum {
     ASC = "ASC",
     DESC = "DESC"

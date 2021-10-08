@@ -20,11 +20,11 @@ function DNSLookupResultsFromJSON(json) {
 }
 exports.DNSLookupResultsFromJSON = DNSLookupResultsFromJSON;
 function DNSLookupResultsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'results': (json['results'].map(_1.DNSLookupResultFromJSON)),
+        results: json['results'].map(_1.DNSLookupResultFromJSON),
     };
 }
 exports.DNSLookupResultsFromJSONTyped = DNSLookupResultsFromJSONTyped;
@@ -36,7 +36,7 @@ function DNSLookupResultsToJSON(value) {
         return null;
     }
     return {
-        'results': (value.results.map(_1.DNSLookupResultToJSON)),
+        results: value.results.map(_1.DNSLookupResultToJSON),
     };
 }
 exports.DNSLookupResultsToJSON = DNSLookupResultsToJSON;

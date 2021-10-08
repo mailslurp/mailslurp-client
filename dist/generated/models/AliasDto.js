@@ -20,20 +20,28 @@ function AliasDtoFromJSON(json) {
 }
 exports.AliasDtoFromJSON = AliasDtoFromJSON;
 function AliasDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': !(0, runtime_1.exists)(json, 'createdAt') ? undefined : (new Date(json['createdAt'])),
-        'emailAddress': !(0, runtime_1.exists)(json, 'emailAddress') ? undefined : json['emailAddress'],
-        'id': json['id'],
-        'inboxId': !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        'isVerified': !(0, runtime_1.exists)(json, 'isVerified') ? undefined : json['isVerified'],
-        'maskedEmailAddress': !(0, runtime_1.exists)(json, 'maskedEmailAddress') ? undefined : json['maskedEmailAddress'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'updatedAt': !(0, runtime_1.exists)(json, 'updatedAt') ? undefined : (new Date(json['updatedAt'])),
-        'useThreads': !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
-        'userId': json['userId'],
+        createdAt: !(0, runtime_1.exists)(json, 'createdAt')
+            ? undefined
+            : new Date(json['createdAt']),
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
+        id: json['id'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        isVerified: !(0, runtime_1.exists)(json, 'isVerified') ? undefined : json['isVerified'],
+        maskedEmailAddress: !(0, runtime_1.exists)(json, 'maskedEmailAddress')
+            ? undefined
+            : json['maskedEmailAddress'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        updatedAt: !(0, runtime_1.exists)(json, 'updatedAt')
+            ? undefined
+            : new Date(json['updatedAt']),
+        useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
+        userId: json['userId'],
     };
 }
 exports.AliasDtoFromJSONTyped = AliasDtoFromJSONTyped;
@@ -45,16 +53,16 @@ function AliasDtoToJSON(value) {
         return null;
     }
     return {
-        'createdAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'emailAddress': value.emailAddress,
-        'id': value.id,
-        'inboxId': value.inboxId,
-        'isVerified': value.isVerified,
-        'maskedEmailAddress': value.maskedEmailAddress,
-        'name': value.name,
-        'updatedAt': value.updatedAt === undefined ? undefined : (value.updatedAt.toISOString()),
-        'useThreads': value.useThreads,
-        'userId': value.userId,
+        createdAt: value.createdAt === undefined ? undefined : value.createdAt.toISOString(),
+        emailAddress: value.emailAddress,
+        id: value.id,
+        inboxId: value.inboxId,
+        isVerified: value.isVerified,
+        maskedEmailAddress: value.maskedEmailAddress,
+        name: value.name,
+        updatedAt: value.updatedAt === undefined ? undefined : value.updatedAt.toISOString(),
+        useThreads: value.useThreads,
+        userId: value.userId,
     };
 }
 exports.AliasDtoToJSON = AliasDtoToJSON;

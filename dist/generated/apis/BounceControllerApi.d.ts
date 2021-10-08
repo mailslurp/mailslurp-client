@@ -77,17 +77,17 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
     getBouncedRecipients(requestParameters: GetBouncedRecipientsRequest, initOverrides?: RequestInit): Promise<PageBouncedRecipients>;
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetBouncedEmailsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 export declare enum GetBouncedRecipientsSortEnum {
     ASC = "ASC",
     DESC = "DESC"

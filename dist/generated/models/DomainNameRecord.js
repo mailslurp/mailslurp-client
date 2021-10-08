@@ -15,9 +15,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
+ * @export
+ * @enum {string}
+ */
 var DomainNameRecordRecordTypeEnum;
 (function (DomainNameRecordRecordTypeEnum) {
     DomainNameRecordRecordTypeEnum["A"] = "A";
@@ -115,14 +115,14 @@ function DomainNameRecordFromJSON(json) {
 }
 exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
 function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'name': json['name'],
-        'recordEntries': json['recordEntries'],
-        'recordType': json['recordType'],
-        'ttl': json['ttl'],
+        name: json['name'],
+        recordEntries: json['recordEntries'],
+        recordType: json['recordType'],
+        ttl: json['ttl'],
     };
 }
 exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
@@ -134,10 +134,10 @@ function DomainNameRecordToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'recordEntries': value.recordEntries,
-        'recordType': value.recordType,
-        'ttl': value.ttl,
+        name: value.name,
+        recordEntries: value.recordEntries,
+        recordType: value.recordType,
+        ttl: value.ttl,
     };
 }
 exports.DomainNameRecordToJSON = DomainNameRecordToJSON;

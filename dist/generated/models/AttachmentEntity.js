@@ -20,18 +20,20 @@ function AttachmentEntityFromJSON(json) {
 }
 exports.AttachmentEntityFromJSON = AttachmentEntityFromJSON;
 function AttachmentEntityFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'attachmentId': json['attachmentId'],
-        'contentLength': !(0, runtime_1.exists)(json, 'contentLength') ? undefined : json['contentLength'],
-        'contentType': !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
-        'createdAt': (new Date(json['createdAt'])),
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'updatedAt': (new Date(json['updatedAt'])),
-        'userId': json['userId'],
+        attachmentId: json['attachmentId'],
+        contentLength: !(0, runtime_1.exists)(json, 'contentLength')
+            ? undefined
+            : json['contentLength'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        createdAt: new Date(json['createdAt']),
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        updatedAt: new Date(json['updatedAt']),
+        userId: json['userId'],
     };
 }
 exports.AttachmentEntityFromJSONTyped = AttachmentEntityFromJSONTyped;
@@ -43,14 +45,14 @@ function AttachmentEntityToJSON(value) {
         return null;
     }
     return {
-        'attachmentId': value.attachmentId,
-        'contentLength': value.contentLength,
-        'contentType': value.contentType,
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'name': value.name,
-        'updatedAt': (value.updatedAt.toISOString()),
-        'userId': value.userId,
+        attachmentId: value.attachmentId,
+        contentLength: value.contentLength,
+        contentType: value.contentType,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        name: value.name,
+        updatedAt: value.updatedAt.toISOString(),
+        userId: value.userId,
     };
 }
 exports.AttachmentEntityToJSON = AttachmentEntityToJSON;

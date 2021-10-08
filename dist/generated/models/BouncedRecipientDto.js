@@ -20,14 +20,14 @@ function BouncedRecipientDtoFromJSON(json) {
 }
 exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
 function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['createdAt'])),
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'recipient': json['recipient'],
-        'userId': json['userId'],
+        createdAt: new Date(json['createdAt']),
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        recipient: json['recipient'],
+        userId: json['userId'],
     };
 }
 exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
@@ -39,10 +39,10 @@ function BouncedRecipientDtoToJSON(value) {
         return null;
     }
     return {
-        'createdAt': (value.createdAt.toISOString()),
-        'id': value.id,
-        'recipient': value.recipient,
-        'userId': value.userId,
+        createdAt: value.createdAt.toISOString(),
+        id: value.id,
+        recipient: value.recipient,
+        userId: value.userId,
     };
 }
 exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;

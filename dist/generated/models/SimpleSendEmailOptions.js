@@ -20,14 +20,14 @@ function SimpleSendEmailOptionsFromJSON(json) {
 }
 exports.SimpleSendEmailOptionsFromJSON = SimpleSendEmailOptionsFromJSON;
 function SimpleSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        'body': !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
-        'senderId': !(0, runtime_1.exists)(json, 'senderId') ? undefined : json['senderId'],
-        'subject': !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        'to': !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
+        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        senderId: !(0, runtime_1.exists)(json, 'senderId') ? undefined : json['senderId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
     };
 }
 exports.SimpleSendEmailOptionsFromJSONTyped = SimpleSendEmailOptionsFromJSONTyped;
@@ -39,10 +39,10 @@ function SimpleSendEmailOptionsToJSON(value) {
         return null;
     }
     return {
-        'body': value.body,
-        'senderId': value.senderId,
-        'subject': value.subject,
-        'to': value.to,
+        body: value.body,
+        senderId: value.senderId,
+        subject: value.subject,
+        to: value.to,
     };
 }
 exports.SimpleSendEmailOptionsToJSON = SimpleSendEmailOptionsToJSON;

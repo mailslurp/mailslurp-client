@@ -110,17 +110,19 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/bounce/emails/{id}".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/bounce/emails/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.BouncedEmailDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.BouncedEmailDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -171,7 +173,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/emails",
@@ -181,7 +183,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageBouncedEmailFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageBouncedEmailFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -220,17 +224,19 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/bounce/recipients/{id}".replace("{" + "id" + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/bounce/recipients/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.BouncedRecipientDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.BouncedRecipientDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -281,7 +287,7 @@ var BounceControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/bounce/recipients",
@@ -291,7 +297,9 @@ var BounceControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageBouncedRecipientsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageBouncedRecipientsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -318,18 +326,18 @@ var BounceControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.BounceControllerApi = BounceControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetBouncedEmailsSortEnum;
 (function (GetBouncedEmailsSortEnum) {
     GetBouncedEmailsSortEnum["ASC"] = "ASC";
     GetBouncedEmailsSortEnum["DESC"] = "DESC";
 })(GetBouncedEmailsSortEnum = exports.GetBouncedEmailsSortEnum || (exports.GetBouncedEmailsSortEnum = {}));
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetBouncedRecipientsSortEnum;
 (function (GetBouncedRecipientsSortEnum) {
     GetBouncedRecipientsSortEnum["ASC"] = "ASC";

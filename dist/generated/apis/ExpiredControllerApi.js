@@ -107,7 +107,7 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/expired/defaults",
@@ -117,7 +117,9 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ExpirationDefaultsFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExpirationDefaultsFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -150,23 +152,26 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null || requestParameters.inboxId === undefined) {
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getExpiredInboxByInboxId.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/expired/inbox/{inboxId}".replace("{" + "inboxId" + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/expired/inbox/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ExpiredInboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExpiredInboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -199,23 +204,26 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.expiredId === null || requestParameters.expiredId === undefined) {
+                        if (requestParameters.expiredId === null ||
+                            requestParameters.expiredId === undefined) {
                             throw new runtime.RequiredError('expiredId', 'Required parameter requestParameters.expiredId was null or undefined when calling getExpiredInboxRecord.');
                         }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/expired/{expiredId}".replace("{" + "expiredId" + "}", encodeURIComponent(String(requestParameters.expiredId))),
+                                path: "/expired/{expiredId}".replace("{" + 'expiredId' + "}", encodeURIComponent(String(requestParameters.expiredId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.ExpiredInboxDtoFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ExpiredInboxDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -266,7 +274,7 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
-                            headerParameters["x-api-key"] = this.configuration.apiKey("x-api-key"); // API_KEY authentication
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/expired",
@@ -276,7 +284,9 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return (0, models_1.PageExpiredInboxRecordProjectionFromJSON)(jsonValue); })];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageExpiredInboxRecordProjectionFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -303,9 +313,9 @@ var ExpiredControllerApi = /** @class */ (function (_super) {
 }(runtime.BaseAPI));
 exports.ExpiredControllerApi = ExpiredControllerApi;
 /**
-    * @export
-    * @enum {string}
-    */
+ * @export
+ * @enum {string}
+ */
 var GetExpiredInboxesSortEnum;
 (function (GetExpiredInboxesSortEnum) {
     GetExpiredInboxesSortEnum["ASC"] = "ASC";
