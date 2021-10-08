@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
     "target": "es5",
     "declaration": true,

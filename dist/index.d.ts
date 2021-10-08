@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, MatchOptions, PageInboxProjection, SendEmailOptions, TemplateControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, MissedEmailControllerApi, InboxRulesetControllerApi, MailServerControllerApi, TrackingControllerApi, InboxForwarderControllerApi, BounceControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, SendEmailOptions, SentEmailDto, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -108,13 +108,13 @@ export declare class MailSlurp {
      * @summary Delete inbox
      * @param {string} inboxId inboxId
      */
-    deleteInbox(inboxId: string): Promise<Response>;
+    deleteInbox(inboxId: string): Promise<void>;
     /**
      * Deletes all emails
      * @summary Delete all emails in an inbox
      * @param {string} inboxId inboxId
      */
-    emptyInbox(inboxId: string): Promise<Response>;
+    emptyInbox(inboxId: string): Promise<void>;
     /**
      * Returns an inbox's properties, including its email address and ID.
      * @summary Get Inbox
@@ -178,7 +178,7 @@ export declare class MailSlurp {
      * @summary Delete an email
      * @param {string} emailId emailId
      */
-    deleteEmail(emailId: string): Promise<Response>;
+    deleteEmail(emailId: string): Promise<void>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * @summary Get all emails
@@ -215,7 +215,7 @@ export declare class MailSlurp {
      * @param {string} inboxId ID of the inbox you want to send the email from
      * @param {SendEmailOptions} [sendEmailOptions] Options for the email
      */
-    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<Response>;
+    sendEmail(inboxId: string, sendEmailOptions: SendEmailOptions): Promise<SentEmailDto>;
     /**
      * Returns the specified attachment for a given email as a byte stream (file download). You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
      * @summary Get email attachment bytes

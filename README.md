@@ -21,15 +21,15 @@ Here are some links to get started (or see below for code examples).
 - [TestCafe Selenium Example](https://www.mailslurp.com/examples/testcafe-mfa-user-sign-up/)
 
 ### Guides
-- [Creating inboxes](/guides/creating-inboxes)
-- [Sending emails](/guides/sending-emails)
-- [Receiving email](/guides/receiving-emails)
-- [Attachments](/guides/fetching-email-content)
-- [Webhooks](/guides/email-webhooks)
-- [Aliases](/guides/alias-email-address-proxy)
-- [Domains](/guides/custom-domains)
-- [Organizations](/guides/organizations)
-- [DNS and IP Lookup](/guides/dns-lookup-nameservers)
+- [Creating inboxes](https://www.mailslurp.com/guides/creating-inboxes)
+- [Sending emails](https://www.mailslurp.com/guides/sending-emails)
+- [Receiving email](https://www.mailslurp.com/guides/receiving-emails)
+- [Attachments](https://www.mailslurp.com/guides/fetching-email-content)
+- [Webhooks](https://www.mailslurp.com/guides/email-webhooks)
+- [Aliases](https://www.mailslurp.com/guides/alias-email-address-proxy)
+- [Domains](https://www.mailslurp.com/guides/custom-domains)
+- [Organizations](https://www.mailslurp.com/guides/organizations)
+- [DNS and IP Lookup](https://www.mailslurp.com/guides/dns-lookup-nameservers)
 - [Documentation](/docs)
 
 
@@ -97,10 +97,13 @@ it('can use inbox controller methods', async () => {
 You can also instantiate controllers directly. See the [API controllers](https://www.mailslurp.com/docs/js/docs/classes/) for method details.
 
 ```typescript
+import {Configuration} from "./runtime";
+
 it('can use inbox controller methods', async () => {
-  // get inboxes via import
-  const inboxControllerImport = new InboxControllerApi(config);
-  expect(inboxControllerImport.getInboxes).toBeDefined();
+    // get inboxes via import
+    const config = new Configuration({ apiKey })
+    const inboxControllerImport = new InboxControllerApi(config);
+    expect(inboxControllerImport.getInboxes).toBeDefined();
 });
 ```
 
@@ -171,7 +174,7 @@ Inboxes can be either `SMTP` or `HTTP` type mailboxes. `HTTP` inboxes are powere
 You can create an inbox with a randomly assigned email address ending in `@mailslurp.com` like so:
 
 ```javascript
-const inbox = await mailslurp.createInbox();
+const inbox = await mailslurp.createInbox()
 // { id: '123', emailAddress: '123@mailslurp.com' }
 ```
 

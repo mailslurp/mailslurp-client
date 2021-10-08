@@ -1,4 +1,7 @@
+coverage
+junit.xml
 .env
 node_modules
 .idea
 bin
+templates/blocks
