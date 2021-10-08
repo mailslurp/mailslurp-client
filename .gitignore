@@ -5,3 +5,4 @@ node_modules
 .idea
 bin
 templates/blocks
+scripts/hyperlink

@@ -25,10 +25,6 @@ Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }
 
 **`memberof`** MatchOptions
 
-#### Defined in
-
-[src/generated/api.ts:3145](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3145)
-
 ___
 
 ### matches
@@ -38,7 +34,3 @@ ___
 Zero or more match options such as `{ field: 'SUBJECT', should: 'CONTAIN', value: 'Welcome' }`. Options are additive so if one does not match the email is excluded from results
 
 **`memberof`** MatchOptions
-
-#### Defined in
-
-[src/generated/api.ts:3151](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3151)

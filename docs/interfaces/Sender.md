@@ -22,10 +22,6 @@
 
 **`memberof`** Sender
 
-#### Defined in
-
-[src/generated/api.ts:5312](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5312)
-
 ___
 
 ### name
@@ -34,10 +30,6 @@ ___
 
 **`memberof`** Sender
 
-#### Defined in
-
-[src/generated/api.ts:5318](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5318)
-
 ___
 
 ### rawValue
@@ -45,7 +37,3 @@ ___
 • **rawValue**: `string`
 
 **`memberof`** Sender
-
-#### Defined in
-
-[src/generated/api.ts:5324](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5324)

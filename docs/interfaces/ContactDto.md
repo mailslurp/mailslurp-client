@@ -30,10 +30,6 @@
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:661](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L661)
-
 ___
 
 ### createdAt
@@ -41,10 +37,6 @@ ___
 • **createdAt**: `Date`
 
 **`memberof`** ContactDto
-
-#### Defined in
-
-[src/generated/api.ts:667](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L667)
 
 ___
 
@@ -54,10 +46,6 @@ ___
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:673](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L673)
-
 ___
 
 ### firstName
@@ -65,10 +53,6 @@ ___
 • `Optional` **firstName**: `string`
 
 **`memberof`** ContactDto
-
-#### Defined in
-
-[src/generated/api.ts:679](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L679)
 
 ___
 
@@ -78,10 +62,6 @@ ___
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:685](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L685)
-
 ___
 
 ### id
@@ -89,10 +69,6 @@ ___
 • **id**: `string`
 
 **`memberof`** ContactDto
-
-#### Defined in
-
-[src/generated/api.ts:691](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L691)
 
 ___
 
@@ -102,21 +78,13 @@ ___
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:697](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L697)
-
 ___
 
 ### metaData
 
-• `Optional` **metaData**: [`JsonNode`](JsonNode.md)
+• `Optional` **metaData**: `object`
 
 **`memberof`** ContactDto
-
-#### Defined in
-
-[src/generated/api.ts:703](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L703)
 
 ___
 
@@ -126,10 +94,6 @@ ___
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:709](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L709)
-
 ___
 
 ### primaryEmailAddress
@@ -138,10 +102,6 @@ ___
 
 **`memberof`** ContactDto
 
-#### Defined in
-
-[src/generated/api.ts:715](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L715)
-
 ___
 
 ### tags
@@ -149,7 +109,3 @@ ___
 • **tags**: `string`[]
 
 **`memberof`** ContactDto
-
-#### Defined in
-
-[src/generated/api.ts:721](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L721)

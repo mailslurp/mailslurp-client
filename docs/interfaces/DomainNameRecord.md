@@ -25,10 +25,6 @@ DNS Record required for verification of a domain. Record vary depending on domai
 
 **`memberof`** DomainNameRecord
 
-#### Defined in
-
-[src/generated/api.ts:1632](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1632)
-
 ___
 
 ### recordEntries
@@ -37,21 +33,13 @@ ___
 
 **`memberof`** DomainNameRecord
 
-#### Defined in
-
-[src/generated/api.ts:1638](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1638)
-
 ___
 
 ### recordType
 
-• **recordType**: [`RecordTypeEnum`](../enums/DomainNameRecord.RecordTypeEnum.md)
+• **recordType**: [`DomainNameRecordRecordTypeEnum`](../enums/DomainNameRecordRecordTypeEnum.md)
 
 **`memberof`** DomainNameRecord
-
-#### Defined in
-
-[src/generated/api.ts:1644](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1644)
 
 ___
 
@@ -60,7 +48,3 @@ ___
 • **ttl**: `number`
 
 **`memberof`** DomainNameRecord
-
-#### Defined in
-
-[src/generated/api.ts:1650](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1650)

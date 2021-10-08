@@ -22,10 +22,6 @@
 
 **`memberof`** EmailRecipients
 
-#### Defined in
-
-[src/generated/api.ts:2223](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2223)
-
 ___
 
 ### cc
@@ -34,10 +30,6 @@ ___
 
 **`memberof`** EmailRecipients
 
-#### Defined in
-
-[src/generated/api.ts:2229](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2229)
-
 ___
 
 ### to
@@ -45,7 +37,3 @@ ___
 • `Optional` **to**: [`Recipient`](Recipient.md)[]
 
 **`memberof`** EmailRecipients
-
-#### Defined in
-
-[src/generated/api.ts:2235](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2235)

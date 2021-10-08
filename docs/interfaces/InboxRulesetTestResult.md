@@ -21,10 +21,6 @@
 
 **`memberof`** InboxRulesetTestResult
 
-#### Defined in
-
-[src/generated/api.ts:3052](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3052)
-
 ___
 
 ### rulesetMatches
@@ -38,7 +34,3 @@ Map of inbox ruleset ID to boolean of if target matches
 #### Index signature
 
 ▪ [key: `string`]: `boolean`
-
-#### Defined in
-
-[src/generated/api.ts:3058](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3058)

@@ -27,10 +27,6 @@ Size of attachment in bytes
 
 **`memberof`** AttachmentMetaData
 
-#### Defined in
-
-[src/generated/api.ts:326](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L326)
-
 ___
 
 ### contentType
@@ -40,10 +36,6 @@ ___
 Content type of attachment such as `image/png`
 
 **`memberof`** AttachmentMetaData
-
-#### Defined in
-
-[src/generated/api.ts:332](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L332)
 
 ___
 
@@ -55,10 +47,6 @@ ID of attachment
 
 **`memberof`** AttachmentMetaData
 
-#### Defined in
-
-[src/generated/api.ts:338](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L338)
-
 ___
 
 ### name
@@ -68,7 +56,3 @@ ___
 Name of attachment if given
 
 **`memberof`** AttachmentMetaData
-
-#### Defined in
-
-[src/generated/api.ts:344](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L344)

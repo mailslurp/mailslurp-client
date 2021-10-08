@@ -25,20 +25,10 @@ Inboxes to send the email from
 
 **`memberof`** BulkSendEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:592](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L592)
-
 ___
 
 ### sendEmailOptions
 
 • `Optional` **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
-Options for the email to be sent
-
 **`memberof`** BulkSendEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:598](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L598)

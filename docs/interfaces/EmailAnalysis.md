@@ -28,10 +28,6 @@ Verdict of DomainKeys Identified Mail analysis
 
 **`memberof`** EmailAnalysis
 
-#### Defined in
-
-[src/generated/api.ts:1997](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1997)
-
 ___
 
 ### dmarcVerdict
@@ -41,10 +37,6 @@ ___
 Verdict of Domain-based Message Authentication Reporting and Conformance analysis
 
 **`memberof`** EmailAnalysis
-
-#### Defined in
-
-[src/generated/api.ts:2003](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2003)
 
 ___
 
@@ -56,10 +48,6 @@ Verdict of spam ranking analysis
 
 **`memberof`** EmailAnalysis
 
-#### Defined in
-
-[src/generated/api.ts:2009](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2009)
-
 ___
 
 ### spfVerdict
@@ -70,10 +58,6 @@ Verdict of Send Policy Framework record spoofing analysis
 
 **`memberof`** EmailAnalysis
 
-#### Defined in
-
-[src/generated/api.ts:2015](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2015)
-
 ___
 
 ### virusVerdict
@@ -83,7 +67,3 @@ ___
 Verdict of virus scan analysis
 
 **`memberof`** EmailAnalysis
-
-#### Defined in
-
-[src/generated/api.ts:2021](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2021)

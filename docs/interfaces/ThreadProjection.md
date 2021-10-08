@@ -32,10 +32,6 @@ A thread is a message thread created for a message received by an alias
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5738](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5738)
-
 ___
 
 ### bcc
@@ -43,10 +39,6 @@ ___
 • `Optional` **bcc**: `string`[]
 
 **`memberof`** ThreadProjection
-
-#### Defined in
-
-[src/generated/api.ts:5744](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5744)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5750](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5750)
-
 ___
 
 ### createdAt
@@ -67,10 +55,6 @@ ___
 • **createdAt**: `Date`
 
 **`memberof`** ThreadProjection
-
-#### Defined in
-
-[src/generated/api.ts:5756](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5756)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5762](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5762)
-
 ___
 
 ### inboxId
@@ -91,10 +71,6 @@ ___
 • **inboxId**: `string`
 
 **`memberof`** ThreadProjection
-
-#### Defined in
-
-[src/generated/api.ts:5768](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5768)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5774](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5774)
-
 ___
 
 ### subject
@@ -115,10 +87,6 @@ ___
 • `Optional` **subject**: `string`
 
 **`memberof`** ThreadProjection
-
-#### Defined in
-
-[src/generated/api.ts:5780](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5780)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5786](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5786)
-
 ___
 
 ### updatedAt
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** ThreadProjection
 
-#### Defined in
-
-[src/generated/api.ts:5792](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5792)
-
 ___
 
 ### userId
@@ -151,7 +111,3 @@ ___
 • **userId**: `string`
 
 **`memberof`** ThreadProjection
-
-#### Defined in
-
-[src/generated/api.ts:5798](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5798)

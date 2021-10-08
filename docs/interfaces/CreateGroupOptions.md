@@ -21,10 +21,6 @@
 
 **`memberof`** CreateGroupOptions
 
-#### Defined in
-
-[src/generated/api.ts:946](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L946)
-
 ___
 
 ### name
@@ -32,7 +28,3 @@ ___
 • **name**: `string`
 
 **`memberof`** CreateGroupOptions
-
-#### Defined in
-
-[src/generated/api.ts:940](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L940)

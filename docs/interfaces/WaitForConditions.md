@@ -33,10 +33,6 @@ ISO Date Time latest time of email to consider. Filter for matching emails that 
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6180](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6180)
-
 ___
 
 ### count
@@ -47,23 +43,15 @@ Number of results that should match conditions. Either exactly or at least this 
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6186](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6186)
-
 ___
 
 ### countType
 
-• `Optional` **countType**: [`CountTypeEnum`](../enums/WaitForConditions.CountTypeEnum.md)
+• `Optional` **countType**: [`WaitForConditionsCountTypeEnum`](../enums/WaitForConditionsCountTypeEnum.md)
 
 How should the found count be compared to the expected count.
 
 **`memberof`** WaitForConditions
-
-#### Defined in
-
-[src/generated/api.ts:6192](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6192)
 
 ___
 
@@ -75,10 +63,6 @@ Max time in milliseconds to wait between retries if a `timeout` is specified.
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6198](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6198)
-
 ___
 
 ### inboxId
@@ -88,10 +72,6 @@ ___
 ID of inbox to search within and apply conditions to. Essentially filtering the emails found to give a count.
 
 **`memberof`** WaitForConditions
-
-#### Defined in
-
-[src/generated/api.ts:6204](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6204)
 
 ___
 
@@ -103,10 +83,6 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6210](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6210)
-
 ___
 
 ### since
@@ -117,23 +93,15 @@ ISO Date Time earliest time of email to consider. Filter for matching emails tha
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6216](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6216)
-
 ___
 
 ### sortDirection
 
-• `Optional` **sortDirection**: [`SortDirectionEnum`](../enums/WaitForConditions.SortDirectionEnum.md)
+• `Optional` **sortDirection**: [`WaitForConditionsSortDirectionEnum`](../enums/WaitForConditionsSortDirectionEnum.md)
 
 Direction to sort matching emails by created time
 
 **`memberof`** WaitForConditions
-
-#### Defined in
-
-[src/generated/api.ts:6222](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6222)
 
 ___
 
@@ -145,10 +113,6 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 **`memberof`** WaitForConditions
 
-#### Defined in
-
-[src/generated/api.ts:6228](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6228)
-
 ___
 
 ### unreadOnly
@@ -158,7 +122,3 @@ ___
 Apply conditions only to **unread** emails. All emails begin with `read=false`. An email is marked `read=true` when an `EmailDto` representation of it has been returned to the user at least once. For example you have called `getEmail` or `waitForLatestEmail` etc., or you have viewed the email in the dashboard.
 
 **`memberof`** WaitForConditions
-
-#### Defined in
-
-[src/generated/api.ts:6234](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6234)

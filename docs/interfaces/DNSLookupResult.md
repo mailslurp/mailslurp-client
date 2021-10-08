@@ -25,10 +25,6 @@ DNS lookup result. Includes record type, time to live, raw response, and name va
 
 **`memberof`** DNSLookupResult
 
-#### Defined in
-
-[src/generated/api.ts:1355](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1355)
-
 ___
 
 ### recordEntries
@@ -37,21 +33,13 @@ ___
 
 **`memberof`** DNSLookupResult
 
-#### Defined in
-
-[src/generated/api.ts:1361](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1361)
-
 ___
 
 ### recordType
 
-• **recordType**: [`RecordTypeEnum`](../enums/DNSLookupResult.RecordTypeEnum.md)
+• **recordType**: [`DNSLookupResultRecordTypeEnum`](../enums/DNSLookupResultRecordTypeEnum.md)
 
 **`memberof`** DNSLookupResult
-
-#### Defined in
-
-[src/generated/api.ts:1367](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1367)
 
 ___
 
@@ -60,7 +48,3 @@ ___
 • **ttl**: `number`
 
 **`memberof`** DNSLookupResult
-
-#### Defined in
-
-[src/generated/api.ts:1373](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1373)

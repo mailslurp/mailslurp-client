@@ -2,10 +2,6 @@
 
 # Class: MissedEmailControllerApi
 
-MissedEmailControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,50 +16,40 @@ MissedEmailControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](MissedEmailControllerApi.md#basepath)
 - [configuration](MissedEmailControllerApi.md#configuration)
-- [fetch](MissedEmailControllerApi.md#fetch)
 
 ### Methods
 
 - [getAllMissedEmails](MissedEmailControllerApi.md#getallmissedemails)
+- [getAllMissedEmailsRaw](MissedEmailControllerApi.md#getallmissedemailsraw)
 - [getAllUnknownMissedEmails](MissedEmailControllerApi.md#getallunknownmissedemails)
+- [getAllUnknownMissedEmailsRaw](MissedEmailControllerApi.md#getallunknownmissedemailsraw)
 - [getMissedEmail](MissedEmailControllerApi.md#getmissedemail)
+- [getMissedEmailRaw](MissedEmailControllerApi.md#getmissedemailraw)
+- [request](MissedEmailControllerApi.md#request)
 - [waitForNthMissedEmail](MissedEmailControllerApi.md#waitfornthmissedemail)
+- [waitForNthMissedEmailRaw](MissedEmailControllerApi.md#waitfornthmissedemailraw)
+- [withMiddleware](MissedEmailControllerApi.md#withmiddleware)
+- [withPostMiddleware](MissedEmailControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](MissedEmailControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new MissedEmailControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new MissedEmailControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -73,144 +59,257 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### getAllMissedEmails
 
-▸ **getAllMissedEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
+▸ **getAllMissedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
 
-**`summary`** Get all MissedEmails in paginated format
-
-**`throws`** {RequiredError}
-
-**`memberof`** MissedEmailControllerApi
+Get all MissedEmails in paginated format
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllMissedEmailsRequest`](../interfaces/GetAllMissedEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26851](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26851)
+### getAllMissedEmailsRaw
+
+▸ **getAllMissedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>\>
+
+Get all MissedEmails in paginated format
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllMissedEmailsRequest`](../interfaces/GetAllMissedEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>\>
 
 ___
 
 ### getAllUnknownMissedEmails
 
-▸ **getAllUnknownMissedEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
+▸ **getAllUnknownMissedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
 
 Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
-
-**`summary`** Get all unknown missed emails in paginated format
-
-**`throws`** {RequiredError}
-
-**`memberof`** MissedEmailControllerApi
+Get all unknown missed emails in paginated format
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllUnknownMissedEmailsRequest`](../interfaces/GetAllUnknownMissedEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:26889](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26889)
-
 ___
 
-### getMissedEmail
+### getAllUnknownMissedEmailsRaw
 
-▸ **getMissedEmail**(`missedEmailId`, `options?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+▸ **getAllUnknownMissedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>\>
 
-**`summary`** Get MissedEmail
-
-**`throws`** {RequiredError}
-
-**`memberof`** MissedEmailControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `missedEmailId` | `string` | missedEmailId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:26921](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26921)
-
-___
-
-### waitForNthMissedEmail
-
-▸ **waitForNthMissedEmail**(`before?`, `inboxId?`, `index?`, `since?`, `timeout?`, `options?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
-
-Wait for 0 based index missed email
-
-**`summary`** Wait for Nth missed email
-
-**`throws`** {RequiredError}
-
-**`memberof`** MissedEmailControllerApi
+Unknown missed emails are emails that were sent to MailSlurp but could not be assigned to an existing inbox.
+Get all unknown missed emails in paginated format
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `index?` | `number` |
-| `since?` | `Date` |
-| `timeout?` | `number` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllUnknownMissedEmailsRequest`](../interfaces/GetAllUnknownMissedEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>\>
+
+___
+
+### getMissedEmail
+
+▸ **getMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+
+Get MissedEmail
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetMissedEmailRequest`](../interfaces/GetMissedEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26940](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26940)
+### getMissedEmailRaw
+
+▸ **getMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+
+Get MissedEmail
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetMissedEmailRequest`](../interfaces/GetMissedEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### waitForNthMissedEmail
+
+▸ **waitForNthMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+
+Wait for 0 based index missed email
+Wait for Nth missed email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForNthMissedEmailRequest`](../interfaces/WaitForNthMissedEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+
+___
+
+### waitForNthMissedEmailRaw
+
+▸ **waitForNthMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+
+Wait for 0 based index missed email
+Wait for Nth missed email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForNthMissedEmailRequest`](../interfaces/WaitForNthMissedEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

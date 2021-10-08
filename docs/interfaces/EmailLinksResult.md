@@ -23,10 +23,6 @@ Links found in HTML
 
 **`memberof`** EmailLinksResult
 
-#### Defined in
-
-[src/generated/api.ts:2055](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2055)
-
 ___
 
 ### links
@@ -34,7 +30,3 @@ ___
 • **links**: `string`[]
 
 **`memberof`** EmailLinksResult
-
-#### Defined in
-
-[src/generated/api.ts:2061](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2061)

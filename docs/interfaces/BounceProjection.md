@@ -22,10 +22,6 @@
 
 **`memberof`** BounceProjection
 
-#### Defined in
-
-[src/generated/api.ts:428](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L428)
-
 ___
 
 ### id
@@ -34,10 +30,6 @@ ___
 
 **`memberof`** BounceProjection
 
-#### Defined in
-
-[src/generated/api.ts:434](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L434)
-
 ___
 
 ### sender
@@ -45,7 +37,3 @@ ___
 • **sender**: `string`
 
 **`memberof`** BounceProjection
-
-#### Defined in
-
-[src/generated/api.ts:440](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L440)

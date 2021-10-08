@@ -2,10 +2,6 @@
 
 # Class: ExportControllerApi
 
-ExportControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,48 +16,36 @@ ExportControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](ExportControllerApi.md#basepath)
 - [configuration](ExportControllerApi.md#configuration)
-- [fetch](ExportControllerApi.md#fetch)
 
 ### Methods
 
 - [exportEntities](ExportControllerApi.md#exportentities)
+- [exportEntitiesRaw](ExportControllerApi.md#exportentitiesraw)
 - [getExportLink](ExportControllerApi.md#getexportlink)
+- [getExportLinkRaw](ExportControllerApi.md#getexportlinkraw)
+- [request](ExportControllerApi.md#request)
+- [withMiddleware](ExportControllerApi.md#withmiddleware)
+- [withPostMiddleware](ExportControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](ExportControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new ExportControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new ExportControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -71,79 +55,177 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### exportEntities
 
-▸ **exportEntities**(`apiKey`, `exportType`, `outputFormat`, `createdEarliestTime?`, `createdOldestTime?`, `excludePreviouslyExported?`, `filter?`, `listSeparatorToken?`, `options?`): `Promise`<`string`\>
+▸ **exportEntities**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-**`summary`** Export inboxes link callable via browser
-
-**`throws`** {RequiredError}
-
-**`memberof`** ExportControllerApi
+Export inboxes link callable via browser
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `apiKey` | `string` | apiKey |
-| `exportType` | ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"`` | exportType |
-| `outputFormat` | ``"CSV_DEFAULT"`` \| ``"CSV_EXCEL"`` | outputFormat |
-| `createdEarliestTime?` | `Date` | - |
-| `createdOldestTime?` | `Date` | - |
-| `excludePreviouslyExported?` | `boolean` | - |
-| `filter?` | `string` | - |
-| `listSeparatorToken?` | `string` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportEntitiesRequest`](../interfaces/ExportEntitiesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:18011](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18011)
+### exportEntitiesRaw
+
+▸ **exportEntitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Export inboxes link callable via browser
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportEntitiesRequest`](../interfaces/ExportEntitiesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
 ___
 
 ### getExportLink
 
-▸ **getExportLink**(`exportOptions`, `exportType`, `apiKey?`, `options?`): `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
+▸ **getExportLink**(`requestParameters`, `initOverrides?`): `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
 
-**`summary`** Get export link
-
-**`throws`** {RequiredError}
-
-**`memberof`** ExportControllerApi
+Get export link
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `exportOptions` | [`ExportOptions`](../interfaces/ExportOptions.md) | exportOptions |
-| `exportType` | ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"`` | exportType |
-| `apiKey?` | `string` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetExportLinkRequest`](../interfaces/GetExportLinkRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:18045](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18045)
+### getExportLinkRaw
+
+▸ **getExportLinkRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportLink`](../interfaces/ExportLink.md)\>\>
+
+Get export link
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetExportLinkRequest`](../interfaces/GetExportLinkRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportLink`](../interfaces/ExportLink.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

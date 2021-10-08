@@ -32,10 +32,6 @@ Paginated attachment entity results. Page index starts at zero. Projection resul
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3466](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3466)
-
 ___
 
 ### empty
@@ -43,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageAttachmentEntity
-
-#### Defined in
-
-[src/generated/api.ts:3472](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3472)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3478](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3478)
-
 ___
 
 ### last
@@ -67,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageAttachmentEntity
-
-#### Defined in
-
-[src/generated/api.ts:3484](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3484)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3490](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3490)
-
 ___
 
 ### numberOfElements
@@ -91,10 +71,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageAttachmentEntity
-
-#### Defined in
-
-[src/generated/api.ts:3496](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3496)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3502](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3502)
-
 ___
 
 ### size
@@ -115,10 +87,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageAttachmentEntity
-
-#### Defined in
-
-[src/generated/api.ts:3508](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3508)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3514](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3514)
-
 ___
 
 ### totalElements
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** PageAttachmentEntity
 
-#### Defined in
-
-[src/generated/api.ts:3520](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3520)
-
 ___
 
 ### totalPages
@@ -151,7 +111,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageAttachmentEntity
-
-#### Defined in
-
-[src/generated/api.ts:3526](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3526)

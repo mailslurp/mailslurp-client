@@ -2,8 +2,6 @@
 
 # Class: RequiredError
 
-**`export`**
-
 ## Hierarchy
 
 - `Error`
@@ -46,10 +44,6 @@
 
 Error.constructor
 
-#### Defined in
-
-[src/generated/api.ts:79](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L79)
-
 ## Properties
 
 ### field
@@ -66,10 +60,6 @@ ___
 
 Error.message
 
-#### Defined in
-
-node_modules/typescript/lib/lib.es5.d.ts:974
-
 ___
 
 ### name
@@ -80,10 +70,6 @@ ___
 
 Error.name
 
-#### Defined in
-
-[src/generated/api.ts:78](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L78)
-
 ___
 
 ### stack
@@ -93,10 +79,6 @@ ___
 #### Inherited from
 
 Error.stack
-
-#### Defined in
-
-node_modules/typescript/lib/lib.es5.d.ts:975
 
 ___
 
@@ -125,10 +107,6 @@ Optional override for formatting stack traces
 
 Error.prepareStackTrace
 
-#### Defined in
-
-node_modules/@types/node/globals.d.ts:140
-
 ___
 
 ### stackTraceLimit
@@ -138,10 +116,6 @@ ___
 #### Inherited from
 
 Error.stackTraceLimit
-
-#### Defined in
-
-node_modules/@types/node/globals.d.ts:142
 
 ## Methods
 
@@ -155,7 +129,7 @@ Create .stack property on a target object
 
 | Name | Type |
 | :------ | :------ |
-| `targetObject` | `Object` |
+| `targetObject` | `object` |
 | `constructorOpt?` | `Function` |
 
 #### Returns
@@ -165,7 +139,3 @@ Create .stack property on a target object
 #### Inherited from
 
 Error.captureStackTrace
-
-#### Defined in
-
-node_modules/@types/node/globals.d.ts:133

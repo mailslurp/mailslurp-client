@@ -31,10 +31,6 @@ ID of attachment. Use the `AttachmentController` to
 
 **`memberof`** WebhookNewAttachmentPayload
 
-#### Defined in
-
-[src/generated/api.ts:6534](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6534)
-
 ___
 
 ### contentLength
@@ -44,10 +40,6 @@ ___
 Size of attachment in bytes
 
 **`memberof`** WebhookNewAttachmentPayload
-
-#### Defined in
-
-[src/generated/api.ts:6540](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6540)
 
 ___
 
@@ -59,23 +51,15 @@ Content type of attachment such as 'image/png' or 'application/pdf
 
 **`memberof`** WebhookNewAttachmentPayload
 
-#### Defined in
-
-[src/generated/api.ts:6546](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6546)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookNewAttachmentPayload.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookNewAttachmentPayloadEventNameEnum`](../enums/WebhookNewAttachmentPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
 **`memberof`** WebhookNewAttachmentPayload
-
-#### Defined in
-
-[src/generated/api.ts:6552](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6552)
 
 ___
 
@@ -87,10 +71,6 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 **`memberof`** WebhookNewAttachmentPayload
 
-#### Defined in
-
-[src/generated/api.ts:6558](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6558)
-
 ___
 
 ### name
@@ -100,10 +80,6 @@ ___
 Filename of the attachment if present
 
 **`memberof`** WebhookNewAttachmentPayload
-
-#### Defined in
-
-[src/generated/api.ts:6564](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6564)
 
 ___
 
@@ -115,10 +91,6 @@ ID of webhook entity being triggered
 
 **`memberof`** WebhookNewAttachmentPayload
 
-#### Defined in
-
-[src/generated/api.ts:6570](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6570)
-
 ___
 
 ### webhookName
@@ -128,7 +100,3 @@ ___
 Name of the webhook being triggered
 
 **`memberof`** WebhookNewAttachmentPayload
-
-#### Defined in
-
-[src/generated/api.ts:6576](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6576)

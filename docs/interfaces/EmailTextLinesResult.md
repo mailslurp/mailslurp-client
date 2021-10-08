@@ -23,10 +23,6 @@ Parsed text of an email
 
 **`memberof`** EmailTextLinesResult
 
-#### Defined in
-
-[src/generated/api.ts:2249](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2249)
-
 ___
 
 ### lines
@@ -34,7 +30,3 @@ ___
 • **lines**: `string`[]
 
 **`memberof`** EmailTextLinesResult
-
-#### Defined in
-
-[src/generated/api.ts:2255](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2255)

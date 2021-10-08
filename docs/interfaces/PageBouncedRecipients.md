@@ -32,10 +32,6 @@ Paginated bounced recipients. Page index starts at zero. Projection results may 
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3614](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3614)
-
 ___
 
 ### empty
@@ -43,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageBouncedRecipients
-
-#### Defined in
-
-[src/generated/api.ts:3620](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3620)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3626](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3626)
-
 ___
 
 ### last
@@ -67,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageBouncedRecipients
-
-#### Defined in
-
-[src/generated/api.ts:3632](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3632)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3638](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3638)
-
 ___
 
 ### numberOfElements
@@ -91,10 +71,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageBouncedRecipients
-
-#### Defined in
-
-[src/generated/api.ts:3644](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3644)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3650](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3650)
-
 ___
 
 ### size
@@ -115,10 +87,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageBouncedRecipients
-
-#### Defined in
-
-[src/generated/api.ts:3656](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3656)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3662](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3662)
-
 ___
 
 ### totalElements
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** PageBouncedRecipients
 
-#### Defined in
-
-[src/generated/api.ts:3668](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3668)
-
 ___
 
 ### totalPages
@@ -151,7 +111,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageBouncedRecipients
-
-#### Defined in
-
-[src/generated/api.ts:3674](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3674)

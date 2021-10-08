@@ -2,10 +2,6 @@
 
 # Class: AttachmentControllerApi
 
-AttachmentControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,56 +16,52 @@ AttachmentControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](AttachmentControllerApi.md#basepath)
 - [configuration](AttachmentControllerApi.md#configuration)
-- [fetch](AttachmentControllerApi.md#fetch)
 
 ### Methods
 
 - [deleteAllAttachments](AttachmentControllerApi.md#deleteallattachments)
+- [deleteAllAttachmentsRaw](AttachmentControllerApi.md#deleteallattachmentsraw)
 - [deleteAttachment](AttachmentControllerApi.md#deleteattachment)
+- [deleteAttachmentRaw](AttachmentControllerApi.md#deleteattachmentraw)
 - [downloadAttachmentAsBase64Encoded](AttachmentControllerApi.md#downloadattachmentasbase64encoded)
+- [downloadAttachmentAsBase64EncodedRaw](AttachmentControllerApi.md#downloadattachmentasbase64encodedraw)
 - [downloadAttachmentAsBytes](AttachmentControllerApi.md#downloadattachmentasbytes)
+- [downloadAttachmentAsBytesRaw](AttachmentControllerApi.md#downloadattachmentasbytesraw)
 - [getAttachment](AttachmentControllerApi.md#getattachment)
 - [getAttachmentInfo](AttachmentControllerApi.md#getattachmentinfo)
+- [getAttachmentInfoRaw](AttachmentControllerApi.md#getattachmentinforaw)
+- [getAttachmentRaw](AttachmentControllerApi.md#getattachmentraw)
 - [getAttachments](AttachmentControllerApi.md#getattachments)
+- [getAttachmentsRaw](AttachmentControllerApi.md#getattachmentsraw)
+- [request](AttachmentControllerApi.md#request)
 - [uploadAttachment](AttachmentControllerApi.md#uploadattachment)
 - [uploadAttachmentBytes](AttachmentControllerApi.md#uploadattachmentbytes)
+- [uploadAttachmentBytesRaw](AttachmentControllerApi.md#uploadattachmentbytesraw)
+- [uploadAttachmentRaw](AttachmentControllerApi.md#uploadattachmentraw)
 - [uploadMultipartForm](AttachmentControllerApi.md#uploadmultipartform)
+- [uploadMultipartFormRaw](AttachmentControllerApi.md#uploadmultipartformraw)
+- [withMiddleware](AttachmentControllerApi.md#withmiddleware)
+- [withPostMiddleware](AttachmentControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](AttachmentControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new AttachmentControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new AttachmentControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -79,314 +71,497 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### deleteAllAttachments
 
-▸ **deleteAllAttachments**(`options?`): `Promise`<`Response`\>
+▸ **deleteAllAttachments**(`initOverrides?`): `Promise`<`void`\>
 
-**`summary`** Delete all attachments
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Delete all attachments
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9797](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9797)
+### deleteAllAttachmentsRaw
+
+▸ **deleteAllAttachmentsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete all attachments
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### deleteAttachment
 
-▸ **deleteAttachment**(`attachmentId`, `options?`): `Promise`<`Response`\>
+▸ **deleteAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
-
-**`summary`** Delete an attachment
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Delete an attachment
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `attachmentId` | `string` | ID of attachment |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAttachmentRequest`](../interfaces/DeleteAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9811](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9811)
+### deleteAttachmentRaw
+
+▸ **deleteAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Delete an attachment
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAttachmentRequest`](../interfaces/DeleteAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### downloadAttachmentAsBase64Encoded
 
-▸ **downloadAttachmentAsBase64Encoded**(`attachmentId`, `options?`): `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
+▸ **downloadAttachmentAsBase64Encoded**(`requestParameters`, `initOverrides?`): `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
 
 Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
-
-**`summary`** Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `attachmentId` | `string` | ID of attachment |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadAttachmentAsBase64EncodedRequest`](../interfaces/DownloadAttachmentAsBase64EncodedRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9826](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9826)
+### downloadAttachmentAsBase64EncodedRaw
+
+▸ **downloadAttachmentAsBase64EncodedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>\>
+
+Returns the specified attachment for a given email as a base 64 encoded string. The response type is application/json. This method is similar to the `downloadAttachment` method but allows some clients to get around issues with binary responses.
+Get email attachment as base64 encoded string as alternative to binary responses. To read the content decode the Base64 encoded contents.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadAttachmentAsBase64EncodedRequest`](../interfaces/DownloadAttachmentAsBase64EncodedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>\>
 
 ___
 
 ### downloadAttachmentAsBytes
 
-▸ **downloadAttachmentAsBytes**(`attachmentId`, `options?`): `Promise`<`string`\>
+▸ **downloadAttachmentAsBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
 Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
-
-**`summary`** Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `attachmentId` | `string` | ID of attachment |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadAttachmentAsBytesRequest`](../interfaces/DownloadAttachmentAsBytesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9846](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9846)
+### downloadAttachmentAsBytesRaw
+
+▸ **downloadAttachmentAsBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Returns the specified attachment for a given email as a stream / array of bytes. You can find attachment ids in email responses endpoint responses. The response type is application/octet-stream.
+Download attachments. Get email attachment bytes. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadAttachmentAsBytesRequest`](../interfaces/DownloadAttachmentAsBytesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
 ___
 
 ### getAttachment
 
-▸ **getAttachment**(`attachmentId`, `options?`): `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
+▸ **getAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
-
-**`summary`** Get an attachment entity
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Get an attachment entity
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `attachmentId` | `string` | ID of attachment |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAttachmentRequest`](../interfaces/GetAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:9863](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9863)
-
 ___
 
 ### getAttachmentInfo
 
-▸ **getAttachmentInfo**(`attachmentId`, `options?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
+▸ **getAttachmentInfo**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
 Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
-
-**`summary`** Get email attachment metadata information
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Get email attachment metadata information
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `attachmentId` | `string` | ID of attachment |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAttachmentInfoRequest`](../interfaces/GetAttachmentInfoRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9878](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9878)
+### getAttachmentInfoRaw
+
+▸ **getAttachmentInfoRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>\>
+
+Returns the metadata for an attachment. It is saved separately to the content of the attachment. Contains properties `name` and `content-type` and `content-length` in bytes for a given attachment.
+Get email attachment metadata information
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAttachmentInfoRequest`](../interfaces/GetAttachmentInfoRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>\>
+
+___
+
+### getAttachmentRaw
+
+▸ **getAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Get an attachment entity
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAttachmentRequest`](../interfaces/GetAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
 
 ___
 
 ### getAttachments
 
-▸ **getAttachments**(`before?`, `fileNameFilter?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
+▸ **getAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
-
-**`summary`** Get email attachments
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Get email attachments
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `fileNameFilter?` | `string` |
-| `page?` | `number` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:9898](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9898)
-
 ___
 
-### uploadAttachment
+### getAttachmentsRaw
 
-▸ **uploadAttachment**(`uploadOptions`, `options?`): `Promise`<`string`[]\>
+▸ **getAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
-
-**`summary`** Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `uploadOptions` | [`UploadAttachmentOptions`](../interfaces/UploadAttachmentOptions.md) | uploadOptions |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-#### Defined in
-
-[src/generated/api.ts:9926](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9926)
-
-___
-
-### uploadAttachmentBytes
-
-▸ **uploadAttachmentBytes**(`byteArray?`, `contentType?`, `filename?`, `options?`): `Promise`<`string`[]\>
-
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
-
-**`summary`** Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
+Get email attachments
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `byteArray?` | `string` |
-| `contentType?` | `string` |
-| `filename?` | `string` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### uploadAttachment
+
+▸ **uploadAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadAttachmentRequest`](../interfaces/UploadAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9946](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9946)
+### uploadAttachmentBytes
+
+▸ **uploadAttachmentBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadAttachmentBytesRequest`](../interfaces/UploadAttachmentBytesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`[]\>
+
+___
+
+### uploadAttachmentBytesRaw
+
+▸ **uploadAttachmentBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadAttachmentBytesRequest`](../interfaces/UploadAttachmentBytesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+___
+
+### uploadAttachmentRaw
+
+▸ **uploadAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadAttachmentRequest`](../interfaces/UploadAttachmentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 ___
 
 ### uploadMultipartForm
 
-▸ **uploadMultipartForm**(`file`, `contentType?`, `contentTypeHeader?`, `filename?`, `xFilename?`, `options?`): `Promise`<`string`[]\>
+▸ **uploadMultipartForm**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
 Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
-
-**`summary`** Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AttachmentControllerApi
+Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `file` | `any` | file |
-| `contentType?` | `string` | - |
-| `contentTypeHeader?` | `string` | - |
-| `filename?` | `string` | - |
-| `xFilename?` | `string` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadMultipartFormRequest`](../interfaces/UploadMultipartFormRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:9974](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9974)
+### uploadMultipartFormRaw
+
+▸ **uploadMultipartFormRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
+Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UploadMultipartFormRequest`](../interfaces/UploadMultipartFormRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

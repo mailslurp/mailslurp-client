@@ -20,15 +20,11 @@ Options for creating an inbox forwarder
 
 ### field
 
-• `Optional` **field**: [`FieldEnum`](../enums/CreateInboxForwarderOptions.FieldEnum.md)
+• `Optional` **field**: [`CreateInboxForwarderOptionsFieldEnum`](../enums/CreateInboxForwarderOptionsFieldEnum.md)
 
 Field to match against to trigger inbox forwarding for inbound email
 
 **`memberof`** CreateInboxForwarderOptions
-
-#### Defined in
-
-[src/generated/api.ts:1043](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1043)
 
 ___
 
@@ -40,10 +36,6 @@ Email addresses to forward an email to if it matches the field and match criteri
 
 **`memberof`** CreateInboxForwarderOptions
 
-#### Defined in
-
-[src/generated/api.ts:1049](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1049)
-
 ___
 
 ### match
@@ -53,7 +45,3 @@ ___
 String or wildcard style match for field specified when evaluating forwarding rules
 
 **`memberof`** CreateInboxForwarderOptions
-
-#### Defined in
-
-[src/generated/api.ts:1055](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1055)

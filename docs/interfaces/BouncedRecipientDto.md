@@ -25,10 +25,6 @@ Bounced recipient
 
 **`memberof`** BouncedRecipientDto
 
-#### Defined in
-
-[src/generated/api.ts:560](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L560)
-
 ___
 
 ### id
@@ -36,10 +32,6 @@ ___
 • `Optional` **id**: `string`
 
 **`memberof`** BouncedRecipientDto
-
-#### Defined in
-
-[src/generated/api.ts:566](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L566)
 
 ___
 
@@ -49,10 +41,6 @@ ___
 
 **`memberof`** BouncedRecipientDto
 
-#### Defined in
-
-[src/generated/api.ts:572](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L572)
-
 ___
 
 ### userId
@@ -60,7 +48,3 @@ ___
 • **userId**: `string`
 
 **`memberof`** BouncedRecipientDto
-
-#### Defined in
-
-[src/generated/api.ts:578](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L578)

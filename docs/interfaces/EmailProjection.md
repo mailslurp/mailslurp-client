@@ -34,10 +34,6 @@ A compact representation of a full email. Used in list endpoints to keep respons
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2137](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2137)
-
 ___
 
 ### bcc
@@ -45,10 +41,6 @@ ___
 • `Optional` **bcc**: `string`[]
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2143](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2143)
 
 ___
 
@@ -58,10 +50,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2149](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2149)
-
 ___
 
 ### bodyMD5Hash
@@ -69,10 +57,6 @@ ___
 • `Optional` **bodyMD5Hash**: `string`
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2155](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2155)
 
 ___
 
@@ -82,10 +66,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2161](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2161)
-
 ___
 
 ### createdAt
@@ -93,10 +73,6 @@ ___
 • **createdAt**: `Date`
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2167](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2167)
 
 ___
 
@@ -106,10 +82,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2173](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2173)
-
 ___
 
 ### id
@@ -117,10 +89,6 @@ ___
 • **id**: `string`
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2179](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2179)
 
 ___
 
@@ -130,10 +98,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2185](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2185)
-
 ___
 
 ### read
@@ -141,10 +105,6 @@ ___
 • `Optional` **read**: `boolean`
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2191](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2191)
 
 ___
 
@@ -154,10 +114,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2197](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2197)
-
 ___
 
 ### teamAccess
@@ -166,10 +122,6 @@ ___
 
 **`memberof`** EmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:2203](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2203)
-
 ___
 
 ### to
@@ -177,7 +129,3 @@ ___
 • **to**: `string`[]
 
 **`memberof`** EmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:2209](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2209)

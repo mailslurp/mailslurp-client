@@ -2,10 +2,6 @@
 
 # Class: InboxForwarderControllerApi
 
-InboxForwarderControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,54 +16,48 @@ InboxForwarderControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](InboxForwarderControllerApi.md#basepath)
 - [configuration](InboxForwarderControllerApi.md#configuration)
-- [fetch](InboxForwarderControllerApi.md#fetch)
 
 ### Methods
 
 - [createNewInboxForwarder](InboxForwarderControllerApi.md#createnewinboxforwarder)
+- [createNewInboxForwarderRaw](InboxForwarderControllerApi.md#createnewinboxforwarderraw)
 - [deleteInboxForwarder](InboxForwarderControllerApi.md#deleteinboxforwarder)
+- [deleteInboxForwarderRaw](InboxForwarderControllerApi.md#deleteinboxforwarderraw)
 - [deleteInboxForwarders](InboxForwarderControllerApi.md#deleteinboxforwarders)
+- [deleteInboxForwardersRaw](InboxForwarderControllerApi.md#deleteinboxforwardersraw)
 - [getInboxForwarder](InboxForwarderControllerApi.md#getinboxforwarder)
+- [getInboxForwarderRaw](InboxForwarderControllerApi.md#getinboxforwarderraw)
 - [getInboxForwarders](InboxForwarderControllerApi.md#getinboxforwarders)
+- [getInboxForwardersRaw](InboxForwarderControllerApi.md#getinboxforwardersraw)
+- [request](InboxForwarderControllerApi.md#request)
 - [testInboxForwarder](InboxForwarderControllerApi.md#testinboxforwarder)
+- [testInboxForwarderRaw](InboxForwarderControllerApi.md#testinboxforwarderraw)
 - [testInboxForwardersForInbox](InboxForwarderControllerApi.md#testinboxforwardersforinbox)
+- [testInboxForwardersForInboxRaw](InboxForwarderControllerApi.md#testinboxforwardersforinboxraw)
 - [testNewInboxForwarder](InboxForwarderControllerApi.md#testnewinboxforwarder)
+- [testNewInboxForwarderRaw](InboxForwarderControllerApi.md#testnewinboxforwarderraw)
+- [withMiddleware](InboxForwarderControllerApi.md#withmiddleware)
+- [withPostMiddleware](InboxForwarderControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](InboxForwarderControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new InboxForwarderControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new InboxForwarderControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -77,257 +67,421 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createNewInboxForwarder
 
-▸ **createNewInboxForwarder**(`createInboxForwarderOptions`, `inboxId?`, `options?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+▸ **createNewInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-
-**`summary`** Create an inbox forwarder
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Create an inbox forwarder
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createInboxForwarderOptions` | [`CreateInboxForwarderOptions`](../interfaces/CreateInboxForwarderOptions.md) | createInboxForwarderOptions |
-| `inboxId?` | `string` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateNewInboxForwarderRequest`](../interfaces/CreateNewInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24286](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24286)
+### createNewInboxForwarderRaw
+
+▸ **createNewInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
+
+Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+Create an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateNewInboxForwarderRequest`](../interfaces/CreateNewInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
 
 ___
 
 ### deleteInboxForwarder
 
-▸ **deleteInboxForwarder**(`id`, `options?`): `Promise`<`Response`\>
+▸ **deleteInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete inbox forwarder
-
-**`summary`** Delete an inbox forwarder
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Delete an inbox forwarder
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox forwarder |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxForwarderRequest`](../interfaces/DeleteInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24308](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24308)
+### deleteInboxForwarderRaw
+
+▸ **deleteInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete inbox forwarder
+Delete an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxForwarderRequest`](../interfaces/DeleteInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### deleteInboxForwarders
 
-▸ **deleteInboxForwarders**(`inboxId?`, `options?`): `Promise`<`Response`\>
+▸ **deleteInboxForwarders**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete inbox forwarders. Accepts optional inboxId filter.
-
-**`summary`** Delete inbox forwarders
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Delete inbox forwarders
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `inboxId?` | `string` |
-| `options?` | `any` |
+| `requestParameters` | [`DeleteInboxForwardersRequest`](../interfaces/DeleteInboxForwardersRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24322](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24322)
+### deleteInboxForwardersRaw
+
+▸ **deleteInboxForwardersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete inbox forwarders. Accepts optional inboxId filter.
+Delete inbox forwarders
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxForwardersRequest`](../interfaces/DeleteInboxForwardersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### getInboxForwarder
 
-▸ **getInboxForwarder**(`id`, `options?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+▸ **getInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
 Get inbox ruleset
-
-**`summary`** Get an inbox forwarder
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox forwarder |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:24336](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24336)
-
-___
-
-### getInboxForwarders
-
-▸ **getInboxForwarders**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>
-
-List all forwarders attached to an inbox
-
-**`summary`** List inbox forwarders
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Get an inbox forwarder
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetInboxForwarderRequest`](../interfaces/GetInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+
+___
+
+### getInboxForwarderRaw
+
+▸ **getInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
+
+Get inbox ruleset
+Get an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxForwarderRequest`](../interfaces/GetInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
+
+___
+
+### getInboxForwarders
+
+▸ **getInboxForwarders**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>
+
+List all forwarders attached to an inbox
+List inbox forwarders
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxForwardersRequest`](../interfaces/GetInboxForwardersRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24356](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24356)
+### getInboxForwardersRaw
+
+▸ **getInboxForwardersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>\>
+
+List all forwarders attached to an inbox
+List inbox forwarders
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxForwardersRequest`](../interfaces/GetInboxForwardersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
 
 ___
 
 ### testInboxForwarder
 
-▸ **testInboxForwarder**(`id`, `inboxForwarderTestOptions`, `options?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
+▸ **testInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
 Test an inbox forwarder
-
-**`summary`** Test an inbox forwarder
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Test an inbox forwarder
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox forwarder |
-| `inboxForwarderTestOptions` | [`InboxForwarderTestOptions`](../interfaces/InboxForwarderTestOptions.md) | inboxForwarderTestOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxForwarderRequest`](../interfaces/TestInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24389](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24389)
+### testInboxForwarderRaw
+
+▸ **testInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
+
+Test an inbox forwarder
+Test an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxForwarderRequest`](../interfaces/TestInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
 
 ___
 
 ### testInboxForwardersForInbox
 
-▸ **testInboxForwardersForInbox**(`inboxForwarderTestOptions`, `inboxId`, `options?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
+▸ **testInboxForwardersForInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
 Test inbox forwarders for inbox
-
-**`summary`** Test inbox forwarders for inbox
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Test inbox forwarders for inbox
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxForwarderTestOptions` | [`InboxForwarderTestOptions`](../interfaces/InboxForwarderTestOptions.md) | inboxForwarderTestOptions |
-| `inboxId` | `string` | ID of inbox |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxForwardersForInboxRequest`](../interfaces/TestInboxForwardersForInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24412](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24412)
+### testInboxForwardersForInboxRaw
+
+▸ **testInboxForwardersForInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
+
+Test inbox forwarders for inbox
+Test inbox forwarders for inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxForwardersForInboxRequest`](../interfaces/TestInboxForwardersForInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
 
 ___
 
 ### testNewInboxForwarder
 
-▸ **testNewInboxForwarder**(`testNewInboxForwarderOptions`, `options?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
+▸ **testNewInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
 Test new inbox forwarder
-
-**`summary`** Test new inbox forwarder
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxForwarderControllerApi
+Test new inbox forwarder
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `testNewInboxForwarderOptions` | [`TestNewInboxForwarderOptions`](../interfaces/TestNewInboxForwarderOptions.md) | testNewInboxForwarderOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestNewInboxForwarderRequest`](../interfaces/TestNewInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:24434](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24434)
+### testNewInboxForwarderRaw
+
+▸ **testNewInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
+
+Test new inbox forwarder
+Test new inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestNewInboxForwarderRequest`](../interfaces/TestNewInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

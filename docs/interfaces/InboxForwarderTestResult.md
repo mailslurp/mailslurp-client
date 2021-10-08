@@ -21,10 +21,6 @@
 
 **`memberof`** InboxForwarderTestResult
 
-#### Defined in
-
-[src/generated/api.ts:2860](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2860)
-
 ___
 
 ### matches
@@ -36,7 +32,3 @@ ___
 #### Index signature
 
 ▪ [key: `string`]: `boolean`
-
-#### Defined in
-
-[src/generated/api.ts:2866](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2866)

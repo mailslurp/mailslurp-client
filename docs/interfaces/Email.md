@@ -42,13 +42,7 @@ Email entity (also known as EmailDto). When an SMTP email message is received by
 
 • `Optional` **analysis**: [`EmailAnalysis`](EmailAnalysis.md)
 
-Smart analysis of email content including spam ratings
-
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1851](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1851)
 
 ___
 
@@ -60,10 +54,6 @@ List of IDs of attachments found in the email. Use these IDs with the Inbox and 
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1857](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1857)
-
 ___
 
 ### bcc
@@ -73,10 +63,6 @@ ___
 List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1863](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1863)
 
 ___
 
@@ -88,10 +74,6 @@ The body of the email message as text parsed from the SMTP message body (does no
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1869](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1869)
-
 ___
 
 ### bodyExcerpt
@@ -101,10 +83,6 @@ ___
 An excerpt of the body of the email message for quick preview .
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1875](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1875)
 
 ___
 
@@ -116,10 +94,6 @@ A hash signature of the email message using MD5. Useful for comparing emails wit
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1881](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1881)
-
 ___
 
 ### cc
@@ -129,10 +103,6 @@ ___
 List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1887](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1887)
 
 ___
 
@@ -144,10 +114,6 @@ Detected character set of the email body such as UTF-8
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1893](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1893)
-
 ___
 
 ### createdAt
@@ -158,10 +124,6 @@ When was the email received by MailSlurp
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1899](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1899)
-
 ___
 
 ### from
@@ -171,10 +133,6 @@ ___
 Who the email was sent from. An email address - see fromName for the sender name.
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1905](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1905)
 
 ___
 
@@ -190,10 +148,6 @@ Collection of SMTP headers attached to email
 
 ▪ [key: `string`]: `string`
 
-#### Defined in
-
-[src/generated/api.ts:1911](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1911)
-
 ___
 
 ### id
@@ -203,10 +157,6 @@ ___
 ID of the email entity
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1917](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1917)
 
 ___
 
@@ -218,10 +168,6 @@ ID of the inbox that received the email
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1923](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1923)
-
 ___
 
 ### isHTML
@@ -231,10 +177,6 @@ ___
 Is the email body HTML
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1929](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1929)
 
 ___
 
@@ -246,23 +188,13 @@ Read flag. Has the email ever been viewed in the dashboard or fetched via the AP
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1935](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1935)
-
 ___
 
 ### recipients
 
 • `Optional` **recipients**: [`EmailRecipients`](EmailRecipients.md)
 
-The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
-
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1941](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1941)
 
 ___
 
@@ -274,23 +206,13 @@ The `replyTo` field on the received email message
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1947](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1947)
-
 ___
 
 ### sender
 
 • `Optional` **sender**: [`Sender`](Sender.md)
 
-Sender object containing from email address and from personal name if provided in address
-
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1953](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1953)
 
 ___
 
@@ -302,10 +224,6 @@ The subject line of the email message as specified by SMTP subject header
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1959](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1959)
-
 ___
 
 ### teamAccess
@@ -315,10 +233,6 @@ ___
 Can the email be accessed by organization team members
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1965](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1965)
 
 ___
 
@@ -330,10 +244,6 @@ List of `To` recipient email addresses that the email was addressed to. See reci
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1971](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1971)
-
 ___
 
 ### updatedAt
@@ -344,10 +254,6 @@ When was the email last updated
 
 **`memberof`** Email
 
-#### Defined in
-
-[src/generated/api.ts:1977](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1977)
-
 ___
 
 ### userId
@@ -357,7 +263,3 @@ ___
 ID of user that email belongs to
 
 **`memberof`** Email
-
-#### Defined in
-
-[src/generated/api.ts:1983](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1983)

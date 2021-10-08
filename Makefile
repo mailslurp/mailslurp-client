@@ -43,10 +43,16 @@ docs: node_modules
 docs-lint: node_modules
 	npm run docs:lint
 
+docs-test:
+	NODE_BIN=$(PWD)/node_modules/.bin OUTPUT_DIR=$(PWD)/docs $(PWD)/scripts/lint.sh
+
 readme: node_modules
 	DEBUG=script* npm run readme
 
 # manually bump package version first
-deploy: generate fmt build docs readme test
+deploy: generate fmt build docs docs-lint docs-test readme test
 	npm publish
 
+download-hyperlink:
+	curl --output scripts/hyperlink -L https://github.com/untitaker/hyperlink/releases/download/0.1.17/hyperlink-linux-x86_64
+	chmod +x scripts/hyperlink

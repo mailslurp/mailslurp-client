@@ -31,10 +31,6 @@ Bounced email
 
 **`memberof`** BouncedEmailDto
 
-#### Defined in
-
-[src/generated/api.ts:492](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L492)
-
 ___
 
 ### bounceRecipients
@@ -42,10 +38,6 @@ ___
 • `Optional` **bounceRecipients**: `string`[]
 
 **`memberof`** BouncedEmailDto
-
-#### Defined in
-
-[src/generated/api.ts:498](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L498)
 
 ___
 
@@ -55,10 +47,6 @@ ___
 
 **`memberof`** BouncedEmailDto
 
-#### Defined in
-
-[src/generated/api.ts:504](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L504)
-
 ___
 
 ### bounceType
@@ -66,10 +54,6 @@ ___
 • `Optional` **bounceType**: `string`
 
 **`memberof`** BouncedEmailDto
-
-#### Defined in
-
-[src/generated/api.ts:510](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L510)
 
 ___
 
@@ -79,10 +63,6 @@ ___
 
 **`memberof`** BouncedEmailDto
 
-#### Defined in
-
-[src/generated/api.ts:516](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L516)
-
 ___
 
 ### id
@@ -90,10 +70,6 @@ ___
 • `Optional` **id**: `string`
 
 **`memberof`** BouncedEmailDto
-
-#### Defined in
-
-[src/generated/api.ts:522](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L522)
 
 ___
 
@@ -103,10 +79,6 @@ ___
 
 **`memberof`** BouncedEmailDto
 
-#### Defined in
-
-[src/generated/api.ts:528](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L528)
-
 ___
 
 ### sender
@@ -114,10 +86,6 @@ ___
 • **sender**: `string`
 
 **`memberof`** BouncedEmailDto
-
-#### Defined in
-
-[src/generated/api.ts:534](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L534)
 
 ___
 
@@ -127,10 +95,6 @@ ___
 
 **`memberof`** BouncedEmailDto
 
-#### Defined in
-
-[src/generated/api.ts:540](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L540)
-
 ___
 
 ### userId
@@ -138,7 +102,3 @@ ___
 • **userId**: `string`
 
 **`memberof`** BouncedEmailDto
-
-#### Defined in
-
-[src/generated/api.ts:546](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L546)

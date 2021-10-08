@@ -19,7 +19,3 @@
 • **domain**: `string`
 
 **`memberof`** DescribeDomainOptions
-
-#### Defined in
-
-[src/generated/api.ts:1503](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1503)

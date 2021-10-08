@@ -19,7 +19,3 @@
 • **testTarget**: `string`
 
 **`memberof`** InboxRulesetTestOptions
-
-#### Defined in
-
-[src/generated/api.ts:3038](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3038)

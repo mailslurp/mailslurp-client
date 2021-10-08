@@ -2,10 +2,6 @@
 
 # Class: AliasControllerApi
 
-AliasControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,55 +16,50 @@ AliasControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](AliasControllerApi.md#basepath)
 - [configuration](AliasControllerApi.md#configuration)
-- [fetch](AliasControllerApi.md#fetch)
 
 ### Methods
 
 - [createAlias](AliasControllerApi.md#createalias)
+- [createAliasRaw](AliasControllerApi.md#createaliasraw)
 - [deleteAlias](AliasControllerApi.md#deletealias)
+- [deleteAliasRaw](AliasControllerApi.md#deletealiasraw)
 - [getAlias](AliasControllerApi.md#getalias)
 - [getAliasEmails](AliasControllerApi.md#getaliasemails)
+- [getAliasEmailsRaw](AliasControllerApi.md#getaliasemailsraw)
+- [getAliasRaw](AliasControllerApi.md#getaliasraw)
 - [getAliasThreads](AliasControllerApi.md#getaliasthreads)
+- [getAliasThreadsRaw](AliasControllerApi.md#getaliasthreadsraw)
 - [getAliases](AliasControllerApi.md#getaliases)
+- [getAliasesRaw](AliasControllerApi.md#getaliasesraw)
 - [replyToAliasEmail](AliasControllerApi.md#replytoaliasemail)
+- [replyToAliasEmailRaw](AliasControllerApi.md#replytoaliasemailraw)
+- [request](AliasControllerApi.md#request)
 - [sendAliasEmail](AliasControllerApi.md#sendaliasemail)
+- [sendAliasEmailRaw](AliasControllerApi.md#sendaliasemailraw)
 - [updateAlias](AliasControllerApi.md#updatealias)
+- [updateAliasRaw](AliasControllerApi.md#updatealiasraw)
+- [withMiddleware](AliasControllerApi.md#withmiddleware)
+- [withPostMiddleware](AliasControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](AliasControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new AliasControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new AliasControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -78,291 +69,457 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createAlias
 
-▸ **createAlias**(`createAliasOptions`, `options?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+▸ **createAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
 Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
-
-**`summary`** Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createAliasOptions` | [`CreateAliasOptions`](../interfaces/CreateAliasOptions.md) | createAliasOptions |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:8392](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8392)
-
-___
-
-### deleteAlias
-
-▸ **deleteAlias**(`aliasId`, `options?`): `Promise`<`Response`\>
-
-**`summary`** Delete an email alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/generated/api.ts:8407](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8407)
-
-___
-
-### getAlias
-
-▸ **getAlias**(`aliasId`, `options?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
-
-Get an email alias by ID
-
-**`summary`** Get an email alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:8422](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8422)
-
-___
-
-### getAliasEmails
-
-▸ **getAliasEmails**(`aliasId`, `before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
-
-Get paginated emails for an alias by ID
-
-**`summary`** Get emails for an alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:8442](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8442)
-
-___
-
-### getAliasThreads
-
-▸ **getAliasThreads**(`aliasId`, `before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
-
-Returns threads created for an email alias in paginated form
-
-**`summary`** Get threads created for an alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:8475](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8475)
-
-___
-
-### getAliases
-
-▸ **getAliases**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
-
-Get all email aliases in paginated form
-
-**`summary`** Get all email aliases you have created
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
+Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `page?` | `number` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`CreateAliasRequest`](../interfaces/CreateAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+
+___
+
+### createAliasRaw
+
+▸ **createAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
+
+Email aliases use a MailSlurp randomly generated email address (or a custom domain inbox that you provide) to mask or proxy a real email address. Emails sent to the alias address will be forwarded to the hidden email address it was created for. If you want to send a reply use the threadId attached
+Create an email alias. Must be verified by clicking link inside verification email that will be sent to the address. Once verified the alias will be active.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateAliasRequest`](../interfaces/CreateAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
+
+___
+
+### deleteAlias
+
+▸ **deleteAlias**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAliasRequest`](../interfaces/DeleteAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAliasRaw
+
+▸ **deleteAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAliasRequest`](../interfaces/DeleteAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### getAlias
+
+▸ **getAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+
+Get an email alias by ID
+Get an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasRequest`](../interfaces/GetAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
+
+___
+
+### getAliasEmails
+
+▸ **getAliasEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+Get paginated emails for an alias by ID
+Get emails for an alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasEmailsRequest`](../interfaces/GetAliasEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+___
+
+### getAliasEmailsRaw
+
+▸ **getAliasEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
+
+Get paginated emails for an alias by ID
+Get emails for an alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasEmailsRequest`](../interfaces/GetAliasEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
+
+___
+
+### getAliasRaw
+
+▸ **getAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
+
+Get an email alias by ID
+Get an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasRequest`](../interfaces/GetAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
+
+___
+
+### getAliasThreads
+
+▸ **getAliasThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+
+Returns threads created for an email alias in paginated form
+Get threads created for an alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasThreadsRequest`](../interfaces/GetAliasThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+
+___
+
+### getAliasThreadsRaw
+
+▸ **getAliasThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+
+Returns threads created for an email alias in paginated form
+Get threads created for an alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasThreadsRequest`](../interfaces/GetAliasThreadsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+
+___
+
+### getAliases
+
+▸ **getAliases**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
+
+Get all email aliases in paginated form
+Get all email aliases you have created
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasesRequest`](../interfaces/GetAliasesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:8507](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8507)
+### getAliasesRaw
+
+▸ **getAliasesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAlias`](../interfaces/PageAlias.md)\>\>
+
+Get all email aliases in paginated form
+Get all email aliases you have created
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAliasesRequest`](../interfaces/GetAliasesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAlias`](../interfaces/PageAlias.md)\>\>
 
 ___
 
 ### replyToAliasEmail
 
-▸ **replyToAliasEmail**(`aliasId`, `emailId`, `replyToAliasEmailOptions`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+▸ **replyToAliasEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
-
-**`summary`** Reply to an email
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
+Reply to an email
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | ID of the alias that email belongs to |
-| `emailId` | `string` | ID of the email that should be replied to |
-| `replyToAliasEmailOptions` | [`ReplyToAliasEmailOptions`](../interfaces/ReplyToAliasEmailOptions.md) | replyToAliasEmailOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReplyToAliasEmailRequest`](../interfaces/ReplyToAliasEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:8535](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8535)
-
 ___
 
-### sendAliasEmail
+### replyToAliasEmailRaw
 
-▸ **sendAliasEmail**(`aliasId`, `sendEmailOptions?`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+▸ **replyToAliasEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
-Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
-
-**`summary`** Send an email from an alias inbox
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
+Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
+Reply to an email
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `sendEmailOptions?` | [`SendEmailOptions`](../interfaces/SendEmailOptions.md) | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReplyToAliasEmailRequest`](../interfaces/ReplyToAliasEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:8558](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8558)
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
 ___
 
-### updateAlias
+### request
 
-▸ **updateAlias**(`aliasId`, `updateAliasOptions`, `options?`): `Promise`<`Response`\>
-
-**`summary`** Update an email alias
-
-**`throws`** {RequiredError}
-
-**`memberof`** AliasControllerApi
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | aliasId |
-| `updateAliasOptions` | [`UpdateAliasOptions`](../interfaces/UpdateAliasOptions.md) | updateAliasOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`Response`\>
 
-#### Defined in
+#### Inherited from
 
-[src/generated/api.ts:8579](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8579)
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### sendAliasEmail
+
+▸ **sendAliasEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
+Send an email from an alias inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendAliasEmailRequest`](../interfaces/SendAliasEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendAliasEmailRaw
+
+▸ **sendAliasEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Send an email from an alias. Replies to the email will be forwarded to the alias masked email address
+Send an email from an alias inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendAliasEmailRequest`](../interfaces/SendAliasEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+___
+
+### updateAlias
+
+▸ **updateAlias**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Update an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateAliasRequest`](../interfaces/UpdateAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### updateAliasRaw
+
+▸ **updateAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Update an email alias
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateAliasRequest`](../interfaces/UpdateAliasRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

@@ -24,10 +24,6 @@
 
 **`memberof`** TemplateProjection
 
-#### Defined in
-
-[src/generated/api.ts:5626](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5626)
-
 ___
 
 ### id
@@ -35,10 +31,6 @@ ___
 • **id**: `string`
 
 **`memberof`** TemplateProjection
-
-#### Defined in
-
-[src/generated/api.ts:5632](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5632)
 
 ___
 
@@ -48,10 +40,6 @@ ___
 
 **`memberof`** TemplateProjection
 
-#### Defined in
-
-[src/generated/api.ts:5638](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5638)
-
 ___
 
 ### updatedAt
@@ -60,10 +48,6 @@ ___
 
 **`memberof`** TemplateProjection
 
-#### Defined in
-
-[src/generated/api.ts:5644](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5644)
-
 ___
 
 ### variables
@@ -71,7 +55,3 @@ ___
 • **variables**: `string`[]
 
 **`memberof`** TemplateProjection
-
-#### Defined in
-
-[src/generated/api.ts:5650](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5650)

@@ -19,7 +19,3 @@
 • **testValue**: `string`
 
 **`memberof`** InboxForwarderTestOptions
-
-#### Defined in
-
-[src/generated/api.ts:2846](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2846)

@@ -2,7 +2,7 @@
 
 # Interface: WebhookDto
 
-Representation of a webhook for an inbox. The URL specified will be using by MailSlurp whenever an email is received by the attached inbox. A webhook entity should have a URL that points to your server. Your server should accept HTTP/S POST requests and return a success 200. MailSlurp will retry your webhooks if they fail. See https://api.mailslurp.com/schemas/webhook-payload for the payload schema.
+Representation of a webhook for an inbox. The URL specified will be using by MailSlurp whenever an email is received by the attached inbox. A webhook entity should have a URL that points to your server. Your server should accept HTTP/S POST requests and return a success 200. MailSlurp will retry your webhooks if they fail. See <https://api.mailslurp.com/schemas/webhook-payload> for the payload schema.
 
 **`export`**
 
@@ -34,10 +34,6 @@ Does webhook expect basic authentication? If true it means you created this webh
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6271](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6271)
-
 ___
 
 ### createdAt
@@ -48,21 +44,13 @@ When the webhook was created
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6277](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6277)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookDto.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookDtoEventNameEnum`](../enums/WebhookDtoEventNameEnum.md)
 
 **`memberof`** WebhookDto
-
-#### Defined in
-
-[src/generated/api.ts:6283](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6283)
 
 ___
 
@@ -74,10 +62,6 @@ ID of the Webhook
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6289](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6289)
-
 ___
 
 ### inboxId
@@ -88,23 +72,15 @@ The inbox that the Webhook will be triggered by
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6295](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6295)
-
 ___
 
 ### method
 
-• `Optional` **method**: [`MethodEnum`](../enums/WebhookDto.MethodEnum.md)
+• `Optional` **method**: [`WebhookDtoMethodEnum`](../enums/WebhookDtoMethodEnum.md)
 
 HTTP method that your server endpoint must listen for
 
 **`memberof`** WebhookDto
-
-#### Defined in
-
-[src/generated/api.ts:6301](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6301)
 
 ___
 
@@ -116,10 +92,6 @@ Name of the webhook
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6307](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6307)
-
 ___
 
 ### payloadJsonSchema
@@ -130,10 +102,6 @@ Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPaylo
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6313](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6313)
-
 ___
 
 ### updatedAt
@@ -141,10 +109,6 @@ ___
 • **updatedAt**: `Date`
 
 **`memberof`** WebhookDto
-
-#### Defined in
-
-[src/generated/api.ts:6319](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6319)
 
 ___
 
@@ -156,10 +120,6 @@ URL of your server that the webhook will be sent to. The schema of the JSON that
 
 **`memberof`** WebhookDto
 
-#### Defined in
-
-[src/generated/api.ts:6325](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6325)
-
 ___
 
 ### userId
@@ -169,7 +129,3 @@ ___
 User ID of the Webhook
 
 **`memberof`** WebhookDto
-
-#### Defined in
-
-[src/generated/api.ts:6331](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6331)

@@ -32,10 +32,6 @@ Paginated unknown MissedEmail results. Unknown missed emails are emails that wer
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4724](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4724)
-
 ___
 
 ### empty
@@ -43,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageUnknownMissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4730](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4730)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4736](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4736)
-
 ___
 
 ### last
@@ -67,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageUnknownMissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4742](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4742)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4748](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4748)
-
 ___
 
 ### numberOfElements
@@ -91,10 +71,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageUnknownMissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4754](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4754)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4760](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4760)
-
 ___
 
 ### size
@@ -115,10 +87,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageUnknownMissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4766](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4766)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4772](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4772)
-
 ___
 
 ### totalElements
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** PageUnknownMissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4778](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4778)
-
 ___
 
 ### totalPages
@@ -151,7 +111,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageUnknownMissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4784](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4784)

@@ -27,10 +27,6 @@
 
 **`memberof`** CreateContactOptions
 
-#### Defined in
-
-[src/generated/api.ts:879](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L879)
-
 ___
 
 ### emailAddresses
@@ -41,10 +37,6 @@ Set of email addresses belonging to the contact
 
 **`memberof`** CreateContactOptions
 
-#### Defined in
-
-[src/generated/api.ts:837](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L837)
-
 ___
 
 ### firstName
@@ -52,10 +44,6 @@ ___
 • `Optional` **firstName**: `string`
 
 **`memberof`** CreateContactOptions
-
-#### Defined in
-
-[src/generated/api.ts:843](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L843)
 
 ___
 
@@ -67,10 +55,6 @@ Group IDs that contact belongs to
 
 **`memberof`** CreateContactOptions
 
-#### Defined in
-
-[src/generated/api.ts:849](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L849)
-
 ___
 
 ### lastName
@@ -79,23 +63,13 @@ ___
 
 **`memberof`** CreateContactOptions
 
-#### Defined in
-
-[src/generated/api.ts:873](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L873)
-
 ___
 
 ### metaData
 
-• `Optional` **metaData**: [`JsonNode`](JsonNode.md)
-
-User metadata key value pairs to save for this contact. Can be any values you like.
+• `Optional` **metaData**: `object`
 
 **`memberof`** CreateContactOptions
-
-#### Defined in
-
-[src/generated/api.ts:855](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L855)
 
 ___
 
@@ -107,10 +81,6 @@ Has the user explicitly or implicitly opted out of being contacted? If so MailSl
 
 **`memberof`** CreateContactOptions
 
-#### Defined in
-
-[src/generated/api.ts:861](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L861)
-
 ___
 
 ### tags
@@ -120,7 +90,3 @@ ___
 Tags that can be used to search and group contacts
 
 **`memberof`** CreateContactOptions
-
-#### Defined in
-
-[src/generated/api.ts:867](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L867)

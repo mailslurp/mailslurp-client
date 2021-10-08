@@ -33,10 +33,6 @@ DEPRECATED (team access is always true). Grant team access to this inbox and the
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:960](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L960)
-
 ___
 
 ### description
@@ -46,10 +42,6 @@ ___
 Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
 
 **`memberof`** CreateInboxDto
-
-#### Defined in
-
-[src/generated/api.ts:966](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L966)
 
 ___
 
@@ -61,10 +53,6 @@ A custom email address to use with the inbox. Defaults to null. When null MailSl
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:972](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L972)
-
 ___
 
 ### expiresAt
@@ -74,10 +62,6 @@ ___
 Optional inbox expiration date. If null then this inbox is permanent and the emails in it won't be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX.
 
 **`memberof`** CreateInboxDto
-
-#### Defined in
-
-[src/generated/api.ts:978](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L978)
 
 ___
 
@@ -89,10 +73,6 @@ Number of milliseconds that inbox should exist for
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:984](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L984)
-
 ___
 
 ### favourite
@@ -103,23 +83,15 @@ Is the inbox a favorite. Marking an inbox as a favorite is typically done in the
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:990](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L990)
-
 ___
 
 ### inboxType
 
-• `Optional` **inboxType**: [`InboxTypeEnum`](../enums/CreateInboxDto.InboxTypeEnum.md)
+• `Optional` **inboxType**: [`CreateInboxDtoInboxTypeEnum`](../enums/CreateInboxDtoInboxTypeEnum.md)
 
 HTTP (default) or SMTP inbox type. HTTP inboxes are best for testing while SMTP inboxes are more reliable for public inbound email consumption. When using custom domains the domain type must match the inbox type. HTTP inboxes are processed by AWS SES while SMTP inboxes use a custom mail server running at `mx.mailslurp.com`.
 
 **`memberof`** CreateInboxDto
-
-#### Defined in
-
-[src/generated/api.ts:996](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L996)
 
 ___
 
@@ -131,10 +103,6 @@ Optional name of the inbox. Displayed in the dashboard for easier search and use
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:1002](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1002)
-
 ___
 
 ### tags
@@ -145,10 +113,6 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 **`memberof`** CreateInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:1008](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1008)
-
 ___
 
 ### useDomainPool
@@ -158,7 +122,3 @@ ___
 Use the MailSlurp domain name pool with this inbox when creating the email address. Defaults to null. If enabled the inbox will be an email address with a domain randomly chosen from a list of the MailSlurp domains. This is useful when the default `@mailslurp.com` email addresses used with inboxes are blocked or considered spam by a provider or receiving service. When domain pool is enabled an email address will be generated ending in `@mailslurp.{world,info,xyz,...}` . This means a TLD is randomly selecting from a list of `.biz`, `.info`, `.xyz` etc to add variance to the generated email addresses. When null or false MailSlurp uses the default behavior of `@mailslurp.com` or custom email address provided by the emailAddress field. Note this feature is only available for `HTTP` inbox types.
 
 **`memberof`** CreateInboxDto
-
-#### Defined in
-
-[src/generated/api.ts:1014](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1014)

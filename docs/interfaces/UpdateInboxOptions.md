@@ -28,10 +28,6 @@ Description of an inbox for labelling and searching purposes
 
 **`memberof`** UpdateInboxOptions
 
-#### Defined in
-
-[src/generated/api.ts:6044](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6044)
-
 ___
 
 ### expiresAt
@@ -41,10 +37,6 @@ ___
 Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
 **`memberof`** UpdateInboxOptions
-
-#### Defined in
-
-[src/generated/api.ts:6050](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6050)
 
 ___
 
@@ -56,10 +48,6 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 **`memberof`** UpdateInboxOptions
 
-#### Defined in
-
-[src/generated/api.ts:6056](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6056)
-
 ___
 
 ### name
@@ -70,10 +58,6 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 **`memberof`** UpdateInboxOptions
 
-#### Defined in
-
-[src/generated/api.ts:6062](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6062)
-
 ___
 
 ### tags
@@ -83,7 +67,3 @@ ___
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 
 **`memberof`** UpdateInboxOptions
-
-#### Defined in
-
-[src/generated/api.ts:6068](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6068)

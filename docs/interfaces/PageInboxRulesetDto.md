@@ -32,10 +32,6 @@ Paginated inbox ruleset results. Page index starts at zero. Projection results m
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4206](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4206)
-
 ___
 
 ### empty
@@ -43,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageInboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:4212](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4212)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4218](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4218)
-
 ___
 
 ### last
@@ -67,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageInboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:4224](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4224)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4230](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4230)
-
 ___
 
 ### numberOfElements
@@ -91,10 +71,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageInboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:4236](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4236)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4242](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4242)
-
 ___
 
 ### size
@@ -115,10 +87,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageInboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:4248](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4248)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4254](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4254)
-
 ___
 
 ### totalElements
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** PageInboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:4260](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4260)
-
 ___
 
 ### totalPages
@@ -151,7 +111,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageInboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:4266](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4266)

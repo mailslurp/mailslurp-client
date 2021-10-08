@@ -22,10 +22,6 @@
 
 **`memberof`** Sort
 
-#### Defined in
-
-[src/generated/api.ts:5562](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5562)
-
 ___
 
 ### sorted
@@ -34,10 +30,6 @@ ___
 
 **`memberof`** Sort
 
-#### Defined in
-
-[src/generated/api.ts:5568](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5568)
-
 ___
 
 ### unsorted
@@ -45,7 +37,3 @@ ___
 • `Optional` **unsorted**: `boolean`
 
 **`memberof`** Sort
-
-#### Defined in
-
-[src/generated/api.ts:5574](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5574)

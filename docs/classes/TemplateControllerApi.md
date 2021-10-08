@@ -2,10 +2,6 @@
 
 # Class: TemplateControllerApi
 
-TemplateControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,52 +16,44 @@ TemplateControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](TemplateControllerApi.md#basepath)
 - [configuration](TemplateControllerApi.md#configuration)
-- [fetch](TemplateControllerApi.md#fetch)
 
 ### Methods
 
 - [createTemplate](TemplateControllerApi.md#createtemplate)
+- [createTemplateRaw](TemplateControllerApi.md#createtemplateraw)
 - [deleteTemplate](TemplateControllerApi.md#deletetemplate)
+- [deleteTemplateRaw](TemplateControllerApi.md#deletetemplateraw)
 - [getAllTemplates](TemplateControllerApi.md#getalltemplates)
+- [getAllTemplatesRaw](TemplateControllerApi.md#getalltemplatesraw)
 - [getTemplate](TemplateControllerApi.md#gettemplate)
+- [getTemplateRaw](TemplateControllerApi.md#gettemplateraw)
 - [getTemplates](TemplateControllerApi.md#gettemplates)
+- [getTemplatesRaw](TemplateControllerApi.md#gettemplatesraw)
+- [request](TemplateControllerApi.md#request)
 - [updateTemplate](TemplateControllerApi.md#updatetemplate)
+- [updateTemplateRaw](TemplateControllerApi.md#updatetemplateraw)
+- [withMiddleware](TemplateControllerApi.md#withmiddleware)
+- [withPostMiddleware](TemplateControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](TemplateControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new TemplateControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new TemplateControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -75,182 +63,327 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createTemplate
 
-▸ **createTemplate**(`createTemplateOptions`, `options?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+▸ **createTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-**`summary`** Create a Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+Create a Template
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createTemplateOptions` | [`CreateTemplateOptions`](../interfaces/CreateTemplateOptions.md) | createTemplateOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateTemplateRequest`](../interfaces/CreateTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:28808](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28808)
+### createTemplateRaw
+
+▸ **createTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
+
+Create a Template
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateTemplateRequest`](../interfaces/CreateTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
 ___
 
 ### deleteTemplate
 
-▸ **deleteTemplate**(`templateId`, `options?`): `Promise`<`Response`\>
+▸ **deleteTemplate**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-**`summary`** Delete Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+Delete Template
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `templateId` | `string` | templateId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteTemplateRequest`](../interfaces/DeleteTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:28826](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28826)
+### deleteTemplateRaw
+
+▸ **deleteTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete Template
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteTemplateRequest`](../interfaces/DeleteTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### getAllTemplates
 
-▸ **getAllTemplates**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
+▸ **getAllTemplates**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
 
-**`summary`** Get all Templates in paginated format
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+Get all Templates in paginated format
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `page?` | `number` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllTemplatesRequest`](../interfaces/GetAllTemplatesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:28845](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28845)
-
 ___
 
-### getTemplate
+### getAllTemplatesRaw
 
-▸ **getTemplate**(`templateId`, `options?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+▸ **getAllTemplatesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>\>
 
-**`summary`** Get Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `templateId` | `string` | templateId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:28871](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28871)
-
-___
-
-### getTemplates
-
-▸ **getTemplates**(`options?`): `Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
-
-**`summary`** Get all Templates
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+Get all Templates in paginated format
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllTemplatesRequest`](../interfaces/GetAllTemplatesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
-
-#### Defined in
-
-[src/generated/api.ts:28885](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28885)
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>\>
 
 ___
 
-### updateTemplate
+### getTemplate
 
-▸ **updateTemplate**(`createTemplateOptions`, `templateId`, `options?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+▸ **getTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-**`summary`** Update a Template
-
-**`throws`** {RequiredError}
-
-**`memberof`** TemplateControllerApi
+Get Template
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createTemplateOptions` | [`CreateTemplateOptions`](../interfaces/CreateTemplateOptions.md) | createTemplateOptions |
-| `templateId` | `string` | templateId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplateRequest`](../interfaces/GetTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:28900](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28900)
+### getTemplateRaw
+
+▸ **getTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
+
+Get Template
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplateRequest`](../interfaces/GetTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
+
+___
+
+### getTemplates
+
+▸ **getTemplates**(`initOverrides?`): `Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
+
+Get all Templates
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
+
+___
+
+### getTemplatesRaw
+
+▸ **getTemplatesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>\>
+
+Get all Templates
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### updateTemplate
+
+▸ **updateTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+
+Update a Template
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateTemplateRequest`](../interfaces/UpdateTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+
+___
+
+### updateTemplateRaw
+
+▸ **updateTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
+
+Update a Template
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateTemplateRequest`](../interfaces/UpdateTemplateRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

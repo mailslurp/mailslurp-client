@@ -23,10 +23,6 @@
 
 **`memberof`** ExpiredInboxRecordProjection
 
-#### Defined in
-
-[src/generated/api.ts:2371](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2371)
-
 ___
 
 ### emailAddress
@@ -34,10 +30,6 @@ ___
 • **emailAddress**: `string`
 
 **`memberof`** ExpiredInboxRecordProjection
-
-#### Defined in
-
-[src/generated/api.ts:2377](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2377)
 
 ___
 
@@ -47,10 +39,6 @@ ___
 
 **`memberof`** ExpiredInboxRecordProjection
 
-#### Defined in
-
-[src/generated/api.ts:2383](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2383)
-
 ___
 
 ### userId
@@ -58,7 +46,3 @@ ___
 • **userId**: `string`
 
 **`memberof`** ExpiredInboxRecordProjection
-
-#### Defined in
-
-[src/generated/api.ts:2389](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2389)

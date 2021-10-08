@@ -2,10 +2,6 @@
 
 # Class: ContactControllerApi
 
-ContactControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,52 +16,44 @@ ContactControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](ContactControllerApi.md#basepath)
 - [configuration](ContactControllerApi.md#configuration)
-- [fetch](ContactControllerApi.md#fetch)
 
 ### Methods
 
 - [createContact](ContactControllerApi.md#createcontact)
+- [createContactRaw](ContactControllerApi.md#createcontactraw)
 - [deleteContact](ContactControllerApi.md#deletecontact)
+- [deleteContactRaw](ContactControllerApi.md#deletecontactraw)
 - [getAllContacts](ContactControllerApi.md#getallcontacts)
+- [getAllContactsRaw](ContactControllerApi.md#getallcontactsraw)
 - [getContact](ContactControllerApi.md#getcontact)
+- [getContactRaw](ContactControllerApi.md#getcontactraw)
 - [getContactVCard](ContactControllerApi.md#getcontactvcard)
+- [getContactVCardRaw](ContactControllerApi.md#getcontactvcardraw)
 - [getContacts](ContactControllerApi.md#getcontacts)
+- [getContactsRaw](ContactControllerApi.md#getcontactsraw)
+- [request](ContactControllerApi.md#request)
+- [withMiddleware](ContactControllerApi.md#withmiddleware)
+- [withPostMiddleware](ContactControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](ContactControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new ContactControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new ContactControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -75,181 +63,327 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createContact
 
-▸ **createContact**(`createContactOptions`, `options?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
+▸ **createContact**(`requestParameters`, `initOverrides?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
 
-**`summary`** Create a contact
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
+Create a contact
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createContactOptions` | [`CreateContactOptions`](../interfaces/CreateContactOptions.md) | createContactOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateContactRequest`](../interfaces/CreateContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:12514](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12514)
+### createContactRaw
+
+▸ **createContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
+
+Create a contact
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateContactRequest`](../interfaces/CreateContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
 
 ___
 
 ### deleteContact
 
-▸ **deleteContact**(`contactId`, `options?`): `Promise`<`Response`\>
+▸ **deleteContact**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-**`summary`** Delete contact
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
+Delete contact
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contactId` | `string` | contactId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteContactRequest`](../interfaces/DeleteContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:12532](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12532)
+### deleteContactRaw
+
+▸ **deleteContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete contact
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteContactRequest`](../interfaces/DeleteContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### getAllContacts
 
-▸ **getAllContacts**(`before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
+▸ **getAllContacts**(`requestParameters`, `initOverrides?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
-**`summary`** Get all contacts
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
+Get all contacts
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `page?` | `number` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllContactsRequest`](../interfaces/GetAllContactsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:12551](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12551)
-
 ___
 
-### getContact
+### getAllContactsRaw
 
-▸ **getContact**(`contactId`, `options?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
+▸ **getAllContactsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>\>
 
-**`summary`** Get contact
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contactId` | `string` | contactId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:12577](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12577)
-
-___
-
-### getContactVCard
-
-▸ **getContactVCard**(`contactId`, `options?`): `Promise`<`string`\>
-
-**`summary`** Get contact vCard vcf file
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contactId` | `string` | contactId |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<`string`\>
-
-#### Defined in
-
-[src/generated/api.ts:12592](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12592)
-
-___
-
-### getContacts
-
-▸ **getContacts**(`options?`): `Promise`<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>
-
-**`summary`** Get all contacts
-
-**`throws`** {RequiredError}
-
-**`memberof`** ContactControllerApi
+Get all contacts
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllContactsRequest`](../interfaces/GetAllContactsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>\>
+
+___
+
+### getContact
+
+▸ **getContact**(`requestParameters`, `initOverrides?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
+
+Get contact
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetContactRequest`](../interfaces/GetContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
+
+___
+
+### getContactRaw
+
+▸ **getContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
+
+Get contact
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetContactRequest`](../interfaces/GetContactRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
+
+___
+
+### getContactVCard
+
+▸ **getContactVCard**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Get contact vCard vcf file
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetContactVCardRequest`](../interfaces/GetContactVCardRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### getContactVCardRaw
+
+▸ **getContactVCardRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Get contact vCard vcf file
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetContactVCardRequest`](../interfaces/GetContactVCardRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### getContacts
+
+▸ **getContacts**(`initOverrides?`): `Promise`<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>
+
+Get all contacts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:12606](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12606)
+### getContactsRaw
+
+▸ **getContactsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>\>
+
+Get all contacts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

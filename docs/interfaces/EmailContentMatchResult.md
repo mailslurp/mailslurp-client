@@ -23,10 +23,6 @@ Matches for the given pattern
 
 **`memberof`** EmailContentMatchResult
 
-#### Defined in
-
-[src/generated/api.ts:2035](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2035)
-
 ___
 
 ### pattern
@@ -34,7 +30,3 @@ ___
 • **pattern**: `string`
 
 **`memberof`** EmailContentMatchResult
-
-#### Defined in
-
-[src/generated/api.ts:2041](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2041)

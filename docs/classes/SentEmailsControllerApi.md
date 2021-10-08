@@ -2,10 +2,6 @@
 
 # Class: SentEmailsControllerApi
 
-SentEmailsControllerApi - object-oriented interface
-
-**`export`**
-
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
@@ -20,52 +16,44 @@ SentEmailsControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](SentEmailsControllerApi.md#basepath)
 - [configuration](SentEmailsControllerApi.md#configuration)
-- [fetch](SentEmailsControllerApi.md#fetch)
 
 ### Methods
 
 - [getAllSentTrackingPixels](SentEmailsControllerApi.md#getallsenttrackingpixels)
+- [getAllSentTrackingPixelsRaw](SentEmailsControllerApi.md#getallsenttrackingpixelsraw)
 - [getSentEmail](SentEmailsControllerApi.md#getsentemail)
 - [getSentEmailHTMLContent](SentEmailsControllerApi.md#getsentemailhtmlcontent)
+- [getSentEmailHTMLContentRaw](SentEmailsControllerApi.md#getsentemailhtmlcontentraw)
+- [getSentEmailRaw](SentEmailsControllerApi.md#getsentemailraw)
 - [getSentEmailTrackingPixels](SentEmailsControllerApi.md#getsentemailtrackingpixels)
+- [getSentEmailTrackingPixelsRaw](SentEmailsControllerApi.md#getsentemailtrackingpixelsraw)
 - [getSentEmails](SentEmailsControllerApi.md#getsentemails)
+- [getSentEmailsRaw](SentEmailsControllerApi.md#getsentemailsraw)
 - [getSentOrganizationEmails](SentEmailsControllerApi.md#getsentorganizationemails)
+- [getSentOrganizationEmailsRaw](SentEmailsControllerApi.md#getsentorganizationemailsraw)
+- [request](SentEmailsControllerApi.md#request)
+- [withMiddleware](SentEmailsControllerApi.md#withmiddleware)
+- [withPostMiddleware](SentEmailsControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](SentEmailsControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new SentEmailsControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new SentEmailsControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -75,201 +63,329 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### getAllSentTrackingPixels
 
-▸ **getAllSentTrackingPixels**(`before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
+▸ **getAllSentTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
-**`summary`** Get all sent email tracking pixels in paginated form
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get all sent email tracking pixels in paginated form
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllSentTrackingPixelsRequest`](../interfaces/GetAllSentTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:27923](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27923)
+### getAllSentTrackingPixelsRaw
+
+▸ **getAllSentTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
+
+Get all sent email tracking pixels in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllSentTrackingPixelsRequest`](../interfaces/GetAllSentTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
 ___
 
 ### getSentEmail
 
-▸ **getSentEmail**(`id`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+▸ **getSentEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-**`summary`** Get sent email receipt
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get sent email receipt
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | id |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailRequest`](../interfaces/GetSentEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-#### Defined in
-
-[src/generated/api.ts:27953](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27953)
-
 ___
 
 ### getSentEmailHTMLContent
 
-▸ **getSentEmailHTMLContent**(`id`, `options?`): `Promise`<`string`\>
+▸ **getSentEmailHTMLContent**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-**`summary`** Get sent email HTML content
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get sent email HTML content
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | id |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailHTMLContentRequest`](../interfaces/GetSentEmailHTMLContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:27968](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27968)
+### getSentEmailHTMLContentRaw
+
+▸ **getSentEmailHTMLContentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Get sent email HTML content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailHTMLContentRequest`](../interfaces/GetSentEmailHTMLContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### getSentEmailRaw
+
+▸ **getSentEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Get sent email receipt
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailRequest`](../interfaces/GetSentEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
 ___
 
 ### getSentEmailTrackingPixels
 
-▸ **getSentEmailTrackingPixels**(`id`, `before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
+▸ **getSentEmailTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
-**`summary`** Get all tracking pixels for a sent email in paginated form
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get all tracking pixels for a sent email in paginated form
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | id |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `searchFilter?` | `string` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailTrackingPixelsRequest`](../interfaces/GetSentEmailTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:27988](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27988)
+### getSentEmailTrackingPixelsRaw
+
+▸ **getSentEmailTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
+
+Get all tracking pixels for a sent email in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailTrackingPixelsRequest`](../interfaces/GetSentEmailTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
 ___
 
 ### getSentEmails
 
-▸ **getSentEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
+▸ **getSentEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-**`summary`** Get all sent emails in paginated form
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get all sent emails in paginated form
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetSentEmailsRequest`](../interfaces/GetSentEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:28026](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28026)
+### getSentEmailsRaw
+
+▸ **getSentEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
+
+Get all sent emails in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailsRequest`](../interfaces/GetSentEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
 
 ___
 
 ### getSentOrganizationEmails
 
-▸ **getSentOrganizationEmails**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
+▸ **getSentOrganizationEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-**`summary`** Get all sent organization emails in paginated form
-
-**`throws`** {RequiredError}
-
-**`memberof`** SentEmailsControllerApi
+Get all sent organization emails in paginated form
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetSentOrganizationEmailsRequest`](../interfaces/GetSentOrganizationEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:28062](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28062)
+### getSentOrganizationEmailsRaw
+
+▸ **getSentOrganizationEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
+
+Get all sent organization emails in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentOrganizationEmailsRequest`](../interfaces/GetSentOrganizationEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

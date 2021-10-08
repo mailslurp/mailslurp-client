@@ -32,10 +32,6 @@ Paginated webhook results. Page index starts at zero. Projection results may omi
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4872](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4872)
-
 ___
 
 ### empty
@@ -43,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageWebhookResult
-
-#### Defined in
-
-[src/generated/api.ts:4878](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4878)
 
 ___
 
@@ -56,10 +48,6 @@ ___
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4884](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4884)
-
 ___
 
 ### last
@@ -67,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageWebhookResult
-
-#### Defined in
-
-[src/generated/api.ts:4890](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4890)
 
 ___
 
@@ -80,10 +64,6 @@ ___
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4896](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4896)
-
 ___
 
 ### numberOfElements
@@ -91,10 +71,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageWebhookResult
-
-#### Defined in
-
-[src/generated/api.ts:4902](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4902)
 
 ___
 
@@ -104,10 +80,6 @@ ___
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4908](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4908)
-
 ___
 
 ### size
@@ -115,10 +87,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageWebhookResult
-
-#### Defined in
-
-[src/generated/api.ts:4914](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4914)
 
 ___
 
@@ -128,10 +96,6 @@ ___
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4920](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4920)
-
 ___
 
 ### totalElements
@@ -140,10 +104,6 @@ ___
 
 **`memberof`** PageWebhookResult
 
-#### Defined in
-
-[src/generated/api.ts:4926](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4926)
-
 ___
 
 ### totalPages
@@ -151,7 +111,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageWebhookResult
-
-#### Defined in
-
-[src/generated/api.ts:4932](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4932)

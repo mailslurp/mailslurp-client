@@ -19,26 +19,18 @@ Options for matching emails in an inbox based on a condition such as `HAS_ATTACH
 
 ### condition
 
-• `Optional` **condition**: [`ConditionEnum`](../enums/ConditionOption.ConditionEnum.md)
+• `Optional` **condition**: [`HAS_ATTACHMENTS`](../enums/ConditionOptionConditionEnum.md#has_attachments)
 
 The condition to evaluate against the email
 
 **`memberof`** ConditionOption
 
-#### Defined in
-
-[src/generated/api.ts:619](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L619)
-
 ___
 
 ### value
 
-• `Optional` **value**: [`ValueEnum`](../enums/ConditionOption.ValueEnum.md)
+• `Optional` **value**: [`ConditionOptionValueEnum`](../enums/ConditionOptionValueEnum.md)
 
 What the condition should evaluate to. A string 'TRUE|FALSE' not a boolean.
 
 **`memberof`** ConditionOption
-
-#### Defined in
-
-[src/generated/api.ts:625](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L625)
