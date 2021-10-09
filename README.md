@@ -105,18 +105,18 @@ Any method that returns non-2xx response throws an exception by default (unless 
 
 ```typescript
 try {
-    await mailslurp.waitController.waitForLatestEmail({
-        inboxId: inboxId,
-        timeout: timeout,
-        unreadOnly: true,
-    });
+  await mailslurp.waitController.waitForLatestEmail({
+    inboxId: inboxId,
+    timeout: timeout,
+    unreadOnly: true,
+  });
 } catch (e) {
-    // handle the error and status code in your code
-    const statusCode = e.status;
-    const errorMessage = await e.text();
+  // handle the error and status code in your code
+  const statusCode = e.status;
+  const errorMessage = await e.text();
 
-    expect(errorMessage).toContain('Failed to satisfy email query for inbox');
-    expect(statusCode).toEqual(408);
+  expect(errorMessage).toContain('Failed to satisfy email query for inbox');
+  expect(statusCode).toEqual(408);
 }
 ```
 
@@ -180,7 +180,7 @@ Inboxes have real email addresses. See the [inbox reference](https://www.mailslu
 
 ```javascript
 const mailslurp = new MailSlurp(config);
-const {id: inboxId} = await mailslurp.createInbox();
+const { id: inboxId } = await mailslurp.createInbox();
 const inbox = await mailslurp.getInbox(inboxId);
 expect(inbox.id).toEqual(inboxId);
 ```
@@ -205,25 +205,31 @@ To read emails that already exist in an inbox use the [EmailController](https://
 There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/Email/).
 
 ```javascript
-const inbox = await mailslurp.createInbox()
-await mailslurp.sendEmail(inbox.id, {to: [inbox.emailAddress], subject: "test"})
+const inbox = await mailslurp.createInbox();
+await mailslurp.sendEmail(inbox.id, {
+  to: [inbox.emailAddress],
+  subject: 'test',
+});
 
 // wait for first email
 const latestEmail = await mailslurp.waitForLatestEmail(inbox.id, timeoutMs);
-expect(latestEmail.subject).toContain("test");
+expect(latestEmail.subject).toContain('test');
 
 // send another
-await mailslurp.sendEmail(inbox.id, {to: [inbox.emailAddress], subject: "second"})
+await mailslurp.sendEmail(inbox.id, {
+  to: [inbox.emailAddress],
+  subject: 'second',
+});
 
 // wait for second using controller instead
 const secondEmail = await mailslurp.waitController.waitForLatestEmail({
-    inboxId: inbox.id,
-    unreadOnly: true
+  inboxId: inbox.id,
+  unreadOnly: true,
 });
-expect(secondEmail.subject).toContain('second')
+expect(secondEmail.subject).toContain('second');
 
 const allEmails = await mailslurp.getEmails(inbox.id);
-expect(allEmails).toHaveLength(2)
+expect(allEmails).toHaveLength(2);
 ```
 
 For more fetching methods see the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/WaitForControllerApi/) and the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/EmailControllerApi/)
@@ -232,14 +238,14 @@ For more fetching methods see the [WaitForController](https://www.mailslurp.com/
 To send emails use the [SendEmailOptions](https://www.mailslurp.com/docs/js/docs/modules/SendEmailOptions/) arguments with the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/InboxControllerApi/) or MailSlurp [instance methods](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/).
 
 ```typescript
-const inbox = await mailslurp.createInbox()
+const inbox = await mailslurp.createInbox();
 const options = {
-    to: [emailAddress],
-    subject: "Hello",
-    body: "Welcome",
+  to: [emailAddress],
+  subject: 'Hello',
+  body: 'Welcome',
 };
 const sent = await mailslurp.sendEmail(inbox.id, options);
-expect(sent.subject).toContain("Hello")
+expect(sent.subject).toContain('Hello');
 ```
 
 ### Upload attachment
@@ -251,17 +257,20 @@ Attachments can be uploaded as base64 strings. The ids returned can the be used 
 const mailslurp = new MailSlurp(config);
 
 // read a file as a base64 encoded string
-const pathToAttachment = path.join(__dirname + "/attachment.txt")
-const fileBase64Encoded = await fs.promises.readFile(pathToAttachment, {encoding: 'base64'});
+const pathToAttachment = path.join(__dirname + '/attachment.txt');
+const fileBase64Encoded = await fs.promises.readFile(pathToAttachment, {
+  encoding: 'base64',
+});
 
 // upload the attachment as base64 string and get atttachment id
-const [attachmentId] = await mailslurp.attachmentController.uploadAttachment({
+const [attachmentId] =
+  await mailslurp.attachmentController.uploadAttachment({
     uploadOptions: {
-        base64Contents: fileBase64Encoded,
-        contentType: 'text/plain',
-        filename: path.basename(pathToAttachment)
-    }
-})
+      base64Contents: fileBase64Encoded,
+      contentType: 'text/plain',
+      filename: path.basename(pathToAttachment),
+    },
+  });
 ```
 
 ### Send attachment
@@ -270,21 +279,21 @@ To send an attachment first upload the file using the [AttachmentController](htt
 You can send attachments by including their IDs in the attachments options when sending.
 
 ```javascript
-const inbox1 = await mailslurp.createInbox()
-const inbox2 = await mailslurp.createInbox()
+const inbox1 = await mailslurp.createInbox();
+const inbox2 = await mailslurp.createInbox();
 
 // send email and get saved result
 const sentEmail = await mailslurp.inboxController.sendEmailAndConfirm({
-    inboxId: inbox1.id,
-    sendEmailOptions: {
-        to: [inbox2.emailAddress],
-        attachments: [attachmentId],
-        subject: "Send attachments",
-        body: "Here are your files"
-    }
+  inboxId: inbox1.id,
+  sendEmailOptions: {
+    to: [inbox2.emailAddress],
+    attachments: [attachmentId],
+    subject: 'Send attachments',
+    body: 'Here are your files',
+  },
 });
 
-expect(sentEmail.attachments.length).toEqual(1)
+expect(sentEmail.attachments.length).toEqual(1);
 ```
 
 ### Receive attachments
@@ -293,28 +302,32 @@ To wait for expected emails to arrive and read their contents use the [WaitFor c
 ```javascript
 // first wait for an email
 const email = await mailslurp.waitController.waitForLatestEmail({
-    inboxId: inboxId,
-    timeout: 30000,
-    unreadOnly: true
-})
+  inboxId: inboxId,
+  timeout: 30000,
+  unreadOnly: true,
+});
 
 // check has attachments
 expect(email.attachments.length).toEqual(1);
 
 // download with email controller as base64 string
-const attachmentDto = await mailslurp.emailController.downloadAttachmentBase64({
+const attachmentDto =
+  await mailslurp.emailController.downloadAttachmentBase64({
     attachmentId: email.attachments[0]!!,
-    emailId: email.id
-})
+    emailId: email.id,
+  });
 
 // can access content
-expect(attachmentDto.base64FileContents).toBeTruthy()
-const fileContent = new Buffer(attachmentDto.base64FileContents, 'base64').toString();
-expect(fileContent).toContain('test')
+expect(attachmentDto.base64FileContents).toBeTruthy();
+const fileContent = new Buffer(
+  attachmentDto.base64FileContents,
+  'base64'
+).toString();
+expect(fileContent).toContain('test');
 
 // can access size etc
-expect(attachmentDto.sizeBytes).toBeTruthy()
-expect(attachmentDto.contentType).toBeTruthy()
+expect(attachmentDto.sizeBytes).toBeTruthy();
+expect(attachmentDto.contentType).toBeTruthy();
 ```
 
 ### Wait for multiple emails
@@ -322,27 +335,33 @@ The WaitForController contains many methods for waiting for emails to arrive in 
 
 ```javascript
 it('can wait for multiple emails', async () => {
-    const mailslurp = new MailSlurp(config);
+  const mailslurp = new MailSlurp(config);
 
-    // example of creating inboxes simultaneously
-    const inbox1 = await mailslurp.createInbox();
-    const inbox2 = await mailslurp.createInbox();
+  // example of creating inboxes simultaneously
+  const inbox1 = await mailslurp.createInbox();
+  const inbox2 = await mailslurp.createInbox();
 
-    // send two emails
-    await mailslurp.sendEmail(inbox1.id, {to: [inbox2.emailAddress], subject: "Hello Dogs"})
-    await mailslurp.sendEmail(inbox1.id, {to: [inbox2.emailAddress], subject: "Hello Cats"})
+  // send two emails
+  await mailslurp.sendEmail(inbox1.id, {
+    to: [inbox2.emailAddress],
+    subject: 'Hello Dogs',
+  });
+  await mailslurp.sendEmail(inbox1.id, {
+    to: [inbox2.emailAddress],
+    subject: 'Hello Cats',
+  });
 
-    // wait for 2 emails
-    const emails = await mailslurp.waitController.waitForEmailCount({
-        count: 2,
-        inboxId: inbox2.id,
-        sort: WaitForEmailCountSortEnum.DESC
-    })
+  // wait for 2 emails
+  const emails = await mailslurp.waitController.waitForEmailCount({
+    count: 2,
+    inboxId: inbox2.id,
+    sort: WaitForEmailCountSortEnum.DESC,
+  });
 
-    const subjects = emails.map(e => e.subject)
-    expect(subjects).toContain("Hello Dogs")
-    expect(subjects).toContain("Hello Cats")
-})
+  const subjects = emails.map((e) => e.subject);
+  expect(subjects).toContain('Hello Dogs');
+  expect(subjects).toContain('Hello Cats');
+});
 ```
 
 ### Wait for matching emails
@@ -356,29 +375,31 @@ const inbox2 = await mailslurp.createInbox();
 const to = [inbox2.emailAddress];
 
 // send two emails
-await mailslurp.sendEmail(inbox1.id, {to, subject: "Apples"});
-await mailslurp.sendEmail(inbox1.id, {to, subject: "Oranges"});
+await mailslurp.sendEmail(inbox1.id, { to, subject: 'Apples' });
+await mailslurp.sendEmail(inbox1.id, { to, subject: 'Oranges' });
 
 // wait for matching email based on subject (see MatchOptions for all options)
 const matchOptions: MatchOptions = {
-    matches: [
-        {
-            field: MatchOptionFieldEnum.SUBJECT,
-            should: MatchOptionShouldEnum.CONTAIN,
-            value: "Apples"
-        }
-    ]
+  matches: [
+    {
+      field: MatchOptionFieldEnum.SUBJECT,
+      should: MatchOptionShouldEnum.CONTAIN,
+      value: 'Apples',
+    },
+  ],
 };
 const expectCount = 1;
-const matchingEmails = await mailslurp.waitController.waitForMatchingEmails({
+const matchingEmails = await mailslurp.waitController.waitForMatchingEmails(
+  {
     inboxId: inbox2.id,
     matchOptions: matchOptions,
     count: expectCount,
     timeout: timeoutMillis,
-    unreadOnly: true
-})
+    unreadOnly: true,
+  }
+);
 expect(matchingEmails.length).toEqual(1);
-expect(matchingEmails[0].subject).toEqual("Apples");
+expect(matchingEmails[0].subject).toEqual('Apples');
 ```
 
 See the [MatchOptions documentation](https://www.mailslurp.com/docs/js/docs/interfaces/MatchOptions/) for reference.
@@ -390,29 +411,29 @@ You can extract useful information from emails using regular expressions. See th
 const inbox1 = await mailslurp.createInbox();
 const inbox2 = await mailslurp.createInbox();
 
-const to = [inbox2.emailAddress]
-const body = "Hi there. Your code is: 123456"
-await mailslurp.sendEmail(inbox1.id, {to, body})
+const to = [inbox2.emailAddress];
+const body = 'Hi there. Your code is: 123456';
+await mailslurp.sendEmail(inbox1.id, { to, body });
 
 // wait for email
 const email = await mailslurp.waitController.waitForLatestEmail({
-    inboxId: inbox2.id,
-    timeout: timeoutMillis,
-    unreadOnly: true
-})
-const pattern = "code is: ([0-9]{6})"
-expect(email.body).toContain("Your code is")
+  inboxId: inbox2.id,
+  timeout: timeoutMillis,
+  unreadOnly: true,
+});
+const pattern = 'code is: ([0-9]{6})';
+expect(email.body).toContain('Your code is');
 
 // pass the pattern to mailslurp to match for emails
 const result = await mailslurp.emailController.getEmailContentMatch({
-    contentMatchOptions: {pattern},
-    emailId: email.id
-})
+  contentMatchOptions: { pattern },
+  emailId: email.id,
+});
 
 // access the match groups
 expect(result.matches).toHaveLength(2);
-expect(result.matches[0]).toEqual("code is: 123456")
-expect(result.matches[1]).toEqual("123456");
+expect(result.matches[0]).toEqual('code is: 123456');
+expect(result.matches[1]).toEqual('123456');
 ```
 
 ## Webhooks
@@ -441,15 +462,15 @@ To consume webhooks first create a webhook for an inbox and a given [webhook eve
 const app = express();
 app.use(bodyParser.json());
 // receive new email webhook payload via post
-app.post("/new-email-endpoint", async (request, response) => {
-    // can use typescript types
-    const payload = request.body as WebhookNewEmailPayload
+app.post('/new-email-endpoint', async (request, response) => {
+  // can use typescript types
+  const payload = request.body as WebhookNewEmailPayload;
 
-    // do something with with email id
-    expect(payload.emailId).toBeTruthy()
+  // do something with with email id
+  expect(payload.emailId).toBeTruthy();
 
-    // return a 2xx status code so MailSlurp knows you received it
-    return response.sendStatus(200);
+  // return a 2xx status code so MailSlurp knows you received it
+  return response.sendStatus(200);
 });
 const server = app.listen(port);
 ```
@@ -458,17 +479,21 @@ const server = app.listen(port);
 
 ```typescript
 // get a test payload for NEW_EMAIL event
-const testPayload = await mailslurp.webhookController.getTestWebhookPayloadNewEmail()
+const testPayload =
+  await mailslurp.webhookController.getTestWebhookPayloadNewEmail();
 // post payload to your server to test it
-const testResponse = await fetch(`http://localhost:${port}/new-email-endpoint`, {
+const testResponse = await fetch(
+  `http://localhost:${port}/new-email-endpoint`,
+  {
     method: 'POST',
     headers: {
-        'content-type': 'application/json'
+      'content-type': 'application/json',
     },
-    body: JSON.stringify(testPayload)
-})
+    body: JSON.stringify(testPayload),
+  }
+);
 // expect 200
-expect(testResponse.status).toEqual(200)
+expect(testResponse.status).toEqual(200);
 ```
 
 ## Verify email address
