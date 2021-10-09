@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForConditionsCountTypeEnum
-
 # Enumeration: WaitForConditionsCountTypeEnum
 
 **`export`**

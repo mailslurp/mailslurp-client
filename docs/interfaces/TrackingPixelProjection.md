@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TrackingPixelProjection
-
 # Interface: TrackingPixelProjection
 
 **`export`**

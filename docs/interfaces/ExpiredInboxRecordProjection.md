@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExpiredInboxRecordProjection
-
 # Interface: ExpiredInboxRecordProjection
 
 **`export`**

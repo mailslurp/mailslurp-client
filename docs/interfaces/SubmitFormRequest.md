@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SubmitFormRequest
-
 # Interface: SubmitFormRequest
 
 ## Table of contents

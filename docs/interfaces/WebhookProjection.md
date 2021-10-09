@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookProjection
-
 # Interface: WebhookProjection
 
 Representation of a webhook

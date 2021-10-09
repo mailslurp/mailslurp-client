@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateAliasOptions
-
 # Interface: UpdateAliasOptions
 
 Update an email alias

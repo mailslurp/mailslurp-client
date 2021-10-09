@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetSentEmailHTMLContentRequest
-
 # Interface: GetSentEmailHTMLContentRequest
 
 ## Table of contents

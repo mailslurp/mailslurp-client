@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAliasThreadsRequest
-
 # Interface: GetAliasThreadsRequest
 
 ## Table of contents

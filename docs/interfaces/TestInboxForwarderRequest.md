@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TestInboxForwarderRequest
-
 # Interface: TestInboxForwarderRequest
 
 ## Table of contents

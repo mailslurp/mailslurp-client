@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SendTestEmailRequest
-
 # Interface: SendTestEmailRequest
 
 ## Table of contents

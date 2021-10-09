@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GravatarUrl
-
 # Interface: GravatarUrl
 
 **`export`**

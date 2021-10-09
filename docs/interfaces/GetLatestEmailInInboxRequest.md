@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetLatestEmailInInboxRequest
-
 # Interface: GetLatestEmailInInboxRequest
 
 ## Table of contents

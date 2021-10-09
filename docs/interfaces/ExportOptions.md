@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportOptions
-
 # Interface: ExportOptions
 
 Options for exporting user data

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Consume
-
 # Interface: Consume
 
 ## Table of contents

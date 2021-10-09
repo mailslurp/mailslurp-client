@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TemplateProjection
-
 # Interface: TemplateProjection
 
 **`export`**

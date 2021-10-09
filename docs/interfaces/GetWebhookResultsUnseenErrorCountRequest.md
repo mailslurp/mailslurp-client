@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetWebhookResultsUnseenErrorCountRequest
-
 # Interface: GetWebhookResultsUnseenErrorCountRequest
 
 ## Table of contents

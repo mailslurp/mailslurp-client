@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageWebhookProjection
-
 # Interface: PageWebhookProjection
 
 Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.

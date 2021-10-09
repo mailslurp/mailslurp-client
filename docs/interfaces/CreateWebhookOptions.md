@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateWebhookOptions
-
 # Interface: CreateWebhookOptions
 
 Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the inbox receives an email. Webhooks are great for processing many inbound emails.

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainNameRecord
-
 # Interface: DomainNameRecord
 
 DNS Record required for verification of a domain. Record vary depending on domain type.

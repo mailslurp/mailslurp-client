@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MarkAsReadRequest
-
 # Interface: MarkAsReadRequest
 
 ## Table of contents

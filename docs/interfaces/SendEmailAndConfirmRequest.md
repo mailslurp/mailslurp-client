@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SendEmailAndConfirmRequest
-
 # Interface: SendEmailAndConfirmRequest
 
 ## Table of contents

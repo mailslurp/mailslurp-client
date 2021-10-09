@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToEmailRequest
-
 # Interface: ReplyToEmailRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxPreview
-
 # Interface: InboxPreview
 
 **`export`**
@@ -76,7 +74,7 @@ ___
 
 • `Optional` **inboxType**: [`InboxPreviewInboxTypeEnum`](../enums/InboxPreviewInboxTypeEnum.md)
 
-Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testing. SMTP inboxes are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
+Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great most cases. SMTP inboxes are receive only (cannot send) and are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
 
 **`memberof`** InboxPreview
 
@@ -106,6 +104,6 @@ ___
 
 • `Optional` **teamAccess**: `boolean`
 
-Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at <https://www.mailslurp.com/guides/team-email-account-sharing/>
+Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
 
 **`memberof`** InboxPreview

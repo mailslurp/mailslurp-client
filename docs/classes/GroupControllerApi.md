@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GroupControllerApi
-
 # Class: GroupControllerApi
 
 ## Hierarchy

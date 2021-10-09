@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetExportLinkExportTypeEnum
-
 # Enumeration: GetExportLinkExportTypeEnum
 
 **`export`**

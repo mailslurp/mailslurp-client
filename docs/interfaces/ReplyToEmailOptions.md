@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToEmailOptions
-
 # Interface: ReplyToEmailOptions
 
 Options for replying to email with API

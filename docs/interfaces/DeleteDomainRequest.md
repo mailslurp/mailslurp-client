@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteDomainRequest
-
 # Interface: DeleteDomainRequest
 
 ## Table of contents

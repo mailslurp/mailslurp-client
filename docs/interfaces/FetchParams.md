@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / FetchParams
-
 # Interface: FetchParams
 
 ## Table of contents

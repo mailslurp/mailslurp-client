@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DNSLookupOptions
-
 # Interface: DNSLookupOptions
 
 Options for DNS query.

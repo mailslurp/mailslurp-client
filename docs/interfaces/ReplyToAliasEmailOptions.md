@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToAliasEmailOptions
-
 # Interface: ReplyToAliasEmailOptions
 
 Options for replying to an alias email using the alias inbox

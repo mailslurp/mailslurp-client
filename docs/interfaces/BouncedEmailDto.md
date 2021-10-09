@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BouncedEmailDto
-
 # Interface: BouncedEmailDto
 
 Bounced email

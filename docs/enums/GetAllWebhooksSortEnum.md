@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAllWebhooksSortEnum
-
 # Enumeration: GetAllWebhooksSortEnum
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteInboxForwarderRequest
-
 # Interface: DeleteInboxForwarderRequest
 
 ## Table of contents

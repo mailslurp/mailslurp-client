@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TemplateControllerApi
-
 # Class: TemplateControllerApi
 
 ## Hierarchy

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExpiredInboxDto
-
 # Interface: ExpiredInboxDto
 
 Expired inbox

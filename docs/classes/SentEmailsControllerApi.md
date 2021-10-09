@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SentEmailsControllerApi
-
 # Class: SentEmailsControllerApi
 
 ## Hierarchy

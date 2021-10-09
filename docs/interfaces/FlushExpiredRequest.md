@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / FlushExpiredRequest
-
 # Interface: FlushExpiredRequest
 
 ## Table of contents

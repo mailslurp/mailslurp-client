@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetTemplateRequest
-
 # Interface: GetTemplateRequest
 
 ## Table of contents

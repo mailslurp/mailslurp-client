@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailAnalysis
-
 # Interface: EmailAnalysis
 
 Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or dynamic error message

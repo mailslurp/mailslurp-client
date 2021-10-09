@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / JSONSchemaDto
-
 # Interface: JSONSchemaDto
 
 **`export`**

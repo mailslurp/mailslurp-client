@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetOrganizationEmailsPaginatedSortEnum
-
 # Enumeration: GetOrganizationEmailsPaginatedSortEnum
 
 **`export`**

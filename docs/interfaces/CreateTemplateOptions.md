@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateTemplateOptions
-
 # Interface: CreateTemplateOptions
 
 **`export`**

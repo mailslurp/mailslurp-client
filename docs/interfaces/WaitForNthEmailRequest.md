@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForNthEmailRequest
-
 # Interface: WaitForNthEmailRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForConditions
-
 # Interface: WaitForConditions
 
 Conditions that a `waitForXEmails` endpoint operates on. The methods wait until given conditions are met or a timeout is reached. If the conditions are met without needing to wait the results will be returned immediately. Can include `unreadOnly` to ignore already read emails that were returned in an API call or viewing in the dashboard. Can also include matches for emails containing `from`, `subject`, `hasAttachments` etc.

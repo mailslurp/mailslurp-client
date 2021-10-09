@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateContactOptions
-
 # Interface: CreateContactOptions
 
 **`export`**

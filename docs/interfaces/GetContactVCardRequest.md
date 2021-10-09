@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetContactVCardRequest
-
 # Interface: GetContactVCardRequest
 
 ## Table of contents

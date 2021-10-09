@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ApiResponse
-
 # Interface: ApiResponse<T\>
 
 ## Type parameters

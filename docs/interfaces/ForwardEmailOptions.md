@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ForwardEmailOptions
-
 # Interface: ForwardEmailOptions
 
 Options for forwarding an email

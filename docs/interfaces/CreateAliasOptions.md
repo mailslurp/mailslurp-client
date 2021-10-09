@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateAliasOptions
-
 # Interface: CreateAliasOptions
 
 Create email alias options. Email aliases can be used to mask real email addresses behind an ID. You can also attach an inbox to an alias so that any email received by the inbox email address if forwarded to the alias email address.

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / JSONApiResponse
-
 # Class: JSONApiResponse<T\>
 
 ## Type parameters

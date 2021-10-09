@@ -15,13 +15,10 @@
   "MD013": {
     "line_length": 10000
   },
-  "MD030": {
-    "ul_multi": 3,
-    "ol_multi": 2
-  },
   "MD024": false,
   "MD033": false,
   "MD030": false,
+  "MD034": false,
   "MD035": {
     "style": false
   },

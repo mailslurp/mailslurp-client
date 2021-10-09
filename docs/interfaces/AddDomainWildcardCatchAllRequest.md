@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AddDomainWildcardCatchAllRequest
-
 # Interface: AddDomainWildcardCatchAllRequest
 
 ## Table of contents

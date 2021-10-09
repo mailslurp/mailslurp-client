@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetExpiredInboxRecordRequest
-
 # Interface: GetExpiredInboxRecordRequest
 
 ## Table of contents

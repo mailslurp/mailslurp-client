@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteWebhookRequest
-
 # Interface: DeleteWebhookRequest
 
 ## Table of contents

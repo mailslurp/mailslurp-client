@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForLatestEmailRequest
-
 # Interface: WaitForLatestEmailRequest
 
 ## Table of contents

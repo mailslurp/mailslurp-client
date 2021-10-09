@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetExpiredInboxByInboxIdRequest
-
 # Interface: GetExpiredInboxByInboxIdRequest
 
 ## Table of contents

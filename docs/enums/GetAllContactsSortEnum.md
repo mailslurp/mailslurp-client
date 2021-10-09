@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAllContactsSortEnum
-
 # Enumeration: GetAllContactsSortEnum
 
 **`export`**

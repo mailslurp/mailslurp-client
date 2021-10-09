@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DownloadBodyBytesRequest
-
 # Interface: DownloadBodyBytesRequest
 
 ## Table of contents

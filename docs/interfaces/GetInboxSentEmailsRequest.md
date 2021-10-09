@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetInboxSentEmailsRequest
-
 # Interface: GetInboxSentEmailsRequest
 
 ## Table of contents

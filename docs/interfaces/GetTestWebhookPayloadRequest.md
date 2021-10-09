@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetTestWebhookPayloadRequest
-
 # Interface: GetTestWebhookPayloadRequest
 
 ## Table of contents

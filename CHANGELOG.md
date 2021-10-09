@@ -1,4 +1,6 @@
 # Changelog
+## [15.0.0]
+- Change method signature of controllers to use a single request parameter instead of many individual parameters.
 
 ## [14.0.0]
 - Add before and since parameters to paginated methods. Parameter count and order has changed for some non-single-parameter functions like `waitForLatestEmail`. Will migrate to all single parameter functions in a later version.

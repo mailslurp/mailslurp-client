@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ConditionOptionValueEnum
-
 # Enumeration: ConditionOptionValueEnum
 
 **`export`**

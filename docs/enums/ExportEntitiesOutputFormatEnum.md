@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportEntitiesOutputFormatEnum
-
 # Enumeration: ExportEntitiesOutputFormatEnum
 
 **`export`**

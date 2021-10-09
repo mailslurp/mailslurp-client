@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailRecipients
-
 # Interface: EmailRecipients
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / IPAddressResult
-
 # Interface: IPAddressResult
 
 IP Address look up result for a given domain / hostname

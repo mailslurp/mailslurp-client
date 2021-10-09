@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BulkSendEmailsRequest
-
 # Interface: BulkSendEmailsRequest
 
 ## Table of contents

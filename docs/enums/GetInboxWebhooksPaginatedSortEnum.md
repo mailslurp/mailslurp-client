@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetInboxWebhooksPaginatedSortEnum
-
 # Enumeration: GetInboxWebhooksPaginatedSortEnum
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateDomainRequest
-
 # Interface: UpdateDomainRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateInboxRulesetOptionsActionEnum
-
 # Enumeration: CreateInboxRulesetOptionsActionEnum
 
 **`export`**

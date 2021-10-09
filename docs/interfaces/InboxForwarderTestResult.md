@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxForwarderTestResult
-
 # Interface: InboxForwarderTestResult
 
 **`export`**

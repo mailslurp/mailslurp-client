@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ResponseTransformer
-
 # Interface: ResponseTransformer<T\>
 
 ## Type parameters

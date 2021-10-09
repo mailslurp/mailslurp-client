@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TemplateVariable
-
 # Interface: TemplateVariable
 
 **`export`**

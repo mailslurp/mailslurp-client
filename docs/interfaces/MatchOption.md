@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MatchOption
-
 # Interface: MatchOption
 
 Options for matching emails in an inbox. Each match option object contains a `field`, `should` and `value` property. Together they form logical conditions such as `SUBJECT` should `CONTAIN` value.

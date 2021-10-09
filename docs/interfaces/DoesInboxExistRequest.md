@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DoesInboxExistRequest
-
 # Interface: DoesInboxExistRequest
 
 ## Table of contents

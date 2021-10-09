@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetEmailHTMLQueryRequest
-
 # Interface: GetEmailHTMLQueryRequest
 
 ## Table of contents

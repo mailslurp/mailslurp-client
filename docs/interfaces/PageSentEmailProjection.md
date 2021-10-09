@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageSentEmailProjection
-
 # Interface: PageSentEmailProjection
 
 Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.

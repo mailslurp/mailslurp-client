@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteInboxRulesetsRequest
-
 # Interface: DeleteInboxRulesetsRequest
 
 ## Table of contents

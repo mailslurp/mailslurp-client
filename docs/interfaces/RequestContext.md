@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RequestContext
-
 # Interface: RequestContext
 
 ## Table of contents

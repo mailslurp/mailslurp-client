@@ -41,7 +41,10 @@ docs: node_modules
 	npm run docs
 
 docs-lint: node_modules
-	npm run docs:lint
+	# fix bad links in docs
+#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/#### Index signature//g' && cd -
+#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/\[key: `string`\]:/key/g' && cd -
+	#npm run docs:lint
 
 docs-test:
 	NODE_BIN=$(PWD)/node_modules/.bin OUTPUT_DIR=$(PWD)/docs $(PWD)/scripts/lint.sh

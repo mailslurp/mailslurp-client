@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ConditionOption
-
 # Interface: ConditionOption
 
 Options for matching emails in an inbox based on a condition such as `HAS_ATTACHMENTS=TRUE`

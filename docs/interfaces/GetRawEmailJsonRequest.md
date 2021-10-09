@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetRawEmailJsonRequest
-
 # Interface: GetRawEmailJsonRequest
 
 ## Table of contents

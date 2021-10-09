@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetDomainRequest
-
 # Interface: GetDomainRequest
 
 ## Table of contents

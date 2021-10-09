@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DescribeMailServerDomainRequest
-
 # Interface: DescribeMailServerDomainRequest
 
 ## Table of contents

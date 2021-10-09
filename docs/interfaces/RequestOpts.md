@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RequestOpts
-
 # Interface: RequestOpts
 
 ## Table of contents

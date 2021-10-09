@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainPreview
-
 # Interface: DomainPreview
 
 Preview object for domain entity

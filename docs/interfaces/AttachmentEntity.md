@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AttachmentEntity
-
 # Interface: AttachmentEntity
 
 **`export`**

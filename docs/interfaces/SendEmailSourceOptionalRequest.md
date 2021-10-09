@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SendEmailSourceOptionalRequest
-
 # Interface: SendEmailSourceOptionalRequest
 
 ## Table of contents

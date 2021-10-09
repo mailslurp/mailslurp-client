@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookNewEmailPayload
-
 # Interface: WebhookNewEmailPayload
 
 NEW_EMAIL webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to. Use the email ID to fetch the full email body or attachments.

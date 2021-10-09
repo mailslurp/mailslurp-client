@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BouncedRecipientDto
-
 # Interface: BouncedRecipientDto
 
 Bounced recipient

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxRulesetDto
-
 # Interface: InboxRulesetDto
 
 **`export`**

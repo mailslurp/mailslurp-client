@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForNthEmailSortEnum
-
 # Enumeration: WaitForNthEmailSortEnum
 
 **`export`**

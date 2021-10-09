@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ListInboxTrackingPixelsRequest
-
 # Interface: ListInboxTrackingPixelsRequest
 
 ## Table of contents

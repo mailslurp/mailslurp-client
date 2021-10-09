@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DNSLookupResults
-
 # Interface: DNSLookupResults
 
 Results of query on domain name servers

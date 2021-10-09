@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetSentOrganizationEmailsSortEnum
-
 # Enumeration: GetSentOrganizationEmailsSortEnum
 
 **`export`**

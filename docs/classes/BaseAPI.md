@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BaseAPI
-
 # Class: BaseAPI
 
 This is the base class for all generated API classes.

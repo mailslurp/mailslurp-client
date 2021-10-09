@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetInboxForwarderRequest
-
 # Interface: GetInboxForwarderRequest
 
 ## Table of contents

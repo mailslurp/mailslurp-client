@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAllInboxesRequest
-
 # Interface: GetAllInboxesRequest
 
 ## Table of contents

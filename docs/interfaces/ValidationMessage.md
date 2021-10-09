@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ValidationMessage
-
 # Interface: ValidationMessage
 
 **`export`**

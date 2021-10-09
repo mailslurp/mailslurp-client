@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetGravatarUrlForEmailAddressRequest
-
 # Interface: GetGravatarUrlForEmailAddressRequest
 
 ## Table of contents

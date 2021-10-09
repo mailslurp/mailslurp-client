@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailContentMatchResult
-
 # Interface: EmailContentMatchResult
 
 Matches for the given pattern

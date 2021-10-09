@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetInboxWebhooksPaginatedRequest
-
 # Interface: GetInboxWebhooksPaginatedRequest
 
 ## Table of contents

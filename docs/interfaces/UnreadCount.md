@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UnreadCount
-
 # Interface: UnreadCount
 
 **`export`**

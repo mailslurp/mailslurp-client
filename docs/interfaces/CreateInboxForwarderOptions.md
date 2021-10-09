@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateInboxForwarderOptions
-
 # Interface: CreateInboxForwarderOptions
 
 Options for creating an inbox forwarder

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / OrganizationInboxProjectionInboxTypeEnum
-
 # Enumeration: OrganizationInboxProjectionInboxTypeEnum
 
 **`export`**

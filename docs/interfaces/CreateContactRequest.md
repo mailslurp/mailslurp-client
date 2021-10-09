@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateContactRequest
-
 # Interface: CreateContactRequest
 
 ## Table of contents

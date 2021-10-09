@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainDto
-
 # Interface: DomainDto
 
 Domain plus verification records and status

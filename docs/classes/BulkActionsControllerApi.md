@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BulkActionsControllerApi
-
 # Class: BulkActionsControllerApi
 
 ## Hierarchy

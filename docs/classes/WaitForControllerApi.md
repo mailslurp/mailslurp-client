@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForControllerApi
-
 # Class: WaitForControllerApi
 
 ## Hierarchy

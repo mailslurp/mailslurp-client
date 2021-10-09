@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookProjectionEventNameEnum
-
 # Enumeration: WebhookProjectionEventNameEnum
 
 **`export`**

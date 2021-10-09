@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetGroupWithContactsRequest
-
 # Interface: GetGroupWithContactsRequest
 
 ## Table of contents

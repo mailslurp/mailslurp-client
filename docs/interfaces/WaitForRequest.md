@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForRequest
-
 # Interface: WaitForRequest
 
 ## Table of contents

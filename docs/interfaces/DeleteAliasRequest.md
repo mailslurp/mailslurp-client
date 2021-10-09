@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteAliasRequest
-
 # Interface: DeleteAliasRequest
 
 ## Table of contents

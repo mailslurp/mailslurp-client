@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAttachmentsRequest
-
 # Interface: GetAttachmentsRequest
 
 ## Table of contents

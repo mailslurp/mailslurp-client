@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AttachmentMetaData
-
 # Interface: AttachmentMetaData
 
 Meta data associated with an attachment. Attachments are stored as byte blobs so the meta data is stored separately.

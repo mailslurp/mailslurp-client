@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetExportLinkRequest
-
 # Interface: GetExportLinkRequest
 
 ## Table of contents

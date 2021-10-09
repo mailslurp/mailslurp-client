@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageUnknownMissedEmailProjection
-
 # Interface: PageUnknownMissedEmailProjection
 
 Paginated unknown MissedEmail results. Unknown missed emails are emails that were sent to MailSlurp /Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.

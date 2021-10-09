@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateNewEmailAddressRequest
-
 # Interface: CreateNewEmailAddressRequest
 
 ## Table of contents

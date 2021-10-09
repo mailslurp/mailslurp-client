@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AttachmentProjection
-
 # Interface: AttachmentProjection
 
 **`export`**

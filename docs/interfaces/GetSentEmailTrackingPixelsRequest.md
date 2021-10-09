@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetSentEmailTrackingPixelsRequest
-
 # Interface: GetSentEmailTrackingPixelsRequest
 
 ## Table of contents

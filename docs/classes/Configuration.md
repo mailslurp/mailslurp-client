@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Configuration
-
 # Class: Configuration
 
 ## Table of contents

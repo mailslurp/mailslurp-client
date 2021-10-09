@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DownloadAttachmentAsBase64EncodedRequest
-
 # Interface: DownloadAttachmentAsBase64EncodedRequest
 
 ## Table of contents

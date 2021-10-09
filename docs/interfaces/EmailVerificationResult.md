@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailVerificationResult
-
 # Interface: EmailVerificationResult
 
 Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetOrganizationInboxesRequest
-
 # Interface: GetOrganizationInboxesRequest
 
 ## Table of contents

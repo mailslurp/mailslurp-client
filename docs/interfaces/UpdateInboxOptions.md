@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateInboxOptions
-
 # Interface: UpdateInboxOptions
 
 Options for updating inbox properties

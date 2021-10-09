@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAllWebhooksRequest
-
 # Interface: GetAllWebhooksRequest
 
 ## Table of contents

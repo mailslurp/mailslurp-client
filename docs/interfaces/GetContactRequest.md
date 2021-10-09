@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetContactRequest
-
 # Interface: GetContactRequest
 
 ## Table of contents

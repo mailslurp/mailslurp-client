@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / NameServerRecord
-
 # Interface: NameServerRecord
 
 Name Server Record

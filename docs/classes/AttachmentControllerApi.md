@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AttachmentControllerApi
-
 # Class: AttachmentControllerApi
 
 ## Hierarchy

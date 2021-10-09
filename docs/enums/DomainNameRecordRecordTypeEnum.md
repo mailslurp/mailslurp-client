@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainNameRecordRecordTypeEnum
-
 # Enumeration: DomainNameRecordRecordTypeEnum
 
 **`export`**

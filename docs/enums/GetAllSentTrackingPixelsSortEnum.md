@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAllSentTrackingPixelsSortEnum
-
 # Enumeration: GetAllSentTrackingPixelsSortEnum
 
 **`export`**

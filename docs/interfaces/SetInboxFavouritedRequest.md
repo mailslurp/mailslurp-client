@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SetInboxFavouritedRequest
-
 # Interface: SetInboxFavouritedRequest
 
 ## Table of contents

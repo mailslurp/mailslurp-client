@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForEmailCountRequest
-
 # Interface: WaitForEmailCountRequest
 
 ## Table of contents

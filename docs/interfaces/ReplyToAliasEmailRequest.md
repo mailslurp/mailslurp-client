@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToAliasEmailRequest
-
 # Interface: ReplyToAliasEmailRequest
 
 ## Table of contents

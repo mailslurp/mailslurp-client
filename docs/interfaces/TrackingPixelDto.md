@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TrackingPixelDto
-
 # Interface: TrackingPixelDto
 
 **`export`**

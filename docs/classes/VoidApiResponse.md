@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / VoidApiResponse
-
 # Class: VoidApiResponse
 
 ## Table of contents

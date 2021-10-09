@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateAliasRequest
-
 # Interface: UpdateAliasRequest
 
 ## Table of contents

@@ -18,7 +18,7 @@ import glob from "fast-glob";
 const log = debug("script/readme")
 const commentStart='\/\/<gen>'
 const commentEnd='\/\/</gen>'
-
+import { diff } from "jest-diff"
 
 function minIndent(inp: string) {
 	const match = inp.match(/^[ \t]*(?=\S)/gm);
@@ -101,7 +101,7 @@ async function getGenBlocks(content: string): Promise<{ id: string, body: string
 
     log("Check out")
     if (JSON.stringify(definedNames)!=JSON.stringify(names)) {
-        throw new Error(`Defined names and template names do not match: DEFINED '${definedNames}' FOUND '${names}'`)
+        throw new Error(`Defined names and template names do not match: `  + diff(definedNames,names))
     }
 
     for (const [key, value] of Object.entries(blockMap)){

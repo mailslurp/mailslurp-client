@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DownloadAttachmentDto
-
 # Interface: DownloadAttachmentDto
 
 Content of attachment

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetGroupRequest
-
 # Interface: GetGroupRequest
 
 ## Table of contents

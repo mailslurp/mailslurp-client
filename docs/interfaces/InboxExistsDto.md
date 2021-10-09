@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxExistsDto
-
 # Interface: InboxExistsDto
 
 **`export`**

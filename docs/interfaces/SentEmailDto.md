@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SentEmailDto
-
 # Interface: SentEmailDto
 
 Sent email details

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ForwardEmailRequest
-
 # Interface: ForwardEmailRequest
 
 ## Table of contents

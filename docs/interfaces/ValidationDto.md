@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ValidationDto
-
 # Interface: ValidationDto
 
 Response object for email validation operation

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UploadAttachmentOptions
-
 # Interface: UploadAttachmentOptions
 
 Options for uploading files for attachments. When sending emails with the API that require attachments first upload each attachment. Then use the returned attachment ID in your `SendEmailOptions` when sending an email. This way you can use attachments multiple times once they have been uploaded.
@@ -22,7 +20,7 @@ Options for uploading files for attachments. When sending emails with the API th
 
 • **base64Contents**: `string`
 
-Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see <https://www.mailslurp.com/guides/base64-file-uploads/>
+Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
 
 **`memberof`** UploadAttachmentOptions
 

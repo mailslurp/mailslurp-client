@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AliasProjection
-
 # Interface: AliasProjection
 
 Representation of a alias

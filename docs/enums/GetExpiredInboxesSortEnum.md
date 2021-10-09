@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetExpiredInboxesSortEnum
-
 # Enumeration: GetExpiredInboxesSortEnum
 
 **`export`**

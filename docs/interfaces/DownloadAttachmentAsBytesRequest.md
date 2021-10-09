@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DownloadAttachmentAsBytesRequest
-
 # Interface: DownloadAttachmentAsBytesRequest
 
 ## Table of contents

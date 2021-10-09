@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExpiredControllerApi
-
 # Class: ExpiredControllerApi
 
 ## Hierarchy

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateNewEmailAddressInboxTypeEnum
-
 # Enumeration: CreateNewEmailAddressInboxTypeEnum
 
 **`export`**

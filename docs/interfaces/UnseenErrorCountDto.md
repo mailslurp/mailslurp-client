@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UnseenErrorCountDto
-
 # Interface: UnseenErrorCountDto
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetMissedEmailRequest
-
 # Interface: GetMissedEmailRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateInboxRulesetRequest
-
 # Interface: CreateInboxRulesetRequest
 
 ## Table of contents

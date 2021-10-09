@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportControllerApi
-
 # Class: ExportControllerApi
 
 ## Hierarchy

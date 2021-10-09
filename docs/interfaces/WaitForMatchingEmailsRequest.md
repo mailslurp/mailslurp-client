@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForMatchingEmailsRequest
-
 # Interface: WaitForMatchingEmailsRequest
 
 ## Table of contents

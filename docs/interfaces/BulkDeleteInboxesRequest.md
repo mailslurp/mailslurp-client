@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BulkDeleteInboxesRequest
-
 # Interface: BulkDeleteInboxesRequest
 
 ## Table of contents

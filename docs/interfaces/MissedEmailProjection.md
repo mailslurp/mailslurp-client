@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MissedEmailProjection
-
 # Interface: MissedEmailProjection
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateTemplateRequest
-
 # Interface: UpdateTemplateRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GroupDto
-
 # Interface: GroupDto
 
 **`export`**

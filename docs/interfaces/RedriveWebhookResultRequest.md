@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RedriveWebhookResultRequest
-
 # Interface: RedriveWebhookResultRequest
 
 ## Table of contents

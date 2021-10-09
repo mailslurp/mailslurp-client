@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MailSlurp
-
 # Class: MailSlurp
 
 The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST API](https://www.mailslurp.com/docs/api/docs/Apis/).
@@ -529,7 +527,7 @@ ___
 
 ▸ **sendEmail**(`inboxId`, `sendEmailOptions`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See <https://www.mailslurp.com/guides/> for more information on how to send emails.
+Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails.
 
 **`summary`** Send Email
 

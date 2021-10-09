@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteGroupRequest
-
 # Interface: DeleteGroupRequest
 
 ## Table of contents

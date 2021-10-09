@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageInboxRulesetDto
-
 # Interface: PageInboxRulesetDto
 
 Paginated inbox ruleset results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.

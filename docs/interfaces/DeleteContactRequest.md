@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteContactRequest
-
 # Interface: DeleteContactRequest
 
 ## Table of contents

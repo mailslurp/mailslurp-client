@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SetInboxFavouritedOptions
-
 # Interface: SetInboxFavouritedOptions
 
 Options for setting inbox favourite state

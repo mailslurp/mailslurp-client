@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxRulesetTestResult
-
 # Interface: InboxRulesetTestResult
 
 **`export`**

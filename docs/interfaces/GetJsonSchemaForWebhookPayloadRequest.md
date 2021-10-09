@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetJsonSchemaForWebhookPayloadRequest
-
 # Interface: GetJsonSchemaForWebhookPayloadRequest
 
 ## Table of contents

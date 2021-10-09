@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAliasEmailsRequest
-
 # Interface: GetAliasEmailsRequest
 
 ## Table of contents

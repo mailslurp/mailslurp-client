@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailPreview
-
 # Interface: EmailPreview
 
 Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.

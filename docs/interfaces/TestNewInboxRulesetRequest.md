@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TestNewInboxRulesetRequest
-
 # Interface: TestNewInboxRulesetRequest
 
 ## Table of contents

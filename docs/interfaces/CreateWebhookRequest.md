@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateWebhookRequest
-
 # Interface: CreateWebhookRequest
 
 ## Table of contents

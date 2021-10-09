@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ConfigurationParameters
-
 # Interface: ConfigurationParameters
 
 ## Table of contents

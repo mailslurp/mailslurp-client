@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RemoveContactsFromGroupRequest
-
 # Interface: RemoveContactsFromGroupRequest
 
 ## Table of contents

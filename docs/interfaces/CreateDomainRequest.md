@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateDomainRequest
-
 # Interface: CreateDomainRequest
 
 ## Table of contents

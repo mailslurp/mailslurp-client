@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TextApiResponse
-
 # Class: TextApiResponse
 
 ## Table of contents

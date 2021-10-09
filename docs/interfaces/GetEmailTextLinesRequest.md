@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetEmailTextLinesRequest
-
 # Interface: GetEmailTextLinesRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / FormControllerApi
-
 # Class: FormControllerApi
 
 ## Hierarchy

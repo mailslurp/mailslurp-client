@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RawEmailJson
-
 # Interface: RawEmailJson
 
 Content in raw format

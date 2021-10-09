@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookTestResult
-
 # Interface: WebhookTestResult
 
 Results of testing a webhook

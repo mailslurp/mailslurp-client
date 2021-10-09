@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AliasDto
-
 # Interface: AliasDto
 
 Email alias representation

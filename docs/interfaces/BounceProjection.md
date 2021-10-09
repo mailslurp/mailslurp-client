@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BounceProjection
-
 # Interface: BounceProjection
 
 **`export`**

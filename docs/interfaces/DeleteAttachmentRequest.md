@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DeleteAttachmentRequest
-
 # Interface: DeleteAttachmentRequest
 
 ## Table of contents

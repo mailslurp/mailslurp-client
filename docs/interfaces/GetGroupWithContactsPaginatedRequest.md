@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetGroupWithContactsPaginatedRequest
-
 # Interface: GetGroupWithContactsPaginatedRequest
 
 ## Table of contents

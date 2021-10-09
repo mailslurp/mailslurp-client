@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxRulesetDtoHandlerEnum
-
 # Enumeration: InboxRulesetDtoHandlerEnum
 
 **`export`**

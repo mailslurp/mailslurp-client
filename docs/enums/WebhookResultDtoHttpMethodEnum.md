@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookResultDtoHttpMethodEnum
-
 # Enumeration: WebhookResultDtoHttpMethodEnum
 
 **`export`**

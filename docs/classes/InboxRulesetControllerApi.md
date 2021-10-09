@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxRulesetControllerApi
-
 # Class: InboxRulesetControllerApi
 
 ## Hierarchy

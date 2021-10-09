@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailTextLinesResult
-
 # Interface: EmailTextLinesResult
 
 Parsed text of an email

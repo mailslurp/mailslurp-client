@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SimpleSendEmailOptions
-
 # Interface: SimpleSendEmailOptions
 
 **`export`**

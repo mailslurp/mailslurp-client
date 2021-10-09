@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UploadMultipartFormRequest
-
 # Interface: UploadMultipartFormRequest
 
 ## Table of contents

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportLink
-
 # Interface: ExportLink
 
 Export download link

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Pageable
-
 # Interface: Pageable
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ThreadProjection
-
 # Interface: ThreadProjection
 
 A thread is a message thread created for a message received by an alias

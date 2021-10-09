@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportEntitiesRequest
-
 # Interface: ExportEntitiesRequest
 
 ## Table of contents

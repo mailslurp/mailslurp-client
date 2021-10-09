@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / RequiredError
-
 # Class: RequiredError
 
 ## Hierarchy

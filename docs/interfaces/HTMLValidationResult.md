@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / HTMLValidationResult
-
 # Interface: HTMLValidationResult
 
 HTML Validation Results

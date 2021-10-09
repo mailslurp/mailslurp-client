@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateGroupOptions
-
 # Interface: CreateGroupOptions
 
 **`export`**

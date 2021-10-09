@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BulkCreateInboxesRequest
-
 # Interface: BulkCreateInboxesRequest
 
 ## Table of contents

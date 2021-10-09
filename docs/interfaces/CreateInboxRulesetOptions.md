@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateInboxRulesetOptions
-
 # Interface: CreateInboxRulesetOptions
 
 Options for creating inbox rulesets. Inbox rulesets can be used to block, allow, filter, or forward emails when sending or receiving using the inbox.

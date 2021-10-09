@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UploadAttachmentBytesRequest
-
 # Interface: UploadAttachmentBytesRequest
 
 ## Table of contents

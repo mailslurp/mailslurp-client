@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateInboxRequest
-
 # Interface: UpdateInboxRequest
 
 ## Table of contents

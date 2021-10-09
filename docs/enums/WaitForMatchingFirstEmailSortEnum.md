@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WaitForMatchingFirstEmailSortEnum
-
 # Enumeration: WaitForMatchingFirstEmailSortEnum
 
 **`export`**

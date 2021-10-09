@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookNewEmailPayloadEventNameEnum
-
 # Enumeration: WebhookNewEmailPayloadEventNameEnum
 
 **`export`**

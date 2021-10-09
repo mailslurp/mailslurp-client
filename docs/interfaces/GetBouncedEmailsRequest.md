@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetBouncedEmailsRequest
-
 # Interface: GetBouncedEmailsRequest
 
 ## Table of contents

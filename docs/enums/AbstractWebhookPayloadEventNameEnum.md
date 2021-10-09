@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AbstractWebhookPayloadEventNameEnum
-
 # Enumeration: AbstractWebhookPayloadEventNameEnum
 
 **`export`**

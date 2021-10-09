@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetSentOrganizationEmailsRequest
-
 # Interface: GetSentOrganizationEmailsRequest
 
 ## Table of contents

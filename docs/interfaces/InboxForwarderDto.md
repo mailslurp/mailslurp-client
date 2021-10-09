@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxForwarderDto
-
 # Interface: InboxForwarderDto
 
 **`export`**

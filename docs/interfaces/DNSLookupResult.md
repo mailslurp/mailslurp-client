@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DNSLookupResult
-
 # Interface: DNSLookupResult
 
 DNS lookup result. Includes record type, time to live, raw response, and name value for the name server response.

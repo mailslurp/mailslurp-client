@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetDnsLookupRequest
-
 # Interface: GetDnsLookupRequest
 
 ## Table of contents

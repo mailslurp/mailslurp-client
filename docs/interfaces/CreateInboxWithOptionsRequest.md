@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateInboxWithOptionsRequest
-
 # Interface: CreateInboxWithOptionsRequest
 
 ## Table of contents

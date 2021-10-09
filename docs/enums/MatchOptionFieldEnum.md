@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MatchOptionFieldEnum
-
 # Enumeration: MatchOptionFieldEnum
 
 **`export`**

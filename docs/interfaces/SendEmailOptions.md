@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SendEmailOptions
-
 # Interface: SendEmailOptions
 
 Options for sending an email message from an inbox. You must provide one of: `to`, `toGroup`, or `toContacts` to send an email. All other parameters are optional.

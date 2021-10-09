@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetEmailsPaginatedRequest
-
 # Interface: GetEmailsPaginatedRequest
 
 ## Table of contents

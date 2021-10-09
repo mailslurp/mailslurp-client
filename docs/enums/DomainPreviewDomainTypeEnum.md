@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainPreviewDomainTypeEnum
-
 # Enumeration: DomainPreviewDomainTypeEnum
 
 **`export`**

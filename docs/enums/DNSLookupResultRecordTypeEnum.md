@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DNSLookupResultRecordTypeEnum
-
 # Enumeration: DNSLookupResultRecordTypeEnum
 
 **`export`**

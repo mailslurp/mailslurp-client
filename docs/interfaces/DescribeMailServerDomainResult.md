@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DescribeMailServerDomainResult
-
 # Interface: DescribeMailServerDomainResult
 
 Name Server lookup result

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookEmailOpenedPayload
-
 # Interface: WebhookEmailOpenedPayload
 
 EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST when an email containing a tracking pixel is opened and the pixel image is loaded by a reader.

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAliasThreadsSortEnum
-
 # Enumeration: GetAliasThreadsSortEnum
 
 **`export`**

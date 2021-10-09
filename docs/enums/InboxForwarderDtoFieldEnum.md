@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxForwarderDtoFieldEnum
-
 # Enumeration: InboxForwarderDtoFieldEnum
 
 **`export`**

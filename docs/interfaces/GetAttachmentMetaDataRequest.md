@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GetAttachmentMetaDataRequest
-
 # Interface: GetAttachmentMetaDataRequest
 
 ## Table of contents

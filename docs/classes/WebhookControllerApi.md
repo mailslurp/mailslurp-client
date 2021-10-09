@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookControllerApi
-
 # Class: WebhookControllerApi
 
 ## Hierarchy

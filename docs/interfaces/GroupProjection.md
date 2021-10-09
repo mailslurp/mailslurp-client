@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GroupProjection
-
 # Interface: GroupProjection
 
 **`export`**

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailLinksResult
-
 # Interface: EmailLinksResult
 
 Links found in HTML

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BulkSendEmailOptions
-
 # Interface: BulkSendEmailOptions
 
 Options for bulk sending an email from multiple addresses. See regular `sendEmail` methods for more information.

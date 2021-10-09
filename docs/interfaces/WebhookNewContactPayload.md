@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookNewContactPayload
-
 # Interface: WebhookNewContactPayload
 
 NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to that contains a recipient that has not been saved as a contact.

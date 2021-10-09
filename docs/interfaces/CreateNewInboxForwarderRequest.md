@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateNewInboxForwarderRequest
-
 # Interface: CreateNewInboxForwarderRequest
 
 ## Table of contents

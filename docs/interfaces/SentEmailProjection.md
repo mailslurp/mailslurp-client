@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SentEmailProjection
-
 # Interface: SentEmailProjection
 
 **`export`**

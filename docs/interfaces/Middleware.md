@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Middleware
-
 # Interface: Middleware
 
 ## Table of contents

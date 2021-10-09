@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AddContactsToGroupRequest
-
 # Interface: AddContactsToGroupRequest
 
 ## Table of contents

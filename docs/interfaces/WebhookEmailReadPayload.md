@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookEmailReadPayload
-
 # Interface: WebhookEmailReadPayload
 
 EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.

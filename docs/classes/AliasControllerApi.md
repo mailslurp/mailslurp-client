@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / AliasControllerApi
-
 # Class: AliasControllerApi
 
 ## Hierarchy

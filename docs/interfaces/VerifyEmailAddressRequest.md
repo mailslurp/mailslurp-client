@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / VerifyEmailAddressRequest
-
 # Interface: VerifyEmailAddressRequest
 
 ## Table of contents
