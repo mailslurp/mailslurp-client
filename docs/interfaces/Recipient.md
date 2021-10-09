@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Recipient
-
 # Interface: Recipient
 
 **`export`**
@@ -22,10 +20,6 @@
 
 **`memberof`** Recipient
 
-#### Defined in
-
-[src/generated/api.ts:5004](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5004)
-
 ___
 
 ### name
@@ -34,10 +28,6 @@ ___
 
 **`memberof`** Recipient
 
-#### Defined in
-
-[src/generated/api.ts:5010](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5010)
-
 ___
 
 ### rawValue
@@ -45,7 +35,3 @@ ___
 • **rawValue**: `string`
 
 **`memberof`** Recipient
-
-#### Defined in
-
-[src/generated/api.ts:5016](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5016)

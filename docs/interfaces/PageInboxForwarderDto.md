@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageInboxForwarderDto
-
 # Interface: PageInboxForwarderDto
 
 Paginated inbox forwarder results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -32,10 +30,6 @@ Paginated inbox forwarder results. Page index starts at zero. Projection results
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4058](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4058)
-
 ___
 
 ### empty
@@ -43,10 +37,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageInboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:4064](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4064)
 
 ___
 
@@ -56,10 +46,6 @@ ___
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4070](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4070)
-
 ___
 
 ### last
@@ -67,10 +53,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageInboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:4076](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4076)
 
 ___
 
@@ -80,10 +62,6 @@ ___
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4082](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4082)
-
 ___
 
 ### numberOfElements
@@ -91,10 +69,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageInboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:4088](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4088)
 
 ___
 
@@ -104,10 +78,6 @@ ___
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4094](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4094)
-
 ___
 
 ### size
@@ -115,10 +85,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageInboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:4100](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4100)
 
 ___
 
@@ -128,10 +94,6 @@ ___
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4106](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4106)
-
 ___
 
 ### totalElements
@@ -140,10 +102,6 @@ ___
 
 **`memberof`** PageInboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:4112](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4112)
-
 ___
 
 ### totalPages
@@ -151,7 +109,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageInboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:4118](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4118)

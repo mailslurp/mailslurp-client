@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportLink
-
 # Interface: ExportLink
 
 Export download link
@@ -21,7 +19,3 @@ Export download link
 • **downloadLink**: `string`
 
 **`memberof`** ExportLink
-
-#### Defined in
-
-[src/generated/api.ts:2403](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2403)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageInboxProjection
-
 # Interface: PageInboxProjection
 
 Paginated inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -32,10 +30,6 @@ Paginated inbox results. Page index starts at zero. Projection results may omit 
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4132](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4132)
-
 ___
 
 ### empty
@@ -43,10 +37,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:4138](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4138)
 
 ___
 
@@ -56,10 +46,6 @@ ___
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4144](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4144)
-
 ___
 
 ### last
@@ -67,10 +53,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:4150](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4150)
 
 ___
 
@@ -80,10 +62,6 @@ ___
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4156](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4156)
-
 ___
 
 ### numberOfElements
@@ -91,10 +69,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:4162](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4162)
 
 ___
 
@@ -104,10 +78,6 @@ ___
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4168](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4168)
-
 ___
 
 ### size
@@ -115,10 +85,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:4174](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4174)
 
 ___
 
@@ -128,10 +94,6 @@ ___
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4180](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4180)
-
 ___
 
 ### totalElements
@@ -140,10 +102,6 @@ ___
 
 **`memberof`** PageInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:4186](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4186)
-
 ___
 
 ### totalPages
@@ -151,7 +109,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:4192](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4192)

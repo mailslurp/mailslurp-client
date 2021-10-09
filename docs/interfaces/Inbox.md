@@ -1,8 +1,6 @@
-[MailSlurp JS](../README.md) / Inbox
-
 # Interface: Inbox
 
-Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and are best used for public facing email addresses. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching. Inboxes can be private or allow team access. Team access enabled inboxes can be seen by other members of an organization.
+Representation of a MailSlurp inbox. An inbox has an ID and a real email address. Emails can be sent to or from this email address. Inboxes are either `SMTP` or `HTTP` mailboxes. The default, `HTTP` inboxes, use AWS SES to process emails and are best suited as test email accounts. `SMTP` inboxes use a custom mail server at `mx.mailslurp.com` and can only receive emails - they  are best used for public facing email addresses. Use the `EmailController` or the `InboxController` methods to send and receive emails and attachments. Inboxes may have a description, name, and tags for display purposes. You can also favourite an inbox for easier searching. Inboxes can be private or allow team access. Team access enabled inboxes can be seen by other members of an organization.
 
 **`export`**
 
@@ -35,10 +33,6 @@ When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2690](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2690)
-
 ___
 
 ### description
@@ -48,10 +42,6 @@ ___
 Description of an inbox for labelling and searching purposes
 
 **`memberof`** Inbox
-
-#### Defined in
-
-[src/generated/api.ts:2696](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2696)
 
 ___
 
@@ -63,10 +53,6 @@ The inbox's email address. Inbox projections and previews may not include the em
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2702](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2702)
-
 ___
 
 ### expiresAt
@@ -76,10 +62,6 @@ ___
 Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
 
 **`memberof`** Inbox
-
-#### Defined in
-
-[src/generated/api.ts:2708](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2708)
 
 ___
 
@@ -91,10 +73,6 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2714](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2714)
-
 ___
 
 ### id
@@ -105,23 +83,15 @@ ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2720](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2720)
-
 ___
 
 ### inboxType
 
-• `Optional` **inboxType**: [`InboxTypeEnum`](../enums/Inbox.InboxTypeEnum.md)
+• `Optional` **inboxType**: [`InboxInboxTypeEnum`](../enums/InboxInboxTypeEnum.md)
 
-Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testing. SMTP inboxes are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
+Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great most cases. SMTP inboxes are receive only (cannot send) and are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
 
 **`memberof`** Inbox
-
-#### Defined in
-
-[src/generated/api.ts:2726](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2726)
 
 ___
 
@@ -133,10 +103,6 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2732](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2732)
-
 ___
 
 ### readOnly
@@ -146,10 +112,6 @@ ___
 Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
 
 **`memberof`** Inbox
-
-#### Defined in
-
-[src/generated/api.ts:2738](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2738)
 
 ___
 
@@ -161,10 +123,6 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2744](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2744)
-
 ___
 
 ### teamAccess
@@ -175,10 +133,6 @@ Does inbox permit team access for organization team members. If so team users ca
 
 **`memberof`** Inbox
 
-#### Defined in
-
-[src/generated/api.ts:2750](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2750)
-
 ___
 
 ### userId
@@ -188,7 +142,3 @@ ___
 ID of user that inbox belongs to
 
 **`memberof`** Inbox
-
-#### Defined in
-
-[src/generated/api.ts:2756](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2756)

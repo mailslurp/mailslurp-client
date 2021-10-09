@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Result
-
 # Interface: Result<T\>
 
 ## Type parameters
@@ -21,10 +19,6 @@
 
 • `Optional` **content**: `T`
 
-#### Defined in
-
-[src/index.ts:602](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L602)
-
 ___
 
 ### error
@@ -37,7 +31,3 @@ ___
 | :------ | :------ |
 | `message` | `string` |
 | `statusCode` | `number` |
-
-#### Defined in
-
-[src/index.ts:603](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L603)

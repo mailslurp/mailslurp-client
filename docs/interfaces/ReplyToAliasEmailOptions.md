@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToAliasEmailOptions
-
 # Interface: ReplyToAliasEmailOptions
 
 Options for replying to an alias email using the alias inbox
@@ -31,10 +29,6 @@ List of uploaded attachments to send with the reply. Optional.
 
 **`memberof`** ReplyToAliasEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5030](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5030)
-
 ___
 
 ### body
@@ -44,10 +38,6 @@ ___
 Body of the reply email you want to send
 
 **`memberof`** ReplyToAliasEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5036](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5036)
 
 ___
 
@@ -59,10 +49,6 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 
 **`memberof`** ReplyToAliasEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5042](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5042)
-
 ___
 
 ### isHTML
@@ -73,23 +59,15 @@ Is the reply HTML
 
 **`memberof`** ReplyToAliasEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5048](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5048)
-
 ___
 
 ### sendStrategy
 
-• `Optional` **sendStrategy**: [`SendStrategyEnum`](../enums/ReplyToAliasEmailOptions.SendStrategyEnum.md)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToAliasEmailOptionsSendStrategyEnum.md#single_message)
 
 When to send the email. Typically immediately
 
 **`memberof`** ReplyToAliasEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5054](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5054)
 
 ___
 
@@ -101,23 +79,15 @@ Template ID to use instead of body. Will use template variable map to fill defin
 
 **`memberof`** ReplyToAliasEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5060](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5060)
-
 ___
 
 ### templateVariables
 
-• `Optional` **templateVariables**: `any`
+• `Optional` **templateVariables**: `object`
 
 Template variables if using a template
 
 **`memberof`** ReplyToAliasEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5066](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5066)
 
 ___
 
@@ -128,7 +98,3 @@ ___
 Optionally use inbox name as display name for sender email address
 
 **`memberof`** ReplyToAliasEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5072](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5072)

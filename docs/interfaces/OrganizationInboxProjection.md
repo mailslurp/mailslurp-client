@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / OrganizationInboxProjection
-
 # Interface: OrganizationInboxProjection
 
 **`export`**
@@ -30,10 +28,6 @@ When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T
 
 **`memberof`** OrganizationInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:3315](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3315)
-
 ___
 
 ### emailAddress
@@ -43,10 +37,6 @@ ___
 The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
 
 **`memberof`** OrganizationInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:3321](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3321)
 
 ___
 
@@ -58,10 +48,6 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 **`memberof`** OrganizationInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:3327](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3327)
-
 ___
 
 ### id
@@ -72,23 +58,15 @@ ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to
 
 **`memberof`** OrganizationInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:3333](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3333)
-
 ___
 
 ### inboxType
 
-• `Optional` **inboxType**: [`InboxTypeEnum`](../enums/OrganizationInboxProjection.InboxTypeEnum.md)
+• `Optional` **inboxType**: [`OrganizationInboxProjectionInboxTypeEnum`](../enums/OrganizationInboxProjectionInboxTypeEnum.md)
 
-Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great for testing. SMTP inboxes are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
+Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great most cases. SMTP inboxes are receive only (cannot send) and are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
 
 **`memberof`** OrganizationInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:3339](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3339)
 
 ___
 
@@ -100,10 +78,6 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 **`memberof`** OrganizationInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:3345](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3345)
-
 ___
 
 ### readOnly
@@ -113,10 +87,6 @@ ___
 Is the inbox readOnly for the caller. Read only means can not be deleted or modified. This flag is present when using team accounts and shared inboxes.
 
 **`memberof`** OrganizationInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:3351](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3351)
 
 ___
 
@@ -128,10 +98,6 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 **`memberof`** OrganizationInboxProjection
 
-#### Defined in
-
-[src/generated/api.ts:3357](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3357)
-
 ___
 
 ### teamAccess
@@ -141,7 +107,3 @@ ___
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
 
 **`memberof`** OrganizationInboxProjection
-
-#### Defined in
-
-[src/generated/api.ts:3363](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3363)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / NameServerRecord
-
 # Interface: NameServerRecord
 
 Name Server Record
@@ -25,10 +23,6 @@ Name Server Record
 
 **`memberof`** NameServerRecord
 
-#### Defined in
-
-[src/generated/api.ts:3283](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3283)
-
 ___
 
 ### raw
@@ -36,10 +30,6 @@ ___
 • **raw**: `string`
 
 **`memberof`** NameServerRecord
-
-#### Defined in
-
-[src/generated/api.ts:3289](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3289)
 
 ___
 
@@ -49,10 +39,6 @@ ___
 
 **`memberof`** NameServerRecord
 
-#### Defined in
-
-[src/generated/api.ts:3295](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3295)
-
 ___
 
 ### value
@@ -60,7 +46,3 @@ ___
 • **value**: `string`
 
 **`memberof`** NameServerRecord
-
-#### Defined in
-
-[src/generated/api.ts:3301](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3301)

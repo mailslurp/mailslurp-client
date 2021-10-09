@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / EmailVerificationResult
-
 # Interface: EmailVerificationResult
 
 Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.
@@ -26,10 +24,6 @@ Email verification result. Valid means email address exists according to respons
 
 **`memberof`** EmailVerificationResult
 
-#### Defined in
-
-[src/generated/api.ts:2269](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2269)
-
 ___
 
 ### emailAddress
@@ -37,10 +31,6 @@ ___
 • **emailAddress**: `string`
 
 **`memberof`** EmailVerificationResult
-
-#### Defined in
-
-[src/generated/api.ts:2275](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2275)
 
 ___
 
@@ -50,10 +40,6 @@ ___
 
 **`memberof`** EmailVerificationResult
 
-#### Defined in
-
-[src/generated/api.ts:2281](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2281)
-
 ___
 
 ### isValid
@@ -62,10 +48,6 @@ ___
 
 **`memberof`** EmailVerificationResult
 
-#### Defined in
-
-[src/generated/api.ts:2287](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2287)
-
 ___
 
 ### port
@@ -73,7 +55,3 @@ ___
 • **port**: `number`
 
 **`memberof`** EmailVerificationResult
-
-#### Defined in
-
-[src/generated/api.ts:2293](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2293)

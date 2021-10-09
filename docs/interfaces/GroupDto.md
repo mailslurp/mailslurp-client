@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GroupDto
-
 # Interface: GroupDto
 
 **`export`**
@@ -23,10 +21,6 @@
 
 **`memberof`** GroupDto
 
-#### Defined in
-
-[src/generated/api.ts:2580](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2580)
-
 ___
 
 ### description
@@ -34,10 +28,6 @@ ___
 • `Optional` **description**: `string`
 
 **`memberof`** GroupDto
-
-#### Defined in
-
-[src/generated/api.ts:2586](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2586)
 
 ___
 
@@ -47,10 +37,6 @@ ___
 
 **`memberof`** GroupDto
 
-#### Defined in
-
-[src/generated/api.ts:2592](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2592)
-
 ___
 
 ### name
@@ -58,7 +44,3 @@ ___
 • **name**: `string`
 
 **`memberof`** GroupDto
-
-#### Defined in
-
-[src/generated/api.ts:2598](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2598)

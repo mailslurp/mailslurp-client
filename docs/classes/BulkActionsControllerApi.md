@@ -1,10 +1,4 @@
-[MailSlurp JS](../README.md) / BulkActionsControllerApi
-
 # Class: BulkActionsControllerApi
-
-BulkActionsControllerApi - object-oriented interface
-
-**`export`**
 
 ## Hierarchy
 
@@ -20,49 +14,38 @@ BulkActionsControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](BulkActionsControllerApi.md#basepath)
 - [configuration](BulkActionsControllerApi.md#configuration)
-- [fetch](BulkActionsControllerApi.md#fetch)
 
 ### Methods
 
 - [bulkCreateInboxes](BulkActionsControllerApi.md#bulkcreateinboxes)
+- [bulkCreateInboxesRaw](BulkActionsControllerApi.md#bulkcreateinboxesraw)
 - [bulkDeleteInboxes](BulkActionsControllerApi.md#bulkdeleteinboxes)
+- [bulkDeleteInboxesRaw](BulkActionsControllerApi.md#bulkdeleteinboxesraw)
 - [bulkSendEmails](BulkActionsControllerApi.md#bulksendemails)
+- [bulkSendEmailsRaw](BulkActionsControllerApi.md#bulksendemailsraw)
+- [request](BulkActionsControllerApi.md#request)
+- [withMiddleware](BulkActionsControllerApi.md#withmiddleware)
+- [withPostMiddleware](BulkActionsControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](BulkActionsControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new BulkActionsControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new BulkActionsControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -72,97 +55,215 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### bulkCreateInboxes
 
-▸ **bulkCreateInboxes**(`count`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+▸ **bulkCreateInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
 
-**`summary`** Bulk create Inboxes (email addresses)
-
-**`throws`** {RequiredError}
-
-**`memberof`** BulkActionsControllerApi
+Bulk create Inboxes (email addresses)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `count` | `number` | Number of inboxes to be created in bulk |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkCreateInboxesRequest`](../interfaces/BulkCreateInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:10982](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10982)
+### bulkCreateInboxesRaw
+
+▸ **bulkCreateInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+
+Bulk create Inboxes (email addresses)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkCreateInboxesRequest`](../interfaces/BulkCreateInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
 
 ___
 
 ### bulkDeleteInboxes
 
-▸ **bulkDeleteInboxes**(`ids`, `options?`): `Promise`<`Response`\>
+▸ **bulkDeleteInboxes**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-**`summary`** Bulk Delete Inboxes
-
-**`throws`** {RequiredError}
-
-**`memberof`** BulkActionsControllerApi
+Bulk Delete Inboxes
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `ids` | `string`[] | ids |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkDeleteInboxesRequest`](../interfaces/BulkDeleteInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:10997](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10997)
+### bulkDeleteInboxesRaw
+
+▸ **bulkDeleteInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Bulk Delete Inboxes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkDeleteInboxesRequest`](../interfaces/BulkDeleteInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### bulkSendEmails
 
-▸ **bulkSendEmails**(`bulkSendEmailOptions`, `options?`): `Promise`<`Response`\>
+▸ **bulkSendEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-**`summary`** Bulk Send Emails
-
-**`throws`** {RequiredError}
-
-**`memberof`** BulkActionsControllerApi
+Bulk Send Emails
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bulkSendEmailOptions` | [`BulkSendEmailOptions`](../interfaces/BulkSendEmailOptions.md) | bulkSendEmailOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkSendEmailsRequest`](../interfaces/BulkSendEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### bulkSendEmailsRaw
+
+▸ **bulkSendEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Bulk Send Emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`BulkSendEmailsRequest`](../interfaces/BulkSendEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`Response`\>
 
-#### Defined in
+#### Inherited from
 
-[src/generated/api.ts:11012](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L11012)
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

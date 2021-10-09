@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TemplateVariable
-
 # Interface: TemplateVariable
 
 **`export`**
@@ -21,18 +19,10 @@
 
 **`memberof`** TemplateVariable
 
-#### Defined in
-
-[src/generated/api.ts:5664](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5664)
-
 ___
 
 ### variableType
 
-• **variableType**: [`VariableTypeEnum`](../enums/TemplateVariable.VariableTypeEnum.md)
+• **variableType**: [`STRING`](../enums/TemplateVariableVariableTypeEnum.md#string)
 
 **`memberof`** TemplateVariable
-
-#### Defined in
-
-[src/generated/api.ts:5670](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5670)

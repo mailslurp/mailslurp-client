@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MissedEmailProjection
-
 # Interface: MissedEmailProjection
 
 **`export`**
@@ -24,10 +22,6 @@
 
 **`memberof`** MissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:3245](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3245)
-
 ___
 
 ### from
@@ -35,10 +29,6 @@ ___
 • `Optional` **from**: `string`
 
 **`memberof`** MissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:3251](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3251)
 
 ___
 
@@ -48,10 +38,6 @@ ___
 
 **`memberof`** MissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:3257](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3257)
-
 ___
 
 ### subject
@@ -60,10 +46,6 @@ ___
 
 **`memberof`** MissedEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:3263](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3263)
-
 ___
 
 ### userId
@@ -71,7 +53,3 @@ ___
 • `Optional` **userId**: `string`
 
 **`memberof`** MissedEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:3269](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3269)

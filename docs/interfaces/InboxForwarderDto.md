@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxForwarderDto
-
 # Interface: InboxForwarderDto
 
 **`export`**
@@ -25,21 +23,13 @@
 
 **`memberof`** InboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:2785](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2785)
-
 ___
 
 ### field
 
-• **field**: [`FieldEnum`](../enums/InboxForwarderDto.FieldEnum.md)
+• **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
 
 **`memberof`** InboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:2791](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2791)
 
 ___
 
@@ -49,10 +39,6 @@ ___
 
 **`memberof`** InboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:2797](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2797)
-
 ___
 
 ### id
@@ -60,10 +46,6 @@ ___
 • **id**: `string`
 
 **`memberof`** InboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:2803](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2803)
 
 ___
 
@@ -73,10 +55,6 @@ ___
 
 **`memberof`** InboxForwarderDto
 
-#### Defined in
-
-[src/generated/api.ts:2809](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2809)
-
 ___
 
 ### match
@@ -84,7 +62,3 @@ ___
 • **match**: `string`
 
 **`memberof`** InboxForwarderDto
-
-#### Defined in
-
-[src/generated/api.ts:2815](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2815)

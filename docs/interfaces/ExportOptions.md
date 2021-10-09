@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExportOptions
-
 # Interface: ExportOptions
 
 Options for exporting user data
@@ -27,10 +25,6 @@ Options for exporting user data
 
 **`memberof`** ExportOptions
 
-#### Defined in
-
-[src/generated/api.ts:2429](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2429)
-
 ___
 
 ### createdOldestTime
@@ -38,10 +32,6 @@ ___
 • `Optional` **createdOldestTime**: `Date`
 
 **`memberof`** ExportOptions
-
-#### Defined in
-
-[src/generated/api.ts:2435](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2435)
 
 ___
 
@@ -51,10 +41,6 @@ ___
 
 **`memberof`** ExportOptions
 
-#### Defined in
-
-[src/generated/api.ts:2423](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2423)
-
 ___
 
 ### filter
@@ -63,30 +49,18 @@ ___
 
 **`memberof`** ExportOptions
 
-#### Defined in
-
-[src/generated/api.ts:2441](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2441)
-
 ___
 
 ### listSeparatorToken
 
-• `Optional` **listSeparatorToken**: [`Character`](Character.md)
+• `Optional` **listSeparatorToken**: `object`
 
 **`memberof`** ExportOptions
-
-#### Defined in
-
-[src/generated/api.ts:2447](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2447)
 
 ___
 
 ### outputFormat
 
-• **outputFormat**: [`OutputFormatEnum`](../enums/ExportOptions.OutputFormatEnum.md)
+• **outputFormat**: [`ExportOptionsOutputFormatEnum`](../enums/ExportOptionsOutputFormatEnum.md)
 
 **`memberof`** ExportOptions
-
-#### Defined in
-
-[src/generated/api.ts:2417](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2417)

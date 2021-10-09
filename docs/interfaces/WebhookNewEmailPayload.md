@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookNewEmailPayload
-
 # Interface: WebhookNewEmailPayload
 
 NEW_EMAIL webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to. Use the email ID to fetch the full email body or attachments.
@@ -36,10 +34,6 @@ List of attachment meta data objects if attachments present
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6726](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6726)
-
 ___
 
 ### bcc
@@ -49,10 +43,6 @@ ___
 List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6732](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6732)
 
 ___
 
@@ -64,10 +54,6 @@ List of `CC` recipients email addresses that the email was addressed to. See rec
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6738](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6738)
-
 ___
 
 ### createdAt
@@ -77,10 +63,6 @@ ___
 Date time of event creation
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6744](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6744)
 
 ___
 
@@ -92,23 +74,15 @@ ID of the email that was received. Use this ID for fetching the email with the `
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6750](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6750)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookNewEmailPayload.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookNewEmailPayloadEventNameEnum`](../enums/WebhookNewEmailPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6756](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6756)
 
 ___
 
@@ -120,10 +94,6 @@ Who the email was sent from. An email address - see fromName for the sender name
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6762](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6762)
-
 ___
 
 ### inboxId
@@ -133,10 +103,6 @@ ___
 Id of the inbox that received an email
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6768](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6768)
 
 ___
 
@@ -148,10 +114,6 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6774](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6774)
-
 ___
 
 ### subject
@@ -161,10 +123,6 @@ ___
 The subject line of the email message as specified by SMTP subject header
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6780](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6780)
 
 ___
 
@@ -176,10 +134,6 @@ List of `To` recipient email addresses that the email was addressed to. See reci
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6786](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6786)
-
 ___
 
 ### webhookId
@@ -190,10 +144,6 @@ ID of webhook entity being triggered
 
 **`memberof`** WebhookNewEmailPayload
 
-#### Defined in
-
-[src/generated/api.ts:6792](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6792)
-
 ___
 
 ### webhookName
@@ -203,7 +153,3 @@ ___
 Name of the webhook being triggered
 
 **`memberof`** WebhookNewEmailPayload
-
-#### Defined in
-
-[src/generated/api.ts:6798](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6798)

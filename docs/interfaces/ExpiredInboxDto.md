@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ExpiredInboxDto
-
 # Interface: ExpiredInboxDto
 
 Expired inbox
@@ -24,10 +22,6 @@ Expired inbox
 
 **`memberof`** ExpiredInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:2345](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2345)
-
 ___
 
 ### id
@@ -36,10 +30,6 @@ ___
 
 **`memberof`** ExpiredInboxDto
 
-#### Defined in
-
-[src/generated/api.ts:2351](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2351)
-
 ___
 
 ### inboxId
@@ -47,7 +37,3 @@ ___
 • **inboxId**: `string`
 
 **`memberof`** ExpiredInboxDto
-
-#### Defined in
-
-[src/generated/api.ts:2357](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2357)

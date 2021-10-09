@@ -1,8 +1,6 @@
-[MailSlurp JS](../README.md) / BaseAPI
-
 # Class: BaseAPI
 
-**`export`**
+This is the base class for all generated API classes.
 
 ## Hierarchy
 
@@ -60,46 +58,193 @@
 
 ### Properties
 
-- [basePath](BaseAPI.md#basepath)
 - [configuration](BaseAPI.md#configuration)
-- [fetch](BaseAPI.md#fetch)
+- [middleware](BaseAPI.md#middleware)
+
+### Methods
+
+- [clone](BaseAPI.md#clone)
+- [createFetchParams](BaseAPI.md#createfetchparams)
+- [fetchApi](BaseAPI.md#fetchapi)
+- [request](BaseAPI.md#request)
+- [withMiddleware](BaseAPI.md#withmiddleware)
+- [withPostMiddleware](BaseAPI.md#withpostmiddleware)
+- [withPreMiddleware](BaseAPI.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new BaseAPI**(`configuration?`, `basePath?`, `fetch?`)
+• **new BaseAPI**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
-
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
+| `configuration` | [`Configuration`](Configuration.md) |
 
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-___
 
 ### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
-#### Defined in
+___
 
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
+### middleware
+
+• `Private` **middleware**: [`Middleware`](../interfaces/Middleware.md)[]
+
+## Methods
+
+### clone
+
+▸ `Private` **clone**<`T`\>(): `T`
+
+Create a shallow clone of `this` by constructing a new instance
+and then shallow cloning data members.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Returns
+
+`T`
 
 ___
 
-### fetch
+### createFetchParams
 
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
+▸ `Private` **createFetchParams**(`context`, `initOverrides?`): `Object`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Object`
+
+| Name | Type |
+| :------ | :------ |
+| `init` | `Object` |
+| `init.body` | `any` |
+| `init.cache?` | `RequestCache` |
+| `init.credentials` | `RequestCredentials` |
+| `init.headers` | [`HTTPHeaders`](../README.md#httpheaders) \| `HeadersInit` |
+| `init.integrity?` | `string` |
+| `init.keepalive?` | `boolean` |
+| `init.method` | `string` |
+| `init.mode?` | `RequestMode` |
+| `init.redirect?` | `RequestRedirect` |
+| `init.referrer?` | `string` |
+| `init.referrerPolicy?` | `ReferrerPolicy` |
+| `init.signal?` | `AbortSignal` |
+| `init.window?` | `any` |
+| `url` | `string` |
+
+___
+
+### fetchApi
+
+▸ `Private` **fetchApi**(`url`, `init`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `init` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`

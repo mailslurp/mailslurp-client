@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / Configuration
-
 # Class: Configuration
 
 ## Table of contents
@@ -8,102 +6,177 @@
 
 - [constructor](Configuration.md#constructor)
 
-### Properties
+### Accessors
 
 - [accessToken](Configuration.md#accesstoken)
 - [apiKey](Configuration.md#apikey)
 - [basePath](Configuration.md#basepath)
+- [credentials](Configuration.md#credentials)
+- [fetchApi](Configuration.md#fetchapi)
+- [headers](Configuration.md#headers)
+- [middleware](Configuration.md#middleware)
 - [password](Configuration.md#password)
+- [queryParamsStringify](Configuration.md#queryparamsstringify)
 - [username](Configuration.md#username)
 
 ## Constructors
 
 ### constructor
 
-• **new Configuration**(`param?`)
+• **new Configuration**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `param` | [`ConfigurationParameters`](../interfaces/ConfigurationParameters.md) |
+| `configuration` | [`ConfigurationParameters`](../interfaces/ConfigurationParameters.md) |
 
-#### Defined in
-
-[src/generated/configuration.ts:58](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L58)
-
-## Properties
+## Accessors
 
 ### accessToken
 
-• `Optional` **accessToken**: `string` \| (`name`: `string`, `scopes?`: `string`[]) => `string`
+• `get` **accessToken**(): (`name?`: `string`, `scopes?`: `string`[]) => `string` \| `Promise`<`string`\>
 
-parameter for oauth2 security
+#### Returns
 
-**`param`** security name
+`fn`
 
-**`param`** oauth2 scope
+▸ (`name?`, `scopes?`): `string` \| `Promise`<`string`\>
 
-**`memberof`** Configuration
+##### Parameters
 
-#### Defined in
+| Name | Type |
+| :------ | :------ |
+| `name?` | `string` |
+| `scopes?` | `string`[] |
 
-[src/generated/configuration.ts:49](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L49)
+##### Returns
+
+`string` \| `Promise`<`string`\>
 
 ___
 
 ### apiKey
 
-• `Optional` **apiKey**: `string` \| (`name`: `string`) => `string`
+• `get` **apiKey**(): (`name`: `string`) => `string`
 
-parameter for apiKey security
+#### Returns
 
-**`param`** security name
+`fn`
 
-**`memberof`** Configuration
+▸ (`name`): `string`
 
-#### Defined in
+##### Parameters
 
-[src/generated/configuration.ts:28](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L28)
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+##### Returns
+
+`string`
 
 ___
 
 ### basePath
 
-• `Optional` **basePath**: `string`
+• `get` **basePath**(): `string`
 
-override base path
+#### Returns
 
-**`memberof`** Configuration
+`string`
 
-#### Defined in
+___
 
-[src/generated/configuration.ts:56](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L56)
+### credentials
+
+• `get` **credentials**(): `RequestCredentials`
+
+#### Returns
+
+`RequestCredentials`
+
+___
+
+### fetchApi
+
+• `get` **fetchApi**(): (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
+
+#### Returns
+
+`fn`
+
+▸ (`input`, `init?`): `Promise`<`Response`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `RequestInfo` |
+| `init?` | `RequestInit` |
+
+##### Returns
+
+`Promise`<`Response`\>
+
+___
+
+### headers
+
+• `get` **headers**(): [`HTTPHeaders`](../README.md#httpheaders)
+
+#### Returns
+
+[`HTTPHeaders`](../README.md#httpheaders)
+
+___
+
+### middleware
+
+• `get` **middleware**(): [`Middleware`](../interfaces/Middleware.md)[]
+
+#### Returns
+
+[`Middleware`](../interfaces/Middleware.md)[]
 
 ___
 
 ### password
 
-• `Optional` **password**: `string`
+• `get` **password**(): `string`
 
-parameter for basic security
+#### Returns
 
-**`memberof`** Configuration
+`string`
 
-#### Defined in
+___
 
-[src/generated/configuration.ts:42](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L42)
+### queryParamsStringify
+
+• `get` **queryParamsStringify**(): (`params`: [`HTTPQuery`](../README.md#httpquery)) => `string`
+
+#### Returns
+
+`fn`
+
+▸ (`params`): `string`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `params` | [`HTTPQuery`](../README.md#httpquery) |
+
+##### Returns
+
+`string`
 
 ___
 
 ### username
 
-• `Optional` **username**: `string`
+• `get` **username**(): `string`
 
-parameter for basic security
+#### Returns
 
-**`memberof`** Configuration
-
-#### Defined in
-
-[src/generated/configuration.ts:35](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/configuration.ts#L35)
+`string`

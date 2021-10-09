@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageTrackingPixelProjection
-
 # Interface: PageTrackingPixelProjection
 
 Paginated TrackingPixel results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
@@ -32,10 +30,6 @@ Paginated TrackingPixel results. Page index starts at zero. Projection results m
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4650](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4650)
-
 ___
 
 ### empty
@@ -43,10 +37,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageTrackingPixelProjection
-
-#### Defined in
-
-[src/generated/api.ts:4656](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4656)
 
 ___
 
@@ -56,10 +46,6 @@ ___
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4662](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4662)
-
 ___
 
 ### last
@@ -67,10 +53,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageTrackingPixelProjection
-
-#### Defined in
-
-[src/generated/api.ts:4668](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4668)
 
 ___
 
@@ -80,10 +62,6 @@ ___
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4674](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4674)
-
 ___
 
 ### numberOfElements
@@ -91,10 +69,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageTrackingPixelProjection
-
-#### Defined in
-
-[src/generated/api.ts:4680](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4680)
 
 ___
 
@@ -104,10 +78,6 @@ ___
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4686](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4686)
-
 ___
 
 ### size
@@ -115,10 +85,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageTrackingPixelProjection
-
-#### Defined in
-
-[src/generated/api.ts:4692](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4692)
 
 ___
 
@@ -128,10 +94,6 @@ ___
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4698](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4698)
-
 ___
 
 ### totalElements
@@ -140,10 +102,6 @@ ___
 
 **`memberof`** PageTrackingPixelProjection
 
-#### Defined in
-
-[src/generated/api.ts:4704](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4704)
-
 ___
 
 ### totalPages
@@ -151,7 +109,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageTrackingPixelProjection
-
-#### Defined in
-
-[src/generated/api.ts:4710](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4710)

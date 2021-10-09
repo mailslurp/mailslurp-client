@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ValidationDto
-
 # Interface: ValidationDto
 
 Response object for email validation operation
@@ -25,20 +23,10 @@ ID of the email validated
 
 **`memberof`** ValidationDto
 
-#### Defined in
-
-[src/generated/api.ts:6108](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6108)
-
 ___
 
 ### html
 
 • `Optional` **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
 
-Result of HTML validation
-
 **`memberof`** ValidationDto
-
-#### Defined in
-
-[src/generated/api.ts:6114](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6114)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookEmailOpenedPayload
-
 # Interface: WebhookEmailOpenedPayload
 
 EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST when an email containing a tracking pixel is opened and the pixel image is loaded by a reader.
@@ -32,23 +30,15 @@ Date time of event creation
 
 **`memberof`** WebhookEmailOpenedPayload
 
-#### Defined in
-
-[src/generated/api.ts:6378](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6378)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookEmailOpenedPayload.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookEmailOpenedPayloadEventNameEnum`](../enums/WebhookEmailOpenedPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
 **`memberof`** WebhookEmailOpenedPayload
-
-#### Defined in
-
-[src/generated/api.ts:6384](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6384)
 
 ___
 
@@ -60,10 +50,6 @@ Id of the inbox that received an email
 
 **`memberof`** WebhookEmailOpenedPayload
 
-#### Defined in
-
-[src/generated/api.ts:6390](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6390)
-
 ___
 
 ### messageId
@@ -73,10 +59,6 @@ ___
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
 **`memberof`** WebhookEmailOpenedPayload
-
-#### Defined in
-
-[src/generated/api.ts:6396](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6396)
 
 ___
 
@@ -88,10 +70,6 @@ ID of the tracking pixel
 
 **`memberof`** WebhookEmailOpenedPayload
 
-#### Defined in
-
-[src/generated/api.ts:6402](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6402)
-
 ___
 
 ### recipient
@@ -101,10 +79,6 @@ ___
 Email address for the recipient of the tracking pixel
 
 **`memberof`** WebhookEmailOpenedPayload
-
-#### Defined in
-
-[src/generated/api.ts:6408](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6408)
 
 ___
 
@@ -116,10 +90,6 @@ ID of sent email
 
 **`memberof`** WebhookEmailOpenedPayload
 
-#### Defined in
-
-[src/generated/api.ts:6414](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6414)
-
 ___
 
 ### webhookId
@@ -130,10 +100,6 @@ ID of webhook entity being triggered
 
 **`memberof`** WebhookEmailOpenedPayload
 
-#### Defined in
-
-[src/generated/api.ts:6420](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6420)
-
 ___
 
 ### webhookName
@@ -143,7 +109,3 @@ ___
 Name of the webhook being triggered
 
 **`memberof`** WebhookEmailOpenedPayload
-
-#### Defined in
-
-[src/generated/api.ts:6426](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6426)

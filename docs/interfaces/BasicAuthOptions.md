@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BasicAuthOptions
-
 # Interface: BasicAuthOptions
 
 Basic Authentication options for webhooks. Will be used is present when calling webhook endpoints.
@@ -23,10 +21,6 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 **`memberof`** BasicAuthOptions
 
-#### Defined in
-
-[src/generated/api.ts:414](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L414)
-
 ___
 
 ### username
@@ -34,7 +28,3 @@ ___
 • **username**: `string`
 
 **`memberof`** BasicAuthOptions
-
-#### Defined in
-
-[src/generated/api.ts:408](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L408)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageSentEmailProjection
-
 # Interface: PageSentEmailProjection
 
 Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
@@ -34,10 +32,6 @@ Collection of items
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4428](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4428)
-
 ___
 
 ### empty
@@ -45,10 +39,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageSentEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4434](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4434)
 
 ___
 
@@ -58,10 +48,6 @@ ___
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4440](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4440)
-
 ___
 
 ### last
@@ -69,10 +55,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageSentEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4446](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4446)
 
 ___
 
@@ -84,10 +66,6 @@ Page number starting at 0
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4452](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4452)
-
 ___
 
 ### numberOfElements
@@ -98,10 +76,6 @@ Number of items returned
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4458](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4458)
-
 ___
 
 ### pageable
@@ -109,10 +83,6 @@ ___
 • `Optional` **pageable**: [`Pageable`](Pageable.md)
 
 **`memberof`** PageSentEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4464](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4464)
 
 ___
 
@@ -124,10 +94,6 @@ Size of page requested
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4470](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4470)
-
 ___
 
 ### sort
@@ -135,10 +101,6 @@ ___
 • `Optional` **sort**: [`Sort`](Sort.md)
 
 **`memberof`** PageSentEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4476](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4476)
 
 ___
 
@@ -150,10 +112,6 @@ Total number of items available for querying
 
 **`memberof`** PageSentEmailProjection
 
-#### Defined in
-
-[src/generated/api.ts:4482](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4482)
-
 ___
 
 ### totalPages
@@ -163,7 +121,3 @@ ___
 Total number of pages available
 
 **`memberof`** PageSentEmailProjection
-
-#### Defined in
-
-[src/generated/api.ts:4488](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L4488)

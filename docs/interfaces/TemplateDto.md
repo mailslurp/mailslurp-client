@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TemplateDto
-
 # Interface: TemplateDto
 
 **`export`**
@@ -24,10 +22,6 @@
 
 **`memberof`** TemplateDto
 
-#### Defined in
-
-[src/generated/api.ts:5588](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5588)
-
 ___
 
 ### createdAt
@@ -35,10 +29,6 @@ ___
 • **createdAt**: `Date`
 
 **`memberof`** TemplateDto
-
-#### Defined in
-
-[src/generated/api.ts:5594](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5594)
 
 ___
 
@@ -48,10 +38,6 @@ ___
 
 **`memberof`** TemplateDto
 
-#### Defined in
-
-[src/generated/api.ts:5600](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5600)
-
 ___
 
 ### name
@@ -60,10 +46,6 @@ ___
 
 **`memberof`** TemplateDto
 
-#### Defined in
-
-[src/generated/api.ts:5606](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5606)
-
 ___
 
 ### variables
@@ -71,7 +53,3 @@ ___
 • **variables**: [`TemplateVariable`](TemplateVariable.md)[]
 
 **`memberof`** TemplateDto
-
-#### Defined in
-
-[src/generated/api.ts:5612](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5612)

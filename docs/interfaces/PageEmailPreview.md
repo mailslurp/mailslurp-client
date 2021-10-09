@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / PageEmailPreview
-
 # Interface: PageEmailPreview
 
 Paginated email preview results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments.
@@ -32,10 +30,6 @@ Paginated email preview results. EmailProjections and EmailPreviews are essentia
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3762](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3762)
-
 ___
 
 ### empty
@@ -43,10 +37,6 @@ ___
 • `Optional` **empty**: `boolean`
 
 **`memberof`** PageEmailPreview
-
-#### Defined in
-
-[src/generated/api.ts:3768](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3768)
 
 ___
 
@@ -56,10 +46,6 @@ ___
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3774](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3774)
-
 ___
 
 ### last
@@ -67,10 +53,6 @@ ___
 • `Optional` **last**: `boolean`
 
 **`memberof`** PageEmailPreview
-
-#### Defined in
-
-[src/generated/api.ts:3780](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3780)
 
 ___
 
@@ -80,10 +62,6 @@ ___
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3786](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3786)
-
 ___
 
 ### numberOfElements
@@ -91,10 +69,6 @@ ___
 • `Optional` **numberOfElements**: `number`
 
 **`memberof`** PageEmailPreview
-
-#### Defined in
-
-[src/generated/api.ts:3792](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3792)
 
 ___
 
@@ -104,10 +78,6 @@ ___
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3798](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3798)
-
 ___
 
 ### size
@@ -115,10 +85,6 @@ ___
 • `Optional` **size**: `number`
 
 **`memberof`** PageEmailPreview
-
-#### Defined in
-
-[src/generated/api.ts:3804](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3804)
 
 ___
 
@@ -128,10 +94,6 @@ ___
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3810](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3810)
-
 ___
 
 ### totalElements
@@ -140,10 +102,6 @@ ___
 
 **`memberof`** PageEmailPreview
 
-#### Defined in
-
-[src/generated/api.ts:3816](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3816)
-
 ___
 
 ### totalPages
@@ -151,7 +109,3 @@ ___
 • `Optional` **totalPages**: `number`
 
 **`memberof`** PageEmailPreview
-
-#### Defined in
-
-[src/generated/api.ts:3822](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3822)

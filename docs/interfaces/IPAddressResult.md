@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / IPAddressResult
-
 # Interface: IPAddressResult
 
 IP Address look up result for a given domain / hostname
@@ -23,10 +21,6 @@ IP Address look up result for a given domain / hostname
 
 **`memberof`** IPAddressResult
 
-#### Defined in
-
-[src/generated/api.ts:2670](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2670)
-
 ___
 
 ### hostname
@@ -34,7 +28,3 @@ ___
 • **hostname**: `string`
 
 **`memberof`** IPAddressResult
-
-#### Defined in
-
-[src/generated/api.ts:2676](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2676)

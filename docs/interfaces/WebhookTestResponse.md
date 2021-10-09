@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookTestResponse
-
 # Interface: WebhookTestResponse
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** WebhookTestResponse
 
-#### Defined in
-
-[src/generated/api.ts:7125](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7125)
-
 ___
 
 ### statusCode
@@ -32,7 +26,3 @@ ___
 • `Optional` **statusCode**: `number`
 
 **`memberof`** WebhookTestResponse
-
-#### Defined in
-
-[src/generated/api.ts:7131](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7131)

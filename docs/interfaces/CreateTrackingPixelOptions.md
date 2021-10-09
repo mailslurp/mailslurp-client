@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateTrackingPixelOptions
-
 # Interface: CreateTrackingPixelOptions
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** CreateTrackingPixelOptions
 
-#### Defined in
-
-[src/generated/api.ts:1156](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1156)
-
 ___
 
 ### recipient
@@ -32,7 +26,3 @@ ___
 • `Optional` **recipient**: `string`
 
 **`memberof`** CreateTrackingPixelOptions
-
-#### Defined in
-
-[src/generated/api.ts:1162](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1162)

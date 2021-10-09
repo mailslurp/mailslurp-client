@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GravatarUrl
-
 # Interface: GravatarUrl
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** GravatarUrl
 
-#### Defined in
-
-[src/generated/api.ts:2540](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2540)
-
 ___
 
 ### url
@@ -32,7 +26,3 @@ ___
 • **url**: `string`
 
 **`memberof`** GravatarUrl
-
-#### Defined in
-
-[src/generated/api.ts:2546](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2546)

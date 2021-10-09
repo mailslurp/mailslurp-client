@@ -1,10 +1,4 @@
-[MailSlurp JS](../README.md) / MailServerControllerApi
-
 # Class: MailServerControllerApi
-
-MailServerControllerApi - object-oriented interface
-
-**`export`**
 
 ## Hierarchy
 
@@ -20,50 +14,40 @@ MailServerControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](MailServerControllerApi.md#basepath)
 - [configuration](MailServerControllerApi.md#configuration)
-- [fetch](MailServerControllerApi.md#fetch)
 
 ### Methods
 
 - [describeMailServerDomain](MailServerControllerApi.md#describemailserverdomain)
+- [describeMailServerDomainRaw](MailServerControllerApi.md#describemailserverdomainraw)
 - [getDnsLookup](MailServerControllerApi.md#getdnslookup)
+- [getDnsLookupRaw](MailServerControllerApi.md#getdnslookupraw)
 - [getIpAddress](MailServerControllerApi.md#getipaddress)
+- [getIpAddressRaw](MailServerControllerApi.md#getipaddressraw)
+- [request](MailServerControllerApi.md#request)
 - [verifyEmailAddress](MailServerControllerApi.md#verifyemailaddress)
+- [verifyEmailAddressRaw](MailServerControllerApi.md#verifyemailaddressraw)
+- [withMiddleware](MailServerControllerApi.md#withmiddleware)
+- [withPostMiddleware](MailServerControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](MailServerControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new MailServerControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new MailServerControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -73,124 +57,253 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### describeMailServerDomain
 
-▸ **describeMailServerDomain**(`describeOptions`, `options?`): `Promise`<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>
+▸ **describeMailServerDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>
 
-**`summary`** Get DNS Mail Server records for a domain
-
-**`throws`** {RequiredError}
-
-**`memberof`** MailServerControllerApi
+Get DNS Mail Server records for a domain
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `describeOptions` | [`DescribeDomainOptions`](../interfaces/DescribeDomainOptions.md) | describeOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DescribeMailServerDomainRequest`](../interfaces/DescribeMailServerDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26125](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26125)
+### describeMailServerDomainRaw
+
+▸ **describeMailServerDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>\>
+
+Get DNS Mail Server records for a domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DescribeMailServerDomainRequest`](../interfaces/DescribeMailServerDomainRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>\>
 
 ___
 
 ### getDnsLookup
 
-▸ **getDnsLookup**(`dnsLookupOptions`, `options?`): `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
+▸ **getDnsLookup**(`requestParameters`, `initOverrides?`): `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
 
-**`summary`** Lookup DNS records for a domain
-
-**`throws`** {RequiredError}
-
-**`memberof`** MailServerControllerApi
+Lookup DNS records for a domain
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dnsLookupOptions` | [`DNSLookupOptions`](../interfaces/DNSLookupOptions.md) | dnsLookupOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDnsLookupRequest`](../interfaces/GetDnsLookupRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26145](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26145)
+### getDnsLookupRaw
+
+▸ **getDnsLookupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
+
+Lookup DNS records for a domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDnsLookupRequest`](../interfaces/GetDnsLookupRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
 
 ___
 
 ### getIpAddress
 
-▸ **getIpAddress**(`name`, `options?`): `Promise`<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>
+▸ **getIpAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>
 
-**`summary`** Get IP address for a domain
-
-**`throws`** {RequiredError}
-
-**`memberof`** MailServerControllerApi
+Get IP address for a domain
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | name |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetIpAddressRequest`](../interfaces/GetIpAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26160](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26160)
+### getIpAddressRaw
+
+▸ **getIpAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>\>
+
+Get IP address for a domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetIpAddressRequest`](../interfaces/GetIpAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
 
 ___
 
 ### verifyEmailAddress
 
-▸ **verifyEmailAddress**(`verifyOptions`, `options?`): `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
+▸ **verifyEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
 
-**`summary`** Verify the existence of an email address at a given mail server.
-
-**`throws`** {RequiredError}
-
-**`memberof`** MailServerControllerApi
+Verify the existence of an email address at a given mail server.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `verifyOptions` | [`VerifyEmailAddressOptions`](../interfaces/VerifyEmailAddressOptions.md) | verifyOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`VerifyEmailAddressRequest`](../interfaces/VerifyEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:26175](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26175)
+### verifyEmailAddressRaw
+
+▸ **verifyEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>\>
+
+Verify the existence of an email address at a given mail server.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`VerifyEmailAddressRequest`](../interfaces/VerifyEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

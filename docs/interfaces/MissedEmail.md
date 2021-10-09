@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MissedEmail
-
 # Interface: MissedEmail
 
 **`export`**
@@ -31,10 +29,6 @@
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3165](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3165)
-
 ___
 
 ### bcc
@@ -42,10 +36,6 @@ ___
 • **bcc**: `string`[]
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3171](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3171)
 
 ___
 
@@ -55,10 +45,6 @@ ___
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3177](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3177)
-
 ___
 
 ### cc
@@ -66,10 +52,6 @@ ___
 • **cc**: `string`[]
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3183](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3183)
 
 ___
 
@@ -79,10 +61,6 @@ ___
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3189](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3189)
-
 ___
 
 ### from
@@ -90,10 +68,6 @@ ___
 • `Optional` **from**: `string`
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3195](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3195)
 
 ___
 
@@ -103,10 +77,6 @@ ___
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3201](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3201)
-
 ___
 
 ### inboxIds
@@ -114,10 +84,6 @@ ___
 • **inboxIds**: `string`[]
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3207](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3207)
 
 ___
 
@@ -127,10 +93,6 @@ ___
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3213](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3213)
-
 ___
 
 ### to
@@ -138,10 +100,6 @@ ___
 • **to**: `string`[]
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3219](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3219)
 
 ___
 
@@ -151,10 +109,6 @@ ___
 
 **`memberof`** MissedEmail
 
-#### Defined in
-
-[src/generated/api.ts:3225](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3225)
-
 ___
 
 ### userId
@@ -162,7 +116,3 @@ ___
 • `Optional` **userId**: `string`
 
 **`memberof`** MissedEmail
-
-#### Defined in
-
-[src/generated/api.ts:3231](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3231)

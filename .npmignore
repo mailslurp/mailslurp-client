@@ -6,3 +6,9 @@ config
 typedoc.json
 .idea
 .env.sample
+test-results
+.circleci
+coverage
+templates
+scripts
+typedoc.json

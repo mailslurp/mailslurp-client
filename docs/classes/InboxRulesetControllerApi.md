@@ -1,10 +1,4 @@
-[MailSlurp JS](../README.md) / InboxRulesetControllerApi
-
 # Class: InboxRulesetControllerApi
-
-InboxRulesetControllerApi - object-oriented interface
-
-**`export`**
 
 ## Hierarchy
 
@@ -20,54 +14,48 @@ InboxRulesetControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](InboxRulesetControllerApi.md#basepath)
 - [configuration](InboxRulesetControllerApi.md#configuration)
-- [fetch](InboxRulesetControllerApi.md#fetch)
 
 ### Methods
 
 - [createNewInboxRuleset](InboxRulesetControllerApi.md#createnewinboxruleset)
+- [createNewInboxRulesetRaw](InboxRulesetControllerApi.md#createnewinboxrulesetraw)
 - [deleteInboxRuleset](InboxRulesetControllerApi.md#deleteinboxruleset)
+- [deleteInboxRulesetRaw](InboxRulesetControllerApi.md#deleteinboxrulesetraw)
 - [deleteInboxRulesets](InboxRulesetControllerApi.md#deleteinboxrulesets)
+- [deleteInboxRulesetsRaw](InboxRulesetControllerApi.md#deleteinboxrulesetsraw)
 - [getInboxRuleset](InboxRulesetControllerApi.md#getinboxruleset)
+- [getInboxRulesetRaw](InboxRulesetControllerApi.md#getinboxrulesetraw)
 - [getInboxRulesets](InboxRulesetControllerApi.md#getinboxrulesets)
+- [getInboxRulesetsRaw](InboxRulesetControllerApi.md#getinboxrulesetsraw)
+- [request](InboxRulesetControllerApi.md#request)
 - [testInboxRuleset](InboxRulesetControllerApi.md#testinboxruleset)
+- [testInboxRulesetRaw](InboxRulesetControllerApi.md#testinboxrulesetraw)
 - [testInboxRulesetsForInbox](InboxRulesetControllerApi.md#testinboxrulesetsforinbox)
+- [testInboxRulesetsForInboxRaw](InboxRulesetControllerApi.md#testinboxrulesetsforinboxraw)
 - [testNewInboxRuleset](InboxRulesetControllerApi.md#testnewinboxruleset)
+- [testNewInboxRulesetRaw](InboxRulesetControllerApi.md#testnewinboxrulesetraw)
+- [withMiddleware](InboxRulesetControllerApi.md#withmiddleware)
+- [withPostMiddleware](InboxRulesetControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](InboxRulesetControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new InboxRulesetControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new InboxRulesetControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -77,257 +65,421 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createNewInboxRuleset
 
-▸ **createNewInboxRuleset**(`createInboxRulesetOptions`, `inboxId?`, `options?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+▸ **createNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-
-**`summary`** Create an inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Create an inbox ruleset
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createInboxRulesetOptions` | [`CreateInboxRulesetOptions`](../interfaces/CreateInboxRulesetOptions.md) | createInboxRulesetOptions |
-| `inboxId?` | `string` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateNewInboxRulesetRequest`](../interfaces/CreateNewInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25483](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25483)
+### createNewInboxRulesetRaw
+
+▸ **createNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+
+Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+Create an inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateNewInboxRulesetRequest`](../interfaces/CreateNewInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
 ___
 
 ### deleteInboxRuleset
 
-▸ **deleteInboxRuleset**(`id`, `options?`): `Promise`<`Response`\>
+▸ **deleteInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete inbox ruleset
-
-**`summary`** Delete an inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Delete an inbox ruleset
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox ruleset |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRulesetRequest`](../interfaces/DeleteInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25505](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25505)
+### deleteInboxRulesetRaw
+
+▸ **deleteInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete inbox ruleset
+Delete an inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRulesetRequest`](../interfaces/DeleteInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### deleteInboxRulesets
 
-▸ **deleteInboxRulesets**(`inboxId?`, `options?`): `Promise`<`Response`\>
+▸ **deleteInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete inbox rulesets. Accepts optional inboxId filter.
-
-**`summary`** Delete inbox rulesets
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Delete inbox rulesets
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `inboxId?` | `string` |
-| `options?` | `any` |
+| `requestParameters` | [`DeleteInboxRulesetsRequest`](../interfaces/DeleteInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25519](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25519)
+### deleteInboxRulesetsRaw
+
+▸ **deleteInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete inbox rulesets. Accepts optional inboxId filter.
+Delete inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRulesetsRequest`](../interfaces/DeleteInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### getInboxRuleset
 
-▸ **getInboxRuleset**(`id`, `options?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+▸ **getInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
 Get inbox ruleset
-
-**`summary`** Get an inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox ruleset |
-| `options?` | `any` | - |
-
-#### Returns
-
-`Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:25533](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25533)
-
-___
-
-### getInboxRulesets
-
-▸ **getInboxRulesets**(`before?`, `inboxId?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
-
-List all rulesets attached to an inbox
-
-**`summary`** List inbox rulesets
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Get an inbox ruleset
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `inboxId?` | `string` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetInboxRulesetRequest`](../interfaces/GetInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+
+___
+
+### getInboxRulesetRaw
+
+▸ **getInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+
+Get inbox ruleset
+Get an inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRulesetRequest`](../interfaces/GetInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+
+___
+
+### getInboxRulesets
+
+▸ **getInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
+
+List all rulesets attached to an inbox
+List inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRulesetsRequest`](../interfaces/GetInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25554](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25554)
+### getInboxRulesetsRaw
+
+▸ **getInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
+
+List all rulesets attached to an inbox
+List inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRulesetsRequest`](../interfaces/GetInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
 
 ___
 
 ### testInboxRuleset
 
-▸ **testInboxRuleset**(`id`, `inboxRulesetTestOptions`, `options?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
+▸ **testInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
 Test an inbox ruleset
-
-**`summary`** Test an inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Test an inbox ruleset
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | ID of inbox ruleset |
-| `inboxRulesetTestOptions` | [`InboxRulesetTestOptions`](../interfaces/InboxRulesetTestOptions.md) | inboxRulesetTestOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetRequest`](../interfaces/TestInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25585](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25585)
+### testInboxRulesetRaw
+
+▸ **testInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
+
+Test an inbox ruleset
+Test an inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetRequest`](../interfaces/TestInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
 ___
 
 ### testInboxRulesetsForInbox
 
-▸ **testInboxRulesetsForInbox**(`inboxId`, `inboxRulesetTestOptions`, `options?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
+▸ **testInboxRulesetsForInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
 Test inbox rulesets for inbox
-
-**`summary`** Test inbox rulesets for inbox
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Test inbox rulesets for inbox
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | ID of inbox |
-| `inboxRulesetTestOptions` | [`InboxRulesetTestOptions`](../interfaces/InboxRulesetTestOptions.md) | inboxRulesetTestOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetsForInboxRequest`](../interfaces/TestInboxRulesetsForInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25606](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25606)
+### testInboxRulesetsForInboxRaw
+
+▸ **testInboxRulesetsForInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
+
+Test inbox rulesets for inbox
+Test inbox rulesets for inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetsForInboxRequest`](../interfaces/TestInboxRulesetsForInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
 ___
 
 ### testNewInboxRuleset
 
-▸ **testNewInboxRuleset**(`testNewInboxRulesetOptions`, `options?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
+▸ **testNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
 Test new inbox ruleset
-
-**`summary`** Test new inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxRulesetControllerApi
+Test new inbox ruleset
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `testNewInboxRulesetOptions` | [`TestNewInboxRulesetOptions`](../interfaces/TestNewInboxRulesetOptions.md) | testNewInboxRulesetOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestNewInboxRulesetRequest`](../interfaces/TestNewInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:25628](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25628)
+### testNewInboxRulesetRaw
+
+▸ **testNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
+
+Test new inbox ruleset
+Test new inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestNewInboxRulesetRequest`](../interfaces/TestNewInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

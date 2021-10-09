@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ValidationMessage
-
 # Interface: ValidationMessage
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** ValidationMessage
 
-#### Defined in
-
-[src/generated/api.ts:6128](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6128)
-
 ___
 
 ### message
@@ -32,7 +26,3 @@ ___
 • `Optional` **message**: `string`
 
 **`memberof`** ValidationMessage
-
-#### Defined in
-
-[src/generated/api.ts:6134](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6134)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookEmailReadPayload
-
 # Interface: WebhookEmailReadPayload
 
 EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.
@@ -31,10 +29,6 @@ Date time of event creation
 
 **`memberof`** WebhookEmailReadPayload
 
-#### Defined in
-
-[src/generated/api.ts:6459](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6459)
-
 ___
 
 ### emailId
@@ -44,10 +38,6 @@ ___
 ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
 
 **`memberof`** WebhookEmailReadPayload
-
-#### Defined in
-
-[src/generated/api.ts:6465](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6465)
 
 ___
 
@@ -59,23 +49,15 @@ Is the email read
 
 **`memberof`** WebhookEmailReadPayload
 
-#### Defined in
-
-[src/generated/api.ts:6471](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6471)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookEmailReadPayload.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookEmailReadPayloadEventNameEnum`](../enums/WebhookEmailReadPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
 **`memberof`** WebhookEmailReadPayload
-
-#### Defined in
-
-[src/generated/api.ts:6477](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6477)
 
 ___
 
@@ -87,10 +69,6 @@ Id of the inbox that received an email
 
 **`memberof`** WebhookEmailReadPayload
 
-#### Defined in
-
-[src/generated/api.ts:6483](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6483)
-
 ___
 
 ### messageId
@@ -100,10 +78,6 @@ ___
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
 **`memberof`** WebhookEmailReadPayload
-
-#### Defined in
-
-[src/generated/api.ts:6489](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6489)
 
 ___
 
@@ -115,10 +89,6 @@ ID of webhook entity being triggered
 
 **`memberof`** WebhookEmailReadPayload
 
-#### Defined in
-
-[src/generated/api.ts:6495](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6495)
-
 ___
 
 ### webhookName
@@ -128,7 +98,3 @@ ___
 Name of the webhook being triggered
 
 **`memberof`** WebhookEmailReadPayload
-
-#### Defined in
-
-[src/generated/api.ts:6501](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6501)

@@ -45,10 +45,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapResult = exports.wrapException = exports.MailSlurp = void 0;
@@ -117,31 +137,27 @@ var MailSlurp = /** @class */ (function () {
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://api.mailslurp.com',
         });
-        var args = [
-            clientConfiguration,
-            clientConfiguration.basePath,
-            _fetch,
-        ];
+        var args = [clientConfiguration, clientConfiguration.basePath, _fetch];
         // instantiate api clients
-        this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArray([void 0], args)))();
-        this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArray([void 0], args)))();
-        this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArray([void 0], args)))();
-        this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, __spreadArray([void 0], args)))();
-        this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, __spreadArray([void 0], args)))();
-        this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, __spreadArray([void 0], args)))();
-        this.contactController = new (generated_1.ContactControllerApi.bind.apply(generated_1.ContactControllerApi, __spreadArray([void 0], args)))();
-        this.groupController = new (generated_1.GroupControllerApi.bind.apply(generated_1.GroupControllerApi, __spreadArray([void 0], args)))();
-        this.templateController = new (generated_1.TemplateControllerApi.bind.apply(generated_1.TemplateControllerApi, __spreadArray([void 0], args)))();
-        this.webhookController = new (generated_1.WebhookControllerApi.bind.apply(generated_1.WebhookControllerApi, __spreadArray([void 0], args)))();
-        this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, __spreadArray([void 0], args)))();
-        this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArray([void 0], args)))();
-        this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArray([void 0], args)))();
-        this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArray([void 0], args)))();
-        this.missedEmailController = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArray([void 0], args)))();
-        this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArray([void 0], args)))();
-        this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArray([void 0], args)))();
-        this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], args)))();
-        this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], args)))();
+        this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.domainController = new (generated_1.DomainControllerApi.bind.apply(generated_1.DomainControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.aliasController = new (generated_1.AliasControllerApi.bind.apply(generated_1.AliasControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.formController = new (generated_1.FormControllerApi.bind.apply(generated_1.FormControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.contactController = new (generated_1.ContactControllerApi.bind.apply(generated_1.ContactControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.groupController = new (generated_1.GroupControllerApi.bind.apply(generated_1.GroupControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.templateController = new (generated_1.TemplateControllerApi.bind.apply(generated_1.TemplateControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.webhookController = new (generated_1.WebhookControllerApi.bind.apply(generated_1.WebhookControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.commonController = new (generated_1.CommonActionsControllerApi.bind.apply(generated_1.CommonActionsControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.bulkController = new (generated_1.BulkActionsControllerApi.bind.apply(generated_1.BulkActionsControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.waitController = new (generated_1.WaitForControllerApi.bind.apply(generated_1.WaitForControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.mailServerController = new (generated_1.MailServerControllerApi.bind.apply(generated_1.MailServerControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.missedEmailController = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], __read(args), false)))();
     }
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
@@ -162,7 +178,21 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInbox(teamAccess, description, emailAddress, expiresAt, expiresIn, favourite, inboxType, name, tags, useDomainPool);
+                        return _this.inboxController.createInbox({
+                            description: description,
+                            emailAddress: emailAddress,
+                            expiresAt: expiresAt,
+                            expiresIn: expiresIn,
+                            favourite: favourite,
+                            inboxType: inboxType
+                                ? inboxType === 'HTTP_INBOX'
+                                    ? generated_1.CreateInboxInboxTypeEnum.HTTP_INBOX
+                                    : generated_1.CreateInboxInboxTypeEnum.SMTP_INBOX
+                                : undefined,
+                            name: name,
+                            tags: tags,
+                            useDomainPool: useDomainPool,
+                        });
                     })];
             });
         });
@@ -176,7 +206,9 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('createInbox', function () {
-                        return _this.inboxController.createInboxWithOptions(createInboxOptions);
+                        return _this.inboxController.createInboxWithOptions({
+                            createInboxDto: createInboxOptions,
+                        });
                     })];
             });
         });
@@ -191,7 +223,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteInbox', function () {
-                        return _this.inboxController.deleteInbox(inboxId);
+                        return _this.inboxController.deleteInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -206,7 +238,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('emptyInbox', function () {
-                        return _this.commonController.emptyInbox(inboxId);
+                        return _this.commonController.emptyInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -221,7 +253,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getInbox', function () {
-                        return _this.inboxController.getInbox(inboxId);
+                        return _this.inboxController.getInbox({ inboxId: inboxId });
                     })];
             });
         });
@@ -234,7 +266,7 @@ var MailSlurp = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxController.getInboxes(); })];
+                return [2 /*return*/, wrapCall('getInboxes', function () { return _this.inboxController.getInboxes({}); })];
             });
         });
     };
@@ -253,7 +285,18 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllInboxes', function () {
-                        return _this.inboxController.getAllInboxes(undefined, favourite, page, search, undefined, size, sort, tag);
+                        return _this.inboxController.getAllInboxes({
+                            favourite: favourite,
+                            page: page,
+                            search: search,
+                            size: size,
+                            sort: sort
+                                ? sort == 'ASC'
+                                    ? generated_1.GetAllInboxesSortEnum.ASC
+                                    : generated_1.GetAllInboxesSortEnum.DESC
+                                : undefined,
+                            tag: tag,
+                        });
                     })];
             });
         });
@@ -271,7 +314,11 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForLatestEmail', function () {
-                        return _this.waitController.waitForLatestEmail(undefined, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForLatestEmail({
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -289,7 +336,12 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForNthEmail', function () {
-                        return _this.waitController.waitForNthEmail(undefined, undefined, inboxId, index, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForNthEmail({
+                            inboxId: inboxId,
+                            index: index,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -308,7 +360,13 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForMatchingEmail', function () {
-                        return _this.waitController.waitForMatchingEmails(matchOptions, undefined, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForMatchingEmails({
+                            matchOptions: matchOptions,
+                            count: count,
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -326,7 +384,12 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('waitForEmailCount', function () {
-                        return _this.waitController.waitForEmailCount(undefined, count, undefined, inboxId, undefined, undefined, timeout, unreadOnly);
+                        return _this.waitController.waitForEmailCount({
+                            count: count,
+                            inboxId: inboxId,
+                            timeout: timeout,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -341,7 +404,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('deleteEmail', function () {
-                        return _this.emailController.deleteEmail(emailId);
+                        return _this.emailController.deleteEmail({ emailId: emailId });
                     })];
             });
         });
@@ -361,7 +424,18 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAllEmails', function () {
-                        return _this.emailController.getEmailsPaginated(undefined, inboxId, page, searchFilter, undefined, size, sort, unreadOnly);
+                        return _this.emailController.getEmailsPaginated({
+                            inboxId: inboxId,
+                            page: page,
+                            searchFilter: searchFilter,
+                            size: size,
+                            sort: sort
+                                ? sort === 'DESC'
+                                    ? generated_1.GetEmailsPaginatedSortEnum.DESC
+                                    : generated_1.GetEmailsPaginatedSortEnum.ASC
+                                : undefined,
+                            unreadOnly: unreadOnly,
+                        });
                     })];
             });
         });
@@ -378,7 +452,19 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmails', function () {
-                        return _this.inboxController.getEmails(inboxId, undefined, undefined, args.limit, args.minCount, args.retryTimeout, args.since, args.size, args.sort, undefined);
+                        return _this.inboxController.getEmails({
+                            inboxId: inboxId,
+                            limit: args.limit,
+                            minCount: args.minCount,
+                            retryTimeout: args.retryTimeout,
+                            since: args.since,
+                            size: args.size,
+                            sort: args.sort
+                                ? args.sort === 'DESC'
+                                    ? generated_1.GetEmailsSortEnum.DESC
+                                    : generated_1.GetEmailsSortEnum.ASC
+                                : undefined,
+                        });
                     })];
             });
         });
@@ -393,7 +479,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getEmail', function () {
-                        return _this.emailController.getEmail(emailId);
+                        return _this.emailController.getEmail({ emailId: emailId });
                     })];
             });
         });
@@ -408,7 +494,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getRawEmail', function () {
-                        return _this.emailController.getRawEmailContents(emailId);
+                        return _this.emailController.getRawEmailContents({ emailId: emailId });
                     })];
             });
         });
@@ -424,7 +510,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('sendEmail', function () {
-                        return _this.inboxController.sendEmail(inboxId, sendEmailOptions);
+                        return _this.inboxController.sendEmailAndConfirm({ inboxId: inboxId, sendEmailOptions: sendEmailOptions });
                     })];
             });
         });
@@ -440,7 +526,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('downloadAttachment', function () {
-                        return _this.emailController.downloadAttachment(attachmentId, emailId);
+                        return _this.emailController.downloadAttachment({ attachmentId: attachmentId, emailId: emailId });
                     })];
             });
         });
@@ -458,7 +544,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('uploadAttachment', function () {
-                        return _this.attachmentController.uploadAttachment(options);
+                        return _this.attachmentController.uploadAttachment({ uploadOptions: options });
                     })];
             });
         });
@@ -476,7 +562,7 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('getAttachmentMetaData', function () {
-                        return _this.emailController.getAttachmentMetaData(attachmentId, emailId);
+                        return _this.emailController.getAttachmentMetaData({ attachmentId: attachmentId, emailId: emailId });
                     })];
             });
         });

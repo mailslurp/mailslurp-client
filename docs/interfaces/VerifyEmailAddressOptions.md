@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / VerifyEmailAddressOptions
-
 # Interface: VerifyEmailAddressOptions
 
 Options for verifying that an email address exists at a remote mail server.
@@ -25,10 +23,6 @@ Options for verifying that an email address exists at a remote mail server.
 
 **`memberof`** VerifyEmailAddressOptions
 
-#### Defined in
-
-[src/generated/api.ts:6154](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6154)
-
 ___
 
 ### mailServerDomain
@@ -36,10 +30,6 @@ ___
 • `Optional` **mailServerDomain**: `string`
 
 **`memberof`** VerifyEmailAddressOptions
-
-#### Defined in
-
-[src/generated/api.ts:6148](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6148)
 
 ___
 
@@ -49,10 +39,6 @@ ___
 
 **`memberof`** VerifyEmailAddressOptions
 
-#### Defined in
-
-[src/generated/api.ts:6166](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6166)
-
 ___
 
 ### senderEmailAddress
@@ -60,7 +46,3 @@ ___
 • `Optional` **senderEmailAddress**: `string`
 
 **`memberof`** VerifyEmailAddressOptions
-
-#### Defined in
-
-[src/generated/api.ts:6160](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6160)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / BounceRecipient
-
 # Interface: BounceRecipient
 
 **`export`**
@@ -24,10 +22,6 @@
 
 **`memberof`** BounceRecipient
 
-#### Defined in
-
-[src/generated/api.ts:454](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L454)
-
 ___
 
 ### id
@@ -35,10 +29,6 @@ ___
 • `Optional` **id**: `string`
 
 **`memberof`** BounceRecipient
-
-#### Defined in
-
-[src/generated/api.ts:460](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L460)
 
 ___
 
@@ -48,10 +38,6 @@ ___
 
 **`memberof`** BounceRecipient
 
-#### Defined in
-
-[src/generated/api.ts:466](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L466)
-
 ___
 
 ### updatedAt
@@ -60,10 +46,6 @@ ___
 
 **`memberof`** BounceRecipient
 
-#### Defined in
-
-[src/generated/api.ts:472](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L472)
-
 ___
 
 ### userId
@@ -71,7 +53,3 @@ ___
 • **userId**: `string`
 
 **`memberof`** BounceRecipient
-
-#### Defined in
-
-[src/generated/api.ts:478](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L478)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookProjection
-
 # Interface: WebhookProjection
 
 Representation of a webhook
@@ -28,21 +26,13 @@ Representation of a webhook
 
 **`memberof`** WebhookProjection
 
-#### Defined in
-
-[src/generated/api.ts:6831](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6831)
-
 ___
 
 ### eventName
 
-• `Optional` **eventName**: [`EventNameEnum`](../enums/WebhookProjection.EventNameEnum.md)
+• `Optional` **eventName**: [`WebhookProjectionEventNameEnum`](../enums/WebhookProjectionEventNameEnum.md)
 
 **`memberof`** WebhookProjection
-
-#### Defined in
-
-[src/generated/api.ts:6837](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6837)
 
 ___
 
@@ -52,10 +42,6 @@ ___
 
 **`memberof`** WebhookProjection
 
-#### Defined in
-
-[src/generated/api.ts:6843](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6843)
-
 ___
 
 ### inboxId
@@ -63,10 +49,6 @@ ___
 • **inboxId**: `string`
 
 **`memberof`** WebhookProjection
-
-#### Defined in
-
-[src/generated/api.ts:6849](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6849)
 
 ___
 
@@ -76,10 +58,6 @@ ___
 
 **`memberof`** WebhookProjection
 
-#### Defined in
-
-[src/generated/api.ts:6855](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6855)
-
 ___
 
 ### updatedAt
@@ -88,10 +66,6 @@ ___
 
 **`memberof`** WebhookProjection
 
-#### Defined in
-
-[src/generated/api.ts:6861](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6861)
-
 ___
 
 ### url
@@ -99,7 +73,3 @@ ___
 • **url**: `string`
 
 **`memberof`** WebhookProjection
-
-#### Defined in
-
-[src/generated/api.ts:6867](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6867)

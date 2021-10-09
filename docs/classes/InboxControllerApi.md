@@ -1,10 +1,4 @@
-[MailSlurp JS](../README.md) / InboxControllerApi
-
 # Class: InboxControllerApi
-
-InboxControllerApi - object-oriented interface
-
-**`export`**
 
 ## Hierarchy
 
@@ -20,68 +14,78 @@ InboxControllerApi - object-oriented interface
 
 ### Properties
 
-- [basePath](InboxControllerApi.md#basepath)
 - [configuration](InboxControllerApi.md#configuration)
-- [fetch](InboxControllerApi.md#fetch)
 
 ### Methods
 
 - [createInbox](InboxControllerApi.md#createinbox)
+- [createInboxRaw](InboxControllerApi.md#createinboxraw)
 - [createInboxRuleset](InboxControllerApi.md#createinboxruleset)
+- [createInboxRulesetRaw](InboxControllerApi.md#createinboxrulesetraw)
 - [createInboxWithDefaults](InboxControllerApi.md#createinboxwithdefaults)
+- [createInboxWithDefaultsRaw](InboxControllerApi.md#createinboxwithdefaultsraw)
 - [createInboxWithOptions](InboxControllerApi.md#createinboxwithoptions)
+- [createInboxWithOptionsRaw](InboxControllerApi.md#createinboxwithoptionsraw)
 - [deleteAllInboxes](InboxControllerApi.md#deleteallinboxes)
+- [deleteAllInboxesRaw](InboxControllerApi.md#deleteallinboxesraw)
 - [deleteInbox](InboxControllerApi.md#deleteinbox)
+- [deleteInboxRaw](InboxControllerApi.md#deleteinboxraw)
+- [doesInboxExist](InboxControllerApi.md#doesinboxexist)
+- [doesInboxExistRaw](InboxControllerApi.md#doesinboxexistraw)
 - [flushExpired](InboxControllerApi.md#flushexpired)
+- [flushExpiredRaw](InboxControllerApi.md#flushexpiredraw)
 - [getAllInboxes](InboxControllerApi.md#getallinboxes)
+- [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
 - [getEmails](InboxControllerApi.md#getemails)
+- [getEmailsRaw](InboxControllerApi.md#getemailsraw)
 - [getInbox](InboxControllerApi.md#getinbox)
 - [getInboxEmailsPaginated](InboxControllerApi.md#getinboxemailspaginated)
+- [getInboxEmailsPaginatedRaw](InboxControllerApi.md#getinboxemailspaginatedraw)
+- [getInboxRaw](InboxControllerApi.md#getinboxraw)
 - [getInboxSentEmails](InboxControllerApi.md#getinboxsentemails)
+- [getInboxSentEmailsRaw](InboxControllerApi.md#getinboxsentemailsraw)
 - [getInboxTags](InboxControllerApi.md#getinboxtags)
+- [getInboxTagsRaw](InboxControllerApi.md#getinboxtagsraw)
 - [getInboxes](InboxControllerApi.md#getinboxes)
+- [getInboxesRaw](InboxControllerApi.md#getinboxesraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
+- [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
+- [listInboxRulesetsRaw](InboxControllerApi.md#listinboxrulesetsraw)
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
+- [listInboxTrackingPixelsRaw](InboxControllerApi.md#listinboxtrackingpixelsraw)
+- [request](InboxControllerApi.md#request)
 - [sendEmail](InboxControllerApi.md#sendemail)
 - [sendEmailAndConfirm](InboxControllerApi.md#sendemailandconfirm)
+- [sendEmailAndConfirmRaw](InboxControllerApi.md#sendemailandconfirmraw)
+- [sendEmailRaw](InboxControllerApi.md#sendemailraw)
 - [sendTestEmail](InboxControllerApi.md#sendtestemail)
+- [sendTestEmailRaw](InboxControllerApi.md#sendtestemailraw)
 - [setInboxFavourited](InboxControllerApi.md#setinboxfavourited)
+- [setInboxFavouritedRaw](InboxControllerApi.md#setinboxfavouritedraw)
 - [updateInbox](InboxControllerApi.md#updateinbox)
+- [updateInboxRaw](InboxControllerApi.md#updateinboxraw)
+- [withMiddleware](InboxControllerApi.md#withmiddleware)
+- [withPostMiddleware](InboxControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](InboxControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new InboxControllerApi**(`configuration?`, `basePath?`, `fetch?`)
+• **new InboxControllerApi**(`configuration?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](Configuration.md) |
-| `basePath` | `string` |
-| `fetch` | [`FetchAPI`](../interfaces/FetchAPI.md) |
+| `configuration` | [`Configuration`](Configuration.md) |
 
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[constructor](BaseAPI.md#constructor)
 
-#### Defined in
-
-[src/generated/api.ts:59](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L59)
-
 ## Properties
-
-### basePath
-
-• `Protected` **basePath**: `string`
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[basePath](BaseAPI.md#basepath)
-
-___
 
 ### configuration
 
@@ -91,711 +95,1013 @@ ___
 
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
-#### Defined in
-
-[src/generated/api.ts:57](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L57)
-
-___
-
-### fetch
-
-• `Protected` **fetch**: [`FetchAPI`](../interfaces/FetchAPI.md)
-
-#### Inherited from
-
-[BaseAPI](BaseAPI.md).[fetch](BaseAPI.md#fetch)
-
 ## Methods
 
 ### createInbox
 
-▸ **createInbox**(`allowTeamAccess?`, `description?`, `emailAddress?`, `expiresAt?`, `expiresIn?`, `favourite?`, `inboxType?`, `name?`, `tags?`, `useDomainPool?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
-
-**`summary`** Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `allowTeamAccess?` | `boolean` |
-| `description?` | `string` |
-| `emailAddress?` | `string` |
-| `expiresAt?` | `Date` |
-| `expiresIn?` | `number` |
-| `favourite?` | `boolean` |
-| `inboxType?` | ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"`` |
-| `name?` | `string` |
-| `tags?` | `string`[] |
-| `useDomainPool?` | `boolean` |
-| `options?` | `any` |
+| `requestParameters` | [`CreateInboxRequest`](../interfaces/CreateInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22707](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22707)
+### createInboxRaw
+
+▸ **createInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
+Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxRequest`](../interfaces/CreateInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
 
 ___
 
 ### createInboxRuleset
 
-▸ **createInboxRuleset**(`createInboxRulesetOptions`, `inboxId`, `options?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
+▸ **createInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
 Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
-
-**`summary`** Create an inbox ruleset
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Create an inbox ruleset
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createInboxRulesetOptions` | [`CreateInboxRulesetOptions`](../interfaces/CreateInboxRulesetOptions.md) | createInboxRulesetOptions |
-| `inboxId` | `string` | inboxId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxRulesetRequest`](../interfaces/CreateInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22744](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22744)
+### createInboxRulesetRaw
+
+▸ **createInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
+
+Create a new inbox rule for forwarding, blocking, and allowing emails when sending and receiving
+Create an inbox ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxRulesetRequest`](../interfaces/CreateInboxRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
 ___
 
 ### createInboxWithDefaults
 
-▸ **createInboxWithDefaults**(`options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInboxWithDefaults**(`initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-**`summary`** Create an inbox with default options. Uses MailSlurp domain pool address and is private.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Create an inbox with default options. Uses MailSlurp domain pool address and is private.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22763](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22763)
+### createInboxWithDefaultsRaw
+
+▸ **createInboxWithDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Create an inbox with default options. Uses MailSlurp domain pool address and is private.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
 
 ___
 
 ### createInboxWithOptions
 
-▸ **createInboxWithOptions**(`createInboxDto`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInboxWithOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
-
-**`summary`** Create an inbox with options. Extended options for inbox creation.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Create an inbox with options. Extended options for inbox creation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `createInboxDto` | [`CreateInboxDto`](../interfaces/CreateInboxDto.md) | createInboxDto |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxWithOptionsRequest`](../interfaces/CreateInboxWithOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22777](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22777)
+### createInboxWithOptionsRaw
+
+▸ **createInboxWithOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
+Create an inbox with options. Extended options for inbox creation.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxWithOptionsRequest`](../interfaces/CreateInboxWithOptionsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
 
 ___
 
 ### deleteAllInboxes
 
-▸ **deleteAllInboxes**(`options?`): `Promise`<`Response`\>
+▸ **deleteAllInboxes**(`initOverrides?`): `Promise`<`void`\>
 
 Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
-
-**`summary`** Delete all inboxes
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Delete all inboxes
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22794](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22794)
+### deleteAllInboxesRaw
+
+▸ **deleteAllInboxesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Permanently delete all inboxes and associated email addresses. This will also delete all emails within the inboxes. Be careful as inboxes cannot be recovered once deleted. Note: deleting inboxes will not impact your usage limits. Monthly inbox creation limits are based on how many inboxes were created in the last 30 days, not how many inboxes you currently have.
+Delete all inboxes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### deleteInbox
 
-▸ **deleteInbox**(`inboxId`, `options?`): `Promise`<`Response`\>
+▸ **deleteInbox**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
-
-**`summary`** Delete inbox
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Delete inbox
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRequest`](../interfaces/DeleteInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22808](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22808)
+### deleteInboxRaw
+
+▸ **deleteInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
+Delete inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRequest`](../interfaces/DeleteInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### doesInboxExist
+
+▸ **doesInboxExist**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>
+
+Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
+Does inbox exist
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DoesInboxExistRequest`](../interfaces/DoesInboxExistRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>
+
+___
+
+### doesInboxExistRaw
+
+▸ **doesInboxExistRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>\>
+
+Check if inboxes exist by email address. Useful if you are sending emails to mailslurp addresses
+Does inbox exist
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DoesInboxExistRequest`](../interfaces/DoesInboxExistRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>\>
 
 ___
 
 ### flushExpired
 
-▸ **flushExpired**(`before?`, `options?`): `Promise`<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>
+▸ **flushExpired**(`requestParameters`, `initOverrides?`): `Promise`<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>
 
 Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
-
-**`summary`** Remove expired inboxes
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Remove expired inboxes
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `options?` | `any` |
+| `requestParameters` | [`FlushExpiredRequest`](../interfaces/FlushExpiredRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22823](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22823)
+### flushExpiredRaw
+
+▸ **flushExpiredRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>\>
+
+Remove any expired inboxes for your account (instead of waiting for scheduled removal on server)
+Remove expired inboxes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`FlushExpiredRequest`](../interfaces/FlushExpiredRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>\>
 
 ___
 
 ### getAllInboxes
 
-▸ **getAllInboxes**(`before?`, `favourite?`, `page?`, `search?`, `since?`, `size?`, `sort?`, `tag?`, `teamAccess?`, `options?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+▸ **getAllInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
 
 List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
-
-**`summary`** List All Inboxes Paginated
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List All Inboxes Paginated
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `favourite?` | `boolean` |
-| `page?` | `number` |
-| `search?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `tag?` | `string` |
-| `teamAccess?` | `boolean` |
-| `options?` | `any` |
+| `requestParameters` | [`GetAllInboxesRequest`](../interfaces/GetAllInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22846](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22846)
+### getAllInboxesRaw
+
+▸ **getAllInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+List All Inboxes Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllInboxesRequest`](../interfaces/GetAllInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
 ___
 
 ### getEmails
 
-▸ **getEmails**(`inboxId`, `before?`, `delayTimeout?`, `limit?`, `minCount?`, `retryTimeout?`, `since?`, `size?`, `sort?`, `unreadOnly?`, `options?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
+▸ **getEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
-List emails that an inbox has received. Only emails that are sent to the inbox's email address will appear in the inbox. It may take several seconds for any email you send to an inbox's email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
-
-**`summary`** Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
+Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | Id of inbox that emails belongs to |
-| `before?` | `Date` | - |
-| `delayTimeout?` | `number` | - |
-| `limit?` | `number` | - |
-| `minCount?` | `number` | - |
-| `retryTimeout?` | `number` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `unreadOnly?` | `boolean` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailsRequest`](../interfaces/GetEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22889](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22889)
+### getEmailsRaw
+
+▸ **getEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
+
+List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
+Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailsRequest`](../interfaces/GetEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
 ___
 
 ### getInbox
 
-▸ **getInbox**(`inboxId`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **getInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-Returns an inbox's properties, including its email address and ID.
-
-**`summary`** Get Inbox. Returns properties of an inbox.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Returns an inbox\'s properties, including its email address and ID.
+Get Inbox. Returns properties of an inbox.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRequest`](../interfaces/GetInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
-
-#### Defined in
-
-[src/generated/api.ts:22925](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22925)
 
 ___
 
 ### getInboxEmailsPaginated
 
-▸ **getInboxEmailsPaginated**(`inboxId`, `before?`, `page?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
+▸ **getInboxEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
 
 Get a paginated list of emails in an inbox. Does not hold connections open.
-
-**`summary`** Get inbox emails paginated
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Get inbox emails paginated
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | Id of inbox that emails belongs to |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxEmailsPaginatedRequest`](../interfaces/GetInboxEmailsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22945](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22945)
+### getInboxEmailsPaginatedRaw
+
+▸ **getInboxEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+Get a paginated list of emails in an inbox. Does not hold connections open.
+Get inbox emails paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxEmailsPaginatedRequest`](../interfaces/GetInboxEmailsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+___
+
+### getInboxRaw
+
+▸ **getInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Returns an inbox\'s properties, including its email address and ID.
+Get Inbox. Returns properties of an inbox.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRequest`](../interfaces/GetInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
 
 ___
 
 ### getInboxSentEmails
 
-▸ **getInboxSentEmails**(`inboxId`, `before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
+▸ **getInboxSentEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-Returns an inbox's sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
-
-**`summary`** Get Inbox Sent Emails
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
+Get Inbox Sent Emails
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `searchFilter?` | `string` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentEmailsRequest`](../interfaces/GetInboxSentEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:22979](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22979)
+### getInboxSentEmailsRaw
+
+▸ **getInboxSentEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
+
+Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
+Get Inbox Sent Emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxSentEmailsRequest`](../interfaces/GetInboxSentEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
 
 ___
 
 ### getInboxTags
 
-▸ **getInboxTags**(`options?`): `Promise`<`string`[]\>
+▸ **getInboxTags**(`initOverrides?`): `Promise`<`string`[]\>
 
 Get all inbox tags
-
-**`summary`** Get inbox tags
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Get inbox tags
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | `any` |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23008](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23008)
+### getInboxTagsRaw
+
+▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+Get all inbox tags
+Get inbox tags
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 ___
 
 ### getInboxes
 
-▸ **getInboxes**(`before?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+▸ **getInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
 
 List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
-
-**`summary`** List Inboxes and email addresses
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List Inboxes and email addresses
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetInboxesRequest`](../interfaces/GetInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
 
-#### Defined in
-
-[src/generated/api.ts:23026](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23026)
-
 ___
 
-### getOrganizationInboxes
+### getInboxesRaw
 
-▸ **getOrganizationInboxes**(`before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>
+▸ **getInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
 
-List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
-
-**`summary`** List Organization Inboxes Paginated
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+List Inboxes and email addresses
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `before?` | `Date` |
-| `page?` | `number` |
-| `searchFilter?` | `string` |
-| `since?` | `Date` |
-| `size?` | `number` |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` |
-| `options?` | `any` |
+| `requestParameters` | [`GetInboxesRequest`](../interfaces/GetInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+
+___
+
+### getOrganizationInboxes
+
+▸ **getOrganizationInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>
+
+List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
+List Organization Inboxes Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrganizationInboxesRequest`](../interfaces/GetOrganizationInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23055](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23055)
+### getOrganizationInboxesRaw
+
+▸ **getOrganizationInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>\>
+
+List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
+List Organization Inboxes Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetOrganizationInboxesRequest`](../interfaces/GetOrganizationInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>\>
 
 ___
 
 ### listInboxRulesets
 
-▸ **listInboxRulesets**(`inboxId`, `before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
+▸ **listInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
 List all rulesets attached to an inbox
-
-**`summary`** List inbox rulesets
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List inbox rulesets
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `searchFilter?` | `string` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ListInboxRulesetsRequest`](../interfaces/ListInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23089](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23089)
+### listInboxRulesetsRaw
+
+▸ **listInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
+
+List all rulesets attached to an inbox
+List inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ListInboxRulesetsRequest`](../interfaces/ListInboxRulesetsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
 
 ___
 
 ### listInboxTrackingPixels
 
-▸ **listInboxTrackingPixels**(`inboxId`, `before?`, `page?`, `searchFilter?`, `since?`, `size?`, `sort?`, `options?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
+▸ **listInboxTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
 List all tracking pixels sent from an inbox
-
-**`summary`** List inbox tracking pixels
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+List inbox tracking pixels
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `before?` | `Date` | - |
-| `page?` | `number` | - |
-| `searchFilter?` | `string` | - |
-| `since?` | `Date` | - |
-| `size?` | `number` | - |
-| `sort?` | ``"ASC"`` \| ``"DESC"`` | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ListInboxTrackingPixelsRequest`](../interfaces/ListInboxTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23125](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23125)
+### listInboxTrackingPixelsRaw
+
+▸ **listInboxTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
+
+List all tracking pixels sent from an inbox
+List inbox tracking pixels
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ListInboxTrackingPixelsRequest`](../interfaces/ListInboxTrackingPixelsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
+
+___
+
+### request
+
+▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `context` | [`RequestOpts`](../interfaces/RequestOpts.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
 
 ___
 
 ### sendEmail
 
-▸ **sendEmail**(`inboxId`, `sendEmailOptions?`, `options?`): `Promise`<`Response`\>
+▸ **sendEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
-
-**`summary`** Send Email
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
+Send Email
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | ID of the inbox you want to send the email from |
-| `sendEmailOptions?` | [`SendEmailOptions`](../interfaces/SendEmailOptions.md) | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailRequest`](../interfaces/SendEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/generated/api.ts:23156](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23156)
+`Promise`<`void`\>
 
 ___
 
 ### sendEmailAndConfirm
 
-▸ **sendEmailAndConfirm**(`inboxId`, `sendEmailOptions?`, `options?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+▸ **sendEmailAndConfirm**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
-
-**`summary`** Send email and return sent confirmation
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Send email and return sent confirmation
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | ID of the inbox you want to send the email from |
-| `sendEmailOptions?` | [`SendEmailOptions`](../interfaces/SendEmailOptions.md) | - |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailAndConfirmRequest`](../interfaces/SendEmailAndConfirmRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23177](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23177)
+### sendEmailAndConfirmRaw
+
+▸ **sendEmailAndConfirmRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Sister method for standard `sendEmail` method with the benefit of returning a `SentEmail` entity confirming the successful sending of the email with a link to the sent object created for it.
+Send email and return sent confirmation
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailAndConfirmRequest`](../interfaces/SendEmailAndConfirmRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+___
+
+### sendEmailRaw
+
+▸ **sendEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
+Send Email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailRequest`](../interfaces/SendEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### sendTestEmail
 
-▸ **sendTestEmail**(`inboxId`, `options?`): `Promise`<`Response`\>
+▸ **sendTestEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Send an inbox a test email to test email receiving is working
-
-**`summary`** Send a test email to inbox
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Send a test email to inbox
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendTestEmailRequest`](../interfaces/SendTestEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`<`void`\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23197](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23197)
+### sendTestEmailRaw
+
+▸ **sendTestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Send an inbox a test email to test email receiving is working
+Send a test email to inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendTestEmailRequest`](../interfaces/SendTestEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
 ### setInboxFavourited
 
-▸ **setInboxFavourited**(`inboxId`, `setInboxFavouritedOptions`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **setInboxFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Set and return new favourite state for an inbox
-
-**`summary`** Set inbox favourited state
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Set inbox favourited state
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `setInboxFavouritedOptions` | [`SetInboxFavouritedOptions`](../interfaces/SetInboxFavouritedOptions.md) | setInboxFavouritedOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetInboxFavouritedRequest`](../interfaces/SetInboxFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23213](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23213)
+### setInboxFavouritedRaw
+
+▸ **setInboxFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Set and return new favourite state for an inbox
+Set inbox favourited state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SetInboxFavouritedRequest`](../interfaces/SetInboxFavouritedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
 
 ___
 
 ### updateInbox
 
-▸ **updateInbox**(`inboxId`, `updateInboxOptions`, `options?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **updateInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
 Update editable fields on an inbox
-
-**`summary`** Update Inbox. Change name and description. Email address is not editable.
-
-**`throws`** {RequiredError}
-
-**`memberof`** InboxControllerApi
+Update Inbox. Change name and description. Email address is not editable.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `inboxId` | `string` | inboxId |
-| `updateInboxOptions` | [`UpdateInboxOptions`](../interfaces/UpdateInboxOptions.md) | updateInboxOptions |
-| `options?` | `any` | - |
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxRequest`](../interfaces/UpdateInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
 
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
+___
 
-[src/generated/api.ts:23234](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23234)
+### updateInboxRaw
+
+▸ **updateInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+Update editable fields on an inbox
+Update Inbox. Change name and description. Email address is not editable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxRequest`](../interfaces/UpdateInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+
+___
+
+### withMiddleware
+
+▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withMiddleware](BaseAPI.md#withmiddleware)
+
+___
+
+### withPostMiddleware
+
+▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPostMiddleware](BaseAPI.md#withpostmiddleware)
+
+___
+
+### withPreMiddleware
+
+▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseAPI](BaseAPI.md).[withPreMiddleware](BaseAPI.md#withpremiddleware)

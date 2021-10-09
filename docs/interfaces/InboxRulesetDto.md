@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / InboxRulesetDto
-
 # Interface: InboxRulesetDto
 
 **`export`**
@@ -22,13 +20,9 @@
 
 ### action
 
-• **action**: [`ActionEnum`](../enums/InboxRulesetDto.ActionEnum.md)
+• **action**: [`InboxRulesetDtoActionEnum`](../enums/InboxRulesetDtoActionEnum.md)
 
 **`memberof`** InboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:2957](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2957)
 
 ___
 
@@ -38,21 +32,13 @@ ___
 
 **`memberof`** InboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:2963](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2963)
-
 ___
 
 ### handler
 
-• **handler**: [`HandlerEnum`](../enums/InboxRulesetDto.HandlerEnum.md)
+• **handler**: [`EXCEPTION`](../enums/InboxRulesetDtoHandlerEnum.md#exception)
 
 **`memberof`** InboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:2969](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2969)
 
 ___
 
@@ -62,10 +48,6 @@ ___
 
 **`memberof`** InboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:2975](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2975)
-
 ___
 
 ### inboxId
@@ -74,21 +56,13 @@ ___
 
 **`memberof`** InboxRulesetDto
 
-#### Defined in
-
-[src/generated/api.ts:2981](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2981)
-
 ___
 
 ### scope
 
-• **scope**: [`ScopeEnum`](../enums/InboxRulesetDto.ScopeEnum.md)
+• **scope**: [`InboxRulesetDtoScopeEnum`](../enums/InboxRulesetDtoScopeEnum.md)
 
 **`memberof`** InboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:2987](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2987)
 
 ___
 
@@ -97,7 +71,3 @@ ___
 • **target**: `string`
 
 **`memberof`** InboxRulesetDto
-
-#### Defined in
-
-[src/generated/api.ts:2993](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2993)

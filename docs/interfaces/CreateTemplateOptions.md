@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / CreateTemplateOptions
-
 # Interface: CreateTemplateOptions
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** CreateTemplateOptions
 
-#### Defined in
-
-[src/generated/api.ts:1142](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1142)
-
 ___
 
 ### name
@@ -32,7 +26,3 @@ ___
 • **name**: `string`
 
 **`memberof`** CreateTemplateOptions
-
-#### Defined in
-
-[src/generated/api.ts:1136](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1136)

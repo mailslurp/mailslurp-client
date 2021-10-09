@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / GroupProjection
-
 # Interface: GroupProjection
 
 **`export`**
@@ -23,10 +21,6 @@
 
 **`memberof`** GroupProjection
 
-#### Defined in
-
-[src/generated/api.ts:2612](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2612)
-
 ___
 
 ### description
@@ -34,10 +28,6 @@ ___
 • `Optional` **description**: `string`
 
 **`memberof`** GroupProjection
-
-#### Defined in
-
-[src/generated/api.ts:2618](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2618)
 
 ___
 
@@ -47,10 +37,6 @@ ___
 
 **`memberof`** GroupProjection
 
-#### Defined in
-
-[src/generated/api.ts:2624](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2624)
-
 ___
 
 ### name
@@ -58,7 +44,3 @@ ___
 • **name**: `string`
 
 **`memberof`** GroupProjection
-
-#### Defined in
-
-[src/generated/api.ts:2630](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2630)

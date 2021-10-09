@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateGroupContacts
-
 # Interface: UpdateGroupContacts
 
 **`export`**
@@ -19,7 +17,3 @@
 • **contactIds**: `string`[]
 
 **`memberof`** UpdateGroupContacts
-
-#### Defined in
-
-[src/generated/api.ts:6030](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6030)

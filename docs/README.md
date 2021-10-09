@@ -1,5 +1,3 @@
-MailSlurp JS
-
 # MailSlurp JS
 
 ## Table of contents
@@ -8,47 +6,103 @@ MailSlurp JS
 
 - [default](README.md#default)
 
-### Namespaces
+### Enumerations
 
-- [AbstractWebhookPayload](modules/AbstractWebhookPayload.md)
-- [ConditionOption](modules/ConditionOption.md)
-- [CreateDomainOptions](modules/CreateDomainOptions.md)
-- [CreateInboxDto](modules/CreateInboxDto.md)
-- [CreateInboxForwarderOptions](modules/CreateInboxForwarderOptions.md)
-- [CreateInboxRulesetOptions](modules/CreateInboxRulesetOptions.md)
-- [CreateWebhookOptions](modules/CreateWebhookOptions.md)
-- [DNSLookupOptions](modules/DNSLookupOptions.md)
-- [DNSLookupResult](modules/DNSLookupResult.md)
-- [DomainDto](modules/DomainDto.md)
-- [DomainNameRecord](modules/DomainNameRecord.md)
-- [DomainPreview](modules/DomainPreview.md)
-- [ExportOptions](modules/ExportOptions.md)
-- [Inbox](modules/Inbox.md)
-- [InboxForwarderDto](modules/InboxForwarderDto.md)
-- [InboxPreview](modules/InboxPreview.md)
-- [InboxRulesetDto](modules/InboxRulesetDto.md)
-- [MatchOption](modules/MatchOption.md)
-- [OrganizationInboxProjection](modules/OrganizationInboxProjection.md)
-- [ReplyToAliasEmailOptions](modules/ReplyToAliasEmailOptions.md)
-- [ReplyToEmailOptions](modules/ReplyToEmailOptions.md)
-- [SendEmailOptions](modules/SendEmailOptions.md)
-- [TemplateVariable](modules/TemplateVariable.md)
-- [WaitForConditions](modules/WaitForConditions.md)
-- [WebhookDto](modules/WebhookDto.md)
-- [WebhookEmailOpenedPayload](modules/WebhookEmailOpenedPayload.md)
-- [WebhookEmailReadPayload](modules/WebhookEmailReadPayload.md)
-- [WebhookNewAttachmentPayload](modules/WebhookNewAttachmentPayload.md)
-- [WebhookNewContactPayload](modules/WebhookNewContactPayload.md)
-- [WebhookNewEmailPayload](modules/WebhookNewEmailPayload.md)
-- [WebhookProjection](modules/WebhookProjection.md)
-- [WebhookResultDto](modules/WebhookResultDto.md)
-- [WebhookTestRequest](modules/WebhookTestRequest.md)
+- [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
+- [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
+- [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
+- [CreateDomainOptionsDomainTypeEnum](enums/CreateDomainOptionsDomainTypeEnum.md)
+- [CreateInboxDtoInboxTypeEnum](enums/CreateInboxDtoInboxTypeEnum.md)
+- [CreateInboxForwarderOptionsFieldEnum](enums/CreateInboxForwarderOptionsFieldEnum.md)
+- [CreateInboxInboxTypeEnum](enums/CreateInboxInboxTypeEnum.md)
+- [CreateInboxRulesetOptionsActionEnum](enums/CreateInboxRulesetOptionsActionEnum.md)
+- [CreateInboxRulesetOptionsScopeEnum](enums/CreateInboxRulesetOptionsScopeEnum.md)
+- [CreateNewEmailAddress1InboxTypeEnum](enums/CreateNewEmailAddress1InboxTypeEnum.md)
+- [CreateNewEmailAddressInboxTypeEnum](enums/CreateNewEmailAddressInboxTypeEnum.md)
+- [CreateWebhookOptionsEventNameEnum](enums/CreateWebhookOptionsEventNameEnum.md)
+- [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
+- [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
+- [DomainDtoDomainTypeEnum](enums/DomainDtoDomainTypeEnum.md)
+- [DomainNameRecordRecordTypeEnum](enums/DomainNameRecordRecordTypeEnum.md)
+- [DomainPreviewDomainTypeEnum](enums/DomainPreviewDomainTypeEnum.md)
+- [ExportEntitiesExportTypeEnum](enums/ExportEntitiesExportTypeEnum.md)
+- [ExportEntitiesOutputFormatEnum](enums/ExportEntitiesOutputFormatEnum.md)
+- [ExportOptionsOutputFormatEnum](enums/ExportOptionsOutputFormatEnum.md)
+- [GetAliasEmailsSortEnum](enums/GetAliasEmailsSortEnum.md)
+- [GetAliasThreadsSortEnum](enums/GetAliasThreadsSortEnum.md)
+- [GetAliasesSortEnum](enums/GetAliasesSortEnum.md)
+- [GetAllContactsSortEnum](enums/GetAllContactsSortEnum.md)
+- [GetAllGroupsSortEnum](enums/GetAllGroupsSortEnum.md)
+- [GetAllInboxesSortEnum](enums/GetAllInboxesSortEnum.md)
+- [GetAllMissedEmailsSortEnum](enums/GetAllMissedEmailsSortEnum.md)
+- [GetAllSentTrackingPixelsSortEnum](enums/GetAllSentTrackingPixelsSortEnum.md)
+- [GetAllTemplatesSortEnum](enums/GetAllTemplatesSortEnum.md)
+- [GetAllTrackingPixelsSortEnum](enums/GetAllTrackingPixelsSortEnum.md)
+- [GetAllUnknownMissedEmailsSortEnum](enums/GetAllUnknownMissedEmailsSortEnum.md)
+- [GetAllWebhookResultsSortEnum](enums/GetAllWebhookResultsSortEnum.md)
+- [GetAllWebhooksSortEnum](enums/GetAllWebhooksSortEnum.md)
+- [GetAttachmentsSortEnum](enums/GetAttachmentsSortEnum.md)
+- [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
+- [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
+- [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
+- [GetEmailsSortEnum](enums/GetEmailsSortEnum.md)
+- [GetExpiredInboxesSortEnum](enums/GetExpiredInboxesSortEnum.md)
+- [GetExportLinkExportTypeEnum](enums/GetExportLinkExportTypeEnum.md)
+- [GetGroupWithContactsPaginatedSortEnum](enums/GetGroupWithContactsPaginatedSortEnum.md)
+- [GetInboxEmailsPaginatedSortEnum](enums/GetInboxEmailsPaginatedSortEnum.md)
+- [GetInboxForwardersSortEnum](enums/GetInboxForwardersSortEnum.md)
+- [GetInboxRulesetsSortEnum](enums/GetInboxRulesetsSortEnum.md)
+- [GetInboxSentEmailsSortEnum](enums/GetInboxSentEmailsSortEnum.md)
+- [GetInboxWebhooksPaginatedSortEnum](enums/GetInboxWebhooksPaginatedSortEnum.md)
+- [GetInboxesSortEnum](enums/GetInboxesSortEnum.md)
+- [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
+- [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
+- [GetSentEmailTrackingPixelsSortEnum](enums/GetSentEmailTrackingPixelsSortEnum.md)
+- [GetSentEmailsSortEnum](enums/GetSentEmailsSortEnum.md)
+- [GetSentOrganizationEmailsSortEnum](enums/GetSentOrganizationEmailsSortEnum.md)
+- [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
+- [GetWebhookResultsSortEnum](enums/GetWebhookResultsSortEnum.md)
+- [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
+- [InboxInboxTypeEnum](enums/InboxInboxTypeEnum.md)
+- [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
+- [InboxRulesetDtoActionEnum](enums/InboxRulesetDtoActionEnum.md)
+- [InboxRulesetDtoHandlerEnum](enums/InboxRulesetDtoHandlerEnum.md)
+- [InboxRulesetDtoScopeEnum](enums/InboxRulesetDtoScopeEnum.md)
+- [ListInboxRulesetsSortEnum](enums/ListInboxRulesetsSortEnum.md)
+- [ListInboxTrackingPixelsSortEnum](enums/ListInboxTrackingPixelsSortEnum.md)
+- [MatchOptionFieldEnum](enums/MatchOptionFieldEnum.md)
+- [MatchOptionShouldEnum](enums/MatchOptionShouldEnum.md)
+- [OrganizationInboxProjectionInboxTypeEnum](enums/OrganizationInboxProjectionInboxTypeEnum.md)
+- [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
+- [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
+- [SendEmailOptionsSendStrategyEnum](enums/SendEmailOptionsSendStrategyEnum.md)
+- [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
+- [WaitForConditionsCountTypeEnum](enums/WaitForConditionsCountTypeEnum.md)
+- [WaitForConditionsSortDirectionEnum](enums/WaitForConditionsSortDirectionEnum.md)
+- [WaitForEmailCountSortEnum](enums/WaitForEmailCountSortEnum.md)
+- [WaitForLatestEmailSortEnum](enums/WaitForLatestEmailSortEnum.md)
+- [WaitForMatchingEmailsSortEnum](enums/WaitForMatchingEmailsSortEnum.md)
+- [WaitForMatchingFirstEmailSortEnum](enums/WaitForMatchingFirstEmailSortEnum.md)
+- [WaitForNthEmailSortEnum](enums/WaitForNthEmailSortEnum.md)
+- [WebhookDtoEventNameEnum](enums/WebhookDtoEventNameEnum.md)
+- [WebhookDtoMethodEnum](enums/WebhookDtoMethodEnum.md)
+- [WebhookEmailOpenedPayloadEventNameEnum](enums/WebhookEmailOpenedPayloadEventNameEnum.md)
+- [WebhookEmailReadPayloadEventNameEnum](enums/WebhookEmailReadPayloadEventNameEnum.md)
+- [WebhookNewAttachmentPayloadEventNameEnum](enums/WebhookNewAttachmentPayloadEventNameEnum.md)
+- [WebhookNewContactPayloadEventNameEnum](enums/WebhookNewContactPayloadEventNameEnum.md)
+- [WebhookNewEmailPayloadEventNameEnum](enums/WebhookNewEmailPayloadEventNameEnum.md)
+- [WebhookProjectionEventNameEnum](enums/WebhookProjectionEventNameEnum.md)
+- [WebhookResultDtoHttpMethodEnum](enums/WebhookResultDtoHttpMethodEnum.md)
+- [WebhookResultDtoResultTypeEnum](enums/WebhookResultDtoResultTypeEnum.md)
+- [WebhookResultDtoWebhookEventEnum](enums/WebhookResultDtoWebhookEventEnum.md)
+- [WebhookTestRequestMethodEnum](enums/WebhookTestRequestMethodEnum.md)
 
 ### Classes
 
 - [AliasControllerApi](classes/AliasControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
+- [BlobApiResponse](classes/BlobApiResponse.md)
 - [BounceControllerApi](classes/BounceControllerApi.md)
 - [BulkActionsControllerApi](classes/BulkActionsControllerApi.md)
 - [CommonActionsControllerApi](classes/CommonActionsControllerApi.md)
@@ -63,21 +117,27 @@ MailSlurp JS
 - [InboxControllerApi](classes/InboxControllerApi.md)
 - [InboxForwarderControllerApi](classes/InboxForwarderControllerApi.md)
 - [InboxRulesetControllerApi](classes/InboxRulesetControllerApi.md)
+- [JSONApiResponse](classes/JSONApiResponse.md)
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
 - [MailSlurp](classes/MailSlurp.md)
 - [MissedEmailControllerApi](classes/MissedEmailControllerApi.md)
 - [RequiredError](classes/RequiredError.md)
 - [SentEmailsControllerApi](classes/SentEmailsControllerApi.md)
 - [TemplateControllerApi](classes/TemplateControllerApi.md)
+- [TextApiResponse](classes/TextApiResponse.md)
 - [TrackingControllerApi](classes/TrackingControllerApi.md)
+- [VoidApiResponse](classes/VoidApiResponse.md)
 - [WaitForControllerApi](classes/WaitForControllerApi.md)
 - [WebhookControllerApi](classes/WebhookControllerApi.md)
 
 ### Interfaces
 
 - [AbstractWebhookPayload](interfaces/AbstractWebhookPayload.md)
+- [AddContactsToGroupRequest](interfaces/AddContactsToGroupRequest.md)
+- [AddDomainWildcardCatchAllRequest](interfaces/AddDomainWildcardCatchAllRequest.md)
 - [AliasDto](interfaces/AliasDto.md)
 - [AliasProjection](interfaces/AliasProjection.md)
+- [ApiResponse](interfaces/ApiResponse.md)
 - [AttachmentEntity](interfaces/AttachmentEntity.md)
 - [AttachmentMetaData](interfaces/AttachmentMetaData.md)
 - [AttachmentProjection](interfaces/AttachmentProjection.md)
@@ -86,32 +146,70 @@ MailSlurp JS
 - [BounceRecipient](interfaces/BounceRecipient.md)
 - [BouncedEmailDto](interfaces/BouncedEmailDto.md)
 - [BouncedRecipientDto](interfaces/BouncedRecipientDto.md)
+- [BulkCreateInboxesRequest](interfaces/BulkCreateInboxesRequest.md)
+- [BulkDeleteInboxesRequest](interfaces/BulkDeleteInboxesRequest.md)
 - [BulkSendEmailOptions](interfaces/BulkSendEmailOptions.md)
-- [Character](interfaces/Character.md)
+- [BulkSendEmailsRequest](interfaces/BulkSendEmailsRequest.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
+- [Consume](interfaces/Consume.md)
 - [ContactDto](interfaces/ContactDto.md)
 - [ContactProjection](interfaces/ContactProjection.md)
 - [ContentMatchOptions](interfaces/ContentMatchOptions.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
+- [CreateAliasRequest](interfaces/CreateAliasRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
+- [CreateContactRequest](interfaces/CreateContactRequest.md)
 - [CreateDomainOptions](interfaces/CreateDomainOptions.md)
+- [CreateDomainRequest](interfaces/CreateDomainRequest.md)
 - [CreateGroupOptions](interfaces/CreateGroupOptions.md)
+- [CreateGroupRequest](interfaces/CreateGroupRequest.md)
 - [CreateInboxDto](interfaces/CreateInboxDto.md)
 - [CreateInboxForwarderOptions](interfaces/CreateInboxForwarderOptions.md)
+- [CreateInboxRequest](interfaces/CreateInboxRequest.md)
 - [CreateInboxRulesetOptions](interfaces/CreateInboxRulesetOptions.md)
+- [CreateInboxRulesetRequest](interfaces/CreateInboxRulesetRequest.md)
+- [CreateInboxWithOptionsRequest](interfaces/CreateInboxWithOptionsRequest.md)
+- [CreateNewEmailAddress1Request](interfaces/CreateNewEmailAddress1Request.md)
+- [CreateNewEmailAddressRequest](interfaces/CreateNewEmailAddressRequest.md)
+- [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
+- [CreateNewInboxRulesetRequest](interfaces/CreateNewInboxRulesetRequest.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
+- [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
 - [CreateTrackingPixelOptions](interfaces/CreateTrackingPixelOptions.md)
+- [CreateTrackingPixelRequest](interfaces/CreateTrackingPixelRequest.md)
 - [CreateWebhookOptions](interfaces/CreateWebhookOptions.md)
+- [CreateWebhookRequest](interfaces/CreateWebhookRequest.md)
 - [DNSLookupOptions](interfaces/DNSLookupOptions.md)
 - [DNSLookupResult](interfaces/DNSLookupResult.md)
 - [DNSLookupResults](interfaces/DNSLookupResults.md)
+- [DeleteAliasRequest](interfaces/DeleteAliasRequest.md)
+- [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
+- [DeleteContactRequest](interfaces/DeleteContactRequest.md)
+- [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
+- [DeleteEmailRequest](interfaces/DeleteEmailRequest.md)
+- [DeleteGroupRequest](interfaces/DeleteGroupRequest.md)
+- [DeleteInboxForwarderRequest](interfaces/DeleteInboxForwarderRequest.md)
+- [DeleteInboxForwardersRequest](interfaces/DeleteInboxForwardersRequest.md)
+- [DeleteInboxRequest](interfaces/DeleteInboxRequest.md)
+- [DeleteInboxRulesetRequest](interfaces/DeleteInboxRulesetRequest.md)
+- [DeleteInboxRulesetsRequest](interfaces/DeleteInboxRulesetsRequest.md)
+- [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
+- [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
 - [DescribeDomainOptions](interfaces/DescribeDomainOptions.md)
+- [DescribeMailServerDomainRequest](interfaces/DescribeMailServerDomainRequest.md)
 - [DescribeMailServerDomainResult](interfaces/DescribeMailServerDomainResult.md)
+- [DoesInboxExistRequest](interfaces/DoesInboxExistRequest.md)
 - [DomainDto](interfaces/DomainDto.md)
 - [DomainNameRecord](interfaces/DomainNameRecord.md)
 - [DomainPreview](interfaces/DomainPreview.md)
+- [DownloadAttachmentAsBase64EncodedRequest](interfaces/DownloadAttachmentAsBase64EncodedRequest.md)
+- [DownloadAttachmentAsBytesRequest](interfaces/DownloadAttachmentAsBytesRequest.md)
+- [DownloadAttachmentBase64Request](interfaces/DownloadAttachmentBase64Request.md)
 - [DownloadAttachmentDto](interfaces/DownloadAttachmentDto.md)
+- [DownloadAttachmentRequest](interfaces/DownloadAttachmentRequest.md)
+- [DownloadBodyBytesRequest](interfaces/DownloadBodyBytesRequest.md)
+- [DownloadBodyRequest](interfaces/DownloadBodyRequest.md)
 - [Email](interfaces/Email.md)
 - [EmailAnalysis](interfaces/EmailAnalysis.md)
 - [EmailContentMatchResult](interfaces/EmailContentMatchResult.md)
@@ -121,15 +219,93 @@ MailSlurp JS
 - [EmailRecipients](interfaces/EmailRecipients.md)
 - [EmailTextLinesResult](interfaces/EmailTextLinesResult.md)
 - [EmailVerificationResult](interfaces/EmailVerificationResult.md)
+- [EmptyInboxRequest](interfaces/EmptyInboxRequest.md)
 - [ExpirationDefaults](interfaces/ExpirationDefaults.md)
 - [ExpiredInboxDto](interfaces/ExpiredInboxDto.md)
 - [ExpiredInboxRecordProjection](interfaces/ExpiredInboxRecordProjection.md)
+- [ExportEntitiesRequest](interfaces/ExportEntitiesRequest.md)
 - [ExportLink](interfaces/ExportLink.md)
 - [ExportOptions](interfaces/ExportOptions.md)
-- [FetchAPI](interfaces/FetchAPI.md)
-- [FetchArgs](interfaces/FetchArgs.md)
+- [FetchParams](interfaces/FetchParams.md)
 - [FlushExpiredInboxesResult](interfaces/FlushExpiredInboxesResult.md)
+- [FlushExpiredRequest](interfaces/FlushExpiredRequest.md)
 - [ForwardEmailOptions](interfaces/ForwardEmailOptions.md)
+- [ForwardEmailRequest](interfaces/ForwardEmailRequest.md)
+- [GetAliasEmailsRequest](interfaces/GetAliasEmailsRequest.md)
+- [GetAliasRequest](interfaces/GetAliasRequest.md)
+- [GetAliasThreadsRequest](interfaces/GetAliasThreadsRequest.md)
+- [GetAliasesRequest](interfaces/GetAliasesRequest.md)
+- [GetAllContactsRequest](interfaces/GetAllContactsRequest.md)
+- [GetAllGroupsRequest](interfaces/GetAllGroupsRequest.md)
+- [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
+- [GetAllMissedEmailsRequest](interfaces/GetAllMissedEmailsRequest.md)
+- [GetAllSentTrackingPixelsRequest](interfaces/GetAllSentTrackingPixelsRequest.md)
+- [GetAllTemplatesRequest](interfaces/GetAllTemplatesRequest.md)
+- [GetAllTrackingPixelsRequest](interfaces/GetAllTrackingPixelsRequest.md)
+- [GetAllUnknownMissedEmailsRequest](interfaces/GetAllUnknownMissedEmailsRequest.md)
+- [GetAllWebhookResultsRequest](interfaces/GetAllWebhookResultsRequest.md)
+- [GetAllWebhooksRequest](interfaces/GetAllWebhooksRequest.md)
+- [GetAttachmentInfoRequest](interfaces/GetAttachmentInfoRequest.md)
+- [GetAttachmentMetaDataRequest](interfaces/GetAttachmentMetaDataRequest.md)
+- [GetAttachmentRequest](interfaces/GetAttachmentRequest.md)
+- [GetAttachments1Request](interfaces/GetAttachments1Request.md)
+- [GetAttachmentsRequest](interfaces/GetAttachmentsRequest.md)
+- [GetBouncedEmailRequest](interfaces/GetBouncedEmailRequest.md)
+- [GetBouncedEmailsRequest](interfaces/GetBouncedEmailsRequest.md)
+- [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
+- [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
+- [GetContactRequest](interfaces/GetContactRequest.md)
+- [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
+- [GetDnsLookupRequest](interfaces/GetDnsLookupRequest.md)
+- [GetDomainRequest](interfaces/GetDomainRequest.md)
+- [GetEmailContentMatchRequest](interfaces/GetEmailContentMatchRequest.md)
+- [GetEmailHTMLQueryRequest](interfaces/GetEmailHTMLQueryRequest.md)
+- [GetEmailHTMLRequest](interfaces/GetEmailHTMLRequest.md)
+- [GetEmailLinksRequest](interfaces/GetEmailLinksRequest.md)
+- [GetEmailRequest](interfaces/GetEmailRequest.md)
+- [GetEmailTextLinesRequest](interfaces/GetEmailTextLinesRequest.md)
+- [GetEmailsPaginatedRequest](interfaces/GetEmailsPaginatedRequest.md)
+- [GetEmailsRequest](interfaces/GetEmailsRequest.md)
+- [GetExpiredInboxByInboxIdRequest](interfaces/GetExpiredInboxByInboxIdRequest.md)
+- [GetExpiredInboxRecordRequest](interfaces/GetExpiredInboxRecordRequest.md)
+- [GetExpiredInboxesRequest](interfaces/GetExpiredInboxesRequest.md)
+- [GetExportLinkRequest](interfaces/GetExportLinkRequest.md)
+- [GetGravatarUrlForEmailAddressRequest](interfaces/GetGravatarUrlForEmailAddressRequest.md)
+- [GetGroupRequest](interfaces/GetGroupRequest.md)
+- [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
+- [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
+- [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
+- [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
+- [GetInboxForwardersRequest](interfaces/GetInboxForwardersRequest.md)
+- [GetInboxRequest](interfaces/GetInboxRequest.md)
+- [GetInboxRulesetRequest](interfaces/GetInboxRulesetRequest.md)
+- [GetInboxRulesetsRequest](interfaces/GetInboxRulesetsRequest.md)
+- [GetInboxSentEmailsRequest](interfaces/GetInboxSentEmailsRequest.md)
+- [GetInboxWebhooksPaginatedRequest](interfaces/GetInboxWebhooksPaginatedRequest.md)
+- [GetInboxesRequest](interfaces/GetInboxesRequest.md)
+- [GetIpAddressRequest](interfaces/GetIpAddressRequest.md)
+- [GetJsonSchemaForWebhookPayloadRequest](interfaces/GetJsonSchemaForWebhookPayloadRequest.md)
+- [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
+- [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
+- [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
+- [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
+- [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
+- [GetRawEmailContentsRequest](interfaces/GetRawEmailContentsRequest.md)
+- [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
+- [GetSentEmailHTMLContentRequest](interfaces/GetSentEmailHTMLContentRequest.md)
+- [GetSentEmailRequest](interfaces/GetSentEmailRequest.md)
+- [GetSentEmailTrackingPixelsRequest](interfaces/GetSentEmailTrackingPixelsRequest.md)
+- [GetSentEmailsRequest](interfaces/GetSentEmailsRequest.md)
+- [GetSentOrganizationEmailsRequest](interfaces/GetSentOrganizationEmailsRequest.md)
+- [GetTemplateRequest](interfaces/GetTemplateRequest.md)
+- [GetTestWebhookPayloadForWebhookRequest](interfaces/GetTestWebhookPayloadForWebhookRequest.md)
+- [GetTestWebhookPayloadRequest](interfaces/GetTestWebhookPayloadRequest.md)
+- [GetTrackingPixelRequest](interfaces/GetTrackingPixelRequest.md)
+- [GetWebhookRequest](interfaces/GetWebhookRequest.md)
+- [GetWebhookResultRequest](interfaces/GetWebhookResultRequest.md)
+- [GetWebhookResultsRequest](interfaces/GetWebhookResultsRequest.md)
+- [GetWebhookResultsUnseenErrorCountRequest](interfaces/GetWebhookResultsUnseenErrorCountRequest.md)
+- [GetWebhooksRequest](interfaces/GetWebhooksRequest.md)
 - [GravatarUrl](interfaces/GravatarUrl.md)
 - [GroupContactsDto](interfaces/GroupContactsDto.md)
 - [GroupDto](interfaces/GroupDto.md)
@@ -137,6 +313,7 @@ MailSlurp JS
 - [HTMLValidationResult](interfaces/HTMLValidationResult.md)
 - [IPAddressResult](interfaces/IPAddressResult.md)
 - [Inbox](interfaces/Inbox.md)
+- [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
 - [InboxForwarderTestResult](interfaces/InboxForwarderTestResult.md)
@@ -145,9 +322,12 @@ MailSlurp JS
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
-- [JsonNode](interfaces/JsonNode.md)
+- [ListInboxRulesetsRequest](interfaces/ListInboxRulesetsRequest.md)
+- [ListInboxTrackingPixelsRequest](interfaces/ListInboxTrackingPixelsRequest.md)
+- [MarkAsReadRequest](interfaces/MarkAsReadRequest.md)
 - [MatchOption](interfaces/MatchOption.md)
 - [MatchOptions](interfaces/MatchOptions.md)
+- [Middleware](interfaces/Middleware.md)
 - [MissedEmail](interfaces/MissedEmail.md)
 - [MissedEmailProjection](interfaces/MissedEmailProjection.md)
 - [NameServerRecord](interfaces/NameServerRecord.md)
@@ -176,21 +356,44 @@ MailSlurp JS
 - [Pageable](interfaces/Pageable.md)
 - [RawEmailJson](interfaces/RawEmailJson.md)
 - [Recipient](interfaces/Recipient.md)
+- [RedriveWebhookResultRequest](interfaces/RedriveWebhookResultRequest.md)
+- [RemoveContactsFromGroupRequest](interfaces/RemoveContactsFromGroupRequest.md)
 - [ReplyToAliasEmailOptions](interfaces/ReplyToAliasEmailOptions.md)
+- [ReplyToAliasEmailRequest](interfaces/ReplyToAliasEmailRequest.md)
 - [ReplyToEmailOptions](interfaces/ReplyToEmailOptions.md)
+- [ReplyToEmailRequest](interfaces/ReplyToEmailRequest.md)
+- [RequestContext](interfaces/RequestContext.md)
+- [RequestOpts](interfaces/RequestOpts.md)
+- [ResponseContext](interfaces/ResponseContext.md)
+- [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
+- [SendAliasEmailRequest](interfaces/SendAliasEmailRequest.md)
+- [SendEmailAndConfirmRequest](interfaces/SendEmailAndConfirmRequest.md)
 - [SendEmailOptions](interfaces/SendEmailOptions.md)
+- [SendEmailRequest](interfaces/SendEmailRequest.md)
+- [SendEmailSimpleRequest](interfaces/SendEmailSimpleRequest.md)
+- [SendEmailSourceOptionalRequest](interfaces/SendEmailSourceOptionalRequest.md)
+- [SendTestDataRequest](interfaces/SendTestDataRequest.md)
+- [SendTestEmailRequest](interfaces/SendTestEmailRequest.md)
 - [Sender](interfaces/Sender.md)
 - [SentEmailDto](interfaces/SentEmailDto.md)
 - [SentEmailProjection](interfaces/SentEmailProjection.md)
 - [SetInboxFavouritedOptions](interfaces/SetInboxFavouritedOptions.md)
+- [SetInboxFavouritedRequest](interfaces/SetInboxFavouritedRequest.md)
 - [SimpleSendEmailOptions](interfaces/SimpleSendEmailOptions.md)
 - [Sort](interfaces/Sort.md)
+- [SubmitFormRequest](interfaces/SubmitFormRequest.md)
 - [TemplateDto](interfaces/TemplateDto.md)
 - [TemplateProjection](interfaces/TemplateProjection.md)
 - [TemplateVariable](interfaces/TemplateVariable.md)
+- [TestInboxForwarderRequest](interfaces/TestInboxForwarderRequest.md)
+- [TestInboxForwardersForInboxRequest](interfaces/TestInboxForwardersForInboxRequest.md)
+- [TestInboxRulesetRequest](interfaces/TestInboxRulesetRequest.md)
+- [TestInboxRulesetsForInboxRequest](interfaces/TestInboxRulesetsForInboxRequest.md)
 - [TestNewInboxForwarderOptions](interfaces/TestNewInboxForwarderOptions.md)
+- [TestNewInboxForwarderRequest](interfaces/TestNewInboxForwarderRequest.md)
 - [TestNewInboxRulesetOptions](interfaces/TestNewInboxRulesetOptions.md)
+- [TestNewInboxRulesetRequest](interfaces/TestNewInboxRulesetRequest.md)
 - [ThreadProjection](interfaces/ThreadProjection.md)
 - [TrackingPixelDto](interfaces/TrackingPixelDto.md)
 - [TrackingPixelProjection](interfaces/TrackingPixelProjection.md)
@@ -198,14 +401,30 @@ MailSlurp JS
 - [UnreadCount](interfaces/UnreadCount.md)
 - [UnseenErrorCountDto](interfaces/UnseenErrorCountDto.md)
 - [UpdateAliasOptions](interfaces/UpdateAliasOptions.md)
+- [UpdateAliasRequest](interfaces/UpdateAliasRequest.md)
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
+- [UpdateDomainRequest](interfaces/UpdateDomainRequest.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
 - [UpdateInboxOptions](interfaces/UpdateInboxOptions.md)
+- [UpdateInboxRequest](interfaces/UpdateInboxRequest.md)
+- [UpdateTemplateRequest](interfaces/UpdateTemplateRequest.md)
+- [UploadAttachmentBytesRequest](interfaces/UploadAttachmentBytesRequest.md)
 - [UploadAttachmentOptions](interfaces/UploadAttachmentOptions.md)
+- [UploadAttachmentRequest](interfaces/UploadAttachmentRequest.md)
+- [UploadMultipartFormRequest](interfaces/UploadMultipartFormRequest.md)
+- [ValidateEmailRequest](interfaces/ValidateEmailRequest.md)
 - [ValidationDto](interfaces/ValidationDto.md)
 - [ValidationMessage](interfaces/ValidationMessage.md)
 - [VerifyEmailAddressOptions](interfaces/VerifyEmailAddressOptions.md)
+- [VerifyEmailAddressRequest](interfaces/VerifyEmailAddressRequest.md)
 - [WaitForConditions](interfaces/WaitForConditions.md)
+- [WaitForEmailCountRequest](interfaces/WaitForEmailCountRequest.md)
+- [WaitForLatestEmailRequest](interfaces/WaitForLatestEmailRequest.md)
+- [WaitForMatchingEmailsRequest](interfaces/WaitForMatchingEmailsRequest.md)
+- [WaitForMatchingFirstEmailRequest](interfaces/WaitForMatchingFirstEmailRequest.md)
+- [WaitForNthEmailRequest](interfaces/WaitForNthEmailRequest.md)
+- [WaitForNthMissedEmailRequest](interfaces/WaitForNthMissedEmailRequest.md)
+- [WaitForRequest](interfaces/WaitForRequest.md)
 - [WebhookDto](interfaces/WebhookDto.md)
 - [WebhookEmailOpenedPayload](interfaces/WebhookEmailOpenedPayload.md)
 - [WebhookEmailReadPayload](interfaces/WebhookEmailReadPayload.md)
@@ -222,80 +441,440 @@ MailSlurp JS
 ### Type aliases
 
 - [Config](README.md#config)
+- [FetchAPI](README.md#fetchapi)
 - [GetMessagesOptions](README.md#getmessagesoptions)
+- [HTTPBody](README.md#httpbody)
+- [HTTPHeaders](README.md#httpheaders)
+- [HTTPMethod](README.md#httpmethod)
+- [HTTPQuery](README.md#httpquery)
+- [Json](README.md#json)
+- [ModelPropertyNaming](README.md#modelpropertynaming)
 
 ### Variables
 
+- [BASE\_PATH](README.md#base_path)
 - [COLLECTION\_FORMATS](README.md#collection_formats)
 
 ### Functions
 
-- [AliasControllerApiFactory](README.md#aliascontrollerapifactory)
-- [AliasControllerApiFetchParamCreator](README.md#aliascontrollerapifetchparamcreator)
-- [AliasControllerApiFp](README.md#aliascontrollerapifp)
-- [AttachmentControllerApiFactory](README.md#attachmentcontrollerapifactory)
-- [AttachmentControllerApiFetchParamCreator](README.md#attachmentcontrollerapifetchparamcreator)
-- [AttachmentControllerApiFp](README.md#attachmentcontrollerapifp)
-- [BounceControllerApiFactory](README.md#bouncecontrollerapifactory)
-- [BounceControllerApiFetchParamCreator](README.md#bouncecontrollerapifetchparamcreator)
-- [BounceControllerApiFp](README.md#bouncecontrollerapifp)
-- [BulkActionsControllerApiFactory](README.md#bulkactionscontrollerapifactory)
-- [BulkActionsControllerApiFetchParamCreator](README.md#bulkactionscontrollerapifetchparamcreator)
-- [BulkActionsControllerApiFp](README.md#bulkactionscontrollerapifp)
-- [CommonActionsControllerApiFactory](README.md#commonactionscontrollerapifactory)
-- [CommonActionsControllerApiFetchParamCreator](README.md#commonactionscontrollerapifetchparamcreator)
-- [CommonActionsControllerApiFp](README.md#commonactionscontrollerapifp)
-- [ContactControllerApiFactory](README.md#contactcontrollerapifactory)
-- [ContactControllerApiFetchParamCreator](README.md#contactcontrollerapifetchparamcreator)
-- [ContactControllerApiFp](README.md#contactcontrollerapifp)
-- [DomainControllerApiFactory](README.md#domaincontrollerapifactory)
-- [DomainControllerApiFetchParamCreator](README.md#domaincontrollerapifetchparamcreator)
-- [DomainControllerApiFp](README.md#domaincontrollerapifp)
-- [EmailControllerApiFactory](README.md#emailcontrollerapifactory)
-- [EmailControllerApiFetchParamCreator](README.md#emailcontrollerapifetchparamcreator)
-- [EmailControllerApiFp](README.md#emailcontrollerapifp)
-- [ExpiredControllerApiFactory](README.md#expiredcontrollerapifactory)
-- [ExpiredControllerApiFetchParamCreator](README.md#expiredcontrollerapifetchparamcreator)
-- [ExpiredControllerApiFp](README.md#expiredcontrollerapifp)
-- [ExportControllerApiFactory](README.md#exportcontrollerapifactory)
-- [ExportControllerApiFetchParamCreator](README.md#exportcontrollerapifetchparamcreator)
-- [ExportControllerApiFp](README.md#exportcontrollerapifp)
-- [FormControllerApiFactory](README.md#formcontrollerapifactory)
-- [FormControllerApiFetchParamCreator](README.md#formcontrollerapifetchparamcreator)
-- [FormControllerApiFp](README.md#formcontrollerapifp)
-- [GroupControllerApiFactory](README.md#groupcontrollerapifactory)
-- [GroupControllerApiFetchParamCreator](README.md#groupcontrollerapifetchparamcreator)
-- [GroupControllerApiFp](README.md#groupcontrollerapifp)
-- [InboxControllerApiFactory](README.md#inboxcontrollerapifactory)
-- [InboxControllerApiFetchParamCreator](README.md#inboxcontrollerapifetchparamcreator)
-- [InboxControllerApiFp](README.md#inboxcontrollerapifp)
-- [InboxForwarderControllerApiFactory](README.md#inboxforwardercontrollerapifactory)
-- [InboxForwarderControllerApiFetchParamCreator](README.md#inboxforwardercontrollerapifetchparamcreator)
-- [InboxForwarderControllerApiFp](README.md#inboxforwardercontrollerapifp)
-- [InboxRulesetControllerApiFactory](README.md#inboxrulesetcontrollerapifactory)
-- [InboxRulesetControllerApiFetchParamCreator](README.md#inboxrulesetcontrollerapifetchparamcreator)
-- [InboxRulesetControllerApiFp](README.md#inboxrulesetcontrollerapifp)
-- [MailServerControllerApiFactory](README.md#mailservercontrollerapifactory)
-- [MailServerControllerApiFetchParamCreator](README.md#mailservercontrollerapifetchparamcreator)
-- [MailServerControllerApiFp](README.md#mailservercontrollerapifp)
-- [MissedEmailControllerApiFactory](README.md#missedemailcontrollerapifactory)
-- [MissedEmailControllerApiFetchParamCreator](README.md#missedemailcontrollerapifetchparamcreator)
-- [MissedEmailControllerApiFp](README.md#missedemailcontrollerapifp)
-- [SentEmailsControllerApiFactory](README.md#sentemailscontrollerapifactory)
-- [SentEmailsControllerApiFetchParamCreator](README.md#sentemailscontrollerapifetchparamcreator)
-- [SentEmailsControllerApiFp](README.md#sentemailscontrollerapifp)
-- [TemplateControllerApiFactory](README.md#templatecontrollerapifactory)
-- [TemplateControllerApiFetchParamCreator](README.md#templatecontrollerapifetchparamcreator)
-- [TemplateControllerApiFp](README.md#templatecontrollerapifp)
-- [TrackingControllerApiFactory](README.md#trackingcontrollerapifactory)
-- [TrackingControllerApiFetchParamCreator](README.md#trackingcontrollerapifetchparamcreator)
-- [TrackingControllerApiFp](README.md#trackingcontrollerapifp)
-- [WaitForControllerApiFactory](README.md#waitforcontrollerapifactory)
-- [WaitForControllerApiFetchParamCreator](README.md#waitforcontrollerapifetchparamcreator)
-- [WaitForControllerApiFp](README.md#waitforcontrollerapifp)
-- [WebhookControllerApiFactory](README.md#webhookcontrollerapifactory)
-- [WebhookControllerApiFetchParamCreator](README.md#webhookcontrollerapifetchparamcreator)
-- [WebhookControllerApiFp](README.md#webhookcontrollerapifp)
+- [AbstractWebhookPayloadFromJSON](README.md#abstractwebhookpayloadfromjson)
+- [AbstractWebhookPayloadFromJSONTyped](README.md#abstractwebhookpayloadfromjsontyped)
+- [AbstractWebhookPayloadToJSON](README.md#abstractwebhookpayloadtojson)
+- [AliasDtoFromJSON](README.md#aliasdtofromjson)
+- [AliasDtoFromJSONTyped](README.md#aliasdtofromjsontyped)
+- [AliasDtoToJSON](README.md#aliasdtotojson)
+- [AliasProjectionFromJSON](README.md#aliasprojectionfromjson)
+- [AliasProjectionFromJSONTyped](README.md#aliasprojectionfromjsontyped)
+- [AliasProjectionToJSON](README.md#aliasprojectiontojson)
+- [AttachmentEntityFromJSON](README.md#attachmententityfromjson)
+- [AttachmentEntityFromJSONTyped](README.md#attachmententityfromjsontyped)
+- [AttachmentEntityToJSON](README.md#attachmententitytojson)
+- [AttachmentMetaDataFromJSON](README.md#attachmentmetadatafromjson)
+- [AttachmentMetaDataFromJSONTyped](README.md#attachmentmetadatafromjsontyped)
+- [AttachmentMetaDataToJSON](README.md#attachmentmetadatatojson)
+- [AttachmentProjectionFromJSON](README.md#attachmentprojectionfromjson)
+- [AttachmentProjectionFromJSONTyped](README.md#attachmentprojectionfromjsontyped)
+- [AttachmentProjectionToJSON](README.md#attachmentprojectiontojson)
+- [BasicAuthOptionsFromJSON](README.md#basicauthoptionsfromjson)
+- [BasicAuthOptionsFromJSONTyped](README.md#basicauthoptionsfromjsontyped)
+- [BasicAuthOptionsToJSON](README.md#basicauthoptionstojson)
+- [BounceProjectionFromJSON](README.md#bounceprojectionfromjson)
+- [BounceProjectionFromJSONTyped](README.md#bounceprojectionfromjsontyped)
+- [BounceProjectionToJSON](README.md#bounceprojectiontojson)
+- [BounceRecipientFromJSON](README.md#bouncerecipientfromjson)
+- [BounceRecipientFromJSONTyped](README.md#bouncerecipientfromjsontyped)
+- [BounceRecipientToJSON](README.md#bouncerecipienttojson)
+- [BouncedEmailDtoFromJSON](README.md#bouncedemaildtofromjson)
+- [BouncedEmailDtoFromJSONTyped](README.md#bouncedemaildtofromjsontyped)
+- [BouncedEmailDtoToJSON](README.md#bouncedemaildtotojson)
+- [BouncedRecipientDtoFromJSON](README.md#bouncedrecipientdtofromjson)
+- [BouncedRecipientDtoFromJSONTyped](README.md#bouncedrecipientdtofromjsontyped)
+- [BouncedRecipientDtoToJSON](README.md#bouncedrecipientdtotojson)
+- [BulkSendEmailOptionsFromJSON](README.md#bulksendemailoptionsfromjson)
+- [BulkSendEmailOptionsFromJSONTyped](README.md#bulksendemailoptionsfromjsontyped)
+- [BulkSendEmailOptionsToJSON](README.md#bulksendemailoptionstojson)
+- [ConditionOptionFromJSON](README.md#conditionoptionfromjson)
+- [ConditionOptionFromJSONTyped](README.md#conditionoptionfromjsontyped)
+- [ConditionOptionToJSON](README.md#conditionoptiontojson)
+- [ContactDtoFromJSON](README.md#contactdtofromjson)
+- [ContactDtoFromJSONTyped](README.md#contactdtofromjsontyped)
+- [ContactDtoToJSON](README.md#contactdtotojson)
+- [ContactProjectionFromJSON](README.md#contactprojectionfromjson)
+- [ContactProjectionFromJSONTyped](README.md#contactprojectionfromjsontyped)
+- [ContactProjectionToJSON](README.md#contactprojectiontojson)
+- [ContentMatchOptionsFromJSON](README.md#contentmatchoptionsfromjson)
+- [ContentMatchOptionsFromJSONTyped](README.md#contentmatchoptionsfromjsontyped)
+- [ContentMatchOptionsToJSON](README.md#contentmatchoptionstojson)
+- [CreateAliasOptionsFromJSON](README.md#createaliasoptionsfromjson)
+- [CreateAliasOptionsFromJSONTyped](README.md#createaliasoptionsfromjsontyped)
+- [CreateAliasOptionsToJSON](README.md#createaliasoptionstojson)
+- [CreateContactOptionsFromJSON](README.md#createcontactoptionsfromjson)
+- [CreateContactOptionsFromJSONTyped](README.md#createcontactoptionsfromjsontyped)
+- [CreateContactOptionsToJSON](README.md#createcontactoptionstojson)
+- [CreateDomainOptionsFromJSON](README.md#createdomainoptionsfromjson)
+- [CreateDomainOptionsFromJSONTyped](README.md#createdomainoptionsfromjsontyped)
+- [CreateDomainOptionsToJSON](README.md#createdomainoptionstojson)
+- [CreateGroupOptionsFromJSON](README.md#creategroupoptionsfromjson)
+- [CreateGroupOptionsFromJSONTyped](README.md#creategroupoptionsfromjsontyped)
+- [CreateGroupOptionsToJSON](README.md#creategroupoptionstojson)
+- [CreateInboxDtoFromJSON](README.md#createinboxdtofromjson)
+- [CreateInboxDtoFromJSONTyped](README.md#createinboxdtofromjsontyped)
+- [CreateInboxDtoToJSON](README.md#createinboxdtotojson)
+- [CreateInboxForwarderOptionsFromJSON](README.md#createinboxforwarderoptionsfromjson)
+- [CreateInboxForwarderOptionsFromJSONTyped](README.md#createinboxforwarderoptionsfromjsontyped)
+- [CreateInboxForwarderOptionsToJSON](README.md#createinboxforwarderoptionstojson)
+- [CreateInboxRulesetOptionsFromJSON](README.md#createinboxrulesetoptionsfromjson)
+- [CreateInboxRulesetOptionsFromJSONTyped](README.md#createinboxrulesetoptionsfromjsontyped)
+- [CreateInboxRulesetOptionsToJSON](README.md#createinboxrulesetoptionstojson)
+- [CreateTemplateOptionsFromJSON](README.md#createtemplateoptionsfromjson)
+- [CreateTemplateOptionsFromJSONTyped](README.md#createtemplateoptionsfromjsontyped)
+- [CreateTemplateOptionsToJSON](README.md#createtemplateoptionstojson)
+- [CreateTrackingPixelOptionsFromJSON](README.md#createtrackingpixeloptionsfromjson)
+- [CreateTrackingPixelOptionsFromJSONTyped](README.md#createtrackingpixeloptionsfromjsontyped)
+- [CreateTrackingPixelOptionsToJSON](README.md#createtrackingpixeloptionstojson)
+- [CreateWebhookOptionsFromJSON](README.md#createwebhookoptionsfromjson)
+- [CreateWebhookOptionsFromJSONTyped](README.md#createwebhookoptionsfromjsontyped)
+- [CreateWebhookOptionsToJSON](README.md#createwebhookoptionstojson)
+- [DNSLookupOptionsFromJSON](README.md#dnslookupoptionsfromjson)
+- [DNSLookupOptionsFromJSONTyped](README.md#dnslookupoptionsfromjsontyped)
+- [DNSLookupOptionsToJSON](README.md#dnslookupoptionstojson)
+- [DNSLookupResultFromJSON](README.md#dnslookupresultfromjson)
+- [DNSLookupResultFromJSONTyped](README.md#dnslookupresultfromjsontyped)
+- [DNSLookupResultToJSON](README.md#dnslookupresulttojson)
+- [DNSLookupResultsFromJSON](README.md#dnslookupresultsfromjson)
+- [DNSLookupResultsFromJSONTyped](README.md#dnslookupresultsfromjsontyped)
+- [DNSLookupResultsToJSON](README.md#dnslookupresultstojson)
+- [DescribeDomainOptionsFromJSON](README.md#describedomainoptionsfromjson)
+- [DescribeDomainOptionsFromJSONTyped](README.md#describedomainoptionsfromjsontyped)
+- [DescribeDomainOptionsToJSON](README.md#describedomainoptionstojson)
+- [DescribeMailServerDomainResultFromJSON](README.md#describemailserverdomainresultfromjson)
+- [DescribeMailServerDomainResultFromJSONTyped](README.md#describemailserverdomainresultfromjsontyped)
+- [DescribeMailServerDomainResultToJSON](README.md#describemailserverdomainresulttojson)
+- [DomainDtoFromJSON](README.md#domaindtofromjson)
+- [DomainDtoFromJSONTyped](README.md#domaindtofromjsontyped)
+- [DomainDtoToJSON](README.md#domaindtotojson)
+- [DomainNameRecordFromJSON](README.md#domainnamerecordfromjson)
+- [DomainNameRecordFromJSONTyped](README.md#domainnamerecordfromjsontyped)
+- [DomainNameRecordToJSON](README.md#domainnamerecordtojson)
+- [DomainPreviewFromJSON](README.md#domainpreviewfromjson)
+- [DomainPreviewFromJSONTyped](README.md#domainpreviewfromjsontyped)
+- [DomainPreviewToJSON](README.md#domainpreviewtojson)
+- [DownloadAttachmentDtoFromJSON](README.md#downloadattachmentdtofromjson)
+- [DownloadAttachmentDtoFromJSONTyped](README.md#downloadattachmentdtofromjsontyped)
+- [DownloadAttachmentDtoToJSON](README.md#downloadattachmentdtotojson)
+- [EmailAnalysisFromJSON](README.md#emailanalysisfromjson)
+- [EmailAnalysisFromJSONTyped](README.md#emailanalysisfromjsontyped)
+- [EmailAnalysisToJSON](README.md#emailanalysistojson)
+- [EmailContentMatchResultFromJSON](README.md#emailcontentmatchresultfromjson)
+- [EmailContentMatchResultFromJSONTyped](README.md#emailcontentmatchresultfromjsontyped)
+- [EmailContentMatchResultToJSON](README.md#emailcontentmatchresulttojson)
+- [EmailFromJSON](README.md#emailfromjson)
+- [EmailFromJSONTyped](README.md#emailfromjsontyped)
+- [EmailLinksResultFromJSON](README.md#emaillinksresultfromjson)
+- [EmailLinksResultFromJSONTyped](README.md#emaillinksresultfromjsontyped)
+- [EmailLinksResultToJSON](README.md#emaillinksresulttojson)
+- [EmailPreviewFromJSON](README.md#emailpreviewfromjson)
+- [EmailPreviewFromJSONTyped](README.md#emailpreviewfromjsontyped)
+- [EmailPreviewToJSON](README.md#emailpreviewtojson)
+- [EmailProjectionFromJSON](README.md#emailprojectionfromjson)
+- [EmailProjectionFromJSONTyped](README.md#emailprojectionfromjsontyped)
+- [EmailProjectionToJSON](README.md#emailprojectiontojson)
+- [EmailRecipientsFromJSON](README.md#emailrecipientsfromjson)
+- [EmailRecipientsFromJSONTyped](README.md#emailrecipientsfromjsontyped)
+- [EmailRecipientsToJSON](README.md#emailrecipientstojson)
+- [EmailTextLinesResultFromJSON](README.md#emailtextlinesresultfromjson)
+- [EmailTextLinesResultFromJSONTyped](README.md#emailtextlinesresultfromjsontyped)
+- [EmailTextLinesResultToJSON](README.md#emailtextlinesresulttojson)
+- [EmailToJSON](README.md#emailtojson)
+- [EmailVerificationResultFromJSON](README.md#emailverificationresultfromjson)
+- [EmailVerificationResultFromJSONTyped](README.md#emailverificationresultfromjsontyped)
+- [EmailVerificationResultToJSON](README.md#emailverificationresulttojson)
+- [ExpirationDefaultsFromJSON](README.md#expirationdefaultsfromjson)
+- [ExpirationDefaultsFromJSONTyped](README.md#expirationdefaultsfromjsontyped)
+- [ExpirationDefaultsToJSON](README.md#expirationdefaultstojson)
+- [ExpiredInboxDtoFromJSON](README.md#expiredinboxdtofromjson)
+- [ExpiredInboxDtoFromJSONTyped](README.md#expiredinboxdtofromjsontyped)
+- [ExpiredInboxDtoToJSON](README.md#expiredinboxdtotojson)
+- [ExpiredInboxRecordProjectionFromJSON](README.md#expiredinboxrecordprojectionfromjson)
+- [ExpiredInboxRecordProjectionFromJSONTyped](README.md#expiredinboxrecordprojectionfromjsontyped)
+- [ExpiredInboxRecordProjectionToJSON](README.md#expiredinboxrecordprojectiontojson)
+- [ExportLinkFromJSON](README.md#exportlinkfromjson)
+- [ExportLinkFromJSONTyped](README.md#exportlinkfromjsontyped)
+- [ExportLinkToJSON](README.md#exportlinktojson)
+- [ExportOptionsFromJSON](README.md#exportoptionsfromjson)
+- [ExportOptionsFromJSONTyped](README.md#exportoptionsfromjsontyped)
+- [ExportOptionsToJSON](README.md#exportoptionstojson)
+- [FlushExpiredInboxesResultFromJSON](README.md#flushexpiredinboxesresultfromjson)
+- [FlushExpiredInboxesResultFromJSONTyped](README.md#flushexpiredinboxesresultfromjsontyped)
+- [FlushExpiredInboxesResultToJSON](README.md#flushexpiredinboxesresulttojson)
+- [ForwardEmailOptionsFromJSON](README.md#forwardemailoptionsfromjson)
+- [ForwardEmailOptionsFromJSONTyped](README.md#forwardemailoptionsfromjsontyped)
+- [ForwardEmailOptionsToJSON](README.md#forwardemailoptionstojson)
+- [GravatarUrlFromJSON](README.md#gravatarurlfromjson)
+- [GravatarUrlFromJSONTyped](README.md#gravatarurlfromjsontyped)
+- [GravatarUrlToJSON](README.md#gravatarurltojson)
+- [GroupContactsDtoFromJSON](README.md#groupcontactsdtofromjson)
+- [GroupContactsDtoFromJSONTyped](README.md#groupcontactsdtofromjsontyped)
+- [GroupContactsDtoToJSON](README.md#groupcontactsdtotojson)
+- [GroupDtoFromJSON](README.md#groupdtofromjson)
+- [GroupDtoFromJSONTyped](README.md#groupdtofromjsontyped)
+- [GroupDtoToJSON](README.md#groupdtotojson)
+- [GroupProjectionFromJSON](README.md#groupprojectionfromjson)
+- [GroupProjectionFromJSONTyped](README.md#groupprojectionfromjsontyped)
+- [GroupProjectionToJSON](README.md#groupprojectiontojson)
+- [HTMLValidationResultFromJSON](README.md#htmlvalidationresultfromjson)
+- [HTMLValidationResultFromJSONTyped](README.md#htmlvalidationresultfromjsontyped)
+- [HTMLValidationResultToJSON](README.md#htmlvalidationresulttojson)
+- [IPAddressResultFromJSON](README.md#ipaddressresultfromjson)
+- [IPAddressResultFromJSONTyped](README.md#ipaddressresultfromjsontyped)
+- [IPAddressResultToJSON](README.md#ipaddressresulttojson)
+- [InboxExistsDtoFromJSON](README.md#inboxexistsdtofromjson)
+- [InboxExistsDtoFromJSONTyped](README.md#inboxexistsdtofromjsontyped)
+- [InboxExistsDtoToJSON](README.md#inboxexistsdtotojson)
+- [InboxForwarderDtoFromJSON](README.md#inboxforwarderdtofromjson)
+- [InboxForwarderDtoFromJSONTyped](README.md#inboxforwarderdtofromjsontyped)
+- [InboxForwarderDtoToJSON](README.md#inboxforwarderdtotojson)
+- [InboxForwarderTestOptionsFromJSON](README.md#inboxforwardertestoptionsfromjson)
+- [InboxForwarderTestOptionsFromJSONTyped](README.md#inboxforwardertestoptionsfromjsontyped)
+- [InboxForwarderTestOptionsToJSON](README.md#inboxforwardertestoptionstojson)
+- [InboxForwarderTestResultFromJSON](README.md#inboxforwardertestresultfromjson)
+- [InboxForwarderTestResultFromJSONTyped](README.md#inboxforwardertestresultfromjsontyped)
+- [InboxForwarderTestResultToJSON](README.md#inboxforwardertestresulttojson)
+- [InboxFromJSON](README.md#inboxfromjson)
+- [InboxFromJSONTyped](README.md#inboxfromjsontyped)
+- [InboxPreviewFromJSON](README.md#inboxpreviewfromjson)
+- [InboxPreviewFromJSONTyped](README.md#inboxpreviewfromjsontyped)
+- [InboxPreviewToJSON](README.md#inboxpreviewtojson)
+- [InboxRulesetDtoFromJSON](README.md#inboxrulesetdtofromjson)
+- [InboxRulesetDtoFromJSONTyped](README.md#inboxrulesetdtofromjsontyped)
+- [InboxRulesetDtoToJSON](README.md#inboxrulesetdtotojson)
+- [InboxRulesetTestOptionsFromJSON](README.md#inboxrulesettestoptionsfromjson)
+- [InboxRulesetTestOptionsFromJSONTyped](README.md#inboxrulesettestoptionsfromjsontyped)
+- [InboxRulesetTestOptionsToJSON](README.md#inboxrulesettestoptionstojson)
+- [InboxRulesetTestResultFromJSON](README.md#inboxrulesettestresultfromjson)
+- [InboxRulesetTestResultFromJSONTyped](README.md#inboxrulesettestresultfromjsontyped)
+- [InboxRulesetTestResultToJSON](README.md#inboxrulesettestresulttojson)
+- [InboxToJSON](README.md#inboxtojson)
+- [JSONSchemaDtoFromJSON](README.md#jsonschemadtofromjson)
+- [JSONSchemaDtoFromJSONTyped](README.md#jsonschemadtofromjsontyped)
+- [JSONSchemaDtoToJSON](README.md#jsonschemadtotojson)
+- [MatchOptionFromJSON](README.md#matchoptionfromjson)
+- [MatchOptionFromJSONTyped](README.md#matchoptionfromjsontyped)
+- [MatchOptionToJSON](README.md#matchoptiontojson)
+- [MatchOptionsFromJSON](README.md#matchoptionsfromjson)
+- [MatchOptionsFromJSONTyped](README.md#matchoptionsfromjsontyped)
+- [MatchOptionsToJSON](README.md#matchoptionstojson)
+- [MissedEmailFromJSON](README.md#missedemailfromjson)
+- [MissedEmailFromJSONTyped](README.md#missedemailfromjsontyped)
+- [MissedEmailProjectionFromJSON](README.md#missedemailprojectionfromjson)
+- [MissedEmailProjectionFromJSONTyped](README.md#missedemailprojectionfromjsontyped)
+- [MissedEmailProjectionToJSON](README.md#missedemailprojectiontojson)
+- [MissedEmailToJSON](README.md#missedemailtojson)
+- [NameServerRecordFromJSON](README.md#nameserverrecordfromjson)
+- [NameServerRecordFromJSONTyped](README.md#nameserverrecordfromjsontyped)
+- [NameServerRecordToJSON](README.md#nameserverrecordtojson)
+- [OrganizationInboxProjectionFromJSON](README.md#organizationinboxprojectionfromjson)
+- [OrganizationInboxProjectionFromJSONTyped](README.md#organizationinboxprojectionfromjsontyped)
+- [OrganizationInboxProjectionToJSON](README.md#organizationinboxprojectiontojson)
+- [PageAliasFromJSON](README.md#pagealiasfromjson)
+- [PageAliasFromJSONTyped](README.md#pagealiasfromjsontyped)
+- [PageAliasToJSON](README.md#pagealiastojson)
+- [PageAttachmentEntityFromJSON](README.md#pageattachmententityfromjson)
+- [PageAttachmentEntityFromJSONTyped](README.md#pageattachmententityfromjsontyped)
+- [PageAttachmentEntityToJSON](README.md#pageattachmententitytojson)
+- [PageBouncedEmailFromJSON](README.md#pagebouncedemailfromjson)
+- [PageBouncedEmailFromJSONTyped](README.md#pagebouncedemailfromjsontyped)
+- [PageBouncedEmailToJSON](README.md#pagebouncedemailtojson)
+- [PageBouncedRecipientsFromJSON](README.md#pagebouncedrecipientsfromjson)
+- [PageBouncedRecipientsFromJSONTyped](README.md#pagebouncedrecipientsfromjsontyped)
+- [PageBouncedRecipientsToJSON](README.md#pagebouncedrecipientstojson)
+- [PageContactProjectionFromJSON](README.md#pagecontactprojectionfromjson)
+- [PageContactProjectionFromJSONTyped](README.md#pagecontactprojectionfromjsontyped)
+- [PageContactProjectionToJSON](README.md#pagecontactprojectiontojson)
+- [PageEmailPreviewFromJSON](README.md#pageemailpreviewfromjson)
+- [PageEmailPreviewFromJSONTyped](README.md#pageemailpreviewfromjsontyped)
+- [PageEmailPreviewToJSON](README.md#pageemailpreviewtojson)
+- [PageEmailProjectionFromJSON](README.md#pageemailprojectionfromjson)
+- [PageEmailProjectionFromJSONTyped](README.md#pageemailprojectionfromjsontyped)
+- [PageEmailProjectionToJSON](README.md#pageemailprojectiontojson)
+- [PageExpiredInboxRecordProjectionFromJSON](README.md#pageexpiredinboxrecordprojectionfromjson)
+- [PageExpiredInboxRecordProjectionFromJSONTyped](README.md#pageexpiredinboxrecordprojectionfromjsontyped)
+- [PageExpiredInboxRecordProjectionToJSON](README.md#pageexpiredinboxrecordprojectiontojson)
+- [PageGroupProjectionFromJSON](README.md#pagegroupprojectionfromjson)
+- [PageGroupProjectionFromJSONTyped](README.md#pagegroupprojectionfromjsontyped)
+- [PageGroupProjectionToJSON](README.md#pagegroupprojectiontojson)
+- [PageInboxForwarderDtoFromJSON](README.md#pageinboxforwarderdtofromjson)
+- [PageInboxForwarderDtoFromJSONTyped](README.md#pageinboxforwarderdtofromjsontyped)
+- [PageInboxForwarderDtoToJSON](README.md#pageinboxforwarderdtotojson)
+- [PageInboxProjectionFromJSON](README.md#pageinboxprojectionfromjson)
+- [PageInboxProjectionFromJSONTyped](README.md#pageinboxprojectionfromjsontyped)
+- [PageInboxProjectionToJSON](README.md#pageinboxprojectiontojson)
+- [PageInboxRulesetDtoFromJSON](README.md#pageinboxrulesetdtofromjson)
+- [PageInboxRulesetDtoFromJSONTyped](README.md#pageinboxrulesetdtofromjsontyped)
+- [PageInboxRulesetDtoToJSON](README.md#pageinboxrulesetdtotojson)
+- [PageMissedEmailProjectionFromJSON](README.md#pagemissedemailprojectionfromjson)
+- [PageMissedEmailProjectionFromJSONTyped](README.md#pagemissedemailprojectionfromjsontyped)
+- [PageMissedEmailProjectionToJSON](README.md#pagemissedemailprojectiontojson)
+- [PageOrganizationInboxProjectionFromJSON](README.md#pageorganizationinboxprojectionfromjson)
+- [PageOrganizationInboxProjectionFromJSONTyped](README.md#pageorganizationinboxprojectionfromjsontyped)
+- [PageOrganizationInboxProjectionToJSON](README.md#pageorganizationinboxprojectiontojson)
+- [PageSentEmailProjectionFromJSON](README.md#pagesentemailprojectionfromjson)
+- [PageSentEmailProjectionFromJSONTyped](README.md#pagesentemailprojectionfromjsontyped)
+- [PageSentEmailProjectionToJSON](README.md#pagesentemailprojectiontojson)
+- [PageTemplateProjectionFromJSON](README.md#pagetemplateprojectionfromjson)
+- [PageTemplateProjectionFromJSONTyped](README.md#pagetemplateprojectionfromjsontyped)
+- [PageTemplateProjectionToJSON](README.md#pagetemplateprojectiontojson)
+- [PageThreadProjectionFromJSON](README.md#pagethreadprojectionfromjson)
+- [PageThreadProjectionFromJSONTyped](README.md#pagethreadprojectionfromjsontyped)
+- [PageThreadProjectionToJSON](README.md#pagethreadprojectiontojson)
+- [PageTrackingPixelProjectionFromJSON](README.md#pagetrackingpixelprojectionfromjson)
+- [PageTrackingPixelProjectionFromJSONTyped](README.md#pagetrackingpixelprojectionfromjsontyped)
+- [PageTrackingPixelProjectionToJSON](README.md#pagetrackingpixelprojectiontojson)
+- [PageUnknownMissedEmailProjectionFromJSON](README.md#pageunknownmissedemailprojectionfromjson)
+- [PageUnknownMissedEmailProjectionFromJSONTyped](README.md#pageunknownmissedemailprojectionfromjsontyped)
+- [PageUnknownMissedEmailProjectionToJSON](README.md#pageunknownmissedemailprojectiontojson)
+- [PageWebhookProjectionFromJSON](README.md#pagewebhookprojectionfromjson)
+- [PageWebhookProjectionFromJSONTyped](README.md#pagewebhookprojectionfromjsontyped)
+- [PageWebhookProjectionToJSON](README.md#pagewebhookprojectiontojson)
+- [PageWebhookResultFromJSON](README.md#pagewebhookresultfromjson)
+- [PageWebhookResultFromJSONTyped](README.md#pagewebhookresultfromjsontyped)
+- [PageWebhookResultToJSON](README.md#pagewebhookresulttojson)
+- [PageableFromJSON](README.md#pageablefromjson)
+- [PageableFromJSONTyped](README.md#pageablefromjsontyped)
+- [PageableToJSON](README.md#pageabletojson)
+- [RawEmailJsonFromJSON](README.md#rawemailjsonfromjson)
+- [RawEmailJsonFromJSONTyped](README.md#rawemailjsonfromjsontyped)
+- [RawEmailJsonToJSON](README.md#rawemailjsontojson)
+- [RecipientFromJSON](README.md#recipientfromjson)
+- [RecipientFromJSONTyped](README.md#recipientfromjsontyped)
+- [RecipientToJSON](README.md#recipienttojson)
+- [ReplyToAliasEmailOptionsFromJSON](README.md#replytoaliasemailoptionsfromjson)
+- [ReplyToAliasEmailOptionsFromJSONTyped](README.md#replytoaliasemailoptionsfromjsontyped)
+- [ReplyToAliasEmailOptionsToJSON](README.md#replytoaliasemailoptionstojson)
+- [ReplyToEmailOptionsFromJSON](README.md#replytoemailoptionsfromjson)
+- [ReplyToEmailOptionsFromJSONTyped](README.md#replytoemailoptionsfromjsontyped)
+- [ReplyToEmailOptionsToJSON](README.md#replytoemailoptionstojson)
+- [SendEmailOptionsFromJSON](README.md#sendemailoptionsfromjson)
+- [SendEmailOptionsFromJSONTyped](README.md#sendemailoptionsfromjsontyped)
+- [SendEmailOptionsToJSON](README.md#sendemailoptionstojson)
+- [SenderFromJSON](README.md#senderfromjson)
+- [SenderFromJSONTyped](README.md#senderfromjsontyped)
+- [SenderToJSON](README.md#sendertojson)
+- [SentEmailDtoFromJSON](README.md#sentemaildtofromjson)
+- [SentEmailDtoFromJSONTyped](README.md#sentemaildtofromjsontyped)
+- [SentEmailDtoToJSON](README.md#sentemaildtotojson)
+- [SentEmailProjectionFromJSON](README.md#sentemailprojectionfromjson)
+- [SentEmailProjectionFromJSONTyped](README.md#sentemailprojectionfromjsontyped)
+- [SentEmailProjectionToJSON](README.md#sentemailprojectiontojson)
+- [SetInboxFavouritedOptionsFromJSON](README.md#setinboxfavouritedoptionsfromjson)
+- [SetInboxFavouritedOptionsFromJSONTyped](README.md#setinboxfavouritedoptionsfromjsontyped)
+- [SetInboxFavouritedOptionsToJSON](README.md#setinboxfavouritedoptionstojson)
+- [SimpleSendEmailOptionsFromJSON](README.md#simplesendemailoptionsfromjson)
+- [SimpleSendEmailOptionsFromJSONTyped](README.md#simplesendemailoptionsfromjsontyped)
+- [SimpleSendEmailOptionsToJSON](README.md#simplesendemailoptionstojson)
+- [SortFromJSON](README.md#sortfromjson)
+- [SortFromJSONTyped](README.md#sortfromjsontyped)
+- [SortToJSON](README.md#sorttojson)
+- [TemplateDtoFromJSON](README.md#templatedtofromjson)
+- [TemplateDtoFromJSONTyped](README.md#templatedtofromjsontyped)
+- [TemplateDtoToJSON](README.md#templatedtotojson)
+- [TemplateProjectionFromJSON](README.md#templateprojectionfromjson)
+- [TemplateProjectionFromJSONTyped](README.md#templateprojectionfromjsontyped)
+- [TemplateProjectionToJSON](README.md#templateprojectiontojson)
+- [TemplateVariableFromJSON](README.md#templatevariablefromjson)
+- [TemplateVariableFromJSONTyped](README.md#templatevariablefromjsontyped)
+- [TemplateVariableToJSON](README.md#templatevariabletojson)
+- [TestNewInboxForwarderOptionsFromJSON](README.md#testnewinboxforwarderoptionsfromjson)
+- [TestNewInboxForwarderOptionsFromJSONTyped](README.md#testnewinboxforwarderoptionsfromjsontyped)
+- [TestNewInboxForwarderOptionsToJSON](README.md#testnewinboxforwarderoptionstojson)
+- [TestNewInboxRulesetOptionsFromJSON](README.md#testnewinboxrulesetoptionsfromjson)
+- [TestNewInboxRulesetOptionsFromJSONTyped](README.md#testnewinboxrulesetoptionsfromjsontyped)
+- [TestNewInboxRulesetOptionsToJSON](README.md#testnewinboxrulesetoptionstojson)
+- [ThreadProjectionFromJSON](README.md#threadprojectionfromjson)
+- [ThreadProjectionFromJSONTyped](README.md#threadprojectionfromjsontyped)
+- [ThreadProjectionToJSON](README.md#threadprojectiontojson)
+- [TrackingPixelDtoFromJSON](README.md#trackingpixeldtofromjson)
+- [TrackingPixelDtoFromJSONTyped](README.md#trackingpixeldtofromjsontyped)
+- [TrackingPixelDtoToJSON](README.md#trackingpixeldtotojson)
+- [TrackingPixelProjectionFromJSON](README.md#trackingpixelprojectionfromjson)
+- [TrackingPixelProjectionFromJSONTyped](README.md#trackingpixelprojectionfromjsontyped)
+- [TrackingPixelProjectionToJSON](README.md#trackingpixelprojectiontojson)
+- [UnknownMissedEmailProjectionFromJSON](README.md#unknownmissedemailprojectionfromjson)
+- [UnknownMissedEmailProjectionFromJSONTyped](README.md#unknownmissedemailprojectionfromjsontyped)
+- [UnknownMissedEmailProjectionToJSON](README.md#unknownmissedemailprojectiontojson)
+- [UnreadCountFromJSON](README.md#unreadcountfromjson)
+- [UnreadCountFromJSONTyped](README.md#unreadcountfromjsontyped)
+- [UnreadCountToJSON](README.md#unreadcounttojson)
+- [UnseenErrorCountDtoFromJSON](README.md#unseenerrorcountdtofromjson)
+- [UnseenErrorCountDtoFromJSONTyped](README.md#unseenerrorcountdtofromjsontyped)
+- [UnseenErrorCountDtoToJSON](README.md#unseenerrorcountdtotojson)
+- [UpdateAliasOptionsFromJSON](README.md#updatealiasoptionsfromjson)
+- [UpdateAliasOptionsFromJSONTyped](README.md#updatealiasoptionsfromjsontyped)
+- [UpdateAliasOptionsToJSON](README.md#updatealiasoptionstojson)
+- [UpdateDomainOptionsFromJSON](README.md#updatedomainoptionsfromjson)
+- [UpdateDomainOptionsFromJSONTyped](README.md#updatedomainoptionsfromjsontyped)
+- [UpdateDomainOptionsToJSON](README.md#updatedomainoptionstojson)
+- [UpdateGroupContactsFromJSON](README.md#updategroupcontactsfromjson)
+- [UpdateGroupContactsFromJSONTyped](README.md#updategroupcontactsfromjsontyped)
+- [UpdateGroupContactsToJSON](README.md#updategroupcontactstojson)
+- [UpdateInboxOptionsFromJSON](README.md#updateinboxoptionsfromjson)
+- [UpdateInboxOptionsFromJSONTyped](README.md#updateinboxoptionsfromjsontyped)
+- [UpdateInboxOptionsToJSON](README.md#updateinboxoptionstojson)
+- [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
+- [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
+- [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
+- [ValidationDtoFromJSON](README.md#validationdtofromjson)
+- [ValidationDtoFromJSONTyped](README.md#validationdtofromjsontyped)
+- [ValidationDtoToJSON](README.md#validationdtotojson)
+- [ValidationMessageFromJSON](README.md#validationmessagefromjson)
+- [ValidationMessageFromJSONTyped](README.md#validationmessagefromjsontyped)
+- [ValidationMessageToJSON](README.md#validationmessagetojson)
+- [VerifyEmailAddressOptionsFromJSON](README.md#verifyemailaddressoptionsfromjson)
+- [VerifyEmailAddressOptionsFromJSONTyped](README.md#verifyemailaddressoptionsfromjsontyped)
+- [VerifyEmailAddressOptionsToJSON](README.md#verifyemailaddressoptionstojson)
+- [WaitForConditionsFromJSON](README.md#waitforconditionsfromjson)
+- [WaitForConditionsFromJSONTyped](README.md#waitforconditionsfromjsontyped)
+- [WaitForConditionsToJSON](README.md#waitforconditionstojson)
+- [WebhookDtoFromJSON](README.md#webhookdtofromjson)
+- [WebhookDtoFromJSONTyped](README.md#webhookdtofromjsontyped)
+- [WebhookDtoToJSON](README.md#webhookdtotojson)
+- [WebhookEmailOpenedPayloadFromJSON](README.md#webhookemailopenedpayloadfromjson)
+- [WebhookEmailOpenedPayloadFromJSONTyped](README.md#webhookemailopenedpayloadfromjsontyped)
+- [WebhookEmailOpenedPayloadToJSON](README.md#webhookemailopenedpayloadtojson)
+- [WebhookEmailReadPayloadFromJSON](README.md#webhookemailreadpayloadfromjson)
+- [WebhookEmailReadPayloadFromJSONTyped](README.md#webhookemailreadpayloadfromjsontyped)
+- [WebhookEmailReadPayloadToJSON](README.md#webhookemailreadpayloadtojson)
+- [WebhookNewAttachmentPayloadFromJSON](README.md#webhooknewattachmentpayloadfromjson)
+- [WebhookNewAttachmentPayloadFromJSONTyped](README.md#webhooknewattachmentpayloadfromjsontyped)
+- [WebhookNewAttachmentPayloadToJSON](README.md#webhooknewattachmentpayloadtojson)
+- [WebhookNewContactPayloadFromJSON](README.md#webhooknewcontactpayloadfromjson)
+- [WebhookNewContactPayloadFromJSONTyped](README.md#webhooknewcontactpayloadfromjsontyped)
+- [WebhookNewContactPayloadToJSON](README.md#webhooknewcontactpayloadtojson)
+- [WebhookNewEmailPayloadFromJSON](README.md#webhooknewemailpayloadfromjson)
+- [WebhookNewEmailPayloadFromJSONTyped](README.md#webhooknewemailpayloadfromjsontyped)
+- [WebhookNewEmailPayloadToJSON](README.md#webhooknewemailpayloadtojson)
+- [WebhookProjectionFromJSON](README.md#webhookprojectionfromjson)
+- [WebhookProjectionFromJSONTyped](README.md#webhookprojectionfromjsontyped)
+- [WebhookProjectionToJSON](README.md#webhookprojectiontojson)
+- [WebhookRedriveResultFromJSON](README.md#webhookredriveresultfromjson)
+- [WebhookRedriveResultFromJSONTyped](README.md#webhookredriveresultfromjsontyped)
+- [WebhookRedriveResultToJSON](README.md#webhookredriveresulttojson)
+- [WebhookResultDtoFromJSON](README.md#webhookresultdtofromjson)
+- [WebhookResultDtoFromJSONTyped](README.md#webhookresultdtofromjsontyped)
+- [WebhookResultDtoToJSON](README.md#webhookresultdtotojson)
+- [WebhookTestRequestFromJSON](README.md#webhooktestrequestfromjson)
+- [WebhookTestRequestFromJSONTyped](README.md#webhooktestrequestfromjsontyped)
+- [WebhookTestRequestToJSON](README.md#webhooktestrequesttojson)
+- [WebhookTestResponseFromJSON](README.md#webhooktestresponsefromjson)
+- [WebhookTestResponseFromJSONTyped](README.md#webhooktestresponsefromjsontyped)
+- [WebhookTestResponseToJSON](README.md#webhooktestresponsetojson)
+- [WebhookTestResultFromJSON](README.md#webhooktestresultfromjson)
+- [WebhookTestResultFromJSONTyped](README.md#webhooktestresultfromjsontyped)
+- [WebhookTestResultToJSON](README.md#webhooktestresulttojson)
+- [canConsumeForm](README.md#canconsumeform)
+- [exists](README.md#exists)
+- [mapValues](README.md#mapvalues)
+- [querystring](README.md#querystring)
 - [wrapException](README.md#wrapexception)
 - [wrapResult](README.md#wrapresult)
 
@@ -303,7 +882,7 @@ MailSlurp JS
 
 ### default
 
-Renames and exports: [MailSlurp](classes/MailSlurp.md)
+Renames and re-exports [MailSlurp](classes/MailSlurp.md)
 
 ## Type aliases
 
@@ -323,11 +902,13 @@ MailSlurp config
 | `apiKey` | `string` |
 | `attribution?` | `string` |
 | `basePath?` | `string` |
-| `fetchApi?` | [`FetchAPI`](interfaces/FetchAPI.md) |
+| `fetchApi?` | [`FetchAPI`](README.md#fetchapi) |
 
-#### Defined in
+___
 
-[src/index.ts:48](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L48)
+### FetchAPI
+
+Ƭ **FetchAPI**: `WindowOrWorkerGlobalScope`[``"fetch"``]
 
 ___
 
@@ -351,17 +932,70 @@ For more control over fetching. See also Webhook endpoints
 | `size?` | `number` |
 | `sort?` | `SortEnum` |
 
-#### Defined in
+___
 
-[src/index.ts:572](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L572)
+### HTTPBody
+
+Ƭ **HTTPBody**: [`Json`](README.md#json) \| `FormData` \| `URLSearchParams`
+
+___
+
+### HTTPHeaders
+
+Ƭ **HTTPHeaders**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `string`
+
+___
+
+### HTTPMethod
+
+Ƭ **HTTPMethod**: ``"GET"`` \| ``"POST"`` \| ``"PUT"`` \| ``"PATCH"`` \| ``"DELETE"`` \| ``"OPTIONS"`` \| ``"HEAD"``
+
+___
+
+### HTTPQuery
+
+Ƭ **HTTPQuery**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `string` \| `number` \| ``null`` \| `boolean` \| (`string` \| `number` \| ``null`` \| `boolean`)[] \| [`HTTPQuery`](README.md#httpquery)
+
+___
+
+### Json
+
+Ƭ **Json**: `any`
+
+___
+
+### ModelPropertyNaming
+
+Ƭ **ModelPropertyNaming**: ``"camelCase"`` \| ``"snake_case"`` \| ``"PascalCase"`` \| ``"original"``
 
 ## Variables
 
+### BASE\_PATH
+
+• **BASE\_PATH**: `string`
+
+MailSlurp API
+MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+
+The version of the OpenAPI document: 6.5.2
+
+NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+https://openapi-generator.tech
+Do not edit the class manually.
+
+___
+
 ### COLLECTION\_FORMATS
 
-• `Const` **COLLECTION\_FORMATS**: `Object`
-
-**`export`**
+• **COLLECTION\_FORMATS**: `Object`
 
 #### Type declaration
 
@@ -372,2354 +1006,6834 @@ For more control over fetching. See also Webhook endpoints
 | `ssv` | `string` |
 | `tsv` | `string` |
 
-#### Defined in
-
-[src/generated/api.ts:25](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25)
-
 ## Functions
 
-### AliasControllerApiFactory
+### AbstractWebhookPayloadFromJSON
 
-▸ `Const` **AliasControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+▸ **AbstractWebhookPayloadFromJSON**(`json`): [`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
 
-AliasControllerApi - factory interface
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
+
+___
+
+### AbstractWebhookPayloadFromJSONTyped
+
+▸ **AbstractWebhookPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
+
+___
+
+### AbstractWebhookPayloadToJSON
+
+▸ **AbstractWebhookPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AliasDtoFromJSON
+
+▸ **AliasDtoFromJSON**(`json`): [`AliasDto`](interfaces/AliasDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AliasDto`](interfaces/AliasDto.md)
+
+___
+
+### AliasDtoFromJSONTyped
+
+▸ **AliasDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AliasDto`](interfaces/AliasDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AliasDto`](interfaces/AliasDto.md)
+
+___
+
+### AliasDtoToJSON
+
+▸ **AliasDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AliasDto`](interfaces/AliasDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AliasProjectionFromJSON
+
+▸ **AliasProjectionFromJSON**(`json`): [`AliasProjection`](interfaces/AliasProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AliasProjection`](interfaces/AliasProjection.md)
+
+___
+
+### AliasProjectionFromJSONTyped
+
+▸ **AliasProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AliasProjection`](interfaces/AliasProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AliasProjection`](interfaces/AliasProjection.md)
+
+___
+
+### AliasProjectionToJSON
+
+▸ **AliasProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AliasProjection`](interfaces/AliasProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AttachmentEntityFromJSON
+
+▸ **AttachmentEntityFromJSON**(`json`): [`AttachmentEntity`](interfaces/AttachmentEntity.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AttachmentEntity`](interfaces/AttachmentEntity.md)
+
+___
+
+### AttachmentEntityFromJSONTyped
+
+▸ **AttachmentEntityFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentEntity`](interfaces/AttachmentEntity.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AttachmentEntity`](interfaces/AttachmentEntity.md)
+
+___
+
+### AttachmentEntityToJSON
+
+▸ **AttachmentEntityToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AttachmentEntity`](interfaces/AttachmentEntity.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AttachmentMetaDataFromJSON
+
+▸ **AttachmentMetaDataFromJSON**(`json`): [`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
+
+___
+
+### AttachmentMetaDataFromJSONTyped
+
+▸ **AttachmentMetaDataFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
+
+___
+
+### AttachmentMetaDataToJSON
+
+▸ **AttachmentMetaDataToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AttachmentMetaData`](interfaces/AttachmentMetaData.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### AttachmentProjectionFromJSON
+
+▸ **AttachmentProjectionFromJSON**(`json`): [`AttachmentProjection`](interfaces/AttachmentProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`AttachmentProjection`](interfaces/AttachmentProjection.md)
+
+___
+
+### AttachmentProjectionFromJSONTyped
+
+▸ **AttachmentProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentProjection`](interfaces/AttachmentProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`AttachmentProjection`](interfaces/AttachmentProjection.md)
+
+___
+
+### AttachmentProjectionToJSON
+
+▸ **AttachmentProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`AttachmentProjection`](interfaces/AttachmentProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BasicAuthOptionsFromJSON
+
+▸ **BasicAuthOptionsFromJSON**(`json`): [`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
+
+___
+
+### BasicAuthOptionsFromJSONTyped
+
+▸ **BasicAuthOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
+
+___
+
+### BasicAuthOptionsToJSON
+
+▸ **BasicAuthOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BasicAuthOptions`](interfaces/BasicAuthOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BounceProjectionFromJSON
+
+▸ **BounceProjectionFromJSON**(`json`): [`BounceProjection`](interfaces/BounceProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BounceProjection`](interfaces/BounceProjection.md)
+
+___
+
+### BounceProjectionFromJSONTyped
+
+▸ **BounceProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceProjection`](interfaces/BounceProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BounceProjection`](interfaces/BounceProjection.md)
+
+___
+
+### BounceProjectionToJSON
+
+▸ **BounceProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BounceProjection`](interfaces/BounceProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BounceRecipientFromJSON
+
+▸ **BounceRecipientFromJSON**(`json`): [`BounceRecipient`](interfaces/BounceRecipient.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BounceRecipient`](interfaces/BounceRecipient.md)
+
+___
+
+### BounceRecipientFromJSONTyped
+
+▸ **BounceRecipientFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceRecipient`](interfaces/BounceRecipient.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BounceRecipient`](interfaces/BounceRecipient.md)
+
+___
+
+### BounceRecipientToJSON
+
+▸ **BounceRecipientToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BounceRecipient`](interfaces/BounceRecipient.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BouncedEmailDtoFromJSON
+
+▸ **BouncedEmailDtoFromJSON**(`json`): [`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
+
+___
+
+### BouncedEmailDtoFromJSONTyped
+
+▸ **BouncedEmailDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
+
+___
+
+### BouncedEmailDtoToJSON
+
+▸ **BouncedEmailDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BouncedEmailDto`](interfaces/BouncedEmailDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BouncedRecipientDtoFromJSON
+
+▸ **BouncedRecipientDtoFromJSON**(`json`): [`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
+
+___
+
+### BouncedRecipientDtoFromJSONTyped
+
+▸ **BouncedRecipientDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
+
+___
+
+### BouncedRecipientDtoToJSON
+
+▸ **BouncedRecipientDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### BulkSendEmailOptionsFromJSON
+
+▸ **BulkSendEmailOptionsFromJSON**(`json`): [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
+
+___
+
+### BulkSendEmailOptionsFromJSONTyped
+
+▸ **BulkSendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
+
+___
+
+### BulkSendEmailOptionsToJSON
+
+▸ **BulkSendEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConditionOptionFromJSON
+
+▸ **ConditionOptionFromJSON**(`json`): [`ConditionOption`](interfaces/ConditionOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConditionOption`](interfaces/ConditionOption.md)
+
+___
+
+### ConditionOptionFromJSONTyped
+
+▸ **ConditionOptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConditionOption`](interfaces/ConditionOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConditionOption`](interfaces/ConditionOption.md)
+
+___
+
+### ConditionOptionToJSON
+
+▸ **ConditionOptionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConditionOption`](interfaces/ConditionOption.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ContactDtoFromJSON
+
+▸ **ContactDtoFromJSON**(`json`): [`ContactDto`](interfaces/ContactDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ContactDto`](interfaces/ContactDto.md)
+
+___
+
+### ContactDtoFromJSONTyped
+
+▸ **ContactDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContactDto`](interfaces/ContactDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ContactDto`](interfaces/ContactDto.md)
+
+___
+
+### ContactDtoToJSON
+
+▸ **ContactDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ContactDto`](interfaces/ContactDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ContactProjectionFromJSON
+
+▸ **ContactProjectionFromJSON**(`json`): [`ContactProjection`](interfaces/ContactProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ContactProjection`](interfaces/ContactProjection.md)
+
+___
+
+### ContactProjectionFromJSONTyped
+
+▸ **ContactProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContactProjection`](interfaces/ContactProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ContactProjection`](interfaces/ContactProjection.md)
+
+___
+
+### ContactProjectionToJSON
+
+▸ **ContactProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ContactProjection`](interfaces/ContactProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ContentMatchOptionsFromJSON
+
+▸ **ContentMatchOptionsFromJSON**(`json`): [`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
+
+___
+
+### ContentMatchOptionsFromJSONTyped
+
+▸ **ContentMatchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
+
+___
+
+### ContentMatchOptionsToJSON
+
+▸ **ContentMatchOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ContentMatchOptions`](interfaces/ContentMatchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateAliasOptionsFromJSON
+
+▸ **CreateAliasOptionsFromJSON**(`json`): [`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
+
+___
+
+### CreateAliasOptionsFromJSONTyped
+
+▸ **CreateAliasOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
+
+___
+
+### CreateAliasOptionsToJSON
+
+▸ **CreateAliasOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateAliasOptions`](interfaces/CreateAliasOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateContactOptionsFromJSON
+
+▸ **CreateContactOptionsFromJSON**(`json`): [`CreateContactOptions`](interfaces/CreateContactOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateContactOptions`](interfaces/CreateContactOptions.md)
+
+___
+
+### CreateContactOptionsFromJSONTyped
+
+▸ **CreateContactOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateContactOptions`](interfaces/CreateContactOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateContactOptions`](interfaces/CreateContactOptions.md)
+
+___
+
+### CreateContactOptionsToJSON
+
+▸ **CreateContactOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateContactOptions`](interfaces/CreateContactOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateDomainOptionsFromJSON
+
+▸ **CreateDomainOptionsFromJSON**(`json`): [`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
+
+___
+
+### CreateDomainOptionsFromJSONTyped
+
+▸ **CreateDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
+
+___
+
+### CreateDomainOptionsToJSON
+
+▸ **CreateDomainOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateDomainOptions`](interfaces/CreateDomainOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateGroupOptionsFromJSON
+
+▸ **CreateGroupOptionsFromJSON**(`json`): [`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
+
+___
+
+### CreateGroupOptionsFromJSONTyped
+
+▸ **CreateGroupOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
+
+___
+
+### CreateGroupOptionsToJSON
+
+▸ **CreateGroupOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateGroupOptions`](interfaces/CreateGroupOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateInboxDtoFromJSON
+
+▸ **CreateInboxDtoFromJSON**(`json`): [`CreateInboxDto`](interfaces/CreateInboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateInboxDto`](interfaces/CreateInboxDto.md)
+
+___
+
+### CreateInboxDtoFromJSONTyped
+
+▸ **CreateInboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxDto`](interfaces/CreateInboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateInboxDto`](interfaces/CreateInboxDto.md)
+
+___
+
+### CreateInboxDtoToJSON
+
+▸ **CreateInboxDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateInboxDto`](interfaces/CreateInboxDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateInboxForwarderOptionsFromJSON
+
+▸ **CreateInboxForwarderOptionsFromJSON**(`json`): [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
+
+___
+
+### CreateInboxForwarderOptionsFromJSONTyped
+
+▸ **CreateInboxForwarderOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
+
+___
+
+### CreateInboxForwarderOptionsToJSON
+
+▸ **CreateInboxForwarderOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateInboxRulesetOptionsFromJSON
+
+▸ **CreateInboxRulesetOptionsFromJSON**(`json`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
+
+___
+
+### CreateInboxRulesetOptionsFromJSONTyped
+
+▸ **CreateInboxRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
+
+___
+
+### CreateInboxRulesetOptionsToJSON
+
+▸ **CreateInboxRulesetOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateTemplateOptionsFromJSON
+
+▸ **CreateTemplateOptionsFromJSON**(`json`): [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
+
+___
+
+### CreateTemplateOptionsFromJSONTyped
+
+▸ **CreateTemplateOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
+
+___
+
+### CreateTemplateOptionsToJSON
+
+▸ **CreateTemplateOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateTrackingPixelOptionsFromJSON
+
+▸ **CreateTrackingPixelOptionsFromJSON**(`json`): [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
+
+___
+
+### CreateTrackingPixelOptionsFromJSONTyped
+
+▸ **CreateTrackingPixelOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
+
+___
+
+### CreateTrackingPixelOptionsToJSON
+
+▸ **CreateTrackingPixelOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateWebhookOptionsFromJSON
+
+▸ **CreateWebhookOptionsFromJSON**(`json`): [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
+
+___
+
+### CreateWebhookOptionsFromJSONTyped
+
+▸ **CreateWebhookOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
+
+___
+
+### CreateWebhookOptionsToJSON
+
+▸ **CreateWebhookOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DNSLookupOptionsFromJSON
+
+▸ **DNSLookupOptionsFromJSON**(`json`): [`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
+
+___
+
+### DNSLookupOptionsFromJSONTyped
+
+▸ **DNSLookupOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
+
+___
+
+### DNSLookupOptionsToJSON
+
+▸ **DNSLookupOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DNSLookupOptions`](interfaces/DNSLookupOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DNSLookupResultFromJSON
+
+▸ **DNSLookupResultFromJSON**(`json`): [`DNSLookupResult`](interfaces/DNSLookupResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DNSLookupResult`](interfaces/DNSLookupResult.md)
+
+___
+
+### DNSLookupResultFromJSONTyped
+
+▸ **DNSLookupResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupResult`](interfaces/DNSLookupResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DNSLookupResult`](interfaces/DNSLookupResult.md)
+
+___
+
+### DNSLookupResultToJSON
+
+▸ **DNSLookupResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DNSLookupResult`](interfaces/DNSLookupResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DNSLookupResultsFromJSON
+
+▸ **DNSLookupResultsFromJSON**(`json`): [`DNSLookupResults`](interfaces/DNSLookupResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DNSLookupResults`](interfaces/DNSLookupResults.md)
+
+___
+
+### DNSLookupResultsFromJSONTyped
+
+▸ **DNSLookupResultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupResults`](interfaces/DNSLookupResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DNSLookupResults`](interfaces/DNSLookupResults.md)
+
+___
+
+### DNSLookupResultsToJSON
+
+▸ **DNSLookupResultsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DNSLookupResults`](interfaces/DNSLookupResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DescribeDomainOptionsFromJSON
+
+▸ **DescribeDomainOptionsFromJSON**(`json`): [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
+
+___
+
+### DescribeDomainOptionsFromJSONTyped
+
+▸ **DescribeDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
+
+___
+
+### DescribeDomainOptionsToJSON
+
+▸ **DescribeDomainOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DescribeMailServerDomainResultFromJSON
+
+▸ **DescribeMailServerDomainResultFromJSON**(`json`): [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
+
+___
+
+### DescribeMailServerDomainResultFromJSONTyped
+
+▸ **DescribeMailServerDomainResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
+
+___
+
+### DescribeMailServerDomainResultToJSON
+
+▸ **DescribeMailServerDomainResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainDtoFromJSON
+
+▸ **DomainDtoFromJSON**(`json`): [`DomainDto`](interfaces/DomainDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainDto`](interfaces/DomainDto.md)
+
+___
+
+### DomainDtoFromJSONTyped
+
+▸ **DomainDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainDto`](interfaces/DomainDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainDto`](interfaces/DomainDto.md)
+
+___
+
+### DomainDtoToJSON
+
+▸ **DomainDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainDto`](interfaces/DomainDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainNameRecordFromJSON
+
+▸ **DomainNameRecordFromJSON**(`json`): [`DomainNameRecord`](interfaces/DomainNameRecord.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainNameRecord`](interfaces/DomainNameRecord.md)
+
+___
+
+### DomainNameRecordFromJSONTyped
+
+▸ **DomainNameRecordFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainNameRecord`](interfaces/DomainNameRecord.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainNameRecord`](interfaces/DomainNameRecord.md)
+
+___
+
+### DomainNameRecordToJSON
+
+▸ **DomainNameRecordToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainNameRecord`](interfaces/DomainNameRecord.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainPreviewFromJSON
+
+▸ **DomainPreviewFromJSON**(`json`): [`DomainPreview`](interfaces/DomainPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainPreview`](interfaces/DomainPreview.md)
+
+___
+
+### DomainPreviewFromJSONTyped
+
+▸ **DomainPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainPreview`](interfaces/DomainPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainPreview`](interfaces/DomainPreview.md)
+
+___
+
+### DomainPreviewToJSON
+
+▸ **DomainPreviewToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainPreview`](interfaces/DomainPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DownloadAttachmentDtoFromJSON
+
+▸ **DownloadAttachmentDtoFromJSON**(`json`): [`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
+
+___
+
+### DownloadAttachmentDtoFromJSONTyped
+
+▸ **DownloadAttachmentDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
+
+___
+
+### DownloadAttachmentDtoToJSON
+
+▸ **DownloadAttachmentDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailAnalysisFromJSON
+
+▸ **EmailAnalysisFromJSON**(`json`): [`EmailAnalysis`](interfaces/EmailAnalysis.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailAnalysis`](interfaces/EmailAnalysis.md)
+
+___
+
+### EmailAnalysisFromJSONTyped
+
+▸ **EmailAnalysisFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailAnalysis`](interfaces/EmailAnalysis.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailAnalysis`](interfaces/EmailAnalysis.md)
+
+___
+
+### EmailAnalysisToJSON
+
+▸ **EmailAnalysisToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailAnalysis`](interfaces/EmailAnalysis.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailContentMatchResultFromJSON
+
+▸ **EmailContentMatchResultFromJSON**(`json`): [`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
+
+___
+
+### EmailContentMatchResultFromJSONTyped
+
+▸ **EmailContentMatchResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
+
+___
+
+### EmailContentMatchResultToJSON
+
+▸ **EmailContentMatchResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailFromJSON
+
+▸ **EmailFromJSON**(`json`): [`Email`](interfaces/Email.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`Email`](interfaces/Email.md)
+
+___
+
+### EmailFromJSONTyped
+
+▸ **EmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Email`](interfaces/Email.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`Email`](interfaces/Email.md)
+
+___
+
+### EmailLinksResultFromJSON
+
+▸ **EmailLinksResultFromJSON**(`json`): [`EmailLinksResult`](interfaces/EmailLinksResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailLinksResult`](interfaces/EmailLinksResult.md)
+
+___
+
+### EmailLinksResultFromJSONTyped
+
+▸ **EmailLinksResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailLinksResult`](interfaces/EmailLinksResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailLinksResult`](interfaces/EmailLinksResult.md)
+
+___
+
+### EmailLinksResultToJSON
+
+▸ **EmailLinksResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailLinksResult`](interfaces/EmailLinksResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailPreviewFromJSON
+
+▸ **EmailPreviewFromJSON**(`json`): [`EmailPreview`](interfaces/EmailPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailPreview`](interfaces/EmailPreview.md)
+
+___
+
+### EmailPreviewFromJSONTyped
+
+▸ **EmailPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailPreview`](interfaces/EmailPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailPreview`](interfaces/EmailPreview.md)
+
+___
+
+### EmailPreviewToJSON
+
+▸ **EmailPreviewToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailPreview`](interfaces/EmailPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailProjectionFromJSON
+
+▸ **EmailProjectionFromJSON**(`json`): [`EmailProjection`](interfaces/EmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailProjection`](interfaces/EmailProjection.md)
+
+___
+
+### EmailProjectionFromJSONTyped
+
+▸ **EmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailProjection`](interfaces/EmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailProjection`](interfaces/EmailProjection.md)
+
+___
+
+### EmailProjectionToJSON
+
+▸ **EmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailProjection`](interfaces/EmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailRecipientsFromJSON
+
+▸ **EmailRecipientsFromJSON**(`json`): [`EmailRecipients`](interfaces/EmailRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailRecipients`](interfaces/EmailRecipients.md)
+
+___
+
+### EmailRecipientsFromJSONTyped
+
+▸ **EmailRecipientsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailRecipients`](interfaces/EmailRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailRecipients`](interfaces/EmailRecipients.md)
+
+___
+
+### EmailRecipientsToJSON
+
+▸ **EmailRecipientsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailRecipients`](interfaces/EmailRecipients.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailTextLinesResultFromJSON
+
+▸ **EmailTextLinesResultFromJSON**(`json`): [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
+
+___
+
+### EmailTextLinesResultFromJSONTyped
+
+▸ **EmailTextLinesResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
+
+___
+
+### EmailTextLinesResultToJSON
+
+▸ **EmailTextLinesResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailToJSON
+
+▸ **EmailToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`Email`](interfaces/Email.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailVerificationResultFromJSON
+
+▸ **EmailVerificationResultFromJSON**(`json`): [`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
+
+___
+
+### EmailVerificationResultFromJSONTyped
+
+▸ **EmailVerificationResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
+
+___
+
+### EmailVerificationResultToJSON
+
+▸ **EmailVerificationResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailVerificationResult`](interfaces/EmailVerificationResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExpirationDefaultsFromJSON
+
+▸ **ExpirationDefaultsFromJSON**(`json`): [`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
+
+___
+
+### ExpirationDefaultsFromJSONTyped
+
+▸ **ExpirationDefaultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
+
+___
+
+### ExpirationDefaultsToJSON
+
+▸ **ExpirationDefaultsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExpirationDefaults`](interfaces/ExpirationDefaults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExpiredInboxDtoFromJSON
+
+▸ **ExpiredInboxDtoFromJSON**(`json`): [`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
+
+___
+
+### ExpiredInboxDtoFromJSONTyped
+
+▸ **ExpiredInboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
+
+___
+
+### ExpiredInboxDtoToJSON
+
+▸ **ExpiredInboxDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExpiredInboxRecordProjectionFromJSON
+
+▸ **ExpiredInboxRecordProjectionFromJSON**(`json`): [`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
+
+___
+
+### ExpiredInboxRecordProjectionFromJSONTyped
+
+▸ **ExpiredInboxRecordProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
+
+___
+
+### ExpiredInboxRecordProjectionToJSON
+
+▸ **ExpiredInboxRecordProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExportLinkFromJSON
+
+▸ **ExportLinkFromJSON**(`json`): [`ExportLink`](interfaces/ExportLink.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExportLink`](interfaces/ExportLink.md)
+
+___
+
+### ExportLinkFromJSONTyped
+
+▸ **ExportLinkFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportLink`](interfaces/ExportLink.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExportLink`](interfaces/ExportLink.md)
+
+___
+
+### ExportLinkToJSON
+
+▸ **ExportLinkToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExportLink`](interfaces/ExportLink.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ExportOptionsFromJSON
+
+▸ **ExportOptionsFromJSON**(`json`): [`ExportOptions`](interfaces/ExportOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ExportOptions`](interfaces/ExportOptions.md)
+
+___
+
+### ExportOptionsFromJSONTyped
+
+▸ **ExportOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportOptions`](interfaces/ExportOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ExportOptions`](interfaces/ExportOptions.md)
+
+___
+
+### ExportOptionsToJSON
+
+▸ **ExportOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ExportOptions`](interfaces/ExportOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### FlushExpiredInboxesResultFromJSON
+
+▸ **FlushExpiredInboxesResultFromJSON**(`json`): [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
+
+___
+
+### FlushExpiredInboxesResultFromJSONTyped
+
+▸ **FlushExpiredInboxesResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
+
+___
+
+### FlushExpiredInboxesResultToJSON
+
+▸ **FlushExpiredInboxesResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ForwardEmailOptionsFromJSON
+
+▸ **ForwardEmailOptionsFromJSON**(`json`): [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
+
+___
+
+### ForwardEmailOptionsFromJSONTyped
+
+▸ **ForwardEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
+
+___
+
+### ForwardEmailOptionsToJSON
+
+▸ **ForwardEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GravatarUrlFromJSON
+
+▸ **GravatarUrlFromJSON**(`json`): [`GravatarUrl`](interfaces/GravatarUrl.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GravatarUrl`](interfaces/GravatarUrl.md)
+
+___
+
+### GravatarUrlFromJSONTyped
+
+▸ **GravatarUrlFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GravatarUrl`](interfaces/GravatarUrl.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GravatarUrl`](interfaces/GravatarUrl.md)
+
+___
+
+### GravatarUrlToJSON
+
+▸ **GravatarUrlToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GravatarUrl`](interfaces/GravatarUrl.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GroupContactsDtoFromJSON
+
+▸ **GroupContactsDtoFromJSON**(`json`): [`GroupContactsDto`](interfaces/GroupContactsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GroupContactsDto`](interfaces/GroupContactsDto.md)
+
+___
+
+### GroupContactsDtoFromJSONTyped
+
+▸ **GroupContactsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupContactsDto`](interfaces/GroupContactsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GroupContactsDto`](interfaces/GroupContactsDto.md)
+
+___
+
+### GroupContactsDtoToJSON
+
+▸ **GroupContactsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GroupContactsDto`](interfaces/GroupContactsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GroupDtoFromJSON
+
+▸ **GroupDtoFromJSON**(`json`): [`GroupDto`](interfaces/GroupDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GroupDto`](interfaces/GroupDto.md)
+
+___
+
+### GroupDtoFromJSONTyped
+
+▸ **GroupDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupDto`](interfaces/GroupDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GroupDto`](interfaces/GroupDto.md)
+
+___
+
+### GroupDtoToJSON
+
+▸ **GroupDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GroupDto`](interfaces/GroupDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GroupProjectionFromJSON
+
+▸ **GroupProjectionFromJSON**(`json`): [`GroupProjection`](interfaces/GroupProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GroupProjection`](interfaces/GroupProjection.md)
+
+___
+
+### GroupProjectionFromJSONTyped
+
+▸ **GroupProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupProjection`](interfaces/GroupProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GroupProjection`](interfaces/GroupProjection.md)
+
+___
+
+### GroupProjectionToJSON
+
+▸ **GroupProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GroupProjection`](interfaces/GroupProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### HTMLValidationResultFromJSON
+
+▸ **HTMLValidationResultFromJSON**(`json`): [`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
+
+___
+
+### HTMLValidationResultFromJSONTyped
+
+▸ **HTMLValidationResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
+
+___
+
+### HTMLValidationResultToJSON
+
+▸ **HTMLValidationResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`HTMLValidationResult`](interfaces/HTMLValidationResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### IPAddressResultFromJSON
+
+▸ **IPAddressResultFromJSON**(`json`): [`IPAddressResult`](interfaces/IPAddressResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`IPAddressResult`](interfaces/IPAddressResult.md)
+
+___
+
+### IPAddressResultFromJSONTyped
+
+▸ **IPAddressResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`IPAddressResult`](interfaces/IPAddressResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`IPAddressResult`](interfaces/IPAddressResult.md)
+
+___
+
+### IPAddressResultToJSON
+
+▸ **IPAddressResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`IPAddressResult`](interfaces/IPAddressResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxExistsDtoFromJSON
+
+▸ **InboxExistsDtoFromJSON**(`json`): [`InboxExistsDto`](interfaces/InboxExistsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxExistsDto`](interfaces/InboxExistsDto.md)
+
+___
+
+### InboxExistsDtoFromJSONTyped
+
+▸ **InboxExistsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxExistsDto`](interfaces/InboxExistsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxExistsDto`](interfaces/InboxExistsDto.md)
+
+___
+
+### InboxExistsDtoToJSON
+
+▸ **InboxExistsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxExistsDto`](interfaces/InboxExistsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxForwarderDtoFromJSON
+
+▸ **InboxForwarderDtoFromJSON**(`json`): [`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
+
+___
+
+### InboxForwarderDtoFromJSONTyped
+
+▸ **InboxForwarderDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
+
+___
+
+### InboxForwarderDtoToJSON
+
+▸ **InboxForwarderDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxForwarderDto`](interfaces/InboxForwarderDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxForwarderTestOptionsFromJSON
+
+▸ **InboxForwarderTestOptionsFromJSON**(`json`): [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
+
+___
+
+### InboxForwarderTestOptionsFromJSONTyped
+
+▸ **InboxForwarderTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
+
+___
+
+### InboxForwarderTestOptionsToJSON
+
+▸ **InboxForwarderTestOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxForwarderTestResultFromJSON
+
+▸ **InboxForwarderTestResultFromJSON**(`json`): [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
+
+___
+
+### InboxForwarderTestResultFromJSONTyped
+
+▸ **InboxForwarderTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
+
+___
+
+### InboxForwarderTestResultToJSON
+
+▸ **InboxForwarderTestResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxFromJSON
+
+▸ **InboxFromJSON**(`json`): [`Inbox`](interfaces/Inbox.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`Inbox`](interfaces/Inbox.md)
+
+___
+
+### InboxFromJSONTyped
+
+▸ **InboxFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Inbox`](interfaces/Inbox.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`Inbox`](interfaces/Inbox.md)
+
+___
+
+### InboxPreviewFromJSON
+
+▸ **InboxPreviewFromJSON**(`json`): [`InboxPreview`](interfaces/InboxPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxPreview`](interfaces/InboxPreview.md)
+
+___
+
+### InboxPreviewFromJSONTyped
+
+▸ **InboxPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxPreview`](interfaces/InboxPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxPreview`](interfaces/InboxPreview.md)
+
+___
+
+### InboxPreviewToJSON
+
+▸ **InboxPreviewToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxPreview`](interfaces/InboxPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxRulesetDtoFromJSON
+
+▸ **InboxRulesetDtoFromJSON**(`json`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
+
+___
+
+### InboxRulesetDtoFromJSONTyped
+
+▸ **InboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
+
+___
+
+### InboxRulesetDtoToJSON
+
+▸ **InboxRulesetDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxRulesetDto`](interfaces/InboxRulesetDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxRulesetTestOptionsFromJSON
+
+▸ **InboxRulesetTestOptionsFromJSON**(`json`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
+
+___
+
+### InboxRulesetTestOptionsFromJSONTyped
+
+▸ **InboxRulesetTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
+
+___
+
+### InboxRulesetTestOptionsToJSON
+
+▸ **InboxRulesetTestOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxRulesetTestResultFromJSON
+
+▸ **InboxRulesetTestResultFromJSON**(`json`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
+
+___
+
+### InboxRulesetTestResultFromJSONTyped
+
+▸ **InboxRulesetTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
+
+___
+
+### InboxRulesetTestResultToJSON
+
+▸ **InboxRulesetTestResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxToJSON
+
+▸ **InboxToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`Inbox`](interfaces/Inbox.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### JSONSchemaDtoFromJSON
+
+▸ **JSONSchemaDtoFromJSON**(`json`): [`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
+
+___
+
+### JSONSchemaDtoFromJSONTyped
+
+▸ **JSONSchemaDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
+
+___
+
+### JSONSchemaDtoToJSON
+
+▸ **JSONSchemaDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`JSONSchemaDto`](interfaces/JSONSchemaDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MatchOptionFromJSON
+
+▸ **MatchOptionFromJSON**(`json`): [`MatchOption`](interfaces/MatchOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MatchOption`](interfaces/MatchOption.md)
+
+___
+
+### MatchOptionFromJSONTyped
+
+▸ **MatchOptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MatchOption`](interfaces/MatchOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MatchOption`](interfaces/MatchOption.md)
+
+___
+
+### MatchOptionToJSON
+
+▸ **MatchOptionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MatchOption`](interfaces/MatchOption.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MatchOptionsFromJSON
+
+▸ **MatchOptionsFromJSON**(`json`): [`MatchOptions`](interfaces/MatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MatchOptions`](interfaces/MatchOptions.md)
+
+___
+
+### MatchOptionsFromJSONTyped
+
+▸ **MatchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MatchOptions`](interfaces/MatchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MatchOptions`](interfaces/MatchOptions.md)
+
+___
+
+### MatchOptionsToJSON
+
+▸ **MatchOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MatchOptions`](interfaces/MatchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MissedEmailFromJSON
+
+▸ **MissedEmailFromJSON**(`json`): [`MissedEmail`](interfaces/MissedEmail.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MissedEmail`](interfaces/MissedEmail.md)
+
+___
+
+### MissedEmailFromJSONTyped
+
+▸ **MissedEmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmail`](interfaces/MissedEmail.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MissedEmail`](interfaces/MissedEmail.md)
+
+___
+
+### MissedEmailProjectionFromJSON
+
+▸ **MissedEmailProjectionFromJSON**(`json`): [`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
+
+___
+
+### MissedEmailProjectionFromJSONTyped
+
+▸ **MissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
+
+___
+
+### MissedEmailProjectionToJSON
+
+▸ **MissedEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MissedEmailProjection`](interfaces/MissedEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### MissedEmailToJSON
+
+▸ **MissedEmailToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MissedEmail`](interfaces/MissedEmail.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### NameServerRecordFromJSON
+
+▸ **NameServerRecordFromJSON**(`json`): [`NameServerRecord`](interfaces/NameServerRecord.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`NameServerRecord`](interfaces/NameServerRecord.md)
+
+___
+
+### NameServerRecordFromJSONTyped
+
+▸ **NameServerRecordFromJSONTyped**(`json`, `ignoreDiscriminator`): [`NameServerRecord`](interfaces/NameServerRecord.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`NameServerRecord`](interfaces/NameServerRecord.md)
+
+___
+
+### NameServerRecordToJSON
+
+▸ **NameServerRecordToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`NameServerRecord`](interfaces/NameServerRecord.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### OrganizationInboxProjectionFromJSON
+
+▸ **OrganizationInboxProjectionFromJSON**(`json`): [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
+
+___
+
+### OrganizationInboxProjectionFromJSONTyped
+
+▸ **OrganizationInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
+
+___
+
+### OrganizationInboxProjectionToJSON
+
+▸ **OrganizationInboxProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageAliasFromJSON
+
+▸ **PageAliasFromJSON**(`json`): [`PageAlias`](interfaces/PageAlias.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageAlias`](interfaces/PageAlias.md)
+
+___
+
+### PageAliasFromJSONTyped
+
+▸ **PageAliasFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAlias`](interfaces/PageAlias.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageAlias`](interfaces/PageAlias.md)
+
+___
+
+### PageAliasToJSON
+
+▸ **PageAliasToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageAlias`](interfaces/PageAlias.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageAttachmentEntityFromJSON
+
+▸ **PageAttachmentEntityFromJSON**(`json`): [`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
+
+___
+
+### PageAttachmentEntityFromJSONTyped
+
+▸ **PageAttachmentEntityFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
+
+___
+
+### PageAttachmentEntityToJSON
+
+▸ **PageAttachmentEntityToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageBouncedEmailFromJSON
+
+▸ **PageBouncedEmailFromJSON**(`json`): [`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
+
+___
+
+### PageBouncedEmailFromJSONTyped
+
+▸ **PageBouncedEmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
+
+___
+
+### PageBouncedEmailToJSON
+
+▸ **PageBouncedEmailToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageBouncedEmail`](interfaces/PageBouncedEmail.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageBouncedRecipientsFromJSON
+
+▸ **PageBouncedRecipientsFromJSON**(`json`): [`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
+
+___
+
+### PageBouncedRecipientsFromJSONTyped
+
+▸ **PageBouncedRecipientsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
+
+___
+
+### PageBouncedRecipientsToJSON
+
+▸ **PageBouncedRecipientsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageContactProjectionFromJSON
+
+▸ **PageContactProjectionFromJSON**(`json`): [`PageContactProjection`](interfaces/PageContactProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageContactProjection`](interfaces/PageContactProjection.md)
+
+___
+
+### PageContactProjectionFromJSONTyped
+
+▸ **PageContactProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageContactProjection`](interfaces/PageContactProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageContactProjection`](interfaces/PageContactProjection.md)
+
+___
+
+### PageContactProjectionToJSON
+
+▸ **PageContactProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageContactProjection`](interfaces/PageContactProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageEmailPreviewFromJSON
+
+▸ **PageEmailPreviewFromJSON**(`json`): [`PageEmailPreview`](interfaces/PageEmailPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEmailPreview`](interfaces/PageEmailPreview.md)
+
+___
+
+### PageEmailPreviewFromJSONTyped
+
+▸ **PageEmailPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailPreview`](interfaces/PageEmailPreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEmailPreview`](interfaces/PageEmailPreview.md)
+
+___
+
+### PageEmailPreviewToJSON
+
+▸ **PageEmailPreviewToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEmailPreview`](interfaces/PageEmailPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageEmailProjectionFromJSON
+
+▸ **PageEmailProjectionFromJSON**(`json`): [`PageEmailProjection`](interfaces/PageEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEmailProjection`](interfaces/PageEmailProjection.md)
+
+___
+
+### PageEmailProjectionFromJSONTyped
+
+▸ **PageEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailProjection`](interfaces/PageEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEmailProjection`](interfaces/PageEmailProjection.md)
+
+___
+
+### PageEmailProjectionToJSON
+
+▸ **PageEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEmailProjection`](interfaces/PageEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageExpiredInboxRecordProjectionFromJSON
+
+▸ **PageExpiredInboxRecordProjectionFromJSON**(`json`): [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
+
+___
+
+### PageExpiredInboxRecordProjectionFromJSONTyped
+
+▸ **PageExpiredInboxRecordProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
+
+___
+
+### PageExpiredInboxRecordProjectionToJSON
+
+▸ **PageExpiredInboxRecordProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageGroupProjectionFromJSON
+
+▸ **PageGroupProjectionFromJSON**(`json`): [`PageGroupProjection`](interfaces/PageGroupProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageGroupProjection`](interfaces/PageGroupProjection.md)
+
+___
+
+### PageGroupProjectionFromJSONTyped
+
+▸ **PageGroupProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageGroupProjection`](interfaces/PageGroupProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageGroupProjection`](interfaces/PageGroupProjection.md)
+
+___
+
+### PageGroupProjectionToJSON
+
+▸ **PageGroupProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageGroupProjection`](interfaces/PageGroupProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageInboxForwarderDtoFromJSON
+
+▸ **PageInboxForwarderDtoFromJSON**(`json`): [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
+
+___
+
+### PageInboxForwarderDtoFromJSONTyped
+
+▸ **PageInboxForwarderDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
+
+___
+
+### PageInboxForwarderDtoToJSON
+
+▸ **PageInboxForwarderDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageInboxProjectionFromJSON
+
+▸ **PageInboxProjectionFromJSON**(`json`): [`PageInboxProjection`](interfaces/PageInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxProjection`](interfaces/PageInboxProjection.md)
+
+___
+
+### PageInboxProjectionFromJSONTyped
+
+▸ **PageInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxProjection`](interfaces/PageInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxProjection`](interfaces/PageInboxProjection.md)
+
+___
+
+### PageInboxProjectionToJSON
+
+▸ **PageInboxProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxProjection`](interfaces/PageInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageInboxRulesetDtoFromJSON
+
+▸ **PageInboxRulesetDtoFromJSON**(`json`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
+
+___
+
+### PageInboxRulesetDtoFromJSONTyped
+
+▸ **PageInboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
+
+___
+
+### PageInboxRulesetDtoToJSON
+
+▸ **PageInboxRulesetDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageMissedEmailProjectionFromJSON
+
+▸ **PageMissedEmailProjectionFromJSON**(`json`): [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
+
+___
+
+### PageMissedEmailProjectionFromJSONTyped
+
+▸ **PageMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
+
+___
+
+### PageMissedEmailProjectionToJSON
+
+▸ **PageMissedEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageOrganizationInboxProjectionFromJSON
+
+▸ **PageOrganizationInboxProjectionFromJSON**(`json`): [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
+
+___
+
+### PageOrganizationInboxProjectionFromJSONTyped
+
+▸ **PageOrganizationInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
+
+___
+
+### PageOrganizationInboxProjectionToJSON
+
+▸ **PageOrganizationInboxProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageSentEmailProjectionFromJSON
+
+▸ **PageSentEmailProjectionFromJSON**(`json`): [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
+
+___
+
+### PageSentEmailProjectionFromJSONTyped
+
+▸ **PageSentEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
+
+___
+
+### PageSentEmailProjectionToJSON
+
+▸ **PageSentEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageTemplateProjectionFromJSON
+
+▸ **PageTemplateProjectionFromJSON**(`json`): [`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
+
+___
+
+### PageTemplateProjectionFromJSONTyped
+
+▸ **PageTemplateProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
+
+___
+
+### PageTemplateProjectionToJSON
+
+▸ **PageTemplateProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageTemplateProjection`](interfaces/PageTemplateProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageThreadProjectionFromJSON
+
+▸ **PageThreadProjectionFromJSON**(`json`): [`PageThreadProjection`](interfaces/PageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageThreadProjection`](interfaces/PageThreadProjection.md)
+
+___
+
+### PageThreadProjectionFromJSONTyped
+
+▸ **PageThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageThreadProjection`](interfaces/PageThreadProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageThreadProjection`](interfaces/PageThreadProjection.md)
+
+___
+
+### PageThreadProjectionToJSON
+
+▸ **PageThreadProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageThreadProjection`](interfaces/PageThreadProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageTrackingPixelProjectionFromJSON
+
+▸ **PageTrackingPixelProjectionFromJSON**(`json`): [`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
+
+___
+
+### PageTrackingPixelProjectionFromJSONTyped
+
+▸ **PageTrackingPixelProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
+
+___
+
+### PageTrackingPixelProjectionToJSON
+
+▸ **PageTrackingPixelProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageUnknownMissedEmailProjectionFromJSON
+
+▸ **PageUnknownMissedEmailProjectionFromJSON**(`json`): [`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
 
-**`export`**
+#### Returns
+
+[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
+
+___
 
+### PageUnknownMissedEmailProjectionFromJSONTyped
+
+▸ **PageUnknownMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
+
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
+
+___
+
+### PageUnknownMissedEmailProjectionToJSON
+
+▸ **PageUnknownMissedEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options?`: `any`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `deleteAlias` | (`aliasId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAlias` | (`aliasId`: `string`, `options?`: `any`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
-| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
-| `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
+| `value?` | [`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:8179](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8179)
+`any`
 
 ___
+
+### PageWebhookProjectionFromJSON
+
+▸ **PageWebhookProjectionFromJSON**(`json`): [`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
 
-### AliasControllerApiFetchParamCreator
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
 
-▸ `Const` **AliasControllerApiFetchParamCreator**(`configuration?`): `Object`
+#### Returns
+
+[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
+
+___
 
-AliasControllerApi - fetch parameter creator
+### PageWebhookProjectionFromJSONTyped
 
-**`export`**
+▸ **PageWebhookProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
+
+___
+
+### PageWebhookProjectionToJSON
 
+▸ **PageWebhookProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteAlias` | (`aliasId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAlias` | (`aliasId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `value?` | [`PageWebhookProjection`](interfaces/PageWebhookProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:7164](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7164)
+`any`
 
 ___
 
-### AliasControllerApiFp
+### PageWebhookResultFromJSON
 
-▸ `Const` **AliasControllerApiFp**(`configuration?`): `Object`
+▸ **PageWebhookResultFromJSON**(`json`): [`PageWebhookResult`](interfaces/PageWebhookResult.md)
 
-AliasControllerApi - functional programming interface
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageWebhookResult`](interfaces/PageWebhookResult.md)
+
+___
+
+### PageWebhookResultFromJSONTyped
 
-**`export`**
+▸ **PageWebhookResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageWebhookResult`](interfaces/PageWebhookResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`PageWebhookResult`](interfaces/PageWebhookResult.md)
+
+___
+
+### PageWebhookResultToJSON
+
+▸ **PageWebhookResultToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createAlias` | (`createAliasOptions`: [`CreateAliasOptions`](interfaces/CreateAliasOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `deleteAlias` | (`aliasId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAlias` | (`aliasId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AliasDto`](interfaces/AliasDto.md)\> |
-| `getAliasEmails` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getAliasThreads` | (`aliasId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageThreadProjection`](interfaces/PageThreadProjection.md)\> |
-| `getAliases` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAlias`](interfaces/PageAlias.md)\> |
-| `replyToAliasEmail` | (`aliasId`: `string`, `emailId`: `string`, `replyToAliasEmailOptions`: [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendAliasEmail` | (`aliasId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `updateAlias` | (`aliasId`: `string`, `updateAliasOptions`: [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
+| `value?` | [`PageWebhookResult`](interfaces/PageWebhookResult.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:7845](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7845)
+`any`
 
 ___
+
+### PageableFromJSON
+
+▸ **PageableFromJSON**(`json`): [`Pageable`](interfaces/Pageable.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-### AttachmentControllerApiFactory
+[`Pageable`](interfaces/Pageable.md)
 
-▸ `Const` **AttachmentControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+___
 
-AttachmentControllerApi - factory interface
+### PageableFromJSONTyped
 
-**`export`**
+▸ **PageableFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Pageable`](interfaces/Pageable.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`Pageable`](interfaces/Pageable.md)
+
+___
+
+### PageableToJSON
 
+▸ **PageableToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `deleteAllAttachments` | (`options?`: `any`) => `Promise`<`Response`\> |
-| `deleteAttachment` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `downloadAttachmentAsBase64Encoded` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)\> |
-| `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getAttachment` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentEntity`](interfaces/AttachmentEntity.md)\> |
-| `getAttachmentInfo` | (`attachmentId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
-| `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options?`: `any`) => `Promise`<`string`[]\> |
-| `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options?`: `any`) => `Promise`<`string`[]\> |
-| `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options?`: `any`) => `Promise`<`string`[]\> |
+| `value?` | [`Pageable`](interfaces/Pageable.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:9598](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9598)
+`any`
 
 ___
+
+### RawEmailJsonFromJSON
+
+▸ **RawEmailJsonFromJSON**(`json`): [`RawEmailJson`](interfaces/RawEmailJson.md)
+
+#### Parameters
 
-### AttachmentControllerApiFetchParamCreator
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-▸ `Const` **AttachmentControllerApiFetchParamCreator**(`configuration?`): `Object`
+[`RawEmailJson`](interfaces/RawEmailJson.md)
 
-AttachmentControllerApi - fetch parameter creator
+___
+
+### RawEmailJsonFromJSONTyped
 
-**`export`**
+▸ **RawEmailJsonFromJSONTyped**(`json`, `ignoreDiscriminator`): [`RawEmailJson`](interfaces/RawEmailJson.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`RawEmailJson`](interfaces/RawEmailJson.md)
+
+___
+
+### RawEmailJsonToJSON
+
+▸ **RawEmailJsonToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `deleteAllAttachments` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteAttachment` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadAttachmentAsBase64Encoded` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachment` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachmentInfo` | (`attachmentId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `value?` | [`RawEmailJson`](interfaces/RawEmailJson.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:8596](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L8596)
+`any`
 
 ___
+
+### RecipientFromJSON
+
+▸ **RecipientFromJSON**(`json`): [`Recipient`](interfaces/Recipient.md)
 
-### AttachmentControllerApiFp
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
 
-▸ `Const` **AttachmentControllerApiFp**(`configuration?`): `Object`
+#### Returns
+
+[`Recipient`](interfaces/Recipient.md)
+
+___
 
-AttachmentControllerApi - functional programming interface
+### RecipientFromJSONTyped
 
-**`export`**
+▸ **RecipientFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Recipient`](interfaces/Recipient.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`Recipient`](interfaces/Recipient.md)
+
+___
+
+### RecipientToJSON
 
+▸ **RecipientToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `deleteAllAttachments` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteAttachment` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `downloadAttachmentAsBase64Encoded` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)\> |
-| `downloadAttachmentAsBytes` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getAttachment` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentEntity`](interfaces/AttachmentEntity.md)\> |
-| `getAttachmentInfo` | (`attachmentId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments` | (`before?`: `Date`, `fileNameFilter?`: `string`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)\> |
-| `uploadAttachment` | (`uploadOptions`: [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
-| `uploadAttachmentBytes` | (`byteArray?`: `string`, `contentType?`: `string`, `filename?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
-| `uploadMultipartForm` | (`file`: `any`, `contentType?`: `string`, `contentTypeHeader?`: `string`, `filename?`: `string`, `xFilename?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
+| `value?` | [`Recipient`](interfaces/Recipient.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:9243](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9243)
+`any`
 
 ___
+
+### ReplyToAliasEmailOptionsFromJSON
+
+▸ **ReplyToAliasEmailOptionsFromJSON**(`json`): [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-### BounceControllerApiFactory
+[`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
 
-▸ `Const` **BounceControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+___
 
-BounceControllerApi - factory interface
+### ReplyToAliasEmailOptionsFromJSONTyped
 
-**`export`**
+▸ **ReplyToAliasEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
+
+___
+
+### ReplyToAliasEmailOptionsToJSON
+
+▸ **ReplyToAliasEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getBouncedEmail` | (`id`: `string`, `options?`: `any`) => `Promise`<[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)\> |
-| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
-| `getBouncedRecipient` | (`id`: `string`, `options?`: `any`) => `Promise`<[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)\> |
-| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
+| `value?` | [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:10427](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10427)
+`any`
 
 ___
+
+### ReplyToEmailOptionsFromJSON
+
+▸ **ReplyToEmailOptionsFromJSON**(`json`): [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-### BounceControllerApiFetchParamCreator
+[`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
 
-▸ `Const` **BounceControllerApiFetchParamCreator**(`configuration?`): `Object`
+___
 
-BounceControllerApi - fetch parameter creator
+### ReplyToEmailOptionsFromJSONTyped
 
-**`export`**
+▸ **ReplyToEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
+
+___
+
+### ReplyToEmailOptionsToJSON
 
+▸ **ReplyToEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getBouncedEmail` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getBouncedRecipient` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `value?` | [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:9999](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L9999)
+`any`
 
 ___
+
+### SendEmailOptionsFromJSON
+
+▸ **SendEmailOptionsFromJSON**(`json`): [`SendEmailOptions`](interfaces/SendEmailOptions.md)
+
+#### Parameters
 
-### BounceControllerApiFp
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-▸ `Const` **BounceControllerApiFp**(`configuration?`): `Object`
+[`SendEmailOptions`](interfaces/SendEmailOptions.md)
 
-BounceControllerApi - functional programming interface
+___
+
+### SendEmailOptionsFromJSONTyped
 
-**`export`**
+▸ **SendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendEmailOptions`](interfaces/SendEmailOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`SendEmailOptions`](interfaces/SendEmailOptions.md)
+
+___
+
+### SendEmailOptionsToJSON
+
+▸ **SendEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getBouncedEmail` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`BouncedEmailDto`](interfaces/BouncedEmailDto.md)\> |
-| `getBouncedEmails` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedEmail`](interfaces/PageBouncedEmail.md)\> |
-| `getBouncedRecipient` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)\> |
-| `getBouncedRecipients` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)\> |
+| `value?` | [`SendEmailOptions`](interfaces/SendEmailOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:10276](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10276)
+`any`
 
 ___
+
+### SenderFromJSON
+
+▸ **SenderFromJSON**(`json`): [`Sender`](interfaces/Sender.md)
 
-### BulkActionsControllerApiFactory
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
 
-▸ `Const` **BulkActionsControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+#### Returns
+
+[`Sender`](interfaces/Sender.md)
+
+___
 
-BulkActionsControllerApi - factory interface
+### SenderFromJSONTyped
 
-**`export`**
+▸ **SenderFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Sender`](interfaces/Sender.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`Sender`](interfaces/Sender.md)
+
+___
+
+### SenderToJSON
 
+▸ **SenderToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `bulkCreateInboxes` | (`count`: `number`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `bulkDeleteInboxes` | (`ids`: `string`[], `options?`: `any`) => `Promise`<`Response`\> |
-| `bulkSendEmails` | (`bulkSendEmailOptions`: [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
+| `value?` | [`Sender`](interfaces/Sender.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:10916](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10916)
+`any`
 
 ___
 
-### BulkActionsControllerApiFetchParamCreator
+### SentEmailDtoFromJSON
 
-▸ `Const` **BulkActionsControllerApiFetchParamCreator**(`configuration?`): `Object`
+▸ **SentEmailDtoFromJSON**(`json`): [`SentEmailDto`](interfaces/SentEmailDto.md)
 
-BulkActionsControllerApi - fetch parameter creator
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SentEmailDto`](interfaces/SentEmailDto.md)
+
+___
+
+### SentEmailDtoFromJSONTyped
 
-**`export`**
+▸ **SentEmailDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SentEmailDto`](interfaces/SentEmailDto.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`SentEmailDto`](interfaces/SentEmailDto.md)
+
+___
+
+### SentEmailDtoToJSON
+
+▸ **SentEmailDtoToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `bulkCreateInboxes` | (`count`: `number`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `bulkDeleteInboxes` | (`ids`: `string`[], `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `bulkSendEmails` | (`bulkSendEmailOptions`: [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `value?` | [`SentEmailDto`](interfaces/SentEmailDto.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:10620](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10620)
+`any`
 
 ___
+
+### SentEmailProjectionFromJSON
+
+▸ **SentEmailProjectionFromJSON**(`json`): [`SentEmailProjection`](interfaces/SentEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-### BulkActionsControllerApiFp
+[`SentEmailProjection`](interfaces/SentEmailProjection.md)
 
-▸ `Const` **BulkActionsControllerApiFp**(`configuration?`): `Object`
+___
 
-BulkActionsControllerApi - functional programming interface
+### SentEmailProjectionFromJSONTyped
 
-**`export`**
+▸ **SentEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SentEmailProjection`](interfaces/SentEmailProjection.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`SentEmailProjection`](interfaces/SentEmailProjection.md)
+
+___
+
+### SentEmailProjectionToJSON
 
+▸ **SentEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `bulkCreateInboxes` | (`count`: `number`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `bulkDeleteInboxes` | (`ids`: `string`[], `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `bulkSendEmails` | (`bulkSendEmailOptions`: [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
+| `value?` | [`SentEmailProjection`](interfaces/SentEmailProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:10815](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L10815)
+`any`
 
 ___
+
+### SetInboxFavouritedOptionsFromJSON
+
+▸ **SetInboxFavouritedOptionsFromJSON**(`json`): [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
+
+#### Parameters
 
-### CommonActionsControllerApiFactory
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-▸ `Const` **CommonActionsControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+[`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
 
-CommonActionsControllerApi - factory interface
+___
+
+### SetInboxFavouritedOptionsFromJSONTyped
 
-**`export`**
+▸ **SetInboxFavouritedOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
+
+___
+
+### SetInboxFavouritedOptionsToJSON
+
+▸ **SetInboxFavouritedOptionsToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `emptyInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
+| `value?` | [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:11565](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L11565)
+`any`
 
 ___
+
+### SimpleSendEmailOptionsFromJSON
+
+▸ **SimpleSendEmailOptionsFromJSON**(`json`): [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
 
-### CommonActionsControllerApiFetchParamCreator
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
 
-▸ `Const` **CommonActionsControllerApiFetchParamCreator**(`configuration?`): `Object`
+#### Returns
+
+[`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
+
+___
 
-CommonActionsControllerApi - fetch parameter creator
+### SimpleSendEmailOptionsFromJSONTyped
 
-**`export`**
+▸ **SimpleSendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
+
+___
+
+### SimpleSendEmailOptionsToJSON
 
+▸ **SimpleSendEmailOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `emptyInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `value?` | [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:11027](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L11027)
+`any`
 
 ___
+
+### SortFromJSON
+
+▸ **SortFromJSON**(`json`): [`Sort`](interfaces/Sort.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
 
-### CommonActionsControllerApiFp
+[`Sort`](interfaces/Sort.md)
 
-▸ `Const` **CommonActionsControllerApiFp**(`configuration?`): `Object`
+___
 
-CommonActionsControllerApi - functional programming interface
+### SortFromJSONTyped
 
-**`export`**
+▸ **SortFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Sort`](interfaces/Sort.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`Sort`](interfaces/Sort.md)
+
+___
+
+### SortToJSON
+
+▸ **SortToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createNewEmailAddress` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createNewEmailAddress1` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `emptyInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `sendEmailSimple` | (`emailOptions`: [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
+| `value?` | [`Sort`](interfaces/Sort.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:11374](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L11374)
+`any`
 
 ___
-
-### ContactControllerApiFactory
 
-▸ `Const` **ContactControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### TemplateDtoFromJSON
 
-ContactControllerApi - factory interface
+▸ **TemplateDtoFromJSON**(`json`): [`TemplateDto`](interfaces/TemplateDto.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`TemplateDto`](interfaces/TemplateDto.md)
+
+___
+
+### TemplateDtoFromJSONTyped
+
+▸ **TemplateDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateDto`](interfaces/TemplateDto.md)
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options?`: `any`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
-| `deleteContact` | (`contactId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
-| `getContact` | (`contactId`: `string`, `options?`: `any`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
-| `getContactVCard` | (`contactId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getContacts` | (`options?`: `any`) => `Promise`<[`ContactProjection`](interfaces/ContactProjection.md)[]\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:12395](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12395)
+[`TemplateDto`](interfaces/TemplateDto.md)
 
 ___
-
-### ContactControllerApiFetchParamCreator
 
-▸ `Const` **ContactControllerApiFetchParamCreator**(`configuration?`): `Object`
+### TemplateDtoToJSON
 
-ContactControllerApi - fetch parameter creator
+▸ **TemplateDtoToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`TemplateDto`](interfaces/TemplateDto.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
 
+### TemplateProjectionFromJSON
+
+▸ **TemplateProjectionFromJSON**(`json`): [`TemplateProjection`](interfaces/TemplateProjection.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteContact` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getContact` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getContactVCard` | (`contactId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getContacts` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:11829](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L11829)
+[`TemplateProjection`](interfaces/TemplateProjection.md)
 
 ___
-
-### ContactControllerApiFp
 
-▸ `Const` **ContactControllerApiFp**(`configuration?`): `Object`
+### TemplateProjectionFromJSONTyped
 
-ContactControllerApi - functional programming interface
+▸ **TemplateProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateProjection`](interfaces/TemplateProjection.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`TemplateProjection`](interfaces/TemplateProjection.md)
 
+___
+
+### TemplateProjectionToJSON
+
+▸ **TemplateProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createContact` | (`createContactOptions`: [`CreateContactOptions`](interfaces/CreateContactOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
-| `deleteContact` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllContacts` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
-| `getContact` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactDto`](interfaces/ContactDto.md)\> |
-| `getContactVCard` | (`contactId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getContacts` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ContactProjection`](interfaces/ContactProjection.md)[]\> |
+| `value?` | [`TemplateProjection`](interfaces/TemplateProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:12194](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12194)
+`any`
 
 ___
-
-### DomainControllerApiFactory
 
-▸ `Const` **DomainControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### TemplateVariableFromJSON
 
-DomainControllerApi - factory interface
+▸ **TemplateVariableFromJSON**(`json`): [`TemplateVariable`](interfaces/TemplateVariable.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`TemplateVariable`](interfaces/TemplateVariable.md)
+
+___
+
+### TemplateVariableFromJSONTyped
+
+▸ **TemplateVariableFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateVariable`](interfaces/TemplateVariable.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `addDomainWildcardCatchAll` | (`id`: `string`, `options?`: `any`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `createDomain` | (`domainOptions`: [`CreateDomainOptions`](interfaces/CreateDomainOptions.md), `options?`: `any`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `deleteDomain` | (`id`: `string`, `options?`: `any`) => `Promise`<`string`[]\> |
-| `getDomain` | (`id`: `string`, `options?`: `any`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `getDomains` | (`options?`: `any`) => `Promise`<[`DomainPreview`](interfaces/DomainPreview.md)[]\> |
-| `updateDomain` | (`id`: `string`, `updateDomainDto`: [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md), `options?`: `any`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:13170](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L13170)
+[`TemplateVariable`](interfaces/TemplateVariable.md)
 
 ___
-
-### DomainControllerApiFetchParamCreator
 
-▸ `Const` **DomainControllerApiFetchParamCreator**(`configuration?`): `Object`
+### TemplateVariableToJSON
 
-DomainControllerApi - fetch parameter creator
+▸ **TemplateVariableToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`TemplateVariable`](interfaces/TemplateVariable.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### TestNewInboxForwarderOptionsFromJSON
+
+▸ **TestNewInboxForwarderOptionsFromJSON**(`json`): [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `addDomainWildcardCatchAll` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createDomain` | (`domainOptions`: [`CreateDomainOptions`](interfaces/CreateDomainOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteDomain` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getDomain` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getDomains` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `updateDomain` | (`id`: `string`, `updateDomainDto`: [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:12618](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12618)
+[`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
 
 ___
-
-### DomainControllerApiFp
 
-▸ `Const` **DomainControllerApiFp**(`configuration?`): `Object`
+### TestNewInboxForwarderOptionsFromJSONTyped
 
-DomainControllerApi - functional programming interface
+▸ **TestNewInboxForwarderOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
+
+___
 
+### TestNewInboxForwarderOptionsToJSON
+
+▸ **TestNewInboxForwarderOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `addDomainWildcardCatchAll` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `createDomain` | (`domainOptions`: [`CreateDomainOptions`](interfaces/CreateDomainOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `deleteDomain` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
-| `getDomain` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
-| `getDomains` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DomainPreview`](interfaces/DomainPreview.md)[]\> |
-| `updateDomain` | (`id`: `string`, `updateDomainDto`: [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DomainDto`](interfaces/DomainDto.md)\> |
+| `value?` | [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:12978](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L12978)
+`any`
 
 ___
-
-### EmailControllerApiFactory
 
-▸ `Const` **EmailControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### TestNewInboxRulesetOptionsFromJSON
 
-EmailControllerApi - factory interface
+▸ **TestNewInboxRulesetOptionsFromJSON**(`json`): [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
 
+___
+
+### TestNewInboxRulesetOptionsFromJSONTyped
+
+▸ **TestNewInboxRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `deleteAllEmails` | (`options?`: `any`) => `Promise`<`Response`\> |
-| `deleteEmail` | (`emailId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `downloadAttachment` | (`attachmentId`: `string`, `emailId`: `string`, `apiKey?`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `downloadAttachmentBase64` | (`attachmentId`: `string`, `emailId`: `string`, `options?`: `any`) => `Promise`<[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)\> |
-| `downloadBody` | (`emailId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `downloadBodyBytes` | (`emailId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `forwardEmail` | (`emailId`: `string`, `forwardEmailOptions`: [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `getAttachmentMetaData` | (`attachmentId`: `string`, `emailId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments1` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)[]\> |
-| `getEmail` | (`emailId`: `string`, `decode?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getEmailContentMatch` | (`contentMatchOptions`: [`ContentMatchOptions`](interfaces/ContentMatchOptions.md), `emailId`: `string`, `options?`: `any`) => `Promise`<[`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)\> |
-| `getEmailHTML` | (`emailId`: `string`, `decode?`: `boolean`, `options?`: `any`) => `Promise`<`string`\> |
-| `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options?`: `any`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailLinks` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`EmailLinksResult`](interfaces/EmailLinksResult.md)\> |
-| `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options?`: `any`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options?`: `any`) => `Promise`<[`GravatarUrl`](interfaces/GravatarUrl.md)\> |
-| `getLatestEmail` | (`inboxIds?`: `string`[], `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getLatestEmailInInbox` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getRawEmailContents` | (`emailId`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getRawEmailJson` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`RawEmailJson`](interfaces/RawEmailJson.md)\> |
-| `getUnreadEmailCount` | (`options?`: `any`) => `Promise`<[`UnreadCount`](interfaces/UnreadCount.md)\> |
-| `markAsRead` | (`emailId`: `string`, `read?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)\> |
-| `replyToEmail` | (`emailId`: `string`, `replyToEmailOptions`: [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendEmailSourceOptional` | (`inboxId?`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<`Response`\> |
-| `validateEmail` | (`emailId`: `string`, `options?`: `any`) => `Promise`<[`ValidationDto`](interfaces/ValidationDto.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:16037](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L16037)
+[`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
 
 ___
-
-### EmailControllerApiFetchParamCreator
 
-▸ `Const` **EmailControllerApiFetchParamCreator**(`configuration?`): `Object`
+### TestNewInboxRulesetOptionsToJSON
 
-EmailControllerApi - fetch parameter creator
+▸ **TestNewInboxRulesetOptionsToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### ThreadProjectionFromJSON
+
+▸ **ThreadProjectionFromJSON**(`json`): [`ThreadProjection`](interfaces/ThreadProjection.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `deleteAllEmails` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteEmail` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadAttachment` | (`attachmentId`: `string`, `emailId`: `string`, `apiKey?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadAttachmentBase64` | (`attachmentId`: `string`, `emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadBody` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `downloadBodyBytes` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `forwardEmail` | (`emailId`: `string`, `forwardEmailOptions`: [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachmentMetaData` | (`attachmentId`: `string`, `emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAttachments1` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmail` | (`emailId`: `string`, `decode?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailContentMatch` | (`contentMatchOptions`: [`ContentMatchOptions`](interfaces/ContentMatchOptions.md), `emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailHTML` | (`emailId`: `string`, `decode?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailLinks` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getLatestEmail` | (`inboxIds?`: `string`[], `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getLatestEmailInInbox` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getRawEmailContents` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getRawEmailJson` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getUnreadEmailCount` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `markAsRead` | (`emailId`: `string`, `read?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `replyToEmail` | (`emailId`: `string`, `replyToEmailOptions`: [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendEmailSourceOptional` | (`inboxId?`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `validateEmail` | (`emailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:13367](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L13367)
+[`ThreadProjection`](interfaces/ThreadProjection.md)
 
 ___
-
-### EmailControllerApiFp
 
-▸ `Const` **EmailControllerApiFp**(`configuration?`): `Object`
+### ThreadProjectionFromJSONTyped
 
-EmailControllerApi - functional programming interface
+▸ **ThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ThreadProjection`](interfaces/ThreadProjection.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`ThreadProjection`](interfaces/ThreadProjection.md)
+
+___
+
+### ThreadProjectionToJSON
+
+▸ **ThreadProjectionToJSON**(`value?`): `any`
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `deleteAllEmails` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteEmail` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `downloadAttachment` | (`attachmentId`: `string`, `emailId`: `string`, `apiKey?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `downloadAttachmentBase64` | (`attachmentId`: `string`, `emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)\> |
-| `downloadBody` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `downloadBodyBytes` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `forwardEmail` | (`emailId`: `string`, `forwardEmailOptions`: [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `getAttachmentMetaData` | (`attachmentId`: `string`, `emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)\> |
-| `getAttachments1` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AttachmentMetaData`](interfaces/AttachmentMetaData.md)[]\> |
-| `getEmail` | (`emailId`: `string`, `decode?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getEmailContentMatch` | (`contentMatchOptions`: [`ContentMatchOptions`](interfaces/ContentMatchOptions.md), `emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)\> |
-| `getEmailHTML` | (`emailId`: `string`, `decode?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getEmailHTMLQuery` | (`emailId`: `string`, `htmlSelector?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailLinks` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailLinksResult`](interfaces/EmailLinksResult.md)\> |
-| `getEmailTextLines` | (`emailId`: `string`, `decodeHtmlEntities?`: `boolean`, `lineSeparator?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)\> |
-| `getEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getGravatarUrlForEmailAddress` | (`emailAddress`: `string`, `size?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GravatarUrl`](interfaces/GravatarUrl.md)\> |
-| `getLatestEmail` | (`inboxIds?`: `string`[], `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getLatestEmailInInbox` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `getOrganizationEmailsPaginated` | (`before?`: `Date`, `inboxId?`: `string`[], `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailProjection`](interfaces/PageEmailProjection.md)\> |
-| `getRawEmailContents` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getRawEmailJson` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`RawEmailJson`](interfaces/RawEmailJson.md)\> |
-| `getUnreadEmailCount` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`UnreadCount`](interfaces/UnreadCount.md)\> |
-| `markAsRead` | (`emailId`: `string`, `read?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)\> |
-| `replyToEmail` | (`emailId`: `string`, `replyToEmailOptions`: [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendEmailSourceOptional` | (`inboxId?`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `validateEmail` | (`emailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ValidationDto`](interfaces/ValidationDto.md)\> |
+| `value?` | [`ThreadProjection`](interfaces/ThreadProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:15108](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L15108)
+`any`
 
 ___
-
-### ExpiredControllerApiFactory
 
-▸ `Const` **ExpiredControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### TrackingPixelDtoFromJSON
 
-ExpiredControllerApi - factory interface
+▸ **TrackingPixelDtoFromJSON**(`json`): [`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
+
+___
 
+### TrackingPixelDtoFromJSONTyped
+
+▸ **TrackingPixelDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getExpirationDefaults` | (`options?`: `any`) => `Promise`<[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)\> |
-| `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxRecord` | (`expiredId`: `string`, `options?`: `any`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17450](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17450)
+[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
 
 ___
-
-### ExpiredControllerApiFetchParamCreator
 
-▸ `Const` **ExpiredControllerApiFetchParamCreator**(`configuration?`): `Object`
+### TrackingPixelDtoToJSON
 
-ExpiredControllerApi - fetch parameter creator
+▸ **TrackingPixelDtoToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`TrackingPixelDto`](interfaces/TrackingPixelDto.md) |
 
 #### Returns
 
-`Object`
+`any`
 
+___
+
+### TrackingPixelProjectionFromJSON
+
+▸ **TrackingPixelProjectionFromJSON**(`json`): [`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getExpirationDefaults` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getExpiredInboxRecord` | (`expiredId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17063](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17063)
+[`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
 
 ___
-
-### ExpiredControllerApiFp
 
-▸ `Const` **ExpiredControllerApiFp**(`configuration?`): `Object`
+### TrackingPixelProjectionFromJSONTyped
 
-ExpiredControllerApi - functional programming interface
+▸ **TrackingPixelProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
+
+___
+
+### TrackingPixelProjectionToJSON
+
+▸ **TrackingPixelProjectionToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getExpirationDefaults` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpirationDefaults`](interfaces/ExpirationDefaults.md)\> |
-| `getExpiredInboxByInboxId` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxRecord` | (`expiredId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)\> |
-| `getExpiredInboxes` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)\> |
+| `value?` | [`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17309](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17309)
+`any`
 
 ___
-
-### ExportControllerApiFactory
 
-▸ `Const` **ExportControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### UnknownMissedEmailProjectionFromJSON
 
-ExportControllerApi - factory interface
+▸ **UnknownMissedEmailProjectionFromJSON**(`json`): [`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
+
+___
+
+### UnknownMissedEmailProjectionFromJSONTyped
+
+▸ **UnknownMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `exportEntities` | (`apiKey`: `string`, `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `outputFormat`: ``"CSV_DEFAULT"`` \| ``"CSV_EXCEL"``, `createdEarliestTime?`: `Date`, `createdOldestTime?`: `Date`, `excludePreviouslyExported?`: `boolean`, `filter?`: `string`, `listSeparatorToken?`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getExportLink` | (`exportOptions`: [`ExportOptions`](interfaces/ExportOptions.md), `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `apiKey?`: `string`, `options?`: `any`) => `Promise`<[`ExportLink`](interfaces/ExportLink.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17921](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17921)
+[`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
 
 ___
-
-### ExportControllerApiFetchParamCreator
 
-▸ `Const` **ExportControllerApiFetchParamCreator**(`configuration?`): `Object`
+### UnknownMissedEmailProjectionToJSON
 
-ExportControllerApi - fetch parameter creator
+▸ **UnknownMissedEmailProjectionToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
 
+### UnreadCountFromJSON
+
+▸ **UnreadCountFromJSON**(`json`): [`UnreadCount`](interfaces/UnreadCount.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `exportEntities` | (`apiKey`: `string`, `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `outputFormat`: ``"CSV_DEFAULT"`` \| ``"CSV_EXCEL"``, `createdEarliestTime?`: `Date`, `createdOldestTime?`: `Date`, `excludePreviouslyExported?`: `boolean`, `filter?`: `string`, `listSeparatorToken?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getExportLink` | (`exportOptions`: [`ExportOptions`](interfaces/ExportOptions.md), `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `apiKey?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17607](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17607)
+[`UnreadCount`](interfaces/UnreadCount.md)
 
 ___
-
-### ExportControllerApiFp
 
-▸ `Const` **ExportControllerApiFp**(`configuration?`): `Object`
+### UnreadCountFromJSONTyped
 
-ExportControllerApi - functional programming interface
+▸ **UnreadCountFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnreadCount`](interfaces/UnreadCount.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`UnreadCount`](interfaces/UnreadCount.md)
 
+___
+
+### UnreadCountToJSON
+
+▸ **UnreadCountToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `exportEntities` | (`apiKey`: `string`, `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `outputFormat`: ``"CSV_DEFAULT"`` \| ``"CSV_EXCEL"``, `createdEarliestTime?`: `Date`, `createdOldestTime?`: `Date`, `excludePreviouslyExported?`: `boolean`, `filter?`: `string`, `listSeparatorToken?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getExportLink` | (`exportOptions`: [`ExportOptions`](interfaces/ExportOptions.md), `exportType`: ``"ATTACHMENTS"`` \| ``"INBOXES"`` \| ``"CONTACTS"`` \| ``"EMAILS"``, `apiKey?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`ExportLink`](interfaces/ExportLink.md)\> |
+| `value?` | [`UnreadCount`](interfaces/UnreadCount.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:17824](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L17824)
+`any`
 
 ___
-
-### FormControllerApiFactory
 
-▸ `Const` **FormControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### UnseenErrorCountDtoFromJSON
 
-FormControllerApi - factory interface
+▸ **UnseenErrorCountDtoFromJSON**(`json`): [`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
+
+___
+
+### UnseenErrorCountDtoFromJSONTyped
+
+▸ **UnseenErrorCountDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `submitForm` | (`emailAddress?`: `string`, `redirectTo?`: `string`, `spamCheck?`: `string`, `subject?`: `string`, `successMessage?`: `string`, `to?`: `string`, `otherParameters?`: `string`, `options?`: `any`) => `Promise`<`string`\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:18234](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18234)
+[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
 
 ___
-
-### FormControllerApiFetchParamCreator
 
-▸ `Const` **FormControllerApiFetchParamCreator**(`configuration?`): `Object`
+### UnseenErrorCountDtoToJSON
 
-FormControllerApi - fetch parameter creator
+▸ **UnseenErrorCountDtoToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### UpdateAliasOptionsFromJSON
+
+▸ **UpdateAliasOptionsFromJSON**(`json`): [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `submitForm` | (`emailAddress?`: `string`, `redirectTo?`: `string`, `spamCheck?`: `string`, `subject?`: `string`, `successMessage?`: `string`, `to?`: `string`, `otherParameters?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:18064](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18064)
+[`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
 
 ___
-
-### FormControllerApiFp
 
-▸ `Const` **FormControllerApiFp**(`configuration?`): `Object`
+### UpdateAliasOptionsFromJSONTyped
 
-FormControllerApi - functional programming interface
+▸ **UpdateAliasOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
+
+___
 
+### UpdateAliasOptionsToJSON
+
+▸ **UpdateAliasOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `submitForm` | (`emailAddress?`: `string`, `redirectTo?`: `string`, `spamCheck?`: `string`, `subject?`: `string`, `successMessage?`: `string`, `to?`: `string`, `otherParameters?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
+| `value?` | [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:18174](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18174)
+`any`
 
 ___
-
-### GroupControllerApiFactory
 
-▸ `Const` **GroupControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### UpdateDomainOptionsFromJSON
 
-GroupControllerApi - factory interface
+▸ **UpdateDomainOptionsFromJSON**(`json`): [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
 
+___
+
+### UpdateDomainOptionsFromJSONTyped
+
+▸ **UpdateDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options?`: `any`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
-| `deleteGroup` | (`groupId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
-| `getGroup` | (`groupId`: `string`, `options?`: `any`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
-| `getGroupWithContacts` | (`groupId`: `string`, `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
-| `getGroups` | (`options?`: `any`) => `Promise`<[`GroupProjection`](interfaces/GroupProjection.md)[]\> |
-| `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:19258](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L19258)
+[`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
 
 ___
-
-### GroupControllerApiFetchParamCreator
 
-▸ `Const` **GroupControllerApiFetchParamCreator**(`configuration?`): `Object`
+### UpdateDomainOptionsToJSON
 
-GroupControllerApi - fetch parameter creator
+▸ **UpdateDomainOptionsToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### UpdateGroupContactsFromJSON
+
+▸ **UpdateGroupContactsFromJSON**(`json`): [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteGroup` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGroup` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGroupWithContacts` | (`groupId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getGroups` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:18325](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18325)
+[`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
 
 ___
-
-### GroupControllerApiFp
 
-▸ `Const` **GroupControllerApiFp**(`configuration?`): `Object`
+### UpdateGroupContactsFromJSONTyped
 
-GroupControllerApi - functional programming interface
+▸ **UpdateGroupContactsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
+
+___
+
+### UpdateGroupContactsToJSON
+
+▸ **UpdateGroupContactsToJSON**(`value?`): `any`
 
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `addContactsToGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `createGroup` | (`createGroupOptions`: [`CreateGroupOptions`](interfaces/CreateGroupOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
-| `deleteGroup` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllGroups` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageGroupProjection`](interfaces/PageGroupProjection.md)\> |
-| `getGroup` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupDto`](interfaces/GroupDto.md)\> |
-| `getGroupWithContacts` | (`groupId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
-| `getGroupWithContactsPaginated` | (`groupId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageContactProjection`](interfaces/PageContactProjection.md)\> |
-| `getGroups` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupProjection`](interfaces/GroupProjection.md)[]\> |
-| `removeContactsFromGroup` | (`groupId`: `string`, `updateGroupContactsOption`: [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`GroupContactsDto`](interfaces/GroupContactsDto.md)\> |
+| `value?` | [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:18938](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L18938)
+`any`
 
 ___
-
-### InboxControllerApiFactory
 
-▸ `Const` **InboxControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### UpdateInboxOptionsFromJSON
 
-InboxControllerApi - factory interface
+▸ **UpdateInboxOptionsFromJSON**(`json`): [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
+
+___
 
+### UpdateInboxOptionsFromJSONTyped
+
+▸ **UpdateInboxOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createInbox` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId`: `string`, `options?`: `any`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `createInboxWithDefaults` | (`options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `deleteAllInboxes` | (`options?`: `any`) => `Promise`<`Response`\> |
-| `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `flushExpired` | (`before?`: `Date`, `options?`: `any`) => `Promise`<[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)\> |
-| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
-| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `getInbox` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
-| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getInboxTags` | (`options?`: `any`) => `Promise`<`string`[]\> |
-| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
-| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<`Response`\> |
-| `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendTestEmail` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `setInboxFavourited` | (`inboxId`: `string`, `setInboxFavouritedOptions`: [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md), `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `updateInbox` | (`inboxId`: `string`, `updateInboxOptions`: [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md), `options?`: `any`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:22165](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L22165)
+[`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
 
 ___
-
-### InboxControllerApiFetchParamCreator
 
-▸ `Const` **InboxControllerApiFetchParamCreator**(`configuration?`): `Object`
+### UpdateInboxOptionsToJSON
 
-InboxControllerApi - fetch parameter creator
+▸ **UpdateInboxOptionsToJSON**(`value?`): `any`
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md) |
 
 #### Returns
 
-`Object`
+`any`
 
+___
+
+### UploadAttachmentOptionsFromJSON
+
+▸ **UploadAttachmentOptionsFromJSON**(`json`): [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createInbox` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createInboxWithDefaults` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteAllInboxes` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `flushExpired` | (`before?`: `Date`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInbox` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxTags` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendTestEmail` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `setInboxFavourited` | (`inboxId`: `string`, `setInboxFavouritedOptions`: [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `updateInbox` | (`inboxId`: `string`, `updateInboxOptions`: [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:19623](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L19623)
+[`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
 
 ___
-
-### InboxControllerApiFp
 
-▸ `Const` **InboxControllerApiFp**(`configuration?`): `Object`
+### UploadAttachmentOptionsFromJSONTyped
 
-InboxControllerApi - functional programming interface
+▸ **UploadAttachmentOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
+
+___
+
+### UploadAttachmentOptionsToJSON
+
+▸ **UploadAttachmentOptionsToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createInbox` | (`allowTeamAccess?`: `boolean`, `description?`: `string`, `emailAddress?`: `string`, `expiresAt?`: `Date`, `expiresIn?`: `number`, `favourite?`: `boolean`, `inboxType?`: ``"HTTP_INBOX"`` \| ``"SMTP_INBOX"``, `name?`: `string`, `tags?`: `string`[], `useDomainPool?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `createInboxWithDefaults` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `createInboxWithOptions` | (`createInboxDto`: [`CreateInboxDto`](interfaces/CreateInboxDto.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `deleteAllInboxes` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `flushExpired` | (`before?`: `Date`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)\> |
-| `getAllInboxes` | (`before?`: `Date`, `favourite?`: `boolean`, `page?`: `number`, `search?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `tag?`: `string`, `teamAccess?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxProjection`](interfaces/PageInboxProjection.md)\> |
-| `getEmails` | (`inboxId`: `string`, `before?`: `Date`, `delayTimeout?`: `number`, `limit?`: `number`, `minCount?`: `number`, `retryTimeout?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `getInbox` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `getInboxEmailsPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageEmailPreview`](interfaces/PageEmailPreview.md)\> |
-| `getInboxSentEmails` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getInboxTags` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`[]\> |
-| `getInboxes` | (`before?`: `Date`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)[]\> |
-| `getOrganizationInboxes` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)\> |
-| `listInboxRulesets` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `listInboxTrackingPixels` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `sendEmail` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `sendEmailAndConfirm` | (`inboxId`: `string`, `sendEmailOptions?`: [`SendEmailOptions`](interfaces/SendEmailOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `sendTestEmail` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `setInboxFavourited` | (`inboxId`: `string`, `setInboxFavouritedOptions`: [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
-| `updateInbox` | (`inboxId`: `string`, `updateInboxOptions`: [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Inbox`](interfaces/Inbox.md)\> |
+| `value?` | [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:21279](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L21279)
+`any`
 
 ___
-
-### InboxForwarderControllerApiFactory
 
-▸ `Const` **InboxForwarderControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+### ValidationDtoFromJSON
 
-InboxForwarderControllerApi - factory interface
+▸ **ValidationDtoFromJSON**(`json`): [`ValidationDto`](interfaces/ValidationDto.md)
 
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`ValidationDto`](interfaces/ValidationDto.md)
+
+___
+
+### ValidationDtoFromJSONTyped
+
+▸ **ValidationDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidationDto`](interfaces/ValidationDto.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxForwarder` | (`createInboxForwarderOptions`: [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md), `inboxId?`: `string`, `options?`: `any`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `deleteInboxForwarder` | (`id`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `deleteInboxForwarders` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getInboxForwarder` | (`id`: `string`, `options?`: `any`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
-| `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
-| `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
-| `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options?`: `any`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:24108](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24108)
+[`ValidationDto`](interfaces/ValidationDto.md)
 
 ___
-
-### InboxForwarderControllerApiFetchParamCreator
-
-▸ `Const` **InboxForwarderControllerApiFetchParamCreator**(`configuration?`): `Object`
 
-InboxForwarderControllerApi - fetch parameter creator
+### ValidationDtoToJSON
 
-**`export`**
+▸ **ValidationDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`ValidationDto`](interfaces/ValidationDto.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### ValidationMessageFromJSON
 
+▸ **ValidationMessageFromJSON**(`json`): [`ValidationMessage`](interfaces/ValidationMessage.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxForwarder` | (`createInboxForwarderOptions`: [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md), `inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteInboxForwarder` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteInboxForwarders` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxForwarder` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:23251](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23251)
+[`ValidationMessage`](interfaces/ValidationMessage.md)
 
 ___
 
-### InboxForwarderControllerApiFp
+### ValidationMessageFromJSONTyped
 
-▸ `Const` **InboxForwarderControllerApiFp**(`configuration?`): `Object`
+▸ **ValidationMessageFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidationMessage`](interfaces/ValidationMessage.md)
 
-InboxForwarderControllerApi - functional programming interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`ValidationMessage`](interfaces/ValidationMessage.md)
+
+___
+
+### ValidationMessageToJSON
+
+▸ **ValidationMessageToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxForwarder` | (`createInboxForwarderOptions`: [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md), `inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `deleteInboxForwarder` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteInboxForwarders` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getInboxForwarder` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderDto`](interfaces/InboxForwarderDto.md)\> |
-| `getInboxForwarders` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)\> |
-| `testInboxForwarder` | (`id`: `string`, `inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
-| `testInboxForwardersForInbox` | (`inboxForwarderTestOptions`: [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md), `inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
-| `testNewInboxForwarder` | (`testNewInboxForwarderOptions`: [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)\> |
+| `value?` | [`ValidationMessage`](interfaces/ValidationMessage.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:23810](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L23810)
+`any`
 
 ___
-
-### InboxRulesetControllerApiFactory
-
-▸ `Const` **InboxRulesetControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
 
-InboxRulesetControllerApi - factory interface
+### VerifyEmailAddressOptionsFromJSON
 
-**`export`**
+▸ **VerifyEmailAddressOptionsFromJSON**(`json`): [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
+
+___
+
+### VerifyEmailAddressOptionsFromJSONTyped
 
+▸ **VerifyEmailAddressOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId?`: `string`, `options?`: `any`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `deleteInboxRuleset` | (`id`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `deleteInboxRulesets` | (`inboxId?`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getInboxRuleset` | (`id`: `string`, `options?`: `any`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
-| `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
-| `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options?`: `any`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:25308](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25308)
+[`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
 
 ___
 
-### InboxRulesetControllerApiFetchParamCreator
+### VerifyEmailAddressOptionsToJSON
 
-▸ `Const` **InboxRulesetControllerApiFetchParamCreator**(`configuration?`): `Object`
+▸ **VerifyEmailAddressOptionsToJSON**(`value?`): `any`
 
-InboxRulesetControllerApi - fetch parameter creator
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WaitForConditionsFromJSON
+
+▸ **WaitForConditionsFromJSON**(`json`): [`WaitForConditions`](interfaces/WaitForConditions.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteInboxRuleset` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteInboxRulesets` | (`inboxId?`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxRuleset` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:24451](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L24451)
+[`WaitForConditions`](interfaces/WaitForConditions.md)
 
 ___
-
-### InboxRulesetControllerApiFp
-
-▸ `Const` **InboxRulesetControllerApiFp**(`configuration?`): `Object`
 
-InboxRulesetControllerApi - functional programming interface
+### WaitForConditionsFromJSONTyped
 
-**`export`**
+▸ **WaitForConditionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WaitForConditions`](interfaces/WaitForConditions.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WaitForConditions`](interfaces/WaitForConditions.md)
+
+___
+
+### WaitForConditionsToJSON
 
+▸ **WaitForConditionsToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createNewInboxRuleset` | (`createInboxRulesetOptions`: [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md), `inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `deleteInboxRuleset` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteInboxRulesets` | (`inboxId?`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getInboxRuleset` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetDto`](interfaces/InboxRulesetDto.md)\> |
-| `getInboxRulesets` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)\> |
-| `testInboxRuleset` | (`id`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
-| `testInboxRulesetsForInbox` | (`inboxId`: `string`, `inboxRulesetTestOptions`: [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
-| `testNewInboxRuleset` | (`testNewInboxRulesetOptions`: [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)\> |
+| `value?` | [`WaitForConditions`](interfaces/WaitForConditions.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:25010](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25010)
+`any`
 
 ___
 
-### MailServerControllerApiFactory
+### WebhookDtoFromJSON
 
-▸ `Const` **MailServerControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+▸ **WebhookDtoFromJSON**(`json`): [`WebhookDto`](interfaces/WebhookDto.md)
 
-MailServerControllerApi - factory interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookDto`](interfaces/WebhookDto.md)
+
+___
+
+### WebhookDtoFromJSONTyped
+
+▸ **WebhookDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookDto`](interfaces/WebhookDto.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `describeMailServerDomain` | (`describeOptions`: [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md), `options?`: `any`) => `Promise`<[`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)\> |
-| `getDnsLookup` | (`dnsLookupOptions`: [`DNSLookupOptions`](interfaces/DNSLookupOptions.md), `options?`: `any`) => `Promise`<[`DNSLookupResults`](interfaces/DNSLookupResults.md)\> |
-| `getIpAddress` | (`name`: `string`, `options?`: `any`) => `Promise`<[`IPAddressResult`](interfaces/IPAddressResult.md)\> |
-| `verifyEmailAddress` | (`verifyOptions`: [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md), `options?`: `any`) => `Promise`<[`EmailVerificationResult`](interfaces/EmailVerificationResult.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:26041](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26041)
+[`WebhookDto`](interfaces/WebhookDto.md)
 
 ___
-
-### MailServerControllerApiFetchParamCreator
-
-▸ `Const` **MailServerControllerApiFetchParamCreator**(`configuration?`): `Object`
 
-MailServerControllerApi - fetch parameter creator
+### WebhookDtoToJSON
 
-**`export`**
+▸ **WebhookDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookDto`](interfaces/WebhookDto.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookEmailOpenedPayloadFromJSON
 
+▸ **WebhookEmailOpenedPayloadFromJSON**(`json`): [`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `describeMailServerDomain` | (`describeOptions`: [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getDnsLookup` | (`dnsLookupOptions`: [`DNSLookupOptions`](interfaces/DNSLookupOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getIpAddress` | (`name`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `verifyEmailAddress` | (`verifyOptions`: [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:25645](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25645)
+[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
 
 ___
 
-### MailServerControllerApiFp
+### WebhookEmailOpenedPayloadFromJSONTyped
 
-▸ `Const` **MailServerControllerApiFp**(`configuration?`): `Object`
+▸ **WebhookEmailOpenedPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
 
-MailServerControllerApi - functional programming interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
+
+___
+
+### WebhookEmailOpenedPayloadToJSON
+
+▸ **WebhookEmailOpenedPayloadToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `describeMailServerDomain` | (`describeOptions`: [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)\> |
-| `getDnsLookup` | (`dnsLookupOptions`: [`DNSLookupOptions`](interfaces/DNSLookupOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`DNSLookupResults`](interfaces/DNSLookupResults.md)\> |
-| `getIpAddress` | (`name`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`IPAddressResult`](interfaces/IPAddressResult.md)\> |
-| `verifyEmailAddress` | (`verifyOptions`: [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailVerificationResult`](interfaces/EmailVerificationResult.md)\> |
+| `value?` | [`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:25904](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L25904)
+`any`
 
 ___
-
-### MissedEmailControllerApiFactory
-
-▸ `Const` **MissedEmailControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
 
-MissedEmailControllerApi - factory interface
+### WebhookEmailReadPayloadFromJSON
 
-**`export`**
+▸ **WebhookEmailReadPayloadFromJSON**(`json`): [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
+
+___
+
+### WebhookEmailReadPayloadFromJSONTyped
 
+▸ **WebhookEmailReadPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
-| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
-| `getMissedEmail` | (`missedEmailId`: `string`, `options?`: `any`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
-| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options?`: `any`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:26708](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26708)
+[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
 
 ___
 
-### MissedEmailControllerApiFetchParamCreator
+### WebhookEmailReadPayloadToJSON
 
-▸ `Const` **MissedEmailControllerApiFetchParamCreator**(`configuration?`): `Object`
+▸ **WebhookEmailReadPayloadToJSON**(`value?`): `any`
 
-MissedEmailControllerApi - fetch parameter creator
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookNewAttachmentPayloadFromJSON
+
+▸ **WebhookNewAttachmentPayloadFromJSON**(`json`): [`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getMissedEmail` | (`missedEmailId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:26190](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26190)
+[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
 
 ___
-
-### MissedEmailControllerApiFp
-
-▸ `Const` **MissedEmailControllerApiFp**(`configuration?`): `Object`
 
-MissedEmailControllerApi - functional programming interface
+### WebhookNewAttachmentPayloadFromJSONTyped
 
-**`export`**
+▸ **WebhookNewAttachmentPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
+
+___
+
+### WebhookNewAttachmentPayloadToJSON
 
+▸ **WebhookNewAttachmentPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getAllMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)\> |
-| `getAllUnknownMissedEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)\> |
-| `getMissedEmail` | (`missedEmailId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
-| `waitForNthMissedEmail` | (`before?`: `Date`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `timeout?`: `number`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`MissedEmail`](interfaces/MissedEmail.md)\> |
+| `value?` | [`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:26514](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26514)
+`any`
 
 ___
 
-### SentEmailsControllerApiFactory
+### WebhookNewContactPayloadFromJSON
 
-▸ `Const` **SentEmailsControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+▸ **WebhookNewContactPayloadFromJSON**(`json`): [`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
 
-SentEmailsControllerApi - factory interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
+
+___
+
+### WebhookNewContactPayloadFromJSONTyped
+
+▸ **WebhookNewContactPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmail` | (`id`: `string`, `options?`: `any`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `getSentEmailHTMLContent` | (`id`: `string`, `options?`: `any`) => `Promise`<`string`\> |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:27730](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27730)
+[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
 
 ___
-
-### SentEmailsControllerApiFetchParamCreator
-
-▸ `Const` **SentEmailsControllerApiFetchParamCreator**(`configuration?`): `Object`
 
-SentEmailsControllerApi - fetch parameter creator
+### WebhookNewContactPayloadToJSON
 
-**`export`**
+▸ **WebhookNewContactPayloadToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookNewEmailPayloadFromJSON
 
+▸ **WebhookNewEmailPayloadFromJSON**(`json`): [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmail` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmailHTMLContent` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:26965](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L26965)
+[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
 
 ___
 
-### SentEmailsControllerApiFp
+### WebhookNewEmailPayloadFromJSONTyped
 
-▸ `Const` **SentEmailsControllerApiFp**(`configuration?`): `Object`
+▸ **WebhookNewEmailPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
 
-SentEmailsControllerApi - functional programming interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
+
+___
+
+### WebhookNewEmailPayloadToJSON
+
+▸ **WebhookNewEmailPayloadToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `getAllSentTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmail` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`SentEmailDto`](interfaces/SentEmailDto.md)\> |
-| `getSentEmailHTMLContent` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`string`\> |
-| `getSentEmailTrackingPixels` | (`id`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getSentEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
-| `getSentOrganizationEmails` | (`before?`: `Date`, `inboxId?`: `string`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)\> |
+| `value?` | [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:27446](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L27446)
+`any`
 
 ___
-
-### TemplateControllerApiFactory
-
-▸ `Const` **TemplateControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
 
-TemplateControllerApi - factory interface
+### WebhookProjectionFromJSON
 
-**`export`**
+▸ **WebhookProjectionFromJSON**(`json`): [`WebhookProjection`](interfaces/WebhookProjection.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookProjection`](interfaces/WebhookProjection.md)
+
+___
+
+### WebhookProjectionFromJSONTyped
 
+▸ **WebhookProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookProjection`](interfaces/WebhookProjection.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
-| `deleteTemplate` | (`templateId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
-| `getTemplate` | (`templateId`: `string`, `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
-| `getTemplates` | (`options?`: `any`) => `Promise`<[`TemplateProjection`](interfaces/TemplateProjection.md)[]\> |
-| `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options?`: `any`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:28683](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28683)
+[`WebhookProjection`](interfaces/WebhookProjection.md)
 
 ___
 
-### TemplateControllerApiFetchParamCreator
+### WebhookProjectionToJSON
 
-▸ `Const` **TemplateControllerApiFetchParamCreator**(`configuration?`): `Object`
+▸ **WebhookProjectionToJSON**(`value?`): `any`
 
-TemplateControllerApi - fetch parameter creator
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookProjection`](interfaces/WebhookProjection.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookRedriveResultFromJSON
+
+▸ **WebhookRedriveResultFromJSON**(`json`): [`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteTemplate` | (`templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTemplate` | (`templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTemplates` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:28091](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28091)
+[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
 
 ___
-
-### TemplateControllerApiFp
-
-▸ `Const` **TemplateControllerApiFp**(`configuration?`): `Object`
 
-TemplateControllerApi - functional programming interface
+### WebhookRedriveResultFromJSONTyped
 
-**`export`**
+▸ **WebhookRedriveResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
+
+___
+
+### WebhookRedriveResultToJSON
 
+▸ **WebhookRedriveResultToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
-| `deleteTemplate` | (`templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllTemplates` | (`before?`: `Date`, `page?`: `number`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTemplateProjection`](interfaces/PageTemplateProjection.md)\> |
-| `getTemplate` | (`templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
-| `getTemplates` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateProjection`](interfaces/TemplateProjection.md)[]\> |
-| `updateTemplate` | (`createTemplateOptions`: [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md), `templateId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TemplateDto`](interfaces/TemplateDto.md)\> |
+| `value?` | [`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:28480](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28480)
+`any`
 
 ___
 
-### TrackingControllerApiFactory
+### WebhookResultDtoFromJSON
 
-▸ `Const` **TrackingControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+▸ **WebhookResultDtoFromJSON**(`json`): [`WebhookResultDto`](interfaces/WebhookResultDto.md)
 
-TrackingControllerApi - factory interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookResultDto`](interfaces/WebhookResultDto.md)
+
+___
+
+### WebhookResultDtoFromJSONTyped
+
+▸ **WebhookResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookResultDto`](interfaces/WebhookResultDto.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options?`: `any`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
-| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getTrackingPixel` | (`id`: `string`, `options?`: `any`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:29254](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L29254)
+[`WebhookResultDto`](interfaces/WebhookResultDto.md)
 
 ___
-
-### TrackingControllerApiFetchParamCreator
-
-▸ `Const` **TrackingControllerApiFetchParamCreator**(`configuration?`): `Object`
 
-TrackingControllerApi - fetch parameter creator
+### WebhookResultDtoToJSON
 
-**`export`**
+▸ **WebhookResultDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookResultDto`](interfaces/WebhookResultDto.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookTestRequestFromJSON
 
+▸ **WebhookTestRequestFromJSON**(`json`): [`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTrackingPixel` | (`id`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:28917](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L28917)
+[`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
 
 ___
 
-### TrackingControllerApiFp
+### WebhookTestRequestFromJSONTyped
 
-▸ `Const` **TrackingControllerApiFp**(`configuration?`): `Object`
+▸ **WebhookTestRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
 
-TrackingControllerApi - functional programming interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
+
+___
+
+### WebhookTestRequestToJSON
+
+▸ **WebhookTestRequestToJSON**(`value?`): `any`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createTrackingPixel` | (`createTrackingPixelOptions`: [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
-| `getAllTrackingPixels` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)\> |
-| `getTrackingPixel` | (`id`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`TrackingPixelDto`](interfaces/TrackingPixelDto.md)\> |
+| `value?` | [`WebhookTestRequest`](interfaces/WebhookTestRequest.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:29134](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L29134)
+`any`
 
 ___
-
-### WaitForControllerApiFactory
-
-▸ `Const` **WaitForControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
 
-WaitForControllerApi - factory interface
+### WebhookTestResponseFromJSON
 
-**`export`**
+▸ **WebhookTestResponseFromJSON**(`json`): [`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `json` | `any` |
 
 #### Returns
 
-`Object`
+[`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
+
+___
+
+### WebhookTestResponseFromJSONTyped
 
+▸ **WebhookTestResponseFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:30291](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L30291)
+[`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
 
 ___
 
-### WaitForControllerApiFetchParamCreator
+### WebhookTestResponseToJSON
 
-▸ `Const` **WaitForControllerApiFetchParamCreator**(`configuration?`): `Object`
+▸ **WebhookTestResponseToJSON**(`value?`): `any`
 
-WaitForControllerApi - fetch parameter creator
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `value?` | [`WebhookTestResponse`](interfaces/WebhookTestResponse.md) |
 
 #### Returns
 
-`Object`
+`any`
+
+___
+
+### WebhookTestResultFromJSON
+
+▸ **WebhookTestResultFromJSON**(`json`): [`WebhookTestResult`](interfaces/WebhookTestResult.md)
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
+| `json` | `any` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:29401](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L29401)
+[`WebhookTestResult`](interfaces/WebhookTestResult.md)
 
 ___
-
-### WaitForControllerApiFp
-
-▸ `Const` **WaitForControllerApiFp**(`configuration?`): `Object`
 
-WaitForControllerApi - functional programming interface
+### WebhookTestResultFromJSONTyped
 
-**`export`**
+▸ **WebhookTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestResult`](interfaces/WebhookTestResult.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
 
 #### Returns
 
-`Object`
+[`WebhookTestResult`](interfaces/WebhookTestResult.md)
+
+___
+
+### WebhookTestResultToJSON
 
+▸ **WebhookTestResultToJSON**(`value?`): `any`
+
+#### Parameters
+
 | Name | Type |
 | :------ | :------ |
-| `waitFor` | (`waitForConditions?`: [`WaitForConditions`](interfaces/WaitForConditions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForEmailCount` | (`before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForLatestEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForMatchingEmails` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `count?`: `number`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`EmailPreview`](interfaces/EmailPreview.md)[]\> |
-| `waitForMatchingFirstEmail` | (`matchOptions`: [`MatchOptions`](interfaces/MatchOptions.md), `before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
-| `waitForNthEmail` | (`before?`: `Date`, `delay?`: `number`, `inboxId?`: `string`, `index?`: `number`, `since?`: `Date`, `sort?`: ``"ASC"`` \| ``"DESC"``, `timeout?`: `number`, `unreadOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`Email`](interfaces/Email.md)\> |
+| `value?` | [`WebhookTestResult`](interfaces/WebhookTestResult.md) |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:29973](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L29973)
+`any`
 
 ___
 
-### WebhookControllerApiFactory
+### canConsumeForm
 
-▸ `Const` **WebhookControllerApiFactory**(`configuration?`, `fetch?`, `basePath?`): `Object`
+▸ **canConsumeForm**(`consumes`): `boolean`
 
-WebhookControllerApi - factory interface
-
-**`export`**
-
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
-| `fetch?` | [`FetchAPI`](interfaces/FetchAPI.md) |
-| `basePath?` | `string` |
+| `consumes` | [`Consume`](interfaces/Consume.md)[] |
 
 #### Returns
 
-`Object`
+`boolean`
+
+___
+
+### exists
+
+▸ **exists**(`json`, `key`): `boolean`
+
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
-| `deleteAllWebhooks` | (`options?`: `any`) => `Promise`<`Response`\> |
-| `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
-| `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options?`: `any`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
-| `getTestWebhookPayloadEmailOpened` | (`options?`: `any`) => `Promise`<[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)\> |
-| `getTestWebhookPayloadEmailRead` | (`options?`: `any`) => `Promise`<[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)\> |
-| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
-| `getTestWebhookPayloadNewAttachment` | (`options?`: `any`) => `Promise`<[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)\> |
-| `getTestWebhookPayloadNewContact` | (`options?`: `any`) => `Promise`<[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)\> |
-| `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
-| `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
-| `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)\> |
-| `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
-| `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
-| `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
+| `json` | `any` |
+| `key` | `string` |
 
-#### Defined in
+#### Returns
 
-[src/generated/api.ts:32783](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L32783)
+`boolean`
 
 ___
-
-### WebhookControllerApiFetchParamCreator
-
-▸ `Const` **WebhookControllerApiFetchParamCreator**(`configuration?`): `Object`
 
-WebhookControllerApi - fetch parameter creator
+### mapValues
 
-**`export`**
+▸ **mapValues**(`data`, `fn`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| `data` | `any` |
+| `fn` | (`item`: `any`) => `any` |
 
 #### Returns
 
 `Object`
-
-| Name | Type |
-| :------ | :------ |
-| `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteAllWebhooks` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadEmailOpened` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadEmailRead` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadNewAttachment` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadNewContact` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getTestWebhookPayloadNewEmail` | (`options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhook` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `getWebhooks` | (`inboxId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `redriveWebhookResult` | (`webhookResultId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-| `sendTestData` | (`webhookId`: `string`, `options`: `any`) => [`FetchArgs`](interfaces/FetchArgs.md) |
-
-#### Defined in
 
-[src/generated/api.ts:30724](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L30724)
-
 ___
-
-### WebhookControllerApiFp
 
-▸ `Const` **WebhookControllerApiFp**(`configuration?`): `Object`
+### querystring
 
-WebhookControllerApi - functional programming interface
+▸ **querystring**(`params`, `prefix?`): `string`
 
-**`export`**
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `configuration?` | [`Configuration`](classes/Configuration.md) |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `params` | [`HTTPQuery`](README.md#httpquery) | `undefined` |
+| `prefix` | `string` | `''` |
 
 #### Returns
-
-`Object`
 
-| Name | Type |
-| :------ | :------ |
-| `createWebhook` | (`inboxId`: `string`, `webhookOptions`: [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md), `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
-| `deleteAllWebhooks` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `deleteWebhook` | (`inboxId`: `string`, `webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<`Response`\> |
-| `getAllWebhookResults` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getAllWebhooks` | (`before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getInboxWebhooksPaginated` | (`inboxId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookProjection`](interfaces/PageWebhookProjection.md)\> |
-| `getJsonSchemaForWebhookPayload` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`JSONSchemaDto`](interfaces/JSONSchemaDto.md)\> |
-| `getTestWebhookPayload` | (`eventName?`: ``"EMAIL_RECEIVED"`` \| ``"NEW_EMAIL"`` \| ``"NEW_CONTACT"`` \| ``"NEW_ATTACHMENT"`` \| ``"EMAIL_OPENED"`` \| ``"EMAIL_READ"``, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
-| `getTestWebhookPayloadEmailOpened` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)\> |
-| `getTestWebhookPayloadEmailRead` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)\> |
-| `getTestWebhookPayloadForWebhook` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)\> |
-| `getTestWebhookPayloadNewAttachment` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)\> |
-| `getTestWebhookPayloadNewContact` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)\> |
-| `getTestWebhookPayloadNewEmail` | (`options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)\> |
-| `getWebhook` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)\> |
-| `getWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookResultDto`](interfaces/WebhookResultDto.md)\> |
-| `getWebhookResults` | (`webhookId`: `string`, `before?`: `Date`, `page?`: `number`, `searchFilter?`: `string`, `since?`: `Date`, `size?`: `number`, `sort?`: ``"ASC"`` \| ``"DESC"``, `unseenOnly?`: `boolean`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`PageWebhookResult`](interfaces/PageWebhookResult.md)\> |
-| `getWebhookResultsUnseenErrorCount` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)\> |
-| `getWebhooks` | (`inboxId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookDto`](interfaces/WebhookDto.md)[]\> |
-| `redriveWebhookResult` | (`webhookResultId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)\> |
-| `sendTestData` | (`webhookId`: `string`, `options?`: `any`) => (`fetch?`: [`FetchAPI`](interfaces/FetchAPI.md), `basePath?`: `string`) => `Promise`<[`WebhookTestResult`](interfaces/WebhookTestResult.md)\> |
-
-#### Defined in
-
-[src/generated/api.ts:32029](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L32029)
+`string`
 
 ___
 
@@ -2743,10 +7857,6 @@ ___
 
 `Promise`<`T`\>
 
-#### Defined in
-
-[src/index.ts:597](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L597)
-
 ___
 
 ### wrapResult
@@ -2768,7 +7878,3 @@ ___
 #### Returns
 
 `Promise`<[`Result`](interfaces/Result.md)<`T`\>\>
-
-#### Defined in
-
-[src/index.ts:609](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L609)

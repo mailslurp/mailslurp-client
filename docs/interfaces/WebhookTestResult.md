@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / WebhookTestResult
-
 # Interface: WebhookTestResult
 
 Results of testing a webhook
@@ -24,10 +22,6 @@ Results of testing a webhook
 
 **`memberof`** WebhookTestResult
 
-#### Defined in
-
-[src/generated/api.ts:7145](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7145)
-
 ___
 
 ### request
@@ -36,10 +30,6 @@ ___
 
 **`memberof`** WebhookTestResult
 
-#### Defined in
-
-[src/generated/api.ts:7151](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7151)
-
 ___
 
 ### response
@@ -47,7 +37,3 @@ ___
 • **response**: [`WebhookTestResponse`](WebhookTestResponse.md)
 
 **`memberof`** WebhookTestResult
-
-#### Defined in
-
-[src/generated/api.ts:7157](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L7157)

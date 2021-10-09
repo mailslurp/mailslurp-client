@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / UpdateAliasOptions
-
 # Interface: UpdateAliasOptions
 
 Update an email alias
@@ -23,7 +21,3 @@ Update an email alias
 Optional name for alias
 
 **`memberof`** UpdateAliasOptions
-
-#### Defined in
-
-[src/generated/api.ts:6002](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L6002)

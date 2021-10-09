@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / SetInboxFavouritedOptions
-
 # Interface: SetInboxFavouritedOptions
 
 Options for setting inbox favourite state
@@ -23,7 +21,3 @@ Options for setting inbox favourite state
 Is the inbox a favorite. Marking an inbox as a favorite is typically done in the dashboard for quick access or filtering
 
 **`memberof`** SetInboxFavouritedOptions
-
-#### Defined in
-
-[src/generated/api.ts:5516](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5516)

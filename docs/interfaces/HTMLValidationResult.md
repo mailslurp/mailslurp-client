@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / HTMLValidationResult
-
 # Interface: HTMLValidationResult
 
 HTML Validation Results
@@ -26,10 +24,6 @@ Optional errors resulting from HTML validation
 
 **`memberof`** HTMLValidationResult
 
-#### Defined in
-
-[src/generated/api.ts:2644](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2644)
-
 ___
 
 ### isValid
@@ -40,10 +34,6 @@ Is HTML validation result valid
 
 **`memberof`** HTMLValidationResult
 
-#### Defined in
-
-[src/generated/api.ts:2650](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2650)
-
 ___
 
 ### warnings
@@ -53,7 +43,3 @@ ___
 Optional warnings resulting from HTML validation
 
 **`memberof`** HTMLValidationResult
-
-#### Defined in
-
-[src/generated/api.ts:2656](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2656)

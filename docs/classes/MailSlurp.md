@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / MailSlurp
-
 # Class: MailSlurp
 
 The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST API](https://www.mailslurp.com/docs/api/docs/Apis/).
@@ -7,6 +5,7 @@ The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST 
 Create an instance of this class to call MailSlurp API methods. Contains top level convenience functions. Access the full API controllers as properties on the instance.
 
 ## Create instance
+
 You must provide a configuration object with [your API Key](https://app.mailslurp.com) as the `apiKey` property
 when creating a new instance.
 
@@ -18,6 +17,7 @@ const mailslurp = new MailSlurp({
 ```
 
 ## Call methods
+
 Most methods are asynchronous and return Promises. You can `await` the results or use `.then(result => {})`
 Common controllers include the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/inboxcontrollerapi/), [EmailController](https://www.mailslurp.com/docs/js/docs/classes/emailcontrollerapi/) and the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/) for receiving emails.
 
@@ -111,19 +111,11 @@ const mailslurp = new MailSlurp({ apiKey })
 | :------ | :------ |
 | `opts` | [`Config`](../README.md#config) |
 
-#### Defined in
-
-[src/index.ts:131](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L131)
-
 ## Properties
 
 ### aliasController
 
 • `Readonly` **aliasController**: [`AliasControllerApi`](AliasControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:106](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L106)
 
 ___
 
@@ -131,19 +123,11 @@ ___
 
 • `Readonly` **attachmentController**: [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:100](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L100)
-
 ___
 
 ### bounceController
 
 • `Readonly` **bounceController**: [`BounceControllerApi`](BounceControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:118](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L118)
 
 ___
 
@@ -151,19 +135,11 @@ ___
 
 • `Readonly` **bulkController**: [`BulkActionsControllerApi`](BulkActionsControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:103](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L103)
-
 ___
 
 ### commonController
 
 • `Readonly` **commonController**: [`CommonActionsControllerApi`](CommonActionsControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:102](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L102)
 
 ___
 
@@ -171,19 +147,11 @@ ___
 
 • `Readonly` **contactController**: [`ContactControllerApi`](ContactControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:109](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L109)
-
 ___
 
 ### domainController
 
 • `Readonly` **domainController**: [`DomainControllerApi`](DomainControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:108](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L108)
 
 ___
 
@@ -191,19 +159,11 @@ ___
 
 • `Readonly` **emailController**: [`EmailControllerApi`](EmailControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:98](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L98)
-
 ___
 
 ### formController
 
 • `Readonly` **formController**: [`FormControllerApi`](FormControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:107](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L107)
 
 ___
 
@@ -211,19 +171,11 @@ ___
 
 • `Readonly` **groupController**: [`GroupControllerApi`](GroupControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:110](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L110)
-
 ___
 
 ### inboxController
 
 • `Readonly` **inboxController**: [`InboxControllerApi`](InboxControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:99](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L99)
 
 ___
 
@@ -231,19 +183,11 @@ ___
 
 • `Readonly` **inboxForwarderController**: [`InboxForwarderControllerApi`](InboxForwarderControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:116](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L116)
-
 ___
 
 ### inboxRulesetController
 
 • `Readonly` **inboxRulesetController**: [`InboxRulesetControllerApi`](InboxRulesetControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:115](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L115)
 
 ___
 
@@ -251,19 +195,11 @@ ___
 
 • `Readonly` **mailServerController**: [`MailServerControllerApi`](MailServerControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:113](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L113)
-
 ___
 
 ### missedEmailController
 
 • `Readonly` **missedEmailController**: [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:114](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L114)
 
 ___
 
@@ -271,19 +207,11 @@ ___
 
 • `Readonly` **templateController**: [`TemplateControllerApi`](TemplateControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:111](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L111)
-
 ___
 
 ### trackingController
 
 • `Readonly` **trackingController**: [`TrackingControllerApi`](TrackingControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:117](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L117)
 
 ___
 
@@ -291,19 +219,11 @@ ___
 
 • `Readonly` **waitController**: [`WaitForControllerApi`](WaitForControllerApi.md)
 
-#### Defined in
-
-[src/index.ts:104](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L104)
-
 ___
 
 ### webhookController
 
 • `Readonly` **webhookController**: [`WebhookControllerApi`](WebhookControllerApi.md)
-
-#### Defined in
-
-[src/index.ts:112](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L112)
 
 ## Methods
 
@@ -334,10 +254,6 @@ Create a new inbox and with a randomized email address to send and receive from.
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
-
-[src/index.ts:188](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L188)
-
 ___
 
 ### createInboxWithOptions
@@ -356,15 +272,11 @@ Create an inbox using CreateInboxDto options. More convenient that `createInbox`
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
-
-[src/index.ts:220](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L220)
-
 ___
 
 ### deleteEmail
 
-▸ **deleteEmail**(`emailId`): `Promise`<`Response`\>
+▸ **deleteEmail**(`emailId`): `Promise`<`void`\>
 
 Deletes an email and removes it from the inbox. Deleted emails cannot be recovered.
 
@@ -378,17 +290,13 @@ Deletes an email and removes it from the inbox. Deleted emails cannot be recover
 
 #### Returns
 
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/index.ts:416](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L416)
+`Promise`<`void`\>
 
 ___
 
 ### deleteInbox
 
-▸ **deleteInbox**(`inboxId`): `Promise`<`Response`\>
+▸ **deleteInbox**(`inboxId`): `Promise`<`void`\>
 
 Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
 
@@ -402,11 +310,7 @@ Permanently delete an inbox and associated email address as well as all emails w
 
 #### Returns
 
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/index.ts:233](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L233)
+`Promise`<`void`\>
 
 ___
 
@@ -429,15 +333,11 @@ Returns the specified attachment for a given email as a byte stream (file downlo
 
 `Promise`<`String`\>
 
-#### Defined in
-
-[src/index.ts:523](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L523)
-
 ___
 
 ### emptyInbox
 
-▸ **emptyInbox**(`inboxId`): `Promise`<`Response`\>
+▸ **emptyInbox**(`inboxId`): `Promise`<`void`\>
 
 Deletes all emails
 
@@ -451,11 +351,7 @@ Deletes all emails
 
 #### Returns
 
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/index.ts:244](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L244)
+`Promise`<`void`\>
 
 ___
 
@@ -482,10 +378,6 @@ By default returns all emails across all inboxes sorted by ascending created at 
 
 `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-#### Defined in
-
-[src/index.ts:432](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L432)
-
 ___
 
 ### getAllInboxes
@@ -511,10 +403,6 @@ List inboxes in paginated form. Allows for page index, page size, and sort direc
 
 `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
 
-#### Defined in
-
-[src/index.ts:279](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L279)
-
 ___
 
 ### getAttachmentMetaData
@@ -538,10 +426,6 @@ MetaData includes name, size (bytes) and content-type.
 
 `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
-#### Defined in
-
-[src/index.ts:556](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L556)
-
 ___
 
 ### getEmail
@@ -561,10 +445,6 @@ Returns an EmailDto object with headers and content. To retrieve the raw unparse
 #### Returns
 
 `Promise`<[`Email`](../interfaces/Email.md)\>
-
-#### Defined in
-
-[src/index.ts:485](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L485)
 
 ___
 
@@ -587,10 +467,6 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 
 `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
-#### Defined in
-
-[src/index.ts:460](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L460)
-
 ___
 
 ### getInbox
@@ -611,10 +487,6 @@ Returns an inbox's properties, including its email address and ID.
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
 
-#### Defined in
-
-[src/index.ts:255](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L255)
-
 ___
 
 ### getInboxes
@@ -628,10 +500,6 @@ List the inboxes you have created
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
-
-#### Defined in
-
-[src/index.ts:265](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L265)
 
 ___
 
@@ -653,15 +521,11 @@ Returns a raw, unparsed, and unprocessed email. If your client has issues proces
 
 `Promise`<`string`\>
 
-#### Defined in
-
-[src/index.ts:496](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L496)
-
 ___
 
 ### sendEmail
 
-▸ **sendEmail**(`inboxId`, `sendEmailOptions`): `Promise`<`Response`\>
+▸ **sendEmail**(`inboxId`, `sendEmailOptions`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 Send an email from an inbox's email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox's id not the inbox's email address. See https://www.mailslurp.com/guides/ for more information on how to send emails.
 
@@ -676,11 +540,7 @@ Send an email from an inbox's email address.  The request body should contain th
 
 #### Returns
 
-`Promise`<`Response`\>
-
-#### Defined in
-
-[src/index.ts:508](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L508)
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
 ___
 
@@ -705,10 +565,6 @@ This means that attachments can easily be reused.
 
 `Promise`<`String`[]\>
 
-#### Defined in
-
-[src/index.ts:540](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L540)
-
 ___
 
 ### waitForEmailCount
@@ -732,10 +588,6 @@ If inbox contains count or more emails at time of request then return count wort
 
 `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
-#### Defined in
-
-[src/index.ts:391](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L391)
-
 ___
 
 ### waitForLatestEmail
@@ -757,10 +609,6 @@ Will return either the last received email or wait for an email to arrive and re
 #### Returns
 
 `Promise`<[`Email`](../interfaces/Email.md)\>
-
-#### Defined in
-
-[src/index.ts:309](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L309)
 
 ___
 
@@ -786,10 +634,6 @@ Perform a search of emails in an inbox with the given patterns. If results match
 
 `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
-#### Defined in
-
-[src/index.ts:362](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L362)
-
 ___
 
 ### waitForNthEmail
@@ -812,7 +656,3 @@ If nth email is already present in inbox then return it. If not hold the connect
 #### Returns
 
 `Promise`<[`Email`](../interfaces/Email.md)\>
-
-#### Defined in
-
-[src/index.ts:334](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/index.ts#L334)

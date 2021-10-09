@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ForwardEmailOptions
-
 # Interface: ForwardEmailOptions
 
 Options for forwarding an email
@@ -29,10 +27,6 @@ Optional bcc recipients
 
 **`memberof`** ForwardEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:2496](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2496)
-
 ___
 
 ### cc
@@ -42,10 +36,6 @@ ___
 Optional cc recipients
 
 **`memberof`** ForwardEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:2502](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2502)
 
 ___
 
@@ -57,10 +47,6 @@ Optional from override
 
 **`memberof`** ForwardEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:2508](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2508)
-
 ___
 
 ### subject
@@ -70,10 +56,6 @@ ___
 Subject for forwarded email
 
 **`memberof`** ForwardEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:2514](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2514)
 
 ___
 
@@ -85,10 +67,6 @@ To recipients for forwarded email
 
 **`memberof`** ForwardEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:2520](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2520)
-
 ___
 
 ### useInboxName
@@ -98,7 +76,3 @@ ___
 Optionally use inbox name as display name for sender email address
 
 **`memberof`** ForwardEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:2526](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L2526)

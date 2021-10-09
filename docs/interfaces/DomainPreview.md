@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / DomainPreview
-
 # Interface: DomainPreview
 
 Preview object for domain entity
@@ -27,10 +25,6 @@ Preview object for domain entity
 
 **`memberof`** DomainPreview
 
-#### Defined in
-
-[src/generated/api.ts:1766](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1766)
-
 ___
 
 ### createdAt
@@ -38,10 +32,6 @@ ___
 • **createdAt**: `Date`
 
 **`memberof`** DomainPreview
-
-#### Defined in
-
-[src/generated/api.ts:1772](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1772)
 
 ___
 
@@ -51,21 +41,13 @@ ___
 
 **`memberof`** DomainPreview
 
-#### Defined in
-
-[src/generated/api.ts:1778](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1778)
-
 ___
 
 ### domainType
 
-• **domainType**: [`DomainTypeEnum`](../enums/DomainPreview.DomainTypeEnum.md)
+• **domainType**: [`DomainPreviewDomainTypeEnum`](../enums/DomainPreviewDomainTypeEnum.md)
 
 **`memberof`** DomainPreview
-
-#### Defined in
-
-[src/generated/api.ts:1784](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1784)
 
 ___
 
@@ -75,10 +57,6 @@ ___
 
 **`memberof`** DomainPreview
 
-#### Defined in
-
-[src/generated/api.ts:1790](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1790)
-
 ___
 
 ### isVerified
@@ -86,7 +64,3 @@ ___
 • **isVerified**: `boolean`
 
 **`memberof`** DomainPreview
-
-#### Defined in
-
-[src/generated/api.ts:1796](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L1796)

@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / JSONSchemaDto
-
 # Interface: JSONSchemaDto
 
 **`export`**
@@ -19,7 +17,3 @@
 • **value**: `string`
 
 **`memberof`** JSONSchemaDto
-
-#### Defined in
-
-[src/generated/api.ts:3072](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L3072)

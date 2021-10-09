@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / ReplyToEmailOptions
-
 # Interface: ReplyToEmailOptions
 
 Options for replying to email with API
@@ -33,10 +31,6 @@ List of uploaded attachments to send with the reply. Optional.
 
 **`memberof`** ReplyToEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5100](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5100)
-
 ___
 
 ### body
@@ -46,10 +40,6 @@ ___
 Body of the reply email you want to send
 
 **`memberof`** ReplyToEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5106](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5106)
 
 ___
 
@@ -61,10 +51,6 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 
 **`memberof`** ReplyToEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5112](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5112)
-
 ___
 
 ### from
@@ -74,10 +60,6 @@ ___
 The from header that should be used. Optional
 
 **`memberof`** ReplyToEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5118](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5118)
 
 ___
 
@@ -89,10 +71,6 @@ Is the reply HTML
 
 **`memberof`** ReplyToEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5124](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5124)
-
 ___
 
 ### replyTo
@@ -103,23 +81,15 @@ The replyTo header that should be used. Optional
 
 **`memberof`** ReplyToEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5130](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5130)
-
 ___
 
 ### sendStrategy
 
-• `Optional` **sendStrategy**: [`SendStrategyEnum`](../enums/ReplyToEmailOptions.SendStrategyEnum.md)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single_message)
 
 When to send the email. Typically immediately
 
 **`memberof`** ReplyToEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5136](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5136)
 
 ___
 
@@ -131,23 +101,15 @@ Template ID to use instead of body. Will use template variable map to fill defin
 
 **`memberof`** ReplyToEmailOptions
 
-#### Defined in
-
-[src/generated/api.ts:5142](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5142)
-
 ___
 
 ### templateVariables
 
-• `Optional` **templateVariables**: `any`
+• `Optional` **templateVariables**: `object`
 
 Template variables if using a template
 
 **`memberof`** ReplyToEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5148](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5148)
 
 ___
 
@@ -158,7 +120,3 @@ ___
 Optionally use inbox name as display name for sender email address
 
 **`memberof`** ReplyToEmailOptions
-
-#### Defined in
-
-[src/generated/api.ts:5154](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5154)

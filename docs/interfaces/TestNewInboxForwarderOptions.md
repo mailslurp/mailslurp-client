@@ -1,5 +1,3 @@
-[MailSlurp JS](../README.md) / TestNewInboxForwarderOptions
-
 # Interface: TestNewInboxForwarderOptions
 
 **`export`**
@@ -21,10 +19,6 @@
 
 **`memberof`** TestNewInboxForwarderOptions
 
-#### Defined in
-
-[src/generated/api.ts:5704](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5704)
-
 ___
 
 ### inboxForwarderTestOptions
@@ -32,7 +26,3 @@ ___
 • **inboxForwarderTestOptions**: [`InboxForwarderTestOptions`](InboxForwarderTestOptions.md)
 
 **`memberof`** TestNewInboxForwarderOptions
-
-#### Defined in
-
-[src/generated/api.ts:5698](https://github.com/mailslurp/mailslurp-client/blob/5523864/src/generated/api.ts#L5698)
