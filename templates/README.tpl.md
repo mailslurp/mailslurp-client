@@ -23,8 +23,9 @@ Here are some links to get started (or see below for code examples).
 - [Main class methods](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/)
 - [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
+- [REST API Docs](https://www.mailslurp.com/docs/api/)
+- [GraphQL Client](https://www.mailslurp.com/guides/graphql-email-api)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
-
 
 ## Get started
 

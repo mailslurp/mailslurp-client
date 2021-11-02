@@ -156,6 +156,7 @@
 - [ContactDto](interfaces/ContactDto.md)
 - [ContactProjection](interfaces/ContactProjection.md)
 - [ContentMatchOptions](interfaces/ContentMatchOptions.md)
+- [CountDto](interfaces/CountDto.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
 - [CreateAliasRequest](interfaces/CreateAliasRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
@@ -274,6 +275,7 @@
 - [GetGroupRequest](interfaces/GetGroupRequest.md)
 - [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
 - [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
+- [GetInboxEmailCountRequest](interfaces/GetInboxEmailCountRequest.md)
 - [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
 - [GetInboxForwardersRequest](interfaces/GetInboxForwardersRequest.md)
@@ -505,6 +507,9 @@
 - [ContentMatchOptionsFromJSON](README.md#contentmatchoptionsfromjson)
 - [ContentMatchOptionsFromJSONTyped](README.md#contentmatchoptionsfromjsontyped)
 - [ContentMatchOptionsToJSON](README.md#contentmatchoptionstojson)
+- [CountDtoFromJSON](README.md#countdtofromjson)
+- [CountDtoFromJSONTyped](README.md#countdtofromjsontyped)
+- [CountDtoToJSON](README.md#countdtotojson)
 - [CreateAliasOptionsFromJSON](README.md#createaliasoptionsfromjson)
 - [CreateAliasOptionsFromJSONTyped](README.md#createaliasoptionsfromjsontyped)
 - [CreateAliasOptionsToJSON](README.md#createaliasoptionstojson)
@@ -1785,6 +1790,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ContentMatchOptions`](interfaces/ContentMatchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CountDtoFromJSON
+
+▸ **CountDtoFromJSON**(`json`): [`CountDto`](interfaces/CountDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CountDto`](interfaces/CountDto.md)
+
+___
+
+### CountDtoFromJSONTyped
+
+▸ **CountDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CountDto`](interfaces/CountDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CountDto`](interfaces/CountDto.md)
+
+___
+
+### CountDtoToJSON
+
+▸ **CountDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CountDto`](interfaces/CountDto.md) |
 
 #### Returns
 

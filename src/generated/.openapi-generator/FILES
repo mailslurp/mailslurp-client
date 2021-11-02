@@ -39,6 +39,7 @@ models/ConditionOption.ts
 models/ContactDto.ts
 models/ContactProjection.ts
 models/ContentMatchOptions.ts
+models/CountDto.ts
 models/CreateAliasOptions.ts
 models/CreateContactOptions.ts
 models/CreateDomainOptions.ts

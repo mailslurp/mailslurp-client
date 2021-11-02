@@ -20,6 +20,9 @@ import {
   ContentMatchOptions,
   ContentMatchOptionsFromJSON,
   ContentMatchOptionsToJSON,
+  CountDto,
+  CountDtoFromJSON,
+  CountDtoToJSON,
   DownloadAttachmentDto,
   DownloadAttachmentDtoFromJSON,
   DownloadAttachmentDtoToJSON,
@@ -888,6 +891,43 @@ export class EmailControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get email count
+   */
+  async getEmailCountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/emails/count`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get email count
+   */
+  async getEmailCount(initOverrides?: RequestInit): Promise<CountDto> {
+    const response = await this.getEmailCountRaw(initOverrides);
     return await response.value();
   }
 

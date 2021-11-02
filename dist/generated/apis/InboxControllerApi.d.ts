@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, Inbox, InboxExistsDto, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, Inbox, InboxExistsDto, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     allowTeamAccess?: boolean;
     description?: string;
@@ -63,6 +63,9 @@ export interface GetEmailsRequest {
     unreadOnly?: boolean;
 }
 export interface GetInboxRequest {
+    inboxId: string;
+}
+export interface GetInboxEmailCountRequest {
     inboxId: string;
 }
 export interface GetInboxEmailsPaginatedRequest {
@@ -245,6 +248,22 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get Inbox. Returns properties of an inbox.
      */
     getInbox(requestParameters: GetInboxRequest, initOverrides?: RequestInit): Promise<Inbox>;
+    /**
+     * Get total inbox count
+     */
+    getInboxCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get total inbox count
+     */
+    getInboxCount(initOverrides?: RequestInit): Promise<CountDto>;
+    /**
+     * Get email count in inbox
+     */
+    getInboxEmailCountRaw(requestParameters: GetInboxEmailCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get email count in inbox
+     */
+    getInboxEmailCount(requestParameters: GetInboxEmailCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
     /**
      * Get a paginated list of emails in an inbox. Does not hold connections open.
      * Get inbox emails paginated

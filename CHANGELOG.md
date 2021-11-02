@@ -1,4 +1,7 @@
 # Changelog
+## [15.0.2]
+- Add graphql changes to README.
+
 ## [15.0.0]
 - Change method signature of controllers to use a single request parameter instead of many individual parameters.
 

@@ -28,6 +28,7 @@ __exportStar(require("./ConditionOption"), exports);
 __exportStar(require("./ContactDto"), exports);
 __exportStar(require("./ContactProjection"), exports);
 __exportStar(require("./ContentMatchOptions"), exports);
+__exportStar(require("./CountDto"), exports);
 __exportStar(require("./CreateAliasOptions"), exports);
 __exportStar(require("./CreateContactOptions"), exports);
 __exportStar(require("./CreateDomainOptions"), exports);

@@ -16,6 +16,7 @@ export * from './ConditionOption';
 export * from './ContactDto';
 export * from './ContactProjection';
 export * from './ContentMatchOptions';
+export * from './CountDto';
 export * from './CreateAliasOptions';
 export * from './CreateContactOptions';
 export * from './CreateDomainOptions';

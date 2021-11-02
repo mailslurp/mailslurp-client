@@ -39,6 +39,10 @@
 - [getEmails](InboxControllerApi.md#getemails)
 - [getEmailsRaw](InboxControllerApi.md#getemailsraw)
 - [getInbox](InboxControllerApi.md#getinbox)
+- [getInboxCount](InboxControllerApi.md#getinboxcount)
+- [getInboxCountRaw](InboxControllerApi.md#getinboxcountraw)
+- [getInboxEmailCount](InboxControllerApi.md#getinboxemailcount)
+- [getInboxEmailCountRaw](InboxControllerApi.md#getinboxemailcountraw)
 - [getInboxEmailsPaginated](InboxControllerApi.md#getinboxemailspaginated)
 - [getInboxEmailsPaginatedRaw](InboxControllerApi.md#getinboxemailspaginatedraw)
 - [getInboxRaw](InboxControllerApi.md#getinboxraw)
@@ -508,6 +512,80 @@ Get Inbox. Returns properties of an inbox.
 #### Returns
 
 `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+
+___
+
+### getInboxCount
+
+▸ **getInboxCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get total inbox count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getInboxCountRaw
+
+▸ **getInboxCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get total inbox count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+___
+
+### getInboxEmailCount
+
+▸ **getInboxEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxEmailCountRequest`](../interfaces/GetInboxEmailCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getInboxEmailCountRaw
+
+▸ **getInboxEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get email count in inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxEmailCountRequest`](../interfaces/GetInboxEmailCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 ___
 

@@ -39,6 +39,8 @@
 - [getEmail](EmailControllerApi.md#getemail)
 - [getEmailContentMatch](EmailControllerApi.md#getemailcontentmatch)
 - [getEmailContentMatchRaw](EmailControllerApi.md#getemailcontentmatchraw)
+- [getEmailCount](EmailControllerApi.md#getemailcount)
+- [getEmailCountRaw](EmailControllerApi.md#getemailcountraw)
 - [getEmailHTML](EmailControllerApi.md#getemailhtml)
 - [getEmailHTMLQuery](EmailControllerApi.md#getemailhtmlquery)
 - [getEmailHTMLQueryRaw](EmailControllerApi.md#getemailhtmlqueryraw)
@@ -520,6 +522,42 @@ Get email content regex pattern match results. Runs regex against email body and
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>\>
+
+___
+
+### getEmailCount
+
+▸ **getEmailCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get email count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getEmailCountRaw
+
+▸ **getEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get email count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 ___
 

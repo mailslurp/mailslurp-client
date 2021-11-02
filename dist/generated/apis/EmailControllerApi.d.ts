@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, ContentMatchOptions, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface DeleteEmailRequest {
     emailId: string;
 }
@@ -230,6 +230,14 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Get email content regex pattern match results. Runs regex against email body and returns match groups.
      */
     getEmailContentMatch(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit): Promise<EmailContentMatchResult>;
+    /**
+     * Get email count
+     */
+    getEmailCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get email count
+     */
+    getEmailCount(initOverrides?: RequestInit): Promise<CountDto>;
     /**
      * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
      * Get email content as HTML. For displaying emails in browser context.

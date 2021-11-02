@@ -14,6 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
+  CountDto,
+  CountDtoFromJSON,
+  CountDtoToJSON,
   CreateInboxDto,
   CreateInboxDtoFromJSON,
   CreateInboxDtoToJSON,
@@ -127,6 +130,10 @@ export interface GetEmailsRequest {
 }
 
 export interface GetInboxRequest {
+  inboxId: string;
+}
+
+export interface GetInboxEmailCountRequest {
   inboxId: string;
 }
 
@@ -903,6 +910,100 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Inbox> {
     const response = await this.getInboxRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get total inbox count
+   */
+  async getInboxCountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/count`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get total inbox count
+   */
+  async getInboxCount(initOverrides?: RequestInit): Promise<CountDto> {
+    const response = await this.getInboxCountRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get email count in inbox
+   */
+  async getInboxEmailCountRaw(
+    requestParameters: GetInboxEmailCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getInboxEmailCount.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/emails/count`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get email count in inbox
+   */
+  async getInboxEmailCount(
+    requestParameters: GetInboxEmailCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<CountDto> {
+    const response = await this.getInboxEmailCountRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
