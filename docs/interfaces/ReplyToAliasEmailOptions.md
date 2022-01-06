@@ -33,7 +33,7 @@ ___
 
 ### body
 
-• `Optional` **body**: `string`
+• **body**: `string`
 
 Body of the reply email you want to send
 
@@ -53,7 +53,7 @@ ___
 
 ### isHTML
 
-• `Optional` **isHTML**: `boolean`
+• **isHTML**: `boolean`
 
 Is the reply HTML
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToAliasEmailOptionsSendStrategyEnum.md#single_message)
 
-When to send the email. Typically immediately
+How an email should be sent based on its recipients
 
 **`memberof`** ReplyToAliasEmailOptions
 
@@ -83,11 +83,15 @@ ___
 
 ### templateVariables
 
-• `Optional` **templateVariables**: `object`
+• `Optional` **templateVariables**: `Object`
 
 Template variables if using a template
 
 **`memberof`** ReplyToAliasEmailOptions
+
+#### Index signature
+
+▪ [key: `string`]: `object`
 
 ___
 

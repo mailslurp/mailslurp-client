@@ -4,17 +4,17 @@
 
 ### Properties
 
+- [createWebhookOptions](CreateWebhookRequest.md#createwebhookoptions)
 - [inboxId](CreateWebhookRequest.md#inboxid)
-- [webhookOptions](CreateWebhookRequest.md#webhookoptions)
 
 ## Properties
+
+### createWebhookOptions
+
+• **createWebhookOptions**: [`CreateWebhookOptions`](CreateWebhookOptions.md)
+
+___
 
 ### inboxId
 
 • **inboxId**: `string`
-
-___
-
-### webhookOptions
-
-• **webhookOptions**: [`CreateWebhookOptions`](CreateWebhookOptions.md)

@@ -229,7 +229,7 @@ ___
 
 ### createInbox
 
-▸ **createInbox**(`emailAddress?`, `name?`, `description?`, `expiresAt?`, `favourite?`, `tags?`, `teamAccess?`, `expiresIn?`, `useDomainPool?`, `inboxType?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInbox**(`emailAddress?`, `name?`, `description?`, `expiresAt?`, `favourite?`, `tags?`, `teamAccess?`, `expiresIn?`, `useDomainPool?`, `inboxType?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
 
@@ -252,13 +252,13 @@ Create a new inbox and with a randomized email address to send and receive from.
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### createInboxWithOptions
 
-▸ **createInboxWithOptions**(`createInboxOptions`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInboxWithOptions**(`createInboxOptions`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
 
@@ -270,7 +270,7 @@ Create an inbox using CreateInboxDto options. More convenient that `createInbox`
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
@@ -471,7 +471,7 @@ ___
 
 ### getInbox
 
-▸ **getInbox**(`inboxId`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **getInbox**(`inboxId`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Returns an inbox's properties, including its email address and ID.
 
@@ -485,13 +485,13 @@ Returns an inbox's properties, including its email address and ID.
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### getInboxes
 
-▸ **getInboxes**(): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+▸ **getInboxes**(): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 List the inboxes you have created
 
@@ -499,7 +499,7 @@ List the inboxes you have created
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 ___
 

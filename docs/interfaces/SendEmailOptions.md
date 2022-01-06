@@ -1,6 +1,6 @@
 # Interface: SendEmailOptions
 
-Options for sending an email message from an inbox. You must provide one of: `to`, `toGroup`, or `toContacts` to send an email. All other parameters are optional.
+Options for the email to be sent
 
 **`export`**
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/SendEmailOptionsSendStrategyEnum.md#single_message)
 
-Optional strategy to use when sending the email
+How an email should be sent based on its recipients
 
 **`memberof`** SendEmailOptions
 
@@ -163,11 +163,15 @@ ___
 
 ### templateVariables
 
-• `Optional` **templateVariables**: `object`
+• `Optional` **templateVariables**: `Object`
 
 Optional map of template variables. Will replace moustache syntax variables in subject and body or template with the associated values if found.
 
 **`memberof`** SendEmailOptions
+
+#### Index signature
+
+▪ [key: `string`]: `object`
 
 ___
 

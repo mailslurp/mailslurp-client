@@ -18,7 +18,7 @@ Content of attachment
 
 ### base64FileContents
 
-• `Optional` **base64FileContents**: `string`
+• **base64FileContents**: `string`
 
 Base64 encoded string of attachment bytes. Decode the base64 encoded string to get the raw contents. If the file has a content type such as `text/html` you can read the contents directly by converting it to string using `utf-8` encoding.
 
@@ -28,7 +28,7 @@ ___
 
 ### contentType
 
-• `Optional` **contentType**: `string`
+• **contentType**: `string`
 
 Content type of attachment. Examples are `image/png`, `application/msword`, `text/csv` etc.
 
@@ -38,7 +38,7 @@ ___
 
 ### sizeBytes
 
-• `Optional` **sizeBytes**: `number`
+• **sizeBytes**: `number`
 
 Size in bytes of attachment content
 

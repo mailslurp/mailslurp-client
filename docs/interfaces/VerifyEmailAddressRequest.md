@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [verifyOptions](VerifyEmailAddressRequest.md#verifyoptions)
+- [verifyEmailAddressOptions](VerifyEmailAddressRequest.md#verifyemailaddressoptions)
 
 ## Properties
 
-### verifyOptions
+### verifyEmailAddressOptions
 
-• **verifyOptions**: [`VerifyEmailAddressOptions`](VerifyEmailAddressOptions.md)
+• **verifyEmailAddressOptions**: [`VerifyEmailAddressOptions`](VerifyEmailAddressOptions.md)

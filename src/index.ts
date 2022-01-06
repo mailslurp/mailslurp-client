@@ -24,8 +24,8 @@ import {
   GetEmailsPaginatedSortEnum,
   GetEmailsSortEnum,
   GroupControllerApi,
-  Inbox,
   InboxControllerApi,
+  InboxDto,
   InboxForwarderControllerApi,
   InboxRulesetControllerApi,
   MailServerControllerApi,
@@ -195,7 +195,7 @@ export class MailSlurp {
     expiresIn?: number,
     useDomainPool?: boolean,
     inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX'
-  ): Promise<Inbox> {
+  ): Promise<InboxDto> {
     return wrapCall('createInbox', () =>
       this.inboxController.createInbox({
         description,
@@ -221,7 +221,7 @@ export class MailSlurp {
    */
   async createInboxWithOptions(
     createInboxOptions: CreateInboxDto
-  ): Promise<Inbox> {
+  ): Promise<InboxDto> {
     return wrapCall('createInbox', () =>
       this.inboxController.createInboxWithOptions({
         createInboxDto: createInboxOptions,
@@ -256,7 +256,7 @@ export class MailSlurp {
    * @summary Get Inbox
    * @param {string} inboxId inboxId
    */
-  async getInbox(inboxId: string): Promise<Inbox> {
+  async getInbox(inboxId: string): Promise<InboxDto> {
     return wrapCall('getInbox', () =>
       this.inboxController.getInbox({ inboxId })
     );
@@ -266,7 +266,7 @@ export class MailSlurp {
    * List the inboxes you have created
    * @summary List Inboxes / Email Addresses
    */
-  async getInboxes(): Promise<Inbox[]> {
+  async getInboxes(): Promise<InboxDto[]> {
     return wrapCall('getInboxes', () => this.inboxController.getInboxes({}));
   }
 
@@ -537,7 +537,9 @@ export class MailSlurp {
     options: UploadAttachmentOptions
   ): Promise<Array<String>> {
     return wrapCall('uploadAttachment', () =>
-      this.attachmentController.uploadAttachment({ uploadOptions: options })
+      this.attachmentController.uploadAttachment({
+        uploadAttachmentOptions: options,
+      })
     );
   }
 

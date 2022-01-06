@@ -19,6 +19,7 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 - [pageable](PageSentEmailProjection.md#pageable)
 - [size](PageSentEmailProjection.md#size)
 - [sort](PageSentEmailProjection.md#sort)
+- [total](PageSentEmailProjection.md#total)
 - [totalElements](PageSentEmailProjection.md#totalelements)
 - [totalPages](PageSentEmailProjection.md#totalpages)
 
@@ -26,7 +27,7 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 
 ### content
 
-• `Optional` **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
+• **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
 
 Collection of items
 
@@ -60,7 +61,7 @@ ___
 
 ### number
 
-• `Optional` **number**: `number`
+• **number**: `number`
 
 Page number starting at 0
 
@@ -70,7 +71,7 @@ ___
 
 ### numberOfElements
 
-• `Optional` **numberOfElements**: `number`
+• **numberOfElements**: `number`
 
 Number of items returned
 
@@ -80,7 +81,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageSentEmailProjection
 
@@ -88,7 +89,7 @@ ___
 
 ### size
 
-• `Optional` **size**: `number`
+• **size**: `number`
 
 Size of page requested
 
@@ -104,9 +105,17 @@ ___
 
 ___
 
+### total
+
+• `Optional` **total**: `number`
+
+**`memberof`** PageSentEmailProjection
+
+___
+
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 Total number of items available for querying
 
@@ -116,7 +125,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 Total number of pages available
 

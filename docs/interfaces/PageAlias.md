@@ -19,6 +19,7 @@ Paginated email alias results. Page index starts at zero. Projection results may
 - [pageable](PageAlias.md#pageable)
 - [size](PageAlias.md#size)
 - [sort](PageAlias.md#sort)
+- [total](PageAlias.md#total)
 - [totalElements](PageAlias.md#totalelements)
 - [totalPages](PageAlias.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageAlias
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageAlias
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageAlias
 

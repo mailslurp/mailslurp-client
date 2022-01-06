@@ -116,7 +116,7 @@ ___
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 When was the email received by MailSlurp
 
@@ -150,7 +150,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of the email entity
 
@@ -160,7 +160,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 ID of the inbox that received the email
 
@@ -172,7 +172,7 @@ ___
 
 • `Optional` **isHTML**: `boolean`
 
-Is the email body HTML
+Is the email body content type HTML?
 
 **`memberof`** Email
 
@@ -180,7 +180,7 @@ ___
 
 ### read
 
-• `Optional` **read**: `boolean`
+• **read**: `boolean`
 
 Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
 
@@ -226,7 +226,7 @@ ___
 
 ### teamAccess
 
-• `Optional` **teamAccess**: `boolean`
+• **teamAccess**: `boolean`
 
 Can the email be accessed by organization team members
 
@@ -236,7 +236,7 @@ ___
 
 ### to
 
-• `Optional` **to**: `string`[]
+• **to**: `string`[]
 
 List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 
@@ -246,7 +246,7 @@ ___
 
 ### updatedAt
 
-• `Optional` **updatedAt**: `Date`
+• **updatedAt**: `Date`
 
 When was the email last updated
 
@@ -256,7 +256,7 @@ ___
 
 ### userId
 
-• `Optional` **userId**: `string`
+• **userId**: `string`
 
 ID of user that email belongs to
 

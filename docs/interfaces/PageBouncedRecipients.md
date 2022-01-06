@@ -19,6 +19,7 @@ Paginated bounced recipients. Page index starts at zero. Projection results may 
 - [pageable](PageBouncedRecipients.md#pageable)
 - [size](PageBouncedRecipients.md#size)
 - [sort](PageBouncedRecipients.md#sort)
+- [total](PageBouncedRecipients.md#total)
 - [totalElements](PageBouncedRecipients.md#totalelements)
 - [totalPages](PageBouncedRecipients.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageBouncedRecipients
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageBouncedRecipients
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageBouncedRecipients
 

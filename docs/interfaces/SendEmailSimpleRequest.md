@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [emailOptions](SendEmailSimpleRequest.md#emailoptions)
+- [simpleSendEmailOptions](SendEmailSimpleRequest.md#simplesendemailoptions)
 
 ## Properties
 
-### emailOptions
+### simpleSendEmailOptions
 
-• **emailOptions**: [`SimpleSendEmailOptions`](SimpleSendEmailOptions.md)
+• **simpleSendEmailOptions**: [`SimpleSendEmailOptions`](SimpleSendEmailOptions.md)

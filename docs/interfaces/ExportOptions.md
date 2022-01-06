@@ -53,7 +53,7 @@ ___
 
 ### listSeparatorToken
 
-• `Optional` **listSeparatorToken**: `object`
+• `Optional` **listSeparatorToken**: `string`
 
 **`memberof`** ExportOptions
 

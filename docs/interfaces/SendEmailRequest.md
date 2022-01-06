@@ -17,4 +17,4 @@ ___
 
 ### sendEmailOptions
 
-• `Optional` **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
+• **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)

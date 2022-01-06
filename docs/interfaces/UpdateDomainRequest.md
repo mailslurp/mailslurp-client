@@ -5,7 +5,7 @@
 ### Properties
 
 - [id](UpdateDomainRequest.md#id)
-- [updateDomainDto](UpdateDomainRequest.md#updatedomaindto)
+- [updateDomainOptions](UpdateDomainRequest.md#updatedomainoptions)
 
 ## Properties
 
@@ -15,6 +15,6 @@
 
 ___
 
-### updateDomainDto
+### updateDomainOptions
 
-• **updateDomainDto**: [`UpdateDomainOptions`](UpdateDomainOptions.md)
+• **updateDomainOptions**: [`UpdateDomainOptions`](UpdateDomainOptions.md)

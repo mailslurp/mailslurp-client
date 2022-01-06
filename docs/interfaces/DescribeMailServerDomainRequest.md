@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [describeOptions](DescribeMailServerDomainRequest.md#describeoptions)
+- [describeDomainOptions](DescribeMailServerDomainRequest.md#describedomainoptions)
 
 ## Properties
 
-### describeOptions
+### describeDomainOptions
 
-• **describeOptions**: [`DescribeDomainOptions`](DescribeDomainOptions.md)
+• **describeDomainOptions**: [`DescribeDomainOptions`](DescribeDomainOptions.md)

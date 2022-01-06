@@ -19,6 +19,7 @@ Paginated email preview results. EmailProjections and EmailPreviews are essentia
 - [pageable](PageEmailPreview.md#pageable)
 - [size](PageEmailPreview.md#size)
 - [sort](PageEmailPreview.md#sort)
+- [total](PageEmailPreview.md#total)
 - [totalElements](PageEmailPreview.md#totalelements)
 - [totalPages](PageEmailPreview.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageEmailPreview
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageEmailPreview
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageEmailPreview
 

@@ -41,7 +41,7 @@
 - [GetAllUnknownMissedEmailsSortEnum](enums/GetAllUnknownMissedEmailsSortEnum.md)
 - [GetAllWebhookResultsSortEnum](enums/GetAllWebhookResultsSortEnum.md)
 - [GetAllWebhooksSortEnum](enums/GetAllWebhooksSortEnum.md)
-- [GetAttachmentsSortEnum](enums/GetAttachmentsSortEnum.md)
+- [GetAttachments1SortEnum](enums/GetAttachments1SortEnum.md)
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
 - [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
@@ -62,8 +62,8 @@
 - [GetSentOrganizationEmailsSortEnum](enums/GetSentOrganizationEmailsSortEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
 - [GetWebhookResultsSortEnum](enums/GetWebhookResultsSortEnum.md)
+- [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
-- [InboxInboxTypeEnum](enums/InboxInboxTypeEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
 - [InboxRulesetDtoActionEnum](enums/InboxRulesetDtoActionEnum.md)
 - [InboxRulesetDtoHandlerEnum](enums/InboxRulesetDtoHandlerEnum.md)
@@ -188,6 +188,7 @@
 - [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
+- [DeleteEmailAddressRequest](interfaces/DeleteEmailAddressRequest.md)
 - [DeleteEmailRequest](interfaces/DeleteEmailRequest.md)
 - [DeleteGroupRequest](interfaces/DeleteGroupRequest.md)
 - [DeleteInboxForwarderRequest](interfaces/DeleteInboxForwarderRequest.md)
@@ -195,6 +196,7 @@
 - [DeleteInboxRequest](interfaces/DeleteInboxRequest.md)
 - [DeleteInboxRulesetRequest](interfaces/DeleteInboxRulesetRequest.md)
 - [DeleteInboxRulesetsRequest](interfaces/DeleteInboxRulesetsRequest.md)
+- [DeleteSentEmailRequest](interfaces/DeleteSentEmailRequest.md)
 - [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
 - [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
 - [DescribeDomainOptions](interfaces/DescribeDomainOptions.md)
@@ -314,7 +316,7 @@
 - [GroupProjection](interfaces/GroupProjection.md)
 - [HTMLValidationResult](interfaces/HTMLValidationResult.md)
 - [IPAddressResult](interfaces/IPAddressResult.md)
-- [Inbox](interfaces/Inbox.md)
+- [InboxDto](interfaces/InboxDto.md)
 - [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
@@ -323,6 +325,7 @@
 - [InboxRulesetDto](interfaces/InboxRulesetDto.md)
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
+- [InlineObject](interfaces/InlineObject.md)
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [ListInboxRulesetsRequest](interfaces/ListInboxRulesetsRequest.md)
 - [ListInboxTrackingPixelsRequest](interfaces/ListInboxTrackingPixelsRequest.md)
@@ -355,7 +358,7 @@
 - [PageUnknownMissedEmailProjection](interfaces/PageUnknownMissedEmailProjection.md)
 - [PageWebhookProjection](interfaces/PageWebhookProjection.md)
 - [PageWebhookResult](interfaces/PageWebhookResult.md)
-- [Pageable](interfaces/Pageable.md)
+- [PageableObject](interfaces/PageableObject.md)
 - [RawEmailJson](interfaces/RawEmailJson.md)
 - [Recipient](interfaces/Recipient.md)
 - [RedriveWebhookResultRequest](interfaces/RedriveWebhookResultRequest.md)
@@ -633,6 +636,9 @@
 - [IPAddressResultFromJSON](README.md#ipaddressresultfromjson)
 - [IPAddressResultFromJSONTyped](README.md#ipaddressresultfromjsontyped)
 - [IPAddressResultToJSON](README.md#ipaddressresulttojson)
+- [InboxDtoFromJSON](README.md#inboxdtofromjson)
+- [InboxDtoFromJSONTyped](README.md#inboxdtofromjsontyped)
+- [InboxDtoToJSON](README.md#inboxdtotojson)
 - [InboxExistsDtoFromJSON](README.md#inboxexistsdtofromjson)
 - [InboxExistsDtoFromJSONTyped](README.md#inboxexistsdtofromjsontyped)
 - [InboxExistsDtoToJSON](README.md#inboxexistsdtotojson)
@@ -645,8 +651,6 @@
 - [InboxForwarderTestResultFromJSON](README.md#inboxforwardertestresultfromjson)
 - [InboxForwarderTestResultFromJSONTyped](README.md#inboxforwardertestresultfromjsontyped)
 - [InboxForwarderTestResultToJSON](README.md#inboxforwardertestresulttojson)
-- [InboxFromJSON](README.md#inboxfromjson)
-- [InboxFromJSONTyped](README.md#inboxfromjsontyped)
 - [InboxPreviewFromJSON](README.md#inboxpreviewfromjson)
 - [InboxPreviewFromJSONTyped](README.md#inboxpreviewfromjsontyped)
 - [InboxPreviewToJSON](README.md#inboxpreviewtojson)
@@ -659,7 +663,9 @@
 - [InboxRulesetTestResultFromJSON](README.md#inboxrulesettestresultfromjson)
 - [InboxRulesetTestResultFromJSONTyped](README.md#inboxrulesettestresultfromjsontyped)
 - [InboxRulesetTestResultToJSON](README.md#inboxrulesettestresulttojson)
-- [InboxToJSON](README.md#inboxtojson)
+- [InlineObjectFromJSON](README.md#inlineobjectfromjson)
+- [InlineObjectFromJSONTyped](README.md#inlineobjectfromjsontyped)
+- [InlineObjectToJSON](README.md#inlineobjecttojson)
 - [JSONSchemaDtoFromJSON](README.md#jsonschemadtofromjson)
 - [JSONSchemaDtoFromJSONTyped](README.md#jsonschemadtofromjsontyped)
 - [JSONSchemaDtoToJSON](README.md#jsonschemadtotojson)
@@ -744,9 +750,9 @@
 - [PageWebhookResultFromJSON](README.md#pagewebhookresultfromjson)
 - [PageWebhookResultFromJSONTyped](README.md#pagewebhookresultfromjsontyped)
 - [PageWebhookResultToJSON](README.md#pagewebhookresulttojson)
-- [PageableFromJSON](README.md#pageablefromjson)
-- [PageableFromJSONTyped](README.md#pageablefromjsontyped)
-- [PageableToJSON](README.md#pageabletojson)
+- [PageableObjectFromJSON](README.md#pageableobjectfromjson)
+- [PageableObjectFromJSONTyped](README.md#pageableobjectfromjsontyped)
+- [PageableObjectToJSON](README.md#pageableobjecttojson)
 - [RawEmailJsonFromJSON](README.md#rawemailjsonfromjson)
 - [RawEmailJsonFromJSONTyped](README.md#rawemailjsonfromjsontyped)
 - [RawEmailJsonToJSON](README.md#rawemailjsontojson)
@@ -991,6 +997,7 @@ MailSlurp API
 MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
 
 The version of the OpenAPI document: 6.5.2
+Contact: contact@mailslurp.dev
 
 NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
 https://openapi-generator.tech
@@ -3855,6 +3862,55 @@ ___
 
 ___
 
+### InboxDtoFromJSON
+
+▸ **InboxDtoFromJSON**(`json`): [`InboxDto`](interfaces/InboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxDto`](interfaces/InboxDto.md)
+
+___
+
+### InboxDtoFromJSONTyped
+
+▸ **InboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxDto`](interfaces/InboxDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxDto`](interfaces/InboxDto.md)
+
+___
+
+### InboxDtoToJSON
+
+▸ **InboxDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxDto`](interfaces/InboxDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### InboxExistsDtoFromJSON
 
 ▸ **InboxExistsDtoFromJSON**(`json`): [`InboxExistsDto`](interfaces/InboxExistsDto.md)
@@ -4048,39 +4104,6 @@ ___
 #### Returns
 
 `any`
-
-___
-
-### InboxFromJSON
-
-▸ **InboxFromJSON**(`json`): [`Inbox`](interfaces/Inbox.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`Inbox`](interfaces/Inbox.md)
-
-___
-
-### InboxFromJSONTyped
-
-▸ **InboxFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Inbox`](interfaces/Inbox.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`Inbox`](interfaces/Inbox.md)
 
 ___
 
@@ -4280,15 +4303,48 @@ ___
 
 ___
 
-### InboxToJSON
+### InlineObjectFromJSON
 
-▸ **InboxToJSON**(`value?`): `any`
+▸ **InlineObjectFromJSON**(`json`): [`InlineObject`](interfaces/InlineObject.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`Inbox`](interfaces/Inbox.md) |
+| `json` | `any` |
+
+#### Returns
+
+[`InlineObject`](interfaces/InlineObject.md)
+
+___
+
+### InlineObjectFromJSONTyped
+
+▸ **InlineObjectFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject`](interfaces/InlineObject.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InlineObject`](interfaces/InlineObject.md)
+
+___
+
+### InlineObjectToJSON
+
+▸ **InlineObjectToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InlineObject`](interfaces/InlineObject.md) |
 
 #### Returns
 
@@ -5668,9 +5724,9 @@ ___
 
 ___
 
-### PageableFromJSON
+### PageableObjectFromJSON
 
-▸ **PageableFromJSON**(`json`): [`Pageable`](interfaces/Pageable.md)
+▸ **PageableObjectFromJSON**(`json`): [`PageableObject`](interfaces/PageableObject.md)
 
 #### Parameters
 
@@ -5680,13 +5736,13 @@ ___
 
 #### Returns
 
-[`Pageable`](interfaces/Pageable.md)
+[`PageableObject`](interfaces/PageableObject.md)
 
 ___
 
-### PageableFromJSONTyped
+### PageableObjectFromJSONTyped
 
-▸ **PageableFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Pageable`](interfaces/Pageable.md)
+▸ **PageableObjectFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageableObject`](interfaces/PageableObject.md)
 
 #### Parameters
 
@@ -5697,19 +5753,19 @@ ___
 
 #### Returns
 
-[`Pageable`](interfaces/Pageable.md)
+[`PageableObject`](interfaces/PageableObject.md)
 
 ___
 
-### PageableToJSON
+### PageableObjectToJSON
 
-▸ **PageableToJSON**(`value?`): `any`
+▸ **PageableObjectToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`Pageable`](interfaces/Pageable.md) |
+| `value?` | [`PageableObject`](interfaces/PageableObject.md) |
 
 #### Returns
 

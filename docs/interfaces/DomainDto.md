@@ -44,7 +44,7 @@ ___
 
 ### dkimTokens
 
-• `Optional` **dkimTokens**: `string`[]
+• **dkimTokens**: `string`[]
 
 Unique token DKIM tokens
 
@@ -54,7 +54,7 @@ ___
 
 ### domain
 
-• `Optional` **domain**: `string`
+• **domain**: `string`
 
 Custom domain name
 
@@ -64,7 +64,7 @@ ___
 
 ### domainNameRecords
 
-• `Optional` **domainNameRecords**: [`DomainNameRecord`](DomainNameRecord.md)[]
+• **domainNameRecords**: [`DomainNameRecord`](DomainNameRecord.md)[]
 
 List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS server associated with your domain provider.
 
@@ -74,9 +74,9 @@ ___
 
 ### domainType
 
-• `Optional` **domainType**: [`DomainDtoDomainTypeEnum`](../enums/DomainDtoDomainTypeEnum.md)
+• **domainType**: [`DomainDtoDomainTypeEnum`](../enums/DomainDtoDomainTypeEnum.md)
 
-The type of domain. SMTP or HTTP domains differ in what inboxes can be used with them.
+Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
 
 **`memberof`** DomainDto
 
@@ -92,7 +92,7 @@ ___
 
 ### isVerified
 
-• `Optional` **isVerified**: `boolean`
+• **isVerified**: `boolean`
 
 Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
 
@@ -118,7 +118,7 @@ ___
 
 ### verificationToken
 
-• `Optional` **verificationToken**: `string`
+• **verificationToken**: `string`
 
 Verification tokens
 

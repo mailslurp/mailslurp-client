@@ -29,7 +29,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 ___
 

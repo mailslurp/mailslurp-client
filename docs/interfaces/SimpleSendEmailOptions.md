@@ -47,7 +47,7 @@ ___
 
 ### to
 
-• `Optional` **to**: `string`
+• **to**: `string`
 
 Email address to send to
 

@@ -37,6 +37,8 @@ ___
 
 • **recordType**: [`DNSLookupResultRecordTypeEnum`](../enums/DNSLookupResultRecordTypeEnum.md)
 
+Domain Name Server Record Types
+
 **`memberof`** DNSLookupResult
 
 ___

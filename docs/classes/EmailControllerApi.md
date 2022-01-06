@@ -34,8 +34,8 @@
 - [forwardEmailRaw](EmailControllerApi.md#forwardemailraw)
 - [getAttachmentMetaData](EmailControllerApi.md#getattachmentmetadata)
 - [getAttachmentMetaDataRaw](EmailControllerApi.md#getattachmentmetadataraw)
-- [getAttachments1](EmailControllerApi.md#getattachments1)
-- [getAttachments1Raw](EmailControllerApi.md#getattachments1raw)
+- [getAttachments](EmailControllerApi.md#getattachments)
+- [getAttachmentsRaw](EmailControllerApi.md#getattachmentsraw)
 - [getEmail](EmailControllerApi.md#getemail)
 - [getEmailContentMatch](EmailControllerApi.md#getemailcontentmatch)
 - [getEmailContentMatchRaw](EmailControllerApi.md#getemailcontentmatchraw)
@@ -425,9 +425,9 @@ Get email attachment metadata. This is the `contentType` and `contentLength` of 
 
 ___
 
-### getAttachments1
+### getAttachments
 
-▸ **getAttachments1**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>
+▸ **getAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>
 
 Returns an array of attachment metadata such as name and content-type for a given email if present.
 Get all email attachment metadata. Metadata includes name and size of attachments.
@@ -436,7 +436,7 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -445,9 +445,9 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 ___
 
-### getAttachments1Raw
+### getAttachmentsRaw
 
-▸ **getAttachments1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>\>
+▸ **getAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>\>
 
 Returns an array of attachment metadata such as name and content-type for a given email if present.
 Get all email attachment metadata. Metadata includes name and size of attachments.
@@ -456,7 +456,7 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

@@ -19,6 +19,7 @@ Paginated bounced email. Page index starts at zero. Projection results may omit 
 - [pageable](PageBouncedEmail.md#pageable)
 - [size](PageBouncedEmail.md#size)
 - [sort](PageBouncedEmail.md#sort)
+- [total](PageBouncedEmail.md#total)
 - [totalElements](PageBouncedEmail.md#totalelements)
 - [totalPages](PageBouncedEmail.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageBouncedEmail
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageBouncedEmail
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageBouncedEmail
 

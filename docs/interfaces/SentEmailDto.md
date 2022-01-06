@@ -91,7 +91,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of sent email
 
@@ -101,7 +101,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 Inbox ID email was sent from
 
@@ -161,7 +161,7 @@ ___
 
 ### userId
 
-• `Optional` **userId**: `string`
+• **userId**: `string`
 
 User ID
 

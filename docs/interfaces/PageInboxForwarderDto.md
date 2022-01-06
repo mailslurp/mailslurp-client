@@ -19,6 +19,7 @@ Paginated inbox forwarder results. Page index starts at zero. Projection results
 - [pageable](PageInboxForwarderDto.md#pageable)
 - [size](PageInboxForwarderDto.md#size)
 - [sort](PageInboxForwarderDto.md#sort)
+- [total](PageInboxForwarderDto.md#total)
 - [totalElements](PageInboxForwarderDto.md#totalelements)
 - [totalPages](PageInboxForwarderDto.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageInboxForwarderDto
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageInboxForwarderDto
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageInboxForwarderDto
 

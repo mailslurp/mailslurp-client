@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [domainOptions](CreateDomainRequest.md#domainoptions)
+- [createDomainOptions](CreateDomainRequest.md#createdomainoptions)
 
 ## Properties
 
-### domainOptions
+### createDomainOptions
 
-• **domainOptions**: [`CreateDomainOptions`](CreateDomainOptions.md)
+• **createDomainOptions**: [`CreateDomainOptions`](CreateDomainOptions.md)

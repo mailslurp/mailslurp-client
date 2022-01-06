@@ -19,7 +19,7 @@ Meta data associated with an attachment. Attachments are stored as byte blobs so
 
 ### contentLength
 
-• `Optional` **contentLength**: `number`
+• **contentLength**: `number`
 
 Size of attachment in bytes
 
@@ -29,7 +29,7 @@ ___
 
 ### contentType
 
-• `Optional` **contentType**: `string`
+• **contentType**: `string`
 
 Content type of attachment such as `image/png`
 
@@ -39,7 +39,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of attachment
 
@@ -49,7 +49,7 @@ ___
 
 ### name
 
-• `Optional` **name**: `string`
+• **name**: `string`
 
 Name of attachment if given
 

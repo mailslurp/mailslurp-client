@@ -54,7 +54,7 @@ ___
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 When was the email received by MailSlurp
 
@@ -74,7 +74,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of the email entity
 
@@ -104,7 +104,7 @@ ___
 
 ### to
 
-• `Optional` **to**: `string`[]
+• **to**: `string`[]
 
 List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 

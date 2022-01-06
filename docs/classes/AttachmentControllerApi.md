@@ -30,8 +30,8 @@
 - [getAttachmentInfo](AttachmentControllerApi.md#getattachmentinfo)
 - [getAttachmentInfoRaw](AttachmentControllerApi.md#getattachmentinforaw)
 - [getAttachmentRaw](AttachmentControllerApi.md#getattachmentraw)
-- [getAttachments](AttachmentControllerApi.md#getattachments)
-- [getAttachmentsRaw](AttachmentControllerApi.md#getattachmentsraw)
+- [getAttachments1](AttachmentControllerApi.md#getattachments1)
+- [getAttachments1Raw](AttachmentControllerApi.md#getattachments1raw)
 - [request](AttachmentControllerApi.md#request)
 - [uploadAttachment](AttachmentControllerApi.md#uploadattachment)
 - [uploadAttachmentBytes](AttachmentControllerApi.md#uploadattachmentbytes)
@@ -111,7 +111,6 @@ ___
 
 ▸ **deleteAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Delete an attachment
 
 #### Parameters
@@ -131,7 +130,6 @@ ___
 
 ▸ **deleteAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Delete an attachment
 
 #### Parameters
@@ -231,7 +229,6 @@ ___
 
 ▸ **getAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Get an attachment entity
 
 #### Parameters
@@ -291,7 +288,6 @@ ___
 
 ▸ **getAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Get an attachment entity
 
 #### Parameters
@@ -307,9 +303,9 @@ Get an attachment entity
 
 ___
 
-### getAttachments
+### getAttachments1
 
-▸ **getAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
+▸ **getAttachments1**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 Get email attachments
@@ -318,7 +314,7 @@ Get email attachments
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
+| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -327,9 +323,9 @@ Get email attachments
 
 ___
 
-### getAttachmentsRaw
+### getAttachments1Raw
 
-▸ **getAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
+▸ **getAttachments1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 Get email attachments
@@ -338,7 +334,7 @@ Get email attachments
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
+| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -372,7 +368,6 @@ ___
 
 ▸ **uploadAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
@@ -392,7 +387,6 @@ ___
 
 ▸ **uploadAttachmentBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
@@ -412,7 +406,6 @@ ___
 
 ▸ **uploadAttachmentBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using file byte stream input octet stream. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
@@ -432,7 +425,6 @@ ___
 
 ▸ **uploadAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using base64 file encoding. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
@@ -452,7 +444,6 @@ ___
 
 ▸ **uploadMultipartForm**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters
@@ -472,7 +463,6 @@ ___
 
 ▸ **uploadMultipartFormRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
-Email attachments are essentially files with meta data. Files are byte arrays and the meta data is a content type and a filename. These properties allow email clients to display the filename and icon etc. When sending emails with attachments first upload each attachment with an upload endpoint. Record the returned attachment ID and use it with subsequent email sending. For legacy reasons the ID is returned as the first element in an array. Only a single ID is ever returned. To send the attachments pass a list of attachment IDs with `SendEmailOptions` when sending an email. Using the upload endpoints prior to sending mean attachments can easily be reused.
 Upload an attachment for sending using a Multipart Form request. Returns an array whose first element is the ID of the uploaded attachment.
 
 #### Parameters

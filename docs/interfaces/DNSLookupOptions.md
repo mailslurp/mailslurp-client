@@ -18,7 +18,7 @@ Options for DNS query.
 
 ### hostname
 
-• `Optional` **hostname**: `string`
+• **hostname**: `string`
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
@@ -28,7 +28,7 @@ ___
 
 ### omitFinalDNSDot
 
-• `Optional` **omitFinalDNSDot**: `boolean`
+• **omitFinalDNSDot**: `boolean`
 
 Optionally control whether to omit the final dot in full DNS name values.
 
@@ -38,7 +38,7 @@ ___
 
 ### recordTypes
 
-• `Optional` **recordTypes**: [`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)[]
+• **recordTypes**: `Set`<[`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)\>
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 

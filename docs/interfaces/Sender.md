@@ -1,5 +1,7 @@
 # Interface: Sender
 
+Sender object containing from email address and from personal name if provided in address
+
 **`export`**
 
 **`interface`** Sender

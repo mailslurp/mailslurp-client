@@ -19,6 +19,7 @@ Paginated expired inbox results. Page index starts at zero. Projection results m
 - [pageable](PageExpiredInboxRecordProjection.md#pageable)
 - [size](PageExpiredInboxRecordProjection.md#size)
 - [sort](PageExpiredInboxRecordProjection.md#sort)
+- [total](PageExpiredInboxRecordProjection.md#total)
 - [totalElements](PageExpiredInboxRecordProjection.md#totalelements)
 - [totalPages](PageExpiredInboxRecordProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageExpiredInboxRecordProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageExpiredInboxRecordProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageExpiredInboxRecordProjection
 

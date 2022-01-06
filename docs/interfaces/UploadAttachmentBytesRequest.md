@@ -4,17 +4,11 @@
 
 ### Properties
 
-- [byteArray](UploadAttachmentBytesRequest.md#bytearray)
 - [contentType](UploadAttachmentBytesRequest.md#contenttype)
 - [filename](UploadAttachmentBytesRequest.md#filename)
+- [requestBody](UploadAttachmentBytesRequest.md#requestbody)
 
 ## Properties
-
-### byteArray
-
-• `Optional` **byteArray**: `string`
-
-___
 
 ### contentType
 
@@ -25,3 +19,9 @@ ___
 ### filename
 
 • `Optional` **filename**: `string`
+
+___
+
+### requestBody
+
+• **requestBody**: `string`[]

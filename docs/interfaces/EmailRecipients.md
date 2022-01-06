@@ -1,5 +1,7 @@
 # Interface: EmailRecipients
 
+The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
+
 **`export`**
 
 **`interface`** EmailRecipients

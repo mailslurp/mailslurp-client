@@ -20,7 +20,7 @@
 
 ### attachmentId
 
-• `Optional` **attachmentId**: `string`
+• **attachmentId**: `string`
 
 Attachment ID
 

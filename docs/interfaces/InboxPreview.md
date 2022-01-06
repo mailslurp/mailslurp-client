@@ -22,7 +22,7 @@
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
 
@@ -52,7 +52,7 @@ ___
 
 ### favourite
 
-• `Optional` **favourite**: `boolean`
+• **favourite**: `boolean`
 
 Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
 
@@ -62,7 +62,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to Inbox and Email Controller endpoints. See the emailAddress property for the email address or the inbox. To get emails in an inbox use the WaitFor and Inbox Controller methods `waitForLatestEmail` and `getEmails` methods respectively. Inboxes can be used with aliases to forward emails automatically.
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **inboxType**: [`InboxPreviewInboxTypeEnum`](../enums/InboxPreviewInboxTypeEnum.md)
 
-Type of inbox - either HTTP (default) or SMTP. HTTP inboxes are great most cases. SMTP inboxes are receive only (cannot send) and are processed by a custom SMTP mail server and are better for public facing inboxes that receive emails from Gmail and other large providers. If using a custom domain the domain type must match the inbox type. Use an SMTP domain for SMTP inboxes that includes an MX record pointing to `10 mx.mailslurp.com` for inbound messages.
+Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
 
 **`memberof`** InboxPreview
 
@@ -92,7 +92,7 @@ ___
 
 ### tags
 
-• `Optional` **tags**: `string`[]
+• `Optional` **tags**: `Set`<`string`\>
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 
@@ -102,7 +102,7 @@ ___
 
 ### teamAccess
 
-• `Optional` **teamAccess**: `boolean`
+• **teamAccess**: `boolean`
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
 

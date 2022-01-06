@@ -19,6 +19,7 @@ Paginated contact results. Page index starts at zero. Projection results may omi
 - [pageable](PageContactProjection.md#pageable)
 - [size](PageContactProjection.md#size)
 - [sort](PageContactProjection.md#sort)
+- [total](PageContactProjection.md#total)
 - [totalElements](PageContactProjection.md#totalelements)
 - [totalPages](PageContactProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageContactProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageContactProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageContactProjection
 

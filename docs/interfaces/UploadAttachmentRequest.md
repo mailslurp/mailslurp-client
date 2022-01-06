@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [uploadOptions](UploadAttachmentRequest.md#uploadoptions)
+- [uploadAttachmentOptions](UploadAttachmentRequest.md#uploadattachmentoptions)
 
 ## Properties
 
-### uploadOptions
+### uploadAttachmentOptions
 
-• **uploadOptions**: [`UploadAttachmentOptions`](UploadAttachmentOptions.md)
+• **uploadAttachmentOptions**: [`UploadAttachmentOptions`](UploadAttachmentOptions.md)

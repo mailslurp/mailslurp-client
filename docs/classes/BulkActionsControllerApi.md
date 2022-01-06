@@ -59,7 +59,7 @@
 
 ### bulkCreateInboxes
 
-▸ **bulkCreateInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+▸ **bulkCreateInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 Bulk create Inboxes (email addresses)
 
@@ -72,13 +72,13 @@ Bulk create Inboxes (email addresses)
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 ___
 
 ### bulkCreateInboxesRaw
 
-▸ **bulkCreateInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+▸ **bulkCreateInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
 Bulk create Inboxes (email addresses)
 
@@ -91,7 +91,7 @@ Bulk create Inboxes (email addresses)
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
 ___
 

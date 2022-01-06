@@ -17,4 +17,4 @@ ___
 
 ### htmlSelector
 
-• `Optional` **htmlSelector**: `string`
+• **htmlSelector**: `string`

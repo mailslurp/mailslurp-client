@@ -37,7 +37,7 @@ ___
 
 ### emailAddresses
 
-• `Optional` **emailAddresses**: `string`[]
+• `Optional` **emailAddresses**: `Set`<`string`\>
 
 **`memberof`** ContactProjection
 

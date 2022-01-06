@@ -39,7 +39,7 @@ ___
 
 ### domain
 
-• `Optional` **domain**: `string`
+• **domain**: `string`
 
 The top level domain you wish to use with MailSlurp. Do not specify subdomain just the top level. So `test.com` covers all subdomains such as `mail.test.com`. Don't include a protocol such as `http://`. Once added you must complete the verification steps by adding the returned records to your domain.
 
@@ -51,6 +51,6 @@ ___
 
 • `Optional` **domainType**: [`CreateDomainOptionsDomainTypeEnum`](../enums/CreateDomainOptionsDomainTypeEnum.md)
 
-Domain type to create. HTTP or SMTP domain. HTTP domain uses MailSlurps SES MX records. SMTP uses a custom SMTP server MX record. SMTP domains can only be used with SMTP inboxes. SMTP inboxes are more reliable for public inbound emails while HTTP inboxes are more suitable for testing.
+Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
 
 **`memberof`** CreateDomainOptions

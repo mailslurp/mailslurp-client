@@ -57,7 +57,7 @@ describe('common usage patterns using default client', () => {
       name: 'Test inbox',
       description: 'My inbox',
       useDomainPool: true,
-      tags: ['test', 'ci'],
+      tags: ['test', 'ci'] as any,
     });
     await mailslurp.deleteInbox(inboxWithOptions.id);
   });

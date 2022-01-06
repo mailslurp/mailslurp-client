@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [ids](BulkDeleteInboxesRequest.md#ids)
+- [requestBody](BulkDeleteInboxesRequest.md#requestbody)
 
 ## Properties
 
-### ids
+### requestBody
 
-• **ids**: `string`[]
+• **requestBody**: `string`[]

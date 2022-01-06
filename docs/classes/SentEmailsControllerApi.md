@@ -18,6 +18,10 @@
 
 ### Methods
 
+- [deleteAllSentEmails](SentEmailsControllerApi.md#deleteallsentemails)
+- [deleteAllSentEmailsRaw](SentEmailsControllerApi.md#deleteallsentemailsraw)
+- [deleteSentEmail](SentEmailsControllerApi.md#deletesentemail)
+- [deleteSentEmailRaw](SentEmailsControllerApi.md#deletesentemailraw)
 - [getAllSentTrackingPixels](SentEmailsControllerApi.md#getallsenttrackingpixels)
 - [getAllSentTrackingPixelsRaw](SentEmailsControllerApi.md#getallsenttrackingpixelsraw)
 - [getSentEmail](SentEmailsControllerApi.md#getsentemail)
@@ -62,6 +66,80 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### deleteAllSentEmails
+
+▸ **deleteAllSentEmails**(`initOverrides?`): `Promise`<`void`\>
+
+Delete all sent email receipts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllSentEmailsRaw
+
+▸ **deleteAllSentEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete all sent email receipts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deleteSentEmail
+
+▸ **deleteSentEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete sent email receipt
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteSentEmailRequest`](../interfaces/DeleteSentEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteSentEmailRaw
+
+▸ **deleteSentEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete sent email receipt
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteSentEmailRequest`](../interfaces/DeleteSentEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
 
 ### getAllSentTrackingPixels
 

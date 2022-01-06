@@ -127,7 +127,7 @@ If you prefer not to use `try/catch` you can use methods with the `Raw` suffix. 
 ```typescript
 // use methods with `Raw` suffix to access a wrapped response
 // that contains the status instead of throwing an exception
-const inboxRaw: ApiResponse<Inbox> =
+const inboxRaw: ApiResponse<InboxDto> =
   await mailslurp.inboxController.createInboxRaw({});
 expect(inboxRaw.raw.ok).toBeTruthy();
 const inbox = await inboxRaw.value();
@@ -266,7 +266,7 @@ const fileBase64Encoded = await fs.promises.readFile(pathToAttachment, {
 // upload the attachment as base64 string and get atttachment id
 const [attachmentId] =
   await mailslurp.attachmentController.uploadAttachment({
-    uploadOptions: {
+    uploadAttachmentOptions: {
       base64Contents: fileBase64Encoded,
       contentType: 'text/plain',
       filename: path.basename(pathToAttachment),

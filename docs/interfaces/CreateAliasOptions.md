@@ -19,7 +19,7 @@ Create email alias options. Email aliases can be used to mask real email address
 
 ### emailAddress
 
-• `Optional` **emailAddress**: `string`
+• **emailAddress**: `string`
 
 Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread.
 
@@ -49,7 +49,7 @@ ___
 
 ### useThreads
 
-• `Optional` **useThreads**: `boolean`
+• **useThreads**: `boolean`
 
 Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
 

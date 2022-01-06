@@ -1,4 +1,4 @@
-# Enumeration: InboxInboxTypeEnum
+# Enumeration: InboxDtoInboxTypeEnum
 
 **`export`**
 
@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [HTTP\_INBOX](InboxInboxTypeEnum.md#http_inbox)
-- [SMTP\_INBOX](InboxInboxTypeEnum.md#smtp_inbox)
+- [HTTP\_INBOX](InboxDtoInboxTypeEnum.md#http_inbox)
+- [SMTP\_INBOX](InboxDtoInboxTypeEnum.md#smtp_inbox)
 
 ## Enumeration members
 

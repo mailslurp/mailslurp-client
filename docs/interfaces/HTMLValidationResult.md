@@ -18,7 +18,7 @@ HTML Validation Results
 
 ### errors
 
-• `Optional` **errors**: [`ValidationMessage`](ValidationMessage.md)[]
+• **errors**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional errors resulting from HTML validation
 
@@ -28,7 +28,7 @@ ___
 
 ### isValid
 
-• `Optional` **isValid**: `boolean`
+• **isValid**: `boolean`
 
 Is HTML validation result valid
 
@@ -38,7 +38,7 @@ ___
 
 ### warnings
 
-• `Optional` **warnings**: [`ValidationMessage`](ValidationMessage.md)[]
+• **warnings**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional warnings resulting from HTML validation
 

@@ -33,7 +33,7 @@ ___
 
 ### emailAddress
 
-• `Optional` **emailAddress**: `string`
+• **emailAddress**: `string`
 
 The alias's email address for receiving email
 
@@ -51,7 +51,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 Inbox that is associated with the alias
 
@@ -61,7 +61,7 @@ ___
 
 ### isVerified
 
-• `Optional` **isVerified**: `boolean`
+• **isVerified**: `boolean`
 
 Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
 

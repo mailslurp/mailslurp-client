@@ -23,7 +23,7 @@ ___
 
 ### rulesetMatches
 
-• `Optional` **rulesetMatches**: `Object`
+• **rulesetMatches**: `Object`
 
 Map of inbox ruleset ID to boolean of if target matches
 

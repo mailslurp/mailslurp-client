@@ -81,7 +81,7 @@ models/GroupDto.ts
 models/GroupProjection.ts
 models/HTMLValidationResult.ts
 models/IPAddressResult.ts
-models/Inbox.ts
+models/InboxDto.ts
 models/InboxExistsDto.ts
 models/InboxForwarderDto.ts
 models/InboxForwarderTestOptions.ts
@@ -90,6 +90,7 @@ models/InboxPreview.ts
 models/InboxRulesetDto.ts
 models/InboxRulesetTestOptions.ts
 models/InboxRulesetTestResult.ts
+models/InlineObject.ts
 models/JSONSchemaDto.ts
 models/MatchOption.ts
 models/MatchOptions.ts
@@ -118,7 +119,7 @@ models/PageTrackingPixelProjection.ts
 models/PageUnknownMissedEmailProjection.ts
 models/PageWebhookProjection.ts
 models/PageWebhookResult.ts
-models/Pageable.ts
+models/PageableObject.ts
 models/RawEmailJson.ts
 models/Recipient.ts
 models/ReplyToAliasEmailOptions.ts

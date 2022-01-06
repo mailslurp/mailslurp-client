@@ -103,7 +103,7 @@
 
 ### createInbox
 
-▸ **createInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
 Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
@@ -117,13 +117,13 @@ Create an inbox email address. An inbox has a real email address and can send an
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### createInboxRaw
 
-▸ **createInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **createInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
 Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
@@ -137,7 +137,7 @@ Create an inbox email address. An inbox has a real email address and can send an
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 ### createInboxWithDefaults
 
-▸ **createInboxWithDefaults**(`initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInboxWithDefaults**(`initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Create an inbox with default options. Uses MailSlurp domain pool address and is private.
 
@@ -195,13 +195,13 @@ Create an inbox with default options. Uses MailSlurp domain pool address and is 
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### createInboxWithDefaultsRaw
 
-▸ **createInboxWithDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **createInboxWithDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Create an inbox with default options. Uses MailSlurp domain pool address and is private.
 
@@ -213,13 +213,13 @@ Create an inbox with default options. Uses MailSlurp domain pool address and is 
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 
 ### createInboxWithOptions
 
-▸ **createInboxWithOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **createInboxWithOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
 Create an inbox with options. Extended options for inbox creation.
@@ -233,13 +233,13 @@ Create an inbox with options. Extended options for inbox creation.
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### createInboxWithOptionsRaw
 
-▸ **createInboxWithOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **createInboxWithOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Additional endpoint that allows inbox creation with request body options. Can be more flexible that other methods for some clients.
 Create an inbox with options. Extended options for inbox creation.
@@ -253,7 +253,7 @@ Create an inbox with options. Extended options for inbox creation.
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 
@@ -497,7 +497,7 @@ ___
 
 ### getInbox
 
-▸ **getInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **getInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Returns an inbox\'s properties, including its email address and ID.
 Get Inbox. Returns properties of an inbox.
@@ -511,7 +511,7 @@ Get Inbox. Returns properties of an inbox.
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
@@ -631,7 +631,7 @@ ___
 
 ### getInboxRaw
 
-▸ **getInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **getInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Returns an inbox\'s properties, including its email address and ID.
 Get Inbox. Returns properties of an inbox.
@@ -645,7 +645,7 @@ Get Inbox. Returns properties of an inbox.
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 
@@ -691,7 +691,7 @@ ___
 
 ### getInboxTags
 
-▸ **getInboxTags**(`initOverrides?`): `Promise`<`string`[]\>
+▸ **getInboxTags**(`initOverrides?`): `Promise`<`Set`<`string`\>\>
 
 Get all inbox tags
 Get inbox tags
@@ -704,13 +704,13 @@ Get inbox tags
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<`Set`<`string`\>\>
 
 ___
 
 ### getInboxTagsRaw
 
-▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Set`<`string`\>\>\>
 
 Get all inbox tags
 Get inbox tags
@@ -723,13 +723,13 @@ Get inbox tags
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Set`<`string`\>\>\>
 
 ___
 
 ### getInboxes
 
-▸ **getInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+▸ **getInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
 List Inboxes and email addresses
@@ -743,13 +743,13 @@ List Inboxes and email addresses
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)[]\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
 ___
 
 ### getInboxesRaw
 
-▸ **getInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+▸ **getInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
 List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
 List Inboxes and email addresses
@@ -763,7 +763,7 @@ List Inboxes and email addresses
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
 ___
 
@@ -1030,7 +1030,7 @@ ___
 
 ### setInboxFavourited
 
-▸ **setInboxFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **setInboxFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Set and return new favourite state for an inbox
 Set inbox favourited state
@@ -1044,13 +1044,13 @@ Set inbox favourited state
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### setInboxFavouritedRaw
 
-▸ **setInboxFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **setInboxFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Set and return new favourite state for an inbox
 Set inbox favourited state
@@ -1064,13 +1064,13 @@ Set inbox favourited state
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 
 ### updateInbox
 
-▸ **updateInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+▸ **updateInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 Update editable fields on an inbox
 Update Inbox. Change name and description. Email address is not editable.
@@ -1084,13 +1084,13 @@ Update Inbox. Change name and description. Email address is not editable.
 
 #### Returns
 
-`Promise`<[`Inbox`](../interfaces/Inbox.md)\>
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
 ___
 
 ### updateInboxRaw
 
-▸ **updateInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+▸ **updateInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 Update editable fields on an inbox
 Update Inbox. Change name and description. Email address is not editable.
@@ -1104,7 +1104,7 @@ Update Inbox. Change name and description. Email address is not editable.
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Inbox`](../interfaces/Inbox.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 

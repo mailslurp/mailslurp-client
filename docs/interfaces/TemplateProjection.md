@@ -50,6 +50,6 @@ ___
 
 ### variables
 
-• **variables**: `string`[]
+• **variables**: `Set`<`string`\>
 
 **`memberof`** TemplateProjection

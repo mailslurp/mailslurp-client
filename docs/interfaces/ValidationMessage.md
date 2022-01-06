@@ -1,5 +1,7 @@
 # Interface: ValidationMessage
 
+Optional warnings resulting from HTML validation
+
 **`export`**
 
 **`interface`** ValidationMessage

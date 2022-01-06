@@ -5,8 +5,8 @@
 ### Properties
 
 - [contentType](UploadMultipartFormRequest.md#contenttype)
-- [file](UploadMultipartFormRequest.md#file)
 - [filename](UploadMultipartFormRequest.md#filename)
+- [inlineObject](UploadMultipartFormRequest.md#inlineobject)
 - [xFilename](UploadMultipartFormRequest.md#xfilename)
 
 ## Properties
@@ -17,15 +17,15 @@
 
 ___
 
-### file
-
-• **file**: `Blob`
-
-___
-
 ### filename
 
 • `Optional` **filename**: `string`
+
+___
+
+### inlineObject
+
+• `Optional` **inlineObject**: [`InlineObject`](InlineObject.md)
 
 ___
 

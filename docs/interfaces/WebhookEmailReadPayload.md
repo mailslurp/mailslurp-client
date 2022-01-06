@@ -23,7 +23,7 @@ EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 Date time of event creation
 
@@ -33,7 +33,7 @@ ___
 
 ### emailId
 
-• `Optional` **emailId**: `string`
+• **emailId**: `string`
 
 ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
 
@@ -43,7 +43,7 @@ ___
 
 ### emailIsRead
 
-• `Optional` **emailIsRead**: `boolean`
+• **emailIsRead**: `boolean`
 
 Is the email read
 
@@ -53,7 +53,7 @@ ___
 
 ### eventName
 
-• `Optional` **eventName**: [`WebhookEmailReadPayloadEventNameEnum`](../enums/WebhookEmailReadPayloadEventNameEnum.md)
+• **eventName**: [`WebhookEmailReadPayloadEventNameEnum`](../enums/WebhookEmailReadPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
@@ -63,7 +63,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 Id of the inbox that received an email
 
@@ -73,7 +73,7 @@ ___
 
 ### messageId
 
-• `Optional` **messageId**: `string`
+• **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -83,7 +83,7 @@ ___
 
 ### webhookId
 
-• `Optional` **webhookId**: `string`
+• **webhookId**: `string`
 
 ID of webhook entity being triggered
 

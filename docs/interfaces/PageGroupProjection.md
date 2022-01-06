@@ -19,6 +19,7 @@ Paginated missed email results. Page index starts at zero. Projection results ma
 - [pageable](PageGroupProjection.md#pageable)
 - [size](PageGroupProjection.md#size)
 - [sort](PageGroupProjection.md#sort)
+- [total](PageGroupProjection.md#total)
 - [totalElements](PageGroupProjection.md#totalelements)
 - [totalPages](PageGroupProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageGroupProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageGroupProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageGroupProjection
 

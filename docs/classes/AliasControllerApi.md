@@ -410,7 +410,7 @@ ___
 
 ### updateAlias
 
-▸ **updateAlias**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+▸ **updateAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
 Update an email alias
 
@@ -423,13 +423,13 @@ Update an email alias
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
 ___
 
 ### updateAliasRaw
 
-▸ **updateAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **updateAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
 
 Update an email alias
 
@@ -442,7 +442,7 @@ Update an email alias
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
 
 ___
 

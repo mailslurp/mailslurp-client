@@ -37,6 +37,8 @@ ___
 
 • **recordType**: [`DomainNameRecordRecordTypeEnum`](../enums/DomainNameRecordRecordTypeEnum.md)
 
+Domain Name Server Record Types
+
 **`memberof`** DomainNameRecord
 
 ___

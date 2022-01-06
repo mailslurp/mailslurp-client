@@ -1,5 +1,7 @@
 # Interface: SentEmailProjection
 
+Collection of items
+
 **`export`**
 
 **`interface`** SentEmailProjection

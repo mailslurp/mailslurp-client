@@ -29,7 +29,7 @@ ___
 
 ### emailAddresses
 
-• `Optional` **emailAddresses**: `string`[]
+• `Optional` **emailAddresses**: `Set`<`string`\>
 
 Set of email addresses belonging to the contact
 
@@ -83,7 +83,7 @@ ___
 
 ### tags
 
-• `Optional` **tags**: `string`[]
+• `Optional` **tags**: `Set`<`string`\>
 
 Tags that can be used to search and group contacts
 

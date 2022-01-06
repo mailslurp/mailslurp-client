@@ -18,9 +18,9 @@ Options for matching emails in an inbox. Each match option object contains a `fi
 
 ### field
 
-• `Optional` **field**: [`MatchOptionFieldEnum`](../enums/MatchOptionFieldEnum.md)
+• **field**: [`MatchOptionFieldEnum`](../enums/MatchOptionFieldEnum.md)
 
-The email property to match on. One of SUBJECT, TO, BCC, CC or FROM
+Fields of an email object that can be used to filter results
 
 **`memberof`** MatchOption
 
@@ -28,9 +28,9 @@ ___
 
 ### should
 
-• `Optional` **should**: [`MatchOptionShouldEnum`](../enums/MatchOptionShouldEnum.md)
+• **should**: [`MatchOptionShouldEnum`](../enums/MatchOptionShouldEnum.md)
 
-What criteria to apply. CONTAIN or EQUAL. Note CONTAIN is recommended due to some SMTP servers adding new lines to fields and body content.
+How the value of the email field specified should be compared to the value given in the match options.
 
 **`memberof`** MatchOption
 
@@ -38,7 +38,7 @@ ___
 
 ### value
 
-• `Optional` **value**: `string`
+• **value**: `string`
 
 The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
 

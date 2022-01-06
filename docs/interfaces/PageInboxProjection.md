@@ -19,6 +19,7 @@ Paginated inbox results. Page index starts at zero. Projection results may omit 
 - [pageable](PageInboxProjection.md#pageable)
 - [size](PageInboxProjection.md#size)
 - [sort](PageInboxProjection.md#sort)
+- [total](PageInboxProjection.md#total)
 - [totalElements](PageInboxProjection.md#totalelements)
 - [totalPages](PageInboxProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageInboxProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageInboxProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageInboxProjection
 

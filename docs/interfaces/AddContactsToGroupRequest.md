@@ -5,7 +5,7 @@
 ### Properties
 
 - [groupId](AddContactsToGroupRequest.md#groupid)
-- [updateGroupContactsOption](AddContactsToGroupRequest.md#updategroupcontactsoption)
+- [updateGroupContacts](AddContactsToGroupRequest.md#updategroupcontacts)
 
 ## Properties
 
@@ -15,6 +15,6 @@
 
 ___
 
-### updateGroupContactsOption
+### updateGroupContacts
 
-• **updateGroupContactsOption**: [`UpdateGroupContacts`](UpdateGroupContacts.md)
+• **updateGroupContacts**: [`UpdateGroupContacts`](UpdateGroupContacts.md)

@@ -19,6 +19,7 @@ Paginated attachment entity results. Page index starts at zero. Projection resul
 - [pageable](PageAttachmentEntity.md#pageable)
 - [size](PageAttachmentEntity.md#size)
 - [sort](PageAttachmentEntity.md#sort)
+- [total](PageAttachmentEntity.md#total)
 - [totalElements](PageAttachmentEntity.md#totalelements)
 - [totalPages](PageAttachmentEntity.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageAttachmentEntity
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageAttachmentEntity
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageAttachmentEntity
 

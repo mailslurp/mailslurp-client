@@ -19,6 +19,7 @@ Paginated email projection results. EmailProjections and EmailPreviews are essen
 - [pageable](PageThreadProjection.md#pageable)
 - [size](PageThreadProjection.md#size)
 - [sort](PageThreadProjection.md#sort)
+- [total](PageThreadProjection.md#total)
 - [totalElements](PageThreadProjection.md#totalelements)
 - [totalPages](PageThreadProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageThreadProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageThreadProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageThreadProjection
 

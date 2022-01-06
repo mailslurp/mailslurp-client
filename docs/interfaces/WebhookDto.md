@@ -26,7 +26,7 @@ Representation of a webhook for an inbox. The URL specified will be using by Mai
 
 ### basicAuth
 
-• `Optional` **basicAuth**: `boolean`
+• **basicAuth**: `boolean`
 
 Does webhook expect basic authentication? If true it means you created this webhook with a username and password. MailSlurp will use these in the URL to authenticate itself.
 
@@ -36,7 +36,7 @@ ___
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 When the webhook was created
 
@@ -54,7 +54,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 ID of the Webhook
 
@@ -64,7 +64,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 The inbox that the Webhook will be triggered by
 
@@ -74,7 +74,7 @@ ___
 
 ### method
 
-• `Optional` **method**: [`WebhookDtoMethodEnum`](../enums/WebhookDtoMethodEnum.md)
+• **method**: [`WebhookDtoMethodEnum`](../enums/WebhookDtoMethodEnum.md)
 
 HTTP method that your server endpoint must listen for
 
@@ -94,7 +94,7 @@ ___
 
 ### payloadJsonSchema
 
-• `Optional` **payloadJsonSchema**: `string`
+• **payloadJsonSchema**: `string`
 
 Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
 
@@ -112,7 +112,7 @@ ___
 
 ### url
 
-• `Optional` **url**: `string`
+• **url**: `string`
 
 URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
 
@@ -122,7 +122,7 @@ ___
 
 ### userId
 
-• `Optional` **userId**: `string`
+• **userId**: `string`
 
 User ID of the Webhook
 

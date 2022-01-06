@@ -17,7 +17,7 @@ Options for bulk sending an email from multiple addresses. See regular `sendEmai
 
 ### inboxIds
 
-• `Optional` **inboxIds**: `string`[]
+• **inboxIds**: `string`[]
 
 Inboxes to send the email from
 
@@ -27,6 +27,6 @@ ___
 
 ### sendEmailOptions
 
-• `Optional` **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
+• **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 **`memberof`** BulkSendEmailOptions

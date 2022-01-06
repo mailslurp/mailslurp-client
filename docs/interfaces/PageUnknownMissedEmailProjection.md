@@ -19,6 +19,7 @@ Paginated unknown MissedEmail results. Unknown missed emails are emails that wer
 - [pageable](PageUnknownMissedEmailProjection.md#pageable)
 - [size](PageUnknownMissedEmailProjection.md#size)
 - [sort](PageUnknownMissedEmailProjection.md#sort)
+- [total](PageUnknownMissedEmailProjection.md#total)
 - [totalElements](PageUnknownMissedEmailProjection.md#totalelements)
 - [totalPages](PageUnknownMissedEmailProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageUnknownMissedEmailProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageUnknownMissedEmailProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageUnknownMissedEmailProjection
 

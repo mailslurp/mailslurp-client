@@ -1,4 +1,4 @@
-# Enumeration: GetAttachmentsSortEnum
+# Enumeration: GetAttachments1SortEnum
 
 **`export`**
 
@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [ASC](GetAttachmentsSortEnum.md#asc)
-- [DESC](GetAttachmentsSortEnum.md#desc)
+- [ASC](GetAttachments1SortEnum.md#asc)
+- [DESC](GetAttachments1SortEnum.md#desc)
 
 ## Enumeration members
 

@@ -16,7 +16,7 @@ Options for setting inbox favourite state
 
 ### state
 
-• `Optional` **state**: `boolean`
+• **state**: `boolean`
 
 Is the inbox a favorite. Marking an inbox as a favorite is typically done in the dashboard for quick access or filtering
 

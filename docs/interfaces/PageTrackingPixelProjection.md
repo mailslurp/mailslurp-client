@@ -19,6 +19,7 @@ Paginated TrackingPixel results. Page index starts at zero. Projection results m
 - [pageable](PageTrackingPixelProjection.md#pageable)
 - [size](PageTrackingPixelProjection.md#size)
 - [sort](PageTrackingPixelProjection.md#sort)
+- [total](PageTrackingPixelProjection.md#total)
 - [totalElements](PageTrackingPixelProjection.md#totalelements)
 - [totalPages](PageTrackingPixelProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageTrackingPixelProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageTrackingPixelProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageTrackingPixelProjection
 

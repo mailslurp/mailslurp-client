@@ -12,13 +12,13 @@
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 ___
 
 ### sendEmailOptions
 
-• `Optional` **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
+• **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 ___
 

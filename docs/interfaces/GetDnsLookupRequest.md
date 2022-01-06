@@ -4,10 +4,10 @@
 
 ### Properties
 
-- [dnsLookupOptions](GetDnsLookupRequest.md#dnslookupoptions)
+- [dNSLookupOptions](GetDnsLookupRequest.md#dnslookupoptions)
 
 ## Properties
 
-### dnsLookupOptions
+### dNSLookupOptions
 
-• **dnsLookupOptions**: [`DNSLookupOptions`](DNSLookupOptions.md)
+• **dNSLookupOptions**: [`DNSLookupOptions`](DNSLookupOptions.md)

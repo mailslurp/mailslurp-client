@@ -18,7 +18,7 @@ Options for creating an inbox forwarder
 
 ### field
 
-• `Optional` **field**: [`CreateInboxForwarderOptionsFieldEnum`](../enums/CreateInboxForwarderOptionsFieldEnum.md)
+• **field**: [`CreateInboxForwarderOptionsFieldEnum`](../enums/CreateInboxForwarderOptionsFieldEnum.md)
 
 Field to match against to trigger inbox forwarding for inbound email
 
@@ -28,7 +28,7 @@ ___
 
 ### forwardToRecipients
 
-• `Optional` **forwardToRecipients**: `string`[]
+• **forwardToRecipients**: `string`[]
 
 Email addresses to forward an email to if it matches the field and match criteria of the forwarder
 
@@ -38,7 +38,7 @@ ___
 
 ### match
 
-• `Optional` **match**: `string`
+• **match**: `string`
 
 String or wildcard style match for field specified when evaluating forwarding rules
 

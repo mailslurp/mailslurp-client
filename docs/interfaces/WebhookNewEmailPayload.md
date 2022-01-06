@@ -28,7 +28,7 @@ NEW_EMAIL webhook payload. Sent to your webhook url endpoint via HTTP POST when 
 
 ### attachmentMetaDatas
 
-• `Optional` **attachmentMetaDatas**: [`AttachmentMetaData`](AttachmentMetaData.md)[]
+• **attachmentMetaDatas**: [`AttachmentMetaData`](AttachmentMetaData.md)[]
 
 List of attachment meta data objects if attachments present
 
@@ -38,7 +38,7 @@ ___
 
 ### bcc
 
-• `Optional` **bcc**: `string`[]
+• **bcc**: `string`[]
 
 List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
@@ -48,7 +48,7 @@ ___
 
 ### cc
 
-• `Optional` **cc**: `string`[]
+• **cc**: `string`[]
 
 List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
 
@@ -58,7 +58,7 @@ ___
 
 ### createdAt
 
-• `Optional` **createdAt**: `Date`
+• **createdAt**: `Date`
 
 Date time of event creation
 
@@ -68,7 +68,7 @@ ___
 
 ### emailId
 
-• `Optional` **emailId**: `string`
+• **emailId**: `string`
 
 ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
 
@@ -78,7 +78,7 @@ ___
 
 ### eventName
 
-• `Optional` **eventName**: [`WebhookNewEmailPayloadEventNameEnum`](../enums/WebhookNewEmailPayloadEventNameEnum.md)
+• **eventName**: [`WebhookNewEmailPayloadEventNameEnum`](../enums/WebhookNewEmailPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
@@ -88,7 +88,7 @@ ___
 
 ### from
 
-• `Optional` **from**: `string`
+• **from**: `string`
 
 Who the email was sent from. An email address - see fromName for the sender name.
 
@@ -98,7 +98,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 Id of the inbox that received an email
 
@@ -108,7 +108,7 @@ ___
 
 ### messageId
 
-• `Optional` **messageId**: `string`
+• **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -128,7 +128,7 @@ ___
 
 ### to
 
-• `Optional` **to**: `string`[]
+• **to**: `string`[]
 
 List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 
@@ -138,7 +138,7 @@ ___
 
 ### webhookId
 
-• `Optional` **webhookId**: `string`
+• **webhookId**: `string`
 
 ID of webhook entity being triggered
 

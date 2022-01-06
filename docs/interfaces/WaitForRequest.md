@@ -10,4 +10,4 @@
 
 ### waitForConditions
 
-• `Optional` **waitForConditions**: [`WaitForConditions`](WaitForConditions.md)
+• **waitForConditions**: [`WaitForConditions`](WaitForConditions.md)

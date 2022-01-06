@@ -23,7 +23,7 @@ ___
 
 ### count
 
-• `Optional` **count**: `number`
+• **count**: `number`
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 ### inboxId
 
-• `Optional` **inboxId**: `string`
+• **inboxId**: `string`
 
 ___
 

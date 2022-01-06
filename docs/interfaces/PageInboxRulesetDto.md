@@ -19,6 +19,7 @@ Paginated inbox ruleset results. Page index starts at zero. Projection results m
 - [pageable](PageInboxRulesetDto.md#pageable)
 - [size](PageInboxRulesetDto.md#size)
 - [sort](PageInboxRulesetDto.md#sort)
+- [total](PageInboxRulesetDto.md#total)
 - [totalElements](PageInboxRulesetDto.md#totalelements)
 - [totalPages](PageInboxRulesetDto.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageInboxRulesetDto
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageInboxRulesetDto
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageInboxRulesetDto
 

@@ -19,6 +19,7 @@ Paginated webhook entity. Page index starts at zero. Projection results may omit
 - [pageable](PageWebhookProjection.md#pageable)
 - [size](PageWebhookProjection.md#size)
 - [sort](PageWebhookProjection.md#sort)
+- [total](PageWebhookProjection.md#total)
 - [totalElements](PageWebhookProjection.md#totalelements)
 - [totalPages](PageWebhookProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageWebhookProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageWebhookProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageWebhookProjection
 

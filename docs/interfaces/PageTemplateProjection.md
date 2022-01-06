@@ -19,6 +19,7 @@ Paginated email template results. Page index starts at zero. Projection results 
 - [pageable](PageTemplateProjection.md#pageable)
 - [size](PageTemplateProjection.md#size)
 - [sort](PageTemplateProjection.md#sort)
+- [total](PageTemplateProjection.md#total)
 - [totalElements](PageTemplateProjection.md#totalelements)
 - [totalPages](PageTemplateProjection.md#totalpages)
 
@@ -74,7 +75,7 @@ ___
 
 ### pageable
 
-• `Optional` **pageable**: [`Pageable`](Pageable.md)
+• `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
 **`memberof`** PageTemplateProjection
 
@@ -91,6 +92,14 @@ ___
 ### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
+
+**`memberof`** PageTemplateProjection
+
+___
+
+### total
+
+• `Optional` **total**: `number`
 
 **`memberof`** PageTemplateProjection
 

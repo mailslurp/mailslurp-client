@@ -61,7 +61,7 @@ ___
 
 ### to
 
-• `Optional` **to**: `string`[]
+• **to**: `string`[]
 
 To recipients for forwarded email
 

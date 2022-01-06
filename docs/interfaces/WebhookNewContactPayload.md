@@ -54,7 +54,7 @@ ___
 
 ### emailAddresses
 
-• **emailAddresses**: `string`[]
+• **emailAddresses**: `Set`<`string`\>
 
 **`memberof`** WebhookNewContactPayload
 
@@ -62,7 +62,7 @@ ___
 
 ### eventName
 
-• `Optional` **eventName**: [`WebhookNewContactPayloadEventNameEnum`](../enums/WebhookNewContactPayloadEventNameEnum.md)
+• **eventName**: [`WebhookNewContactPayloadEventNameEnum`](../enums/WebhookNewContactPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
@@ -96,7 +96,7 @@ ___
 
 ### messageId
 
-• `Optional` **messageId**: `string`
+• **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
@@ -130,7 +130,7 @@ ___
 
 ### tags
 
-• **tags**: `string`[]
+• **tags**: `Set`<`string`\>
 
 **`memberof`** WebhookNewContactPayload
 
@@ -138,7 +138,7 @@ ___
 
 ### webhookId
 
-• `Optional` **webhookId**: `string`
+• **webhookId**: `string`
 
 ID of webhook entity being triggered
 

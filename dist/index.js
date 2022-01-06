@@ -544,7 +544,9 @@ var MailSlurp = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, wrapCall('uploadAttachment', function () {
-                        return _this.attachmentController.uploadAttachment({ uploadOptions: options });
+                        return _this.attachmentController.uploadAttachment({
+                            uploadAttachmentOptions: options,
+                        });
                     })];
             });
         });

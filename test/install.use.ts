@@ -1,4 +1,4 @@
-import { ApiResponse, Configuration, Inbox } from '../dist';
+import { ApiResponse, Configuration, InboxDto } from '../dist';
 
 test('quick start', async () => {
   //<gen>quick_start
@@ -28,7 +28,7 @@ test('fetch setup', async () => {
   //<gen>fetch_raw
   // use methods with `Raw` suffix to access a wrapped response
   // that contains the status instead of throwing an exception
-  const inboxRaw: ApiResponse<Inbox> =
+  const inboxRaw: ApiResponse<InboxDto> =
     await mailslurp.inboxController.createInboxRaw({});
   expect(inboxRaw.raw.ok).toBeTruthy();
   const inbox = await inboxRaw.value();

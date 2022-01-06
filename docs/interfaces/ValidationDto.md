@@ -17,7 +17,7 @@ Response object for email validation operation
 
 ### emailId
 
-• `Optional` **emailId**: `string`
+• **emailId**: `string`
 
 ID of the email validated
 
@@ -27,6 +27,6 @@ ___
 
 ### html
 
-• `Optional` **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
+• **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
 
 **`memberof`** ValidationDto

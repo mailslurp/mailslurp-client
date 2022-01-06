@@ -1,6 +1,6 @@
 # Interface: WaitForConditions
 
-Conditions that a `waitForXEmails` endpoint operates on. The methods wait until given conditions are met or a timeout is reached. If the conditions are met without needing to wait the results will be returned immediately. Can include `unreadOnly` to ignore already read emails that were returned in an API call or viewing in the dashboard. Can also include matches for emails containing `from`, `subject`, `hasAttachments` etc.
+Conditions to apply to emails that you are waiting for
 
 **`export`**
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **countType**: [`WaitForConditionsCountTypeEnum`](../enums/WaitForConditionsCountTypeEnum.md)
 
-How should the found count be compared to the expected count.
+How result size should be compared with the expected size. Exactly or at-least matching result?
 
 **`memberof`** WaitForConditions
 

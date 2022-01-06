@@ -1,4 +1,4 @@
-import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, Inbox, InboxControllerApi, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, SendEmailOptions, SentEmailDto, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
+import { AliasControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, FetchAPI, FormControllerApi, GroupControllerApi, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, SendEmailOptions, SentEmailDto, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -97,12 +97,12 @@ export declare class MailSlurp {
      * @param {boolean} [useDomainPool] Optional flag to use the MailSlurp domain pool for domain endings.
      * @param {string} inboxType Optional inbox type HTTP or SMTP
      */
-    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>, teamAccess?: boolean, expiresIn?: number, useDomainPool?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX'): Promise<Inbox>;
+    createInbox(emailAddress?: string, name?: string, description?: string, expiresAt?: Date, favourite?: boolean, tags?: Array<string>, teamAccess?: boolean, expiresIn?: number, useDomainPool?: boolean, inboxType?: 'HTTP_INBOX' | 'SMTP_INBOX'): Promise<InboxDto>;
     /**
      * Create an inbox using CreateInboxDto options. More convenient that `createInbox` in some cases.
      * @param createInboxOptions
      */
-    createInboxWithOptions(createInboxOptions: CreateInboxDto): Promise<Inbox>;
+    createInboxWithOptions(createInboxOptions: CreateInboxDto): Promise<InboxDto>;
     /**
      * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox
@@ -120,12 +120,12 @@ export declare class MailSlurp {
      * @summary Get Inbox
      * @param {string} inboxId inboxId
      */
-    getInbox(inboxId: string): Promise<Inbox>;
+    getInbox(inboxId: string): Promise<InboxDto>;
     /**
      * List the inboxes you have created
      * @summary List Inboxes / Email Addresses
      */
-    getInboxes(): Promise<Inbox[]>;
+    getInboxes(): Promise<InboxDto[]>;
     /**
      * List inboxes in paginated form. Allows for page index, page size, and sort direction. Can also filter by favourited or email address like pattern.
      * @summary List Inboxes Paginated

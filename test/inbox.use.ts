@@ -134,7 +134,7 @@ describe('send email', () => {
     // upload the attachment as base64 string and get atttachment id
     const [attachmentId] =
       await mailslurp.attachmentController.uploadAttachment({
-        uploadOptions: {
+        uploadAttachmentOptions: {
           base64Contents: fileBase64Encoded,
           contentType: 'text/plain',
           filename: path.basename(pathToAttachment),

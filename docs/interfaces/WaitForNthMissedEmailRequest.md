@@ -26,7 +26,7 @@ ___
 
 ### index
 
-• `Optional` **index**: `number`
+• **index**: `number`
 
 ___
 
