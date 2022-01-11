@@ -36,13 +36,13 @@ export interface MissedEmailProjection {
    * @type {string}
    * @memberof MissedEmailProjection
    */
-  userId?: string;
+  subject?: string;
   /**
    *
    * @type {string}
    * @memberof MissedEmailProjection
    */
-  subject?: string;
+  userId?: string;
   /**
    *
    * @type {Date}
@@ -67,8 +67,8 @@ export function MissedEmailProjectionFromJSONTyped(
   return {
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -85,8 +85,8 @@ export function MissedEmailProjectionToJSON(
   return {
     id: value.id,
     from: value.from,
-    userId: value.userId,
     subject: value.subject,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
   };
 }

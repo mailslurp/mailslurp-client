@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNewEmailAddress1InboxTypeEnum = exports.CreateNewEmailAddressInboxTypeEnum = exports.CommonActionsControllerApi = void 0;
+exports.CreateRandomInboxInboxTypeEnum = exports.CreateNewEmailAddressInboxTypeEnum = exports.CommonActionsControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -99,84 +99,6 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      * Create new random inbox
      */
     CommonActionsControllerApi.prototype.createNewEmailAddressRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        if (requestParameters.allowTeamAccess !== undefined) {
-                            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
-                        }
-                        if (requestParameters.useDomainPool !== undefined) {
-                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
-                        }
-                        if (requestParameters.expiresAt !== undefined) {
-                            queryParameters['expiresAt'] = requestParameters.expiresAt.toISOString();
-                        }
-                        if (requestParameters.expiresIn !== undefined) {
-                            queryParameters['expiresIn'] = requestParameters.expiresIn;
-                        }
-                        if (requestParameters.emailAddress !== undefined) {
-                            queryParameters['emailAddress'] = requestParameters.emailAddress;
-                        }
-                        if (requestParameters.inboxType !== undefined) {
-                            queryParameters['inboxType'] = requestParameters.inboxType;
-                        }
-                        if (requestParameters.description !== undefined) {
-                            queryParameters['description'] = requestParameters.description;
-                        }
-                        if (requestParameters.name !== undefined) {
-                            queryParameters['name'] = requestParameters.name;
-                        }
-                        if (requestParameters.tags) {
-                            queryParameters['tags'] = requestParameters.tags;
-                        }
-                        if (requestParameters.favourite !== undefined) {
-                            queryParameters['favourite'] = requestParameters.favourite;
-                        }
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/createInbox",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
-                            })];
-                }
-            });
-        });
-    };
-    /**
-     * Returns an Inbox with an `id` and an `emailAddress`
-     * Create new random inbox
-     */
-    CommonActionsControllerApi.prototype.createNewEmailAddress = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createNewEmailAddressRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
-     * Returns an Inbox with an `id` and an `emailAddress`
-     * Create new random inbox
-     */
-    CommonActionsControllerApi.prototype.createNewEmailAddress1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -236,12 +158,90 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    CommonActionsControllerApi.prototype.createNewEmailAddress1 = function (requestParameters, initOverrides) {
+    CommonActionsControllerApi.prototype.createNewEmailAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createNewEmailAddress1Raw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.createNewEmailAddressRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    CommonActionsControllerApi.prototype.createRandomInboxRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.allowTeamAccess !== undefined) {
+                            queryParameters['allowTeamAccess'] = requestParameters.allowTeamAccess;
+                        }
+                        if (requestParameters.useDomainPool !== undefined) {
+                            queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+                        }
+                        if (requestParameters.expiresAt !== undefined) {
+                            queryParameters['expiresAt'] = requestParameters.expiresAt.toISOString();
+                        }
+                        if (requestParameters.expiresIn !== undefined) {
+                            queryParameters['expiresIn'] = requestParameters.expiresIn;
+                        }
+                        if (requestParameters.emailAddress !== undefined) {
+                            queryParameters['emailAddress'] = requestParameters.emailAddress;
+                        }
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        if (requestParameters.description !== undefined) {
+                            queryParameters['description'] = requestParameters.description;
+                        }
+                        if (requestParameters.name !== undefined) {
+                            queryParameters['name'] = requestParameters.name;
+                        }
+                        if (requestParameters.tags) {
+                            queryParameters['tags'] = requestParameters.tags;
+                        }
+                        if (requestParameters.favourite !== undefined) {
+                            queryParameters['favourite'] = requestParameters.favourite;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/createInbox",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an Inbox with an `id` and an `emailAddress`
+     * Create new random inbox
+     */
+    CommonActionsControllerApi.prototype.createRandomInbox = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createRandomInboxRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -418,8 +418,8 @@ var CreateNewEmailAddressInboxTypeEnum;
  * @export
  * @enum {string}
  */
-var CreateNewEmailAddress1InboxTypeEnum;
-(function (CreateNewEmailAddress1InboxTypeEnum) {
-    CreateNewEmailAddress1InboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
-    CreateNewEmailAddress1InboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateNewEmailAddress1InboxTypeEnum = exports.CreateNewEmailAddress1InboxTypeEnum || (exports.CreateNewEmailAddress1InboxTypeEnum = {}));
+var CreateRandomInboxInboxTypeEnum;
+(function (CreateRandomInboxInboxTypeEnum) {
+    CreateRandomInboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    CreateRandomInboxInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(CreateRandomInboxInboxTypeEnum = exports.CreateRandomInboxInboxTypeEnum || (exports.CreateRandomInboxInboxTypeEnum = {}));

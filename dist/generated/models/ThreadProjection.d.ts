@@ -32,12 +32,6 @@ export interface ThreadProjection {
      * @type {string}
      * @memberof ThreadProjection
      */
-    userId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ThreadProjection
-     */
     subject?: string;
     /**
      *
@@ -45,6 +39,12 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    userId: string;
     /**
      *
      * @type {Array<string>}

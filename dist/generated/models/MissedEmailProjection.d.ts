@@ -32,13 +32,13 @@ export interface MissedEmailProjection {
      * @type {string}
      * @memberof MissedEmailProjection
      */
-    userId?: string;
+    subject?: string;
     /**
      *
      * @type {string}
      * @memberof MissedEmailProjection
      */
-    subject?: string;
+    userId?: string;
     /**
      *
      * @type {Date}

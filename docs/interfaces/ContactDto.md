@@ -40,7 +40,7 @@ ___
 
 ### emailAddresses
 
-• **emailAddresses**: `Set`<`string`\>
+• **emailAddresses**: `string`[]
 
 **`memberof`** ContactDto
 
@@ -104,6 +104,6 @@ ___
 
 ### tags
 
-• **tags**: `Set`<`string`\>
+• **tags**: `string`[]
 
 **`memberof`** ContactDto

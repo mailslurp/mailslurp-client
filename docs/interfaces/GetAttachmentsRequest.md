@@ -4,10 +4,45 @@
 
 ### Properties
 
-- [emailId](GetAttachmentsRequest.md#emailid)
+- [before](GetAttachmentsRequest.md#before)
+- [fileNameFilter](GetAttachmentsRequest.md#filenamefilter)
+- [page](GetAttachmentsRequest.md#page)
+- [since](GetAttachmentsRequest.md#since)
+- [size](GetAttachmentsRequest.md#size)
+- [sort](GetAttachmentsRequest.md#sort)
 
 ## Properties
 
-### emailId
+### before
 
-• **emailId**: `string`
+• `Optional` **before**: `Date`
+
+___
+
+### fileNameFilter
+
+• `Optional` **fileNameFilter**: `string`
+
+___
+
+### page
+
+• `Optional` **page**: `number`
+
+___
+
+### since
+
+• `Optional` **since**: `Date`
+
+___
+
+### size
+
+• `Optional` **size**: `number`
+
+___
+
+### sort
+
+• `Optional` **sort**: [`GetAttachmentsSortEnum`](../enums/GetAttachmentsSortEnum.md)

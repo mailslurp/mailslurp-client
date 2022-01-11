@@ -38,7 +38,7 @@ ___
 
 ### recordTypes
 
-• **recordTypes**: `Set`<[`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)\>
+• **recordTypes**: [`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)[]
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 

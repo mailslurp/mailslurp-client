@@ -67,7 +67,7 @@ ___
 
 ### tags
 
-• `Optional` **tags**: `Set`<`string`\>
+• `Optional` **tags**: `string`[]
 
 ___
 

@@ -37,12 +37,12 @@ export interface GetAttachmentMetaDataRequest {
     emailId: string;
     attachmentId: string;
 }
-export interface GetAttachmentsRequest {
-    emailId: string;
-}
 export interface GetEmailRequest {
     emailId: string;
     decode?: boolean;
+}
+export interface GetEmailAttachmentsRequest {
+    emailId: string;
 }
 export interface GetEmailContentMatchRequest {
     emailId: string;
@@ -79,7 +79,7 @@ export interface GetGravatarUrlForEmailAddressRequest {
     size?: string;
 }
 export interface GetLatestEmailRequest {
-    inboxIds?: Set<string>;
+    inboxIds?: Array<string>;
 }
 export interface GetLatestEmailInInboxRequest {
     inboxId: string;
@@ -201,16 +201,6 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getAttachmentMetaData(requestParameters: GetAttachmentMetaDataRequest, initOverrides?: RequestInit): Promise<AttachmentMetaData>;
     /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
-     */
-    getAttachmentsRaw(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>>;
-    /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
-     */
-    getAttachments(requestParameters: GetAttachmentsRequest, initOverrides?: RequestInit): Promise<Array<AttachmentMetaData>>;
-    /**
      * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
      * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
      */
@@ -220,6 +210,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
      */
     getEmail(requestParameters: GetEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Returns an array of attachment metadata such as name and content-type for a given email if present.
+     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     */
+    getEmailAttachmentsRaw(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>>;
+    /**
+     * Returns an array of attachment metadata such as name and content-type for a given email if present.
+     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     */
+    getEmailAttachments(requestParameters: GetEmailAttachmentsRequest, initOverrides?: RequestInit): Promise<Array<AttachmentMetaData>>;
     /**
      * Return the matches for a given Java style regex pattern. Do not include the typical `/` at start or end of regex in some languages. Given an example `your code is: 12345` the pattern to extract match looks like `code is: (\\d{6})`. This will return an array of matches with the first matching the entire pattern and the subsequent matching the groups: `[\'code is: 123456\', \'123456\']` See https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html for more information of available patterns.
      * Get email content regex pattern match results. Runs regex against email body and returns match groups.

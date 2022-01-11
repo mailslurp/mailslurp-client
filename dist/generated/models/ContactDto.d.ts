@@ -47,10 +47,10 @@ export interface ContactDto {
     company?: string;
     /**
      *
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof ContactDto
      */
-    emailAddresses: Set<string>;
+    emailAddresses: Array<string>;
     /**
      *
      * @type {string}
@@ -59,10 +59,10 @@ export interface ContactDto {
     primaryEmailAddress?: string;
     /**
      *
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof ContactDto
      */
-    tags: Set<string>;
+    tags: Array<string>;
     /**
      *
      * @type {object}

@@ -20,19 +20,19 @@ export interface CreateNewEmailAddressRequest {
     inboxType?: CreateNewEmailAddressInboxTypeEnum;
     description?: string;
     name?: string;
-    tags?: Set<string>;
+    tags?: Array<string>;
     favourite?: boolean;
 }
-export interface CreateNewEmailAddress1Request {
+export interface CreateRandomInboxRequest {
     allowTeamAccess?: boolean;
     useDomainPool?: boolean;
     expiresAt?: Date;
     expiresIn?: number;
     emailAddress?: string;
-    inboxType?: CreateNewEmailAddress1InboxTypeEnum;
+    inboxType?: CreateRandomInboxInboxTypeEnum;
     description?: string;
     name?: string;
-    tags?: Set<string>;
+    tags?: Array<string>;
     favourite?: boolean;
 }
 export interface DeleteEmailAddressRequest {
@@ -62,12 +62,12 @@ export declare class CommonActionsControllerApi extends runtime.BaseAPI {
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createNewEmailAddress1Raw(requestParameters: CreateNewEmailAddress1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
+    createRandomInboxRaw(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxDto>>;
     /**
      * Returns an Inbox with an `id` and an `emailAddress`
      * Create new random inbox
      */
-    createNewEmailAddress1(requestParameters: CreateNewEmailAddress1Request, initOverrides?: RequestInit): Promise<InboxDto>;
+    createRandomInbox(requestParameters: CreateRandomInboxRequest, initOverrides?: RequestInit): Promise<InboxDto>;
     /**
      * Deletes inbox email address
      * Delete inbox email address by inbox id
@@ -111,7 +111,7 @@ export declare enum CreateNewEmailAddressInboxTypeEnum {
  * @export
  * @enum {string}
  */
-export declare enum CreateNewEmailAddress1InboxTypeEnum {
+export declare enum CreateRandomInboxInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
 }

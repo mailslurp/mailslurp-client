@@ -54,7 +54,7 @@ ___
 
 ### emailAddresses
 
-• **emailAddresses**: `Set`<`string`\>
+• **emailAddresses**: `string`[]
 
 **`memberof`** WebhookNewContactPayload
 
@@ -130,7 +130,7 @@ ___
 
 ### tags
 
-• **tags**: `Set`<`string`\>
+• **tags**: `string`[]
 
 **`memberof`** WebhookNewContactPayload
 

@@ -77,16 +77,16 @@ export interface WebhookNewContactPayload {
     primaryEmailAddress?: string;
     /**
      *
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof WebhookNewContactPayload
      */
-    emailAddresses: Set<string>;
+    emailAddresses: Array<string>;
     /**
      *
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof WebhookNewContactPayload
      */
-    tags: Set<string>;
+    tags: Array<string>;
     /**
      *
      * @type {object}

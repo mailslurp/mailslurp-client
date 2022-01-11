@@ -31,20 +31,20 @@ export interface CreateNewEmailAddressRequest {
   inboxType?: CreateNewEmailAddressInboxTypeEnum;
   description?: string;
   name?: string;
-  tags?: Set<string>;
+  tags?: Array<string>;
   favourite?: boolean;
 }
 
-export interface CreateNewEmailAddress1Request {
+export interface CreateRandomInboxRequest {
   allowTeamAccess?: boolean;
   useDomainPool?: boolean;
   expiresAt?: Date;
   expiresIn?: number;
   emailAddress?: string;
-  inboxType?: CreateNewEmailAddress1InboxTypeEnum;
+  inboxType?: CreateRandomInboxInboxTypeEnum;
   description?: string;
   name?: string;
-  tags?: Set<string>;
+  tags?: Array<string>;
   favourite?: boolean;
 }
 
@@ -124,7 +124,7 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/createInbox`,
+        path: `/newEmailAddress`,
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
@@ -156,8 +156,8 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
    * Returns an Inbox with an `id` and an `emailAddress`
    * Create new random inbox
    */
-  async createNewEmailAddress1Raw(
-    requestParameters: CreateNewEmailAddress1Request,
+  async createRandomInboxRaw(
+    requestParameters: CreateRandomInboxRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<InboxDto>> {
     const queryParameters: any = {};
@@ -212,7 +212,7 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/newEmailAddress`,
+        path: `/createInbox`,
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
@@ -229,11 +229,11 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
    * Returns an Inbox with an `id` and an `emailAddress`
    * Create new random inbox
    */
-  async createNewEmailAddress1(
-    requestParameters: CreateNewEmailAddress1Request,
+  async createRandomInbox(
+    requestParameters: CreateRandomInboxRequest,
     initOverrides?: RequestInit
   ): Promise<InboxDto> {
-    const response = await this.createNewEmailAddress1Raw(
+    const response = await this.createRandomInboxRaw(
       requestParameters,
       initOverrides
     );
@@ -416,7 +416,7 @@ export enum CreateNewEmailAddressInboxTypeEnum {
  * @export
  * @enum {string}
  */
-export enum CreateNewEmailAddress1InboxTypeEnum {
+export enum CreateRandomInboxInboxTypeEnum {
   HTTP_INBOX = 'HTTP_INBOX',
   SMTP_INBOX = 'SMTP_INBOX',
 }

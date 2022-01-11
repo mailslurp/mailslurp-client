@@ -30,8 +30,8 @@
 - [getAttachmentInfo](AttachmentControllerApi.md#getattachmentinfo)
 - [getAttachmentInfoRaw](AttachmentControllerApi.md#getattachmentinforaw)
 - [getAttachmentRaw](AttachmentControllerApi.md#getattachmentraw)
-- [getAttachments1](AttachmentControllerApi.md#getattachments1)
-- [getAttachments1Raw](AttachmentControllerApi.md#getattachments1raw)
+- [getAttachments](AttachmentControllerApi.md#getattachments)
+- [getAttachmentsRaw](AttachmentControllerApi.md#getattachmentsraw)
 - [request](AttachmentControllerApi.md#request)
 - [uploadAttachment](AttachmentControllerApi.md#uploadattachment)
 - [uploadAttachmentBytes](AttachmentControllerApi.md#uploadattachmentbytes)
@@ -303,9 +303,9 @@ Get an attachment entity
 
 ___
 
-### getAttachments1
+### getAttachments
 
-▸ **getAttachments1**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
+▸ **getAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 Get email attachments
@@ -314,7 +314,7 @@ Get email attachments
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -323,9 +323,9 @@ Get email attachments
 
 ___
 
-### getAttachments1Raw
+### getAttachmentsRaw
 
-▸ **getAttachments1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
+▸ **getAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
 
 Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
 Get email attachments
@@ -334,7 +334,7 @@ Get email attachments
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetAttachments1Request`](../interfaces/GetAttachments1Request.md) |
+| `requestParameters` | [`GetAttachmentsRequest`](../interfaces/GetAttachmentsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

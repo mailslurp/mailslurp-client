@@ -45,10 +45,10 @@ export interface CreateInboxDto {
   useDomainPool?: boolean;
   /**
    * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-   * @type {Set<string>}
+   * @type {Array<string>}
    * @memberof CreateInboxDto
    */
-  tags?: Set<string>;
+  tags?: Array<string>;
   /**
    * Optional inbox expiration date. If null then this inbox is permanent and the emails in it won't be deleted. If an expiration date is provided or is required by your plan the inbox will be closed when the expiration time is reached. Expired inboxes still contain their emails but can no longer send or receive emails. An ExpiredInboxRecord is created when an inbox and the email address and inbox ID are recorded. The expiresAt property is a timestamp string in ISO DateTime Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX.
    * @type {Date}

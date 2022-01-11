@@ -65,10 +65,10 @@ export interface InboxDto {
     favourite: boolean;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof InboxDto
      */
-    tags?: Set<string>;
+    tags?: Array<string>;
     /**
      * Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
      * @type {string}

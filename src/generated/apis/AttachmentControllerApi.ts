@@ -54,10 +54,10 @@ export interface GetAttachmentInfoRequest {
   attachmentId: string;
 }
 
-export interface GetAttachments1Request {
+export interface GetAttachmentsRequest {
   page?: number;
   size?: number;
-  sort?: GetAttachments1SortEnum;
+  sort?: GetAttachmentsSortEnum;
   fileNameFilter?: string;
   since?: Date;
   before?: Date;
@@ -405,8 +405,8 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
    * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
    * Get email attachments
    */
-  async getAttachments1Raw(
-    requestParameters: GetAttachments1Request,
+  async getAttachmentsRaw(
+    requestParameters: GetAttachmentsRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<PageAttachmentEntity>> {
     const queryParameters: any = {};
@@ -462,11 +462,11 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
    * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
    * Get email attachments
    */
-  async getAttachments1(
-    requestParameters: GetAttachments1Request,
+  async getAttachments(
+    requestParameters: GetAttachmentsRequest,
     initOverrides?: RequestInit
   ): Promise<PageAttachmentEntity> {
-    const response = await this.getAttachments1Raw(
+    const response = await this.getAttachmentsRaw(
       requestParameters,
       initOverrides
     );
@@ -655,7 +655,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
  * @export
  * @enum {string}
  */
-export enum GetAttachments1SortEnum {
+export enum GetAttachmentsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

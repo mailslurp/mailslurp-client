@@ -520,58 +520,6 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
-     */
-    EmailControllerApi.prototype.getAttachmentsRaw = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (requestParameters.emailId === null ||
-                            requestParameters.emailId === undefined) {
-                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getAttachments.');
-                        }
-                        queryParameters = {};
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return jsonValue.map(models_1.AttachmentMetaDataFromJSON);
-                            })];
-                }
-            });
-        });
-    };
-    /**
-     * Returns an array of attachment metadata such as name and content-type for a given email if present.
-     * Get all email attachment metadata. Metadata includes name and size of attachments.
-     */
-    EmailControllerApi.prototype.getAttachments = function (requestParameters, initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAttachmentsRaw(requestParameters, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
      * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
      * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
      */
@@ -618,6 +566,58 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an array of attachment metadata such as name and content-type for a given email if present.
+     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     */
+    EmailControllerApi.prototype.getEmailAttachmentsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailAttachments.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/attachments".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.AttachmentMetaDataFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns an array of attachment metadata such as name and content-type for a given email if present.
+     * Get all email attachment metadata. Metadata includes name and size of attachments.
+     */
+    EmailControllerApi.prototype.getEmailAttachments = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailAttachmentsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

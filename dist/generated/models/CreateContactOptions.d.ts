@@ -35,16 +35,16 @@ export interface CreateContactOptions {
     company?: string;
     /**
      * Set of email addresses belonging to the contact
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof CreateContactOptions
      */
-    emailAddresses?: Set<string>;
+    emailAddresses?: Array<string>;
     /**
      * Tags that can be used to search and group contacts
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof CreateContactOptions
      */
-    tags?: Set<string>;
+    tags?: Array<string>;
     /**
      *
      * @type {object}

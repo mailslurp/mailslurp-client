@@ -47,10 +47,10 @@ export interface OrganizationInboxProjection {
     favourite: boolean;
     /**
      * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof OrganizationInboxProjection
      */
-    tags?: Set<string>;
+    tags?: Array<string>;
     /**
      * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
      * @type {boolean}

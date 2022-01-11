@@ -105,7 +105,7 @@ ___
 
 ### tags
 
-• `Optional` **tags**: `Set`<`string`\>
+• `Optional` **tags**: `string`[]
 
 Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
 

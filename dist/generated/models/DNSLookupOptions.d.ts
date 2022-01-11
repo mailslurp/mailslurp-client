@@ -23,10 +23,10 @@ export interface DNSLookupOptions {
     hostname: string;
     /**
      * List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof DNSLookupOptions
      */
-    recordTypes: Set<DNSLookupOptionsRecordTypesEnum>;
+    recordTypes: Array<DNSLookupOptionsRecordTypesEnum>;
     /**
      * Optionally control whether to omit the final dot in full DNS name values.
      * @type {boolean}

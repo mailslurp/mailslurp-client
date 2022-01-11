@@ -691,7 +691,7 @@ ___
 
 ### getInboxTags
 
-▸ **getInboxTags**(`initOverrides?`): `Promise`<`Set`<`string`\>\>
+▸ **getInboxTags**(`initOverrides?`): `Promise`<`string`[]\>
 
 Get all inbox tags
 Get inbox tags
@@ -704,13 +704,13 @@ Get inbox tags
 
 #### Returns
 
-`Promise`<`Set`<`string`\>\>
+`Promise`<`string`[]\>
 
 ___
 
 ### getInboxTagsRaw
 
-▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Set`<`string`\>\>\>
+▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 Get all inbox tags
 Get inbox tags
@@ -723,7 +723,7 @@ Get inbox tags
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Set`<`string`\>\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
 ___
 

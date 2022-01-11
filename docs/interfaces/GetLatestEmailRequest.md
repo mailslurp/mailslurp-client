@@ -10,4 +10,4 @@
 
 ### inboxIds
 
-• `Optional` **inboxIds**: `Set`<`string`\>
+• `Optional` **inboxIds**: `string`[]

@@ -103,13 +103,13 @@ export interface GetAttachmentMetaDataRequest {
   attachmentId: string;
 }
 
-export interface GetAttachmentsRequest {
-  emailId: string;
-}
-
 export interface GetEmailRequest {
   emailId: string;
   decode?: boolean;
+}
+
+export interface GetEmailAttachmentsRequest {
+  emailId: string;
 }
 
 export interface GetEmailContentMatchRequest {
@@ -154,7 +154,7 @@ export interface GetGravatarUrlForEmailAddressRequest {
 }
 
 export interface GetLatestEmailRequest {
-  inboxIds?: Set<string>;
+  inboxIds?: Array<string>;
 }
 
 export interface GetLatestEmailInInboxRequest {
@@ -704,65 +704,6 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Returns an array of attachment metadata such as name and content-type for a given email if present.
-   * Get all email attachment metadata. Metadata includes name and size of attachments.
-   */
-  async getAttachmentsRaw(
-    requestParameters: GetAttachmentsRequest,
-    initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>> {
-    if (
-      requestParameters.emailId === null ||
-      requestParameters.emailId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'emailId',
-        'Required parameter requestParameters.emailId was null or undefined when calling getAttachments.'
-      );
-    }
-
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/emails/{emailId}/attachments`.replace(
-          `{${'emailId'}}`,
-          encodeURIComponent(String(requestParameters.emailId))
-        ),
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
-      initOverrides
-    );
-
-    return new runtime.JSONApiResponse(response, (jsonValue) =>
-      jsonValue.map(AttachmentMetaDataFromJSON)
-    );
-  }
-
-  /**
-   * Returns an array of attachment metadata such as name and content-type for a given email if present.
-   * Get all email attachment metadata. Metadata includes name and size of attachments.
-   */
-  async getAttachments(
-    requestParameters: GetAttachmentsRequest,
-    initOverrides?: RequestInit
-  ): Promise<Array<AttachmentMetaData>> {
-    const response = await this.getAttachmentsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
-  }
-
-  /**
    * Returns a email summary object with headers and content. To retrieve the raw unparsed email use the getRawEmail endpoints
    * Get email content including headers and body. Expects email to exist by ID. For emails that may not have arrived yet use the WaitForController.
    */
@@ -819,6 +760,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Email> {
     const response = await this.getEmailRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Returns an array of attachment metadata such as name and content-type for a given email if present.
+   * Get all email attachment metadata. Metadata includes name and size of attachments.
+   */
+  async getEmailAttachmentsRaw(
+    requestParameters: GetEmailAttachmentsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<AttachmentMetaData>>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailAttachments.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/attachments`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(AttachmentMetaDataFromJSON)
+    );
+  }
+
+  /**
+   * Returns an array of attachment metadata such as name and content-type for a given email if present.
+   * Get all email attachment metadata. Metadata includes name and size of attachments.
+   */
+  async getEmailAttachments(
+    requestParameters: GetEmailAttachmentsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<AttachmentMetaData>> {
+    const response = await this.getEmailAttachmentsRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

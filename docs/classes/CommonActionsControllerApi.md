@@ -19,9 +19,9 @@
 ### Methods
 
 - [createNewEmailAddress](CommonActionsControllerApi.md#createnewemailaddress)
-- [createNewEmailAddress1](CommonActionsControllerApi.md#createnewemailaddress1)
-- [createNewEmailAddress1Raw](CommonActionsControllerApi.md#createnewemailaddress1raw)
 - [createNewEmailAddressRaw](CommonActionsControllerApi.md#createnewemailaddressraw)
+- [createRandomInbox](CommonActionsControllerApi.md#createrandominbox)
+- [createRandomInboxRaw](CommonActionsControllerApi.md#createrandominboxraw)
 - [deleteEmailAddress](CommonActionsControllerApi.md#deleteemailaddress)
 - [deleteEmailAddressRaw](CommonActionsControllerApi.md#deleteemailaddressraw)
 - [emptyInbox](CommonActionsControllerApi.md#emptyinbox)
@@ -81,46 +81,6 @@ Create new random inbox
 
 ___
 
-### createNewEmailAddress1
-
-▸ **createNewEmailAddress1**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
-
-Returns an Inbox with an `id` and an `emailAddress`
-Create new random inbox
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `requestParameters` | [`CreateNewEmailAddress1Request`](../interfaces/CreateNewEmailAddress1Request.md) |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
-`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
-
-___
-
-### createNewEmailAddress1Raw
-
-▸ **createNewEmailAddress1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
-
-Returns an Inbox with an `id` and an `emailAddress`
-Create new random inbox
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `requestParameters` | [`CreateNewEmailAddress1Request`](../interfaces/CreateNewEmailAddress1Request.md) |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
-
-___
-
 ### createNewEmailAddressRaw
 
 ▸ **createNewEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
@@ -133,6 +93,46 @@ Create new random inbox
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`CreateNewEmailAddressRequest`](../interfaces/CreateNewEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### createRandomInbox
+
+▸ **createRandomInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
+
+Returns an Inbox with an `id` and an `emailAddress`
+Create new random inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateRandomInboxRequest`](../interfaces/CreateRandomInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
+
+___
+
+### createRandomInboxRaw
+
+▸ **createRandomInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+Returns an Inbox with an `id` and an `emailAddress`
+Create new random inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateRandomInboxRequest`](../interfaces/CreateRandomInboxRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

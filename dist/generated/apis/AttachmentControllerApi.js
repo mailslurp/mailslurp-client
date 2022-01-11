@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetAttachments1SortEnum = exports.AttachmentControllerApi = void 0;
+exports.GetAttachmentsSortEnum = exports.AttachmentControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -390,7 +390,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * Get email attachments
      */
-    AttachmentControllerApi.prototype.getAttachments1Raw = function (requestParameters, initOverrides) {
+    AttachmentControllerApi.prototype.getAttachmentsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -438,12 +438,12 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
      * Get all attachments in paginated response. Each entity contains meta data for the attachment such as `name` and `content-type`. Use the `attachmentId` and the download endpoints to get the file contents.
      * Get email attachments
      */
-    AttachmentControllerApi.prototype.getAttachments1 = function (requestParameters, initOverrides) {
+    AttachmentControllerApi.prototype.getAttachments = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAttachments1Raw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getAttachmentsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -620,8 +620,8 @@ exports.AttachmentControllerApi = AttachmentControllerApi;
  * @export
  * @enum {string}
  */
-var GetAttachments1SortEnum;
-(function (GetAttachments1SortEnum) {
-    GetAttachments1SortEnum["ASC"] = "ASC";
-    GetAttachments1SortEnum["DESC"] = "DESC";
-})(GetAttachments1SortEnum = exports.GetAttachments1SortEnum || (exports.GetAttachments1SortEnum = {}));
+var GetAttachmentsSortEnum;
+(function (GetAttachmentsSortEnum) {
+    GetAttachmentsSortEnum["ASC"] = "ASC";
+    GetAttachmentsSortEnum["DESC"] = "DESC";
+})(GetAttachmentsSortEnum = exports.GetAttachmentsSortEnum || (exports.GetAttachmentsSortEnum = {}));

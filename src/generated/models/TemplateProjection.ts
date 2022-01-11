@@ -39,10 +39,10 @@ export interface TemplateProjection {
   createdAt: Date;
   /**
    *
-   * @type {Set<string>}
+   * @type {Array<string>}
    * @memberof TemplateProjection
    */
-  variables: Set<string>;
+  variables: Array<string>;
   /**
    *
    * @type {Date}

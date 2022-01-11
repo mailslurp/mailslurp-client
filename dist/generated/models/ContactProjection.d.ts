@@ -47,10 +47,10 @@ export interface ContactProjection {
     company?: string;
     /**
      *
-     * @type {Set<string>}
+     * @type {Array<string>}
      * @memberof ContactProjection
      */
-    emailAddresses?: Set<string>;
+    emailAddresses?: Array<string>;
     /**
      *
      * @type {boolean}

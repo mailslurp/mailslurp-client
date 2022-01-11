@@ -1181,7 +1181,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
    */
   async getInboxTagsRaw(
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Set<string>>> {
+  ): Promise<runtime.ApiResponse<Array<string>>> {
     const queryParameters: any = {};
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1207,7 +1207,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
    * Get all inbox tags
    * Get inbox tags
    */
-  async getInboxTags(initOverrides?: RequestInit): Promise<Set<string>> {
+  async getInboxTags(initOverrides?: RequestInit): Promise<Array<string>> {
     const response = await this.getInboxTagsRaw(initOverrides);
     return await response.value();
   }
