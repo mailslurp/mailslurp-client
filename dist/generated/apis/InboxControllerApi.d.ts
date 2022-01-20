@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, InboxDto, InboxExistsDto, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -62,8 +62,14 @@ export interface GetEmailsRequest {
     before?: Date;
     since?: Date;
 }
+export interface GetImapSmtpAccessRequest {
+    inboxId?: string;
+}
 export interface GetInboxRequest {
     inboxId: string;
+}
+export interface GetInboxByEmailAddressRequest {
+    emailAddress: string;
 }
 export interface GetInboxEmailCountRequest {
     inboxId: string;
@@ -239,6 +245,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getEmails(requestParameters: GetEmailsRequest, initOverrides?: RequestInit): Promise<Array<EmailPreview>>;
     /**
+     * Get IMAP and SMTP access usernames and passwords
+     */
+    getImapSmtpAccessRaw(requestParameters: GetImapSmtpAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapSmtpAccessDetails>>;
+    /**
+     * Get IMAP and SMTP access usernames and passwords
+     */
+    getImapSmtpAccess(requestParameters: GetImapSmtpAccessRequest, initOverrides?: RequestInit): Promise<ImapSmtpAccessDetails>;
+    /**
      * Returns an inbox\'s properties, including its email address and ID.
      * Get Inbox. Returns properties of an inbox.
      */
@@ -248,6 +262,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get Inbox. Returns properties of an inbox.
      */
     getInbox(requestParameters: GetInboxRequest, initOverrides?: RequestInit): Promise<InboxDto>;
+    /**
+     * Get a inbox result by email address
+     * Search for an inbox with the provided email address
+     */
+    getInboxByEmailAddressRaw(requestParameters: GetInboxByEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxByEmailAddressResult>>;
+    /**
+     * Get a inbox result by email address
+     * Search for an inbox with the provided email address
+     */
+    getInboxByEmailAddress(requestParameters: GetInboxByEmailAddressRequest, initOverrides?: RequestInit): Promise<InboxByEmailAddressResult>;
     /**
      * Get total inbox count
      */
@@ -274,6 +298,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get inbox emails paginated
      */
     getInboxEmailsPaginated(requestParameters: GetInboxEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<PageEmailPreview>;
+    /**
+     * Get list of inbox IDs
+     * Get all inbox IDs
+     */
+    getInboxIdsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxIdsResult>>;
+    /**
+     * Get list of inbox IDs
+     * Get all inbox IDs
+     */
+    getInboxIds(initOverrides?: RequestInit): Promise<InboxIdsResult>;
     /**
      * Returns an inbox\'s sent email receipts. Call individual sent email endpoints for more details. Note for privacy reasons the full body of sent emails is never stored. An MD5 hash hex is available for comparison instead.
      * Get Inbox Sent Emails

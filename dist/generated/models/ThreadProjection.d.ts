@@ -38,19 +38,25 @@ export interface ThreadProjection {
      * @type {string}
      * @memberof ThreadProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof ThreadProjection
      */
-    userId: string;
+    inboxId: string;
     /**
      *
      * @type {Array<string>}
      * @memberof ThreadProjection
      */
     to: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
@@ -63,12 +69,6 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     cc?: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {Date}

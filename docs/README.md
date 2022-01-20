@@ -277,6 +277,8 @@
 - [GetGroupRequest](interfaces/GetGroupRequest.md)
 - [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
 - [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
+- [GetImapSmtpAccessRequest](interfaces/GetImapSmtpAccessRequest.md)
+- [GetInboxByEmailAddressRequest](interfaces/GetInboxByEmailAddressRequest.md)
 - [GetInboxEmailCountRequest](interfaces/GetInboxEmailCountRequest.md)
 - [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
@@ -316,11 +318,15 @@
 - [GroupProjection](interfaces/GroupProjection.md)
 - [HTMLValidationResult](interfaces/HTMLValidationResult.md)
 - [IPAddressResult](interfaces/IPAddressResult.md)
+- [ImapSmtpAccessDetails](interfaces/ImapSmtpAccessDetails.md)
+- [InboxByEmailAddressResult](interfaces/InboxByEmailAddressResult.md)
 - [InboxDto](interfaces/InboxDto.md)
 - [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
 - [InboxForwarderTestResult](interfaces/InboxForwarderTestResult.md)
+- [InboxIdItem](interfaces/InboxIdItem.md)
+- [InboxIdsResult](interfaces/InboxIdsResult.md)
 - [InboxPreview](interfaces/InboxPreview.md)
 - [InboxRulesetDto](interfaces/InboxRulesetDto.md)
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
@@ -636,6 +642,12 @@
 - [IPAddressResultFromJSON](README.md#ipaddressresultfromjson)
 - [IPAddressResultFromJSONTyped](README.md#ipaddressresultfromjsontyped)
 - [IPAddressResultToJSON](README.md#ipaddressresulttojson)
+- [ImapSmtpAccessDetailsFromJSON](README.md#imapsmtpaccessdetailsfromjson)
+- [ImapSmtpAccessDetailsFromJSONTyped](README.md#imapsmtpaccessdetailsfromjsontyped)
+- [ImapSmtpAccessDetailsToJSON](README.md#imapsmtpaccessdetailstojson)
+- [InboxByEmailAddressResultFromJSON](README.md#inboxbyemailaddressresultfromjson)
+- [InboxByEmailAddressResultFromJSONTyped](README.md#inboxbyemailaddressresultfromjsontyped)
+- [InboxByEmailAddressResultToJSON](README.md#inboxbyemailaddressresulttojson)
 - [InboxDtoFromJSON](README.md#inboxdtofromjson)
 - [InboxDtoFromJSONTyped](README.md#inboxdtofromjsontyped)
 - [InboxDtoToJSON](README.md#inboxdtotojson)
@@ -651,6 +663,12 @@
 - [InboxForwarderTestResultFromJSON](README.md#inboxforwardertestresultfromjson)
 - [InboxForwarderTestResultFromJSONTyped](README.md#inboxforwardertestresultfromjsontyped)
 - [InboxForwarderTestResultToJSON](README.md#inboxforwardertestresulttojson)
+- [InboxIdItemFromJSON](README.md#inboxiditemfromjson)
+- [InboxIdItemFromJSONTyped](README.md#inboxiditemfromjsontyped)
+- [InboxIdItemToJSON](README.md#inboxiditemtojson)
+- [InboxIdsResultFromJSON](README.md#inboxidsresultfromjson)
+- [InboxIdsResultFromJSONTyped](README.md#inboxidsresultfromjsontyped)
+- [InboxIdsResultToJSON](README.md#inboxidsresulttojson)
 - [InboxPreviewFromJSON](README.md#inboxpreviewfromjson)
 - [InboxPreviewFromJSONTyped](README.md#inboxpreviewfromjsontyped)
 - [InboxPreviewToJSON](README.md#inboxpreviewtojson)
@@ -3862,6 +3880,104 @@ ___
 
 ___
 
+### ImapSmtpAccessDetailsFromJSON
+
+▸ **ImapSmtpAccessDetailsFromJSON**(`json`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
+
+___
+
+### ImapSmtpAccessDetailsFromJSONTyped
+
+▸ **ImapSmtpAccessDetailsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
+
+___
+
+### ImapSmtpAccessDetailsToJSON
+
+▸ **ImapSmtpAccessDetailsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxByEmailAddressResultFromJSON
+
+▸ **InboxByEmailAddressResultFromJSON**(`json`): [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
+
+___
+
+### InboxByEmailAddressResultFromJSONTyped
+
+▸ **InboxByEmailAddressResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
+
+___
+
+### InboxByEmailAddressResultToJSON
+
+▸ **InboxByEmailAddressResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### InboxDtoFromJSON
 
 ▸ **InboxDtoFromJSON**(`json`): [`InboxDto`](interfaces/InboxDto.md)
@@ -4100,6 +4216,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxIdItemFromJSON
+
+▸ **InboxIdItemFromJSON**(`json`): [`InboxIdItem`](interfaces/InboxIdItem.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxIdItem`](interfaces/InboxIdItem.md)
+
+___
+
+### InboxIdItemFromJSONTyped
+
+▸ **InboxIdItemFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxIdItem`](interfaces/InboxIdItem.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxIdItem`](interfaces/InboxIdItem.md)
+
+___
+
+### InboxIdItemToJSON
+
+▸ **InboxIdItemToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxIdItem`](interfaces/InboxIdItem.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxIdsResultFromJSON
+
+▸ **InboxIdsResultFromJSON**(`json`): [`InboxIdsResult`](interfaces/InboxIdsResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxIdsResult`](interfaces/InboxIdsResult.md)
+
+___
+
+### InboxIdsResultFromJSONTyped
+
+▸ **InboxIdsResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxIdsResult`](interfaces/InboxIdsResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxIdsResult`](interfaces/InboxIdsResult.md)
+
+___
+
+### InboxIdsResultToJSON
+
+▸ **InboxIdsResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxIdsResult`](interfaces/InboxIdsResult.md) |
 
 #### Returns
 

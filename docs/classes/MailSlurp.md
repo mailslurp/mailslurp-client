@@ -80,6 +80,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [getAttachmentMetaData](MailSlurp.md#getattachmentmetadata)
 - [getEmail](MailSlurp.md#getemail)
 - [getEmails](MailSlurp.md#getemails)
+- [getImapSmtpAccessDetails](MailSlurp.md#getimapsmtpaccessdetails)
 - [getInbox](MailSlurp.md#getinbox)
 - [getInboxes](MailSlurp.md#getinboxes)
 - [getRawEmail](MailSlurp.md#getrawemail)
@@ -466,6 +467,22 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 #### Returns
 
 `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
+
+___
+
+### getImapSmtpAccessDetails
+
+▸ **getImapSmtpAccessDetails**(`inboxId?`): `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `inboxId?` | `string` |
+
+#### Returns
+
+`Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
 
 ___
 

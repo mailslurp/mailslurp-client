@@ -38,13 +38,19 @@
 - [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
 - [getEmails](InboxControllerApi.md#getemails)
 - [getEmailsRaw](InboxControllerApi.md#getemailsraw)
+- [getImapSmtpAccess](InboxControllerApi.md#getimapsmtpaccess)
+- [getImapSmtpAccessRaw](InboxControllerApi.md#getimapsmtpaccessraw)
 - [getInbox](InboxControllerApi.md#getinbox)
+- [getInboxByEmailAddress](InboxControllerApi.md#getinboxbyemailaddress)
+- [getInboxByEmailAddressRaw](InboxControllerApi.md#getinboxbyemailaddressraw)
 - [getInboxCount](InboxControllerApi.md#getinboxcount)
 - [getInboxCountRaw](InboxControllerApi.md#getinboxcountraw)
 - [getInboxEmailCount](InboxControllerApi.md#getinboxemailcount)
 - [getInboxEmailCountRaw](InboxControllerApi.md#getinboxemailcountraw)
 - [getInboxEmailsPaginated](InboxControllerApi.md#getinboxemailspaginated)
 - [getInboxEmailsPaginatedRaw](InboxControllerApi.md#getinboxemailspaginatedraw)
+- [getInboxIds](InboxControllerApi.md#getinboxids)
+- [getInboxIdsRaw](InboxControllerApi.md#getinboxidsraw)
 - [getInboxRaw](InboxControllerApi.md#getinboxraw)
 - [getInboxSentEmails](InboxControllerApi.md#getinboxsentemails)
 - [getInboxSentEmailsRaw](InboxControllerApi.md#getinboxsentemailsraw)
@@ -495,6 +501,44 @@ Get emails in an Inbox. This method is not idempotent as it allows retries and w
 
 ___
 
+### getImapSmtpAccess
+
+▸ **getImapSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
+
+Get IMAP and SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapSmtpAccessRequest`](../interfaces/GetImapSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
+
+___
+
+### getImapSmtpAccessRaw
+
+▸ **getImapSmtpAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>\>
+
+Get IMAP and SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapSmtpAccessRequest`](../interfaces/GetImapSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>\>
+
+___
+
 ### getInbox
 
 ▸ **getInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
@@ -512,6 +556,46 @@ Get Inbox. Returns properties of an inbox.
 #### Returns
 
 `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
+
+___
+
+### getInboxByEmailAddress
+
+▸ **getInboxByEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>
+
+Get a inbox result by email address
+Search for an inbox with the provided email address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxByEmailAddressRequest`](../interfaces/GetInboxByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>
+
+___
+
+### getInboxByEmailAddressRaw
+
+▸ **getInboxByEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>\>
+
+Get a inbox result by email address
+Search for an inbox with the provided email address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxByEmailAddressRequest`](../interfaces/GetInboxByEmailAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>\>
 
 ___
 
@@ -626,6 +710,44 @@ Get inbox emails paginated
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
+
+___
+
+### getInboxIds
+
+▸ **getInboxIds**(`initOverrides?`): `Promise`<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>
+
+Get list of inbox IDs
+Get all inbox IDs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>
+
+___
+
+### getInboxIdsRaw
+
+▸ **getInboxIdsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>\>
+
+Get list of inbox IDs
+Get all inbox IDs
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>\>
 
 ___
 

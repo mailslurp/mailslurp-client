@@ -63,6 +63,12 @@ export interface SentEmailProjection {
   attachments: Array<string>;
   /**
    *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
@@ -73,12 +79,6 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   cc: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentEmailProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -106,9 +106,9 @@ export function SentEmailProjectionFromJSONTyped(
     inboxId: json['inboxId'],
     to: json['to'],
     attachments: json['attachments'],
+    createdAt: new Date(json['createdAt']),
     bcc: json['bcc'],
     cc: json['cc'],
-    createdAt: new Date(json['createdAt']),
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
   };
 }
@@ -130,9 +130,9 @@ export function SentEmailProjectionToJSON(
     inboxId: value.inboxId,
     to: value.to,
     attachments: value.attachments,
+    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
-    createdAt: value.createdAt.toISOString(),
     bodyMD5Hash: value.bodyMD5Hash,
   };
 }

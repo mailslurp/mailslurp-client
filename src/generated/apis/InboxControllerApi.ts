@@ -29,12 +29,21 @@ import {
   FlushExpiredInboxesResult,
   FlushExpiredInboxesResultFromJSON,
   FlushExpiredInboxesResultToJSON,
+  ImapSmtpAccessDetails,
+  ImapSmtpAccessDetailsFromJSON,
+  ImapSmtpAccessDetailsToJSON,
+  InboxByEmailAddressResult,
+  InboxByEmailAddressResultFromJSON,
+  InboxByEmailAddressResultToJSON,
   InboxDto,
   InboxDtoFromJSON,
   InboxDtoToJSON,
   InboxExistsDto,
   InboxExistsDtoFromJSON,
   InboxExistsDtoToJSON,
+  InboxIdsResult,
+  InboxIdsResultFromJSON,
+  InboxIdsResultToJSON,
   InboxRulesetDto,
   InboxRulesetDtoFromJSON,
   InboxRulesetDtoToJSON,
@@ -129,8 +138,16 @@ export interface GetEmailsRequest {
   since?: Date;
 }
 
+export interface GetImapSmtpAccessRequest {
+  inboxId?: string;
+}
+
 export interface GetInboxRequest {
   inboxId: string;
+}
+
+export interface GetInboxByEmailAddressRequest {
+  emailAddress: string;
 }
 
 export interface GetInboxEmailCountRequest {
@@ -860,6 +877,54 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get IMAP and SMTP access usernames and passwords
+   */
+  async getImapSmtpAccessRaw(
+    requestParameters: GetImapSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ImapSmtpAccessDetails>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/imap-smtp-access`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ImapSmtpAccessDetailsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get IMAP and SMTP access usernames and passwords
+   */
+  async getImapSmtpAccess(
+    requestParameters: GetImapSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<ImapSmtpAccessDetails> {
+    const response = await this.getImapSmtpAccessRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Returns an inbox\'s properties, including its email address and ID.
    * Get Inbox. Returns properties of an inbox.
    */
@@ -912,6 +977,66 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<InboxDto> {
     const response = await this.getInboxRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get a inbox result by email address
+   * Search for an inbox with the provided email address
+   */
+  async getInboxByEmailAddressRaw(
+    requestParameters: GetInboxByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxByEmailAddressResult>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getInboxByEmailAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/byEmailAddress`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxByEmailAddressResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a inbox result by email address
+   * Search for an inbox with the provided email address
+   */
+  async getInboxByEmailAddress(
+    requestParameters: GetInboxByEmailAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxByEmailAddressResult> {
+    const response = await this.getInboxByEmailAddressRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1087,6 +1212,45 @@ export class InboxControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get list of inbox IDs
+   * Get all inbox IDs
+   */
+  async getInboxIdsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxIdsResult>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/ids`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxIdsResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get list of inbox IDs
+   * Get all inbox IDs
+   */
+  async getInboxIds(initOverrides?: RequestInit): Promise<InboxIdsResult> {
+    const response = await this.getInboxIdsRaw(initOverrides);
     return await response.value();
   }
 

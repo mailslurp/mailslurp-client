@@ -213,6 +213,16 @@ var MailSlurp = /** @class */ (function () {
             });
         });
     };
+    MailSlurp.prototype.getImapSmtpAccessDetails = function (inboxId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, wrapCall('createInbox', function () {
+                        return _this.inboxController.getImapSmtpAccess({ inboxId: inboxId });
+                    })];
+            });
+        });
+    };
     /**
      * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * @summary Delete inbox

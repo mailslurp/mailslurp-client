@@ -24,6 +24,7 @@ import {
   GetEmailsPaginatedSortEnum,
   GetEmailsSortEnum,
   GroupControllerApi,
+  ImapSmtpAccessDetails,
   InboxControllerApi,
   InboxDto,
   InboxForwarderControllerApi,
@@ -226,6 +227,14 @@ export class MailSlurp {
       this.inboxController.createInboxWithOptions({
         createInboxDto: createInboxOptions,
       })
+    );
+  }
+
+  async getImapSmtpAccessDetails(
+    inboxId?: string
+  ): Promise<ImapSmtpAccessDetails> {
+    return wrapCall('createInbox', () =>
+      this.inboxController.getImapSmtpAccess({ inboxId })
     );
   }
 

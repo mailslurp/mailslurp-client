@@ -32,6 +32,12 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
+    userId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
     emailAddress: string;
     /**
      *
@@ -39,12 +45,6 @@ export interface AliasProjection {
      * @memberof AliasProjection
      */
     inboxId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    userId: string;
     /**
      *
      * @type {Date}

@@ -81,11 +81,15 @@ models/GroupDto.ts
 models/GroupProjection.ts
 models/HTMLValidationResult.ts
 models/IPAddressResult.ts
+models/ImapSmtpAccessDetails.ts
+models/InboxByEmailAddressResult.ts
 models/InboxDto.ts
 models/InboxExistsDto.ts
 models/InboxForwarderDto.ts
 models/InboxForwarderTestOptions.ts
 models/InboxForwarderTestResult.ts
+models/InboxIdItem.ts
+models/InboxIdsResult.ts
 models/InboxPreview.ts
 models/InboxRulesetDto.ts
 models/InboxRulesetTestOptions.ts
