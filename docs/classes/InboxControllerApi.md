@@ -69,6 +69,8 @@
 - [sendEmailAndConfirm](InboxControllerApi.md#sendemailandconfirm)
 - [sendEmailAndConfirmRaw](InboxControllerApi.md#sendemailandconfirmraw)
 - [sendEmailRaw](InboxControllerApi.md#sendemailraw)
+- [sendSmtpEnvelope](InboxControllerApi.md#sendsmtpenvelope)
+- [sendSmtpEnvelopeRaw](InboxControllerApi.md#sendsmtpenveloperaw)
 - [sendTestEmail](InboxControllerApi.md#sendtestemail)
 - [sendTestEmailRaw](InboxControllerApi.md#sendtestemailraw)
 - [setInboxFavourited](InboxControllerApi.md#setinboxfavourited)
@@ -1107,6 +1109,46 @@ Send Email
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### sendSmtpEnvelope
+
+▸ **sendSmtpEnvelope**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+Send email using an SMTP mail envelope and message body and return sent confirmation
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeRequest`](../interfaces/SendSmtpEnvelopeRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendSmtpEnvelopeRaw
+
+▸ **sendSmtpEnvelopeRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+Send email using an SMTP mail envelope and message body and return sent confirmation
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeRequest`](../interfaces/SendSmtpEnvelopeRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
 ___
 

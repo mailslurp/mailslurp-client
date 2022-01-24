@@ -10,7 +10,11 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+export interface ApplyImapFlagOperationRequest {
+    emailId: string;
+    imapFlagOperationOptions: ImapFlagOperationOptions;
+}
 export interface DeleteEmailRequest {
     emailId: string;
 }
@@ -120,6 +124,16 @@ export interface ValidateEmailRequest {
  *
  */
 export declare class EmailControllerApi extends runtime.BaseAPI {
+    /**
+     * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+     * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+     */
+    applyImapFlagOperationRaw(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreview>>;
+    /**
+     * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+     * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+     */
+    applyImapFlagOperation(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit): Promise<EmailPreview>;
     /**
      * Deletes all emails in your account. Be careful as emails cannot be recovered
      * Delete all emails in all inboxes.

@@ -36,6 +36,12 @@ export interface PageThreadProjection {
     total?: number;
     /**
      *
+     * @type {boolean}
+     * @memberof PageThreadProjection
+     */
+    last?: boolean;
+    /**
+     *
      * @type {number}
      * @memberof PageThreadProjection
      */
@@ -46,12 +52,6 @@ export interface PageThreadProjection {
      * @memberof PageThreadProjection
      */
     totalPages?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageThreadProjection
-     */
-    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageThreadProjection {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageThreadProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageThreadProjection
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

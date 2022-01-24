@@ -18,6 +18,8 @@
 
 ### Methods
 
+- [applyImapFlagOperation](EmailControllerApi.md#applyimapflagoperation)
+- [applyImapFlagOperationRaw](EmailControllerApi.md#applyimapflagoperationraw)
 - [deleteAllEmails](EmailControllerApi.md#deleteallemails)
 - [deleteAllEmailsRaw](EmailControllerApi.md#deleteallemailsraw)
 - [deleteEmail](EmailControllerApi.md#deleteemail)
@@ -106,6 +108,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### applyImapFlagOperation
+
+▸ **applyImapFlagOperation**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
+
+Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ApplyImapFlagOperationRequest`](../interfaces/ApplyImapFlagOperationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
+
+___
+
+### applyImapFlagOperationRaw
+
+▸ **applyImapFlagOperationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
+
+Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ApplyImapFlagOperationRequest`](../interfaces/ApplyImapFlagOperationRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
+
+___
 
 ### deleteAllEmails
 

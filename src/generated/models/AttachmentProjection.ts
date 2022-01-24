@@ -32,17 +32,17 @@ export interface AttachmentProjection {
    */
   contentLength?: number;
   /**
+   * Content type of attachment.
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  contentType?: string;
+  /**
    *
    * @type {string}
    * @memberof AttachmentProjection
    */
   userId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  createdAt: Date;
   /**
    * Attachment ID
    * @type {string}
@@ -54,13 +54,13 @@ export interface AttachmentProjection {
    * @type {Date}
    * @memberof AttachmentProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
-   * Content type of attachment.
-   * @type {string}
+   *
+   * @type {Date}
    * @memberof AttachmentProjection
    */
-  contentType?: string;
+  updatedAt: Date;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
@@ -79,11 +79,11 @@ export function AttachmentProjectionFromJSONTyped(
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
-    userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
-    attachmentId: json['attachmentId'],
-    updatedAt: new Date(json['updatedAt']),
     contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
+    userId: json['userId'],
+    attachmentId: json['attachmentId'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
   };
 }
 
@@ -99,10 +99,10 @@ export function AttachmentProjectionToJSON(
   return {
     name: value.name,
     contentLength: value.contentLength,
-    userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
-    attachmentId: value.attachmentId,
-    updatedAt: value.updatedAt.toISOString(),
     contentType: value.contentType,
+    userId: value.userId,
+    attachmentId: value.attachmentId,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
   };
 }

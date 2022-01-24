@@ -47,6 +47,9 @@ import {
   GravatarUrl,
   GravatarUrlFromJSON,
   GravatarUrlToJSON,
+  ImapFlagOperationOptions,
+  ImapFlagOperationOptionsFromJSON,
+  ImapFlagOperationOptionsToJSON,
   PageEmailProjection,
   PageEmailProjectionFromJSON,
   PageEmailProjectionToJSON,
@@ -69,6 +72,11 @@ import {
   ValidationDtoFromJSON,
   ValidationDtoToJSON,
 } from '../models';
+
+export interface ApplyImapFlagOperationRequest {
+  emailId: string;
+  imapFlagOperationOptions: ImapFlagOperationOptions;
+}
 
 export interface DeleteEmailRequest {
   emailId: string;
@@ -204,6 +212,80 @@ export interface ValidateEmailRequest {
  *
  */
 export class EmailControllerApi extends runtime.BaseAPI {
+  /**
+   * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+   * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+   */
+  async applyImapFlagOperationRaw(
+    requestParameters: ApplyImapFlagOperationRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailPreview>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling applyImapFlagOperation.'
+      );
+    }
+
+    if (
+      requestParameters.imapFlagOperationOptions === null ||
+      requestParameters.imapFlagOperationOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'imapFlagOperationOptions',
+        'Required parameter requestParameters.imapFlagOperationOptions was null or undefined when calling applyImapFlagOperation.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/imap-flag-operation`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ImapFlagOperationOptionsToJSON(
+          requestParameters.imapFlagOperationOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailPreviewFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Apply RFC3501 section-2.3.2 IMAP flag operations on an email
+   * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
+   */
+  async applyImapFlagOperation(
+    requestParameters: ApplyImapFlagOperationRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailPreview> {
+    const response = await this.applyImapFlagOperationRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Deletes all emails in your account. Be careful as emails cannot be recovered
    * Delete all emails in all inboxes.

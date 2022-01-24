@@ -62,6 +62,7 @@
 - [GetSentOrganizationEmailsSortEnum](enums/GetSentOrganizationEmailsSortEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
 - [GetWebhookResultsSortEnum](enums/GetWebhookResultsSortEnum.md)
+- [ImapFlagOperationOptionsFlagOperationEnum](enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
@@ -138,6 +139,7 @@
 - [AliasDto](interfaces/AliasDto.md)
 - [AliasProjection](interfaces/AliasProjection.md)
 - [ApiResponse](interfaces/ApiResponse.md)
+- [ApplyImapFlagOperationRequest](interfaces/ApplyImapFlagOperationRequest.md)
 - [AttachmentEntity](interfaces/AttachmentEntity.md)
 - [AttachmentMetaData](interfaces/AttachmentMetaData.md)
 - [AttachmentProjection](interfaces/AttachmentProjection.md)
@@ -318,6 +320,7 @@
 - [GroupProjection](interfaces/GroupProjection.md)
 - [HTMLValidationResult](interfaces/HTMLValidationResult.md)
 - [IPAddressResult](interfaces/IPAddressResult.md)
+- [ImapFlagOperationOptions](interfaces/ImapFlagOperationOptions.md)
 - [ImapSmtpAccessDetails](interfaces/ImapSmtpAccessDetails.md)
 - [InboxByEmailAddressResult](interfaces/InboxByEmailAddressResult.md)
 - [InboxDto](interfaces/InboxDto.md)
@@ -384,6 +387,8 @@
 - [SendEmailRequest](interfaces/SendEmailRequest.md)
 - [SendEmailSimpleRequest](interfaces/SendEmailSimpleRequest.md)
 - [SendEmailSourceOptionalRequest](interfaces/SendEmailSourceOptionalRequest.md)
+- [SendSMTPEnvelopeOptions](interfaces/SendSMTPEnvelopeOptions.md)
+- [SendSmtpEnvelopeRequest](interfaces/SendSmtpEnvelopeRequest.md)
 - [SendTestDataRequest](interfaces/SendTestDataRequest.md)
 - [SendTestEmailRequest](interfaces/SendTestEmailRequest.md)
 - [Sender](interfaces/Sender.md)
@@ -642,6 +647,9 @@
 - [IPAddressResultFromJSON](README.md#ipaddressresultfromjson)
 - [IPAddressResultFromJSONTyped](README.md#ipaddressresultfromjsontyped)
 - [IPAddressResultToJSON](README.md#ipaddressresulttojson)
+- [ImapFlagOperationOptionsFromJSON](README.md#imapflagoperationoptionsfromjson)
+- [ImapFlagOperationOptionsFromJSONTyped](README.md#imapflagoperationoptionsfromjsontyped)
+- [ImapFlagOperationOptionsToJSON](README.md#imapflagoperationoptionstojson)
 - [ImapSmtpAccessDetailsFromJSON](README.md#imapsmtpaccessdetailsfromjson)
 - [ImapSmtpAccessDetailsFromJSONTyped](README.md#imapsmtpaccessdetailsfromjsontyped)
 - [ImapSmtpAccessDetailsToJSON](README.md#imapsmtpaccessdetailstojson)
@@ -786,6 +794,9 @@
 - [SendEmailOptionsFromJSON](README.md#sendemailoptionsfromjson)
 - [SendEmailOptionsFromJSONTyped](README.md#sendemailoptionsfromjsontyped)
 - [SendEmailOptionsToJSON](README.md#sendemailoptionstojson)
+- [SendSMTPEnvelopeOptionsFromJSON](README.md#sendsmtpenvelopeoptionsfromjson)
+- [SendSMTPEnvelopeOptionsFromJSONTyped](README.md#sendsmtpenvelopeoptionsfromjsontyped)
+- [SendSMTPEnvelopeOptionsToJSON](README.md#sendsmtpenvelopeoptionstojson)
 - [SenderFromJSON](README.md#senderfromjson)
 - [SenderFromJSONTyped](README.md#senderfromjsontyped)
 - [SenderToJSON](README.md#sendertojson)
@@ -3880,6 +3891,55 @@ ___
 
 ___
 
+### ImapFlagOperationOptionsFromJSON
+
+▸ **ImapFlagOperationOptionsFromJSON**(`json`): [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
+
+___
+
+### ImapFlagOperationOptionsFromJSONTyped
+
+▸ **ImapFlagOperationOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
+
+___
+
+### ImapFlagOperationOptionsToJSON
+
+▸ **ImapFlagOperationOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ImapSmtpAccessDetailsFromJSON
 
 ▸ **ImapSmtpAccessDetailsFromJSON**(`json`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
@@ -6225,6 +6285,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SendEmailOptions`](interfaces/SendEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### SendSMTPEnvelopeOptionsFromJSON
+
+▸ **SendSMTPEnvelopeOptionsFromJSON**(`json`): [`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
+
+___
+
+### SendSMTPEnvelopeOptionsFromJSONTyped
+
+▸ **SendSMTPEnvelopeOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
+
+___
+
+### SendSMTPEnvelopeOptionsToJSON
+
+▸ **SendSMTPEnvelopeOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md) |
 
 #### Returns
 

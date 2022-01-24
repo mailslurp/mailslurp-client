@@ -186,66 +186,6 @@ const inbox = await mailslurp.getInbox(inboxId);
 expect(inbox.id).toEqual(inboxId);
 ```
 
-### SMTP / IMAP access
-
-| Protocol | Host             | Port | TLS   | Description |
-|----------|------------------|------|-------|-------------|
-| SMTP     | mx.mailslurp.com | 2525 | false | SMTP server |
-| IMAP     | mailslurp.click  | 1143 | false | IMAP server |
-
-
-You can access MailSlurp inboxes using Nodemailer or other SMTP client packages by:
-- Create SMTP inbox
-- Call `getImapSmtpAccessDetails` to get [SMTP server host and port](https://www.mailslurp.com/guides/smtp-imap/) settings
-- Use SMTP username and password with TLS false
-
-```javascript
-const server = await mailslurp.getImapSmtpAccessDetails()
-```
-
-Here is a test example using Jest:
-
-```javascript
-it('can create smtp inbox then send email from a mailslurp address', async () => {
-    log("Try plain auth")
-    const mailslurp = new MailSlurp(config);
-    const inbox = await mailslurp.createInboxWithOptions({inboxType:CreateInboxDtoInboxTypeEnum.SMTP_INBOX});
-    const server = await mailslurp.getImapSmtpAccessDetails()
-
-    log("Fetched imap smtp access")
-    expect(inbox.id).toBeTruthy();
-    expect(inbox.emailAddress).toContain('@mailslurp.mx');
-
-    const opts = {
-        host: server.smtpServerHost,
-        port: server.smtpServerPort,
-        secure: false,
-        auth: {
-            user: server.smtpUsername,
-            pass: server.smtpPassword,
-            type: "PLAIN"
-        },
-    }
-    log("Create auth plain transport")
-    const transport = nodemailer.createTransport(opts)
-
-    log("Send email")
-    const sent = await transport.sendMail({
-        from: inbox.emailAddress,
-        to: inbox.emailAddress,
-        subject: "Subject string",
-        html: "<b>Hello world</b>",
-    });
-    expect(sent.messageId).toBeTruthy()
-
-    log("Wait for email to arrive")
-    const email = await mailslurp.waitForLatestEmail(inbox.id, 30000, true)
-    expect(email.subject).toContain("Test outbound")
-    expect(email.isHTML).toBeTruthy()
-});
-```
-
-
 ### List inboxes
 Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/modules/InboxProjection/) for properties.
 

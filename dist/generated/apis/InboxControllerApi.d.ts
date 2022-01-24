@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -130,6 +130,10 @@ export interface SendEmailRequest {
 export interface SendEmailAndConfirmRequest {
     inboxId: string;
     sendEmailOptions: SendEmailOptions;
+}
+export interface SendSmtpEnvelopeRequest {
+    inboxId: string;
+    sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
 }
 export interface SendTestEmailRequest {
     inboxId: string;
@@ -388,6 +392,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Send email and return sent confirmation
      */
     sendEmailAndConfirm(requestParameters: SendEmailAndConfirmRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    sendSmtpEnvelopeRaw(requestParameters: SendSmtpEnvelopeRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    sendSmtpEnvelope(requestParameters: SendSmtpEnvelopeRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
     /**
      * Send an inbox a test email to test email receiving is working
      * Send a test email to inbox

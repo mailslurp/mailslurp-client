@@ -36,6 +36,12 @@ export interface PageEmailPreview {
     total?: number;
     /**
      *
+     * @type {boolean}
+     * @memberof PageEmailPreview
+     */
+    last?: boolean;
+    /**
+     *
      * @type {number}
      * @memberof PageEmailPreview
      */
@@ -46,12 +52,6 @@ export interface PageEmailPreview {
      * @memberof PageEmailPreview
      */
     totalPages?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEmailPreview
-     */
-    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageEmailPreview {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageEmailPreview
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageEmailPreview
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEmailPreview
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

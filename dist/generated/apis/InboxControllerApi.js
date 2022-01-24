@@ -1544,6 +1544,64 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelopeRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelope.');
+                        }
+                        if (requestParameters.sendSMTPEnvelopeOptions === null ||
+                            requestParameters.sendSMTPEnvelopeOptions === undefined) {
+                            throw new runtime.RequiredError('sendSMTPEnvelopeOptions', 'Required parameter requestParameters.sendSMTPEnvelopeOptions was null or undefined when calling sendSmtpEnvelope.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendSMTPEnvelopeOptionsToJSON)(requestParameters.sendSMTPEnvelopeOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+     * Send email using an SMTP mail envelope and message body and return sent confirmation
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelope = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendSmtpEnvelopeRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Send an inbox a test email to test email receiving is working
      * Send a test email to inbox
      */

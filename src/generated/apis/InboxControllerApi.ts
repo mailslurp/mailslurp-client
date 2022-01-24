@@ -68,6 +68,9 @@ import {
   SendEmailOptions,
   SendEmailOptionsFromJSON,
   SendEmailOptionsToJSON,
+  SendSMTPEnvelopeOptions,
+  SendSMTPEnvelopeOptionsFromJSON,
+  SendSMTPEnvelopeOptionsToJSON,
   SentEmailDto,
   SentEmailDtoFromJSON,
   SentEmailDtoToJSON,
@@ -217,6 +220,11 @@ export interface SendEmailRequest {
 export interface SendEmailAndConfirmRequest {
   inboxId: string;
   sendEmailOptions: SendEmailOptions;
+}
+
+export interface SendSmtpEnvelopeRequest {
+  inboxId: string;
+  sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
 }
 
 export interface SendTestEmailRequest {
@@ -1811,6 +1819,80 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SentEmailDto> {
     const response = await this.sendEmailAndConfirmRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+   * Send email using an SMTP mail envelope and message body and return sent confirmation
+   */
+  async sendSmtpEnvelopeRaw(
+    requestParameters: SendSmtpEnvelopeRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentEmailDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelope.'
+      );
+    }
+
+    if (
+      requestParameters.sendSMTPEnvelopeOptions === null ||
+      requestParameters.sendSMTPEnvelopeOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendSMTPEnvelopeOptions',
+        'Required parameter requestParameters.sendSMTPEnvelopeOptions was null or undefined when calling sendSmtpEnvelope.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/smtp-envelope`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendSMTPEnvelopeOptionsToJSON(
+          requestParameters.sendSMTPEnvelopeOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
+   * Send email using an SMTP mail envelope and message body and return sent confirmation
+   */
+  async sendSmtpEnvelope(
+    requestParameters: SendSmtpEnvelopeRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentEmailDto> {
+    const response = await this.sendSmtpEnvelopeRaw(
       requestParameters,
       initOverrides
     );

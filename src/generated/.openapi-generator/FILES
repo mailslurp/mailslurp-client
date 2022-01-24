@@ -81,6 +81,7 @@ models/GroupDto.ts
 models/GroupProjection.ts
 models/HTMLValidationResult.ts
 models/IPAddressResult.ts
+models/ImapFlagOperationOptions.ts
 models/ImapSmtpAccessDetails.ts
 models/InboxByEmailAddressResult.ts
 models/InboxDto.ts
@@ -129,6 +130,7 @@ models/Recipient.ts
 models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
 models/SendEmailOptions.ts
+models/SendSMTPEnvelopeOptions.ts
 models/Sender.ts
 models/SentEmailDto.ts
 models/SentEmailProjection.ts
