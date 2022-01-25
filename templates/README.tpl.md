@@ -141,6 +141,32 @@ Inboxes have real email addresses. See the [inbox reference](https://www.mailslu
 {{get_an_inbox}}
 ```
 
+### Access mailbox and emails using SMTP client
+You can access SMTP_INBOX type inboxes using an SMTP client like nodemailer. First create an inbox then call the `getImapSmtpAccessDetails` function to obtain SMTP username and password:
+
+```javascript
+const {MailSlurp} = require('mailslurp-client');
+const nodemailer = require("nodemailer");
+const apiKey = process.env.API_KEY;
+const mailslurp = new MailSlurp({ apiKey });
+
+// get access details for smpt server
+const server = await mailslurp.getImapSmtpAccessDetails();
+
+// use details to configure SMTP client like NodeMailer
+const opts = {
+    host: server.smtpServerHost,
+    port: server.smtpServerPort,
+    secure: false, // Disable tls recommended
+    auth: {
+        user: server.smtpUsername,
+        pass: server.smtpPassword,
+        type: "PLAIN" // Note the use of PLAIN AUTH
+    },
+}
+const transport = nodemailer.createTransport(opts)
+```
+
 ### List inboxes
 Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/modules/InboxProjection/) for properties.
 
