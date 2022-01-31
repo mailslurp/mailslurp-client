@@ -549,10 +549,6 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
 
     const queryParameters: any = {};
 
-    if (requestParameters.contentType !== undefined) {
-      queryParameters['contentType'] = requestParameters.contentType;
-    }
-
     if (requestParameters.filename !== undefined) {
       queryParameters['filename'] = requestParameters.filename;
     }
@@ -560,6 +556,13 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     const headerParameters: runtime.HTTPHeaders = {};
 
     headerParameters['Content-Type'] = 'application/octet-stream';
+
+    if (
+      requestParameters.contentType !== undefined &&
+      requestParameters.contentType !== null
+    ) {
+      headerParameters['contentType'] = String(requestParameters.contentType);
+    }
 
     if (this.configuration && this.configuration.apiKey) {
       headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication

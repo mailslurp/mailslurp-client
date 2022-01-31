@@ -58,6 +58,8 @@
 - [getInboxTagsRaw](InboxControllerApi.md#getinboxtagsraw)
 - [getInboxes](InboxControllerApi.md#getinboxes)
 - [getInboxesRaw](InboxControllerApi.md#getinboxesraw)
+- [getLatestEmailInInbox](InboxControllerApi.md#getlatestemailininbox)
+- [getLatestEmailInInboxRaw](InboxControllerApi.md#getlatestemailininboxraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
 - [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
@@ -888,6 +890,46 @@ List Inboxes and email addresses
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
+
+___
+
+### getLatestEmailInInbox
+
+▸ **getLatestEmailInInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
+
+Get the newest email in an inbox or wait for one to arrive
+Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetLatestEmailInInboxRequest`](../interfaces/GetLatestEmailInInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`Email`](../interfaces/Email.md)\>
+
+___
+
+### getLatestEmailInInboxRaw
+
+▸ **getLatestEmailInInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+
+Get the newest email in an inbox or wait for one to arrive
+Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetLatestEmailInInboxRequest`](../interfaces/GetLatestEmailInInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
 ___
 

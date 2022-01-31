@@ -2,15 +2,15 @@
 
 > Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
 
-[MailSlurp](https://www.mailslurp.com) is an email [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading.
+[MailSlurp](https://www.mailslurp.com) is an email [API](https://docs.mailslurp.com/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading.
 
 ![email testing](https://www.mailslurp.com/assets/slurpie-vibrant.png)
 
 ## Quick links
 Here are some links to get started (or see below for code examples).
 
-- [Main class methods](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/)
-- [Method Documentation](https://www.mailslurp.com/docs/js/docs/)
+- [Main class methods](https://docs.mailslurp.com/js/docs/classes/MailSlurp/)
+- [Method Documentation](https://docs.mailslurp.com/js/docs/)
 - [NPM Package](https://www.npmjs.com/package/mailslurp-client)
 - [Github Source](https://github.com/mailslurp/mailslurp-client)
 
@@ -39,7 +39,7 @@ This section describes how to get up and running with the Javascript client.
 
 See the [guides page](https://www.mailslurp.com/guides/) for more examples and use with common frameworks. For use with CypressJS see the official [Cypress MailSlurp plugin](https://www.npmjs.com/package/cypress-mailslurp).
 
-See the method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/). 
+See the method documentation for a [list of all functions](https://docs.mailslurp.com/js/docs/). 
 
 > See the `test/integration.spec.ts` in this package for usage examples of this client.
 
@@ -76,7 +76,7 @@ const mailslurp = new MailSlurp({ apiKey: "your_api_key" });
 
 Note the `MailSlurp` object is a class with many common methods. It does not contain all MailSlurp API methods. **The full API is available as individually exported controllers**.
 
-See the [MailSlurp class documentation](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/) for all methods or
+See the [MailSlurp class documentation](https://docs.mailslurp.com/js/docs/classes/MailSlurp/) for all methods or
 see the `test/integration.spec.ts` file for usage examples.
 
 Use individual controllers like so:
@@ -94,7 +94,7 @@ it('can use inbox controller methods', async () => {
 });
 ```
 
-You can also instantiate controllers directly. See the [API controllers](https://www.mailslurp.com/docs/js/docs/classes/) for method details.
+You can also instantiate controllers directly. See the [API controllers](https://docs.mailslurp.com/js/docs/classes/) for method details.
 
 ```typescript
 it('can use inbox controller methods', async () => {
@@ -164,7 +164,7 @@ test('can use wrapResult to avoid try catch', async () => {
 Here are some snippets of common usage. Read
 
 ### Create an email address
-MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://www.mailslurp.com/docs/js/docs/modules/Inbox/).
+MailSlurp inboxes have real email addresses. There are several ways to create them. See the docs for full [inbox object reference](https://docs.mailslurp.com/js/docs/modules/Inbox/).
 Inboxes can be either `SMTP` or `HTTP` type mailboxes. `HTTP` inboxes are powered by AWS SES and are great for most use cases. `SMTP` inboxes use a custom mail server running at `mx.mailslurp.com` to support older email clients. `SMTP` inboxes are more suitable for public facing usage.
 
 #### Simple usage
@@ -214,7 +214,7 @@ describe('inbox method usage', () => {
 > To use custom domains see the [domain verification guide](https://www.mailslurp.com/guides/custom-domains/)
 
 ### Get an inbox
-Inboxes have real email addresses. See the [inbox reference](https://www.mailslurp.com/docs/js/docs/modules/Inbox/) for all properties.
+Inboxes have real email addresses. See the [inbox reference](https://docs.mailslurp.com/js/docs/modules/Inbox/) for all properties.
 
 ```javascript
 /**
@@ -232,7 +232,7 @@ it('can get a full inbox', async () => {
 ```
 
 ### List inboxes
-Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://www.mailslurp.com/docs/js/docs/modules/InboxProjection/) for properties.
+Inbox lists are paginated and sortable. List methods return a projection of an inbox. See the [inbox projection reference](https://docs.mailslurp.com/js/docs/modules/InboxProjection/) for properties.
 
 ```javascript
 describe("inbox pagination", () => {
@@ -252,7 +252,7 @@ describe("inbox pagination", () => {
 ```
 
 ### Access controllers
-A [MailSlurp instance](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/) has properties for access all the API endpoints as controllers. See these for further inbox operations.
+A [MailSlurp instance](https://docs.mailslurp.com/js/docs/classes/MailSlurp/) has properties for access all the API endpoints as controllers. See these for further inbox operations.
 ```javascript
 describe("inbox pagination", () => {
   /**
@@ -269,12 +269,12 @@ describe("inbox pagination", () => {
 });
 ```
 
-See method documentation for a [list of all functions](https://www.mailslurp.com/docs/js/docs/).
+See method documentation for a [list of all functions](https://docs.mailslurp.com/js/docs/).
 
 ### Fetch emails from inbox
-To read emails that already exist in an inbox use the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/EmailControllerApi/) `getEmail` method. To wait for expected emails that may not have arrived yet use the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/WaitForControllerApi/).
+To read emails that already exist in an inbox use the [EmailController](https://docs.mailslurp.com/js/docs/classes/EmailControllerApi/) `getEmail` method. To wait for expected emails that may not have arrived yet use the [WaitForController](https://docs.mailslurp.com/js/docs/classes/WaitForControllerApi/).
 
-There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://www.mailslurp.com/docs/js/docs/interfaces/Email/).
+There are many ways to receive and fetch emails in MailSlurp. Emails have many properties including body, subject, attachments and more. See the API docs for [full email reference](https://docs.mailslurp.com/js/docs/interfaces/Email/).
 
 ```javascript
 const latestEmail = await mailslurp.waitForLatestEmail(undefined, undefined, inbox.id);
@@ -286,10 +286,10 @@ const secondEmail = await mailslurp.waitForNthEmail(inbox.id, 1);
 const allEmails = await mailslurp.getInboxEmailsPaginated(inbox.id);
 ```
 
-For more fetching methods see the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/WaitForControllerApi/) and the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/EmailControllerApi/)
+For more fetching methods see the [WaitForController](https://docs.mailslurp.com/js/docs/classes/WaitForControllerApi/) and the [EmailController](https://docs.mailslurp.com/js/docs/classes/EmailControllerApi/)
 
 ### Send emails
-To send emails use the [SendEmailOptions](https://www.mailslurp.com/docs/js/docs/modules/SendEmailOptions/) arguments with the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/InboxControllerApi/) or MailSlurp [instance methods](https://www.mailslurp.com/docs/js/docs/classes/MailSlurp/).
+To send emails use the [SendEmailOptions](https://docs.mailslurp.com/js/docs/modules/SendEmailOptions/) arguments with the [InboxController](https://docs.mailslurp.com/js/docs/classes/InboxControllerApi/) or MailSlurp [instance methods](https://docs.mailslurp.com/js/docs/classes/MailSlurp/).
 
 ```javascript
 const options = {
@@ -301,9 +301,9 @@ await mailslurp.sendEmail(inbox.id, options);
 ```
 
 ### Upload attachment
-Upload attachment using the [AttachmentController](https://www.mailslurp.com/docs/js/docs/classes/AttachmentControllerApi/).
+Upload attachment using the [AttachmentController](https://docs.mailslurp.com/js/docs/classes/AttachmentControllerApi/).
 
-Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions. See the [upload attachment options](https://www.mailslurp.com/docs/js/docs/interfaces/UploadAttachmentOptions/) for more information.
+Attachments can be uploaded as base64 strings. The ids returned can the be used with `SendEmailOptions` send functions. See the [upload attachment options](https://docs.mailslurp.com/js/docs/interfaces/UploadAttachmentOptions/) for more information.
 ```javascript
 /**
  * Upload base 64 encoded file
@@ -323,7 +323,7 @@ async function uploadAttachment() {
 ```
 
 ### Send attachment
-To send an attachment first upload the file using the [AttachmentController](https://www.mailslurp.com/docs/js/docs/classes/AttachmentControllerApi/) then send an email containing the attachment ID with the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/AttachmentControllerApi/).
+To send an attachment first upload the file using the [AttachmentController](https://docs.mailslurp.com/js/docs/classes/AttachmentControllerApi/) then send an email containing the attachment ID with the [InboxController](https://docs.mailslurp.com/js/docs/classes/AttachmentControllerApi/).
 
 You can send attachments by including their IDs in the attachments options when sending.
 ```javascript
@@ -347,7 +347,7 @@ it("can send attachment", async () => {
 });
 ```
 ### Wait for multiple emails
-The WaitForController contains many methods for waiting for emails to arrive in an inbox. See the [waitFor controller reference](https://www.mailslurp.com/docs/js/docs/classes/WaitForControllerApi/) for more information.
+The WaitForController contains many methods for waiting for emails to arrive in an inbox. See the [waitFor controller reference](https://docs.mailslurp.com/js/docs/classes/WaitForControllerApi/) for more information.
 
 ```javascript
 it('can wait for multiple emails', async () => {
@@ -371,7 +371,7 @@ it('can wait for multiple emails', async () => {
 ```
 
 ### Receive attachments
-To wait for expected emails to arrive and read their contents use the [WaitFor controller](https://www.mailslurp.com/docs/js/docs/classes/WaitForControllerApi/) endpoints.
+To wait for expected emails to arrive and read their contents use the [WaitFor controller](https://docs.mailslurp.com/js/docs/classes/WaitForControllerApi/) endpoints.
 
 ```javascript
 async function canReceiveAttachment(inboxId) {
@@ -424,10 +424,10 @@ it('can wait for matching emails', async () => {
 })
 ```
 
-See the [MatchOptions documentation](https://www.mailslurp.com/docs/js/docs/interfaces/MatchOptions/) for reference.
+See the [MatchOptions documentation](https://docs.mailslurp.com/js/docs/interfaces/MatchOptions/) for reference.
 
 ### Extract email content
-You can extract useful information from emails using regular expressions. See the [EmailController](https://www.mailslurp.com/docs/js/docs/classes/EmailControllerApi/) for more information:
+You can extract useful information from emails using regular expressions. See the [EmailController](https://docs.mailslurp.com/js/docs/classes/EmailControllerApi/) for more information:
 
 ```javascript
 const mailslurp = new MailSlurp(config);
@@ -451,7 +451,7 @@ expect(result.matches[1]).toEqual("123456");
 ```
 
 ## Aliases
-You can mask an email address using an alias and the [AliasController](https://www.mailslurp.com/docs/js/docs/classes/AliasControllerApi/). An alias is like a proxy. It can receive emails and forward them to any address. You can generate many to one aliases for any email address. You must verify the email address upon first use by clicking a link in the email that is sent to the address. Here is a code example:
+You can mask an email address using an alias and the [AliasController](https://docs.mailslurp.com/js/docs/classes/AliasControllerApi/). An alias is like a proxy. It can receive emails and forward them to any address. You can generate many to one aliases for any email address. You must verify the email address upon first use by clicking a link in the email that is sent to the address. Here is a code example:
 
 ```typescript
 /**
@@ -535,7 +535,7 @@ test('aliases', async () => {
 ```
 
 ## Webhooks
-To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://www.mailslurp.com/docs/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://www.mailslurp.com/guides/email-webhooks/).
+To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://www.mailslurp.com/guides/email-webhooks/).
 
 ### Create webhooks
 ```typescript
@@ -546,7 +546,7 @@ mailslurp.webhookController.createWebhook(inboxId, {
 ```
 
 ### Listen to webhooks
-To consume webhooks first create a webhook for an inbox and a given [webhook event](https://www.mailslurp.com/docs/webhooks). Set the webhook URL to an endpoint on your server. Your server must be publicly accessible and return a 200 or 201 status code in 30 seconds. To test locally use a service like ngrok.io to tunnel your local machine to a public URL. [The payload](https://www.mailslurp.com/guides/email-webhooks) posted to your end point will depend on the event type. Here is a listen example using express
+To consume webhooks first create a webhook for an inbox and a given [webhook event](https://docs.mailslurp.com/webhooks). Set the webhook URL to an endpoint on your server. Your server must be publicly accessible and return a 200 or 201 status code in 30 seconds. To test locally use a service like ngrok.io to tunnel your local machine to a public URL. [The payload](https://www.mailslurp.com/guides/email-webhooks) posted to your end point will depend on the event type. Here is a listen example using express
 
 > **Note:** you can use any framework or language you like with webhooks.
 
@@ -589,7 +589,7 @@ describe('can manage smtp inboxes', () => {
 
 ## More Documentation
 
-- [Method documentation](https://www.mailslurp.com/docs/js/docs/)
+- [Method documentation](https://docs.mailslurp.com/js/docs/)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)
 - [Example repositories](https://www.mailslurp.com/examples/)
@@ -597,7 +597,7 @@ describe('can manage smtp inboxes', () => {
 ## Resources
 
 - [Dashboard App](https://app.mailslurp.com)
-- [Documentation](https://www.mailslurp.com/docs/js/docs/)
+- [Documentation](https://docs.mailslurp.com/js/docs/)
 - [Github](https://github.com/mailslurp/mailslurp-client)
 - [NPM package](https://www.npmjs.com/package/mailslurp-client)
 

@@ -64,6 +64,7 @@ models/EmailAnalysis.ts
 models/EmailContentMatchResult.ts
 models/EmailLinksResult.ts
 models/EmailPreview.ts
+models/EmailPreviewUrls.ts
 models/EmailProjection.ts
 models/EmailRecipients.ts
 models/EmailTextLinesResult.ts

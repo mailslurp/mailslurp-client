@@ -49,6 +49,8 @@
 - [getEmailHTMLRaw](EmailControllerApi.md#getemailhtmlraw)
 - [getEmailLinks](EmailControllerApi.md#getemaillinks)
 - [getEmailLinksRaw](EmailControllerApi.md#getemaillinksraw)
+- [getEmailPreviewURLs](EmailControllerApi.md#getemailpreviewurls)
+- [getEmailPreviewURLsRaw](EmailControllerApi.md#getemailpreviewurlsraw)
 - [getEmailRaw](EmailControllerApi.md#getemailraw)
 - [getEmailTextLines](EmailControllerApi.md#getemailtextlines)
 - [getEmailTextLinesRaw](EmailControllerApi.md#getemailtextlinesraw)
@@ -57,8 +59,8 @@
 - [getGravatarUrlForEmailAddress](EmailControllerApi.md#getgravatarurlforemailaddress)
 - [getGravatarUrlForEmailAddressRaw](EmailControllerApi.md#getgravatarurlforemailaddressraw)
 - [getLatestEmail](EmailControllerApi.md#getlatestemail)
-- [getLatestEmailInInbox](EmailControllerApi.md#getlatestemailininbox)
-- [getLatestEmailInInboxRaw](EmailControllerApi.md#getlatestemailininboxraw)
+- [getLatestEmailInInbox1](EmailControllerApi.md#getlatestemailininbox1)
+- [getLatestEmailInInbox1Raw](EmailControllerApi.md#getlatestemailininbox1raw)
 - [getLatestEmailRaw](EmailControllerApi.md#getlatestemailraw)
 - [getOrganizationEmailsPaginated](EmailControllerApi.md#getorganizationemailspaginated)
 - [getOrganizationEmailsPaginatedRaw](EmailControllerApi.md#getorganizationemailspaginatedraw)
@@ -723,6 +725,46 @@ Parse and return list of links found in an email (only works for HTML content)
 
 ___
 
+### getEmailPreviewURLs
+
+▸ **getEmailPreviewURLs**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
+
+Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+Get email URLs for viewing in browser or downloading
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailPreviewURLsRequest`](../interfaces/GetEmailPreviewURLsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
+
+___
+
+### getEmailPreviewURLsRaw
+
+▸ **getEmailPreviewURLsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
+
+Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+Get email URLs for viewing in browser or downloading
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailPreviewURLsRequest`](../interfaces/GetEmailPreviewURLsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
+
+___
+
 ### getEmailRaw
 
 ▸ **getEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
@@ -881,9 +923,9 @@ Get latest email in all inboxes. Most recently received.
 
 ___
 
-### getLatestEmailInInbox
+### getLatestEmailInInbox1
 
-▸ **getLatestEmailInInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
+▸ **getLatestEmailInInbox1**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
 Get the newest email in all inboxes or in a passed set of inbox IDs
 Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
@@ -892,7 +934,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetLatestEmailInInboxRequest`](../interfaces/GetLatestEmailInInboxRequest.md) |
+| `requestParameters` | [`GetLatestEmailInInbox1Request`](../interfaces/GetLatestEmailInInbox1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -901,9 +943,9 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 ___
 
-### getLatestEmailInInboxRaw
+### getLatestEmailInInbox1Raw
 
-▸ **getLatestEmailInInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+▸ **getLatestEmailInInbox1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
 Get the newest email in all inboxes or in a passed set of inbox IDs
 Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
@@ -912,7 +954,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetLatestEmailInInboxRequest`](../interfaces/GetLatestEmailInInboxRequest.md) |
+| `requestParameters` | [`GetLatestEmailInInbox1Request`](../interfaces/GetLatestEmailInInbox1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

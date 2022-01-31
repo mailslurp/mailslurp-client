@@ -23,6 +23,9 @@ import {
   CreateInboxRulesetOptions,
   CreateInboxRulesetOptionsFromJSON,
   CreateInboxRulesetOptionsToJSON,
+  Email,
+  EmailFromJSON,
+  EmailToJSON,
   EmailPreview,
   EmailPreviewFromJSON,
   EmailPreviewToJSON,
@@ -181,6 +184,11 @@ export interface GetInboxesRequest {
   sort?: GetInboxesSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface GetLatestEmailInInboxRequest {
+  inboxId: string;
+  timeoutMillis: number;
 }
 
 export interface GetOrganizationInboxesRequest {
@@ -1442,6 +1450,80 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<InboxDto>> {
     const response = await this.getInboxesRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get the newest email in an inbox or wait for one to arrive
+   * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+   */
+  async getLatestEmailInInboxRaw(
+    requestParameters: GetLatestEmailInInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Email>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.'
+      );
+    }
+
+    if (
+      requestParameters.timeoutMillis === null ||
+      requestParameters.timeoutMillis === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'timeoutMillis',
+        'Required parameter requestParameters.timeoutMillis was null or undefined when calling getLatestEmailInInbox.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.timeoutMillis !== undefined) {
+      queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/getLatestEmail`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get the newest email in an inbox or wait for one to arrive
+   * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+   */
+  async getLatestEmailInInbox(
+    requestParameters: GetLatestEmailInInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<Email> {
+    const response = await this.getLatestEmailInInboxRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

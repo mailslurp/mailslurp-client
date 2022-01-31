@@ -13,25 +13,22 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateProjectionToJSON = exports.TemplateProjectionFromJSONTyped = exports.TemplateProjectionFromJSON = void 0;
-function TemplateProjectionFromJSON(json) {
-    return TemplateProjectionFromJSONTyped(json, false);
+exports.EmailPreviewUrlsToJSON = exports.EmailPreviewUrlsFromJSONTyped = exports.EmailPreviewUrlsFromJSON = void 0;
+function EmailPreviewUrlsFromJSON(json) {
+    return EmailPreviewUrlsFromJSONTyped(json, false);
 }
-exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
-function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
+exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
+function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
     }
     return {
-        name: json['name'],
-        id: json['id'],
-        createdAt: new Date(json['createdAt']),
-        variables: json['variables'],
-        updatedAt: new Date(json['updatedAt']),
+        rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
+        plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
     };
 }
-exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
-function TemplateProjectionToJSON(value) {
+exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
+function EmailPreviewUrlsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,11 +36,8 @@ function TemplateProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
-        createdAt: value.createdAt.toISOString(),
-        variables: value.variables,
-        updatedAt: value.updatedAt.toISOString(),
+        rawSmtpMessageUrl: value.rawSmtpMessageUrl,
+        plainHtmlBodyUrl: value.plainHtmlBodyUrl,
     };
 }
-exports.TemplateProjectionToJSON = TemplateProjectionToJSON;
+exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;

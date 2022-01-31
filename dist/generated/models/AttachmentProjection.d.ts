@@ -34,17 +34,17 @@ export interface AttachmentProjection {
      */
     contentType?: string;
     /**
-     *
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    userId: string;
-    /**
      * Attachment ID
      * @type {string}
      * @memberof AttachmentProjection
      */
     attachmentId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    userId: string;
     /**
      *
      * @type {Date}

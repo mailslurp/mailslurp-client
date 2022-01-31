@@ -16,64 +16,41 @@ import { exists, mapValues } from '../runtime';
 /**
  *
  * @export
- * @interface TemplateProjection
+ * @interface EmailPreviewUrls
  */
-export interface TemplateProjection {
+export interface EmailPreviewUrls {
   /**
    *
    * @type {string}
-   * @memberof TemplateProjection
+   * @memberof EmailPreviewUrls
    */
-  name: string;
+  rawSmtpMessageUrl: string;
   /**
    *
    * @type {string}
-   * @memberof TemplateProjection
+   * @memberof EmailPreviewUrls
    */
-  id: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof TemplateProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof TemplateProjection
-   */
-  variables: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof TemplateProjection
-   */
-  updatedAt: Date;
+  plainHtmlBodyUrl: string;
 }
 
-export function TemplateProjectionFromJSON(json: any): TemplateProjection {
-  return TemplateProjectionFromJSONTyped(json, false);
+export function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls {
+  return EmailPreviewUrlsFromJSONTyped(json, false);
 }
 
-export function TemplateProjectionFromJSONTyped(
+export function EmailPreviewUrlsFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): TemplateProjection {
+): EmailPreviewUrls {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    name: json['name'],
-    id: json['id'],
-    createdAt: new Date(json['createdAt']),
-    variables: json['variables'],
-    updatedAt: new Date(json['updatedAt']),
+    rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
+    plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
   };
 }
 
-export function TemplateProjectionToJSON(
-  value?: TemplateProjection | null
-): any {
+export function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any {
   if (value === undefined) {
     return undefined;
   }
@@ -81,10 +58,7 @@ export function TemplateProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
-    createdAt: value.createdAt.toISOString(),
-    variables: value.variables,
-    updatedAt: value.updatedAt.toISOString(),
+    rawSmtpMessageUrl: value.rawSmtpMessageUrl,
+    plainHtmlBodyUrl: value.plainHtmlBodyUrl,
   };
 }

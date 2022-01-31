@@ -77,7 +77,7 @@ require('isomorphic-fetch');
 var generated_1 = require("./generated");
 __exportStar(require("./generated"), exports);
 /**
- * The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST API](https://www.mailslurp.com/docs/api/docs/Apis/).
+ * The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST API](https://docs.mailslurp.com/api/docs/Apis/).
  *
  * Create an instance of this class to call MailSlurp API methods. Contains top level convenience functions. Access the full API controllers as properties on the instance.
  *
@@ -94,7 +94,7 @@ __exportStar(require("./generated"), exports);
 
  * ## Call methods
  * Most methods are asynchronous and return Promises. You can `await` the results or use `.then(result => {})`
- * Common controllers include the [InboxController](https://www.mailslurp.com/docs/js/docs/classes/inboxcontrollerapi/), [EmailController](https://www.mailslurp.com/docs/js/docs/classes/emailcontrollerapi/) and the [WaitForController](https://www.mailslurp.com/docs/js/docs/classes/waitforcontrollerapi/) for receiving emails.
+ * Common controllers include the [InboxController](https://docs.mailslurp.com/js/docs/classes/inboxcontrollerapi/), [EmailController](https://docs.mailslurp.com/js/docs/classes/emailcontrollerapi/) and the [WaitForController](https://docs.mailslurp.com/js/docs/classes/waitforcontrollerapi/) for receiving emails.
  *
  * ```javascript
  * // call convenience functions

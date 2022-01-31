@@ -53,6 +53,7 @@ __exportStar(require("./EmailAnalysis"), exports);
 __exportStar(require("./EmailContentMatchResult"), exports);
 __exportStar(require("./EmailLinksResult"), exports);
 __exportStar(require("./EmailPreview"), exports);
+__exportStar(require("./EmailPreviewUrls"), exports);
 __exportStar(require("./EmailProjection"), exports);
 __exportStar(require("./EmailRecipients"), exports);
 __exportStar(require("./EmailTextLinesResult"), exports);

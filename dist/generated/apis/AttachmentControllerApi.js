@@ -516,14 +516,15 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                             throw new runtime.RequiredError('requestBody', 'Required parameter requestParameters.requestBody was null or undefined when calling uploadAttachmentBytes.');
                         }
                         queryParameters = {};
-                        if (requestParameters.contentType !== undefined) {
-                            queryParameters['contentType'] = requestParameters.contentType;
-                        }
                         if (requestParameters.filename !== undefined) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/octet-stream';
+                        if (requestParameters.contentType !== undefined &&
+                            requestParameters.contentType !== null) {
+                            headerParameters['contentType'] = String(requestParameters.contentType);
+                        }
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }

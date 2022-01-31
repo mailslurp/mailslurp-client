@@ -220,6 +220,7 @@
 - [EmailContentMatchResult](interfaces/EmailContentMatchResult.md)
 - [EmailLinksResult](interfaces/EmailLinksResult.md)
 - [EmailPreview](interfaces/EmailPreview.md)
+- [EmailPreviewUrls](interfaces/EmailPreviewUrls.md)
 - [EmailProjection](interfaces/EmailProjection.md)
 - [EmailRecipients](interfaces/EmailRecipients.md)
 - [EmailTextLinesResult](interfaces/EmailTextLinesResult.md)
@@ -267,6 +268,7 @@
 - [GetEmailHTMLQueryRequest](interfaces/GetEmailHTMLQueryRequest.md)
 - [GetEmailHTMLRequest](interfaces/GetEmailHTMLRequest.md)
 - [GetEmailLinksRequest](interfaces/GetEmailLinksRequest.md)
+- [GetEmailPreviewURLsRequest](interfaces/GetEmailPreviewURLsRequest.md)
 - [GetEmailRequest](interfaces/GetEmailRequest.md)
 - [GetEmailTextLinesRequest](interfaces/GetEmailTextLinesRequest.md)
 - [GetEmailsPaginatedRequest](interfaces/GetEmailsPaginatedRequest.md)
@@ -293,6 +295,7 @@
 - [GetInboxesRequest](interfaces/GetInboxesRequest.md)
 - [GetIpAddressRequest](interfaces/GetIpAddressRequest.md)
 - [GetJsonSchemaForWebhookPayloadRequest](interfaces/GetJsonSchemaForWebhookPayloadRequest.md)
+- [GetLatestEmailInInbox1Request](interfaces/GetLatestEmailInInbox1Request.md)
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
@@ -300,7 +303,10 @@
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
 - [GetRawEmailContentsRequest](interfaces/GetRawEmailContentsRequest.md)
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
+- [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
+- [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
 - [GetSentEmailHTMLContentRequest](interfaces/GetSentEmailHTMLContentRequest.md)
+- [GetSentEmailPreviewURLsRequest](interfaces/GetSentEmailPreviewURLsRequest.md)
 - [GetSentEmailRequest](interfaces/GetSentEmailRequest.md)
 - [GetSentEmailTrackingPixelsRequest](interfaces/GetSentEmailTrackingPixelsRequest.md)
 - [GetSentEmailsRequest](interfaces/GetSentEmailsRequest.md)
@@ -595,6 +601,9 @@
 - [EmailPreviewFromJSON](README.md#emailpreviewfromjson)
 - [EmailPreviewFromJSONTyped](README.md#emailpreviewfromjsontyped)
 - [EmailPreviewToJSON](README.md#emailpreviewtojson)
+- [EmailPreviewUrlsFromJSON](README.md#emailpreviewurlsfromjson)
+- [EmailPreviewUrlsFromJSONTyped](README.md#emailpreviewurlsfromjsontyped)
+- [EmailPreviewUrlsToJSON](README.md#emailpreviewurlstojson)
 - [EmailProjectionFromJSON](README.md#emailprojectionfromjson)
 - [EmailProjectionFromJSONTyped](README.md#emailprojectionfromjsontyped)
 - [EmailProjectionToJSON](README.md#emailprojectiontojson)
@@ -3035,6 +3044,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`EmailPreview`](interfaces/EmailPreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### EmailPreviewUrlsFromJSON
+
+▸ **EmailPreviewUrlsFromJSON**(`json`): [`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
+
+___
+
+### EmailPreviewUrlsFromJSONTyped
+
+▸ **EmailPreviewUrlsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
+
+___
+
+### EmailPreviewUrlsToJSON
+
+▸ **EmailPreviewUrlsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md) |
 
 #### Returns
 

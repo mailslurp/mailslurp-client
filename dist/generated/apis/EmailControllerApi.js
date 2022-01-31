@@ -953,6 +953,58 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get email URLs for viewing in browser or downloading
+     */
+    EmailControllerApi.prototype.getEmailPreviewURLsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailPreviewURLs.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/urls".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailPreviewUrlsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get email URLs for viewing in browser or downloading
+     */
+    EmailControllerApi.prototype.getEmailPreviewURLs = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailPreviewURLsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
@@ -1194,7 +1246,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    EmailControllerApi.prototype.getLatestEmailInInboxRaw = function (requestParameters, initOverrides) {
+    EmailControllerApi.prototype.getLatestEmailInInbox1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -1202,7 +1254,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                     case 0:
                         if (requestParameters.inboxId === null ||
                             requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.');
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox1.');
                         }
                         queryParameters = {};
                         if (requestParameters.inboxId !== undefined) {
@@ -1231,12 +1283,12 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    EmailControllerApi.prototype.getLatestEmailInInbox = function (requestParameters, initOverrides) {
+    EmailControllerApi.prototype.getLatestEmailInInbox1 = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getLatestEmailInInboxRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getLatestEmailInInbox1Raw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

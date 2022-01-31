@@ -24,9 +24,15 @@
 - [deleteSentEmailRaw](SentEmailsControllerApi.md#deletesentemailraw)
 - [getAllSentTrackingPixels](SentEmailsControllerApi.md#getallsenttrackingpixels)
 - [getAllSentTrackingPixelsRaw](SentEmailsControllerApi.md#getallsenttrackingpixelsraw)
+- [getRawSentEmailContents](SentEmailsControllerApi.md#getrawsentemailcontents)
+- [getRawSentEmailContentsRaw](SentEmailsControllerApi.md#getrawsentemailcontentsraw)
+- [getRawSentEmailJson](SentEmailsControllerApi.md#getrawsentemailjson)
+- [getRawSentEmailJsonRaw](SentEmailsControllerApi.md#getrawsentemailjsonraw)
 - [getSentEmail](SentEmailsControllerApi.md#getsentemail)
 - [getSentEmailHTMLContent](SentEmailsControllerApi.md#getsentemailhtmlcontent)
 - [getSentEmailHTMLContentRaw](SentEmailsControllerApi.md#getsentemailhtmlcontentraw)
+- [getSentEmailPreviewURLs](SentEmailsControllerApi.md#getsentemailpreviewurls)
+- [getSentEmailPreviewURLsRaw](SentEmailsControllerApi.md#getsentemailpreviewurlsraw)
 - [getSentEmailRaw](SentEmailsControllerApi.md#getsentemailraw)
 - [getSentEmailTrackingPixels](SentEmailsControllerApi.md#getsentemailtrackingpixels)
 - [getSentEmailTrackingPixelsRaw](SentEmailsControllerApi.md#getsentemailtrackingpixelsraw)
@@ -179,6 +185,86 @@ Get all sent email tracking pixels in paginated form
 
 ___
 
+### getRawSentEmailContents
+
+▸ **getRawSentEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetRawSentEmailContentsRequest`](../interfaces/GetRawSentEmailContentsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### getRawSentEmailContentsRaw
+
+▸ **getRawSentEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetRawSentEmailContentsRequest`](../interfaces/GetRawSentEmailContentsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### getRawSentEmailJson
+
+▸ **getRawSentEmailJson**(`requestParameters`, `initOverrides?`): `Promise`<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>
+
+Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetRawSentEmailJsonRequest`](../interfaces/GetRawSentEmailJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>
+
+___
+
+### getRawSentEmailJsonRaw
+
+▸ **getRawSentEmailJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
+
+Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetRawSentEmailJsonRequest`](../interfaces/GetRawSentEmailJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
+
+___
+
 ### getSentEmail
 
 ▸ **getSentEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
@@ -233,6 +319,46 @@ Get sent email HTML content
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### getSentEmailPreviewURLs
+
+▸ **getSentEmailPreviewURLs**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
+
+Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+Get sent email URL for viewing in browser or downloading
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailPreviewURLsRequest`](../interfaces/GetSentEmailPreviewURLsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
+
+___
+
+### getSentEmailPreviewURLsRaw
+
+▸ **getSentEmailPreviewURLsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
+
+Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+Get sent email URL for viewing in browser or downloading
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailPreviewURLsRequest`](../interfaces/GetSentEmailPreviewURLsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
 
 ___
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -63,6 +63,9 @@ export interface GetEmailHTMLQueryRequest {
 export interface GetEmailLinksRequest {
     emailId: string;
 }
+export interface GetEmailPreviewURLsRequest {
+    emailId: string;
+}
 export interface GetEmailTextLinesRequest {
     emailId: string;
     decodeHtmlEntities?: boolean;
@@ -85,7 +88,7 @@ export interface GetGravatarUrlForEmailAddressRequest {
 export interface GetLatestEmailRequest {
     inboxIds?: Array<string>;
 }
-export interface GetLatestEmailInInboxRequest {
+export interface GetLatestEmailInInbox1Request {
     inboxId: string;
 }
 export interface GetOrganizationEmailsPaginatedRequest {
@@ -283,6 +286,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailLinks(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit): Promise<EmailLinksResult>;
     /**
+     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get email URLs for viewing in browser or downloading
+     */
+    getEmailPreviewURLsRaw(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
+    /**
+     * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get email URLs for viewing in browser or downloading
+     */
+    getEmailPreviewURLs(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<EmailPreviewUrls>;
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */
@@ -324,12 +337,12 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    getLatestEmailInInboxRaw(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    getLatestEmailInInbox1Raw(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
     /**
      * Get the newest email in all inboxes or in a passed set of inbox IDs
      * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
      */
-    getLatestEmailInInbox(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<Email>;
+    getLatestEmailInInbox1(requestParameters: GetLatestEmailInInbox1Request, initOverrides?: RequestInit): Promise<Email>;
     /**
      * By default returns all emails across all team inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all organization emails. List team or shared test email accounts

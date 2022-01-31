@@ -1226,6 +1226,68 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    InboxControllerApi.prototype.getLatestEmailInInboxRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.');
+                        }
+                        if (requestParameters.timeoutMillis === null ||
+                            requestParameters.timeoutMillis === undefined) {
+                            throw new runtime.RequiredError('timeoutMillis', 'Required parameter requestParameters.timeoutMillis was null or undefined when calling getLatestEmailInInbox.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.timeoutMillis !== undefined) {
+                            queryParameters['timeoutMillis'] = requestParameters.timeoutMillis;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/getLatestEmail",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    InboxControllerApi.prototype.getLatestEmailInInbox = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getLatestEmailInInboxRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated
      */

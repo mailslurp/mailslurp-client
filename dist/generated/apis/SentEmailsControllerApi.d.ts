@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageSentEmailProjection, PageTrackingPixelProjection, SentEmailDto } from '../models';
+import { EmailPreviewUrls, PageSentEmailProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
 export interface DeleteSentEmailRequest {
     id: string;
 }
@@ -22,10 +22,19 @@ export interface GetAllSentTrackingPixelsRequest {
     since?: Date;
     before?: Date;
 }
+export interface GetRawSentEmailContentsRequest {
+    emailId: string;
+}
+export interface GetRawSentEmailJsonRequest {
+    emailId: string;
+}
 export interface GetSentEmailRequest {
     id: string;
 }
 export interface GetSentEmailHTMLContentRequest {
+    id: string;
+}
+export interface GetSentEmailPreviewURLsRequest {
     id: string;
 }
 export interface GetSentEmailTrackingPixelsRequest {
@@ -84,6 +93,26 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      */
     getAllSentTrackingPixels(requestParameters: GetAllSentTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection>;
     /**
+     * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+     * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+     */
+    getRawSentEmailContentsRaw(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+     * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+     */
+    getRawSentEmailContents(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+     * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+     */
+    getRawSentEmailJsonRaw(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RawEmailJson>>;
+    /**
+     * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+     * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+     */
+    getRawSentEmailJson(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit): Promise<RawEmailJson>;
+    /**
      * Get sent email receipt
      */
     getSentEmailRaw(requestParameters: GetSentEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
@@ -99,6 +128,16 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      * Get sent email HTML content
      */
     getSentEmailHTMLContent(requestParameters: GetSentEmailHTMLContentRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get sent email URL for viewing in browser or downloading
+     */
+    getSentEmailPreviewURLsRaw(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreviewUrls>>;
+    /**
+     * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+     * Get sent email URL for viewing in browser or downloading
+     */
+    getSentEmailPreviewURLs(requestParameters: GetSentEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<EmailPreviewUrls>;
     /**
      * Get all tracking pixels for a sent email in paginated form
      */

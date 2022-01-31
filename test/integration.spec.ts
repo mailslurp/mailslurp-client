@@ -13,7 +13,7 @@ import MailSlurp_defaultImport, {
 } from '../dist/index';
 
 // node require style
-const TIMEOUT = 60000;
+const TIMEOUT = 120000;
 jest.setTimeout(TIMEOUT);
 
 const { MailSlurp: MailSlurp_nodeRequire } = require('../dist/index');

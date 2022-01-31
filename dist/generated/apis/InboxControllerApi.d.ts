@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -96,6 +96,10 @@ export interface GetInboxesRequest {
     sort?: GetInboxesSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface GetLatestEmailInInboxRequest {
+    inboxId: string;
+    timeoutMillis: number;
 }
 export interface GetOrganizationInboxesRequest {
     page?: number;
@@ -342,6 +346,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List Inboxes and email addresses
      */
     getInboxes(requestParameters: GetInboxesRequest, initOverrides?: RequestInit): Promise<Array<InboxDto>>;
+    /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    getLatestEmailInInboxRaw(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Email>>;
+    /**
+     * Get the newest email in an inbox or wait for one to arrive
+     * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
+     */
+    getLatestEmailInInbox(requestParameters: GetLatestEmailInInboxRequest, initOverrides?: RequestInit): Promise<Email>;
     /**
      * List organization inboxes in paginated form. These are inboxes created with `allowTeamAccess` flag enabled. Organization inboxes are `readOnly` for non-admin users. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time).
      * List Organization Inboxes Paginated

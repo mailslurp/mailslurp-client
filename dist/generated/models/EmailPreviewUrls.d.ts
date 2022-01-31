@@ -12,40 +12,22 @@
 /**
  *
  * @export
- * @interface TemplateProjection
+ * @interface EmailPreviewUrls
  */
-export interface TemplateProjection {
+export interface EmailPreviewUrls {
     /**
      *
      * @type {string}
-     * @memberof TemplateProjection
+     * @memberof EmailPreviewUrls
      */
-    name: string;
+    rawSmtpMessageUrl: string;
     /**
      *
      * @type {string}
-     * @memberof TemplateProjection
+     * @memberof EmailPreviewUrls
      */
-    id: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof TemplateProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof TemplateProjection
-     */
-    variables: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof TemplateProjection
-     */
-    updatedAt: Date;
+    plainHtmlBodyUrl: string;
 }
-export declare function TemplateProjectionFromJSON(json: any): TemplateProjection;
-export declare function TemplateProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateProjection;
-export declare function TemplateProjectionToJSON(value?: TemplateProjection | null): any;
+export declare function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls;
+export declare function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls;
+export declare function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any;

@@ -39,6 +39,7 @@ export * from './EmailAnalysis';
 export * from './EmailContentMatchResult';
 export * from './EmailLinksResult';
 export * from './EmailPreview';
+export * from './EmailPreviewUrls';
 export * from './EmailProjection';
 export * from './EmailRecipients';
 export * from './EmailTextLinesResult';

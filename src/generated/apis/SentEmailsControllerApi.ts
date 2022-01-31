@@ -14,12 +14,18 @@
 
 import * as runtime from '../runtime';
 import {
+  EmailPreviewUrls,
+  EmailPreviewUrlsFromJSON,
+  EmailPreviewUrlsToJSON,
   PageSentEmailProjection,
   PageSentEmailProjectionFromJSON,
   PageSentEmailProjectionToJSON,
   PageTrackingPixelProjection,
   PageTrackingPixelProjectionFromJSON,
   PageTrackingPixelProjectionToJSON,
+  RawEmailJson,
+  RawEmailJsonFromJSON,
+  RawEmailJsonToJSON,
   SentEmailDto,
   SentEmailDtoFromJSON,
   SentEmailDtoToJSON,
@@ -38,11 +44,23 @@ export interface GetAllSentTrackingPixelsRequest {
   before?: Date;
 }
 
+export interface GetRawSentEmailContentsRequest {
+  emailId: string;
+}
+
+export interface GetRawSentEmailJsonRequest {
+  emailId: string;
+}
+
 export interface GetSentEmailRequest {
   id: string;
 }
 
 export interface GetSentEmailHTMLContentRequest {
+  id: string;
+}
+
+export interface GetSentEmailPreviewURLsRequest {
   id: string;
 }
 
@@ -233,6 +251,122 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+   * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+   */
+  async getRawSentEmailContentsRaw(
+    requestParameters: GetRawSentEmailContentsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getRawSentEmailContents.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/{emailId}/raw`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
+   * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
+   */
+  async getRawSentEmailContents(
+    requestParameters: GetRawSentEmailContentsRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getRawSentEmailContentsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+   * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+   */
+  async getRawSentEmailJsonRaw(
+    requestParameters: GetRawSentEmailJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<RawEmailJson>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getRawSentEmailJson.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/{emailId}/raw/json`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      RawEmailJsonFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
+   * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
+   */
+  async getRawSentEmailJson(
+    requestParameters: GetRawSentEmailJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<RawEmailJson> {
+    const response = await this.getRawSentEmailJsonRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get sent email receipt
    */
   async getSentEmailRaw(
@@ -332,6 +466,62 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<string> {
     const response = await this.getSentEmailHTMLContentRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+   * Get sent email URL for viewing in browser or downloading
+   */
+  async getSentEmailPreviewURLsRaw(
+    requestParameters: GetSentEmailPreviewURLsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailPreviewUrls>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getSentEmailPreviewURLs.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/{id}/urls`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailPreviewUrlsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a list of URLs for sent email content as text/html or raw SMTP message for viewing the message in a browser.
+   * Get sent email URL for viewing in browser or downloading
+   */
+  async getSentEmailPreviewURLs(
+    requestParameters: GetSentEmailPreviewURLsRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailPreviewUrls> {
+    const response = await this.getSentEmailPreviewURLsRaw(
       requestParameters,
       initOverrides
     );

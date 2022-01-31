@@ -5,9 +5,16 @@
 ### Properties
 
 - [inboxId](GetLatestEmailInInboxRequest.md#inboxid)
+- [timeoutMillis](GetLatestEmailInInboxRequest.md#timeoutmillis)
 
 ## Properties
 
 ### inboxId
 
 • **inboxId**: `string`
+
+___
+
+### timeoutMillis
+
+• **timeoutMillis**: `number`

@@ -38,6 +38,9 @@ import {
   EmailPreview,
   EmailPreviewFromJSON,
   EmailPreviewToJSON,
+  EmailPreviewUrls,
+  EmailPreviewUrlsFromJSON,
+  EmailPreviewUrlsToJSON,
   EmailTextLinesResult,
   EmailTextLinesResultFromJSON,
   EmailTextLinesResultToJSON,
@@ -139,6 +142,10 @@ export interface GetEmailLinksRequest {
   emailId: string;
 }
 
+export interface GetEmailPreviewURLsRequest {
+  emailId: string;
+}
+
 export interface GetEmailTextLinesRequest {
   emailId: string;
   decodeHtmlEntities?: boolean;
@@ -165,7 +172,7 @@ export interface GetLatestEmailRequest {
   inboxIds?: Array<string>;
 }
 
-export interface GetLatestEmailInInboxRequest {
+export interface GetLatestEmailInInbox1Request {
   inboxId: string;
 }
 
@@ -1207,6 +1214,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+   * Get email URLs for viewing in browser or downloading
+   */
+  async getEmailPreviewURLsRaw(
+    requestParameters: GetEmailPreviewURLsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailPreviewUrls>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailPreviewURLs.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/urls`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailPreviewUrlsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a list of URLs for email content as text/html or raw SMTP message for viewing the message in a browser.
+   * Get email URLs for viewing in browser or downloading
+   */
+  async getEmailPreviewURLs(
+    requestParameters: GetEmailPreviewURLsRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailPreviewUrls> {
+    const response = await this.getEmailPreviewURLsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
    * Parse and return text from an email, stripping HTML and decoding encoded characters
    */
@@ -1470,8 +1536,8 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Get the newest email in all inboxes or in a passed set of inbox IDs
    * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
    */
-  async getLatestEmailInInboxRaw(
-    requestParameters: GetLatestEmailInInboxRequest,
+  async getLatestEmailInInbox1Raw(
+    requestParameters: GetLatestEmailInInbox1Request,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<Email>> {
     if (
@@ -1480,7 +1546,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
     ) {
       throw new runtime.RequiredError(
         'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox.'
+        'Required parameter requestParameters.inboxId was null or undefined when calling getLatestEmailInInbox1.'
       );
     }
 
@@ -1515,11 +1581,11 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Get the newest email in all inboxes or in a passed set of inbox IDs
    * Get latest email in an inbox. Use `WaitForController` to get emails that may not have arrived yet.
    */
-  async getLatestEmailInInbox(
-    requestParameters: GetLatestEmailInInboxRequest,
+  async getLatestEmailInInbox1(
+    requestParameters: GetLatestEmailInInbox1Request,
     initOverrides?: RequestInit
   ): Promise<Email> {
-    const response = await this.getLatestEmailInInboxRaw(
+    const response = await this.getLatestEmailInInbox1Raw(
       requestParameters,
       initOverrides
     );
