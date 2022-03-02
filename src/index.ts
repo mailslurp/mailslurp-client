@@ -18,6 +18,7 @@ import {
   Email,
   EmailControllerApi,
   EmailPreview,
+  EmailVerificationControllerApi,
   FetchAPI,
   FormControllerApi,
   GetAllInboxesSortEnum,
@@ -102,6 +103,7 @@ export type Config = {
  */
 export class MailSlurp {
   public readonly emailController: EmailControllerApi;
+  public readonly emailVerificationController: EmailVerificationControllerApi;
   public readonly inboxController: InboxControllerApi;
   public readonly attachmentController: AttachmentControllerApi;
 
@@ -148,6 +150,9 @@ export class MailSlurp {
     const args = [clientConfiguration, clientConfiguration.basePath, _fetch];
 
     // instantiate api clients
+    this.emailVerificationController = new EmailVerificationControllerApi(
+      ...args
+    );
     this.emailController = new EmailControllerApi(...args);
     this.inboxController = new InboxControllerApi(...args);
     this.attachmentController = new AttachmentControllerApi(...args);

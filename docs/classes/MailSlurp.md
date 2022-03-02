@@ -55,6 +55,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [contactController](MailSlurp.md#contactcontroller)
 - [domainController](MailSlurp.md#domaincontroller)
 - [emailController](MailSlurp.md#emailcontroller)
+- [emailVerificationController](MailSlurp.md#emailverificationcontroller)
 - [formController](MailSlurp.md#formcontroller)
 - [groupController](MailSlurp.md#groupcontroller)
 - [inboxController](MailSlurp.md#inboxcontroller)
@@ -159,6 +160,12 @@ ___
 ### emailController
 
 • `Readonly` **emailController**: [`EmailControllerApi`](EmailControllerApi.md)
+
+___
+
+### emailVerificationController
+
+• `Readonly` **emailVerificationController**: [`EmailVerificationControllerApi`](EmailVerificationControllerApi.md)
 
 ___
 

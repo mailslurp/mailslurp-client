@@ -139,6 +139,7 @@ var MailSlurp = /** @class */ (function () {
         });
         var args = [clientConfiguration, clientConfiguration.basePath, _fetch];
         // instantiate api clients
+        this.emailVerificationController = new (generated_1.EmailVerificationControllerApi.bind.apply(generated_1.EmailVerificationControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.emailController = new (generated_1.EmailControllerApi.bind.apply(generated_1.EmailControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.inboxController = new (generated_1.InboxControllerApi.bind.apply(generated_1.InboxControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.attachmentController = new (generated_1.AttachmentControllerApi.bind.apply(generated_1.AttachmentControllerApi, __spreadArray([void 0], __read(args), false)))();
