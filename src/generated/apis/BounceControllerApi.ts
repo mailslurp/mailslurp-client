@@ -20,6 +20,12 @@ import {
   BouncedRecipientDto,
   BouncedRecipientDtoFromJSON,
   BouncedRecipientDtoToJSON,
+  FilterBouncedRecipientsOptions,
+  FilterBouncedRecipientsOptionsFromJSON,
+  FilterBouncedRecipientsOptionsToJSON,
+  FilterBouncedRecipientsResult,
+  FilterBouncedRecipientsResultFromJSON,
+  FilterBouncedRecipientsResultToJSON,
   PageBouncedEmail,
   PageBouncedEmailFromJSON,
   PageBouncedEmailToJSON,
@@ -27,6 +33,10 @@ import {
   PageBouncedRecipientsFromJSON,
   PageBouncedRecipientsToJSON,
 } from '../models';
+
+export interface FilterBouncedRecipientRequest {
+  filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
+}
 
 export interface GetBouncedEmailRequest {
   id: string;
@@ -56,6 +66,67 @@ export interface GetBouncedRecipientsRequest {
  *
  */
 export class BounceControllerApi extends runtime.BaseAPI {
+  /**
+   * Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
+   * Filter a list of email recipients and remove those who have bounced
+   */
+  async filterBouncedRecipientRaw(
+    requestParameters: FilterBouncedRecipientRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<FilterBouncedRecipientsResult>> {
+    if (
+      requestParameters.filterBouncedRecipientsOptions === null ||
+      requestParameters.filterBouncedRecipientsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'filterBouncedRecipientsOptions',
+        'Required parameter requestParameters.filterBouncedRecipientsOptions was null or undefined when calling filterBouncedRecipient.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/filter-recipients`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: FilterBouncedRecipientsOptionsToJSON(
+          requestParameters.filterBouncedRecipientsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      FilterBouncedRecipientsResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
+   * Filter a list of email recipients and remove those who have bounced
+   */
+  async filterBouncedRecipient(
+    requestParameters: FilterBouncedRecipientRequest,
+    initOverrides?: RequestInit
+  ): Promise<FilterBouncedRecipientsResult> {
+    const response = await this.filterBouncedRecipientRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Bounced emails are email you have sent that were rejected by a recipient
    * Get a bounced email.

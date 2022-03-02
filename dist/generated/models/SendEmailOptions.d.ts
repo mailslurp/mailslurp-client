@@ -125,6 +125,18 @@ export interface SendEmailOptions {
      * @memberof SendEmailOptions
      */
     addTrackingPixel?: boolean;
+    /**
+     * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+     * @type {boolean}
+     * @memberof SendEmailOptions
+     */
+    filterBouncedRecipients?: boolean;
+    /**
+     * Validate recipient email addresses before sending
+     * @type {string}
+     * @memberof SendEmailOptions
+     */
+    validateEmailAddresses?: SendEmailOptionsValidateEmailAddressesEnum;
 }
 /**
  * @export
@@ -132,6 +144,15 @@ export interface SendEmailOptions {
  */
 export declare enum SendEmailOptionsSendStrategyEnum {
     SINGLE_MESSAGE = "SINGLE_MESSAGE"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum SendEmailOptionsValidateEmailAddressesEnum {
+    VALIDATE_FILTER_REMOVE_INVALID = "VALIDATE_FILTER_REMOVE_INVALID",
+    VALIDATE_ERROR_IF_INVALID = "VALIDATE_ERROR_IF_INVALID",
+    NO_VALIDATION = "NO_VALIDATION"
 }
 export declare function SendEmailOptionsFromJSON(json: any): SendEmailOptions;
 export declare function SendEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendEmailOptions;

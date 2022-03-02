@@ -127,6 +127,18 @@ export interface SendEmailOptions {
    * @memberof SendEmailOptions
    */
   addTrackingPixel?: boolean;
+  /**
+   * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+   * @type {boolean}
+   * @memberof SendEmailOptions
+   */
+  filterBouncedRecipients?: boolean;
+  /**
+   * Validate recipient email addresses before sending
+   * @type {string}
+   * @memberof SendEmailOptions
+   */
+  validateEmailAddresses?: SendEmailOptionsValidateEmailAddressesEnum;
 }
 
 /**
@@ -135,6 +147,15 @@ export interface SendEmailOptions {
  */
 export enum SendEmailOptionsSendStrategyEnum {
   SINGLE_MESSAGE = 'SINGLE_MESSAGE',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum SendEmailOptionsValidateEmailAddressesEnum {
+  VALIDATE_FILTER_REMOVE_INVALID = 'VALIDATE_FILTER_REMOVE_INVALID',
+  VALIDATE_ERROR_IF_INVALID = 'VALIDATE_ERROR_IF_INVALID',
+  NO_VALIDATION = 'NO_VALIDATION',
 }
 
 export function SendEmailOptionsFromJSON(json: any): SendEmailOptions {
@@ -175,6 +196,12 @@ export function SendEmailOptionsFromJSONTyped(
     addTrackingPixel: !exists(json, 'addTrackingPixel')
       ? undefined
       : json['addTrackingPixel'],
+    filterBouncedRecipients: !exists(json, 'filterBouncedRecipients')
+      ? undefined
+      : json['filterBouncedRecipients'],
+    validateEmailAddresses: !exists(json, 'validateEmailAddresses')
+      ? undefined
+      : json['validateEmailAddresses'],
   };
 }
 
@@ -204,5 +231,7 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
     sendStrategy: value.sendStrategy,
     useInboxName: value.useInboxName,
     addTrackingPixel: value.addTrackingPixel,
+    filterBouncedRecipients: value.filterBouncedRecipients,
+    validateEmailAddresses: value.validateEmailAddresses,
   };
 }

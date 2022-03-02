@@ -40,6 +40,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
         sentAt: new Date(json['sentAt']),
         pixelIds: !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
+        messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
     };
 }
 exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
@@ -67,6 +68,7 @@ function SentEmailDtoToJSON(value) {
         isHTML: value.isHTML,
         sentAt: value.sentAt.toISOString(),
         pixelIds: value.pixelIds,
+        messageId: value.messageId,
     };
 }
 exports.SentEmailDtoToJSON = SentEmailDtoToJSON;

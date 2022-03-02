@@ -52,11 +52,11 @@ export declare class MailServerControllerApi extends runtime.BaseAPI {
      */
     getIpAddress(requestParameters: GetIpAddressRequest, initOverrides?: RequestInit): Promise<IPAddressResult>;
     /**
-     * Verify the existence of an email address at a given mail server.
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
      */
     verifyEmailAddressRaw(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailVerificationResult>>;
     /**
-     * Verify the existence of an email address at a given mail server.
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
      */
     verifyEmailAddress(requestParameters: VerifyEmailAddressRequest, initOverrides?: RequestInit): Promise<EmailVerificationResult>;
 }

@@ -44,13 +44,13 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    to: Array<string>;
+    attachments?: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    attachments?: Array<string>;
+    to: Array<string>;
     /**
      *
      * @type {Array<string>}

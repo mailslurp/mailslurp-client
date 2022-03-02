@@ -26,7 +26,7 @@ export interface BouncedRecipientDto {
      * @type {string}
      * @memberof BouncedRecipientDto
      */
-    userId: string;
+    userId?: string;
     /**
      *
      * @type {string}

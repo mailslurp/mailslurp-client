@@ -252,7 +252,7 @@ var MailServerControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Verify the existence of an email address at a given mail server.
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
      */
     MailServerControllerApi.prototype.verifyEmailAddressRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -287,7 +287,7 @@ var MailServerControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Verify the existence of an email address at a given mail server.
+     * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
      */
     MailServerControllerApi.prototype.verifyEmailAddress = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

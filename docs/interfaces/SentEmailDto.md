@@ -20,6 +20,7 @@ Sent email details
 - [id](SentEmailDto.md#id)
 - [inboxId](SentEmailDto.md#inboxid)
 - [isHTML](SentEmailDto.md#ishtml)
+- [messageId](SentEmailDto.md#messageid)
 - [pixelIds](SentEmailDto.md#pixelids)
 - [replyTo](SentEmailDto.md#replyto)
 - [sentAt](SentEmailDto.md#sentat)
@@ -112,6 +113,14 @@ ___
 ### isHTML
 
 • `Optional` **isHTML**: `boolean`
+
+**`memberof`** SentEmailDto
+
+___
+
+### messageId
+
+• `Optional` **messageId**: `string`
 
 **`memberof`** SentEmailDto
 

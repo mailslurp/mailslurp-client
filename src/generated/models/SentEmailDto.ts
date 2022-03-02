@@ -115,6 +115,12 @@ export interface SentEmailDto {
    * @memberof SentEmailDto
    */
   pixelIds?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  messageId?: string;
 }
 
 export function SentEmailDtoFromJSON(json: any): SentEmailDto {
@@ -145,6 +151,7 @@ export function SentEmailDtoFromJSONTyped(
     isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
     sentAt: new Date(json['sentAt']),
     pixelIds: !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
+    messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
   };
 }
 
@@ -172,5 +179,6 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     isHTML: value.isHTML,
     sentAt: value.sentAt.toISOString(),
     pixelIds: value.pixelIds,
+    messageId: value.messageId,
   };
 }

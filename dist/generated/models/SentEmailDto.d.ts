@@ -111,6 +111,12 @@ export interface SentEmailDto {
      * @memberof SentEmailDto
      */
     pixelIds?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    messageId?: string;
 }
 export declare function SentEmailDtoFromJSON(json: any): SentEmailDto;
 export declare function SentEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailDto;

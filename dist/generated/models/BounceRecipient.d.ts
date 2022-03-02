@@ -26,7 +26,7 @@ export interface BounceRecipient {
      * @type {string}
      * @memberof BounceRecipient
      */
-    userId: string;
+    userId?: string;
     /**
      *
      * @type {string}

@@ -53,16 +53,16 @@ export interface AliasProjection {
     createdAt: Date;
     /**
      *
-     * @type {boolean}
-     * @memberof AliasProjection
-     */
-    useThreads?: boolean;
-    /**
-     *
      * @type {Date}
      * @memberof AliasProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {boolean}
+     * @memberof AliasProjection
+     */
+    useThreads?: boolean;
 }
 export declare function AliasProjectionFromJSON(json: any): AliasProjection;
 export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;

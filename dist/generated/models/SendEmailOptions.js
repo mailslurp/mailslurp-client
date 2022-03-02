@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendEmailOptionsToJSON = exports.SendEmailOptionsFromJSONTyped = exports.SendEmailOptionsFromJSON = exports.SendEmailOptionsSendStrategyEnum = void 0;
+exports.SendEmailOptionsToJSON = exports.SendEmailOptionsFromJSONTyped = exports.SendEmailOptionsFromJSON = exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,6 +23,16 @@ var SendEmailOptionsSendStrategyEnum;
 (function (SendEmailOptionsSendStrategyEnum) {
     SendEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
 })(SendEmailOptionsSendStrategyEnum = exports.SendEmailOptionsSendStrategyEnum || (exports.SendEmailOptionsSendStrategyEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var SendEmailOptionsValidateEmailAddressesEnum;
+(function (SendEmailOptionsValidateEmailAddressesEnum) {
+    SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_FILTER_REMOVE_INVALID"] = "VALIDATE_FILTER_REMOVE_INVALID";
+    SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_ERROR_IF_INVALID"] = "VALIDATE_ERROR_IF_INVALID";
+    SendEmailOptionsValidateEmailAddressesEnum["NO_VALIDATION"] = "NO_VALIDATION";
+})(SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsValidateEmailAddressesEnum || (exports.SendEmailOptionsValidateEmailAddressesEnum = {}));
 function SendEmailOptionsFromJSON(json) {
     return SendEmailOptionsFromJSONTyped(json, false);
 }
@@ -58,6 +68,12 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         addTrackingPixel: !(0, runtime_1.exists)(json, 'addTrackingPixel')
             ? undefined
             : json['addTrackingPixel'],
+        filterBouncedRecipients: !(0, runtime_1.exists)(json, 'filterBouncedRecipients')
+            ? undefined
+            : json['filterBouncedRecipients'],
+        validateEmailAddresses: !(0, runtime_1.exists)(json, 'validateEmailAddresses')
+            ? undefined
+            : json['validateEmailAddresses'],
     };
 }
 exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
@@ -87,6 +103,8 @@ function SendEmailOptionsToJSON(value) {
         sendStrategy: value.sendStrategy,
         useInboxName: value.useInboxName,
         addTrackingPixel: value.addTrackingPixel,
+        filterBouncedRecipients: value.filterBouncedRecipients,
+        validateEmailAddresses: value.validateEmailAddresses,
     };
 }
 exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

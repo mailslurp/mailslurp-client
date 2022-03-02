@@ -50,6 +50,6 @@ ___
 
 ### userId
 
-• **userId**: `string`
+• `Optional` **userId**: `string`
 
 **`memberof`** BounceRecipient

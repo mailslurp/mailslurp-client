@@ -30,7 +30,7 @@ export interface BounceRecipient {
    * @type {string}
    * @memberof BounceRecipient
    */
-  userId: string;
+  userId?: string;
   /**
    *
    * @type {string}
@@ -64,7 +64,7 @@ export function BounceRecipientFromJSONTyped(
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    userId: json['userId'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     recipient: json['recipient'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),

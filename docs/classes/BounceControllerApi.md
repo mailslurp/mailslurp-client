@@ -18,6 +18,8 @@
 
 ### Methods
 
+- [filterBouncedRecipient](BounceControllerApi.md#filterbouncedrecipient)
+- [filterBouncedRecipientRaw](BounceControllerApi.md#filterbouncedrecipientraw)
 - [getBouncedEmail](BounceControllerApi.md#getbouncedemail)
 - [getBouncedEmailRaw](BounceControllerApi.md#getbouncedemailraw)
 - [getBouncedEmails](BounceControllerApi.md#getbouncedemails)
@@ -58,6 +60,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### filterBouncedRecipient
+
+▸ **filterBouncedRecipient**(`requestParameters`, `initOverrides?`): `Promise`<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>
+
+Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
+Filter a list of email recipients and remove those who have bounced
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`FilterBouncedRecipientRequest`](../interfaces/FilterBouncedRecipientRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>
+
+___
+
+### filterBouncedRecipientRaw
+
+▸ **filterBouncedRecipientRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>\>
+
+Prevent email sending errors by remove recipients who have resulted in past email bounces or complaints
+Filter a list of email recipients and remove those who have bounced
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`FilterBouncedRecipientRequest`](../interfaces/FilterBouncedRecipientRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>\>
+
+___
 
 ### getBouncedEmail
 

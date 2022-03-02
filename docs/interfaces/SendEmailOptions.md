@@ -16,6 +16,7 @@ Options for the email to be sent
 - [body](SendEmailOptions.md#body)
 - [cc](SendEmailOptions.md#cc)
 - [charset](SendEmailOptions.md#charset)
+- [filterBouncedRecipients](SendEmailOptions.md#filterbouncedrecipients)
 - [from](SendEmailOptions.md#from)
 - [html](SendEmailOptions.md#html)
 - [isHTML](SendEmailOptions.md#ishtml)
@@ -28,6 +29,7 @@ Options for the email to be sent
 - [toContacts](SendEmailOptions.md#tocontacts)
 - [toGroup](SendEmailOptions.md#togroup)
 - [useInboxName](SendEmailOptions.md#useinboxname)
+- [validateEmailAddresses](SendEmailOptions.md#validateemailaddresses)
 
 ## Properties
 
@@ -86,6 +88,16 @@ ___
 • `Optional` **charset**: `string`
 
 Optional charset
+
+**`memberof`** SendEmailOptions
+
+___
+
+### filterBouncedRecipients
+
+• `Optional` **filterBouncedRecipients**: `boolean`
+
+Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
 
 **`memberof`** SendEmailOptions
 
@@ -210,5 +222,15 @@ ___
 • `Optional` **useInboxName**: `boolean`
 
 Use name of inbox as sender email address name. Will construct RFC 5322 email address with `Inbox name <inbox@address.com>` if the inbox has a name.
+
+**`memberof`** SendEmailOptions
+
+___
+
+### validateEmailAddresses
+
+• `Optional` **validateEmailAddresses**: [`SendEmailOptionsValidateEmailAddressesEnum`](../enums/SendEmailOptionsValidateEmailAddressesEnum.md)
+
+Validate recipient email addresses before sending
 
 **`memberof`** SendEmailOptions

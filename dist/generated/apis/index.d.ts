@@ -1,4 +1,5 @@
 export * from './AliasControllerApi';
+export * from './ApiInternalControllerApi';
 export * from './AttachmentControllerApi';
 export * from './BounceControllerApi';
 export * from './BulkActionsControllerApi';
@@ -6,6 +7,7 @@ export * from './CommonActionsControllerApi';
 export * from './ContactControllerApi';
 export * from './DomainControllerApi';
 export * from './EmailControllerApi';
+export * from './EmailVerificationControllerApi';
 export * from './ExpiredControllerApi';
 export * from './ExportControllerApi';
 export * from './FormControllerApi';

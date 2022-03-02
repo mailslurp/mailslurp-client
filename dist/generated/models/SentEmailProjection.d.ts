@@ -50,13 +50,13 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    to: Array<string>;
+    attachments: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    attachments: Array<string>;
+    to: Array<string>;
     /**
      *
      * @type {Array<string>}

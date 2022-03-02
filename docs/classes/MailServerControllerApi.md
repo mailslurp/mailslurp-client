@@ -198,7 +198,7 @@ ___
 
 ▸ **verifyEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
 
-Verify the existence of an email address at a given mail server.
+Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
 
 #### Parameters
 
@@ -217,7 +217,7 @@ ___
 
 ▸ **verifyEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>\>
 
-Verify the existence of an email address at a given mail server.
+Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
 
 #### Parameters
 

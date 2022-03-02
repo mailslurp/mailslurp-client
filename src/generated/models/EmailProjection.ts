@@ -48,13 +48,13 @@ export interface EmailProjection {
    * @type {Array<string>}
    * @memberof EmailProjection
    */
-  to: Array<string>;
+  attachments?: Array<string>;
   /**
    *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
-  attachments?: Array<string>;
+  to: Array<string>;
   /**
    *
    * @type {Array<string>}
@@ -115,8 +115,8 @@ export function EmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     inboxId: json['inboxId'],
-    to: json['to'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    to: json['to'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     createdAt: new Date(json['createdAt']),
@@ -139,8 +139,8 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     from: value.from,
     subject: value.subject,
     inboxId: value.inboxId,
-    to: value.to,
     attachments: value.attachments,
+    to: value.to,
     bcc: value.bcc,
     cc: value.cc,
     createdAt: value.createdAt.toISOString(),

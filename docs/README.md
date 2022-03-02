@@ -61,6 +61,7 @@
 - [GetSentEmailsSortEnum](enums/GetSentEmailsSortEnum.md)
 - [GetSentOrganizationEmailsSortEnum](enums/GetSentOrganizationEmailsSortEnum.md)
 - [GetTestWebhookPayloadEventNameEnum](enums/GetTestWebhookPayloadEventNameEnum.md)
+- [GetValidationRequestsSortEnum](enums/GetValidationRequestsSortEnum.md)
 - [GetWebhookResultsSortEnum](enums/GetWebhookResultsSortEnum.md)
 - [ImapFlagOperationOptionsFlagOperationEnum](enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
@@ -77,7 +78,10 @@
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
 - [SendEmailOptionsSendStrategyEnum](enums/SendEmailOptionsSendStrategyEnum.md)
+- [SendEmailOptionsValidateEmailAddressesEnum](enums/SendEmailOptionsValidateEmailAddressesEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
+- [UserDtoUserTypeEnum](enums/UserDtoUserTypeEnum.md)
+- [UserDtoVerifiedEnum](enums/UserDtoVerifiedEnum.md)
 - [WaitForConditionsCountTypeEnum](enums/WaitForConditionsCountTypeEnum.md)
 - [WaitForConditionsSortDirectionEnum](enums/WaitForConditionsSortDirectionEnum.md)
 - [WaitForEmailCountSortEnum](enums/WaitForEmailCountSortEnum.md)
@@ -101,6 +105,7 @@
 ### Classes
 
 - [AliasControllerApi](classes/AliasControllerApi.md)
+- [ApiInternalControllerApi](classes/ApiInternalControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
 - [BlobApiResponse](classes/BlobApiResponse.md)
@@ -111,6 +116,7 @@
 - [ContactControllerApi](classes/ContactControllerApi.md)
 - [DomainControllerApi](classes/DomainControllerApi.md)
 - [EmailControllerApi](classes/EmailControllerApi.md)
+- [EmailVerificationControllerApi](classes/EmailVerificationControllerApi.md)
 - [ExpiredControllerApi](classes/ExpiredControllerApi.md)
 - [ExportControllerApi](classes/ExportControllerApi.md)
 - [FormControllerApi](classes/FormControllerApi.md)
@@ -224,6 +230,7 @@
 - [EmailProjection](interfaces/EmailProjection.md)
 - [EmailRecipients](interfaces/EmailRecipients.md)
 - [EmailTextLinesResult](interfaces/EmailTextLinesResult.md)
+- [EmailValidationRequest](interfaces/EmailValidationRequest.md)
 - [EmailVerificationResult](interfaces/EmailVerificationResult.md)
 - [EmptyInboxRequest](interfaces/EmptyInboxRequest.md)
 - [ExpirationDefaults](interfaces/ExpirationDefaults.md)
@@ -233,6 +240,9 @@
 - [ExportLink](interfaces/ExportLink.md)
 - [ExportOptions](interfaces/ExportOptions.md)
 - [FetchParams](interfaces/FetchParams.md)
+- [FilterBouncedRecipientRequest](interfaces/FilterBouncedRecipientRequest.md)
+- [FilterBouncedRecipientsOptions](interfaces/FilterBouncedRecipientsOptions.md)
+- [FilterBouncedRecipientsResult](interfaces/FilterBouncedRecipientsResult.md)
 - [FlushExpiredInboxesResult](interfaces/FlushExpiredInboxesResult.md)
 - [FlushExpiredRequest](interfaces/FlushExpiredRequest.md)
 - [ForwardEmailOptions](interfaces/ForwardEmailOptions.md)
@@ -299,12 +309,14 @@
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
+- [GetOrCreateSamlUserOptions](interfaces/GetOrCreateSamlUserOptions.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
 - [GetRawEmailContentsRequest](interfaces/GetRawEmailContentsRequest.md)
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
+- [GetSamlUserOrCreateRequest](interfaces/GetSamlUserOrCreateRequest.md)
 - [GetSentEmailHTMLContentRequest](interfaces/GetSentEmailHTMLContentRequest.md)
 - [GetSentEmailPreviewURLsRequest](interfaces/GetSentEmailPreviewURLsRequest.md)
 - [GetSentEmailRequest](interfaces/GetSentEmailRequest.md)
@@ -315,6 +327,7 @@
 - [GetTestWebhookPayloadForWebhookRequest](interfaces/GetTestWebhookPayloadForWebhookRequest.md)
 - [GetTestWebhookPayloadRequest](interfaces/GetTestWebhookPayloadRequest.md)
 - [GetTrackingPixelRequest](interfaces/GetTrackingPixelRequest.md)
+- [GetValidationRequestsRequest](interfaces/GetValidationRequestsRequest.md)
 - [GetWebhookRequest](interfaces/GetWebhookRequest.md)
 - [GetWebhookResultRequest](interfaces/GetWebhookResultRequest.md)
 - [GetWebhookResultsRequest](interfaces/GetWebhookResultsRequest.md)
@@ -359,6 +372,7 @@
 - [PageContactProjection](interfaces/PageContactProjection.md)
 - [PageEmailPreview](interfaces/PageEmailPreview.md)
 - [PageEmailProjection](interfaces/PageEmailProjection.md)
+- [PageEmailValidationRequest](interfaces/PageEmailValidationRequest.md)
 - [PageExpiredInboxRecordProjection](interfaces/PageExpiredInboxRecordProjection.md)
 - [PageGroupProjection](interfaces/PageGroupProjection.md)
 - [PageInboxForwarderDto](interfaces/PageInboxForwarderDto.md)
@@ -434,6 +448,10 @@
 - [UploadAttachmentOptions](interfaces/UploadAttachmentOptions.md)
 - [UploadAttachmentRequest](interfaces/UploadAttachmentRequest.md)
 - [UploadMultipartFormRequest](interfaces/UploadMultipartFormRequest.md)
+- [UserDto](interfaces/UserDto.md)
+- [ValidateEmailAddressListOptions](interfaces/ValidateEmailAddressListOptions.md)
+- [ValidateEmailAddressListRequest](interfaces/ValidateEmailAddressListRequest.md)
+- [ValidateEmailAddressListResult](interfaces/ValidateEmailAddressListResult.md)
 - [ValidateEmailRequest](interfaces/ValidateEmailRequest.md)
 - [ValidationDto](interfaces/ValidationDto.md)
 - [ValidationMessage](interfaces/ValidationMessage.md)
@@ -614,6 +632,9 @@
 - [EmailTextLinesResultFromJSONTyped](README.md#emailtextlinesresultfromjsontyped)
 - [EmailTextLinesResultToJSON](README.md#emailtextlinesresulttojson)
 - [EmailToJSON](README.md#emailtojson)
+- [EmailValidationRequestFromJSON](README.md#emailvalidationrequestfromjson)
+- [EmailValidationRequestFromJSONTyped](README.md#emailvalidationrequestfromjsontyped)
+- [EmailValidationRequestToJSON](README.md#emailvalidationrequesttojson)
 - [EmailVerificationResultFromJSON](README.md#emailverificationresultfromjson)
 - [EmailVerificationResultFromJSONTyped](README.md#emailverificationresultfromjsontyped)
 - [EmailVerificationResultToJSON](README.md#emailverificationresulttojson)
@@ -632,12 +653,21 @@
 - [ExportOptionsFromJSON](README.md#exportoptionsfromjson)
 - [ExportOptionsFromJSONTyped](README.md#exportoptionsfromjsontyped)
 - [ExportOptionsToJSON](README.md#exportoptionstojson)
+- [FilterBouncedRecipientsOptionsFromJSON](README.md#filterbouncedrecipientsoptionsfromjson)
+- [FilterBouncedRecipientsOptionsFromJSONTyped](README.md#filterbouncedrecipientsoptionsfromjsontyped)
+- [FilterBouncedRecipientsOptionsToJSON](README.md#filterbouncedrecipientsoptionstojson)
+- [FilterBouncedRecipientsResultFromJSON](README.md#filterbouncedrecipientsresultfromjson)
+- [FilterBouncedRecipientsResultFromJSONTyped](README.md#filterbouncedrecipientsresultfromjsontyped)
+- [FilterBouncedRecipientsResultToJSON](README.md#filterbouncedrecipientsresulttojson)
 - [FlushExpiredInboxesResultFromJSON](README.md#flushexpiredinboxesresultfromjson)
 - [FlushExpiredInboxesResultFromJSONTyped](README.md#flushexpiredinboxesresultfromjsontyped)
 - [FlushExpiredInboxesResultToJSON](README.md#flushexpiredinboxesresulttojson)
 - [ForwardEmailOptionsFromJSON](README.md#forwardemailoptionsfromjson)
 - [ForwardEmailOptionsFromJSONTyped](README.md#forwardemailoptionsfromjsontyped)
 - [ForwardEmailOptionsToJSON](README.md#forwardemailoptionstojson)
+- [GetOrCreateSamlUserOptionsFromJSON](README.md#getorcreatesamluseroptionsfromjson)
+- [GetOrCreateSamlUserOptionsFromJSONTyped](README.md#getorcreatesamluseroptionsfromjsontyped)
+- [GetOrCreateSamlUserOptionsToJSON](README.md#getorcreatesamluseroptionstojson)
 - [GravatarUrlFromJSON](README.md#gravatarurlfromjson)
 - [GravatarUrlFromJSONTyped](README.md#gravatarurlfromjsontyped)
 - [GravatarUrlToJSON](README.md#gravatarurltojson)
@@ -743,6 +773,9 @@
 - [PageEmailProjectionFromJSON](README.md#pageemailprojectionfromjson)
 - [PageEmailProjectionFromJSONTyped](README.md#pageemailprojectionfromjsontyped)
 - [PageEmailProjectionToJSON](README.md#pageemailprojectiontojson)
+- [PageEmailValidationRequestFromJSON](README.md#pageemailvalidationrequestfromjson)
+- [PageEmailValidationRequestFromJSONTyped](README.md#pageemailvalidationrequestfromjsontyped)
+- [PageEmailValidationRequestToJSON](README.md#pageemailvalidationrequesttojson)
 - [PageExpiredInboxRecordProjectionFromJSON](README.md#pageexpiredinboxrecordprojectionfromjson)
 - [PageExpiredInboxRecordProjectionFromJSONTyped](README.md#pageexpiredinboxrecordprojectionfromjsontyped)
 - [PageExpiredInboxRecordProjectionToJSON](README.md#pageexpiredinboxrecordprojectiontojson)
@@ -872,6 +905,15 @@
 - [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
 - [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
 - [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
+- [UserDtoFromJSON](README.md#userdtofromjson)
+- [UserDtoFromJSONTyped](README.md#userdtofromjsontyped)
+- [UserDtoToJSON](README.md#userdtotojson)
+- [ValidateEmailAddressListOptionsFromJSON](README.md#validateemailaddresslistoptionsfromjson)
+- [ValidateEmailAddressListOptionsFromJSONTyped](README.md#validateemailaddresslistoptionsfromjsontyped)
+- [ValidateEmailAddressListOptionsToJSON](README.md#validateemailaddresslistoptionstojson)
+- [ValidateEmailAddressListResultFromJSON](README.md#validateemailaddresslistresultfromjson)
+- [ValidateEmailAddressListResultFromJSONTyped](README.md#validateemailaddresslistresultfromjsontyped)
+- [ValidateEmailAddressListResultToJSON](README.md#validateemailaddresslistresulttojson)
 - [ValidationDtoFromJSON](README.md#validationdtofromjson)
 - [ValidationDtoFromJSONTyped](README.md#validationdtofromjsontyped)
 - [ValidationDtoToJSON](README.md#validationdtotojson)
@@ -3263,6 +3305,55 @@ ___
 
 ___
 
+### EmailValidationRequestFromJSON
+
+▸ **EmailValidationRequestFromJSON**(`json`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+
+___
+
+### EmailValidationRequestFromJSONTyped
+
+▸ **EmailValidationRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+
+___
+
+### EmailValidationRequestToJSON
+
+▸ **EmailValidationRequestToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`EmailValidationRequest`](interfaces/EmailValidationRequest.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### EmailVerificationResultFromJSON
 
 ▸ **EmailVerificationResultFromJSON**(`json`): [`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
@@ -3557,6 +3648,104 @@ ___
 
 ___
 
+### FilterBouncedRecipientsOptionsFromJSON
+
+▸ **FilterBouncedRecipientsOptionsFromJSON**(`json`): [`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
+
+___
+
+### FilterBouncedRecipientsOptionsFromJSONTyped
+
+▸ **FilterBouncedRecipientsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
+
+___
+
+### FilterBouncedRecipientsOptionsToJSON
+
+▸ **FilterBouncedRecipientsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### FilterBouncedRecipientsResultFromJSON
+
+▸ **FilterBouncedRecipientsResultFromJSON**(`json`): [`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
+
+___
+
+### FilterBouncedRecipientsResultFromJSONTyped
+
+▸ **FilterBouncedRecipientsResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
+
+___
+
+### FilterBouncedRecipientsResultToJSON
+
+▸ **FilterBouncedRecipientsResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### FlushExpiredInboxesResultFromJSON
 
 ▸ **FlushExpiredInboxesResultFromJSON**(`json`): [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
@@ -3648,6 +3837,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### GetOrCreateSamlUserOptionsFromJSON
+
+▸ **GetOrCreateSamlUserOptionsFromJSON**(`json`): [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
+
+___
+
+### GetOrCreateSamlUserOptionsFromJSONTyped
+
+▸ **GetOrCreateSamlUserOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
+
+___
+
+### GetOrCreateSamlUserOptionsToJSON
+
+▸ **GetOrCreateSamlUserOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md) |
 
 #### Returns
 
@@ -5363,6 +5601,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageEmailProjection`](interfaces/PageEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageEmailValidationRequestFromJSON
+
+▸ **PageEmailValidationRequestFromJSON**(`json`): [`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
+
+___
+
+### PageEmailValidationRequestFromJSONTyped
+
+▸ **PageEmailValidationRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
+
+___
+
+### PageEmailValidationRequestToJSON
+
+▸ **PageEmailValidationRequestToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md) |
 
 #### Returns
 
@@ -7470,6 +7757,153 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UserDtoFromJSON
+
+▸ **UserDtoFromJSON**(`json`): [`UserDto`](interfaces/UserDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UserDto`](interfaces/UserDto.md)
+
+___
+
+### UserDtoFromJSONTyped
+
+▸ **UserDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UserDto`](interfaces/UserDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UserDto`](interfaces/UserDto.md)
+
+___
+
+### UserDtoToJSON
+
+▸ **UserDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UserDto`](interfaces/UserDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ValidateEmailAddressListOptionsFromJSON
+
+▸ **ValidateEmailAddressListOptionsFromJSON**(`json`): [`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
+
+___
+
+### ValidateEmailAddressListOptionsFromJSONTyped
+
+▸ **ValidateEmailAddressListOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
+
+___
+
+### ValidateEmailAddressListOptionsToJSON
+
+▸ **ValidateEmailAddressListOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ValidateEmailAddressListResultFromJSON
+
+▸ **ValidateEmailAddressListResultFromJSON**(`json`): [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
+
+___
+
+### ValidateEmailAddressListResultFromJSONTyped
+
+▸ **ValidateEmailAddressListResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
+
+___
+
+### ValidateEmailAddressListResultToJSON
+
+▸ **ValidateEmailAddressListResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md) |
 
 #### Returns
 

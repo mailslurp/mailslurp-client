@@ -232,7 +232,7 @@ export class MailServerControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Verify the existence of an email address at a given mail server.
+   * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
    */
   async verifyEmailAddressRaw(
     requestParameters: VerifyEmailAddressRequest,
@@ -277,7 +277,7 @@ export class MailServerControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Verify the existence of an email address at a given mail server.
+   * Deprecated. Use the EmailVerificationController methods for more accurate and reliable functionality. Verify the existence of an email address at a given mail server.
    */
   async verifyEmailAddress(
     requestParameters: VerifyEmailAddressRequest,
