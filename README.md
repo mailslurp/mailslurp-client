@@ -275,6 +275,25 @@ const sent = await mailslurp.sendEmail(inbox.id, options);
 expect(sent.subject).toContain('Hello');
 ```
 
+### Verify email addresses
+Validate an email address to find out if it exists and can receive email. This can help reduce your bounce rate and improve your sending reputation.
+
+```javascript
+const mailslurp = new MailSlurp(config);
+const res =
+  await mailslurp.emailVerificationController.validateEmailAddressList({
+    validateEmailAddressListOptions: {
+      emailAddressList: ['contact@mailslurp.dev', 'bad@mailslurp.dev'],
+    },
+  });
+expect(res.resultMapEmailAddressIsValid['contact@mailslurp.dev']).toEqual(
+  true
+);
+expect(res.resultMapEmailAddressIsValid['bad@mailslurp.dev']).toEqual(
+  false
+);
+```
+
 ### Upload attachment
 Upload attachment using the [AttachmentController](https://docs.mailslurp.com/js/docs/classes/AttachmentControllerApi/).
 

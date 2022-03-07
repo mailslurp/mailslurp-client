@@ -31,6 +31,27 @@ integrationTest('can create inboxes', async (mailslurp) => {
   //</gen>
 });
 
+describe('email verification', () => {
+  const config = { apiKey: process.env.API_KEY };
+
+  it('can verify email addresses', async () => {
+    //<gen>verify_email_address
+    const mailslurp = new MailSlurp(config);
+    const res =
+      await mailslurp.emailVerificationController.validateEmailAddressList({
+        validateEmailAddressListOptions: {
+          emailAddressList: ['contact@mailslurp.dev', 'bad@mailslurp.dev'],
+        },
+      });
+    expect(res.resultMapEmailAddressIsValid['contact@mailslurp.dev']).toEqual(
+      true
+    );
+    expect(res.resultMapEmailAddressIsValid['bad@mailslurp.dev']).toEqual(
+      false
+    );
+    //</gen>
+  });
+});
 /**
  * Get an inbox
  */

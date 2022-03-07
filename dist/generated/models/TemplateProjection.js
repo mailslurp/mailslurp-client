@@ -26,8 +26,8 @@ function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: json['name'],
         id: json['id'],
         createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
         variables: json['variables'],
+        updatedAt: new Date(json['updatedAt']),
     };
 }
 exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
@@ -42,8 +42,8 @@ function TemplateProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
         variables: value.variables,
+        updatedAt: value.updatedAt.toISOString(),
     };
 }
 exports.TemplateProjectionToJSON = TemplateProjectionToJSON;

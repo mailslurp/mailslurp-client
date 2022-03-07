@@ -192,6 +192,13 @@ To send emails use the [SendEmailOptions](https://docs.mailslurp.com/js/docs/mod
 {{send_email}}
 ```
 
+### Verify email addresses
+Validate an email address to find out if it exists and can receive email. This can help reduce your bounce rate and improve your sending reputation.
+
+```javascript
+{{verify_email_address}}
+```
+
 ### Upload attachment
 Upload attachment using the [AttachmentController](https://docs.mailslurp.com/js/docs/classes/AttachmentControllerApi/).
 
