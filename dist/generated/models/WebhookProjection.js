@@ -27,6 +27,8 @@ var WebhookProjectionEventNameEnum;
     WebhookProjectionEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookProjectionEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookProjectionEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookProjectionEventNameEnum["BOUNCE"] = "BOUNCE";
+    WebhookProjectionEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(WebhookProjectionEventNameEnum = exports.WebhookProjectionEventNameEnum || (exports.WebhookProjectionEventNameEnum = {}));
 function WebhookProjectionFromJSON(json) {
     return WebhookProjectionFromJSONTyped(json, false);
@@ -40,7 +42,7 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         url: json['url'],
-        inboxId: json['inboxId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),

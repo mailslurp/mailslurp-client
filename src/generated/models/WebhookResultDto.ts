@@ -36,7 +36,7 @@ export interface WebhookResultDto {
    * @type {string}
    * @memberof WebhookResultDto
    */
-  inboxId: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
@@ -142,6 +142,8 @@ export enum WebhookResultDtoWebhookEventEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 /**
  * @export
@@ -167,7 +169,7 @@ export function WebhookResultDtoFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     userId: json['userId'],
-    inboxId: json['inboxId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     webhookId: json['webhookId'],
     webhookUrl: json['webhookUrl'],
     messageId: json['messageId'],

@@ -42,7 +42,7 @@ export interface WebhookProjection {
    * @type {string}
    * @memberof WebhookProjection
    */
-  inboxId: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
@@ -74,6 +74,8 @@ export enum WebhookProjectionEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 
 export function WebhookProjectionFromJSON(json: any): WebhookProjection {
@@ -91,7 +93,7 @@ export function WebhookProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     url: json['url'],
-    inboxId: json['inboxId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),

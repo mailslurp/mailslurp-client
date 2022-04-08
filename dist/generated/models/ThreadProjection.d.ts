@@ -38,13 +38,13 @@ export interface ThreadProjection {
      * @type {string}
      * @memberof ThreadProjection
      */
-    userId: string;
+    inboxId: string;
     /**
      *
      * @type {string}
      * @memberof ThreadProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {Array<string>}

@@ -89,6 +89,8 @@
 - [WaitForMatchingEmailsSortEnum](enums/WaitForMatchingEmailsSortEnum.md)
 - [WaitForMatchingFirstEmailSortEnum](enums/WaitForMatchingFirstEmailSortEnum.md)
 - [WaitForNthEmailSortEnum](enums/WaitForNthEmailSortEnum.md)
+- [WebhookBouncePayloadEventNameEnum](enums/WebhookBouncePayloadEventNameEnum.md)
+- [WebhookBounceRecipientPayloadEventNameEnum](enums/WebhookBounceRecipientPayloadEventNameEnum.md)
 - [WebhookDtoEventNameEnum](enums/WebhookDtoEventNameEnum.md)
 - [WebhookDtoMethodEnum](enums/WebhookDtoMethodEnum.md)
 - [WebhookEmailOpenedPayloadEventNameEnum](enums/WebhookEmailOpenedPayloadEventNameEnum.md)
@@ -165,6 +167,7 @@
 - [ContactProjection](interfaces/ContactProjection.md)
 - [ContentMatchOptions](interfaces/ContentMatchOptions.md)
 - [CountDto](interfaces/CountDto.md)
+- [CreateAccountWebhookRequest](interfaces/CreateAccountWebhookRequest.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
 - [CreateAliasRequest](interfaces/CreateAliasRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
@@ -193,6 +196,7 @@
 - [DNSLookupResult](interfaces/DNSLookupResult.md)
 - [DNSLookupResults](interfaces/DNSLookupResults.md)
 - [DeleteAliasRequest](interfaces/DeleteAliasRequest.md)
+- [DeleteAllInboxEmailsRequest](interfaces/DeleteAllInboxEmailsRequest.md)
 - [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
@@ -206,6 +210,7 @@
 - [DeleteInboxRulesetsRequest](interfaces/DeleteInboxRulesetsRequest.md)
 - [DeleteSentEmailRequest](interfaces/DeleteSentEmailRequest.md)
 - [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
+- [DeleteWebhookByIdRequest](interfaces/DeleteWebhookByIdRequest.md)
 - [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
 - [DescribeDomainOptions](interfaces/DescribeDomainOptions.md)
 - [DescribeMailServerDomainRequest](interfaces/DescribeMailServerDomainRequest.md)
@@ -465,6 +470,8 @@
 - [WaitForNthEmailRequest](interfaces/WaitForNthEmailRequest.md)
 - [WaitForNthMissedEmailRequest](interfaces/WaitForNthMissedEmailRequest.md)
 - [WaitForRequest](interfaces/WaitForRequest.md)
+- [WebhookBouncePayload](interfaces/WebhookBouncePayload.md)
+- [WebhookBounceRecipientPayload](interfaces/WebhookBounceRecipientPayload.md)
 - [WebhookDto](interfaces/WebhookDto.md)
 - [WebhookEmailOpenedPayload](interfaces/WebhookEmailOpenedPayload.md)
 - [WebhookEmailReadPayload](interfaces/WebhookEmailReadPayload.md)
@@ -926,6 +933,12 @@
 - [WaitForConditionsFromJSON](README.md#waitforconditionsfromjson)
 - [WaitForConditionsFromJSONTyped](README.md#waitforconditionsfromjsontyped)
 - [WaitForConditionsToJSON](README.md#waitforconditionstojson)
+- [WebhookBouncePayloadFromJSON](README.md#webhookbouncepayloadfromjson)
+- [WebhookBouncePayloadFromJSONTyped](README.md#webhookbouncepayloadfromjsontyped)
+- [WebhookBouncePayloadToJSON](README.md#webhookbouncepayloadtojson)
+- [WebhookBounceRecipientPayloadFromJSON](README.md#webhookbouncerecipientpayloadfromjson)
+- [WebhookBounceRecipientPayloadFromJSONTyped](README.md#webhookbouncerecipientpayloadfromjsontyped)
+- [WebhookBounceRecipientPayloadToJSON](README.md#webhookbouncerecipientpayloadtojson)
 - [WebhookDtoFromJSON](README.md#webhookdtofromjson)
 - [WebhookDtoFromJSONTyped](README.md#webhookdtofromjsontyped)
 - [WebhookDtoToJSON](README.md#webhookdtotojson)
@@ -8100,6 +8113,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`WaitForConditions`](interfaces/WaitForConditions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### WebhookBouncePayloadFromJSON
+
+▸ **WebhookBouncePayloadFromJSON**(`json`): [`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
+
+___
+
+### WebhookBouncePayloadFromJSONTyped
+
+▸ **WebhookBouncePayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
+
+___
+
+### WebhookBouncePayloadToJSON
+
+▸ **WebhookBouncePayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### WebhookBounceRecipientPayloadFromJSON
+
+▸ **WebhookBounceRecipientPayloadFromJSON**(`json`): [`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
+
+___
+
+### WebhookBounceRecipientPayloadFromJSONTyped
+
+▸ **WebhookBounceRecipientPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
+
+___
+
+### WebhookBounceRecipientPayloadToJSON
+
+▸ **WebhookBounceRecipientPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md) |
 
 #### Returns
 

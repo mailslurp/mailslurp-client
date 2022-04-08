@@ -51,7 +51,9 @@ export declare enum CreateWebhookOptionsEventNameEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 export declare function CreateWebhookOptionsFromJSON(json: any): CreateWebhookOptions;
 export declare function CreateWebhookOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateWebhookOptions;

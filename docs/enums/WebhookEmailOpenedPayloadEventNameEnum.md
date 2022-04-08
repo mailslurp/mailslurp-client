@@ -6,6 +6,8 @@
 
 ### Enumeration members
 
+- [BOUNCE](WebhookEmailOpenedPayloadEventNameEnum.md#bounce)
+- [BOUNCE\_RECIPIENT](WebhookEmailOpenedPayloadEventNameEnum.md#bounce_recipient)
 - [EMAIL\_OPENED](WebhookEmailOpenedPayloadEventNameEnum.md#email_opened)
 - [EMAIL\_READ](WebhookEmailOpenedPayloadEventNameEnum.md#email_read)
 - [EMAIL\_RECEIVED](WebhookEmailOpenedPayloadEventNameEnum.md#email_received)
@@ -14,6 +16,18 @@
 - [NEW\_EMAIL](WebhookEmailOpenedPayloadEventNameEnum.md#new_email)
 
 ## Enumeration members
+
+### BOUNCE
+
+• **BOUNCE** = `"BOUNCE"`
+
+___
+
+### BOUNCE\_RECIPIENT
+
+• **BOUNCE\_RECIPIENT** = `"BOUNCE_RECIPIENT"`
+
+___
 
 ### EMAIL\_OPENED
 

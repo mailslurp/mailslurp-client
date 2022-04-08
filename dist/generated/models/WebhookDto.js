@@ -42,6 +42,8 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookDtoEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookDtoEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookDtoEventNameEnum["BOUNCE"] = "BOUNCE";
+    WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
 function WebhookDtoFromJSON(json) {
     return WebhookDtoFromJSONTyped(json, false);
@@ -56,7 +58,7 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         userId: json['userId'],
         basicAuth: json['basicAuth'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        inboxId: json['inboxId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         url: json['url'],
         method: json['method'],
         payloadJsonSchema: json['payloadJsonSchema'],

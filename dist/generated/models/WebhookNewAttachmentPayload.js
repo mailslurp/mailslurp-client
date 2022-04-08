@@ -27,6 +27,8 @@ var WebhookNewAttachmentPayloadEventNameEnum;
     WebhookNewAttachmentPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookNewAttachmentPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
+    WebhookNewAttachmentPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(WebhookNewAttachmentPayloadEventNameEnum = exports.WebhookNewAttachmentPayloadEventNameEnum || (exports.WebhookNewAttachmentPayloadEventNameEnum = {}));
 function WebhookNewAttachmentPayloadFromJSON(json) {
     return WebhookNewAttachmentPayloadFromJSONTyped(json, false);

@@ -38,7 +38,7 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    inboxId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
@@ -68,7 +68,9 @@ export declare enum WebhookProjectionEventNameEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 export declare function WebhookProjectionFromJSON(json: any): WebhookProjection;
 export declare function WebhookProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookProjection;

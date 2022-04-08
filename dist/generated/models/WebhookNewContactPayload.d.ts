@@ -116,7 +116,9 @@ export declare enum WebhookNewContactPayloadEventNameEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 export declare function WebhookNewContactPayloadFromJSON(json: any): WebhookNewContactPayload;
 export declare function WebhookNewContactPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewContactPayload;

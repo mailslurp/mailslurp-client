@@ -155,6 +155,8 @@ __exportStar(require("./ValidationDto"), exports);
 __exportStar(require("./ValidationMessage"), exports);
 __exportStar(require("./VerifyEmailAddressOptions"), exports);
 __exportStar(require("./WaitForConditions"), exports);
+__exportStar(require("./WebhookBouncePayload"), exports);
+__exportStar(require("./WebhookBounceRecipientPayload"), exports);
 __exportStar(require("./WebhookDto"), exports);
 __exportStar(require("./WebhookEmailOpenedPayload"), exports);
 __exportStar(require("./WebhookEmailReadPayload"), exports);

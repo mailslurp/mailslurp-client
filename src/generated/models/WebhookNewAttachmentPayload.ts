@@ -80,6 +80,8 @@ export enum WebhookNewAttachmentPayloadEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 
 export function WebhookNewAttachmentPayloadFromJSON(

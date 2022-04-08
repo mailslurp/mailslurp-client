@@ -42,6 +42,8 @@ var WebhookResultDtoWebhookEventEnum;
     WebhookResultDtoWebhookEventEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookResultDtoWebhookEventEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookResultDtoWebhookEventEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookResultDtoWebhookEventEnum["BOUNCE"] = "BOUNCE";
+    WebhookResultDtoWebhookEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoWebhookEventEnum || (exports.WebhookResultDtoWebhookEventEnum = {}));
 /**
  * @export
@@ -64,7 +66,7 @@ function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         userId: json['userId'],
-        inboxId: json['inboxId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         webhookId: json['webhookId'],
         webhookUrl: json['webhookUrl'],
         messageId: json['messageId'],

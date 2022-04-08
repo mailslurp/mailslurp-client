@@ -18,11 +18,15 @@
 
 ### Methods
 
+- [createAccountWebhook](WebhookControllerApi.md#createaccountwebhook)
+- [createAccountWebhookRaw](WebhookControllerApi.md#createaccountwebhookraw)
 - [createWebhook](WebhookControllerApi.md#createwebhook)
 - [createWebhookRaw](WebhookControllerApi.md#createwebhookraw)
 - [deleteAllWebhooks](WebhookControllerApi.md#deleteallwebhooks)
 - [deleteAllWebhooksRaw](WebhookControllerApi.md#deleteallwebhooksraw)
 - [deleteWebhook](WebhookControllerApi.md#deletewebhook)
+- [deleteWebhookById](WebhookControllerApi.md#deletewebhookbyid)
+- [deleteWebhookByIdRaw](WebhookControllerApi.md#deletewebhookbyidraw)
 - [deleteWebhookRaw](WebhookControllerApi.md#deletewebhookraw)
 - [getAllWebhookResults](WebhookControllerApi.md#getallwebhookresults)
 - [getAllWebhookResultsRaw](WebhookControllerApi.md#getallwebhookresultsraw)
@@ -33,6 +37,10 @@
 - [getJsonSchemaForWebhookPayload](WebhookControllerApi.md#getjsonschemaforwebhookpayload)
 - [getJsonSchemaForWebhookPayloadRaw](WebhookControllerApi.md#getjsonschemaforwebhookpayloadraw)
 - [getTestWebhookPayload](WebhookControllerApi.md#gettestwebhookpayload)
+- [getTestWebhookPayloadBounce](WebhookControllerApi.md#gettestwebhookpayloadbounce)
+- [getTestWebhookPayloadBounceRaw](WebhookControllerApi.md#gettestwebhookpayloadbounceraw)
+- [getTestWebhookPayloadBounceRecipient](WebhookControllerApi.md#gettestwebhookpayloadbouncerecipient)
+- [getTestWebhookPayloadBounceRecipientRaw](WebhookControllerApi.md#gettestwebhookpayloadbouncerecipientraw)
 - [getTestWebhookPayloadEmailOpened](WebhookControllerApi.md#gettestwebhookpayloademailopened)
 - [getTestWebhookPayloadEmailOpenedRaw](WebhookControllerApi.md#gettestwebhookpayloademailopenedraw)
 - [getTestWebhookPayloadEmailRead](WebhookControllerApi.md#gettestwebhookpayloademailread)
@@ -92,6 +100,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### createAccountWebhook
+
+▸ **createAccountWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+Get notified of account level events such as bounce and bounce recipient.
+Attach a WebHook URL to an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateAccountWebhookRequest`](../interfaces/CreateAccountWebhookRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### createAccountWebhookRaw
+
+▸ **createAccountWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+Get notified of account level events such as bounce and bounce recipient.
+Attach a WebHook URL to an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateAccountWebhookRequest`](../interfaces/CreateAccountWebhookRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+___
 
 ### createWebhook
 
@@ -185,6 +233,44 @@ Delete and disable a Webhook for an Inbox
 #### Returns
 
 `Promise`<`void`\>
+
+___
+
+### deleteWebhookById
+
+▸ **deleteWebhookById**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteWebhookByIdRequest`](../interfaces/DeleteWebhookByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteWebhookByIdRaw
+
+▸ **deleteWebhookByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteWebhookByIdRequest`](../interfaces/DeleteWebhookByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -377,6 +463,78 @@ Get test webhook payload example. Response content depends on eventName passed. 
 #### Returns
 
 `Promise`<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>
+
+___
+
+### getTestWebhookPayloadBounce
+
+▸ **getTestWebhookPayloadBounce**(`initOverrides?`): `Promise`<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>
+
+Get webhook test payload for bounce
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>
+
+___
+
+### getTestWebhookPayloadBounceRaw
+
+▸ **getTestWebhookPayloadBounceRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>\>
+
+Get webhook test payload for bounce
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>\>
+
+___
+
+### getTestWebhookPayloadBounceRecipient
+
+▸ **getTestWebhookPayloadBounceRecipient**(`initOverrides?`): `Promise`<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>
+
+Get webhook test payload for bounce recipient
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>
+
+___
+
+### getTestWebhookPayloadBounceRecipientRaw
+
+▸ **getTestWebhookPayloadBounceRecipientRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>\>
+
+Get webhook test payload for bounce recipient
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>\>
 
 ___
 
@@ -621,7 +779,7 @@ ___
 
 ▸ **getWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
 
-Get a webhook for an Inbox
+Get a webhook
 
 #### Parameters
 
@@ -640,7 +798,7 @@ ___
 
 ▸ **getWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
-Get a webhook for an Inbox
+Get a webhook
 
 #### Parameters
 

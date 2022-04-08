@@ -26,6 +26,8 @@
 - [createInboxWithDefaultsRaw](InboxControllerApi.md#createinboxwithdefaultsraw)
 - [createInboxWithOptions](InboxControllerApi.md#createinboxwithoptions)
 - [createInboxWithOptionsRaw](InboxControllerApi.md#createinboxwithoptionsraw)
+- [deleteAllInboxEmails](InboxControllerApi.md#deleteallinboxemails)
+- [deleteAllInboxEmailsRaw](InboxControllerApi.md#deleteallinboxemailsraw)
 - [deleteAllInboxes](InboxControllerApi.md#deleteallinboxes)
 - [deleteAllInboxesRaw](InboxControllerApi.md#deleteallinboxesraw)
 - [deleteInbox](InboxControllerApi.md#deleteinbox)
@@ -264,6 +266,46 @@ Create an inbox with options. Extended options for inbox creation.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+___
+
+### deleteAllInboxEmails
+
+▸ **deleteAllInboxEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Deletes all emails in an inbox. Be careful as emails cannot be recovered
+Delete all emails in a given inboxes.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxEmailsRequest`](../interfaces/DeleteAllInboxEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllInboxEmailsRaw
+
+▸ **deleteAllInboxEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Deletes all emails in an inbox. Be careful as emails cannot be recovered
+Delete all emails in a given inboxes.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxEmailsRequest`](../interfaces/DeleteAllInboxEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

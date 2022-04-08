@@ -28,6 +28,8 @@ var CreateWebhookOptionsEventNameEnum;
     CreateWebhookOptionsEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     CreateWebhookOptionsEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     CreateWebhookOptionsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    CreateWebhookOptionsEventNameEnum["BOUNCE"] = "BOUNCE";
+    CreateWebhookOptionsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(CreateWebhookOptionsEventNameEnum = exports.CreateWebhookOptionsEventNameEnum || (exports.CreateWebhookOptionsEventNameEnum = {}));
 function CreateWebhookOptionsFromJSON(json) {
     return CreateWebhookOptionsFromJSONTyped(json, false);

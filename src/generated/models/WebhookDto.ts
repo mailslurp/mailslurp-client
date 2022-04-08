@@ -44,11 +44,11 @@ export interface WebhookDto {
    */
   name?: string;
   /**
-   * The inbox that the Webhook will be triggered by
+   * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level
    * @type {string}
    * @memberof WebhookDto
    */
-  inboxId: string;
+  inboxId?: string;
   /**
    * URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
    * @type {string}
@@ -112,6 +112,8 @@ export enum WebhookDtoEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 
 export function WebhookDtoFromJSON(json: any): WebhookDto {
@@ -130,7 +132,7 @@ export function WebhookDtoFromJSONTyped(
     userId: json['userId'],
     basicAuth: json['basicAuth'],
     name: !exists(json, 'name') ? undefined : json['name'],
-    inboxId: json['inboxId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     url: json['url'],
     method: json['method'],
     payloadJsonSchema: json['payloadJsonSchema'],

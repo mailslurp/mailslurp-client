@@ -74,7 +74,9 @@ export declare enum WebhookEmailReadPayloadEventNameEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 export declare function WebhookEmailReadPayloadFromJSON(json: any): WebhookEmailReadPayload;
 export declare function WebhookEmailReadPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailReadPayload;

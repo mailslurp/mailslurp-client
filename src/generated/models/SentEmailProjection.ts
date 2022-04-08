@@ -48,6 +48,24 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
+  bodyMD5Hash?: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  bcc: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  cc: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
   inboxId: string;
   /**
    *
@@ -63,28 +81,10 @@ export interface SentEmailProjection {
   to: Array<string>;
   /**
    *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  bcc: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  cc: Array<string>;
-  /**
-   *
    * @type {Date}
    * @memberof SentEmailProjection
    */
   createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  bodyMD5Hash?: string;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -103,13 +103,13 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    bcc: json['bcc'],
+    cc: json['cc'],
     inboxId: json['inboxId'],
     attachments: json['attachments'],
     to: json['to'],
-    bcc: json['bcc'],
-    cc: json['cc'],
     createdAt: new Date(json['createdAt']),
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
   };
 }
 
@@ -127,12 +127,12 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
+    bodyMD5Hash: value.bodyMD5Hash,
+    bcc: value.bcc,
+    cc: value.cc,
     inboxId: value.inboxId,
     attachments: value.attachments,
     to: value.to,
-    bcc: value.bcc,
-    cc: value.cc,
     createdAt: value.createdAt.toISOString(),
-    bodyMD5Hash: value.bodyMD5Hash,
   };
 }

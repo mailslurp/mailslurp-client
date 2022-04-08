@@ -143,6 +143,8 @@ export * from './ValidationDto';
 export * from './ValidationMessage';
 export * from './VerifyEmailAddressOptions';
 export * from './WaitForConditions';
+export * from './WebhookBouncePayload';
+export * from './WebhookBounceRecipientPayload';
 export * from './WebhookDto';
 export * from './WebhookEmailOpenedPayload';
 export * from './WebhookEmailReadPayload';

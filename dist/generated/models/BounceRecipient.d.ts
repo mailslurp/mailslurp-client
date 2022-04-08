@@ -20,7 +20,7 @@ export interface BounceRecipient {
      * @type {string}
      * @memberof BounceRecipient
      */
-    id?: string;
+    id: string;
     /**
      *
      * @type {string}

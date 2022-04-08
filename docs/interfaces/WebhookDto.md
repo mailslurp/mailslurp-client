@@ -64,9 +64,9 @@ ___
 
 ### inboxId
 
-• **inboxId**: `string`
+• `Optional` **inboxId**: `string`
 
-The inbox that the Webhook will be triggered by
+The inbox that the Webhook will be triggered by. If null then webhook triggered at account level
 
 **`memberof`** WebhookDto
 

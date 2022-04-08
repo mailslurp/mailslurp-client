@@ -26,7 +26,7 @@ ___
 
 ### id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 **`memberof`** BounceRecipient
 

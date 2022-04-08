@@ -27,6 +27,8 @@ var WebhookEmailReadPayloadEventNameEnum;
     WebhookEmailReadPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookEmailReadPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookEmailReadPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookEmailReadPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
+    WebhookEmailReadPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(WebhookEmailReadPayloadEventNameEnum = exports.WebhookEmailReadPayloadEventNameEnum || (exports.WebhookEmailReadPayloadEventNameEnum = {}));
 function WebhookEmailReadPayloadFromJSON(json) {
     return WebhookEmailReadPayloadFromJSONTyped(json, false);

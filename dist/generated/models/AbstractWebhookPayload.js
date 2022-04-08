@@ -27,6 +27,8 @@ var AbstractWebhookPayloadEventNameEnum;
     AbstractWebhookPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     AbstractWebhookPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     AbstractWebhookPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    AbstractWebhookPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
+    AbstractWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
 })(AbstractWebhookPayloadEventNameEnum = exports.AbstractWebhookPayloadEventNameEnum || (exports.AbstractWebhookPayloadEventNameEnum = {}));
 function AbstractWebhookPayloadFromJSON(json) {
     return AbstractWebhookPayloadFromJSONTyped(json, false);

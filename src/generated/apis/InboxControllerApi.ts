@@ -107,6 +107,10 @@ export interface CreateInboxWithOptionsRequest {
   createInboxDto: CreateInboxDto;
 }
 
+export interface DeleteAllInboxEmailsRequest {
+  inboxId: string;
+}
+
 export interface DeleteInboxRequest {
   inboxId: string;
 }
@@ -511,6 +515,59 @@ export class InboxControllerApi extends runtime.BaseAPI {
       initOverrides
     );
     return await response.value();
+  }
+
+  /**
+   * Deletes all emails in an inbox. Be careful as emails cannot be recovered
+   * Delete all emails in a given inboxes.
+   */
+  async deleteAllInboxEmailsRaw(
+    requestParameters: DeleteAllInboxEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling deleteAllInboxEmails.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/deleteAllInboxEmails`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Deletes all emails in an inbox. Be careful as emails cannot be recovered
+   * Delete all emails in a given inboxes.
+   */
+  async deleteAllInboxEmails(
+    requestParameters: DeleteAllInboxEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllInboxEmailsRaw(requestParameters, initOverrides);
   }
 
   /**

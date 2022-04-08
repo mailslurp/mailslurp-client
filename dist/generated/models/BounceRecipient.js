@@ -24,7 +24,7 @@ function BounceRecipientFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        id: json['id'],
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         recipient: json['recipient'],
         createdAt: new Date(json['createdAt']),

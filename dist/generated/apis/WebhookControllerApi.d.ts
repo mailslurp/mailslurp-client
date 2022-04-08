@@ -10,13 +10,19 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+export interface CreateAccountWebhookRequest {
+    createWebhookOptions: CreateWebhookOptions;
+}
 export interface CreateWebhookRequest {
     inboxId: string;
     createWebhookOptions: CreateWebhookOptions;
 }
 export interface DeleteWebhookRequest {
     inboxId: string;
+    webhookId: string;
+}
+export interface DeleteWebhookByIdRequest {
     webhookId: string;
 }
 export interface GetAllWebhookResultsRequest {
@@ -87,6 +93,16 @@ export interface SendTestDataRequest {
  */
 export declare class WebhookControllerApi extends runtime.BaseAPI {
     /**
+     * Get notified of account level events such as bounce and bounce recipient.
+     * Attach a WebHook URL to an inbox
+     */
+    createAccountWebhookRaw(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Get notified of account level events such as bounce and bounce recipient.
+     * Attach a WebHook URL to an inbox
+     */
+    createAccountWebhook(requestParameters: CreateAccountWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    /**
      * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
      * Attach a WebHook URL to an inbox
      */
@@ -112,6 +128,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Delete and disable a Webhook for an Inbox
      */
     deleteWebhook(requestParameters: DeleteWebhookRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete a webhook
+     */
+    deleteWebhookByIdRaw(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a webhook
+     */
+    deleteWebhookById(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Get results for all webhooks
      */
@@ -154,6 +178,22 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
      */
     getTestWebhookPayload(requestParameters: GetTestWebhookPayloadRequest, initOverrides?: RequestInit): Promise<AbstractWebhookPayload>;
+    /**
+     * Get webhook test payload for bounce
+     */
+    getTestWebhookPayloadBounceRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBouncePayload>>;
+    /**
+     * Get webhook test payload for bounce
+     */
+    getTestWebhookPayloadBounce(initOverrides?: RequestInit): Promise<WebhookBouncePayload>;
+    /**
+     * Get webhook test payload for bounce recipient
+     */
+    getTestWebhookPayloadBounceRecipientRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>>;
+    /**
+     * Get webhook test payload for bounce recipient
+     */
+    getTestWebhookPayloadBounceRecipient(initOverrides?: RequestInit): Promise<WebhookBounceRecipientPayload>;
     /**
      * Get webhook test payload for email opened event
      */
@@ -203,11 +243,11 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      */
     getTestWebhookPayloadNewEmail(initOverrides?: RequestInit): Promise<WebhookNewEmailPayload>;
     /**
-     * Get a webhook for an Inbox
+     * Get a webhook
      */
     getWebhookRaw(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
     /**
-     * Get a webhook for an Inbox
+     * Get a webhook
      */
     getWebhook(requestParameters: GetWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
     /**
@@ -295,7 +335,9 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 /**
  * @export

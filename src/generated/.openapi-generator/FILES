@@ -168,6 +168,8 @@ models/ValidationDto.ts
 models/ValidationMessage.ts
 models/VerifyEmailAddressOptions.ts
 models/WaitForConditions.ts
+models/WebhookBouncePayload.ts
+models/WebhookBounceRecipientPayload.ts
 models/WebhookDto.ts
 models/WebhookEmailOpenedPayload.ts
 models/WebhookEmailReadPayload.ts

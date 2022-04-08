@@ -32,6 +32,12 @@ import {
   UnseenErrorCountDto,
   UnseenErrorCountDtoFromJSON,
   UnseenErrorCountDtoToJSON,
+  WebhookBouncePayload,
+  WebhookBouncePayloadFromJSON,
+  WebhookBouncePayloadToJSON,
+  WebhookBounceRecipientPayload,
+  WebhookBounceRecipientPayloadFromJSON,
+  WebhookBounceRecipientPayloadToJSON,
   WebhookDto,
   WebhookDtoFromJSON,
   WebhookDtoToJSON,
@@ -61,6 +67,10 @@ import {
   WebhookTestResultToJSON,
 } from '../models';
 
+export interface CreateAccountWebhookRequest {
+  createWebhookOptions: CreateWebhookOptions;
+}
+
 export interface CreateWebhookRequest {
   inboxId: string;
   createWebhookOptions: CreateWebhookOptions;
@@ -68,6 +78,10 @@ export interface CreateWebhookRequest {
 
 export interface DeleteWebhookRequest {
   inboxId: string;
+  webhookId: string;
+}
+
+export interface DeleteWebhookByIdRequest {
   webhookId: string;
 }
 
@@ -151,6 +165,67 @@ export interface SendTestDataRequest {
  *
  */
 export class WebhookControllerApi extends runtime.BaseAPI {
+  /**
+   * Get notified of account level events such as bounce and bounce recipient.
+   * Attach a WebHook URL to an inbox
+   */
+  async createAccountWebhookRaw(
+    requestParameters: CreateAccountWebhookRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookDto>> {
+    if (
+      requestParameters.createWebhookOptions === null ||
+      requestParameters.createWebhookOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createWebhookOptions',
+        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createAccountWebhook.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateWebhookOptionsToJSON(
+          requestParameters.createWebhookOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get notified of account level events such as bounce and bounce recipient.
+   * Attach a WebHook URL to an inbox
+   */
+  async createAccountWebhook(
+    requestParameters: CreateAccountWebhookRequest,
+    initOverrides?: RequestInit
+  ): Promise<WebhookDto> {
+    const response = await this.createAccountWebhookRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Get notified whenever an inbox receives an email via a WebHook URL. An emailID will be posted to this URL every time an email is received for this inbox. The URL must be publicly reachable by the MailSlurp server. You can provide basicAuth values if you wish to secure this endpoint.
    * Attach a WebHook URL to an inbox
@@ -323,6 +398,57 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteWebhookRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete a webhook
+   */
+  async deleteWebhookByIdRaw(
+    requestParameters: DeleteWebhookByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.webhookId === null ||
+      requestParameters.webhookId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookId',
+        'Required parameter requestParameters.webhookId was null or undefined when calling deleteWebhookById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/{webhookId}`.replace(
+          `{${'webhookId'}}`,
+          encodeURIComponent(String(requestParameters.webhookId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a webhook
+   */
+  async deleteWebhookById(
+    requestParameters: DeleteWebhookByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteWebhookByIdRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -660,6 +786,86 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get webhook test payload for bounce
+   */
+  async getTestWebhookPayloadBounceRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookBouncePayload>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/test/email-bounce-payload`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookBouncePayloadFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get webhook test payload for bounce
+   */
+  async getTestWebhookPayloadBounce(
+    initOverrides?: RequestInit
+  ): Promise<WebhookBouncePayload> {
+    const response = await this.getTestWebhookPayloadBounceRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get webhook test payload for bounce recipient
+   */
+  async getTestWebhookPayloadBounceRecipientRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookBounceRecipientPayload>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/test/email-bounce-recipient-payload`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookBounceRecipientPayloadFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get webhook test payload for bounce recipient
+   */
+  async getTestWebhookPayloadBounceRecipient(
+    initOverrides?: RequestInit
+  ): Promise<WebhookBounceRecipientPayload> {
+    const response = await this.getTestWebhookPayloadBounceRecipientRaw(
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get webhook test payload for email opened event
    */
   async getTestWebhookPayloadEmailOpenedRaw(
@@ -920,7 +1126,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get a webhook for an Inbox
+   * Get a webhook
    */
   async getWebhookRaw(
     requestParameters: GetWebhookRequest,
@@ -963,7 +1169,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get a webhook for an Inbox
+   * Get a webhook
    */
   async getWebhook(
     requestParameters: GetWebhookRequest,
@@ -1383,6 +1589,8 @@ export enum GetTestWebhookPayloadEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 /**
  * @export

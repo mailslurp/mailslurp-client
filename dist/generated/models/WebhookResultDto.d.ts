@@ -32,7 +32,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    inboxId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
@@ -136,7 +136,9 @@ export declare enum WebhookResultDtoWebhookEventEnum {
     NEW_CONTACT = "NEW_CONTACT",
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
-    EMAIL_READ = "EMAIL_READ"
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 /**
  * @export
