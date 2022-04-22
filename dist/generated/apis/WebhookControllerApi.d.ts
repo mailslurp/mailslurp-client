@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -50,6 +50,9 @@ export interface GetInboxWebhooksPaginatedRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+}
+export interface GetJsonSchemaForWebhookEventRequest {
+    event: GetJsonSchemaForWebhookEventEventEnum;
 }
 export interface GetJsonSchemaForWebhookPayloadRequest {
     webhookId: string;
@@ -162,6 +165,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get paginated webhooks for an Inbox
      */
     getInboxWebhooksPaginated(requestParameters: GetInboxWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    getJsonSchemaForWebhookEventRaw(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<JSONSchemaDto>>;
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    getJsonSchemaForWebhookEvent(requestParameters: GetJsonSchemaForWebhookEventRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto>;
     /**
      * Get JSON Schema definition for webhook payload
      */
@@ -324,6 +335,20 @@ export declare enum GetAllWebhooksSortEnum {
 export declare enum GetInboxWebhooksPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetJsonSchemaForWebhookEventEventEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
 }
 /**
  * @export

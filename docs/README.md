@@ -55,6 +55,7 @@
 - [GetInboxSentEmailsSortEnum](enums/GetInboxSentEmailsSortEnum.md)
 - [GetInboxWebhooksPaginatedSortEnum](enums/GetInboxWebhooksPaginatedSortEnum.md)
 - [GetInboxesSortEnum](enums/GetInboxesSortEnum.md)
+- [GetJsonSchemaForWebhookEventEventEnum](enums/GetJsonSchemaForWebhookEventEventEnum.md)
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
 - [GetSentEmailTrackingPixelsSortEnum](enums/GetSentEmailTrackingPixelsSortEnum.md)
@@ -80,8 +81,6 @@
 - [SendEmailOptionsSendStrategyEnum](enums/SendEmailOptionsSendStrategyEnum.md)
 - [SendEmailOptionsValidateEmailAddressesEnum](enums/SendEmailOptionsValidateEmailAddressesEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
-- [UserDtoUserTypeEnum](enums/UserDtoUserTypeEnum.md)
-- [UserDtoVerifiedEnum](enums/UserDtoVerifiedEnum.md)
 - [WaitForConditionsCountTypeEnum](enums/WaitForConditionsCountTypeEnum.md)
 - [WaitForConditionsSortDirectionEnum](enums/WaitForConditionsSortDirectionEnum.md)
 - [WaitForEmailCountSortEnum](enums/WaitForEmailCountSortEnum.md)
@@ -107,7 +106,6 @@
 ### Classes
 
 - [AliasControllerApi](classes/AliasControllerApi.md)
-- [ApiInternalControllerApi](classes/ApiInternalControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
 - [BlobApiResponse](classes/BlobApiResponse.md)
@@ -309,19 +307,18 @@
 - [GetInboxWebhooksPaginatedRequest](interfaces/GetInboxWebhooksPaginatedRequest.md)
 - [GetInboxesRequest](interfaces/GetInboxesRequest.md)
 - [GetIpAddressRequest](interfaces/GetIpAddressRequest.md)
+- [GetJsonSchemaForWebhookEventRequest](interfaces/GetJsonSchemaForWebhookEventRequest.md)
 - [GetJsonSchemaForWebhookPayloadRequest](interfaces/GetJsonSchemaForWebhookPayloadRequest.md)
 - [GetLatestEmailInInbox1Request](interfaces/GetLatestEmailInInbox1Request.md)
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
-- [GetOrCreateSamlUserOptions](interfaces/GetOrCreateSamlUserOptions.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
 - [GetRawEmailContentsRequest](interfaces/GetRawEmailContentsRequest.md)
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
-- [GetSamlUserOrCreateRequest](interfaces/GetSamlUserOrCreateRequest.md)
 - [GetSentEmailHTMLContentRequest](interfaces/GetSentEmailHTMLContentRequest.md)
 - [GetSentEmailPreviewURLsRequest](interfaces/GetSentEmailPreviewURLsRequest.md)
 - [GetSentEmailRequest](interfaces/GetSentEmailRequest.md)
@@ -453,7 +450,6 @@
 - [UploadAttachmentOptions](interfaces/UploadAttachmentOptions.md)
 - [UploadAttachmentRequest](interfaces/UploadAttachmentRequest.md)
 - [UploadMultipartFormRequest](interfaces/UploadMultipartFormRequest.md)
-- [UserDto](interfaces/UserDto.md)
 - [ValidateEmailAddressListOptions](interfaces/ValidateEmailAddressListOptions.md)
 - [ValidateEmailAddressListRequest](interfaces/ValidateEmailAddressListRequest.md)
 - [ValidateEmailAddressListResult](interfaces/ValidateEmailAddressListResult.md)
@@ -672,9 +668,6 @@
 - [ForwardEmailOptionsFromJSON](README.md#forwardemailoptionsfromjson)
 - [ForwardEmailOptionsFromJSONTyped](README.md#forwardemailoptionsfromjsontyped)
 - [ForwardEmailOptionsToJSON](README.md#forwardemailoptionstojson)
-- [GetOrCreateSamlUserOptionsFromJSON](README.md#getorcreatesamluseroptionsfromjson)
-- [GetOrCreateSamlUserOptionsFromJSONTyped](README.md#getorcreatesamluseroptionsfromjsontyped)
-- [GetOrCreateSamlUserOptionsToJSON](README.md#getorcreatesamluseroptionstojson)
 - [GravatarUrlFromJSON](README.md#gravatarurlfromjson)
 - [GravatarUrlFromJSONTyped](README.md#gravatarurlfromjsontyped)
 - [GravatarUrlToJSON](README.md#gravatarurltojson)
@@ -912,9 +905,6 @@
 - [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
 - [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
 - [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
-- [UserDtoFromJSON](README.md#userdtofromjson)
-- [UserDtoFromJSONTyped](README.md#userdtofromjsontyped)
-- [UserDtoToJSON](README.md#userdtotojson)
 - [ValidateEmailAddressListOptionsFromJSON](README.md#validateemailaddresslistoptionsfromjson)
 - [ValidateEmailAddressListOptionsFromJSONTyped](README.md#validateemailaddresslistoptionsfromjsontyped)
 - [ValidateEmailAddressListOptionsToJSON](README.md#validateemailaddresslistoptionstojson)
@@ -1087,7 +1077,7 @@ ___
 • **BASE\_PATH**: `string`
 
 MailSlurp API
-MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
 
 The version of the OpenAPI document: 6.5.2
 Contact: contact@mailslurp.dev
@@ -3850,55 +3840,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### GetOrCreateSamlUserOptionsFromJSON
-
-▸ **GetOrCreateSamlUserOptionsFromJSON**(`json`): [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
-
-___
-
-### GetOrCreateSamlUserOptionsFromJSONTyped
-
-▸ **GetOrCreateSamlUserOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md)
-
-___
-
-### GetOrCreateSamlUserOptionsToJSON
-
-▸ **GetOrCreateSamlUserOptionsToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`GetOrCreateSamlUserOptions`](interfaces/GetOrCreateSamlUserOptions.md) |
 
 #### Returns
 
@@ -7770,55 +7711,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### UserDtoFromJSON
-
-▸ **UserDtoFromJSON**(`json`): [`UserDto`](interfaces/UserDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`UserDto`](interfaces/UserDto.md)
-
-___
-
-### UserDtoFromJSONTyped
-
-▸ **UserDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UserDto`](interfaces/UserDto.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`UserDto`](interfaces/UserDto.md)
-
-___
-
-### UserDtoToJSON
-
-▸ **UserDtoToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`UserDto`](interfaces/UserDto.md) |
 
 #### Returns
 

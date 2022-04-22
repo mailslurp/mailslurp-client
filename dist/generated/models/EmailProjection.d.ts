@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -35,16 +35,16 @@ export interface EmailProjection {
     subject?: string;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    inboxId: string;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
     attachments?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    inboxId: string;
     /**
      *
      * @type {Array<string>}
@@ -74,12 +74,6 @@ export interface EmailProjection {
      * @type {boolean}
      * @memberof EmailProjection
      */
-    teamAccess?: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
     read?: boolean;
     /**
      *
@@ -93,6 +87,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bodyExcerpt?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    teamAccess?: boolean;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

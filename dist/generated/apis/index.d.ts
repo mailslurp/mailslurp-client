@@ -1,5 +1,4 @@
 export * from './AliasControllerApi';
-export * from './ApiInternalControllerApi';
 export * from './AttachmentControllerApi';
 export * from './BounceControllerApi';
 export * from './BulkActionsControllerApi';

@@ -248,7 +248,7 @@ You can extract useful information from emails using regular expressions. See th
 ```
 
 ## Webhooks
-To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://www.mailslurp.com/guides/email-webhooks/).
+To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://docs.mailslurp.com/webhooks/).
 
 ### Create webhooks
 You can create webhooks in code or using the [MailSlurp dashboard](https://app.mailslurp.com/).
@@ -258,7 +258,7 @@ You can create webhooks in code or using the [MailSlurp dashboard](https://app.m
 ```
 
 ### Listen to webhooks
-To consume webhooks first create a webhook for an inbox and a given [webhook event](https://docs.mailslurp.com/webhooks). Set the webhook URL to an endpoint on your server. Your server must be publicly accessible and return a 200 or 201 status code in 30 seconds. To test locally use a service like ngrok.io to tunnel your local machine to a public URL. [The payload](https://www.mailslurp.com/guides/email-webhooks) posted to your end point will depend on the event type. Here is a listen example using express
+To consume webhooks first create a webhook for an inbox and a given [webhook event](https://docs.mailslurp.com/webhooks). Set the webhook URL to an endpoint on your server. Your server must be publicly accessible and return a 200 or 201 status code in 30 seconds. To test locally use a service like ngrok.io to tunnel your local machine to a public URL. [The payload](https://docs.mailslurp.com/webhooks) posted to your end point will depend on the event type. Here is a listen example using express
 
 > **Note:** you can use any framework or language you like with webhooks.
 

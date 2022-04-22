@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -26,9 +26,9 @@ function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
-        inboxId: json['inboxId'],
         userId: json['userId'],
         emailAddress: json['emailAddress'],
+        inboxId: json['inboxId'],
         createdAt: new Date(json['createdAt']),
         useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
         updatedAt: new Date(json['updatedAt']),
@@ -45,9 +45,9 @@ function AliasProjectionToJSON(value) {
     return {
         name: value.name,
         id: value.id,
-        inboxId: value.inboxId,
         userId: value.userId,
         emailAddress: value.emailAddress,
+        inboxId: value.inboxId,
         createdAt: value.createdAt.toISOString(),
         useThreads: value.useThreads,
         updatedAt: value.updatedAt.toISOString(),

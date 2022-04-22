@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -33,16 +33,16 @@ export interface TemplateProjection {
   id: string;
   /**
    *
-   * @type {Array<string>}
-   * @memberof TemplateProjection
-   */
-  variables: Array<string>;
-  /**
-   *
    * @type {Date}
    * @memberof TemplateProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof TemplateProjection
+   */
+  variables: Array<string>;
   /**
    *
    * @type {Date}
@@ -65,8 +65,8 @@ export function TemplateProjectionFromJSONTyped(
   return {
     name: json['name'],
     id: json['id'],
-    variables: json['variables'],
     createdAt: new Date(json['createdAt']),
+    variables: json['variables'],
     updatedAt: new Date(json['updatedAt']),
   };
 }
@@ -83,8 +83,8 @@ export function TemplateProjectionToJSON(
   return {
     name: value.name,
     id: value.id,
-    variables: value.variables,
     createdAt: value.createdAt.toISOString(),
+    variables: value.variables,
     updatedAt: value.updatedAt.toISOString(),
   };
 }

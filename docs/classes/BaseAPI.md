@@ -8,8 +8,6 @@ This is the base class for all generated API classes.
 
   ↳ [`AliasControllerApi`](AliasControllerApi.md)
 
-  ↳ [`ApiInternalControllerApi`](ApiInternalControllerApi.md)
-
   ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
   ↳ [`BounceControllerApi`](BounceControllerApi.md)

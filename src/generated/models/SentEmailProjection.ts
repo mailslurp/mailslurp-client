@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -45,10 +45,22 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  attachments: Array<string>;
+  /**
+   *
    * @type {string}
    * @memberof SentEmailProjection
    */
-  bodyMD5Hash?: string;
+  inboxId: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  to: Array<string>;
   /**
    *
    * @type {Array<string>}
@@ -63,28 +75,16 @@ export interface SentEmailProjection {
   cc: Array<string>;
   /**
    *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  attachments: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  to: Array<string>;
-  /**
-   *
    * @type {Date}
    * @memberof SentEmailProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  bodyMD5Hash?: string;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -103,13 +103,13 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    attachments: json['attachments'],
+    inboxId: json['inboxId'],
+    to: json['to'],
     bcc: json['bcc'],
     cc: json['cc'],
-    inboxId: json['inboxId'],
-    attachments: json['attachments'],
-    to: json['to'],
     createdAt: new Date(json['createdAt']),
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
   };
 }
 
@@ -127,12 +127,12 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
-    bodyMD5Hash: value.bodyMD5Hash,
+    attachments: value.attachments,
+    inboxId: value.inboxId,
+    to: value.to,
     bcc: value.bcc,
     cc: value.cc,
-    inboxId: value.inboxId,
-    attachments: value.attachments,
-    to: value.to,
     createdAt: value.createdAt.toISOString(),
+    bodyMD5Hash: value.bodyMD5Hash,
   };
 }

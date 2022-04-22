@@ -34,6 +34,8 @@
 - [getAllWebhooksRaw](WebhookControllerApi.md#getallwebhooksraw)
 - [getInboxWebhooksPaginated](WebhookControllerApi.md#getinboxwebhookspaginated)
 - [getInboxWebhooksPaginatedRaw](WebhookControllerApi.md#getinboxwebhookspaginatedraw)
+- [getJsonSchemaForWebhookEvent](WebhookControllerApi.md#getjsonschemaforwebhookevent)
+- [getJsonSchemaForWebhookEventRaw](WebhookControllerApi.md#getjsonschemaforwebhookeventraw)
 - [getJsonSchemaForWebhookPayload](WebhookControllerApi.md#getjsonschemaforwebhookpayload)
 - [getJsonSchemaForWebhookPayloadRaw](WebhookControllerApi.md#getjsonschemaforwebhookpayloadraw)
 - [getTestWebhookPayload](WebhookControllerApi.md#gettestwebhookpayload)
@@ -406,6 +408,44 @@ Get paginated webhooks for an Inbox
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
+
+___
+
+### getJsonSchemaForWebhookEvent
+
+▸ **getJsonSchemaForWebhookEvent**(`requestParameters`, `initOverrides?`): `Promise`<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>
+
+Get JSON Schema definition for webhook payload by event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetJsonSchemaForWebhookEventRequest`](../interfaces/GetJsonSchemaForWebhookEventRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>
+
+___
+
+### getJsonSchemaForWebhookEventRaw
+
+▸ **getJsonSchemaForWebhookEventRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>\>
+
+Get JSON Schema definition for webhook payload by event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetJsonSchemaForWebhookEventRequest`](../interfaces/GetJsonSchemaForWebhookEventRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>\>
 
 ___
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -54,6 +54,12 @@ export interface PageAttachmentEntity {
   total?: number;
   /**
    *
+   * @type {boolean}
+   * @memberof PageAttachmentEntity
+   */
+  last?: boolean;
+  /**
+   *
    * @type {number}
    * @memberof PageAttachmentEntity
    */
@@ -64,12 +70,6 @@ export interface PageAttachmentEntity {
    * @memberof PageAttachmentEntity
    */
   totalPages?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageAttachmentEntity
-   */
-  last?: boolean;
   /**
    *
    * @type {number}
@@ -90,16 +90,16 @@ export interface PageAttachmentEntity {
   sort?: Sort;
   /**
    *
-   * @type {number}
-   * @memberof PageAttachmentEntity
-   */
-  numberOfElements?: number;
-  /**
-   *
    * @type {boolean}
    * @memberof PageAttachmentEntity
    */
   first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageAttachmentEntity
+   */
+  numberOfElements?: number;
   /**
    *
    * @type {boolean}
@@ -127,18 +127,18 @@ export function PageAttachmentEntityFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
+    last: !exists(json, 'last') ? undefined : json['last'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
     totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -159,14 +159,14 @@ export function PageAttachmentEntityToJSON(
         : (value.content as Array<any>).map(AttachmentProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
+    last: value.last,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
-    last: value.last,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),
-    numberOfElements: value.numberOfElements,
     first: value.first,
+    numberOfElements: value.numberOfElements,
     empty: value.empty,
   };
 }

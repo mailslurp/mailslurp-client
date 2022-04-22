@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -112,6 +112,10 @@ export interface GetInboxWebhooksPaginatedRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+}
+
+export interface GetJsonSchemaForWebhookEventRequest {
+  event: GetJsonSchemaForWebhookEventEventEnum;
 }
 
 export interface GetJsonSchemaForWebhookPayloadRequest {
@@ -674,6 +678,64 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageWebhookProjection> {
     const response = await this.getInboxWebhooksPaginatedRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get JSON Schema definition for webhook payload by event
+   */
+  async getJsonSchemaForWebhookEventRaw(
+    requestParameters: GetJsonSchemaForWebhookEventRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<JSONSchemaDto>> {
+    if (
+      requestParameters.event === null ||
+      requestParameters.event === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'event',
+        'Required parameter requestParameters.event was null or undefined when calling getJsonSchemaForWebhookEvent.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.event !== undefined) {
+      queryParameters['event'] = requestParameters.event;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/schema`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      JSONSchemaDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get JSON Schema definition for webhook payload by event
+   */
+  async getJsonSchemaForWebhookEvent(
+    requestParameters: GetJsonSchemaForWebhookEventRequest,
+    initOverrides?: RequestInit
+  ): Promise<JSONSchemaDto> {
+    const response = await this.getJsonSchemaForWebhookEventRaw(
       requestParameters,
       initOverrides
     );
@@ -1577,6 +1639,20 @@ export enum GetAllWebhooksSortEnum {
 export enum GetInboxWebhooksPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetJsonSchemaForWebhookEventEventEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
 }
 /**
  * @export

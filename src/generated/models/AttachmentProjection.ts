@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -32,6 +32,12 @@ export interface AttachmentProjection {
    */
   contentLength?: number;
   /**
+   * Content type of attachment.
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  contentType?: string;
+  /**
    *
    * @type {string}
    * @memberof AttachmentProjection
@@ -55,12 +61,6 @@ export interface AttachmentProjection {
    * @memberof AttachmentProjection
    */
   updatedAt: Date;
-  /**
-   * Content type of attachment.
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  contentType?: string;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
@@ -79,11 +79,11 @@ export function AttachmentProjectionFromJSONTyped(
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
+    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     userId: json['userId'],
     attachmentId: json['attachmentId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
   };
 }
 
@@ -99,10 +99,10 @@ export function AttachmentProjectionToJSON(
   return {
     name: value.name,
     contentLength: value.contentLength,
+    contentType: value.contentType,
     userId: value.userId,
     attachmentId: value.attachmentId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
-    contentType: value.contentType,
   };
 }

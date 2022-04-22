@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -39,16 +39,16 @@ export interface EmailProjection {
   subject?: string;
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  inboxId: string;
-  /**
-   *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
   attachments?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  inboxId: string;
   /**
    *
    * @type {Array<string>}
@@ -78,12 +78,6 @@ export interface EmailProjection {
    * @type {boolean}
    * @memberof EmailProjection
    */
-  teamAccess?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailProjection
-   */
   read?: boolean;
   /**
    *
@@ -97,6 +91,12 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   bodyExcerpt?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  teamAccess?: boolean;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -114,16 +114,16 @@ export function EmailProjectionFromJSONTyped(
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    inboxId: json['inboxId'],
     to: json['to'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     createdAt: new Date(json['createdAt']),
-    teamAccess: !exists(json, 'teamAccess') ? undefined : json['teamAccess'],
     read: !exists(json, 'read') ? undefined : json['read'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    teamAccess: !exists(json, 'teamAccess') ? undefined : json['teamAccess'],
   };
 }
 
@@ -138,15 +138,15 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     id: value.id,
     from: value.from,
     subject: value.subject,
-    inboxId: value.inboxId,
     attachments: value.attachments,
+    inboxId: value.inboxId,
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,
     createdAt: value.createdAt.toISOString(),
-    teamAccess: value.teamAccess,
     read: value.read,
     bodyMD5Hash: value.bodyMD5Hash,
     bodyExcerpt: value.bodyExcerpt,
+    teamAccess: value.teamAccess,
   };
 }

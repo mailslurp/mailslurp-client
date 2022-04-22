@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -539,6 +539,59 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getInboxWebhooksPaginatedRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    WebhookControllerApi.prototype.getJsonSchemaForWebhookEventRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.event === null ||
+                            requestParameters.event === undefined) {
+                            throw new runtime.RequiredError('event', 'Required parameter requestParameters.event was null or undefined when calling getJsonSchemaForWebhookEvent.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.event !== undefined) {
+                            queryParameters['event'] = requestParameters.event;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/schema",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.JSONSchemaDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get JSON Schema definition for webhook payload by event
+     */
+    WebhookControllerApi.prototype.getJsonSchemaForWebhookEvent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getJsonSchemaForWebhookEventRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1421,6 +1474,21 @@ var GetInboxWebhooksPaginatedSortEnum;
     GetInboxWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetInboxWebhooksPaginatedSortEnum["DESC"] = "DESC";
 })(GetInboxWebhooksPaginatedSortEnum = exports.GetInboxWebhooksPaginatedSortEnum || (exports.GetInboxWebhooksPaginatedSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetJsonSchemaForWebhookEventEventEnum;
+(function (GetJsonSchemaForWebhookEventEventEnum) {
+    GetJsonSchemaForWebhookEventEventEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetJsonSchemaForWebhookEventEventEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetJsonSchemaForWebhookEventEventEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetJsonSchemaForWebhookEventEventEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetJsonSchemaForWebhookEventEventEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetJsonSchemaForWebhookEventEventEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetJsonSchemaForWebhookEventEventEnum["BOUNCE"] = "BOUNCE";
+    GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+})(GetJsonSchemaForWebhookEventEventEnum = exports.GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = {}));
 /**
  * @export
  * @enum {string}
