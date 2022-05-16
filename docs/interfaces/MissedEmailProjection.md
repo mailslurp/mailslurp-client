@@ -1,5 +1,7 @@
 # Interface: MissedEmailProjection
 
+Missed email data
+
 **`export`**
 
 **`interface`** MissedEmailProjection

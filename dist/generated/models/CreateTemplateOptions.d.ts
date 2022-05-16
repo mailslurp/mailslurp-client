@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Options for creating email templates
  * @export
  * @interface CreateTemplateOptions
  */

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Organization team inbox
  * @export
  * @interface OrganizationInboxProjection
  */
@@ -69,6 +69,12 @@ export interface OrganizationInboxProjection {
      * @memberof OrganizationInboxProjection
      */
     readOnly: boolean;
+    /**
+     * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+     * @type {boolean}
+     * @memberof OrganizationInboxProjection
+     */
+    virtualInbox?: boolean;
 }
 /**
  * @export

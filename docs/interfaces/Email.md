@@ -21,6 +21,7 @@ Email entity (also known as EmailDto). When an SMTP email message is received by
 - [createdAt](Email.md#createdat)
 - [from](Email.md#from)
 - [headers](Email.md#headers)
+- [html](Email.md#html)
 - [id](Email.md#id)
 - [inboxId](Email.md#inboxid)
 - [isHTML](Email.md#ishtml)
@@ -145,6 +146,14 @@ Collection of SMTP headers attached to email
 #### Index signature
 
 ▪ [key: `string`]: `string`
+
+___
+
+### html
+
+• `Optional` **html**: `boolean`
+
+**`memberof`** Email
 
 ___
 

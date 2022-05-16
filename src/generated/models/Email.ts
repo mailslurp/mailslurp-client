@@ -172,6 +172,12 @@ export interface Email {
    * @memberof Email
    */
   teamAccess: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof Email
+   */
+  html?: boolean;
 }
 
 export function EmailFromJSON(json: any): Email {
@@ -215,6 +221,7 @@ export function EmailFromJSONTyped(
     updatedAt: new Date(json['updatedAt']),
     read: json['read'],
     teamAccess: json['teamAccess'],
+    html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
 
@@ -249,5 +256,6 @@ export function EmailToJSON(value?: Email | null): any {
     updatedAt: value.updatedAt.toISOString(),
     read: value.read,
     teamAccess: value.teamAccess,
+    html: value.html,
   };
 }

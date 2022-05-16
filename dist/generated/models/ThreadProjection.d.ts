@@ -35,6 +35,12 @@ export interface ThreadProjection {
     subject?: string;
     /**
      *
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof ThreadProjection
      */
@@ -63,12 +69,6 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     cc?: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {Date}

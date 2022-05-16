@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Result of test of inbox ruleset
  * @export
  * @interface InboxRulesetTestResult
  */

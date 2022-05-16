@@ -1,5 +1,7 @@
 # Interface: TestNewInboxForwarderOptions
 
+Options for testing new inbox forwarder rules
+
 **`export`**
 
 **`interface`** TestNewInboxForwarderOptions

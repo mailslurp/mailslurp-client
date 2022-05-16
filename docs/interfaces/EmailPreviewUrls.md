@@ -1,5 +1,7 @@
 # Interface: EmailPreviewUrls
 
+URLs for email body
+
 **`export`**
 
 **`interface`** EmailPreviewUrls

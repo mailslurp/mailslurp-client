@@ -117,6 +117,18 @@ export interface SentEmailDto {
      * @memberof SentEmailDto
      */
     messageId?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    virtualSend?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailDto
+     */
+    html?: boolean;
 }
 export declare function SentEmailDtoFromJSON(json: any): SentEmailDto;
 export declare function SentEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailDto;

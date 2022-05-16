@@ -1,5 +1,7 @@
 # Interface: UpdateGroupContacts
 
+Update group contacts options. Pass a list of contact ids to replace existing group contacts.
+
 **`export`**
 
 **`interface`** UpdateGroupContacts

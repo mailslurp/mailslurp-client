@@ -1,5 +1,7 @@
 # Interface: JSONSchemaDto
 
+JSONSchema for payload
+
 **`export`**
 
 **`interface`** JSONSchemaDto

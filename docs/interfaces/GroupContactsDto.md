@@ -1,5 +1,7 @@
 # Interface: GroupContactsDto
 
+Describes contacts attached to a contact group
+
 **`export`**
 
 **`interface`** GroupContactsDto

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Test options for inbox ruleset
  * @export
  * @interface InboxRulesetTestOptions
  */

@@ -35,16 +35,22 @@ export interface EmailProjection {
     subject?: string;
     /**
      *
-     * @type {Array<string>}
+     * @type {Date}
      * @memberof EmailProjection
      */
-    attachments?: Array<string>;
+    createdAt: Date;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string>;
     /**
      *
      * @type {Array<string>}
@@ -65,10 +71,10 @@ export interface EmailProjection {
     cc?: Array<string>;
     /**
      *
-     * @type {Date}
+     * @type {boolean}
      * @memberof EmailProjection
      */
-    createdAt: Date;
+    teamAccess?: boolean;
     /**
      *
      * @type {boolean}
@@ -87,12 +93,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bodyExcerpt?: string;
-    /**
-     *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    teamAccess?: boolean;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

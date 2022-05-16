@@ -75,6 +75,7 @@ export * from './InboxRulesetDto';
 export * from './InboxRulesetTestOptions';
 export * from './InboxRulesetTestResult';
 export * from './InlineObject';
+export * from './InlineObject1';
 export * from './JSONSchemaDto';
 export * from './MatchOption';
 export * from './MatchOptions';

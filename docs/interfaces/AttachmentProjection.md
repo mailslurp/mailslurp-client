@@ -1,5 +1,7 @@
 # Interface: AttachmentProjection
 
+Email attachment data
+
 **`export`**
 
 **`interface`** AttachmentProjection

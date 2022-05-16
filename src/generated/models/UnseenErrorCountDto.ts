@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Number of unseen errors
  * @export
  * @interface UnseenErrorCountDto
  */

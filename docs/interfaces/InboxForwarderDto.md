@@ -1,5 +1,7 @@
 # Interface: InboxForwarderDto
 
+Inbox forwarder
+
 **`export`**
 
 **`interface`** InboxForwarderDto

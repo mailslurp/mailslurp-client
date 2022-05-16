@@ -11,7 +11,7 @@
  */
 import { CreateInboxRulesetOptions, InboxRulesetTestOptions } from './';
 /**
- *
+ * Test inbox ruleset options
  * @export
  * @interface TestNewInboxRulesetOptions
  */

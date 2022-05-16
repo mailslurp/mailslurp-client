@@ -135,6 +135,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.favourite !== undefined) {
                             queryParameters['favourite'] = requestParameters.favourite;
                         }
+                        if (requestParameters.virtualInbox !== undefined) {
+                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -212,6 +215,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.favourite !== undefined) {
                             queryParameters['favourite'] = requestParameters.favourite;
+                        }
+                        if (requestParameters.virtualInbox !== undefined) {
+                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {

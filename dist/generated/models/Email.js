@@ -54,6 +54,7 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
         read: json['read'],
         teamAccess: json['teamAccess'],
+        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
 exports.EmailFromJSONTyped = EmailFromJSONTyped;
@@ -88,6 +89,7 @@ function EmailToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
         read: value.read,
         teamAccess: value.teamAccess,
+        html: value.html,
     };
 }
 exports.EmailToJSON = EmailToJSON;

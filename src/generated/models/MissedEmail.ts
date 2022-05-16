@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Missed email
  * @export
  * @interface MissedEmail
  */

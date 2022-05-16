@@ -1,5 +1,7 @@
 # Interface: TestNewInboxRulesetOptions
 
+Test inbox ruleset options
+
 **`export`**
 
 **`interface`** TestNewInboxRulesetOptions

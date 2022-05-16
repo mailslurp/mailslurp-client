@@ -81,6 +81,12 @@ export interface InboxDto {
      * @memberof InboxDto
      */
     readOnly: boolean;
+    /**
+     * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+     * @type {boolean}
+     * @memberof InboxDto
+     */
+    virtualInbox: boolean;
 }
 /**
  * @export

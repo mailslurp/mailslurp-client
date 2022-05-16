@@ -79,6 +79,12 @@ export interface CreateInboxDto {
    * @memberof CreateInboxDto
    */
   inboxType?: CreateInboxDtoInboxTypeEnum;
+  /**
+   * Virtual inbox prevents any outbound emails from being sent. It creates sent email records but will never send real emails to recipients. Great for testing and faking email sending.
+   * @type {boolean}
+   * @memberof CreateInboxDto
+   */
+  virtualInbox?: boolean;
 }
 
 /**
@@ -120,6 +126,9 @@ export function CreateInboxDtoFromJSONTyped(
       ? undefined
       : json['allowTeamAccess'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
+    virtualInbox: !exists(json, 'virtualInbox')
+      ? undefined
+      : json['virtualInbox'],
   };
 }
 
@@ -142,5 +151,6 @@ export function CreateInboxDtoToJSON(value?: CreateInboxDto | null): any {
     expiresIn: value.expiresIn,
     allowTeamAccess: value.allowTeamAccess,
     inboxType: value.inboxType,
+    virtualInbox: value.virtualInbox,
   };
 }

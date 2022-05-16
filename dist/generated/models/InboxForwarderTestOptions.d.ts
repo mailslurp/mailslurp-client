@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Options for testing an inbox forwarder against a value
  * @export
  * @interface InboxForwarderTestOptions
  */

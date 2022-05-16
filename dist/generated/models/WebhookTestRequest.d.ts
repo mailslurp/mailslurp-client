@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Result of webhook test request
  * @export
  * @interface WebhookTestRequest
  */

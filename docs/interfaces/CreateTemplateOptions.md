@@ -1,5 +1,7 @@
 # Interface: CreateTemplateOptions
 
+Options for creating email templates
+
 **`export`**
 
 **`interface`** CreateTemplateOptions

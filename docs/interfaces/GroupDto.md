@@ -1,5 +1,7 @@
 # Interface: GroupDto
 
+Contact group data
+
 **`export`**
 
 **`interface`** GroupDto

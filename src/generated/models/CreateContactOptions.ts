@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Options for creating an email contact in address book
  * @export
  * @interface CreateContactOptions
  */

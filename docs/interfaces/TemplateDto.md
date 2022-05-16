@@ -1,5 +1,7 @@
 # Interface: TemplateDto
 
+Email template
+
 **`export`**
 
 **`interface`** TemplateDto

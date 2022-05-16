@@ -89,6 +89,7 @@ __exportStar(require("./InboxRulesetDto"), exports);
 __exportStar(require("./InboxRulesetTestOptions"), exports);
 __exportStar(require("./InboxRulesetTestResult"), exports);
 __exportStar(require("./InlineObject"), exports);
+__exportStar(require("./InlineObject1"), exports);
 __exportStar(require("./JSONSchemaDto"), exports);
 __exportStar(require("./MatchOption"), exports);
 __exportStar(require("./MatchOptions"), exports);

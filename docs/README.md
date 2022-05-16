@@ -356,6 +356,7 @@
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
 - [InlineObject](interfaces/InlineObject.md)
+- [InlineObject1](interfaces/InlineObject1.md)
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [ListInboxRulesetsRequest](interfaces/ListInboxRulesetsRequest.md)
 - [ListInboxTrackingPixelsRequest](interfaces/ListInboxTrackingPixelsRequest.md)
@@ -728,6 +729,9 @@
 - [InboxRulesetTestResultFromJSON](README.md#inboxrulesettestresultfromjson)
 - [InboxRulesetTestResultFromJSONTyped](README.md#inboxrulesettestresultfromjsontyped)
 - [InboxRulesetTestResultToJSON](README.md#inboxrulesettestresulttojson)
+- [InlineObject1FromJSON](README.md#inlineobject1fromjson)
+- [InlineObject1FromJSONTyped](README.md#inlineobject1fromjsontyped)
+- [InlineObject1ToJSON](README.md#inlineobject1tojson)
 - [InlineObjectFromJSON](README.md#inlineobjectfromjson)
 - [InlineObjectFromJSONTyped](README.md#inlineobjectfromjsontyped)
 - [InlineObjectToJSON](README.md#inlineobjecttojson)
@@ -4820,6 +4824,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InlineObject1FromJSON
+
+▸ **InlineObject1FromJSON**(`json`): [`InlineObject1`](interfaces/InlineObject1.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InlineObject1`](interfaces/InlineObject1.md)
+
+___
+
+### InlineObject1FromJSONTyped
+
+▸ **InlineObject1FromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject1`](interfaces/InlineObject1.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InlineObject1`](interfaces/InlineObject1.md)
+
+___
+
+### InlineObject1ToJSON
+
+▸ **InlineObject1ToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InlineObject1`](interfaces/InlineObject1.md) |
 
 #### Returns
 

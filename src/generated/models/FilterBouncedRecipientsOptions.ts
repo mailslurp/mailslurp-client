@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Options for filtering bounced email recipients
  * @export
  * @interface FilterBouncedRecipientsOptions
  */

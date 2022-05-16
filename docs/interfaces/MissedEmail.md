@@ -1,5 +1,7 @@
 # Interface: MissedEmail
 
+Missed email
+
 **`export`**
 
 **`interface`** MissedEmail

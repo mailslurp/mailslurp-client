@@ -1,5 +1,7 @@
 # Interface: InboxExistsDto
 
+Result of email exists query
+
 **`export`**
 
 **`interface`** InboxExistsDto

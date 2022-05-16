@@ -1,5 +1,7 @@
 # Interface: GroupProjection
 
+Data for contact group
+
 **`export`**
 
 **`interface`** GroupProjection

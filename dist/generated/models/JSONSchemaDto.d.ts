@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * JSONSchema for payload
  * @export
  * @interface JSONSchemaDto
  */

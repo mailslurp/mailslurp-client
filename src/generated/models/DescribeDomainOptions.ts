@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Domain record description
  * @export
  * @interface DescribeDomainOptions
  */

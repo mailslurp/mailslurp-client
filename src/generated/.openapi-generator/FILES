@@ -101,6 +101,7 @@ models/InboxRulesetDto.ts
 models/InboxRulesetTestOptions.ts
 models/InboxRulesetTestResult.ts
 models/InlineObject.ts
+models/InlineObject1.ts
 models/JSONSchemaDto.ts
 models/MatchOption.ts
 models/MatchOptions.ts

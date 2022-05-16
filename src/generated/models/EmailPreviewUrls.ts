@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * URLs for email body
  * @export
  * @interface EmailPreviewUrls
  */

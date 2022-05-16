@@ -1,5 +1,7 @@
 # Interface: InboxForwarderTestResult
 
+Results of inbox forwarder test
+
 **`export`**
 
 **`interface`** InboxForwarderTestResult

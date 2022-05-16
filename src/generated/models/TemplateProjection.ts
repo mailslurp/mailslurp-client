@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Email template data
  * @export
  * @interface TemplateProjection
  */

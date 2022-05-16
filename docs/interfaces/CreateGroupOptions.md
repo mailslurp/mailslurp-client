@@ -1,5 +1,7 @@
 # Interface: CreateGroupOptions
 
+Create contact group options
+
 **`export`**
 
 **`interface`** CreateGroupOptions

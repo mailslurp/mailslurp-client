@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Inbox data
  * @export
  * @interface InboxPreview
  */
@@ -68,6 +68,12 @@ export interface InboxPreview {
    */
   inboxType?: InboxPreviewInboxTypeEnum;
   /**
+   * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+   * @type {boolean}
+   * @memberof InboxPreview
+   */
+  virtualInbox?: boolean;
+  /**
    * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
    * @type {string}
    * @memberof InboxPreview
@@ -106,6 +112,9 @@ export function InboxPreviewFromJSONTyped(
     tags: !exists(json, 'tags') ? undefined : json['tags'],
     teamAccess: json['teamAccess'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
+    virtualInbox: !exists(json, 'virtualInbox')
+      ? undefined
+      : json['virtualInbox'],
     expiresAt: !exists(json, 'expiresAt') ? undefined : json['expiresAt'],
   };
 }
@@ -126,6 +135,7 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
     tags: value.tags,
     teamAccess: value.teamAccess,
     inboxType: value.inboxType,
+    virtualInbox: value.virtualInbox,
     expiresAt: value.expiresAt,
   };
 }

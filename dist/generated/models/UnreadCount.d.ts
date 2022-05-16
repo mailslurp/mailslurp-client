@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Number of unread emails
  * @export
  * @interface UnreadCount
  */

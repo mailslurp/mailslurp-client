@@ -51,6 +51,9 @@ function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['allowTeamAccess'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
+        virtualInbox: !(0, runtime_1.exists)(json, 'virtualInbox')
+            ? undefined
+            : json['virtualInbox'],
     };
 }
 exports.CreateInboxDtoFromJSONTyped = CreateInboxDtoFromJSONTyped;
@@ -72,6 +75,7 @@ function CreateInboxDtoToJSON(value) {
         expiresIn: value.expiresIn,
         allowTeamAccess: value.allowTeamAccess,
         inboxType: value.inboxType,
+        virtualInbox: value.virtualInbox,
     };
 }
 exports.CreateInboxDtoToJSON = CreateInboxDtoToJSON;

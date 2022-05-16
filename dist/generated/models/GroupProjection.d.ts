@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Data for contact group
  * @export
  * @interface GroupProjection
  */

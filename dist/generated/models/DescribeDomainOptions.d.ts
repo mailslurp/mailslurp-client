@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Domain record description
  * @export
  * @interface DescribeDomainOptions
  */

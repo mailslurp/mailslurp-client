@@ -1,5 +1,7 @@
 # Interface: DescribeDomainOptions
 
+Domain record description
+
 **`export`**
 
 **`interface`** DescribeDomainOptions

@@ -1,5 +1,7 @@
 # Interface: InboxIdsResult
 
+List of inbox IDs and email addresses
+
 **`export`**
 
 **`interface`** InboxIdsResult

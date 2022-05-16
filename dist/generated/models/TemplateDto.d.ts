@@ -11,7 +11,7 @@
  */
 import { TemplateVariable } from './';
 /**
- *
+ * Email template
  * @export
  * @interface TemplateDto
  */

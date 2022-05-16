@@ -14,6 +14,7 @@ Options for replying to email with API
 - [body](ReplyToEmailOptions.md#body)
 - [charset](ReplyToEmailOptions.md#charset)
 - [from](ReplyToEmailOptions.md#from)
+- [html](ReplyToEmailOptions.md#html)
 - [isHTML](ReplyToEmailOptions.md#ishtml)
 - [replyTo](ReplyToEmailOptions.md#replyto)
 - [sendStrategy](ReplyToEmailOptions.md#sendstrategy)
@@ -58,6 +59,14 @@ ___
 • `Optional` **from**: `string`
 
 The from header that should be used. Optional
+
+**`memberof`** ReplyToEmailOptions
+
+___
+
+### html
+
+• `Optional` **html**: `boolean`
 
 **`memberof`** ReplyToEmailOptions
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Unknown missed email projection
  * @export
  * @interface UnknownMissedEmailProjection
  */
@@ -35,16 +35,16 @@ export interface UnknownMissedEmailProjection {
     subject?: string;
     /**
      *
-     * @type {Array<string>}
-     * @memberof UnknownMissedEmailProjection
-     */
-    to?: Array<string>;
-    /**
-     *
      * @type {Date}
      * @memberof UnknownMissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof UnknownMissedEmailProjection
+     */
+    to?: Array<string>;
 }
 export declare function UnknownMissedEmailProjectionFromJSON(json: any): UnknownMissedEmailProjection;
 export declare function UnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnknownMissedEmailProjection;

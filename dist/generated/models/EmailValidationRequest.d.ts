@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Email validation request
  * @export
  * @interface EmailValidationRequest
  */

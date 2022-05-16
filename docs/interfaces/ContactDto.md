@@ -1,5 +1,7 @@
 # Interface: ContactDto
 
+Contact object. For saving a user in contact book.
+
 **`export`**
 
 **`interface`** ContactDto

@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Simplified send email options
  * @export
  * @interface SimpleSendEmailOptions
  */

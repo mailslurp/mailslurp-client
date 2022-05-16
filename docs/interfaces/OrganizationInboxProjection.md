@@ -1,5 +1,7 @@
 # Interface: OrganizationInboxProjection
 
+Organization team inbox
+
 **`export`**
 
 **`interface`** OrganizationInboxProjection
@@ -17,6 +19,7 @@
 - [readOnly](OrganizationInboxProjection.md#readonly)
 - [tags](OrganizationInboxProjection.md#tags)
 - [teamAccess](OrganizationInboxProjection.md#teamaccess)
+- [virtualInbox](OrganizationInboxProjection.md#virtualinbox)
 
 ## Properties
 
@@ -105,5 +108,15 @@ ___
 • **teamAccess**: `boolean`
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
+
+**`memberof`** OrganizationInboxProjection
+
+___
+
+### virtualInbox
+
+• `Optional` **virtualInbox**: `boolean`
+
+Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
 
 **`memberof`** OrganizationInboxProjection

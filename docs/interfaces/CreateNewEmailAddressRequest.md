@@ -14,6 +14,7 @@
 - [name](CreateNewEmailAddressRequest.md#name)
 - [tags](CreateNewEmailAddressRequest.md#tags)
 - [useDomainPool](CreateNewEmailAddressRequest.md#usedomainpool)
+- [virtualInbox](CreateNewEmailAddressRequest.md#virtualinbox)
 
 ## Properties
 
@@ -74,3 +75,9 @@ ___
 ### useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
+
+___
+
+### virtualInbox
+
+• `Optional` **virtualInbox**: `boolean`

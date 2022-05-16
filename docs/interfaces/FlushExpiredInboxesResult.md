@@ -1,5 +1,7 @@
 # Interface: FlushExpiredInboxesResult
 
+Result from calling expire on any inboxes that have applicable expiration dates given current time.
+
 **`export`**
 
 **`interface`** FlushExpiredInboxesResult

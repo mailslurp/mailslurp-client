@@ -46,6 +46,7 @@ function ReplyToAliasEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
             ? undefined
             : json['useInboxName'],
+        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
 exports.ReplyToAliasEmailOptionsFromJSONTyped = ReplyToAliasEmailOptionsFromJSONTyped;
@@ -65,6 +66,7 @@ function ReplyToAliasEmailOptionsToJSON(value) {
         template: value.template,
         sendStrategy: value.sendStrategy,
         useInboxName: value.useInboxName,
+        html: value.html,
     };
 }
 exports.ReplyToAliasEmailOptionsToJSON = ReplyToAliasEmailOptionsToJSON;

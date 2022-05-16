@@ -1,5 +1,7 @@
 # Interface: CountDto
 
+Number of elements
+
 **`export`**
 
 **`interface`** CountDto

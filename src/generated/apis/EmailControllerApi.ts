@@ -209,6 +209,7 @@ export interface SendEmailSourceOptionalRequest {
   inboxId: string;
   sendEmailOptions: SendEmailOptions;
   useDomainPool?: boolean;
+  virtualSend?: boolean;
 }
 
 export interface ValidateEmailRequest {
@@ -1991,6 +1992,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.useDomainPool !== undefined) {
       queryParameters['useDomainPool'] = requestParameters.useDomainPool;
+    }
+
+    if (requestParameters.virtualSend !== undefined) {
+      queryParameters['virtualSend'] = requestParameters.virtualSend;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Results of inbox forwarder test
  * @export
  * @interface InboxForwarderTestResult
  */

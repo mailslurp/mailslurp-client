@@ -1,5 +1,7 @@
 # Interface: EmailValidationRequest
 
+Email validation request
+
 **`export`**
 
 **`interface`** EmailValidationRequest

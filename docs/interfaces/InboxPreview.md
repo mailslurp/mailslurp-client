@@ -1,5 +1,7 @@
 # Interface: InboxPreview
 
+Inbox data
+
 **`export`**
 
 **`interface`** InboxPreview
@@ -17,6 +19,7 @@
 - [name](InboxPreview.md#name)
 - [tags](InboxPreview.md#tags)
 - [teamAccess](InboxPreview.md#teamaccess)
+- [virtualInbox](InboxPreview.md#virtualinbox)
 
 ## Properties
 
@@ -105,5 +108,15 @@ ___
 • **teamAccess**: `boolean`
 
 Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
+
+**`memberof`** InboxPreview
+
+___
+
+### virtualInbox
+
+• `Optional` **virtualInbox**: `boolean`
+
+Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
 
 **`memberof`** InboxPreview

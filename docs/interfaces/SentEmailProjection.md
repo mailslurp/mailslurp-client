@@ -21,6 +21,7 @@ Collection of items
 - [subject](SentEmailProjection.md#subject)
 - [to](SentEmailProjection.md#to)
 - [userId](SentEmailProjection.md#userid)
+- [virtualSend](SentEmailProjection.md#virtualsend)
 
 ## Properties
 
@@ -107,5 +108,13 @@ ___
 ### userId
 
 • **userId**: `string`
+
+**`memberof`** SentEmailProjection
+
+___
+
+### virtualSend
+
+• `Optional` **virtualSend**: `boolean`
 
 **`memberof`** SentEmailProjection

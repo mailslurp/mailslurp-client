@@ -67,6 +67,12 @@ export interface ReplyToAliasEmailOptions {
    * @memberof ReplyToAliasEmailOptions
    */
   useInboxName?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  html?: boolean;
 }
 
 /**
@@ -105,6 +111,7 @@ export function ReplyToAliasEmailOptionsFromJSONTyped(
     useInboxName: !exists(json, 'useInboxName')
       ? undefined
       : json['useInboxName'],
+    html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
 
@@ -126,5 +133,6 @@ export function ReplyToAliasEmailOptionsToJSON(
     template: value.template,
     sendStrategy: value.sendStrategy,
     useInboxName: value.useInboxName,
+    html: value.html,
   };
 }

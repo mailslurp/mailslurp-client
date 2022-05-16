@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Inbox ID and email address pair
  * @export
  * @interface InboxIdItem
  */

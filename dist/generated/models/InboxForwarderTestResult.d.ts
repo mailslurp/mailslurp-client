@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Results of inbox forwarder test
  * @export
  * @interface InboxForwarderTestResult
  */

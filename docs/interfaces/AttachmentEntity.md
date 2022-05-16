@@ -1,5 +1,7 @@
 # Interface: AttachmentEntity
 
+Email attachment entity
+
 **`export`**
 
 **`interface`** AttachmentEntity

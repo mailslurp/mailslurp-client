@@ -96,6 +96,7 @@ export interface CreateInboxRequest {
   expiresIn?: number;
   allowTeamAccess?: boolean;
   inboxType?: CreateInboxInboxTypeEnum;
+  virtualInbox?: boolean;
 }
 
 export interface CreateInboxRulesetRequest {
@@ -307,6 +308,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.inboxType !== undefined) {
       queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    if (requestParameters.virtualInbox !== undefined) {
+      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

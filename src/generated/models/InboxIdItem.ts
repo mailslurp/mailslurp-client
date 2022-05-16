@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Inbox ID and email address pair
  * @export
  * @interface InboxIdItem
  */

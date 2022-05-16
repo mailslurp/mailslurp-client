@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Email recipient
  * @export
  * @interface Recipient
  */

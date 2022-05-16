@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * JSONSchema for payload
  * @export
  * @interface JSONSchemaDto
  */

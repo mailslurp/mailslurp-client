@@ -17,6 +17,7 @@ Sent email details
 - [cc](SentEmailDto.md#cc)
 - [charset](SentEmailDto.md#charset)
 - [from](SentEmailDto.md#from)
+- [html](SentEmailDto.md#html)
 - [id](SentEmailDto.md#id)
 - [inboxId](SentEmailDto.md#inboxid)
 - [isHTML](SentEmailDto.md#ishtml)
@@ -27,6 +28,7 @@ Sent email details
 - [subject](SentEmailDto.md#subject)
 - [to](SentEmailDto.md#to)
 - [userId](SentEmailDto.md#userid)
+- [virtualSend](SentEmailDto.md#virtualsend)
 
 ## Properties
 
@@ -85,6 +87,14 @@ ___
 ### from
 
 • `Optional` **from**: `string`
+
+**`memberof`** SentEmailDto
+
+___
+
+### html
+
+• `Optional` **html**: `boolean`
 
 **`memberof`** SentEmailDto
 
@@ -173,5 +183,13 @@ ___
 • **userId**: `string`
 
 User ID
+
+**`memberof`** SentEmailDto
+
+___
+
+### virtualSend
+
+• `Optional` **virtualSend**: `boolean`
 
 **`memberof`** SentEmailDto

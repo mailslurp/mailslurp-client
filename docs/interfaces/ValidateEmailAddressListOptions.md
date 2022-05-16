@@ -1,5 +1,7 @@
 # Interface: ValidateEmailAddressListOptions
 
+Options for validating a list of email addresses
+
 **`export`**
 
 **`interface`** ValidateEmailAddressListOptions

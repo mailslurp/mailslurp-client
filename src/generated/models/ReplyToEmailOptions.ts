@@ -79,6 +79,12 @@ export interface ReplyToEmailOptions {
    * @memberof ReplyToEmailOptions
    */
   useInboxName?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ReplyToEmailOptions
+   */
+  html?: boolean;
 }
 
 /**
@@ -117,6 +123,7 @@ export function ReplyToEmailOptionsFromJSONTyped(
     useInboxName: !exists(json, 'useInboxName')
       ? undefined
       : json['useInboxName'],
+    html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
 
@@ -140,5 +147,6 @@ export function ReplyToEmailOptionsToJSON(
     template: value.template,
     sendStrategy: value.sendStrategy,
     useInboxName: value.useInboxName,
+    html: value.html,
   };
 }

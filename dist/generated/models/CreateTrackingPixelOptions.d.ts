@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Options for creating a tracking pixel for email open tracking
  * @export
  * @interface CreateTrackingPixelOptions
  */

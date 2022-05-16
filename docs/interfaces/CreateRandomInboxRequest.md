@@ -14,6 +14,7 @@
 - [name](CreateRandomInboxRequest.md#name)
 - [tags](CreateRandomInboxRequest.md#tags)
 - [useDomainPool](CreateRandomInboxRequest.md#usedomainpool)
+- [virtualInbox](CreateRandomInboxRequest.md#virtualinbox)
 
 ## Properties
 
@@ -74,3 +75,9 @@ ___
 ### useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
+
+___
+
+### virtualInbox
+
+• `Optional` **virtualInbox**: `boolean`

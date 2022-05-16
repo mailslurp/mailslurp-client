@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Create contact group options
  * @export
  * @interface CreateGroupOptions
  */

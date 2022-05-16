@@ -1,5 +1,7 @@
 # Interface: ContactProjection
 
+Email contact for address book
+
 **`export`**
 
 **`interface`** ContactProjection

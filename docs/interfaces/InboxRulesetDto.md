@@ -1,5 +1,7 @@
 # Interface: InboxRulesetDto
 
+Rules for inbox
+
 **`export`**
 
 **`interface`** InboxRulesetDto

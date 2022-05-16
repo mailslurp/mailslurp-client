@@ -1,5 +1,7 @@
 # Interface: FilterBouncedRecipientsResult
 
+Remaining recipients that were filtered to remove bounced recipients
+
 **`export`**
 
 **`interface`** FilterBouncedRecipientsResult

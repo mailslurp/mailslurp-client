@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Options for filtering bounced email recipients
  * @export
  * @interface FilterBouncedRecipientsOptions
  */

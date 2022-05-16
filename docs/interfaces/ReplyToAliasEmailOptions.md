@@ -13,6 +13,7 @@ Options for replying to an alias email using the alias inbox
 - [attachments](ReplyToAliasEmailOptions.md#attachments)
 - [body](ReplyToAliasEmailOptions.md#body)
 - [charset](ReplyToAliasEmailOptions.md#charset)
+- [html](ReplyToAliasEmailOptions.md#html)
 - [isHTML](ReplyToAliasEmailOptions.md#ishtml)
 - [sendStrategy](ReplyToAliasEmailOptions.md#sendstrategy)
 - [template](ReplyToAliasEmailOptions.md#template)
@@ -46,6 +47,14 @@ ___
 • `Optional` **charset**: `string`
 
 The charset that your message should be sent with. Optional. Default is UTF-8
+
+**`memberof`** ReplyToAliasEmailOptions
+
+___
+
+### html
+
+• `Optional` **html**: `boolean`
 
 **`memberof`** ReplyToAliasEmailOptions
 

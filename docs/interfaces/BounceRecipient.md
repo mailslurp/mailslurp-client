@@ -1,5 +1,7 @@
 # Interface: BounceRecipient
 
+Bounced email recipient address
+
 **`export`**
 
 **`interface`** BounceRecipient

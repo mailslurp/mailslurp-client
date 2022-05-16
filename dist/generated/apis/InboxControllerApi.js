@@ -135,6 +135,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.inboxType !== undefined) {
                             queryParameters['inboxType'] = requestParameters.inboxType;
                         }
+                        if (requestParameters.virtualInbox !== undefined) {
+                            queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication

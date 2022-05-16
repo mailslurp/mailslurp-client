@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Options for creating email templates
  * @export
  * @interface CreateTemplateOptions
  */

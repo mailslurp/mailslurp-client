@@ -119,6 +119,7 @@ export interface SendEmailSourceOptionalRequest {
     inboxId: string;
     sendEmailOptions: SendEmailOptions;
     useDomainPool?: boolean;
+    virtualSend?: boolean;
 }
 export interface ValidateEmailRequest {
     emailId: string;

@@ -6,7 +6,7 @@
 
 - [contentType](UploadAttachmentBytesRequest.md#contenttype)
 - [filename](UploadAttachmentBytesRequest.md#filename)
-- [requestBody](UploadAttachmentBytesRequest.md#requestbody)
+- [inlineObject1](UploadAttachmentBytesRequest.md#inlineobject1)
 
 ## Properties
 
@@ -22,6 +22,6 @@ ___
 
 ___
 
-### requestBody
+### inlineObject1
 
-• **requestBody**: `string`[]
+• **inlineObject1**: [`InlineObject1`](InlineObject1.md)

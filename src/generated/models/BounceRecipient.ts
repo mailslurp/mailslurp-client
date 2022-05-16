@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Bounced email recipient address
  * @export
  * @interface BounceRecipient
  */

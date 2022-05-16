@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Response from webhook test request
  * @export
  * @interface WebhookTestResponse
  */

@@ -1,5 +1,7 @@
 # Interface: GravatarUrl
 
+User image
+
 **`export`**
 
 **`interface`** GravatarUrl

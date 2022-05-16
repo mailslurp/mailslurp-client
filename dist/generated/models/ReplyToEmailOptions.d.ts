@@ -77,6 +77,12 @@ export interface ReplyToEmailOptions {
      * @memberof ReplyToEmailOptions
      */
     useInboxName?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ReplyToEmailOptions
+     */
+    html?: boolean;
 }
 /**
  * @export

@@ -511,9 +511,9 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.requestBody === null ||
-                            requestParameters.requestBody === undefined) {
-                            throw new runtime.RequiredError('requestBody', 'Required parameter requestParameters.requestBody was null or undefined when calling uploadAttachmentBytes.');
+                        if (requestParameters.inlineObject1 === null ||
+                            requestParameters.inlineObject1 === undefined) {
+                            throw new runtime.RequiredError('inlineObject1', 'Required parameter requestParameters.inlineObject1 was null or undefined when calling uploadAttachmentBytes.');
                         }
                         queryParameters = {};
                         if (requestParameters.filename !== undefined) {
@@ -533,7 +533,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: requestParameters.requestBody,
+                                body: (0, models_1.InlineObject1ToJSON)(requestParameters.inlineObject1),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();

@@ -65,6 +65,12 @@ export interface ReplyToAliasEmailOptions {
      * @memberof ReplyToAliasEmailOptions
      */
     useInboxName?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ReplyToAliasEmailOptions
+     */
+    html?: boolean;
 }
 /**
  * @export

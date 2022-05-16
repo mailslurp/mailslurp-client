@@ -1,5 +1,7 @@
 # Interface: InboxRulesetTestResult
 
+Result of test of inbox ruleset
+
 **`export`**
 
 **`interface`** InboxRulesetTestResult

@@ -20,6 +20,7 @@ Options for creating an inbox. An inbox has a real email address that can send a
 - [name](CreateInboxDto.md#name)
 - [tags](CreateInboxDto.md#tags)
 - [useDomainPool](CreateInboxDto.md#usedomainpool)
+- [virtualInbox](CreateInboxDto.md#virtualinbox)
 
 ## Properties
 
@@ -118,5 +119,15 @@ ___
 • `Optional` **useDomainPool**: `boolean`
 
 Use the MailSlurp domain name pool with this inbox when creating the email address. Defaults to null. If enabled the inbox will be an email address with a domain randomly chosen from a list of the MailSlurp domains. This is useful when the default `@mailslurp.com` email addresses used with inboxes are blocked or considered spam by a provider or receiving service. When domain pool is enabled an email address will be generated ending in `@mailslurp.{world,info,xyz,...}` . This means a TLD is randomly selecting from a list of `.biz`, `.info`, `.xyz` etc to add variance to the generated email addresses. When null or false MailSlurp uses the default behavior of `@mailslurp.com` or custom email address provided by the emailAddress field. Note this feature is only available for `HTTP` inbox types.
+
+**`memberof`** CreateInboxDto
+
+___
+
+### virtualInbox
+
+• `Optional` **virtualInbox**: `boolean`
+
+Virtual inbox prevents any outbound emails from being sent. It creates sent email records but will never send real emails to recipients. Great for testing and faking email sending.
 
 **`memberof`** CreateInboxDto

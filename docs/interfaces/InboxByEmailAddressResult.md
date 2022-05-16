@@ -1,5 +1,7 @@
 # Interface: InboxByEmailAddressResult
 
+Result of search for inbox by email address
+
 **`export`**
 
 **`interface`** InboxByEmailAddressResult

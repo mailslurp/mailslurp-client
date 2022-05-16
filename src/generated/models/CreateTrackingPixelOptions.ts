@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Options for creating a tracking pixel for email open tracking
  * @export
  * @interface CreateTrackingPixelOptions
  */

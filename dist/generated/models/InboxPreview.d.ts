@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Inbox data
  * @export
  * @interface InboxPreview
  */
@@ -63,6 +63,12 @@ export interface InboxPreview {
      * @memberof InboxPreview
      */
     inboxType?: InboxPreviewInboxTypeEnum;
+    /**
+     * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+     * @type {boolean}
+     * @memberof InboxPreview
+     */
+    virtualInbox?: boolean;
     /**
      * Inbox expiration time. When, if ever, the inbox should expire and be deleted. If null then this inbox is permanent and the emails in it won't be deleted. This is the default behavior unless expiration date is set. If an expiration date is set and the time is reached MailSlurp will expire the inbox and move it to an expired inbox entity. You can still access the emails belonging to it but it can no longer send or receive email.
      * @type {string}

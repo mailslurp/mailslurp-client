@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Tracking pixel data
  * @export
  * @interface TrackingPixelProjection
  */
@@ -33,6 +33,12 @@ export interface TrackingPixelProjection {
   id: string;
   /**
    *
+   * @type {Date}
+   * @memberof TrackingPixelProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
@@ -43,12 +49,6 @@ export interface TrackingPixelProjection {
    * @memberof TrackingPixelProjection
    */
   inboxId?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof TrackingPixelProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -91,9 +91,9 @@ export function TrackingPixelProjectionFromJSONTyped(
   return {
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
+    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
     seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
@@ -113,9 +113,9 @@ export function TrackingPixelProjectionToJSON(
   return {
     name: value.name,
     id: value.id,
+    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
     recipient: value.recipient,
     seen: value.seen,
     seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),

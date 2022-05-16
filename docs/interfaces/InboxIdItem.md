@@ -1,5 +1,7 @@
 # Interface: InboxIdItem
 
+Inbox ID and email address pair
+
 **`export`**
 
 **`interface`** InboxIdItem

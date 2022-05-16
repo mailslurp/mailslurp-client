@@ -1,5 +1,7 @@
 # Interface: Recipient
 
+Email recipient
+
 **`export`**
 
 **`interface`** Recipient

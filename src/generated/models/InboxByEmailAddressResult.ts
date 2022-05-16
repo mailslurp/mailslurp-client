@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Result of search for inbox by email address
  * @export
  * @interface InboxByEmailAddressResult
  */

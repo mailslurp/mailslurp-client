@@ -1,5 +1,7 @@
 # Interface: UnseenErrorCountDto
 
+Number of unseen errors
+
 **`export`**
 
 **`interface`** UnseenErrorCountDto

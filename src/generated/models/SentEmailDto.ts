@@ -121,6 +121,18 @@ export interface SentEmailDto {
    * @memberof SentEmailDto
    */
   messageId?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SentEmailDto
+   */
+  virtualSend?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SentEmailDto
+   */
+  html?: boolean;
 }
 
 export function SentEmailDtoFromJSON(json: any): SentEmailDto {
@@ -152,6 +164,8 @@ export function SentEmailDtoFromJSONTyped(
     sentAt: new Date(json['sentAt']),
     pixelIds: !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    virtualSend: !exists(json, 'virtualSend') ? undefined : json['virtualSend'],
+    html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
 
@@ -180,5 +194,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     sentAt: value.sentAt.toISOString(),
     pixelIds: value.pixelIds,
     messageId: value.messageId,
+    virtualSend: value.virtualSend,
+    html: value.html,
   };
 }

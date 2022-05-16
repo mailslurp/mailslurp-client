@@ -22,6 +22,7 @@ export interface CreateInboxRequest {
     expiresIn?: number;
     allowTeamAccess?: boolean;
     inboxType?: CreateInboxInboxTypeEnum;
+    virtualInbox?: boolean;
 }
 export interface CreateInboxRulesetRequest {
     inboxId: string;

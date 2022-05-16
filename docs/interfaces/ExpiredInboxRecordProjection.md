@@ -1,5 +1,7 @@
 # Interface: ExpiredInboxRecordProjection
 
+Record of inbox expiration
+
 **`export`**
 
 **`interface`** ExpiredInboxRecordProjection

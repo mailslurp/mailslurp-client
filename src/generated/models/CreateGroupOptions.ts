@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Create contact group options
  * @export
  * @interface CreateGroupOptions
  */

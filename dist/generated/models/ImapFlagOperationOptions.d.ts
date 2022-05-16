@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * IMAP operation flags
  * @export
  * @interface ImapFlagOperationOptions
  */

@@ -21,6 +21,7 @@ Representation of a MailSlurp inbox. An inbox has an ID and a real email address
 - [readOnly](InboxDto.md#readonly)
 - [tags](InboxDto.md#tags)
 - [userId](InboxDto.md#userid)
+- [virtualInbox](InboxDto.md#virtualinbox)
 
 ## Properties
 
@@ -129,5 +130,15 @@ ___
 • `Optional` **userId**: `string`
 
 ID of user that inbox belongs to
+
+**`memberof`** InboxDto
+
+___
+
+### virtualInbox
+
+• **virtualInbox**: `boolean`
+
+Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
 
 **`memberof`** InboxDto

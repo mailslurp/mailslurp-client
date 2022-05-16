@@ -1,5 +1,7 @@
 # Interface: SimpleSendEmailOptions
 
+Simplified send email options
+
 **`export`**
 
 **`interface`** SimpleSendEmailOptions

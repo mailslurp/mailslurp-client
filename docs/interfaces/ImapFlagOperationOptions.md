@@ -1,5 +1,7 @@
 # Interface: ImapFlagOperationOptions
 
+IMAP operation flags
+
 **`export`**
 
 **`interface`** ImapFlagOperationOptions

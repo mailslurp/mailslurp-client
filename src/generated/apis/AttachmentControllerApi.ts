@@ -26,6 +26,9 @@ import {
   InlineObject,
   InlineObjectFromJSON,
   InlineObjectToJSON,
+  InlineObject1,
+  InlineObject1FromJSON,
+  InlineObject1ToJSON,
   PageAttachmentEntity,
   PageAttachmentEntityFromJSON,
   PageAttachmentEntityToJSON,
@@ -68,7 +71,7 @@ export interface UploadAttachmentRequest {
 }
 
 export interface UploadAttachmentBytesRequest {
-  requestBody: Array<string>;
+  inlineObject1: InlineObject1;
   contentType?: string;
   filename?: string;
 }
@@ -538,12 +541,12 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<Array<string>>> {
     if (
-      requestParameters.requestBody === null ||
-      requestParameters.requestBody === undefined
+      requestParameters.inlineObject1 === null ||
+      requestParameters.inlineObject1 === undefined
     ) {
       throw new runtime.RequiredError(
-        'requestBody',
-        'Required parameter requestParameters.requestBody was null or undefined when calling uploadAttachmentBytes.'
+        'inlineObject1',
+        'Required parameter requestParameters.inlineObject1 was null or undefined when calling uploadAttachmentBytes.'
       );
     }
 
@@ -574,7 +577,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: requestParameters.requestBody,
+        body: InlineObject1ToJSON(requestParameters.inlineObject1),
       },
       initOverrides
     );

@@ -1,5 +1,7 @@
 # Interface: CreateContactOptions
 
+Options for creating an email contact in address book
+
 **`export`**
 
 **`interface`** CreateContactOptions

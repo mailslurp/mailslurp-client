@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Remaining recipients that were filtered to remove bounced recipients
  * @export
  * @interface FilterBouncedRecipientsResult
  */

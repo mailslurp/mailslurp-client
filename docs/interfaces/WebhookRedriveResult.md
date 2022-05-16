@@ -1,5 +1,7 @@
 # Interface: WebhookRedriveResult
 
+Result of retrying webhook
+
 **`export`**
 
 **`interface`** WebhookRedriveResult

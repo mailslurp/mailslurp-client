@@ -1,5 +1,7 @@
 # Interface: WebhookTestResponse
 
+Response from webhook test request
+
 **`export`**
 
 **`interface`** WebhookTestResponse

@@ -75,6 +75,12 @@ export interface CreateInboxDto {
      * @memberof CreateInboxDto
      */
     inboxType?: CreateInboxDtoInboxTypeEnum;
+    /**
+     * Virtual inbox prevents any outbound emails from being sent. It creates sent email records but will never send real emails to recipients. Great for testing and faking email sending.
+     * @type {boolean}
+     * @memberof CreateInboxDto
+     */
+    virtualInbox?: boolean;
 }
 /**
  * @export

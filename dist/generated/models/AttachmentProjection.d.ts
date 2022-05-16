@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Email attachment data
  * @export
  * @interface AttachmentProjection
  */
@@ -35,6 +35,12 @@ export interface AttachmentProjection {
     contentType?: string;
     /**
      *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof AttachmentProjection
      */
@@ -45,12 +51,6 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     attachmentId: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {Date}

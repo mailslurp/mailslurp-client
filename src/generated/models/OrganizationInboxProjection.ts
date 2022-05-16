@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Organization team inbox
  * @export
  * @interface OrganizationInboxProjection
  */
@@ -73,6 +73,12 @@ export interface OrganizationInboxProjection {
    * @memberof OrganizationInboxProjection
    */
   readOnly: boolean;
+  /**
+   * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+   * @type {boolean}
+   * @memberof OrganizationInboxProjection
+   */
+  virtualInbox?: boolean;
 }
 
 /**
@@ -109,6 +115,9 @@ export function OrganizationInboxProjectionFromJSONTyped(
     teamAccess: json['teamAccess'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     readOnly: json['readOnly'],
+    virtualInbox: !exists(json, 'virtualInbox')
+      ? undefined
+      : json['virtualInbox'],
   };
 }
 
@@ -131,5 +140,6 @@ export function OrganizationInboxProjectionToJSON(
     teamAccess: value.teamAccess,
     inboxType: value.inboxType,
     readOnly: value.readOnly,
+    virtualInbox: value.virtualInbox,
   };
 }

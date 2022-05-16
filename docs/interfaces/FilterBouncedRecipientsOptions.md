@@ -1,5 +1,7 @@
 # Interface: FilterBouncedRecipientsOptions
 
+Options for filtering bounced email recipients
+
 **`export`**
 
 **`interface`** FilterBouncedRecipientsOptions

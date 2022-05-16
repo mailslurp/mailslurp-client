@@ -1,5 +1,7 @@
 # Interface: UnreadCount
 
+Number of unread emails
+
 **`export`**
 
 **`interface`** UnreadCount

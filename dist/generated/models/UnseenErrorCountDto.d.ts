@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Number of unseen errors
  * @export
  * @interface UnseenErrorCountDto
  */

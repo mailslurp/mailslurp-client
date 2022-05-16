@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Update group contacts options. Pass a list of contact ids to replace existing group contacts.
  * @export
  * @interface UpdateGroupContacts
  */

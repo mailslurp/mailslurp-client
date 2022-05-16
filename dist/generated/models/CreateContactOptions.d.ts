@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Options for creating an email contact in address book
  * @export
  * @interface CreateContactOptions
  */

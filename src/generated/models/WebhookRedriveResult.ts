@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Result of retrying webhook
  * @export
  * @interface WebhookRedriveResult
  */

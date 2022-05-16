@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * URLs for email body
  * @export
  * @interface EmailPreviewUrls
  */

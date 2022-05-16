@@ -1,5 +1,7 @@
 # Interface: ImapSmtpAccessDetails
 
+Access details for inbox using SMTP or IMAP
+
 **`export`**
 
 **`interface`** ImapSmtpAccessDetails
@@ -23,6 +25,8 @@
 
 • **imapPassword**: `string`
 
+IMAP password for login
+
 **`memberof`** ImapSmtpAccessDetails
 
 ___
@@ -30,6 +34,8 @@ ___
 ### imapServerHost
 
 • **imapServerHost**: `string`
+
+IMAP server host domain
 
 **`memberof`** ImapSmtpAccessDetails
 
@@ -39,6 +45,8 @@ ___
 
 • **imapServerPort**: `number`
 
+IMAP server host port
+
 **`memberof`** ImapSmtpAccessDetails
 
 ___
@@ -46,6 +54,8 @@ ___
 ### imapUsername
 
 • **imapUsername**: `string`
+
+IMAP username for login
 
 **`memberof`** ImapSmtpAccessDetails
 
@@ -55,6 +65,8 @@ ___
 
 • **smtpPassword**: `string`
 
+SMTP  for login
+
 **`memberof`** ImapSmtpAccessDetails
 
 ___
@@ -62,6 +74,8 @@ ___
 ### smtpServerHost
 
 • **smtpServerHost**: `string`
+
+SMTP server host domain
 
 **`memberof`** ImapSmtpAccessDetails
 
@@ -71,6 +85,8 @@ ___
 
 • **smtpServerPort**: `number`
 
+SMTP server host port
+
 **`memberof`** ImapSmtpAccessDetails
 
 ___
@@ -78,5 +94,7 @@ ___
 ### smtpUsername
 
 • **smtpUsername**: `string`
+
+SMTP username for login
 
 **`memberof`** ImapSmtpAccessDetails

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Rules for inbox
  * @export
  * @interface InboxRulesetDto
  */

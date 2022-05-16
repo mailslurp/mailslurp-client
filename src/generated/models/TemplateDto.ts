@@ -21,7 +21,7 @@ import {
 } from './';
 
 /**
- *
+ * Email template
  * @export
  * @interface TemplateDto
  */

@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * User image
  * @export
  * @interface GravatarUrl
  */

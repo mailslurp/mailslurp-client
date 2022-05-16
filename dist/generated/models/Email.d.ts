@@ -156,6 +156,12 @@ export interface Email {
      * @memberof Email
      */
     teamAccess: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof Email
+     */
+    html?: boolean;
 }
 export declare function EmailFromJSON(json: any): Email;
 export declare function EmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): Email;

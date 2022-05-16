@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Email attachment entity
  * @export
  * @interface AttachmentEntity
  */

@@ -1,5 +1,7 @@
 # Interface: TrackingPixelProjection
 
+Tracking pixel data
+
 **`export`**
 
 **`interface`** TrackingPixelProjection

@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Contact object. For saving a user in contact book.
  * @export
  * @interface ContactDto
  */

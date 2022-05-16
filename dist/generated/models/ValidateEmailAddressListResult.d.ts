@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Result of validating a list of email addresses
  * @export
  * @interface ValidateEmailAddressListResult
  */

@@ -48,6 +48,7 @@ function ReplyToEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
             ? undefined
             : json['useInboxName'],
+        html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
 exports.ReplyToEmailOptionsFromJSONTyped = ReplyToEmailOptionsFromJSONTyped;
@@ -69,6 +70,7 @@ function ReplyToEmailOptionsToJSON(value) {
         template: value.template,
         sendStrategy: value.sendStrategy,
         useInboxName: value.useInboxName,
+        html: value.html,
     };
 }
 exports.ReplyToEmailOptionsToJSON = ReplyToEmailOptionsToJSON;

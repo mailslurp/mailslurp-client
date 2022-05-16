@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Result of validating a list of email addresses
  * @export
  * @interface ValidateEmailAddressListResult
  */

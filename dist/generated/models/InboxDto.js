@@ -44,6 +44,7 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         readOnly: json['readOnly'],
+        virtualInbox: json['virtualInbox'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -66,6 +67,7 @@ function InboxDtoToJSON(value) {
         tags: value.tags,
         inboxType: value.inboxType,
         readOnly: value.readOnly,
+        virtualInbox: value.virtualInbox,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

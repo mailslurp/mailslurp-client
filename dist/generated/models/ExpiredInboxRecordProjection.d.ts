@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Record of inbox expiration
  * @export
  * @interface ExpiredInboxRecordProjection
  */
@@ -23,6 +23,12 @@ export interface ExpiredInboxRecordProjection {
     id: string;
     /**
      *
+     * @type {Date}
+     * @memberof ExpiredInboxRecordProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof ExpiredInboxRecordProjection
      */
@@ -33,12 +39,6 @@ export interface ExpiredInboxRecordProjection {
      * @memberof ExpiredInboxRecordProjection
      */
     emailAddress: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof ExpiredInboxRecordProjection
-     */
-    createdAt: Date;
 }
 export declare function ExpiredInboxRecordProjectionFromJSON(json: any): ExpiredInboxRecordProjection;
 export declare function ExpiredInboxRecordProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpiredInboxRecordProjection;

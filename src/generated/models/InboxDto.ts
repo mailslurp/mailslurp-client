@@ -85,6 +85,12 @@ export interface InboxDto {
    * @memberof InboxDto
    */
   readOnly: boolean;
+  /**
+   * Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
+   * @type {boolean}
+   * @memberof InboxDto
+   */
+  virtualInbox: boolean;
 }
 
 /**
@@ -119,6 +125,7 @@ export function InboxDtoFromJSONTyped(
     tags: !exists(json, 'tags') ? undefined : json['tags'],
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     readOnly: json['readOnly'],
+    virtualInbox: json['virtualInbox'],
   };
 }
 
@@ -141,5 +148,6 @@ export function InboxDtoToJSON(value?: InboxDto | null): any {
     tags: value.tags,
     inboxType: value.inboxType,
     readOnly: value.readOnly,
+    virtualInbox: value.virtualInbox,
   };
 }

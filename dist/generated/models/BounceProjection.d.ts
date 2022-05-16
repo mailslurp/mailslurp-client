@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Bounced email event
  * @export
  * @interface BounceProjection
  */

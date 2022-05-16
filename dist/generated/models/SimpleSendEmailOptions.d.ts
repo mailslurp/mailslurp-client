@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Simplified send email options
  * @export
  * @interface SimpleSendEmailOptions
  */

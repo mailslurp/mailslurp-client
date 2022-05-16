@@ -1,5 +1,7 @@
 # Interface: TrackingPixelDto
 
+Tracking pixel
+
 **`export`**
 
 **`interface`** TrackingPixelDto

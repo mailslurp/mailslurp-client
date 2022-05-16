@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Email attachment data
  * @export
  * @interface AttachmentProjection
  */
@@ -39,6 +39,12 @@ export interface AttachmentProjection {
   contentType?: string;
   /**
    *
+   * @type {Date}
+   * @memberof AttachmentProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof AttachmentProjection
    */
@@ -49,12 +55,6 @@ export interface AttachmentProjection {
    * @memberof AttachmentProjection
    */
   attachmentId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {Date}
@@ -80,9 +80,9 @@ export function AttachmentProjectionFromJSONTyped(
       ? undefined
       : json['contentLength'],
     contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
+    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
     attachmentId: json['attachmentId'],
-    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
 }
@@ -100,9 +100,9 @@ export function AttachmentProjectionToJSON(
     name: value.name,
     contentLength: value.contentLength,
     contentType: value.contentType,
+    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     attachmentId: value.attachmentId,
-    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };
 }

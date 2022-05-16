@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Contact group data
  * @export
  * @interface GroupDto
  */

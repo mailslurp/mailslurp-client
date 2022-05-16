@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Email validation request
  * @export
  * @interface EmailValidationRequest
  */

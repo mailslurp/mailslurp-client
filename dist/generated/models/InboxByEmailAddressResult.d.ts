@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Result of search for inbox by email address
  * @export
  * @interface InboxByEmailAddressResult
  */

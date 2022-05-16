@@ -33,6 +33,7 @@ export interface CreateNewEmailAddressRequest {
   name?: string;
   tags?: Array<string>;
   favourite?: boolean;
+  virtualInbox?: boolean;
 }
 
 export interface CreateRandomInboxRequest {
@@ -46,6 +47,7 @@ export interface CreateRandomInboxRequest {
   name?: string;
   tags?: Array<string>;
   favourite?: boolean;
+  virtualInbox?: boolean;
 }
 
 export interface DeleteEmailAddressRequest {
@@ -114,6 +116,10 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.favourite !== undefined) {
       queryParameters['favourite'] = requestParameters.favourite;
+    }
+
+    if (requestParameters.virtualInbox !== undefined) {
+      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -202,6 +208,10 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.favourite !== undefined) {
       queryParameters['favourite'] = requestParameters.favourite;
+    }
+
+    if (requestParameters.virtualInbox !== undefined) {
+      queryParameters['virtualInbox'] = requestParameters.virtualInbox;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

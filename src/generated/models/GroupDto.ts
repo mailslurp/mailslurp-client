@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Contact group data
  * @export
  * @interface GroupDto
  */

@@ -1,5 +1,7 @@
 # Interface: BounceProjection
 
+Bounced email event
+
 **`export`**
 
 **`interface`** BounceProjection

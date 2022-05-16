@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Number of elements
  * @export
  * @interface CountDto
  */

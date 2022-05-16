@@ -1654,6 +1654,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.useDomainPool !== undefined) {
                             queryParameters['useDomainPool'] = requestParameters.useDomainPool;
                         }
+                        if (requestParameters.virtualSend !== undefined) {
+                            queryParameters['virtualSend'] = requestParameters.virtualSend;
+                        }
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {

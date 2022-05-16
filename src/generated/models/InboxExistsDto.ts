@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- *
+ * Result of email exists query
  * @export
  * @interface InboxExistsDto
  */

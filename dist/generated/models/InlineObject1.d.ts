@@ -10,60 +10,60 @@
  * Do not edit the class manually.
  */
 /**
- * Representation of a alias
+ * Byte array request body
  * @export
- * @interface AliasProjection
+ * @interface InlineObject1
  */
-export interface AliasProjection {
+export interface InlineObject1 {
+    /**
+     *
+     * @type {number}
+     * @memberof InlineObject1
+     */
+    _short?: number;
     /**
      *
      * @type {string}
-     * @memberof AliasProjection
+     * @memberof InlineObject1
      */
-    name?: string;
+    _char?: string;
     /**
      *
-     * @type {string}
-     * @memberof AliasProjection
+     * @type {number}
+     * @memberof InlineObject1
      */
-    id: string;
+    _int?: number;
     /**
      *
-     * @type {Date}
-     * @memberof AliasProjection
+     * @type {number}
+     * @memberof InlineObject1
      */
-    createdAt: Date;
+    _long?: number;
     /**
      *
-     * @type {string}
-     * @memberof AliasProjection
+     * @type {number}
+     * @memberof InlineObject1
      */
-    userId: string;
+    _float?: number;
     /**
      *
-     * @type {string}
-     * @memberof AliasProjection
+     * @type {number}
+     * @memberof InlineObject1
      */
-    emailAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    inboxId: string;
+    _double?: number;
     /**
      *
      * @type {boolean}
-     * @memberof AliasProjection
+     * @memberof InlineObject1
      */
-    useThreads?: boolean;
+    direct?: boolean;
     /**
      *
-     * @type {Date}
-     * @memberof AliasProjection
+     * @type {boolean}
+     * @memberof InlineObject1
      */
-    updatedAt: Date;
+    readOnly?: boolean;
 }
-export declare function AliasProjectionFromJSON(json: any): AliasProjection;
-export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;
-export declare function AliasProjectionToJSON(value?: AliasProjection | null): any;
+export declare function InlineObject1FromJSON(json: any): InlineObject1;
+export declare function InlineObject1FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject1;
+export declare function InlineObject1ToJSON(value?: InlineObject1 | null): any;

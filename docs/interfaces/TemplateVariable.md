@@ -1,5 +1,7 @@
 # Interface: TemplateVariable
 
+Variable for use with email template
+
 **`export`**
 
 **`interface`** TemplateVariable

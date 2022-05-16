@@ -1,5 +1,7 @@
 # Interface: TemplateProjection
 
+Email template data
+
 **`export`**
 
 **`interface`** TemplateProjection

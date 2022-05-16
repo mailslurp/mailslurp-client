@@ -10,55 +10,55 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Access details for inbox using SMTP or IMAP
  * @export
  * @interface ImapSmtpAccessDetails
  */
 export interface ImapSmtpAccessDetails {
     /**
-     *
+     * SMTP server host domain
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */
     smtpServerHost: string;
     /**
-     *
+     * SMTP server host port
      * @type {number}
      * @memberof ImapSmtpAccessDetails
      */
     smtpServerPort: number;
     /**
-     *
+     * SMTP username for login
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */
     smtpUsername: string;
     /**
-     *
+     * SMTP  for login
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */
     smtpPassword: string;
     /**
-     *
+     * IMAP server host domain
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */
     imapServerHost: string;
     /**
-     *
+     * IMAP server host port
      * @type {number}
      * @memberof ImapSmtpAccessDetails
      */
     imapServerPort: number;
     /**
-     *
+     * IMAP username for login
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */
     imapUsername: string;
     /**
-     *
+     * IMAP password for login
      * @type {string}
      * @memberof ImapSmtpAccessDetails
      */

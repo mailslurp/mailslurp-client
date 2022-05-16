@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Contact object. For saving a user in contact book.
  * @export
  * @interface ContactDto
  */

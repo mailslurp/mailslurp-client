@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * Tracking pixel data
  * @export
  * @interface TrackingPixelProjection
  */
@@ -29,6 +29,12 @@ export interface TrackingPixelProjection {
     id: string;
     /**
      *
+     * @type {Date}
+     * @memberof TrackingPixelProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof TrackingPixelProjection
      */
@@ -39,12 +45,6 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     inboxId?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof TrackingPixelProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

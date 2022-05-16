@@ -1,5 +1,7 @@
 # Interface: WebhookResultDto
 
+Result of a webhook notification
+
 **`export`**
 
 **`interface`** WebhookResultDto

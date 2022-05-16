@@ -1,5 +1,7 @@
 # Interface: InboxRulesetTestOptions
 
+Test options for inbox ruleset
+
 **`export`**
 
 **`interface`** InboxRulesetTestOptions
