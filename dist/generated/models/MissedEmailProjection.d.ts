@@ -35,16 +35,16 @@ export interface MissedEmailProjection {
     subject?: string;
     /**
      *
-     * @type {Date}
-     * @memberof MissedEmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof MissedEmailProjection
      */
     userId?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof MissedEmailProjection
+     */
+    createdAt: Date;
 }
 export declare function MissedEmailProjectionFromJSON(json: any): MissedEmailProjection;
 export declare function MissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedEmailProjection;

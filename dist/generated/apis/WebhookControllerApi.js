@@ -1245,23 +1245,19 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      * Get count of unseen webhook results with error status
      */
-    WebhookControllerApi.prototype.getWebhookResultsUnseenErrorCountRaw = function (requestParameters, initOverrides) {
+    WebhookControllerApi.prototype.getWebhookResultsUnseenErrorCountRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getWebhookResultsUnseenErrorCount.');
-                        }
                         queryParameters = {};
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/unseen-count".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/webhooks/results/unseen-count",
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1278,12 +1274,12 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      * Get count of unseen webhook results with error status
      */
-    WebhookControllerApi.prototype.getWebhookResultsUnseenErrorCount = function (requestParameters, initOverrides) {
+    WebhookControllerApi.prototype.getWebhookResultsUnseenErrorCount = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getWebhookResultsUnseenErrorCountRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getWebhookResultsUnseenErrorCountRaw(initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1436,6 +1432,60 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.sendTestDataRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    WebhookControllerApi.prototype.verifyWebhookSignatureRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.verifyWebhookSignatureOptions === null ||
+                            requestParameters.verifyWebhookSignatureOptions === undefined) {
+                            throw new runtime.RequiredError('verifyWebhookSignatureOptions', 'Required parameter requestParameters.verifyWebhookSignatureOptions was null or undefined when calling verifyWebhookSignature.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/verify",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.VerifyWebhookSignatureOptionsToJSON)(requestParameters.verifyWebhookSignatureOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.VerifyWebhookSignatureResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    WebhookControllerApi.prototype.verifyWebhookSignature = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.verifyWebhookSignatureRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

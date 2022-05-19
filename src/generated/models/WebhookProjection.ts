@@ -39,12 +39,6 @@ export interface WebhookProjection {
   url: string;
   /**
    *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof WebhookProjection
    */
@@ -61,6 +55,12 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof WebhookProjection
+   */
+  createdAt: Date;
 }
 
 /**
@@ -93,10 +93,10 @@ export function WebhookProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     url: json['url'],
-    createdAt: new Date(json['createdAt']),
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
   };
 }
 
@@ -111,9 +111,9 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     name: value.name,
     id: value.id,
     url: value.url,
-    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
     eventName: value.eventName,
     updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
   };
 }

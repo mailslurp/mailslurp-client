@@ -29,10 +29,10 @@ export interface AliasProjection {
     id: string;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof AliasProjection
      */
-    createdAt: Date;
+    inboxId: string;
     /**
      *
      * @type {string}
@@ -47,22 +47,22 @@ export interface AliasProjection {
     emailAddress: string;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof AliasProjection
      */
-    inboxId: string;
+    updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof AliasProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {boolean}
      * @memberof AliasProjection
      */
     useThreads?: boolean;
-    /**
-     *
-     * @type {Date}
-     * @memberof AliasProjection
-     */
-    updatedAt: Date;
 }
 export declare function AliasProjectionFromJSON(json: any): AliasProjection;
 export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;

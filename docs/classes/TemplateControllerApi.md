@@ -67,6 +67,7 @@
 
 ▸ **createTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
+Create an email template with variables for use with templated transactional emails.
 Create a Template
 
 #### Parameters
@@ -86,6 +87,7 @@ ___
 
 ▸ **createTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
+Create an email template with variables for use with templated transactional emails.
 Create a Template
 
 #### Parameters
@@ -105,7 +107,8 @@ ___
 
 ▸ **deleteTemplate**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
-Delete Template
+Delete template
+Delete email template
 
 #### Parameters
 
@@ -124,7 +127,8 @@ ___
 
 ▸ **deleteTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
-Delete Template
+Delete template
+Delete email template
 
 #### Parameters
 
@@ -143,7 +147,8 @@ ___
 
 ▸ **getAllTemplates**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
 
-Get all Templates in paginated format
+Get all templates in paginated format
+List templates
 
 #### Parameters
 
@@ -162,7 +167,8 @@ ___
 
 ▸ **getAllTemplatesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>\>
 
-Get all Templates in paginated format
+Get all templates in paginated format
+List templates
 
 #### Parameters
 
@@ -181,7 +187,8 @@ ___
 
 ▸ **getTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-Get Template
+Get email template
+Get template
 
 #### Parameters
 
@@ -200,7 +207,8 @@ ___
 
 ▸ **getTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
-Get Template
+Get email template
+Get template
 
 #### Parameters
 
@@ -219,7 +227,8 @@ ___
 
 ▸ **getTemplates**(`initOverrides?`): `Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
 
-Get all Templates
+Get all templates
+List templates
 
 #### Parameters
 
@@ -237,7 +246,8 @@ ___
 
 ▸ **getTemplatesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>\>
 
-Get all Templates
+Get all templates
+List templates
 
 #### Parameters
 
@@ -276,7 +286,8 @@ ___
 
 ▸ **updateTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
-Update a Template
+Update email template
+Update template
 
 #### Parameters
 
@@ -295,7 +306,8 @@ ___
 
 ▸ **updateTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
-Update a Template
+Update email template
+Update template
 
 #### Parameters
 

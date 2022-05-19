@@ -42,10 +42,10 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         url: json['url'],
-        createdAt: new Date(json['createdAt']),
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         updatedAt: new Date(json['updatedAt']),
+        createdAt: new Date(json['createdAt']),
     };
 }
 exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
@@ -60,10 +60,10 @@ function WebhookProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         url: value.url,
-        createdAt: value.createdAt.toISOString(),
         inboxId: value.inboxId,
         eventName: value.eventName,
         updatedAt: value.updatedAt.toISOString(),
+        createdAt: value.createdAt.toISOString(),
     };
 }
 exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

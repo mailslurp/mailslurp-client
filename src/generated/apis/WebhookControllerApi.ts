@@ -32,6 +32,12 @@ import {
   UnseenErrorCountDto,
   UnseenErrorCountDtoFromJSON,
   UnseenErrorCountDtoToJSON,
+  VerifyWebhookSignatureOptions,
+  VerifyWebhookSignatureOptionsFromJSON,
+  VerifyWebhookSignatureOptionsToJSON,
+  VerifyWebhookSignatureResults,
+  VerifyWebhookSignatureResultsFromJSON,
+  VerifyWebhookSignatureResultsToJSON,
   WebhookBouncePayload,
   WebhookBouncePayloadFromJSON,
   WebhookBouncePayloadToJSON,
@@ -149,10 +155,6 @@ export interface GetWebhookResultsRequest {
   unseenOnly?: boolean;
 }
 
-export interface GetWebhookResultsUnseenErrorCountRequest {
-  inboxId: string;
-}
-
 export interface GetWebhooksRequest {
   inboxId: string;
 }
@@ -163,6 +165,10 @@ export interface RedriveWebhookResultRequest {
 
 export interface SendTestDataRequest {
   webhookId: string;
+}
+
+export interface VerifyWebhookSignatureRequest {
+  verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
 }
 
 /**
@@ -1389,19 +1395,8 @@ export class WebhookControllerApi extends runtime.BaseAPI {
    * Get count of unseen webhook results with error status
    */
   async getWebhookResultsUnseenErrorCountRaw(
-    requestParameters: GetWebhookResultsUnseenErrorCountRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<UnseenErrorCountDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling getWebhookResultsUnseenErrorCount.'
-      );
-    }
-
     const queryParameters: any = {};
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1412,10 +1407,7 @@ export class WebhookControllerApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/webhooks/results/unseen-count`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
+        path: `/webhooks/results/unseen-count`,
         method: 'GET',
         headers: headerParameters,
         query: queryParameters,
@@ -1432,11 +1424,9 @@ export class WebhookControllerApi extends runtime.BaseAPI {
    * Get count of unseen webhook results with error status
    */
   async getWebhookResultsUnseenErrorCount(
-    requestParameters: GetWebhookResultsUnseenErrorCountRequest,
     initOverrides?: RequestInit
   ): Promise<UnseenErrorCountDto> {
     const response = await this.getWebhookResultsUnseenErrorCountRaw(
-      requestParameters,
       initOverrides
     );
     return await response.value();
@@ -1609,6 +1599,67 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<WebhookTestResult> {
     const response = await this.sendTestDataRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+   * Verify a webhook payload signature
+   */
+  async verifyWebhookSignatureRaw(
+    requestParameters: VerifyWebhookSignatureRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>> {
+    if (
+      requestParameters.verifyWebhookSignatureOptions === null ||
+      requestParameters.verifyWebhookSignatureOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'verifyWebhookSignatureOptions',
+        'Required parameter requestParameters.verifyWebhookSignatureOptions was null or undefined when calling verifyWebhookSignature.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/verify`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: VerifyWebhookSignatureOptionsToJSON(
+          requestParameters.verifyWebhookSignatureOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      VerifyWebhookSignatureResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+   * Verify a webhook payload signature
+   */
+  async verifyWebhookSignature(
+    requestParameters: VerifyWebhookSignatureRequest,
+    initOverrides?: RequestInit
+  ): Promise<VerifyWebhookSignatureResults> {
+    const response = await this.verifyWebhookSignatureRaw(
       requestParameters,
       initOverrides
     );

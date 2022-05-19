@@ -39,12 +39,6 @@ export interface EmailProjection {
   subject?: string;
   /**
    *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof EmailProjection
    */
@@ -61,18 +55,6 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   to: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  bcc?: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  cc?: Array<string>;
   /**
    *
    * @type {boolean}
@@ -97,6 +79,24 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   bodyExcerpt?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  bcc?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  cc?: Array<string>;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -114,16 +114,16 @@ export function EmailProjectionFromJSONTyped(
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     to: json['to'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
     teamAccess: !exists(json, 'teamAccess') ? undefined : json['teamAccess'],
     read: !exists(json, 'read') ? undefined : json['read'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    createdAt: new Date(json['createdAt']),
+    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
+    cc: !exists(json, 'cc') ? undefined : json['cc'],
   };
 }
 
@@ -138,15 +138,15 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     id: value.id,
     from: value.from,
     subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
     attachments: value.attachments,
     to: value.to,
-    bcc: value.bcc,
-    cc: value.cc,
     teamAccess: value.teamAccess,
     read: value.read,
     bodyMD5Hash: value.bodyMD5Hash,
     bodyExcerpt: value.bodyExcerpt,
+    createdAt: value.createdAt.toISOString(),
+    bcc: value.bcc,
+    cc: value.cc,
   };
 }

@@ -22,6 +22,8 @@ Email template
 
 • **content**: `string`
 
+Content of the template
+
 **`memberof`** TemplateDto
 
 ___
@@ -29,6 +31,8 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+Created at time
 
 **`memberof`** TemplateDto
 
@@ -38,6 +42,8 @@ ___
 
 • **id**: `string`
 
+ID of template
+
 **`memberof`** TemplateDto
 
 ___
@@ -46,6 +52,8 @@ ___
 
 • **name**: `string`
 
+Template name
+
 **`memberof`** TemplateDto
 
 ___
@@ -53,5 +61,7 @@ ___
 ### variables
 
 • **variables**: [`TemplateVariable`](TemplateVariable.md)[]
+
+Variables available in template that can be replaced with values
 
 **`memberof`** TemplateDto

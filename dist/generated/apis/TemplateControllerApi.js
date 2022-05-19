@@ -95,6 +95,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
     TemplateControllerApi.prototype.createTemplateRaw = function (requestParameters, initOverrides) {
@@ -130,6 +131,7 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
     TemplateControllerApi.prototype.createTemplate = function (requestParameters, initOverrides) {
@@ -147,7 +149,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Delete Template
+     * Delete template
+     * Delete email template
      */
     TemplateControllerApi.prototype.deleteTemplateRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -178,7 +181,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Delete Template
+     * Delete template
+     * Delete email template
      */
     TemplateControllerApi.prototype.deleteTemplate = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -193,7 +197,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get all Templates in paginated format
+     * Get all templates in paginated format
+     * List templates
      */
     TemplateControllerApi.prototype.getAllTemplatesRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -237,7 +242,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get all Templates in paginated format
+     * Get all templates in paginated format
+     * List templates
      */
     TemplateControllerApi.prototype.getAllTemplates = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -254,7 +260,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get Template
+     * Get email template
+     * Get template
      */
     TemplateControllerApi.prototype.getTemplateRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -287,7 +294,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get Template
+     * Get email template
+     * Get template
      */
     TemplateControllerApi.prototype.getTemplate = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -304,7 +312,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get all Templates
+     * Get all templates
+     * List templates
      */
     TemplateControllerApi.prototype.getTemplatesRaw = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -333,7 +342,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get all Templates
+     * Get all templates
+     * List templates
      */
     TemplateControllerApi.prototype.getTemplates = function (initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -350,7 +360,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Update a Template
+     * Update email template
+     * Update template
      */
     TemplateControllerApi.prototype.updateTemplateRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -389,7 +400,8 @@ var TemplateControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Update a Template
+     * Update email template
+     * Update template
      */
     TemplateControllerApi.prototype.updateTemplate = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

@@ -20,13 +20,13 @@ import { exists, mapValues } from '../runtime';
  */
 export interface TemplateVariable {
   /**
-   *
+   * Name of variable. This can be used in a template as {{name}}
    * @type {string}
    * @memberof TemplateVariable
    */
   name: string;
   /**
-   *
+   * The type of variable
    * @type {string}
    * @memberof TemplateVariable
    */

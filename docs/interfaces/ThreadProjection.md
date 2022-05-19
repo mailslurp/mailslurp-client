@@ -28,6 +28,8 @@ A thread is a message thread created for a message received by an alias
 
 • **aliasId**: `string`
 
+Alias ID
+
 **`memberof`** ThreadProjection
 
 ___
@@ -35,6 +37,8 @@ ___
 ### bcc
 
 • `Optional` **bcc**: `string`[]
+
+BCC recipients
 
 **`memberof`** ThreadProjection
 
@@ -44,6 +48,8 @@ ___
 
 • `Optional` **cc**: `string`[]
 
+CC recipients
+
 **`memberof`** ThreadProjection
 
 ___
@@ -51,6 +57,8 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+Created at DateTime
 
 **`memberof`** ThreadProjection
 
@@ -60,6 +68,8 @@ ___
 
 • **id**: `string`
 
+ID of email thread
+
 **`memberof`** ThreadProjection
 
 ___
@@ -67,6 +77,8 @@ ___
 ### inboxId
 
 • **inboxId**: `string`
+
+Inbox ID
 
 **`memberof`** ThreadProjection
 
@@ -76,6 +88,8 @@ ___
 
 • `Optional` **name**: `string`
 
+Name of thread
+
 **`memberof`** ThreadProjection
 
 ___
@@ -83,6 +97,8 @@ ___
 ### subject
 
 • `Optional` **subject**: `string`
+
+Thread subject
 
 **`memberof`** ThreadProjection
 
@@ -92,6 +108,8 @@ ___
 
 • **to**: `string`[]
 
+To recipients
+
 **`memberof`** ThreadProjection
 
 ___
@@ -100,6 +118,8 @@ ___
 
 • **updatedAt**: `Date`
 
+Updated at DateTime
+
 **`memberof`** ThreadProjection
 
 ___
@@ -107,5 +127,7 @@ ___
 ### userId
 
 • **userId**: `string`
+
+User ID
 
 **`memberof`** ThreadProjection

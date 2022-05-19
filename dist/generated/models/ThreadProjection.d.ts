@@ -16,67 +16,67 @@
  */
 export interface ThreadProjection {
     /**
-     *
+     * Name of thread
      * @type {string}
      * @memberof ThreadProjection
      */
     name?: string;
     /**
-     *
+     * ID of email thread
      * @type {string}
      * @memberof ThreadProjection
      */
     id: string;
     /**
-     *
+     * Thread subject
      * @type {string}
      * @memberof ThreadProjection
      */
     subject?: string;
     /**
-     *
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    userId: string;
-    /**
-     *
+     * Inbox ID
      * @type {string}
      * @memberof ThreadProjection
      */
     inboxId: string;
     /**
-     *
+     * User ID
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    userId: string;
+    /**
+     * To recipients
      * @type {Array<string>}
      * @memberof ThreadProjection
      */
     to: Array<string>;
     /**
-     *
-     * @type {Array<string>}
-     * @memberof ThreadProjection
-     */
-    bcc?: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof ThreadProjection
-     */
-    cc?: Array<string>;
-    /**
-     *
+     * Updated at DateTime
      * @type {Date}
      * @memberof ThreadProjection
      */
     updatedAt: Date;
     /**
-     *
+     * Created at DateTime
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
+    /**
+     * BCC recipients
+     * @type {Array<string>}
+     * @memberof ThreadProjection
+     */
+    bcc?: Array<string>;
+    /**
+     * CC recipients
+     * @type {Array<string>}
+     * @memberof ThreadProjection
+     */
+    cc?: Array<string>;
+    /**
+     * Alias ID
      * @type {string}
      * @memberof ThreadProjection
      */

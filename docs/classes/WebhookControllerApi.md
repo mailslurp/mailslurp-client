@@ -71,6 +71,8 @@
 - [request](WebhookControllerApi.md#request)
 - [sendTestData](WebhookControllerApi.md#sendtestdata)
 - [sendTestDataRaw](WebhookControllerApi.md#sendtestdataraw)
+- [verifyWebhookSignature](WebhookControllerApi.md#verifywebhooksignature)
+- [verifyWebhookSignatureRaw](WebhookControllerApi.md#verifywebhooksignatureraw)
 - [withMiddleware](WebhookControllerApi.md#withmiddleware)
 - [withPostMiddleware](WebhookControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](WebhookControllerApi.md#withpremiddleware)
@@ -931,7 +933,7 @@ ___
 
 ### getWebhookResultsUnseenErrorCount
 
-▸ **getWebhookResultsUnseenErrorCount**(`requestParameters`, `initOverrides?`): `Promise`<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>
+▸ **getWebhookResultsUnseenErrorCount**(`initOverrides?`): `Promise`<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>
 
 Get count of unseen webhook results with error status
 
@@ -939,7 +941,6 @@ Get count of unseen webhook results with error status
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetWebhookResultsUnseenErrorCountRequest`](../interfaces/GetWebhookResultsUnseenErrorCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -950,7 +951,7 @@ ___
 
 ### getWebhookResultsUnseenErrorCountRaw
 
-▸ **getWebhookResultsUnseenErrorCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>\>
+▸ **getWebhookResultsUnseenErrorCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>\>
 
 Get count of unseen webhook results with error status
 
@@ -958,7 +959,6 @@ Get count of unseen webhook results with error status
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetWebhookResultsUnseenErrorCountRequest`](../interfaces/GetWebhookResultsUnseenErrorCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1101,6 +1101,46 @@ Send webhook test data
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookTestResult`](../interfaces/WebhookTestResult.md)\>\>
+
+___
+
+### verifyWebhookSignature
+
+▸ **verifyWebhookSignature**(`requestParameters`, `initOverrides?`): `Promise`<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>
+
+Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+Verify a webhook payload signature
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`VerifyWebhookSignatureRequest`](../interfaces/VerifyWebhookSignatureRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>
+
+___
+
+### verifyWebhookSignatureRaw
+
+▸ **verifyWebhookSignatureRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>\>
+
+Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+Verify a webhook payload signature
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`VerifyWebhookSignatureRequest`](../interfaces/VerifyWebhookSignatureRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>\>
 
 ___
 

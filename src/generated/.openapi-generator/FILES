@@ -165,6 +165,8 @@ models/ValidateEmailAddressListResult.ts
 models/ValidationDto.ts
 models/ValidationMessage.ts
 models/VerifyEmailAddressOptions.ts
+models/VerifyWebhookSignatureOptions.ts
+models/VerifyWebhookSignatureResults.ts
 models/WaitForConditions.ts
 models/WebhookBouncePayload.ts
 models/WebhookBounceRecipientPayload.ts

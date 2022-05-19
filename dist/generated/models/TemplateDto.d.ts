@@ -17,31 +17,31 @@ import { TemplateVariable } from './';
  */
 export interface TemplateDto {
     /**
-     *
+     * ID of template
      * @type {string}
      * @memberof TemplateDto
      */
     id: string;
     /**
-     *
+     * Template name
      * @type {string}
      * @memberof TemplateDto
      */
     name: string;
     /**
-     *
+     * Variables available in template that can be replaced with values
      * @type {Array<TemplateVariable>}
      * @memberof TemplateDto
      */
     variables: Array<TemplateVariable>;
     /**
-     *
+     * Content of the template
      * @type {string}
      * @memberof TemplateDto
      */
     content: string;
     /**
-     *
+     * Created at time
      * @type {Date}
      * @memberof TemplateDto
      */

@@ -14,19 +14,19 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Options for creating email templates
+ * Create template options
  * @export
  * @interface CreateTemplateOptions
  */
 export interface CreateTemplateOptions {
   /**
-   *
+   * Name of template
    * @type {string}
    * @memberof CreateTemplateOptions
    */
   name: string;
   /**
-   *
+   * Template content. Can include moustache style variables such as {{var_name}}
    * @type {string}
    * @memberof CreateTemplateOptions
    */

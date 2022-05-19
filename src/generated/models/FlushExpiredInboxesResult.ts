@@ -20,13 +20,13 @@ import { exists, mapValues } from '../runtime';
  */
 export interface FlushExpiredInboxesResult {
   /**
-   *
+   * Inbox IDs affected by expiration
    * @type {Array<string>}
    * @memberof FlushExpiredInboxesResult
    */
   inboxIds: Array<string>;
   /**
-   *
+   * DateTime to filter inboxes so that those expiring before this time are expired
    * @type {Date}
    * @memberof FlushExpiredInboxesResult
    */

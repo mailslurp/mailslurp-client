@@ -45,10 +45,10 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
-   * @type {Date}
+   * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  createdAt: Date;
+  to: Array<string>;
   /**
    *
    * @type {string}
@@ -63,10 +63,16 @@ export interface SentEmailProjection {
   attachments: Array<string>;
   /**
    *
-   * @type {Array<string>}
+   * @type {string}
    * @memberof SentEmailProjection
    */
-  to: Array<string>;
+  bodyMD5Hash?: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -79,12 +85,6 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   cc: Array<string>;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  bodyMD5Hash?: string;
   /**
    *
    * @type {boolean}
@@ -109,13 +109,13 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
+    to: json['to'],
     inboxId: json['inboxId'],
     attachments: json['attachments'],
-    to: json['to'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    createdAt: new Date(json['createdAt']),
     bcc: json['bcc'],
     cc: json['cc'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     virtualSend: !exists(json, 'virtualSend') ? undefined : json['virtualSend'],
   };
 }
@@ -134,13 +134,13 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
+    to: value.to,
     inboxId: value.inboxId,
     attachments: value.attachments,
-    to: value.to,
+    bodyMD5Hash: value.bodyMD5Hash,
+    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
-    bodyMD5Hash: value.bodyMD5Hash,
     virtualSend: value.virtualSend,
   };
 }

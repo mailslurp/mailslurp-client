@@ -36,51 +36,63 @@ export interface UpdateTemplateRequest {
  */
 export declare class TemplateControllerApi extends runtime.BaseAPI {
     /**
+     * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
     createTemplateRaw(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
+     * Create an email template with variables for use with templated transactional emails.
      * Create a Template
      */
     createTemplate(requestParameters: CreateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
     /**
-     * Delete Template
+     * Delete template
+     * Delete email template
      */
     deleteTemplateRaw(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
-     * Delete Template
+     * Delete template
+     * Delete email template
      */
     deleteTemplate(requestParameters: DeleteTemplateRequest, initOverrides?: RequestInit): Promise<void>;
     /**
-     * Get all Templates in paginated format
+     * Get all templates in paginated format
+     * List templates
      */
     getAllTemplatesRaw(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageTemplateProjection>>;
     /**
-     * Get all Templates in paginated format
+     * Get all templates in paginated format
+     * List templates
      */
     getAllTemplates(requestParameters: GetAllTemplatesRequest, initOverrides?: RequestInit): Promise<PageTemplateProjection>;
     /**
-     * Get Template
+     * Get email template
+     * Get template
      */
     getTemplateRaw(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
-     * Get Template
+     * Get email template
+     * Get template
      */
     getTemplate(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
     /**
-     * Get all Templates
+     * Get all templates
+     * List templates
      */
     getTemplatesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<TemplateProjection>>>;
     /**
-     * Get all Templates
+     * Get all templates
+     * List templates
      */
     getTemplates(initOverrides?: RequestInit): Promise<Array<TemplateProjection>>;
     /**
-     * Update a Template
+     * Update email template
+     * Update template
      */
     updateTemplateRaw(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplateDto>>;
     /**
-     * Update a Template
+     * Update email template
+     * Update template
      */
     updateTemplate(requestParameters: UpdateTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
 }

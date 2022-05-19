@@ -141,6 +141,8 @@ export * from './ValidateEmailAddressListResult';
 export * from './ValidationDto';
 export * from './ValidationMessage';
 export * from './VerifyEmailAddressOptions';
+export * from './VerifyWebhookSignatureOptions';
+export * from './VerifyWebhookSignatureResults';
 export * from './WaitForConditions';
 export * from './WebhookBouncePayload';
 export * from './WebhookBounceRecipientPayload';

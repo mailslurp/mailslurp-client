@@ -20,67 +20,67 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ThreadProjection {
   /**
-   *
+   * Name of thread
    * @type {string}
    * @memberof ThreadProjection
    */
   name?: string;
   /**
-   *
+   * ID of email thread
    * @type {string}
    * @memberof ThreadProjection
    */
   id: string;
   /**
-   *
+   * Thread subject
    * @type {string}
    * @memberof ThreadProjection
    */
   subject?: string;
   /**
-   *
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  userId: string;
-  /**
-   *
+   * Inbox ID
    * @type {string}
    * @memberof ThreadProjection
    */
   inboxId: string;
   /**
-   *
+   * User ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  userId: string;
+  /**
+   * To recipients
    * @type {Array<string>}
    * @memberof ThreadProjection
    */
   to: Array<string>;
   /**
-   *
-   * @type {Array<string>}
-   * @memberof ThreadProjection
-   */
-  bcc?: Array<string>;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof ThreadProjection
-   */
-  cc?: Array<string>;
-  /**
-   *
+   * Updated at DateTime
    * @type {Date}
    * @memberof ThreadProjection
    */
   updatedAt: Date;
   /**
-   *
+   * Created at DateTime
+   * @type {Date}
+   * @memberof ThreadProjection
+   */
+  createdAt: Date;
+  /**
+   * BCC recipients
+   * @type {Array<string>}
+   * @memberof ThreadProjection
+   */
+  bcc?: Array<string>;
+  /**
+   * CC recipients
+   * @type {Array<string>}
+   * @memberof ThreadProjection
+   */
+  cc?: Array<string>;
+  /**
+   * Alias ID
    * @type {string}
    * @memberof ThreadProjection
    */
@@ -102,13 +102,13 @@ export function ThreadProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    userId: json['userId'],
     inboxId: json['inboxId'],
+    userId: json['userId'],
     to: json['to'],
+    updatedAt: new Date(json['updatedAt']),
+    createdAt: new Date(json['createdAt']),
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
-    updatedAt: new Date(json['updatedAt']),
     aliasId: json['aliasId'],
   };
 }
@@ -124,13 +124,13 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     name: value.name,
     id: value.id,
     subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    userId: value.userId,
     inboxId: value.inboxId,
+    userId: value.userId,
     to: value.to,
+    updatedAt: value.updatedAt.toISOString(),
+    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
-    updatedAt: value.updatedAt.toISOString(),
     aliasId: value.aliasId,
   };
 }

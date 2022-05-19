@@ -19,6 +19,8 @@ Result from calling expire on any inboxes that have applicable expiration dates 
 
 • **expireBefore**: `Date`
 
+DateTime to filter inboxes so that those expiring before this time are expired
+
 **`memberof`** FlushExpiredInboxesResult
 
 ___
@@ -26,5 +28,7 @@ ___
 ### inboxIds
 
 • **inboxIds**: `string`[]
+
+Inbox IDs affected by expiration
 
 **`memberof`** FlushExpiredInboxesResult

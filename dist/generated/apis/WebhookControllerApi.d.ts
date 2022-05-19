@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -79,9 +79,6 @@ export interface GetWebhookResultsRequest {
     before?: Date;
     unseenOnly?: boolean;
 }
-export interface GetWebhookResultsUnseenErrorCountRequest {
-    inboxId: string;
-}
 export interface GetWebhooksRequest {
     inboxId: string;
 }
@@ -90,6 +87,9 @@ export interface RedriveWebhookResultRequest {
 }
 export interface SendTestDataRequest {
     webhookId: string;
+}
+export interface VerifyWebhookSignatureRequest {
+    verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
 }
 /**
  *
@@ -280,11 +280,11 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     /**
      * Get count of unseen webhook results with error status
      */
-    getWebhookResultsUnseenErrorCountRaw(requestParameters: GetWebhookResultsUnseenErrorCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnseenErrorCountDto>>;
+    getWebhookResultsUnseenErrorCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnseenErrorCountDto>>;
     /**
      * Get count of unseen webhook results with error status
      */
-    getWebhookResultsUnseenErrorCount(requestParameters: GetWebhookResultsUnseenErrorCountRequest, initOverrides?: RequestInit): Promise<UnseenErrorCountDto>;
+    getWebhookResultsUnseenErrorCount(initOverrides?: RequestInit): Promise<UnseenErrorCountDto>;
     /**
      * Get all webhooks for an Inbox
      */
@@ -311,6 +311,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Send webhook test data
      */
     sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult>;
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    verifyWebhookSignatureRaw(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<VerifyWebhookSignatureResults>>;
+    /**
+     * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
+     * Verify a webhook payload signature
+     */
+    verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<VerifyWebhookSignatureResults>;
 }
 /**
  * @export

@@ -35,12 +35,6 @@ export interface WebhookProjection {
     url: string;
     /**
      *
-     * @type {Date}
-     * @memberof WebhookProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof WebhookProjection
      */
@@ -57,6 +51,12 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    createdAt: Date;
 }
 /**
  * @export

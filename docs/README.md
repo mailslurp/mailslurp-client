@@ -333,7 +333,6 @@
 - [GetWebhookRequest](interfaces/GetWebhookRequest.md)
 - [GetWebhookResultRequest](interfaces/GetWebhookResultRequest.md)
 - [GetWebhookResultsRequest](interfaces/GetWebhookResultsRequest.md)
-- [GetWebhookResultsUnseenErrorCountRequest](interfaces/GetWebhookResultsUnseenErrorCountRequest.md)
 - [GetWebhooksRequest](interfaces/GetWebhooksRequest.md)
 - [GravatarUrl](interfaces/GravatarUrl.md)
 - [GroupContactsDto](interfaces/GroupContactsDto.md)
@@ -459,6 +458,9 @@
 - [ValidationMessage](interfaces/ValidationMessage.md)
 - [VerifyEmailAddressOptions](interfaces/VerifyEmailAddressOptions.md)
 - [VerifyEmailAddressRequest](interfaces/VerifyEmailAddressRequest.md)
+- [VerifyWebhookSignatureOptions](interfaces/VerifyWebhookSignatureOptions.md)
+- [VerifyWebhookSignatureRequest](interfaces/VerifyWebhookSignatureRequest.md)
+- [VerifyWebhookSignatureResults](interfaces/VerifyWebhookSignatureResults.md)
 - [WaitForConditions](interfaces/WaitForConditions.md)
 - [WaitForEmailCountRequest](interfaces/WaitForEmailCountRequest.md)
 - [WaitForLatestEmailRequest](interfaces/WaitForLatestEmailRequest.md)
@@ -924,6 +926,12 @@
 - [VerifyEmailAddressOptionsFromJSON](README.md#verifyemailaddressoptionsfromjson)
 - [VerifyEmailAddressOptionsFromJSONTyped](README.md#verifyemailaddressoptionsfromjsontyped)
 - [VerifyEmailAddressOptionsToJSON](README.md#verifyemailaddressoptionstojson)
+- [VerifyWebhookSignatureOptionsFromJSON](README.md#verifywebhooksignatureoptionsfromjson)
+- [VerifyWebhookSignatureOptionsFromJSONTyped](README.md#verifywebhooksignatureoptionsfromjsontyped)
+- [VerifyWebhookSignatureOptionsToJSON](README.md#verifywebhooksignatureoptionstojson)
+- [VerifyWebhookSignatureResultsFromJSON](README.md#verifywebhooksignatureresultsfromjson)
+- [VerifyWebhookSignatureResultsFromJSONTyped](README.md#verifywebhooksignatureresultsfromjsontyped)
+- [VerifyWebhookSignatureResultsToJSON](README.md#verifywebhooksignatureresultstojson)
 - [WaitForConditionsFromJSON](README.md#waitforconditionsfromjson)
 - [WaitForConditionsFromJSONTyped](README.md#waitforconditionsfromjsontyped)
 - [WaitForConditionsToJSON](README.md#waitforconditionstojson)
@@ -8009,6 +8017,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### VerifyWebhookSignatureOptionsFromJSON
+
+▸ **VerifyWebhookSignatureOptionsFromJSON**(`json`): [`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
+
+___
+
+### VerifyWebhookSignatureOptionsFromJSONTyped
+
+▸ **VerifyWebhookSignatureOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
+
+___
+
+### VerifyWebhookSignatureOptionsToJSON
+
+▸ **VerifyWebhookSignatureOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### VerifyWebhookSignatureResultsFromJSON
+
+▸ **VerifyWebhookSignatureResultsFromJSON**(`json`): [`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
+
+___
+
+### VerifyWebhookSignatureResultsFromJSONTyped
+
+▸ **VerifyWebhookSignatureResultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
+
+___
+
+### VerifyWebhookSignatureResultsToJSON
+
+▸ **VerifyWebhookSignatureResultsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md) |
 
 #### Returns
 

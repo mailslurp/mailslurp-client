@@ -58,6 +58,7 @@ export interface UpdateTemplateRequest {
  */
 export class TemplateControllerApi extends runtime.BaseAPI {
   /**
+   * Create an email template with variables for use with templated transactional emails.
    * Create a Template
    */
   async createTemplateRaw(
@@ -103,6 +104,7 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Create an email template with variables for use with templated transactional emails.
    * Create a Template
    */
   async createTemplate(
@@ -117,7 +119,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete Template
+   * Delete template
+   * Delete email template
    */
   async deleteTemplateRaw(
     requestParameters: DeleteTemplateRequest,
@@ -158,7 +161,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Delete Template
+   * Delete template
+   * Delete email template
    */
   async deleteTemplate(
     requestParameters: DeleteTemplateRequest,
@@ -168,7 +172,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get all Templates in paginated format
+   * Get all templates in paginated format
+   * List templates
    */
   async getAllTemplatesRaw(
     requestParameters: GetAllTemplatesRequest,
@@ -220,7 +225,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get all Templates in paginated format
+   * Get all templates in paginated format
+   * List templates
    */
   async getAllTemplates(
     requestParameters: GetAllTemplatesRequest,
@@ -234,7 +240,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Template
+   * Get email template
+   * Get template
    */
   async getTemplateRaw(
     requestParameters: GetTemplateRequest,
@@ -277,7 +284,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get Template
+   * Get email template
+   * Get template
    */
   async getTemplate(
     requestParameters: GetTemplateRequest,
@@ -291,7 +299,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get all Templates
+   * Get all templates
+   * List templates
    */
   async getTemplatesRaw(
     initOverrides?: RequestInit
@@ -320,7 +329,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Get all Templates
+   * Get all templates
+   * List templates
    */
   async getTemplates(
     initOverrides?: RequestInit
@@ -330,7 +340,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update a Template
+   * Update email template
+   * Update template
    */
   async updateTemplateRaw(
     requestParameters: UpdateTemplateRequest,
@@ -388,7 +399,8 @@ export class TemplateControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Update a Template
+   * Update email template
+   * Update template
    */
   async updateTemplate(
     requestParameters: UpdateTemplateRequest,

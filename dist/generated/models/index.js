@@ -153,6 +153,8 @@ __exportStar(require("./ValidateEmailAddressListResult"), exports);
 __exportStar(require("./ValidationDto"), exports);
 __exportStar(require("./ValidationMessage"), exports);
 __exportStar(require("./VerifyEmailAddressOptions"), exports);
+__exportStar(require("./VerifyWebhookSignatureOptions"), exports);
+__exportStar(require("./VerifyWebhookSignatureResults"), exports);
 __exportStar(require("./WaitForConditions"), exports);
 __exportStar(require("./WebhookBouncePayload"), exports);
 __exportStar(require("./WebhookBounceRecipientPayload"), exports);

@@ -41,10 +41,10 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
-     * @type {Date}
+     * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    createdAt: Date;
+    to: Array<string>;
     /**
      *
      * @type {string}
@@ -59,10 +59,16 @@ export interface SentEmailProjection {
     attachments: Array<string>;
     /**
      *
-     * @type {Array<string>}
+     * @type {string}
      * @memberof SentEmailProjection
      */
-    to: Array<string>;
+    bodyMD5Hash?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
@@ -75,12 +81,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     cc: Array<string>;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    bodyMD5Hash?: string;
     /**
      *
      * @type {boolean}

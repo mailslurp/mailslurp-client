@@ -1,6 +1,6 @@
 # Interface: CreateTemplateOptions
 
-Options for creating email templates
+Create template options
 
 **`export`**
 
@@ -19,6 +19,8 @@ Options for creating email templates
 
 • **content**: `string`
 
+Template content. Can include moustache style variables such as {{var_name}}
+
 **`memberof`** CreateTemplateOptions
 
 ___
@@ -26,5 +28,7 @@ ___
 ### name
 
 • **name**: `string`
+
+Name of template
 
 **`memberof`** CreateTemplateOptions
