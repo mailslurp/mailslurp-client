@@ -38,19 +38,19 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    userId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}
      * @memberof AliasProjection
      */
-    emailAddress: string;
+    userId: string;
     /**
      *
-     * @type {Date}
+     * @type {boolean}
      * @memberof AliasProjection
      */
-    updatedAt: Date;
+    useThreads?: boolean;
     /**
      *
      * @type {Date}
@@ -59,10 +59,10 @@ export interface AliasProjection {
     createdAt: Date;
     /**
      *
-     * @type {boolean}
+     * @type {Date}
      * @memberof AliasProjection
      */
-    useThreads?: boolean;
+    updatedAt: Date;
 }
 export declare function AliasProjectionFromJSON(json: any): AliasProjection;
 export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;

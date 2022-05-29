@@ -145,7 +145,7 @@ export class MailSlurp {
     // create credentials
     const clientConfiguration = new Configuration({
       apiKey: opts.apiKey,
-      basePath: opts.basePath || 'https://api.mailslurp.com',
+      basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
     });
     const args = [clientConfiguration, clientConfiguration.basePath, _fetch];
 

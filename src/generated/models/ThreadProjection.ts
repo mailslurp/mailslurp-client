@@ -56,18 +56,6 @@ export interface ThreadProjection {
    */
   to: Array<string>;
   /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  updatedAt: Date;
-  /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  createdAt: Date;
-  /**
    * BCC recipients
    * @type {Array<string>}
    * @memberof ThreadProjection
@@ -79,6 +67,18 @@ export interface ThreadProjection {
    * @memberof ThreadProjection
    */
   cc?: Array<string>;
+  /**
+   * Created at DateTime
+   * @type {Date}
+   * @memberof ThreadProjection
+   */
+  createdAt: Date;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof ThreadProjection
+   */
+  updatedAt: Date;
   /**
    * Alias ID
    * @type {string}
@@ -105,10 +105,10 @@ export function ThreadProjectionFromJSONTyped(
     inboxId: json['inboxId'],
     userId: json['userId'],
     to: json['to'],
-    updatedAt: new Date(json['updatedAt']),
-    createdAt: new Date(json['createdAt']),
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     aliasId: json['aliasId'],
   };
 }
@@ -127,10 +127,10 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     inboxId: value.inboxId,
     userId: value.userId,
     to: value.to,
-    updatedAt: value.updatedAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     aliasId: value.aliasId,
   };
 }

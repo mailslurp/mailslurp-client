@@ -44,13 +44,13 @@ export interface AttachmentProjection {
      * @type {Date}
      * @memberof AttachmentProjection
      */
-    updatedAt: Date;
+    createdAt: Date;
     /**
      *
      * @type {Date}
      * @memberof AttachmentProjection
      */
-    createdAt: Date;
+    updatedAt: Date;
     /**
      * Content type of attachment.
      * @type {string}

@@ -32,12 +32,6 @@ export interface TemplateProjection {
      * @type {Date}
      * @memberof TemplateProjection
      */
-    updatedAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof TemplateProjection
-     */
     createdAt: Date;
     /**
      *
@@ -45,6 +39,12 @@ export interface TemplateProjection {
      * @memberof TemplateProjection
      */
     variables: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof TemplateProjection
+     */
+    updatedAt: Date;
 }
 export declare function TemplateProjectionFromJSON(json: any): TemplateProjection;
 export declare function TemplateProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TemplateProjection;

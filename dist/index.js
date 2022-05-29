@@ -135,7 +135,7 @@ var MailSlurp = /** @class */ (function () {
         // create credentials
         var clientConfiguration = new generated_1.Configuration({
             apiKey: opts.apiKey,
-            basePath: opts.basePath || 'https://api.mailslurp.com',
+            basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
         });
         var args = [clientConfiguration, clientConfiguration.basePath, _fetch];
         // instantiate api clients

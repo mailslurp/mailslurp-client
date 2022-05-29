@@ -54,13 +54,13 @@ export interface WebhookProjection {
    * @type {Date}
    * @memberof WebhookProjection
    */
-  updatedAt: Date;
+  createdAt: Date;
   /**
    *
    * @type {Date}
    * @memberof WebhookProjection
    */
-  createdAt: Date;
+  updatedAt: Date;
 }
 
 /**
@@ -95,8 +95,8 @@ export function WebhookProjectionFromJSONTyped(
     url: json['url'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    updatedAt: new Date(json['updatedAt']),
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
   };
 }
 
@@ -113,7 +113,7 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     url: value.url,
     inboxId: value.inboxId,
     eventName: value.eventName,
-    updatedAt: value.updatedAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
   };
 }
