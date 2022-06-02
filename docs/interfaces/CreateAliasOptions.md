@@ -17,7 +17,7 @@ Create email alias options. Email aliases can be used to mask real email address
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -27,7 +27,7 @@ Email address to be hidden behind alias. Emails sent to the alias email address 
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
@@ -37,7 +37,7 @@ Optional inbox ID to attach to alias. Null by default means an a new inbox will 
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -47,7 +47,7 @@ Optional name for alias
 
 ___
 
-### useThreads
+### <a id="usethreads" name="usethreads"></a> useThreads
 
 • **useThreads**: `boolean`
 

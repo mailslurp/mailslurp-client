@@ -8,6 +8,6 @@
 
 ## Properties
 
-### dNSLookupOptions
+### <a id="dnslookupoptions" name="dnslookupoptions"></a> dNSLookupOptions
 
 • **dNSLookupOptions**: [`DNSLookupOptions`](DNSLookupOptions.md)

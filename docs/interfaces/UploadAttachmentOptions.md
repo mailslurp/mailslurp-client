@@ -16,7 +16,7 @@ Options for uploading files for attachments. When sending emails with the API th
 
 ## Properties
 
-### base64Contents
+### <a id="base64contents" name="base64contents"></a> base64Contents
 
 • **base64Contents**: `string`
 
@@ -26,7 +26,7 @@ Base64 encoded string of file contents. Typically this means reading the bytes o
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • `Optional` **contentType**: `string`
 
@@ -36,7 +36,7 @@ Optional contentType for file. For instance `application/pdf`
 
 ___
 
-### filename
+### <a id="filename" name="filename"></a> filename
 
 • `Optional` **filename**: `string`
 

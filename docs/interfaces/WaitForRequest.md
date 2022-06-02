@@ -8,6 +8,6 @@
 
 ## Properties
 
-### waitForConditions
+### <a id="waitforconditions" name="waitforconditions"></a> waitForConditions
 
 • **waitForConditions**: [`WaitForConditions`](WaitForConditions.md)

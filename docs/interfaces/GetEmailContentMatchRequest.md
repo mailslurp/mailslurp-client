@@ -9,12 +9,12 @@
 
 ## Properties
 
-### contentMatchOptions
+### <a id="contentmatchoptions" name="contentmatchoptions"></a> contentMatchOptions
 
 • **contentMatchOptions**: [`ContentMatchOptions`](ContentMatchOptions.md)
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`

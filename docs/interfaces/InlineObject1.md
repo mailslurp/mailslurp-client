@@ -10,18 +10,18 @@ Byte array request body
 
 ### Properties
 
-- [\_char](InlineObject1.md#char)
-- [\_double](InlineObject1.md#double)
-- [\_float](InlineObject1.md#float)
-- [\_int](InlineObject1.md#int)
-- [\_long](InlineObject1.md#long)
-- [\_short](InlineObject1.md#short)
+- [\_char](InlineObject1.md#_char)
+- [\_double](InlineObject1.md#_double)
+- [\_float](InlineObject1.md#_float)
+- [\_int](InlineObject1.md#_int)
+- [\_long](InlineObject1.md#_long)
+- [\_short](InlineObject1.md#_short)
 - [direct](InlineObject1.md#direct)
 - [readOnly](InlineObject1.md#readonly)
 
 ## Properties
 
-### \_char
+### <a id="_char" name="_char"></a> \_char
 
 • `Optional` **\_char**: `string`
 
@@ -29,7 +29,7 @@ Byte array request body
 
 ___
 
-### \_double
+### <a id="_double" name="_double"></a> \_double
 
 • `Optional` **\_double**: `number`
 
@@ -37,7 +37,7 @@ ___
 
 ___
 
-### \_float
+### <a id="_float" name="_float"></a> \_float
 
 • `Optional` **\_float**: `number`
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### \_int
+### <a id="_int" name="_int"></a> \_int
 
 • `Optional` **\_int**: `number`
 
@@ -53,7 +53,7 @@ ___
 
 ___
 
-### \_long
+### <a id="_long" name="_long"></a> \_long
 
 • `Optional` **\_long**: `number`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### \_short
+### <a id="_short" name="_short"></a> \_short
 
 • `Optional` **\_short**: `number`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### direct
+### <a id="direct" name="direct"></a> direct
 
 • `Optional` **direct**: `boolean`
 
@@ -77,7 +77,7 @@ ___
 
 ___
 
-### readOnly
+### <a id="readonly" name="readonly"></a> readOnly
 
 • `Optional` **readOnly**: `boolean`
 

@@ -4,12 +4,12 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [SINGLE\_MESSAGE](SendEmailOptionsSendStrategyEnum.md#single-message)
+- [SINGLE\_MESSAGE](SendEmailOptionsSendStrategyEnum.md#single_message)
 
-## Enumeration members
+## Enumeration Members
 
-### SINGLE\_MESSAGE
+### <a id="single_message" name="single_message"></a> SINGLE\_MESSAGE
 
-• **SINGLE\_MESSAGE** = `"SINGLE_MESSAGE"`
+• **SINGLE\_MESSAGE**

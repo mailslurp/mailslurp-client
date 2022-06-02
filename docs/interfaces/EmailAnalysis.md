@@ -18,7 +18,7 @@ Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or d
 
 ## Properties
 
-### dkimVerdict
+### <a id="dkimverdict" name="dkimverdict"></a> dkimVerdict
 
 • `Optional` **dkimVerdict**: `string`
 
@@ -28,7 +28,7 @@ Verdict of DomainKeys Identified Mail analysis
 
 ___
 
-### dmarcVerdict
+### <a id="dmarcverdict" name="dmarcverdict"></a> dmarcVerdict
 
 • `Optional` **dmarcVerdict**: `string`
 
@@ -38,7 +38,7 @@ Verdict of Domain-based Message Authentication Reporting and Conformance analysi
 
 ___
 
-### spamVerdict
+### <a id="spamverdict" name="spamverdict"></a> spamVerdict
 
 • `Optional` **spamVerdict**: `string`
 
@@ -48,7 +48,7 @@ Verdict of spam ranking analysis
 
 ___
 
-### spfVerdict
+### <a id="spfverdict" name="spfverdict"></a> spfVerdict
 
 • `Optional` **spfVerdict**: `string`
 
@@ -58,7 +58,7 @@ Verdict of Send Policy Framework record spoofing analysis
 
 ___
 
-### virusVerdict
+### <a id="virusverdict" name="virusverdict"></a> virusVerdict
 
 • `Optional` **virusVerdict**: `string`
 

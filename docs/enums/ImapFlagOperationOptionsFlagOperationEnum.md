@@ -4,26 +4,26 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [ADD\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#add-flags)
-- [REMOVE\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#remove-flags)
-- [SET\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#set-flags)
+- [ADD\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#add_flags)
+- [REMOVE\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#remove_flags)
+- [SET\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#set_flags)
 
-## Enumeration members
+## Enumeration Members
 
-### ADD\_FLAGS
+### <a id="add_flags" name="add_flags"></a> ADD\_FLAGS
 
-• **ADD\_FLAGS** = `"ADD_FLAGS"`
-
-___
-
-### REMOVE\_FLAGS
-
-• **REMOVE\_FLAGS** = `"REMOVE_FLAGS"`
+• **ADD\_FLAGS**
 
 ___
 
-### SET\_FLAGS
+### <a id="remove_flags" name="remove_flags"></a> REMOVE\_FLAGS
 
-• **SET\_FLAGS** = `"SET_FLAGS"`
+• **REMOVE\_FLAGS**
+
+___
+
+### <a id="set_flags" name="set_flags"></a> SET\_FLAGS
+
+• **SET\_FLAGS**

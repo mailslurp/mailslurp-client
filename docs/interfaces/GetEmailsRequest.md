@@ -17,60 +17,60 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### delayTimeout
+### <a id="delaytimeout" name="delaytimeout"></a> delayTimeout
 
 • `Optional` **delayTimeout**: `number`
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### limit
+### <a id="limit" name="limit"></a> limit
 
 • `Optional` **limit**: `number`
 
 ___
 
-### minCount
+### <a id="mincount" name="mincount"></a> minCount
 
 • `Optional` **minCount**: `number`
 
 ___
 
-### retryTimeout
+### <a id="retrytimeout" name="retrytimeout"></a> retryTimeout
 
 • `Optional` **retryTimeout**: `number`
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • `Optional` **size**: `number`
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`GetEmailsSortEnum`](../enums/GetEmailsSortEnum.md)
 
 ___
 
-### unreadOnly
+### <a id="unreadonly" name="unreadonly"></a> unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

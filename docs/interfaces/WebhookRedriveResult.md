@@ -16,7 +16,7 @@ Result of retrying webhook
 
 ## Properties
 
-### message
+### <a id="message" name="message"></a> message
 
 • `Optional` **message**: `string`
 
@@ -24,7 +24,7 @@ Result of retrying webhook
 
 ___
 
-### success
+### <a id="success" name="success"></a> success
 
 • **success**: `boolean`
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### webhookResultId
+### <a id="webhookresultid" name="webhookresultid"></a> webhookResultId
 
 • **webhookResultId**: `string`
 

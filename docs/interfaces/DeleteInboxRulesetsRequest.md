@@ -8,6 +8,6 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`

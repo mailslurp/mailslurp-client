@@ -8,6 +8,6 @@
 
 ## Properties
 
-### requestBody
+### <a id="requestbody" name="requestbody"></a> requestBody
 
 • **requestBody**: `string`[]

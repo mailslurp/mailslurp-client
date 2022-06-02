@@ -27,7 +27,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new RequiredError**(`field`, `msg?`)
 
@@ -44,13 +44,13 @@ Error.constructor
 
 ## Properties
 
-### field
+### <a id="field" name="field"></a> field
 
 • **field**: `string`
 
 ___
 
-### message
+### <a id="message" name="message"></a> message
 
 • **message**: `string`
 
@@ -60,7 +60,7 @@ Error.message
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: ``"RequiredError"``
 
@@ -70,7 +70,7 @@ Error.name
 
 ___
 
-### stack
+### <a id="stack" name="stack"></a> stack
 
 • `Optional` **stack**: `string`
 
@@ -80,7 +80,7 @@ Error.stack
 
 ___
 
-### prepareStackTrace
+### <a id="preparestacktrace" name="preparestacktrace"></a> prepareStackTrace
 
 ▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
 
@@ -109,7 +109,7 @@ Error.prepareStackTrace
 
 ___
 
-### stackTraceLimit
+### <a id="stacktracelimit" name="stacktracelimit"></a> stackTraceLimit
 
 ▪ `Static` **stackTraceLimit**: `number`
 
@@ -119,7 +119,7 @@ Error.stackTraceLimit
 
 ## Methods
 
-### captureStackTrace
+### <a id="capturestacktrace" name="capturestacktrace"></a> captureStackTrace
 
 ▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 

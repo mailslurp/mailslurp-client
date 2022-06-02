@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [HTTP\_INBOX](CreateInboxInboxTypeEnum.md#http-inbox)
-- [SMTP\_INBOX](CreateInboxInboxTypeEnum.md#smtp-inbox)
+- [HTTP\_INBOX](CreateInboxInboxTypeEnum.md#http_inbox)
+- [SMTP\_INBOX](CreateInboxInboxTypeEnum.md#smtp_inbox)
 
-## Enumeration members
+## Enumeration Members
 
-### HTTP\_INBOX
+### <a id="http_inbox" name="http_inbox"></a> HTTP\_INBOX
 
-• **HTTP\_INBOX** = `"HTTP_INBOX"`
+• **HTTP\_INBOX**
 
 ___
 
-### SMTP\_INBOX
+### <a id="smtp_inbox" name="smtp_inbox"></a> SMTP\_INBOX
 
-• **SMTP\_INBOX** = `"SMTP_INBOX"`
+• **SMTP\_INBOX**

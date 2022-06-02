@@ -16,7 +16,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new BlobApiResponse**(`raw`)
 
@@ -28,13 +28,13 @@
 
 ## Properties
 
-### raw
+### <a id="raw" name="raw"></a> raw
 
 • **raw**: `Response`
 
 ## Methods
 
-### value
+### <a id="value" name="value"></a> value
 
 ▸ **value**(): `Promise`<`Blob`\>
 

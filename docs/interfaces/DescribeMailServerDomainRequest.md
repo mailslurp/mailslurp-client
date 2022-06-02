@@ -8,6 +8,6 @@
 
 ## Properties
 
-### describeDomainOptions
+### <a id="describedomainoptions" name="describedomainoptions"></a> describeDomainOptions
 
 • **describeDomainOptions**: [`DescribeDomainOptions`](DescribeDomainOptions.md)

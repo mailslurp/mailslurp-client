@@ -18,66 +18,66 @@
 
 ## Properties
 
-### allowTeamAccess
+### <a id="allowteamaccess" name="allowteamaccess"></a> allowTeamAccess
 
 • `Optional` **allowTeamAccess**: `boolean`
 
 ___
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • `Optional` **emailAddress**: `string`
 
 ___
 
-### expiresAt
+### <a id="expiresat" name="expiresat"></a> expiresAt
 
 • `Optional` **expiresAt**: `Date`
 
 ___
 
-### expiresIn
+### <a id="expiresin" name="expiresin"></a> expiresIn
 
 • `Optional` **expiresIn**: `number`
 
 ___
 
-### favourite
+### <a id="favourite" name="favourite"></a> favourite
 
 • `Optional` **favourite**: `boolean`
 
 ___
 
-### inboxType
+### <a id="inboxtype" name="inboxtype"></a> inboxType
 
 • `Optional` **inboxType**: [`CreateRandomInboxInboxTypeEnum`](../enums/CreateRandomInboxInboxTypeEnum.md)
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • `Optional` **tags**: `string`[]
 
 ___
 
-### useDomainPool
+### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
 
 ___
 
-### virtualInbox
+### <a id="virtualinbox" name="virtualinbox"></a> virtualInbox
 
 • `Optional` **virtualInbox**: `boolean`

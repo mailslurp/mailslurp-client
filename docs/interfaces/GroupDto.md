@@ -17,7 +17,7 @@ Contact group data
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -25,7 +25,7 @@ Contact group data
 
 ___
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 

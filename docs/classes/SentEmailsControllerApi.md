@@ -47,7 +47,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new SentEmailsControllerApi**(`configuration?`)
 
@@ -63,7 +63,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -73,7 +73,7 @@
 
 ## Methods
 
-### deleteAllSentEmails
+### <a id="deleteallsentemails" name="deleteallsentemails"></a> deleteAllSentEmails
 
 ▸ **deleteAllSentEmails**(`initOverrides?`): `Promise`<`void`\>
 
@@ -91,7 +91,7 @@ Delete all sent email receipts
 
 ___
 
-### deleteAllSentEmailsRaw
+### <a id="deleteallsentemailsraw" name="deleteallsentemailsraw"></a> deleteAllSentEmailsRaw
 
 ▸ **deleteAllSentEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -109,7 +109,7 @@ Delete all sent email receipts
 
 ___
 
-### deleteSentEmail
+### <a id="deletesentemail" name="deletesentemail"></a> deleteSentEmail
 
 ▸ **deleteSentEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -128,7 +128,7 @@ Delete sent email receipt
 
 ___
 
-### deleteSentEmailRaw
+### <a id="deletesentemailraw" name="deletesentemailraw"></a> deleteSentEmailRaw
 
 ▸ **deleteSentEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -147,7 +147,7 @@ Delete sent email receipt
 
 ___
 
-### getAllSentTrackingPixels
+### <a id="getallsenttrackingpixels" name="getallsenttrackingpixels"></a> getAllSentTrackingPixels
 
 ▸ **getAllSentTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
@@ -166,7 +166,7 @@ Get all sent email tracking pixels in paginated form
 
 ___
 
-### getAllSentTrackingPixelsRaw
+### <a id="getallsenttrackingpixelsraw" name="getallsenttrackingpixelsraw"></a> getAllSentTrackingPixelsRaw
 
 ▸ **getAllSentTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
@@ -185,7 +185,7 @@ Get all sent email tracking pixels in paginated form
 
 ___
 
-### getRawSentEmailContents
+### <a id="getrawsentemailcontents" name="getrawsentemailcontents"></a> getRawSentEmailContents
 
 ▸ **getRawSentEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -205,7 +205,7 @@ Get raw sent email string. Returns unparsed raw SMTP message with headers and bo
 
 ___
 
-### getRawSentEmailContentsRaw
+### <a id="getrawsentemailcontentsraw" name="getrawsentemailcontentsraw"></a> getRawSentEmailContentsRaw
 
 ▸ **getRawSentEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -225,7 +225,7 @@ Get raw sent email string. Returns unparsed raw SMTP message with headers and bo
 
 ___
 
-### getRawSentEmailJson
+### <a id="getrawsentemailjson" name="getrawsentemailjson"></a> getRawSentEmailJson
 
 ▸ **getRawSentEmailJson**(`requestParameters`, `initOverrides?`): `Promise`<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>
 
@@ -245,7 +245,7 @@ Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 ___
 
-### getRawSentEmailJsonRaw
+### <a id="getrawsentemailjsonraw" name="getrawsentemailjsonraw"></a> getRawSentEmailJsonRaw
 
 ▸ **getRawSentEmailJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
 
@@ -265,7 +265,7 @@ Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 ___
 
-### getSentEmail
+### <a id="getsentemail" name="getsentemail"></a> getSentEmail
 
 ▸ **getSentEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -284,7 +284,7 @@ Get sent email receipt
 
 ___
 
-### getSentEmailHTMLContent
+### <a id="getsentemailhtmlcontent" name="getsentemailhtmlcontent"></a> getSentEmailHTMLContent
 
 ▸ **getSentEmailHTMLContent**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -303,7 +303,7 @@ Get sent email HTML content
 
 ___
 
-### getSentEmailHTMLContentRaw
+### <a id="getsentemailhtmlcontentraw" name="getsentemailhtmlcontentraw"></a> getSentEmailHTMLContentRaw
 
 ▸ **getSentEmailHTMLContentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -322,7 +322,7 @@ Get sent email HTML content
 
 ___
 
-### getSentEmailPreviewURLs
+### <a id="getsentemailpreviewurls" name="getsentemailpreviewurls"></a> getSentEmailPreviewURLs
 
 ▸ **getSentEmailPreviewURLs**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
 
@@ -342,7 +342,7 @@ Get sent email URL for viewing in browser or downloading
 
 ___
 
-### getSentEmailPreviewURLsRaw
+### <a id="getsentemailpreviewurlsraw" name="getsentemailpreviewurlsraw"></a> getSentEmailPreviewURLsRaw
 
 ▸ **getSentEmailPreviewURLsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
 
@@ -362,7 +362,7 @@ Get sent email URL for viewing in browser or downloading
 
 ___
 
-### getSentEmailRaw
+### <a id="getsentemailraw" name="getsentemailraw"></a> getSentEmailRaw
 
 ▸ **getSentEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -381,7 +381,7 @@ Get sent email receipt
 
 ___
 
-### getSentEmailTrackingPixels
+### <a id="getsentemailtrackingpixels" name="getsentemailtrackingpixels"></a> getSentEmailTrackingPixels
 
 ▸ **getSentEmailTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
@@ -400,7 +400,7 @@ Get all tracking pixels for a sent email in paginated form
 
 ___
 
-### getSentEmailTrackingPixelsRaw
+### <a id="getsentemailtrackingpixelsraw" name="getsentemailtrackingpixelsraw"></a> getSentEmailTrackingPixelsRaw
 
 ▸ **getSentEmailTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
@@ -419,7 +419,7 @@ Get all tracking pixels for a sent email in paginated form
 
 ___
 
-### getSentEmails
+### <a id="getsentemails" name="getsentemails"></a> getSentEmails
 
 ▸ **getSentEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
@@ -438,7 +438,7 @@ Get all sent emails in paginated form
 
 ___
 
-### getSentEmailsRaw
+### <a id="getsentemailsraw" name="getsentemailsraw"></a> getSentEmailsRaw
 
 ▸ **getSentEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
 
@@ -457,7 +457,7 @@ Get all sent emails in paginated form
 
 ___
 
-### getSentOrganizationEmails
+### <a id="getsentorganizationemails" name="getsentorganizationemails"></a> getSentOrganizationEmails
 
 ▸ **getSentOrganizationEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
@@ -476,7 +476,7 @@ Get all sent organization emails in paginated form
 
 ___
 
-### getSentOrganizationEmailsRaw
+### <a id="getsentorganizationemailsraw" name="getsentorganizationemailsraw"></a> getSentOrganizationEmailsRaw
 
 ▸ **getSentOrganizationEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
 
@@ -495,7 +495,7 @@ Get all sent organization emails in paginated form
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -516,9 +516,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -530,6 +530,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -542,9 +543,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -556,6 +557,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -568,9 +570,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -582,6 +584,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

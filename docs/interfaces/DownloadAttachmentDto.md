@@ -16,7 +16,7 @@ Content of attachment
 
 ## Properties
 
-### base64FileContents
+### <a id="base64filecontents" name="base64filecontents"></a> base64FileContents
 
 • **base64FileContents**: `string`
 
@@ -26,7 +26,7 @@ Base64 encoded string of attachment bytes. Decode the base64 encoded string to g
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • **contentType**: `string`
 
@@ -36,7 +36,7 @@ Content type of attachment. Examples are `image/png`, `application/msword`, `tex
 
 ___
 
-### sizeBytes
+### <a id="sizebytes" name="sizebytes"></a> sizeBytes
 
 • **sizeBytes**: `number`
 

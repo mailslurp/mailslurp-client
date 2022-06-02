@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### setInboxFavouritedOptions
+### <a id="setinboxfavouritedoptions" name="setinboxfavouritedoptions"></a> setInboxFavouritedOptions
 
 • **setInboxFavouritedOptions**: [`SetInboxFavouritedOptions`](SetInboxFavouritedOptions.md)

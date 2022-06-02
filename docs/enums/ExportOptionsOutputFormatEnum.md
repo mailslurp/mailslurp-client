@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DEFAULT](ExportOptionsOutputFormatEnum.md#default)
 - [EXCEL](ExportOptionsOutputFormatEnum.md#excel)
 
-## Enumeration members
+## Enumeration Members
 
-### DEFAULT
+### <a id="default" name="default"></a> DEFAULT
 
-• **DEFAULT** = `"CSV_DEFAULT"`
+• **DEFAULT**
 
 ___
 
-### EXCEL
+### <a id="excel" name="excel"></a> EXCEL
 
-• **EXCEL** = `"CSV_EXCEL"`
+• **EXCEL**

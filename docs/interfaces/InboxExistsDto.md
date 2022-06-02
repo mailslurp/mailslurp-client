@@ -10,11 +10,11 @@ Result of email exists query
 
 ### Properties
 
-- [\_exists](InboxExistsDto.md#exists)
+- [\_exists](InboxExistsDto.md#_exists)
 
 ## Properties
 
-### \_exists
+### <a id="_exists" name="_exists"></a> \_exists
 
 • **\_exists**: `boolean`
 

@@ -16,7 +16,7 @@ Bounced email event
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -24,7 +24,7 @@ Bounced email event
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### sender
+### <a id="sender" name="sender"></a> sender
 
 • **sender**: `string`
 

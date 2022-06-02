@@ -54,7 +54,7 @@ function WebhookNewContactPayloadFromJSONTyped(json, ignoreDiscriminator) {
         emailAddresses: json['emailAddresses'],
         tags: json['tags'],
         metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
-        optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
+        optOut: json['optOut'],
         createdAt: new Date(json['createdAt']),
     };
 }

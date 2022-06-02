@@ -16,7 +16,7 @@ Options for creating an inbox forwarder
 
 ## Properties
 
-### field
+### <a id="field" name="field"></a> field
 
 • **field**: [`CreateInboxForwarderOptionsFieldEnum`](../enums/CreateInboxForwarderOptionsFieldEnum.md)
 
@@ -26,7 +26,7 @@ Field to match against to trigger inbox forwarding for inbound email
 
 ___
 
-### forwardToRecipients
+### <a id="forwardtorecipients" name="forwardtorecipients"></a> forwardToRecipients
 
 • **forwardToRecipients**: `string`[]
 
@@ -36,7 +36,7 @@ Email addresses to forward an email to if it matches the field and match criteri
 
 ___
 
-### match
+### <a id="match" name="match"></a> match
 
 • **match**: `string`
 

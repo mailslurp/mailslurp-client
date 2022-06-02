@@ -29,7 +29,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new EmailVerificationControllerApi**(`configuration?`)
 
@@ -45,7 +45,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -55,7 +55,7 @@
 
 ## Methods
 
-### getValidationRequests
+### <a id="getvalidationrequests" name="getvalidationrequests"></a> getValidationRequests
 
 ▸ **getValidationRequests**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>
 
@@ -74,7 +74,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### getValidationRequestsRaw
+### <a id="getvalidationrequestsraw" name="getvalidationrequestsraw"></a> getValidationRequestsRaw
 
 ▸ **getValidationRequestsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>\>
 
@@ -93,7 +93,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -114,7 +114,7 @@ ___
 
 ___
 
-### validateEmailAddressList
+### <a id="validateemailaddresslist" name="validateemailaddresslist"></a> validateEmailAddressList
 
 ▸ **validateEmailAddressList**(`requestParameters`, `initOverrides?`): `Promise`<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>
 
@@ -133,7 +133,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### validateEmailAddressListRaw
+### <a id="validateemailaddresslistraw" name="validateemailaddresslistraw"></a> validateEmailAddressListRaw
 
 ▸ **validateEmailAddressListRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>\>
 
@@ -152,9 +152,9 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -166,6 +166,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -178,9 +179,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -192,6 +193,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -204,9 +206,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -218,6 +220,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

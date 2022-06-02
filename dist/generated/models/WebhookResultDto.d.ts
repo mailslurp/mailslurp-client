@@ -110,7 +110,7 @@ export interface WebhookResultDto {
      * @type {boolean}
      * @memberof WebhookResultDto
      */
-    seen?: boolean;
+    seen: boolean;
 }
 /**
  * @export

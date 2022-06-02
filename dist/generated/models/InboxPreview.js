@@ -43,9 +43,7 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         teamAccess: json['teamAccess'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
-        virtualInbox: !(0, runtime_1.exists)(json, 'virtualInbox')
-            ? undefined
-            : json['virtualInbox'],
+        virtualInbox: json['virtualInbox'],
         expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
     };
 }

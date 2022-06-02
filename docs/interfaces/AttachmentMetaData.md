@@ -17,7 +17,7 @@ Meta data associated with an attachment. Attachments are stored as byte blobs so
 
 ## Properties
 
-### contentLength
+### <a id="contentlength" name="contentlength"></a> contentLength
 
 • **contentLength**: `number`
 
@@ -27,7 +27,7 @@ Size of attachment in bytes
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • **contentType**: `string`
 
@@ -37,7 +37,7 @@ Content type of attachment such as `image/png`
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -47,7 +47,7 @@ ID of attachment
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 

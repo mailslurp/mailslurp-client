@@ -33,7 +33,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new MissedEmailControllerApi**(`configuration?`)
 
@@ -49,7 +49,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +59,7 @@
 
 ## Methods
 
-### getAllMissedEmails
+### <a id="getallmissedemails" name="getallmissedemails"></a> getAllMissedEmails
 
 ▸ **getAllMissedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>
 
@@ -78,7 +78,7 @@ Get all MissedEmails in paginated format
 
 ___
 
-### getAllMissedEmailsRaw
+### <a id="getallmissedemailsraw" name="getallmissedemailsraw"></a> getAllMissedEmailsRaw
 
 ▸ **getAllMissedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageMissedEmailProjection`](../interfaces/PageMissedEmailProjection.md)\>\>
 
@@ -97,7 +97,7 @@ Get all MissedEmails in paginated format
 
 ___
 
-### getAllUnknownMissedEmails
+### <a id="getallunknownmissedemails" name="getallunknownmissedemails"></a> getAllUnknownMissedEmails
 
 ▸ **getAllUnknownMissedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>
 
@@ -117,7 +117,7 @@ Get all unknown missed emails in paginated format
 
 ___
 
-### getAllUnknownMissedEmailsRaw
+### <a id="getallunknownmissedemailsraw" name="getallunknownmissedemailsraw"></a> getAllUnknownMissedEmailsRaw
 
 ▸ **getAllUnknownMissedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageUnknownMissedEmailProjection`](../interfaces/PageUnknownMissedEmailProjection.md)\>\>
 
@@ -137,7 +137,7 @@ Get all unknown missed emails in paginated format
 
 ___
 
-### getMissedEmail
+### <a id="getmissedemail" name="getmissedemail"></a> getMissedEmail
 
 ▸ **getMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
 
@@ -156,7 +156,7 @@ Get MissedEmail
 
 ___
 
-### getMissedEmailRaw
+### <a id="getmissedemailraw" name="getmissedemailraw"></a> getMissedEmailRaw
 
 ▸ **getMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
 
@@ -175,7 +175,7 @@ Get MissedEmail
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -196,7 +196,7 @@ ___
 
 ___
 
-### waitForNthMissedEmail
+### <a id="waitfornthmissedemail" name="waitfornthmissedemail"></a> waitForNthMissedEmail
 
 ▸ **waitForNthMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
 
@@ -216,7 +216,7 @@ Wait for Nth missed email
 
 ___
 
-### waitForNthMissedEmailRaw
+### <a id="waitfornthmissedemailraw" name="waitfornthmissedemailraw"></a> waitForNthMissedEmailRaw
 
 ▸ **waitForNthMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
 
@@ -236,9 +236,9 @@ Wait for Nth missed email
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -250,6 +250,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -262,9 +263,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -276,6 +277,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -288,9 +290,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -302,6 +304,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

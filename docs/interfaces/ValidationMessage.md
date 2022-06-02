@@ -15,7 +15,7 @@ Optional warnings resulting from HTML validation
 
 ## Properties
 
-### lineNumber
+### <a id="linenumber" name="linenumber"></a> lineNumber
 
 • **lineNumber**: `number`
 
@@ -23,7 +23,7 @@ Optional warnings resulting from HTML validation
 
 ___
 
-### message
+### <a id="message" name="message"></a> message
 
 • `Optional` **message**: `string`
 

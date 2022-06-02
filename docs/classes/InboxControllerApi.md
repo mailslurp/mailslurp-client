@@ -87,7 +87,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new InboxControllerApi**(`configuration?`)
 
@@ -103,7 +103,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -113,7 +113,7 @@
 
 ## Methods
 
-### createInbox
+### <a id="createinbox" name="createinbox"></a> createInbox
 
 ▸ **createInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -133,7 +133,7 @@ Create an inbox email address. An inbox has a real email address and can send an
 
 ___
 
-### createInboxRaw
+### <a id="createinboxraw" name="createinboxraw"></a> createInboxRaw
 
 ▸ **createInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -153,7 +153,7 @@ Create an inbox email address. An inbox has a real email address and can send an
 
 ___
 
-### createInboxRuleset
+### <a id="createinboxruleset" name="createinboxruleset"></a> createInboxRuleset
 
 ▸ **createInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
@@ -173,7 +173,7 @@ Create an inbox ruleset
 
 ___
 
-### createInboxRulesetRaw
+### <a id="createinboxrulesetraw" name="createinboxrulesetraw"></a> createInboxRulesetRaw
 
 ▸ **createInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
@@ -193,7 +193,7 @@ Create an inbox ruleset
 
 ___
 
-### createInboxWithDefaults
+### <a id="createinboxwithdefaults" name="createinboxwithdefaults"></a> createInboxWithDefaults
 
 ▸ **createInboxWithDefaults**(`initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -211,7 +211,7 @@ Create an inbox with default options. Uses MailSlurp domain pool address and is 
 
 ___
 
-### createInboxWithDefaultsRaw
+### <a id="createinboxwithdefaultsraw" name="createinboxwithdefaultsraw"></a> createInboxWithDefaultsRaw
 
 ▸ **createInboxWithDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -229,7 +229,7 @@ Create an inbox with default options. Uses MailSlurp domain pool address and is 
 
 ___
 
-### createInboxWithOptions
+### <a id="createinboxwithoptions" name="createinboxwithoptions"></a> createInboxWithOptions
 
 ▸ **createInboxWithOptions**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -249,7 +249,7 @@ Create an inbox with options. Extended options for inbox creation.
 
 ___
 
-### createInboxWithOptionsRaw
+### <a id="createinboxwithoptionsraw" name="createinboxwithoptionsraw"></a> createInboxWithOptionsRaw
 
 ▸ **createInboxWithOptionsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -269,7 +269,7 @@ Create an inbox with options. Extended options for inbox creation.
 
 ___
 
-### deleteAllInboxEmails
+### <a id="deleteallinboxemails" name="deleteallinboxemails"></a> deleteAllInboxEmails
 
 ▸ **deleteAllInboxEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -289,7 +289,7 @@ Delete all emails in a given inboxes.
 
 ___
 
-### deleteAllInboxEmailsRaw
+### <a id="deleteallinboxemailsraw" name="deleteallinboxemailsraw"></a> deleteAllInboxEmailsRaw
 
 ▸ **deleteAllInboxEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -309,7 +309,7 @@ Delete all emails in a given inboxes.
 
 ___
 
-### deleteAllInboxes
+### <a id="deleteallinboxes" name="deleteallinboxes"></a> deleteAllInboxes
 
 ▸ **deleteAllInboxes**(`initOverrides?`): `Promise`<`void`\>
 
@@ -328,7 +328,7 @@ Delete all inboxes
 
 ___
 
-### deleteAllInboxesRaw
+### <a id="deleteallinboxesraw" name="deleteallinboxesraw"></a> deleteAllInboxesRaw
 
 ▸ **deleteAllInboxesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -347,7 +347,7 @@ Delete all inboxes
 
 ___
 
-### deleteInbox
+### <a id="deleteinbox" name="deleteinbox"></a> deleteInbox
 
 ▸ **deleteInbox**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -367,7 +367,7 @@ Delete inbox
 
 ___
 
-### deleteInboxRaw
+### <a id="deleteinboxraw" name="deleteinboxraw"></a> deleteInboxRaw
 
 ▸ **deleteInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -387,7 +387,7 @@ Delete inbox
 
 ___
 
-### doesInboxExist
+### <a id="doesinboxexist" name="doesinboxexist"></a> doesInboxExist
 
 ▸ **doesInboxExist**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>
 
@@ -407,7 +407,7 @@ Does inbox exist
 
 ___
 
-### doesInboxExistRaw
+### <a id="doesinboxexistraw" name="doesinboxexistraw"></a> doesInboxExistRaw
 
 ▸ **doesInboxExistRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxExistsDto`](../interfaces/InboxExistsDto.md)\>\>
 
@@ -427,7 +427,7 @@ Does inbox exist
 
 ___
 
-### flushExpired
+### <a id="flushexpired" name="flushexpired"></a> flushExpired
 
 ▸ **flushExpired**(`requestParameters`, `initOverrides?`): `Promise`<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>
 
@@ -447,7 +447,7 @@ Remove expired inboxes
 
 ___
 
-### flushExpiredRaw
+### <a id="flushexpiredraw" name="flushexpiredraw"></a> flushExpiredRaw
 
 ▸ **flushExpiredRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FlushExpiredInboxesResult`](../interfaces/FlushExpiredInboxesResult.md)\>\>
 
@@ -467,7 +467,7 @@ Remove expired inboxes
 
 ___
 
-### getAllInboxes
+### <a id="getallinboxes" name="getallinboxes"></a> getAllInboxes
 
 ▸ **getAllInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
 
@@ -487,7 +487,7 @@ List All Inboxes Paginated
 
 ___
 
-### getAllInboxesRaw
+### <a id="getallinboxesraw" name="getallinboxesraw"></a> getAllInboxesRaw
 
 ▸ **getAllInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
@@ -507,7 +507,7 @@ List All Inboxes Paginated
 
 ___
 
-### getEmails
+### <a id="getemails" name="getemails"></a> getEmails
 
 ▸ **getEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -527,7 +527,7 @@ Get emails in an Inbox. This method is not idempotent as it allows retries and w
 
 ___
 
-### getEmailsRaw
+### <a id="getemailsraw" name="getemailsraw"></a> getEmailsRaw
 
 ▸ **getEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -547,7 +547,7 @@ Get emails in an Inbox. This method is not idempotent as it allows retries and w
 
 ___
 
-### getImapSmtpAccess
+### <a id="getimapsmtpaccess" name="getimapsmtpaccess"></a> getImapSmtpAccess
 
 ▸ **getImapSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
 
@@ -566,7 +566,7 @@ Get IMAP and SMTP access usernames and passwords
 
 ___
 
-### getImapSmtpAccessRaw
+### <a id="getimapsmtpaccessraw" name="getimapsmtpaccessraw"></a> getImapSmtpAccessRaw
 
 ▸ **getImapSmtpAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>\>
 
@@ -585,7 +585,7 @@ Get IMAP and SMTP access usernames and passwords
 
 ___
 
-### getInbox
+### <a id="getinbox" name="getinbox"></a> getInbox
 
 ▸ **getInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -605,7 +605,7 @@ Get Inbox. Returns properties of an inbox.
 
 ___
 
-### getInboxByEmailAddress
+### <a id="getinboxbyemailaddress" name="getinboxbyemailaddress"></a> getInboxByEmailAddress
 
 ▸ **getInboxByEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>
 
@@ -625,7 +625,7 @@ Search for an inbox with the provided email address
 
 ___
 
-### getInboxByEmailAddressRaw
+### <a id="getinboxbyemailaddressraw" name="getinboxbyemailaddressraw"></a> getInboxByEmailAddressRaw
 
 ▸ **getInboxByEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>\>
 
@@ -645,7 +645,7 @@ Search for an inbox with the provided email address
 
 ___
 
-### getInboxCount
+### <a id="getinboxcount" name="getinboxcount"></a> getInboxCount
 
 ▸ **getInboxCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
@@ -663,7 +663,7 @@ Get total inbox count
 
 ___
 
-### getInboxCountRaw
+### <a id="getinboxcountraw" name="getinboxcountraw"></a> getInboxCountRaw
 
 ▸ **getInboxCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
@@ -681,7 +681,7 @@ Get total inbox count
 
 ___
 
-### getInboxEmailCount
+### <a id="getinboxemailcount" name="getinboxemailcount"></a> getInboxEmailCount
 
 ▸ **getInboxEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
@@ -700,7 +700,7 @@ Get email count in inbox
 
 ___
 
-### getInboxEmailCountRaw
+### <a id="getinboxemailcountraw" name="getinboxemailcountraw"></a> getInboxEmailCountRaw
 
 ▸ **getInboxEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
@@ -719,7 +719,7 @@ Get email count in inbox
 
 ___
 
-### getInboxEmailsPaginated
+### <a id="getinboxemailspaginated" name="getinboxemailspaginated"></a> getInboxEmailsPaginated
 
 ▸ **getInboxEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>
 
@@ -739,7 +739,7 @@ Get inbox emails paginated
 
 ___
 
-### getInboxEmailsPaginatedRaw
+### <a id="getinboxemailspaginatedraw" name="getinboxemailspaginatedraw"></a> getInboxEmailsPaginatedRaw
 
 ▸ **getInboxEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailPreview`](../interfaces/PageEmailPreview.md)\>\>
 
@@ -759,7 +759,7 @@ Get inbox emails paginated
 
 ___
 
-### getInboxIds
+### <a id="getinboxids" name="getinboxids"></a> getInboxIds
 
 ▸ **getInboxIds**(`initOverrides?`): `Promise`<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>
 
@@ -778,7 +778,7 @@ Get all inbox IDs
 
 ___
 
-### getInboxIdsRaw
+### <a id="getinboxidsraw" name="getinboxidsraw"></a> getInboxIdsRaw
 
 ▸ **getInboxIdsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxIdsResult`](../interfaces/InboxIdsResult.md)\>\>
 
@@ -797,7 +797,7 @@ Get all inbox IDs
 
 ___
 
-### getInboxRaw
+### <a id="getinboxraw" name="getinboxraw"></a> getInboxRaw
 
 ▸ **getInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -817,7 +817,7 @@ Get Inbox. Returns properties of an inbox.
 
 ___
 
-### getInboxSentEmails
+### <a id="getinboxsentemails" name="getinboxsentemails"></a> getInboxSentEmails
 
 ▸ **getInboxSentEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>
 
@@ -837,7 +837,7 @@ Get Inbox Sent Emails
 
 ___
 
-### getInboxSentEmailsRaw
+### <a id="getinboxsentemailsraw" name="getinboxsentemailsraw"></a> getInboxSentEmailsRaw
 
 ▸ **getInboxSentEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
 
@@ -857,7 +857,7 @@ Get Inbox Sent Emails
 
 ___
 
-### getInboxTags
+### <a id="getinboxtags" name="getinboxtags"></a> getInboxTags
 
 ▸ **getInboxTags**(`initOverrides?`): `Promise`<`string`[]\>
 
@@ -876,7 +876,7 @@ Get inbox tags
 
 ___
 
-### getInboxTagsRaw
+### <a id="getinboxtagsraw" name="getinboxtagsraw"></a> getInboxTagsRaw
 
 ▸ **getInboxTagsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -895,7 +895,7 @@ Get inbox tags
 
 ___
 
-### getInboxes
+### <a id="getinboxes" name="getinboxes"></a> getInboxes
 
 ▸ **getInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
@@ -915,7 +915,7 @@ List Inboxes and email addresses
 
 ___
 
-### getInboxesRaw
+### <a id="getinboxesraw" name="getinboxesraw"></a> getInboxesRaw
 
 ▸ **getInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
@@ -935,7 +935,7 @@ List Inboxes and email addresses
 
 ___
 
-### getLatestEmailInInbox
+### <a id="getlatestemailininbox" name="getlatestemailininbox"></a> getLatestEmailInInbox
 
 ▸ **getLatestEmailInInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -955,7 +955,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 ___
 
-### getLatestEmailInInboxRaw
+### <a id="getlatestemailininboxraw" name="getlatestemailininboxraw"></a> getLatestEmailInInboxRaw
 
 ▸ **getLatestEmailInInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -975,7 +975,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 ___
 
-### getOrganizationInboxes
+### <a id="getorganizationinboxes" name="getorganizationinboxes"></a> getOrganizationInboxes
 
 ▸ **getOrganizationInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>
 
@@ -995,7 +995,7 @@ List Organization Inboxes Paginated
 
 ___
 
-### getOrganizationInboxesRaw
+### <a id="getorganizationinboxesraw" name="getorganizationinboxesraw"></a> getOrganizationInboxesRaw
 
 ▸ **getOrganizationInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageOrganizationInboxProjection`](../interfaces/PageOrganizationInboxProjection.md)\>\>
 
@@ -1015,7 +1015,7 @@ List Organization Inboxes Paginated
 
 ___
 
-### listInboxRulesets
+### <a id="listinboxrulesets" name="listinboxrulesets"></a> listInboxRulesets
 
 ▸ **listInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
@@ -1035,7 +1035,7 @@ List inbox rulesets
 
 ___
 
-### listInboxRulesetsRaw
+### <a id="listinboxrulesetsraw" name="listinboxrulesetsraw"></a> listInboxRulesetsRaw
 
 ▸ **listInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
 
@@ -1055,7 +1055,7 @@ List inbox rulesets
 
 ___
 
-### listInboxTrackingPixels
+### <a id="listinboxtrackingpixels" name="listinboxtrackingpixels"></a> listInboxTrackingPixels
 
 ▸ **listInboxTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
@@ -1075,7 +1075,7 @@ List inbox tracking pixels
 
 ___
 
-### listInboxTrackingPixelsRaw
+### <a id="listinboxtrackingpixelsraw" name="listinboxtrackingpixelsraw"></a> listInboxTrackingPixelsRaw
 
 ▸ **listInboxTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
@@ -1095,7 +1095,7 @@ List inbox tracking pixels
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -1116,7 +1116,7 @@ ___
 
 ___
 
-### sendEmail
+### <a id="sendemail" name="sendemail"></a> sendEmail
 
 ▸ **sendEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -1136,7 +1136,7 @@ Send Email
 
 ___
 
-### sendEmailAndConfirm
+### <a id="sendemailandconfirm" name="sendemailandconfirm"></a> sendEmailAndConfirm
 
 ▸ **sendEmailAndConfirm**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -1156,7 +1156,7 @@ Send email and return sent confirmation
 
 ___
 
-### sendEmailAndConfirmRaw
+### <a id="sendemailandconfirmraw" name="sendemailandconfirmraw"></a> sendEmailAndConfirmRaw
 
 ▸ **sendEmailAndConfirmRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -1176,7 +1176,7 @@ Send email and return sent confirmation
 
 ___
 
-### sendEmailRaw
+### <a id="sendemailraw" name="sendemailraw"></a> sendEmailRaw
 
 ▸ **sendEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -1196,7 +1196,7 @@ Send Email
 
 ___
 
-### sendSmtpEnvelope
+### <a id="sendsmtpenvelope" name="sendsmtpenvelope"></a> sendSmtpEnvelope
 
 ▸ **sendSmtpEnvelope**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -1216,7 +1216,7 @@ Send email using an SMTP mail envelope and message body and return sent confirma
 
 ___
 
-### sendSmtpEnvelopeRaw
+### <a id="sendsmtpenveloperaw" name="sendsmtpenveloperaw"></a> sendSmtpEnvelopeRaw
 
 ▸ **sendSmtpEnvelopeRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -1236,7 +1236,7 @@ Send email using an SMTP mail envelope and message body and return sent confirma
 
 ___
 
-### sendTestEmail
+### <a id="sendtestemail" name="sendtestemail"></a> sendTestEmail
 
 ▸ **sendTestEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -1256,7 +1256,7 @@ Send a test email to inbox
 
 ___
 
-### sendTestEmailRaw
+### <a id="sendtestemailraw" name="sendtestemailraw"></a> sendTestEmailRaw
 
 ▸ **sendTestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -1276,7 +1276,7 @@ Send a test email to inbox
 
 ___
 
-### setInboxFavourited
+### <a id="setinboxfavourited" name="setinboxfavourited"></a> setInboxFavourited
 
 ▸ **setInboxFavourited**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -1296,7 +1296,7 @@ Set inbox favourited state
 
 ___
 
-### setInboxFavouritedRaw
+### <a id="setinboxfavouritedraw" name="setinboxfavouritedraw"></a> setInboxFavouritedRaw
 
 ▸ **setInboxFavouritedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -1316,7 +1316,7 @@ Set inbox favourited state
 
 ___
 
-### updateInbox
+### <a id="updateinbox" name="updateinbox"></a> updateInbox
 
 ▸ **updateInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -1336,7 +1336,7 @@ Update Inbox. Change name and description. Email address is not editable.
 
 ___
 
-### updateInboxRaw
+### <a id="updateinboxraw" name="updateinboxraw"></a> updateInboxRaw
 
 ▸ **updateInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -1356,9 +1356,9 @@ Update Inbox. Change name and description. Email address is not editable.
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -1370,6 +1370,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -1382,9 +1383,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1396,6 +1397,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -1408,9 +1410,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1422,6 +1424,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

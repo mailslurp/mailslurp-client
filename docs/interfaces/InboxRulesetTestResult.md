@@ -15,7 +15,7 @@ Result of test of inbox ruleset
 
 ## Properties
 
-### matches
+### <a id="matches" name="matches"></a> matches
 
 • **matches**: `boolean`
 
@@ -23,7 +23,7 @@ Result of test of inbox ruleset
 
 ___
 
-### rulesetMatches
+### <a id="rulesetmatches" name="rulesetmatches"></a> rulesetMatches
 
 • **rulesetMatches**: `Object`
 
@@ -33,4 +33,4 @@ Map of inbox ruleset ID to boolean of if target matches
 
 #### Index signature
 
-▪ [key: `string`]: %60boolean%60
+▪ [key: `string`]: `boolean`

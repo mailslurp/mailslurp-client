@@ -32,7 +32,7 @@ Sent email details
 
 ## Properties
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • `Optional` **attachments**: `string`[]
 
@@ -42,7 +42,7 @@ Array of IDs of attachments that were sent with this email
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### body
+### <a id="body" name="body"></a> body
 
 • `Optional` **body**: `string`
 
@@ -58,7 +58,7 @@ ___
 
 ___
 
-### bodyMD5Hash
+### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
@@ -68,7 +68,7 @@ MD5 Hash
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -76,7 +76,7 @@ ___
 
 ___
 
-### charset
+### <a id="charset" name="charset"></a> charset
 
 • `Optional` **charset**: `string`
 
@@ -84,7 +84,7 @@ ___
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -92,7 +92,7 @@ ___
 
 ___
 
-### html
+### <a id="html" name="html"></a> html
 
 • `Optional` **html**: `boolean`
 
@@ -100,7 +100,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -110,7 +110,7 @@ ID of sent email
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -120,7 +120,7 @@ Inbox ID email was sent from
 
 ___
 
-### isHTML
+### <a id="ishtml" name="ishtml"></a> isHTML
 
 • `Optional` **isHTML**: `boolean`
 
@@ -128,7 +128,7 @@ ___
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • `Optional` **messageId**: `string`
 
@@ -136,7 +136,7 @@ ___
 
 ___
 
-### pixelIds
+### <a id="pixelids" name="pixelids"></a> pixelIds
 
 • `Optional` **pixelIds**: `string`[]
 
@@ -144,7 +144,7 @@ ___
 
 ___
 
-### replyTo
+### <a id="replyto" name="replyto"></a> replyTo
 
 • `Optional` **replyTo**: `string`
 
@@ -152,7 +152,7 @@ ___
 
 ___
 
-### sentAt
+### <a id="sentat" name="sentat"></a> sentAt
 
 • **sentAt**: `Date`
 
@@ -160,7 +160,7 @@ ___
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -168,7 +168,7 @@ ___
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • `Optional` **to**: `string`[]
 
@@ -178,7 +178,7 @@ Recipients email was sent to
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 
@@ -188,7 +188,7 @@ User ID
 
 ___
 
-### virtualSend
+### <a id="virtualsend" name="virtualsend"></a> virtualSend
 
 • `Optional` **virtualSend**: `boolean`
 

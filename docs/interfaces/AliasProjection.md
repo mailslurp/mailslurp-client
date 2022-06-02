@@ -21,7 +21,7 @@ Representation of a alias
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -29,7 +29,7 @@ Representation of a alias
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -37,7 +37,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -53,7 +53,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### useThreads
+### <a id="usethreads" name="usethreads"></a> useThreads
 
 • `Optional` **useThreads**: `boolean`
 
@@ -77,7 +77,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

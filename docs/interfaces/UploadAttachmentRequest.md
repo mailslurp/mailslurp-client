@@ -8,6 +8,6 @@
 
 ## Properties
 
-### uploadAttachmentOptions
+### <a id="uploadattachmentoptions" name="uploadattachmentoptions"></a> uploadAttachmentOptions
 
 • **uploadAttachmentOptions**: [`UploadAttachmentOptions`](UploadAttachmentOptions.md)

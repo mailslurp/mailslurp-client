@@ -18,13 +18,13 @@
 
 ## Properties
 
-### raw
+### <a id="raw" name="raw"></a> raw
 
 • **raw**: `Response`
 
 ## Methods
 
-### value
+### <a id="value" name="value"></a> value
 
 ▸ **value**(): `Promise`<`T`\>
 

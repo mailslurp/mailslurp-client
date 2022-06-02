@@ -20,31 +20,31 @@
 
 ## Properties
 
-### accessToken
+### <a id="accesstoken" name="accesstoken"></a> accessToken
 
 • `Optional` **accessToken**: `string` \| `Promise`<`string`\> \| (`name?`: `string`, `scopes?`: `string`[]) => `string` \| `Promise`<`string`\>
 
 ___
 
-### apiKey
+### <a id="apikey" name="apikey"></a> apiKey
 
 • `Optional` **apiKey**: `string` \| (`name`: `string`) => `string`
 
 ___
 
-### basePath
+### <a id="basepath" name="basepath"></a> basePath
 
 • `Optional` **basePath**: `string`
 
 ___
 
-### credentials
+### <a id="credentials" name="credentials"></a> credentials
 
 • `Optional` **credentials**: `RequestCredentials`
 
 ___
 
-### fetchApi
+### <a id="fetchapi" name="fetchapi"></a> fetchApi
 
 • `Optional` **fetchApi**: (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
@@ -65,31 +65,31 @@ ___
 
 ___
 
-### headers
+### <a id="headers" name="headers"></a> headers
 
 • `Optional` **headers**: [`HTTPHeaders`](../README.md#httpheaders)
 
 ___
 
-### middleware
+### <a id="middleware" name="middleware"></a> middleware
 
 • `Optional` **middleware**: [`Middleware`](Middleware.md)[]
 
 ___
 
-### password
+### <a id="password" name="password"></a> password
 
 • `Optional` **password**: `string`
 
 ___
 
-### username
+### <a id="username" name="username"></a> username
 
 • `Optional` **username**: `string`
 
 ## Methods
 
-### queryParamsStringify
+### <a id="queryparamsstringify" name="queryparamsstringify"></a> queryParamsStringify
 
 ▸ `Optional` **queryParamsStringify**(`params`): `string`
 

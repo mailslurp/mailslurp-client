@@ -14,7 +14,7 @@ Number of elements
 
 ## Properties
 
-### totalElements
+### <a id="totalelements" name="totalelements"></a> totalElements
 
 • **totalElements**: `number`
 

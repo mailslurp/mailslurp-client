@@ -15,7 +15,7 @@ Create contact group options
 
 ## Properties
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
@@ -23,7 +23,7 @@ Create contact group options
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 

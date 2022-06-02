@@ -21,7 +21,7 @@ NEW_ATTACHMENT webhook payload. Sent to your webhook url endpoint via HTTP POST 
 
 ## Properties
 
-### attachmentId
+### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
 
@@ -31,7 +31,7 @@ ID of attachment. Use the `AttachmentController` to
 
 ___
 
-### contentLength
+### <a id="contentlength" name="contentlength"></a> contentLength
 
 • **contentLength**: `number`
 
@@ -41,7 +41,7 @@ Size of attachment in bytes
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • **contentType**: `string`
 
@@ -51,7 +51,7 @@ Content type of attachment such as 'image/png' or 'application/pdf
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • **eventName**: [`WebhookNewAttachmentPayloadEventNameEnum`](../enums/WebhookNewAttachmentPayloadEventNameEnum.md)
 
@@ -61,7 +61,7 @@ Name of the event type webhook is being triggered for.
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -71,7 +71,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 
@@ -81,7 +81,7 @@ Filename of the attachment if present
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -91,7 +91,7 @@ ID of webhook entity being triggered
 
 ___
 
-### webhookName
+### <a id="webhookname" name="webhookname"></a> webhookName
 
 • `Optional` **webhookName**: `string`
 

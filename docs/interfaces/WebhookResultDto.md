@@ -29,7 +29,7 @@ Result of a webhook notification
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -37,7 +37,7 @@ Result of a webhook notification
 
 ___
 
-### httpMethod
+### <a id="httpmethod" name="httpmethod"></a> httpMethod
 
 • **httpMethod**: [`WebhookResultDtoHttpMethodEnum`](../enums/WebhookResultDtoHttpMethodEnum.md)
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -53,7 +53,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### redriveId
+### <a id="redriveid" name="redriveid"></a> redriveId
 
 • `Optional` **redriveId**: `string`
 
@@ -77,7 +77,7 @@ ___
 
 ___
 
-### responseBodyExtract
+### <a id="responsebodyextract" name="responsebodyextract"></a> responseBodyExtract
 
 • `Optional` **responseBodyExtract**: `string`
 
@@ -85,7 +85,7 @@ ___
 
 ___
 
-### responseStatus
+### <a id="responsestatus" name="responsestatus"></a> responseStatus
 
 • `Optional` **responseStatus**: `number`
 
@@ -93,7 +93,7 @@ ___
 
 ___
 
-### responseTimeMillis
+### <a id="responsetimemillis" name="responsetimemillis"></a> responseTimeMillis
 
 • **responseTimeMillis**: `number`
 
@@ -101,7 +101,7 @@ ___
 
 ___
 
-### resultType
+### <a id="resulttype" name="resulttype"></a> resultType
 
 • `Optional` **resultType**: [`WebhookResultDtoResultTypeEnum`](../enums/WebhookResultDtoResultTypeEnum.md)
 
@@ -109,15 +109,15 @@ ___
 
 ___
 
-### seen
+### <a id="seen" name="seen"></a> seen
 
-• `Optional` **seen**: `boolean`
+• **seen**: `boolean`
 
 **`memberof`** WebhookResultDto
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -125,7 +125,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 
@@ -133,7 +133,7 @@ ___
 
 ___
 
-### webhookEvent
+### <a id="webhookevent" name="webhookevent"></a> webhookEvent
 
 • **webhookEvent**: [`WebhookResultDtoWebhookEventEnum`](../enums/WebhookResultDtoWebhookEventEnum.md)
 
@@ -141,7 +141,7 @@ ___
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -149,7 +149,7 @@ ___
 
 ___
 
-### webhookUrl
+### <a id="webhookurl" name="webhookurl"></a> webhookUrl
 
 • **webhookUrl**: `string`
 

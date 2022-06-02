@@ -17,7 +17,7 @@ Bounced recipient
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -25,7 +25,7 @@ Bounced recipient
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### recipient
+### <a id="recipient" name="recipient"></a> recipient
 
 • **recipient**: `string`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • `Optional` **userId**: `string`
 

@@ -8,6 +8,6 @@
 
 ## Properties
 
-### createGroupOptions
+### <a id="creategroupoptions" name="creategroupoptions"></a> createGroupOptions
 
 • **createGroupOptions**: [`CreateGroupOptions`](CreateGroupOptions.md)

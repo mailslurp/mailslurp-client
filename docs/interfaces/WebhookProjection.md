@@ -20,7 +20,7 @@ Representation of a webhook
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -28,7 +28,7 @@ Representation of a webhook
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • `Optional` **eventName**: [`WebhookProjectionEventNameEnum`](../enums/WebhookProjectionEventNameEnum.md)
 
@@ -36,7 +36,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -44,7 +44,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
@@ -52,7 +52,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -60,7 +60,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -68,7 +68,7 @@ ___
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`
 

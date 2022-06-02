@@ -14,7 +14,7 @@ Domain record description
 
 ## Properties
 
-### domain
+### <a id="domain" name="domain"></a> domain
 
 • **domain**: `string`
 

@@ -15,7 +15,7 @@ Create template options
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • **content**: `string`
 
@@ -25,7 +25,7 @@ Template content. Can include moustache style variables such as {{var_name}}
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 

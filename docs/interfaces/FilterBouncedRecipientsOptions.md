@@ -14,7 +14,7 @@ Options for filtering bounced email recipients
 
 ## Properties
 
-### emailRecipients
+### <a id="emailrecipients" name="emailrecipients"></a> emailRecipients
 
 • **emailRecipients**: `string`[]
 

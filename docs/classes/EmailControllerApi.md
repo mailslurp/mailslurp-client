@@ -85,7 +85,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new EmailControllerApi**(`configuration?`)
 
@@ -101,7 +101,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -111,7 +111,7 @@
 
 ## Methods
 
-### applyImapFlagOperation
+### <a id="applyimapflagoperation" name="applyimapflagoperation"></a> applyImapFlagOperation
 
 ▸ **applyImapFlagOperation**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
@@ -131,7 +131,7 @@ Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
 
 ___
 
-### applyImapFlagOperationRaw
+### <a id="applyimapflagoperationraw" name="applyimapflagoperationraw"></a> applyImapFlagOperationRaw
 
 ▸ **applyImapFlagOperationRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
@@ -151,7 +151,7 @@ Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
 
 ___
 
-### deleteAllEmails
+### <a id="deleteallemails" name="deleteallemails"></a> deleteAllEmails
 
 ▸ **deleteAllEmails**(`initOverrides?`): `Promise`<`void`\>
 
@@ -170,7 +170,7 @@ Delete all emails in all inboxes.
 
 ___
 
-### deleteAllEmailsRaw
+### <a id="deleteallemailsraw" name="deleteallemailsraw"></a> deleteAllEmailsRaw
 
 ▸ **deleteAllEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -189,7 +189,7 @@ Delete all emails in all inboxes.
 
 ___
 
-### deleteEmail
+### <a id="deleteemail" name="deleteemail"></a> deleteEmail
 
 ▸ **deleteEmail**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -209,7 +209,7 @@ Delete an email
 
 ___
 
-### deleteEmailRaw
+### <a id="deleteemailraw" name="deleteemailraw"></a> deleteEmailRaw
 
 ▸ **deleteEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -229,7 +229,7 @@ Delete an email
 
 ___
 
-### downloadAttachment
+### <a id="downloadattachment" name="downloadattachment"></a> downloadAttachment
 
 ▸ **downloadAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -249,7 +249,7 @@ Get email attachment bytes. Returned as `octet-stream` with content type header.
 
 ___
 
-### downloadAttachmentBase64
+### <a id="downloadattachmentbase64" name="downloadattachmentbase64"></a> downloadAttachmentBase64
 
 ▸ **downloadAttachmentBase64**(`requestParameters`, `initOverrides?`): `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
 
@@ -269,7 +269,7 @@ Get email attachment as base64 encoded string as an alternative to binary respon
 
 ___
 
-### downloadAttachmentBase64Raw
+### <a id="downloadattachmentbase64raw" name="downloadattachmentbase64raw"></a> downloadAttachmentBase64Raw
 
 ▸ **downloadAttachmentBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>\>
 
@@ -289,7 +289,7 @@ Get email attachment as base64 encoded string as an alternative to binary respon
 
 ___
 
-### downloadAttachmentRaw
+### <a id="downloadattachmentraw" name="downloadattachmentraw"></a> downloadAttachmentRaw
 
 ▸ **downloadAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -309,7 +309,7 @@ Get email attachment bytes. Returned as `octet-stream` with content type header.
 
 ___
 
-### downloadBody
+### <a id="downloadbody" name="downloadbody"></a> downloadBody
 
 ▸ **downloadBody**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -329,7 +329,7 @@ Get email body as string. Returned as `plain/text` with content type header.
 
 ___
 
-### downloadBodyBytes
+### <a id="downloadbodybytes" name="downloadbodybytes"></a> downloadBodyBytes
 
 ▸ **downloadBodyBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -349,7 +349,7 @@ Get email body in bytes. Returned as `octet-stream` with content type header.
 
 ___
 
-### downloadBodyBytesRaw
+### <a id="downloadbodybytesraw" name="downloadbodybytesraw"></a> downloadBodyBytesRaw
 
 ▸ **downloadBodyBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -369,7 +369,7 @@ Get email body in bytes. Returned as `octet-stream` with content type header.
 
 ___
 
-### downloadBodyRaw
+### <a id="downloadbodyraw" name="downloadbodyraw"></a> downloadBodyRaw
 
 ▸ **downloadBodyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -389,7 +389,7 @@ Get email body as string. Returned as `plain/text` with content type header.
 
 ___
 
-### forwardEmail
+### <a id="forwardemail" name="forwardemail"></a> forwardEmail
 
 ▸ **forwardEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -409,7 +409,7 @@ Forward email to recipients
 
 ___
 
-### forwardEmailRaw
+### <a id="forwardemailraw" name="forwardemailraw"></a> forwardEmailRaw
 
 ▸ **forwardEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -429,7 +429,7 @@ Forward email to recipients
 
 ___
 
-### getAttachmentMetaData
+### <a id="getattachmentmetadata" name="getattachmentmetadata"></a> getAttachmentMetaData
 
 ▸ **getAttachmentMetaData**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
@@ -449,7 +449,7 @@ Get email attachment metadata. This is the `contentType` and `contentLength` of 
 
 ___
 
-### getAttachmentMetaDataRaw
+### <a id="getattachmentmetadataraw" name="getattachmentmetadataraw"></a> getAttachmentMetaDataRaw
 
 ▸ **getAttachmentMetaDataRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>\>
 
@@ -469,7 +469,7 @@ Get email attachment metadata. This is the `contentType` and `contentLength` of 
 
 ___
 
-### getEmail
+### <a id="getemail" name="getemail"></a> getEmail
 
 ▸ **getEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -489,7 +489,7 @@ Get email content including headers and body. Expects email to exist by ID. For 
 
 ___
 
-### getEmailAttachments
+### <a id="getemailattachments" name="getemailattachments"></a> getEmailAttachments
 
 ▸ **getEmailAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>
 
@@ -509,7 +509,7 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 ___
 
-### getEmailAttachmentsRaw
+### <a id="getemailattachmentsraw" name="getemailattachmentsraw"></a> getEmailAttachmentsRaw
 
 ▸ **getEmailAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)[]\>\>
 
@@ -529,7 +529,7 @@ Get all email attachment metadata. Metadata includes name and size of attachment
 
 ___
 
-### getEmailContentMatch
+### <a id="getemailcontentmatch" name="getemailcontentmatch"></a> getEmailContentMatch
 
 ▸ **getEmailContentMatch**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>
 
@@ -549,7 +549,7 @@ Get email content regex pattern match results. Runs regex against email body and
 
 ___
 
-### getEmailContentMatchRaw
+### <a id="getemailcontentmatchraw" name="getemailcontentmatchraw"></a> getEmailContentMatchRaw
 
 ▸ **getEmailContentMatchRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>\>
 
@@ -569,7 +569,7 @@ Get email content regex pattern match results. Runs regex against email body and
 
 ___
 
-### getEmailCount
+### <a id="getemailcount" name="getemailcount"></a> getEmailCount
 
 ▸ **getEmailCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
 
@@ -587,7 +587,7 @@ Get email count
 
 ___
 
-### getEmailCountRaw
+### <a id="getemailcountraw" name="getemailcountraw"></a> getEmailCountRaw
 
 ▸ **getEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
@@ -605,7 +605,7 @@ Get email count
 
 ___
 
-### getEmailHTML
+### <a id="getemailhtml" name="getemailhtml"></a> getEmailHTML
 
 ▸ **getEmailHTML**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -625,7 +625,7 @@ Get email content as HTML. For displaying emails in browser context.
 
 ___
 
-### getEmailHTMLQuery
+### <a id="getemailhtmlquery" name="getemailhtmlquery"></a> getEmailHTMLQuery
 
 ▸ **getEmailHTMLQuery**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>
 
@@ -645,7 +645,7 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 
 ___
 
-### getEmailHTMLQueryRaw
+### <a id="getemailhtmlqueryraw" name="getemailhtmlqueryraw"></a> getEmailHTMLQueryRaw
 
 ▸ **getEmailHTMLQueryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
 
@@ -665,7 +665,7 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 
 ___
 
-### getEmailHTMLRaw
+### <a id="getemailhtmlraw" name="getemailhtmlraw"></a> getEmailHTMLRaw
 
 ▸ **getEmailHTMLRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -685,7 +685,7 @@ Get email content as HTML. For displaying emails in browser context.
 
 ___
 
-### getEmailLinks
+### <a id="getemaillinks" name="getemaillinks"></a> getEmailLinks
 
 ▸ **getEmailLinks**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailLinksResult`](../interfaces/EmailLinksResult.md)\>
 
@@ -705,7 +705,7 @@ Parse and return list of links found in an email (only works for HTML content)
 
 ___
 
-### getEmailLinksRaw
+### <a id="getemaillinksraw" name="getemaillinksraw"></a> getEmailLinksRaw
 
 ▸ **getEmailLinksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailLinksResult`](../interfaces/EmailLinksResult.md)\>\>
 
@@ -725,7 +725,7 @@ Parse and return list of links found in an email (only works for HTML content)
 
 ___
 
-### getEmailPreviewURLs
+### <a id="getemailpreviewurls" name="getemailpreviewurls"></a> getEmailPreviewURLs
 
 ▸ **getEmailPreviewURLs**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>
 
@@ -745,7 +745,7 @@ Get email URLs for viewing in browser or downloading
 
 ___
 
-### getEmailPreviewURLsRaw
+### <a id="getemailpreviewurlsraw" name="getemailpreviewurlsraw"></a> getEmailPreviewURLsRaw
 
 ▸ **getEmailPreviewURLsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewUrls`](../interfaces/EmailPreviewUrls.md)\>\>
 
@@ -765,7 +765,7 @@ Get email URLs for viewing in browser or downloading
 
 ___
 
-### getEmailRaw
+### <a id="getemailraw" name="getemailraw"></a> getEmailRaw
 
 ▸ **getEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -785,7 +785,7 @@ Get email content including headers and body. Expects email to exist by ID. For 
 
 ___
 
-### getEmailTextLines
+### <a id="getemailtextlines" name="getemailtextlines"></a> getEmailTextLines
 
 ▸ **getEmailTextLines**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>
 
@@ -805,7 +805,7 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 
 ___
 
-### getEmailTextLinesRaw
+### <a id="getemailtextlinesraw" name="getemailtextlinesraw"></a> getEmailTextLinesRaw
 
 ▸ **getEmailTextLinesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
 
@@ -825,7 +825,7 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 
 ___
 
-### getEmailsPaginated
+### <a id="getemailspaginated" name="getemailspaginated"></a> getEmailsPaginated
 
 ▸ **getEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
@@ -845,7 +845,7 @@ Get all emails in all inboxes in paginated form. Email API list all.
 
 ___
 
-### getEmailsPaginatedRaw
+### <a id="getemailspaginatedraw" name="getemailspaginatedraw"></a> getEmailsPaginatedRaw
 
 ▸ **getEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
@@ -865,7 +865,7 @@ Get all emails in all inboxes in paginated form. Email API list all.
 
 ___
 
-### getGravatarUrlForEmailAddress
+### <a id="getgravatarurlforemailaddress" name="getgravatarurlforemailaddress"></a> getGravatarUrlForEmailAddress
 
 ▸ **getGravatarUrlForEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`GravatarUrl`](../interfaces/GravatarUrl.md)\>
 
@@ -884,7 +884,7 @@ Get gravatar url for email address
 
 ___
 
-### getGravatarUrlForEmailAddressRaw
+### <a id="getgravatarurlforemailaddressraw" name="getgravatarurlforemailaddressraw"></a> getGravatarUrlForEmailAddressRaw
 
 ▸ **getGravatarUrlForEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GravatarUrl`](../interfaces/GravatarUrl.md)\>\>
 
@@ -903,7 +903,7 @@ Get gravatar url for email address
 
 ___
 
-### getLatestEmail
+### <a id="getlatestemail" name="getlatestemail"></a> getLatestEmail
 
 ▸ **getLatestEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -923,7 +923,7 @@ Get latest email in all inboxes. Most recently received.
 
 ___
 
-### getLatestEmailInInbox1
+### <a id="getlatestemailininbox1" name="getlatestemailininbox1"></a> getLatestEmailInInbox1
 
 ▸ **getLatestEmailInInbox1**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -943,7 +943,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 ___
 
-### getLatestEmailInInbox1Raw
+### <a id="getlatestemailininbox1raw" name="getlatestemailininbox1raw"></a> getLatestEmailInInbox1Raw
 
 ▸ **getLatestEmailInInbox1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -963,7 +963,7 @@ Get latest email in an inbox. Use `WaitForController` to get emails that may not
 
 ___
 
-### getLatestEmailRaw
+### <a id="getlatestemailraw" name="getlatestemailraw"></a> getLatestEmailRaw
 
 ▸ **getLatestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -983,7 +983,7 @@ Get latest email in all inboxes. Most recently received.
 
 ___
 
-### getOrganizationEmailsPaginated
+### <a id="getorganizationemailspaginated" name="getorganizationemailspaginated"></a> getOrganizationEmailsPaginated
 
 ▸ **getOrganizationEmailsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
@@ -1003,7 +1003,7 @@ Get all organization emails. List team or shared test email accounts
 
 ___
 
-### getOrganizationEmailsPaginatedRaw
+### <a id="getorganizationemailspaginatedraw" name="getorganizationemailspaginatedraw"></a> getOrganizationEmailsPaginatedRaw
 
 ▸ **getOrganizationEmailsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
@@ -1023,7 +1023,7 @@ Get all organization emails. List team or shared test email accounts
 
 ___
 
-### getRawEmailContents
+### <a id="getrawemailcontents" name="getrawemailcontents"></a> getRawEmailContents
 
 ▸ **getRawEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -1043,7 +1043,7 @@ Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 ___
 
-### getRawEmailContentsRaw
+### <a id="getrawemailcontentsraw" name="getrawemailcontentsraw"></a> getRawEmailContentsRaw
 
 ▸ **getRawEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -1063,7 +1063,7 @@ Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 ___
 
-### getRawEmailJson
+### <a id="getrawemailjson" name="getrawemailjson"></a> getRawEmailJson
 
 ▸ **getRawEmailJson**(`requestParameters`, `initOverrides?`): `Promise`<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>
 
@@ -1083,7 +1083,7 @@ Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 ___
 
-### getRawEmailJsonRaw
+### <a id="getrawemailjsonraw" name="getrawemailjsonraw"></a> getRawEmailJsonRaw
 
 ▸ **getRawEmailJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
 
@@ -1103,7 +1103,7 @@ Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.
 
 ___
 
-### getUnreadEmailCount
+### <a id="getunreademailcount" name="getunreademailcount"></a> getUnreadEmailCount
 
 ▸ **getUnreadEmailCount**(`initOverrides?`): `Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
 
@@ -1122,7 +1122,7 @@ Get unread email count
 
 ___
 
-### getUnreadEmailCountRaw
+### <a id="getunreademailcountraw" name="getunreademailcountraw"></a> getUnreadEmailCountRaw
 
 ▸ **getUnreadEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
 
@@ -1141,7 +1141,7 @@ Get unread email count
 
 ___
 
-### markAsRead
+### <a id="markasread" name="markasread"></a> markAsRead
 
 ▸ **markAsRead**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
@@ -1161,7 +1161,7 @@ Mark an email as read on unread
 
 ___
 
-### markAsReadRaw
+### <a id="markasreadraw" name="markasreadraw"></a> markAsReadRaw
 
 ▸ **markAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
@@ -1181,7 +1181,7 @@ Mark an email as read on unread
 
 ___
 
-### replyToEmail
+### <a id="replytoemail" name="replytoemail"></a> replyToEmail
 
 ▸ **replyToEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -1201,7 +1201,7 @@ Reply to an email
 
 ___
 
-### replyToEmailRaw
+### <a id="replytoemailraw" name="replytoemailraw"></a> replyToEmailRaw
 
 ▸ **replyToEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -1221,7 +1221,7 @@ Reply to an email
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -1242,7 +1242,7 @@ ___
 
 ___
 
-### sendEmailSourceOptional
+### <a id="sendemailsourceoptional" name="sendemailsourceoptional"></a> sendEmailSourceOptional
 
 ▸ **sendEmailSourceOptional**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -1262,7 +1262,7 @@ Send email
 
 ___
 
-### sendEmailSourceOptionalRaw
+### <a id="sendemailsourceoptionalraw" name="sendemailsourceoptionalraw"></a> sendEmailSourceOptionalRaw
 
 ▸ **sendEmailSourceOptionalRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -1282,7 +1282,7 @@ Send email
 
 ___
 
-### validateEmail
+### <a id="validateemail" name="validateemail"></a> validateEmail
 
 ▸ **validateEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`ValidationDto`](../interfaces/ValidationDto.md)\>
 
@@ -1302,7 +1302,7 @@ Validate email HTML contents
 
 ___
 
-### validateEmailRaw
+### <a id="validateemailraw" name="validateemailraw"></a> validateEmailRaw
 
 ▸ **validateEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ValidationDto`](../interfaces/ValidationDto.md)\>\>
 
@@ -1322,9 +1322,9 @@ Validate email HTML contents
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -1336,6 +1336,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -1348,9 +1349,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1362,6 +1363,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -1374,9 +1376,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1388,6 +1390,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

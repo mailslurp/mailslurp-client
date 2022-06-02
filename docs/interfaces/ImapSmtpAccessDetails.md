@@ -21,7 +21,7 @@ Access details for inbox using SMTP or IMAP
 
 ## Properties
 
-### imapPassword
+### <a id="imappassword" name="imappassword"></a> imapPassword
 
 • **imapPassword**: `string`
 
@@ -31,7 +31,7 @@ IMAP password for login
 
 ___
 
-### imapServerHost
+### <a id="imapserverhost" name="imapserverhost"></a> imapServerHost
 
 • **imapServerHost**: `string`
 
@@ -41,7 +41,7 @@ IMAP server host domain
 
 ___
 
-### imapServerPort
+### <a id="imapserverport" name="imapserverport"></a> imapServerPort
 
 • **imapServerPort**: `number`
 
@@ -51,7 +51,7 @@ IMAP server host port
 
 ___
 
-### imapUsername
+### <a id="imapusername" name="imapusername"></a> imapUsername
 
 • **imapUsername**: `string`
 
@@ -61,7 +61,7 @@ IMAP username for login
 
 ___
 
-### smtpPassword
+### <a id="smtppassword" name="smtppassword"></a> smtpPassword
 
 • **smtpPassword**: `string`
 
@@ -71,7 +71,7 @@ SMTP  for login
 
 ___
 
-### smtpServerHost
+### <a id="smtpserverhost" name="smtpserverhost"></a> smtpServerHost
 
 • **smtpServerHost**: `string`
 
@@ -81,7 +81,7 @@ SMTP server host domain
 
 ___
 
-### smtpServerPort
+### <a id="smtpserverport" name="smtpserverport"></a> smtpServerPort
 
 • **smtpServerPort**: `number`
 
@@ -91,7 +91,7 @@ SMTP server host port
 
 ___
 
-### smtpUsername
+### <a id="smtpusername" name="smtpusername"></a> smtpUsername
 
 • **smtpUsername**: `string`
 

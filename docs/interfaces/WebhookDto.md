@@ -24,7 +24,7 @@ Representation of a webhook for an inbox. The URL specified will be using by Mai
 
 ## Properties
 
-### basicAuth
+### <a id="basicauth" name="basicauth"></a> basicAuth
 
 • **basicAuth**: `boolean`
 
@@ -34,7 +34,7 @@ Does webhook expect basic authentication? If true it means you created this webh
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -44,7 +44,7 @@ When the webhook was created
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • `Optional` **eventName**: [`WebhookDtoEventNameEnum`](../enums/WebhookDtoEventNameEnum.md)
 
@@ -52,7 +52,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -62,7 +62,7 @@ ID of the Webhook
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
@@ -72,7 +72,7 @@ The inbox that the Webhook will be triggered by. If null then webhook triggered 
 
 ___
 
-### method
+### <a id="method" name="method"></a> method
 
 • **method**: [`WebhookDtoMethodEnum`](../enums/WebhookDtoMethodEnum.md)
 
@@ -82,7 +82,7 @@ HTTP method that your server endpoint must listen for
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -92,7 +92,7 @@ Name of the webhook
 
 ___
 
-### payloadJsonSchema
+### <a id="payloadjsonschema" name="payloadjsonschema"></a> payloadJsonSchema
 
 • **payloadJsonSchema**: `string`
 
@@ -102,7 +102,7 @@ Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPaylo
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -110,7 +110,7 @@ ___
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`
 
@@ -120,7 +120,7 @@ URL of your server that the webhook will be sent to. The schema of the JSON that
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

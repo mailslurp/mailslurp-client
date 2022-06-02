@@ -15,7 +15,7 @@ Inbox ID and email address pair
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -23,7 +23,7 @@ Inbox ID and email address pair
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 

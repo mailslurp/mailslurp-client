@@ -15,48 +15,48 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### delay
+### <a id="delay" name="delay"></a> delay
 
 • `Optional` **delay**: `number`
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### matchOptions
+### <a id="matchoptions" name="matchoptions"></a> matchOptions
 
 • **matchOptions**: [`MatchOptions`](MatchOptions.md)
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`WaitForMatchingFirstEmailSortEnum`](../enums/WaitForMatchingFirstEmailSortEnum.md)
 
 ___
 
-### timeout
+### <a id="timeout" name="timeout"></a> timeout
 
 • `Optional` **timeout**: `number`
 
 ___
 
-### unreadOnly
+### <a id="unreadonly" name="unreadonly"></a> unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

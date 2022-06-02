@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### replyToEmailOptions
+### <a id="replytoemailoptions" name="replytoemailoptions"></a> replyToEmailOptions
 
 • **replyToEmailOptions**: [`ReplyToEmailOptions`](ReplyToEmailOptions.md)

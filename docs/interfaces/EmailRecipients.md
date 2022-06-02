@@ -16,7 +16,7 @@ The `To`,`CC`,`BCC` recipients stored in object form with email address and name
 
 ## Properties
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: [`Recipient`](Recipient.md)[]
 
@@ -24,7 +24,7 @@ The `To`,`CC`,`BCC` recipients stored in object form with email address and name
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: [`Recipient`](Recipient.md)[]
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • `Optional` **to**: [`Recipient`](Recipient.md)[]
 

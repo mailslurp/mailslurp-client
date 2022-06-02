@@ -24,7 +24,7 @@ Domain plus verification records and status
 
 ## Properties
 
-### catchAllInboxId
+### <a id="catchallinboxid" name="catchallinboxid"></a> catchAllInboxId
 
 • `Optional` **catchAllInboxId**: `string`
 
@@ -34,7 +34,7 @@ The optional catch all inbox that will receive emails sent to the domain that ca
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### dkimTokens
+### <a id="dkimtokens" name="dkimtokens"></a> dkimTokens
 
 • **dkimTokens**: `string`[]
 
@@ -52,7 +52,7 @@ Unique token DKIM tokens
 
 ___
 
-### domain
+### <a id="domain" name="domain"></a> domain
 
 • **domain**: `string`
 
@@ -62,7 +62,7 @@ Custom domain name
 
 ___
 
-### domainNameRecords
+### <a id="domainnamerecords" name="domainnamerecords"></a> domainNameRecords
 
 • **domainNameRecords**: [`DomainNameRecord`](DomainNameRecord.md)[]
 
@@ -72,7 +72,7 @@ List of DNS domain name records (C, MX, TXT) etc that you must add to the DNS se
 
 ___
 
-### domainType
+### <a id="domaintype" name="domaintype"></a> domainType
 
 • **domainType**: [`DomainDtoDomainTypeEnum`](../enums/DomainDtoDomainTypeEnum.md)
 
@@ -82,7 +82,7 @@ Type of domain. Dictates type of inbox that can be created with domain. HTTP mea
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -90,7 +90,7 @@ ___
 
 ___
 
-### isVerified
+### <a id="isverified" name="isverified"></a> isVerified
 
 • **isVerified**: `boolean`
 
@@ -100,7 +100,7 @@ Whether domain has been verified or not. If the domain is not verified after 72 
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -108,7 +108,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 
@@ -116,7 +116,7 @@ ___
 
 ___
 
-### verificationToken
+### <a id="verificationtoken" name="verificationtoken"></a> verificationToken
 
 • **verificationToken**: `string`
 

@@ -62,7 +62,7 @@ export interface EmailPreview {
      * @type {boolean}
      * @memberof EmailPreview
      */
-    read?: boolean;
+    read: boolean;
     /**
      * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
      * @type {Array<string>}

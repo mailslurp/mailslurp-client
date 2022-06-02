@@ -9,12 +9,12 @@
 
 ## Properties
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • **groupId**: `string`
 
 ___
 
-### updateGroupContacts
+### <a id="updategroupcontacts" name="updategroupcontacts"></a> updateGroupContacts
 
 • **updateGroupContacts**: [`UpdateGroupContacts`](UpdateGroupContacts.md)

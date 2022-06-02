@@ -17,7 +17,7 @@ Record of inbox expiration
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -25,7 +25,7 @@ Record of inbox expiration
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

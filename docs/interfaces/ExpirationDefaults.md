@@ -18,7 +18,7 @@ Expiration defaults for your account
 
 ## Properties
 
-### canPermanentInbox
+### <a id="canpermanentinbox" name="canpermanentinbox"></a> canPermanentInbox
 
 • **canPermanentInbox**: `boolean`
 
@@ -26,7 +26,7 @@ Expiration defaults for your account
 
 ___
 
-### defaultExpirationMillis
+### <a id="defaultexpirationmillis" name="defaultexpirationmillis"></a> defaultExpirationMillis
 
 • `Optional` **defaultExpirationMillis**: `number`
 
@@ -34,7 +34,7 @@ ___
 
 ___
 
-### defaultExpiresAt
+### <a id="defaultexpiresat" name="defaultexpiresat"></a> defaultExpiresAt
 
 • `Optional` **defaultExpiresAt**: `Date`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### maxExpirationMillis
+### <a id="maxexpirationmillis" name="maxexpirationmillis"></a> maxExpirationMillis
 
 • `Optional` **maxExpirationMillis**: `number`
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### nextInboxAllowsPermanent
+### <a id="nextinboxallowspermanent" name="nextinboxallowspermanent"></a> nextInboxAllowsPermanent
 
 • **nextInboxAllowsPermanent**: `boolean`
 

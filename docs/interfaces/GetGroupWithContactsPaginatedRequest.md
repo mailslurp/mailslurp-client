@@ -13,36 +13,36 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • **groupId**: `string`
 
 ___
 
-### page
+### <a id="page" name="page"></a> page
 
 • `Optional` **page**: `number`
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • `Optional` **size**: `number`
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`GetGroupWithContactsPaginatedSortEnum`](../enums/GetGroupWithContactsPaginatedSortEnum.md)

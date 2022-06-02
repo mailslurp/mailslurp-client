@@ -18,7 +18,7 @@ Email template
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • **content**: `string`
 
@@ -28,7 +28,7 @@ Content of the template
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -38,7 +38,7 @@ Created at time
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -48,7 +48,7 @@ ID of template
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 
@@ -58,7 +58,7 @@ Template name
 
 ___
 
-### variables
+### <a id="variables" name="variables"></a> variables
 
 • **variables**: [`TemplateVariable`](TemplateVariable.md)[]
 

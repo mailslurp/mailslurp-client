@@ -15,7 +15,7 @@ Describes contacts attached to a contact group
 
 ## Properties
 
-### contacts
+### <a id="contacts" name="contacts"></a> contacts
 
 • **contacts**: [`ContactDto`](ContactDto.md)[]
 
@@ -23,7 +23,7 @@ Describes contacts attached to a contact group
 
 ___
 
-### group
+### <a id="group" name="group"></a> group
 
 • **group**: [`GroupDto`](GroupDto.md)
 

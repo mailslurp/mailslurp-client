@@ -4,33 +4,33 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ATTACHMENTS](CreateInboxForwarderOptionsFieldEnum.md#attachments)
 - [RECIPIENTS](CreateInboxForwarderOptionsFieldEnum.md#recipients)
 - [SENDER](CreateInboxForwarderOptionsFieldEnum.md#sender)
 - [SUBJECT](CreateInboxForwarderOptionsFieldEnum.md#subject)
 
-## Enumeration members
+## Enumeration Members
 
-### ATTACHMENTS
+### <a id="attachments" name="attachments"></a> ATTACHMENTS
 
-• **ATTACHMENTS** = `"ATTACHMENTS"`
-
-___
-
-### RECIPIENTS
-
-• **RECIPIENTS** = `"RECIPIENTS"`
+• **ATTACHMENTS**
 
 ___
 
-### SENDER
+### <a id="recipients" name="recipients"></a> RECIPIENTS
 
-• **SENDER** = `"SENDER"`
+• **RECIPIENTS**
 
 ___
 
-### SUBJECT
+### <a id="sender" name="sender"></a> SENDER
 
-• **SUBJECT** = `"SUBJECT"`
+• **SENDER**
+
+___
+
+### <a id="subject" name="subject"></a> SUBJECT
+
+• **SUBJECT**

@@ -94,7 +94,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new MailSlurp**(`opts`)
 
@@ -115,127 +115,127 @@ const mailslurp = new MailSlurp({ apiKey })
 
 ## Properties
 
-### aliasController
+### <a id="aliascontroller" name="aliascontroller"></a> aliasController
 
 • `Readonly` **aliasController**: [`AliasControllerApi`](AliasControllerApi.md)
 
 ___
 
-### attachmentController
+### <a id="attachmentcontroller" name="attachmentcontroller"></a> attachmentController
 
 • `Readonly` **attachmentController**: [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
 ___
 
-### bounceController
+### <a id="bouncecontroller" name="bouncecontroller"></a> bounceController
 
 • `Readonly` **bounceController**: [`BounceControllerApi`](BounceControllerApi.md)
 
 ___
 
-### bulkController
+### <a id="bulkcontroller" name="bulkcontroller"></a> bulkController
 
 • `Readonly` **bulkController**: [`BulkActionsControllerApi`](BulkActionsControllerApi.md)
 
 ___
 
-### commonController
+### <a id="commoncontroller" name="commoncontroller"></a> commonController
 
 • `Readonly` **commonController**: [`CommonActionsControllerApi`](CommonActionsControllerApi.md)
 
 ___
 
-### contactController
+### <a id="contactcontroller" name="contactcontroller"></a> contactController
 
 • `Readonly` **contactController**: [`ContactControllerApi`](ContactControllerApi.md)
 
 ___
 
-### domainController
+### <a id="domaincontroller" name="domaincontroller"></a> domainController
 
 • `Readonly` **domainController**: [`DomainControllerApi`](DomainControllerApi.md)
 
 ___
 
-### emailController
+### <a id="emailcontroller" name="emailcontroller"></a> emailController
 
 • `Readonly` **emailController**: [`EmailControllerApi`](EmailControllerApi.md)
 
 ___
 
-### emailVerificationController
+### <a id="emailverificationcontroller" name="emailverificationcontroller"></a> emailVerificationController
 
 • `Readonly` **emailVerificationController**: [`EmailVerificationControllerApi`](EmailVerificationControllerApi.md)
 
 ___
 
-### formController
+### <a id="formcontroller" name="formcontroller"></a> formController
 
 • `Readonly` **formController**: [`FormControllerApi`](FormControllerApi.md)
 
 ___
 
-### groupController
+### <a id="groupcontroller" name="groupcontroller"></a> groupController
 
 • `Readonly` **groupController**: [`GroupControllerApi`](GroupControllerApi.md)
 
 ___
 
-### inboxController
+### <a id="inboxcontroller" name="inboxcontroller"></a> inboxController
 
 • `Readonly` **inboxController**: [`InboxControllerApi`](InboxControllerApi.md)
 
 ___
 
-### inboxForwarderController
+### <a id="inboxforwardercontroller" name="inboxforwardercontroller"></a> inboxForwarderController
 
 • `Readonly` **inboxForwarderController**: [`InboxForwarderControllerApi`](InboxForwarderControllerApi.md)
 
 ___
 
-### inboxRulesetController
+### <a id="inboxrulesetcontroller" name="inboxrulesetcontroller"></a> inboxRulesetController
 
 • `Readonly` **inboxRulesetController**: [`InboxRulesetControllerApi`](InboxRulesetControllerApi.md)
 
 ___
 
-### mailServerController
+### <a id="mailservercontroller" name="mailservercontroller"></a> mailServerController
 
 • `Readonly` **mailServerController**: [`MailServerControllerApi`](MailServerControllerApi.md)
 
 ___
 
-### missedEmailController
+### <a id="missedemailcontroller" name="missedemailcontroller"></a> missedEmailController
 
 • `Readonly` **missedEmailController**: [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
 
 ___
 
-### templateController
+### <a id="templatecontroller" name="templatecontroller"></a> templateController
 
 • `Readonly` **templateController**: [`TemplateControllerApi`](TemplateControllerApi.md)
 
 ___
 
-### trackingController
+### <a id="trackingcontroller" name="trackingcontroller"></a> trackingController
 
 • `Readonly` **trackingController**: [`TrackingControllerApi`](TrackingControllerApi.md)
 
 ___
 
-### waitController
+### <a id="waitcontroller" name="waitcontroller"></a> waitController
 
 • `Readonly` **waitController**: [`WaitForControllerApi`](WaitForControllerApi.md)
 
 ___
 
-### webhookController
+### <a id="webhookcontroller" name="webhookcontroller"></a> webhookController
 
 • `Readonly` **webhookController**: [`WebhookControllerApi`](WebhookControllerApi.md)
 
 ## Methods
 
-### createInbox
+### <a id="createinbox" name="createinbox"></a> createInbox
 
 ▸ **createInbox**(`emailAddress?`, `name?`, `description?`, `expiresAt?`, `favourite?`, `tags?`, `teamAccess?`, `expiresIn?`, `useDomainPool?`, `inboxType?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -264,7 +264,7 @@ Create a new inbox and with a randomized email address to send and receive from.
 
 ___
 
-### createInboxWithOptions
+### <a id="createinboxwithoptions" name="createinboxwithoptions"></a> createInboxWithOptions
 
 ▸ **createInboxWithOptions**(`createInboxOptions`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -282,7 +282,7 @@ Create an inbox using CreateInboxDto options. More convenient that `createInbox`
 
 ___
 
-### deleteEmail
+### <a id="deleteemail" name="deleteemail"></a> deleteEmail
 
 ▸ **deleteEmail**(`emailId`): `Promise`<`void`\>
 
@@ -302,7 +302,7 @@ Deletes an email and removes it from the inbox. Deleted emails cannot be recover
 
 ___
 
-### deleteInbox
+### <a id="deleteinbox" name="deleteinbox"></a> deleteInbox
 
 ▸ **deleteInbox**(`inboxId`): `Promise`<`void`\>
 
@@ -322,7 +322,7 @@ Permanently delete an inbox and associated email address as well as all emails w
 
 ___
 
-### downloadAttachment
+### <a id="downloadattachment" name="downloadattachment"></a> downloadAttachment
 
 ▸ **downloadAttachment**(`emailId`, `attachmentId`): `Promise`<`String`\>
 
@@ -343,7 +343,7 @@ Returns the specified attachment for a given email as a byte stream (file downlo
 
 ___
 
-### emptyInbox
+### <a id="emptyinbox" name="emptyinbox"></a> emptyInbox
 
 ▸ **emptyInbox**(`inboxId`): `Promise`<`void`\>
 
@@ -363,7 +363,7 @@ Deletes all emails
 
 ___
 
-### getAllEmails
+### <a id="getallemails" name="getallemails"></a> getAllEmails
 
 ▸ **getAllEmails**(`page?`, `size?`, `inboxId?`, `sort?`, `unreadOnly?`, `searchFilter?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
@@ -388,7 +388,7 @@ By default returns all emails across all inboxes sorted by ascending created at 
 
 ___
 
-### getAllInboxes
+### <a id="getallinboxes" name="getallinboxes"></a> getAllInboxes
 
 ▸ **getAllInboxes**(`page?`, `size?`, `favourite?`, `search?`, `sort?`, `tag?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
 
@@ -413,7 +413,7 @@ List inboxes in paginated form. Allows for page index, page size, and sort direc
 
 ___
 
-### getAttachmentMetaData
+### <a id="getattachmentmetadata" name="getattachmentmetadata"></a> getAttachmentMetaData
 
 ▸ **getAttachmentMetaData**(`attachmentId`, `emailId`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
@@ -436,7 +436,7 @@ MetaData includes name, size (bytes) and content-type.
 
 ___
 
-### getEmail
+### <a id="getemail" name="getemail"></a> getEmail
 
 ▸ **getEmail**(`emailId`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -456,7 +456,7 @@ Returns an EmailDto object with headers and content. To retrieve the raw unparse
 
 ___
 
-### getEmails
+### <a id="getemails" name="getemails"></a> getEmails
 
 ▸ **getEmails**(`inboxId`, `args?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -477,7 +477,7 @@ List emails that an inbox has received. Only emails that are sent to the inbox's
 
 ___
 
-### getImapSmtpAccessDetails
+### <a id="getimapsmtpaccessdetails" name="getimapsmtpaccessdetails"></a> getImapSmtpAccessDetails
 
 ▸ **getImapSmtpAccessDetails**(`inboxId?`): `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
 
@@ -493,7 +493,7 @@ ___
 
 ___
 
-### getInbox
+### <a id="getinbox" name="getinbox"></a> getInbox
 
 ▸ **getInbox**(`inboxId`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -513,7 +513,7 @@ Returns an inbox's properties, including its email address and ID.
 
 ___
 
-### getInboxes
+### <a id="getinboxes" name="getinboxes"></a> getInboxes
 
 ▸ **getInboxes**(): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
@@ -527,7 +527,7 @@ List the inboxes you have created
 
 ___
 
-### getRawEmail
+### <a id="getrawemail" name="getrawemail"></a> getRawEmail
 
 ▸ **getRawEmail**(`emailId`): `Promise`<`string`\>
 
@@ -547,7 +547,7 @@ Returns a raw, unparsed, and unprocessed email. If your client has issues proces
 
 ___
 
-### sendEmail
+### <a id="sendemail" name="sendemail"></a> sendEmail
 
 ▸ **sendEmail**(`inboxId`, `sendEmailOptions`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -568,7 +568,7 @@ Send an email from an inbox's email address.  The request body should contain th
 
 ___
 
-### uploadAttachment
+### <a id="uploadattachment" name="uploadattachment"></a> uploadAttachment
 
 ▸ **uploadAttachment**(`options`): `Promise`<`String`[]\>
 
@@ -591,7 +591,7 @@ This means that attachments can easily be reused.
 
 ___
 
-### waitForEmailCount
+### <a id="waitforemailcount" name="waitforemailcount"></a> waitForEmailCount
 
 ▸ **waitForEmailCount**(`count?`, `inboxId?`, `timeout?`, `unreadOnly?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -614,7 +614,7 @@ If inbox contains count or more emails at time of request then return count wort
 
 ___
 
-### waitForLatestEmail
+### <a id="waitforlatestemail" name="waitforlatestemail"></a> waitForLatestEmail
 
 ▸ **waitForLatestEmail**(`inboxId?`, `timeout?`, `unreadOnly?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -636,7 +636,7 @@ Will return either the last received email or wait for an email to arrive and re
 
 ___
 
-### waitForMatchingEmails
+### <a id="waitformatchingemails" name="waitformatchingemails"></a> waitForMatchingEmails
 
 ▸ **waitForMatchingEmails**(`matchOptions`, `count?`, `inboxId?`, `timeout?`, `unreadOnly?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -660,7 +660,7 @@ Perform a search of emails in an inbox with the given patterns. If results match
 
 ___
 
-### waitForNthEmail
+### <a id="waitfornthemail" name="waitfornthemail"></a> waitForNthEmail
 
 ▸ **waitForNthEmail**(`inboxId`, `index`, `timeout?`, `unreadOnly?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 

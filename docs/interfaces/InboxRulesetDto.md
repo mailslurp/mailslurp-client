@@ -20,7 +20,7 @@ Rules for inbox
 
 ## Properties
 
-### action
+### <a id="action" name="action"></a> action
 
 • **action**: [`InboxRulesetDtoActionEnum`](../enums/InboxRulesetDtoActionEnum.md)
 
@@ -28,7 +28,7 @@ Rules for inbox
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -36,7 +36,7 @@ ___
 
 ___
 
-### handler
+### <a id="handler" name="handler"></a> handler
 
 • **handler**: [`EXCEPTION`](../enums/InboxRulesetDtoHandlerEnum.md#exception)
 
@@ -44,7 +44,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -52,7 +52,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -60,7 +60,7 @@ ___
 
 ___
 
-### scope
+### <a id="scope" name="scope"></a> scope
 
 • **scope**: [`InboxRulesetDtoScopeEnum`](../enums/InboxRulesetDtoScopeEnum.md)
 
@@ -68,7 +68,7 @@ ___
 
 ___
 
-### target
+### <a id="target" name="target"></a> target
 
 • **target**: `string`
 

@@ -21,7 +21,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new Configuration**(`configuration?`)
 
@@ -33,7 +33,7 @@
 
 ## Accessors
 
-### accessToken
+### <a id="accesstoken" name="accesstoken"></a> accessToken
 
 • `get` **accessToken**(): (`name?`: `string`, `scopes?`: `string`[]) => `string` \| `Promise`<`string`\>
 
@@ -56,7 +56,7 @@
 
 ___
 
-### apiKey
+### <a id="apikey" name="apikey"></a> apiKey
 
 • `get` **apiKey**(): (`name`: `string`) => `string`
 
@@ -78,7 +78,7 @@ ___
 
 ___
 
-### basePath
+### <a id="basepath" name="basepath"></a> basePath
 
 • `get` **basePath**(): `string`
 
@@ -88,7 +88,7 @@ ___
 
 ___
 
-### credentials
+### <a id="credentials" name="credentials"></a> credentials
 
 • `get` **credentials**(): `RequestCredentials`
 
@@ -98,7 +98,7 @@ ___
 
 ___
 
-### fetchApi
+### <a id="fetchapi" name="fetchapi"></a> fetchApi
 
 • `get` **fetchApi**(): (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
@@ -121,7 +121,7 @@ ___
 
 ___
 
-### headers
+### <a id="headers" name="headers"></a> headers
 
 • `get` **headers**(): [`HTTPHeaders`](../README.md#httpheaders)
 
@@ -131,7 +131,7 @@ ___
 
 ___
 
-### middleware
+### <a id="middleware" name="middleware"></a> middleware
 
 • `get` **middleware**(): [`Middleware`](../interfaces/Middleware.md)[]
 
@@ -141,7 +141,7 @@ ___
 
 ___
 
-### password
+### <a id="password" name="password"></a> password
 
 • `get` **password**(): `string`
 
@@ -151,7 +151,7 @@ ___
 
 ___
 
-### queryParamsStringify
+### <a id="queryparamsstringify" name="queryparamsstringify"></a> queryParamsStringify
 
 • `get` **queryParamsStringify**(): (`params`: [`HTTPQuery`](../README.md#httpquery)) => `string`
 
@@ -173,7 +173,7 @@ ___
 
 ___
 
-### username
+### <a id="username" name="username"></a> username
 
 • `get` **username**(): `string`
 

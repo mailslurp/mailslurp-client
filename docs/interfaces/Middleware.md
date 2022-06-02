@@ -9,7 +9,7 @@
 
 ## Methods
 
-### post
+### <a id="post" name="post"></a> post
 
 ▸ `Optional` **post**(`context`): `Promise`<`void` \| `Response`\>
 
@@ -25,7 +25,7 @@
 
 ___
 
-### pre
+### <a id="pre" name="pre"></a> pre
 
 ▸ `Optional` **pre**(`context`): `Promise`<`void` \| [`FetchParams`](FetchParams.md)\>
 

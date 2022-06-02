@@ -9,12 +9,12 @@
 
 ## Properties
 
-### init
+### <a id="init" name="init"></a> init
 
 • **init**: `RequestInit`
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`

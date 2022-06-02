@@ -8,6 +8,6 @@
 
 ## Properties
 
-### testNewInboxRulesetOptions
+### <a id="testnewinboxrulesetoptions" name="testnewinboxrulesetoptions"></a> testNewInboxRulesetOptions
 
 • **testNewInboxRulesetOptions**: [`TestNewInboxRulesetOptions`](TestNewInboxRulesetOptions.md)

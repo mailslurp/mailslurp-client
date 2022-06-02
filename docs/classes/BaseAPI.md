@@ -75,7 +75,7 @@ This is the base class for all generated API classes.
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new BaseAPI**(`configuration?`)
 
@@ -87,21 +87,21 @@ This is the base class for all generated API classes.
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
 ___
 
-### middleware
+### <a id="middleware" name="middleware"></a> middleware
 
 • `Private` **middleware**: [`Middleware`](../interfaces/Middleware.md)[]
 
 ## Methods
 
-### clone
+### <a id="clone" name="clone"></a> clone
 
-▸ `Private` **clone**<`T`\>(): `T`
+▸ `Private` **clone**<`T`\>(`this`): `T`
 
 Create a shallow clone of `this` by constructing a new instance
 and then shallow cloning data members.
@@ -112,13 +112,19 @@ and then shallow cloning data members.
 | :------ | :------ |
 | `T` | extends [`BaseAPI`](BaseAPI.md)<`T`\> |
 
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | `T` |
+
 #### Returns
 
 `T`
 
 ___
 
-### createFetchParams
+### <a id="createfetchparams" name="createfetchparams"></a> createFetchParams
 
 ▸ `Private` **createFetchParams**(`context`, `initOverrides?`): `Object`
 
@@ -135,7 +141,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `init` | `Object` |
+| `init` | { `body`: `any` ; `cache?`: `RequestCache` ; `credentials`: `RequestCredentials` ; `headers`: [`HTTPHeaders`](../README.md#httpheaders) \| `HeadersInit` = headers; `integrity?`: `string` ; `keepalive?`: `boolean` ; `method`: `string` = context.method; `mode?`: `RequestMode` ; `redirect?`: `RequestRedirect` ; `referrer?`: `string` ; `referrerPolicy?`: `ReferrerPolicy` ; `signal?`: `AbortSignal` ; `window?`: `any`  } |
 | `init.body` | `any` |
 | `init.cache?` | `RequestCache` |
 | `init.credentials` | `RequestCredentials` |
@@ -153,7 +159,7 @@ ___
 
 ___
 
-### fetchApi
+### <a id="fetchapi" name="fetchapi"></a> fetchApi
 
 ▸ `Private` **fetchApi**(`url`, `init`): `Promise`<`Response`\>
 
@@ -170,7 +176,7 @@ ___
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -187,9 +193,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -201,6 +207,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -209,9 +216,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -223,6 +230,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -231,9 +239,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -245,6 +253,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

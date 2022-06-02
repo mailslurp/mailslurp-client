@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [CONTAIN](MatchOptionShouldEnum.md#contain)
 - [EQUAL](MatchOptionShouldEnum.md#equal)
 
-## Enumeration members
+## Enumeration Members
 
-### CONTAIN
+### <a id="contain" name="contain"></a> CONTAIN
 
-• **CONTAIN** = `"CONTAIN"`
+• **CONTAIN**
 
 ___
 
-### EQUAL
+### <a id="equal" name="equal"></a> EQUAL
 
-• **EQUAL** = `"EQUAL"`
+• **EQUAL**

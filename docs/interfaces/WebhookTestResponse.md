@@ -15,7 +15,7 @@ Response from webhook test request
 
 ## Properties
 
-### message
+### <a id="message" name="message"></a> message
 
 • `Optional` **message**: `string`
 
@@ -23,7 +23,7 @@ Response from webhook test request
 
 ___
 
-### statusCode
+### <a id="statuscode" name="statuscode"></a> statusCode
 
 • `Optional` **statusCode**: `number`
 

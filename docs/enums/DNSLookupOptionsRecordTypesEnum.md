@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [A](DNSLookupOptionsRecordTypesEnum.md#a)
 - [A6](DNSLookupOptionsRecordTypesEnum.md#a6)
@@ -60,7 +60,7 @@
 - [NINFO](DNSLookupOptionsRecordTypesEnum.md#ninfo)
 - [NS](DNSLookupOptionsRecordTypesEnum.md#ns)
 - [NSAP](DNSLookupOptionsRecordTypesEnum.md#nsap)
-- [NSAP\_PTR](DNSLookupOptionsRecordTypesEnum.md#nsap-ptr)
+- [NSAP\_PTR](DNSLookupOptionsRecordTypesEnum.md#nsap_ptr)
 - [NSEC](DNSLookupOptionsRecordTypesEnum.md#nsec)
 - [NSEC3](DNSLookupOptionsRecordTypesEnum.md#nsec3)
 - [NSEC3PARAM](DNSLookupOptionsRecordTypesEnum.md#nsec3param)
@@ -96,536 +96,536 @@
 - [X25](DNSLookupOptionsRecordTypesEnum.md#x25)
 - [ZONEMD](DNSLookupOptionsRecordTypesEnum.md#zonemd)
 
-## Enumeration members
+## Enumeration Members
 
-### A
+### <a id="a" name="a"></a> A
 
-• **A** = `"A"`
+• **A**
 
 ___
 
-### A6
+### <a id="a6" name="a6"></a> A6
 
-• **A6** = `"A6"`
+• **A6**
 
 ___
 
-### AAAA
+### <a id="aaaa" name="aaaa"></a> AAAA
 
-• **AAAA** = `"AAAA"`
+• **AAAA**
 
 ___
 
-### AFSDB
+### <a id="afsdb" name="afsdb"></a> AFSDB
 
-• **AFSDB** = `"AFSDB"`
+• **AFSDB**
 
 ___
 
-### AMTRELAY
+### <a id="amtrelay" name="amtrelay"></a> AMTRELAY
 
-• **AMTRELAY** = `"AMTRELAY"`
+• **AMTRELAY**
 
 ___
 
-### ANY
+### <a id="any" name="any"></a> ANY
 
-• **ANY** = `"ANY"`
+• **ANY**
 
 ___
 
-### APL
+### <a id="apl" name="apl"></a> APL
 
-• **APL** = `"APL"`
+• **APL**
 
 ___
 
-### ATMA
+### <a id="atma" name="atma"></a> ATMA
 
-• **ATMA** = `"ATMA"`
+• **ATMA**
 
 ___
 
-### AVC
+### <a id="avc" name="avc"></a> AVC
 
-• **AVC** = `"AVC"`
+• **AVC**
 
 ___
 
-### AXFR
+### <a id="axfr" name="axfr"></a> AXFR
 
-• **AXFR** = `"AXFR"`
+• **AXFR**
 
 ___
 
-### CAA
+### <a id="caa" name="caa"></a> CAA
 
-• **CAA** = `"CAA"`
+• **CAA**
 
 ___
 
-### CDNSKEY
+### <a id="cdnskey" name="cdnskey"></a> CDNSKEY
 
-• **CDNSKEY** = `"CDNSKEY"`
+• **CDNSKEY**
 
 ___
 
-### CDS
+### <a id="cds" name="cds"></a> CDS
 
-• **CDS** = `"CDS"`
+• **CDS**
 
 ___
 
-### CERT
+### <a id="cert" name="cert"></a> CERT
 
-• **CERT** = `"CERT"`
+• **CERT**
 
 ___
 
-### CNAME
+### <a id="cname" name="cname"></a> CNAME
 
-• **CNAME** = `"CNAME"`
+• **CNAME**
 
 ___
 
-### CSYNC
+### <a id="csync" name="csync"></a> CSYNC
 
-• **CSYNC** = `"CSYNC"`
+• **CSYNC**
 
 ___
 
-### DHCID
+### <a id="dhcid" name="dhcid"></a> DHCID
 
-• **DHCID** = `"DHCID"`
+• **DHCID**
 
 ___
 
-### DLV
+### <a id="dlv" name="dlv"></a> DLV
 
-• **DLV** = `"DLV"`
+• **DLV**
 
 ___
 
-### DNAME
+### <a id="dname" name="dname"></a> DNAME
 
-• **DNAME** = `"DNAME"`
+• **DNAME**
 
 ___
 
-### DNSKEY
+### <a id="dnskey" name="dnskey"></a> DNSKEY
 
-• **DNSKEY** = `"DNSKEY"`
+• **DNSKEY**
 
 ___
 
-### DOA
+### <a id="doa" name="doa"></a> DOA
 
-• **DOA** = `"DOA"`
+• **DOA**
 
 ___
 
-### DS
+### <a id="ds" name="ds"></a> DS
 
-• **DS** = `"DS"`
+• **DS**
 
 ___
 
-### EID
+### <a id="eid" name="eid"></a> EID
 
-• **EID** = `"EID"`
+• **EID**
 
 ___
 
-### EUI48
+### <a id="eui48" name="eui48"></a> EUI48
 
-• **EUI48** = `"EUI48"`
+• **EUI48**
 
 ___
 
-### EUI64
+### <a id="eui64" name="eui64"></a> EUI64
 
-• **EUI64** = `"EUI64"`
+• **EUI64**
 
 ___
 
-### GID
+### <a id="gid" name="gid"></a> GID
 
-• **GID** = `"GID"`
+• **GID**
 
 ___
 
-### GPOS
+### <a id="gpos" name="gpos"></a> GPOS
 
-• **GPOS** = `"GPOS"`
+• **GPOS**
 
 ___
 
-### HINFO
+### <a id="hinfo" name="hinfo"></a> HINFO
 
-• **HINFO** = `"HINFO"`
+• **HINFO**
 
 ___
 
-### HIP
+### <a id="hip" name="hip"></a> HIP
 
-• **HIP** = `"HIP"`
+• **HIP**
 
 ___
 
-### HTTPS
+### <a id="https" name="https"></a> HTTPS
 
-• **HTTPS** = `"HTTPS"`
+• **HTTPS**
 
 ___
 
-### IPSECKEY
+### <a id="ipseckey" name="ipseckey"></a> IPSECKEY
 
-• **IPSECKEY** = `"IPSECKEY"`
+• **IPSECKEY**
 
 ___
 
-### ISDN
+### <a id="isdn" name="isdn"></a> ISDN
 
-• **ISDN** = `"ISDN"`
+• **ISDN**
 
 ___
 
-### IXFR
+### <a id="ixfr" name="ixfr"></a> IXFR
 
-• **IXFR** = `"IXFR"`
+• **IXFR**
 
 ___
 
-### KEY
+### <a id="key" name="key"></a> KEY
 
-• **KEY** = `"KEY"`
+• **KEY**
 
 ___
 
-### KX
+### <a id="kx" name="kx"></a> KX
 
-• **KX** = `"KX"`
+• **KX**
 
 ___
 
-### L32
+### <a id="l32" name="l32"></a> L32
 
-• **L32** = `"L32"`
+• **L32**
 
 ___
 
-### L64
+### <a id="l64" name="l64"></a> L64
 
-• **L64** = `"L64"`
+• **L64**
 
 ___
 
-### LOC
+### <a id="loc" name="loc"></a> LOC
 
-• **LOC** = `"LOC"`
+• **LOC**
 
 ___
 
-### LP
+### <a id="lp" name="lp"></a> LP
 
-• **LP** = `"LP"`
+• **LP**
 
 ___
 
-### MAILA
+### <a id="maila" name="maila"></a> MAILA
 
-• **MAILA** = `"MAILA"`
+• **MAILA**
 
 ___
 
-### MAILB
+### <a id="mailb" name="mailb"></a> MAILB
 
-• **MAILB** = `"MAILB"`
+• **MAILB**
 
 ___
 
-### MB
+### <a id="mb" name="mb"></a> MB
 
-• **MB** = `"MB"`
+• **MB**
 
 ___
 
-### MD
+### <a id="md" name="md"></a> MD
 
-• **MD** = `"MD"`
+• **MD**
 
 ___
 
-### MF
+### <a id="mf" name="mf"></a> MF
 
-• **MF** = `"MF"`
+• **MF**
 
 ___
 
-### MG
+### <a id="mg" name="mg"></a> MG
 
-• **MG** = `"MG"`
+• **MG**
 
 ___
 
-### MINFO
+### <a id="minfo" name="minfo"></a> MINFO
 
-• **MINFO** = `"MINFO"`
+• **MINFO**
 
 ___
 
-### MR
+### <a id="mr" name="mr"></a> MR
 
-• **MR** = `"MR"`
+• **MR**
 
 ___
 
-### MX
+### <a id="mx" name="mx"></a> MX
 
-• **MX** = `"MX"`
+• **MX**
 
 ___
 
-### NAPTR
+### <a id="naptr" name="naptr"></a> NAPTR
 
-• **NAPTR** = `"NAPTR"`
+• **NAPTR**
 
 ___
 
-### NID
+### <a id="nid" name="nid"></a> NID
 
-• **NID** = `"NID"`
+• **NID**
 
 ___
 
-### NIMLOC
+### <a id="nimloc" name="nimloc"></a> NIMLOC
 
-• **NIMLOC** = `"NIMLOC"`
+• **NIMLOC**
 
 ___
 
-### NINFO
+### <a id="ninfo" name="ninfo"></a> NINFO
 
-• **NINFO** = `"NINFO"`
+• **NINFO**
 
 ___
 
-### NS
+### <a id="ns" name="ns"></a> NS
 
-• **NS** = `"NS"`
+• **NS**
 
 ___
 
-### NSAP
+### <a id="nsap" name="nsap"></a> NSAP
 
-• **NSAP** = `"NSAP"`
+• **NSAP**
 
 ___
 
-### NSAP\_PTR
+### <a id="nsap_ptr" name="nsap_ptr"></a> NSAP\_PTR
 
-• **NSAP\_PTR** = `"NSAP_PTR"`
+• **NSAP\_PTR**
 
 ___
 
-### NSEC
+### <a id="nsec" name="nsec"></a> NSEC
 
-• **NSEC** = `"NSEC"`
+• **NSEC**
 
 ___
 
-### NSEC3
+### <a id="nsec3" name="nsec3"></a> NSEC3
 
-• **NSEC3** = `"NSEC3"`
+• **NSEC3**
 
 ___
 
-### NSEC3PARAM
+### <a id="nsec3param" name="nsec3param"></a> NSEC3PARAM
 
-• **NSEC3PARAM** = `"NSEC3PARAM"`
+• **NSEC3PARAM**
 
 ___
 
-### NULL
+### <a id="null" name="null"></a> NULL
 
-• **NULL** = `"NULL"`
+• **NULL**
 
 ___
 
-### NXT
+### <a id="nxt" name="nxt"></a> NXT
 
-• **NXT** = `"NXT"`
+• **NXT**
 
 ___
 
-### OPENPGPKEY
+### <a id="openpgpkey" name="openpgpkey"></a> OPENPGPKEY
 
-• **OPENPGPKEY** = `"OPENPGPKEY"`
+• **OPENPGPKEY**
 
 ___
 
-### OPT
+### <a id="opt" name="opt"></a> OPT
 
-• **OPT** = `"OPT"`
+• **OPT**
 
 ___
 
-### PTR
+### <a id="ptr" name="ptr"></a> PTR
 
-• **PTR** = `"PTR"`
+• **PTR**
 
 ___
 
-### PX
+### <a id="px" name="px"></a> PX
 
-• **PX** = `"PX"`
+• **PX**
 
 ___
 
-### RKEY
+### <a id="rkey" name="rkey"></a> RKEY
 
-• **RKEY** = `"RKEY"`
+• **RKEY**
 
 ___
 
-### RP
+### <a id="rp" name="rp"></a> RP
 
-• **RP** = `"RP"`
+• **RP**
 
 ___
 
-### RRSIG
+### <a id="rrsig" name="rrsig"></a> RRSIG
 
-• **RRSIG** = `"RRSIG"`
+• **RRSIG**
 
 ___
 
-### RT
+### <a id="rt" name="rt"></a> RT
 
-• **RT** = `"RT"`
+• **RT**
 
 ___
 
-### SIG
+### <a id="sig" name="sig"></a> SIG
 
-• **SIG** = `"SIG"`
+• **SIG**
 
 ___
 
-### SINK
+### <a id="sink" name="sink"></a> SINK
 
-• **SINK** = `"SINK"`
+• **SINK**
 
 ___
 
-### SMIMEA
+### <a id="smimea" name="smimea"></a> SMIMEA
 
-• **SMIMEA** = `"SMIMEA"`
+• **SMIMEA**
 
 ___
 
-### SOA
+### <a id="soa" name="soa"></a> SOA
 
-• **SOA** = `"SOA"`
+• **SOA**
 
 ___
 
-### SPF
+### <a id="spf" name="spf"></a> SPF
 
-• **SPF** = `"SPF"`
+• **SPF**
 
 ___
 
-### SRV
+### <a id="srv" name="srv"></a> SRV
 
-• **SRV** = `"SRV"`
+• **SRV**
 
 ___
 
-### SSHFP
+### <a id="sshfp" name="sshfp"></a> SSHFP
 
-• **SSHFP** = `"SSHFP"`
+• **SSHFP**
 
 ___
 
-### SVCB
+### <a id="svcb" name="svcb"></a> SVCB
 
-• **SVCB** = `"SVCB"`
+• **SVCB**
 
 ___
 
-### TA
+### <a id="ta" name="ta"></a> TA
 
-• **TA** = `"TA"`
+• **TA**
 
 ___
 
-### TALINK
+### <a id="talink" name="talink"></a> TALINK
 
-• **TALINK** = `"TALINK"`
+• **TALINK**
 
 ___
 
-### TKEY
+### <a id="tkey" name="tkey"></a> TKEY
 
-• **TKEY** = `"TKEY"`
+• **TKEY**
 
 ___
 
-### TLSA
+### <a id="tlsa" name="tlsa"></a> TLSA
 
-• **TLSA** = `"TLSA"`
+• **TLSA**
 
 ___
 
-### TSIG
+### <a id="tsig" name="tsig"></a> TSIG
 
-• **TSIG** = `"TSIG"`
+• **TSIG**
 
 ___
 
-### TXT
+### <a id="txt" name="txt"></a> TXT
 
-• **TXT** = `"TXT"`
+• **TXT**
 
 ___
 
-### UID
+### <a id="uid" name="uid"></a> UID
 
-• **UID** = `"UID"`
+• **UID**
 
 ___
 
-### UINFO
+### <a id="uinfo" name="uinfo"></a> UINFO
 
-• **UINFO** = `"UINFO"`
+• **UINFO**
 
 ___
 
-### UNSPEC
+### <a id="unspec" name="unspec"></a> UNSPEC
 
-• **UNSPEC** = `"UNSPEC"`
+• **UNSPEC**
 
 ___
 
-### URI
+### <a id="uri" name="uri"></a> URI
 
-• **URI** = `"URI"`
+• **URI**
 
 ___
 
-### WKS
+### <a id="wks" name="wks"></a> WKS
 
-• **WKS** = `"WKS"`
+• **WKS**
 
 ___
 
-### X25
+### <a id="x25" name="x25"></a> X25
 
-• **X25** = `"X25"`
+• **X25**
 
 ___
 
-### ZONEMD
+### <a id="zonemd" name="zonemd"></a> ZONEMD
 
-• **ZONEMD** = `"ZONEMD"`
+• **ZONEMD**

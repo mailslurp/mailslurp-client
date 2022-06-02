@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### sendEmailOptions
+### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)

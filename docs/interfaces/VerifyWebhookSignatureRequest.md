@@ -8,6 +8,6 @@
 
 ## Properties
 
-### verifyWebhookSignatureOptions
+### <a id="verifywebhooksignatureoptions" name="verifywebhooksignatureoptions"></a> verifyWebhookSignatureOptions
 
 • **verifyWebhookSignatureOptions**: [`VerifyWebhookSignatureOptions`](VerifyWebhookSignatureOptions.md)

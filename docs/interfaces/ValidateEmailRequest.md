@@ -8,6 +8,6 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`

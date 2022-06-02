@@ -44,9 +44,7 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
         teamAccess: json['teamAccess'],
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         readOnly: json['readOnly'],
-        virtualInbox: !(0, runtime_1.exists)(json, 'virtualInbox')
-            ? undefined
-            : json['virtualInbox'],
+        virtualInbox: json['virtualInbox'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;

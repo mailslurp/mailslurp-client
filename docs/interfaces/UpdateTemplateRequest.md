@@ -9,12 +9,12 @@
 
 ## Properties
 
-### createTemplateOptions
+### <a id="createtemplateoptions" name="createtemplateoptions"></a> createTemplateOptions
 
 • **createTemplateOptions**: [`CreateTemplateOptions`](CreateTemplateOptions.md)
 
 ___
 
-### templateId
+### <a id="templateid" name="templateid"></a> templateId
 
 • **templateId**: `string`

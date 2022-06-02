@@ -8,6 +8,6 @@
 
 ## Properties
 
-### count
+### <a id="count" name="count"></a> count
 
 • **count**: `number`

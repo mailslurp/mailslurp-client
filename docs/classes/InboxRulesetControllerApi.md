@@ -41,7 +41,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new InboxRulesetControllerApi**(`configuration?`)
 
@@ -57,7 +57,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -67,7 +67,7 @@
 
 ## Methods
 
-### createNewInboxRuleset
+### <a id="createnewinboxruleset" name="createnewinboxruleset"></a> createNewInboxRuleset
 
 ▸ **createNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
@@ -87,7 +87,7 @@ Create an inbox ruleset
 
 ___
 
-### createNewInboxRulesetRaw
+### <a id="createnewinboxrulesetraw" name="createnewinboxrulesetraw"></a> createNewInboxRulesetRaw
 
 ▸ **createNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
@@ -107,7 +107,7 @@ Create an inbox ruleset
 
 ___
 
-### deleteInboxRuleset
+### <a id="deleteinboxruleset" name="deleteinboxruleset"></a> deleteInboxRuleset
 
 ▸ **deleteInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -127,7 +127,7 @@ Delete an inbox ruleset
 
 ___
 
-### deleteInboxRulesetRaw
+### <a id="deleteinboxrulesetraw" name="deleteinboxrulesetraw"></a> deleteInboxRulesetRaw
 
 ▸ **deleteInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -147,7 +147,7 @@ Delete an inbox ruleset
 
 ___
 
-### deleteInboxRulesets
+### <a id="deleteinboxrulesets" name="deleteinboxrulesets"></a> deleteInboxRulesets
 
 ▸ **deleteInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -167,7 +167,7 @@ Delete inbox rulesets
 
 ___
 
-### deleteInboxRulesetsRaw
+### <a id="deleteinboxrulesetsraw" name="deleteinboxrulesetsraw"></a> deleteInboxRulesetsRaw
 
 ▸ **deleteInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -187,7 +187,7 @@ Delete inbox rulesets
 
 ___
 
-### getInboxRuleset
+### <a id="getinboxruleset" name="getinboxruleset"></a> getInboxRuleset
 
 ▸ **getInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
@@ -207,7 +207,7 @@ Get an inbox ruleset
 
 ___
 
-### getInboxRulesetRaw
+### <a id="getinboxrulesetraw" name="getinboxrulesetraw"></a> getInboxRulesetRaw
 
 ▸ **getInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
@@ -227,7 +227,7 @@ Get an inbox ruleset
 
 ___
 
-### getInboxRulesets
+### <a id="getinboxrulesets" name="getinboxrulesets"></a> getInboxRulesets
 
 ▸ **getInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
@@ -247,7 +247,7 @@ List inbox rulesets
 
 ___
 
-### getInboxRulesetsRaw
+### <a id="getinboxrulesetsraw" name="getinboxrulesetsraw"></a> getInboxRulesetsRaw
 
 ▸ **getInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
 
@@ -267,7 +267,7 @@ List inbox rulesets
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -288,7 +288,7 @@ ___
 
 ___
 
-### testInboxRuleset
+### <a id="testinboxruleset" name="testinboxruleset"></a> testInboxRuleset
 
 ▸ **testInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -308,7 +308,7 @@ Test an inbox ruleset
 
 ___
 
-### testInboxRulesetRaw
+### <a id="testinboxrulesetraw" name="testinboxrulesetraw"></a> testInboxRulesetRaw
 
 ▸ **testInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -328,7 +328,7 @@ Test an inbox ruleset
 
 ___
 
-### testInboxRulesetsForInbox
+### <a id="testinboxrulesetsforinbox" name="testinboxrulesetsforinbox"></a> testInboxRulesetsForInbox
 
 ▸ **testInboxRulesetsForInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -348,7 +348,7 @@ Test inbox rulesets for inbox
 
 ___
 
-### testInboxRulesetsForInboxRaw
+### <a id="testinboxrulesetsforinboxraw" name="testinboxrulesetsforinboxraw"></a> testInboxRulesetsForInboxRaw
 
 ▸ **testInboxRulesetsForInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -368,7 +368,7 @@ Test inbox rulesets for inbox
 
 ___
 
-### testNewInboxRuleset
+### <a id="testnewinboxruleset" name="testnewinboxruleset"></a> testNewInboxRuleset
 
 ▸ **testNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -388,7 +388,7 @@ Test new inbox ruleset
 
 ___
 
-### testNewInboxRulesetRaw
+### <a id="testnewinboxrulesetraw" name="testnewinboxrulesetraw"></a> testNewInboxRulesetRaw
 
 ▸ **testNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -408,9 +408,9 @@ Test new inbox ruleset
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -422,6 +422,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -434,9 +435,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -448,6 +449,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -460,9 +462,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -474,6 +476,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

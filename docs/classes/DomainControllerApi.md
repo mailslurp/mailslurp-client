@@ -37,7 +37,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new DomainControllerApi**(`configuration?`)
 
@@ -53,7 +53,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -63,7 +63,7 @@
 
 ## Methods
 
-### addDomainWildcardCatchAll
+### <a id="adddomainwildcardcatchall" name="adddomainwildcardcatchall"></a> addDomainWildcardCatchAll
 
 ▸ **addDomainWildcardCatchAll**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -83,7 +83,7 @@ Add catch all wild card inbox to domain
 
 ___
 
-### addDomainWildcardCatchAllRaw
+### <a id="adddomainwildcardcatchallraw" name="adddomainwildcardcatchallraw"></a> addDomainWildcardCatchAllRaw
 
 ▸ **addDomainWildcardCatchAllRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -103,7 +103,7 @@ Add catch all wild card inbox to domain
 
 ___
 
-### createDomain
+### <a id="createdomain" name="createdomain"></a> createDomain
 
 ▸ **createDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -123,7 +123,7 @@ Create Domain
 
 ___
 
-### createDomainRaw
+### <a id="createdomainraw" name="createdomainraw"></a> createDomainRaw
 
 ▸ **createDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -143,7 +143,7 @@ Create Domain
 
 ___
 
-### deleteDomain
+### <a id="deletedomain" name="deletedomain"></a> deleteDomain
 
 ▸ **deleteDomain**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -163,7 +163,7 @@ Delete a domain
 
 ___
 
-### deleteDomainRaw
+### <a id="deletedomainraw" name="deletedomainraw"></a> deleteDomainRaw
 
 ▸ **deleteDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -183,7 +183,7 @@ Delete a domain
 
 ___
 
-### getDomain
+### <a id="getdomain" name="getdomain"></a> getDomain
 
 ▸ **getDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -203,7 +203,7 @@ Get a domain
 
 ___
 
-### getDomainRaw
+### <a id="getdomainraw" name="getdomainraw"></a> getDomainRaw
 
 ▸ **getDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -223,7 +223,7 @@ Get a domain
 
 ___
 
-### getDomains
+### <a id="getdomains" name="getdomains"></a> getDomains
 
 ▸ **getDomains**(`initOverrides?`): `Promise`<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>
 
@@ -242,7 +242,7 @@ Get domains
 
 ___
 
-### getDomainsRaw
+### <a id="getdomainsraw" name="getdomainsraw"></a> getDomainsRaw
 
 ▸ **getDomainsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>\>
 
@@ -261,7 +261,7 @@ Get domains
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -282,7 +282,7 @@ ___
 
 ___
 
-### updateDomain
+### <a id="updatedomain" name="updatedomain"></a> updateDomain
 
 ▸ **updateDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -302,7 +302,7 @@ Update a domain
 
 ___
 
-### updateDomainRaw
+### <a id="updatedomainraw" name="updatedomainraw"></a> updateDomainRaw
 
 ▸ **updateDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -322,9 +322,9 @@ Update a domain
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -336,6 +336,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -348,9 +349,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -362,6 +363,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -374,9 +376,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -388,6 +390,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

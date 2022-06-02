@@ -24,7 +24,7 @@ A thread is a message thread created for a message received by an alias
 
 ## Properties
 
-### aliasId
+### <a id="aliasid" name="aliasid"></a> aliasId
 
 • **aliasId**: `string`
 
@@ -34,7 +34,7 @@ Alias ID
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -44,7 +44,7 @@ BCC recipients
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -54,7 +54,7 @@ CC recipients
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -64,7 +64,7 @@ Created at DateTime
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -74,7 +74,7 @@ ID of email thread
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -84,7 +84,7 @@ Inbox ID
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -94,7 +94,7 @@ Name of thread
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -104,7 +104,7 @@ Thread subject
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 
@@ -114,7 +114,7 @@ To recipients
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -124,7 +124,7 @@ Updated at DateTime
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

@@ -17,7 +17,7 @@ Result of webhook test request
 
 ## Properties
 
-### headers
+### <a id="headers" name="headers"></a> headers
 
 • **headers**: `Object`
 
@@ -25,11 +25,11 @@ Result of webhook test request
 
 #### Index signature
 
-▪ [key: `string`]: %60string%60
+▪ [key: `string`]: `string`
 
 ___
 
-### method
+### <a id="method" name="method"></a> method
 
 • **method**: [`WebhookTestRequestMethodEnum`](../enums/WebhookTestRequestMethodEnum.md)
 
@@ -37,7 +37,7 @@ ___
 
 ___
 
-### payload
+### <a id="payload" name="payload"></a> payload
 
 • `Optional` **payload**: `string`
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`
 

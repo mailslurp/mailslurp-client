@@ -35,7 +35,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new BounceControllerApi**(`configuration?`)
 
@@ -51,7 +51,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -61,7 +61,7 @@
 
 ## Methods
 
-### filterBouncedRecipient
+### <a id="filterbouncedrecipient" name="filterbouncedrecipient"></a> filterBouncedRecipient
 
 ▸ **filterBouncedRecipient**(`requestParameters`, `initOverrides?`): `Promise`<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>
 
@@ -81,7 +81,7 @@ Filter a list of email recipients and remove those who have bounced
 
 ___
 
-### filterBouncedRecipientRaw
+### <a id="filterbouncedrecipientraw" name="filterbouncedrecipientraw"></a> filterBouncedRecipientRaw
 
 ▸ **filterBouncedRecipientRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>\>
 
@@ -101,7 +101,7 @@ Filter a list of email recipients and remove those who have bounced
 
 ___
 
-### getBouncedEmail
+### <a id="getbouncedemail" name="getbouncedemail"></a> getBouncedEmail
 
 ▸ **getBouncedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>
 
@@ -121,7 +121,7 @@ Get a bounced email.
 
 ___
 
-### getBouncedEmailRaw
+### <a id="getbouncedemailraw" name="getbouncedemailraw"></a> getBouncedEmailRaw
 
 ▸ **getBouncedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>\>
 
@@ -141,7 +141,7 @@ Get a bounced email.
 
 ___
 
-### getBouncedEmails
+### <a id="getbouncedemails" name="getbouncedemails"></a> getBouncedEmails
 
 ▸ **getBouncedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
 
@@ -161,7 +161,7 @@ Get paginated list of bounced emails.
 
 ___
 
-### getBouncedEmailsRaw
+### <a id="getbouncedemailsraw" name="getbouncedemailsraw"></a> getBouncedEmailsRaw
 
 ▸ **getBouncedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>\>
 
@@ -181,7 +181,7 @@ Get paginated list of bounced emails.
 
 ___
 
-### getBouncedRecipient
+### <a id="getbouncedrecipient" name="getbouncedrecipient"></a> getBouncedRecipient
 
 ▸ **getBouncedRecipient**(`requestParameters`, `initOverrides?`): `Promise`<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>
 
@@ -201,7 +201,7 @@ Get a bounced email.
 
 ___
 
-### getBouncedRecipientRaw
+### <a id="getbouncedrecipientraw" name="getbouncedrecipientraw"></a> getBouncedRecipientRaw
 
 ▸ **getBouncedRecipientRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>\>
 
@@ -221,7 +221,7 @@ Get a bounced email.
 
 ___
 
-### getBouncedRecipients
+### <a id="getbouncedrecipients" name="getbouncedrecipients"></a> getBouncedRecipients
 
 ▸ **getBouncedRecipients**(`requestParameters`, `initOverrides?`): `Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
 
@@ -241,7 +241,7 @@ Get paginated list of bounced recipients.
 
 ___
 
-### getBouncedRecipientsRaw
+### <a id="getbouncedrecipientsraw" name="getbouncedrecipientsraw"></a> getBouncedRecipientsRaw
 
 ▸ **getBouncedRecipientsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>\>
 
@@ -261,7 +261,7 @@ Get paginated list of bounced recipients.
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -282,9 +282,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -296,6 +296,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -308,9 +309,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -322,6 +323,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -334,9 +336,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -348,6 +350,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

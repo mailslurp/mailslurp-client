@@ -15,13 +15,13 @@
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • `Optional` **content**: `T`
 
 ___
 
-### error
+### <a id="error" name="error"></a> error
 
 • `Optional` **error**: `Object`
 

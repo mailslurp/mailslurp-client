@@ -18,7 +18,7 @@ Options for updating inbox properties
 
 ## Properties
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
@@ -28,7 +28,7 @@ Description of an inbox for labelling and searching purposes
 
 ___
 
-### expiresAt
+### <a id="expiresat" name="expiresat"></a> expiresAt
 
 • `Optional` **expiresAt**: `Date`
 
@@ -38,7 +38,7 @@ Inbox expiration time. When, if ever, the inbox should expire and be deleted. If
 
 ___
 
-### favourite
+### <a id="favourite" name="favourite"></a> favourite
 
 • `Optional` **favourite**: `boolean`
 
@@ -48,7 +48,7 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -58,7 +58,7 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • `Optional` **tags**: `string`[]
 

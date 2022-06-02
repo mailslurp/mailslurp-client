@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### read
+### <a id="read" name="read"></a> read
 
 • `Optional` **read**: `boolean`

@@ -11,7 +11,7 @@
 
 ## Properties
 
-### fetch
+### <a id="fetch" name="fetch"></a> fetch
 
 • **fetch**: (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
@@ -32,18 +32,18 @@
 
 ___
 
-### init
+### <a id="init" name="init"></a> init
 
 • **init**: `RequestInit`
 
 ___
 
-### response
+### <a id="response" name="response"></a> response
 
 • **response**: `Response`
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`

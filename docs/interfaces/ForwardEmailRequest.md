@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### forwardEmailOptions
+### <a id="forwardemailoptions" name="forwardemailoptions"></a> forwardEmailOptions
 
 • **forwardEmailOptions**: [`ForwardEmailOptions`](ForwardEmailOptions.md)

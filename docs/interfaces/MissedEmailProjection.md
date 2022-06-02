@@ -18,7 +18,7 @@ Missed email data
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -26,7 +26,7 @@ Missed email data
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -34,7 +34,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • `Optional` **userId**: `string`
 

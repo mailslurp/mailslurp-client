@@ -21,7 +21,7 @@ BOUNCE webhook payload. Sent to your webhook url endpoint via HTTP POST when an 
 
 ## Properties
 
-### bounceId
+### <a id="bounceid" name="bounceid"></a> bounceId
 
 • **bounceId**: `string`
 
@@ -31,7 +31,7 @@ ID of the bounce email record. Use the ID with the bounce controller to view mor
 
 ___
 
-### bounceRecipients
+### <a id="bouncerecipients" name="bouncerecipients"></a> bounceRecipients
 
 • `Optional` **bounceRecipients**: `string`[]
 
@@ -41,7 +41,7 @@ Email addresses that resulted in a bounce or email being rejected. Please save t
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • **eventName**: [`WebhookBouncePayloadEventNameEnum`](../enums/WebhookBouncePayloadEventNameEnum.md)
 
@@ -51,7 +51,7 @@ Name of the event type webhook is being triggered for.
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -61,7 +61,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 ___
 
-### sender
+### <a id="sender" name="sender"></a> sender
 
 • **sender**: `string`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### sentToRecipients
+### <a id="senttorecipients" name="senttorecipients"></a> sentToRecipients
 
 • `Optional` **sentToRecipients**: `string`[]
 
@@ -77,7 +77,7 @@ ___
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -87,7 +87,7 @@ ID of webhook entity being triggered
 
 ___
 
-### webhookName
+### <a id="webhookname" name="webhookname"></a> webhookName
 
 • `Optional` **webhookName**: `string`
 

@@ -15,7 +15,7 @@ Parsed text of an email
 
 ## Properties
 
-### body
+### <a id="body" name="body"></a> body
 
 • **body**: `string`
 
@@ -23,7 +23,7 @@ Parsed text of an email
 
 ___
 
-### lines
+### <a id="lines" name="lines"></a> lines
 
 • **lines**: `string`[]
 

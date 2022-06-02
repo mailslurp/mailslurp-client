@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • `Optional` **size**: `string`

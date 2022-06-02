@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`

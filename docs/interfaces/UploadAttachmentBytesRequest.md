@@ -10,18 +10,18 @@
 
 ## Properties
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • `Optional` **contentType**: `string`
 
 ___
 
-### filename
+### <a id="filename" name="filename"></a> filename
 
 • `Optional` **filename**: `string`
 
 ___
 
-### inlineObject1
+### <a id="inlineobject1" name="inlineobject1"></a> inlineObject1
 
 • **inlineObject1**: [`InlineObject1`](InlineObject1.md)

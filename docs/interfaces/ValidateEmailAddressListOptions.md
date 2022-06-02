@@ -14,7 +14,7 @@ Options for validating a list of email addresses
 
 ## Properties
 
-### emailAddressList
+### <a id="emailaddresslist" name="emailaddresslist"></a> emailAddressList
 
 • **emailAddressList**: `string`[]
 

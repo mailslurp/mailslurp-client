@@ -24,7 +24,7 @@ Options for replying to email with API
 
 ## Properties
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • `Optional` **attachments**: `string`[]
 
@@ -34,7 +34,7 @@ List of uploaded attachments to send with the reply. Optional.
 
 ___
 
-### body
+### <a id="body" name="body"></a> body
 
 • **body**: `string`
 
@@ -44,7 +44,7 @@ Body of the reply email you want to send
 
 ___
 
-### charset
+### <a id="charset" name="charset"></a> charset
 
 • `Optional` **charset**: `string`
 
@@ -54,7 +54,7 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -64,7 +64,7 @@ The from header that should be used. Optional
 
 ___
 
-### html
+### <a id="html" name="html"></a> html
 
 • `Optional` **html**: `boolean`
 
@@ -72,7 +72,7 @@ ___
 
 ___
 
-### isHTML
+### <a id="ishtml" name="ishtml"></a> isHTML
 
 • **isHTML**: `boolean`
 
@@ -82,7 +82,7 @@ Is the reply HTML
 
 ___
 
-### replyTo
+### <a id="replyto" name="replyto"></a> replyTo
 
 • `Optional` **replyTo**: `string`
 
@@ -92,9 +92,9 @@ The replyTo header that should be used. Optional
 
 ___
 
-### sendStrategy
+### <a id="sendstrategy" name="sendstrategy"></a> sendStrategy
 
-• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single-message)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single_message)
 
 How an email should be sent based on its recipients
 
@@ -102,7 +102,7 @@ How an email should be sent based on its recipients
 
 ___
 
-### template
+### <a id="template" name="template"></a> template
 
 • `Optional` **template**: `string`
 
@@ -112,7 +112,7 @@ Template ID to use instead of body. Will use template variable map to fill defin
 
 ___
 
-### templateVariables
+### <a id="templatevariables" name="templatevariables"></a> templateVariables
 
 • `Optional` **templateVariables**: `Object`
 
@@ -122,11 +122,11 @@ Template variables if using a template
 
 #### Index signature
 
-▪ [key: `string`]: %60object%60
+▪ [key: `string`]: `object`
 
 ___
 
-### useInboxName
+### <a id="useinboxname" name="useinboxname"></a> useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 

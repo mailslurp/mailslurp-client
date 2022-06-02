@@ -43,7 +43,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new AliasControllerApi**(`configuration?`)
 
@@ -59,7 +59,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -69,7 +69,7 @@
 
 ## Methods
 
-### createAlias
+### <a id="createalias" name="createalias"></a> createAlias
 
 ▸ **createAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
@@ -89,7 +89,7 @@ Create an email alias. Must be verified by clicking link inside verification ema
 
 ___
 
-### createAliasRaw
+### <a id="createaliasraw" name="createaliasraw"></a> createAliasRaw
 
 ▸ **createAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
 
@@ -109,7 +109,7 @@ Create an email alias. Must be verified by clicking link inside verification ema
 
 ___
 
-### deleteAlias
+### <a id="deletealias" name="deletealias"></a> deleteAlias
 
 ▸ **deleteAlias**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -128,7 +128,7 @@ Delete an email alias
 
 ___
 
-### deleteAliasRaw
+### <a id="deletealiasraw" name="deletealiasraw"></a> deleteAliasRaw
 
 ▸ **deleteAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -147,7 +147,7 @@ Delete an email alias
 
 ___
 
-### getAlias
+### <a id="getalias" name="getalias"></a> getAlias
 
 ▸ **getAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
@@ -167,7 +167,7 @@ Get an email alias
 
 ___
 
-### getAliasEmails
+### <a id="getaliasemails" name="getaliasemails"></a> getAliasEmails
 
 ▸ **getAliasEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
@@ -187,7 +187,7 @@ Get emails for an alias
 
 ___
 
-### getAliasEmailsRaw
+### <a id="getaliasemailsraw" name="getaliasemailsraw"></a> getAliasEmailsRaw
 
 ▸ **getAliasEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
@@ -207,7 +207,7 @@ Get emails for an alias
 
 ___
 
-### getAliasRaw
+### <a id="getaliasraw" name="getaliasraw"></a> getAliasRaw
 
 ▸ **getAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
 
@@ -227,7 +227,7 @@ Get an email alias
 
 ___
 
-### getAliasThreads
+### <a id="getaliasthreads" name="getaliasthreads"></a> getAliasThreads
 
 ▸ **getAliasThreads**(`requestParameters`, `initOverrides?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
 
@@ -247,7 +247,7 @@ Get threads created for an alias
 
 ___
 
-### getAliasThreadsRaw
+### <a id="getaliasthreadsraw" name="getaliasthreadsraw"></a> getAliasThreadsRaw
 
 ▸ **getAliasThreadsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
 
@@ -267,7 +267,7 @@ Get threads created for an alias
 
 ___
 
-### getAliases
+### <a id="getaliases" name="getaliases"></a> getAliases
 
 ▸ **getAliases**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAlias`](../interfaces/PageAlias.md)\>
 
@@ -287,7 +287,7 @@ Get all email aliases you have created
 
 ___
 
-### getAliasesRaw
+### <a id="getaliasesraw" name="getaliasesraw"></a> getAliasesRaw
 
 ▸ **getAliasesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAlias`](../interfaces/PageAlias.md)\>\>
 
@@ -307,7 +307,7 @@ Get all email aliases you have created
 
 ___
 
-### replyToAliasEmail
+### <a id="replytoaliasemail" name="replytoaliasemail"></a> replyToAliasEmail
 
 ▸ **replyToAliasEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -327,7 +327,7 @@ Reply to an email
 
 ___
 
-### replyToAliasEmailRaw
+### <a id="replytoaliasemailraw" name="replytoaliasemailraw"></a> replyToAliasEmailRaw
 
 ▸ **replyToAliasEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -347,7 +347,7 @@ Reply to an email
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -368,7 +368,7 @@ ___
 
 ___
 
-### sendAliasEmail
+### <a id="sendaliasemail" name="sendaliasemail"></a> sendAliasEmail
 
 ▸ **sendAliasEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
 
@@ -388,7 +388,7 @@ Send an email from an alias inbox
 
 ___
 
-### sendAliasEmailRaw
+### <a id="sendaliasemailraw" name="sendaliasemailraw"></a> sendAliasEmailRaw
 
 ▸ **sendAliasEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
@@ -408,7 +408,7 @@ Send an email from an alias inbox
 
 ___
 
-### updateAlias
+### <a id="updatealias" name="updatealias"></a> updateAlias
 
 ▸ **updateAlias**(`requestParameters`, `initOverrides?`): `Promise`<[`AliasDto`](../interfaces/AliasDto.md)\>
 
@@ -427,7 +427,7 @@ Update an email alias
 
 ___
 
-### updateAliasRaw
+### <a id="updatealiasraw" name="updatealiasraw"></a> updateAliasRaw
 
 ▸ **updateAliasRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AliasDto`](../interfaces/AliasDto.md)\>\>
 
@@ -446,9 +446,9 @@ Update an email alias
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -460,6 +460,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -472,9 +473,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -486,6 +487,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -498,9 +500,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -512,6 +514,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

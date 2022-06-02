@@ -22,7 +22,7 @@ EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST wh
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -32,7 +32,7 @@ Date time of event creation
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • **eventName**: [`WebhookEmailOpenedPayloadEventNameEnum`](../enums/WebhookEmailOpenedPayloadEventNameEnum.md)
 
@@ -42,7 +42,7 @@ Name of the event type webhook is being triggered for.
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -52,7 +52,7 @@ Id of the inbox that received an email
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -62,7 +62,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 ___
 
-### pixelId
+### <a id="pixelid" name="pixelid"></a> pixelId
 
 • **pixelId**: `string`
 
@@ -72,7 +72,7 @@ ID of the tracking pixel
 
 ___
 
-### recipient
+### <a id="recipient" name="recipient"></a> recipient
 
 • **recipient**: `string`
 
@@ -82,7 +82,7 @@ Email address for the recipient of the tracking pixel
 
 ___
 
-### sentEmailId
+### <a id="sentemailid" name="sentemailid"></a> sentEmailId
 
 • **sentEmailId**: `string`
 
@@ -92,7 +92,7 @@ ID of sent email
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -102,7 +102,7 @@ ID of webhook entity being triggered
 
 ___
 
-### webhookName
+### <a id="webhookname" name="webhookname"></a> webhookName
 
 • `Optional` **webhookName**: `string`
 

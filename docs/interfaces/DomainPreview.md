@@ -19,7 +19,7 @@ Preview object for domain entity
 
 ## Properties
 
-### catchAllInboxId
+### <a id="catchallinboxid" name="catchallinboxid"></a> catchAllInboxId
 
 • `Optional` **catchAllInboxId**: `string`
 
@@ -27,7 +27,7 @@ Preview object for domain entity
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -35,7 +35,7 @@ ___
 
 ___
 
-### domain
+### <a id="domain" name="domain"></a> domain
 
 • **domain**: `string`
 
@@ -43,7 +43,7 @@ ___
 
 ___
 
-### domainType
+### <a id="domaintype" name="domaintype"></a> domainType
 
 • **domainType**: [`DomainPreviewDomainTypeEnum`](../enums/DomainPreviewDomainTypeEnum.md)
 
@@ -53,7 +53,7 @@ Type of domain. Dictates type of inbox that can be created with domain. HTTP mea
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### isVerified
+### <a id="isverified" name="isverified"></a> isVerified
 
 • **isVerified**: `boolean`
 

@@ -8,6 +8,6 @@
 
 ## Properties
 
-### createAliasOptions
+### <a id="createaliasoptions" name="createaliasoptions"></a> createAliasOptions
 
 • **createAliasOptions**: [`CreateAliasOptions`](CreateAliasOptions.md)

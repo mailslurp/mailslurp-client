@@ -8,6 +8,6 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`

@@ -23,7 +23,7 @@ Bounced email
 
 ## Properties
 
-### bounceMta
+### <a id="bouncemta" name="bouncemta"></a> bounceMta
 
 • `Optional` **bounceMta**: `string`
 
@@ -31,7 +31,7 @@ Bounced email
 
 ___
 
-### bounceRecipients
+### <a id="bouncerecipients" name="bouncerecipients"></a> bounceRecipients
 
 • `Optional` **bounceRecipients**: `string`[]
 
@@ -39,7 +39,7 @@ ___
 
 ___
 
-### bounceSubType
+### <a id="bouncesubtype" name="bouncesubtype"></a> bounceSubType
 
 • `Optional` **bounceSubType**: `string`
 
@@ -47,7 +47,7 @@ ___
 
 ___
 
-### bounceType
+### <a id="bouncetype" name="bouncetype"></a> bounceType
 
 • `Optional` **bounceType**: `string`
 
@@ -55,7 +55,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -63,7 +63,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -71,7 +71,7 @@ ___
 
 ___
 
-### notificationType
+### <a id="notificationtype" name="notificationtype"></a> notificationType
 
 • **notificationType**: `string`
 
@@ -79,7 +79,7 @@ ___
 
 ___
 
-### sender
+### <a id="sender" name="sender"></a> sender
 
 • **sender**: `string`
 
@@ -87,7 +87,7 @@ ___
 
 ___
 
-### sentToRecipients
+### <a id="senttorecipients" name="senttorecipients"></a> sentToRecipients
 
 • `Optional` **sentToRecipients**: `string`[]
 
@@ -95,7 +95,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

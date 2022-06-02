@@ -15,7 +15,7 @@ URLs for email body
 
 ## Properties
 
-### plainHtmlBodyUrl
+### <a id="plainhtmlbodyurl" name="plainhtmlbodyurl"></a> plainHtmlBodyUrl
 
 • **plainHtmlBodyUrl**: `string`
 
@@ -23,7 +23,7 @@ URLs for email body
 
 ___
 
-### rawSmtpMessageUrl
+### <a id="rawsmtpmessageurl" name="rawsmtpmessageurl"></a> rawSmtpMessageUrl
 
 • **rawSmtpMessageUrl**: `string`
 

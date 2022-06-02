@@ -25,7 +25,7 @@ Missed email
 
 ## Properties
 
-### attachmentCount
+### <a id="attachmentcount" name="attachmentcount"></a> attachmentCount
 
 • **attachmentCount**: `number`
 
@@ -33,7 +33,7 @@ Missed email
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • **bcc**: `string`[]
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### bodyExcerpt
+### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
 
@@ -49,7 +49,7 @@ ___
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • **cc**: `string`[]
 
@@ -57,7 +57,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -65,7 +65,7 @@ ___
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -73,7 +73,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -81,7 +81,7 @@ ___
 
 ___
 
-### inboxIds
+### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: `string`[]
 
@@ -89,7 +89,7 @@ ___
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -97,7 +97,7 @@ ___
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 
@@ -105,7 +105,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -113,7 +113,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • `Optional` **userId**: `string`
 

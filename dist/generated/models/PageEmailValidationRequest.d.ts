@@ -36,6 +36,12 @@ export interface PageEmailValidationRequest {
     total?: number;
     /**
      *
+     * @type {boolean}
+     * @memberof PageEmailValidationRequest
+     */
+    last?: boolean;
+    /**
+     *
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
@@ -46,12 +52,6 @@ export interface PageEmailValidationRequest {
      * @memberof PageEmailValidationRequest
      */
     totalPages?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEmailValidationRequest
-     */
-    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageEmailValidationRequest {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageEmailValidationRequest
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageEmailValidationRequest
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEmailValidationRequest
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

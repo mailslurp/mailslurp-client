@@ -8,6 +8,6 @@
 
 ## Properties
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • **contentType**: `string`

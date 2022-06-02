@@ -15,48 +15,48 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### delay
+### <a id="delay" name="delay"></a> delay
 
 • `Optional` **delay**: `number`
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
 ___
 
-### index
+### <a id="index" name="index"></a> index
 
 • `Optional` **index**: `number`
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`WaitForNthEmailSortEnum`](../enums/WaitForNthEmailSortEnum.md)
 
 ___
 
-### timeout
+### <a id="timeout" name="timeout"></a> timeout
 
 • `Optional` **timeout**: `number`
 
 ___
 
-### unreadOnly
+### <a id="unreadonly" name="unreadonly"></a> unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### htmlSelector
+### <a id="htmlselector" name="htmlselector"></a> htmlSelector
 
 • **htmlSelector**: `string`

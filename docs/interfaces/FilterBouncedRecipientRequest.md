@@ -8,6 +8,6 @@
 
 ## Properties
 
-### filterBouncedRecipientsOptions
+### <a id="filterbouncedrecipientsoptions" name="filterbouncedrecipientsoptions"></a> filterBouncedRecipientsOptions
 
 • **filterBouncedRecipientsOptions**: [`FilterBouncedRecipientsOptions`](FilterBouncedRecipientsOptions.md)

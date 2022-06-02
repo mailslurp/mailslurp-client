@@ -4,26 +4,26 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [NO\_VALIDATION](SendEmailOptionsValidateEmailAddressesEnum.md#no-validation)
-- [VALIDATE\_ERROR\_IF\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate-error-if-invalid)
-- [VALIDATE\_FILTER\_REMOVE\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate-filter-remove-invalid)
+- [NO\_VALIDATION](SendEmailOptionsValidateEmailAddressesEnum.md#no_validation)
+- [VALIDATE\_ERROR\_IF\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate_error_if_invalid)
+- [VALIDATE\_FILTER\_REMOVE\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate_filter_remove_invalid)
 
-## Enumeration members
+## Enumeration Members
 
-### NO\_VALIDATION
+### <a id="no_validation" name="no_validation"></a> NO\_VALIDATION
 
-• **NO\_VALIDATION** = `"NO_VALIDATION"`
-
-___
-
-### VALIDATE\_ERROR\_IF\_INVALID
-
-• **VALIDATE\_ERROR\_IF\_INVALID** = `"VALIDATE_ERROR_IF_INVALID"`
+• **NO\_VALIDATION**
 
 ___
 
-### VALIDATE\_FILTER\_REMOVE\_INVALID
+### <a id="validate_error_if_invalid" name="validate_error_if_invalid"></a> VALIDATE\_ERROR\_IF\_INVALID
 
-• **VALIDATE\_FILTER\_REMOVE\_INVALID** = `"VALIDATE_FILTER_REMOVE_INVALID"`
+• **VALIDATE\_ERROR\_IF\_INVALID**
+
+___
+
+### <a id="validate_filter_remove_invalid" name="validate_filter_remove_invalid"></a> VALIDATE\_FILTER\_REMOVE\_INVALID
+
+• **VALIDATE\_FILTER\_REMOVE\_INVALID**

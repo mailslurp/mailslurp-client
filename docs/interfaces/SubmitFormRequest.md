@@ -14,42 +14,42 @@
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • `Optional` **emailAddress**: `string`
 
 ___
 
-### otherParameters
+### <a id="otherparameters" name="otherparameters"></a> otherParameters
 
 • `Optional` **otherParameters**: `string`
 
 ___
 
-### redirectTo
+### <a id="redirectto" name="redirectto"></a> redirectTo
 
 • `Optional` **redirectTo**: `string`
 
 ___
 
-### spamCheck
+### <a id="spamcheck" name="spamcheck"></a> spamCheck
 
 • `Optional` **spamCheck**: `string`
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
 ___
 
-### successMessage
+### <a id="successmessage" name="successmessage"></a> successMessage
 
 • `Optional` **successMessage**: `string`
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • `Optional` **to**: `string`

@@ -4,12 +4,12 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [HAS\_ATTACHMENTS](ConditionOptionConditionEnum.md#has-attachments)
+- [HAS\_ATTACHMENTS](ConditionOptionConditionEnum.md#has_attachments)
 
-## Enumeration members
+## Enumeration Members
 
-### HAS\_ATTACHMENTS
+### <a id="has_attachments" name="has_attachments"></a> HAS\_ATTACHMENTS
 
-• **HAS\_ATTACHMENTS** = `"HAS_ATTACHMENTS"`
+• **HAS\_ATTACHMENTS**

@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### inboxRulesetTestOptions
+### <a id="inboxrulesettestoptions" name="inboxrulesettestoptions"></a> inboxRulesetTestOptions
 
 • **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)

@@ -37,7 +37,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new TemplateControllerApi**(`configuration?`)
 
@@ -53,7 +53,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -63,7 +63,7 @@
 
 ## Methods
 
-### createTemplate
+### <a id="createtemplate" name="createtemplate"></a> createTemplate
 
 ▸ **createTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -83,7 +83,7 @@ Create a Template
 
 ___
 
-### createTemplateRaw
+### <a id="createtemplateraw" name="createtemplateraw"></a> createTemplateRaw
 
 ▸ **createTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -103,7 +103,7 @@ Create a Template
 
 ___
 
-### deleteTemplate
+### <a id="deletetemplate" name="deletetemplate"></a> deleteTemplate
 
 ▸ **deleteTemplate**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -123,7 +123,7 @@ Delete email template
 
 ___
 
-### deleteTemplateRaw
+### <a id="deletetemplateraw" name="deletetemplateraw"></a> deleteTemplateRaw
 
 ▸ **deleteTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -143,7 +143,7 @@ Delete email template
 
 ___
 
-### getAllTemplates
+### <a id="getalltemplates" name="getalltemplates"></a> getAllTemplates
 
 ▸ **getAllTemplates**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
 
@@ -163,7 +163,7 @@ List templates
 
 ___
 
-### getAllTemplatesRaw
+### <a id="getalltemplatesraw" name="getalltemplatesraw"></a> getAllTemplatesRaw
 
 ▸ **getAllTemplatesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>\>
 
@@ -183,7 +183,7 @@ List templates
 
 ___
 
-### getTemplate
+### <a id="gettemplate" name="gettemplate"></a> getTemplate
 
 ▸ **getTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -203,7 +203,7 @@ Get template
 
 ___
 
-### getTemplateRaw
+### <a id="gettemplateraw" name="gettemplateraw"></a> getTemplateRaw
 
 ▸ **getTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -223,7 +223,7 @@ Get template
 
 ___
 
-### getTemplates
+### <a id="gettemplates" name="gettemplates"></a> getTemplates
 
 ▸ **getTemplates**(`initOverrides?`): `Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
 
@@ -242,7 +242,7 @@ List templates
 
 ___
 
-### getTemplatesRaw
+### <a id="gettemplatesraw" name="gettemplatesraw"></a> getTemplatesRaw
 
 ▸ **getTemplatesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>\>
 
@@ -261,7 +261,7 @@ List templates
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -282,7 +282,7 @@ ___
 
 ___
 
-### updateTemplate
+### <a id="updatetemplate" name="updatetemplate"></a> updateTemplate
 
 ▸ **updateTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -302,7 +302,7 @@ Update template
 
 ___
 
-### updateTemplateRaw
+### <a id="updatetemplateraw" name="updatetemplateraw"></a> updateTemplateRaw
 
 ▸ **updateTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -322,9 +322,9 @@ Update template
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -336,6 +336,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -348,9 +349,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -362,6 +363,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -374,9 +376,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -388,6 +390,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

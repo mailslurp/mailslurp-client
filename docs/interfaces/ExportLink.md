@@ -14,7 +14,7 @@ Export download link
 
 ## Properties
 
-### downloadLink
+### <a id="downloadlink" name="downloadlink"></a> downloadLink
 
 • **downloadLink**: `string`
 

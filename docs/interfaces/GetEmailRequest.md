@@ -9,12 +9,12 @@
 
 ## Properties
 
-### decode
+### <a id="decode" name="decode"></a> decode
 
 • `Optional` **decode**: `boolean`
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`

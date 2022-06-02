@@ -9,12 +9,12 @@
 
 ## Properties
 
-### createInboxRulesetOptions
+### <a id="createinboxrulesetoptions" name="createinboxrulesetoptions"></a> createInboxRulesetOptions
 
 • **createInboxRulesetOptions**: [`CreateInboxRulesetOptions`](CreateInboxRulesetOptions.md)
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`

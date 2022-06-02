@@ -15,7 +15,7 @@ IP Address look up result for a given domain / hostname
 
 ## Properties
 
-### address
+### <a id="address" name="address"></a> address
 
 • **address**: `string`
 
@@ -23,7 +23,7 @@ IP Address look up result for a given domain / hostname
 
 ___
 
-### hostname
+### <a id="hostname" name="hostname"></a> hostname
 
 • **hostname**: `string`
 

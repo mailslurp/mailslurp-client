@@ -8,6 +8,6 @@
 
 ## Properties
 
-### inboxIds
+### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • `Optional` **inboxIds**: `string`[]

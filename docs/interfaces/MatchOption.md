@@ -16,7 +16,7 @@ Options for matching emails in an inbox. Each match option object contains a `fi
 
 ## Properties
 
-### field
+### <a id="field" name="field"></a> field
 
 • **field**: [`MatchOptionFieldEnum`](../enums/MatchOptionFieldEnum.md)
 
@@ -26,7 +26,7 @@ Fields of an email object that can be used to filter results
 
 ___
 
-### should
+### <a id="should" name="should"></a> should
 
 • **should**: [`MatchOptionShouldEnum`](../enums/MatchOptionShouldEnum.md)
 
@@ -36,7 +36,7 @@ How the value of the email field specified should be compared to the value given
 
 ___
 
-### value
+### <a id="value" name="value"></a> value
 
 • **value**: `string`
 

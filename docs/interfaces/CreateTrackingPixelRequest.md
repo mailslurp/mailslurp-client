@@ -8,6 +8,6 @@
 
 ## Properties
 
-### createTrackingPixelOptions
+### <a id="createtrackingpixeloptions" name="createtrackingpixeloptions"></a> createTrackingPixelOptions
 
 • **createTrackingPixelOptions**: [`CreateTrackingPixelOptions`](CreateTrackingPixelOptions.md)

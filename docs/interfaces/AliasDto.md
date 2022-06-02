@@ -23,7 +23,7 @@ Email alias representation
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • `Optional` **createdAt**: `Date`
 
@@ -31,7 +31,7 @@ Email alias representation
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -41,7 +41,7 @@ The alias's email address for receiving email
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -49,7 +49,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -59,7 +59,7 @@ Inbox that is associated with the alias
 
 ___
 
-### isVerified
+### <a id="isverified" name="isverified"></a> isVerified
 
 • **isVerified**: `boolean`
 
@@ -69,7 +69,7 @@ Has the alias been verified. You must verify an alias if the masked email addres
 
 ___
 
-### maskedEmailAddress
+### <a id="maskedemailaddress" name="maskedemailaddress"></a> maskedEmailAddress
 
 • `Optional` **maskedEmailAddress**: `string`
 
@@ -79,7 +79,7 @@ The underlying email address that is hidden and will received forwarded email
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -87,7 +87,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • `Optional` **updatedAt**: `Date`
 
@@ -95,7 +95,7 @@ ___
 
 ___
 
-### useThreads
+### <a id="usethreads" name="usethreads"></a> useThreads
 
 • `Optional` **useThreads**: `boolean`
 
@@ -105,7 +105,7 @@ If alias will generate response threads or not when email are received by it
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

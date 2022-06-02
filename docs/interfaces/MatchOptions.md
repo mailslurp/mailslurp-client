@@ -15,7 +15,7 @@ Optional filter for matching emails based on fields. For instance filter results
 
 ## Properties
 
-### conditions
+### <a id="conditions" name="conditions"></a> conditions
 
 • `Optional` **conditions**: [`ConditionOption`](ConditionOption.md)[]
 
@@ -25,7 +25,7 @@ Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }
 
 ___
 
-### matches
+### <a id="matches" name="matches"></a> matches
 
 • `Optional` **matches**: [`MatchOption`](MatchOption.md)[]
 

@@ -25,7 +25,7 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
 
@@ -35,7 +35,7 @@ Collection of items
 
 ___
 
-### empty
+### <a id="empty" name="empty"></a> empty
 
 • `Optional` **empty**: `boolean`
 
@@ -43,7 +43,7 @@ ___
 
 ___
 
-### first
+### <a id="first" name="first"></a> first
 
 • `Optional` **first**: `boolean`
 
@@ -51,7 +51,7 @@ ___
 
 ___
 
-### last
+### <a id="last" name="last"></a> last
 
 • `Optional` **last**: `boolean`
 
@@ -59,7 +59,7 @@ ___
 
 ___
 
-### number
+### <a id="number" name="number"></a> number
 
 • **number**: `number`
 
@@ -69,7 +69,7 @@ Page number starting at 0
 
 ___
 
-### numberOfElements
+### <a id="numberofelements" name="numberofelements"></a> numberOfElements
 
 • **numberOfElements**: `number`
 
@@ -79,7 +79,7 @@ Number of items returned
 
 ___
 
-### pageable
+### <a id="pageable" name="pageable"></a> pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
@@ -87,7 +87,7 @@ ___
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • **size**: `number`
 
@@ -97,7 +97,7 @@ Size of page requested
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
@@ -105,7 +105,7 @@ ___
 
 ___
 
-### total
+### <a id="total" name="total"></a> total
 
 • `Optional` **total**: `number`
 
@@ -113,7 +113,7 @@ ___
 
 ___
 
-### totalElements
+### <a id="totalelements" name="totalelements"></a> totalElements
 
 • **totalElements**: `number`
 
@@ -123,7 +123,7 @@ Total number of items available for querying
 
 ___
 
-### totalPages
+### <a id="totalpages" name="totalpages"></a> totalPages
 
 • **totalPages**: `number`
 

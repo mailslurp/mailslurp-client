@@ -19,7 +19,7 @@ Email validation request
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -27,7 +27,7 @@ Email validation request
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -35,7 +35,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -43,7 +43,7 @@ ___
 
 ___
 
-### isValid
+### <a id="isvalid" name="isvalid"></a> isValid
 
 • **isValid**: `boolean`
 
@@ -51,7 +51,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -59,7 +59,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

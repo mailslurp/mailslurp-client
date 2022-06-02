@@ -33,7 +33,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new ExpiredControllerApi**(`configuration?`)
 
@@ -49,7 +49,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +59,7 @@
 
 ## Methods
 
-### getExpirationDefaults
+### <a id="getexpirationdefaults" name="getexpirationdefaults"></a> getExpirationDefaults
 
 ▸ **getExpirationDefaults**(`initOverrides?`): `Promise`<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>
 
@@ -78,7 +78,7 @@ Get default expiration settings
 
 ___
 
-### getExpirationDefaultsRaw
+### <a id="getexpirationdefaultsraw" name="getexpirationdefaultsraw"></a> getExpirationDefaultsRaw
 
 ▸ **getExpirationDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>\>
 
@@ -97,7 +97,7 @@ Get default expiration settings
 
 ___
 
-### getExpiredInboxByInboxId
+### <a id="getexpiredinboxbyinboxid" name="getexpiredinboxbyinboxid"></a> getExpiredInboxByInboxId
 
 ▸ **getExpiredInboxByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
@@ -117,7 +117,7 @@ Get expired inbox record for a previously existing inbox
 
 ___
 
-### getExpiredInboxByInboxIdRaw
+### <a id="getexpiredinboxbyinboxidraw" name="getexpiredinboxbyinboxidraw"></a> getExpiredInboxByInboxIdRaw
 
 ▸ **getExpiredInboxByInboxIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>\>
 
@@ -137,7 +137,7 @@ Get expired inbox record for a previously existing inbox
 
 ___
 
-### getExpiredInboxRecord
+### <a id="getexpiredinboxrecord" name="getexpiredinboxrecord"></a> getExpiredInboxRecord
 
 ▸ **getExpiredInboxRecord**(`requestParameters`, `initOverrides?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
@@ -157,7 +157,7 @@ Get an expired inbox record
 
 ___
 
-### getExpiredInboxRecordRaw
+### <a id="getexpiredinboxrecordraw" name="getexpiredinboxrecordraw"></a> getExpiredInboxRecordRaw
 
 ▸ **getExpiredInboxRecordRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>\>
 
@@ -177,7 +177,7 @@ Get an expired inbox record
 
 ___
 
-### getExpiredInboxes
+### <a id="getexpiredinboxes" name="getexpiredinboxes"></a> getExpiredInboxes
 
 ▸ **getExpiredInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
 
@@ -197,7 +197,7 @@ List records of expired inboxes
 
 ___
 
-### getExpiredInboxesRaw
+### <a id="getexpiredinboxesraw" name="getexpiredinboxesraw"></a> getExpiredInboxesRaw
 
 ▸ **getExpiredInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>\>
 
@@ -217,7 +217,7 @@ List records of expired inboxes
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -238,9 +238,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -252,6 +252,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -264,9 +265,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -278,6 +279,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -290,9 +292,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -304,6 +306,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

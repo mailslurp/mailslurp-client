@@ -33,7 +33,7 @@ Options for the email to be sent
 
 ## Properties
 
-### addTrackingPixel
+### <a id="addtrackingpixel" name="addtrackingpixel"></a> addTrackingPixel
 
 • `Optional` **addTrackingPixel**: `boolean`
 
@@ -43,7 +43,7 @@ Add tracking pixel to email
 
 ___
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • `Optional` **attachments**: `string`[]
 
@@ -53,7 +53,7 @@ Optional list of attachment IDs to send with this email. You must first upload e
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -63,7 +63,7 @@ Optional list of bcc destination email addresses
 
 ___
 
-### body
+### <a id="body" name="body"></a> body
 
 • `Optional` **body**: `string`
 
@@ -73,7 +73,7 @@ Optional contents of email. If body contains HTML then set `isHTML` to true to e
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -83,7 +83,7 @@ Optional list of cc destination email addresses
 
 ___
 
-### charset
+### <a id="charset" name="charset"></a> charset
 
 • `Optional` **charset**: `string`
 
@@ -93,7 +93,7 @@ Optional charset
 
 ___
 
-### filterBouncedRecipients
+### <a id="filterbouncedrecipients" name="filterbouncedrecipients"></a> filterBouncedRecipients
 
 • `Optional` **filterBouncedRecipients**: `boolean`
 
@@ -103,7 +103,7 @@ Filter recipients to remove any bounced recipients from to, bcc, and cc before s
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -113,7 +113,7 @@ Optional from address. Email address is RFC 5322 format and may include a displa
 
 ___
 
-### html
+### <a id="html" name="html"></a> html
 
 • `Optional` **html**: `boolean`
 
@@ -123,7 +123,7 @@ Optional HTML flag to indicate that contents is HTML. Set's a `content-type: tex
 
 ___
 
-### isHTML
+### <a id="ishtml" name="ishtml"></a> isHTML
 
 • `Optional` **isHTML**: `boolean`
 
@@ -133,7 +133,7 @@ Optional HTML flag. If true the `content-type` of the email will be `text/html`.
 
 ___
 
-### replyTo
+### <a id="replyto" name="replyto"></a> replyTo
 
 • `Optional` **replyTo**: `string`
 
@@ -143,9 +143,9 @@ Optional replyTo header
 
 ___
 
-### sendStrategy
+### <a id="sendstrategy" name="sendstrategy"></a> sendStrategy
 
-• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/SendEmailOptionsSendStrategyEnum.md#single-message)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/SendEmailOptionsSendStrategyEnum.md#single_message)
 
 How an email should be sent based on its recipients
 
@@ -153,7 +153,7 @@ How an email should be sent based on its recipients
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -163,7 +163,7 @@ Optional email subject line
 
 ___
 
-### template
+### <a id="template" name="template"></a> template
 
 • `Optional` **template**: `string`
 
@@ -173,7 +173,7 @@ Optional template ID to use for body. Will override body if provided. When using
 
 ___
 
-### templateVariables
+### <a id="templatevariables" name="templatevariables"></a> templateVariables
 
 • `Optional` **templateVariables**: `Object`
 
@@ -183,11 +183,11 @@ Optional map of template variables. Will replace moustache syntax variables in s
 
 #### Index signature
 
-▪ [key: `string`]: %60object%60
+▪ [key: `string`]: `object`
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • `Optional` **to**: `string`[]
 
@@ -197,7 +197,7 @@ List of destination email addresses. Each email address must be RFC 5322 format.
 
 ___
 
-### toContacts
+### <a id="tocontacts" name="tocontacts"></a> toContacts
 
 • `Optional` **toContacts**: `string`[]
 
@@ -207,7 +207,7 @@ Optional list of contact IDs to send email to. Manage your contacts via the API 
 
 ___
 
-### toGroup
+### <a id="togroup" name="togroup"></a> toGroup
 
 • `Optional` **toGroup**: `string`
 
@@ -217,7 +217,7 @@ Optional contact group ID to send email to. You can create contacts and contact 
 
 ___
 
-### useInboxName
+### <a id="useinboxname" name="useinboxname"></a> useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 
@@ -227,7 +227,7 @@ Use name of inbox as sender email address name. Will construct RFC 5322 email ad
 
 ___
 
-### validateEmailAddresses
+### <a id="validateemailaddresses" name="validateemailaddresses"></a> validateEmailAddresses
 
 • `Optional` **validateEmailAddresses**: [`SendEmailOptionsValidateEmailAddressesEnum`](../enums/SendEmailOptionsValidateEmailAddressesEnum.md)
 

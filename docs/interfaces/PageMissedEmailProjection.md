@@ -25,7 +25,7 @@ Paginated MissedEmail results. Page index starts at zero. Projection results may
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • `Optional` **content**: [`MissedEmailProjection`](MissedEmailProjection.md)[]
 
@@ -33,7 +33,7 @@ Paginated MissedEmail results. Page index starts at zero. Projection results may
 
 ___
 
-### empty
+### <a id="empty" name="empty"></a> empty
 
 • `Optional` **empty**: `boolean`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### first
+### <a id="first" name="first"></a> first
 
 • `Optional` **first**: `boolean`
 
@@ -49,7 +49,7 @@ ___
 
 ___
 
-### last
+### <a id="last" name="last"></a> last
 
 • `Optional` **last**: `boolean`
 
@@ -57,7 +57,7 @@ ___
 
 ___
 
-### number
+### <a id="number" name="number"></a> number
 
 • `Optional` **number**: `number`
 
@@ -65,7 +65,7 @@ ___
 
 ___
 
-### numberOfElements
+### <a id="numberofelements" name="numberofelements"></a> numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
@@ -73,7 +73,7 @@ ___
 
 ___
 
-### pageable
+### <a id="pageable" name="pageable"></a> pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
@@ -81,7 +81,7 @@ ___
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • `Optional` **size**: `number`
 
@@ -89,7 +89,7 @@ ___
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
@@ -97,7 +97,7 @@ ___
 
 ___
 
-### total
+### <a id="total" name="total"></a> total
 
 • `Optional` **total**: `number`
 
@@ -105,7 +105,7 @@ ___
 
 ___
 
-### totalElements
+### <a id="totalelements" name="totalelements"></a> totalElements
 
 • `Optional` **totalElements**: `number`
 
@@ -113,7 +113,7 @@ ___
 
 ___
 
-### totalPages
+### <a id="totalpages" name="totalpages"></a> totalPages
 
 • `Optional` **totalPages**: `number`
 

@@ -33,7 +33,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new MailServerControllerApi**(`configuration?`)
 
@@ -49,7 +49,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +59,7 @@
 
 ## Methods
 
-### describeMailServerDomain
+### <a id="describemailserverdomain" name="describemailserverdomain"></a> describeMailServerDomain
 
 ▸ **describeMailServerDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>
 
@@ -78,7 +78,7 @@ Get DNS Mail Server records for a domain
 
 ___
 
-### describeMailServerDomainRaw
+### <a id="describemailserverdomainraw" name="describemailserverdomainraw"></a> describeMailServerDomainRaw
 
 ▸ **describeMailServerDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>\>
 
@@ -97,7 +97,7 @@ Get DNS Mail Server records for a domain
 
 ___
 
-### getDnsLookup
+### <a id="getdnslookup" name="getdnslookup"></a> getDnsLookup
 
 ▸ **getDnsLookup**(`requestParameters`, `initOverrides?`): `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
 
@@ -116,7 +116,7 @@ Lookup DNS records for a domain
 
 ___
 
-### getDnsLookupRaw
+### <a id="getdnslookupraw" name="getdnslookupraw"></a> getDnsLookupRaw
 
 ▸ **getDnsLookupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
 
@@ -135,7 +135,7 @@ Lookup DNS records for a domain
 
 ___
 
-### getIpAddress
+### <a id="getipaddress" name="getipaddress"></a> getIpAddress
 
 ▸ **getIpAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>
 
@@ -154,7 +154,7 @@ Get IP address for a domain
 
 ___
 
-### getIpAddressRaw
+### <a id="getipaddressraw" name="getipaddressraw"></a> getIpAddressRaw
 
 ▸ **getIpAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>\>
 
@@ -173,7 +173,7 @@ Get IP address for a domain
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -194,7 +194,7 @@ ___
 
 ___
 
-### verifyEmailAddress
+### <a id="verifyemailaddress" name="verifyemailaddress"></a> verifyEmailAddress
 
 ▸ **verifyEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
 
@@ -213,7 +213,7 @@ Deprecated. Use the EmailVerificationController methods for more accurate and re
 
 ___
 
-### verifyEmailAddressRaw
+### <a id="verifyemailaddressraw" name="verifyemailaddressraw"></a> verifyEmailAddressRaw
 
 ▸ **verifyEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>\>
 
@@ -232,9 +232,9 @@ Deprecated. Use the EmailVerificationController methods for more accurate and re
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -246,6 +246,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -258,9 +259,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -272,6 +273,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -284,9 +286,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -298,6 +300,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

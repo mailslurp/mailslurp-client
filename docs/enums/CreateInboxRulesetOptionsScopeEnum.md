@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [RECEIVING\_EMAILS](CreateInboxRulesetOptionsScopeEnum.md#receiving-emails)
-- [SENDING\_EMAILS](CreateInboxRulesetOptionsScopeEnum.md#sending-emails)
+- [RECEIVING\_EMAILS](CreateInboxRulesetOptionsScopeEnum.md#receiving_emails)
+- [SENDING\_EMAILS](CreateInboxRulesetOptionsScopeEnum.md#sending_emails)
 
-## Enumeration members
+## Enumeration Members
 
-### RECEIVING\_EMAILS
+### <a id="receiving_emails" name="receiving_emails"></a> RECEIVING\_EMAILS
 
-• **RECEIVING\_EMAILS** = `"RECEIVING_EMAILS"`
+• **RECEIVING\_EMAILS**
 
 ___
 
-### SENDING\_EMAILS
+### <a id="sending_emails" name="sending_emails"></a> SENDING\_EMAILS
 
-• **SENDING\_EMAILS** = `"SENDING_EMAILS"`
+• **SENDING\_EMAILS**

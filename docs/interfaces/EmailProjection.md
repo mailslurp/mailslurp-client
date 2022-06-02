@@ -26,7 +26,7 @@ A compact representation of a full email. Used in list endpoints to keep respons
 
 ## Properties
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • `Optional` **attachments**: `string`[]
 
@@ -34,7 +34,7 @@ A compact representation of a full email. Used in list endpoints to keep respons
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### bodyExcerpt
+### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### bodyMD5Hash
+### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
@@ -58,7 +58,7 @@ ___
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -66,7 +66,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -74,7 +74,7 @@ ___
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -82,7 +82,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -90,7 +90,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -98,15 +98,15 @@ ___
 
 ___
 
-### read
+### <a id="read" name="read"></a> read
 
-• `Optional` **read**: `boolean`
+• **read**: `boolean`
 
 **`memberof`** EmailProjection
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -114,15 +114,15 @@ ___
 
 ___
 
-### teamAccess
+### <a id="teamaccess" name="teamaccess"></a> teamAccess
 
-• `Optional` **teamAccess**: `boolean`
+• **teamAccess**: `boolean`
 
 **`memberof`** EmailProjection
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 

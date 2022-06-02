@@ -9,12 +9,12 @@
 
 ## Properties
 
-### createWebhookOptions
+### <a id="createwebhookoptions" name="createwebhookoptions"></a> createWebhookOptions
 
 • **createWebhookOptions**: [`CreateWebhookOptions`](CreateWebhookOptions.md)
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`

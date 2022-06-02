@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### timeoutMillis
+### <a id="timeoutmillis" name="timeoutmillis"></a> timeoutMillis
 
 • **timeoutMillis**: `number`

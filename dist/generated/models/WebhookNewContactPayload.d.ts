@@ -98,7 +98,7 @@ export interface WebhookNewContactPayload {
      * @type {boolean}
      * @memberof WebhookNewContactPayload
      */
-    optOut?: boolean;
+    optOut: boolean;
     /**
      *
      * @type {Date}

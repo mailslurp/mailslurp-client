@@ -9,12 +9,12 @@
 
 ## Properties
 
-### aliasId
+### <a id="aliasid" name="aliasid"></a> aliasId
 
 • **aliasId**: `string`
 
 ___
 
-### updateAliasOptions
+### <a id="updatealiasoptions" name="updatealiasoptions"></a> updateAliasOptions
 
 • **updateAliasOptions**: [`UpdateAliasOptions`](UpdateAliasOptions.md)

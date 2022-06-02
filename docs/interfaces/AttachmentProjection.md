@@ -20,7 +20,7 @@ Email attachment data
 
 ## Properties
 
-### attachmentId
+### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
 
@@ -30,7 +30,7 @@ Attachment ID
 
 ___
 
-### contentLength
+### <a id="contentlength" name="contentlength"></a> contentLength
 
 • `Optional` **contentLength**: `number`
 
@@ -40,7 +40,7 @@ Content length of attachment in bytes
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • `Optional` **contentType**: `string`
 
@@ -50,7 +50,7 @@ Content type of attachment.
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -58,7 +58,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -66,7 +66,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -74,7 +74,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

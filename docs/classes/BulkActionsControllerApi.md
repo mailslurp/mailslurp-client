@@ -31,7 +31,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new BulkActionsControllerApi**(`configuration?`)
 
@@ -47,7 +47,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -57,7 +57,7 @@
 
 ## Methods
 
-### bulkCreateInboxes
+### <a id="bulkcreateinboxes" name="bulkcreateinboxes"></a> bulkCreateInboxes
 
 ▸ **bulkCreateInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)[]\>
 
@@ -76,7 +76,7 @@ Bulk create Inboxes (email addresses)
 
 ___
 
-### bulkCreateInboxesRaw
+### <a id="bulkcreateinboxesraw" name="bulkcreateinboxesraw"></a> bulkCreateInboxesRaw
 
 ▸ **bulkCreateInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)[]\>\>
 
@@ -95,7 +95,7 @@ Bulk create Inboxes (email addresses)
 
 ___
 
-### bulkDeleteInboxes
+### <a id="bulkdeleteinboxes" name="bulkdeleteinboxes"></a> bulkDeleteInboxes
 
 ▸ **bulkDeleteInboxes**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -114,7 +114,7 @@ Bulk Delete Inboxes
 
 ___
 
-### bulkDeleteInboxesRaw
+### <a id="bulkdeleteinboxesraw" name="bulkdeleteinboxesraw"></a> bulkDeleteInboxesRaw
 
 ▸ **bulkDeleteInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -133,7 +133,7 @@ Bulk Delete Inboxes
 
 ___
 
-### bulkSendEmails
+### <a id="bulksendemails" name="bulksendemails"></a> bulkSendEmails
 
 ▸ **bulkSendEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -152,7 +152,7 @@ Bulk Send Emails
 
 ___
 
-### bulkSendEmailsRaw
+### <a id="bulksendemailsraw" name="bulksendemailsraw"></a> bulkSendEmailsRaw
 
 ▸ **bulkSendEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -171,7 +171,7 @@ Bulk Send Emails
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -192,9 +192,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -206,6 +206,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -218,9 +219,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -232,6 +233,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -244,9 +246,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -258,6 +260,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

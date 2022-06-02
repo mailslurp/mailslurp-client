@@ -4,12 +4,12 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [EXCEPTION](InboxRulesetDtoHandlerEnum.md#exception)
 
-## Enumeration members
+## Enumeration Members
 
-### EXCEPTION
+### <a id="exception" name="exception"></a> EXCEPTION
 
-• **EXCEPTION** = `"EXCEPTION"`
+• **EXCEPTION**

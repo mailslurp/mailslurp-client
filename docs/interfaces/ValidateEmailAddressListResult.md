@@ -16,7 +16,7 @@ Result of validating a list of email addresses
 
 ## Properties
 
-### invalidEmailAddresses
+### <a id="invalidemailaddresses" name="invalidemailaddresses"></a> invalidEmailAddresses
 
 • **invalidEmailAddresses**: `string`[]
 
@@ -24,7 +24,7 @@ Result of validating a list of email addresses
 
 ___
 
-### resultMapEmailAddressIsValid
+### <a id="resultmapemailaddressisvalid" name="resultmapemailaddressisvalid"></a> resultMapEmailAddressIsValid
 
 • **resultMapEmailAddressIsValid**: `Object`
 
@@ -32,11 +32,11 @@ ___
 
 #### Index signature
 
-▪ [key: `string`]: %60boolean%60
+▪ [key: `string`]: `boolean`
 
 ___
 
-### validEmailAddresses
+### <a id="validemailaddresses" name="validemailaddresses"></a> validEmailAddresses
 
 • **validEmailAddresses**: `string`[]
 

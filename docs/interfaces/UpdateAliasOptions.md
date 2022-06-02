@@ -14,7 +14,7 @@ Update an email alias
 
 ## Properties
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 

@@ -25,7 +25,7 @@ Collection of items
 
 ## Properties
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • **attachments**: `string`[]
 
@@ -33,7 +33,7 @@ Collection of items
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • **bcc**: `string`[]
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### bodyMD5Hash
+### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
@@ -49,7 +49,7 @@ ___
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • **cc**: `string`[]
 
@@ -57,7 +57,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -65,7 +65,7 @@ ___
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -73,7 +73,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -81,7 +81,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -89,7 +89,7 @@ ___
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -97,7 +97,7 @@ ___
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 
@@ -105,7 +105,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 
@@ -113,8 +113,8 @@ ___
 
 ___
 
-### virtualSend
+### <a id="virtualsend" name="virtualsend"></a> virtualSend
 
-• `Optional` **virtualSend**: `boolean`
+• **virtualSend**: `boolean`
 
 **`memberof`** SentEmailProjection

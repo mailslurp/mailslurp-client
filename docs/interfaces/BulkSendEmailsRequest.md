@@ -8,6 +8,6 @@
 
 ## Properties
 
-### bulkSendEmailOptions
+### <a id="bulksendemailoptions" name="bulksendemailoptions"></a> bulkSendEmailOptions
 
 • **bulkSendEmailOptions**: [`BulkSendEmailOptions`](BulkSendEmailOptions.md)

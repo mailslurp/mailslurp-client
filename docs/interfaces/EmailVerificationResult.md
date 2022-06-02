@@ -18,7 +18,7 @@ Email verification result. Valid means email address exists according to respons
 
 ## Properties
 
-### domainName
+### <a id="domainname" name="domainname"></a> domainName
 
 • **domainName**: `string`
 
@@ -26,7 +26,7 @@ Email verification result. Valid means email address exists according to respons
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -34,7 +34,7 @@ ___
 
 ___
 
-### error
+### <a id="error" name="error"></a> error
 
 • `Optional` **error**: `string`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### isValid
+### <a id="isvalid" name="isvalid"></a> isValid
 
 • **isValid**: `boolean`
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### port
+### <a id="port" name="port"></a> port
 
 • **port**: `number`
 

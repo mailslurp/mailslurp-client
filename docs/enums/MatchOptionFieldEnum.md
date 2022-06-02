@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [BCC](MatchOptionFieldEnum.md#bcc)
 - [CC](MatchOptionFieldEnum.md#cc)
@@ -12,32 +12,32 @@
 - [SUBJECT](MatchOptionFieldEnum.md#subject)
 - [TO](MatchOptionFieldEnum.md#to)
 
-## Enumeration members
+## Enumeration Members
 
-### BCC
+### <a id="bcc" name="bcc"></a> BCC
 
-• **BCC** = `"BCC"`
-
-___
-
-### CC
-
-• **CC** = `"CC"`
+• **BCC**
 
 ___
 
-### FROM
+### <a id="cc" name="cc"></a> CC
 
-• **FROM** = `"FROM"`
-
-___
-
-### SUBJECT
-
-• **SUBJECT** = `"SUBJECT"`
+• **CC**
 
 ___
 
-### TO
+### <a id="from" name="from"></a> FROM
 
-• **TO** = `"TO"`
+• **FROM**
+
+___
+
+### <a id="subject" name="subject"></a> SUBJECT
+
+• **SUBJECT**
+
+___
+
+### <a id="to" name="to"></a> TO
+
+• **TO**

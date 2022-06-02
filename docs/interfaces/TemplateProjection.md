@@ -18,7 +18,7 @@ Email template data
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -26,7 +26,7 @@ Email template data
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -34,7 +34,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 
@@ -42,7 +42,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -50,7 +50,7 @@ ___
 
 ___
 
-### variables
+### <a id="variables" name="variables"></a> variables
 
 • **variables**: `string`[]
 

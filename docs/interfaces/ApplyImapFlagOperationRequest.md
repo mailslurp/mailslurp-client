@@ -9,12 +9,12 @@
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### imapFlagOperationOptions
+### <a id="imapflagoperationoptions" name="imapflagoperationoptions"></a> imapFlagOperationOptions
 
 • **imapFlagOperationOptions**: [`ImapFlagOperationOptions`](ImapFlagOperationOptions.md)

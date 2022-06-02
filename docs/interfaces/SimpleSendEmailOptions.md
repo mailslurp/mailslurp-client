@@ -17,7 +17,7 @@ Simplified send email options
 
 ## Properties
 
-### body
+### <a id="body" name="body"></a> body
 
 • `Optional` **body**: `string`
 
@@ -27,7 +27,7 @@ Body of the email message. Supports HTML
 
 ___
 
-### senderId
+### <a id="senderid" name="senderid"></a> senderId
 
 • `Optional` **senderId**: `string`
 
@@ -37,7 +37,7 @@ ID of inbox to send from. If null an inbox will be created for sending
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -47,7 +47,7 @@ Subject line of the email
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`
 

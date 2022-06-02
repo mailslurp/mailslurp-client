@@ -42,8 +42,8 @@ docs: node_modules
 
 docs-lint: node_modules
 	# fix bad links in docs
-#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/#### Index signature//g' && cd -
-#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/\[key: `string`\]:/key/g' && cd -
+	#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/#### Index signature//g' && cd -
+	#	cd docs && find . -type f -name "*.md" -print0 | xargs -0 sed -i'' -e 's/\[key: `string`\]:/key/g' && cd -
 	#npm run docs:lint
 
 docs-test:
@@ -52,8 +52,12 @@ docs-test:
 readme: node_modules
 	DEBUG=script* npm run readme
 
+tag:
+	git tag v$$(node -e 'console.log(require("./package.json").version)') -a
+	git push origin --tags
+
 # manually bump package version first
-deploy: generate fmt build docs docs-lint docs-test readme #test
+deploy: generate fmt build docs docs-lint docs-test readme test
 	npm publish
 
 download-hyperlink:

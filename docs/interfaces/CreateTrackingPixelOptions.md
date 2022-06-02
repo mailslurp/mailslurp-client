@@ -15,7 +15,7 @@ Options for creating a tracking pixel for email open tracking
 
 ## Properties
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -23,7 +23,7 @@ Options for creating a tracking pixel for email open tracking
 
 ___
 
-### recipient
+### <a id="recipient" name="recipient"></a> recipient
 
 • `Optional` **recipient**: `string`
 

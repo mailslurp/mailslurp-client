@@ -4,12 +4,12 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [STRING](TemplateVariableVariableTypeEnum.md#string)
 
-## Enumeration members
+## Enumeration Members
 
-### STRING
+### <a id="string" name="string"></a> STRING
 
-• **STRING** = `"STRING"`
+• **STRING**

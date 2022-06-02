@@ -28,11 +28,23 @@ export interface AttachmentProjection {
      */
     contentLength?: number;
     /**
+     * Content type of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentType?: string;
+    /**
      *
      * @type {string}
      * @memberof AttachmentProjection
      */
     userId: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    createdAt: Date;
     /**
      * Attachment ID
      * @type {string}
@@ -44,19 +56,7 @@ export interface AttachmentProjection {
      * @type {Date}
      * @memberof AttachmentProjection
      */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
     updatedAt: Date;
-    /**
-     * Content type of attachment.
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    contentType?: string;
 }
 export declare function AttachmentProjectionFromJSON(json: any): AttachmentProjection;
 export declare function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection;

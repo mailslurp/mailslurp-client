@@ -12,30 +12,30 @@
 
 ## Properties
 
-### body
+### <a id="body" name="body"></a> body
 
 • `Optional` **body**: `any`
 
 ___
 
-### headers
+### <a id="headers" name="headers"></a> headers
 
 • **headers**: [`HTTPHeaders`](../README.md#httpheaders)
 
 ___
 
-### method
+### <a id="method" name="method"></a> method
 
 • **method**: [`HTTPMethod`](../README.md#httpmethod)
 
 ___
 
-### path
+### <a id="path" name="path"></a> path
 
 • **path**: `string`
 
 ___
 
-### query
+### <a id="query" name="query"></a> query
 
 • `Optional` **query**: [`HTTPQuery`](../README.md#httpquery)

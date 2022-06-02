@@ -13,7 +13,7 @@
 
 ## Properties
 
-### contentTypeHeader
+### <a id="contenttypeheader" name="contenttypeheader"></a> contentTypeHeader
 
 • `Optional` **contentTypeHeader**: `string`
 
@@ -23,7 +23,7 @@ Optional content type header of attachment
 
 ___
 
-### file
+### <a id="file" name="file"></a> file
 
 • **file**: `Blob`
 

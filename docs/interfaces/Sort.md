@@ -14,7 +14,7 @@
 
 ## Properties
 
-### empty
+### <a id="empty" name="empty"></a> empty
 
 • `Optional` **empty**: `boolean`
 
@@ -22,7 +22,7 @@
 
 ___
 
-### sorted
+### <a id="sorted" name="sorted"></a> sorted
 
 • `Optional` **sorted**: `boolean`
 
@@ -30,7 +30,7 @@ ___
 
 ___
 
-### unsorted
+### <a id="unsorted" name="unsorted"></a> unsorted
 
 • `Optional` **unsorted**: `boolean`
 

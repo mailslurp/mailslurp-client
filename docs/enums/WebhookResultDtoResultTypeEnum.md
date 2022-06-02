@@ -4,26 +4,26 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-- [BAD\_RESPONSE](WebhookResultDtoResultTypeEnum.md#bad-response)
+- [BAD\_RESPONSE](WebhookResultDtoResultTypeEnum.md#bad_response)
 - [EXCEPTION](WebhookResultDtoResultTypeEnum.md#exception)
 - [SUCCESS](WebhookResultDtoResultTypeEnum.md#success)
 
-## Enumeration members
+## Enumeration Members
 
-### BAD\_RESPONSE
+### <a id="bad_response" name="bad_response"></a> BAD\_RESPONSE
 
-• **BAD\_RESPONSE** = `"BAD_RESPONSE"`
-
-___
-
-### EXCEPTION
-
-• **EXCEPTION** = `"EXCEPTION"`
+• **BAD\_RESPONSE**
 
 ___
 
-### SUCCESS
+### <a id="exception" name="exception"></a> EXCEPTION
 
-• **SUCCESS** = `"SUCCESS"`
+• **EXCEPTION**
+
+___
+
+### <a id="success" name="success"></a> SUCCESS
+
+• **SUCCESS**

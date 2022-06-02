@@ -83,7 +83,7 @@ function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         resultType: !(0, runtime_1.exists)(json, 'resultType') ? undefined : json['resultType'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
-        seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
+        seen: json['seen'],
     };
 }
 exports.WebhookResultDtoFromJSONTyped = WebhookResultDtoFromJSONTyped;

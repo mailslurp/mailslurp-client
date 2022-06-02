@@ -23,7 +23,7 @@ Conditions to apply to emails that you are waiting for
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
@@ -33,7 +33,7 @@ ISO Date Time latest time of email to consider. Filter for matching emails that 
 
 ___
 
-### count
+### <a id="count" name="count"></a> count
 
 • `Optional` **count**: `number`
 
@@ -43,7 +43,7 @@ Number of results that should match conditions. Either exactly or at least this 
 
 ___
 
-### countType
+### <a id="counttype" name="counttype"></a> countType
 
 • `Optional` **countType**: [`WaitForConditionsCountTypeEnum`](../enums/WaitForConditionsCountTypeEnum.md)
 
@@ -53,7 +53,7 @@ How result size should be compared with the expected size. Exactly or at-least m
 
 ___
 
-### delayTimeout
+### <a id="delaytimeout" name="delaytimeout"></a> delayTimeout
 
 • `Optional` **delayTimeout**: `number`
 
@@ -63,7 +63,7 @@ Max time in milliseconds to wait between retries if a `timeout` is specified.
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -73,7 +73,7 @@ ID of inbox to search within and apply conditions to. Essentially filtering the 
 
 ___
 
-### matches
+### <a id="matches" name="matches"></a> matches
 
 • `Optional` **matches**: [`MatchOption`](MatchOption.md)[]
 
@@ -83,7 +83,7 @@ Conditions that should be matched for an email to qualify for results. Each cond
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
@@ -93,7 +93,7 @@ ISO Date Time earliest time of email to consider. Filter for matching emails tha
 
 ___
 
-### sortDirection
+### <a id="sortdirection" name="sortdirection"></a> sortDirection
 
 • `Optional` **sortDirection**: [`WaitForConditionsSortDirectionEnum`](../enums/WaitForConditionsSortDirectionEnum.md)
 
@@ -103,7 +103,7 @@ Direction to sort matching emails by created time
 
 ___
 
-### timeout
+### <a id="timeout" name="timeout"></a> timeout
 
 • **timeout**: `number`
 
@@ -113,7 +113,7 @@ Max time in milliseconds to retry the `waitFor` operation until conditions are m
 
 ___
 
-### unreadOnly
+### <a id="unreadonly" name="unreadonly"></a> unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`
 

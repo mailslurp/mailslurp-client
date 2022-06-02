@@ -9,12 +9,12 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### sendSMTPEnvelopeOptions
+### <a id="sendsmtpenvelopeoptions" name="sendsmtpenvelopeoptions"></a> sendSMTPEnvelopeOptions
 
 • **sendSMTPEnvelopeOptions**: [`SendSMTPEnvelopeOptions`](SendSMTPEnvelopeOptions.md)

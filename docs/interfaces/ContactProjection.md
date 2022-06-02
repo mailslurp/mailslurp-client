@@ -21,7 +21,7 @@ Email contact for address book
 
 ## Properties
 
-### company
+### <a id="company" name="company"></a> company
 
 • `Optional` **company**: `string`
 
@@ -29,7 +29,7 @@ Email contact for address book
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -37,7 +37,7 @@ ___
 
 ___
 
-### emailAddresses
+### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
 
 • `Optional` **emailAddresses**: `string`[]
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### firstName
+### <a id="firstname" name="firstname"></a> firstName
 
 • `Optional` **firstName**: `string`
 
@@ -53,7 +53,7 @@ ___
 
 ___
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • `Optional` **groupId**: `string`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### lastName
+### <a id="lastname" name="lastname"></a> lastName
 
 • `Optional` **lastName**: `string`
 
@@ -77,8 +77,8 @@ ___
 
 ___
 
-### optOut
+### <a id="optout" name="optout"></a> optOut
 
-• `Optional` **optOut**: `boolean`
+• **optOut**: `boolean`
 
 **`memberof`** ContactProjection

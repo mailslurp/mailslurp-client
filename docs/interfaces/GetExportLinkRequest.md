@@ -10,18 +10,18 @@
 
 ## Properties
 
-### apiKey
+### <a id="apikey" name="apikey"></a> apiKey
 
 • `Optional` **apiKey**: `string`
 
 ___
 
-### exportOptions
+### <a id="exportoptions" name="exportoptions"></a> exportOptions
 
 • **exportOptions**: [`ExportOptions`](ExportOptions.md)
 
 ___
 
-### exportType
+### <a id="exporttype" name="exporttype"></a> exportType
 
 • **exportType**: [`GetExportLinkExportTypeEnum`](../enums/GetExportLinkExportTypeEnum.md)

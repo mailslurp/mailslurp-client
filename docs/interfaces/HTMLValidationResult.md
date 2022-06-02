@@ -16,7 +16,7 @@ HTML Validation Results
 
 ## Properties
 
-### errors
+### <a id="errors" name="errors"></a> errors
 
 • **errors**: [`ValidationMessage`](ValidationMessage.md)[]
 
@@ -26,7 +26,7 @@ Optional errors resulting from HTML validation
 
 ___
 
-### isValid
+### <a id="isvalid" name="isvalid"></a> isValid
 
 • **isValid**: `boolean`
 
@@ -36,7 +36,7 @@ Is HTML validation result valid
 
 ___
 
-### warnings
+### <a id="warnings" name="warnings"></a> warnings
 
 • **warnings**: [`ValidationMessage`](ValidationMessage.md)[]
 

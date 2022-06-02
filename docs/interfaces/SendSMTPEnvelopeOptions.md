@@ -16,7 +16,7 @@ Options for the email envelope
 
 ## Properties
 
-### data
+### <a id="data" name="data"></a> data
 
 • **data**: `string`
 
@@ -24,7 +24,7 @@ Options for the email envelope
 
 ___
 
-### mailFrom
+### <a id="mailfrom" name="mailfrom"></a> mailFrom
 
 • **mailFrom**: `string`
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### rcptTo
+### <a id="rcptto" name="rcptto"></a> rcptTo
 
 • **rcptTo**: `string`[]
 

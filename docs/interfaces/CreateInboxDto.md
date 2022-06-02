@@ -24,7 +24,7 @@ Options for creating an inbox. An inbox has a real email address that can send a
 
 ## Properties
 
-### allowTeamAccess
+### <a id="allowteamaccess" name="allowteamaccess"></a> allowTeamAccess
 
 • `Optional` **allowTeamAccess**: `boolean`
 
@@ -34,7 +34,7 @@ DEPRECATED (team access is always true). Grant team access to this inbox and the
 
 ___
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
@@ -44,7 +44,7 @@ Optional description of the inbox for labelling purposes. Is shown in the dashbo
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • `Optional` **emailAddress**: `string`
 
@@ -54,7 +54,7 @@ A custom email address to use with the inbox. Defaults to null. When null MailSl
 
 ___
 
-### expiresAt
+### <a id="expiresat" name="expiresat"></a> expiresAt
 
 • `Optional` **expiresAt**: `Date`
 
@@ -64,7 +64,7 @@ Optional inbox expiration date. If null then this inbox is permanent and the ema
 
 ___
 
-### expiresIn
+### <a id="expiresin" name="expiresin"></a> expiresIn
 
 • `Optional` **expiresIn**: `number`
 
@@ -74,7 +74,7 @@ Number of milliseconds that inbox should exist for
 
 ___
 
-### favourite
+### <a id="favourite" name="favourite"></a> favourite
 
 • `Optional` **favourite**: `boolean`
 
@@ -84,7 +84,7 @@ Is the inbox a favorite. Marking an inbox as a favorite is typically done in the
 
 ___
 
-### inboxType
+### <a id="inboxtype" name="inboxtype"></a> inboxType
 
 • `Optional` **inboxType**: [`CreateInboxDtoInboxTypeEnum`](../enums/CreateInboxDtoInboxTypeEnum.md)
 
@@ -94,7 +94,7 @@ Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes a
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -104,7 +104,7 @@ Optional name of the inbox. Displayed in the dashboard for easier search and use
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • `Optional` **tags**: `string`[]
 
@@ -114,7 +114,7 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 ___
 
-### useDomainPool
+### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
 
@@ -124,7 +124,7 @@ Use the MailSlurp domain name pool with this inbox when creating the email addre
 
 ___
 
-### virtualInbox
+### <a id="virtualinbox" name="virtualinbox"></a> virtualInbox
 
 • `Optional` **virtualInbox**: `boolean`
 

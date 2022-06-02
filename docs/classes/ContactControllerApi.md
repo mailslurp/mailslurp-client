@@ -37,7 +37,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new ContactControllerApi**(`configuration?`)
 
@@ -53,7 +53,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -63,7 +63,7 @@
 
 ## Methods
 
-### createContact
+### <a id="createcontact" name="createcontact"></a> createContact
 
 ▸ **createContact**(`requestParameters`, `initOverrides?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
 
@@ -82,7 +82,7 @@ Create a contact
 
 ___
 
-### createContactRaw
+### <a id="createcontactraw" name="createcontactraw"></a> createContactRaw
 
 ▸ **createContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
 
@@ -101,7 +101,7 @@ Create a contact
 
 ___
 
-### deleteContact
+### <a id="deletecontact" name="deletecontact"></a> deleteContact
 
 ▸ **deleteContact**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -120,7 +120,7 @@ Delete contact
 
 ___
 
-### deleteContactRaw
+### <a id="deletecontactraw" name="deletecontactraw"></a> deleteContactRaw
 
 ▸ **deleteContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -139,7 +139,7 @@ Delete contact
 
 ___
 
-### getAllContacts
+### <a id="getallcontacts" name="getallcontacts"></a> getAllContacts
 
 ▸ **getAllContacts**(`requestParameters`, `initOverrides?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
@@ -158,7 +158,7 @@ Get all contacts
 
 ___
 
-### getAllContactsRaw
+### <a id="getallcontactsraw" name="getallcontactsraw"></a> getAllContactsRaw
 
 ▸ **getAllContactsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>\>
 
@@ -177,7 +177,7 @@ Get all contacts
 
 ___
 
-### getContact
+### <a id="getcontact" name="getcontact"></a> getContact
 
 ▸ **getContact**(`requestParameters`, `initOverrides?`): `Promise`<[`ContactDto`](../interfaces/ContactDto.md)\>
 
@@ -196,7 +196,7 @@ Get contact
 
 ___
 
-### getContactRaw
+### <a id="getcontactraw" name="getcontactraw"></a> getContactRaw
 
 ▸ **getContactRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactDto`](../interfaces/ContactDto.md)\>\>
 
@@ -215,7 +215,7 @@ Get contact
 
 ___
 
-### getContactVCard
+### <a id="getcontactvcard" name="getcontactvcard"></a> getContactVCard
 
 ▸ **getContactVCard**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -234,7 +234,7 @@ Get contact vCard vcf file
 
 ___
 
-### getContactVCardRaw
+### <a id="getcontactvcardraw" name="getcontactvcardraw"></a> getContactVCardRaw
 
 ▸ **getContactVCardRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -253,7 +253,7 @@ Get contact vCard vcf file
 
 ___
 
-### getContacts
+### <a id="getcontacts" name="getcontacts"></a> getContacts
 
 ▸ **getContacts**(`initOverrides?`): `Promise`<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>
 
@@ -271,7 +271,7 @@ Get all contacts
 
 ___
 
-### getContactsRaw
+### <a id="getcontactsraw" name="getcontactsraw"></a> getContactsRaw
 
 ▸ **getContactsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ContactProjection`](../interfaces/ContactProjection.md)[]\>\>
 
@@ -289,7 +289,7 @@ Get all contacts
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -310,9 +310,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -324,6 +324,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -336,9 +337,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -350,6 +351,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -362,9 +364,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -376,6 +378,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

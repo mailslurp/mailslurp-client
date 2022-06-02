@@ -37,7 +37,7 @@ Email entity (also known as EmailDto). When an SMTP email message is received by
 
 ## Properties
 
-### analysis
+### <a id="analysis" name="analysis"></a> analysis
 
 • `Optional` **analysis**: [`EmailAnalysis`](EmailAnalysis.md)
 
@@ -45,7 +45,7 @@ Email entity (also known as EmailDto). When an SMTP email message is received by
 
 ___
 
-### attachments
+### <a id="attachments" name="attachments"></a> attachments
 
 • `Optional` **attachments**: `string`[]
 
@@ -55,7 +55,7 @@ List of IDs of attachments found in the email. Use these IDs with the Inbox and 
 
 ___
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -65,7 +65,7 @@ List of `BCC` recipients email addresses that the email was addressed to. See re
 
 ___
 
-### body
+### <a id="body" name="body"></a> body
 
 • `Optional` **body**: `string`
 
@@ -75,7 +75,7 @@ The body of the email message as text parsed from the SMTP message body (does no
 
 ___
 
-### bodyExcerpt
+### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
 
@@ -85,7 +85,7 @@ An excerpt of the body of the email message for quick preview .
 
 ___
 
-### bodyMD5Hash
+### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
@@ -95,7 +95,7 @@ A hash signature of the email message using MD5. Useful for comparing emails wit
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -105,7 +105,7 @@ List of `CC` recipients email addresses that the email was addressed to. See rec
 
 ___
 
-### charset
+### <a id="charset" name="charset"></a> charset
 
 • `Optional` **charset**: `string`
 
@@ -115,7 +115,7 @@ Detected character set of the email body such as UTF-8
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -125,7 +125,7 @@ When was the email received by MailSlurp
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -135,7 +135,7 @@ Who the email was sent from. An email address - see fromName for the sender name
 
 ___
 
-### headers
+### <a id="headers" name="headers"></a> headers
 
 • `Optional` **headers**: `Object`
 
@@ -145,11 +145,11 @@ Collection of SMTP headers attached to email
 
 #### Index signature
 
-▪ [key: `string`]: %60string%60
+▪ [key: `string`]: `string`
 
 ___
 
-### html
+### <a id="html" name="html"></a> html
 
 • `Optional` **html**: `boolean`
 
@@ -157,7 +157,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -167,7 +167,7 @@ ID of the email entity
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -177,7 +177,7 @@ ID of the inbox that received the email
 
 ___
 
-### isHTML
+### <a id="ishtml" name="ishtml"></a> isHTML
 
 • `Optional` **isHTML**: `boolean`
 
@@ -187,7 +187,7 @@ Is the email body content type HTML?
 
 ___
 
-### read
+### <a id="read" name="read"></a> read
 
 • **read**: `boolean`
 
@@ -197,7 +197,7 @@ Read flag. Has the email ever been viewed in the dashboard or fetched via the AP
 
 ___
 
-### recipients
+### <a id="recipients" name="recipients"></a> recipients
 
 • `Optional` **recipients**: [`EmailRecipients`](EmailRecipients.md)
 
@@ -205,7 +205,7 @@ ___
 
 ___
 
-### replyTo
+### <a id="replyto" name="replyto"></a> replyTo
 
 • `Optional` **replyTo**: `string`
 
@@ -215,7 +215,7 @@ The `replyTo` field on the received email message
 
 ___
 
-### sender
+### <a id="sender" name="sender"></a> sender
 
 • `Optional` **sender**: [`Sender`](Sender.md)
 
@@ -223,7 +223,7 @@ ___
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -233,7 +233,7 @@ The subject line of the email message as specified by SMTP subject header
 
 ___
 
-### teamAccess
+### <a id="teamaccess" name="teamaccess"></a> teamAccess
 
 • **teamAccess**: `boolean`
 
@@ -243,7 +243,7 @@ Can the email be accessed by organization team members
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 
@@ -253,7 +253,7 @@ List of `To` recipient email addresses that the email was addressed to. See reci
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -263,7 +263,7 @@ When was the email last updated
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

@@ -10,18 +10,18 @@
 
 ## Properties
 
-### aliasId
+### <a id="aliasid" name="aliasid"></a> aliasId
 
 • **aliasId**: `string`
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### replyToAliasEmailOptions
+### <a id="replytoaliasemailoptions" name="replytoaliasemailoptions"></a> replyToAliasEmailOptions
 
 • **replyToAliasEmailOptions**: [`ReplyToAliasEmailOptions`](ReplyToAliasEmailOptions.md)

@@ -4,33 +4,33 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ATTACHMENTS](ExportEntitiesExportTypeEnum.md#attachments)
 - [CONTACTS](ExportEntitiesExportTypeEnum.md#contacts)
 - [EMAILS](ExportEntitiesExportTypeEnum.md#emails)
 - [INBOXES](ExportEntitiesExportTypeEnum.md#inboxes)
 
-## Enumeration members
+## Enumeration Members
 
-### ATTACHMENTS
+### <a id="attachments" name="attachments"></a> ATTACHMENTS
 
-• **ATTACHMENTS** = `"ATTACHMENTS"`
-
-___
-
-### CONTACTS
-
-• **CONTACTS** = `"CONTACTS"`
+• **ATTACHMENTS**
 
 ___
 
-### EMAILS
+### <a id="contacts" name="contacts"></a> CONTACTS
 
-• **EMAILS** = `"EMAILS"`
+• **CONTACTS**
 
 ___
 
-### INBOXES
+### <a id="emails" name="emails"></a> EMAILS
 
-• **INBOXES** = `"INBOXES"`
+• **EMAILS**
+
+___
+
+### <a id="inboxes" name="inboxes"></a> INBOXES
+
+• **INBOXES**

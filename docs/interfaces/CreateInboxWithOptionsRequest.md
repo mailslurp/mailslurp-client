@@ -8,6 +8,6 @@
 
 ## Properties
 
-### createInboxDto
+### <a id="createinboxdto" name="createinboxdto"></a> createInboxDto
 
 • **createInboxDto**: [`CreateInboxDto`](CreateInboxDto.md)

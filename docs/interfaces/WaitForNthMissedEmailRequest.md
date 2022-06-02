@@ -12,30 +12,30 @@
 
 ## Properties
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
 ___
 
-### index
+### <a id="index" name="index"></a> index
 
 • **index**: `number`
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### timeout
+### <a id="timeout" name="timeout"></a> timeout
 
 • `Optional` **timeout**: `number`

@@ -15,7 +15,7 @@ Result from calling expire on any inboxes that have applicable expiration dates 
 
 ## Properties
 
-### expireBefore
+### <a id="expirebefore" name="expirebefore"></a> expireBefore
 
 • **expireBefore**: `Date`
 
@@ -25,7 +25,7 @@ DateTime to filter inboxes so that those expiring before this time are expired
 
 ___
 
-### inboxIds
+### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: `string`[]
 

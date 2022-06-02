@@ -14,7 +14,7 @@ Options for setting inbox favourite state
 
 ## Properties
 
-### state
+### <a id="state" name="state"></a> state
 
 • **state**: `boolean`
 

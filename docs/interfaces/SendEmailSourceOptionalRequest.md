@@ -11,24 +11,24 @@
 
 ## Properties
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### sendEmailOptions
+### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 ___
 
-### useDomainPool
+### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
 
 ___
 
-### virtualSend
+### <a id="virtualsend" name="virtualsend"></a> virtualSend
 
 • `Optional` **virtualSend**: `boolean`

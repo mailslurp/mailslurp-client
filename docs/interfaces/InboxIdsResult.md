@@ -14,7 +14,7 @@ List of inbox IDs and email addresses
 
 ## Properties
 
-### inboxIds
+### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: [`InboxIdItem`](InboxIdItem.md)[]
 

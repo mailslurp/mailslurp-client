@@ -10,12 +10,12 @@ Result of search for inbox by email address
 
 ### Properties
 
-- [\_exists](InboxByEmailAddressResult.md#exists)
+- [\_exists](InboxByEmailAddressResult.md#_exists)
 - [inboxId](InboxByEmailAddressResult.md#inboxid)
 
 ## Properties
 
-### \_exists
+### <a id="_exists" name="_exists"></a> \_exists
 
 • **\_exists**: `boolean`
 
@@ -23,7 +23,7 @@ Result of search for inbox by email address
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 

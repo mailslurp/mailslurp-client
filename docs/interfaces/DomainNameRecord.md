@@ -17,7 +17,7 @@ DNS Record required for verification of a domain. Record vary depending on domai
 
 ## Properties
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 
@@ -25,7 +25,7 @@ DNS Record required for verification of a domain. Record vary depending on domai
 
 ___
 
-### recordEntries
+### <a id="recordentries" name="recordentries"></a> recordEntries
 
 • **recordEntries**: `string`[]
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### recordType
+### <a id="recordtype" name="recordtype"></a> recordType
 
 • **recordType**: [`DomainNameRecordRecordTypeEnum`](../enums/DomainNameRecordRecordTypeEnum.md)
 
@@ -43,7 +43,7 @@ Domain Name Server Record Types
 
 ___
 
-### ttl
+### <a id="ttl" name="ttl"></a> ttl
 
 • **ttl**: `number`
 

@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [FALSE](ConditionOptionValueEnum.md#false)
 - [TRUE](ConditionOptionValueEnum.md#true)
 
-## Enumeration members
+## Enumeration Members
 
-### FALSE
+### <a id="false" name="false"></a> FALSE
 
-• **FALSE** = `"FALSE"`
+• **FALSE**
 
 ___
 
-### TRUE
+### <a id="true" name="true"></a> TRUE
 
-• **TRUE** = `"TRUE"`
+• **TRUE**

@@ -16,7 +16,7 @@ Name Server lookup result
 
 ## Properties
 
-### domain
+### <a id="domain" name="domain"></a> domain
 
 • **domain**: `string`
 
@@ -24,7 +24,7 @@ Name Server lookup result
 
 ___
 
-### message
+### <a id="message" name="message"></a> message
 
 • `Optional` **message**: `string`
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### mxRecords
+### <a id="mxrecords" name="mxrecords"></a> mxRecords
 
 • **mxRecords**: [`NameServerRecord`](NameServerRecord.md)[]
 

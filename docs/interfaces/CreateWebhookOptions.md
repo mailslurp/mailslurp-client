@@ -17,7 +17,7 @@ Options for creating a webhook. Webhooks can be attached to inboxes and MailSlur
 
 ## Properties
 
-### basicAuth
+### <a id="basicauth" name="basicauth"></a> basicAuth
 
 • `Optional` **basicAuth**: [`BasicAuthOptions`](BasicAuthOptions.md)
 
@@ -25,7 +25,7 @@ Options for creating a webhook. Webhooks can be attached to inboxes and MailSlur
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • `Optional` **eventName**: [`CreateWebhookOptionsEventNameEnum`](../enums/CreateWebhookOptionsEventNameEnum.md)
 
@@ -35,7 +35,7 @@ Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when a
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -45,7 +45,7 @@ Optional name for the webhook
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`
 

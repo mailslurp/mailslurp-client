@@ -8,6 +8,6 @@
 
 ## Properties
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`

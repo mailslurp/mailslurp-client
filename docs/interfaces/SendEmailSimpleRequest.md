@@ -8,6 +8,6 @@
 
 ## Properties
 
-### simpleSendEmailOptions
+### <a id="simplesendemailoptions" name="simplesendemailoptions"></a> simpleSendEmailOptions
 
 • **simpleSendEmailOptions**: [`SimpleSendEmailOptions`](SimpleSendEmailOptions.md)

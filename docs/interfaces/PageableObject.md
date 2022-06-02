@@ -17,7 +17,7 @@
 
 ## Properties
 
-### offset
+### <a id="offset" name="offset"></a> offset
 
 • `Optional` **offset**: `number`
 
@@ -25,7 +25,7 @@
 
 ___
 
-### pageNumber
+### <a id="pagenumber" name="pagenumber"></a> pageNumber
 
 • `Optional` **pageNumber**: `number`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### pageSize
+### <a id="pagesize" name="pagesize"></a> pageSize
 
 • `Optional` **pageSize**: `number`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### paged
+### <a id="paged" name="paged"></a> paged
 
 • `Optional` **paged**: `boolean`
 
@@ -49,7 +49,7 @@ ___
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
@@ -57,7 +57,7 @@ ___
 
 ___
 
-### unpaged
+### <a id="unpaged" name="unpaged"></a> unpaged
 
 • `Optional` **unpaged**: `boolean`
 

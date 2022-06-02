@@ -14,7 +14,7 @@ Results of query on domain name servers
 
 ## Properties
 
-### results
+### <a id="results" name="results"></a> results
 
 • **results**: [`DNSLookupResult`](DNSLookupResult.md)[]
 

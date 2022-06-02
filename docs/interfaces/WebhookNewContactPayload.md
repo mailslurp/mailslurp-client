@@ -28,7 +28,7 @@ NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST whe
 
 ## Properties
 
-### company
+### <a id="company" name="company"></a> company
 
 • `Optional` **company**: `string`
 
@@ -36,7 +36,7 @@ NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST whe
 
 ___
 
-### contactId
+### <a id="contactid" name="contactid"></a> contactId
 
 • **contactId**: `string`
 
@@ -44,7 +44,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -52,7 +52,7 @@ ___
 
 ___
 
-### emailAddresses
+### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
 
 • **emailAddresses**: `string`[]
 
@@ -60,7 +60,7 @@ ___
 
 ___
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • **eventName**: [`WebhookNewContactPayloadEventNameEnum`](../enums/WebhookNewContactPayloadEventNameEnum.md)
 
@@ -70,7 +70,7 @@ Name of the event type webhook is being triggered for.
 
 ___
 
-### firstName
+### <a id="firstname" name="firstname"></a> firstName
 
 • `Optional` **firstName**: `string`
 
@@ -78,7 +78,7 @@ ___
 
 ___
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • `Optional` **groupId**: `string`
 
@@ -86,7 +86,7 @@ ___
 
 ___
 
-### lastName
+### <a id="lastname" name="lastname"></a> lastName
 
 • `Optional` **lastName**: `string`
 
@@ -94,7 +94,7 @@ ___
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -104,7 +104,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 ___
 
-### metaData
+### <a id="metadata" name="metadata"></a> metaData
 
 • `Optional` **metaData**: `object`
 
@@ -112,15 +112,15 @@ ___
 
 ___
 
-### optOut
+### <a id="optout" name="optout"></a> optOut
 
-• `Optional` **optOut**: `boolean`
+• **optOut**: `boolean`
 
 **`memberof`** WebhookNewContactPayload
 
 ___
 
-### primaryEmailAddress
+### <a id="primaryemailaddress" name="primaryemailaddress"></a> primaryEmailAddress
 
 • `Optional` **primaryEmailAddress**: `string`
 
@@ -128,7 +128,7 @@ ___
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • **tags**: `string`[]
 
@@ -136,7 +136,7 @@ ___
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -146,7 +146,7 @@ ID of webhook entity being triggered
 
 ___
 
-### webhookName
+### <a id="webhookname" name="webhookname"></a> webhookName
 
 • `Optional` **webhookName**: `string`
 

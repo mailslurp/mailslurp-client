@@ -29,7 +29,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new ExportControllerApi**(`configuration?`)
 
@@ -45,7 +45,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -55,7 +55,7 @@
 
 ## Methods
 
-### exportEntities
+### <a id="exportentities" name="exportentities"></a> exportEntities
 
 ▸ **exportEntities**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -74,7 +74,7 @@ Export inboxes link callable via browser
 
 ___
 
-### exportEntitiesRaw
+### <a id="exportentitiesraw" name="exportentitiesraw"></a> exportEntitiesRaw
 
 ▸ **exportEntitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -93,7 +93,7 @@ Export inboxes link callable via browser
 
 ___
 
-### getExportLink
+### <a id="getexportlink" name="getexportlink"></a> getExportLink
 
 ▸ **getExportLink**(`requestParameters`, `initOverrides?`): `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
 
@@ -112,7 +112,7 @@ Get export link
 
 ___
 
-### getExportLinkRaw
+### <a id="getexportlinkraw" name="getexportlinkraw"></a> getExportLinkRaw
 
 ▸ **getExportLinkRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportLink`](../interfaces/ExportLink.md)\>\>
 
@@ -131,7 +131,7 @@ Get export link
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -152,9 +152,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -166,6 +166,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -178,9 +179,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -192,6 +193,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -204,9 +206,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -218,6 +220,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

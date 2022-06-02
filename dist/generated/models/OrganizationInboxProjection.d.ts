@@ -74,7 +74,7 @@ export interface OrganizationInboxProjection {
      * @type {boolean}
      * @memberof OrganizationInboxProjection
      */
-    virtualInbox?: boolean;
+    virtualInbox: boolean;
 }
 /**
  * @export

@@ -15,7 +15,7 @@ Results of inbox forwarder test
 
 ## Properties
 
-### doesMatch
+### <a id="doesmatch" name="doesmatch"></a> doesMatch
 
 • **doesMatch**: `boolean`
 
@@ -23,7 +23,7 @@ Results of inbox forwarder test
 
 ___
 
-### matches
+### <a id="matches" name="matches"></a> matches
 
 • **matches**: `Object`
 
@@ -31,4 +31,4 @@ ___
 
 #### Index signature
 
-▪ [key: `string`]: %60boolean%60
+▪ [key: `string`]: `boolean`

@@ -8,6 +8,6 @@
 
 ## Properties
 
-### verifyEmailAddressOptions
+### <a id="verifyemailaddressoptions" name="verifyemailaddressoptions"></a> verifyEmailAddressOptions
 
 • **verifyEmailAddressOptions**: [`VerifyEmailAddressOptions`](VerifyEmailAddressOptions.md)

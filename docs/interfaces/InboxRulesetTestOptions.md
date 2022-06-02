@@ -14,7 +14,7 @@ Test options for inbox ruleset
 
 ## Properties
 
-### testTarget
+### <a id="testtarget" name="testtarget"></a> testTarget
 
 • **testTarget**: `string`
 

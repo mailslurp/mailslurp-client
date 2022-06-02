@@ -15,7 +15,7 @@ Links found in HTML
 
 ## Properties
 
-### body
+### <a id="body" name="body"></a> body
 
 • **body**: `string`
 
@@ -23,7 +23,7 @@ Links found in HTML
 
 ___
 
-### links
+### <a id="links" name="links"></a> links
 
 • **links**: `string`[]
 

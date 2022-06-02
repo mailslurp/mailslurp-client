@@ -16,7 +16,7 @@ Options for creating inbox rulesets. Inbox rulesets can be used to block, allow,
 
 ## Properties
 
-### action
+### <a id="action" name="action"></a> action
 
 • **action**: [`CreateInboxRulesetOptionsActionEnum`](../enums/CreateInboxRulesetOptionsActionEnum.md)
 
@@ -26,7 +26,7 @@ Action to be taken when the ruleset matches an email for the given scope. For ex
 
 ___
 
-### scope
+### <a id="scope" name="scope"></a> scope
 
 • **scope**: [`CreateInboxRulesetOptionsScopeEnum`](../enums/CreateInboxRulesetOptionsScopeEnum.md)
 
@@ -36,7 +36,7 @@ What type of emails actions to apply ruleset to. Either `SENDING_EMAILS` or `REC
 
 ___
 
-### target
+### <a id="target" name="target"></a> target
 
 • **target**: `string`
 

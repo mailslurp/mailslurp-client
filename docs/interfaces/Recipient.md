@@ -16,7 +16,7 @@ Email recipient
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -24,7 +24,7 @@ Email recipient
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -32,7 +32,7 @@ ___
 
 ___
 
-### rawValue
+### <a id="rawvalue" name="rawvalue"></a> rawValue
 
 • **rawValue**: `string`
 

@@ -14,7 +14,7 @@ Update group contacts options. Pass a list of contact ids to replace existing gr
 
 ## Properties
 
-### contactIds
+### <a id="contactids" name="contactids"></a> contactIds
 
 • **contactIds**: `string`[]
 

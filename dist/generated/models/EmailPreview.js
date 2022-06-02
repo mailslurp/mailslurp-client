@@ -31,7 +31,7 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         createdAt: new Date(json['createdAt']),
-        read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
+        read: json['read'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
     };
 }

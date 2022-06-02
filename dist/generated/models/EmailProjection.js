@@ -30,13 +30,13 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         inboxId: json['inboxId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         to: json['to'],
+        createdAt: new Date(json['createdAt']),
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        createdAt: new Date(json['createdAt']),
-        teamAccess: !(0, runtime_1.exists)(json, 'teamAccess') ? undefined : json['teamAccess'],
-        read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+        teamAccess: json['teamAccess'],
+        read: json['read'],
     };
 }
 exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
@@ -54,13 +54,13 @@ function EmailProjectionToJSON(value) {
         inboxId: value.inboxId,
         attachments: value.attachments,
         to: value.to,
+        createdAt: value.createdAt.toISOString(),
         bcc: value.bcc,
         cc: value.cc,
-        createdAt: value.createdAt.toISOString(),
-        teamAccess: value.teamAccess,
-        read: value.read,
         bodyMD5Hash: value.bodyMD5Hash,
         bodyExcerpt: value.bodyExcerpt,
+        teamAccess: value.teamAccess,
+        read: value.read,
     };
 }
 exports.EmailProjectionToJSON = EmailProjectionToJSON;

@@ -14,7 +14,7 @@ Options for matching content using regex patterns based on Java Pattern syntax
 
 ## Properties
 
-### pattern
+### <a id="pattern" name="pattern"></a> pattern
 
 • **pattern**: `string`
 

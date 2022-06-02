@@ -12,7 +12,7 @@
 
 ## Properties
 
-### isValid
+### <a id="isvalid" name="isvalid"></a> isValid
 
 • **isValid**: `boolean`
 

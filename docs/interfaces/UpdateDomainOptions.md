@@ -14,7 +14,7 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 ## Properties
 
-### catchAllInboxId
+### <a id="catchallinboxid" name="catchallinboxid"></a> catchAllInboxId
 
 • `Optional` **catchAllInboxId**: `string`
 

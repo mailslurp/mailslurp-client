@@ -79,7 +79,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new WebhookControllerApi**(`configuration?`)
 
@@ -95,7 +95,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -105,7 +105,7 @@
 
 ## Methods
 
-### createAccountWebhook
+### <a id="createaccountwebhook" name="createaccountwebhook"></a> createAccountWebhook
 
 ▸ **createAccountWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
 
@@ -125,7 +125,7 @@ Attach a WebHook URL to an inbox
 
 ___
 
-### createAccountWebhookRaw
+### <a id="createaccountwebhookraw" name="createaccountwebhookraw"></a> createAccountWebhookRaw
 
 ▸ **createAccountWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
@@ -145,7 +145,7 @@ Attach a WebHook URL to an inbox
 
 ___
 
-### createWebhook
+### <a id="createwebhook" name="createwebhook"></a> createWebhook
 
 ▸ **createWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
 
@@ -165,7 +165,7 @@ Attach a WebHook URL to an inbox
 
 ___
 
-### createWebhookRaw
+### <a id="createwebhookraw" name="createwebhookraw"></a> createWebhookRaw
 
 ▸ **createWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
@@ -185,7 +185,7 @@ Attach a WebHook URL to an inbox
 
 ___
 
-### deleteAllWebhooks
+### <a id="deleteallwebhooks" name="deleteallwebhooks"></a> deleteAllWebhooks
 
 ▸ **deleteAllWebhooks**(`initOverrides?`): `Promise`<`void`\>
 
@@ -203,7 +203,7 @@ Delete all webhooks
 
 ___
 
-### deleteAllWebhooksRaw
+### <a id="deleteallwebhooksraw" name="deleteallwebhooksraw"></a> deleteAllWebhooksRaw
 
 ▸ **deleteAllWebhooksRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -221,7 +221,7 @@ Delete all webhooks
 
 ___
 
-### deleteWebhook
+### <a id="deletewebhook" name="deletewebhook"></a> deleteWebhook
 
 ▸ **deleteWebhook**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -240,7 +240,7 @@ Delete and disable a Webhook for an Inbox
 
 ___
 
-### deleteWebhookById
+### <a id="deletewebhookbyid" name="deletewebhookbyid"></a> deleteWebhookById
 
 ▸ **deleteWebhookById**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -259,7 +259,7 @@ Delete a webhook
 
 ___
 
-### deleteWebhookByIdRaw
+### <a id="deletewebhookbyidraw" name="deletewebhookbyidraw"></a> deleteWebhookByIdRaw
 
 ▸ **deleteWebhookByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -278,7 +278,7 @@ Delete a webhook
 
 ___
 
-### deleteWebhookRaw
+### <a id="deletewebhookraw" name="deletewebhookraw"></a> deleteWebhookRaw
 
 ▸ **deleteWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -297,7 +297,7 @@ Delete and disable a Webhook for an Inbox
 
 ___
 
-### getAllWebhookResults
+### <a id="getallwebhookresults" name="getallwebhookresults"></a> getAllWebhookResults
 
 ▸ **getAllWebhookResults**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookResult`](../interfaces/PageWebhookResult.md)\>
 
@@ -316,7 +316,7 @@ Get results for all webhooks
 
 ___
 
-### getAllWebhookResultsRaw
+### <a id="getallwebhookresultsraw" name="getallwebhookresultsraw"></a> getAllWebhookResultsRaw
 
 ▸ **getAllWebhookResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookResult`](../interfaces/PageWebhookResult.md)\>\>
 
@@ -335,7 +335,7 @@ Get results for all webhooks
 
 ___
 
-### getAllWebhooks
+### <a id="getallwebhooks" name="getallwebhooks"></a> getAllWebhooks
 
 ▸ **getAllWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
 
@@ -355,7 +355,7 @@ List Webhooks Paginated
 
 ___
 
-### getAllWebhooksRaw
+### <a id="getallwebhooksraw" name="getallwebhooksraw"></a> getAllWebhooksRaw
 
 ▸ **getAllWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
 
@@ -375,7 +375,7 @@ List Webhooks Paginated
 
 ___
 
-### getInboxWebhooksPaginated
+### <a id="getinboxwebhookspaginated" name="getinboxwebhookspaginated"></a> getInboxWebhooksPaginated
 
 ▸ **getInboxWebhooksPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
 
@@ -394,7 +394,7 @@ Get paginated webhooks for an Inbox
 
 ___
 
-### getInboxWebhooksPaginatedRaw
+### <a id="getinboxwebhookspaginatedraw" name="getinboxwebhookspaginatedraw"></a> getInboxWebhooksPaginatedRaw
 
 ▸ **getInboxWebhooksPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
 
@@ -413,7 +413,7 @@ Get paginated webhooks for an Inbox
 
 ___
 
-### getJsonSchemaForWebhookEvent
+### <a id="getjsonschemaforwebhookevent" name="getjsonschemaforwebhookevent"></a> getJsonSchemaForWebhookEvent
 
 ▸ **getJsonSchemaForWebhookEvent**(`requestParameters`, `initOverrides?`): `Promise`<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>
 
@@ -432,7 +432,7 @@ Get JSON Schema definition for webhook payload by event
 
 ___
 
-### getJsonSchemaForWebhookEventRaw
+### <a id="getjsonschemaforwebhookeventraw" name="getjsonschemaforwebhookeventraw"></a> getJsonSchemaForWebhookEventRaw
 
 ▸ **getJsonSchemaForWebhookEventRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>\>
 
@@ -451,7 +451,7 @@ Get JSON Schema definition for webhook payload by event
 
 ___
 
-### getJsonSchemaForWebhookPayload
+### <a id="getjsonschemaforwebhookpayload" name="getjsonschemaforwebhookpayload"></a> getJsonSchemaForWebhookPayload
 
 ▸ **getJsonSchemaForWebhookPayload**(`requestParameters`, `initOverrides?`): `Promise`<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>
 
@@ -470,7 +470,7 @@ Get JSON Schema definition for webhook payload
 
 ___
 
-### getJsonSchemaForWebhookPayloadRaw
+### <a id="getjsonschemaforwebhookpayloadraw" name="getjsonschemaforwebhookpayloadraw"></a> getJsonSchemaForWebhookPayloadRaw
 
 ▸ **getJsonSchemaForWebhookPayloadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>\>
 
@@ -489,7 +489,7 @@ Get JSON Schema definition for webhook payload
 
 ___
 
-### getTestWebhookPayload
+### <a id="gettestwebhookpayload" name="gettestwebhookpayload"></a> getTestWebhookPayload
 
 ▸ **getTestWebhookPayload**(`requestParameters`, `initOverrides?`): `Promise`<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>
 
@@ -508,7 +508,7 @@ Get test webhook payload example. Response content depends on eventName passed. 
 
 ___
 
-### getTestWebhookPayloadBounce
+### <a id="gettestwebhookpayloadbounce" name="gettestwebhookpayloadbounce"></a> getTestWebhookPayloadBounce
 
 ▸ **getTestWebhookPayloadBounce**(`initOverrides?`): `Promise`<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>
 
@@ -526,7 +526,7 @@ Get webhook test payload for bounce
 
 ___
 
-### getTestWebhookPayloadBounceRaw
+### <a id="gettestwebhookpayloadbounceraw" name="gettestwebhookpayloadbounceraw"></a> getTestWebhookPayloadBounceRaw
 
 ▸ **getTestWebhookPayloadBounceRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBouncePayload`](../interfaces/WebhookBouncePayload.md)\>\>
 
@@ -544,7 +544,7 @@ Get webhook test payload for bounce
 
 ___
 
-### getTestWebhookPayloadBounceRecipient
+### <a id="gettestwebhookpayloadbouncerecipient" name="gettestwebhookpayloadbouncerecipient"></a> getTestWebhookPayloadBounceRecipient
 
 ▸ **getTestWebhookPayloadBounceRecipient**(`initOverrides?`): `Promise`<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>
 
@@ -562,7 +562,7 @@ Get webhook test payload for bounce recipient
 
 ___
 
-### getTestWebhookPayloadBounceRecipientRaw
+### <a id="gettestwebhookpayloadbouncerecipientraw" name="gettestwebhookpayloadbouncerecipientraw"></a> getTestWebhookPayloadBounceRecipientRaw
 
 ▸ **getTestWebhookPayloadBounceRecipientRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookBounceRecipientPayload`](../interfaces/WebhookBounceRecipientPayload.md)\>\>
 
@@ -580,7 +580,7 @@ Get webhook test payload for bounce recipient
 
 ___
 
-### getTestWebhookPayloadEmailOpened
+### <a id="gettestwebhookpayloademailopened" name="gettestwebhookpayloademailopened"></a> getTestWebhookPayloadEmailOpened
 
 ▸ **getTestWebhookPayloadEmailOpened**(`initOverrides?`): `Promise`<[`WebhookEmailOpenedPayload`](../interfaces/WebhookEmailOpenedPayload.md)\>
 
@@ -598,7 +598,7 @@ Get webhook test payload for email opened event
 
 ___
 
-### getTestWebhookPayloadEmailOpenedRaw
+### <a id="gettestwebhookpayloademailopenedraw" name="gettestwebhookpayloademailopenedraw"></a> getTestWebhookPayloadEmailOpenedRaw
 
 ▸ **getTestWebhookPayloadEmailOpenedRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookEmailOpenedPayload`](../interfaces/WebhookEmailOpenedPayload.md)\>\>
 
@@ -616,7 +616,7 @@ Get webhook test payload for email opened event
 
 ___
 
-### getTestWebhookPayloadEmailRead
+### <a id="gettestwebhookpayloademailread" name="gettestwebhookpayloademailread"></a> getTestWebhookPayloadEmailRead
 
 ▸ **getTestWebhookPayloadEmailRead**(`initOverrides?`): `Promise`<[`WebhookEmailReadPayload`](../interfaces/WebhookEmailReadPayload.md)\>
 
@@ -634,7 +634,7 @@ Get webhook test payload for email opened event
 
 ___
 
-### getTestWebhookPayloadEmailReadRaw
+### <a id="gettestwebhookpayloademailreadraw" name="gettestwebhookpayloademailreadraw"></a> getTestWebhookPayloadEmailReadRaw
 
 ▸ **getTestWebhookPayloadEmailReadRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookEmailReadPayload`](../interfaces/WebhookEmailReadPayload.md)\>\>
 
@@ -652,7 +652,7 @@ Get webhook test payload for email opened event
 
 ___
 
-### getTestWebhookPayloadForWebhook
+### <a id="gettestwebhookpayloadforwebhook" name="gettestwebhookpayloadforwebhook"></a> getTestWebhookPayloadForWebhook
 
 ▸ **getTestWebhookPayloadForWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>
 
@@ -671,7 +671,7 @@ Get example payload for webhook
 
 ___
 
-### getTestWebhookPayloadForWebhookRaw
+### <a id="gettestwebhookpayloadforwebhookraw" name="gettestwebhookpayloadforwebhookraw"></a> getTestWebhookPayloadForWebhookRaw
 
 ▸ **getTestWebhookPayloadForWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>\>
 
@@ -690,7 +690,7 @@ Get example payload for webhook
 
 ___
 
-### getTestWebhookPayloadNewAttachment
+### <a id="gettestwebhookpayloadnewattachment" name="gettestwebhookpayloadnewattachment"></a> getTestWebhookPayloadNewAttachment
 
 ▸ **getTestWebhookPayloadNewAttachment**(`initOverrides?`): `Promise`<[`WebhookNewAttachmentPayload`](../interfaces/WebhookNewAttachmentPayload.md)\>
 
@@ -708,7 +708,7 @@ Get webhook test payload for new attachment event
 
 ___
 
-### getTestWebhookPayloadNewAttachmentRaw
+### <a id="gettestwebhookpayloadnewattachmentraw" name="gettestwebhookpayloadnewattachmentraw"></a> getTestWebhookPayloadNewAttachmentRaw
 
 ▸ **getTestWebhookPayloadNewAttachmentRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewAttachmentPayload`](../interfaces/WebhookNewAttachmentPayload.md)\>\>
 
@@ -726,7 +726,7 @@ Get webhook test payload for new attachment event
 
 ___
 
-### getTestWebhookPayloadNewContact
+### <a id="gettestwebhookpayloadnewcontact" name="gettestwebhookpayloadnewcontact"></a> getTestWebhookPayloadNewContact
 
 ▸ **getTestWebhookPayloadNewContact**(`initOverrides?`): `Promise`<[`WebhookNewContactPayload`](../interfaces/WebhookNewContactPayload.md)\>
 
@@ -744,7 +744,7 @@ Get webhook test payload for new contact event
 
 ___
 
-### getTestWebhookPayloadNewContactRaw
+### <a id="gettestwebhookpayloadnewcontactraw" name="gettestwebhookpayloadnewcontactraw"></a> getTestWebhookPayloadNewContactRaw
 
 ▸ **getTestWebhookPayloadNewContactRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewContactPayload`](../interfaces/WebhookNewContactPayload.md)\>\>
 
@@ -762,7 +762,7 @@ Get webhook test payload for new contact event
 
 ___
 
-### getTestWebhookPayloadNewEmail
+### <a id="gettestwebhookpayloadnewemail" name="gettestwebhookpayloadnewemail"></a> getTestWebhookPayloadNewEmail
 
 ▸ **getTestWebhookPayloadNewEmail**(`initOverrides?`): `Promise`<[`WebhookNewEmailPayload`](../interfaces/WebhookNewEmailPayload.md)\>
 
@@ -780,7 +780,7 @@ Get webhook test payload for new email event
 
 ___
 
-### getTestWebhookPayloadNewEmailRaw
+### <a id="gettestwebhookpayloadnewemailraw" name="gettestwebhookpayloadnewemailraw"></a> getTestWebhookPayloadNewEmailRaw
 
 ▸ **getTestWebhookPayloadNewEmailRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewEmailPayload`](../interfaces/WebhookNewEmailPayload.md)\>\>
 
@@ -798,7 +798,7 @@ Get webhook test payload for new email event
 
 ___
 
-### getTestWebhookPayloadRaw
+### <a id="gettestwebhookpayloadraw" name="gettestwebhookpayloadraw"></a> getTestWebhookPayloadRaw
 
 ▸ **getTestWebhookPayloadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AbstractWebhookPayload`](../interfaces/AbstractWebhookPayload.md)\>\>
 
@@ -817,7 +817,7 @@ Get test webhook payload example. Response content depends on eventName passed. 
 
 ___
 
-### getWebhook
+### <a id="getwebhook" name="getwebhook"></a> getWebhook
 
 ▸ **getWebhook**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
 
@@ -836,7 +836,7 @@ Get a webhook
 
 ___
 
-### getWebhookRaw
+### <a id="getwebhookraw" name="getwebhookraw"></a> getWebhookRaw
 
 ▸ **getWebhookRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
@@ -855,7 +855,7 @@ Get a webhook
 
 ___
 
-### getWebhookResult
+### <a id="getwebhookresult" name="getwebhookresult"></a> getWebhookResult
 
 ▸ **getWebhookResult**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)\>
 
@@ -874,7 +874,7 @@ Get a webhook result for a webhook
 
 ___
 
-### getWebhookResultRaw
+### <a id="getwebhookresultraw" name="getwebhookresultraw"></a> getWebhookResultRaw
 
 ▸ **getWebhookResultRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)\>\>
 
@@ -893,7 +893,7 @@ Get a webhook result for a webhook
 
 ___
 
-### getWebhookResults
+### <a id="getwebhookresults" name="getwebhookresults"></a> getWebhookResults
 
 ▸ **getWebhookResults**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookResult`](../interfaces/PageWebhookResult.md)\>
 
@@ -912,7 +912,7 @@ Get a webhook results for a webhook
 
 ___
 
-### getWebhookResultsRaw
+### <a id="getwebhookresultsraw" name="getwebhookresultsraw"></a> getWebhookResultsRaw
 
 ▸ **getWebhookResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookResult`](../interfaces/PageWebhookResult.md)\>\>
 
@@ -931,7 +931,7 @@ Get a webhook results for a webhook
 
 ___
 
-### getWebhookResultsUnseenErrorCount
+### <a id="getwebhookresultsunseenerrorcount" name="getwebhookresultsunseenerrorcount"></a> getWebhookResultsUnseenErrorCount
 
 ▸ **getWebhookResultsUnseenErrorCount**(`initOverrides?`): `Promise`<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>
 
@@ -949,7 +949,7 @@ Get count of unseen webhook results with error status
 
 ___
 
-### getWebhookResultsUnseenErrorCountRaw
+### <a id="getwebhookresultsunseenerrorcountraw" name="getwebhookresultsunseenerrorcountraw"></a> getWebhookResultsUnseenErrorCountRaw
 
 ▸ **getWebhookResultsUnseenErrorCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnseenErrorCountDto`](../interfaces/UnseenErrorCountDto.md)\>\>
 
@@ -967,7 +967,7 @@ Get count of unseen webhook results with error status
 
 ___
 
-### getWebhooks
+### <a id="getwebhooks" name="getwebhooks"></a> getWebhooks
 
 ▸ **getWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>
 
@@ -986,7 +986,7 @@ Get all webhooks for an Inbox
 
 ___
 
-### getWebhooksRaw
+### <a id="getwebhooksraw" name="getwebhooksraw"></a> getWebhooksRaw
 
 ▸ **getWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>\>
 
@@ -1005,7 +1005,7 @@ Get all webhooks for an Inbox
 
 ___
 
-### redriveWebhookResult
+### <a id="redrivewebhookresult" name="redrivewebhookresult"></a> redriveWebhookResult
 
 ▸ **redriveWebhookResult**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookRedriveResult`](../interfaces/WebhookRedriveResult.md)\>
 
@@ -1025,7 +1025,7 @@ Get a webhook result and try to resend the original webhook payload
 
 ___
 
-### redriveWebhookResultRaw
+### <a id="redrivewebhookresultraw" name="redrivewebhookresultraw"></a> redriveWebhookResultRaw
 
 ▸ **redriveWebhookResultRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookRedriveResult`](../interfaces/WebhookRedriveResult.md)\>\>
 
@@ -1045,7 +1045,7 @@ Get a webhook result and try to resend the original webhook payload
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -1066,7 +1066,7 @@ ___
 
 ___
 
-### sendTestData
+### <a id="sendtestdata" name="sendtestdata"></a> sendTestData
 
 ▸ **sendTestData**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookTestResult`](../interfaces/WebhookTestResult.md)\>
 
@@ -1085,7 +1085,7 @@ Send webhook test data
 
 ___
 
-### sendTestDataRaw
+### <a id="sendtestdataraw" name="sendtestdataraw"></a> sendTestDataRaw
 
 ▸ **sendTestDataRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookTestResult`](../interfaces/WebhookTestResult.md)\>\>
 
@@ -1104,7 +1104,7 @@ Send webhook test data
 
 ___
 
-### verifyWebhookSignature
+### <a id="verifywebhooksignature" name="verifywebhooksignature"></a> verifyWebhookSignature
 
 ▸ **verifyWebhookSignature**(`requestParameters`, `initOverrides?`): `Promise`<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>
 
@@ -1124,7 +1124,7 @@ Verify a webhook payload signature
 
 ___
 
-### verifyWebhookSignatureRaw
+### <a id="verifywebhooksignatureraw" name="verifywebhooksignatureraw"></a> verifyWebhookSignatureRaw
 
 ▸ **verifyWebhookSignatureRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>\>
 
@@ -1144,9 +1144,9 @@ Verify a webhook payload signature
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -1158,6 +1158,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -1170,9 +1171,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1184,6 +1185,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -1196,9 +1198,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -1210,6 +1212,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

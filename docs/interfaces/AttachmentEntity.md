@@ -21,7 +21,7 @@ Email attachment entity
 
 ## Properties
 
-### attachmentId
+### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
 
@@ -29,7 +29,7 @@ Email attachment entity
 
 ___
 
-### contentLength
+### <a id="contentlength" name="contentlength"></a> contentLength
 
 • `Optional` **contentLength**: `number`
 
@@ -37,7 +37,7 @@ ___
 
 ___
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • `Optional` **contentType**: `string`
 
@@ -45,7 +45,7 @@ ___
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -53,7 +53,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
@@ -61,7 +61,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -69,7 +69,7 @@ ___
 
 ___
 
-### updatedAt
+### <a id="updatedat" name="updatedat"></a> updatedAt
 
 • **updatedAt**: `Date`
 
@@ -77,7 +77,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

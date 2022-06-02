@@ -15,7 +15,7 @@ IMAP operation flags
 
 ## Properties
 
-### flagOperation
+### <a id="flagoperation" name="flagoperation"></a> flagOperation
 
 • **flagOperation**: [`ImapFlagOperationOptionsFlagOperationEnum`](../enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 
@@ -23,7 +23,7 @@ IMAP operation flags
 
 ___
 
-### flags
+### <a id="flags" name="flags"></a> flags
 
 • **flags**: `string`[]
 

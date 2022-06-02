@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ASC](GetInboxForwardersSortEnum.md#asc)
 - [DESC](GetInboxForwardersSortEnum.md#desc)
 
-## Enumeration members
+## Enumeration Members
 
-### ASC
+### <a id="asc" name="asc"></a> ASC
 
-• **ASC** = `"ASC"`
+• **ASC**
 
 ___
 
-### DESC
+### <a id="desc" name="desc"></a> DESC
 
-• **DESC** = `"DESC"`
+• **DESC**

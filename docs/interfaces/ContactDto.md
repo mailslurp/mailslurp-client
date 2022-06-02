@@ -24,7 +24,7 @@ Contact object. For saving a user in contact book.
 
 ## Properties
 
-### company
+### <a id="company" name="company"></a> company
 
 • `Optional` **company**: `string`
 
@@ -32,7 +32,7 @@ Contact object. For saving a user in contact book.
 
 ___
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -40,7 +40,7 @@ ___
 
 ___
 
-### emailAddresses
+### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
 
 • **emailAddresses**: `string`[]
 
@@ -48,7 +48,7 @@ ___
 
 ___
 
-### firstName
+### <a id="firstname" name="firstname"></a> firstName
 
 • `Optional` **firstName**: `string`
 
@@ -56,7 +56,7 @@ ___
 
 ___
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • `Optional` **groupId**: `string`
 
@@ -64,7 +64,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -72,7 +72,7 @@ ___
 
 ___
 
-### lastName
+### <a id="lastname" name="lastname"></a> lastName
 
 • `Optional` **lastName**: `string`
 
@@ -80,7 +80,7 @@ ___
 
 ___
 
-### metaData
+### <a id="metadata" name="metadata"></a> metaData
 
 • `Optional` **metaData**: `object`
 
@@ -88,7 +88,7 @@ ___
 
 ___
 
-### optOut
+### <a id="optout" name="optout"></a> optOut
 
 • `Optional` **optOut**: `boolean`
 
@@ -96,7 +96,7 @@ ___
 
 ___
 
-### primaryEmailAddress
+### <a id="primaryemailaddress" name="primaryemailaddress"></a> primaryEmailAddress
 
 • `Optional` **primaryEmailAddress**: `string`
 
@@ -104,7 +104,7 @@ ___
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • **tags**: `string`[]
 

@@ -37,7 +37,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new WaitForControllerApi**(`configuration?`)
 
@@ -53,7 +53,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -63,7 +63,7 @@
 
 ## Methods
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -84,7 +84,7 @@
 
 ___
 
-### waitFor
+### <a id="waitfor" name="waitfor"></a> waitFor
 
 ▸ **waitFor**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -104,7 +104,7 @@ Wait for an email to match the provided filter conditions such as subject contai
 
 ___
 
-### waitForEmailCount
+### <a id="waitforemailcount" name="waitforemailcount"></a> waitForEmailCount
 
 ▸ **waitForEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -124,7 +124,7 @@ Wait for and return count number of emails. Hold connection until inbox count ma
 
 ___
 
-### waitForEmailCountRaw
+### <a id="waitforemailcountraw" name="waitforemailcountraw"></a> waitForEmailCountRaw
 
 ▸ **waitForEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -144,7 +144,7 @@ Wait for and return count number of emails. Hold connection until inbox count ma
 
 ___
 
-### waitForLatestEmail
+### <a id="waitforlatestemail" name="waitforlatestemail"></a> waitForLatestEmail
 
 ▸ **waitForLatestEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -164,7 +164,7 @@ Fetch inbox\'s latest email or if empty wait for an email to arrive
 
 ___
 
-### waitForLatestEmailRaw
+### <a id="waitforlatestemailraw" name="waitforlatestemailraw"></a> waitForLatestEmailRaw
 
 ▸ **waitForLatestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -184,7 +184,7 @@ Fetch inbox\'s latest email or if empty wait for an email to arrive
 
 ___
 
-### waitForMatchingEmails
+### <a id="waitformatchingemails" name="waitformatchingemails"></a> waitForMatchingEmails
 
 ▸ **waitForMatchingEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -204,7 +204,7 @@ Wait or return list of emails that match simple matching patterns
 
 ___
 
-### waitForMatchingEmailsRaw
+### <a id="waitformatchingemailsraw" name="waitformatchingemailsraw"></a> waitForMatchingEmailsRaw
 
 ▸ **waitForMatchingEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -224,7 +224,7 @@ Wait or return list of emails that match simple matching patterns
 
 ___
 
-### waitForMatchingFirstEmail
+### <a id="waitformatchingfirstemail" name="waitformatchingfirstemail"></a> waitForMatchingFirstEmail
 
 ▸ **waitForMatchingFirstEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -244,7 +244,7 @@ Wait for or return the first email that matches provided MatchOptions array
 
 ___
 
-### waitForMatchingFirstEmailRaw
+### <a id="waitformatchingfirstemailraw" name="waitformatchingfirstemailraw"></a> waitForMatchingFirstEmailRaw
 
 ▸ **waitForMatchingFirstEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -264,7 +264,7 @@ Wait for or return the first email that matches provided MatchOptions array
 
 ___
 
-### waitForNthEmail
+### <a id="waitfornthemail" name="waitfornthemail"></a> waitForNthEmail
 
 ▸ **waitForNthEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -284,7 +284,7 @@ Wait for or fetch the email with a given index in the inbox specified. If index 
 
 ___
 
-### waitForNthEmailRaw
+### <a id="waitfornthemailraw" name="waitfornthemailraw"></a> waitForNthEmailRaw
 
 ▸ **waitForNthEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -304,7 +304,7 @@ Wait for or fetch the email with a given index in the inbox specified. If index 
 
 ___
 
-### waitForRaw
+### <a id="waitforraw" name="waitforraw"></a> waitForRaw
 
 ▸ **waitForRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -324,9 +324,9 @@ Wait for an email to match the provided filter conditions such as subject contai
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -338,6 +338,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -350,9 +351,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -364,6 +365,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -376,9 +378,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -390,6 +392,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

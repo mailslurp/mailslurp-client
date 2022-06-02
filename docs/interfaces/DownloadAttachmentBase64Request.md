@@ -9,12 +9,12 @@
 
 ## Properties
 
-### attachmentId
+### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`

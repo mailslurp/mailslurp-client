@@ -15,7 +15,7 @@ Matches for the given pattern
 
 ## Properties
 
-### matches
+### <a id="matches" name="matches"></a> matches
 
 • **matches**: `string`[]
 
@@ -23,7 +23,7 @@ Matches for the given pattern
 
 ___
 
-### pattern
+### <a id="pattern" name="pattern"></a> pattern
 
 • **pattern**: `string`
 

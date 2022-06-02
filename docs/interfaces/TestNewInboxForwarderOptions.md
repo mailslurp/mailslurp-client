@@ -15,7 +15,7 @@ Options for testing new inbox forwarder rules
 
 ## Properties
 
-### createInboxForwarderOptions
+### <a id="createinboxforwarderoptions" name="createinboxforwarderoptions"></a> createInboxForwarderOptions
 
 • **createInboxForwarderOptions**: [`CreateInboxForwarderOptions`](CreateInboxForwarderOptions.md)
 
@@ -23,7 +23,7 @@ Options for testing new inbox forwarder rules
 
 ___
 
-### inboxForwarderTestOptions
+### <a id="inboxforwardertestoptions" name="inboxforwardertestoptions"></a> inboxForwarderTestOptions
 
 • **inboxForwarderTestOptions**: [`InboxForwarderTestOptions`](InboxForwarderTestOptions.md)
 

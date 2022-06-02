@@ -17,7 +17,7 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 ## Properties
 
-### createdCatchAllInbox
+### <a id="createdcatchallinbox" name="createdcatchallinbox"></a> createdCatchAllInbox
 
 • `Optional` **createdCatchAllInbox**: `boolean`
 
@@ -27,7 +27,7 @@ Whether to create a catch all inbox for the domain. Any email sent to an address
 
 ___
 
-### description
+### <a id="description" name="description"></a> description
 
 • `Optional` **description**: `string`
 
@@ -37,7 +37,7 @@ Optional description of the domain.
 
 ___
 
-### domain
+### <a id="domain" name="domain"></a> domain
 
 • **domain**: `string`
 
@@ -47,7 +47,7 @@ The top level domain you wish to use with MailSlurp. Do not specify subdomain ju
 
 ___
 
-### domainType
+### <a id="domaintype" name="domaintype"></a> domainType
 
 • `Optional` **domainType**: [`CreateDomainOptionsDomainTypeEnum`](../enums/CreateDomainOptionsDomainTypeEnum.md)
 

@@ -14,7 +14,7 @@ Remaining recipients that were filtered to remove bounced recipients
 
 ## Properties
 
-### filteredRecipients
+### <a id="filteredrecipients" name="filteredrecipients"></a> filteredRecipients
 
 • **filteredRecipients**: `string`[]
 

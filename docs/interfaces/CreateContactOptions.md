@@ -21,7 +21,7 @@ Options for creating an email contact in address book
 
 ## Properties
 
-### company
+### <a id="company" name="company"></a> company
 
 • `Optional` **company**: `string`
 
@@ -29,7 +29,7 @@ Options for creating an email contact in address book
 
 ___
 
-### emailAddresses
+### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
 
 • `Optional` **emailAddresses**: `string`[]
 
@@ -39,7 +39,7 @@ Set of email addresses belonging to the contact
 
 ___
 
-### firstName
+### <a id="firstname" name="firstname"></a> firstName
 
 • `Optional` **firstName**: `string`
 
@@ -47,7 +47,7 @@ ___
 
 ___
 
-### groupId
+### <a id="groupid" name="groupid"></a> groupId
 
 • `Optional` **groupId**: `string`
 
@@ -57,7 +57,7 @@ Group IDs that contact belongs to
 
 ___
 
-### lastName
+### <a id="lastname" name="lastname"></a> lastName
 
 • `Optional` **lastName**: `string`
 
@@ -65,7 +65,7 @@ ___
 
 ___
 
-### metaData
+### <a id="metadata" name="metadata"></a> metaData
 
 • `Optional` **metaData**: `object`
 
@@ -73,7 +73,7 @@ ___
 
 ___
 
-### optOut
+### <a id="optout" name="optout"></a> optOut
 
 • `Optional` **optOut**: `boolean`
 
@@ -83,7 +83,7 @@ Has the user explicitly or implicitly opted out of being contacted? If so MailSl
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • `Optional` **tags**: `string`[]
 

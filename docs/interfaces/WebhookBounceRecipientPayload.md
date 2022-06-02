@@ -18,7 +18,7 @@ BOUNCE_RECIPIENT webhook payload. Sent to your webhook url endpoint via HTTP POS
 
 ## Properties
 
-### eventName
+### <a id="eventname" name="eventname"></a> eventName
 
 • **eventName**: [`WebhookBounceRecipientPayloadEventNameEnum`](../enums/WebhookBounceRecipientPayloadEventNameEnum.md)
 
@@ -28,7 +28,7 @@ Name of the event type webhook is being triggered for.
 
 ___
 
-### messageId
+### <a id="messageid" name="messageid"></a> messageId
 
 • **messageId**: `string`
 
@@ -38,7 +38,7 @@ Idempotent message ID. Store this ID locally or in a database to prevent message
 
 ___
 
-### recipient
+### <a id="recipient" name="recipient"></a> recipient
 
 • **recipient**: `string`
 
@@ -48,7 +48,7 @@ Email address that caused a bounce. Make note of the address and try not to mess
 
 ___
 
-### webhookId
+### <a id="webhookid" name="webhookid"></a> webhookId
 
 • **webhookId**: `string`
 
@@ -58,7 +58,7 @@ ID of webhook entity being triggered
 
 ___
 
-### webhookName
+### <a id="webhookname" name="webhookname"></a> webhookName
 
 • `Optional` **webhookName**: `string`
 

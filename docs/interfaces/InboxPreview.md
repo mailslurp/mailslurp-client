@@ -23,7 +23,7 @@ Inbox data
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -33,7 +33,7 @@ When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T
 
 ___
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • `Optional` **emailAddress**: `string`
 
@@ -43,7 +43,7 @@ The inbox's email address. Inbox projections and previews may not include the em
 
 ___
 
-### expiresAt
+### <a id="expiresat" name="expiresat"></a> expiresAt
 
 • `Optional` **expiresAt**: `string`
 
@@ -53,7 +53,7 @@ Inbox expiration time. When, if ever, the inbox should expire and be deleted. If
 
 ___
 
-### favourite
+### <a id="favourite" name="favourite"></a> favourite
 
 • **favourite**: `boolean`
 
@@ -63,7 +63,7 @@ Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -73,7 +73,7 @@ ID of the inbox. The ID is a UUID-V4 format string. Use the inboxId for calls to
 
 ___
 
-### inboxType
+### <a id="inboxtype" name="inboxtype"></a> inboxType
 
 • `Optional` **inboxType**: [`InboxPreviewInboxTypeEnum`](../enums/InboxPreviewInboxTypeEnum.md)
 
@@ -83,7 +83,7 @@ Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes a
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -93,7 +93,7 @@ Name of the inbox and used as the sender name when sending emails .Displayed in 
 
 ___
 
-### tags
+### <a id="tags" name="tags"></a> tags
 
 • `Optional` **tags**: `string`[]
 
@@ -103,7 +103,7 @@ Tags that inbox has been tagged with. Tags can be added to inboxes to group diff
 
 ___
 
-### teamAccess
+### <a id="teamaccess" name="teamaccess"></a> teamAccess
 
 • **teamAccess**: `boolean`
 
@@ -113,9 +113,9 @@ Does inbox permit team access for organization team members. If so team users ca
 
 ___
 
-### virtualInbox
+### <a id="virtualinbox" name="virtualinbox"></a> virtualInbox
 
-• `Optional` **virtualInbox**: `boolean`
+• **virtualInbox**: `boolean`
 
 Virtual inbox can receive email but will not send emails to real recipients. Will save sent email record but never send an actual email. Perfect for testing mail server actions.
 

@@ -15,7 +15,7 @@ Response object for email validation operation
 
 ## Properties
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
@@ -25,7 +25,7 @@ ID of the email validated
 
 ___
 
-### html
+### <a id="html" name="html"></a> html
 
 • **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
 

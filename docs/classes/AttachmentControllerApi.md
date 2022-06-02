@@ -45,7 +45,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new AttachmentControllerApi**(`configuration?`)
 
@@ -61,7 +61,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -71,7 +71,7 @@
 
 ## Methods
 
-### deleteAllAttachments
+### <a id="deleteallattachments" name="deleteallattachments"></a> deleteAllAttachments
 
 ▸ **deleteAllAttachments**(`initOverrides?`): `Promise`<`void`\>
 
@@ -89,7 +89,7 @@ Delete all attachments
 
 ___
 
-### deleteAllAttachmentsRaw
+### <a id="deleteallattachmentsraw" name="deleteallattachmentsraw"></a> deleteAllAttachmentsRaw
 
 ▸ **deleteAllAttachmentsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -107,7 +107,7 @@ Delete all attachments
 
 ___
 
-### deleteAttachment
+### <a id="deleteattachment" name="deleteattachment"></a> deleteAttachment
 
 ▸ **deleteAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -126,7 +126,7 @@ Delete an attachment
 
 ___
 
-### deleteAttachmentRaw
+### <a id="deleteattachmentraw" name="deleteattachmentraw"></a> deleteAttachmentRaw
 
 ▸ **deleteAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -145,7 +145,7 @@ Delete an attachment
 
 ___
 
-### downloadAttachmentAsBase64Encoded
+### <a id="downloadattachmentasbase64encoded" name="downloadattachmentasbase64encoded"></a> downloadAttachmentAsBase64Encoded
 
 ▸ **downloadAttachmentAsBase64Encoded**(`requestParameters`, `initOverrides?`): `Promise`<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>
 
@@ -165,7 +165,7 @@ Get email attachment as base64 encoded string as alternative to binary responses
 
 ___
 
-### downloadAttachmentAsBase64EncodedRaw
+### <a id="downloadattachmentasbase64encodedraw" name="downloadattachmentasbase64encodedraw"></a> downloadAttachmentAsBase64EncodedRaw
 
 ▸ **downloadAttachmentAsBase64EncodedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DownloadAttachmentDto`](../interfaces/DownloadAttachmentDto.md)\>\>
 
@@ -185,7 +185,7 @@ Get email attachment as base64 encoded string as alternative to binary responses
 
 ___
 
-### downloadAttachmentAsBytes
+### <a id="downloadattachmentasbytes" name="downloadattachmentasbytes"></a> downloadAttachmentAsBytes
 
 ▸ **downloadAttachmentAsBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -205,7 +205,7 @@ Download attachments. Get email attachment bytes. If you have trouble with byte 
 
 ___
 
-### downloadAttachmentAsBytesRaw
+### <a id="downloadattachmentasbytesraw" name="downloadattachmentasbytesraw"></a> downloadAttachmentAsBytesRaw
 
 ▸ **downloadAttachmentAsBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -225,7 +225,7 @@ Download attachments. Get email attachment bytes. If you have trouble with byte 
 
 ___
 
-### getAttachment
+### <a id="getattachment" name="getattachment"></a> getAttachment
 
 ▸ **getAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>
 
@@ -244,7 +244,7 @@ Get an attachment entity
 
 ___
 
-### getAttachmentInfo
+### <a id="getattachmentinfo" name="getattachmentinfo"></a> getAttachmentInfo
 
 ▸ **getAttachmentInfo**(`requestParameters`, `initOverrides?`): `Promise`<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>
 
@@ -264,7 +264,7 @@ Get email attachment metadata information
 
 ___
 
-### getAttachmentInfoRaw
+### <a id="getattachmentinforaw" name="getattachmentinforaw"></a> getAttachmentInfoRaw
 
 ▸ **getAttachmentInfoRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentMetaData`](../interfaces/AttachmentMetaData.md)\>\>
 
@@ -284,7 +284,7 @@ Get email attachment metadata information
 
 ___
 
-### getAttachmentRaw
+### <a id="getattachmentraw" name="getattachmentraw"></a> getAttachmentRaw
 
 ▸ **getAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AttachmentEntity`](../interfaces/AttachmentEntity.md)\>\>
 
@@ -303,7 +303,7 @@ Get an attachment entity
 
 ___
 
-### getAttachments
+### <a id="getattachments" name="getattachments"></a> getAttachments
 
 ▸ **getAttachments**(`requestParameters`, `initOverrides?`): `Promise`<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>
 
@@ -323,7 +323,7 @@ Get email attachments
 
 ___
 
-### getAttachmentsRaw
+### <a id="getattachmentsraw" name="getattachmentsraw"></a> getAttachmentsRaw
 
 ▸ **getAttachmentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAttachmentEntity`](../interfaces/PageAttachmentEntity.md)\>\>
 
@@ -343,7 +343,7 @@ Get email attachments
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -364,7 +364,7 @@ ___
 
 ___
 
-### uploadAttachment
+### <a id="uploadattachment" name="uploadattachment"></a> uploadAttachment
 
 ▸ **uploadAttachment**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -383,7 +383,7 @@ Upload an attachment for sending using base64 file encoding. Returns an array wh
 
 ___
 
-### uploadAttachmentBytes
+### <a id="uploadattachmentbytes" name="uploadattachmentbytes"></a> uploadAttachmentBytes
 
 ▸ **uploadAttachmentBytes**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -402,7 +402,7 @@ Upload an attachment for sending using file byte stream input octet stream. Retu
 
 ___
 
-### uploadAttachmentBytesRaw
+### <a id="uploadattachmentbytesraw" name="uploadattachmentbytesraw"></a> uploadAttachmentBytesRaw
 
 ▸ **uploadAttachmentBytesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -421,7 +421,7 @@ Upload an attachment for sending using file byte stream input octet stream. Retu
 
 ___
 
-### uploadAttachmentRaw
+### <a id="uploadattachmentraw" name="uploadattachmentraw"></a> uploadAttachmentRaw
 
 ▸ **uploadAttachmentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -440,7 +440,7 @@ Upload an attachment for sending using base64 file encoding. Returns an array wh
 
 ___
 
-### uploadMultipartForm
+### <a id="uploadmultipartform" name="uploadmultipartform"></a> uploadMultipartForm
 
 ▸ **uploadMultipartForm**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -459,7 +459,7 @@ Upload an attachment for sending using a Multipart Form request. Returns an arra
 
 ___
 
-### uploadMultipartFormRaw
+### <a id="uploadmultipartformraw" name="uploadmultipartformraw"></a> uploadMultipartFormRaw
 
 ▸ **uploadMultipartFormRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -478,9 +478,9 @@ Upload an attachment for sending using a Multipart Form request. Returns an arra
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -492,6 +492,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -504,9 +505,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -518,6 +519,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -530,9 +532,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -544,6 +546,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

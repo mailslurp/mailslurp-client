@@ -8,6 +8,6 @@
 
 ## Properties
 
-### validateEmailAddressListOptions
+### <a id="validateemailaddresslistoptions" name="validateemailaddresslistoptions"></a> validateEmailAddressListOptions
 
 • **validateEmailAddressListOptions**: [`ValidateEmailAddressListOptions`](ValidateEmailAddressListOptions.md)

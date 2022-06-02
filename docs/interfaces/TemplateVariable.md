@@ -15,7 +15,7 @@ Variable for use with email template
 
 ## Properties
 
-### name
+### <a id="name" name="name"></a> name
 
 • **name**: `string`
 
@@ -25,7 +25,7 @@ Name of variable. This can be used in a template as {{name}}
 
 ___
 
-### variableType
+### <a id="variabletype" name="variabletype"></a> variableType
 
 • **variableType**: [`STRING`](../enums/TemplateVariableVariableTypeEnum.md#string)
 

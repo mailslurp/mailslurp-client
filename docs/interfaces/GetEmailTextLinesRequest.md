@@ -10,18 +10,18 @@
 
 ## Properties
 
-### decodeHtmlEntities
+### <a id="decodehtmlentities" name="decodehtmlentities"></a> decodeHtmlEntities
 
 • `Optional` **decodeHtmlEntities**: `boolean`
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`
 
 ___
 
-### lineSeparator
+### <a id="lineseparator" name="lineseparator"></a> lineSeparator
 
 • `Optional` **lineSeparator**: `string`

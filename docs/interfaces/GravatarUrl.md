@@ -15,7 +15,7 @@ User image
 
 ## Properties
 
-### hash
+### <a id="hash" name="hash"></a> hash
 
 • **hash**: `string`
 
@@ -23,7 +23,7 @@ User image
 
 ___
 
-### url
+### <a id="url" name="url"></a> url
 
 • **url**: `string`
 

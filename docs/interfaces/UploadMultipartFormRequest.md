@@ -11,24 +11,24 @@
 
 ## Properties
 
-### contentType
+### <a id="contenttype" name="contenttype"></a> contentType
 
 • `Optional` **contentType**: `string`
 
 ___
 
-### filename
+### <a id="filename" name="filename"></a> filename
 
 • `Optional` **filename**: `string`
 
 ___
 
-### inlineObject
+### <a id="inlineobject" name="inlineobject"></a> inlineObject
 
 • `Optional` **inlineObject**: [`InlineObject`](InlineObject.md)
 
 ___
 
-### xFilename
+### <a id="xfilename" name="xfilename"></a> xFilename
 
 • `Optional` **xFilename**: `string`

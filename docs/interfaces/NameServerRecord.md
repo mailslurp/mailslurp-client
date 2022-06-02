@@ -17,7 +17,7 @@ Name Server Record
 
 ## Properties
 
-### priority
+### <a id="priority" name="priority"></a> priority
 
 • **priority**: `string`
 
@@ -25,7 +25,7 @@ Name Server Record
 
 ___
 
-### raw
+### <a id="raw" name="raw"></a> raw
 
 • **raw**: `string`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### recordType
+### <a id="recordtype" name="recordtype"></a> recordType
 
 • **recordType**: `string`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### value
+### <a id="value" name="value"></a> value
 
 • **value**: `string`
 

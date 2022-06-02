@@ -15,7 +15,7 @@ Test inbox ruleset options
 
 ## Properties
 
-### createInboxRulesetOptions
+### <a id="createinboxrulesetoptions" name="createinboxrulesetoptions"></a> createInboxRulesetOptions
 
 • **createInboxRulesetOptions**: [`CreateInboxRulesetOptions`](CreateInboxRulesetOptions.md)
 
@@ -23,7 +23,7 @@ Test inbox ruleset options
 
 ___
 
-### inboxRulesetTestOptions
+### <a id="inboxrulesettestoptions" name="inboxrulesettestoptions"></a> inboxRulesetTestOptions
 
 • **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)
 

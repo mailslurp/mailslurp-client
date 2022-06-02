@@ -4,19 +4,19 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ATLEAST](WaitForConditionsCountTypeEnum.md#atleast)
 - [EXACTLY](WaitForConditionsCountTypeEnum.md#exactly)
 
-## Enumeration members
+## Enumeration Members
 
-### ATLEAST
+### <a id="atleast" name="atleast"></a> ATLEAST
 
-• **ATLEAST** = `"ATLEAST"`
+• **ATLEAST**
 
 ___
 
-### EXACTLY
+### <a id="exactly" name="exactly"></a> EXACTLY
 
-• **EXACTLY** = `"EXACTLY"`
+• **EXACTLY**

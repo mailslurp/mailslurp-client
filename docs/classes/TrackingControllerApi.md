@@ -31,7 +31,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new TrackingControllerApi**(`configuration?`)
 
@@ -47,7 +47,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -57,7 +57,7 @@
 
 ## Methods
 
-### createTrackingPixel
+### <a id="createtrackingpixel" name="createtrackingpixel"></a> createTrackingPixel
 
 ▸ **createTrackingPixel**(`requestParameters`, `initOverrides?`): `Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
 
@@ -77,7 +77,7 @@ Create tracking pixel
 
 ___
 
-### createTrackingPixelRaw
+### <a id="createtrackingpixelraw" name="createtrackingpixelraw"></a> createTrackingPixelRaw
 
 ▸ **createTrackingPixelRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>\>
 
@@ -97,7 +97,7 @@ Create tracking pixel
 
 ___
 
-### getAllTrackingPixels
+### <a id="getalltrackingpixels" name="getalltrackingpixels"></a> getAllTrackingPixels
 
 ▸ **getAllTrackingPixels**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>
 
@@ -117,7 +117,7 @@ Get tracking pixels
 
 ___
 
-### getAllTrackingPixelsRaw
+### <a id="getalltrackingpixelsraw" name="getalltrackingpixelsraw"></a> getAllTrackingPixelsRaw
 
 ▸ **getAllTrackingPixelsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTrackingPixelProjection`](../interfaces/PageTrackingPixelProjection.md)\>\>
 
@@ -137,7 +137,7 @@ Get tracking pixels
 
 ___
 
-### getTrackingPixel
+### <a id="gettrackingpixel" name="gettrackingpixel"></a> getTrackingPixel
 
 ▸ **getTrackingPixel**(`requestParameters`, `initOverrides?`): `Promise`<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>
 
@@ -156,7 +156,7 @@ Get pixel
 
 ___
 
-### getTrackingPixelRaw
+### <a id="gettrackingpixelraw" name="gettrackingpixelraw"></a> getTrackingPixelRaw
 
 ▸ **getTrackingPixelRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TrackingPixelDto`](../interfaces/TrackingPixelDto.md)\>\>
 
@@ -175,7 +175,7 @@ Get pixel
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -196,9 +196,9 @@ ___
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -210,6 +210,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -222,9 +223,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -236,6 +237,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -248,9 +250,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -262,6 +264,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

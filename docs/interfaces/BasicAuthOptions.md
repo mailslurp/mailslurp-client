@@ -15,7 +15,7 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 ## Properties
 
-### password
+### <a id="password" name="password"></a> password
 
 • **password**: `string`
 
@@ -23,7 +23,7 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 ___
 
-### username
+### <a id="username" name="username"></a> username
 
 • **username**: `string`
 

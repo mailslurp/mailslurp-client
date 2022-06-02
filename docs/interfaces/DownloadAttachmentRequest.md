@@ -10,18 +10,18 @@
 
 ## Properties
 
-### apiKey
+### <a id="apikey" name="apikey"></a> apiKey
 
 • `Optional` **apiKey**: `string`
 
 ___
 
-### attachmentId
+### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
 
 ___
 
-### emailId
+### <a id="emailid" name="emailid"></a> emailId
 
 • **emailId**: `string`

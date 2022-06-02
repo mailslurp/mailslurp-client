@@ -8,6 +8,6 @@
 
 ## Properties
 
-### createDomainOptions
+### <a id="createdomainoptions" name="createdomainoptions"></a> createDomainOptions
 
 • **createDomainOptions**: [`CreateDomainOptions`](CreateDomainOptions.md)

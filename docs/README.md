@@ -484,7 +484,7 @@
 - [WebhookTestResponse](interfaces/WebhookTestResponse.md)
 - [WebhookTestResult](interfaces/WebhookTestResult.md)
 
-### Type aliases
+### Type Aliases
 
 - [Config](README.md#config)
 - [FetchAPI](README.md#fetchapi)
@@ -498,8 +498,8 @@
 
 ### Variables
 
-- [BASE\_PATH](README.md#base-path)
-- [COLLECTION\_FORMATS](README.md#collection-formats)
+- [BASE\_PATH](README.md#base_path)
+- [COLLECTION\_FORMATS](README.md#collection_formats)
 
 ### Functions
 
@@ -986,13 +986,13 @@
 
 ## References
 
-### default
+### <a id="default" name="default"></a> default
 
 Renames and re-exports [MailSlurp](classes/MailSlurp.md)
 
-## Type aliases
+## Type Aliases
 
-### Config
+### <a id="config" name="config"></a> Config
 
 Ƭ **Config**: `Object`
 
@@ -1012,13 +1012,13 @@ MailSlurp config
 
 ___
 
-### FetchAPI
+### <a id="fetchapi" name="fetchapi"></a> FetchAPI
 
 Ƭ **FetchAPI**: `WindowOrWorkerGlobalScope`[``"fetch"``]
 
 ___
 
-### GetMessagesOptions
+### <a id="getmessagesoptions" name="getmessagesoptions"></a> GetMessagesOptions
 
 Ƭ **GetMessagesOptions**: `Object`
 
@@ -1040,53 +1040,53 @@ For more control over fetching. See also Webhook endpoints
 
 ___
 
-### HTTPBody
+### <a id="httpbody" name="httpbody"></a> HTTPBody
 
 Ƭ **HTTPBody**: [`Json`](README.md#json) \| `FormData` \| `URLSearchParams`
 
 ___
 
-### HTTPHeaders
+### <a id="httpheaders" name="httpheaders"></a> HTTPHeaders
 
 Ƭ **HTTPHeaders**: `Object`
 
 #### Index signature
 
-▪ [key: `string`]: %60string%60
+▪ [key: `string`]: `string`
 
 ___
 
-### HTTPMethod
+### <a id="httpmethod" name="httpmethod"></a> HTTPMethod
 
 Ƭ **HTTPMethod**: ``"GET"`` \| ``"POST"`` \| ``"PUT"`` \| ``"PATCH"`` \| ``"DELETE"`` \| ``"OPTIONS"`` \| ``"HEAD"``
 
 ___
 
-### HTTPQuery
+### <a id="httpquery" name="httpquery"></a> HTTPQuery
 
 Ƭ **HTTPQuery**: `Object`
 
 #### Index signature
 
-▪ [key: `string`]: %60string%60%20/%7C%20%60number%60%20/%7C%20%60%60null%60%60%20/%7C%20%60boolean%60%20/%7C%20(%60string%60%20/%7C%20%60number%60%20/%7C%20%60%60null%60%60%20/%7C%20%60boolean%60)[]%20/%7C%20[%60HTTPQuery%60](README.md#httpquery)
+▪ [key: `string`]: `string` \| `number` \| ``null`` \| `boolean` \| (`string` \| `number` \| ``null`` \| `boolean`)[] \| [`HTTPQuery`](README.md#httpquery)
 
 ___
 
-### Json
+### <a id="json" name="json"></a> Json
 
 Ƭ **Json**: `any`
 
 ___
 
-### ModelPropertyNaming
+### <a id="modelpropertynaming" name="modelpropertynaming"></a> ModelPropertyNaming
 
 Ƭ **ModelPropertyNaming**: ``"camelCase"`` \| ``"snake_case"`` \| ``"PascalCase"`` \| ``"original"``
 
 ## Variables
 
-### BASE\_PATH
+### <a id="base_path" name="base_path"></a> BASE\_PATH
 
-• **BASE\_PATH**: `string`
+• `Const` **BASE\_PATH**: `string`
 
 MailSlurp API
 MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
@@ -1100,9 +1100,9 @@ Do not edit the class manually.
 
 ___
 
-### COLLECTION\_FORMATS
+### <a id="collection_formats" name="collection_formats"></a> COLLECTION\_FORMATS
 
-• **COLLECTION\_FORMATS**: `Object`
+• `Const` **COLLECTION\_FORMATS**: `Object`
 
 #### Type declaration
 
@@ -1115,7 +1115,7 @@ ___
 
 ## Functions
 
-### AbstractWebhookPayloadFromJSON
+### <a id="abstractwebhookpayloadfromjson" name="abstractwebhookpayloadfromjson"></a> AbstractWebhookPayloadFromJSON
 
 ▸ **AbstractWebhookPayloadFromJSON**(`json`): [`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
 
@@ -1131,7 +1131,7 @@ ___
 
 ___
 
-### AbstractWebhookPayloadFromJSONTyped
+### <a id="abstractwebhookpayloadfromjsontyped" name="abstractwebhookpayloadfromjsontyped"></a> AbstractWebhookPayloadFromJSONTyped
 
 ▸ **AbstractWebhookPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AbstractWebhookPayload`](interfaces/AbstractWebhookPayload.md)
 
@@ -1148,7 +1148,7 @@ ___
 
 ___
 
-### AbstractWebhookPayloadToJSON
+### <a id="abstractwebhookpayloadtojson" name="abstractwebhookpayloadtojson"></a> AbstractWebhookPayloadToJSON
 
 ▸ **AbstractWebhookPayloadToJSON**(`value?`): `any`
 
@@ -1164,7 +1164,7 @@ ___
 
 ___
 
-### AliasDtoFromJSON
+### <a id="aliasdtofromjson" name="aliasdtofromjson"></a> AliasDtoFromJSON
 
 ▸ **AliasDtoFromJSON**(`json`): [`AliasDto`](interfaces/AliasDto.md)
 
@@ -1180,7 +1180,7 @@ ___
 
 ___
 
-### AliasDtoFromJSONTyped
+### <a id="aliasdtofromjsontyped" name="aliasdtofromjsontyped"></a> AliasDtoFromJSONTyped
 
 ▸ **AliasDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AliasDto`](interfaces/AliasDto.md)
 
@@ -1197,7 +1197,7 @@ ___
 
 ___
 
-### AliasDtoToJSON
+### <a id="aliasdtotojson" name="aliasdtotojson"></a> AliasDtoToJSON
 
 ▸ **AliasDtoToJSON**(`value?`): `any`
 
@@ -1213,7 +1213,7 @@ ___
 
 ___
 
-### AliasProjectionFromJSON
+### <a id="aliasprojectionfromjson" name="aliasprojectionfromjson"></a> AliasProjectionFromJSON
 
 ▸ **AliasProjectionFromJSON**(`json`): [`AliasProjection`](interfaces/AliasProjection.md)
 
@@ -1229,7 +1229,7 @@ ___
 
 ___
 
-### AliasProjectionFromJSONTyped
+### <a id="aliasprojectionfromjsontyped" name="aliasprojectionfromjsontyped"></a> AliasProjectionFromJSONTyped
 
 ▸ **AliasProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AliasProjection`](interfaces/AliasProjection.md)
 
@@ -1246,7 +1246,7 @@ ___
 
 ___
 
-### AliasProjectionToJSON
+### <a id="aliasprojectiontojson" name="aliasprojectiontojson"></a> AliasProjectionToJSON
 
 ▸ **AliasProjectionToJSON**(`value?`): `any`
 
@@ -1262,7 +1262,7 @@ ___
 
 ___
 
-### AttachmentEntityFromJSON
+### <a id="attachmententityfromjson" name="attachmententityfromjson"></a> AttachmentEntityFromJSON
 
 ▸ **AttachmentEntityFromJSON**(`json`): [`AttachmentEntity`](interfaces/AttachmentEntity.md)
 
@@ -1278,7 +1278,7 @@ ___
 
 ___
 
-### AttachmentEntityFromJSONTyped
+### <a id="attachmententityfromjsontyped" name="attachmententityfromjsontyped"></a> AttachmentEntityFromJSONTyped
 
 ▸ **AttachmentEntityFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentEntity`](interfaces/AttachmentEntity.md)
 
@@ -1295,7 +1295,7 @@ ___
 
 ___
 
-### AttachmentEntityToJSON
+### <a id="attachmententitytojson" name="attachmententitytojson"></a> AttachmentEntityToJSON
 
 ▸ **AttachmentEntityToJSON**(`value?`): `any`
 
@@ -1311,7 +1311,7 @@ ___
 
 ___
 
-### AttachmentMetaDataFromJSON
+### <a id="attachmentmetadatafromjson" name="attachmentmetadatafromjson"></a> AttachmentMetaDataFromJSON
 
 ▸ **AttachmentMetaDataFromJSON**(`json`): [`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
 
@@ -1327,7 +1327,7 @@ ___
 
 ___
 
-### AttachmentMetaDataFromJSONTyped
+### <a id="attachmentmetadatafromjsontyped" name="attachmentmetadatafromjsontyped"></a> AttachmentMetaDataFromJSONTyped
 
 ▸ **AttachmentMetaDataFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentMetaData`](interfaces/AttachmentMetaData.md)
 
@@ -1344,7 +1344,7 @@ ___
 
 ___
 
-### AttachmentMetaDataToJSON
+### <a id="attachmentmetadatatojson" name="attachmentmetadatatojson"></a> AttachmentMetaDataToJSON
 
 ▸ **AttachmentMetaDataToJSON**(`value?`): `any`
 
@@ -1360,7 +1360,7 @@ ___
 
 ___
 
-### AttachmentProjectionFromJSON
+### <a id="attachmentprojectionfromjson" name="attachmentprojectionfromjson"></a> AttachmentProjectionFromJSON
 
 ▸ **AttachmentProjectionFromJSON**(`json`): [`AttachmentProjection`](interfaces/AttachmentProjection.md)
 
@@ -1376,7 +1376,7 @@ ___
 
 ___
 
-### AttachmentProjectionFromJSONTyped
+### <a id="attachmentprojectionfromjsontyped" name="attachmentprojectionfromjsontyped"></a> AttachmentProjectionFromJSONTyped
 
 ▸ **AttachmentProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`AttachmentProjection`](interfaces/AttachmentProjection.md)
 
@@ -1393,7 +1393,7 @@ ___
 
 ___
 
-### AttachmentProjectionToJSON
+### <a id="attachmentprojectiontojson" name="attachmentprojectiontojson"></a> AttachmentProjectionToJSON
 
 ▸ **AttachmentProjectionToJSON**(`value?`): `any`
 
@@ -1409,7 +1409,7 @@ ___
 
 ___
 
-### BasicAuthOptionsFromJSON
+### <a id="basicauthoptionsfromjson" name="basicauthoptionsfromjson"></a> BasicAuthOptionsFromJSON
 
 ▸ **BasicAuthOptionsFromJSON**(`json`): [`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
 
@@ -1425,7 +1425,7 @@ ___
 
 ___
 
-### BasicAuthOptionsFromJSONTyped
+### <a id="basicauthoptionsfromjsontyped" name="basicauthoptionsfromjsontyped"></a> BasicAuthOptionsFromJSONTyped
 
 ▸ **BasicAuthOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BasicAuthOptions`](interfaces/BasicAuthOptions.md)
 
@@ -1442,7 +1442,7 @@ ___
 
 ___
 
-### BasicAuthOptionsToJSON
+### <a id="basicauthoptionstojson" name="basicauthoptionstojson"></a> BasicAuthOptionsToJSON
 
 ▸ **BasicAuthOptionsToJSON**(`value?`): `any`
 
@@ -1458,7 +1458,7 @@ ___
 
 ___
 
-### BounceProjectionFromJSON
+### <a id="bounceprojectionfromjson" name="bounceprojectionfromjson"></a> BounceProjectionFromJSON
 
 ▸ **BounceProjectionFromJSON**(`json`): [`BounceProjection`](interfaces/BounceProjection.md)
 
@@ -1474,7 +1474,7 @@ ___
 
 ___
 
-### BounceProjectionFromJSONTyped
+### <a id="bounceprojectionfromjsontyped" name="bounceprojectionfromjsontyped"></a> BounceProjectionFromJSONTyped
 
 ▸ **BounceProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceProjection`](interfaces/BounceProjection.md)
 
@@ -1491,7 +1491,7 @@ ___
 
 ___
 
-### BounceProjectionToJSON
+### <a id="bounceprojectiontojson" name="bounceprojectiontojson"></a> BounceProjectionToJSON
 
 ▸ **BounceProjectionToJSON**(`value?`): `any`
 
@@ -1507,7 +1507,7 @@ ___
 
 ___
 
-### BounceRecipientFromJSON
+### <a id="bouncerecipientfromjson" name="bouncerecipientfromjson"></a> BounceRecipientFromJSON
 
 ▸ **BounceRecipientFromJSON**(`json`): [`BounceRecipient`](interfaces/BounceRecipient.md)
 
@@ -1523,7 +1523,7 @@ ___
 
 ___
 
-### BounceRecipientFromJSONTyped
+### <a id="bouncerecipientfromjsontyped" name="bouncerecipientfromjsontyped"></a> BounceRecipientFromJSONTyped
 
 ▸ **BounceRecipientFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceRecipient`](interfaces/BounceRecipient.md)
 
@@ -1540,7 +1540,7 @@ ___
 
 ___
 
-### BounceRecipientToJSON
+### <a id="bouncerecipienttojson" name="bouncerecipienttojson"></a> BounceRecipientToJSON
 
 ▸ **BounceRecipientToJSON**(`value?`): `any`
 
@@ -1556,7 +1556,7 @@ ___
 
 ___
 
-### BouncedEmailDtoFromJSON
+### <a id="bouncedemaildtofromjson" name="bouncedemaildtofromjson"></a> BouncedEmailDtoFromJSON
 
 ▸ **BouncedEmailDtoFromJSON**(`json`): [`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
 
@@ -1572,7 +1572,7 @@ ___
 
 ___
 
-### BouncedEmailDtoFromJSONTyped
+### <a id="bouncedemaildtofromjsontyped" name="bouncedemaildtofromjsontyped"></a> BouncedEmailDtoFromJSONTyped
 
 ▸ **BouncedEmailDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BouncedEmailDto`](interfaces/BouncedEmailDto.md)
 
@@ -1589,7 +1589,7 @@ ___
 
 ___
 
-### BouncedEmailDtoToJSON
+### <a id="bouncedemaildtotojson" name="bouncedemaildtotojson"></a> BouncedEmailDtoToJSON
 
 ▸ **BouncedEmailDtoToJSON**(`value?`): `any`
 
@@ -1605,7 +1605,7 @@ ___
 
 ___
 
-### BouncedRecipientDtoFromJSON
+### <a id="bouncedrecipientdtofromjson" name="bouncedrecipientdtofromjson"></a> BouncedRecipientDtoFromJSON
 
 ▸ **BouncedRecipientDtoFromJSON**(`json`): [`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
 
@@ -1621,7 +1621,7 @@ ___
 
 ___
 
-### BouncedRecipientDtoFromJSONTyped
+### <a id="bouncedrecipientdtofromjsontyped" name="bouncedrecipientdtofromjsontyped"></a> BouncedRecipientDtoFromJSONTyped
 
 ▸ **BouncedRecipientDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BouncedRecipientDto`](interfaces/BouncedRecipientDto.md)
 
@@ -1638,7 +1638,7 @@ ___
 
 ___
 
-### BouncedRecipientDtoToJSON
+### <a id="bouncedrecipientdtotojson" name="bouncedrecipientdtotojson"></a> BouncedRecipientDtoToJSON
 
 ▸ **BouncedRecipientDtoToJSON**(`value?`): `any`
 
@@ -1654,7 +1654,7 @@ ___
 
 ___
 
-### BulkSendEmailOptionsFromJSON
+### <a id="bulksendemailoptionsfromjson" name="bulksendemailoptionsfromjson"></a> BulkSendEmailOptionsFromJSON
 
 ▸ **BulkSendEmailOptionsFromJSON**(`json`): [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
 
@@ -1670,7 +1670,7 @@ ___
 
 ___
 
-### BulkSendEmailOptionsFromJSONTyped
+### <a id="bulksendemailoptionsfromjsontyped" name="bulksendemailoptionsfromjsontyped"></a> BulkSendEmailOptionsFromJSONTyped
 
 ▸ **BulkSendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BulkSendEmailOptions`](interfaces/BulkSendEmailOptions.md)
 
@@ -1687,7 +1687,7 @@ ___
 
 ___
 
-### BulkSendEmailOptionsToJSON
+### <a id="bulksendemailoptionstojson" name="bulksendemailoptionstojson"></a> BulkSendEmailOptionsToJSON
 
 ▸ **BulkSendEmailOptionsToJSON**(`value?`): `any`
 
@@ -1703,7 +1703,7 @@ ___
 
 ___
 
-### ConditionOptionFromJSON
+### <a id="conditionoptionfromjson" name="conditionoptionfromjson"></a> ConditionOptionFromJSON
 
 ▸ **ConditionOptionFromJSON**(`json`): [`ConditionOption`](interfaces/ConditionOption.md)
 
@@ -1719,7 +1719,7 @@ ___
 
 ___
 
-### ConditionOptionFromJSONTyped
+### <a id="conditionoptionfromjsontyped" name="conditionoptionfromjsontyped"></a> ConditionOptionFromJSONTyped
 
 ▸ **ConditionOptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConditionOption`](interfaces/ConditionOption.md)
 
@@ -1736,7 +1736,7 @@ ___
 
 ___
 
-### ConditionOptionToJSON
+### <a id="conditionoptiontojson" name="conditionoptiontojson"></a> ConditionOptionToJSON
 
 ▸ **ConditionOptionToJSON**(`value?`): `any`
 
@@ -1752,7 +1752,7 @@ ___
 
 ___
 
-### ContactDtoFromJSON
+### <a id="contactdtofromjson" name="contactdtofromjson"></a> ContactDtoFromJSON
 
 ▸ **ContactDtoFromJSON**(`json`): [`ContactDto`](interfaces/ContactDto.md)
 
@@ -1768,7 +1768,7 @@ ___
 
 ___
 
-### ContactDtoFromJSONTyped
+### <a id="contactdtofromjsontyped" name="contactdtofromjsontyped"></a> ContactDtoFromJSONTyped
 
 ▸ **ContactDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContactDto`](interfaces/ContactDto.md)
 
@@ -1785,7 +1785,7 @@ ___
 
 ___
 
-### ContactDtoToJSON
+### <a id="contactdtotojson" name="contactdtotojson"></a> ContactDtoToJSON
 
 ▸ **ContactDtoToJSON**(`value?`): `any`
 
@@ -1801,7 +1801,7 @@ ___
 
 ___
 
-### ContactProjectionFromJSON
+### <a id="contactprojectionfromjson" name="contactprojectionfromjson"></a> ContactProjectionFromJSON
 
 ▸ **ContactProjectionFromJSON**(`json`): [`ContactProjection`](interfaces/ContactProjection.md)
 
@@ -1817,7 +1817,7 @@ ___
 
 ___
 
-### ContactProjectionFromJSONTyped
+### <a id="contactprojectionfromjsontyped" name="contactprojectionfromjsontyped"></a> ContactProjectionFromJSONTyped
 
 ▸ **ContactProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContactProjection`](interfaces/ContactProjection.md)
 
@@ -1834,7 +1834,7 @@ ___
 
 ___
 
-### ContactProjectionToJSON
+### <a id="contactprojectiontojson" name="contactprojectiontojson"></a> ContactProjectionToJSON
 
 ▸ **ContactProjectionToJSON**(`value?`): `any`
 
@@ -1850,7 +1850,7 @@ ___
 
 ___
 
-### ContentMatchOptionsFromJSON
+### <a id="contentmatchoptionsfromjson" name="contentmatchoptionsfromjson"></a> ContentMatchOptionsFromJSON
 
 ▸ **ContentMatchOptionsFromJSON**(`json`): [`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
 
@@ -1866,7 +1866,7 @@ ___
 
 ___
 
-### ContentMatchOptionsFromJSONTyped
+### <a id="contentmatchoptionsfromjsontyped" name="contentmatchoptionsfromjsontyped"></a> ContentMatchOptionsFromJSONTyped
 
 ▸ **ContentMatchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ContentMatchOptions`](interfaces/ContentMatchOptions.md)
 
@@ -1883,7 +1883,7 @@ ___
 
 ___
 
-### ContentMatchOptionsToJSON
+### <a id="contentmatchoptionstojson" name="contentmatchoptionstojson"></a> ContentMatchOptionsToJSON
 
 ▸ **ContentMatchOptionsToJSON**(`value?`): `any`
 
@@ -1899,7 +1899,7 @@ ___
 
 ___
 
-### CountDtoFromJSON
+### <a id="countdtofromjson" name="countdtofromjson"></a> CountDtoFromJSON
 
 ▸ **CountDtoFromJSON**(`json`): [`CountDto`](interfaces/CountDto.md)
 
@@ -1915,7 +1915,7 @@ ___
 
 ___
 
-### CountDtoFromJSONTyped
+### <a id="countdtofromjsontyped" name="countdtofromjsontyped"></a> CountDtoFromJSONTyped
 
 ▸ **CountDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CountDto`](interfaces/CountDto.md)
 
@@ -1932,7 +1932,7 @@ ___
 
 ___
 
-### CountDtoToJSON
+### <a id="countdtotojson" name="countdtotojson"></a> CountDtoToJSON
 
 ▸ **CountDtoToJSON**(`value?`): `any`
 
@@ -1948,7 +1948,7 @@ ___
 
 ___
 
-### CreateAliasOptionsFromJSON
+### <a id="createaliasoptionsfromjson" name="createaliasoptionsfromjson"></a> CreateAliasOptionsFromJSON
 
 ▸ **CreateAliasOptionsFromJSON**(`json`): [`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
 
@@ -1964,7 +1964,7 @@ ___
 
 ___
 
-### CreateAliasOptionsFromJSONTyped
+### <a id="createaliasoptionsfromjsontyped" name="createaliasoptionsfromjsontyped"></a> CreateAliasOptionsFromJSONTyped
 
 ▸ **CreateAliasOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateAliasOptions`](interfaces/CreateAliasOptions.md)
 
@@ -1981,7 +1981,7 @@ ___
 
 ___
 
-### CreateAliasOptionsToJSON
+### <a id="createaliasoptionstojson" name="createaliasoptionstojson"></a> CreateAliasOptionsToJSON
 
 ▸ **CreateAliasOptionsToJSON**(`value?`): `any`
 
@@ -1997,7 +1997,7 @@ ___
 
 ___
 
-### CreateContactOptionsFromJSON
+### <a id="createcontactoptionsfromjson" name="createcontactoptionsfromjson"></a> CreateContactOptionsFromJSON
 
 ▸ **CreateContactOptionsFromJSON**(`json`): [`CreateContactOptions`](interfaces/CreateContactOptions.md)
 
@@ -2013,7 +2013,7 @@ ___
 
 ___
 
-### CreateContactOptionsFromJSONTyped
+### <a id="createcontactoptionsfromjsontyped" name="createcontactoptionsfromjsontyped"></a> CreateContactOptionsFromJSONTyped
 
 ▸ **CreateContactOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateContactOptions`](interfaces/CreateContactOptions.md)
 
@@ -2030,7 +2030,7 @@ ___
 
 ___
 
-### CreateContactOptionsToJSON
+### <a id="createcontactoptionstojson" name="createcontactoptionstojson"></a> CreateContactOptionsToJSON
 
 ▸ **CreateContactOptionsToJSON**(`value?`): `any`
 
@@ -2046,7 +2046,7 @@ ___
 
 ___
 
-### CreateDomainOptionsFromJSON
+### <a id="createdomainoptionsfromjson" name="createdomainoptionsfromjson"></a> CreateDomainOptionsFromJSON
 
 ▸ **CreateDomainOptionsFromJSON**(`json`): [`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
 
@@ -2062,7 +2062,7 @@ ___
 
 ___
 
-### CreateDomainOptionsFromJSONTyped
+### <a id="createdomainoptionsfromjsontyped" name="createdomainoptionsfromjsontyped"></a> CreateDomainOptionsFromJSONTyped
 
 ▸ **CreateDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateDomainOptions`](interfaces/CreateDomainOptions.md)
 
@@ -2079,7 +2079,7 @@ ___
 
 ___
 
-### CreateDomainOptionsToJSON
+### <a id="createdomainoptionstojson" name="createdomainoptionstojson"></a> CreateDomainOptionsToJSON
 
 ▸ **CreateDomainOptionsToJSON**(`value?`): `any`
 
@@ -2095,7 +2095,7 @@ ___
 
 ___
 
-### CreateGroupOptionsFromJSON
+### <a id="creategroupoptionsfromjson" name="creategroupoptionsfromjson"></a> CreateGroupOptionsFromJSON
 
 ▸ **CreateGroupOptionsFromJSON**(`json`): [`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
 
@@ -2111,7 +2111,7 @@ ___
 
 ___
 
-### CreateGroupOptionsFromJSONTyped
+### <a id="creategroupoptionsfromjsontyped" name="creategroupoptionsfromjsontyped"></a> CreateGroupOptionsFromJSONTyped
 
 ▸ **CreateGroupOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateGroupOptions`](interfaces/CreateGroupOptions.md)
 
@@ -2128,7 +2128,7 @@ ___
 
 ___
 
-### CreateGroupOptionsToJSON
+### <a id="creategroupoptionstojson" name="creategroupoptionstojson"></a> CreateGroupOptionsToJSON
 
 ▸ **CreateGroupOptionsToJSON**(`value?`): `any`
 
@@ -2144,7 +2144,7 @@ ___
 
 ___
 
-### CreateInboxDtoFromJSON
+### <a id="createinboxdtofromjson" name="createinboxdtofromjson"></a> CreateInboxDtoFromJSON
 
 ▸ **CreateInboxDtoFromJSON**(`json`): [`CreateInboxDto`](interfaces/CreateInboxDto.md)
 
@@ -2160,7 +2160,7 @@ ___
 
 ___
 
-### CreateInboxDtoFromJSONTyped
+### <a id="createinboxdtofromjsontyped" name="createinboxdtofromjsontyped"></a> CreateInboxDtoFromJSONTyped
 
 ▸ **CreateInboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxDto`](interfaces/CreateInboxDto.md)
 
@@ -2177,7 +2177,7 @@ ___
 
 ___
 
-### CreateInboxDtoToJSON
+### <a id="createinboxdtotojson" name="createinboxdtotojson"></a> CreateInboxDtoToJSON
 
 ▸ **CreateInboxDtoToJSON**(`value?`): `any`
 
@@ -2193,7 +2193,7 @@ ___
 
 ___
 
-### CreateInboxForwarderOptionsFromJSON
+### <a id="createinboxforwarderoptionsfromjson" name="createinboxforwarderoptionsfromjson"></a> CreateInboxForwarderOptionsFromJSON
 
 ▸ **CreateInboxForwarderOptionsFromJSON**(`json`): [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
 
@@ -2209,7 +2209,7 @@ ___
 
 ___
 
-### CreateInboxForwarderOptionsFromJSONTyped
+### <a id="createinboxforwarderoptionsfromjsontyped" name="createinboxforwarderoptionsfromjsontyped"></a> CreateInboxForwarderOptionsFromJSONTyped
 
 ▸ **CreateInboxForwarderOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md)
 
@@ -2226,7 +2226,7 @@ ___
 
 ___
 
-### CreateInboxForwarderOptionsToJSON
+### <a id="createinboxforwarderoptionstojson" name="createinboxforwarderoptionstojson"></a> CreateInboxForwarderOptionsToJSON
 
 ▸ **CreateInboxForwarderOptionsToJSON**(`value?`): `any`
 
@@ -2242,7 +2242,7 @@ ___
 
 ___
 
-### CreateInboxRulesetOptionsFromJSON
+### <a id="createinboxrulesetoptionsfromjson" name="createinboxrulesetoptionsfromjson"></a> CreateInboxRulesetOptionsFromJSON
 
 ▸ **CreateInboxRulesetOptionsFromJSON**(`json`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
 
@@ -2258,7 +2258,7 @@ ___
 
 ___
 
-### CreateInboxRulesetOptionsFromJSONTyped
+### <a id="createinboxrulesetoptionsfromjsontyped" name="createinboxrulesetoptionsfromjsontyped"></a> CreateInboxRulesetOptionsFromJSONTyped
 
 ▸ **CreateInboxRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxRulesetOptions`](interfaces/CreateInboxRulesetOptions.md)
 
@@ -2275,7 +2275,7 @@ ___
 
 ___
 
-### CreateInboxRulesetOptionsToJSON
+### <a id="createinboxrulesetoptionstojson" name="createinboxrulesetoptionstojson"></a> CreateInboxRulesetOptionsToJSON
 
 ▸ **CreateInboxRulesetOptionsToJSON**(`value?`): `any`
 
@@ -2291,7 +2291,7 @@ ___
 
 ___
 
-### CreateTemplateOptionsFromJSON
+### <a id="createtemplateoptionsfromjson" name="createtemplateoptionsfromjson"></a> CreateTemplateOptionsFromJSON
 
 ▸ **CreateTemplateOptionsFromJSON**(`json`): [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
 
@@ -2307,7 +2307,7 @@ ___
 
 ___
 
-### CreateTemplateOptionsFromJSONTyped
+### <a id="createtemplateoptionsfromjsontyped" name="createtemplateoptionsfromjsontyped"></a> CreateTemplateOptionsFromJSONTyped
 
 ▸ **CreateTemplateOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTemplateOptions`](interfaces/CreateTemplateOptions.md)
 
@@ -2324,7 +2324,7 @@ ___
 
 ___
 
-### CreateTemplateOptionsToJSON
+### <a id="createtemplateoptionstojson" name="createtemplateoptionstojson"></a> CreateTemplateOptionsToJSON
 
 ▸ **CreateTemplateOptionsToJSON**(`value?`): `any`
 
@@ -2340,7 +2340,7 @@ ___
 
 ___
 
-### CreateTrackingPixelOptionsFromJSON
+### <a id="createtrackingpixeloptionsfromjson" name="createtrackingpixeloptionsfromjson"></a> CreateTrackingPixelOptionsFromJSON
 
 ▸ **CreateTrackingPixelOptionsFromJSON**(`json`): [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
 
@@ -2356,7 +2356,7 @@ ___
 
 ___
 
-### CreateTrackingPixelOptionsFromJSONTyped
+### <a id="createtrackingpixeloptionsfromjsontyped" name="createtrackingpixeloptionsfromjsontyped"></a> CreateTrackingPixelOptionsFromJSONTyped
 
 ▸ **CreateTrackingPixelOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateTrackingPixelOptions`](interfaces/CreateTrackingPixelOptions.md)
 
@@ -2373,7 +2373,7 @@ ___
 
 ___
 
-### CreateTrackingPixelOptionsToJSON
+### <a id="createtrackingpixeloptionstojson" name="createtrackingpixeloptionstojson"></a> CreateTrackingPixelOptionsToJSON
 
 ▸ **CreateTrackingPixelOptionsToJSON**(`value?`): `any`
 
@@ -2389,7 +2389,7 @@ ___
 
 ___
 
-### CreateWebhookOptionsFromJSON
+### <a id="createwebhookoptionsfromjson" name="createwebhookoptionsfromjson"></a> CreateWebhookOptionsFromJSON
 
 ▸ **CreateWebhookOptionsFromJSON**(`json`): [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
 
@@ -2405,7 +2405,7 @@ ___
 
 ___
 
-### CreateWebhookOptionsFromJSONTyped
+### <a id="createwebhookoptionsfromjsontyped" name="createwebhookoptionsfromjsontyped"></a> CreateWebhookOptionsFromJSONTyped
 
 ▸ **CreateWebhookOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateWebhookOptions`](interfaces/CreateWebhookOptions.md)
 
@@ -2422,7 +2422,7 @@ ___
 
 ___
 
-### CreateWebhookOptionsToJSON
+### <a id="createwebhookoptionstojson" name="createwebhookoptionstojson"></a> CreateWebhookOptionsToJSON
 
 ▸ **CreateWebhookOptionsToJSON**(`value?`): `any`
 
@@ -2438,7 +2438,7 @@ ___
 
 ___
 
-### DNSLookupOptionsFromJSON
+### <a id="dnslookupoptionsfromjson" name="dnslookupoptionsfromjson"></a> DNSLookupOptionsFromJSON
 
 ▸ **DNSLookupOptionsFromJSON**(`json`): [`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
 
@@ -2454,7 +2454,7 @@ ___
 
 ___
 
-### DNSLookupOptionsFromJSONTyped
+### <a id="dnslookupoptionsfromjsontyped" name="dnslookupoptionsfromjsontyped"></a> DNSLookupOptionsFromJSONTyped
 
 ▸ **DNSLookupOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupOptions`](interfaces/DNSLookupOptions.md)
 
@@ -2471,7 +2471,7 @@ ___
 
 ___
 
-### DNSLookupOptionsToJSON
+### <a id="dnslookupoptionstojson" name="dnslookupoptionstojson"></a> DNSLookupOptionsToJSON
 
 ▸ **DNSLookupOptionsToJSON**(`value?`): `any`
 
@@ -2487,7 +2487,7 @@ ___
 
 ___
 
-### DNSLookupResultFromJSON
+### <a id="dnslookupresultfromjson" name="dnslookupresultfromjson"></a> DNSLookupResultFromJSON
 
 ▸ **DNSLookupResultFromJSON**(`json`): [`DNSLookupResult`](interfaces/DNSLookupResult.md)
 
@@ -2503,7 +2503,7 @@ ___
 
 ___
 
-### DNSLookupResultFromJSONTyped
+### <a id="dnslookupresultfromjsontyped" name="dnslookupresultfromjsontyped"></a> DNSLookupResultFromJSONTyped
 
 ▸ **DNSLookupResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupResult`](interfaces/DNSLookupResult.md)
 
@@ -2520,7 +2520,7 @@ ___
 
 ___
 
-### DNSLookupResultToJSON
+### <a id="dnslookupresulttojson" name="dnslookupresulttojson"></a> DNSLookupResultToJSON
 
 ▸ **DNSLookupResultToJSON**(`value?`): `any`
 
@@ -2536,7 +2536,7 @@ ___
 
 ___
 
-### DNSLookupResultsFromJSON
+### <a id="dnslookupresultsfromjson" name="dnslookupresultsfromjson"></a> DNSLookupResultsFromJSON
 
 ▸ **DNSLookupResultsFromJSON**(`json`): [`DNSLookupResults`](interfaces/DNSLookupResults.md)
 
@@ -2552,7 +2552,7 @@ ___
 
 ___
 
-### DNSLookupResultsFromJSONTyped
+### <a id="dnslookupresultsfromjsontyped" name="dnslookupresultsfromjsontyped"></a> DNSLookupResultsFromJSONTyped
 
 ▸ **DNSLookupResultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupResults`](interfaces/DNSLookupResults.md)
 
@@ -2569,7 +2569,7 @@ ___
 
 ___
 
-### DNSLookupResultsToJSON
+### <a id="dnslookupresultstojson" name="dnslookupresultstojson"></a> DNSLookupResultsToJSON
 
 ▸ **DNSLookupResultsToJSON**(`value?`): `any`
 
@@ -2585,7 +2585,7 @@ ___
 
 ___
 
-### DescribeDomainOptionsFromJSON
+### <a id="describedomainoptionsfromjson" name="describedomainoptionsfromjson"></a> DescribeDomainOptionsFromJSON
 
 ▸ **DescribeDomainOptionsFromJSON**(`json`): [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
 
@@ -2601,7 +2601,7 @@ ___
 
 ___
 
-### DescribeDomainOptionsFromJSONTyped
+### <a id="describedomainoptionsfromjsontyped" name="describedomainoptionsfromjsontyped"></a> DescribeDomainOptionsFromJSONTyped
 
 ▸ **DescribeDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DescribeDomainOptions`](interfaces/DescribeDomainOptions.md)
 
@@ -2618,7 +2618,7 @@ ___
 
 ___
 
-### DescribeDomainOptionsToJSON
+### <a id="describedomainoptionstojson" name="describedomainoptionstojson"></a> DescribeDomainOptionsToJSON
 
 ▸ **DescribeDomainOptionsToJSON**(`value?`): `any`
 
@@ -2634,7 +2634,7 @@ ___
 
 ___
 
-### DescribeMailServerDomainResultFromJSON
+### <a id="describemailserverdomainresultfromjson" name="describemailserverdomainresultfromjson"></a> DescribeMailServerDomainResultFromJSON
 
 ▸ **DescribeMailServerDomainResultFromJSON**(`json`): [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
 
@@ -2650,7 +2650,7 @@ ___
 
 ___
 
-### DescribeMailServerDomainResultFromJSONTyped
+### <a id="describemailserverdomainresultfromjsontyped" name="describemailserverdomainresultfromjsontyped"></a> DescribeMailServerDomainResultFromJSONTyped
 
 ▸ **DescribeMailServerDomainResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DescribeMailServerDomainResult`](interfaces/DescribeMailServerDomainResult.md)
 
@@ -2667,7 +2667,7 @@ ___
 
 ___
 
-### DescribeMailServerDomainResultToJSON
+### <a id="describemailserverdomainresulttojson" name="describemailserverdomainresulttojson"></a> DescribeMailServerDomainResultToJSON
 
 ▸ **DescribeMailServerDomainResultToJSON**(`value?`): `any`
 
@@ -2683,7 +2683,7 @@ ___
 
 ___
 
-### DomainDtoFromJSON
+### <a id="domaindtofromjson" name="domaindtofromjson"></a> DomainDtoFromJSON
 
 ▸ **DomainDtoFromJSON**(`json`): [`DomainDto`](interfaces/DomainDto.md)
 
@@ -2699,7 +2699,7 @@ ___
 
 ___
 
-### DomainDtoFromJSONTyped
+### <a id="domaindtofromjsontyped" name="domaindtofromjsontyped"></a> DomainDtoFromJSONTyped
 
 ▸ **DomainDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainDto`](interfaces/DomainDto.md)
 
@@ -2716,7 +2716,7 @@ ___
 
 ___
 
-### DomainDtoToJSON
+### <a id="domaindtotojson" name="domaindtotojson"></a> DomainDtoToJSON
 
 ▸ **DomainDtoToJSON**(`value?`): `any`
 
@@ -2732,7 +2732,7 @@ ___
 
 ___
 
-### DomainNameRecordFromJSON
+### <a id="domainnamerecordfromjson" name="domainnamerecordfromjson"></a> DomainNameRecordFromJSON
 
 ▸ **DomainNameRecordFromJSON**(`json`): [`DomainNameRecord`](interfaces/DomainNameRecord.md)
 
@@ -2748,7 +2748,7 @@ ___
 
 ___
 
-### DomainNameRecordFromJSONTyped
+### <a id="domainnamerecordfromjsontyped" name="domainnamerecordfromjsontyped"></a> DomainNameRecordFromJSONTyped
 
 ▸ **DomainNameRecordFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainNameRecord`](interfaces/DomainNameRecord.md)
 
@@ -2765,7 +2765,7 @@ ___
 
 ___
 
-### DomainNameRecordToJSON
+### <a id="domainnamerecordtojson" name="domainnamerecordtojson"></a> DomainNameRecordToJSON
 
 ▸ **DomainNameRecordToJSON**(`value?`): `any`
 
@@ -2781,7 +2781,7 @@ ___
 
 ___
 
-### DomainPreviewFromJSON
+### <a id="domainpreviewfromjson" name="domainpreviewfromjson"></a> DomainPreviewFromJSON
 
 ▸ **DomainPreviewFromJSON**(`json`): [`DomainPreview`](interfaces/DomainPreview.md)
 
@@ -2797,7 +2797,7 @@ ___
 
 ___
 
-### DomainPreviewFromJSONTyped
+### <a id="domainpreviewfromjsontyped" name="domainpreviewfromjsontyped"></a> DomainPreviewFromJSONTyped
 
 ▸ **DomainPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainPreview`](interfaces/DomainPreview.md)
 
@@ -2814,7 +2814,7 @@ ___
 
 ___
 
-### DomainPreviewToJSON
+### <a id="domainpreviewtojson" name="domainpreviewtojson"></a> DomainPreviewToJSON
 
 ▸ **DomainPreviewToJSON**(`value?`): `any`
 
@@ -2830,7 +2830,7 @@ ___
 
 ___
 
-### DownloadAttachmentDtoFromJSON
+### <a id="downloadattachmentdtofromjson" name="downloadattachmentdtofromjson"></a> DownloadAttachmentDtoFromJSON
 
 ▸ **DownloadAttachmentDtoFromJSON**(`json`): [`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
 
@@ -2846,7 +2846,7 @@ ___
 
 ___
 
-### DownloadAttachmentDtoFromJSONTyped
+### <a id="downloadattachmentdtofromjsontyped" name="downloadattachmentdtofromjsontyped"></a> DownloadAttachmentDtoFromJSONTyped
 
 ▸ **DownloadAttachmentDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DownloadAttachmentDto`](interfaces/DownloadAttachmentDto.md)
 
@@ -2863,7 +2863,7 @@ ___
 
 ___
 
-### DownloadAttachmentDtoToJSON
+### <a id="downloadattachmentdtotojson" name="downloadattachmentdtotojson"></a> DownloadAttachmentDtoToJSON
 
 ▸ **DownloadAttachmentDtoToJSON**(`value?`): `any`
 
@@ -2879,7 +2879,7 @@ ___
 
 ___
 
-### EmailAnalysisFromJSON
+### <a id="emailanalysisfromjson" name="emailanalysisfromjson"></a> EmailAnalysisFromJSON
 
 ▸ **EmailAnalysisFromJSON**(`json`): [`EmailAnalysis`](interfaces/EmailAnalysis.md)
 
@@ -2895,7 +2895,7 @@ ___
 
 ___
 
-### EmailAnalysisFromJSONTyped
+### <a id="emailanalysisfromjsontyped" name="emailanalysisfromjsontyped"></a> EmailAnalysisFromJSONTyped
 
 ▸ **EmailAnalysisFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailAnalysis`](interfaces/EmailAnalysis.md)
 
@@ -2912,7 +2912,7 @@ ___
 
 ___
 
-### EmailAnalysisToJSON
+### <a id="emailanalysistojson" name="emailanalysistojson"></a> EmailAnalysisToJSON
 
 ▸ **EmailAnalysisToJSON**(`value?`): `any`
 
@@ -2928,7 +2928,7 @@ ___
 
 ___
 
-### EmailContentMatchResultFromJSON
+### <a id="emailcontentmatchresultfromjson" name="emailcontentmatchresultfromjson"></a> EmailContentMatchResultFromJSON
 
 ▸ **EmailContentMatchResultFromJSON**(`json`): [`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
 
@@ -2944,7 +2944,7 @@ ___
 
 ___
 
-### EmailContentMatchResultFromJSONTyped
+### <a id="emailcontentmatchresultfromjsontyped" name="emailcontentmatchresultfromjsontyped"></a> EmailContentMatchResultFromJSONTyped
 
 ▸ **EmailContentMatchResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailContentMatchResult`](interfaces/EmailContentMatchResult.md)
 
@@ -2961,7 +2961,7 @@ ___
 
 ___
 
-### EmailContentMatchResultToJSON
+### <a id="emailcontentmatchresulttojson" name="emailcontentmatchresulttojson"></a> EmailContentMatchResultToJSON
 
 ▸ **EmailContentMatchResultToJSON**(`value?`): `any`
 
@@ -2977,7 +2977,7 @@ ___
 
 ___
 
-### EmailFromJSON
+### <a id="emailfromjson" name="emailfromjson"></a> EmailFromJSON
 
 ▸ **EmailFromJSON**(`json`): [`Email`](interfaces/Email.md)
 
@@ -2993,7 +2993,7 @@ ___
 
 ___
 
-### EmailFromJSONTyped
+### <a id="emailfromjsontyped" name="emailfromjsontyped"></a> EmailFromJSONTyped
 
 ▸ **EmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Email`](interfaces/Email.md)
 
@@ -3010,7 +3010,7 @@ ___
 
 ___
 
-### EmailLinksResultFromJSON
+### <a id="emaillinksresultfromjson" name="emaillinksresultfromjson"></a> EmailLinksResultFromJSON
 
 ▸ **EmailLinksResultFromJSON**(`json`): [`EmailLinksResult`](interfaces/EmailLinksResult.md)
 
@@ -3026,7 +3026,7 @@ ___
 
 ___
 
-### EmailLinksResultFromJSONTyped
+### <a id="emaillinksresultfromjsontyped" name="emaillinksresultfromjsontyped"></a> EmailLinksResultFromJSONTyped
 
 ▸ **EmailLinksResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailLinksResult`](interfaces/EmailLinksResult.md)
 
@@ -3043,7 +3043,7 @@ ___
 
 ___
 
-### EmailLinksResultToJSON
+### <a id="emaillinksresulttojson" name="emaillinksresulttojson"></a> EmailLinksResultToJSON
 
 ▸ **EmailLinksResultToJSON**(`value?`): `any`
 
@@ -3059,7 +3059,7 @@ ___
 
 ___
 
-### EmailPreviewFromJSON
+### <a id="emailpreviewfromjson" name="emailpreviewfromjson"></a> EmailPreviewFromJSON
 
 ▸ **EmailPreviewFromJSON**(`json`): [`EmailPreview`](interfaces/EmailPreview.md)
 
@@ -3075,7 +3075,7 @@ ___
 
 ___
 
-### EmailPreviewFromJSONTyped
+### <a id="emailpreviewfromjsontyped" name="emailpreviewfromjsontyped"></a> EmailPreviewFromJSONTyped
 
 ▸ **EmailPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailPreview`](interfaces/EmailPreview.md)
 
@@ -3092,7 +3092,7 @@ ___
 
 ___
 
-### EmailPreviewToJSON
+### <a id="emailpreviewtojson" name="emailpreviewtojson"></a> EmailPreviewToJSON
 
 ▸ **EmailPreviewToJSON**(`value?`): `any`
 
@@ -3108,7 +3108,7 @@ ___
 
 ___
 
-### EmailPreviewUrlsFromJSON
+### <a id="emailpreviewurlsfromjson" name="emailpreviewurlsfromjson"></a> EmailPreviewUrlsFromJSON
 
 ▸ **EmailPreviewUrlsFromJSON**(`json`): [`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
 
@@ -3124,7 +3124,7 @@ ___
 
 ___
 
-### EmailPreviewUrlsFromJSONTyped
+### <a id="emailpreviewurlsfromjsontyped" name="emailpreviewurlsfromjsontyped"></a> EmailPreviewUrlsFromJSONTyped
 
 ▸ **EmailPreviewUrlsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailPreviewUrls`](interfaces/EmailPreviewUrls.md)
 
@@ -3141,7 +3141,7 @@ ___
 
 ___
 
-### EmailPreviewUrlsToJSON
+### <a id="emailpreviewurlstojson" name="emailpreviewurlstojson"></a> EmailPreviewUrlsToJSON
 
 ▸ **EmailPreviewUrlsToJSON**(`value?`): `any`
 
@@ -3157,7 +3157,7 @@ ___
 
 ___
 
-### EmailProjectionFromJSON
+### <a id="emailprojectionfromjson" name="emailprojectionfromjson"></a> EmailProjectionFromJSON
 
 ▸ **EmailProjectionFromJSON**(`json`): [`EmailProjection`](interfaces/EmailProjection.md)
 
@@ -3173,7 +3173,7 @@ ___
 
 ___
 
-### EmailProjectionFromJSONTyped
+### <a id="emailprojectionfromjsontyped" name="emailprojectionfromjsontyped"></a> EmailProjectionFromJSONTyped
 
 ▸ **EmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailProjection`](interfaces/EmailProjection.md)
 
@@ -3190,7 +3190,7 @@ ___
 
 ___
 
-### EmailProjectionToJSON
+### <a id="emailprojectiontojson" name="emailprojectiontojson"></a> EmailProjectionToJSON
 
 ▸ **EmailProjectionToJSON**(`value?`): `any`
 
@@ -3206,7 +3206,7 @@ ___
 
 ___
 
-### EmailRecipientsFromJSON
+### <a id="emailrecipientsfromjson" name="emailrecipientsfromjson"></a> EmailRecipientsFromJSON
 
 ▸ **EmailRecipientsFromJSON**(`json`): [`EmailRecipients`](interfaces/EmailRecipients.md)
 
@@ -3222,7 +3222,7 @@ ___
 
 ___
 
-### EmailRecipientsFromJSONTyped
+### <a id="emailrecipientsfromjsontyped" name="emailrecipientsfromjsontyped"></a> EmailRecipientsFromJSONTyped
 
 ▸ **EmailRecipientsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailRecipients`](interfaces/EmailRecipients.md)
 
@@ -3239,7 +3239,7 @@ ___
 
 ___
 
-### EmailRecipientsToJSON
+### <a id="emailrecipientstojson" name="emailrecipientstojson"></a> EmailRecipientsToJSON
 
 ▸ **EmailRecipientsToJSON**(`value?`): `any`
 
@@ -3255,7 +3255,7 @@ ___
 
 ___
 
-### EmailTextLinesResultFromJSON
+### <a id="emailtextlinesresultfromjson" name="emailtextlinesresultfromjson"></a> EmailTextLinesResultFromJSON
 
 ▸ **EmailTextLinesResultFromJSON**(`json`): [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
 
@@ -3271,7 +3271,7 @@ ___
 
 ___
 
-### EmailTextLinesResultFromJSONTyped
+### <a id="emailtextlinesresultfromjsontyped" name="emailtextlinesresultfromjsontyped"></a> EmailTextLinesResultFromJSONTyped
 
 ▸ **EmailTextLinesResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailTextLinesResult`](interfaces/EmailTextLinesResult.md)
 
@@ -3288,7 +3288,7 @@ ___
 
 ___
 
-### EmailTextLinesResultToJSON
+### <a id="emailtextlinesresulttojson" name="emailtextlinesresulttojson"></a> EmailTextLinesResultToJSON
 
 ▸ **EmailTextLinesResultToJSON**(`value?`): `any`
 
@@ -3304,7 +3304,7 @@ ___
 
 ___
 
-### EmailToJSON
+### <a id="emailtojson" name="emailtojson"></a> EmailToJSON
 
 ▸ **EmailToJSON**(`value?`): `any`
 
@@ -3320,7 +3320,7 @@ ___
 
 ___
 
-### EmailValidationRequestFromJSON
+### <a id="emailvalidationrequestfromjson" name="emailvalidationrequestfromjson"></a> EmailValidationRequestFromJSON
 
 ▸ **EmailValidationRequestFromJSON**(`json`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
 
@@ -3336,7 +3336,7 @@ ___
 
 ___
 
-### EmailValidationRequestFromJSONTyped
+### <a id="emailvalidationrequestfromjsontyped" name="emailvalidationrequestfromjsontyped"></a> EmailValidationRequestFromJSONTyped
 
 ▸ **EmailValidationRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
 
@@ -3353,7 +3353,7 @@ ___
 
 ___
 
-### EmailValidationRequestToJSON
+### <a id="emailvalidationrequesttojson" name="emailvalidationrequesttojson"></a> EmailValidationRequestToJSON
 
 ▸ **EmailValidationRequestToJSON**(`value?`): `any`
 
@@ -3369,7 +3369,7 @@ ___
 
 ___
 
-### EmailVerificationResultFromJSON
+### <a id="emailverificationresultfromjson" name="emailverificationresultfromjson"></a> EmailVerificationResultFromJSON
 
 ▸ **EmailVerificationResultFromJSON**(`json`): [`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
 
@@ -3385,7 +3385,7 @@ ___
 
 ___
 
-### EmailVerificationResultFromJSONTyped
+### <a id="emailverificationresultfromjsontyped" name="emailverificationresultfromjsontyped"></a> EmailVerificationResultFromJSONTyped
 
 ▸ **EmailVerificationResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailVerificationResult`](interfaces/EmailVerificationResult.md)
 
@@ -3402,7 +3402,7 @@ ___
 
 ___
 
-### EmailVerificationResultToJSON
+### <a id="emailverificationresulttojson" name="emailverificationresulttojson"></a> EmailVerificationResultToJSON
 
 ▸ **EmailVerificationResultToJSON**(`value?`): `any`
 
@@ -3418,7 +3418,7 @@ ___
 
 ___
 
-### ExpirationDefaultsFromJSON
+### <a id="expirationdefaultsfromjson" name="expirationdefaultsfromjson"></a> ExpirationDefaultsFromJSON
 
 ▸ **ExpirationDefaultsFromJSON**(`json`): [`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
 
@@ -3434,7 +3434,7 @@ ___
 
 ___
 
-### ExpirationDefaultsFromJSONTyped
+### <a id="expirationdefaultsfromjsontyped" name="expirationdefaultsfromjsontyped"></a> ExpirationDefaultsFromJSONTyped
 
 ▸ **ExpirationDefaultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpirationDefaults`](interfaces/ExpirationDefaults.md)
 
@@ -3451,7 +3451,7 @@ ___
 
 ___
 
-### ExpirationDefaultsToJSON
+### <a id="expirationdefaultstojson" name="expirationdefaultstojson"></a> ExpirationDefaultsToJSON
 
 ▸ **ExpirationDefaultsToJSON**(`value?`): `any`
 
@@ -3467,7 +3467,7 @@ ___
 
 ___
 
-### ExpiredInboxDtoFromJSON
+### <a id="expiredinboxdtofromjson" name="expiredinboxdtofromjson"></a> ExpiredInboxDtoFromJSON
 
 ▸ **ExpiredInboxDtoFromJSON**(`json`): [`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
 
@@ -3483,7 +3483,7 @@ ___
 
 ___
 
-### ExpiredInboxDtoFromJSONTyped
+### <a id="expiredinboxdtofromjsontyped" name="expiredinboxdtofromjsontyped"></a> ExpiredInboxDtoFromJSONTyped
 
 ▸ **ExpiredInboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpiredInboxDto`](interfaces/ExpiredInboxDto.md)
 
@@ -3500,7 +3500,7 @@ ___
 
 ___
 
-### ExpiredInboxDtoToJSON
+### <a id="expiredinboxdtotojson" name="expiredinboxdtotojson"></a> ExpiredInboxDtoToJSON
 
 ▸ **ExpiredInboxDtoToJSON**(`value?`): `any`
 
@@ -3516,7 +3516,7 @@ ___
 
 ___
 
-### ExpiredInboxRecordProjectionFromJSON
+### <a id="expiredinboxrecordprojectionfromjson" name="expiredinboxrecordprojectionfromjson"></a> ExpiredInboxRecordProjectionFromJSON
 
 ▸ **ExpiredInboxRecordProjectionFromJSON**(`json`): [`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
 
@@ -3532,7 +3532,7 @@ ___
 
 ___
 
-### ExpiredInboxRecordProjectionFromJSONTyped
+### <a id="expiredinboxrecordprojectionfromjsontyped" name="expiredinboxrecordprojectionfromjsontyped"></a> ExpiredInboxRecordProjectionFromJSONTyped
 
 ▸ **ExpiredInboxRecordProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExpiredInboxRecordProjection`](interfaces/ExpiredInboxRecordProjection.md)
 
@@ -3549,7 +3549,7 @@ ___
 
 ___
 
-### ExpiredInboxRecordProjectionToJSON
+### <a id="expiredinboxrecordprojectiontojson" name="expiredinboxrecordprojectiontojson"></a> ExpiredInboxRecordProjectionToJSON
 
 ▸ **ExpiredInboxRecordProjectionToJSON**(`value?`): `any`
 
@@ -3565,7 +3565,7 @@ ___
 
 ___
 
-### ExportLinkFromJSON
+### <a id="exportlinkfromjson" name="exportlinkfromjson"></a> ExportLinkFromJSON
 
 ▸ **ExportLinkFromJSON**(`json`): [`ExportLink`](interfaces/ExportLink.md)
 
@@ -3581,7 +3581,7 @@ ___
 
 ___
 
-### ExportLinkFromJSONTyped
+### <a id="exportlinkfromjsontyped" name="exportlinkfromjsontyped"></a> ExportLinkFromJSONTyped
 
 ▸ **ExportLinkFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportLink`](interfaces/ExportLink.md)
 
@@ -3598,7 +3598,7 @@ ___
 
 ___
 
-### ExportLinkToJSON
+### <a id="exportlinktojson" name="exportlinktojson"></a> ExportLinkToJSON
 
 ▸ **ExportLinkToJSON**(`value?`): `any`
 
@@ -3614,7 +3614,7 @@ ___
 
 ___
 
-### ExportOptionsFromJSON
+### <a id="exportoptionsfromjson" name="exportoptionsfromjson"></a> ExportOptionsFromJSON
 
 ▸ **ExportOptionsFromJSON**(`json`): [`ExportOptions`](interfaces/ExportOptions.md)
 
@@ -3630,7 +3630,7 @@ ___
 
 ___
 
-### ExportOptionsFromJSONTyped
+### <a id="exportoptionsfromjsontyped" name="exportoptionsfromjsontyped"></a> ExportOptionsFromJSONTyped
 
 ▸ **ExportOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ExportOptions`](interfaces/ExportOptions.md)
 
@@ -3647,7 +3647,7 @@ ___
 
 ___
 
-### ExportOptionsToJSON
+### <a id="exportoptionstojson" name="exportoptionstojson"></a> ExportOptionsToJSON
 
 ▸ **ExportOptionsToJSON**(`value?`): `any`
 
@@ -3663,7 +3663,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsOptionsFromJSON
+### <a id="filterbouncedrecipientsoptionsfromjson" name="filterbouncedrecipientsoptionsfromjson"></a> FilterBouncedRecipientsOptionsFromJSON
 
 ▸ **FilterBouncedRecipientsOptionsFromJSON**(`json`): [`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
 
@@ -3679,7 +3679,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsOptionsFromJSONTyped
+### <a id="filterbouncedrecipientsoptionsfromjsontyped" name="filterbouncedrecipientsoptionsfromjsontyped"></a> FilterBouncedRecipientsOptionsFromJSONTyped
 
 ▸ **FilterBouncedRecipientsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FilterBouncedRecipientsOptions`](interfaces/FilterBouncedRecipientsOptions.md)
 
@@ -3696,7 +3696,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsOptionsToJSON
+### <a id="filterbouncedrecipientsoptionstojson" name="filterbouncedrecipientsoptionstojson"></a> FilterBouncedRecipientsOptionsToJSON
 
 ▸ **FilterBouncedRecipientsOptionsToJSON**(`value?`): `any`
 
@@ -3712,7 +3712,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsResultFromJSON
+### <a id="filterbouncedrecipientsresultfromjson" name="filterbouncedrecipientsresultfromjson"></a> FilterBouncedRecipientsResultFromJSON
 
 ▸ **FilterBouncedRecipientsResultFromJSON**(`json`): [`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
 
@@ -3728,7 +3728,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsResultFromJSONTyped
+### <a id="filterbouncedrecipientsresultfromjsontyped" name="filterbouncedrecipientsresultfromjsontyped"></a> FilterBouncedRecipientsResultFromJSONTyped
 
 ▸ **FilterBouncedRecipientsResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FilterBouncedRecipientsResult`](interfaces/FilterBouncedRecipientsResult.md)
 
@@ -3745,7 +3745,7 @@ ___
 
 ___
 
-### FilterBouncedRecipientsResultToJSON
+### <a id="filterbouncedrecipientsresulttojson" name="filterbouncedrecipientsresulttojson"></a> FilterBouncedRecipientsResultToJSON
 
 ▸ **FilterBouncedRecipientsResultToJSON**(`value?`): `any`
 
@@ -3761,7 +3761,7 @@ ___
 
 ___
 
-### FlushExpiredInboxesResultFromJSON
+### <a id="flushexpiredinboxesresultfromjson" name="flushexpiredinboxesresultfromjson"></a> FlushExpiredInboxesResultFromJSON
 
 ▸ **FlushExpiredInboxesResultFromJSON**(`json`): [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
 
@@ -3777,7 +3777,7 @@ ___
 
 ___
 
-### FlushExpiredInboxesResultFromJSONTyped
+### <a id="flushexpiredinboxesresultfromjsontyped" name="flushexpiredinboxesresultfromjsontyped"></a> FlushExpiredInboxesResultFromJSONTyped
 
 ▸ **FlushExpiredInboxesResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`FlushExpiredInboxesResult`](interfaces/FlushExpiredInboxesResult.md)
 
@@ -3794,7 +3794,7 @@ ___
 
 ___
 
-### FlushExpiredInboxesResultToJSON
+### <a id="flushexpiredinboxesresulttojson" name="flushexpiredinboxesresulttojson"></a> FlushExpiredInboxesResultToJSON
 
 ▸ **FlushExpiredInboxesResultToJSON**(`value?`): `any`
 
@@ -3810,7 +3810,7 @@ ___
 
 ___
 
-### ForwardEmailOptionsFromJSON
+### <a id="forwardemailoptionsfromjson" name="forwardemailoptionsfromjson"></a> ForwardEmailOptionsFromJSON
 
 ▸ **ForwardEmailOptionsFromJSON**(`json`): [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
 
@@ -3826,7 +3826,7 @@ ___
 
 ___
 
-### ForwardEmailOptionsFromJSONTyped
+### <a id="forwardemailoptionsfromjsontyped" name="forwardemailoptionsfromjsontyped"></a> ForwardEmailOptionsFromJSONTyped
 
 ▸ **ForwardEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ForwardEmailOptions`](interfaces/ForwardEmailOptions.md)
 
@@ -3843,7 +3843,7 @@ ___
 
 ___
 
-### ForwardEmailOptionsToJSON
+### <a id="forwardemailoptionstojson" name="forwardemailoptionstojson"></a> ForwardEmailOptionsToJSON
 
 ▸ **ForwardEmailOptionsToJSON**(`value?`): `any`
 
@@ -3859,7 +3859,7 @@ ___
 
 ___
 
-### GravatarUrlFromJSON
+### <a id="gravatarurlfromjson" name="gravatarurlfromjson"></a> GravatarUrlFromJSON
 
 ▸ **GravatarUrlFromJSON**(`json`): [`GravatarUrl`](interfaces/GravatarUrl.md)
 
@@ -3875,7 +3875,7 @@ ___
 
 ___
 
-### GravatarUrlFromJSONTyped
+### <a id="gravatarurlfromjsontyped" name="gravatarurlfromjsontyped"></a> GravatarUrlFromJSONTyped
 
 ▸ **GravatarUrlFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GravatarUrl`](interfaces/GravatarUrl.md)
 
@@ -3892,7 +3892,7 @@ ___
 
 ___
 
-### GravatarUrlToJSON
+### <a id="gravatarurltojson" name="gravatarurltojson"></a> GravatarUrlToJSON
 
 ▸ **GravatarUrlToJSON**(`value?`): `any`
 
@@ -3908,7 +3908,7 @@ ___
 
 ___
 
-### GroupContactsDtoFromJSON
+### <a id="groupcontactsdtofromjson" name="groupcontactsdtofromjson"></a> GroupContactsDtoFromJSON
 
 ▸ **GroupContactsDtoFromJSON**(`json`): [`GroupContactsDto`](interfaces/GroupContactsDto.md)
 
@@ -3924,7 +3924,7 @@ ___
 
 ___
 
-### GroupContactsDtoFromJSONTyped
+### <a id="groupcontactsdtofromjsontyped" name="groupcontactsdtofromjsontyped"></a> GroupContactsDtoFromJSONTyped
 
 ▸ **GroupContactsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupContactsDto`](interfaces/GroupContactsDto.md)
 
@@ -3941,7 +3941,7 @@ ___
 
 ___
 
-### GroupContactsDtoToJSON
+### <a id="groupcontactsdtotojson" name="groupcontactsdtotojson"></a> GroupContactsDtoToJSON
 
 ▸ **GroupContactsDtoToJSON**(`value?`): `any`
 
@@ -3957,7 +3957,7 @@ ___
 
 ___
 
-### GroupDtoFromJSON
+### <a id="groupdtofromjson" name="groupdtofromjson"></a> GroupDtoFromJSON
 
 ▸ **GroupDtoFromJSON**(`json`): [`GroupDto`](interfaces/GroupDto.md)
 
@@ -3973,7 +3973,7 @@ ___
 
 ___
 
-### GroupDtoFromJSONTyped
+### <a id="groupdtofromjsontyped" name="groupdtofromjsontyped"></a> GroupDtoFromJSONTyped
 
 ▸ **GroupDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupDto`](interfaces/GroupDto.md)
 
@@ -3990,7 +3990,7 @@ ___
 
 ___
 
-### GroupDtoToJSON
+### <a id="groupdtotojson" name="groupdtotojson"></a> GroupDtoToJSON
 
 ▸ **GroupDtoToJSON**(`value?`): `any`
 
@@ -4006,7 +4006,7 @@ ___
 
 ___
 
-### GroupProjectionFromJSON
+### <a id="groupprojectionfromjson" name="groupprojectionfromjson"></a> GroupProjectionFromJSON
 
 ▸ **GroupProjectionFromJSON**(`json`): [`GroupProjection`](interfaces/GroupProjection.md)
 
@@ -4022,7 +4022,7 @@ ___
 
 ___
 
-### GroupProjectionFromJSONTyped
+### <a id="groupprojectionfromjsontyped" name="groupprojectionfromjsontyped"></a> GroupProjectionFromJSONTyped
 
 ▸ **GroupProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`GroupProjection`](interfaces/GroupProjection.md)
 
@@ -4039,7 +4039,7 @@ ___
 
 ___
 
-### GroupProjectionToJSON
+### <a id="groupprojectiontojson" name="groupprojectiontojson"></a> GroupProjectionToJSON
 
 ▸ **GroupProjectionToJSON**(`value?`): `any`
 
@@ -4055,7 +4055,7 @@ ___
 
 ___
 
-### HTMLValidationResultFromJSON
+### <a id="htmlvalidationresultfromjson" name="htmlvalidationresultfromjson"></a> HTMLValidationResultFromJSON
 
 ▸ **HTMLValidationResultFromJSON**(`json`): [`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
 
@@ -4071,7 +4071,7 @@ ___
 
 ___
 
-### HTMLValidationResultFromJSONTyped
+### <a id="htmlvalidationresultfromjsontyped" name="htmlvalidationresultfromjsontyped"></a> HTMLValidationResultFromJSONTyped
 
 ▸ **HTMLValidationResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`HTMLValidationResult`](interfaces/HTMLValidationResult.md)
 
@@ -4088,7 +4088,7 @@ ___
 
 ___
 
-### HTMLValidationResultToJSON
+### <a id="htmlvalidationresulttojson" name="htmlvalidationresulttojson"></a> HTMLValidationResultToJSON
 
 ▸ **HTMLValidationResultToJSON**(`value?`): `any`
 
@@ -4104,7 +4104,7 @@ ___
 
 ___
 
-### IPAddressResultFromJSON
+### <a id="ipaddressresultfromjson" name="ipaddressresultfromjson"></a> IPAddressResultFromJSON
 
 ▸ **IPAddressResultFromJSON**(`json`): [`IPAddressResult`](interfaces/IPAddressResult.md)
 
@@ -4120,7 +4120,7 @@ ___
 
 ___
 
-### IPAddressResultFromJSONTyped
+### <a id="ipaddressresultfromjsontyped" name="ipaddressresultfromjsontyped"></a> IPAddressResultFromJSONTyped
 
 ▸ **IPAddressResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`IPAddressResult`](interfaces/IPAddressResult.md)
 
@@ -4137,7 +4137,7 @@ ___
 
 ___
 
-### IPAddressResultToJSON
+### <a id="ipaddressresulttojson" name="ipaddressresulttojson"></a> IPAddressResultToJSON
 
 ▸ **IPAddressResultToJSON**(`value?`): `any`
 
@@ -4153,7 +4153,7 @@ ___
 
 ___
 
-### ImapFlagOperationOptionsFromJSON
+### <a id="imapflagoperationoptionsfromjson" name="imapflagoperationoptionsfromjson"></a> ImapFlagOperationOptionsFromJSON
 
 ▸ **ImapFlagOperationOptionsFromJSON**(`json`): [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
 
@@ -4169,7 +4169,7 @@ ___
 
 ___
 
-### ImapFlagOperationOptionsFromJSONTyped
+### <a id="imapflagoperationoptionsfromjsontyped" name="imapflagoperationoptionsfromjsontyped"></a> ImapFlagOperationOptionsFromJSONTyped
 
 ▸ **ImapFlagOperationOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
 
@@ -4186,7 +4186,7 @@ ___
 
 ___
 
-### ImapFlagOperationOptionsToJSON
+### <a id="imapflagoperationoptionstojson" name="imapflagoperationoptionstojson"></a> ImapFlagOperationOptionsToJSON
 
 ▸ **ImapFlagOperationOptionsToJSON**(`value?`): `any`
 
@@ -4202,7 +4202,7 @@ ___
 
 ___
 
-### ImapSmtpAccessDetailsFromJSON
+### <a id="imapsmtpaccessdetailsfromjson" name="imapsmtpaccessdetailsfromjson"></a> ImapSmtpAccessDetailsFromJSON
 
 ▸ **ImapSmtpAccessDetailsFromJSON**(`json`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
 
@@ -4218,7 +4218,7 @@ ___
 
 ___
 
-### ImapSmtpAccessDetailsFromJSONTyped
+### <a id="imapsmtpaccessdetailsfromjsontyped" name="imapsmtpaccessdetailsfromjsontyped"></a> ImapSmtpAccessDetailsFromJSONTyped
 
 ▸ **ImapSmtpAccessDetailsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
 
@@ -4235,7 +4235,7 @@ ___
 
 ___
 
-### ImapSmtpAccessDetailsToJSON
+### <a id="imapsmtpaccessdetailstojson" name="imapsmtpaccessdetailstojson"></a> ImapSmtpAccessDetailsToJSON
 
 ▸ **ImapSmtpAccessDetailsToJSON**(`value?`): `any`
 
@@ -4251,7 +4251,7 @@ ___
 
 ___
 
-### InboxByEmailAddressResultFromJSON
+### <a id="inboxbyemailaddressresultfromjson" name="inboxbyemailaddressresultfromjson"></a> InboxByEmailAddressResultFromJSON
 
 ▸ **InboxByEmailAddressResultFromJSON**(`json`): [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
 
@@ -4267,7 +4267,7 @@ ___
 
 ___
 
-### InboxByEmailAddressResultFromJSONTyped
+### <a id="inboxbyemailaddressresultfromjsontyped" name="inboxbyemailaddressresultfromjsontyped"></a> InboxByEmailAddressResultFromJSONTyped
 
 ▸ **InboxByEmailAddressResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md)
 
@@ -4284,7 +4284,7 @@ ___
 
 ___
 
-### InboxByEmailAddressResultToJSON
+### <a id="inboxbyemailaddressresulttojson" name="inboxbyemailaddressresulttojson"></a> InboxByEmailAddressResultToJSON
 
 ▸ **InboxByEmailAddressResultToJSON**(`value?`): `any`
 
@@ -4300,7 +4300,7 @@ ___
 
 ___
 
-### InboxDtoFromJSON
+### <a id="inboxdtofromjson" name="inboxdtofromjson"></a> InboxDtoFromJSON
 
 ▸ **InboxDtoFromJSON**(`json`): [`InboxDto`](interfaces/InboxDto.md)
 
@@ -4316,7 +4316,7 @@ ___
 
 ___
 
-### InboxDtoFromJSONTyped
+### <a id="inboxdtofromjsontyped" name="inboxdtofromjsontyped"></a> InboxDtoFromJSONTyped
 
 ▸ **InboxDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxDto`](interfaces/InboxDto.md)
 
@@ -4333,7 +4333,7 @@ ___
 
 ___
 
-### InboxDtoToJSON
+### <a id="inboxdtotojson" name="inboxdtotojson"></a> InboxDtoToJSON
 
 ▸ **InboxDtoToJSON**(`value?`): `any`
 
@@ -4349,7 +4349,7 @@ ___
 
 ___
 
-### InboxExistsDtoFromJSON
+### <a id="inboxexistsdtofromjson" name="inboxexistsdtofromjson"></a> InboxExistsDtoFromJSON
 
 ▸ **InboxExistsDtoFromJSON**(`json`): [`InboxExistsDto`](interfaces/InboxExistsDto.md)
 
@@ -4365,7 +4365,7 @@ ___
 
 ___
 
-### InboxExistsDtoFromJSONTyped
+### <a id="inboxexistsdtofromjsontyped" name="inboxexistsdtofromjsontyped"></a> InboxExistsDtoFromJSONTyped
 
 ▸ **InboxExistsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxExistsDto`](interfaces/InboxExistsDto.md)
 
@@ -4382,7 +4382,7 @@ ___
 
 ___
 
-### InboxExistsDtoToJSON
+### <a id="inboxexistsdtotojson" name="inboxexistsdtotojson"></a> InboxExistsDtoToJSON
 
 ▸ **InboxExistsDtoToJSON**(`value?`): `any`
 
@@ -4398,7 +4398,7 @@ ___
 
 ___
 
-### InboxForwarderDtoFromJSON
+### <a id="inboxforwarderdtofromjson" name="inboxforwarderdtofromjson"></a> InboxForwarderDtoFromJSON
 
 ▸ **InboxForwarderDtoFromJSON**(`json`): [`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
 
@@ -4414,7 +4414,7 @@ ___
 
 ___
 
-### InboxForwarderDtoFromJSONTyped
+### <a id="inboxforwarderdtofromjsontyped" name="inboxforwarderdtofromjsontyped"></a> InboxForwarderDtoFromJSONTyped
 
 ▸ **InboxForwarderDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderDto`](interfaces/InboxForwarderDto.md)
 
@@ -4431,7 +4431,7 @@ ___
 
 ___
 
-### InboxForwarderDtoToJSON
+### <a id="inboxforwarderdtotojson" name="inboxforwarderdtotojson"></a> InboxForwarderDtoToJSON
 
 ▸ **InboxForwarderDtoToJSON**(`value?`): `any`
 
@@ -4447,7 +4447,7 @@ ___
 
 ___
 
-### InboxForwarderTestOptionsFromJSON
+### <a id="inboxforwardertestoptionsfromjson" name="inboxforwardertestoptionsfromjson"></a> InboxForwarderTestOptionsFromJSON
 
 ▸ **InboxForwarderTestOptionsFromJSON**(`json`): [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
 
@@ -4463,7 +4463,7 @@ ___
 
 ___
 
-### InboxForwarderTestOptionsFromJSONTyped
+### <a id="inboxforwardertestoptionsfromjsontyped" name="inboxforwardertestoptionsfromjsontyped"></a> InboxForwarderTestOptionsFromJSONTyped
 
 ▸ **InboxForwarderTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
 
@@ -4480,7 +4480,7 @@ ___
 
 ___
 
-### InboxForwarderTestOptionsToJSON
+### <a id="inboxforwardertestoptionstojson" name="inboxforwardertestoptionstojson"></a> InboxForwarderTestOptionsToJSON
 
 ▸ **InboxForwarderTestOptionsToJSON**(`value?`): `any`
 
@@ -4496,7 +4496,7 @@ ___
 
 ___
 
-### InboxForwarderTestResultFromJSON
+### <a id="inboxforwardertestresultfromjson" name="inboxforwardertestresultfromjson"></a> InboxForwarderTestResultFromJSON
 
 ▸ **InboxForwarderTestResultFromJSON**(`json`): [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
 
@@ -4512,7 +4512,7 @@ ___
 
 ___
 
-### InboxForwarderTestResultFromJSONTyped
+### <a id="inboxforwardertestresultfromjsontyped" name="inboxforwardertestresultfromjsontyped"></a> InboxForwarderTestResultFromJSONTyped
 
 ▸ **InboxForwarderTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderTestResult`](interfaces/InboxForwarderTestResult.md)
 
@@ -4529,7 +4529,7 @@ ___
 
 ___
 
-### InboxForwarderTestResultToJSON
+### <a id="inboxforwardertestresulttojson" name="inboxforwardertestresulttojson"></a> InboxForwarderTestResultToJSON
 
 ▸ **InboxForwarderTestResultToJSON**(`value?`): `any`
 
@@ -4545,7 +4545,7 @@ ___
 
 ___
 
-### InboxIdItemFromJSON
+### <a id="inboxiditemfromjson" name="inboxiditemfromjson"></a> InboxIdItemFromJSON
 
 ▸ **InboxIdItemFromJSON**(`json`): [`InboxIdItem`](interfaces/InboxIdItem.md)
 
@@ -4561,7 +4561,7 @@ ___
 
 ___
 
-### InboxIdItemFromJSONTyped
+### <a id="inboxiditemfromjsontyped" name="inboxiditemfromjsontyped"></a> InboxIdItemFromJSONTyped
 
 ▸ **InboxIdItemFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxIdItem`](interfaces/InboxIdItem.md)
 
@@ -4578,7 +4578,7 @@ ___
 
 ___
 
-### InboxIdItemToJSON
+### <a id="inboxiditemtojson" name="inboxiditemtojson"></a> InboxIdItemToJSON
 
 ▸ **InboxIdItemToJSON**(`value?`): `any`
 
@@ -4594,7 +4594,7 @@ ___
 
 ___
 
-### InboxIdsResultFromJSON
+### <a id="inboxidsresultfromjson" name="inboxidsresultfromjson"></a> InboxIdsResultFromJSON
 
 ▸ **InboxIdsResultFromJSON**(`json`): [`InboxIdsResult`](interfaces/InboxIdsResult.md)
 
@@ -4610,7 +4610,7 @@ ___
 
 ___
 
-### InboxIdsResultFromJSONTyped
+### <a id="inboxidsresultfromjsontyped" name="inboxidsresultfromjsontyped"></a> InboxIdsResultFromJSONTyped
 
 ▸ **InboxIdsResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxIdsResult`](interfaces/InboxIdsResult.md)
 
@@ -4627,7 +4627,7 @@ ___
 
 ___
 
-### InboxIdsResultToJSON
+### <a id="inboxidsresulttojson" name="inboxidsresulttojson"></a> InboxIdsResultToJSON
 
 ▸ **InboxIdsResultToJSON**(`value?`): `any`
 
@@ -4643,7 +4643,7 @@ ___
 
 ___
 
-### InboxPreviewFromJSON
+### <a id="inboxpreviewfromjson" name="inboxpreviewfromjson"></a> InboxPreviewFromJSON
 
 ▸ **InboxPreviewFromJSON**(`json`): [`InboxPreview`](interfaces/InboxPreview.md)
 
@@ -4659,7 +4659,7 @@ ___
 
 ___
 
-### InboxPreviewFromJSONTyped
+### <a id="inboxpreviewfromjsontyped" name="inboxpreviewfromjsontyped"></a> InboxPreviewFromJSONTyped
 
 ▸ **InboxPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxPreview`](interfaces/InboxPreview.md)
 
@@ -4676,7 +4676,7 @@ ___
 
 ___
 
-### InboxPreviewToJSON
+### <a id="inboxpreviewtojson" name="inboxpreviewtojson"></a> InboxPreviewToJSON
 
 ▸ **InboxPreviewToJSON**(`value?`): `any`
 
@@ -4692,7 +4692,7 @@ ___
 
 ___
 
-### InboxRulesetDtoFromJSON
+### <a id="inboxrulesetdtofromjson" name="inboxrulesetdtofromjson"></a> InboxRulesetDtoFromJSON
 
 ▸ **InboxRulesetDtoFromJSON**(`json`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
 
@@ -4708,7 +4708,7 @@ ___
 
 ___
 
-### InboxRulesetDtoFromJSONTyped
+### <a id="inboxrulesetdtofromjsontyped" name="inboxrulesetdtofromjsontyped"></a> InboxRulesetDtoFromJSONTyped
 
 ▸ **InboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
 
@@ -4725,7 +4725,7 @@ ___
 
 ___
 
-### InboxRulesetDtoToJSON
+### <a id="inboxrulesetdtotojson" name="inboxrulesetdtotojson"></a> InboxRulesetDtoToJSON
 
 ▸ **InboxRulesetDtoToJSON**(`value?`): `any`
 
@@ -4741,7 +4741,7 @@ ___
 
 ___
 
-### InboxRulesetTestOptionsFromJSON
+### <a id="inboxrulesettestoptionsfromjson" name="inboxrulesettestoptionsfromjson"></a> InboxRulesetTestOptionsFromJSON
 
 ▸ **InboxRulesetTestOptionsFromJSON**(`json`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
 
@@ -4757,7 +4757,7 @@ ___
 
 ___
 
-### InboxRulesetTestOptionsFromJSONTyped
+### <a id="inboxrulesettestoptionsfromjsontyped" name="inboxrulesettestoptionsfromjsontyped"></a> InboxRulesetTestOptionsFromJSONTyped
 
 ▸ **InboxRulesetTestOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetTestOptions`](interfaces/InboxRulesetTestOptions.md)
 
@@ -4774,7 +4774,7 @@ ___
 
 ___
 
-### InboxRulesetTestOptionsToJSON
+### <a id="inboxrulesettestoptionstojson" name="inboxrulesettestoptionstojson"></a> InboxRulesetTestOptionsToJSON
 
 ▸ **InboxRulesetTestOptionsToJSON**(`value?`): `any`
 
@@ -4790,7 +4790,7 @@ ___
 
 ___
 
-### InboxRulesetTestResultFromJSON
+### <a id="inboxrulesettestresultfromjson" name="inboxrulesettestresultfromjson"></a> InboxRulesetTestResultFromJSON
 
 ▸ **InboxRulesetTestResultFromJSON**(`json`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
 
@@ -4806,7 +4806,7 @@ ___
 
 ___
 
-### InboxRulesetTestResultFromJSONTyped
+### <a id="inboxrulesettestresultfromjsontyped" name="inboxrulesettestresultfromjsontyped"></a> InboxRulesetTestResultFromJSONTyped
 
 ▸ **InboxRulesetTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxRulesetTestResult`](interfaces/InboxRulesetTestResult.md)
 
@@ -4823,7 +4823,7 @@ ___
 
 ___
 
-### InboxRulesetTestResultToJSON
+### <a id="inboxrulesettestresulttojson" name="inboxrulesettestresulttojson"></a> InboxRulesetTestResultToJSON
 
 ▸ **InboxRulesetTestResultToJSON**(`value?`): `any`
 
@@ -4839,7 +4839,7 @@ ___
 
 ___
 
-### InlineObject1FromJSON
+### <a id="inlineobject1fromjson" name="inlineobject1fromjson"></a> InlineObject1FromJSON
 
 ▸ **InlineObject1FromJSON**(`json`): [`InlineObject1`](interfaces/InlineObject1.md)
 
@@ -4855,7 +4855,7 @@ ___
 
 ___
 
-### InlineObject1FromJSONTyped
+### <a id="inlineobject1fromjsontyped" name="inlineobject1fromjsontyped"></a> InlineObject1FromJSONTyped
 
 ▸ **InlineObject1FromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject1`](interfaces/InlineObject1.md)
 
@@ -4872,7 +4872,7 @@ ___
 
 ___
 
-### InlineObject1ToJSON
+### <a id="inlineobject1tojson" name="inlineobject1tojson"></a> InlineObject1ToJSON
 
 ▸ **InlineObject1ToJSON**(`value?`): `any`
 
@@ -4888,7 +4888,7 @@ ___
 
 ___
 
-### InlineObjectFromJSON
+### <a id="inlineobjectfromjson" name="inlineobjectfromjson"></a> InlineObjectFromJSON
 
 ▸ **InlineObjectFromJSON**(`json`): [`InlineObject`](interfaces/InlineObject.md)
 
@@ -4904,7 +4904,7 @@ ___
 
 ___
 
-### InlineObjectFromJSONTyped
+### <a id="inlineobjectfromjsontyped" name="inlineobjectfromjsontyped"></a> InlineObjectFromJSONTyped
 
 ▸ **InlineObjectFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InlineObject`](interfaces/InlineObject.md)
 
@@ -4921,7 +4921,7 @@ ___
 
 ___
 
-### InlineObjectToJSON
+### <a id="inlineobjecttojson" name="inlineobjecttojson"></a> InlineObjectToJSON
 
 ▸ **InlineObjectToJSON**(`value?`): `any`
 
@@ -4937,7 +4937,7 @@ ___
 
 ___
 
-### JSONSchemaDtoFromJSON
+### <a id="jsonschemadtofromjson" name="jsonschemadtofromjson"></a> JSONSchemaDtoFromJSON
 
 ▸ **JSONSchemaDtoFromJSON**(`json`): [`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
 
@@ -4953,7 +4953,7 @@ ___
 
 ___
 
-### JSONSchemaDtoFromJSONTyped
+### <a id="jsonschemadtofromjsontyped" name="jsonschemadtofromjsontyped"></a> JSONSchemaDtoFromJSONTyped
 
 ▸ **JSONSchemaDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`JSONSchemaDto`](interfaces/JSONSchemaDto.md)
 
@@ -4970,7 +4970,7 @@ ___
 
 ___
 
-### JSONSchemaDtoToJSON
+### <a id="jsonschemadtotojson" name="jsonschemadtotojson"></a> JSONSchemaDtoToJSON
 
 ▸ **JSONSchemaDtoToJSON**(`value?`): `any`
 
@@ -4986,7 +4986,7 @@ ___
 
 ___
 
-### MatchOptionFromJSON
+### <a id="matchoptionfromjson" name="matchoptionfromjson"></a> MatchOptionFromJSON
 
 ▸ **MatchOptionFromJSON**(`json`): [`MatchOption`](interfaces/MatchOption.md)
 
@@ -5002,7 +5002,7 @@ ___
 
 ___
 
-### MatchOptionFromJSONTyped
+### <a id="matchoptionfromjsontyped" name="matchoptionfromjsontyped"></a> MatchOptionFromJSONTyped
 
 ▸ **MatchOptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MatchOption`](interfaces/MatchOption.md)
 
@@ -5019,7 +5019,7 @@ ___
 
 ___
 
-### MatchOptionToJSON
+### <a id="matchoptiontojson" name="matchoptiontojson"></a> MatchOptionToJSON
 
 ▸ **MatchOptionToJSON**(`value?`): `any`
 
@@ -5035,7 +5035,7 @@ ___
 
 ___
 
-### MatchOptionsFromJSON
+### <a id="matchoptionsfromjson" name="matchoptionsfromjson"></a> MatchOptionsFromJSON
 
 ▸ **MatchOptionsFromJSON**(`json`): [`MatchOptions`](interfaces/MatchOptions.md)
 
@@ -5051,7 +5051,7 @@ ___
 
 ___
 
-### MatchOptionsFromJSONTyped
+### <a id="matchoptionsfromjsontyped" name="matchoptionsfromjsontyped"></a> MatchOptionsFromJSONTyped
 
 ▸ **MatchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MatchOptions`](interfaces/MatchOptions.md)
 
@@ -5068,7 +5068,7 @@ ___
 
 ___
 
-### MatchOptionsToJSON
+### <a id="matchoptionstojson" name="matchoptionstojson"></a> MatchOptionsToJSON
 
 ▸ **MatchOptionsToJSON**(`value?`): `any`
 
@@ -5084,7 +5084,7 @@ ___
 
 ___
 
-### MissedEmailFromJSON
+### <a id="missedemailfromjson" name="missedemailfromjson"></a> MissedEmailFromJSON
 
 ▸ **MissedEmailFromJSON**(`json`): [`MissedEmail`](interfaces/MissedEmail.md)
 
@@ -5100,7 +5100,7 @@ ___
 
 ___
 
-### MissedEmailFromJSONTyped
+### <a id="missedemailfromjsontyped" name="missedemailfromjsontyped"></a> MissedEmailFromJSONTyped
 
 ▸ **MissedEmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmail`](interfaces/MissedEmail.md)
 
@@ -5117,7 +5117,7 @@ ___
 
 ___
 
-### MissedEmailProjectionFromJSON
+### <a id="missedemailprojectionfromjson" name="missedemailprojectionfromjson"></a> MissedEmailProjectionFromJSON
 
 ▸ **MissedEmailProjectionFromJSON**(`json`): [`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
 
@@ -5133,7 +5133,7 @@ ___
 
 ___
 
-### MissedEmailProjectionFromJSONTyped
+### <a id="missedemailprojectionfromjsontyped" name="missedemailprojectionfromjsontyped"></a> MissedEmailProjectionFromJSONTyped
 
 ▸ **MissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmailProjection`](interfaces/MissedEmailProjection.md)
 
@@ -5150,7 +5150,7 @@ ___
 
 ___
 
-### MissedEmailProjectionToJSON
+### <a id="missedemailprojectiontojson" name="missedemailprojectiontojson"></a> MissedEmailProjectionToJSON
 
 ▸ **MissedEmailProjectionToJSON**(`value?`): `any`
 
@@ -5166,7 +5166,7 @@ ___
 
 ___
 
-### MissedEmailToJSON
+### <a id="missedemailtojson" name="missedemailtojson"></a> MissedEmailToJSON
 
 ▸ **MissedEmailToJSON**(`value?`): `any`
 
@@ -5182,7 +5182,7 @@ ___
 
 ___
 
-### NameServerRecordFromJSON
+### <a id="nameserverrecordfromjson" name="nameserverrecordfromjson"></a> NameServerRecordFromJSON
 
 ▸ **NameServerRecordFromJSON**(`json`): [`NameServerRecord`](interfaces/NameServerRecord.md)
 
@@ -5198,7 +5198,7 @@ ___
 
 ___
 
-### NameServerRecordFromJSONTyped
+### <a id="nameserverrecordfromjsontyped" name="nameserverrecordfromjsontyped"></a> NameServerRecordFromJSONTyped
 
 ▸ **NameServerRecordFromJSONTyped**(`json`, `ignoreDiscriminator`): [`NameServerRecord`](interfaces/NameServerRecord.md)
 
@@ -5215,7 +5215,7 @@ ___
 
 ___
 
-### NameServerRecordToJSON
+### <a id="nameserverrecordtojson" name="nameserverrecordtojson"></a> NameServerRecordToJSON
 
 ▸ **NameServerRecordToJSON**(`value?`): `any`
 
@@ -5231,7 +5231,7 @@ ___
 
 ___
 
-### OrganizationInboxProjectionFromJSON
+### <a id="organizationinboxprojectionfromjson" name="organizationinboxprojectionfromjson"></a> OrganizationInboxProjectionFromJSON
 
 ▸ **OrganizationInboxProjectionFromJSON**(`json`): [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
 
@@ -5247,7 +5247,7 @@ ___
 
 ___
 
-### OrganizationInboxProjectionFromJSONTyped
+### <a id="organizationinboxprojectionfromjsontyped" name="organizationinboxprojectionfromjsontyped"></a> OrganizationInboxProjectionFromJSONTyped
 
 ▸ **OrganizationInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`OrganizationInboxProjection`](interfaces/OrganizationInboxProjection.md)
 
@@ -5264,7 +5264,7 @@ ___
 
 ___
 
-### OrganizationInboxProjectionToJSON
+### <a id="organizationinboxprojectiontojson" name="organizationinboxprojectiontojson"></a> OrganizationInboxProjectionToJSON
 
 ▸ **OrganizationInboxProjectionToJSON**(`value?`): `any`
 
@@ -5280,7 +5280,7 @@ ___
 
 ___
 
-### PageAliasFromJSON
+### <a id="pagealiasfromjson" name="pagealiasfromjson"></a> PageAliasFromJSON
 
 ▸ **PageAliasFromJSON**(`json`): [`PageAlias`](interfaces/PageAlias.md)
 
@@ -5296,7 +5296,7 @@ ___
 
 ___
 
-### PageAliasFromJSONTyped
+### <a id="pagealiasfromjsontyped" name="pagealiasfromjsontyped"></a> PageAliasFromJSONTyped
 
 ▸ **PageAliasFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAlias`](interfaces/PageAlias.md)
 
@@ -5313,7 +5313,7 @@ ___
 
 ___
 
-### PageAliasToJSON
+### <a id="pagealiastojson" name="pagealiastojson"></a> PageAliasToJSON
 
 ▸ **PageAliasToJSON**(`value?`): `any`
 
@@ -5329,7 +5329,7 @@ ___
 
 ___
 
-### PageAttachmentEntityFromJSON
+### <a id="pageattachmententityfromjson" name="pageattachmententityfromjson"></a> PageAttachmentEntityFromJSON
 
 ▸ **PageAttachmentEntityFromJSON**(`json`): [`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
 
@@ -5345,7 +5345,7 @@ ___
 
 ___
 
-### PageAttachmentEntityFromJSONTyped
+### <a id="pageattachmententityfromjsontyped" name="pageattachmententityfromjsontyped"></a> PageAttachmentEntityFromJSONTyped
 
 ▸ **PageAttachmentEntityFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageAttachmentEntity`](interfaces/PageAttachmentEntity.md)
 
@@ -5362,7 +5362,7 @@ ___
 
 ___
 
-### PageAttachmentEntityToJSON
+### <a id="pageattachmententitytojson" name="pageattachmententitytojson"></a> PageAttachmentEntityToJSON
 
 ▸ **PageAttachmentEntityToJSON**(`value?`): `any`
 
@@ -5378,7 +5378,7 @@ ___
 
 ___
 
-### PageBouncedEmailFromJSON
+### <a id="pagebouncedemailfromjson" name="pagebouncedemailfromjson"></a> PageBouncedEmailFromJSON
 
 ▸ **PageBouncedEmailFromJSON**(`json`): [`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
 
@@ -5394,7 +5394,7 @@ ___
 
 ___
 
-### PageBouncedEmailFromJSONTyped
+### <a id="pagebouncedemailfromjsontyped" name="pagebouncedemailfromjsontyped"></a> PageBouncedEmailFromJSONTyped
 
 ▸ **PageBouncedEmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageBouncedEmail`](interfaces/PageBouncedEmail.md)
 
@@ -5411,7 +5411,7 @@ ___
 
 ___
 
-### PageBouncedEmailToJSON
+### <a id="pagebouncedemailtojson" name="pagebouncedemailtojson"></a> PageBouncedEmailToJSON
 
 ▸ **PageBouncedEmailToJSON**(`value?`): `any`
 
@@ -5427,7 +5427,7 @@ ___
 
 ___
 
-### PageBouncedRecipientsFromJSON
+### <a id="pagebouncedrecipientsfromjson" name="pagebouncedrecipientsfromjson"></a> PageBouncedRecipientsFromJSON
 
 ▸ **PageBouncedRecipientsFromJSON**(`json`): [`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
 
@@ -5443,7 +5443,7 @@ ___
 
 ___
 
-### PageBouncedRecipientsFromJSONTyped
+### <a id="pagebouncedrecipientsfromjsontyped" name="pagebouncedrecipientsfromjsontyped"></a> PageBouncedRecipientsFromJSONTyped
 
 ▸ **PageBouncedRecipientsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageBouncedRecipients`](interfaces/PageBouncedRecipients.md)
 
@@ -5460,7 +5460,7 @@ ___
 
 ___
 
-### PageBouncedRecipientsToJSON
+### <a id="pagebouncedrecipientstojson" name="pagebouncedrecipientstojson"></a> PageBouncedRecipientsToJSON
 
 ▸ **PageBouncedRecipientsToJSON**(`value?`): `any`
 
@@ -5476,7 +5476,7 @@ ___
 
 ___
 
-### PageContactProjectionFromJSON
+### <a id="pagecontactprojectionfromjson" name="pagecontactprojectionfromjson"></a> PageContactProjectionFromJSON
 
 ▸ **PageContactProjectionFromJSON**(`json`): [`PageContactProjection`](interfaces/PageContactProjection.md)
 
@@ -5492,7 +5492,7 @@ ___
 
 ___
 
-### PageContactProjectionFromJSONTyped
+### <a id="pagecontactprojectionfromjsontyped" name="pagecontactprojectionfromjsontyped"></a> PageContactProjectionFromJSONTyped
 
 ▸ **PageContactProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageContactProjection`](interfaces/PageContactProjection.md)
 
@@ -5509,7 +5509,7 @@ ___
 
 ___
 
-### PageContactProjectionToJSON
+### <a id="pagecontactprojectiontojson" name="pagecontactprojectiontojson"></a> PageContactProjectionToJSON
 
 ▸ **PageContactProjectionToJSON**(`value?`): `any`
 
@@ -5525,7 +5525,7 @@ ___
 
 ___
 
-### PageEmailPreviewFromJSON
+### <a id="pageemailpreviewfromjson" name="pageemailpreviewfromjson"></a> PageEmailPreviewFromJSON
 
 ▸ **PageEmailPreviewFromJSON**(`json`): [`PageEmailPreview`](interfaces/PageEmailPreview.md)
 
@@ -5541,7 +5541,7 @@ ___
 
 ___
 
-### PageEmailPreviewFromJSONTyped
+### <a id="pageemailpreviewfromjsontyped" name="pageemailpreviewfromjsontyped"></a> PageEmailPreviewFromJSONTyped
 
 ▸ **PageEmailPreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailPreview`](interfaces/PageEmailPreview.md)
 
@@ -5558,7 +5558,7 @@ ___
 
 ___
 
-### PageEmailPreviewToJSON
+### <a id="pageemailpreviewtojson" name="pageemailpreviewtojson"></a> PageEmailPreviewToJSON
 
 ▸ **PageEmailPreviewToJSON**(`value?`): `any`
 
@@ -5574,7 +5574,7 @@ ___
 
 ___
 
-### PageEmailProjectionFromJSON
+### <a id="pageemailprojectionfromjson" name="pageemailprojectionfromjson"></a> PageEmailProjectionFromJSON
 
 ▸ **PageEmailProjectionFromJSON**(`json`): [`PageEmailProjection`](interfaces/PageEmailProjection.md)
 
@@ -5590,7 +5590,7 @@ ___
 
 ___
 
-### PageEmailProjectionFromJSONTyped
+### <a id="pageemailprojectionfromjsontyped" name="pageemailprojectionfromjsontyped"></a> PageEmailProjectionFromJSONTyped
 
 ▸ **PageEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailProjection`](interfaces/PageEmailProjection.md)
 
@@ -5607,7 +5607,7 @@ ___
 
 ___
 
-### PageEmailProjectionToJSON
+### <a id="pageemailprojectiontojson" name="pageemailprojectiontojson"></a> PageEmailProjectionToJSON
 
 ▸ **PageEmailProjectionToJSON**(`value?`): `any`
 
@@ -5623,7 +5623,7 @@ ___
 
 ___
 
-### PageEmailValidationRequestFromJSON
+### <a id="pageemailvalidationrequestfromjson" name="pageemailvalidationrequestfromjson"></a> PageEmailValidationRequestFromJSON
 
 ▸ **PageEmailValidationRequestFromJSON**(`json`): [`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
 
@@ -5639,7 +5639,7 @@ ___
 
 ___
 
-### PageEmailValidationRequestFromJSONTyped
+### <a id="pageemailvalidationrequestfromjsontyped" name="pageemailvalidationrequestfromjsontyped"></a> PageEmailValidationRequestFromJSONTyped
 
 ▸ **PageEmailValidationRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageEmailValidationRequest`](interfaces/PageEmailValidationRequest.md)
 
@@ -5656,7 +5656,7 @@ ___
 
 ___
 
-### PageEmailValidationRequestToJSON
+### <a id="pageemailvalidationrequesttojson" name="pageemailvalidationrequesttojson"></a> PageEmailValidationRequestToJSON
 
 ▸ **PageEmailValidationRequestToJSON**(`value?`): `any`
 
@@ -5672,7 +5672,7 @@ ___
 
 ___
 
-### PageExpiredInboxRecordProjectionFromJSON
+### <a id="pageexpiredinboxrecordprojectionfromjson" name="pageexpiredinboxrecordprojectionfromjson"></a> PageExpiredInboxRecordProjectionFromJSON
 
 ▸ **PageExpiredInboxRecordProjectionFromJSON**(`json`): [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
 
@@ -5688,7 +5688,7 @@ ___
 
 ___
 
-### PageExpiredInboxRecordProjectionFromJSONTyped
+### <a id="pageexpiredinboxrecordprojectionfromjsontyped" name="pageexpiredinboxrecordprojectionfromjsontyped"></a> PageExpiredInboxRecordProjectionFromJSONTyped
 
 ▸ **PageExpiredInboxRecordProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageExpiredInboxRecordProjection`](interfaces/PageExpiredInboxRecordProjection.md)
 
@@ -5705,7 +5705,7 @@ ___
 
 ___
 
-### PageExpiredInboxRecordProjectionToJSON
+### <a id="pageexpiredinboxrecordprojectiontojson" name="pageexpiredinboxrecordprojectiontojson"></a> PageExpiredInboxRecordProjectionToJSON
 
 ▸ **PageExpiredInboxRecordProjectionToJSON**(`value?`): `any`
 
@@ -5721,7 +5721,7 @@ ___
 
 ___
 
-### PageGroupProjectionFromJSON
+### <a id="pagegroupprojectionfromjson" name="pagegroupprojectionfromjson"></a> PageGroupProjectionFromJSON
 
 ▸ **PageGroupProjectionFromJSON**(`json`): [`PageGroupProjection`](interfaces/PageGroupProjection.md)
 
@@ -5737,7 +5737,7 @@ ___
 
 ___
 
-### PageGroupProjectionFromJSONTyped
+### <a id="pagegroupprojectionfromjsontyped" name="pagegroupprojectionfromjsontyped"></a> PageGroupProjectionFromJSONTyped
 
 ▸ **PageGroupProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageGroupProjection`](interfaces/PageGroupProjection.md)
 
@@ -5754,7 +5754,7 @@ ___
 
 ___
 
-### PageGroupProjectionToJSON
+### <a id="pagegroupprojectiontojson" name="pagegroupprojectiontojson"></a> PageGroupProjectionToJSON
 
 ▸ **PageGroupProjectionToJSON**(`value?`): `any`
 
@@ -5770,7 +5770,7 @@ ___
 
 ___
 
-### PageInboxForwarderDtoFromJSON
+### <a id="pageinboxforwarderdtofromjson" name="pageinboxforwarderdtofromjson"></a> PageInboxForwarderDtoFromJSON
 
 ▸ **PageInboxForwarderDtoFromJSON**(`json`): [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
 
@@ -5786,7 +5786,7 @@ ___
 
 ___
 
-### PageInboxForwarderDtoFromJSONTyped
+### <a id="pageinboxforwarderdtofromjsontyped" name="pageinboxforwarderdtofromjsontyped"></a> PageInboxForwarderDtoFromJSONTyped
 
 ▸ **PageInboxForwarderDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md)
 
@@ -5803,7 +5803,7 @@ ___
 
 ___
 
-### PageInboxForwarderDtoToJSON
+### <a id="pageinboxforwarderdtotojson" name="pageinboxforwarderdtotojson"></a> PageInboxForwarderDtoToJSON
 
 ▸ **PageInboxForwarderDtoToJSON**(`value?`): `any`
 
@@ -5819,7 +5819,7 @@ ___
 
 ___
 
-### PageInboxProjectionFromJSON
+### <a id="pageinboxprojectionfromjson" name="pageinboxprojectionfromjson"></a> PageInboxProjectionFromJSON
 
 ▸ **PageInboxProjectionFromJSON**(`json`): [`PageInboxProjection`](interfaces/PageInboxProjection.md)
 
@@ -5835,7 +5835,7 @@ ___
 
 ___
 
-### PageInboxProjectionFromJSONTyped
+### <a id="pageinboxprojectionfromjsontyped" name="pageinboxprojectionfromjsontyped"></a> PageInboxProjectionFromJSONTyped
 
 ▸ **PageInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxProjection`](interfaces/PageInboxProjection.md)
 
@@ -5852,7 +5852,7 @@ ___
 
 ___
 
-### PageInboxProjectionToJSON
+### <a id="pageinboxprojectiontojson" name="pageinboxprojectiontojson"></a> PageInboxProjectionToJSON
 
 ▸ **PageInboxProjectionToJSON**(`value?`): `any`
 
@@ -5868,7 +5868,7 @@ ___
 
 ___
 
-### PageInboxRulesetDtoFromJSON
+### <a id="pageinboxrulesetdtofromjson" name="pageinboxrulesetdtofromjson"></a> PageInboxRulesetDtoFromJSON
 
 ▸ **PageInboxRulesetDtoFromJSON**(`json`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
 
@@ -5884,7 +5884,7 @@ ___
 
 ___
 
-### PageInboxRulesetDtoFromJSONTyped
+### <a id="pageinboxrulesetdtofromjsontyped" name="pageinboxrulesetdtofromjsontyped"></a> PageInboxRulesetDtoFromJSONTyped
 
 ▸ **PageInboxRulesetDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxRulesetDto`](interfaces/PageInboxRulesetDto.md)
 
@@ -5901,7 +5901,7 @@ ___
 
 ___
 
-### PageInboxRulesetDtoToJSON
+### <a id="pageinboxrulesetdtotojson" name="pageinboxrulesetdtotojson"></a> PageInboxRulesetDtoToJSON
 
 ▸ **PageInboxRulesetDtoToJSON**(`value?`): `any`
 
@@ -5917,7 +5917,7 @@ ___
 
 ___
 
-### PageMissedEmailProjectionFromJSON
+### <a id="pagemissedemailprojectionfromjson" name="pagemissedemailprojectionfromjson"></a> PageMissedEmailProjectionFromJSON
 
 ▸ **PageMissedEmailProjectionFromJSON**(`json`): [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
 
@@ -5933,7 +5933,7 @@ ___
 
 ___
 
-### PageMissedEmailProjectionFromJSONTyped
+### <a id="pagemissedemailprojectionfromjsontyped" name="pagemissedemailprojectionfromjsontyped"></a> PageMissedEmailProjectionFromJSONTyped
 
 ▸ **PageMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
 
@@ -5950,7 +5950,7 @@ ___
 
 ___
 
-### PageMissedEmailProjectionToJSON
+### <a id="pagemissedemailprojectiontojson" name="pagemissedemailprojectiontojson"></a> PageMissedEmailProjectionToJSON
 
 ▸ **PageMissedEmailProjectionToJSON**(`value?`): `any`
 
@@ -5966,7 +5966,7 @@ ___
 
 ___
 
-### PageOrganizationInboxProjectionFromJSON
+### <a id="pageorganizationinboxprojectionfromjson" name="pageorganizationinboxprojectionfromjson"></a> PageOrganizationInboxProjectionFromJSON
 
 ▸ **PageOrganizationInboxProjectionFromJSON**(`json`): [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
 
@@ -5982,7 +5982,7 @@ ___
 
 ___
 
-### PageOrganizationInboxProjectionFromJSONTyped
+### <a id="pageorganizationinboxprojectionfromjsontyped" name="pageorganizationinboxprojectionfromjsontyped"></a> PageOrganizationInboxProjectionFromJSONTyped
 
 ▸ **PageOrganizationInboxProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageOrganizationInboxProjection`](interfaces/PageOrganizationInboxProjection.md)
 
@@ -5999,7 +5999,7 @@ ___
 
 ___
 
-### PageOrganizationInboxProjectionToJSON
+### <a id="pageorganizationinboxprojectiontojson" name="pageorganizationinboxprojectiontojson"></a> PageOrganizationInboxProjectionToJSON
 
 ▸ **PageOrganizationInboxProjectionToJSON**(`value?`): `any`
 
@@ -6015,7 +6015,7 @@ ___
 
 ___
 
-### PageSentEmailProjectionFromJSON
+### <a id="pagesentemailprojectionfromjson" name="pagesentemailprojectionfromjson"></a> PageSentEmailProjectionFromJSON
 
 ▸ **PageSentEmailProjectionFromJSON**(`json`): [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
 
@@ -6031,7 +6031,7 @@ ___
 
 ___
 
-### PageSentEmailProjectionFromJSONTyped
+### <a id="pagesentemailprojectionfromjsontyped" name="pagesentemailprojectionfromjsontyped"></a> PageSentEmailProjectionFromJSONTyped
 
 ▸ **PageSentEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
 
@@ -6048,7 +6048,7 @@ ___
 
 ___
 
-### PageSentEmailProjectionToJSON
+### <a id="pagesentemailprojectiontojson" name="pagesentemailprojectiontojson"></a> PageSentEmailProjectionToJSON
 
 ▸ **PageSentEmailProjectionToJSON**(`value?`): `any`
 
@@ -6064,7 +6064,7 @@ ___
 
 ___
 
-### PageTemplateProjectionFromJSON
+### <a id="pagetemplateprojectionfromjson" name="pagetemplateprojectionfromjson"></a> PageTemplateProjectionFromJSON
 
 ▸ **PageTemplateProjectionFromJSON**(`json`): [`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
 
@@ -6080,7 +6080,7 @@ ___
 
 ___
 
-### PageTemplateProjectionFromJSONTyped
+### <a id="pagetemplateprojectionfromjsontyped" name="pagetemplateprojectionfromjsontyped"></a> PageTemplateProjectionFromJSONTyped
 
 ▸ **PageTemplateProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageTemplateProjection`](interfaces/PageTemplateProjection.md)
 
@@ -6097,7 +6097,7 @@ ___
 
 ___
 
-### PageTemplateProjectionToJSON
+### <a id="pagetemplateprojectiontojson" name="pagetemplateprojectiontojson"></a> PageTemplateProjectionToJSON
 
 ▸ **PageTemplateProjectionToJSON**(`value?`): `any`
 
@@ -6113,7 +6113,7 @@ ___
 
 ___
 
-### PageThreadProjectionFromJSON
+### <a id="pagethreadprojectionfromjson" name="pagethreadprojectionfromjson"></a> PageThreadProjectionFromJSON
 
 ▸ **PageThreadProjectionFromJSON**(`json`): [`PageThreadProjection`](interfaces/PageThreadProjection.md)
 
@@ -6129,7 +6129,7 @@ ___
 
 ___
 
-### PageThreadProjectionFromJSONTyped
+### <a id="pagethreadprojectionfromjsontyped" name="pagethreadprojectionfromjsontyped"></a> PageThreadProjectionFromJSONTyped
 
 ▸ **PageThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageThreadProjection`](interfaces/PageThreadProjection.md)
 
@@ -6146,7 +6146,7 @@ ___
 
 ___
 
-### PageThreadProjectionToJSON
+### <a id="pagethreadprojectiontojson" name="pagethreadprojectiontojson"></a> PageThreadProjectionToJSON
 
 ▸ **PageThreadProjectionToJSON**(`value?`): `any`
 
@@ -6162,7 +6162,7 @@ ___
 
 ___
 
-### PageTrackingPixelProjectionFromJSON
+### <a id="pagetrackingpixelprojectionfromjson" name="pagetrackingpixelprojectionfromjson"></a> PageTrackingPixelProjectionFromJSON
 
 ▸ **PageTrackingPixelProjectionFromJSON**(`json`): [`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
 
@@ -6178,7 +6178,7 @@ ___
 
 ___
 
-### PageTrackingPixelProjectionFromJSONTyped
+### <a id="pagetrackingpixelprojectionfromjsontyped" name="pagetrackingpixelprojectionfromjsontyped"></a> PageTrackingPixelProjectionFromJSONTyped
 
 ▸ **PageTrackingPixelProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageTrackingPixelProjection`](interfaces/PageTrackingPixelProjection.md)
 
@@ -6195,7 +6195,7 @@ ___
 
 ___
 
-### PageTrackingPixelProjectionToJSON
+### <a id="pagetrackingpixelprojectiontojson" name="pagetrackingpixelprojectiontojson"></a> PageTrackingPixelProjectionToJSON
 
 ▸ **PageTrackingPixelProjectionToJSON**(`value?`): `any`
 
@@ -6211,7 +6211,7 @@ ___
 
 ___
 
-### PageUnknownMissedEmailProjectionFromJSON
+### <a id="pageunknownmissedemailprojectionfromjson" name="pageunknownmissedemailprojectionfromjson"></a> PageUnknownMissedEmailProjectionFromJSON
 
 ▸ **PageUnknownMissedEmailProjectionFromJSON**(`json`): [`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
 
@@ -6227,7 +6227,7 @@ ___
 
 ___
 
-### PageUnknownMissedEmailProjectionFromJSONTyped
+### <a id="pageunknownmissedemailprojectionfromjsontyped" name="pageunknownmissedemailprojectionfromjsontyped"></a> PageUnknownMissedEmailProjectionFromJSONTyped
 
 ▸ **PageUnknownMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageUnknownMissedEmailProjection`](interfaces/PageUnknownMissedEmailProjection.md)
 
@@ -6244,7 +6244,7 @@ ___
 
 ___
 
-### PageUnknownMissedEmailProjectionToJSON
+### <a id="pageunknownmissedemailprojectiontojson" name="pageunknownmissedemailprojectiontojson"></a> PageUnknownMissedEmailProjectionToJSON
 
 ▸ **PageUnknownMissedEmailProjectionToJSON**(`value?`): `any`
 
@@ -6260,7 +6260,7 @@ ___
 
 ___
 
-### PageWebhookProjectionFromJSON
+### <a id="pagewebhookprojectionfromjson" name="pagewebhookprojectionfromjson"></a> PageWebhookProjectionFromJSON
 
 ▸ **PageWebhookProjectionFromJSON**(`json`): [`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
 
@@ -6276,7 +6276,7 @@ ___
 
 ___
 
-### PageWebhookProjectionFromJSONTyped
+### <a id="pagewebhookprojectionfromjsontyped" name="pagewebhookprojectionfromjsontyped"></a> PageWebhookProjectionFromJSONTyped
 
 ▸ **PageWebhookProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageWebhookProjection`](interfaces/PageWebhookProjection.md)
 
@@ -6293,7 +6293,7 @@ ___
 
 ___
 
-### PageWebhookProjectionToJSON
+### <a id="pagewebhookprojectiontojson" name="pagewebhookprojectiontojson"></a> PageWebhookProjectionToJSON
 
 ▸ **PageWebhookProjectionToJSON**(`value?`): `any`
 
@@ -6309,7 +6309,7 @@ ___
 
 ___
 
-### PageWebhookResultFromJSON
+### <a id="pagewebhookresultfromjson" name="pagewebhookresultfromjson"></a> PageWebhookResultFromJSON
 
 ▸ **PageWebhookResultFromJSON**(`json`): [`PageWebhookResult`](interfaces/PageWebhookResult.md)
 
@@ -6325,7 +6325,7 @@ ___
 
 ___
 
-### PageWebhookResultFromJSONTyped
+### <a id="pagewebhookresultfromjsontyped" name="pagewebhookresultfromjsontyped"></a> PageWebhookResultFromJSONTyped
 
 ▸ **PageWebhookResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageWebhookResult`](interfaces/PageWebhookResult.md)
 
@@ -6342,7 +6342,7 @@ ___
 
 ___
 
-### PageWebhookResultToJSON
+### <a id="pagewebhookresulttojson" name="pagewebhookresulttojson"></a> PageWebhookResultToJSON
 
 ▸ **PageWebhookResultToJSON**(`value?`): `any`
 
@@ -6358,7 +6358,7 @@ ___
 
 ___
 
-### PageableObjectFromJSON
+### <a id="pageableobjectfromjson" name="pageableobjectfromjson"></a> PageableObjectFromJSON
 
 ▸ **PageableObjectFromJSON**(`json`): [`PageableObject`](interfaces/PageableObject.md)
 
@@ -6374,7 +6374,7 @@ ___
 
 ___
 
-### PageableObjectFromJSONTyped
+### <a id="pageableobjectfromjsontyped" name="pageableobjectfromjsontyped"></a> PageableObjectFromJSONTyped
 
 ▸ **PageableObjectFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageableObject`](interfaces/PageableObject.md)
 
@@ -6391,7 +6391,7 @@ ___
 
 ___
 
-### PageableObjectToJSON
+### <a id="pageableobjecttojson" name="pageableobjecttojson"></a> PageableObjectToJSON
 
 ▸ **PageableObjectToJSON**(`value?`): `any`
 
@@ -6407,7 +6407,7 @@ ___
 
 ___
 
-### RawEmailJsonFromJSON
+### <a id="rawemailjsonfromjson" name="rawemailjsonfromjson"></a> RawEmailJsonFromJSON
 
 ▸ **RawEmailJsonFromJSON**(`json`): [`RawEmailJson`](interfaces/RawEmailJson.md)
 
@@ -6423,7 +6423,7 @@ ___
 
 ___
 
-### RawEmailJsonFromJSONTyped
+### <a id="rawemailjsonfromjsontyped" name="rawemailjsonfromjsontyped"></a> RawEmailJsonFromJSONTyped
 
 ▸ **RawEmailJsonFromJSONTyped**(`json`, `ignoreDiscriminator`): [`RawEmailJson`](interfaces/RawEmailJson.md)
 
@@ -6440,7 +6440,7 @@ ___
 
 ___
 
-### RawEmailJsonToJSON
+### <a id="rawemailjsontojson" name="rawemailjsontojson"></a> RawEmailJsonToJSON
 
 ▸ **RawEmailJsonToJSON**(`value?`): `any`
 
@@ -6456,7 +6456,7 @@ ___
 
 ___
 
-### RecipientFromJSON
+### <a id="recipientfromjson" name="recipientfromjson"></a> RecipientFromJSON
 
 ▸ **RecipientFromJSON**(`json`): [`Recipient`](interfaces/Recipient.md)
 
@@ -6472,7 +6472,7 @@ ___
 
 ___
 
-### RecipientFromJSONTyped
+### <a id="recipientfromjsontyped" name="recipientfromjsontyped"></a> RecipientFromJSONTyped
 
 ▸ **RecipientFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Recipient`](interfaces/Recipient.md)
 
@@ -6489,7 +6489,7 @@ ___
 
 ___
 
-### RecipientToJSON
+### <a id="recipienttojson" name="recipienttojson"></a> RecipientToJSON
 
 ▸ **RecipientToJSON**(`value?`): `any`
 
@@ -6505,7 +6505,7 @@ ___
 
 ___
 
-### ReplyToAliasEmailOptionsFromJSON
+### <a id="replytoaliasemailoptionsfromjson" name="replytoaliasemailoptionsfromjson"></a> ReplyToAliasEmailOptionsFromJSON
 
 ▸ **ReplyToAliasEmailOptionsFromJSON**(`json`): [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
 
@@ -6521,7 +6521,7 @@ ___
 
 ___
 
-### ReplyToAliasEmailOptionsFromJSONTyped
+### <a id="replytoaliasemailoptionsfromjsontyped" name="replytoaliasemailoptionsfromjsontyped"></a> ReplyToAliasEmailOptionsFromJSONTyped
 
 ▸ **ReplyToAliasEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ReplyToAliasEmailOptions`](interfaces/ReplyToAliasEmailOptions.md)
 
@@ -6538,7 +6538,7 @@ ___
 
 ___
 
-### ReplyToAliasEmailOptionsToJSON
+### <a id="replytoaliasemailoptionstojson" name="replytoaliasemailoptionstojson"></a> ReplyToAliasEmailOptionsToJSON
 
 ▸ **ReplyToAliasEmailOptionsToJSON**(`value?`): `any`
 
@@ -6554,7 +6554,7 @@ ___
 
 ___
 
-### ReplyToEmailOptionsFromJSON
+### <a id="replytoemailoptionsfromjson" name="replytoemailoptionsfromjson"></a> ReplyToEmailOptionsFromJSON
 
 ▸ **ReplyToEmailOptionsFromJSON**(`json`): [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
 
@@ -6570,7 +6570,7 @@ ___
 
 ___
 
-### ReplyToEmailOptionsFromJSONTyped
+### <a id="replytoemailoptionsfromjsontyped" name="replytoemailoptionsfromjsontyped"></a> ReplyToEmailOptionsFromJSONTyped
 
 ▸ **ReplyToEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md)
 
@@ -6587,7 +6587,7 @@ ___
 
 ___
 
-### ReplyToEmailOptionsToJSON
+### <a id="replytoemailoptionstojson" name="replytoemailoptionstojson"></a> ReplyToEmailOptionsToJSON
 
 ▸ **ReplyToEmailOptionsToJSON**(`value?`): `any`
 
@@ -6603,7 +6603,7 @@ ___
 
 ___
 
-### SendEmailOptionsFromJSON
+### <a id="sendemailoptionsfromjson" name="sendemailoptionsfromjson"></a> SendEmailOptionsFromJSON
 
 ▸ **SendEmailOptionsFromJSON**(`json`): [`SendEmailOptions`](interfaces/SendEmailOptions.md)
 
@@ -6619,7 +6619,7 @@ ___
 
 ___
 
-### SendEmailOptionsFromJSONTyped
+### <a id="sendemailoptionsfromjsontyped" name="sendemailoptionsfromjsontyped"></a> SendEmailOptionsFromJSONTyped
 
 ▸ **SendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendEmailOptions`](interfaces/SendEmailOptions.md)
 
@@ -6636,7 +6636,7 @@ ___
 
 ___
 
-### SendEmailOptionsToJSON
+### <a id="sendemailoptionstojson" name="sendemailoptionstojson"></a> SendEmailOptionsToJSON
 
 ▸ **SendEmailOptionsToJSON**(`value?`): `any`
 
@@ -6652,7 +6652,7 @@ ___
 
 ___
 
-### SendSMTPEnvelopeOptionsFromJSON
+### <a id="sendsmtpenvelopeoptionsfromjson" name="sendsmtpenvelopeoptionsfromjson"></a> SendSMTPEnvelopeOptionsFromJSON
 
 ▸ **SendSMTPEnvelopeOptionsFromJSON**(`json`): [`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
 
@@ -6668,7 +6668,7 @@ ___
 
 ___
 
-### SendSMTPEnvelopeOptionsFromJSONTyped
+### <a id="sendsmtpenvelopeoptionsfromjsontyped" name="sendsmtpenvelopeoptionsfromjsontyped"></a> SendSMTPEnvelopeOptionsFromJSONTyped
 
 ▸ **SendSMTPEnvelopeOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendSMTPEnvelopeOptions`](interfaces/SendSMTPEnvelopeOptions.md)
 
@@ -6685,7 +6685,7 @@ ___
 
 ___
 
-### SendSMTPEnvelopeOptionsToJSON
+### <a id="sendsmtpenvelopeoptionstojson" name="sendsmtpenvelopeoptionstojson"></a> SendSMTPEnvelopeOptionsToJSON
 
 ▸ **SendSMTPEnvelopeOptionsToJSON**(`value?`): `any`
 
@@ -6701,7 +6701,7 @@ ___
 
 ___
 
-### SenderFromJSON
+### <a id="senderfromjson" name="senderfromjson"></a> SenderFromJSON
 
 ▸ **SenderFromJSON**(`json`): [`Sender`](interfaces/Sender.md)
 
@@ -6717,7 +6717,7 @@ ___
 
 ___
 
-### SenderFromJSONTyped
+### <a id="senderfromjsontyped" name="senderfromjsontyped"></a> SenderFromJSONTyped
 
 ▸ **SenderFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Sender`](interfaces/Sender.md)
 
@@ -6734,7 +6734,7 @@ ___
 
 ___
 
-### SenderToJSON
+### <a id="sendertojson" name="sendertojson"></a> SenderToJSON
 
 ▸ **SenderToJSON**(`value?`): `any`
 
@@ -6750,7 +6750,7 @@ ___
 
 ___
 
-### SentEmailDtoFromJSON
+### <a id="sentemaildtofromjson" name="sentemaildtofromjson"></a> SentEmailDtoFromJSON
 
 ▸ **SentEmailDtoFromJSON**(`json`): [`SentEmailDto`](interfaces/SentEmailDto.md)
 
@@ -6766,7 +6766,7 @@ ___
 
 ___
 
-### SentEmailDtoFromJSONTyped
+### <a id="sentemaildtofromjsontyped" name="sentemaildtofromjsontyped"></a> SentEmailDtoFromJSONTyped
 
 ▸ **SentEmailDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SentEmailDto`](interfaces/SentEmailDto.md)
 
@@ -6783,7 +6783,7 @@ ___
 
 ___
 
-### SentEmailDtoToJSON
+### <a id="sentemaildtotojson" name="sentemaildtotojson"></a> SentEmailDtoToJSON
 
 ▸ **SentEmailDtoToJSON**(`value?`): `any`
 
@@ -6799,7 +6799,7 @@ ___
 
 ___
 
-### SentEmailProjectionFromJSON
+### <a id="sentemailprojectionfromjson" name="sentemailprojectionfromjson"></a> SentEmailProjectionFromJSON
 
 ▸ **SentEmailProjectionFromJSON**(`json`): [`SentEmailProjection`](interfaces/SentEmailProjection.md)
 
@@ -6815,7 +6815,7 @@ ___
 
 ___
 
-### SentEmailProjectionFromJSONTyped
+### <a id="sentemailprojectionfromjsontyped" name="sentemailprojectionfromjsontyped"></a> SentEmailProjectionFromJSONTyped
 
 ▸ **SentEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SentEmailProjection`](interfaces/SentEmailProjection.md)
 
@@ -6832,7 +6832,7 @@ ___
 
 ___
 
-### SentEmailProjectionToJSON
+### <a id="sentemailprojectiontojson" name="sentemailprojectiontojson"></a> SentEmailProjectionToJSON
 
 ▸ **SentEmailProjectionToJSON**(`value?`): `any`
 
@@ -6848,7 +6848,7 @@ ___
 
 ___
 
-### SetInboxFavouritedOptionsFromJSON
+### <a id="setinboxfavouritedoptionsfromjson" name="setinboxfavouritedoptionsfromjson"></a> SetInboxFavouritedOptionsFromJSON
 
 ▸ **SetInboxFavouritedOptionsFromJSON**(`json`): [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
 
@@ -6864,7 +6864,7 @@ ___
 
 ___
 
-### SetInboxFavouritedOptionsFromJSONTyped
+### <a id="setinboxfavouritedoptionsfromjsontyped" name="setinboxfavouritedoptionsfromjsontyped"></a> SetInboxFavouritedOptionsFromJSONTyped
 
 ▸ **SetInboxFavouritedOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SetInboxFavouritedOptions`](interfaces/SetInboxFavouritedOptions.md)
 
@@ -6881,7 +6881,7 @@ ___
 
 ___
 
-### SetInboxFavouritedOptionsToJSON
+### <a id="setinboxfavouritedoptionstojson" name="setinboxfavouritedoptionstojson"></a> SetInboxFavouritedOptionsToJSON
 
 ▸ **SetInboxFavouritedOptionsToJSON**(`value?`): `any`
 
@@ -6897,7 +6897,7 @@ ___
 
 ___
 
-### SimpleSendEmailOptionsFromJSON
+### <a id="simplesendemailoptionsfromjson" name="simplesendemailoptionsfromjson"></a> SimpleSendEmailOptionsFromJSON
 
 ▸ **SimpleSendEmailOptionsFromJSON**(`json`): [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
 
@@ -6913,7 +6913,7 @@ ___
 
 ___
 
-### SimpleSendEmailOptionsFromJSONTyped
+### <a id="simplesendemailoptionsfromjsontyped" name="simplesendemailoptionsfromjsontyped"></a> SimpleSendEmailOptionsFromJSONTyped
 
 ▸ **SimpleSendEmailOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SimpleSendEmailOptions`](interfaces/SimpleSendEmailOptions.md)
 
@@ -6930,7 +6930,7 @@ ___
 
 ___
 
-### SimpleSendEmailOptionsToJSON
+### <a id="simplesendemailoptionstojson" name="simplesendemailoptionstojson"></a> SimpleSendEmailOptionsToJSON
 
 ▸ **SimpleSendEmailOptionsToJSON**(`value?`): `any`
 
@@ -6946,7 +6946,7 @@ ___
 
 ___
 
-### SortFromJSON
+### <a id="sortfromjson" name="sortfromjson"></a> SortFromJSON
 
 ▸ **SortFromJSON**(`json`): [`Sort`](interfaces/Sort.md)
 
@@ -6962,7 +6962,7 @@ ___
 
 ___
 
-### SortFromJSONTyped
+### <a id="sortfromjsontyped" name="sortfromjsontyped"></a> SortFromJSONTyped
 
 ▸ **SortFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Sort`](interfaces/Sort.md)
 
@@ -6979,7 +6979,7 @@ ___
 
 ___
 
-### SortToJSON
+### <a id="sorttojson" name="sorttojson"></a> SortToJSON
 
 ▸ **SortToJSON**(`value?`): `any`
 
@@ -6995,7 +6995,7 @@ ___
 
 ___
 
-### TemplateDtoFromJSON
+### <a id="templatedtofromjson" name="templatedtofromjson"></a> TemplateDtoFromJSON
 
 ▸ **TemplateDtoFromJSON**(`json`): [`TemplateDto`](interfaces/TemplateDto.md)
 
@@ -7011,7 +7011,7 @@ ___
 
 ___
 
-### TemplateDtoFromJSONTyped
+### <a id="templatedtofromjsontyped" name="templatedtofromjsontyped"></a> TemplateDtoFromJSONTyped
 
 ▸ **TemplateDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateDto`](interfaces/TemplateDto.md)
 
@@ -7028,7 +7028,7 @@ ___
 
 ___
 
-### TemplateDtoToJSON
+### <a id="templatedtotojson" name="templatedtotojson"></a> TemplateDtoToJSON
 
 ▸ **TemplateDtoToJSON**(`value?`): `any`
 
@@ -7044,7 +7044,7 @@ ___
 
 ___
 
-### TemplateProjectionFromJSON
+### <a id="templateprojectionfromjson" name="templateprojectionfromjson"></a> TemplateProjectionFromJSON
 
 ▸ **TemplateProjectionFromJSON**(`json`): [`TemplateProjection`](interfaces/TemplateProjection.md)
 
@@ -7060,7 +7060,7 @@ ___
 
 ___
 
-### TemplateProjectionFromJSONTyped
+### <a id="templateprojectionfromjsontyped" name="templateprojectionfromjsontyped"></a> TemplateProjectionFromJSONTyped
 
 ▸ **TemplateProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateProjection`](interfaces/TemplateProjection.md)
 
@@ -7077,7 +7077,7 @@ ___
 
 ___
 
-### TemplateProjectionToJSON
+### <a id="templateprojectiontojson" name="templateprojectiontojson"></a> TemplateProjectionToJSON
 
 ▸ **TemplateProjectionToJSON**(`value?`): `any`
 
@@ -7093,7 +7093,7 @@ ___
 
 ___
 
-### TemplateVariableFromJSON
+### <a id="templatevariablefromjson" name="templatevariablefromjson"></a> TemplateVariableFromJSON
 
 ▸ **TemplateVariableFromJSON**(`json`): [`TemplateVariable`](interfaces/TemplateVariable.md)
 
@@ -7109,7 +7109,7 @@ ___
 
 ___
 
-### TemplateVariableFromJSONTyped
+### <a id="templatevariablefromjsontyped" name="templatevariablefromjsontyped"></a> TemplateVariableFromJSONTyped
 
 ▸ **TemplateVariableFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplateVariable`](interfaces/TemplateVariable.md)
 
@@ -7126,7 +7126,7 @@ ___
 
 ___
 
-### TemplateVariableToJSON
+### <a id="templatevariabletojson" name="templatevariabletojson"></a> TemplateVariableToJSON
 
 ▸ **TemplateVariableToJSON**(`value?`): `any`
 
@@ -7142,7 +7142,7 @@ ___
 
 ___
 
-### TestNewInboxForwarderOptionsFromJSON
+### <a id="testnewinboxforwarderoptionsfromjson" name="testnewinboxforwarderoptionsfromjson"></a> TestNewInboxForwarderOptionsFromJSON
 
 ▸ **TestNewInboxForwarderOptionsFromJSON**(`json`): [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
 
@@ -7158,7 +7158,7 @@ ___
 
 ___
 
-### TestNewInboxForwarderOptionsFromJSONTyped
+### <a id="testnewinboxforwarderoptionsfromjsontyped" name="testnewinboxforwarderoptionsfromjsontyped"></a> TestNewInboxForwarderOptionsFromJSONTyped
 
 ▸ **TestNewInboxForwarderOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestNewInboxForwarderOptions`](interfaces/TestNewInboxForwarderOptions.md)
 
@@ -7175,7 +7175,7 @@ ___
 
 ___
 
-### TestNewInboxForwarderOptionsToJSON
+### <a id="testnewinboxforwarderoptionstojson" name="testnewinboxforwarderoptionstojson"></a> TestNewInboxForwarderOptionsToJSON
 
 ▸ **TestNewInboxForwarderOptionsToJSON**(`value?`): `any`
 
@@ -7191,7 +7191,7 @@ ___
 
 ___
 
-### TestNewInboxRulesetOptionsFromJSON
+### <a id="testnewinboxrulesetoptionsfromjson" name="testnewinboxrulesetoptionsfromjson"></a> TestNewInboxRulesetOptionsFromJSON
 
 ▸ **TestNewInboxRulesetOptionsFromJSON**(`json`): [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
 
@@ -7207,7 +7207,7 @@ ___
 
 ___
 
-### TestNewInboxRulesetOptionsFromJSONTyped
+### <a id="testnewinboxrulesetoptionsfromjsontyped" name="testnewinboxrulesetoptionsfromjsontyped"></a> TestNewInboxRulesetOptionsFromJSONTyped
 
 ▸ **TestNewInboxRulesetOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md)
 
@@ -7224,7 +7224,7 @@ ___
 
 ___
 
-### TestNewInboxRulesetOptionsToJSON
+### <a id="testnewinboxrulesetoptionstojson" name="testnewinboxrulesetoptionstojson"></a> TestNewInboxRulesetOptionsToJSON
 
 ▸ **TestNewInboxRulesetOptionsToJSON**(`value?`): `any`
 
@@ -7240,7 +7240,7 @@ ___
 
 ___
 
-### ThreadProjectionFromJSON
+### <a id="threadprojectionfromjson" name="threadprojectionfromjson"></a> ThreadProjectionFromJSON
 
 ▸ **ThreadProjectionFromJSON**(`json`): [`ThreadProjection`](interfaces/ThreadProjection.md)
 
@@ -7256,7 +7256,7 @@ ___
 
 ___
 
-### ThreadProjectionFromJSONTyped
+### <a id="threadprojectionfromjsontyped" name="threadprojectionfromjsontyped"></a> ThreadProjectionFromJSONTyped
 
 ▸ **ThreadProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ThreadProjection`](interfaces/ThreadProjection.md)
 
@@ -7273,7 +7273,7 @@ ___
 
 ___
 
-### ThreadProjectionToJSON
+### <a id="threadprojectiontojson" name="threadprojectiontojson"></a> ThreadProjectionToJSON
 
 ▸ **ThreadProjectionToJSON**(`value?`): `any`
 
@@ -7289,7 +7289,7 @@ ___
 
 ___
 
-### TrackingPixelDtoFromJSON
+### <a id="trackingpixeldtofromjson" name="trackingpixeldtofromjson"></a> TrackingPixelDtoFromJSON
 
 ▸ **TrackingPixelDtoFromJSON**(`json`): [`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
 
@@ -7305,7 +7305,7 @@ ___
 
 ___
 
-### TrackingPixelDtoFromJSONTyped
+### <a id="trackingpixeldtofromjsontyped" name="trackingpixeldtofromjsontyped"></a> TrackingPixelDtoFromJSONTyped
 
 ▸ **TrackingPixelDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TrackingPixelDto`](interfaces/TrackingPixelDto.md)
 
@@ -7322,7 +7322,7 @@ ___
 
 ___
 
-### TrackingPixelDtoToJSON
+### <a id="trackingpixeldtotojson" name="trackingpixeldtotojson"></a> TrackingPixelDtoToJSON
 
 ▸ **TrackingPixelDtoToJSON**(`value?`): `any`
 
@@ -7338,7 +7338,7 @@ ___
 
 ___
 
-### TrackingPixelProjectionFromJSON
+### <a id="trackingpixelprojectionfromjson" name="trackingpixelprojectionfromjson"></a> TrackingPixelProjectionFromJSON
 
 ▸ **TrackingPixelProjectionFromJSON**(`json`): [`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
 
@@ -7354,7 +7354,7 @@ ___
 
 ___
 
-### TrackingPixelProjectionFromJSONTyped
+### <a id="trackingpixelprojectionfromjsontyped" name="trackingpixelprojectionfromjsontyped"></a> TrackingPixelProjectionFromJSONTyped
 
 ▸ **TrackingPixelProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TrackingPixelProjection`](interfaces/TrackingPixelProjection.md)
 
@@ -7371,7 +7371,7 @@ ___
 
 ___
 
-### TrackingPixelProjectionToJSON
+### <a id="trackingpixelprojectiontojson" name="trackingpixelprojectiontojson"></a> TrackingPixelProjectionToJSON
 
 ▸ **TrackingPixelProjectionToJSON**(`value?`): `any`
 
@@ -7387,7 +7387,7 @@ ___
 
 ___
 
-### UnknownMissedEmailProjectionFromJSON
+### <a id="unknownmissedemailprojectionfromjson" name="unknownmissedemailprojectionfromjson"></a> UnknownMissedEmailProjectionFromJSON
 
 ▸ **UnknownMissedEmailProjectionFromJSON**(`json`): [`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
 
@@ -7403,7 +7403,7 @@ ___
 
 ___
 
-### UnknownMissedEmailProjectionFromJSONTyped
+### <a id="unknownmissedemailprojectionfromjsontyped" name="unknownmissedemailprojectionfromjsontyped"></a> UnknownMissedEmailProjectionFromJSONTyped
 
 ▸ **UnknownMissedEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnknownMissedEmailProjection`](interfaces/UnknownMissedEmailProjection.md)
 
@@ -7420,7 +7420,7 @@ ___
 
 ___
 
-### UnknownMissedEmailProjectionToJSON
+### <a id="unknownmissedemailprojectiontojson" name="unknownmissedemailprojectiontojson"></a> UnknownMissedEmailProjectionToJSON
 
 ▸ **UnknownMissedEmailProjectionToJSON**(`value?`): `any`
 
@@ -7436,7 +7436,7 @@ ___
 
 ___
 
-### UnreadCountFromJSON
+### <a id="unreadcountfromjson" name="unreadcountfromjson"></a> UnreadCountFromJSON
 
 ▸ **UnreadCountFromJSON**(`json`): [`UnreadCount`](interfaces/UnreadCount.md)
 
@@ -7452,7 +7452,7 @@ ___
 
 ___
 
-### UnreadCountFromJSONTyped
+### <a id="unreadcountfromjsontyped" name="unreadcountfromjsontyped"></a> UnreadCountFromJSONTyped
 
 ▸ **UnreadCountFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnreadCount`](interfaces/UnreadCount.md)
 
@@ -7469,7 +7469,7 @@ ___
 
 ___
 
-### UnreadCountToJSON
+### <a id="unreadcounttojson" name="unreadcounttojson"></a> UnreadCountToJSON
 
 ▸ **UnreadCountToJSON**(`value?`): `any`
 
@@ -7485,7 +7485,7 @@ ___
 
 ___
 
-### UnseenErrorCountDtoFromJSON
+### <a id="unseenerrorcountdtofromjson" name="unseenerrorcountdtofromjson"></a> UnseenErrorCountDtoFromJSON
 
 ▸ **UnseenErrorCountDtoFromJSON**(`json`): [`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
 
@@ -7501,7 +7501,7 @@ ___
 
 ___
 
-### UnseenErrorCountDtoFromJSONTyped
+### <a id="unseenerrorcountdtofromjsontyped" name="unseenerrorcountdtofromjsontyped"></a> UnseenErrorCountDtoFromJSONTyped
 
 ▸ **UnseenErrorCountDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UnseenErrorCountDto`](interfaces/UnseenErrorCountDto.md)
 
@@ -7518,7 +7518,7 @@ ___
 
 ___
 
-### UnseenErrorCountDtoToJSON
+### <a id="unseenerrorcountdtotojson" name="unseenerrorcountdtotojson"></a> UnseenErrorCountDtoToJSON
 
 ▸ **UnseenErrorCountDtoToJSON**(`value?`): `any`
 
@@ -7534,7 +7534,7 @@ ___
 
 ___
 
-### UpdateAliasOptionsFromJSON
+### <a id="updatealiasoptionsfromjson" name="updatealiasoptionsfromjson"></a> UpdateAliasOptionsFromJSON
 
 ▸ **UpdateAliasOptionsFromJSON**(`json`): [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
 
@@ -7550,7 +7550,7 @@ ___
 
 ___
 
-### UpdateAliasOptionsFromJSONTyped
+### <a id="updatealiasoptionsfromjsontyped" name="updatealiasoptionsfromjsontyped"></a> UpdateAliasOptionsFromJSONTyped
 
 ▸ **UpdateAliasOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateAliasOptions`](interfaces/UpdateAliasOptions.md)
 
@@ -7567,7 +7567,7 @@ ___
 
 ___
 
-### UpdateAliasOptionsToJSON
+### <a id="updatealiasoptionstojson" name="updatealiasoptionstojson"></a> UpdateAliasOptionsToJSON
 
 ▸ **UpdateAliasOptionsToJSON**(`value?`): `any`
 
@@ -7583,7 +7583,7 @@ ___
 
 ___
 
-### UpdateDomainOptionsFromJSON
+### <a id="updatedomainoptionsfromjson" name="updatedomainoptionsfromjson"></a> UpdateDomainOptionsFromJSON
 
 ▸ **UpdateDomainOptionsFromJSON**(`json`): [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
 
@@ -7599,7 +7599,7 @@ ___
 
 ___
 
-### UpdateDomainOptionsFromJSONTyped
+### <a id="updatedomainoptionsfromjsontyped" name="updatedomainoptionsfromjsontyped"></a> UpdateDomainOptionsFromJSONTyped
 
 ▸ **UpdateDomainOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateDomainOptions`](interfaces/UpdateDomainOptions.md)
 
@@ -7616,7 +7616,7 @@ ___
 
 ___
 
-### UpdateDomainOptionsToJSON
+### <a id="updatedomainoptionstojson" name="updatedomainoptionstojson"></a> UpdateDomainOptionsToJSON
 
 ▸ **UpdateDomainOptionsToJSON**(`value?`): `any`
 
@@ -7632,7 +7632,7 @@ ___
 
 ___
 
-### UpdateGroupContactsFromJSON
+### <a id="updategroupcontactsfromjson" name="updategroupcontactsfromjson"></a> UpdateGroupContactsFromJSON
 
 ▸ **UpdateGroupContactsFromJSON**(`json`): [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
 
@@ -7648,7 +7648,7 @@ ___
 
 ___
 
-### UpdateGroupContactsFromJSONTyped
+### <a id="updategroupcontactsfromjsontyped" name="updategroupcontactsfromjsontyped"></a> UpdateGroupContactsFromJSONTyped
 
 ▸ **UpdateGroupContactsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateGroupContacts`](interfaces/UpdateGroupContacts.md)
 
@@ -7665,7 +7665,7 @@ ___
 
 ___
 
-### UpdateGroupContactsToJSON
+### <a id="updategroupcontactstojson" name="updategroupcontactstojson"></a> UpdateGroupContactsToJSON
 
 ▸ **UpdateGroupContactsToJSON**(`value?`): `any`
 
@@ -7681,7 +7681,7 @@ ___
 
 ___
 
-### UpdateInboxOptionsFromJSON
+### <a id="updateinboxoptionsfromjson" name="updateinboxoptionsfromjson"></a> UpdateInboxOptionsFromJSON
 
 ▸ **UpdateInboxOptionsFromJSON**(`json`): [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
 
@@ -7697,7 +7697,7 @@ ___
 
 ___
 
-### UpdateInboxOptionsFromJSONTyped
+### <a id="updateinboxoptionsfromjsontyped" name="updateinboxoptionsfromjsontyped"></a> UpdateInboxOptionsFromJSONTyped
 
 ▸ **UpdateInboxOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md)
 
@@ -7714,7 +7714,7 @@ ___
 
 ___
 
-### UpdateInboxOptionsToJSON
+### <a id="updateinboxoptionstojson" name="updateinboxoptionstojson"></a> UpdateInboxOptionsToJSON
 
 ▸ **UpdateInboxOptionsToJSON**(`value?`): `any`
 
@@ -7730,7 +7730,7 @@ ___
 
 ___
 
-### UploadAttachmentOptionsFromJSON
+### <a id="uploadattachmentoptionsfromjson" name="uploadattachmentoptionsfromjson"></a> UploadAttachmentOptionsFromJSON
 
 ▸ **UploadAttachmentOptionsFromJSON**(`json`): [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
 
@@ -7746,7 +7746,7 @@ ___
 
 ___
 
-### UploadAttachmentOptionsFromJSONTyped
+### <a id="uploadattachmentoptionsfromjsontyped" name="uploadattachmentoptionsfromjsontyped"></a> UploadAttachmentOptionsFromJSONTyped
 
 ▸ **UploadAttachmentOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md)
 
@@ -7763,7 +7763,7 @@ ___
 
 ___
 
-### UploadAttachmentOptionsToJSON
+### <a id="uploadattachmentoptionstojson" name="uploadattachmentoptionstojson"></a> UploadAttachmentOptionsToJSON
 
 ▸ **UploadAttachmentOptionsToJSON**(`value?`): `any`
 
@@ -7779,7 +7779,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListOptionsFromJSON
+### <a id="validateemailaddresslistoptionsfromjson" name="validateemailaddresslistoptionsfromjson"></a> ValidateEmailAddressListOptionsFromJSON
 
 ▸ **ValidateEmailAddressListOptionsFromJSON**(`json`): [`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
 
@@ -7795,7 +7795,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListOptionsFromJSONTyped
+### <a id="validateemailaddresslistoptionsfromjsontyped" name="validateemailaddresslistoptionsfromjsontyped"></a> ValidateEmailAddressListOptionsFromJSONTyped
 
 ▸ **ValidateEmailAddressListOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidateEmailAddressListOptions`](interfaces/ValidateEmailAddressListOptions.md)
 
@@ -7812,7 +7812,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListOptionsToJSON
+### <a id="validateemailaddresslistoptionstojson" name="validateemailaddresslistoptionstojson"></a> ValidateEmailAddressListOptionsToJSON
 
 ▸ **ValidateEmailAddressListOptionsToJSON**(`value?`): `any`
 
@@ -7828,7 +7828,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListResultFromJSON
+### <a id="validateemailaddresslistresultfromjson" name="validateemailaddresslistresultfromjson"></a> ValidateEmailAddressListResultFromJSON
 
 ▸ **ValidateEmailAddressListResultFromJSON**(`json`): [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
 
@@ -7844,7 +7844,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListResultFromJSONTyped
+### <a id="validateemailaddresslistresultfromjsontyped" name="validateemailaddresslistresultfromjsontyped"></a> ValidateEmailAddressListResultFromJSONTyped
 
 ▸ **ValidateEmailAddressListResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidateEmailAddressListResult`](interfaces/ValidateEmailAddressListResult.md)
 
@@ -7861,7 +7861,7 @@ ___
 
 ___
 
-### ValidateEmailAddressListResultToJSON
+### <a id="validateemailaddresslistresulttojson" name="validateemailaddresslistresulttojson"></a> ValidateEmailAddressListResultToJSON
 
 ▸ **ValidateEmailAddressListResultToJSON**(`value?`): `any`
 
@@ -7877,7 +7877,7 @@ ___
 
 ___
 
-### ValidationDtoFromJSON
+### <a id="validationdtofromjson" name="validationdtofromjson"></a> ValidationDtoFromJSON
 
 ▸ **ValidationDtoFromJSON**(`json`): [`ValidationDto`](interfaces/ValidationDto.md)
 
@@ -7893,7 +7893,7 @@ ___
 
 ___
 
-### ValidationDtoFromJSONTyped
+### <a id="validationdtofromjsontyped" name="validationdtofromjsontyped"></a> ValidationDtoFromJSONTyped
 
 ▸ **ValidationDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidationDto`](interfaces/ValidationDto.md)
 
@@ -7910,7 +7910,7 @@ ___
 
 ___
 
-### ValidationDtoToJSON
+### <a id="validationdtotojson" name="validationdtotojson"></a> ValidationDtoToJSON
 
 ▸ **ValidationDtoToJSON**(`value?`): `any`
 
@@ -7926,7 +7926,7 @@ ___
 
 ___
 
-### ValidationMessageFromJSON
+### <a id="validationmessagefromjson" name="validationmessagefromjson"></a> ValidationMessageFromJSON
 
 ▸ **ValidationMessageFromJSON**(`json`): [`ValidationMessage`](interfaces/ValidationMessage.md)
 
@@ -7942,7 +7942,7 @@ ___
 
 ___
 
-### ValidationMessageFromJSONTyped
+### <a id="validationmessagefromjsontyped" name="validationmessagefromjsontyped"></a> ValidationMessageFromJSONTyped
 
 ▸ **ValidationMessageFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ValidationMessage`](interfaces/ValidationMessage.md)
 
@@ -7959,7 +7959,7 @@ ___
 
 ___
 
-### ValidationMessageToJSON
+### <a id="validationmessagetojson" name="validationmessagetojson"></a> ValidationMessageToJSON
 
 ▸ **ValidationMessageToJSON**(`value?`): `any`
 
@@ -7975,7 +7975,7 @@ ___
 
 ___
 
-### VerifyEmailAddressOptionsFromJSON
+### <a id="verifyemailaddressoptionsfromjson" name="verifyemailaddressoptionsfromjson"></a> VerifyEmailAddressOptionsFromJSON
 
 ▸ **VerifyEmailAddressOptionsFromJSON**(`json`): [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
 
@@ -7991,7 +7991,7 @@ ___
 
 ___
 
-### VerifyEmailAddressOptionsFromJSONTyped
+### <a id="verifyemailaddressoptionsfromjsontyped" name="verifyemailaddressoptionsfromjsontyped"></a> VerifyEmailAddressOptionsFromJSONTyped
 
 ▸ **VerifyEmailAddressOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyEmailAddressOptions`](interfaces/VerifyEmailAddressOptions.md)
 
@@ -8008,7 +8008,7 @@ ___
 
 ___
 
-### VerifyEmailAddressOptionsToJSON
+### <a id="verifyemailaddressoptionstojson" name="verifyemailaddressoptionstojson"></a> VerifyEmailAddressOptionsToJSON
 
 ▸ **VerifyEmailAddressOptionsToJSON**(`value?`): `any`
 
@@ -8024,7 +8024,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureOptionsFromJSON
+### <a id="verifywebhooksignatureoptionsfromjson" name="verifywebhooksignatureoptionsfromjson"></a> VerifyWebhookSignatureOptionsFromJSON
 
 ▸ **VerifyWebhookSignatureOptionsFromJSON**(`json`): [`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
 
@@ -8040,7 +8040,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureOptionsFromJSONTyped
+### <a id="verifywebhooksignatureoptionsfromjsontyped" name="verifywebhooksignatureoptionsfromjsontyped"></a> VerifyWebhookSignatureOptionsFromJSONTyped
 
 ▸ **VerifyWebhookSignatureOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyWebhookSignatureOptions`](interfaces/VerifyWebhookSignatureOptions.md)
 
@@ -8057,7 +8057,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureOptionsToJSON
+### <a id="verifywebhooksignatureoptionstojson" name="verifywebhooksignatureoptionstojson"></a> VerifyWebhookSignatureOptionsToJSON
 
 ▸ **VerifyWebhookSignatureOptionsToJSON**(`value?`): `any`
 
@@ -8073,7 +8073,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureResultsFromJSON
+### <a id="verifywebhooksignatureresultsfromjson" name="verifywebhooksignatureresultsfromjson"></a> VerifyWebhookSignatureResultsFromJSON
 
 ▸ **VerifyWebhookSignatureResultsFromJSON**(`json`): [`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
 
@@ -8089,7 +8089,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureResultsFromJSONTyped
+### <a id="verifywebhooksignatureresultsfromjsontyped" name="verifywebhooksignatureresultsfromjsontyped"></a> VerifyWebhookSignatureResultsFromJSONTyped
 
 ▸ **VerifyWebhookSignatureResultsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`VerifyWebhookSignatureResults`](interfaces/VerifyWebhookSignatureResults.md)
 
@@ -8106,7 +8106,7 @@ ___
 
 ___
 
-### VerifyWebhookSignatureResultsToJSON
+### <a id="verifywebhooksignatureresultstojson" name="verifywebhooksignatureresultstojson"></a> VerifyWebhookSignatureResultsToJSON
 
 ▸ **VerifyWebhookSignatureResultsToJSON**(`value?`): `any`
 
@@ -8122,7 +8122,7 @@ ___
 
 ___
 
-### WaitForConditionsFromJSON
+### <a id="waitforconditionsfromjson" name="waitforconditionsfromjson"></a> WaitForConditionsFromJSON
 
 ▸ **WaitForConditionsFromJSON**(`json`): [`WaitForConditions`](interfaces/WaitForConditions.md)
 
@@ -8138,7 +8138,7 @@ ___
 
 ___
 
-### WaitForConditionsFromJSONTyped
+### <a id="waitforconditionsfromjsontyped" name="waitforconditionsfromjsontyped"></a> WaitForConditionsFromJSONTyped
 
 ▸ **WaitForConditionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WaitForConditions`](interfaces/WaitForConditions.md)
 
@@ -8155,7 +8155,7 @@ ___
 
 ___
 
-### WaitForConditionsToJSON
+### <a id="waitforconditionstojson" name="waitforconditionstojson"></a> WaitForConditionsToJSON
 
 ▸ **WaitForConditionsToJSON**(`value?`): `any`
 
@@ -8171,7 +8171,7 @@ ___
 
 ___
 
-### WebhookBouncePayloadFromJSON
+### <a id="webhookbouncepayloadfromjson" name="webhookbouncepayloadfromjson"></a> WebhookBouncePayloadFromJSON
 
 ▸ **WebhookBouncePayloadFromJSON**(`json`): [`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
 
@@ -8187,7 +8187,7 @@ ___
 
 ___
 
-### WebhookBouncePayloadFromJSONTyped
+### <a id="webhookbouncepayloadfromjsontyped" name="webhookbouncepayloadfromjsontyped"></a> WebhookBouncePayloadFromJSONTyped
 
 ▸ **WebhookBouncePayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookBouncePayload`](interfaces/WebhookBouncePayload.md)
 
@@ -8204,7 +8204,7 @@ ___
 
 ___
 
-### WebhookBouncePayloadToJSON
+### <a id="webhookbouncepayloadtojson" name="webhookbouncepayloadtojson"></a> WebhookBouncePayloadToJSON
 
 ▸ **WebhookBouncePayloadToJSON**(`value?`): `any`
 
@@ -8220,7 +8220,7 @@ ___
 
 ___
 
-### WebhookBounceRecipientPayloadFromJSON
+### <a id="webhookbouncerecipientpayloadfromjson" name="webhookbouncerecipientpayloadfromjson"></a> WebhookBounceRecipientPayloadFromJSON
 
 ▸ **WebhookBounceRecipientPayloadFromJSON**(`json`): [`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
 
@@ -8236,7 +8236,7 @@ ___
 
 ___
 
-### WebhookBounceRecipientPayloadFromJSONTyped
+### <a id="webhookbouncerecipientpayloadfromjsontyped" name="webhookbouncerecipientpayloadfromjsontyped"></a> WebhookBounceRecipientPayloadFromJSONTyped
 
 ▸ **WebhookBounceRecipientPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookBounceRecipientPayload`](interfaces/WebhookBounceRecipientPayload.md)
 
@@ -8253,7 +8253,7 @@ ___
 
 ___
 
-### WebhookBounceRecipientPayloadToJSON
+### <a id="webhookbouncerecipientpayloadtojson" name="webhookbouncerecipientpayloadtojson"></a> WebhookBounceRecipientPayloadToJSON
 
 ▸ **WebhookBounceRecipientPayloadToJSON**(`value?`): `any`
 
@@ -8269,7 +8269,7 @@ ___
 
 ___
 
-### WebhookDtoFromJSON
+### <a id="webhookdtofromjson" name="webhookdtofromjson"></a> WebhookDtoFromJSON
 
 ▸ **WebhookDtoFromJSON**(`json`): [`WebhookDto`](interfaces/WebhookDto.md)
 
@@ -8285,7 +8285,7 @@ ___
 
 ___
 
-### WebhookDtoFromJSONTyped
+### <a id="webhookdtofromjsontyped" name="webhookdtofromjsontyped"></a> WebhookDtoFromJSONTyped
 
 ▸ **WebhookDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookDto`](interfaces/WebhookDto.md)
 
@@ -8302,7 +8302,7 @@ ___
 
 ___
 
-### WebhookDtoToJSON
+### <a id="webhookdtotojson" name="webhookdtotojson"></a> WebhookDtoToJSON
 
 ▸ **WebhookDtoToJSON**(`value?`): `any`
 
@@ -8318,7 +8318,7 @@ ___
 
 ___
 
-### WebhookEmailOpenedPayloadFromJSON
+### <a id="webhookemailopenedpayloadfromjson" name="webhookemailopenedpayloadfromjson"></a> WebhookEmailOpenedPayloadFromJSON
 
 ▸ **WebhookEmailOpenedPayloadFromJSON**(`json`): [`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
 
@@ -8334,7 +8334,7 @@ ___
 
 ___
 
-### WebhookEmailOpenedPayloadFromJSONTyped
+### <a id="webhookemailopenedpayloadfromjsontyped" name="webhookemailopenedpayloadfromjsontyped"></a> WebhookEmailOpenedPayloadFromJSONTyped
 
 ▸ **WebhookEmailOpenedPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookEmailOpenedPayload`](interfaces/WebhookEmailOpenedPayload.md)
 
@@ -8351,7 +8351,7 @@ ___
 
 ___
 
-### WebhookEmailOpenedPayloadToJSON
+### <a id="webhookemailopenedpayloadtojson" name="webhookemailopenedpayloadtojson"></a> WebhookEmailOpenedPayloadToJSON
 
 ▸ **WebhookEmailOpenedPayloadToJSON**(`value?`): `any`
 
@@ -8367,7 +8367,7 @@ ___
 
 ___
 
-### WebhookEmailReadPayloadFromJSON
+### <a id="webhookemailreadpayloadfromjson" name="webhookemailreadpayloadfromjson"></a> WebhookEmailReadPayloadFromJSON
 
 ▸ **WebhookEmailReadPayloadFromJSON**(`json`): [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
 
@@ -8383,7 +8383,7 @@ ___
 
 ___
 
-### WebhookEmailReadPayloadFromJSONTyped
+### <a id="webhookemailreadpayloadfromjsontyped" name="webhookemailreadpayloadfromjsontyped"></a> WebhookEmailReadPayloadFromJSONTyped
 
 ▸ **WebhookEmailReadPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md)
 
@@ -8400,7 +8400,7 @@ ___
 
 ___
 
-### WebhookEmailReadPayloadToJSON
+### <a id="webhookemailreadpayloadtojson" name="webhookemailreadpayloadtojson"></a> WebhookEmailReadPayloadToJSON
 
 ▸ **WebhookEmailReadPayloadToJSON**(`value?`): `any`
 
@@ -8416,7 +8416,7 @@ ___
 
 ___
 
-### WebhookNewAttachmentPayloadFromJSON
+### <a id="webhooknewattachmentpayloadfromjson" name="webhooknewattachmentpayloadfromjson"></a> WebhookNewAttachmentPayloadFromJSON
 
 ▸ **WebhookNewAttachmentPayloadFromJSON**(`json`): [`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
 
@@ -8432,7 +8432,7 @@ ___
 
 ___
 
-### WebhookNewAttachmentPayloadFromJSONTyped
+### <a id="webhooknewattachmentpayloadfromjsontyped" name="webhooknewattachmentpayloadfromjsontyped"></a> WebhookNewAttachmentPayloadFromJSONTyped
 
 ▸ **WebhookNewAttachmentPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewAttachmentPayload`](interfaces/WebhookNewAttachmentPayload.md)
 
@@ -8449,7 +8449,7 @@ ___
 
 ___
 
-### WebhookNewAttachmentPayloadToJSON
+### <a id="webhooknewattachmentpayloadtojson" name="webhooknewattachmentpayloadtojson"></a> WebhookNewAttachmentPayloadToJSON
 
 ▸ **WebhookNewAttachmentPayloadToJSON**(`value?`): `any`
 
@@ -8465,7 +8465,7 @@ ___
 
 ___
 
-### WebhookNewContactPayloadFromJSON
+### <a id="webhooknewcontactpayloadfromjson" name="webhooknewcontactpayloadfromjson"></a> WebhookNewContactPayloadFromJSON
 
 ▸ **WebhookNewContactPayloadFromJSON**(`json`): [`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
 
@@ -8481,7 +8481,7 @@ ___
 
 ___
 
-### WebhookNewContactPayloadFromJSONTyped
+### <a id="webhooknewcontactpayloadfromjsontyped" name="webhooknewcontactpayloadfromjsontyped"></a> WebhookNewContactPayloadFromJSONTyped
 
 ▸ **WebhookNewContactPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewContactPayload`](interfaces/WebhookNewContactPayload.md)
 
@@ -8498,7 +8498,7 @@ ___
 
 ___
 
-### WebhookNewContactPayloadToJSON
+### <a id="webhooknewcontactpayloadtojson" name="webhooknewcontactpayloadtojson"></a> WebhookNewContactPayloadToJSON
 
 ▸ **WebhookNewContactPayloadToJSON**(`value?`): `any`
 
@@ -8514,7 +8514,7 @@ ___
 
 ___
 
-### WebhookNewEmailPayloadFromJSON
+### <a id="webhooknewemailpayloadfromjson" name="webhooknewemailpayloadfromjson"></a> WebhookNewEmailPayloadFromJSON
 
 ▸ **WebhookNewEmailPayloadFromJSON**(`json`): [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
 
@@ -8530,7 +8530,7 @@ ___
 
 ___
 
-### WebhookNewEmailPayloadFromJSONTyped
+### <a id="webhooknewemailpayloadfromjsontyped" name="webhooknewemailpayloadfromjsontyped"></a> WebhookNewEmailPayloadFromJSONTyped
 
 ▸ **WebhookNewEmailPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md)
 
@@ -8547,7 +8547,7 @@ ___
 
 ___
 
-### WebhookNewEmailPayloadToJSON
+### <a id="webhooknewemailpayloadtojson" name="webhooknewemailpayloadtojson"></a> WebhookNewEmailPayloadToJSON
 
 ▸ **WebhookNewEmailPayloadToJSON**(`value?`): `any`
 
@@ -8563,7 +8563,7 @@ ___
 
 ___
 
-### WebhookProjectionFromJSON
+### <a id="webhookprojectionfromjson" name="webhookprojectionfromjson"></a> WebhookProjectionFromJSON
 
 ▸ **WebhookProjectionFromJSON**(`json`): [`WebhookProjection`](interfaces/WebhookProjection.md)
 
@@ -8579,7 +8579,7 @@ ___
 
 ___
 
-### WebhookProjectionFromJSONTyped
+### <a id="webhookprojectionfromjsontyped" name="webhookprojectionfromjsontyped"></a> WebhookProjectionFromJSONTyped
 
 ▸ **WebhookProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookProjection`](interfaces/WebhookProjection.md)
 
@@ -8596,7 +8596,7 @@ ___
 
 ___
 
-### WebhookProjectionToJSON
+### <a id="webhookprojectiontojson" name="webhookprojectiontojson"></a> WebhookProjectionToJSON
 
 ▸ **WebhookProjectionToJSON**(`value?`): `any`
 
@@ -8612,7 +8612,7 @@ ___
 
 ___
 
-### WebhookRedriveResultFromJSON
+### <a id="webhookredriveresultfromjson" name="webhookredriveresultfromjson"></a> WebhookRedriveResultFromJSON
 
 ▸ **WebhookRedriveResultFromJSON**(`json`): [`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
 
@@ -8628,7 +8628,7 @@ ___
 
 ___
 
-### WebhookRedriveResultFromJSONTyped
+### <a id="webhookredriveresultfromjsontyped" name="webhookredriveresultfromjsontyped"></a> WebhookRedriveResultFromJSONTyped
 
 ▸ **WebhookRedriveResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookRedriveResult`](interfaces/WebhookRedriveResult.md)
 
@@ -8645,7 +8645,7 @@ ___
 
 ___
 
-### WebhookRedriveResultToJSON
+### <a id="webhookredriveresulttojson" name="webhookredriveresulttojson"></a> WebhookRedriveResultToJSON
 
 ▸ **WebhookRedriveResultToJSON**(`value?`): `any`
 
@@ -8661,7 +8661,7 @@ ___
 
 ___
 
-### WebhookResultDtoFromJSON
+### <a id="webhookresultdtofromjson" name="webhookresultdtofromjson"></a> WebhookResultDtoFromJSON
 
 ▸ **WebhookResultDtoFromJSON**(`json`): [`WebhookResultDto`](interfaces/WebhookResultDto.md)
 
@@ -8677,7 +8677,7 @@ ___
 
 ___
 
-### WebhookResultDtoFromJSONTyped
+### <a id="webhookresultdtofromjsontyped" name="webhookresultdtofromjsontyped"></a> WebhookResultDtoFromJSONTyped
 
 ▸ **WebhookResultDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookResultDto`](interfaces/WebhookResultDto.md)
 
@@ -8694,7 +8694,7 @@ ___
 
 ___
 
-### WebhookResultDtoToJSON
+### <a id="webhookresultdtotojson" name="webhookresultdtotojson"></a> WebhookResultDtoToJSON
 
 ▸ **WebhookResultDtoToJSON**(`value?`): `any`
 
@@ -8710,7 +8710,7 @@ ___
 
 ___
 
-### WebhookTestRequestFromJSON
+### <a id="webhooktestrequestfromjson" name="webhooktestrequestfromjson"></a> WebhookTestRequestFromJSON
 
 ▸ **WebhookTestRequestFromJSON**(`json`): [`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
 
@@ -8726,7 +8726,7 @@ ___
 
 ___
 
-### WebhookTestRequestFromJSONTyped
+### <a id="webhooktestrequestfromjsontyped" name="webhooktestrequestfromjsontyped"></a> WebhookTestRequestFromJSONTyped
 
 ▸ **WebhookTestRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestRequest`](interfaces/WebhookTestRequest.md)
 
@@ -8743,7 +8743,7 @@ ___
 
 ___
 
-### WebhookTestRequestToJSON
+### <a id="webhooktestrequesttojson" name="webhooktestrequesttojson"></a> WebhookTestRequestToJSON
 
 ▸ **WebhookTestRequestToJSON**(`value?`): `any`
 
@@ -8759,7 +8759,7 @@ ___
 
 ___
 
-### WebhookTestResponseFromJSON
+### <a id="webhooktestresponsefromjson" name="webhooktestresponsefromjson"></a> WebhookTestResponseFromJSON
 
 ▸ **WebhookTestResponseFromJSON**(`json`): [`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
 
@@ -8775,7 +8775,7 @@ ___
 
 ___
 
-### WebhookTestResponseFromJSONTyped
+### <a id="webhooktestresponsefromjsontyped" name="webhooktestresponsefromjsontyped"></a> WebhookTestResponseFromJSONTyped
 
 ▸ **WebhookTestResponseFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestResponse`](interfaces/WebhookTestResponse.md)
 
@@ -8792,7 +8792,7 @@ ___
 
 ___
 
-### WebhookTestResponseToJSON
+### <a id="webhooktestresponsetojson" name="webhooktestresponsetojson"></a> WebhookTestResponseToJSON
 
 ▸ **WebhookTestResponseToJSON**(`value?`): `any`
 
@@ -8808,7 +8808,7 @@ ___
 
 ___
 
-### WebhookTestResultFromJSON
+### <a id="webhooktestresultfromjson" name="webhooktestresultfromjson"></a> WebhookTestResultFromJSON
 
 ▸ **WebhookTestResultFromJSON**(`json`): [`WebhookTestResult`](interfaces/WebhookTestResult.md)
 
@@ -8824,7 +8824,7 @@ ___
 
 ___
 
-### WebhookTestResultFromJSONTyped
+### <a id="webhooktestresultfromjsontyped" name="webhooktestresultfromjsontyped"></a> WebhookTestResultFromJSONTyped
 
 ▸ **WebhookTestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookTestResult`](interfaces/WebhookTestResult.md)
 
@@ -8841,7 +8841,7 @@ ___
 
 ___
 
-### WebhookTestResultToJSON
+### <a id="webhooktestresulttojson" name="webhooktestresulttojson"></a> WebhookTestResultToJSON
 
 ▸ **WebhookTestResultToJSON**(`value?`): `any`
 
@@ -8857,7 +8857,7 @@ ___
 
 ___
 
-### canConsumeForm
+### <a id="canconsumeform" name="canconsumeform"></a> canConsumeForm
 
 ▸ **canConsumeForm**(`consumes`): `boolean`
 
@@ -8873,7 +8873,7 @@ ___
 
 ___
 
-### exists
+### <a id="exists" name="exists"></a> exists
 
 ▸ **exists**(`json`, `key`): `boolean`
 
@@ -8890,7 +8890,7 @@ ___
 
 ___
 
-### mapValues
+### <a id="mapvalues" name="mapvalues"></a> mapValues
 
 ▸ **mapValues**(`data`, `fn`): `Object`
 
@@ -8907,7 +8907,7 @@ ___
 
 ___
 
-### querystring
+### <a id="querystring" name="querystring"></a> querystring
 
 ▸ **querystring**(`params`, `prefix?`): `string`
 
@@ -8924,7 +8924,7 @@ ___
 
 ___
 
-### wrapException
+### <a id="wrapexception" name="wrapexception"></a> wrapException
 
 ▸ **wrapException**<`T`\>(`fn`): `Promise`<`T`\>
 
@@ -8946,7 +8946,7 @@ ___
 
 ___
 
-### wrapResult
+### <a id="wrapresult" name="wrapresult"></a> wrapResult
 
 ▸ **wrapResult**<`T`\>(`fn`): `Promise`<[`Result`](interfaces/Result.md)<`T`\>\>
 

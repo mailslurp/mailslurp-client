@@ -15,7 +15,7 @@ Options for bulk sending an email from multiple addresses. See regular `sendEmai
 
 ## Properties
 
-### inboxIds
+### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: `string`[]
 
@@ -25,7 +25,7 @@ Inboxes to send the email from
 
 ___
 
-### sendEmailOptions
+### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 

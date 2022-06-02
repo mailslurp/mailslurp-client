@@ -22,7 +22,7 @@ Tracking pixel data
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -30,7 +30,7 @@ Tracking pixel data
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -38,7 +38,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • `Optional` **inboxId**: `string`
 
@@ -46,7 +46,7 @@ ___
 
 ___
 
-### name
+### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
 
@@ -54,7 +54,7 @@ ___
 
 ___
 
-### recipient
+### <a id="recipient" name="recipient"></a> recipient
 
 • `Optional` **recipient**: `string`
 
@@ -62,7 +62,7 @@ ___
 
 ___
 
-### seen
+### <a id="seen" name="seen"></a> seen
 
 • **seen**: `boolean`
 
@@ -70,7 +70,7 @@ ___
 
 ___
 
-### seenAt
+### <a id="seenat" name="seenat"></a> seenAt
 
 • `Optional` **seenAt**: `Date`
 
@@ -78,7 +78,7 @@ ___
 
 ___
 
-### sentEmailId
+### <a id="sentemailid" name="sentemailid"></a> sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
@@ -86,7 +86,7 @@ ___
 
 ___
 
-### userId
+### <a id="userid" name="userid"></a> userId
 
 • **userId**: `string`
 

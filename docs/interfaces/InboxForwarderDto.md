@@ -19,7 +19,7 @@ Inbox forwarder
 
 ## Properties
 
-### createdAt
+### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
 
@@ -27,7 +27,7 @@ Inbox forwarder
 
 ___
 
-### field
+### <a id="field" name="field"></a> field
 
 • **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
 
@@ -35,7 +35,7 @@ ___
 
 ___
 
-### forwardToRecipients
+### <a id="forwardtorecipients" name="forwardtorecipients"></a> forwardToRecipients
 
 • **forwardToRecipients**: `string`[]
 
@@ -43,7 +43,7 @@ ___
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
@@ -51,7 +51,7 @@ ___
 
 ___
 
-### inboxId
+### <a id="inboxid" name="inboxid"></a> inboxId
 
 • **inboxId**: `string`
 
@@ -59,7 +59,7 @@ ___
 
 ___
 
-### match
+### <a id="match" name="match"></a> match
 
 • **match**: `string`
 

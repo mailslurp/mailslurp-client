@@ -35,7 +35,7 @@
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new CommonActionsControllerApi**(`configuration?`)
 
@@ -51,7 +51,7 @@
 
 ## Properties
 
-### configuration
+### <a id="configuration" name="configuration"></a> configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -61,7 +61,7 @@
 
 ## Methods
 
-### createNewEmailAddress
+### <a id="createnewemailaddress" name="createnewemailaddress"></a> createNewEmailAddress
 
 ▸ **createNewEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -81,7 +81,7 @@ Create new random inbox
 
 ___
 
-### createNewEmailAddressRaw
+### <a id="createnewemailaddressraw" name="createnewemailaddressraw"></a> createNewEmailAddressRaw
 
 ▸ **createNewEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -101,7 +101,7 @@ Create new random inbox
 
 ___
 
-### createRandomInbox
+### <a id="createrandominbox" name="createrandominbox"></a> createRandomInbox
 
 ▸ **createRandomInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -121,7 +121,7 @@ Create new random inbox
 
 ___
 
-### createRandomInboxRaw
+### <a id="createrandominboxraw" name="createrandominboxraw"></a> createRandomInboxRaw
 
 ▸ **createRandomInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -141,7 +141,7 @@ Create new random inbox
 
 ___
 
-### deleteEmailAddress
+### <a id="deleteemailaddress" name="deleteemailaddress"></a> deleteEmailAddress
 
 ▸ **deleteEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -161,7 +161,7 @@ Delete inbox email address by inbox id
 
 ___
 
-### deleteEmailAddressRaw
+### <a id="deleteemailaddressraw" name="deleteemailaddressraw"></a> deleteEmailAddressRaw
 
 ▸ **deleteEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -181,7 +181,7 @@ Delete inbox email address by inbox id
 
 ___
 
-### emptyInbox
+### <a id="emptyinbox" name="emptyinbox"></a> emptyInbox
 
 ▸ **emptyInbox**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -201,7 +201,7 @@ Delete all emails in an inbox
 
 ___
 
-### emptyInboxRaw
+### <a id="emptyinboxraw" name="emptyinboxraw"></a> emptyInboxRaw
 
 ▸ **emptyInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -221,7 +221,7 @@ Delete all emails in an inbox
 
 ___
 
-### request
+### <a id="request" name="request"></a> request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -242,7 +242,7 @@ ___
 
 ___
 
-### sendEmailSimple
+### <a id="sendemailsimple" name="sendemailsimple"></a> sendEmailSimple
 
 ▸ **sendEmailSimple**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -262,7 +262,7 @@ Send an email
 
 ___
 
-### sendEmailSimpleRaw
+### <a id="sendemailsimpleraw" name="sendemailsimpleraw"></a> sendEmailSimpleRaw
 
 ▸ **sendEmailSimpleRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -282,9 +282,9 @@ Send an email
 
 ___
 
-### withMiddleware
+### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
 
-▸ **withMiddleware**<`T`\>(...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
 
 #### Type parameters
 
@@ -296,6 +296,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...middlewares` | [`Middleware`](../interfaces/Middleware.md)[] |
 
 #### Returns
@@ -308,9 +309,9 @@ ___
 
 ___
 
-### withPostMiddleware
+### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -322,6 +323,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...postMiddlewares` | (`context`: [`ResponseContext`](../interfaces/ResponseContext.md)) => `Promise`<`void` \| `Response`\>[] |
 
 #### Returns
@@ -334,9 +336,9 @@ ___
 
 ___
 
-### withPreMiddleware
+### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
 
 #### Type parameters
 
@@ -348,6 +350,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
+| `this` | `T` |
 | `...preMiddlewares` | (`context`: [`RequestContext`](../interfaces/RequestContext.md)) => `Promise`<`void` \| [`FetchParams`](../interfaces/FetchParams.md)\>[] |
 
 #### Returns

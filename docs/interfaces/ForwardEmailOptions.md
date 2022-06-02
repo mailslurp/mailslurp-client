@@ -19,7 +19,7 @@ Options for forwarding an email
 
 ## Properties
 
-### bcc
+### <a id="bcc" name="bcc"></a> bcc
 
 • `Optional` **bcc**: `string`[]
 
@@ -29,7 +29,7 @@ Optional bcc recipients
 
 ___
 
-### cc
+### <a id="cc" name="cc"></a> cc
 
 • `Optional` **cc**: `string`[]
 
@@ -39,7 +39,7 @@ Optional cc recipients
 
 ___
 
-### from
+### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
 
@@ -49,7 +49,7 @@ Optional from override
 
 ___
 
-### subject
+### <a id="subject" name="subject"></a> subject
 
 • `Optional` **subject**: `string`
 
@@ -59,7 +59,7 @@ Subject for forwarded email
 
 ___
 
-### to
+### <a id="to" name="to"></a> to
 
 • **to**: `string`[]
 
@@ -69,7 +69,7 @@ To recipients for forwarded email
 
 ___
 
-### useInboxName
+### <a id="useinboxname" name="useinboxname"></a> useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 

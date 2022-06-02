@@ -17,7 +17,7 @@ Options for verifying that an email address exists at a remote mail server.
 
 ## Properties
 
-### emailAddress
+### <a id="emailaddress" name="emailaddress"></a> emailAddress
 
 • **emailAddress**: `string`
 
@@ -25,7 +25,7 @@ Options for verifying that an email address exists at a remote mail server.
 
 ___
 
-### mailServerDomain
+### <a id="mailserverdomain" name="mailserverdomain"></a> mailServerDomain
 
 • `Optional` **mailServerDomain**: `string`
 
@@ -33,7 +33,7 @@ ___
 
 ___
 
-### port
+### <a id="port" name="port"></a> port
 
 • `Optional` **port**: `number`
 
@@ -41,7 +41,7 @@ ___
 
 ___
 
-### senderEmailAddress
+### <a id="senderemailaddress" name="senderemailaddress"></a> senderEmailAddress
 
 • `Optional` **senderEmailAddress**: `string`
 

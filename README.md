@@ -91,9 +91,9 @@ MailSlurp is built on Javascript `fetch`. If you want to override the default `f
 
 ```typescript
 const { MailSlurp } = require('mailslurp-client');
-const isomorphicFetch = require('isomorphic-fetch');
+const crossFetch = require('cross-fetch');
 const mailslurp = new MailSlurp({
-  fetchApi: isomorphicFetch,
+  fetchApi: crossFetch,
   apiKey: apiKey,
 });
 ```

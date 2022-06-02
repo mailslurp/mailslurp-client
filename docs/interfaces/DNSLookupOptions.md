@@ -16,7 +16,7 @@ Options for DNS query.
 
 ## Properties
 
-### hostname
+### <a id="hostname" name="hostname"></a> hostname
 
 • **hostname**: `string`
 
@@ -26,7 +26,7 @@ List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
 ___
 
-### omitFinalDNSDot
+### <a id="omitfinaldnsdot" name="omitfinaldnsdot"></a> omitFinalDNSDot
 
 • **omitFinalDNSDot**: `boolean`
 
@@ -36,7 +36,7 @@ Optionally control whether to omit the final dot in full DNS name values.
 
 ___
 
-### recordTypes
+### <a id="recordtypes" name="recordtypes"></a> recordTypes
 
 • **recordTypes**: [`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)[]
 

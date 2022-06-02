@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DELETE](WebhookResultDtoHttpMethodEnum.md#delete)
 - [GET](WebhookResultDtoHttpMethodEnum.md#get)
@@ -15,50 +15,50 @@
 - [PUT](WebhookResultDtoHttpMethodEnum.md#put)
 - [TRACE](WebhookResultDtoHttpMethodEnum.md#trace)
 
-## Enumeration members
+## Enumeration Members
 
-### DELETE
+### <a id="delete" name="delete"></a> DELETE
 
-• **DELETE** = `"DELETE"`
-
-___
-
-### GET
-
-• **GET** = `"GET"`
+• **DELETE**
 
 ___
 
-### HEAD
+### <a id="get" name="get"></a> GET
 
-• **HEAD** = `"HEAD"`
-
-___
-
-### OPTIONS
-
-• **OPTIONS** = `"OPTIONS"`
+• **GET**
 
 ___
 
-### PATCH
+### <a id="head" name="head"></a> HEAD
 
-• **PATCH** = `"PATCH"`
-
-___
-
-### POST
-
-• **POST** = `"POST"`
+• **HEAD**
 
 ___
 
-### PUT
+### <a id="options" name="options"></a> OPTIONS
 
-• **PUT** = `"PUT"`
+• **OPTIONS**
 
 ___
 
-### TRACE
+### <a id="patch" name="patch"></a> PATCH
 
-• **TRACE** = `"TRACE"`
+• **PATCH**
+
+___
+
+### <a id="post" name="post"></a> POST
+
+• **POST**
+
+___
+
+### <a id="put" name="put"></a> PUT
+
+• **PUT**
+
+___
+
+### <a id="trace" name="trace"></a> TRACE
+
+• **TRACE**

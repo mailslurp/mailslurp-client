@@ -8,6 +8,6 @@
 
 ## Properties
 
-### testNewInboxForwarderOptions
+### <a id="testnewinboxforwarderoptions" name="testnewinboxforwarderoptions"></a> testNewInboxForwarderOptions
 
 • **testNewInboxForwarderOptions**: [`TestNewInboxForwarderOptions`](TestNewInboxForwarderOptions.md)

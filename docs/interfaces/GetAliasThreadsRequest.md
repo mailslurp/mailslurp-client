@@ -13,36 +13,36 @@
 
 ## Properties
 
-### aliasId
+### <a id="aliasid" name="aliasid"></a> aliasId
 
 • **aliasId**: `string`
 
 ___
 
-### before
+### <a id="before" name="before"></a> before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### page
+### <a id="page" name="page"></a> page
 
 • `Optional` **page**: `number`
 
 ___
 
-### since
+### <a id="since" name="since"></a> since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### size
+### <a id="size" name="size"></a> size
 
 • `Optional` **size**: `number`
 
 ___
 
-### sort
+### <a id="sort" name="sort"></a> sort
 
 • `Optional` **sort**: [`GetAliasThreadsSortEnum`](../enums/GetAliasThreadsSortEnum.md)
