@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [HTTP\_INBOX](CreateInboxInboxTypeEnum.md#http_inbox)
-- [SMTP\_INBOX](CreateInboxInboxTypeEnum.md#smtp_inbox)
+- [HTTP\_INBOX](CreateInboxInboxTypeEnum.md#http-inbox)
+- [SMTP\_INBOX](CreateInboxInboxTypeEnum.md#smtp-inbox)
 
 ## Enumeration members
 

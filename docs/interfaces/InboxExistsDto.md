@@ -10,7 +10,7 @@ Result of email exists query
 
 ### Properties
 
-- [\_exists](InboxExistsDto.md#_exists)
+- [\_exists](InboxExistsDto.md#exists)
 
 ## Properties
 

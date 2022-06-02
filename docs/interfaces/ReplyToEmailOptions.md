@@ -94,7 +94,7 @@ ___
 
 ### sendStrategy
 
-• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single_message)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single-message)
 
 How an email should be sent based on its recipients
 
@@ -122,7 +122,7 @@ Template variables if using a template
 
 #### Index signature
 
-▪ [key: `string`]: `object`
+▪ [key: `string`]: %60object%60
 
 ___
 

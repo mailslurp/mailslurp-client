@@ -145,7 +145,7 @@ ___
 
 ### sendStrategy
 
-• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/SendEmailOptionsSendStrategyEnum.md#single_message)
+• `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/SendEmailOptionsSendStrategyEnum.md#single-message)
 
 How an email should be sent based on its recipients
 
@@ -183,7 +183,7 @@ Optional map of template variables. Will replace moustache syntax variables in s
 
 #### Index signature
 
-▪ [key: `string`]: `object`
+▪ [key: `string`]: %60object%60
 
 ___
 

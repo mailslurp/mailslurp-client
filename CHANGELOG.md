@@ -1,4 +1,8 @@
 # Changelog
+## [15.10.0]
+- Replace isomophic fetch with cross fetch and polyfill.
+- Remove security issues in node modules.
+
 ## [15.0.2]
 - Add graphql changes to README.
 

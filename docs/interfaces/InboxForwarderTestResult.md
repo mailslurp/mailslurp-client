@@ -31,4 +31,4 @@ ___
 
 #### Index signature
 
-▪ [key: `string`]: `boolean`
+▪ [key: `string`]: %60boolean%60

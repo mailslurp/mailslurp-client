@@ -10,7 +10,7 @@ Result of search for inbox by email address
 
 ### Properties
 
-- [\_exists](InboxByEmailAddressResult.md#_exists)
+- [\_exists](InboxByEmailAddressResult.md#exists)
 - [inboxId](InboxByEmailAddressResult.md#inboxid)
 
 ## Properties

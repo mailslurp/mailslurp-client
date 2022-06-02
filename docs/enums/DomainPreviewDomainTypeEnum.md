@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [HTTP\_INBOX](DomainPreviewDomainTypeEnum.md#http_inbox)
-- [SMTP\_DOMAIN](DomainPreviewDomainTypeEnum.md#smtp_domain)
+- [HTTP\_INBOX](DomainPreviewDomainTypeEnum.md#http-inbox)
+- [SMTP\_DOMAIN](DomainPreviewDomainTypeEnum.md#smtp-domain)
 
 ## Enumeration members
 

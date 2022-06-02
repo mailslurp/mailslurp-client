@@ -2,7 +2,7 @@ import MailSlurp, { WebhookNewEmailPayload } from '../dist';
 
 import express from 'express';
 import * as bodyParser from 'body-parser';
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 const port = 4567;
 
 test('webhook server', async () => {

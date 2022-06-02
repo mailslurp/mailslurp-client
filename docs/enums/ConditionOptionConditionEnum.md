@@ -6,7 +6,7 @@
 
 ### Enumeration members
 
-- [HAS\_ATTACHMENTS](ConditionOptionConditionEnum.md#has_attachments)
+- [HAS\_ATTACHMENTS](ConditionOptionConditionEnum.md#has-attachments)
 
 ## Enumeration members
 

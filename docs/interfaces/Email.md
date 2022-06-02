@@ -145,7 +145,7 @@ Collection of SMTP headers attached to email
 
 #### Index signature
 
-▪ [key: `string`]: `string`
+▪ [key: `string`]: %60string%60
 
 ___
 

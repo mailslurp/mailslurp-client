@@ -498,8 +498,8 @@
 
 ### Variables
 
-- [BASE\_PATH](README.md#base_path)
-- [COLLECTION\_FORMATS](README.md#collection_formats)
+- [BASE\_PATH](README.md#base-path)
+- [COLLECTION\_FORMATS](README.md#collection-formats)
 
 ### Functions
 
@@ -1052,7 +1052,7 @@ ___
 
 #### Index signature
 
-▪ [key: `string`]: `string`
+▪ [key: `string`]: %60string%60
 
 ___
 
@@ -1068,7 +1068,7 @@ ___
 
 #### Index signature
 
-▪ [key: `string`]: `string` \| `number` \| ``null`` \| `boolean` \| (`string` \| `number` \| ``null`` \| `boolean`)[] \| [`HTTPQuery`](README.md#httpquery)
+▪ [key: `string`]: %60string%60%20/%7C%20%60number%60%20/%7C%20%60%60null%60%60%20/%7C%20%60boolean%60%20/%7C%20(%60string%60%20/%7C%20%60number%60%20/%7C%20%60%60null%60%60%20/%7C%20%60boolean%60)[]%20/%7C%20[%60HTTPQuery%60](README.md#httpquery)
 
 ___
 

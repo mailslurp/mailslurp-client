@@ -17,7 +17,7 @@ Options for matching emails in an inbox based on a condition such as `HAS_ATTACH
 
 ### condition
 
-• **condition**: [`HAS_ATTACHMENTS`](../enums/ConditionOptionConditionEnum.md#has_attachments)
+• **condition**: [`HAS_ATTACHMENTS`](../enums/ConditionOptionConditionEnum.md#has-attachments)
 
 Condition of an email object that can be used to filter results
 

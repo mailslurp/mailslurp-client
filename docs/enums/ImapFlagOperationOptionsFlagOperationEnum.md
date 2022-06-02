@@ -6,9 +6,9 @@
 
 ### Enumeration members
 
-- [ADD\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#add_flags)
-- [REMOVE\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#remove_flags)
-- [SET\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#set_flags)
+- [ADD\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#add-flags)
+- [REMOVE\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#remove-flags)
+- [SET\_FLAGS](ImapFlagOperationOptionsFlagOperationEnum.md#set-flags)
 
 ## Enumeration members
 

@@ -8,7 +8,7 @@
 
 - [ALLOW](CreateInboxRulesetOptionsActionEnum.md#allow)
 - [BLOCK](CreateInboxRulesetOptionsActionEnum.md#block)
-- [FILTER\_REMOVE](CreateInboxRulesetOptionsActionEnum.md#filter_remove)
+- [FILTER\_REMOVE](CreateInboxRulesetOptionsActionEnum.md#filter-remove)
 
 ## Enumeration members
 

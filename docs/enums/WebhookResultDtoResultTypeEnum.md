@@ -6,7 +6,7 @@
 
 ### Enumeration members
 
-- [BAD\_RESPONSE](WebhookResultDtoResultTypeEnum.md#bad_response)
+- [BAD\_RESPONSE](WebhookResultDtoResultTypeEnum.md#bad-response)
 - [EXCEPTION](WebhookResultDtoResultTypeEnum.md#exception)
 - [SUCCESS](WebhookResultDtoResultTypeEnum.md#success)
 

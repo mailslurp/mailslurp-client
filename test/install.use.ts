@@ -19,9 +19,9 @@ test('fetch setup', async () => {
   const apiKey = process.env.API_KEY ?? 'your-api-key';
   //<gen>fetch_setup
   const { MailSlurp } = require('mailslurp-client');
-  const isomorphicFetch = require('isomorphic-fetch');
+  const crossFetch = require('cross-fetch');
   const mailslurp = new MailSlurp({
-    fetchApi: isomorphicFetch,
+    fetchApi: crossFetch,
     apiKey: apiKey,
   });
   //</gen>

@@ -7,13 +7,13 @@
 ### Enumeration members
 
 - [BOUNCE](GetTestWebhookPayloadEventNameEnum.md#bounce)
-- [BOUNCE\_RECIPIENT](GetTestWebhookPayloadEventNameEnum.md#bounce_recipient)
-- [EMAIL\_OPENED](GetTestWebhookPayloadEventNameEnum.md#email_opened)
-- [EMAIL\_READ](GetTestWebhookPayloadEventNameEnum.md#email_read)
-- [EMAIL\_RECEIVED](GetTestWebhookPayloadEventNameEnum.md#email_received)
-- [NEW\_ATTACHMENT](GetTestWebhookPayloadEventNameEnum.md#new_attachment)
-- [NEW\_CONTACT](GetTestWebhookPayloadEventNameEnum.md#new_contact)
-- [NEW\_EMAIL](GetTestWebhookPayloadEventNameEnum.md#new_email)
+- [BOUNCE\_RECIPIENT](GetTestWebhookPayloadEventNameEnum.md#bounce-recipient)
+- [EMAIL\_OPENED](GetTestWebhookPayloadEventNameEnum.md#email-opened)
+- [EMAIL\_READ](GetTestWebhookPayloadEventNameEnum.md#email-read)
+- [EMAIL\_RECEIVED](GetTestWebhookPayloadEventNameEnum.md#email-received)
+- [NEW\_ATTACHMENT](GetTestWebhookPayloadEventNameEnum.md#new-attachment)
+- [NEW\_CONTACT](GetTestWebhookPayloadEventNameEnum.md#new-contact)
+- [NEW\_EMAIL](GetTestWebhookPayloadEventNameEnum.md#new-email)
 
 ## Enumeration members
 

@@ -25,7 +25,7 @@ Result of webhook test request
 
 #### Index signature
 
-▪ [key: `string`]: `string`
+▪ [key: `string`]: %60string%60
 
 ___
 

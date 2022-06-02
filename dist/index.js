@@ -73,7 +73,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapResult = exports.wrapException = exports.MailSlurp = void 0;
 require('es6-promise').polyfill();
-require('isomorphic-fetch');
+require('cross-fetch/polyfill');
 var generated_1 = require("./generated");
 __exportStar(require("./generated"), exports);
 /**

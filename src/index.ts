@@ -2,7 +2,7 @@
 import InboxTypeEnum = CreateInboxDto.InboxTypeEnum;
 
 require('es6-promise').polyfill();
-require('isomorphic-fetch');
+require('cross-fetch/polyfill');
 import {
   AliasControllerApi,
   AttachmentControllerApi,

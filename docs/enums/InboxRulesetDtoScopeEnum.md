@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [RECEIVING\_EMAILS](InboxRulesetDtoScopeEnum.md#receiving_emails)
-- [SENDING\_EMAILS](InboxRulesetDtoScopeEnum.md#sending_emails)
+- [RECEIVING\_EMAILS](InboxRulesetDtoScopeEnum.md#receiving-emails)
+- [SENDING\_EMAILS](InboxRulesetDtoScopeEnum.md#sending-emails)
 
 ## Enumeration members
 

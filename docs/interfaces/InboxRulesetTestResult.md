@@ -33,4 +33,4 @@ Map of inbox ruleset ID to boolean of if target matches
 
 #### Index signature
 
-▪ [key: `string`]: `boolean`
+▪ [key: `string`]: %60boolean%60

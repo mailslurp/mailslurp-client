@@ -10,12 +10,12 @@ Byte array request body
 
 ### Properties
 
-- [\_char](InlineObject1.md#_char)
-- [\_double](InlineObject1.md#_double)
-- [\_float](InlineObject1.md#_float)
-- [\_int](InlineObject1.md#_int)
-- [\_long](InlineObject1.md#_long)
-- [\_short](InlineObject1.md#_short)
+- [\_char](InlineObject1.md#char)
+- [\_double](InlineObject1.md#double)
+- [\_float](InlineObject1.md#float)
+- [\_int](InlineObject1.md#int)
+- [\_long](InlineObject1.md#long)
+- [\_short](InlineObject1.md#short)
 - [direct](InlineObject1.md#direct)
 - [readOnly](InlineObject1.md#readonly)
 

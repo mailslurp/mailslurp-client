@@ -6,8 +6,8 @@
 
 ### Enumeration members
 
-- [HTTP\_INBOX](OrganizationInboxProjectionInboxTypeEnum.md#http_inbox)
-- [SMTP\_INBOX](OrganizationInboxProjectionInboxTypeEnum.md#smtp_inbox)
+- [HTTP\_INBOX](OrganizationInboxProjectionInboxTypeEnum.md#http-inbox)
+- [SMTP\_INBOX](OrganizationInboxProjectionInboxTypeEnum.md#smtp-inbox)
 
 ## Enumeration members
 

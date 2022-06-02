@@ -60,7 +60,7 @@
 - [NINFO](DomainNameRecordRecordTypeEnum.md#ninfo)
 - [NS](DomainNameRecordRecordTypeEnum.md#ns)
 - [NSAP](DomainNameRecordRecordTypeEnum.md#nsap)
-- [NSAP\_PTR](DomainNameRecordRecordTypeEnum.md#nsap_ptr)
+- [NSAP\_PTR](DomainNameRecordRecordTypeEnum.md#nsap-ptr)
 - [NSEC](DomainNameRecordRecordTypeEnum.md#nsec)
 - [NSEC3](DomainNameRecordRecordTypeEnum.md#nsec3)
 - [NSEC3PARAM](DomainNameRecordRecordTypeEnum.md#nsec3param)

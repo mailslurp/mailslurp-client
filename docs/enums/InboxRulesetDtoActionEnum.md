@@ -8,7 +8,7 @@
 
 - [ALLOW](InboxRulesetDtoActionEnum.md#allow)
 - [BLOCK](InboxRulesetDtoActionEnum.md#block)
-- [FILTER\_REMOVE](InboxRulesetDtoActionEnum.md#filter_remove)
+- [FILTER\_REMOVE](InboxRulesetDtoActionEnum.md#filter-remove)
 
 ## Enumeration members
 

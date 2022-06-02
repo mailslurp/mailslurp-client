@@ -6,9 +6,9 @@
 
 ### Enumeration members
 
-- [NO\_VALIDATION](SendEmailOptionsValidateEmailAddressesEnum.md#no_validation)
-- [VALIDATE\_ERROR\_IF\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate_error_if_invalid)
-- [VALIDATE\_FILTER\_REMOVE\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate_filter_remove_invalid)
+- [NO\_VALIDATION](SendEmailOptionsValidateEmailAddressesEnum.md#no-validation)
+- [VALIDATE\_ERROR\_IF\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate-error-if-invalid)
+- [VALIDATE\_FILTER\_REMOVE\_INVALID](SendEmailOptionsValidateEmailAddressesEnum.md#validate-filter-remove-invalid)
 
 ## Enumeration members
 

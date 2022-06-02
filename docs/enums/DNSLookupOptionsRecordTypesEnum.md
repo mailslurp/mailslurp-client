@@ -60,7 +60,7 @@
 - [NINFO](DNSLookupOptionsRecordTypesEnum.md#ninfo)
 - [NS](DNSLookupOptionsRecordTypesEnum.md#ns)
 - [NSAP](DNSLookupOptionsRecordTypesEnum.md#nsap)
-- [NSAP\_PTR](DNSLookupOptionsRecordTypesEnum.md#nsap_ptr)
+- [NSAP\_PTR](DNSLookupOptionsRecordTypesEnum.md#nsap-ptr)
 - [NSEC](DNSLookupOptionsRecordTypesEnum.md#nsec)
 - [NSEC3](DNSLookupOptionsRecordTypesEnum.md#nsec3)
 - [NSEC3PARAM](DNSLookupOptionsRecordTypesEnum.md#nsec3param)

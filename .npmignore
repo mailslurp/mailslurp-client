@@ -12,3 +12,5 @@ coverage
 templates
 scripts
 typedoc.json
+junit.xml
+.env

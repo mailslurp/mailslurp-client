@@ -6,7 +6,7 @@
 
 ### Enumeration members
 
-- [SINGLE\_MESSAGE](ReplyToEmailOptionsSendStrategyEnum.md#single_message)
+- [SINGLE\_MESSAGE](ReplyToEmailOptionsSendStrategyEnum.md#single-message)
 
 ## Enumeration members
 
