@@ -26,6 +26,7 @@ function AttachmentEntityFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         attachmentId: json['attachmentId'],
+        bucket: !(0, runtime_1.exists)(json, 'bucket') ? undefined : json['bucket'],
         userId: json['userId'],
         contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
         contentLength: !(0, runtime_1.exists)(json, 'contentLength')
@@ -47,6 +48,7 @@ function AttachmentEntityToJSON(value) {
     return {
         id: value.id,
         attachmentId: value.attachmentId,
+        bucket: value.bucket,
         userId: value.userId,
         contentType: value.contentType,
         contentLength: value.contentLength,

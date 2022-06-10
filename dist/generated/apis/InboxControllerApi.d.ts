@@ -139,6 +139,11 @@ export interface SendEmailAndConfirmRequest {
     inboxId: string;
     sendEmailOptions: SendEmailOptions;
 }
+export interface SendEmailWithQueueRequest {
+    inboxId: string;
+    validateBeforeEnqueue: boolean;
+    sendEmailOptions: SendEmailOptions;
+}
 export interface SendSmtpEnvelopeRequest {
     inboxId: string;
     sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
@@ -420,6 +425,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Send email and return sent confirmation
      */
     sendEmailAndConfirm(requestParameters: SendEmailAndConfirmRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    /**
+     * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+     * Send email with queue
+     */
+    sendEmailWithQueueRaw(requestParameters: SendEmailWithQueueRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+     * Send email with queue
+     */
+    sendEmailWithQueue(requestParameters: SendEmailWithQueueRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Send email using an SMTP envelope containing RCPT TO, MAIL FROM, and a SMTP BODY.
      * Send email using an SMTP mail envelope and message body and return sent confirmation

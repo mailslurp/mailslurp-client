@@ -36,6 +36,12 @@ export interface PageWebhookProjection {
     total?: number;
     /**
      *
+     * @type {boolean}
+     * @memberof PageWebhookProjection
+     */
+    last?: boolean;
+    /**
+     *
      * @type {number}
      * @memberof PageWebhookProjection
      */
@@ -46,12 +52,6 @@ export interface PageWebhookProjection {
      * @memberof PageWebhookProjection
      */
     totalPages?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageWebhookProjection
-     */
-    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageWebhookProjection {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageWebhookProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageWebhookProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageWebhookProjection
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

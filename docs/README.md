@@ -409,6 +409,7 @@
 - [SendEmailRequest](interfaces/SendEmailRequest.md)
 - [SendEmailSimpleRequest](interfaces/SendEmailSimpleRequest.md)
 - [SendEmailSourceOptionalRequest](interfaces/SendEmailSourceOptionalRequest.md)
+- [SendEmailWithQueueRequest](interfaces/SendEmailWithQueueRequest.md)
 - [SendSMTPEnvelopeOptions](interfaces/SendSMTPEnvelopeOptions.md)
 - [SendSmtpEnvelopeRequest](interfaces/SendSmtpEnvelopeRequest.md)
 - [SendTestDataRequest](interfaces/SendTestDataRequest.md)

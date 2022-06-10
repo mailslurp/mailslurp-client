@@ -19,6 +19,8 @@ Missed email
 - [from](MissedEmail.md#from)
 - [id](MissedEmail.md#id)
 - [inboxIds](MissedEmail.md#inboxids)
+- [rawBucket](MissedEmail.md#rawbucket)
+- [rawKey](MissedEmail.md#rawkey)
 - [rawUrl](MissedEmail.md#rawurl)
 - [subject](MissedEmail.md#subject)
 - [to](MissedEmail.md#to)
@@ -94,6 +96,22 @@ ___
 ### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: `string`[]
+
+**`memberof`** MissedEmail
+
+___
+
+### <a id="rawbucket" name="rawbucket"></a> rawBucket
+
+• `Optional` **rawBucket**: `string`
+
+**`memberof`** MissedEmail
+
+___
+
+### <a id="rawkey" name="rawkey"></a> rawKey
+
+• `Optional` **rawKey**: `string`
 
 **`memberof`** MissedEmail
 

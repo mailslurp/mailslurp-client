@@ -59,6 +59,18 @@ export interface MissedEmail {
     rawUrl?: string;
     /**
      *
+     * @type {string}
+     * @memberof MissedEmail
+     */
+    rawKey?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MissedEmail
+     */
+    rawBucket?: string;
+    /**
+     *
      * @type {boolean}
      * @memberof MissedEmail
      */

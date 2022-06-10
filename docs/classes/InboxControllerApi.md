@@ -73,6 +73,8 @@
 - [sendEmailAndConfirm](InboxControllerApi.md#sendemailandconfirm)
 - [sendEmailAndConfirmRaw](InboxControllerApi.md#sendemailandconfirmraw)
 - [sendEmailRaw](InboxControllerApi.md#sendemailraw)
+- [sendEmailWithQueue](InboxControllerApi.md#sendemailwithqueue)
+- [sendEmailWithQueueRaw](InboxControllerApi.md#sendemailwithqueueraw)
 - [sendSmtpEnvelope](InboxControllerApi.md#sendsmtpenvelope)
 - [sendSmtpEnvelopeRaw](InboxControllerApi.md#sendsmtpenveloperaw)
 - [sendTestEmail](InboxControllerApi.md#sendtestemail)
@@ -1188,6 +1190,46 @@ Send Email
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`SendEmailRequest`](../interfaces/SendEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### <a id="sendemailwithqueue" name="sendemailwithqueue"></a> sendEmailWithQueue
+
+▸ **sendEmailWithQueue**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+Send email with queue
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailWithQueueRequest`](../interfaces/SendEmailWithQueueRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### <a id="sendemailwithqueueraw" name="sendemailwithqueueraw"></a> sendEmailWithQueueRaw
+
+▸ **sendEmailWithQueueRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+Send email with queue
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailWithQueueRequest`](../interfaces/SendEmailWithQueueRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

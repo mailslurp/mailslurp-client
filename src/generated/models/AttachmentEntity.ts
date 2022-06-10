@@ -36,6 +36,12 @@ export interface AttachmentEntity {
    * @type {string}
    * @memberof AttachmentEntity
    */
+  bucket?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AttachmentEntity
+   */
   userId: string;
   /**
    *
@@ -83,6 +89,7 @@ export function AttachmentEntityFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     attachmentId: json['attachmentId'],
+    bucket: !exists(json, 'bucket') ? undefined : json['bucket'],
     userId: json['userId'],
     contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     contentLength: !exists(json, 'contentLength')
@@ -104,6 +111,7 @@ export function AttachmentEntityToJSON(value?: AttachmentEntity | null): any {
   return {
     id: value.id,
     attachmentId: value.attachmentId,
+    bucket: value.bucket,
     userId: value.userId,
     contentType: value.contentType,
     contentLength: value.contentLength,

@@ -63,6 +63,18 @@ export interface MissedEmail {
   rawUrl?: string;
   /**
    *
+   * @type {string}
+   * @memberof MissedEmail
+   */
+  rawKey?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof MissedEmail
+   */
+  rawBucket?: string;
+  /**
+   *
    * @type {boolean}
    * @memberof MissedEmail
    */
@@ -124,6 +136,8 @@ export function MissedEmailFromJSONTyped(
     attachmentCount: json['attachmentCount'],
     from: !exists(json, 'from') ? undefined : json['from'],
     rawUrl: !exists(json, 'rawUrl') ? undefined : json['rawUrl'],
+    rawKey: !exists(json, 'rawKey') ? undefined : json['rawKey'],
+    rawBucket: !exists(json, 'rawBucket') ? undefined : json['rawBucket'],
     canRestore: !exists(json, 'canRestore') ? undefined : json['canRestore'],
     to: json['to'],
     cc: json['cc'],
@@ -149,6 +163,8 @@ export function MissedEmailToJSON(value?: MissedEmail | null): any {
     attachmentCount: value.attachmentCount,
     from: value.from,
     rawUrl: value.rawUrl,
+    rawKey: value.rawKey,
+    rawBucket: value.rawBucket,
     canRestore: value.canRestore,
     to: value.to,
     cc: value.cc,

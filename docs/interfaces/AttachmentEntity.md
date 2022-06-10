@@ -11,6 +11,7 @@ Email attachment entity
 ### Properties
 
 - [attachmentId](AttachmentEntity.md#attachmentid)
+- [bucket](AttachmentEntity.md#bucket)
 - [contentLength](AttachmentEntity.md#contentlength)
 - [contentType](AttachmentEntity.md#contenttype)
 - [createdAt](AttachmentEntity.md#createdat)
@@ -24,6 +25,14 @@ Email attachment entity
 ### <a id="attachmentid" name="attachmentid"></a> attachmentId
 
 • **attachmentId**: `string`
+
+**`memberof`** AttachmentEntity
+
+___
+
+### <a id="bucket" name="bucket"></a> bucket
+
+• `Optional` **bucket**: `string`
 
 **`memberof`** AttachmentEntity
 

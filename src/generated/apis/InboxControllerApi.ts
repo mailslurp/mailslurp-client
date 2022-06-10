@@ -235,6 +235,12 @@ export interface SendEmailAndConfirmRequest {
   sendEmailOptions: SendEmailOptions;
 }
 
+export interface SendEmailWithQueueRequest {
+  inboxId: string;
+  validateBeforeEnqueue: boolean;
+  sendEmailOptions: SendEmailOptions;
+}
+
 export interface SendSmtpEnvelopeRequest {
   inboxId: string;
   sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
@@ -1967,6 +1973,87 @@ export class InboxControllerApi extends runtime.BaseAPI {
       initOverrides
     );
     return await response.value();
+  }
+
+  /**
+   * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+   * Send email with queue
+   */
+  async sendEmailWithQueueRaw(
+    requestParameters: SendEmailWithQueueRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailWithQueue.'
+      );
+    }
+
+    if (
+      requestParameters.validateBeforeEnqueue === null ||
+      requestParameters.validateBeforeEnqueue === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'validateBeforeEnqueue',
+        'Required parameter requestParameters.validateBeforeEnqueue was null or undefined when calling sendEmailWithQueue.'
+      );
+    }
+
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailWithQueue.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.validateBeforeEnqueue !== undefined) {
+      queryParameters['validateBeforeEnqueue'] =
+        requestParameters.validateBeforeEnqueue;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/with-queue`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Send an email using a queue. Will place the email onto a queue that will then be processed and sent. Use this queue method to enable any failed email sending to be recovered. This will prevent lost emails when sending if your account encounters a block or payment issue.
+   * Send email with queue
+   */
+  async sendEmailWithQueue(
+    requestParameters: SendEmailWithQueueRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.sendEmailWithQueueRaw(requestParameters, initOverrides);
   }
 
   /**

@@ -54,6 +54,12 @@ export interface PageThreadProjection {
   total?: number;
   /**
    *
+   * @type {boolean}
+   * @memberof PageThreadProjection
+   */
+  last?: boolean;
+  /**
+   *
    * @type {number}
    * @memberof PageThreadProjection
    */
@@ -64,12 +70,6 @@ export interface PageThreadProjection {
    * @memberof PageThreadProjection
    */
   totalPages?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageThreadProjection
-   */
-  last?: boolean;
   /**
    *
    * @type {number}
@@ -90,16 +90,16 @@ export interface PageThreadProjection {
   sort?: Sort;
   /**
    *
-   * @type {number}
-   * @memberof PageThreadProjection
-   */
-  numberOfElements?: number;
-  /**
-   *
    * @type {boolean}
    * @memberof PageThreadProjection
    */
   first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageThreadProjection
+   */
+  numberOfElements?: number;
   /**
    *
    * @type {boolean}
@@ -127,18 +127,18 @@ export function PageThreadProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
+    last: !exists(json, 'last') ? undefined : json['last'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
     totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
-    last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
+    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -159,14 +159,14 @@ export function PageThreadProjectionToJSON(
         : (value.content as Array<any>).map(ThreadProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
+    last: value.last,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
-    last: value.last,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),
-    numberOfElements: value.numberOfElements,
     first: value.first,
+    numberOfElements: value.numberOfElements,
     empty: value.empty,
   };
 }

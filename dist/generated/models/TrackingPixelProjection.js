@@ -29,8 +29,8 @@ function TrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
-        seen: json['seen'],
         recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
+        seen: json['seen'],
         seenAt: !(0, runtime_1.exists)(json, 'seenAt') ? undefined : new Date(json['seenAt']),
         sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     };
@@ -49,8 +49,8 @@ function TrackingPixelProjectionToJSON(value) {
         inboxId: value.inboxId,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
-        seen: value.seen,
         recipient: value.recipient,
+        seen: value.seen,
         seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
         sentEmailId: value.sentEmailId,
     };

@@ -32,6 +32,12 @@ export interface AttachmentEntity {
      * @type {string}
      * @memberof AttachmentEntity
      */
+    bucket?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
     userId: string;
     /**
      *
