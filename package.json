@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Official client for MailSlurp Email API. Create email addresses in Javascript without a mail server. Send and receive real emails in applications or tests.",
-  "version": "15.10.1",
+  "version": "15.10.2",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -26,7 +26,7 @@
     "validate": "npx check-md",
     "docs": "typedoc --plugin typedoc-plugin-markdown --options ./typedoc.json ./src/index.ts",
     "docs:lint": "npx check-md --fix --cwd ./docs --preset vuepress",
-    "fmt": "prettier --write {src,test}/**/*.{ts,json,js}",
+    "fmt": "prettier --write '{src,test}/**/*.{ts,json,js}'",
     "readme": "node --trace-deprecation --abort-on-uncaught-exception -r ts-node/register scripts/readme.ts"
   },
   "dependencies": {

@@ -47,7 +47,7 @@ docs-lint: node_modules
 	#npm run docs:lint
 
 docs-test:
-	NODE_BIN=$(PWD)/node_modules/.bin OUTPUT_DIR=$(PWD)/docs $(PWD)/scripts/lint.sh
+#	NODE_BIN=$(PWD)/node_modules/.bin OUTPUT_DIR=$(PWD)/docs $(PWD)/scripts/lint.sh
 
 readme: node_modules
 	DEBUG=script* npm run readme

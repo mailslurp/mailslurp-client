@@ -13,11 +13,13 @@ Missed email
 - [attachmentCount](MissedEmail.md#attachmentcount)
 - [bcc](MissedEmail.md#bcc)
 - [bodyExcerpt](MissedEmail.md#bodyexcerpt)
+- [canRestore](MissedEmail.md#canrestore)
 - [cc](MissedEmail.md#cc)
 - [createdAt](MissedEmail.md#createdat)
 - [from](MissedEmail.md#from)
 - [id](MissedEmail.md#id)
 - [inboxIds](MissedEmail.md#inboxids)
+- [rawUrl](MissedEmail.md#rawurl)
 - [subject](MissedEmail.md#subject)
 - [to](MissedEmail.md#to)
 - [updatedAt](MissedEmail.md#updatedat)
@@ -44,6 +46,14 @@ ___
 ### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
+
+**`memberof`** MissedEmail
+
+___
+
+### <a id="canrestore" name="canrestore"></a> canRestore
+
+• `Optional` **canRestore**: `boolean`
 
 **`memberof`** MissedEmail
 
@@ -84,6 +94,14 @@ ___
 ### <a id="inboxids" name="inboxids"></a> inboxIds
 
 • **inboxIds**: `string`[]
+
+**`memberof`** MissedEmail
+
+___
+
+### <a id="rawurl" name="rawurl"></a> rawUrl
+
+• `Optional` **rawUrl**: `string`
 
 **`memberof`** MissedEmail
 

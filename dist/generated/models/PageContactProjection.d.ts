@@ -36,12 +36,6 @@ export interface PageContactProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageContactProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageContactProjection
      */
@@ -52,6 +46,12 @@ export interface PageContactProjection {
      * @memberof PageContactProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageContactProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageContactProjection {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageContactProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageContactProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageContactProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

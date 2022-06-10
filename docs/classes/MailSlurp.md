@@ -5,7 +5,6 @@ The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST 
 Create an instance of this class to call MailSlurp API methods. Contains top level convenience functions. Access the full API controllers as properties on the instance.
 
 ## Create instance
-
 You must provide a configuration object with [your API Key](https://app.mailslurp.com) as the `apiKey` property
 when creating a new instance.
 
@@ -17,7 +16,6 @@ const mailslurp = new MailSlurp({
 ```
 
 ## Call methods
-
 Most methods are asynchronous and return Promises. You can `await` the results or use `.then(result => {})`
 Common controllers include the [InboxController](https://docs.mailslurp.com/js/docs/classes/inboxcontrollerapi/), [EmailController](https://docs.mailslurp.com/js/docs/classes/emailcontrollerapi/) and the [WaitForController](https://docs.mailslurp.com/js/docs/classes/waitforcontrollerapi/) for receiving emails.
 
@@ -63,6 +61,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [inboxRulesetController](MailSlurp.md#inboxrulesetcontroller)
 - [mailServerController](MailSlurp.md#mailservercontroller)
 - [missedEmailController](MailSlurp.md#missedemailcontroller)
+- [sentController](MailSlurp.md#sentcontroller)
 - [templateController](MailSlurp.md#templatecontroller)
 - [trackingController](MailSlurp.md#trackingcontroller)
 - [waitController](MailSlurp.md#waitcontroller)
@@ -208,6 +207,12 @@ ___
 ### <a id="missedemailcontroller" name="missedemailcontroller"></a> missedEmailController
 
 • `Readonly` **missedEmailController**: [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
+
+___
+
+### <a id="sentcontroller" name="sentcontroller"></a> sentController
+
+• `Readonly` **sentController**: [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 
 ___
 

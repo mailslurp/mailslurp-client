@@ -53,6 +53,18 @@ export interface MissedEmail {
     from?: string;
     /**
      *
+     * @type {string}
+     * @memberof MissedEmail
+     */
+    rawUrl?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof MissedEmail
+     */
+    canRestore?: boolean;
+    /**
+     *
      * @type {Array<string>}
      * @memberof MissedEmail
      */

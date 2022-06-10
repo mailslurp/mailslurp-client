@@ -52,12 +52,6 @@ export interface ThreadProjection {
      */
     to: Array<string>;
     /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    createdAt: Date;
-    /**
      * BCC recipients
      * @type {Array<string>}
      * @memberof ThreadProjection
@@ -69,6 +63,12 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     cc?: Array<string>;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
     /**
      * Updated at DateTime
      * @type {Date}

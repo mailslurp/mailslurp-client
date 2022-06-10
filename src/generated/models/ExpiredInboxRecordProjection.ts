@@ -30,13 +30,13 @@ export interface ExpiredInboxRecordProjection {
    * @type {string}
    * @memberof ExpiredInboxRecordProjection
    */
-  userId: string;
+  emailAddress: string;
   /**
    *
    * @type {string}
    * @memberof ExpiredInboxRecordProjection
    */
-  emailAddress: string;
+  userId: string;
   /**
    *
    * @type {Date}
@@ -60,8 +60,8 @@ export function ExpiredInboxRecordProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    userId: json['userId'],
     emailAddress: json['emailAddress'],
+    userId: json['userId'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -77,8 +77,8 @@ export function ExpiredInboxRecordProjectionToJSON(
   }
   return {
     id: value.id,
-    userId: value.userId,
     emailAddress: value.emailAddress,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
   };
 }

@@ -53,12 +53,6 @@ export interface EmailProjection {
     to: Array<string>;
     /**
      *
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
@@ -71,16 +65,10 @@ export interface EmailProjection {
     cc?: Array<string>;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof EmailProjection
      */
-    bodyMD5Hash?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyExcerpt?: string;
+    createdAt: Date;
     /**
      *
      * @type {boolean}
@@ -93,6 +81,18 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     read: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyMD5Hash?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyExcerpt?: string;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

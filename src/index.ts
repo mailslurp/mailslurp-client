@@ -36,6 +36,7 @@ import {
   PageInboxProjection,
   SendEmailOptions,
   SentEmailDto,
+  SentEmailsControllerApi,
   TemplateControllerApi,
   TrackingControllerApi,
   UploadAttachmentOptions,
@@ -105,6 +106,7 @@ export class MailSlurp {
   public readonly emailController: EmailControllerApi;
   public readonly emailVerificationController: EmailVerificationControllerApi;
   public readonly inboxController: InboxControllerApi;
+  public readonly sentController: SentEmailsControllerApi;
   public readonly attachmentController: AttachmentControllerApi;
 
   public readonly commonController: CommonActionsControllerApi;
@@ -157,6 +159,7 @@ export class MailSlurp {
     this.inboxController = new InboxControllerApi(...args);
     this.attachmentController = new AttachmentControllerApi(...args);
     this.domainController = new DomainControllerApi(...args);
+    this.sentController = new SentEmailsControllerApi(...args);
 
     this.aliasController = new AliasControllerApi(...args);
     this.formController = new FormControllerApi(...args);

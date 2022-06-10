@@ -57,12 +57,6 @@ export interface EmailProjection {
   to: Array<string>;
   /**
    *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
@@ -75,16 +69,10 @@ export interface EmailProjection {
   cc?: Array<string>;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof EmailProjection
    */
-  bodyMD5Hash?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  bodyExcerpt?: string;
+  createdAt: Date;
   /**
    *
    * @type {boolean}
@@ -97,6 +85,18 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   read: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  bodyMD5Hash?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  bodyExcerpt?: string;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -117,13 +117,13 @@ export function EmailProjectionFromJSONTyped(
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     to: json['to'],
-    createdAt: new Date(json['createdAt']),
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    createdAt: new Date(json['createdAt']),
     teamAccess: json['teamAccess'],
     read: json['read'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
   };
 }
 
@@ -141,12 +141,12 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     inboxId: value.inboxId,
     attachments: value.attachments,
     to: value.to,
-    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
-    bodyMD5Hash: value.bodyMD5Hash,
-    bodyExcerpt: value.bodyExcerpt,
+    createdAt: value.createdAt.toISOString(),
     teamAccess: value.teamAccess,
     read: value.read,
+    bodyMD5Hash: value.bodyMD5Hash,
+    bodyExcerpt: value.bodyExcerpt,
   };
 }

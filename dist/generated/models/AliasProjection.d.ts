@@ -29,6 +29,12 @@ export interface AliasProjection {
     id: string;
     /**
      *
+     * @type {boolean}
+     * @memberof AliasProjection
+     */
+    useThreads?: boolean;
+    /**
+     *
      * @type {string}
      * @memberof AliasProjection
      */
@@ -38,25 +44,19 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    userId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}
      * @memberof AliasProjection
      */
-    emailAddress: string;
+    userId: string;
     /**
      *
      * @type {Date}
      * @memberof AliasProjection
      */
     createdAt: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof AliasProjection
-     */
-    useThreads?: boolean;
     /**
      *
      * @type {Date}

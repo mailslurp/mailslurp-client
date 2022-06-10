@@ -54,12 +54,6 @@ export interface PageContactProjection {
   total?: number;
   /**
    *
-   * @type {boolean}
-   * @memberof PageContactProjection
-   */
-  last?: boolean;
-  /**
-   *
    * @type {number}
    * @memberof PageContactProjection
    */
@@ -70,6 +64,12 @@ export interface PageContactProjection {
    * @memberof PageContactProjection
    */
   totalPages?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageContactProjection
+   */
+  last?: boolean;
   /**
    *
    * @type {number}
@@ -90,16 +90,16 @@ export interface PageContactProjection {
   sort?: Sort;
   /**
    *
-   * @type {boolean}
-   * @memberof PageContactProjection
-   */
-  first?: boolean;
-  /**
-   *
    * @type {number}
    * @memberof PageContactProjection
    */
   numberOfElements?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageContactProjection
+   */
+  first?: boolean;
   /**
    *
    * @type {boolean}
@@ -129,18 +129,18 @@ export function PageContactProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    last: !exists(json, 'last') ? undefined : json['last'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
     totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -161,14 +161,14 @@ export function PageContactProjectionToJSON(
         : (value.content as Array<any>).map(ContactProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    last: value.last,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
+    last: value.last,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),
-    first: value.first,
     numberOfElements: value.numberOfElements,
+    first: value.first,
     empty: value.empty,
   };
 }
