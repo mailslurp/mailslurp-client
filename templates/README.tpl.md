@@ -192,6 +192,12 @@ To send emails use the [SendEmailOptions](https://docs.mailslurp.com/js/docs/mod
 {{send_email}}
 ```
 
+#### Sending with queues
+If your plan permits you can send emails using a queue. This allows you to safely recover emails that failed to send and retry them. Use queue to ensure that emails are always delivered regardless of your account status, bounce limit, or payment failures.
+```typescript
+{{send_with_queue}}
+```
+
 ### Verify email addresses
 Validate an email address to find out if it exists and can receive email. This can help reduce your bounce rate and improve your sending reputation.
 

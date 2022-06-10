@@ -31,6 +31,27 @@ integrationTest('can create inboxes', async (mailslurp) => {
   //</gen>
 });
 
+integrationTest("send with queue", async(mailslurp) => {
+  const inbox = await mailslurp.createInbox();
+  const inboxId = inbox.id!
+  const recipient = inbox.emailAddress
+  //<gen>send_with_queue
+  await mailslurp.inboxController.sendEmailWithQueue({
+    inboxId: inboxId,
+    sendEmailOptions: {
+      to: [recipient],
+      subject: 'Sent with a queue',
+      body: 'Use queues to allow recovery of failed email ' +
+          'sending when account reaches limits or has payment issues'
+    },
+    // validate before adding to queue to fail early
+    validateBeforeEnqueue: false
+  })
+  //</gen>
+  const email = await mailslurp.waitForLatestEmail(inboxId, 60_000)
+  expect(email.subject).toContain('Sent with a queue')
+})
+
 describe('email verification', () => {
   const config = { apiKey: process.env.API_KEY };
 
