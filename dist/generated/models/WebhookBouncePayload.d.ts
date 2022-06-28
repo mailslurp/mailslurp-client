@@ -76,7 +76,8 @@ export declare enum WebhookBouncePayloadEventNameEnum {
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
     BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }
 export declare function WebhookBouncePayloadFromJSON(json: any): WebhookBouncePayload;
 export declare function WebhookBouncePayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookBouncePayload;

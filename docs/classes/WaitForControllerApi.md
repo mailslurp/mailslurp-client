@@ -31,6 +31,8 @@
 - [waitForNthEmail](WaitForControllerApi.md#waitfornthemail)
 - [waitForNthEmailRaw](WaitForControllerApi.md#waitfornthemailraw)
 - [waitForRaw](WaitForControllerApi.md#waitforraw)
+- [waitForSms](WaitForControllerApi.md#waitforsms)
+- [waitForSmsRaw](WaitForControllerApi.md#waitforsmsraw)
 - [withMiddleware](WaitForControllerApi.md#withmiddleware)
 - [withPostMiddleware](WaitForControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](WaitForControllerApi.md#withpremiddleware)
@@ -321,6 +323,46 @@ Wait for an email to match the provided filter conditions such as subject contai
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
+
+___
+
+### <a id="waitforsms" name="waitforsms"></a> waitForSms
+
+▸ **waitForSms**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>
+
+Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForSmsRequest`](../interfaces/WaitForSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>
+
+___
+
+### <a id="waitforsmsraw" name="waitforsmsraw"></a> waitForSmsRaw
+
+▸ **waitForSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>\>
+
+Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForSmsRequest`](../interfaces/WaitForSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>\>
 
 ___
 

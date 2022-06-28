@@ -534,6 +534,60 @@ var WaitForControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+     * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    WaitForControllerApi.prototype.waitForSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForSmsConditions === null ||
+                            requestParameters.waitForSmsConditions === undefined) {
+                            throw new runtime.RequiredError('waitForSmsConditions', 'Required parameter requestParameters.waitForSmsConditions was null or undefined when calling waitForSms.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/waitForSms",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForSmsConditionsToJSON)(requestParameters.waitForSmsConditions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.SmsPreviewFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+     * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    WaitForControllerApi.prototype.waitForSms = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return WaitForControllerApi;
 }(runtime.BaseAPI));
 exports.WaitForControllerApi = WaitForControllerApi;

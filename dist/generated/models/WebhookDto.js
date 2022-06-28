@@ -44,6 +44,7 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     WebhookDtoEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
 function WebhookDtoFromJSON(json) {
     return WebhookDtoFromJSONTyped(json, false);

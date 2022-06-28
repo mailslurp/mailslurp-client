@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -53,6 +53,10 @@ export interface GetEmailContentMatchRequest {
     contentMatchOptions: ContentMatchOptions;
 }
 export interface GetEmailHTMLRequest {
+    emailId: string;
+    decode?: boolean;
+}
+export interface GetEmailHTMLJsonRequest {
     emailId: string;
     decode?: boolean;
 }
@@ -257,15 +261,25 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailCount(initOverrides?: RequestInit): Promise<CountDto>;
     /**
-     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
      * Get email content as HTML. For displaying emails in browser context.
      */
     getEmailHTMLRaw(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
     /**
-     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+     * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
      * Get email content as HTML. For displaying emails in browser context.
      */
     getEmailHTML(requestParameters: GetEmailHTMLRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+     * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+     */
+    getEmailHTMLJsonRaw(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailHtmlDto>>;
+    /**
+     * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+     * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+     */
+    getEmailHTMLJson(requestParameters: GetEmailHTMLJsonRequest, initOverrides?: RequestInit): Promise<EmailHtmlDto>;
     /**
      * Parse an email body and return the content as an array of text. HTML parsing uses JSoup which supports JQuery/CSS style selectors
      * Parse and return text from an email, stripping HTML and decoding encoded characters

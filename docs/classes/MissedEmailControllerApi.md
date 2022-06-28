@@ -25,6 +25,8 @@
 - [getMissedEmail](MissedEmailControllerApi.md#getmissedemail)
 - [getMissedEmailRaw](MissedEmailControllerApi.md#getmissedemailraw)
 - [request](MissedEmailControllerApi.md#request)
+- [restoreMissedEmails](MissedEmailControllerApi.md#restoremissedemails)
+- [restoreMissedEmailsRaw](MissedEmailControllerApi.md#restoremissedemailsraw)
 - [waitForNthMissedEmail](MissedEmailControllerApi.md#waitfornthmissedemail)
 - [waitForNthMissedEmailRaw](MissedEmailControllerApi.md#waitfornthmissedemailraw)
 - [withMiddleware](MissedEmailControllerApi.md#withmiddleware)
@@ -141,6 +143,7 @@ ___
 
 ▸ **getMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
 
+List emails that were missed due to plan limits.
 Get MissedEmail
 
 #### Parameters
@@ -160,6 +163,7 @@ ___
 
 ▸ **getMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
 
+List emails that were missed due to plan limits.
 Get MissedEmail
 
 #### Parameters
@@ -193,6 +197,44 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### <a id="restoremissedemails" name="restoremissedemails"></a> restoreMissedEmails
+
+▸ **restoreMissedEmails**(`initOverrides?`): `Promise`<`void`\>
+
+If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+Restore missed emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### <a id="restoremissedemailsraw" name="restoremissedemailsraw"></a> restoreMissedEmailsRaw
+
+▸ **restoreMissedEmailsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+Restore missed emails
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

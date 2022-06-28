@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { Email, EmailPreview, MatchOptions, WaitForConditions } from '../models';
+import { Email, EmailPreview, MatchOptions, SmsPreview, WaitForConditions, WaitForSmsConditions } from '../models';
 export interface WaitForRequest {
     waitForConditions: WaitForConditions;
 }
@@ -63,6 +63,9 @@ export interface WaitForNthEmailRequest {
     before?: Date;
     sort?: WaitForNthEmailSortEnum;
     delay?: number;
+}
+export interface WaitForSmsRequest {
+    waitForSmsConditions: WaitForSmsConditions;
 }
 /**
  *
@@ -128,6 +131,16 @@ export declare class WaitForControllerApi extends runtime.BaseAPI {
      * Wait for or fetch the email with a given index in the inbox specified. If index doesn\'t exist waits for it to exist or timeout to occur.
      */
     waitForNthEmail(requestParameters: WaitForNthEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+     * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    waitForSmsRaw(requestParameters: WaitForSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<SmsPreview>>>;
+    /**
+     * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+     * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    waitForSms(requestParameters: WaitForSmsRequest, initOverrides?: RequestInit): Promise<Array<SmsPreview>>;
 }
 /**
  * @export

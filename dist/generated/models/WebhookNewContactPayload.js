@@ -29,6 +29,7 @@ var WebhookNewContactPayloadEventNameEnum;
     WebhookNewContactPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     WebhookNewContactPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookNewContactPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    WebhookNewContactPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(WebhookNewContactPayloadEventNameEnum = exports.WebhookNewContactPayloadEventNameEnum || (exports.WebhookNewContactPayloadEventNameEnum = {}));
 function WebhookNewContactPayloadFromJSON(json) {
     return WebhookNewContactPayloadFromJSONTyped(json, false);

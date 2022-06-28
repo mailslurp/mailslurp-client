@@ -29,6 +29,7 @@ var WebhookProjectionEventNameEnum;
     WebhookProjectionEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     WebhookProjectionEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookProjectionEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    WebhookProjectionEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(WebhookProjectionEventNameEnum = exports.WebhookProjectionEventNameEnum || (exports.WebhookProjectionEventNameEnum = {}));
 function WebhookProjectionFromJSON(json) {
     return WebhookProjectionFromJSONTyped(json, false);

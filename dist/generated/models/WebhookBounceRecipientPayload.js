@@ -29,6 +29,7 @@ var WebhookBounceRecipientPayloadEventNameEnum;
     WebhookBounceRecipientPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     WebhookBounceRecipientPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookBounceRecipientPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    WebhookBounceRecipientPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(WebhookBounceRecipientPayloadEventNameEnum = exports.WebhookBounceRecipientPayloadEventNameEnum || (exports.WebhookBounceRecipientPayloadEventNameEnum = {}));
 function WebhookBounceRecipientPayloadFromJSON(json) {
     return WebhookBounceRecipientPayloadFromJSONTyped(json, false);

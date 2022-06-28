@@ -30,6 +30,7 @@ var CreateWebhookOptionsEventNameEnum;
     CreateWebhookOptionsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     CreateWebhookOptionsEventNameEnum["BOUNCE"] = "BOUNCE";
     CreateWebhookOptionsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    CreateWebhookOptionsEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(CreateWebhookOptionsEventNameEnum = exports.CreateWebhookOptionsEventNameEnum || (exports.CreateWebhookOptionsEventNameEnum = {}));
 function CreateWebhookOptionsFromJSON(json) {
     return CreateWebhookOptionsFromJSONTyped(json, false);

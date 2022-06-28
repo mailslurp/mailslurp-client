@@ -1538,6 +1538,7 @@ var GetJsonSchemaForWebhookEventEventEnum;
     GetJsonSchemaForWebhookEventEventEnum["EMAIL_READ"] = "EMAIL_READ";
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE"] = "BOUNCE";
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetJsonSchemaForWebhookEventEventEnum["NEW_SMS"] = "NEW_SMS";
 })(GetJsonSchemaForWebhookEventEventEnum = exports.GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = {}));
 /**
  * @export
@@ -1553,6 +1554,7 @@ var GetTestWebhookPayloadEventNameEnum;
     GetTestWebhookPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
     GetTestWebhookPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     GetTestWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetTestWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
 })(GetTestWebhookPayloadEventNameEnum = exports.GetTestWebhookPayloadEventNameEnum || (exports.GetTestWebhookPayloadEventNameEnum = {}));
 /**
  * @export

@@ -231,6 +231,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
     MissedEmailControllerApi.prototype.getMissedEmailRaw = function (requestParameters, initOverrides) {
@@ -264,6 +265,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
     MissedEmailControllerApi.prototype.getMissedEmail = function (requestParameters, initOverrides) {
@@ -276,6 +278,50 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
                     case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+     * Restore missed emails
+     */
+    MissedEmailControllerApi.prototype.restoreMissedEmailsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/missed-emails/restore",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+     * Restore missed emails
+     */
+    MissedEmailControllerApi.prototype.restoreMissedEmails = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.restoreMissedEmailsRaw(initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });

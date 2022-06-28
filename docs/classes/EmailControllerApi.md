@@ -44,6 +44,8 @@
 - [getEmailCount](EmailControllerApi.md#getemailcount)
 - [getEmailCountRaw](EmailControllerApi.md#getemailcountraw)
 - [getEmailHTML](EmailControllerApi.md#getemailhtml)
+- [getEmailHTMLJson](EmailControllerApi.md#getemailhtmljson)
+- [getEmailHTMLJsonRaw](EmailControllerApi.md#getemailhtmljsonraw)
 - [getEmailHTMLQuery](EmailControllerApi.md#getemailhtmlquery)
 - [getEmailHTMLQueryRaw](EmailControllerApi.md#getemailhtmlqueryraw)
 - [getEmailHTMLRaw](EmailControllerApi.md#getemailhtmlraw)
@@ -609,7 +611,7 @@ ___
 
 ▸ **getEmailHTML**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
-Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
 Get email content as HTML. For displaying emails in browser context.
 
 #### Parameters
@@ -622,6 +624,46 @@ Get email content as HTML. For displaying emails in browser context.
 #### Returns
 
 `Promise`<`string`\>
+
+___
+
+### <a id="getemailhtmljson" name="getemailhtmljson"></a> getEmailHTMLJson
+
+▸ **getEmailHTMLJson**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>
+
+Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailHTMLJsonRequest`](../interfaces/GetEmailHTMLJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>
+
+___
+
+### <a id="getemailhtmljsonraw" name="getemailhtmljsonraw"></a> getEmailHTMLJsonRaw
+
+▸ **getEmailHTMLJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>\>
+
+Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailHTMLJsonRequest`](../interfaces/GetEmailHTMLJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailHtmlDto`](../interfaces/EmailHtmlDto.md)\>\>
 
 ___
 
@@ -669,7 +711,7 @@ ___
 
 ▸ **getEmailHTMLRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
 Get email content as HTML. For displaying emails in browser context.
 
 #### Parameters
