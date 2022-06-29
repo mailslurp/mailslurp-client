@@ -278,20 +278,6 @@ To consume webhooks first create a webhook for an inbox and a given [webhook eve
 {{webhook_server_test}}
 ```
 
-## Verify email address
-You can verify the existence of an email address using the MailServer controller. MailSlurp derives a host for an email address by digging the MX records for the domain. It then connects via telnet to the server and sends the `rcpt to:<emailaddress>` command to check that the email exists on the server. 
-
-```typescript
-describe('can manage smtp inboxes', () => {
-    it('can verify an external email address with a provider like gmail', async () => {
-        const result = await mailslurp.mailServerController.verifyEmailAddress({
-            emailAddress: "contact@mailslurp.dev"
-        })
-        expect(result.isValid).toEqual(true)
-    });
-});
-```
-
 ## More Documentation
 
 - [Method documentation](https://docs.mailslurp.com/js/docs/)
