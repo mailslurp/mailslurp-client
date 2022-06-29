@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { EmailPreviewUrls, PageSentEmailProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
+import { EmailPreviewUrls, PageSentEmailProjection, PageSentEmailWithQueueProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
 export interface DeleteSentEmailRequest {
     id: string;
 }
@@ -52,6 +52,13 @@ export interface GetSentEmailsRequest {
     size?: number;
     sort?: GetSentEmailsSortEnum;
     searchFilter?: string;
+    since?: Date;
+    before?: Date;
+}
+export interface GetSentEmailsWithQueueResultsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetSentEmailsWithQueueResultsSortEnum;
     since?: Date;
     before?: Date;
 }
@@ -155,6 +162,14 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      */
     getSentEmails(requestParameters: GetSentEmailsRequest, initOverrides?: RequestInit): Promise<PageSentEmailProjection>;
     /**
+     * Get results of email sent with queues in paginated form
+     */
+    getSentEmailsWithQueueResultsRaw(requestParameters: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentEmailWithQueueProjection>>;
+    /**
+     * Get results of email sent with queues in paginated form
+     */
+    getSentEmailsWithQueueResults(requestParameters: GetSentEmailsWithQueueResultsRequest, initOverrides?: RequestInit): Promise<PageSentEmailWithQueueProjection>;
+    /**
      * Get all sent organization emails in paginated form
      */
     getSentOrganizationEmailsRaw(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageSentEmailProjection>>;
@@ -184,6 +199,14 @@ export declare enum GetSentEmailTrackingPixelsSortEnum {
  * @enum {string}
  */
 export declare enum GetSentEmailsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSentEmailsWithQueueResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

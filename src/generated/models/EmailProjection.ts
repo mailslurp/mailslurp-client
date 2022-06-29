@@ -57,6 +57,12 @@ export interface EmailProjection {
   to: Array<string>;
   /**
    *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
@@ -67,12 +73,6 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   cc?: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {boolean}
@@ -117,9 +117,9 @@ export function EmailProjectionFromJSONTyped(
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     to: json['to'],
+    createdAt: new Date(json['createdAt']),
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
-    createdAt: new Date(json['createdAt']),
     teamAccess: json['teamAccess'],
     read: json['read'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
@@ -141,9 +141,9 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     inboxId: value.inboxId,
     attachments: value.attachments,
     to: value.to,
+    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
-    createdAt: value.createdAt.toISOString(),
     teamAccess: value.teamAccess,
     read: value.read,
     bodyMD5Hash: value.bodyMD5Hash,

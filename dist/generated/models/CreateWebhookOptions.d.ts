@@ -53,7 +53,8 @@ export declare enum CreateWebhookOptionsEventNameEnum {
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
     BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }
 export declare function CreateWebhookOptionsFromJSON(json: any): CreateWebhookOptions;
 export declare function CreateWebhookOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateWebhookOptions;

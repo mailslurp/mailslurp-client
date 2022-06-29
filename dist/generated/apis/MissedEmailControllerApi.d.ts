@@ -62,13 +62,25 @@ export declare class MissedEmailControllerApi extends runtime.BaseAPI {
      */
     getAllUnknownMissedEmails(requestParameters: GetAllUnknownMissedEmailsRequest, initOverrides?: RequestInit): Promise<PageUnknownMissedEmailProjection>;
     /**
+     * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
     getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmail>>;
     /**
+     * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
     getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmail>;
+    /**
+     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+     * Restore missed emails
+     */
+    restoreMissedEmailsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+     * Restore missed emails
+     */
+    restoreMissedEmails(initOverrides?: RequestInit): Promise<void>;
     /**
      * Wait for 0 based index missed email
      * Wait for Nth missed email

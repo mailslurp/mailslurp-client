@@ -14,6 +14,7 @@
 - [NEW\_ATTACHMENT](GetJsonSchemaForWebhookEventEventEnum.md#new_attachment)
 - [NEW\_CONTACT](GetJsonSchemaForWebhookEventEventEnum.md#new_contact)
 - [NEW\_EMAIL](GetJsonSchemaForWebhookEventEventEnum.md#new_email)
+- [NEW\_SMS](GetJsonSchemaForWebhookEventEventEnum.md#new_sms)
 
 ## Enumeration Members
 
@@ -62,3 +63,9 @@ ___
 ### <a id="new_email" name="new_email"></a> NEW\_EMAIL
 
 • **NEW\_EMAIL**
+
+___
+
+### <a id="new_sms" name="new_sms"></a> NEW\_SMS
+
+• **NEW\_SMS**

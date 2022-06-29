@@ -38,6 +38,8 @@
 - [getSentEmailTrackingPixelsRaw](SentEmailsControllerApi.md#getsentemailtrackingpixelsraw)
 - [getSentEmails](SentEmailsControllerApi.md#getsentemails)
 - [getSentEmailsRaw](SentEmailsControllerApi.md#getsentemailsraw)
+- [getSentEmailsWithQueueResults](SentEmailsControllerApi.md#getsentemailswithqueueresults)
+- [getSentEmailsWithQueueResultsRaw](SentEmailsControllerApi.md#getsentemailswithqueueresultsraw)
 - [getSentOrganizationEmails](SentEmailsControllerApi.md#getsentorganizationemails)
 - [getSentOrganizationEmailsRaw](SentEmailsControllerApi.md#getsentorganizationemailsraw)
 - [request](SentEmailsControllerApi.md#request)
@@ -454,6 +456,44 @@ Get all sent emails in paginated form
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailProjection`](../interfaces/PageSentEmailProjection.md)\>\>
+
+___
+
+### <a id="getsentemailswithqueueresults" name="getsentemailswithqueueresults"></a> getSentEmailsWithQueueResults
+
+▸ **getSentEmailsWithQueueResults**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSentEmailWithQueueProjection`](../interfaces/PageSentEmailWithQueueProjection.md)\>
+
+Get results of email sent with queues in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailsWithQueueResultsRequest`](../interfaces/GetSentEmailsWithQueueResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageSentEmailWithQueueProjection`](../interfaces/PageSentEmailWithQueueProjection.md)\>
+
+___
+
+### <a id="getsentemailswithqueueresultsraw" name="getsentemailswithqueueresultsraw"></a> getSentEmailsWithQueueResultsRaw
+
+▸ **getSentEmailsWithQueueResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailWithQueueProjection`](../interfaces/PageSentEmailWithQueueProjection.md)\>\>
+
+Get results of email sent with queues in paginated form
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentEmailsWithQueueResultsRequest`](../interfaces/GetSentEmailsWithQueueResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSentEmailWithQueueProjection`](../interfaces/PageSentEmailWithQueueProjection.md)\>\>
 
 ___
 

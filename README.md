@@ -275,6 +275,23 @@ const sent = await mailslurp.sendEmail(inbox.id, options);
 expect(sent.subject).toContain('Hello');
 ```
 
+#### Sending with queues
+If your plan permits you can send emails using a queue. This allows you to safely recover emails that failed to send and retry them. Use queue to ensure that emails are always delivered regardless of your account status, bounce limit, or payment failures.
+```typescript
+await mailslurp.inboxController.sendEmailWithQueue({
+  inboxId: inboxId,
+  sendEmailOptions: {
+    to: [recipient],
+    subject: 'Sent with a queue',
+    body:
+      'Use queues to allow recovery of failed email ' +
+      'sending when account reaches limits or has payment issues',
+  },
+  // validate before adding to queue to fail early
+  validateBeforeEnqueue: false,
+});
+```
+
 ### Verify email addresses
 Validate an email address to find out if it exists and can receive email. This can help reduce your bounce rate and improve your sending reputation.
 

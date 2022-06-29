@@ -358,7 +358,8 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
     BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }
 /**
  * @export
@@ -372,7 +373,8 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
     BOUNCE = "BOUNCE",
-    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT"
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }
 /**
  * @export

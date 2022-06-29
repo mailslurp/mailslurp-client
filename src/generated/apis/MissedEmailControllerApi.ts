@@ -212,6 +212,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List emails that were missed due to plan limits.
    * Get MissedEmail
    */
   async getMissedEmailRaw(
@@ -255,6 +256,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List emails that were missed due to plan limits.
    * Get MissedEmail
    */
   async getMissedEmail(
@@ -266,6 +268,42 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
       initOverrides
     );
     return await response.value();
+  }
+
+  /**
+   * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+   * Restore missed emails
+   */
+  async restoreMissedEmailsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/missed-emails/restore`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
+   * Restore missed emails
+   */
+  async restoreMissedEmails(initOverrides?: RequestInit): Promise<void> {
+    await this.restoreMissedEmailsRaw(initOverrides);
   }
 
   /**

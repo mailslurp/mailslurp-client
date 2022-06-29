@@ -23,9 +23,15 @@ import {
   MatchOptions,
   MatchOptionsFromJSON,
   MatchOptionsToJSON,
+  SmsPreview,
+  SmsPreviewFromJSON,
+  SmsPreviewToJSON,
   WaitForConditions,
   WaitForConditionsFromJSON,
   WaitForConditionsToJSON,
+  WaitForSmsConditions,
+  WaitForSmsConditionsFromJSON,
+  WaitForSmsConditionsToJSON,
 } from '../models';
 
 export interface WaitForRequest {
@@ -85,6 +91,10 @@ export interface WaitForNthEmailRequest {
   before?: Date;
   sort?: WaitForNthEmailSortEnum;
   delay?: number;
+}
+
+export interface WaitForSmsRequest {
+  waitForSmsConditions: WaitForSmsConditions;
 }
 
 /**
@@ -612,6 +622,64 @@ export class WaitForControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+   * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+   */
+  async waitForSmsRaw(
+    requestParameters: WaitForSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<SmsPreview>>> {
+    if (
+      requestParameters.waitForSmsConditions === null ||
+      requestParameters.waitForSmsConditions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForSmsConditions',
+        'Required parameter requestParameters.waitForSmsConditions was null or undefined when calling waitForSms.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/waitForSms`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForSmsConditionsToJSON(
+          requestParameters.waitForSmsConditions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(SmsPreviewFromJSON)
+    );
+  }
+
+  /**
+   * Generic waitFor method that will wait until a phone number meets given conditions or return immediately if already met
+   * Wait for an SMS message to match the provided filter conditions such as body contains keyword.
+   */
+  async waitForSms(
+    requestParameters: WaitForSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<SmsPreview>> {
+    const response = await this.waitForSmsRaw(requestParameters, initOverrides);
     return await response.value();
   }
 }

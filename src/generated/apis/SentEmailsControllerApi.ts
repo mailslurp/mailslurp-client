@@ -20,6 +20,9 @@ import {
   PageSentEmailProjection,
   PageSentEmailProjectionFromJSON,
   PageSentEmailProjectionToJSON,
+  PageSentEmailWithQueueProjection,
+  PageSentEmailWithQueueProjectionFromJSON,
+  PageSentEmailWithQueueProjectionToJSON,
   PageTrackingPixelProjection,
   PageTrackingPixelProjectionFromJSON,
   PageTrackingPixelProjectionToJSON,
@@ -80,6 +83,14 @@ export interface GetSentEmailsRequest {
   size?: number;
   sort?: GetSentEmailsSortEnum;
   searchFilter?: string;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetSentEmailsWithQueueResultsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetSentEmailsWithQueueResultsSortEnum;
   since?: Date;
   before?: Date;
 }
@@ -683,6 +694,72 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get results of email sent with queues in paginated form
+   */
+  async getSentEmailsWithQueueResultsRaw(
+    requestParameters: GetSentEmailsWithQueueResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageSentEmailWithQueueProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/queue-results`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageSentEmailWithQueueProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get results of email sent with queues in paginated form
+   */
+  async getSentEmailsWithQueueResults(
+    requestParameters: GetSentEmailsWithQueueResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageSentEmailWithQueueProjection> {
+    const response = await this.getSentEmailsWithQueueResultsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get all sent organization emails in paginated form
    */
   async getSentOrganizationEmailsRaw(
@@ -778,6 +855,14 @@ export enum GetSentEmailTrackingPixelsSortEnum {
  * @enum {string}
  */
 export enum GetSentEmailsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetSentEmailsWithQueueResultsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

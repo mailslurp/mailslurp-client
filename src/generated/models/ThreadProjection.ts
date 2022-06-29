@@ -38,35 +38,23 @@ export interface ThreadProjection {
    */
   subject?: string;
   /**
-   * Inbox ID
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  inboxId: string;
-  /**
    * User ID
    * @type {string}
    * @memberof ThreadProjection
    */
   userId: string;
   /**
+   * Inbox ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  inboxId: string;
+  /**
    * To recipients
    * @type {Array<string>}
    * @memberof ThreadProjection
    */
   to: Array<string>;
-  /**
-   * BCC recipients
-   * @type {Array<string>}
-   * @memberof ThreadProjection
-   */
-  bcc?: Array<string>;
-  /**
-   * CC recipients
-   * @type {Array<string>}
-   * @memberof ThreadProjection
-   */
-  cc?: Array<string>;
   /**
    * Created at DateTime
    * @type {Date}
@@ -79,6 +67,18 @@ export interface ThreadProjection {
    * @memberof ThreadProjection
    */
   updatedAt: Date;
+  /**
+   * BCC recipients
+   * @type {Array<string>}
+   * @memberof ThreadProjection
+   */
+  bcc?: Array<string>;
+  /**
+   * CC recipients
+   * @type {Array<string>}
+   * @memberof ThreadProjection
+   */
+  cc?: Array<string>;
   /**
    * Alias ID
    * @type {string}
@@ -102,13 +102,13 @@ export function ThreadProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
     userId: json['userId'],
+    inboxId: json['inboxId'],
     to: json['to'],
-    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
-    cc: !exists(json, 'cc') ? undefined : json['cc'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
+    cc: !exists(json, 'cc') ? undefined : json['cc'],
     aliasId: json['aliasId'],
   };
 }
@@ -124,13 +124,13 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     name: value.name,
     id: value.id,
     subject: value.subject,
-    inboxId: value.inboxId,
     userId: value.userId,
+    inboxId: value.inboxId,
     to: value.to,
-    bcc: value.bcc,
-    cc: value.cc,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    bcc: value.bcc,
+    cc: value.cc,
     aliasId: value.aliasId,
   };
 }

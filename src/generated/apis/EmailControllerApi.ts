@@ -32,6 +32,9 @@ import {
   EmailContentMatchResult,
   EmailContentMatchResultFromJSON,
   EmailContentMatchResultToJSON,
+  EmailHtmlDto,
+  EmailHtmlDtoFromJSON,
+  EmailHtmlDtoToJSON,
   EmailLinksResult,
   EmailLinksResultFromJSON,
   EmailLinksResultToJSON,
@@ -129,6 +132,11 @@ export interface GetEmailContentMatchRequest {
 }
 
 export interface GetEmailHTMLRequest {
+  emailId: string;
+  decode?: boolean;
+}
+
+export interface GetEmailHTMLJsonRequest {
   emailId: string;
   decode?: boolean;
 }
@@ -1022,7 +1030,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+   * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
    * Get email content as HTML. For displaying emails in browser context.
    */
   async getEmailHTMLRaw(
@@ -1068,7 +1076,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`
+   * Retrieve email content as HTML response for viewing in browsers. Decodes quoted-printable entities and converts charset to UTF-8. Pass your API KEY as a request parameter when viewing in a browser: `?apiKey=xxx`. Returns content-type `text/html;charset=utf-8` so you must call expecting that content response not JSON. For JSON response see the `getEmailHTMLJson` method.
    * Get email content as HTML. For displaying emails in browser context.
    */
   async getEmailHTML(
@@ -1076,6 +1084,69 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<string> {
     const response = await this.getEmailHTMLRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+   * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+   */
+  async getEmailHTMLJsonRaw(
+    requestParameters: GetEmailHTMLJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailHtmlDto>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailHTMLJson.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.decode !== undefined) {
+      queryParameters['decode'] = requestParameters.decode;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/html/json`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailHtmlDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Retrieve email content as HTML response. Decodes quoted-printable entities and converts charset to UTF-8. Returns content-type `application/json;charset=utf-8` so you must call expecting that content response not JSON.
+   * Get email content as HTML in JSON wrapper. For fetching entity decoded HTML content
+   */
+  async getEmailHTMLJson(
+    requestParameters: GetEmailHTMLJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailHtmlDto> {
+    const response = await this.getEmailHTMLJsonRaw(
       requestParameters,
       initOverrides
     );

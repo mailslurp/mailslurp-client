@@ -44,6 +44,7 @@ var WebhookResultDtoWebhookEventEnum;
     WebhookResultDtoWebhookEventEnum["EMAIL_READ"] = "EMAIL_READ";
     WebhookResultDtoWebhookEventEnum["BOUNCE"] = "BOUNCE";
     WebhookResultDtoWebhookEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    WebhookResultDtoWebhookEventEnum["NEW_SMS"] = "NEW_SMS";
 })(WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoWebhookEventEnum || (exports.WebhookResultDtoWebhookEventEnum = {}));
 /**
  * @export

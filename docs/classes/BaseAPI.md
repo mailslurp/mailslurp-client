@@ -42,7 +42,11 @@ This is the base class for all generated API classes.
 
   ↳ [`MissedEmailControllerApi`](MissedEmailControllerApi.md)
 
+  ↳ [`PhoneControllerApi`](PhoneControllerApi.md)
+
   ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
+
+  ↳ [`SmsControllerApi`](SmsControllerApi.md)
 
   ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 

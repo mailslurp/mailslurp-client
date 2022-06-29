@@ -76,6 +76,7 @@ export enum WebhookProjectionEventNameEnum {
   EMAIL_READ = 'EMAIL_READ',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
 }
 
 export function WebhookProjectionFromJSON(json: any): WebhookProjection {
