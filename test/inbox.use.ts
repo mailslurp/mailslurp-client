@@ -3,6 +3,9 @@ import MailSlurp from '../dist';
 
 jest.setTimeout(120_000);
 integrationTest('can create inboxes', async (mailslurp) => {
+  // check account
+  const userInfo = await mailslurp.userController.getUserInfo();
+  expect(userInfo.id.length).toBeGreaterThan(0);
   //<gen>create_inbox
   const inbox = await mailslurp.createInbox();
   // { id: '123', emailAddress: '123@mailslurp.com' }

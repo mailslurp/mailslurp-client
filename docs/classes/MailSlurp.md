@@ -64,6 +64,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [sentController](MailSlurp.md#sentcontroller)
 - [templateController](MailSlurp.md#templatecontroller)
 - [trackingController](MailSlurp.md#trackingcontroller)
+- [userController](MailSlurp.md#usercontroller)
 - [waitController](MailSlurp.md#waitcontroller)
 - [webhookController](MailSlurp.md#webhookcontroller)
 
@@ -225,6 +226,12 @@ ___
 ### <a id="trackingcontroller" name="trackingcontroller"></a> trackingController
 
 • `Readonly` **trackingController**: [`TrackingControllerApi`](TrackingControllerApi.md)
+
+___
+
+### <a id="usercontroller" name="usercontroller"></a> userController
+
+• `Readonly` **userController**: [`ApiUserControllerApi`](ApiUserControllerApi.md)
 
 ___
 
