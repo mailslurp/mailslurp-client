@@ -35,16 +35,16 @@ export interface EmailProjection {
     subject?: string;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    inboxId: string;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
     attachments?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    inboxId: string;
     /**
      *
      * @type {Array<string>}

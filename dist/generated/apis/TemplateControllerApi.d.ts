@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTemplateOptions, PageTemplateProjection, TemplateDto, TemplateProjection } from '../models';
+import { CreateTemplateOptions, PageTemplateProjection, TemplateDto, TemplatePreview, TemplateProjection } from '../models';
 export interface CreateTemplateRequest {
     createTemplateOptions: CreateTemplateOptions;
 }
@@ -25,6 +25,12 @@ export interface GetAllTemplatesRequest {
     before?: Date;
 }
 export interface GetTemplateRequest {
+    templateId: string;
+}
+export interface GetTemplatePreviewHtmlRequest {
+    templateId: string;
+}
+export interface GetTemplatePreviewJsonRequest {
     templateId: string;
 }
 export interface UpdateTemplateRequest {
@@ -75,6 +81,26 @@ export declare class TemplateControllerApi extends runtime.BaseAPI {
      * Get template
      */
     getTemplate(requestParameters: GetTemplateRequest, initOverrides?: RequestInit): Promise<TemplateDto>;
+    /**
+     * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+     * Get template preview HTML
+     */
+    getTemplatePreviewHtmlRaw(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+     * Get template preview HTML
+     */
+    getTemplatePreviewHtml(requestParameters: GetTemplatePreviewHtmlRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+     * Get template preview Json
+     */
+    getTemplatePreviewJsonRaw(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TemplatePreview>>;
+    /**
+     * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+     * Get template preview Json
+     */
+    getTemplatePreviewJson(requestParameters: GetTemplatePreviewJsonRequest, initOverrides?: RequestInit): Promise<TemplatePreview>;
     /**
      * Get all templates
      * List templates

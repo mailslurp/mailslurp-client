@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 /* eslint-disable */
 __exportStar(require("./AliasControllerApi"), exports);
+__exportStar(require("./ApiUserControllerApi"), exports);
 __exportStar(require("./AttachmentControllerApi"), exports);
 __exportStar(require("./BounceControllerApi"), exports);
 __exportStar(require("./BulkActionsControllerApi"), exports);

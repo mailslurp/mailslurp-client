@@ -44,6 +44,12 @@ export interface InboxDto {
    */
   name?: string;
   /**
+   * ID of custom domain used by the inbox if any
+   * @type {string}
+   * @memberof InboxDto
+   */
+  domainId?: string;
+  /**
    * Description of an inbox for labelling and searching purposes
    * @type {string}
    * @memberof InboxDto
@@ -118,6 +124,7 @@ export function InboxDtoFromJSONTyped(
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     description: !exists(json, 'description') ? undefined : json['description'],
     emailAddress: json['emailAddress'],
     expiresAt: !exists(json, 'expiresAt') ? undefined : json['expiresAt'],
@@ -141,6 +148,7 @@ export function InboxDtoToJSON(value?: InboxDto | null): any {
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     name: value.name,
+    domainId: value.domainId,
     description: value.description,
     emailAddress: value.emailAddress,
     expiresAt: value.expiresAt,

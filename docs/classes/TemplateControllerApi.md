@@ -25,6 +25,10 @@
 - [getAllTemplates](TemplateControllerApi.md#getalltemplates)
 - [getAllTemplatesRaw](TemplateControllerApi.md#getalltemplatesraw)
 - [getTemplate](TemplateControllerApi.md#gettemplate)
+- [getTemplatePreviewHtml](TemplateControllerApi.md#gettemplatepreviewhtml)
+- [getTemplatePreviewHtmlRaw](TemplateControllerApi.md#gettemplatepreviewhtmlraw)
+- [getTemplatePreviewJson](TemplateControllerApi.md#gettemplatepreviewjson)
+- [getTemplatePreviewJsonRaw](TemplateControllerApi.md#gettemplatepreviewjsonraw)
 - [getTemplateRaw](TemplateControllerApi.md#gettemplateraw)
 - [getTemplates](TemplateControllerApi.md#gettemplates)
 - [getTemplatesRaw](TemplateControllerApi.md#gettemplatesraw)
@@ -200,6 +204,86 @@ Get template
 #### Returns
 
 `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
+
+___
+
+### <a id="gettemplatepreviewhtml" name="gettemplatepreviewhtml"></a> getTemplatePreviewHtml
+
+▸ **getTemplatePreviewHtml**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+Get template preview HTML
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplatePreviewHtmlRequest`](../interfaces/GetTemplatePreviewHtmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### <a id="gettemplatepreviewhtmlraw" name="gettemplatepreviewhtmlraw"></a> getTemplatePreviewHtmlRaw
+
+▸ **getTemplatePreviewHtmlRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+Get template preview HTML
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplatePreviewHtmlRequest`](../interfaces/GetTemplatePreviewHtmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### <a id="gettemplatepreviewjson" name="gettemplatepreviewjson"></a> getTemplatePreviewJson
+
+▸ **getTemplatePreviewJson**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>
+
+Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+Get template preview Json
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplatePreviewJsonRequest`](../interfaces/GetTemplatePreviewJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>
+
+___
+
+### <a id="gettemplatepreviewjsonraw" name="gettemplatepreviewjsonraw"></a> getTemplatePreviewJsonRaw
+
+▸ **getTemplatePreviewJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>\>
+
+Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+Get template preview Json
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetTemplatePreviewJsonRequest`](../interfaces/GetTemplatePreviewJsonRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>\>
 
 ___
 

@@ -45,6 +45,8 @@
 - [getInbox](InboxControllerApi.md#getinbox)
 - [getInboxByEmailAddress](InboxControllerApi.md#getinboxbyemailaddress)
 - [getInboxByEmailAddressRaw](InboxControllerApi.md#getinboxbyemailaddressraw)
+- [getInboxByName](InboxControllerApi.md#getinboxbyname)
+- [getInboxByNameRaw](InboxControllerApi.md#getinboxbynameraw)
 - [getInboxCount](InboxControllerApi.md#getinboxcount)
 - [getInboxCountRaw](InboxControllerApi.md#getinboxcountraw)
 - [getInboxEmailCount](InboxControllerApi.md#getinboxemailcount)
@@ -644,6 +646,46 @@ Search for an inbox with the provided email address
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByEmailAddressResult`](../interfaces/InboxByEmailAddressResult.md)\>\>
+
+___
+
+### <a id="getinboxbyname" name="getinboxbyname"></a> getInboxByName
+
+▸ **getInboxByName**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxByNameResult`](../interfaces/InboxByNameResult.md)\>
+
+Get a inbox result by name
+Search for an inbox with the given name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxByNameRequest`](../interfaces/GetInboxByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxByNameResult`](../interfaces/InboxByNameResult.md)\>
+
+___
+
+### <a id="getinboxbynameraw" name="getinboxbynameraw"></a> getInboxByNameRaw
+
+▸ **getInboxByNameRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByNameResult`](../interfaces/InboxByNameResult.md)\>\>
+
+Get a inbox result by name
+Search for an inbox with the given name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxByNameRequest`](../interfaces/GetInboxByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxByNameResult`](../interfaces/InboxByNameResult.md)\>\>
 
 ___
 

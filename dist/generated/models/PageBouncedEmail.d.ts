@@ -45,13 +45,13 @@ export interface PageBouncedEmail {
      * @type {number}
      * @memberof PageBouncedEmail
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageBouncedEmail
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}

@@ -23,6 +23,9 @@ import {
   TemplateDto,
   TemplateDtoFromJSON,
   TemplateDtoToJSON,
+  TemplatePreview,
+  TemplatePreviewFromJSON,
+  TemplatePreviewToJSON,
   TemplateProjection,
   TemplateProjectionFromJSON,
   TemplateProjectionToJSON,
@@ -45,6 +48,14 @@ export interface GetAllTemplatesRequest {
 }
 
 export interface GetTemplateRequest {
+  templateId: string;
+}
+
+export interface GetTemplatePreviewHtmlRequest {
+  templateId: string;
+}
+
+export interface GetTemplatePreviewJsonRequest {
   templateId: string;
 }
 
@@ -292,6 +303,122 @@ export class TemplateControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<TemplateDto> {
     const response = await this.getTemplateRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+   * Get template preview HTML
+   */
+  async getTemplatePreviewHtmlRaw(
+    requestParameters: GetTemplatePreviewHtmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    if (
+      requestParameters.templateId === null ||
+      requestParameters.templateId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'templateId',
+        'Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewHtml.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/templates/{templateId}/preview/html`.replace(
+          `{${'templateId'}}`,
+          encodeURIComponent(String(requestParameters.templateId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Get email template preview with passed template variables in HTML format for browsers. Pass template variables as query params.
+   * Get template preview HTML
+   */
+  async getTemplatePreviewHtml(
+    requestParameters: GetTemplatePreviewHtmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getTemplatePreviewHtmlRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+   * Get template preview Json
+   */
+  async getTemplatePreviewJsonRaw(
+    requestParameters: GetTemplatePreviewJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TemplatePreview>> {
+    if (
+      requestParameters.templateId === null ||
+      requestParameters.templateId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'templateId',
+        'Required parameter requestParameters.templateId was null or undefined when calling getTemplatePreviewJson.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/templates/{templateId}/preview/json`.replace(
+          `{${'templateId'}}`,
+          encodeURIComponent(String(requestParameters.templateId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TemplatePreviewFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get email template preview with passed template variables in JSON format. Pass template variables as query params.
+   * Get template preview Json
+   */
+  async getTemplatePreviewJson(
+    requestParameters: GetTemplatePreviewJsonRequest,
+    initOverrides?: RequestInit
+  ): Promise<TemplatePreview> {
+    const response = await this.getTemplatePreviewJsonRaw(
       requestParameters,
       initOverrides
     );

@@ -1,4 +1,7 @@
 # Changelog
+## [15.12.0]
+- Add account info endpoints
+
 ## [15.10.0]
 - Replace isomophic fetch with cross fetch and polyfill.
 - Remove security issues in node modules.

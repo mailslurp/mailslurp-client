@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  BounceRecipient,
-  BounceRecipientFromJSON,
-  BounceRecipientFromJSONTyped,
-  BounceRecipientToJSON,
+  BounceRecipientProjection,
+  BounceRecipientProjectionFromJSON,
+  BounceRecipientProjectionFromJSONTyped,
+  BounceRecipientProjectionToJSON,
   PageableObject,
   PageableObjectFromJSON,
   PageableObjectFromJSONTyped,
@@ -36,10 +36,10 @@ import {
 export interface PageBouncedRecipients {
   /**
    *
-   * @type {Array<BounceRecipient>}
+   * @type {Array<BounceRecipientProjection>}
    * @memberof PageBouncedRecipients
    */
-  content?: Array<BounceRecipient>;
+  content?: Array<BounceRecipientProjection>;
   /**
    *
    * @type {PageableObject}
@@ -63,13 +63,13 @@ export interface PageBouncedRecipients {
    * @type {number}
    * @memberof PageBouncedRecipients
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {number}
    * @memberof PageBouncedRecipients
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {number}
@@ -124,16 +124,16 @@ export function PageBouncedRecipientsFromJSONTyped(
   return {
     content: !exists(json, 'content')
       ? undefined
-      : (json['content'] as Array<any>).map(BounceRecipientFromJSON),
+      : (json['content'] as Array<any>).map(BounceRecipientProjectionFromJSON),
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
@@ -158,12 +158,12 @@ export function PageBouncedRecipientsToJSON(
     content:
       value.content === undefined
         ? undefined
-        : (value.content as Array<any>).map(BounceRecipientToJSON),
+        : (value.content as Array<any>).map(BounceRecipientProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
     last: value.last,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),

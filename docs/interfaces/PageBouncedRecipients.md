@@ -27,7 +27,7 @@ Paginated bounced recipients. Page index starts at zero. Projection results may 
 
 ### <a id="content" name="content"></a> content
 
-• `Optional` **content**: [`BounceRecipient`](BounceRecipient.md)[]
+• `Optional` **content**: [`BounceRecipientProjection`](BounceRecipientProjection.md)[]
 
 **`memberof`** PageBouncedRecipients
 

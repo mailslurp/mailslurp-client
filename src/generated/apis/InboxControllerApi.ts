@@ -38,6 +38,9 @@ import {
   InboxByEmailAddressResult,
   InboxByEmailAddressResultFromJSON,
   InboxByEmailAddressResultToJSON,
+  InboxByNameResult,
+  InboxByNameResultFromJSON,
+  InboxByNameResultToJSON,
   InboxDto,
   InboxDtoFromJSON,
   InboxDtoToJSON,
@@ -159,6 +162,10 @@ export interface GetInboxRequest {
 
 export interface GetInboxByEmailAddressRequest {
   emailAddress: string;
+}
+
+export interface GetInboxByNameRequest {
+  name: string;
 }
 
 export interface GetInboxEmailCountRequest {
@@ -1118,6 +1125,66 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<InboxByEmailAddressResult> {
     const response = await this.getInboxByEmailAddressRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a inbox result by name
+   * Search for an inbox with the given name
+   */
+  async getInboxByNameRaw(
+    requestParameters: GetInboxByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxByNameResult>> {
+    if (
+      requestParameters.name === null ||
+      requestParameters.name === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'name',
+        'Required parameter requestParameters.name was null or undefined when calling getInboxByName.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/byName`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxByNameResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a inbox result by name
+   * Search for an inbox with the given name
+   */
+  async getInboxByName(
+    requestParameters: GetInboxByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxByNameResult> {
+    const response = await this.getInboxByNameRaw(
       requestParameters,
       initOverrides
     );

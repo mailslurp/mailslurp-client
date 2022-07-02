@@ -39,6 +39,8 @@ function BouncedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         bounceSubType: !(0, runtime_1.exists)(json, 'bounceSubType')
             ? undefined
             : json['bounceSubType'],
+        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -60,6 +62,8 @@ function BouncedEmailDtoToJSON(value) {
         bounceType: value.bounceType,
         bounceRecipients: value.bounceRecipients,
         bounceSubType: value.bounceSubType,
+        sentEmailId: value.sentEmailId,
+        subject: value.subject,
         createdAt: value.createdAt.toISOString(),
     };
 }

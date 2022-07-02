@@ -12,6 +12,7 @@ Representation of a MailSlurp inbox. An inbox has an ID and a real email address
 
 - [createdAt](InboxDto.md#createdat)
 - [description](InboxDto.md#description)
+- [domainId](InboxDto.md#domainid)
 - [emailAddress](InboxDto.md#emailaddress)
 - [expiresAt](InboxDto.md#expiresat)
 - [favourite](InboxDto.md#favourite)
@@ -40,6 +41,16 @@ ___
 • `Optional` **description**: `string`
 
 Description of an inbox for labelling and searching purposes
+
+**`memberof`** InboxDto
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+ID of custom domain used by the inbox if any
 
 **`memberof`** InboxDto
 

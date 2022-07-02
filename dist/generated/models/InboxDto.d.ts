@@ -40,6 +40,12 @@ export interface InboxDto {
      */
     name?: string;
     /**
+     * ID of custom domain used by the inbox if any
+     * @type {string}
+     * @memberof InboxDto
+     */
+    domainId?: string;
+    /**
      * Description of an inbox for labelling and searching purposes
      * @type {string}
      * @memberof InboxDto

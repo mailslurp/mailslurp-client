@@ -75,6 +75,18 @@ export interface BouncedEmailDto {
   bounceSubType?: string;
   /**
    *
+   * @type {string}
+   * @memberof BouncedEmailDto
+   */
+  sentEmailId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedEmailDto
+   */
+  subject?: string;
+  /**
+   *
    * @type {Date}
    * @memberof BouncedEmailDto
    */
@@ -108,6 +120,8 @@ export function BouncedEmailDtoFromJSONTyped(
     bounceSubType: !exists(json, 'bounceSubType')
       ? undefined
       : json['bounceSubType'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -129,6 +143,8 @@ export function BouncedEmailDtoToJSON(value?: BouncedEmailDto | null): any {
     bounceType: value.bounceType,
     bounceRecipients: value.bounceRecipients,
     bounceSubType: value.bounceSubType,
+    sentEmailId: value.sentEmailId,
+    subject: value.subject,
     createdAt: value.createdAt.toISOString(),
   };
 }

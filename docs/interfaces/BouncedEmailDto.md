@@ -18,7 +18,9 @@ Bounced email
 - [id](BouncedEmailDto.md#id)
 - [notificationType](BouncedEmailDto.md#notificationtype)
 - [sender](BouncedEmailDto.md#sender)
+- [sentEmailId](BouncedEmailDto.md#sentemailid)
 - [sentToRecipients](BouncedEmailDto.md#senttorecipients)
+- [subject](BouncedEmailDto.md#subject)
 - [userId](BouncedEmailDto.md#userid)
 
 ## Properties
@@ -87,9 +89,25 @@ ___
 
 ___
 
+### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+
+• `Optional` **sentEmailId**: `string`
+
+**`memberof`** BouncedEmailDto
+
+___
+
 ### <a id="senttorecipients" name="senttorecipients"></a> sentToRecipients
 
 • `Optional` **sentToRecipients**: `string`[]
+
+**`memberof`** BouncedEmailDto
+
+___
+
+### <a id="subject" name="subject"></a> subject
+
+• `Optional` **subject**: `string`
 
 **`memberof`** BouncedEmailDto
 

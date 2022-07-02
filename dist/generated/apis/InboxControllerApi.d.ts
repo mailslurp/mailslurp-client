@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -74,6 +74,9 @@ export interface GetInboxRequest {
 }
 export interface GetInboxByEmailAddressRequest {
     emailAddress: string;
+}
+export interface GetInboxByNameRequest {
+    name: string;
 }
 export interface GetInboxEmailCountRequest {
     inboxId: string;
@@ -299,6 +302,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Search for an inbox with the provided email address
      */
     getInboxByEmailAddress(requestParameters: GetInboxByEmailAddressRequest, initOverrides?: RequestInit): Promise<InboxByEmailAddressResult>;
+    /**
+     * Get a inbox result by name
+     * Search for an inbox with the given name
+     */
+    getInboxByNameRaw(requestParameters: GetInboxByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxByNameResult>>;
+    /**
+     * Get a inbox result by name
+     * Search for an inbox with the given name
+     */
+    getInboxByName(requestParameters: GetInboxByNameRequest, initOverrides?: RequestInit): Promise<InboxByNameResult>;
     /**
      * Get total inbox count
      */

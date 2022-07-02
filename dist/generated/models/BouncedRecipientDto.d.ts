@@ -32,7 +32,31 @@ export interface BouncedRecipientDto {
      * @type {string}
      * @memberof BouncedRecipientDto
      */
+    sentEmailId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
     recipient: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
+    diagnosticCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
+    action?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
+    status?: string;
     /**
      *
      * @type {Date}

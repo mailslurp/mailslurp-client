@@ -92,6 +92,9 @@
 - [SmsMatchOptionFieldEnum](enums/SmsMatchOptionFieldEnum.md)
 - [SmsMatchOptionShouldEnum](enums/SmsMatchOptionShouldEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
+- [UserInfoDtoAccountStateEnum](enums/UserInfoDtoAccountStateEnum.md)
+- [UserInfoDtoAccountTypeEnum](enums/UserInfoDtoAccountTypeEnum.md)
+- [UserInfoDtoSubscriptionTypeEnum](enums/UserInfoDtoSubscriptionTypeEnum.md)
 - [WaitForConditionsCountTypeEnum](enums/WaitForConditionsCountTypeEnum.md)
 - [WaitForConditionsSortDirectionEnum](enums/WaitForConditionsSortDirectionEnum.md)
 - [WaitForEmailCountSortEnum](enums/WaitForEmailCountSortEnum.md)
@@ -119,6 +122,7 @@
 ### Classes
 
 - [AliasControllerApi](classes/AliasControllerApi.md)
+- [ApiUserControllerApi](classes/ApiUserControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
 - [BlobApiResponse](classes/BlobApiResponse.md)
@@ -166,7 +170,7 @@
 - [AttachmentProjection](interfaces/AttachmentProjection.md)
 - [BasicAuthOptions](interfaces/BasicAuthOptions.md)
 - [BounceProjection](interfaces/BounceProjection.md)
-- [BounceRecipient](interfaces/BounceRecipient.md)
+- [BounceRecipientProjection](interfaces/BounceRecipientProjection.md)
 - [BouncedEmailDto](interfaces/BouncedEmailDto.md)
 - [BouncedRecipientDto](interfaces/BouncedRecipientDto.md)
 - [BulkCreateInboxesRequest](interfaces/BulkCreateInboxesRequest.md)
@@ -323,6 +327,7 @@
 - [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
 - [GetImapSmtpAccessRequest](interfaces/GetImapSmtpAccessRequest.md)
 - [GetInboxByEmailAddressRequest](interfaces/GetInboxByEmailAddressRequest.md)
+- [GetInboxByNameRequest](interfaces/GetInboxByNameRequest.md)
 - [GetInboxEmailCountRequest](interfaces/GetInboxEmailCountRequest.md)
 - [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
@@ -357,6 +362,8 @@
 - [GetSentOrganizationEmailsRequest](interfaces/GetSentOrganizationEmailsRequest.md)
 - [GetSmsMessageRequest](interfaces/GetSmsMessageRequest.md)
 - [GetSmsMessagesPaginatedRequest](interfaces/GetSmsMessagesPaginatedRequest.md)
+- [GetTemplatePreviewHtmlRequest](interfaces/GetTemplatePreviewHtmlRequest.md)
+- [GetTemplatePreviewJsonRequest](interfaces/GetTemplatePreviewJsonRequest.md)
 - [GetTemplateRequest](interfaces/GetTemplateRequest.md)
 - [GetTestWebhookPayloadForWebhookRequest](interfaces/GetTestWebhookPayloadForWebhookRequest.md)
 - [GetTestWebhookPayloadRequest](interfaces/GetTestWebhookPayloadRequest.md)
@@ -375,6 +382,7 @@
 - [ImapFlagOperationOptions](interfaces/ImapFlagOperationOptions.md)
 - [ImapSmtpAccessDetails](interfaces/ImapSmtpAccessDetails.md)
 - [InboxByEmailAddressResult](interfaces/InboxByEmailAddressResult.md)
+- [InboxByNameResult](interfaces/InboxByNameResult.md)
 - [InboxDto](interfaces/InboxDto.md)
 - [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
@@ -466,6 +474,7 @@
 - [Sort](interfaces/Sort.md)
 - [SubmitFormRequest](interfaces/SubmitFormRequest.md)
 - [TemplateDto](interfaces/TemplateDto.md)
+- [TemplatePreview](interfaces/TemplatePreview.md)
 - [TemplateProjection](interfaces/TemplateProjection.md)
 - [TemplateVariable](interfaces/TemplateVariable.md)
 - [TestInboxForwarderRequest](interfaces/TestInboxForwarderRequest.md)
@@ -494,6 +503,7 @@
 - [UploadAttachmentOptions](interfaces/UploadAttachmentOptions.md)
 - [UploadAttachmentRequest](interfaces/UploadAttachmentRequest.md)
 - [UploadMultipartFormRequest](interfaces/UploadMultipartFormRequest.md)
+- [UserInfoDto](interfaces/UserInfoDto.md)
 - [ValidateEmailAddressListOptions](interfaces/ValidateEmailAddressListOptions.md)
 - [ValidateEmailAddressListRequest](interfaces/ValidateEmailAddressListRequest.md)
 - [ValidateEmailAddressListResult](interfaces/ValidateEmailAddressListResult.md)
@@ -573,9 +583,9 @@
 - [BounceProjectionFromJSON](README.md#bounceprojectionfromjson)
 - [BounceProjectionFromJSONTyped](README.md#bounceprojectionfromjsontyped)
 - [BounceProjectionToJSON](README.md#bounceprojectiontojson)
-- [BounceRecipientFromJSON](README.md#bouncerecipientfromjson)
-- [BounceRecipientFromJSONTyped](README.md#bouncerecipientfromjsontyped)
-- [BounceRecipientToJSON](README.md#bouncerecipienttojson)
+- [BounceRecipientProjectionFromJSON](README.md#bouncerecipientprojectionfromjson)
+- [BounceRecipientProjectionFromJSONTyped](README.md#bouncerecipientprojectionfromjsontyped)
+- [BounceRecipientProjectionToJSON](README.md#bouncerecipientprojectiontojson)
 - [BouncedEmailDtoFromJSON](README.md#bouncedemaildtofromjson)
 - [BouncedEmailDtoFromJSONTyped](README.md#bouncedemaildtofromjsontyped)
 - [BouncedEmailDtoToJSON](README.md#bouncedemaildtotojson)
@@ -759,6 +769,9 @@
 - [InboxByEmailAddressResultFromJSON](README.md#inboxbyemailaddressresultfromjson)
 - [InboxByEmailAddressResultFromJSONTyped](README.md#inboxbyemailaddressresultfromjsontyped)
 - [InboxByEmailAddressResultToJSON](README.md#inboxbyemailaddressresulttojson)
+- [InboxByNameResultFromJSON](README.md#inboxbynameresultfromjson)
+- [InboxByNameResultFromJSONTyped](README.md#inboxbynameresultfromjsontyped)
+- [InboxByNameResultToJSON](README.md#inboxbynameresulttojson)
 - [InboxDtoFromJSON](README.md#inboxdtofromjson)
 - [InboxDtoFromJSONTyped](README.md#inboxdtofromjsontyped)
 - [InboxDtoToJSON](README.md#inboxdtotojson)
@@ -960,6 +973,9 @@
 - [TemplateDtoFromJSON](README.md#templatedtofromjson)
 - [TemplateDtoFromJSONTyped](README.md#templatedtofromjsontyped)
 - [TemplateDtoToJSON](README.md#templatedtotojson)
+- [TemplatePreviewFromJSON](README.md#templatepreviewfromjson)
+- [TemplatePreviewFromJSONTyped](README.md#templatepreviewfromjsontyped)
+- [TemplatePreviewToJSON](README.md#templatepreviewtojson)
 - [TemplateProjectionFromJSON](README.md#templateprojectionfromjson)
 - [TemplateProjectionFromJSONTyped](README.md#templateprojectionfromjsontyped)
 - [TemplateProjectionToJSON](README.md#templateprojectiontojson)
@@ -1005,6 +1021,9 @@
 - [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
 - [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
 - [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
+- [UserInfoDtoFromJSON](README.md#userinfodtofromjson)
+- [UserInfoDtoFromJSONTyped](README.md#userinfodtofromjsontyped)
+- [UserInfoDtoToJSON](README.md#userinfodtotojson)
 - [ValidateEmailAddressListOptionsFromJSON](README.md#validateemailaddresslistoptionsfromjson)
 - [ValidateEmailAddressListOptionsFromJSONTyped](README.md#validateemailaddresslistoptionsfromjsontyped)
 - [ValidateEmailAddressListOptionsToJSON](README.md#validateemailaddresslistoptionstojson)
@@ -1604,9 +1623,9 @@ ___
 
 ___
 
-### <a id="bouncerecipientfromjson" name="bouncerecipientfromjson"></a> BounceRecipientFromJSON
+### <a id="bouncerecipientprojectionfromjson" name="bouncerecipientprojectionfromjson"></a> BounceRecipientProjectionFromJSON
 
-▸ **BounceRecipientFromJSON**(`json`): [`BounceRecipient`](interfaces/BounceRecipient.md)
+▸ **BounceRecipientProjectionFromJSON**(`json`): [`BounceRecipientProjection`](interfaces/BounceRecipientProjection.md)
 
 #### Parameters
 
@@ -1616,13 +1635,13 @@ ___
 
 #### Returns
 
-[`BounceRecipient`](interfaces/BounceRecipient.md)
+[`BounceRecipientProjection`](interfaces/BounceRecipientProjection.md)
 
 ___
 
-### <a id="bouncerecipientfromjsontyped" name="bouncerecipientfromjsontyped"></a> BounceRecipientFromJSONTyped
+### <a id="bouncerecipientprojectionfromjsontyped" name="bouncerecipientprojectionfromjsontyped"></a> BounceRecipientProjectionFromJSONTyped
 
-▸ **BounceRecipientFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceRecipient`](interfaces/BounceRecipient.md)
+▸ **BounceRecipientProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`BounceRecipientProjection`](interfaces/BounceRecipientProjection.md)
 
 #### Parameters
 
@@ -1633,19 +1652,19 @@ ___
 
 #### Returns
 
-[`BounceRecipient`](interfaces/BounceRecipient.md)
+[`BounceRecipientProjection`](interfaces/BounceRecipientProjection.md)
 
 ___
 
-### <a id="bouncerecipienttojson" name="bouncerecipienttojson"></a> BounceRecipientToJSON
+### <a id="bouncerecipientprojectiontojson" name="bouncerecipientprojectiontojson"></a> BounceRecipientProjectionToJSON
 
-▸ **BounceRecipientToJSON**(`value?`): `any`
+▸ **BounceRecipientProjectionToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`BounceRecipient`](interfaces/BounceRecipient.md) |
+| `value?` | [`BounceRecipientProjection`](interfaces/BounceRecipientProjection.md) |
 
 #### Returns
 
@@ -4635,6 +4654,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`InboxByEmailAddressResult`](interfaces/InboxByEmailAddressResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="inboxbynameresultfromjson" name="inboxbynameresultfromjson"></a> InboxByNameResultFromJSON
+
+▸ **InboxByNameResultFromJSON**(`json`): [`InboxByNameResult`](interfaces/InboxByNameResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxByNameResult`](interfaces/InboxByNameResult.md)
+
+___
+
+### <a id="inboxbynameresultfromjsontyped" name="inboxbynameresultfromjsontyped"></a> InboxByNameResultFromJSONTyped
+
+▸ **InboxByNameResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxByNameResult`](interfaces/InboxByNameResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxByNameResult`](interfaces/InboxByNameResult.md)
+
+___
+
+### <a id="inboxbynameresulttojson" name="inboxbynameresulttojson"></a> InboxByNameResultToJSON
+
+▸ **InboxByNameResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxByNameResult`](interfaces/InboxByNameResult.md) |
 
 #### Returns
 
@@ -7925,6 +7993,55 @@ ___
 
 ___
 
+### <a id="templatepreviewfromjson" name="templatepreviewfromjson"></a> TemplatePreviewFromJSON
+
+▸ **TemplatePreviewFromJSON**(`json`): [`TemplatePreview`](interfaces/TemplatePreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TemplatePreview`](interfaces/TemplatePreview.md)
+
+___
+
+### <a id="templatepreviewfromjsontyped" name="templatepreviewfromjsontyped"></a> TemplatePreviewFromJSONTyped
+
+▸ **TemplatePreviewFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TemplatePreview`](interfaces/TemplatePreview.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TemplatePreview`](interfaces/TemplatePreview.md)
+
+___
+
+### <a id="templatepreviewtojson" name="templatepreviewtojson"></a> TemplatePreviewToJSON
+
+▸ **TemplatePreviewToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TemplatePreview`](interfaces/TemplatePreview.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="templateprojectionfromjson" name="templateprojectionfromjson"></a> TemplateProjectionFromJSON
 
 ▸ **TemplateProjectionFromJSON**(`json`): [`TemplateProjection`](interfaces/TemplateProjection.md)
@@ -8653,6 +8770,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UploadAttachmentOptions`](interfaces/UploadAttachmentOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="userinfodtofromjson" name="userinfodtofromjson"></a> UserInfoDtoFromJSON
+
+▸ **UserInfoDtoFromJSON**(`json`): [`UserInfoDto`](interfaces/UserInfoDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UserInfoDto`](interfaces/UserInfoDto.md)
+
+___
+
+### <a id="userinfodtofromjsontyped" name="userinfodtofromjsontyped"></a> UserInfoDtoFromJSONTyped
+
+▸ **UserInfoDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UserInfoDto`](interfaces/UserInfoDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UserInfoDto`](interfaces/UserInfoDto.md)
+
+___
+
+### <a id="userinfodtotojson" name="userinfodtotojson"></a> UserInfoDtoToJSON
+
+▸ **UserInfoDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UserInfoDto`](interfaces/UserInfoDto.md) |
 
 #### Returns
 

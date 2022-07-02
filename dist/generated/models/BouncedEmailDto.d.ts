@@ -71,6 +71,18 @@ export interface BouncedEmailDto {
     bounceSubType?: string;
     /**
      *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    sentEmailId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedEmailDto
+     */
+    subject?: string;
+    /**
+     *
      * @type {Date}
      * @memberof BouncedEmailDto
      */

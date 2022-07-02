@@ -36,7 +36,31 @@ export interface BouncedRecipientDto {
    * @type {string}
    * @memberof BouncedRecipientDto
    */
+  sentEmailId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedRecipientDto
+   */
   recipient: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedRecipientDto
+   */
+  diagnosticCode?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedRecipientDto
+   */
+  action?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedRecipientDto
+   */
+  status?: string;
   /**
    *
    * @type {Date}
@@ -59,7 +83,13 @@ export function BouncedRecipientDtoFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     recipient: json['recipient'],
+    diagnosticCode: !exists(json, 'diagnosticCode')
+      ? undefined
+      : json['diagnosticCode'],
+    action: !exists(json, 'action') ? undefined : json['action'],
+    status: !exists(json, 'status') ? undefined : json['status'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -76,7 +106,11 @@ export function BouncedRecipientDtoToJSON(
   return {
     id: value.id,
     userId: value.userId,
+    sentEmailId: value.sentEmailId,
     recipient: value.recipient,
+    diagnosticCode: value.diagnosticCode,
+    action: value.action,
+    status: value.status,
     createdAt: value.createdAt.toISOString(),
   };
 }

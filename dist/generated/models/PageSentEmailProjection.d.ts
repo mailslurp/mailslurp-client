@@ -53,17 +53,17 @@ export interface PageSentEmailProjection {
      */
     numberOfElements: number;
     /**
-     * Total number of items available for querying
-     * @type {number}
-     * @memberof PageSentEmailProjection
-     */
-    totalElements: number;
-    /**
      * Total number of pages available
      * @type {number}
      * @memberof PageSentEmailProjection
      */
     totalPages: number;
+    /**
+     * Total number of items available for querying
+     * @type {number}
+     * @memberof PageSentEmailProjection
+     */
+    totalElements: number;
     /**
      *
      * @type {boolean}

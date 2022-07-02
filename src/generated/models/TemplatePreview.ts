@@ -14,64 +14,36 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Bounced email recipient address
+ *
  * @export
- * @interface BounceRecipient
+ * @interface TemplatePreview
  */
-export interface BounceRecipient {
+export interface TemplatePreview {
   /**
    *
    * @type {string}
-   * @memberof BounceRecipient
+   * @memberof TemplatePreview
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipient
-   */
-  userId?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipient
-   */
-  recipient: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof BounceRecipient
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof BounceRecipient
-   */
-  updatedAt: Date;
+  preview: string;
 }
 
-export function BounceRecipientFromJSON(json: any): BounceRecipient {
-  return BounceRecipientFromJSONTyped(json, false);
+export function TemplatePreviewFromJSON(json: any): TemplatePreview {
+  return TemplatePreviewFromJSONTyped(json, false);
 }
 
-export function BounceRecipientFromJSONTyped(
+export function TemplatePreviewFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): BounceRecipient {
+): TemplatePreview {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    id: json['id'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    recipient: json['recipient'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
+    preview: json['preview'],
   };
 }
 
-export function BounceRecipientToJSON(value?: BounceRecipient | null): any {
+export function TemplatePreviewToJSON(value?: TemplatePreview | null): any {
   if (value === undefined) {
     return undefined;
   }
@@ -79,10 +51,6 @@ export function BounceRecipientToJSON(value?: BounceRecipient | null): any {
     return null;
   }
   return {
-    id: value.id,
-    userId: value.userId,
-    recipient: value.recipient,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
+    preview: value.preview,
   };
 }

@@ -29,10 +29,28 @@ export interface BounceProjection {
     sender: string;
     /**
      *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    subject?: string;
+    /**
+     *
      * @type {Date}
      * @memberof BounceProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    bounceType?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    bounceMta?: string;
 }
 export declare function BounceProjectionFromJSON(json: any): BounceProjection;
 export declare function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection;

@@ -27,16 +27,16 @@ function PageBouncedRecipientsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         content: !(0, runtime_1.exists)(json, 'content')
             ? undefined
-            : json['content'].map(_1.BounceRecipientFromJSON),
+            : json['content'].map(_1.BounceRecipientProjectionFromJSON),
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
         total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         totalElements: !(0, runtime_1.exists)(json, 'totalElements')
             ? undefined
             : json['totalElements'],
-        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
         number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
@@ -58,12 +58,12 @@ function PageBouncedRecipientsToJSON(value) {
     return {
         content: value.content === undefined
             ? undefined
-            : value.content.map(_1.BounceRecipientToJSON),
+            : value.content.map(_1.BounceRecipientProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
         total: value.total,
         last: value.last,
-        totalElements: value.totalElements,
         totalPages: value.totalPages,
+        totalElements: value.totalElements,
         size: value.size,
         number: value.number,
         sort: (0, _1.SortToJSON)(value.sort),

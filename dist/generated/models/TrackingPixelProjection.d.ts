@@ -41,6 +41,12 @@ export interface TrackingPixelProjection {
     inboxId?: string;
     /**
      *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    sentEmailId?: string;
+    /**
+     *
      * @type {Date}
      * @memberof TrackingPixelProjection
      */
@@ -63,12 +69,6 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     seenAt?: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    sentEmailId?: string;
 }
 export declare function TrackingPixelProjectionFromJSON(json: any): TrackingPixelProjection;
 export declare function TrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelProjection;
