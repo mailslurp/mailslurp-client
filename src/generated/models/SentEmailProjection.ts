@@ -45,28 +45,10 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
-   * @type {Date}
-   * @memberof SentEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  attachments: Array<string>;
-  /**
-   *
    * @type {string}
    * @memberof SentEmailProjection
    */
-  inboxId: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  to: Array<string>;
+  bodyMD5Hash?: string;
   /**
    *
    * @type {Array<string>}
@@ -81,16 +63,34 @@ export interface SentEmailProjection {
   cc: Array<string>;
   /**
    *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  bodyMD5Hash?: string;
-  /**
-   *
    * @type {boolean}
    * @memberof SentEmailProjection
    */
   virtualSend: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  inboxId: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  attachments: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  to: Array<string>;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -109,14 +109,14 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    attachments: json['attachments'],
-    inboxId: json['inboxId'],
-    to: json['to'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     bcc: json['bcc'],
     cc: json['cc'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     virtualSend: json['virtualSend'],
+    inboxId: json['inboxId'],
+    attachments: json['attachments'],
+    to: json['to'],
+    createdAt: new Date(json['createdAt']),
   };
 }
 
@@ -134,13 +134,13 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    attachments: value.attachments,
-    inboxId: value.inboxId,
-    to: value.to,
+    bodyMD5Hash: value.bodyMD5Hash,
     bcc: value.bcc,
     cc: value.cc,
-    bodyMD5Hash: value.bodyMD5Hash,
     virtualSend: value.virtualSend,
+    inboxId: value.inboxId,
+    attachments: value.attachments,
+    to: value.to,
+    createdAt: value.createdAt.toISOString(),
   };
 }

@@ -47,6 +47,9 @@ function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.BasicAuthOptionsFromJSON)(json['basicAuth']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        includeHeaders: !(0, runtime_1.exists)(json, 'includeHeaders')
+            ? undefined
+            : (0, _1.WebhookHeadersFromJSON)(json['includeHeaders']),
     };
 }
 exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
@@ -62,6 +65,7 @@ function CreateWebhookOptionsToJSON(value) {
         basicAuth: (0, _1.BasicAuthOptionsToJSON)(value.basicAuth),
         name: value.name,
         eventName: value.eventName,
+        includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
     };
 }
 exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

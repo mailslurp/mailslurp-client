@@ -63,91 +63,91 @@ export interface Email {
    * @type {string}
    * @memberof Email
    */
-  from?: string;
+  from?: string | null;
   /**
    *
    * @type {Sender}
    * @memberof Email
    */
-  sender?: Sender;
+  sender?: Sender | null;
   /**
    *
    * @type {EmailRecipients}
    * @memberof Email
    */
-  recipients?: EmailRecipients;
+  recipients?: EmailRecipients | null;
   /**
    * The `replyTo` field on the received email message
    * @type {string}
    * @memberof Email
    */
-  replyTo?: string;
+  replyTo?: string | null;
   /**
    * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof Email
    */
-  cc?: Array<string>;
+  cc?: Array<string> | null;
   /**
    * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof Email
    */
-  bcc?: Array<string>;
+  bcc?: Array<string> | null;
   /**
    * Collection of SMTP headers attached to email
    * @type {{ [key: string]: string; }}
    * @memberof Email
    */
-  headers?: { [key: string]: string };
+  headers?: { [key: string]: string } | null;
   /**
    * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
    * @type {Array<string>}
    * @memberof Email
    */
-  attachments?: Array<string>;
+  attachments?: Array<string> | null;
   /**
    * The subject line of the email message as specified by SMTP subject header
    * @type {string}
    * @memberof Email
    */
-  subject?: string;
+  subject?: string | null;
   /**
    * The body of the email message as text parsed from the SMTP message body (does not include attachments). Fetch the raw content to access the SMTP message and use the attachments property to access attachments. The body is stored separately to the email entity so the body is not returned in paginated results only in full single email or wait requests.
    * @type {string}
    * @memberof Email
    */
-  body?: string;
+  body?: string | null;
   /**
    * An excerpt of the body of the email message for quick preview .
    * @type {string}
    * @memberof Email
    */
-  bodyExcerpt?: string;
+  bodyExcerpt?: string | null;
   /**
    * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
    * @type {string}
    * @memberof Email
    */
-  bodyMD5Hash?: string;
+  bodyMD5Hash?: string | null;
   /**
    * Is the email body content type HTML?
    * @type {boolean}
    * @memberof Email
    */
-  isHTML?: boolean;
+  isHTML?: boolean | null;
   /**
    * Detected character set of the email body such as UTF-8
    * @type {string}
    * @memberof Email
    */
-  charset?: string;
+  charset?: string | null;
   /**
    *
    * @type {EmailAnalysis}
    * @memberof Email
    */
-  analysis?: EmailAnalysis;
+  analysis?: EmailAnalysis | null;
   /**
    * When was the email received by MailSlurp
    * @type {Date}

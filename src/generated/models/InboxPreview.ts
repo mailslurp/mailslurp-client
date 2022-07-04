@@ -30,7 +30,7 @@ export interface InboxPreview {
    * @type {string}
    * @memberof InboxPreview
    */
-  emailAddress?: string;
+  emailAddress?: string | null;
   /**
    * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
    * @type {Date}
@@ -48,13 +48,13 @@ export interface InboxPreview {
    * @type {string}
    * @memberof InboxPreview
    */
-  name?: string;
+  name?: string | null;
   /**
    * Tags that inbox has been tagged with. Tags can be added to inboxes to group different inboxes within an account. You can also search for inboxes by tag in the dashboard UI.
    * @type {Array<string>}
    * @memberof InboxPreview
    */
-  tags?: Array<string>;
+  tags?: Array<string> | null;
   /**
    * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
    * @type {boolean}
@@ -78,7 +78,7 @@ export interface InboxPreview {
    * @type {string}
    * @memberof InboxPreview
    */
-  expiresAt?: string;
+  expiresAt?: string | null;
 }
 
 /**

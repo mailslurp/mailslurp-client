@@ -45,13 +45,13 @@ export interface PageExpiredInboxRecordProjection {
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}

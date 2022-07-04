@@ -18,6 +18,7 @@ Representation of a webhook for an inbox. The URL specified will be using by Mai
 - [method](WebhookDto.md#method)
 - [name](WebhookDto.md#name)
 - [payloadJsonSchema](WebhookDto.md#payloadjsonschema)
+- [requestHeaders](WebhookDto.md#requestheaders)
 - [updatedAt](WebhookDto.md#updatedat)
 - [url](WebhookDto.md#url)
 - [userId](WebhookDto.md#userid)
@@ -47,6 +48,8 @@ ___
 ### <a id="eventname" name="eventname"></a> eventName
 
 • `Optional` **eventName**: [`WebhookDtoEventNameEnum`](../enums/WebhookDtoEventNameEnum.md)
+
+Webhook trigger event name
 
 **`memberof`** WebhookDto
 
@@ -97,6 +100,14 @@ ___
 • **payloadJsonSchema**: `string`
 
 Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
+
+**`memberof`** WebhookDto
+
+___
+
+### <a id="requestheaders" name="requestheaders"></a> requestHeaders
+
+• `Optional` **requestHeaders**: [`WebhookHeaders`](WebhookHeaders.md)
 
 **`memberof`** WebhookDto
 

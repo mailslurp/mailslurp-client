@@ -26,13 +26,13 @@ export interface CreateDomainOptions {
      * @type {string}
      * @memberof CreateDomainOptions
      */
-    description?: string;
+    description?: string | null;
     /**
      * Whether to create a catch all inbox for the domain. Any email sent to an address using your domain that cannot be matched to an existing inbox you created with the domain will be routed to the created catch all inbox. You can access emails using the regular methods on this inbox ID.
      * @type {boolean}
      * @memberof CreateDomainOptions
      */
-    createdCatchAllInbox?: boolean;
+    createdCatchAllInbox?: boolean | null;
     /**
      * Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
      * @type {string}

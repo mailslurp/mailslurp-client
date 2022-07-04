@@ -12,6 +12,7 @@ Options for creating a webhook. Webhooks can be attached to inboxes and MailSlur
 
 - [basicAuth](CreateWebhookOptions.md#basicauth)
 - [eventName](CreateWebhookOptions.md#eventname)
+- [includeHeaders](CreateWebhookOptions.md#includeheaders)
 - [name](CreateWebhookOptions.md#name)
 - [url](CreateWebhookOptions.md#url)
 
@@ -30,6 +31,14 @@ ___
 • `Optional` **eventName**: [`CreateWebhookOptionsEventNameEnum`](../enums/CreateWebhookOptionsEventNameEnum.md)
 
 Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when an email is received by the inbox associated with the webhook. Payload differ according to the webhook event name. The other events are `NEW_EMAIL`, `NEW_CONTACT`, and `NEW_ATTACHMENT` and `EMAIL_OPENED`. `EMAIL_OPENED` requires the use of tracking pixels when sending. See the email tracking guide for more information.
+
+**`memberof`** CreateWebhookOptions
+
+___
+
+### <a id="includeheaders" name="includeheaders"></a> includeHeaders
+
+• `Optional` **includeHeaders**: [`WebhookHeaders`](WebhookHeaders.md)
 
 **`memberof`** CreateWebhookOptions
 

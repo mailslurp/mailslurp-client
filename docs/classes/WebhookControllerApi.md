@@ -71,6 +71,8 @@
 - [request](WebhookControllerApi.md#request)
 - [sendTestData](WebhookControllerApi.md#sendtestdata)
 - [sendTestDataRaw](WebhookControllerApi.md#sendtestdataraw)
+- [updateWebhookHeaders](WebhookControllerApi.md#updatewebhookheaders)
+- [updateWebhookHeadersRaw](WebhookControllerApi.md#updatewebhookheadersraw)
 - [verifyWebhookSignature](WebhookControllerApi.md#verifywebhooksignature)
 - [verifyWebhookSignatureRaw](WebhookControllerApi.md#verifywebhooksignatureraw)
 - [withMiddleware](WebhookControllerApi.md#withmiddleware)
@@ -1101,6 +1103,44 @@ Send webhook test data
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookTestResult`](../interfaces/WebhookTestResult.md)\>\>
+
+___
+
+### <a id="updatewebhookheaders" name="updatewebhookheaders"></a> updateWebhookHeaders
+
+▸ **updateWebhookHeaders**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+Update a webhook request headers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateWebhookHeadersRequest`](../interfaces/UpdateWebhookHeadersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### <a id="updatewebhookheadersraw" name="updatewebhookheadersraw"></a> updateWebhookHeadersRaw
+
+▸ **updateWebhookHeadersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+Update a webhook request headers
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateWebhookHeadersRequest`](../interfaces/UpdateWebhookHeadersRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
 ___
 

@@ -71,17 +71,17 @@ export interface PageSentEmailWithQueueProjection {
    */
   numberOfElements: number;
   /**
-   * Total number of pages available
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  totalPages: number;
-  /**
    * Total number of items available for querying
    * @type {number}
    * @memberof PageSentEmailWithQueueProjection
    */
   totalElements: number;
+  /**
+   * Total number of pages available
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -130,8 +130,8 @@ export function PageSentEmailWithQueueProjectionFromJSONTyped(
     size: json['size'],
     number: json['number'],
     numberOfElements: json['numberOfElements'],
-    totalPages: json['totalPages'],
     totalElements: json['totalElements'],
+    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
     first: !exists(json, 'first') ? undefined : json['first'],
@@ -155,8 +155,8 @@ export function PageSentEmailWithQueueProjectionToJSON(
     size: value.size,
     number: value.number,
     numberOfElements: value.numberOfElements,
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     sort: SortToJSON(value.sort),
     first: value.first,

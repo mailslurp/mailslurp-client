@@ -30,7 +30,7 @@ export interface InboxDto {
    * @type {string}
    * @memberof InboxDto
    */
-  userId?: string;
+  userId?: string | null;
   /**
    * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
    * @type {Date}
@@ -42,19 +42,19 @@ export interface InboxDto {
    * @type {string}
    * @memberof InboxDto
    */
-  name?: string;
+  name?: string | null;
   /**
    * ID of custom domain used by the inbox if any
    * @type {string}
    * @memberof InboxDto
    */
-  domainId?: string;
+  domainId?: string | null;
   /**
    * Description of an inbox for labelling and searching purposes
    * @type {string}
    * @memberof InboxDto
    */
-  description?: string;
+  description?: string | null;
   /**
    * The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
    * @type {string}
@@ -66,7 +66,7 @@ export interface InboxDto {
    * @type {string}
    * @memberof InboxDto
    */
-  expiresAt?: string;
+  expiresAt?: string | null;
   /**
    * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
    * @type {boolean}
@@ -78,7 +78,7 @@ export interface InboxDto {
    * @type {Array<string>}
    * @memberof InboxDto
    */
-  tags?: Array<string>;
+  tags?: Array<string> | null;
   /**
    * Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
    * @type {string}

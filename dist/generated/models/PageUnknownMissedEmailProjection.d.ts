@@ -45,13 +45,13 @@ export interface PageUnknownMissedEmailProjection {
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}

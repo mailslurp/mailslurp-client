@@ -18,6 +18,10 @@ import {
   BasicAuthOptionsFromJSON,
   BasicAuthOptionsFromJSONTyped,
   BasicAuthOptionsToJSON,
+  WebhookHeaders,
+  WebhookHeadersFromJSON,
+  WebhookHeadersFromJSONTyped,
+  WebhookHeadersToJSON,
 } from './';
 
 /**
@@ -37,7 +41,7 @@ export interface CreateWebhookOptions {
    * @type {BasicAuthOptions}
    * @memberof CreateWebhookOptions
    */
-  basicAuth?: BasicAuthOptions;
+  basicAuth?: BasicAuthOptions | null;
   /**
    * Optional name for the webhook
    * @type {string}
@@ -50,6 +54,12 @@ export interface CreateWebhookOptions {
    * @memberof CreateWebhookOptions
    */
   eventName?: CreateWebhookOptionsEventNameEnum;
+  /**
+   *
+   * @type {WebhookHeaders}
+   * @memberof CreateWebhookOptions
+   */
+  includeHeaders?: WebhookHeaders;
 }
 
 /**
@@ -86,6 +96,9 @@ export function CreateWebhookOptionsFromJSONTyped(
       : BasicAuthOptionsFromJSON(json['basicAuth']),
     name: !exists(json, 'name') ? undefined : json['name'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
+    includeHeaders: !exists(json, 'includeHeaders')
+      ? undefined
+      : WebhookHeadersFromJSON(json['includeHeaders']),
   };
 }
 
@@ -103,5 +116,6 @@ export function CreateWebhookOptionsToJSON(
     basicAuth: BasicAuthOptionsToJSON(value.basicAuth),
     name: value.name,
     eventName: value.eventName,
+    includeHeaders: WebhookHeadersToJSON(value.includeHeaders),
   };
 }

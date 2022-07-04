@@ -29,7 +29,9 @@ function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
             ? undefined
-            : new Date(json['expiresAt']),
+            : json['expiresAt'] === null
+                ? null
+                : new Date(json['expiresAt']),
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
     };
 }
@@ -45,7 +47,11 @@ function UpdateInboxOptionsToJSON(value) {
         name: value.name,
         description: value.description,
         tags: value.tags,
-        expiresAt: value.expiresAt === undefined ? undefined : value.expiresAt.toISOString(),
+        expiresAt: value.expiresAt === undefined
+            ? undefined
+            : value.expiresAt === null
+                ? null
+                : value.expiresAt.toISOString(),
         favourite: value.favourite,
     };
 }

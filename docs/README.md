@@ -499,6 +499,7 @@
 - [UpdateInboxOptions](interfaces/UpdateInboxOptions.md)
 - [UpdateInboxRequest](interfaces/UpdateInboxRequest.md)
 - [UpdateTemplateRequest](interfaces/UpdateTemplateRequest.md)
+- [UpdateWebhookHeadersRequest](interfaces/UpdateWebhookHeadersRequest.md)
 - [UploadAttachmentBytesRequest](interfaces/UploadAttachmentBytesRequest.md)
 - [UploadAttachmentOptions](interfaces/UploadAttachmentOptions.md)
 - [UploadAttachmentRequest](interfaces/UploadAttachmentRequest.md)
@@ -530,6 +531,8 @@
 - [WebhookDto](interfaces/WebhookDto.md)
 - [WebhookEmailOpenedPayload](interfaces/WebhookEmailOpenedPayload.md)
 - [WebhookEmailReadPayload](interfaces/WebhookEmailReadPayload.md)
+- [WebhookHeaderNameValue](interfaces/WebhookHeaderNameValue.md)
+- [WebhookHeaders](interfaces/WebhookHeaders.md)
 - [WebhookNewAttachmentPayload](interfaces/WebhookNewAttachmentPayload.md)
 - [WebhookNewContactPayload](interfaces/WebhookNewContactPayload.md)
 - [WebhookNewEmailPayload](interfaces/WebhookNewEmailPayload.md)
@@ -1066,6 +1069,12 @@
 - [WebhookEmailReadPayloadFromJSON](README.md#webhookemailreadpayloadfromjson)
 - [WebhookEmailReadPayloadFromJSONTyped](README.md#webhookemailreadpayloadfromjsontyped)
 - [WebhookEmailReadPayloadToJSON](README.md#webhookemailreadpayloadtojson)
+- [WebhookHeaderNameValueFromJSON](README.md#webhookheadernamevaluefromjson)
+- [WebhookHeaderNameValueFromJSONTyped](README.md#webhookheadernamevaluefromjsontyped)
+- [WebhookHeaderNameValueToJSON](README.md#webhookheadernamevaluetojson)
+- [WebhookHeadersFromJSON](README.md#webhookheadersfromjson)
+- [WebhookHeadersFromJSONTyped](README.md#webhookheadersfromjsontyped)
+- [WebhookHeadersToJSON](README.md#webhookheaderstojson)
 - [WebhookNewAttachmentPayloadFromJSON](README.md#webhooknewattachmentpayloadfromjson)
 - [WebhookNewAttachmentPayloadFromJSONTyped](README.md#webhooknewattachmentpayloadfromjsontyped)
 - [WebhookNewAttachmentPayloadToJSON](README.md#webhooknewattachmentpayloadtojson)
@@ -9505,6 +9514,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`WebhookEmailReadPayload`](interfaces/WebhookEmailReadPayload.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="webhookheadernamevaluefromjson" name="webhookheadernamevaluefromjson"></a> WebhookHeaderNameValueFromJSON
+
+▸ **WebhookHeaderNameValueFromJSON**(`json`): [`WebhookHeaderNameValue`](interfaces/WebhookHeaderNameValue.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookHeaderNameValue`](interfaces/WebhookHeaderNameValue.md)
+
+___
+
+### <a id="webhookheadernamevaluefromjsontyped" name="webhookheadernamevaluefromjsontyped"></a> WebhookHeaderNameValueFromJSONTyped
+
+▸ **WebhookHeaderNameValueFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookHeaderNameValue`](interfaces/WebhookHeaderNameValue.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookHeaderNameValue`](interfaces/WebhookHeaderNameValue.md)
+
+___
+
+### <a id="webhookheadernamevaluetojson" name="webhookheadernamevaluetojson"></a> WebhookHeaderNameValueToJSON
+
+▸ **WebhookHeaderNameValueToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookHeaderNameValue`](interfaces/WebhookHeaderNameValue.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="webhookheadersfromjson" name="webhookheadersfromjson"></a> WebhookHeadersFromJSON
+
+▸ **WebhookHeadersFromJSON**(`json`): [`WebhookHeaders`](interfaces/WebhookHeaders.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookHeaders`](interfaces/WebhookHeaders.md)
+
+___
+
+### <a id="webhookheadersfromjsontyped" name="webhookheadersfromjsontyped"></a> WebhookHeadersFromJSONTyped
+
+▸ **WebhookHeadersFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookHeaders`](interfaces/WebhookHeaders.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookHeaders`](interfaces/WebhookHeaders.md)
+
+___
+
+### <a id="webhookheaderstojson" name="webhookheaderstojson"></a> WebhookHeadersToJSON
+
+▸ **WebhookHeadersToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookHeaders`](interfaces/WebhookHeaders.md) |
 
 #### Returns
 

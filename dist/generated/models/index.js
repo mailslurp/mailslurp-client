@@ -181,6 +181,8 @@ __exportStar(require("./WebhookBounceRecipientPayload"), exports);
 __exportStar(require("./WebhookDto"), exports);
 __exportStar(require("./WebhookEmailOpenedPayload"), exports);
 __exportStar(require("./WebhookEmailReadPayload"), exports);
+__exportStar(require("./WebhookHeaderNameValue"), exports);
+__exportStar(require("./WebhookHeaders"), exports);
 __exportStar(require("./WebhookNewAttachmentPayload"), exports);
 __exportStar(require("./WebhookNewContactPayload"), exports);
 __exportStar(require("./WebhookNewEmailPayload"), exports);

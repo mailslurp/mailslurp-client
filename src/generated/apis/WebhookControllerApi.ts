@@ -53,6 +53,9 @@ import {
   WebhookEmailReadPayload,
   WebhookEmailReadPayloadFromJSON,
   WebhookEmailReadPayloadToJSON,
+  WebhookHeaders,
+  WebhookHeadersFromJSON,
+  WebhookHeadersToJSON,
   WebhookNewAttachmentPayload,
   WebhookNewAttachmentPayloadFromJSON,
   WebhookNewAttachmentPayloadToJSON,
@@ -165,6 +168,11 @@ export interface RedriveWebhookResultRequest {
 
 export interface SendTestDataRequest {
   webhookId: string;
+}
+
+export interface UpdateWebhookHeadersRequest {
+  webhookId: string;
+  webhookHeaders: WebhookHeaders;
 }
 
 export interface VerifyWebhookSignatureRequest {
@@ -1599,6 +1607,76 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<WebhookTestResult> {
     const response = await this.sendTestDataRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update a webhook request headers
+   */
+  async updateWebhookHeadersRaw(
+    requestParameters: UpdateWebhookHeadersRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookDto>> {
+    if (
+      requestParameters.webhookId === null ||
+      requestParameters.webhookId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookId',
+        'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhookHeaders.'
+      );
+    }
+
+    if (
+      requestParameters.webhookHeaders === null ||
+      requestParameters.webhookHeaders === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookHeaders',
+        'Required parameter requestParameters.webhookHeaders was null or undefined when calling updateWebhookHeaders.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/{webhookId}/headers`.replace(
+          `{${'webhookId'}}`,
+          encodeURIComponent(String(requestParameters.webhookId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WebhookHeadersToJSON(requestParameters.webhookHeaders),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update a webhook request headers
+   */
+  async updateWebhookHeaders(
+    requestParameters: UpdateWebhookHeadersRequest,
+    initOverrides?: RequestInit
+  ): Promise<WebhookDto> {
+    const response = await this.updateWebhookHeadersRaw(
       requestParameters,
       initOverrides
     );

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -87,6 +87,10 @@ export interface RedriveWebhookResultRequest {
 }
 export interface SendTestDataRequest {
     webhookId: string;
+}
+export interface UpdateWebhookHeadersRequest {
+    webhookId: string;
+    webhookHeaders: WebhookHeaders;
 }
 export interface VerifyWebhookSignatureRequest {
     verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
@@ -311,6 +315,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Send webhook test data
      */
     sendTestData(requestParameters: SendTestDataRequest, initOverrides?: RequestInit): Promise<WebhookTestResult>;
+    /**
+     * Update a webhook request headers
+     */
+    updateWebhookHeadersRaw(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Update a webhook request headers
+     */
+    updateWebhookHeaders(requestParameters: UpdateWebhookHeadersRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
     /**
      * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
      * Verify a webhook payload signature

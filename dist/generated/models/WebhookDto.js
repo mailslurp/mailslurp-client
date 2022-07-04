@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -63,9 +64,12 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         url: json['url'],
         method: json['method'],
         payloadJsonSchema: json['payloadJsonSchema'],
-        createdAt: new Date(json['createdAt']),
+        createdAt: json['createdAt'] === null ? null : new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        requestHeaders: !(0, runtime_1.exists)(json, 'requestHeaders')
+            ? undefined
+            : (0, _1.WebhookHeadersFromJSON)(json['requestHeaders']),
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -85,9 +89,10 @@ function WebhookDtoToJSON(value) {
         url: value.url,
         method: value.method,
         payloadJsonSchema: value.payloadJsonSchema,
-        createdAt: value.createdAt.toISOString(),
+        createdAt: value.createdAt === null ? null : value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         eventName: value.eventName,
+        requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

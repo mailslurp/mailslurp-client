@@ -32,13 +32,13 @@ export interface OrganizationInboxProjection {
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      * The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @type {string}
      * @memberof OrganizationInboxProjection
      */
-    emailAddress?: string;
+    emailAddress?: string | null;
     /**
      * Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
      * @type {boolean}
@@ -50,7 +50,7 @@ export interface OrganizationInboxProjection {
      * @type {Array<string>}
      * @memberof OrganizationInboxProjection
      */
-    tags?: Array<string>;
+    tags?: Array<string> | null;
     /**
      * Does inbox permit team access for organization team members. If so team users can use inbox and emails associated with it. See the team access guide at https://www.mailslurp.com/guides/team-email-account-sharing/
      * @type {boolean}

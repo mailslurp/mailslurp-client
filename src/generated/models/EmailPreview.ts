@@ -30,31 +30,31 @@ export interface EmailPreview {
    * @type {string}
    * @memberof EmailPreview
    */
-  subject?: string;
+  subject?: string | null;
   /**
    * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof EmailPreview
    */
-  to: Array<string>;
+  to: Array<string> | null;
   /**
    * Who the email was sent from. An email address - see fromName for the sender name.
    * @type {string}
    * @memberof EmailPreview
    */
-  from?: string;
+  from?: string | null;
   /**
    * List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof EmailPreview
    */
-  bcc?: Array<string>;
+  bcc?: Array<string> | null;
   /**
    * List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof EmailPreview
    */
-  cc?: Array<string>;
+  cc?: Array<string> | null;
   /**
    * When was the email received by MailSlurp
    * @type {Date}
@@ -72,7 +72,7 @@ export interface EmailPreview {
    * @type {Array<string>}
    * @memberof EmailPreview
    */
-  attachments?: Array<string>;
+  attachments?: Array<string> | null;
 }
 
 export function EmailPreviewFromJSON(json: any): EmailPreview {

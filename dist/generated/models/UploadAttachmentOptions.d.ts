@@ -20,13 +20,13 @@ export interface UploadAttachmentOptions {
      * @type {string}
      * @memberof UploadAttachmentOptions
      */
-    contentType?: string;
+    contentType?: string | null;
     /**
      * Optional filename to save upload with. Will be the name that is shown in email clients
      * @type {string}
      * @memberof UploadAttachmentOptions
      */
-    filename?: string;
+    filename?: string | null;
     /**
      * Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
      * @type {string}

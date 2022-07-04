@@ -24,31 +24,31 @@ export interface CreateContactOptions {
    * @type {string}
    * @memberof CreateContactOptions
    */
-  firstName?: string;
+  firstName?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreateContactOptions
    */
-  lastName?: string;
+  lastName?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreateContactOptions
    */
-  company?: string;
+  company?: string | null;
   /**
    * Set of email addresses belonging to the contact
    * @type {Array<string>}
    * @memberof CreateContactOptions
    */
-  emailAddresses?: Array<string>;
+  emailAddresses?: Array<string> | null;
   /**
    * Tags that can be used to search and group contacts
    * @type {Array<string>}
    * @memberof CreateContactOptions
    */
-  tags?: Array<string>;
+  tags?: Array<string> | null;
   /**
    *
    * @type {object}
@@ -60,13 +60,13 @@ export interface CreateContactOptions {
    * @type {boolean}
    * @memberof CreateContactOptions
    */
-  optOut?: boolean;
+  optOut?: boolean | null;
   /**
    * Group IDs that contact belongs to
    * @type {string}
    * @memberof CreateContactOptions
    */
-  groupId?: string;
+  groupId?: string | null;
 }
 
 export function CreateContactOptionsFromJSON(json: any): CreateContactOptions {

@@ -20,31 +20,31 @@ export interface EmailAnalysis {
      * @type {string}
      * @memberof EmailAnalysis
      */
-    spamVerdict?: string;
+    spamVerdict?: string | null;
     /**
      * Verdict of virus scan analysis
      * @type {string}
      * @memberof EmailAnalysis
      */
-    virusVerdict?: string;
+    virusVerdict?: string | null;
     /**
      * Verdict of Send Policy Framework record spoofing analysis
      * @type {string}
      * @memberof EmailAnalysis
      */
-    spfVerdict?: string;
+    spfVerdict?: string | null;
     /**
      * Verdict of DomainKeys Identified Mail analysis
      * @type {string}
      * @memberof EmailAnalysis
      */
-    dkimVerdict?: string;
+    dkimVerdict?: string | null;
     /**
      * Verdict of Domain-based Message Authentication Reporting and Conformance analysis
      * @type {string}
      * @memberof EmailAnalysis
      */
-    dmarcVerdict?: string;
+    dmarcVerdict?: string | null;
 }
 export declare function EmailAnalysisFromJSON(json: any): EmailAnalysis;
 export declare function EmailAnalysisFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailAnalysis;

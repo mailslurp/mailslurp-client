@@ -167,6 +167,8 @@ export * from './WebhookBounceRecipientPayload';
 export * from './WebhookDto';
 export * from './WebhookEmailOpenedPayload';
 export * from './WebhookEmailReadPayload';
+export * from './WebhookHeaderNameValue';
+export * from './WebhookHeaders';
 export * from './WebhookNewAttachmentPayload';
 export * from './WebhookNewContactPayload';
 export * from './WebhookNewEmailPayload';

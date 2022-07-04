@@ -196,6 +196,8 @@ models/WebhookBounceRecipientPayload.ts
 models/WebhookDto.ts
 models/WebhookEmailOpenedPayload.ts
 models/WebhookEmailReadPayload.ts
+models/WebhookHeaderNameValue.ts
+models/WebhookHeaders.ts
 models/WebhookNewAttachmentPayload.ts
 models/WebhookNewContactPayload.ts
 models/WebhookNewEmailPayload.ts

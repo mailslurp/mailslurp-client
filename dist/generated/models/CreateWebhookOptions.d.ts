@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BasicAuthOptions } from './';
+import { BasicAuthOptions, WebhookHeaders } from './';
 /**
  * Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the inbox receives an email. Webhooks are great for processing many inbound emails.
  * @export
@@ -27,7 +27,7 @@ export interface CreateWebhookOptions {
      * @type {BasicAuthOptions}
      * @memberof CreateWebhookOptions
      */
-    basicAuth?: BasicAuthOptions;
+    basicAuth?: BasicAuthOptions | null;
     /**
      * Optional name for the webhook
      * @type {string}
@@ -40,6 +40,12 @@ export interface CreateWebhookOptions {
      * @memberof CreateWebhookOptions
      */
     eventName?: CreateWebhookOptionsEventNameEnum;
+    /**
+     *
+     * @type {WebhookHeaders}
+     * @memberof CreateWebhookOptions
+     */
+    includeHeaders?: WebhookHeaders;
 }
 /**
  * @export

@@ -53,17 +53,17 @@ export interface PageSentEmailWithQueueProjection {
      */
     numberOfElements: number;
     /**
-     * Total number of pages available
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    totalPages: number;
-    /**
      * Total number of items available for querying
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
      */
     totalElements: number;
+    /**
+     * Total number of pages available
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    totalPages: number;
     /**
      *
      * @type {boolean}

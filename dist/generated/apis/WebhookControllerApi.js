@@ -1441,6 +1441,62 @@ var WebhookControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Update a webhook request headers
+     */
+    WebhookControllerApi.prototype.updateWebhookHeadersRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
+                            throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling updateWebhookHeaders.');
+                        }
+                        if (requestParameters.webhookHeaders === null ||
+                            requestParameters.webhookHeaders === undefined) {
+                            throw new runtime.RequiredError('webhookHeaders', 'Required parameter requestParameters.webhookHeaders was null or undefined when calling updateWebhookHeaders.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/{webhookId}/headers".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                method: 'PUT',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WebhookHeadersToJSON)(requestParameters.webhookHeaders),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Update a webhook request headers
+     */
+    WebhookControllerApi.prototype.updateWebhookHeaders = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateWebhookHeadersRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Verify a webhook payload using the messageId and signature. This allows you to be sure that MailSlurp sent the payload and not another server.
      * Verify a webhook payload signature
      */
