@@ -59,6 +59,7 @@ tag:
 # manually bump package version first
 deploy: generate fmt build docs docs-lint docs-test readme test
 	npm publish
+	$(MAKE) tag
 
 download-hyperlink:
 	curl --output scripts/hyperlink -L https://github.com/untitaker/hyperlink/releases/download/0.1.17/hyperlink-linux-x86_64
