@@ -16,17 +16,23 @@ Sent email details
 - [bodyMD5Hash](SentEmailDto.md#bodymd5hash)
 - [cc](SentEmailDto.md#cc)
 - [charset](SentEmailDto.md#charset)
+- [domainId](SentEmailDto.md#domainid)
 - [from](SentEmailDto.md#from)
 - [html](SentEmailDto.md#html)
 - [id](SentEmailDto.md#id)
 - [inboxId](SentEmailDto.md#inboxid)
 - [isHTML](SentEmailDto.md#ishtml)
 - [messageId](SentEmailDto.md#messageid)
+- [messageIds](SentEmailDto.md#messageids)
 - [pixelIds](SentEmailDto.md#pixelids)
 - [replyTo](SentEmailDto.md#replyto)
 - [sentAt](SentEmailDto.md#sentat)
 - [subject](SentEmailDto.md#subject)
+- [templateId](SentEmailDto.md#templateid)
+- [templateVariables](SentEmailDto.md#templatevariables)
 - [to](SentEmailDto.md#to)
+- [toContacts](SentEmailDto.md#tocontacts)
+- [toGroup](SentEmailDto.md#togroup)
 - [userId](SentEmailDto.md#userid)
 - [virtualSend](SentEmailDto.md#virtualsend)
 
@@ -84,6 +90,16 @@ ___
 
 ___
 
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+Domain ID
+
+**`memberof`** SentEmailDto
+
+___
+
 ### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
@@ -136,6 +152,14 @@ ___
 
 ___
 
+### <a id="messageids" name="messageids"></a> messageIds
+
+• `Optional` **messageIds**: `string`[]
+
+**`memberof`** SentEmailDto
+
+___
+
 ### <a id="pixelids" name="pixelids"></a> pixelIds
 
 • `Optional` **pixelIds**: `string`[]
@@ -168,11 +192,47 @@ ___
 
 ___
 
+### <a id="templateid" name="templateid"></a> templateId
+
+• `Optional` **templateId**: `string`
+
+**`memberof`** SentEmailDto
+
+___
+
+### <a id="templatevariables" name="templatevariables"></a> templateVariables
+
+• `Optional` **templateVariables**: `Object`
+
+**`memberof`** SentEmailDto
+
+#### Index signature
+
+▪ [key: `string`]: `object`
+
+___
+
 ### <a id="to" name="to"></a> to
 
 • `Optional` **to**: `string`[]
 
 Recipients email was sent to
+
+**`memberof`** SentEmailDto
+
+___
+
+### <a id="tocontacts" name="tocontacts"></a> toContacts
+
+• `Optional` **toContacts**: `string`[]
+
+**`memberof`** SentEmailDto
+
+___
+
+### <a id="togroup" name="togroup"></a> toGroup
+
+• `Optional` **toGroup**: `string`
 
 **`memberof`** SentEmailDto
 

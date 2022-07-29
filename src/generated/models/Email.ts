@@ -53,6 +53,12 @@ export interface Email {
    */
   inboxId: string;
   /**
+   * ID of the domain that received the email
+   * @type {string}
+   * @memberof Email
+   */
+  domainId?: string;
+  /**
    * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
    * @type {Array<string>}
    * @memberof Email
@@ -195,6 +201,7 @@ export function EmailFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     inboxId: json['inboxId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     to: json['to'],
     from: !exists(json, 'from') ? undefined : json['from'],
     sender: !exists(json, 'sender')
@@ -236,6 +243,7 @@ export function EmailToJSON(value?: Email | null): any {
     id: value.id,
     userId: value.userId,
     inboxId: value.inboxId,
+    domainId: value.domainId,
     to: value.to,
     from: value.from,
     sender: SenderToJSON(value.sender),

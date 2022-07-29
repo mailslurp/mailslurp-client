@@ -34,7 +34,7 @@ export interface AttachmentMetaData {
      */
     contentLength: number;
     /**
-     * ID of attachment
+     * ID of attachment. Can be used to with attachment controller endpoints to download attachment or with sending methods to attach to an email.
      * @type {string}
      * @memberof AttachmentMetaData
      */

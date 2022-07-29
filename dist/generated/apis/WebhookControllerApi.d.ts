@@ -18,6 +18,9 @@ export interface CreateWebhookRequest {
     inboxId: string;
     createWebhookOptions: CreateWebhookOptions;
 }
+export interface DeleteAllWebhooksRequest {
+    before?: Date;
+}
 export interface DeleteWebhookRequest {
     inboxId: string;
     webhookId: string;
@@ -122,11 +125,11 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
     /**
      * Delete all webhooks
      */
-    deleteAllWebhooksRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteAllWebhooksRaw(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete all webhooks
      */
-    deleteAllWebhooks(initOverrides?: RequestInit): Promise<void>;
+    deleteAllWebhooks(requestParameters: DeleteAllWebhooksRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Delete and disable a Webhook for an Inbox
      */

@@ -45,13 +45,13 @@ export interface PageInboxRulesetDto {
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}

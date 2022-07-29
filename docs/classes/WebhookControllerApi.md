@@ -189,7 +189,7 @@ ___
 
 ### <a id="deleteallwebhooks" name="deleteallwebhooks"></a> deleteAllWebhooks
 
-▸ **deleteAllWebhooks**(`initOverrides?`): `Promise`<`void`\>
+▸ **deleteAllWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete all webhooks
 
@@ -197,6 +197,7 @@ Delete all webhooks
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllWebhooksRequest`](../interfaces/DeleteAllWebhooksRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -207,7 +208,7 @@ ___
 
 ### <a id="deleteallwebhooksraw" name="deleteallwebhooksraw"></a> deleteAllWebhooksRaw
 
-▸ **deleteAllWebhooksRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **deleteAllWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Delete all webhooks
 
@@ -215,6 +216,7 @@ Delete all webhooks
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`DeleteAllWebhooksRequest`](../interfaces/DeleteAllWebhooksRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

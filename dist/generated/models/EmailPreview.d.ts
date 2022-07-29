@@ -22,6 +22,12 @@ export interface EmailPreview {
      */
     id: string;
     /**
+     * ID of the domain that received the email
+     * @type {string}
+     * @memberof EmailPreview
+     */
+    domainId?: string;
+    /**
      * The subject line of the email message as specified by SMTP subject header
      * @type {string}
      * @memberof EmailPreview

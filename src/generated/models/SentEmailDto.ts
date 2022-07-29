@@ -38,6 +38,12 @@ export interface SentEmailDto {
    */
   inboxId: string;
   /**
+   * Domain ID
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  domainId?: string;
+  /**
    * Recipients email was sent to
    * @type {Array<string>}
    * @memberof SentEmailDto
@@ -93,6 +99,18 @@ export interface SentEmailDto {
   body?: string;
   /**
    *
+   * @type {Array<string>}
+   * @memberof SentEmailDto
+   */
+  toContacts?: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  toGroup?: string;
+  /**
+   *
    * @type {string}
    * @memberof SentEmailDto
    */
@@ -123,10 +141,28 @@ export interface SentEmailDto {
   messageId?: string;
   /**
    *
+   * @type {Array<string>}
+   * @memberof SentEmailDto
+   */
+  messageIds?: Array<string>;
+  /**
+   *
    * @type {boolean}
    * @memberof SentEmailDto
    */
   virtualSend?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  templateId?: string;
+  /**
+   *
+   * @type {{ [key: string]: object; }}
+   * @memberof SentEmailDto
+   */
+  templateVariables?: { [key: string]: object };
   /**
    *
    * @type {boolean}
@@ -150,6 +186,7 @@ export function SentEmailDtoFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     inboxId: json['inboxId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     to: !exists(json, 'to') ? undefined : json['to'],
     from: !exists(json, 'from') ? undefined : json['from'],
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
@@ -159,12 +196,19 @@ export function SentEmailDtoFromJSONTyped(
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     body: !exists(json, 'body') ? undefined : json['body'],
+    toContacts: !exists(json, 'toContacts') ? undefined : json['toContacts'],
+    toGroup: !exists(json, 'toGroup') ? undefined : json['toGroup'],
     charset: !exists(json, 'charset') ? undefined : json['charset'],
     isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
     sentAt: new Date(json['sentAt']),
     pixelIds: !exists(json, 'pixelIds') ? undefined : json['pixelIds'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
+    messageIds: !exists(json, 'messageIds') ? undefined : json['messageIds'],
     virtualSend: !exists(json, 'virtualSend') ? undefined : json['virtualSend'],
+    templateId: !exists(json, 'templateId') ? undefined : json['templateId'],
+    templateVariables: !exists(json, 'templateVariables')
+      ? undefined
+      : json['templateVariables'],
     html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
@@ -180,6 +224,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     id: value.id,
     userId: value.userId,
     inboxId: value.inboxId,
+    domainId: value.domainId,
     to: value.to,
     from: value.from,
     replyTo: value.replyTo,
@@ -189,12 +234,17 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     subject: value.subject,
     bodyMD5Hash: value.bodyMD5Hash,
     body: value.body,
+    toContacts: value.toContacts,
+    toGroup: value.toGroup,
     charset: value.charset,
     isHTML: value.isHTML,
     sentAt: value.sentAt.toISOString(),
     pixelIds: value.pixelIds,
     messageId: value.messageId,
+    messageIds: value.messageIds,
     virtualSend: value.virtualSend,
+    templateId: value.templateId,
+    templateVariables: value.templateVariables,
     html: value.html,
   };
 }

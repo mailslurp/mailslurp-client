@@ -21,6 +21,72 @@ import { UserInfoDto, UserInfoDtoFromJSON, UserInfoDtoToJSON } from '../models';
 export class ApiUserControllerApi extends runtime.BaseAPI {
   /**
    */
+  async getSmtpPasswordRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/smtp/password`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   */
+  async getSmtpPassword(initOverrides?: RequestInit): Promise<string> {
+    const response = await this.getSmtpPasswordRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
+  async getSmtpUsernameRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/smtp/username`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   */
+  async getSmtpUsername(initOverrides?: RequestInit): Promise<string> {
+    const response = await this.getSmtpUsernameRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
   async getUserInfoRaw(
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<UserInfoDto>> {

@@ -209,13 +209,16 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      * Delete all webhooks
      */
-    WebhookControllerApi.prototype.deleteAllWebhooksRaw = function (initOverrides) {
+    WebhookControllerApi.prototype.deleteAllWebhooksRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -236,11 +239,11 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     /**
      * Delete all webhooks
      */
-    WebhookControllerApi.prototype.deleteAllWebhooks = function (initOverrides) {
+    WebhookControllerApi.prototype.deleteAllWebhooks = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteAllWebhooksRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.deleteAllWebhooksRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];

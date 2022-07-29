@@ -11,6 +11,7 @@ Inbox data
 ### Properties
 
 - [createdAt](InboxPreview.md#createdat)
+- [domainId](InboxPreview.md#domainid)
 - [emailAddress](InboxPreview.md#emailaddress)
 - [expiresAt](InboxPreview.md#expiresat)
 - [favourite](InboxPreview.md#favourite)
@@ -28,6 +29,16 @@ Inbox data
 • **createdAt**: `Date`
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
+
+**`memberof`** InboxPreview
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+ID of custom domain used by the inbox if any
 
 **`memberof`** InboxPreview
 

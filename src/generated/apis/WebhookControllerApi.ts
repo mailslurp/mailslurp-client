@@ -85,6 +85,10 @@ export interface CreateWebhookRequest {
   createWebhookOptions: CreateWebhookOptions;
 }
 
+export interface DeleteAllWebhooksRequest {
+  before?: Date;
+}
+
 export interface DeleteWebhookRequest {
   inboxId: string;
   webhookId: string;
@@ -322,9 +326,16 @@ export class WebhookControllerApi extends runtime.BaseAPI {
    * Delete all webhooks
    */
   async deleteAllWebhooksRaw(
+    requestParameters: DeleteAllWebhooksRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<void>> {
     const queryParameters: any = {};
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -348,8 +359,11 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   /**
    * Delete all webhooks
    */
-  async deleteAllWebhooks(initOverrides?: RequestInit): Promise<void> {
-    await this.deleteAllWebhooksRaw(initOverrides);
+  async deleteAllWebhooks(
+    requestParameters: DeleteAllWebhooksRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllWebhooksRaw(requestParameters, initOverrides);
   }
 
   /**

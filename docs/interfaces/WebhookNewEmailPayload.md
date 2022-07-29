@@ -14,6 +14,7 @@ NEW_EMAIL webhook payload. Sent to your webhook url endpoint via HTTP POST when 
 - [bcc](WebhookNewEmailPayload.md#bcc)
 - [cc](WebhookNewEmailPayload.md#cc)
 - [createdAt](WebhookNewEmailPayload.md#createdat)
+- [domainId](WebhookNewEmailPayload.md#domainid)
 - [emailId](WebhookNewEmailPayload.md#emailid)
 - [eventName](WebhookNewEmailPayload.md#eventname)
 - [from](WebhookNewEmailPayload.md#from)
@@ -61,6 +62,16 @@ ___
 • **createdAt**: `Date`
 
 Date time of event creation
+
+**`memberof`** WebhookNewEmailPayload
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+Id of the domain that received an email
 
 **`memberof`** WebhookNewEmailPayload
 

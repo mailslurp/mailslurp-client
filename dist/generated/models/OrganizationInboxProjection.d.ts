@@ -22,6 +22,12 @@ export interface OrganizationInboxProjection {
      */
     id: string;
     /**
+     * ID of custom domain used by the inbox if any
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    domainId?: string;
+    /**
      * When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
      * @type {Date}
      * @memberof OrganizationInboxProjection

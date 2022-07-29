@@ -5,7 +5,9 @@
 ### Properties
 
 - [before](GetAllInboxesRequest.md#before)
+- [domainId](GetAllInboxesRequest.md#domainid)
 - [favourite](GetAllInboxesRequest.md#favourite)
+- [inboxType](GetAllInboxesRequest.md#inboxtype)
 - [page](GetAllInboxesRequest.md#page)
 - [search](GetAllInboxesRequest.md#search)
 - [since](GetAllInboxesRequest.md#since)
@@ -22,9 +24,21 @@
 
 ___
 
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+___
+
 ### <a id="favourite" name="favourite"></a> favourite
 
 • `Optional` **favourite**: `boolean`
+
+___
+
+### <a id="inboxtype" name="inboxtype"></a> inboxType
+
+• `Optional` **inboxType**: [`GetAllInboxesInboxTypeEnum`](../enums/GetAllInboxesInboxTypeEnum.md)
 
 ___
 

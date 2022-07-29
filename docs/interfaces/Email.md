@@ -19,6 +19,7 @@ Email entity (also known as EmailDto). When an SMTP email message is received by
 - [cc](Email.md#cc)
 - [charset](Email.md#charset)
 - [createdAt](Email.md#createdat)
+- [domainId](Email.md#domainid)
 - [from](Email.md#from)
 - [headers](Email.md#headers)
 - [html](Email.md#html)
@@ -120,6 +121,16 @@ ___
 • **createdAt**: `Date`
 
 When was the email received by MailSlurp
+
+**`memberof`** Email
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+ID of the domain that received the email
 
 **`memberof`** Email
 

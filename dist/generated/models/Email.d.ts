@@ -35,6 +35,12 @@ export interface Email {
      */
     inboxId: string;
     /**
+     * ID of the domain that received the email
+     * @type {string}
+     * @memberof Email
+     */
+    domainId?: string;
+    /**
      * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}
      * @memberof Email

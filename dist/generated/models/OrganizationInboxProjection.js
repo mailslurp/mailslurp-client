@@ -34,6 +34,7 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         createdAt: new Date(json['createdAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
@@ -57,6 +58,7 @@ function OrganizationInboxProjectionToJSON(value) {
     }
     return {
         id: value.id,
+        domainId: value.domainId,
         createdAt: value.createdAt.toISOString(),
         name: value.name,
         emailAddress: value.emailAddress,

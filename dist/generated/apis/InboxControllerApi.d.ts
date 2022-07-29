@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -51,6 +51,16 @@ export interface GetAllInboxesRequest {
     search?: string;
     tag?: string;
     teamAccess?: boolean;
+    since?: Date;
+    before?: Date;
+    inboxType?: GetAllInboxesInboxTypeEnum;
+    domainId?: string;
+}
+export interface GetDeliveryStatusesByInboxIdRequest {
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetDeliveryStatusesByInboxIdSortEnum;
     since?: Date;
     before?: Date;
 }
@@ -264,6 +274,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List All Inboxes Paginated
      */
     getAllInboxes(requestParameters: GetAllInboxesRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
+    /**
+     * Get all email delivery statuses for an inbox
+     */
+    getDeliveryStatusesByInboxIdRaw(requestParameters: GetDeliveryStatusesByInboxIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
+    /**
+     * Get all email delivery statuses for an inbox
+     */
+    getDeliveryStatusesByInboxId(requestParameters: GetDeliveryStatusesByInboxIdRequest, initOverrides?: RequestInit): Promise<PageDeliveryStatus>;
     /**
      * List emails that an inbox has received. Only emails that are sent to the inbox\'s email address will appear in the inbox. It may take several seconds for any email you send to an inbox\'s email address to appear in the inbox. To make this endpoint wait for a minimum number of emails use the `minCount` parameter. The server will retry the inbox database until the `minCount` is satisfied or the `retryTimeout` is reached
      * Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
@@ -502,6 +520,22 @@ export declare enum CreateInboxInboxTypeEnum {
  * @enum {string}
  */
 export declare enum GetAllInboxesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxesInboxTypeEnum {
+    HTTP_INBOX = "HTTP_INBOX",
+    SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetDeliveryStatusesByInboxIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

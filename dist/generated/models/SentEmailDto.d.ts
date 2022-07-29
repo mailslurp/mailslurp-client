@@ -34,6 +34,12 @@ export interface SentEmailDto {
      */
     inboxId: string;
     /**
+     * Domain ID
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    domainId?: string;
+    /**
      * Recipients email was sent to
      * @type {Array<string>}
      * @memberof SentEmailDto
@@ -89,6 +95,18 @@ export interface SentEmailDto {
     body?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    toContacts?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    toGroup?: string;
+    /**
+     *
      * @type {string}
      * @memberof SentEmailDto
      */
@@ -119,10 +137,30 @@ export interface SentEmailDto {
     messageId?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof SentEmailDto
+     */
+    messageIds?: Array<string>;
+    /**
+     *
      * @type {boolean}
      * @memberof SentEmailDto
      */
     virtualSend?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    templateId?: string;
+    /**
+     *
+     * @type {{ [key: string]: object; }}
+     * @memberof SentEmailDto
+     */
+    templateVariables?: {
+        [key: string]: object;
+    };
     /**
      *
      * @type {boolean}

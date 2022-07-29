@@ -35,6 +35,12 @@ export interface EmailProjection {
     subject?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    to: Array<string>;
+    /**
+     *
      * @type {string}
      * @memberof EmailProjection
      */
@@ -45,12 +51,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     attachments?: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    to: Array<string>;
     /**
      *
      * @type {Date}
@@ -69,6 +69,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     cc?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    domainId?: string;
     /**
      *
      * @type {boolean}

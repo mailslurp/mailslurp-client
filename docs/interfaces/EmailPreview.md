@@ -14,6 +14,7 @@ Preview of an email message. For full message (including body and attachments) c
 - [bcc](EmailPreview.md#bcc)
 - [cc](EmailPreview.md#cc)
 - [createdAt](EmailPreview.md#createdat)
+- [domainId](EmailPreview.md#domainid)
 - [from](EmailPreview.md#from)
 - [id](EmailPreview.md#id)
 - [read](EmailPreview.md#read)
@@ -57,6 +58,16 @@ ___
 • **createdAt**: `Date`
 
 When was the email received by MailSlurp
+
+**`memberof`** EmailPreview
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+ID of the domain that received the email
 
 **`memberof`** EmailPreview
 

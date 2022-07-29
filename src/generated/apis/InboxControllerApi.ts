@@ -53,6 +53,9 @@ import {
   InboxRulesetDto,
   InboxRulesetDtoFromJSON,
   InboxRulesetDtoToJSON,
+  PageDeliveryStatus,
+  PageDeliveryStatusFromJSON,
+  PageDeliveryStatusToJSON,
   PageEmailPreview,
   PageEmailPreviewFromJSON,
   PageEmailPreviewToJSON,
@@ -135,6 +138,17 @@ export interface GetAllInboxesRequest {
   search?: string;
   tag?: string;
   teamAccess?: boolean;
+  since?: Date;
+  before?: Date;
+  inboxType?: GetAllInboxesInboxTypeEnum;
+  domainId?: string;
+}
+
+export interface GetDeliveryStatusesByInboxIdRequest {
+  inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetDeliveryStatusesByInboxIdSortEnum;
   since?: Date;
   before?: Date;
 }
@@ -837,6 +851,14 @@ export class InboxControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.inboxType !== undefined) {
+      queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -867,6 +889,85 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageInboxProjection> {
     const response = await this.getAllInboxesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get all email delivery statuses for an inbox
+   */
+  async getDeliveryStatusesByInboxIdRaw(
+    requestParameters: GetDeliveryStatusesByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageDeliveryStatus>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getDeliveryStatusesByInboxId.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/delivery-status`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageDeliveryStatusFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all email delivery statuses for an inbox
+   */
+  async getDeliveryStatusesByInboxId(
+    requestParameters: GetDeliveryStatusesByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageDeliveryStatus> {
+    const response = await this.getDeliveryStatusesByInboxIdRaw(
       requestParameters,
       initOverrides
     );
@@ -2410,6 +2511,22 @@ export enum CreateInboxInboxTypeEnum {
  * @enum {string}
  */
 export enum GetAllInboxesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxesInboxTypeEnum {
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetDeliveryStatusesByInboxIdSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

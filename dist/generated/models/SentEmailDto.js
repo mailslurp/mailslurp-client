@@ -27,6 +27,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         userId: json['userId'],
         inboxId: json['inboxId'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
@@ -36,12 +37,19 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        toContacts: !(0, runtime_1.exists)(json, 'toContacts') ? undefined : json['toContacts'],
+        toGroup: !(0, runtime_1.exists)(json, 'toGroup') ? undefined : json['toGroup'],
         charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
         isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
         sentAt: new Date(json['sentAt']),
         pixelIds: !(0, runtime_1.exists)(json, 'pixelIds') ? undefined : json['pixelIds'],
         messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
+        messageIds: !(0, runtime_1.exists)(json, 'messageIds') ? undefined : json['messageIds'],
         virtualSend: !(0, runtime_1.exists)(json, 'virtualSend') ? undefined : json['virtualSend'],
+        templateId: !(0, runtime_1.exists)(json, 'templateId') ? undefined : json['templateId'],
+        templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
+            ? undefined
+            : json['templateVariables'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
@@ -57,6 +65,7 @@ function SentEmailDtoToJSON(value) {
         id: value.id,
         userId: value.userId,
         inboxId: value.inboxId,
+        domainId: value.domainId,
         to: value.to,
         from: value.from,
         replyTo: value.replyTo,
@@ -66,12 +75,17 @@ function SentEmailDtoToJSON(value) {
         subject: value.subject,
         bodyMD5Hash: value.bodyMD5Hash,
         body: value.body,
+        toContacts: value.toContacts,
+        toGroup: value.toGroup,
         charset: value.charset,
         isHTML: value.isHTML,
         sentAt: value.sentAt.toISOString(),
         pixelIds: value.pixelIds,
         messageId: value.messageId,
+        messageIds: value.messageIds,
         virtualSend: value.virtualSend,
+        templateId: value.templateId,
+        templateVariables: value.templateVariables,
         html: value.html,
     };
 }

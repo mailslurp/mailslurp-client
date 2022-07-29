@@ -18,6 +18,10 @@
 
 ### Methods
 
+- [getSmtpPassword](ApiUserControllerApi.md#getsmtppassword)
+- [getSmtpPasswordRaw](ApiUserControllerApi.md#getsmtppasswordraw)
+- [getSmtpUsername](ApiUserControllerApi.md#getsmtpusername)
+- [getSmtpUsernameRaw](ApiUserControllerApi.md#getsmtpusernameraw)
 - [getUserInfo](ApiUserControllerApi.md#getuserinfo)
 - [getUserInfoRaw](ApiUserControllerApi.md#getuserinforaw)
 - [request](ApiUserControllerApi.md#request)
@@ -52,6 +56,70 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### <a id="getsmtppassword" name="getsmtppassword"></a> getSmtpPassword
+
+▸ **getSmtpPassword**(`initOverrides?`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### <a id="getsmtppasswordraw" name="getsmtppasswordraw"></a> getSmtpPasswordRaw
+
+▸ **getSmtpPasswordRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### <a id="getsmtpusername" name="getsmtpusername"></a> getSmtpUsername
+
+▸ **getSmtpUsername**(`initOverrides?`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### <a id="getsmtpusernameraw" name="getsmtpusernameraw"></a> getSmtpUsernameRaw
+
+▸ **getSmtpUsernameRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
 
 ### <a id="getuserinfo" name="getuserinfo"></a> getUserInfo
 

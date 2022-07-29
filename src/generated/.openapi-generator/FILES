@@ -39,6 +39,7 @@ models/BounceRecipientProjection.ts
 models/BouncedEmailDto.ts
 models/BouncedRecipientDto.ts
 models/BulkSendEmailOptions.ts
+models/Complaint.ts
 models/ConditionOption.ts
 models/ContactDto.ts
 models/ContactProjection.ts
@@ -58,6 +59,7 @@ models/CreateWebhookOptions.ts
 models/DNSLookupOptions.ts
 models/DNSLookupResult.ts
 models/DNSLookupResults.ts
+models/DeliveryStatusDto.ts
 models/DescribeDomainOptions.ts
 models/DescribeMailServerDomainResult.ts
 models/DomainDto.ts
@@ -122,7 +124,9 @@ models/PageAlias.ts
 models/PageAttachmentEntity.ts
 models/PageBouncedEmail.ts
 models/PageBouncedRecipients.ts
+models/PageComplaint.ts
 models/PageContactProjection.ts
+models/PageDeliveryStatus.ts
 models/PageEmailPreview.ts
 models/PageEmailProjection.ts
 models/PageEmailValidationRequest.ts

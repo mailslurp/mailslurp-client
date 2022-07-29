@@ -47,6 +47,12 @@ export interface WebhookNewEmailPayload {
      */
     inboxId: string;
     /**
+     * Id of the domain that received an email
+     * @type {string}
+     * @memberof WebhookNewEmailPayload
+     */
+    domainId?: string;
+    /**
      * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
      * @type {string}
      * @memberof WebhookNewEmailPayload

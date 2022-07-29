@@ -1,4 +1,4 @@
-import { AliasControllerApi, ApiUserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
+import { AliasControllerApi, ApiUserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
 export * from './generated';
 declare type SortEnum = 'ASC' | 'DESC';
 /**
@@ -56,6 +56,8 @@ export declare class MailSlurp {
     readonly emailVerificationController: EmailVerificationControllerApi;
     readonly inboxController: InboxControllerApi;
     readonly userController: ApiUserControllerApi;
+    readonly phoneController: PhoneControllerApi;
+    readonly smsController: SmsControllerApi;
     readonly sentController: SentEmailsControllerApi;
     readonly attachmentController: AttachmentControllerApi;
     readonly commonController: CommonActionsControllerApi;

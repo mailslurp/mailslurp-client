@@ -45,13 +45,13 @@ export interface PageInboxForwarderDto {
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { EmailPreviewUrls, PageSentEmailProjection, PageSentEmailWithQueueProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
+import { DeliveryStatusDto, EmailPreviewUrls, PageDeliveryStatus, PageSentEmailProjection, PageSentEmailWithQueueProjection, PageTrackingPixelProjection, RawEmailJson, SentEmailDto } from '../models';
 export interface DeleteSentEmailRequest {
     id: string;
 }
@@ -27,6 +27,24 @@ export interface GetRawSentEmailContentsRequest {
 }
 export interface GetRawSentEmailJsonRequest {
     emailId: string;
+}
+export interface GetSentDeliveryStatusRequest {
+    deliveryId: string;
+}
+export interface GetSentDeliveryStatusesRequest {
+    page?: number;
+    size?: number;
+    sort?: GetSentDeliveryStatusesSortEnum;
+    since?: Date;
+    before?: Date;
+}
+export interface GetSentDeliveryStatusesBySentIdRequest {
+    sentId: string;
+    page?: number;
+    size?: number;
+    sort?: GetSentDeliveryStatusesBySentIdSortEnum;
+    since?: Date;
+    before?: Date;
 }
 export interface GetSentEmailRequest {
     id: string;
@@ -68,6 +86,14 @@ export interface GetSentOrganizationEmailsRequest {
     size?: number;
     sort?: GetSentOrganizationEmailsSortEnum;
     searchFilter?: string;
+    since?: Date;
+    before?: Date;
+}
+export interface WaitForDeliveryStatusesRequest {
+    sentId?: string;
+    inboxId?: string;
+    timeout?: number;
+    index?: number;
     since?: Date;
     before?: Date;
 }
@@ -119,6 +145,30 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
      */
     getRawSentEmailJson(requestParameters: GetRawSentEmailJsonRequest, initOverrides?: RequestInit): Promise<RawEmailJson>;
+    /**
+     * Get a sent email delivery status
+     */
+    getSentDeliveryStatusRaw(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
+    /**
+     * Get a sent email delivery status
+     */
+    getSentDeliveryStatus(requestParameters: GetSentDeliveryStatusRequest, initOverrides?: RequestInit): Promise<DeliveryStatusDto>;
+    /**
+     * Get all sent email delivery statuses
+     */
+    getSentDeliveryStatusesRaw(requestParameters: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
+    /**
+     * Get all sent email delivery statuses
+     */
+    getSentDeliveryStatuses(requestParameters: GetSentDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<PageDeliveryStatus>;
+    /**
+     * Get all sent email delivery statuses
+     */
+    getSentDeliveryStatusesBySentIdRaw(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageDeliveryStatus>>;
+    /**
+     * Get all sent email delivery statuses
+     */
+    getSentDeliveryStatusesBySentId(requestParameters: GetSentDeliveryStatusesBySentIdRequest, initOverrides?: RequestInit): Promise<PageDeliveryStatus>;
     /**
      * Get sent email receipt
      */
@@ -177,12 +227,36 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      * Get all sent organization emails in paginated form
      */
     getSentOrganizationEmails(requestParameters: GetSentOrganizationEmailsRequest, initOverrides?: RequestInit): Promise<PageSentEmailProjection>;
+    /**
+     * Wait for delivery statuses
+     */
+    waitForDeliveryStatusesRaw(requestParameters: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DeliveryStatusDto>>;
+    /**
+     * Wait for delivery statuses
+     */
+    waitForDeliveryStatuses(requestParameters: WaitForDeliveryStatusesRequest, initOverrides?: RequestInit): Promise<DeliveryStatusDto>;
 }
 /**
  * @export
  * @enum {string}
  */
 export declare enum GetAllSentTrackingPixelsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSentDeliveryStatusesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetSentDeliveryStatusesBySentIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

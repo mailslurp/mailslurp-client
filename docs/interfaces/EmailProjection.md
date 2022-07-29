@@ -16,6 +16,7 @@ A compact representation of a full email. Used in list endpoints to keep respons
 - [bodyMD5Hash](EmailProjection.md#bodymd5hash)
 - [cc](EmailProjection.md#cc)
 - [createdAt](EmailProjection.md#createdat)
+- [domainId](EmailProjection.md#domainid)
 - [from](EmailProjection.md#from)
 - [id](EmailProjection.md#id)
 - [inboxId](EmailProjection.md#inboxid)
@@ -69,6 +70,14 @@ ___
 ### <a id="createdat" name="createdat"></a> createdAt
 
 • **createdAt**: `Date`
+
+**`memberof`** EmailProjection
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
 
 **`memberof`** EmailProjection
 

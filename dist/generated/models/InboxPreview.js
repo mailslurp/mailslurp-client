@@ -34,6 +34,7 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
@@ -57,6 +58,7 @@ function InboxPreviewToJSON(value) {
     }
     return {
         id: value.id,
+        domainId: value.domainId,
         emailAddress: value.emailAddress,
         createdAt: value.createdAt.toISOString(),
         favourite: value.favourite,

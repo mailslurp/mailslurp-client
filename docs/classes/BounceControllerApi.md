@@ -28,6 +28,8 @@
 - [getBouncedRecipientRaw](BounceControllerApi.md#getbouncedrecipientraw)
 - [getBouncedRecipients](BounceControllerApi.md#getbouncedrecipients)
 - [getBouncedRecipientsRaw](BounceControllerApi.md#getbouncedrecipientsraw)
+- [getComplaints](BounceControllerApi.md#getcomplaints)
+- [getComplaintsRaw](BounceControllerApi.md#getcomplaintsraw)
 - [request](BounceControllerApi.md#request)
 - [withMiddleware](BounceControllerApi.md#withmiddleware)
 - [withPostMiddleware](BounceControllerApi.md#withpostmiddleware)
@@ -258,6 +260,46 @@ Get paginated list of bounced recipients.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>\>
+
+___
+
+### <a id="getcomplaints" name="getcomplaints"></a> getComplaints
+
+▸ **getComplaints**(`requestParameters`, `initOverrides?`): `Promise`<[`PageComplaint`](../interfaces/PageComplaint.md)\>
+
+SMTP complaints made against your account
+Get paginated list of complaints.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetComplaintsRequest`](../interfaces/GetComplaintsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageComplaint`](../interfaces/PageComplaint.md)\>
+
+___
+
+### <a id="getcomplaintsraw" name="getcomplaintsraw"></a> getComplaintsRaw
+
+▸ **getComplaintsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageComplaint`](../interfaces/PageComplaint.md)\>\>
+
+SMTP complaints made against your account
+Get paginated list of complaints.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetComplaintsRequest`](../interfaces/GetComplaintsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageComplaint`](../interfaces/PageComplaint.md)\>\>
 
 ___
 

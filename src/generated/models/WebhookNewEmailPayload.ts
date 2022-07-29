@@ -57,6 +57,12 @@ export interface WebhookNewEmailPayload {
    */
   inboxId: string;
   /**
+   * Id of the domain that received an email
+   * @type {string}
+   * @memberof WebhookNewEmailPayload
+   */
+  domainId?: string;
+  /**
    * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
    * @type {string}
    * @memberof WebhookNewEmailPayload
@@ -141,6 +147,7 @@ export function WebhookNewEmailPayloadFromJSONTyped(
     eventName: json['eventName'],
     webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
     inboxId: json['inboxId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     emailId: json['emailId'],
     createdAt: new Date(json['createdAt']),
     to: json['to'],
@@ -169,6 +176,7 @@ export function WebhookNewEmailPayloadToJSON(
     eventName: value.eventName,
     webhookName: value.webhookName,
     inboxId: value.inboxId,
+    domainId: value.domainId,
     emailId: value.emailId,
     createdAt: value.createdAt.toISOString(),
     to: value.to,

@@ -38,6 +38,8 @@
 - [flushExpiredRaw](InboxControllerApi.md#flushexpiredraw)
 - [getAllInboxes](InboxControllerApi.md#getallinboxes)
 - [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
+- [getDeliveryStatusesByInboxId](InboxControllerApi.md#getdeliverystatusesbyinboxid)
+- [getDeliveryStatusesByInboxIdRaw](InboxControllerApi.md#getdeliverystatusesbyinboxidraw)
 - [getEmails](InboxControllerApi.md#getemails)
 - [getEmailsRaw](InboxControllerApi.md#getemailsraw)
 - [getImapSmtpAccess](InboxControllerApi.md#getimapsmtpaccess)
@@ -508,6 +510,44 @@ List All Inboxes Paginated
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+___
+
+### <a id="getdeliverystatusesbyinboxid" name="getdeliverystatusesbyinboxid"></a> getDeliveryStatusesByInboxId
+
+▸ **getDeliveryStatusesByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+Get all email delivery statuses for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDeliveryStatusesByInboxIdRequest`](../interfaces/GetDeliveryStatusesByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+___
+
+### <a id="getdeliverystatusesbyinboxidraw" name="getdeliverystatusesbyinboxidraw"></a> getDeliveryStatusesByInboxIdRaw
+
+▸ **getDeliveryStatusesByInboxIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
+
+Get all email delivery statuses for an inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDeliveryStatusesByInboxIdRequest`](../interfaces/GetDeliveryStatusesByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
 
 ___
 

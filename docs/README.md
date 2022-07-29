@@ -36,6 +36,7 @@
 - [GetAliasesSortEnum](enums/GetAliasesSortEnum.md)
 - [GetAllContactsSortEnum](enums/GetAllContactsSortEnum.md)
 - [GetAllGroupsSortEnum](enums/GetAllGroupsSortEnum.md)
+- [GetAllInboxesInboxTypeEnum](enums/GetAllInboxesInboxTypeEnum.md)
 - [GetAllInboxesSortEnum](enums/GetAllInboxesSortEnum.md)
 - [GetAllMissedEmailsSortEnum](enums/GetAllMissedEmailsSortEnum.md)
 - [GetAllSentTrackingPixelsSortEnum](enums/GetAllSentTrackingPixelsSortEnum.md)
@@ -47,6 +48,8 @@
 - [GetAttachmentsSortEnum](enums/GetAttachmentsSortEnum.md)
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
+- [GetComplaintsSortEnum](enums/GetComplaintsSortEnum.md)
+- [GetDeliveryStatusesByInboxIdSortEnum](enums/GetDeliveryStatusesByInboxIdSortEnum.md)
 - [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
 - [GetEmailsSortEnum](enums/GetEmailsSortEnum.md)
 - [GetExpiredInboxesSortEnum](enums/GetExpiredInboxesSortEnum.md)
@@ -62,6 +65,8 @@
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
 - [GetPhoneNumbersSortEnum](enums/GetPhoneNumbersSortEnum.md)
+- [GetSentDeliveryStatusesBySentIdSortEnum](enums/GetSentDeliveryStatusesBySentIdSortEnum.md)
+- [GetSentDeliveryStatusesSortEnum](enums/GetSentDeliveryStatusesSortEnum.md)
 - [GetSentEmailTrackingPixelsSortEnum](enums/GetSentEmailTrackingPixelsSortEnum.md)
 - [GetSentEmailsSortEnum](enums/GetSentEmailsSortEnum.md)
 - [GetSentEmailsWithQueueResultsSortEnum](enums/GetSentEmailsWithQueueResultsSortEnum.md)
@@ -177,6 +182,7 @@
 - [BulkDeleteInboxesRequest](interfaces/BulkDeleteInboxesRequest.md)
 - [BulkSendEmailOptions](interfaces/BulkSendEmailOptions.md)
 - [BulkSendEmailsRequest](interfaces/BulkSendEmailsRequest.md)
+- [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
 - [Consume](interfaces/Consume.md)
@@ -216,6 +222,7 @@
 - [DNSLookupResults](interfaces/DNSLookupResults.md)
 - [DeleteAliasRequest](interfaces/DeleteAliasRequest.md)
 - [DeleteAllInboxEmailsRequest](interfaces/DeleteAllInboxEmailsRequest.md)
+- [DeleteAllWebhooksRequest](interfaces/DeleteAllWebhooksRequest.md)
 - [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
@@ -235,6 +242,7 @@
 - [DeleteTemplateRequest](interfaces/DeleteTemplateRequest.md)
 - [DeleteWebhookByIdRequest](interfaces/DeleteWebhookByIdRequest.md)
 - [DeleteWebhookRequest](interfaces/DeleteWebhookRequest.md)
+- [DeliveryStatusDto](interfaces/DeliveryStatusDto.md)
 - [DescribeDomainOptions](interfaces/DescribeDomainOptions.md)
 - [DescribeMailServerDomainRequest](interfaces/DescribeMailServerDomainRequest.md)
 - [DescribeMailServerDomainResult](interfaces/DescribeMailServerDomainResult.md)
@@ -301,8 +309,10 @@
 - [GetBouncedEmailsRequest](interfaces/GetBouncedEmailsRequest.md)
 - [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
 - [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
+- [GetComplaintsRequest](interfaces/GetComplaintsRequest.md)
 - [GetContactRequest](interfaces/GetContactRequest.md)
 - [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
+- [GetDeliveryStatusesByInboxIdRequest](interfaces/GetDeliveryStatusesByInboxIdRequest.md)
 - [GetDnsLookupRequest](interfaces/GetDnsLookupRequest.md)
 - [GetDomainRequest](interfaces/GetDomainRequest.md)
 - [GetEmailAttachmentsRequest](interfaces/GetEmailAttachmentsRequest.md)
@@ -353,6 +363,9 @@
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
+- [GetSentDeliveryStatusRequest](interfaces/GetSentDeliveryStatusRequest.md)
+- [GetSentDeliveryStatusesBySentIdRequest](interfaces/GetSentDeliveryStatusesBySentIdRequest.md)
+- [GetSentDeliveryStatusesRequest](interfaces/GetSentDeliveryStatusesRequest.md)
 - [GetSentEmailHTMLContentRequest](interfaces/GetSentEmailHTMLContentRequest.md)
 - [GetSentEmailPreviewURLsRequest](interfaces/GetSentEmailPreviewURLsRequest.md)
 - [GetSentEmailRequest](interfaces/GetSentEmailRequest.md)
@@ -411,7 +424,9 @@
 - [PageAttachmentEntity](interfaces/PageAttachmentEntity.md)
 - [PageBouncedEmail](interfaces/PageBouncedEmail.md)
 - [PageBouncedRecipients](interfaces/PageBouncedRecipients.md)
+- [PageComplaint](interfaces/PageComplaint.md)
 - [PageContactProjection](interfaces/PageContactProjection.md)
+- [PageDeliveryStatus](interfaces/PageDeliveryStatus.md)
 - [PageEmailPreview](interfaces/PageEmailPreview.md)
 - [PageEmailProjection](interfaces/PageEmailProjection.md)
 - [PageEmailValidationRequest](interfaces/PageEmailValidationRequest.md)
@@ -517,6 +532,7 @@
 - [VerifyWebhookSignatureRequest](interfaces/VerifyWebhookSignatureRequest.md)
 - [VerifyWebhookSignatureResults](interfaces/VerifyWebhookSignatureResults.md)
 - [WaitForConditions](interfaces/WaitForConditions.md)
+- [WaitForDeliveryStatusesRequest](interfaces/WaitForDeliveryStatusesRequest.md)
 - [WaitForEmailCountRequest](interfaces/WaitForEmailCountRequest.md)
 - [WaitForLatestEmailRequest](interfaces/WaitForLatestEmailRequest.md)
 - [WaitForMatchingEmailsRequest](interfaces/WaitForMatchingEmailsRequest.md)
@@ -598,6 +614,9 @@
 - [BulkSendEmailOptionsFromJSON](README.md#bulksendemailoptionsfromjson)
 - [BulkSendEmailOptionsFromJSONTyped](README.md#bulksendemailoptionsfromjsontyped)
 - [BulkSendEmailOptionsToJSON](README.md#bulksendemailoptionstojson)
+- [ComplaintFromJSON](README.md#complaintfromjson)
+- [ComplaintFromJSONTyped](README.md#complaintfromjsontyped)
+- [ComplaintToJSON](README.md#complainttojson)
 - [ConditionOptionFromJSON](README.md#conditionoptionfromjson)
 - [ConditionOptionFromJSONTyped](README.md#conditionoptionfromjsontyped)
 - [ConditionOptionToJSON](README.md#conditionoptiontojson)
@@ -655,6 +674,9 @@
 - [DNSLookupResultsFromJSON](README.md#dnslookupresultsfromjson)
 - [DNSLookupResultsFromJSONTyped](README.md#dnslookupresultsfromjsontyped)
 - [DNSLookupResultsToJSON](README.md#dnslookupresultstojson)
+- [DeliveryStatusDtoFromJSON](README.md#deliverystatusdtofromjson)
+- [DeliveryStatusDtoFromJSONTyped](README.md#deliverystatusdtofromjsontyped)
+- [DeliveryStatusDtoToJSON](README.md#deliverystatusdtotojson)
 - [DescribeDomainOptionsFromJSON](README.md#describedomainoptionsfromjson)
 - [DescribeDomainOptionsFromJSONTyped](README.md#describedomainoptionsfromjsontyped)
 - [DescribeDomainOptionsToJSON](README.md#describedomainoptionstojson)
@@ -847,9 +869,15 @@
 - [PageBouncedRecipientsFromJSON](README.md#pagebouncedrecipientsfromjson)
 - [PageBouncedRecipientsFromJSONTyped](README.md#pagebouncedrecipientsfromjsontyped)
 - [PageBouncedRecipientsToJSON](README.md#pagebouncedrecipientstojson)
+- [PageComplaintFromJSON](README.md#pagecomplaintfromjson)
+- [PageComplaintFromJSONTyped](README.md#pagecomplaintfromjsontyped)
+- [PageComplaintToJSON](README.md#pagecomplainttojson)
 - [PageContactProjectionFromJSON](README.md#pagecontactprojectionfromjson)
 - [PageContactProjectionFromJSONTyped](README.md#pagecontactprojectionfromjsontyped)
 - [PageContactProjectionToJSON](README.md#pagecontactprojectiontojson)
+- [PageDeliveryStatusFromJSON](README.md#pagedeliverystatusfromjson)
+- [PageDeliveryStatusFromJSONTyped](README.md#pagedeliverystatusfromjsontyped)
+- [PageDeliveryStatusToJSON](README.md#pagedeliverystatustojson)
 - [PageEmailPreviewFromJSON](README.md#pageemailpreviewfromjson)
 - [PageEmailPreviewFromJSONTyped](README.md#pageemailpreviewfromjsontyped)
 - [PageEmailPreviewToJSON](README.md#pageemailpreviewtojson)
@@ -1828,6 +1856,55 @@ ___
 
 ___
 
+### <a id="complaintfromjson" name="complaintfromjson"></a> ComplaintFromJSON
+
+▸ **ComplaintFromJSON**(`json`): [`Complaint`](interfaces/Complaint.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`Complaint`](interfaces/Complaint.md)
+
+___
+
+### <a id="complaintfromjsontyped" name="complaintfromjsontyped"></a> ComplaintFromJSONTyped
+
+▸ **ComplaintFromJSONTyped**(`json`, `ignoreDiscriminator`): [`Complaint`](interfaces/Complaint.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`Complaint`](interfaces/Complaint.md)
+
+___
+
+### <a id="complainttojson" name="complainttojson"></a> ComplaintToJSON
+
+▸ **ComplaintToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`Complaint`](interfaces/Complaint.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="conditionoptionfromjson" name="conditionoptionfromjson"></a> ConditionOptionFromJSON
 
 ▸ **ConditionOptionFromJSON**(`json`): [`ConditionOption`](interfaces/ConditionOption.md)
@@ -2752,6 +2829,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`DNSLookupResults`](interfaces/DNSLookupResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="deliverystatusdtofromjson" name="deliverystatusdtofromjson"></a> DeliveryStatusDtoFromJSON
+
+▸ **DeliveryStatusDtoFromJSON**(`json`): [`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md)
+
+___
+
+### <a id="deliverystatusdtofromjsontyped" name="deliverystatusdtofromjsontyped"></a> DeliveryStatusDtoFromJSONTyped
+
+▸ **DeliveryStatusDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md)
+
+___
+
+### <a id="deliverystatusdtotojson" name="deliverystatusdtotojson"></a> DeliveryStatusDtoToJSON
+
+▸ **DeliveryStatusDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DeliveryStatusDto`](interfaces/DeliveryStatusDto.md) |
 
 #### Returns
 
@@ -5895,6 +6021,55 @@ ___
 
 ___
 
+### <a id="pagecomplaintfromjson" name="pagecomplaintfromjson"></a> PageComplaintFromJSON
+
+▸ **PageComplaintFromJSON**(`json`): [`PageComplaint`](interfaces/PageComplaint.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageComplaint`](interfaces/PageComplaint.md)
+
+___
+
+### <a id="pagecomplaintfromjsontyped" name="pagecomplaintfromjsontyped"></a> PageComplaintFromJSONTyped
+
+▸ **PageComplaintFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageComplaint`](interfaces/PageComplaint.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageComplaint`](interfaces/PageComplaint.md)
+
+___
+
+### <a id="pagecomplainttojson" name="pagecomplainttojson"></a> PageComplaintToJSON
+
+▸ **PageComplaintToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageComplaint`](interfaces/PageComplaint.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="pagecontactprojectionfromjson" name="pagecontactprojectionfromjson"></a> PageContactProjectionFromJSON
 
 ▸ **PageContactProjectionFromJSON**(`json`): [`PageContactProjection`](interfaces/PageContactProjection.md)
@@ -5937,6 +6112,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageContactProjection`](interfaces/PageContactProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="pagedeliverystatusfromjson" name="pagedeliverystatusfromjson"></a> PageDeliveryStatusFromJSON
+
+▸ **PageDeliveryStatusFromJSON**(`json`): [`PageDeliveryStatus`](interfaces/PageDeliveryStatus.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageDeliveryStatus`](interfaces/PageDeliveryStatus.md)
+
+___
+
+### <a id="pagedeliverystatusfromjsontyped" name="pagedeliverystatusfromjsontyped"></a> PageDeliveryStatusFromJSONTyped
+
+▸ **PageDeliveryStatusFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageDeliveryStatus`](interfaces/PageDeliveryStatus.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageDeliveryStatus`](interfaces/PageDeliveryStatus.md)
+
+___
+
+### <a id="pagedeliverystatustojson" name="pagedeliverystatustojson"></a> PageDeliveryStatusToJSON
+
+▸ **PageDeliveryStatusToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageDeliveryStatus`](interfaces/PageDeliveryStatus.md) |
 
 #### Returns
 

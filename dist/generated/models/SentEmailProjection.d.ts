@@ -41,28 +41,16 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof SentEmailProjection
      */
-    bodyMD5Hash?: string;
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    bcc: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    cc: Array<string>;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SentEmailProjection
-     */
-    virtualSend: boolean;
+    to: Array<string>;
     /**
      *
      * @type {string}
@@ -80,13 +68,25 @@ export interface SentEmailProjection {
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    to: Array<string>;
+    bcc: Array<string>;
     /**
      *
-     * @type {Date}
+     * @type {Array<string>}
      * @memberof SentEmailProjection
      */
-    createdAt: Date;
+    cc: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyMD5Hash?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailProjection
+     */
+    virtualSend: boolean;
 }
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;

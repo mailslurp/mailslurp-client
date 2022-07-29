@@ -14,9 +14,15 @@
 
 import * as runtime from '../runtime';
 import {
+  DeliveryStatusDto,
+  DeliveryStatusDtoFromJSON,
+  DeliveryStatusDtoToJSON,
   EmailPreviewUrls,
   EmailPreviewUrlsFromJSON,
   EmailPreviewUrlsToJSON,
+  PageDeliveryStatus,
+  PageDeliveryStatusFromJSON,
+  PageDeliveryStatusToJSON,
   PageSentEmailProjection,
   PageSentEmailProjectionFromJSON,
   PageSentEmailProjectionToJSON,
@@ -53,6 +59,27 @@ export interface GetRawSentEmailContentsRequest {
 
 export interface GetRawSentEmailJsonRequest {
   emailId: string;
+}
+
+export interface GetSentDeliveryStatusRequest {
+  deliveryId: string;
+}
+
+export interface GetSentDeliveryStatusesRequest {
+  page?: number;
+  size?: number;
+  sort?: GetSentDeliveryStatusesSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetSentDeliveryStatusesBySentIdRequest {
+  sentId: string;
+  page?: number;
+  size?: number;
+  sort?: GetSentDeliveryStatusesBySentIdSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetSentEmailRequest {
@@ -101,6 +128,15 @@ export interface GetSentOrganizationEmailsRequest {
   size?: number;
   sort?: GetSentOrganizationEmailsSortEnum;
   searchFilter?: string;
+  since?: Date;
+  before?: Date;
+}
+
+export interface WaitForDeliveryStatusesRequest {
+  sentId?: string;
+  inboxId?: string;
+  timeout?: number;
+  index?: number;
   since?: Date;
   before?: Date;
 }
@@ -371,6 +407,208 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<RawEmailJson> {
     const response = await this.getRawSentEmailJsonRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a sent email delivery status
+   */
+  async getSentDeliveryStatusRaw(
+    requestParameters: GetSentDeliveryStatusRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeliveryStatusDto>> {
+    if (
+      requestParameters.deliveryId === null ||
+      requestParameters.deliveryId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'deliveryId',
+        'Required parameter requestParameters.deliveryId was null or undefined when calling getSentDeliveryStatus.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/delivery-status/{deliveryId}`.replace(
+          `{${'deliveryId'}}`,
+          encodeURIComponent(String(requestParameters.deliveryId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DeliveryStatusDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a sent email delivery status
+   */
+  async getSentDeliveryStatus(
+    requestParameters: GetSentDeliveryStatusRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeliveryStatusDto> {
+    const response = await this.getSentDeliveryStatusRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get all sent email delivery statuses
+   */
+  async getSentDeliveryStatusesRaw(
+    requestParameters: GetSentDeliveryStatusesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageDeliveryStatus>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/delivery-status`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageDeliveryStatusFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all sent email delivery statuses
+   */
+  async getSentDeliveryStatuses(
+    requestParameters: GetSentDeliveryStatusesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageDeliveryStatus> {
+    const response = await this.getSentDeliveryStatusesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get all sent email delivery statuses
+   */
+  async getSentDeliveryStatusesBySentIdRaw(
+    requestParameters: GetSentDeliveryStatusesBySentIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageDeliveryStatus>> {
+    if (
+      requestParameters.sentId === null ||
+      requestParameters.sentId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sentId',
+        'Required parameter requestParameters.sentId was null or undefined when calling getSentDeliveryStatusesBySentId.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/{sentId}/delivery-status`.replace(
+          `{${'sentId'}}`,
+          encodeURIComponent(String(requestParameters.sentId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageDeliveryStatusFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get all sent email delivery statuses
+   */
+  async getSentDeliveryStatusesBySentId(
+    requestParameters: GetSentDeliveryStatusesBySentIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageDeliveryStatus> {
+    const response = await this.getSentDeliveryStatusesBySentIdRaw(
       requestParameters,
       initOverrides
     );
@@ -832,6 +1070,76 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * Wait for delivery statuses
+   */
+  async waitForDeliveryStatusesRaw(
+    requestParameters: WaitForDeliveryStatusesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DeliveryStatusDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.sentId !== undefined) {
+      queryParameters['sentId'] = requestParameters.sentId;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.timeout !== undefined) {
+      queryParameters['timeout'] = requestParameters.timeout;
+    }
+
+    if (requestParameters.index !== undefined) {
+      queryParameters['index'] = requestParameters.index;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sent/delivery-status/wait-for`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DeliveryStatusDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for delivery statuses
+   */
+  async waitForDeliveryStatuses(
+    requestParameters: WaitForDeliveryStatusesRequest,
+    initOverrides?: RequestInit
+  ): Promise<DeliveryStatusDto> {
+    const response = await this.waitForDeliveryStatusesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -839,6 +1147,22 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
  * @enum {string}
  */
 export enum GetAllSentTrackingPixelsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetSentDeliveryStatusesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetSentDeliveryStatusesBySentIdSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

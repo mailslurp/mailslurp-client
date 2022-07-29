@@ -35,9 +35,11 @@ import {
   MatchOptions,
   MissedEmailControllerApi,
   PageInboxProjection,
+  PhoneControllerApi,
   SendEmailOptions,
   SentEmailDto,
   SentEmailsControllerApi,
+  SmsControllerApi,
   TemplateControllerApi,
   TrackingControllerApi,
   UploadAttachmentOptions,
@@ -108,6 +110,8 @@ export class MailSlurp {
   public readonly emailVerificationController: EmailVerificationControllerApi;
   public readonly inboxController: InboxControllerApi;
   public readonly userController: ApiUserControllerApi;
+  public readonly phoneController: PhoneControllerApi;
+  public readonly smsController: SmsControllerApi;
   public readonly sentController: SentEmailsControllerApi;
   public readonly attachmentController: AttachmentControllerApi;
 
@@ -157,6 +161,8 @@ export class MailSlurp {
     this.emailVerificationController = new EmailVerificationControllerApi(
       ...args
     );
+    this.phoneController = new PhoneControllerApi(...args);
+    this.smsController = new SmsControllerApi(...args);
     this.userController = new ApiUserControllerApi(...args);
     this.emailController = new EmailControllerApi(...args);
     this.inboxController = new InboxControllerApi(...args);

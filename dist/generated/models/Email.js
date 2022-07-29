@@ -28,6 +28,7 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         userId: json['userId'],
         inboxId: json['inboxId'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         to: json['to'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         sender: !(0, runtime_1.exists)(json, 'sender')
@@ -69,6 +70,7 @@ function EmailToJSON(value) {
         id: value.id,
         userId: value.userId,
         inboxId: value.inboxId,
+        domainId: value.domainId,
         to: value.to,
         from: value.from,
         sender: (0, _1.SenderToJSON)(value.sender),

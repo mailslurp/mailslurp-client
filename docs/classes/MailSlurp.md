@@ -61,7 +61,9 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [inboxRulesetController](MailSlurp.md#inboxrulesetcontroller)
 - [mailServerController](MailSlurp.md#mailservercontroller)
 - [missedEmailController](MailSlurp.md#missedemailcontroller)
+- [phoneController](MailSlurp.md#phonecontroller)
 - [sentController](MailSlurp.md#sentcontroller)
+- [smsController](MailSlurp.md#smscontroller)
 - [templateController](MailSlurp.md#templatecontroller)
 - [trackingController](MailSlurp.md#trackingcontroller)
 - [userController](MailSlurp.md#usercontroller)
@@ -211,9 +213,21 @@ ___
 
 ___
 
+### <a id="phonecontroller" name="phonecontroller"></a> phoneController
+
+• `Readonly` **phoneController**: [`PhoneControllerApi`](PhoneControllerApi.md)
+
+___
+
 ### <a id="sentcontroller" name="sentcontroller"></a> sentController
 
 • `Readonly` **sentController**: [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
+
+___
+
+### <a id="smscontroller" name="smscontroller"></a> smsController
+
+• `Readonly` **smsController**: [`SmsControllerApi`](SmsControllerApi.md)
 
 ___
 

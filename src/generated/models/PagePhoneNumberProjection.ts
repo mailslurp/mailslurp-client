@@ -63,13 +63,13 @@ export interface PagePhoneNumberProjection {
    * @type {number}
    * @memberof PagePhoneNumberProjection
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {number}
    * @memberof PagePhoneNumberProjection
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {number}
@@ -130,10 +130,10 @@ export function PagePhoneNumberProjectionFromJSONTyped(
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
@@ -162,8 +162,8 @@ export function PagePhoneNumberProjectionToJSON(
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
     last: value.last,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),

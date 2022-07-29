@@ -26,6 +26,12 @@ export interface EmailPreview {
    */
   id: string;
   /**
+   * ID of the domain that received the email
+   * @type {string}
+   * @memberof EmailPreview
+   */
+  domainId?: string;
+  /**
    * The subject line of the email message as specified by SMTP subject header
    * @type {string}
    * @memberof EmailPreview
@@ -88,6 +94,7 @@ export function EmailPreviewFromJSONTyped(
   }
   return {
     id: json['id'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     to: json['to'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -108,6 +115,7 @@ export function EmailPreviewToJSON(value?: EmailPreview | null): any {
   }
   return {
     id: value.id,
+    domainId: value.domainId,
     subject: value.subject,
     to: value.to,
     from: value.from,

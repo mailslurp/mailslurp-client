@@ -32,6 +32,9 @@ import {
   PageBouncedRecipients,
   PageBouncedRecipientsFromJSON,
   PageBouncedRecipientsToJSON,
+  PageComplaint,
+  PageComplaintFromJSON,
+  PageComplaintToJSON,
 } from '../models';
 
 export interface FilterBouncedRecipientRequest {
@@ -58,6 +61,14 @@ export interface GetBouncedRecipientsRequest {
   page?: number;
   size?: number;
   sort?: GetBouncedRecipientsSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetComplaintsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetComplaintsSortEnum;
   since?: Date;
   before?: Date;
 }
@@ -374,6 +385,74 @@ export class BounceControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * SMTP complaints made against your account
+   * Get paginated list of complaints.
+   */
+  async getComplaintsRaw(
+    requestParameters: GetComplaintsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageComplaint>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/complaints`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageComplaintFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * SMTP complaints made against your account
+   * Get paginated list of complaints.
+   */
+  async getComplaints(
+    requestParameters: GetComplaintsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageComplaint> {
+    const response = await this.getComplaintsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -389,6 +468,14 @@ export enum GetBouncedEmailsSortEnum {
  * @enum {string}
  */
 export enum GetBouncedRecipientsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetComplaintsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

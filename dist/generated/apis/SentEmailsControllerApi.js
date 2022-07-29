@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetSentOrganizationEmailsSortEnum = exports.GetSentEmailsWithQueueResultsSortEnum = exports.GetSentEmailsSortEnum = exports.GetSentEmailTrackingPixelsSortEnum = exports.GetAllSentTrackingPixelsSortEnum = exports.SentEmailsControllerApi = void 0;
+exports.GetSentOrganizationEmailsSortEnum = exports.GetSentEmailsWithQueueResultsSortEnum = exports.GetSentEmailsSortEnum = exports.GetSentEmailTrackingPixelsSortEnum = exports.GetSentDeliveryStatusesBySentIdSortEnum = exports.GetSentDeliveryStatusesSortEnum = exports.GetAllSentTrackingPixelsSortEnum = exports.SentEmailsControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -339,6 +339,182 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getRawSentEmailJsonRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get a sent email delivery status
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatusRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.deliveryId === null ||
+                            requestParameters.deliveryId === undefined) {
+                            throw new runtime.RequiredError('deliveryId', 'Required parameter requestParameters.deliveryId was null or undefined when calling getSentDeliveryStatus.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sent/delivery-status/{deliveryId}".replace("{" + 'deliveryId' + "}", encodeURIComponent(String(requestParameters.deliveryId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DeliveryStatusDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a sent email delivery status
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatus = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentDeliveryStatusRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all sent email delivery statuses
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatusesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sent/delivery-status",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all sent email delivery statuses
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatuses = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentDeliveryStatusesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all sent email delivery statuses
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatusesBySentIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.sentId === null ||
+                            requestParameters.sentId === undefined) {
+                            throw new runtime.RequiredError('sentId', 'Required parameter requestParameters.sentId was null or undefined when calling getSentDeliveryStatusesBySentId.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sent/{sentId}/delivery-status".replace("{" + 'sentId' + "}", encodeURIComponent(String(requestParameters.sentId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all sent email delivery statuses
+     */
+    SentEmailsControllerApi.prototype.getSentDeliveryStatusesBySentId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getSentDeliveryStatusesBySentIdRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -756,6 +932,70 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Wait for delivery statuses
+     */
+    SentEmailsControllerApi.prototype.waitForDeliveryStatusesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.sentId !== undefined) {
+                            queryParameters['sentId'] = requestParameters.sentId;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.timeout !== undefined) {
+                            queryParameters['timeout'] = requestParameters.timeout;
+                        }
+                        if (requestParameters.index !== undefined) {
+                            queryParameters['index'] = requestParameters.index;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sent/delivery-status/wait-for",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DeliveryStatusDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait for delivery statuses
+     */
+    SentEmailsControllerApi.prototype.waitForDeliveryStatuses = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForDeliveryStatusesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return SentEmailsControllerApi;
 }(runtime.BaseAPI));
 exports.SentEmailsControllerApi = SentEmailsControllerApi;
@@ -768,6 +1008,24 @@ var GetAllSentTrackingPixelsSortEnum;
     GetAllSentTrackingPixelsSortEnum["ASC"] = "ASC";
     GetAllSentTrackingPixelsSortEnum["DESC"] = "DESC";
 })(GetAllSentTrackingPixelsSortEnum = exports.GetAllSentTrackingPixelsSortEnum || (exports.GetAllSentTrackingPixelsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetSentDeliveryStatusesSortEnum;
+(function (GetSentDeliveryStatusesSortEnum) {
+    GetSentDeliveryStatusesSortEnum["ASC"] = "ASC";
+    GetSentDeliveryStatusesSortEnum["DESC"] = "DESC";
+})(GetSentDeliveryStatusesSortEnum = exports.GetSentDeliveryStatusesSortEnum || (exports.GetSentDeliveryStatusesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetSentDeliveryStatusesBySentIdSortEnum;
+(function (GetSentDeliveryStatusesBySentIdSortEnum) {
+    GetSentDeliveryStatusesBySentIdSortEnum["ASC"] = "ASC";
+    GetSentDeliveryStatusesBySentIdSortEnum["DESC"] = "DESC";
+})(GetSentDeliveryStatusesBySentIdSortEnum = exports.GetSentDeliveryStatusesBySentIdSortEnum || (exports.GetSentDeliveryStatusesBySentIdSortEnum = {}));
 /**
  * @export
  * @enum {string}

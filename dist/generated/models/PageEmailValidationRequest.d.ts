@@ -45,13 +45,13 @@ export interface PageEmailValidationRequest {
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}

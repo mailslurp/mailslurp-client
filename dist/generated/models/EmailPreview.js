@@ -25,6 +25,7 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         to: json['to'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
@@ -45,6 +46,7 @@ function EmailPreviewToJSON(value) {
     }
     return {
         id: value.id,
+        domainId: value.domainId,
         subject: value.subject,
         to: value.to,
         from: value.from,

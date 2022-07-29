@@ -28,6 +28,12 @@
 - [getRawSentEmailContentsRaw](SentEmailsControllerApi.md#getrawsentemailcontentsraw)
 - [getRawSentEmailJson](SentEmailsControllerApi.md#getrawsentemailjson)
 - [getRawSentEmailJsonRaw](SentEmailsControllerApi.md#getrawsentemailjsonraw)
+- [getSentDeliveryStatus](SentEmailsControllerApi.md#getsentdeliverystatus)
+- [getSentDeliveryStatusRaw](SentEmailsControllerApi.md#getsentdeliverystatusraw)
+- [getSentDeliveryStatuses](SentEmailsControllerApi.md#getsentdeliverystatuses)
+- [getSentDeliveryStatusesBySentId](SentEmailsControllerApi.md#getsentdeliverystatusesbysentid)
+- [getSentDeliveryStatusesBySentIdRaw](SentEmailsControllerApi.md#getsentdeliverystatusesbysentidraw)
+- [getSentDeliveryStatusesRaw](SentEmailsControllerApi.md#getsentdeliverystatusesraw)
 - [getSentEmail](SentEmailsControllerApi.md#getsentemail)
 - [getSentEmailHTMLContent](SentEmailsControllerApi.md#getsentemailhtmlcontent)
 - [getSentEmailHTMLContentRaw](SentEmailsControllerApi.md#getsentemailhtmlcontentraw)
@@ -43,6 +49,8 @@
 - [getSentOrganizationEmails](SentEmailsControllerApi.md#getsentorganizationemails)
 - [getSentOrganizationEmailsRaw](SentEmailsControllerApi.md#getsentorganizationemailsraw)
 - [request](SentEmailsControllerApi.md#request)
+- [waitForDeliveryStatuses](SentEmailsControllerApi.md#waitfordeliverystatuses)
+- [waitForDeliveryStatusesRaw](SentEmailsControllerApi.md#waitfordeliverystatusesraw)
 - [withMiddleware](SentEmailsControllerApi.md#withmiddleware)
 - [withPostMiddleware](SentEmailsControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](SentEmailsControllerApi.md#withpremiddleware)
@@ -264,6 +272,120 @@ Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RawEmailJson`](../interfaces/RawEmailJson.md)\>\>
+
+___
+
+### <a id="getsentdeliverystatus" name="getsentdeliverystatus"></a> getSentDeliveryStatus
+
+▸ **getSentDeliveryStatus**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>
+
+Get a sent email delivery status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusRequest`](../interfaces/GetSentDeliveryStatusRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>
+
+___
+
+### <a id="getsentdeliverystatusraw" name="getsentdeliverystatusraw"></a> getSentDeliveryStatusRaw
+
+▸ **getSentDeliveryStatusRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>\>
+
+Get a sent email delivery status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusRequest`](../interfaces/GetSentDeliveryStatusRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>\>
+
+___
+
+### <a id="getsentdeliverystatuses" name="getsentdeliverystatuses"></a> getSentDeliveryStatuses
+
+▸ **getSentDeliveryStatuses**(`requestParameters`, `initOverrides?`): `Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+Get all sent email delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusesRequest`](../interfaces/GetSentDeliveryStatusesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+___
+
+### <a id="getsentdeliverystatusesbysentid" name="getsentdeliverystatusesbysentid"></a> getSentDeliveryStatusesBySentId
+
+▸ **getSentDeliveryStatusesBySentId**(`requestParameters`, `initOverrides?`): `Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+Get all sent email delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusesBySentIdRequest`](../interfaces/GetSentDeliveryStatusesBySentIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>
+
+___
+
+### <a id="getsentdeliverystatusesbysentidraw" name="getsentdeliverystatusesbysentidraw"></a> getSentDeliveryStatusesBySentIdRaw
+
+▸ **getSentDeliveryStatusesBySentIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
+
+Get all sent email delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusesBySentIdRequest`](../interfaces/GetSentDeliveryStatusesBySentIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
+
+___
+
+### <a id="getsentdeliverystatusesraw" name="getsentdeliverystatusesraw"></a> getSentDeliveryStatusesRaw
+
+▸ **getSentDeliveryStatusesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
+
+Get all sent email delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSentDeliveryStatusesRequest`](../interfaces/GetSentDeliveryStatusesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageDeliveryStatus`](../interfaces/PageDeliveryStatus.md)\>\>
 
 ___
 
@@ -553,6 +675,44 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### <a id="waitfordeliverystatuses" name="waitfordeliverystatuses"></a> waitForDeliveryStatuses
+
+▸ **waitForDeliveryStatuses**(`requestParameters`, `initOverrides?`): `Promise`<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>
+
+Wait for delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForDeliveryStatusesRequest`](../interfaces/WaitForDeliveryStatusesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>
+
+___
+
+### <a id="waitfordeliverystatusesraw" name="waitfordeliverystatusesraw"></a> waitForDeliveryStatusesRaw
+
+▸ **waitForDeliveryStatusesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>\>
+
+Wait for delivery statuses
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForDeliveryStatusesRequest`](../interfaces/WaitForDeliveryStatusesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DeliveryStatusDto`](../interfaces/DeliveryStatusDto.md)\>\>
 
 ___
 

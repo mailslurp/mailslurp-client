@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -617,6 +617,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        if (requestParameters.domainId !== undefined) {
+                            queryParameters['domainId'] = requestParameters.domainId;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -646,6 +652,71 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get all email delivery statuses for an inbox
+     */
+    InboxControllerApi.prototype.getDeliveryStatusesByInboxIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getDeliveryStatusesByInboxId.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/delivery-status".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageDeliveryStatusFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all email delivery statuses for an inbox
+     */
+    InboxControllerApi.prototype.getDeliveryStatusesByInboxId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDeliveryStatusesByInboxIdRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2016,6 +2087,24 @@ var GetAllInboxesSortEnum;
     GetAllInboxesSortEnum["ASC"] = "ASC";
     GetAllInboxesSortEnum["DESC"] = "DESC";
 })(GetAllInboxesSortEnum = exports.GetAllInboxesSortEnum || (exports.GetAllInboxesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxesInboxTypeEnum;
+(function (GetAllInboxesInboxTypeEnum) {
+    GetAllInboxesInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    GetAllInboxesInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(GetAllInboxesInboxTypeEnum = exports.GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetDeliveryStatusesByInboxIdSortEnum;
+(function (GetDeliveryStatusesByInboxIdSortEnum) {
+    GetDeliveryStatusesByInboxIdSortEnum["ASC"] = "ASC";
+    GetDeliveryStatusesByInboxIdSortEnum["DESC"] = "DESC";
+})(GetDeliveryStatusesByInboxIdSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum || (exports.GetDeliveryStatusesByInboxIdSortEnum = {}));
 /**
  * @export
  * @enum {string}

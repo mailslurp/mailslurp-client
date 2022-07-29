@@ -26,6 +26,12 @@ export interface InboxPreview {
    */
   id: string;
   /**
+   * ID of custom domain used by the inbox if any
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  domainId?: string;
+  /**
    * The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
    * @type {string}
    * @memberof InboxPreview
@@ -103,6 +109,7 @@ export function InboxPreviewFromJSONTyped(
   }
   return {
     id: json['id'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
@@ -126,6 +133,7 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
   }
   return {
     id: value.id,
+    domainId: value.domainId,
     emailAddress: value.emailAddress,
     createdAt: value.createdAt.toISOString(),
     favourite: value.favourite,

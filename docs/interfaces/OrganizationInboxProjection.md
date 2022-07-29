@@ -11,6 +11,7 @@ Organization team inbox
 ### Properties
 
 - [createdAt](OrganizationInboxProjection.md#createdat)
+- [domainId](OrganizationInboxProjection.md#domainid)
 - [emailAddress](OrganizationInboxProjection.md#emailaddress)
 - [favourite](OrganizationInboxProjection.md#favourite)
 - [id](OrganizationInboxProjection.md#id)
@@ -28,6 +29,16 @@ Organization team inbox
 • **createdAt**: `Date`
 
 When the inbox was created. Time stamps are in ISO DateTime Format `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` e.g. `2000-10-31T01:30:00.000-05:00`.
+
+**`memberof`** OrganizationInboxProjection
+
+___
+
+### <a id="domainid" name="domainid"></a> domainId
+
+• `Optional` **domainId**: `string`
+
+ID of custom domain used by the inbox if any
 
 **`memberof`** OrganizationInboxProjection
 
