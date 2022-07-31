@@ -21,6 +21,8 @@
 - [createAccountWebhook](WebhookControllerApi.md#createaccountwebhook)
 - [createAccountWebhookRaw](WebhookControllerApi.md#createaccountwebhookraw)
 - [createWebhook](WebhookControllerApi.md#createwebhook)
+- [createWebhookForPhoneNumber](WebhookControllerApi.md#createwebhookforphonenumber)
+- [createWebhookForPhoneNumberRaw](WebhookControllerApi.md#createwebhookforphonenumberraw)
 - [createWebhookRaw](WebhookControllerApi.md#createwebhookraw)
 - [deleteAllWebhooks](WebhookControllerApi.md#deleteallwebhooks)
 - [deleteAllWebhooksRaw](WebhookControllerApi.md#deleteallwebhooksraw)
@@ -164,6 +166,46 @@ Attach a WebHook URL to an inbox
 #### Returns
 
 `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### <a id="createwebhookforphonenumber" name="createwebhookforphonenumber"></a> createWebhookForPhoneNumber
+
+▸ **createWebhookForPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+Get notified whenever a phone number receives an SMS via a WebHook URL.
+Attach a WebHook URL to a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateWebhookForPhoneNumberRequest`](../interfaces/CreateWebhookForPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDto`](../interfaces/WebhookDto.md)\>
+
+___
+
+### <a id="createwebhookforphonenumberraw" name="createwebhookforphonenumberraw"></a> createWebhookForPhoneNumberRaw
+
+▸ **createWebhookForPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
+
+Get notified whenever a phone number receives an SMS via a WebHook URL.
+Attach a WebHook URL to a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateWebhookForPhoneNumberRequest`](../interfaces/CreateWebhookForPhoneNumberRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)\>\>
 
 ___
 

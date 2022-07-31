@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetPhoneNumbersSortEnum = exports.PhoneControllerApi = void 0;
+exports.GetPhoneNumbersSortEnum = exports.GetPhoneNumbersPhoneCountryEnum = exports.PhoneControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -385,6 +385,9 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.phoneCountry !== undefined) {
+                            queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+                        }
                         if (requestParameters.page !== undefined) {
                             queryParameters['page'] = requestParameters.page;
                         }
@@ -479,9 +482,68 @@ var PhoneControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     */
+    PhoneControllerApi.prototype.testPhoneNumberSendSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling testPhoneNumberSendSms.');
+                        }
+                        if (requestParameters.testPhoneNumberOptions === null ||
+                            requestParameters.testPhoneNumberOptions === undefined) {
+                            throw new runtime.RequiredError('testPhoneNumberOptions', 'Required parameter requestParameters.testPhoneNumberOptions was null or undefined when calling testPhoneNumberSendSms.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/test".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.TestPhoneNumberOptionsToJSON)(requestParameters.testPhoneNumberOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     */
+    PhoneControllerApi.prototype.testPhoneNumberSendSms = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testPhoneNumberSendSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     return PhoneControllerApi;
 }(runtime.BaseAPI));
 exports.PhoneControllerApi = PhoneControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneNumbersPhoneCountryEnum;
+(function (GetPhoneNumbersPhoneCountryEnum) {
+    GetPhoneNumbersPhoneCountryEnum["US"] = "US";
+    GetPhoneNumbersPhoneCountryEnum["GB"] = "GB";
+})(GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumbersPhoneCountryEnum || (exports.GetPhoneNumbersPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}

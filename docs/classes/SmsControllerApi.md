@@ -141,7 +141,7 @@ ___
 
 ### <a id="getsmsmessage" name="getsmsmessage"></a> getSmsMessage
 
-▸ **getSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsMessage`](../interfaces/SmsMessage.md)\>
+▸ **getSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
 
 Returns a SMS summary object with content.
 Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
@@ -155,13 +155,13 @@ Get SMS content including body. Expects SMS to exist by ID. For SMS that may not
 
 #### Returns
 
-`Promise`<[`SmsMessage`](../interfaces/SmsMessage.md)\>
+`Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
 
 ___
 
 ### <a id="getsmsmessageraw" name="getsmsmessageraw"></a> getSmsMessageRaw
 
-▸ **getSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessage`](../interfaces/SmsMessage.md)\>\>
+▸ **getSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
 Returns a SMS summary object with content.
 Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
@@ -175,7 +175,7 @@ Get SMS content including body. Expects SMS to exist by ID. For SMS that may not
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsMessage`](../interfaces/SmsMessage.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
 ___
 

@@ -64,6 +64,7 @@
 - [GetJsonSchemaForWebhookEventEventEnum](enums/GetJsonSchemaForWebhookEventEventEnum.md)
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
+- [GetPhoneNumbersPhoneCountryEnum](enums/GetPhoneNumbersPhoneCountryEnum.md)
 - [GetPhoneNumbersSortEnum](enums/GetPhoneNumbersSortEnum.md)
 - [GetSentDeliveryStatusesBySentIdSortEnum](enums/GetSentDeliveryStatusesBySentIdSortEnum.md)
 - [GetSentDeliveryStatusesSortEnum](enums/GetSentDeliveryStatusesSortEnum.md)
@@ -107,6 +108,7 @@
 - [WaitForMatchingEmailsSortEnum](enums/WaitForMatchingEmailsSortEnum.md)
 - [WaitForMatchingFirstEmailSortEnum](enums/WaitForMatchingFirstEmailSortEnum.md)
 - [WaitForNthEmailSortEnum](enums/WaitForNthEmailSortEnum.md)
+- [WaitForSingleSmsOptionsSortDirectionEnum](enums/WaitForSingleSmsOptionsSortDirectionEnum.md)
 - [WaitForSmsConditionsCountTypeEnum](enums/WaitForSmsConditionsCountTypeEnum.md)
 - [WaitForSmsConditionsSortDirectionEnum](enums/WaitForSmsConditionsSortDirectionEnum.md)
 - [WebhookBouncePayloadEventNameEnum](enums/WebhookBouncePayloadEventNameEnum.md)
@@ -215,6 +217,7 @@
 - [CreateTemplateRequest](interfaces/CreateTemplateRequest.md)
 - [CreateTrackingPixelOptions](interfaces/CreateTrackingPixelOptions.md)
 - [CreateTrackingPixelRequest](interfaces/CreateTrackingPixelRequest.md)
+- [CreateWebhookForPhoneNumberRequest](interfaces/CreateWebhookForPhoneNumberRequest.md)
 - [CreateWebhookOptions](interfaces/CreateWebhookOptions.md)
 - [CreateWebhookRequest](interfaces/CreateWebhookRequest.md)
 - [DNSLookupOptions](interfaces/DNSLookupOptions.md)
@@ -482,8 +485,8 @@
 - [SetInboxFavouritedOptions](interfaces/SetInboxFavouritedOptions.md)
 - [SetInboxFavouritedRequest](interfaces/SetInboxFavouritedRequest.md)
 - [SimpleSendEmailOptions](interfaces/SimpleSendEmailOptions.md)
+- [SmsDto](interfaces/SmsDto.md)
 - [SmsMatchOption](interfaces/SmsMatchOption.md)
-- [SmsMessage](interfaces/SmsMessage.md)
 - [SmsPreview](interfaces/SmsPreview.md)
 - [SmsProjection](interfaces/SmsProjection.md)
 - [Sort](interfaces/Sort.md)
@@ -500,6 +503,8 @@
 - [TestNewInboxForwarderRequest](interfaces/TestNewInboxForwarderRequest.md)
 - [TestNewInboxRulesetOptions](interfaces/TestNewInboxRulesetOptions.md)
 - [TestNewInboxRulesetRequest](interfaces/TestNewInboxRulesetRequest.md)
+- [TestPhoneNumberOptions](interfaces/TestPhoneNumberOptions.md)
+- [TestPhoneNumberSendSmsRequest](interfaces/TestPhoneNumberSendSmsRequest.md)
 - [ThreadProjection](interfaces/ThreadProjection.md)
 - [TrackingPixelDto](interfaces/TrackingPixelDto.md)
 - [TrackingPixelProjection](interfaces/TrackingPixelProjection.md)
@@ -535,11 +540,13 @@
 - [WaitForDeliveryStatusesRequest](interfaces/WaitForDeliveryStatusesRequest.md)
 - [WaitForEmailCountRequest](interfaces/WaitForEmailCountRequest.md)
 - [WaitForLatestEmailRequest](interfaces/WaitForLatestEmailRequest.md)
+- [WaitForLatestSmsRequest](interfaces/WaitForLatestSmsRequest.md)
 - [WaitForMatchingEmailsRequest](interfaces/WaitForMatchingEmailsRequest.md)
 - [WaitForMatchingFirstEmailRequest](interfaces/WaitForMatchingFirstEmailRequest.md)
 - [WaitForNthEmailRequest](interfaces/WaitForNthEmailRequest.md)
 - [WaitForNthMissedEmailRequest](interfaces/WaitForNthMissedEmailRequest.md)
 - [WaitForRequest](interfaces/WaitForRequest.md)
+- [WaitForSingleSmsOptions](interfaces/WaitForSingleSmsOptions.md)
 - [WaitForSmsConditions](interfaces/WaitForSmsConditions.md)
 - [WaitForSmsRequest](interfaces/WaitForSmsRequest.md)
 - [WebhookBouncePayload](interfaces/WebhookBouncePayload.md)
@@ -986,12 +993,12 @@
 - [SimpleSendEmailOptionsFromJSON](README.md#simplesendemailoptionsfromjson)
 - [SimpleSendEmailOptionsFromJSONTyped](README.md#simplesendemailoptionsfromjsontyped)
 - [SimpleSendEmailOptionsToJSON](README.md#simplesendemailoptionstojson)
+- [SmsDtoFromJSON](README.md#smsdtofromjson)
+- [SmsDtoFromJSONTyped](README.md#smsdtofromjsontyped)
+- [SmsDtoToJSON](README.md#smsdtotojson)
 - [SmsMatchOptionFromJSON](README.md#smsmatchoptionfromjson)
 - [SmsMatchOptionFromJSONTyped](README.md#smsmatchoptionfromjsontyped)
 - [SmsMatchOptionToJSON](README.md#smsmatchoptiontojson)
-- [SmsMessageFromJSON](README.md#smsmessagefromjson)
-- [SmsMessageFromJSONTyped](README.md#smsmessagefromjsontyped)
-- [SmsMessageToJSON](README.md#smsmessagetojson)
 - [SmsPreviewFromJSON](README.md#smspreviewfromjson)
 - [SmsPreviewFromJSONTyped](README.md#smspreviewfromjsontyped)
 - [SmsPreviewToJSON](README.md#smspreviewtojson)
@@ -1019,6 +1026,9 @@
 - [TestNewInboxRulesetOptionsFromJSON](README.md#testnewinboxrulesetoptionsfromjson)
 - [TestNewInboxRulesetOptionsFromJSONTyped](README.md#testnewinboxrulesetoptionsfromjsontyped)
 - [TestNewInboxRulesetOptionsToJSON](README.md#testnewinboxrulesetoptionstojson)
+- [TestPhoneNumberOptionsFromJSON](README.md#testphonenumberoptionsfromjson)
+- [TestPhoneNumberOptionsFromJSONTyped](README.md#testphonenumberoptionsfromjsontyped)
+- [TestPhoneNumberOptionsToJSON](README.md#testphonenumberoptionstojson)
 - [ThreadProjectionFromJSON](README.md#threadprojectionfromjson)
 - [ThreadProjectionFromJSONTyped](README.md#threadprojectionfromjsontyped)
 - [ThreadProjectionToJSON](README.md#threadprojectiontojson)
@@ -1079,6 +1089,9 @@
 - [WaitForConditionsFromJSON](README.md#waitforconditionsfromjson)
 - [WaitForConditionsFromJSONTyped](README.md#waitforconditionsfromjsontyped)
 - [WaitForConditionsToJSON](README.md#waitforconditionstojson)
+- [WaitForSingleSmsOptionsFromJSON](README.md#waitforsinglesmsoptionsfromjson)
+- [WaitForSingleSmsOptionsFromJSONTyped](README.md#waitforsinglesmsoptionsfromjsontyped)
+- [WaitForSingleSmsOptionsToJSON](README.md#waitforsinglesmsoptionstojson)
 - [WaitForSmsConditionsFromJSON](README.md#waitforsmsconditionsfromjson)
 - [WaitForSmsConditionsFromJSONTyped](README.md#waitforsmsconditionsfromjsontyped)
 - [WaitForSmsConditionsToJSON](README.md#waitforsmsconditionstojson)
@@ -7932,6 +7945,55 @@ ___
 
 ___
 
+### <a id="smsdtofromjson" name="smsdtofromjson"></a> SmsDtoFromJSON
+
+▸ **SmsDtoFromJSON**(`json`): [`SmsDto`](interfaces/SmsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SmsDto`](interfaces/SmsDto.md)
+
+___
+
+### <a id="smsdtofromjsontyped" name="smsdtofromjsontyped"></a> SmsDtoFromJSONTyped
+
+▸ **SmsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SmsDto`](interfaces/SmsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SmsDto`](interfaces/SmsDto.md)
+
+___
+
+### <a id="smsdtotojson" name="smsdtotojson"></a> SmsDtoToJSON
+
+▸ **SmsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SmsDto`](interfaces/SmsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="smsmatchoptionfromjson" name="smsmatchoptionfromjson"></a> SmsMatchOptionFromJSON
 
 ▸ **SmsMatchOptionFromJSON**(`json`): [`SmsMatchOption`](interfaces/SmsMatchOption.md)
@@ -7974,55 +8036,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SmsMatchOption`](interfaces/SmsMatchOption.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### <a id="smsmessagefromjson" name="smsmessagefromjson"></a> SmsMessageFromJSON
-
-▸ **SmsMessageFromJSON**(`json`): [`SmsMessage`](interfaces/SmsMessage.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-
-#### Returns
-
-[`SmsMessage`](interfaces/SmsMessage.md)
-
-___
-
-### <a id="smsmessagefromjsontyped" name="smsmessagefromjsontyped"></a> SmsMessageFromJSONTyped
-
-▸ **SmsMessageFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SmsMessage`](interfaces/SmsMessage.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `json` | `any` |
-| `ignoreDiscriminator` | `boolean` |
-
-#### Returns
-
-[`SmsMessage`](interfaces/SmsMessage.md)
-
-___
-
-### <a id="smsmessagetojson" name="smsmessagetojson"></a> SmsMessageToJSON
-
-▸ **SmsMessageToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`SmsMessage`](interfaces/SmsMessage.md) |
 
 #### Returns
 
@@ -8464,6 +8477,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`TestNewInboxRulesetOptions`](interfaces/TestNewInboxRulesetOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="testphonenumberoptionsfromjson" name="testphonenumberoptionsfromjson"></a> TestPhoneNumberOptionsFromJSON
+
+▸ **TestPhoneNumberOptionsFromJSON**(`json`): [`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md)
+
+___
+
+### <a id="testphonenumberoptionsfromjsontyped" name="testphonenumberoptionsfromjsontyped"></a> TestPhoneNumberOptionsFromJSONTyped
+
+▸ **TestPhoneNumberOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md)
+
+___
+
+### <a id="testphonenumberoptionstojson" name="testphonenumberoptionstojson"></a> TestPhoneNumberOptionsToJSON
+
+▸ **TestPhoneNumberOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestPhoneNumberOptions`](interfaces/TestPhoneNumberOptions.md) |
 
 #### Returns
 
@@ -9444,6 +9506,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`WaitForConditions`](interfaces/WaitForConditions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="waitforsinglesmsoptionsfromjson" name="waitforsinglesmsoptionsfromjson"></a> WaitForSingleSmsOptionsFromJSON
+
+▸ **WaitForSingleSmsOptionsFromJSON**(`json`): [`WaitForSingleSmsOptions`](interfaces/WaitForSingleSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WaitForSingleSmsOptions`](interfaces/WaitForSingleSmsOptions.md)
+
+___
+
+### <a id="waitforsinglesmsoptionsfromjsontyped" name="waitforsinglesmsoptionsfromjsontyped"></a> WaitForSingleSmsOptionsFromJSONTyped
+
+▸ **WaitForSingleSmsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WaitForSingleSmsOptions`](interfaces/WaitForSingleSmsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WaitForSingleSmsOptions`](interfaces/WaitForSingleSmsOptions.md)
+
+___
+
+### <a id="waitforsinglesmsoptionstojson" name="waitforsinglesmsoptionstojson"></a> WaitForSingleSmsOptionsToJSON
+
+▸ **WaitForSingleSmsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WaitForSingleSmsOptions`](interfaces/WaitForSingleSmsOptions.md) |
 
 #### Returns
 

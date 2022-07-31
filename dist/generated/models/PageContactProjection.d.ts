@@ -45,13 +45,13 @@ export interface PageContactProjection {
      * @type {number}
      * @memberof PageContactProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PageContactProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}

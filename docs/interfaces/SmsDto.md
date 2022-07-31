@@ -1,22 +1,21 @@
-# Interface: SmsMessage
+# Interface: SmsDto
 
 **`export`**
 
-**`interface`** SmsMessage
+**`interface`** SmsDto
 
 ## Table of contents
 
 ### Properties
 
-- [body](SmsMessage.md#body)
-- [createdAt](SmsMessage.md#createdat)
-- [fromNumber](SmsMessage.md#fromnumber)
-- [id](SmsMessage.md#id)
-- [phoneNumber](SmsMessage.md#phonenumber)
-- [read](SmsMessage.md#read)
-- [sid](SmsMessage.md#sid)
-- [updatedAt](SmsMessage.md#updatedat)
-- [userId](SmsMessage.md#userid)
+- [body](SmsDto.md#body)
+- [createdAt](SmsDto.md#createdat)
+- [fromNumber](SmsDto.md#fromnumber)
+- [id](SmsDto.md#id)
+- [phoneNumber](SmsDto.md#phonenumber)
+- [read](SmsDto.md#read)
+- [updatedAt](SmsDto.md#updatedat)
+- [userId](SmsDto.md#userid)
 
 ## Properties
 
@@ -24,7 +23,7 @@
 
 • **body**: `string`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -32,7 +31,7 @@ ___
 
 • **createdAt**: `Date`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -40,15 +39,15 @@ ___
 
 • **fromNumber**: `string`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
 ### <a id="id" name="id"></a> id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -56,7 +55,7 @@ ___
 
 • **phoneNumber**: `string`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -64,15 +63,7 @@ ___
 
 • **read**: `boolean`
 
-**`memberof`** SmsMessage
-
-___
-
-### <a id="sid" name="sid"></a> sid
-
-• **sid**: `string`
-
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -80,7 +71,7 @@ ___
 
 • **updatedAt**: `Date`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto
 
 ___
 
@@ -88,4 +79,4 @@ ___
 
 • **userId**: `string`
 
-**`memberof`** SmsMessage
+**`memberof`** SmsDto

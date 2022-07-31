@@ -63,13 +63,13 @@ export interface PageComplaint {
    * @type {number}
    * @memberof PageComplaint
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {number}
    * @memberof PageComplaint
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {number}
@@ -128,10 +128,10 @@ export function PageComplaintFromJSONTyped(
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
@@ -158,8 +158,8 @@ export function PageComplaintToJSON(value?: PageComplaint | null): any {
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
     last: value.last,
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),

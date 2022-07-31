@@ -6,6 +6,7 @@
 
 - [before](GetPhoneNumbersRequest.md#before)
 - [page](GetPhoneNumbersRequest.md#page)
+- [phoneCountry](GetPhoneNumbersRequest.md#phonecountry)
 - [since](GetPhoneNumbersRequest.md#since)
 - [size](GetPhoneNumbersRequest.md#size)
 - [sort](GetPhoneNumbersRequest.md#sort)
@@ -21,6 +22,12 @@ ___
 ### <a id="page" name="page"></a> page
 
 • `Optional` **page**: `number`
+
+___
+
+### <a id="phonecountry" name="phonecountry"></a> phoneCountry
+
+• `Optional` **phoneCountry**: [`GetPhoneNumbersPhoneCountryEnum`](../enums/GetPhoneNumbersPhoneCountryEnum.md)
 
 ___
 

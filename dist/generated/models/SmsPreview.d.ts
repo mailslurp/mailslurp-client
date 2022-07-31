@@ -32,6 +32,12 @@ export interface SmsPreview {
      * @type {string}
      * @memberof SmsPreview
      */
+    body: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsPreview
+     */
     phoneNumber: string;
     /**
      *

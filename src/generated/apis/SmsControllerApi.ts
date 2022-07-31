@@ -17,9 +17,9 @@ import {
   PageSmsProjection,
   PageSmsProjectionFromJSON,
   PageSmsProjectionToJSON,
-  SmsMessage,
-  SmsMessageFromJSON,
-  SmsMessageToJSON,
+  SmsDto,
+  SmsDtoFromJSON,
+  SmsDtoToJSON,
 } from '../models';
 
 export interface DeleteSmsMessageRequest {
@@ -152,7 +152,7 @@ export class SmsControllerApi extends runtime.BaseAPI {
   async getSmsMessageRaw(
     requestParameters: GetSmsMessageRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<SmsMessage>> {
+  ): Promise<runtime.ApiResponse<SmsDto>> {
     if (
       requestParameters.smsId === null ||
       requestParameters.smsId === undefined
@@ -185,7 +185,7 @@ export class SmsControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      SmsMessageFromJSON(jsonValue)
+      SmsDtoFromJSON(jsonValue)
     );
   }
 
@@ -196,7 +196,7 @@ export class SmsControllerApi extends runtime.BaseAPI {
   async getSmsMessage(
     requestParameters: GetSmsMessageRequest,
     initOverrides?: RequestInit
-  ): Promise<SmsMessage> {
+  ): Promise<SmsDto> {
     const response = await this.getSmsMessageRaw(
       requestParameters,
       initOverrides

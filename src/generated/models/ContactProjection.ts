@@ -42,6 +42,12 @@ export interface ContactProjection {
    * @type {string}
    * @memberof ContactProjection
    */
+  firstName?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
   lastName?: string;
   /**
    *
@@ -61,12 +67,6 @@ export interface ContactProjection {
    * @memberof ContactProjection
    */
   optOut: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  firstName?: string;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
@@ -84,13 +84,13 @@ export function ContactProjectionFromJSONTyped(
     id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
     createdAt: new Date(json['createdAt']),
+    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
     company: !exists(json, 'company') ? undefined : json['company'],
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
     optOut: json['optOut'],
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
   };
 }
 
@@ -105,10 +105,10 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     id: value.id,
     groupId: value.groupId,
     createdAt: value.createdAt.toISOString(),
+    firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
     emailAddresses: value.emailAddresses,
     optOut: value.optOut,
-    firstName: value.firstName,
   };
 }

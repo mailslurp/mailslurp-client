@@ -207,6 +207,64 @@ var WebhookControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    WebhookControllerApi.prototype.createWebhookForPhoneNumberRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneNumberId === null ||
+                            requestParameters.phoneNumberId === undefined) {
+                            throw new runtime.RequiredError('phoneNumberId', 'Required parameter requestParameters.phoneNumberId was null or undefined when calling createWebhookForPhoneNumber.');
+                        }
+                        if (requestParameters.createWebhookOptions === null ||
+                            requestParameters.createWebhookOptions === undefined) {
+                            throw new runtime.RequiredError('createWebhookOptions', 'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhookForPhoneNumber.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneNumberId}/webhooks".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateWebhookOptionsToJSON)(requestParameters.createWebhookOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    WebhookControllerApi.prototype.createWebhookForPhoneNumber = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createWebhookForPhoneNumberRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Delete all webhooks
      */
     WebhookControllerApi.prototype.deleteAllWebhooksRaw = function (requestParameters, initOverrides) {

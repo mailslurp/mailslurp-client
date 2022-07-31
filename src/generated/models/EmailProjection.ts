@@ -39,12 +39,6 @@ export interface EmailProjection {
   subject?: string;
   /**
    *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  to: Array<string>;
-  /**
-   *
    * @type {string}
    * @memberof EmailProjection
    */
@@ -55,6 +49,12 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   attachments?: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  to: Array<string>;
   /**
    *
    * @type {Date}
@@ -84,13 +84,13 @@ export interface EmailProjection {
    * @type {boolean}
    * @memberof EmailProjection
    */
-  teamAccess: boolean;
+  read: boolean;
   /**
    *
    * @type {boolean}
    * @memberof EmailProjection
    */
-  read: boolean;
+  teamAccess: boolean;
   /**
    *
    * @type {string}
@@ -120,15 +120,15 @@ export function EmailProjectionFromJSONTyped(
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    to: json['to'],
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    to: json['to'],
     createdAt: new Date(json['createdAt']),
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    teamAccess: json['teamAccess'],
     read: json['read'],
+    teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
   };
@@ -145,15 +145,15 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     id: value.id,
     from: value.from,
     subject: value.subject,
-    to: value.to,
     inboxId: value.inboxId,
     attachments: value.attachments,
+    to: value.to,
     createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
     domainId: value.domainId,
-    teamAccess: value.teamAccess,
     read: value.read,
+    teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
     bodyExcerpt: value.bodyExcerpt,
   };

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageSmsProjection, SmsMessage } from '../models';
+import { PageSmsProjection, SmsDto } from '../models';
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
@@ -57,12 +57,12 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
-    getSmsMessageRaw(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsMessage>>;
+    getSmsMessageRaw(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
-    getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<SmsMessage>;
+    getSmsMessage(requestParameters: GetSmsMessageRequest, initOverrides?: RequestInit): Promise<SmsDto>;
     /**
      * By default returns all SMS messages across all phone numbers sorted by ascending created at date. Responses are paginated. You can restrict results to a list of phone number IDs. You can also filter out read messages
      * Get all SMS messages in all phone numbers in paginated form. .

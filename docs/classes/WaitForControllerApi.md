@@ -24,6 +24,8 @@
 - [waitForEmailCountRaw](WaitForControllerApi.md#waitforemailcountraw)
 - [waitForLatestEmail](WaitForControllerApi.md#waitforlatestemail)
 - [waitForLatestEmailRaw](WaitForControllerApi.md#waitforlatestemailraw)
+- [waitForLatestSms](WaitForControllerApi.md#waitforlatestsms)
+- [waitForLatestSmsRaw](WaitForControllerApi.md#waitforlatestsmsraw)
 - [waitForMatchingEmails](WaitForControllerApi.md#waitformatchingemails)
 - [waitForMatchingEmailsRaw](WaitForControllerApi.md#waitformatchingemailsraw)
 - [waitForMatchingFirstEmail](WaitForControllerApi.md#waitformatchingfirstemail)
@@ -183,6 +185,46 @@ Fetch inbox\'s latest email or if empty wait for an email to arrive
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+
+___
+
+### <a id="waitforlatestsms" name="waitforlatestsms"></a> waitForLatestSms
+
+▸ **waitForLatestSms**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+Wait until a phone number meets given conditions or return immediately if already met
+Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForLatestSmsRequest`](../interfaces/WaitForLatestSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
+
+___
+
+### <a id="waitforlatestsmsraw" name="waitforlatestsmsraw"></a> waitForLatestSmsRaw
+
+▸ **waitForLatestSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
+
+Wait until a phone number meets given conditions or return immediately if already met
+Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForLatestSmsRequest`](../interfaces/WaitForLatestSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
 ___
 

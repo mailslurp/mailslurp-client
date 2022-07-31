@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateEmergencyAddressOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneNumberProjection, PhoneNumberDto, PhonePlanDto } from '../models';
+import { CreateEmergencyAddressOptions, EmergencyAddress, EmergencyAddressDto, EmptyResponseDto, PagePhoneNumberProjection, PhoneNumberDto, PhonePlanDto, TestPhoneNumberOptions } from '../models';
 export interface CreateEmergencyAddressRequest {
     createEmergencyAddressOptions: CreateEmergencyAddressOptions;
 }
@@ -27,11 +27,16 @@ export interface GetPhoneNumberRequest {
     phoneNumberId: string;
 }
 export interface GetPhoneNumbersRequest {
+    phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
     page?: number;
     size?: number;
     sort?: GetPhoneNumbersSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface TestPhoneNumberSendSmsRequest {
+    phoneNumberId: string;
+    testPhoneNumberOptions: TestPhoneNumberOptions;
 }
 /**
  *
@@ -85,6 +90,20 @@ export declare class PhoneControllerApi extends runtime.BaseAPI {
     /**
      */
     getPhonePlans(initOverrides?: RequestInit): Promise<Array<PhonePlanDto>>;
+    /**
+     */
+    testPhoneNumberSendSmsRaw(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     */
+    testPhoneNumberSendSms(requestParameters: TestPhoneNumberSendSmsRequest, initOverrides?: RequestInit): Promise<void>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneNumbersPhoneCountryEnum {
+    US = "US",
+    GB = "GB"
 }
 /**
  * @export

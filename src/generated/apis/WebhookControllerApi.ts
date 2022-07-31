@@ -85,6 +85,11 @@ export interface CreateWebhookRequest {
   createWebhookOptions: CreateWebhookOptions;
 }
 
+export interface CreateWebhookForPhoneNumberRequest {
+  phoneNumberId: string;
+  createWebhookOptions: CreateWebhookOptions;
+}
+
 export interface DeleteAllWebhooksRequest {
   before?: Date;
 }
@@ -316,6 +321,80 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<WebhookDto> {
     const response = await this.createWebhookRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get notified whenever a phone number receives an SMS via a WebHook URL.
+   * Attach a WebHook URL to a phone number
+   */
+  async createWebhookForPhoneNumberRaw(
+    requestParameters: CreateWebhookForPhoneNumberRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookDto>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling createWebhookForPhoneNumber.'
+      );
+    }
+
+    if (
+      requestParameters.createWebhookOptions === null ||
+      requestParameters.createWebhookOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createWebhookOptions',
+        'Required parameter requestParameters.createWebhookOptions was null or undefined when calling createWebhookForPhoneNumber.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/webhooks`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateWebhookOptionsToJSON(
+          requestParameters.createWebhookOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get notified whenever a phone number receives an SMS via a WebHook URL.
+   * Attach a WebHook URL to a phone number
+   */
+  async createWebhookForPhoneNumber(
+    requestParameters: CreateWebhookForPhoneNumberRequest,
+    initOverrides?: RequestInit
+  ): Promise<WebhookDto> {
+    const response = await this.createWebhookForPhoneNumberRaw(
       requestParameters,
       initOverrides
     );

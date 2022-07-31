@@ -217,7 +217,7 @@ var SmsControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.SmsMessageFromJSON)(jsonValue);
+                                return (0, models_1.SmsDtoFromJSON)(jsonValue);
                             })];
                 }
             });

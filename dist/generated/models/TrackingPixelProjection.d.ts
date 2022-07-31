@@ -53,16 +53,16 @@ export interface TrackingPixelProjection {
     createdAt: Date;
     /**
      *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    recipient?: string;
-    /**
-     *
      * @type {boolean}
      * @memberof TrackingPixelProjection
      */
     seen: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    recipient?: string;
     /**
      *
      * @type {Date}

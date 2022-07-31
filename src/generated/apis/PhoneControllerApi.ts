@@ -35,6 +35,9 @@ import {
   PhonePlanDto,
   PhonePlanDtoFromJSON,
   PhonePlanDtoToJSON,
+  TestPhoneNumberOptions,
+  TestPhoneNumberOptionsFromJSON,
+  TestPhoneNumberOptionsToJSON,
 } from '../models';
 
 export interface CreateEmergencyAddressRequest {
@@ -58,11 +61,17 @@ export interface GetPhoneNumberRequest {
 }
 
 export interface GetPhoneNumbersRequest {
+  phoneCountry?: GetPhoneNumbersPhoneCountryEnum;
   page?: number;
   size?: number;
   sort?: GetPhoneNumbersSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface TestPhoneNumberSendSmsRequest {
+  phoneNumberId: string;
+  testPhoneNumberOptions: TestPhoneNumberOptions;
 }
 
 /**
@@ -385,6 +394,10 @@ export class PhoneControllerApi extends runtime.BaseAPI {
   ): Promise<runtime.ApiResponse<PagePhoneNumberProjection>> {
     const queryParameters: any = {};
 
+    if (requestParameters.phoneCountry !== undefined) {
+      queryParameters['phoneCountry'] = requestParameters.phoneCountry;
+    }
+
     if (requestParameters.page !== undefined) {
       queryParameters['page'] = requestParameters.page;
     }
@@ -477,8 +490,80 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     const response = await this.getPhonePlansRaw(initOverrides);
     return await response.value();
   }
+
+  /**
+   */
+  async testPhoneNumberSendSmsRaw(
+    requestParameters: TestPhoneNumberSendSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.phoneNumberId === null ||
+      requestParameters.phoneNumberId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneNumberId',
+        'Required parameter requestParameters.phoneNumberId was null or undefined when calling testPhoneNumberSendSms.'
+      );
+    }
+
+    if (
+      requestParameters.testPhoneNumberOptions === null ||
+      requestParameters.testPhoneNumberOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testPhoneNumberOptions',
+        'Required parameter requestParameters.testPhoneNumberOptions was null or undefined when calling testPhoneNumberSendSms.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneNumberId}/test`.replace(
+          `{${'phoneNumberId'}}`,
+          encodeURIComponent(String(requestParameters.phoneNumberId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestPhoneNumberOptionsToJSON(
+          requestParameters.testPhoneNumberOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   */
+  async testPhoneNumberSendSms(
+    requestParameters: TestPhoneNumberSendSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.testPhoneNumberSendSmsRaw(requestParameters, initOverrides);
+  }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneNumbersPhoneCountryEnum {
+  US = 'US',
+  GB = 'GB',
+}
 /**
  * @export
  * @enum {string}

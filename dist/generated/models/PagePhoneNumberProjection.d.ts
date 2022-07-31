@@ -45,13 +45,13 @@ export interface PagePhoneNumberProjection {
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}

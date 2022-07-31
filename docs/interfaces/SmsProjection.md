@@ -10,6 +10,7 @@ SMS projection
 
 ### Properties
 
+- [body](SmsProjection.md#body)
 - [createdAt](SmsProjection.md#createdat)
 - [fromNumber](SmsProjection.md#fromnumber)
 - [id](SmsProjection.md#id)
@@ -18,6 +19,14 @@ SMS projection
 - [userId](SmsProjection.md#userid)
 
 ## Properties
+
+### <a id="body" name="body"></a> body
+
+• **body**: `string`
+
+**`memberof`** SmsProjection
+
+___
 
 ### <a id="createdat" name="createdat"></a> createdAt
 

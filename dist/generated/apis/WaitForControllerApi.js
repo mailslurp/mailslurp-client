@@ -298,6 +298,60 @@ var WaitForControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Wait until a phone number meets given conditions or return immediately if already met
+     * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    WaitForControllerApi.prototype.waitForLatestSmsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForSingleSmsOptions === null ||
+                            requestParameters.waitForSingleSmsOptions === undefined) {
+                            throw new runtime.RequiredError('waitForSingleSmsOptions', 'Required parameter requestParameters.waitForSingleSmsOptions was null or undefined when calling waitForLatestSms.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/waitForLatestSms",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForSingleSmsOptionsToJSON)(requestParameters.waitForSingleSmsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SmsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait until a phone number meets given conditions or return immediately if already met
+     * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    WaitForControllerApi.prototype.waitForLatestSms = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForLatestSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: \'SUBJECT\',should:\'CONTAIN\',value:\'needle\'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * Wait or return list of emails that match simple matching patterns
      */

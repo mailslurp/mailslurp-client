@@ -35,12 +35,6 @@ export interface EmailProjection {
     subject?: string;
     /**
      *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    to: Array<string>;
-    /**
-     *
      * @type {string}
      * @memberof EmailProjection
      */
@@ -51,6 +45,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     attachments?: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    to: Array<string>;
     /**
      *
      * @type {Date}
@@ -80,13 +80,13 @@ export interface EmailProjection {
      * @type {boolean}
      * @memberof EmailProjection
      */
-    teamAccess: boolean;
+    read: boolean;
     /**
      *
      * @type {boolean}
      * @memberof EmailProjection
      */
-    read: boolean;
+    teamAccess: boolean;
     /**
      *
      * @type {string}

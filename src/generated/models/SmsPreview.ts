@@ -36,6 +36,12 @@ export interface SmsPreview {
    * @type {string}
    * @memberof SmsPreview
    */
+  body: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsPreview
+   */
   phoneNumber: string;
   /**
    *
@@ -65,6 +71,7 @@ export function SmsPreviewFromJSONTyped(
   return {
     id: json['id'],
     userId: json['userId'],
+    body: json['body'],
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
     createdAt: new Date(json['createdAt']),
@@ -81,6 +88,7 @@ export function SmsPreviewToJSON(value?: SmsPreview | null): any {
   return {
     id: value.id,
     userId: value.userId,
+    body: value.body,
     phoneNumber: value.phoneNumber,
     fromNumber: value.fromNumber,
     createdAt: value.createdAt.toISOString(),

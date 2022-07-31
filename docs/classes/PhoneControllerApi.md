@@ -35,6 +35,8 @@
 - [getPhonePlans](PhoneControllerApi.md#getphoneplans)
 - [getPhonePlansRaw](PhoneControllerApi.md#getphoneplansraw)
 - [request](PhoneControllerApi.md#request)
+- [testPhoneNumberSendSms](PhoneControllerApi.md#testphonenumbersendsms)
+- [testPhoneNumberSendSmsRaw](PhoneControllerApi.md#testphonenumbersendsmsraw)
 - [withMiddleware](PhoneControllerApi.md#withmiddleware)
 - [withPostMiddleware](PhoneControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](PhoneControllerApi.md#withpremiddleware)
@@ -353,6 +355,40 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### <a id="testphonenumbersendsms" name="testphonenumbersendsms"></a> testPhoneNumberSendSms
+
+▸ **testPhoneNumberSendSms**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestPhoneNumberSendSmsRequest`](../interfaces/TestPhoneNumberSendSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### <a id="testphonenumbersendsmsraw" name="testphonenumbersendsmsraw"></a> testPhoneNumberSendSmsRaw
+
+▸ **testPhoneNumberSendSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestPhoneNumberSendSmsRequest`](../interfaces/TestPhoneNumberSendSmsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

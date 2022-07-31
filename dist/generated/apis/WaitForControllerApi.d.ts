@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { Email, EmailPreview, MatchOptions, SmsPreview, WaitForConditions, WaitForSmsConditions } from '../models';
+import { Email, EmailPreview, MatchOptions, SmsDto, SmsPreview, WaitForConditions, WaitForSingleSmsOptions, WaitForSmsConditions } from '../models';
 export interface WaitForRequest {
     waitForConditions: WaitForConditions;
 }
@@ -32,6 +32,9 @@ export interface WaitForLatestEmailRequest {
     since?: Date;
     sort?: WaitForLatestEmailSortEnum;
     delay?: number;
+}
+export interface WaitForLatestSmsRequest {
+    waitForSingleSmsOptions: WaitForSingleSmsOptions;
 }
 export interface WaitForMatchingEmailsRequest {
     inboxId: string;
@@ -101,6 +104,16 @@ export declare class WaitForControllerApi extends runtime.BaseAPI {
      * Fetch inbox\'s latest email or if empty wait for an email to arrive
      */
     waitForLatestEmail(requestParameters: WaitForLatestEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Wait until a phone number meets given conditions or return immediately if already met
+     * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    waitForLatestSmsRaw(requestParameters: WaitForLatestSmsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmsDto>>;
+    /**
+     * Wait until a phone number meets given conditions or return immediately if already met
+     * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+     */
+    waitForLatestSms(requestParameters: WaitForLatestSmsRequest, initOverrides?: RequestInit): Promise<SmsDto>;
     /**
      * Perform a search of emails in an inbox with the given patterns. If results match expected count then return or else retry the search until results are found or timeout is reached. Match options allow simple CONTAINS or EQUALS filtering on SUBJECT, TO, BCC, CC, and FROM. See the `MatchOptions` object for options. An example payload is `{ matches: [{field: \'SUBJECT\',should:\'CONTAIN\',value:\'needle\'}] }`. You can use an array of matches and they will be applied sequentially to filter out emails. If you want to perform matches and extractions of content using Regex patterns see the EmailController `getEmailContentMatch` method.
      * Wait or return list of emails that match simple matching patterns

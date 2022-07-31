@@ -18,6 +18,10 @@ export interface CreateWebhookRequest {
     inboxId: string;
     createWebhookOptions: CreateWebhookOptions;
 }
+export interface CreateWebhookForPhoneNumberRequest {
+    phoneNumberId: string;
+    createWebhookOptions: CreateWebhookOptions;
+}
 export interface DeleteAllWebhooksRequest {
     before?: Date;
 }
@@ -122,6 +126,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Attach a WebHook URL to an inbox
      */
     createWebhook(requestParameters: CreateWebhookRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
+    /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    createWebhookForPhoneNumberRaw(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDto>>;
+    /**
+     * Get notified whenever a phone number receives an SMS via a WebHook URL.
+     * Attach a WebHook URL to a phone number
+     */
+    createWebhookForPhoneNumber(requestParameters: CreateWebhookForPhoneNumberRequest, initOverrides?: RequestInit): Promise<WebhookDto>;
     /**
      * Delete all webhooks
      */

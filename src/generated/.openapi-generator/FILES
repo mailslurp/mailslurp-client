@@ -163,8 +163,8 @@ models/SentEmailDto.ts
 models/SentEmailProjection.ts
 models/SetInboxFavouritedOptions.ts
 models/SimpleSendEmailOptions.ts
+models/SmsDto.ts
 models/SmsMatchOption.ts
-models/SmsMessage.ts
 models/SmsPreview.ts
 models/SmsProjection.ts
 models/Sort.ts
@@ -174,6 +174,7 @@ models/TemplateProjection.ts
 models/TemplateVariable.ts
 models/TestNewInboxForwarderOptions.ts
 models/TestNewInboxRulesetOptions.ts
+models/TestPhoneNumberOptions.ts
 models/ThreadProjection.ts
 models/TrackingPixelDto.ts
 models/TrackingPixelProjection.ts
@@ -194,6 +195,7 @@ models/VerifyEmailAddressOptions.ts
 models/VerifyWebhookSignatureOptions.ts
 models/VerifyWebhookSignatureResults.ts
 models/WaitForConditions.ts
+models/WaitForSingleSmsOptions.ts
 models/WaitForSmsConditions.ts
 models/WebhookBouncePayload.ts
 models/WebhookBounceRecipientPayload.ts

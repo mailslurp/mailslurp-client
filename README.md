@@ -1,8 +1,10 @@
 # MailSlurp Javascript Client
 
-Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript.
+Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript. Use real phone numbers to process inbound TXT messages.
 
-[MailSlurp](https://www.mailslurp.com) is an email [API](https://docs.mailslurp.com/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. MailSlurp is free for personal use but requires an [API KEY](https://app.mailslurp.com). Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading. 
+[MailSlurp](https://www.mailslurp.com) is an email and SMS [API](https://docs.mailslurp.com/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. You can also [create phone numbers](/) and fetch inbound SMS. 
+
+MailSlurp is free for personal use but requires an [API KEY](https://app.mailslurp.com). Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading. 
 
 <br/>
 
@@ -498,6 +500,9 @@ expect(result.matches).toHaveLength(2);
 expect(result.matches[0]).toEqual('code is: 123456');
 expect(result.matches[1]).toEqual('123456');
 ```
+
+## Phone SMS/TXT usage
+Mailslurp supports inbound SMS using real phone numbers. See the [SMS guide](https://app.mailslurp.com/guides/txt-sms/) or the developer [documentation](https://docs.mailslurp.com/txt-sms/) to get started.
 
 ## Webhooks
 To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://docs.mailslurp.com/webhooks/).

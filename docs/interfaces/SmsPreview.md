@@ -8,6 +8,7 @@
 
 ### Properties
 
+- [body](SmsPreview.md#body)
 - [createdAt](SmsPreview.md#createdat)
 - [fromNumber](SmsPreview.md#fromnumber)
 - [id](SmsPreview.md#id)
@@ -15,6 +16,14 @@
 - [userId](SmsPreview.md#userid)
 
 ## Properties
+
+### <a id="body" name="body"></a> body
+
+• **body**: `string`
+
+**`memberof`** SmsPreview
+
+___
 
 ### <a id="createdat" name="createdat"></a> createdAt
 

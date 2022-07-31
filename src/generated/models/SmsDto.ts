@@ -16,90 +16,83 @@ import { exists, mapValues } from '../runtime';
 /**
  *
  * @export
- * @interface SmsMessage
+ * @interface SmsDto
  */
-export interface SmsMessage {
+export interface SmsDto {
   /**
    *
    * @type {string}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
-  id?: string;
+  id: string;
   /**
    *
    * @type {string}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   userId: string;
   /**
    *
    * @type {string}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   phoneNumber: string;
   /**
    *
    * @type {string}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   fromNumber: string;
   /**
    *
    * @type {string}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   body: string;
   /**
    *
    * @type {boolean}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   read: boolean;
   /**
    *
-   * @type {string}
-   * @memberof SmsMessage
-   */
-  sid: string;
-  /**
-   *
    * @type {Date}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   createdAt: Date;
   /**
    *
    * @type {Date}
-   * @memberof SmsMessage
+   * @memberof SmsDto
    */
   updatedAt: Date;
 }
 
-export function SmsMessageFromJSON(json: any): SmsMessage {
-  return SmsMessageFromJSONTyped(json, false);
+export function SmsDtoFromJSON(json: any): SmsDto {
+  return SmsDtoFromJSONTyped(json, false);
 }
 
-export function SmsMessageFromJSONTyped(
+export function SmsDtoFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): SmsMessage {
+): SmsDto {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     userId: json['userId'],
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
     body: json['body'],
     read: json['read'],
-    sid: json['sid'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
 }
 
-export function SmsMessageToJSON(value?: SmsMessage | null): any {
+export function SmsDtoToJSON(value?: SmsDto | null): any {
   if (value === undefined) {
     return undefined;
   }
@@ -113,7 +106,6 @@ export function SmsMessageToJSON(value?: SmsMessage | null): any {
     fromNumber: value.fromNumber,
     body: value.body,
     read: value.read,
-    sid: value.sid,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };

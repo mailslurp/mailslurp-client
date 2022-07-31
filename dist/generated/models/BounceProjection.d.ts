@@ -26,13 +26,13 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    sender: string;
+    subject?: string;
     /**
      *
      * @type {string}
      * @memberof BounceProjection
      */
-    subject?: string;
+    sender: string;
     /**
      *
      * @type {Date}

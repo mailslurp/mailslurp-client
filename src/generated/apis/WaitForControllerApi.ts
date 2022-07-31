@@ -23,12 +23,18 @@ import {
   MatchOptions,
   MatchOptionsFromJSON,
   MatchOptionsToJSON,
+  SmsDto,
+  SmsDtoFromJSON,
+  SmsDtoToJSON,
   SmsPreview,
   SmsPreviewFromJSON,
   SmsPreviewToJSON,
   WaitForConditions,
   WaitForConditionsFromJSON,
   WaitForConditionsToJSON,
+  WaitForSingleSmsOptions,
+  WaitForSingleSmsOptionsFromJSON,
+  WaitForSingleSmsOptionsToJSON,
   WaitForSmsConditions,
   WaitForSmsConditionsFromJSON,
   WaitForSmsConditionsToJSON,
@@ -57,6 +63,10 @@ export interface WaitForLatestEmailRequest {
   since?: Date;
   sort?: WaitForLatestEmailSortEnum;
   delay?: number;
+}
+
+export interface WaitForLatestSmsRequest {
+  waitForSingleSmsOptions: WaitForSingleSmsOptions;
 }
 
 export interface WaitForMatchingEmailsRequest {
@@ -327,6 +337,67 @@ export class WaitForControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Email> {
     const response = await this.waitForLatestEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait until a phone number meets given conditions or return immediately if already met
+   * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+   */
+  async waitForLatestSmsRaw(
+    requestParameters: WaitForLatestSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmsDto>> {
+    if (
+      requestParameters.waitForSingleSmsOptions === null ||
+      requestParameters.waitForSingleSmsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForSingleSmsOptions',
+        'Required parameter requestParameters.waitForSingleSmsOptions was null or undefined when calling waitForLatestSms.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/waitForLatestSms`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForSingleSmsOptionsToJSON(
+          requestParameters.waitForSingleSmsOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait until a phone number meets given conditions or return immediately if already met
+   * Wait for the latest SMS message to match the provided filter conditions such as body contains keyword.
+   */
+  async waitForLatestSms(
+    requestParameters: WaitForLatestSmsRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmsDto> {
+    const response = await this.waitForLatestSmsRaw(
       requestParameters,
       initOverrides
     );
