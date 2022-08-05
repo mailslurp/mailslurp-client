@@ -53,12 +53,6 @@ export interface EmailProjection {
     to: Array<string>;
     /**
      *
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
@@ -69,6 +63,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     cc?: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof EmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

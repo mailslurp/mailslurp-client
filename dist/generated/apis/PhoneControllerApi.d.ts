@@ -37,6 +37,7 @@ export interface GetPhoneNumbersRequest {
 export interface TestPhoneNumberSendSmsRequest {
     phoneNumberId: string;
     testPhoneNumberOptions: TestPhoneNumberOptions;
+    xTestId?: string;
 }
 /**
  *

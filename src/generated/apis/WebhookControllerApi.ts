@@ -119,6 +119,8 @@ export interface GetAllWebhooksRequest {
   sort?: GetAllWebhooksSortEnum;
   searchFilter?: string;
   since?: Date;
+  inboxId?: string;
+  phoneId?: string;
   before?: Date;
 }
 
@@ -138,6 +140,15 @@ export interface GetJsonSchemaForWebhookEventRequest {
 
 export interface GetJsonSchemaForWebhookPayloadRequest {
   webhookId: string;
+}
+
+export interface GetPhoneNumberWebhooksPaginatedRequest {
+  phoneId: string;
+  page?: number;
+  size?: number;
+  sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetTestWebhookPayloadRequest {
@@ -666,6 +677,14 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['since'] = (requestParameters.since as any).toISOString();
     }
 
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
+    }
+
     if (requestParameters.before !== undefined) {
       queryParameters['before'] = (
         requestParameters.before as any
@@ -900,6 +919,85 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<JSONSchemaDto> {
     const response = await this.getJsonSchemaForWebhookPayloadRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get paginated webhooks for a phone number
+   */
+  async getPhoneNumberWebhooksPaginatedRaw(
+    requestParameters: GetPhoneNumberWebhooksPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageWebhookProjection>> {
+    if (
+      requestParameters.phoneId === null ||
+      requestParameters.phoneId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'phoneId',
+        'Required parameter requestParameters.phoneId was null or undefined when calling getPhoneNumberWebhooksPaginated.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/phone/numbers/{phoneId}/webhooks/paginated`.replace(
+          `{${'phoneId'}}`,
+          encodeURIComponent(String(requestParameters.phoneId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageWebhookProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get paginated webhooks for a phone number
+   */
+  async getPhoneNumberWebhooksPaginated(
+    requestParameters: GetPhoneNumberWebhooksPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageWebhookProjection> {
+    const response = await this.getPhoneNumberWebhooksPaginatedRaw(
       requestParameters,
       initOverrides
     );
@@ -1876,6 +1974,14 @@ export enum GetJsonSchemaForWebhookEventEventEnum {
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetPhoneNumberWebhooksPaginatedSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
 }
 /**
  * @export

@@ -32,13 +32,13 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    userId: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    inboxId?: string;
+    userId: string;
     /**
      *
      * @type {string}
@@ -53,16 +53,16 @@ export interface TrackingPixelProjection {
     createdAt: Date;
     /**
      *
-     * @type {boolean}
-     * @memberof TrackingPixelProjection
-     */
-    seen: boolean;
-    /**
-     *
      * @type {string}
      * @memberof TrackingPixelProjection
      */
     recipient?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof TrackingPixelProjection
+     */
+    seen: boolean;
     /**
      *
      * @type {Date}

@@ -5,7 +5,9 @@
 ### Properties
 
 - [before](GetAllWebhooksRequest.md#before)
+- [inboxId](GetAllWebhooksRequest.md#inboxid)
 - [page](GetAllWebhooksRequest.md#page)
+- [phoneId](GetAllWebhooksRequest.md#phoneid)
 - [searchFilter](GetAllWebhooksRequest.md#searchfilter)
 - [since](GetAllWebhooksRequest.md#since)
 - [size](GetAllWebhooksRequest.md#size)
@@ -19,9 +21,21 @@
 
 ___
 
+### <a id="inboxid" name="inboxid"></a> inboxId
+
+• `Optional` **inboxId**: `string`
+
+___
+
 ### <a id="page" name="page"></a> page
 
 • `Optional` **page**: `number`
+
+___
+
+### <a id="phoneid" name="phoneid"></a> phoneId
+
+• `Optional` **phoneId**: `string`
 
 ___
 

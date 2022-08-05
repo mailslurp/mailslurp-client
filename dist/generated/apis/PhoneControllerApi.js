@@ -501,6 +501,10 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.xTestId !== undefined &&
+                            requestParameters.xTestId !== null) {
+                            headerParameters['x-test-id'] = String(requestParameters.xTestId);
+                        }
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }

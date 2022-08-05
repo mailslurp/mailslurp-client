@@ -72,6 +72,7 @@ export interface GetPhoneNumbersRequest {
 export interface TestPhoneNumberSendSmsRequest {
   phoneNumberId: string;
   testPhoneNumberOptions: TestPhoneNumberOptions;
+  xTestId?: string;
 }
 
 /**
@@ -522,6 +523,13 @@ export class PhoneControllerApi extends runtime.BaseAPI {
     const headerParameters: runtime.HTTPHeaders = {};
 
     headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.xTestId !== undefined &&
+      requestParameters.xTestId !== null
+    ) {
+      headerParameters['x-test-id'] = String(requestParameters.xTestId);
+    }
 
     if (this.configuration && this.configuration.apiKey) {
       headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication

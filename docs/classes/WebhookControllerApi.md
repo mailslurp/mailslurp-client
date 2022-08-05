@@ -40,6 +40,8 @@
 - [getJsonSchemaForWebhookEventRaw](WebhookControllerApi.md#getjsonschemaforwebhookeventraw)
 - [getJsonSchemaForWebhookPayload](WebhookControllerApi.md#getjsonschemaforwebhookpayload)
 - [getJsonSchemaForWebhookPayloadRaw](WebhookControllerApi.md#getjsonschemaforwebhookpayloadraw)
+- [getPhoneNumberWebhooksPaginated](WebhookControllerApi.md#getphonenumberwebhookspaginated)
+- [getPhoneNumberWebhooksPaginatedRaw](WebhookControllerApi.md#getphonenumberwebhookspaginatedraw)
 - [getTestWebhookPayload](WebhookControllerApi.md#gettestwebhookpayload)
 - [getTestWebhookPayloadBounce](WebhookControllerApi.md#gettestwebhookpayloadbounce)
 - [getTestWebhookPayloadBounceRaw](WebhookControllerApi.md#gettestwebhookpayloadbounceraw)
@@ -532,6 +534,44 @@ Get JSON Schema definition for webhook payload
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`JSONSchemaDto`](../interfaces/JSONSchemaDto.md)\>\>
+
+___
+
+### <a id="getphonenumberwebhookspaginated" name="getphonenumberwebhookspaginated"></a> getPhoneNumberWebhooksPaginated
+
+▸ **getPhoneNumberWebhooksPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
+
+Get paginated webhooks for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberWebhooksPaginatedRequest`](../interfaces/GetPhoneNumberWebhooksPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
+
+___
+
+### <a id="getphonenumberwebhookspaginatedraw" name="getphonenumberwebhookspaginatedraw"></a> getPhoneNumberWebhooksPaginatedRaw
+
+▸ **getPhoneNumberWebhooksPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
+
+Get paginated webhooks for a phone number
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPhoneNumberWebhooksPaginatedRequest`](../interfaces/GetPhoneNumberWebhooksPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
 
 ___
 

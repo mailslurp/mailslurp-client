@@ -51,7 +51,13 @@ export interface WebhookDto {
    */
   name?: string | null;
   /**
-   * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level
+   * The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
+   * @type {string}
+   * @memberof WebhookDto
+   */
+  phoneId?: string | null;
+  /**
+   * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level or phone level if phoneId set
    * @type {string}
    * @memberof WebhookDto
    */
@@ -146,6 +152,7 @@ export function WebhookDtoFromJSONTyped(
     userId: json['userId'],
     basicAuth: json['basicAuth'],
     name: !exists(json, 'name') ? undefined : json['name'],
+    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     url: json['url'],
     method: json['method'],
@@ -171,6 +178,7 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     userId: value.userId,
     basicAuth: value.basicAuth,
     name: value.name,
+    phoneId: value.phoneId,
     inboxId: value.inboxId,
     url: value.url,
     method: value.method,

@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -500,6 +500,12 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.since !== undefined) {
                             queryParameters['since'] = requestParameters.since.toISOString();
                         }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
+                        }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
@@ -703,6 +709,71 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getJsonSchemaForWebhookPayloadRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    WebhookControllerApi.prototype.getPhoneNumberWebhooksPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.phoneId === null ||
+                            requestParameters.phoneId === undefined) {
+                            throw new runtime.RequiredError('phoneId', 'Required parameter requestParameters.phoneId was null or undefined when calling getPhoneNumberWebhooksPaginated.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/phone/numbers/{phoneId}/webhooks/paginated".replace("{" + 'phoneId' + "}", encodeURIComponent(String(requestParameters.phoneId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    WebhookControllerApi.prototype.getPhoneNumberWebhooksPaginated = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getPhoneNumberWebhooksPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1657,6 +1728,15 @@ var GetJsonSchemaForWebhookEventEventEnum;
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetJsonSchemaForWebhookEventEventEnum["NEW_SMS"] = "NEW_SMS";
 })(GetJsonSchemaForWebhookEventEventEnum = exports.GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetPhoneNumberWebhooksPaginatedSortEnum;
+(function (GetPhoneNumberWebhooksPaginatedSortEnum) {
+    GetPhoneNumberWebhooksPaginatedSortEnum["ASC"] = "ASC";
+    GetPhoneNumberWebhooksPaginatedSortEnum["DESC"] = "DESC";
+})(GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum || (exports.GetPhoneNumberWebhooksPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}

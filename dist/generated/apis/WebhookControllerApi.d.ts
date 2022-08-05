@@ -47,6 +47,8 @@ export interface GetAllWebhooksRequest {
     sort?: GetAllWebhooksSortEnum;
     searchFilter?: string;
     since?: Date;
+    inboxId?: string;
+    phoneId?: string;
     before?: Date;
 }
 export interface GetInboxWebhooksPaginatedRequest {
@@ -63,6 +65,14 @@ export interface GetJsonSchemaForWebhookEventRequest {
 }
 export interface GetJsonSchemaForWebhookPayloadRequest {
     webhookId: string;
+}
+export interface GetPhoneNumberWebhooksPaginatedRequest {
+    phoneId: string;
+    page?: number;
+    size?: number;
+    sort?: GetPhoneNumberWebhooksPaginatedSortEnum;
+    since?: Date;
+    before?: Date;
 }
 export interface GetTestWebhookPayloadRequest {
     eventName?: GetTestWebhookPayloadEventNameEnum;
@@ -202,6 +212,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get JSON Schema definition for webhook payload
      */
     getJsonSchemaForWebhookPayload(requestParameters: GetJsonSchemaForWebhookPayloadRequest, initOverrides?: RequestInit): Promise<JSONSchemaDto>;
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    getPhoneNumberWebhooksPaginatedRaw(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    /**
+     * Get paginated webhooks for a phone number
+     */
+    getPhoneNumberWebhooksPaginated(requestParameters: GetPhoneNumberWebhooksPaginatedRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
     /**
      * Get test webhook payload example. Response content depends on eventName passed. Uses `EMAIL_RECEIVED` as default.
      */
@@ -389,6 +407,14 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetPhoneNumberWebhooksPaginatedSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

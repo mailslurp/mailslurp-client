@@ -18,6 +18,7 @@ Representation of a webhook for an inbox. The URL specified will be using by Mai
 - [method](WebhookDto.md#method)
 - [name](WebhookDto.md#name)
 - [payloadJsonSchema](WebhookDto.md#payloadjsonschema)
+- [phoneId](WebhookDto.md#phoneid)
 - [requestHeaders](WebhookDto.md#requestheaders)
 - [updatedAt](WebhookDto.md#updatedat)
 - [url](WebhookDto.md#url)
@@ -69,7 +70,7 @@ ___
 
 • `Optional` **inboxId**: `string`
 
-The inbox that the Webhook will be triggered by. If null then webhook triggered at account level
+The inbox that the Webhook will be triggered by. If null then webhook triggered at account level or phone level if phoneId set
 
 **`memberof`** WebhookDto
 
@@ -100,6 +101,16 @@ ___
 • **payloadJsonSchema**: `string`
 
 Deprecated. Fetch JSON Schema for webhook using the getJsonSchemaForWebhookPayload method
+
+**`memberof`** WebhookDto
+
+___
+
+### <a id="phoneid" name="phoneid"></a> phoneId
+
+• `Optional` **phoneId**: `string`
+
+The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
 
 **`memberof`** WebhookDto
 

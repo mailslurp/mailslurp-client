@@ -41,7 +41,13 @@ export interface WebhookDto {
      */
     name?: string | null;
     /**
-     * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level
+     * The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    phoneId?: string | null;
+    /**
+     * The inbox that the Webhook will be triggered by. If null then webhook triggered at account level or phone level if phoneId set
      * @type {string}
      * @memberof WebhookDto
      */
