@@ -63,8 +63,10 @@ export type Config = {
   attribution?: string;
   // optional api base path
   basePath?: string;
-
+  // optional fetch override
   fetchApi?: FetchAPI;
+  // optional request headers map
+  headers?: { [key: string]: string };
 };
 
 /**
@@ -154,6 +156,7 @@ export class MailSlurp {
     const clientConfiguration = new Configuration({
       apiKey: opts.apiKey,
       basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
+      headers: opts.headers || undefined,
     });
     const args = [clientConfiguration, clientConfiguration.basePath, _fetch];
 

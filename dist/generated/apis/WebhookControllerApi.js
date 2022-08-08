@@ -924,6 +924,52 @@ var WebhookControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get webhook test payload for delivery status event
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadDeliveryStatusRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/test/delivery-status-payload",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookDeliveryStatusPayloadFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get webhook test payload for delivery status event
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadDeliveryStatus = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTestWebhookPayloadDeliveryStatusRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get webhook test payload for email opened event
      */
     WebhookControllerApi.prototype.getTestWebhookPayloadEmailOpenedRaw = function (initOverrides) {
@@ -1195,6 +1241,52 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getTestWebhookPayloadNewEmailRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get webhook test payload for new sms event
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadNewSmsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/test/new-sms-payload",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookNewSmsPayloadFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get webhook test payload for new sms event
+     */
+    WebhookControllerApi.prototype.getTestWebhookPayloadNewSms = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getTestWebhookPayloadNewSmsRaw(initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1724,6 +1816,7 @@ var GetJsonSchemaForWebhookEventEventEnum;
     GetJsonSchemaForWebhookEventEventEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     GetJsonSchemaForWebhookEventEventEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     GetJsonSchemaForWebhookEventEventEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetJsonSchemaForWebhookEventEventEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE"] = "BOUNCE";
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetJsonSchemaForWebhookEventEventEnum["NEW_SMS"] = "NEW_SMS";
@@ -1749,6 +1842,7 @@ var GetTestWebhookPayloadEventNameEnum;
     GetTestWebhookPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     GetTestWebhookPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     GetTestWebhookPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetTestWebhookPayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     GetTestWebhookPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     GetTestWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetTestWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";

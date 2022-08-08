@@ -8,6 +8,7 @@
 
 - [BOUNCE](WebhookNewAttachmentPayloadEventNameEnum.md#bounce)
 - [BOUNCE\_RECIPIENT](WebhookNewAttachmentPayloadEventNameEnum.md#bounce_recipient)
+- [DELIVERY\_STATUS](WebhookNewAttachmentPayloadEventNameEnum.md#delivery_status)
 - [EMAIL\_OPENED](WebhookNewAttachmentPayloadEventNameEnum.md#email_opened)
 - [EMAIL\_READ](WebhookNewAttachmentPayloadEventNameEnum.md#email_read)
 - [EMAIL\_RECEIVED](WebhookNewAttachmentPayloadEventNameEnum.md#email_received)
@@ -27,6 +28,12 @@ ___
 ### <a id="bounce_recipient" name="bounce_recipient"></a> BOUNCE\_RECIPIENT
 
 • **BOUNCE\_RECIPIENT**
+
+___
+
+### <a id="delivery_status" name="delivery_status"></a> DELIVERY\_STATUS
+
+• **DELIVERY\_STATUS**
 
 ___
 

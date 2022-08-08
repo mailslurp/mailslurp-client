@@ -114,6 +114,7 @@
 - [WaitForSmsConditionsSortDirectionEnum](enums/WaitForSmsConditionsSortDirectionEnum.md)
 - [WebhookBouncePayloadEventNameEnum](enums/WebhookBouncePayloadEventNameEnum.md)
 - [WebhookBounceRecipientPayloadEventNameEnum](enums/WebhookBounceRecipientPayloadEventNameEnum.md)
+- [WebhookDeliveryStatusPayloadEventNameEnum](enums/WebhookDeliveryStatusPayloadEventNameEnum.md)
 - [WebhookDtoEventNameEnum](enums/WebhookDtoEventNameEnum.md)
 - [WebhookDtoMethodEnum](enums/WebhookDtoMethodEnum.md)
 - [WebhookEmailOpenedPayloadEventNameEnum](enums/WebhookEmailOpenedPayloadEventNameEnum.md)
@@ -121,6 +122,7 @@
 - [WebhookNewAttachmentPayloadEventNameEnum](enums/WebhookNewAttachmentPayloadEventNameEnum.md)
 - [WebhookNewContactPayloadEventNameEnum](enums/WebhookNewContactPayloadEventNameEnum.md)
 - [WebhookNewEmailPayloadEventNameEnum](enums/WebhookNewEmailPayloadEventNameEnum.md)
+- [WebhookNewSmsPayloadEventNameEnum](enums/WebhookNewSmsPayloadEventNameEnum.md)
 - [WebhookProjectionEventNameEnum](enums/WebhookProjectionEventNameEnum.md)
 - [WebhookResultDtoHttpMethodEnum](enums/WebhookResultDtoHttpMethodEnum.md)
 - [WebhookResultDtoResultTypeEnum](enums/WebhookResultDtoResultTypeEnum.md)
@@ -553,6 +555,7 @@
 - [WaitForSmsRequest](interfaces/WaitForSmsRequest.md)
 - [WebhookBouncePayload](interfaces/WebhookBouncePayload.md)
 - [WebhookBounceRecipientPayload](interfaces/WebhookBounceRecipientPayload.md)
+- [WebhookDeliveryStatusPayload](interfaces/WebhookDeliveryStatusPayload.md)
 - [WebhookDto](interfaces/WebhookDto.md)
 - [WebhookEmailOpenedPayload](interfaces/WebhookEmailOpenedPayload.md)
 - [WebhookEmailReadPayload](interfaces/WebhookEmailReadPayload.md)
@@ -561,6 +564,7 @@
 - [WebhookNewAttachmentPayload](interfaces/WebhookNewAttachmentPayload.md)
 - [WebhookNewContactPayload](interfaces/WebhookNewContactPayload.md)
 - [WebhookNewEmailPayload](interfaces/WebhookNewEmailPayload.md)
+- [WebhookNewSmsPayload](interfaces/WebhookNewSmsPayload.md)
 - [WebhookProjection](interfaces/WebhookProjection.md)
 - [WebhookRedriveResult](interfaces/WebhookRedriveResult.md)
 - [WebhookResultDto](interfaces/WebhookResultDto.md)
@@ -1103,6 +1107,9 @@
 - [WebhookBounceRecipientPayloadFromJSON](README.md#webhookbouncerecipientpayloadfromjson)
 - [WebhookBounceRecipientPayloadFromJSONTyped](README.md#webhookbouncerecipientpayloadfromjsontyped)
 - [WebhookBounceRecipientPayloadToJSON](README.md#webhookbouncerecipientpayloadtojson)
+- [WebhookDeliveryStatusPayloadFromJSON](README.md#webhookdeliverystatuspayloadfromjson)
+- [WebhookDeliveryStatusPayloadFromJSONTyped](README.md#webhookdeliverystatuspayloadfromjsontyped)
+- [WebhookDeliveryStatusPayloadToJSON](README.md#webhookdeliverystatuspayloadtojson)
 - [WebhookDtoFromJSON](README.md#webhookdtofromjson)
 - [WebhookDtoFromJSONTyped](README.md#webhookdtofromjsontyped)
 - [WebhookDtoToJSON](README.md#webhookdtotojson)
@@ -1127,6 +1134,9 @@
 - [WebhookNewEmailPayloadFromJSON](README.md#webhooknewemailpayloadfromjson)
 - [WebhookNewEmailPayloadFromJSONTyped](README.md#webhooknewemailpayloadfromjsontyped)
 - [WebhookNewEmailPayloadToJSON](README.md#webhooknewemailpayloadtojson)
+- [WebhookNewSmsPayloadFromJSON](README.md#webhooknewsmspayloadfromjson)
+- [WebhookNewSmsPayloadFromJSONTyped](README.md#webhooknewsmspayloadfromjsontyped)
+- [WebhookNewSmsPayloadToJSON](README.md#webhooknewsmspayloadtojson)
 - [WebhookProjectionFromJSON](README.md#webhookprojectionfromjson)
 - [WebhookProjectionFromJSONTyped](README.md#webhookprojectionfromjsontyped)
 - [WebhookProjectionToJSON](README.md#webhookprojectiontojson)
@@ -1177,6 +1187,7 @@ MailSlurp config
 | `attribution?` | `string` |
 | `basePath?` | `string` |
 | `fetchApi?` | [`FetchAPI`](README.md#fetchapi) |
+| `headers?` | { `[key: string]`: `string`;  } |
 
 ___
 
@@ -9711,6 +9722,55 @@ ___
 
 ___
 
+### <a id="webhookdeliverystatuspayloadfromjson" name="webhookdeliverystatuspayloadfromjson"></a> WebhookDeliveryStatusPayloadFromJSON
+
+▸ **WebhookDeliveryStatusPayloadFromJSON**(`json`): [`WebhookDeliveryStatusPayload`](interfaces/WebhookDeliveryStatusPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookDeliveryStatusPayload`](interfaces/WebhookDeliveryStatusPayload.md)
+
+___
+
+### <a id="webhookdeliverystatuspayloadfromjsontyped" name="webhookdeliverystatuspayloadfromjsontyped"></a> WebhookDeliveryStatusPayloadFromJSONTyped
+
+▸ **WebhookDeliveryStatusPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookDeliveryStatusPayload`](interfaces/WebhookDeliveryStatusPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookDeliveryStatusPayload`](interfaces/WebhookDeliveryStatusPayload.md)
+
+___
+
+### <a id="webhookdeliverystatuspayloadtojson" name="webhookdeliverystatuspayloadtojson"></a> WebhookDeliveryStatusPayloadToJSON
+
+▸ **WebhookDeliveryStatusPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookDeliveryStatusPayload`](interfaces/WebhookDeliveryStatusPayload.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="webhookdtofromjson" name="webhookdtofromjson"></a> WebhookDtoFromJSON
 
 ▸ **WebhookDtoFromJSON**(`json`): [`WebhookDto`](interfaces/WebhookDto.md)
@@ -10096,6 +10156,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`WebhookNewEmailPayload`](interfaces/WebhookNewEmailPayload.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="webhooknewsmspayloadfromjson" name="webhooknewsmspayloadfromjson"></a> WebhookNewSmsPayloadFromJSON
+
+▸ **WebhookNewSmsPayloadFromJSON**(`json`): [`WebhookNewSmsPayload`](interfaces/WebhookNewSmsPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`WebhookNewSmsPayload`](interfaces/WebhookNewSmsPayload.md)
+
+___
+
+### <a id="webhooknewsmspayloadfromjsontyped" name="webhooknewsmspayloadfromjsontyped"></a> WebhookNewSmsPayloadFromJSONTyped
+
+▸ **WebhookNewSmsPayloadFromJSONTyped**(`json`, `ignoreDiscriminator`): [`WebhookNewSmsPayload`](interfaces/WebhookNewSmsPayload.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`WebhookNewSmsPayload`](interfaces/WebhookNewSmsPayload.md)
+
+___
+
+### <a id="webhooknewsmspayloadtojson" name="webhooknewsmspayloadtojson"></a> WebhookNewSmsPayloadToJSON
+
+▸ **WebhookNewSmsPayloadToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`WebhookNewSmsPayload`](interfaces/WebhookNewSmsPayload.md) |
 
 #### Returns
 

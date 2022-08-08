@@ -1,4 +1,5 @@
-import { ApiResponse, Configuration, InboxDto } from '../dist';
+import { ApiResponse, Configuration, InboxDto, MailSlurp } from '../dist';
+import crossFetch from 'cross-fetch';
 
 test('quick start', async () => {
   //<gen>quick_start
@@ -15,6 +16,7 @@ test('quick start', async () => {
   expect(inbox.emailAddress).toContain('@mailslurp');
   //</gen>
 });
+
 test('fetch setup', async () => {
   const apiKey = process.env.API_KEY ?? 'your-api-key';
   //<gen>fetch_setup

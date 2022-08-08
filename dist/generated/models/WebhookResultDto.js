@@ -42,6 +42,7 @@ var WebhookResultDtoWebhookEventEnum;
     WebhookResultDtoWebhookEventEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookResultDtoWebhookEventEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookResultDtoWebhookEventEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookResultDtoWebhookEventEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     WebhookResultDtoWebhookEventEnum["BOUNCE"] = "BOUNCE";
     WebhookResultDtoWebhookEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookResultDtoWebhookEventEnum["NEW_SMS"] = "NEW_SMS";

@@ -28,6 +28,7 @@ var CreateWebhookOptionsEventNameEnum;
     CreateWebhookOptionsEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     CreateWebhookOptionsEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     CreateWebhookOptionsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    CreateWebhookOptionsEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     CreateWebhookOptionsEventNameEnum["BOUNCE"] = "BOUNCE";
     CreateWebhookOptionsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     CreateWebhookOptionsEventNameEnum["NEW_SMS"] = "NEW_SMS";

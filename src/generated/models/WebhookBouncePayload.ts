@@ -50,13 +50,13 @@ export interface WebhookBouncePayload {
    */
   bounceId: string;
   /**
-   *
+   * Email sent to recipients
    * @type {Array<string>}
    * @memberof WebhookBouncePayload
    */
   sentToRecipients?: Array<string>;
   /**
-   *
+   * Sender causing bounce
    * @type {string}
    * @memberof WebhookBouncePayload
    */
@@ -80,6 +80,7 @@ export enum WebhookBouncePayloadEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',

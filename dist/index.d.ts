@@ -12,6 +12,9 @@ export declare type Config = {
     attribution?: string;
     basePath?: string;
     fetchApi?: FetchAPI;
+    headers?: {
+        [key: string]: string;
+    };
 };
 /**
  * The official MailSlurp Javascript library. A wrapper around the [MailSlurp REST API](https://docs.mailslurp.com/api/docs/Apis/).

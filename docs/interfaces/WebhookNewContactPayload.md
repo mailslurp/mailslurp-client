@@ -32,6 +32,8 @@ NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST whe
 
 • `Optional` **company**: `string`
 
+Contact company name
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -39,6 +41,8 @@ ___
 ### <a id="contactid" name="contactid"></a> contactId
 
 • **contactId**: `string`
+
+Contact ID
 
 **`memberof`** WebhookNewContactPayload
 
@@ -48,6 +52,8 @@ ___
 
 • **createdAt**: `Date`
 
+Date time of event creation
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -55,6 +61,8 @@ ___
 ### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
 
 • **emailAddresses**: `string`[]
+
+Email addresses for contact
 
 **`memberof`** WebhookNewContactPayload
 
@@ -74,6 +82,8 @@ ___
 
 • `Optional` **firstName**: `string`
 
+Contact first name
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -82,6 +92,8 @@ ___
 
 • `Optional` **groupId**: `string`
 
+Contact group ID
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -89,6 +101,8 @@ ___
 ### <a id="lastname" name="lastname"></a> lastName
 
 • `Optional` **lastName**: `string`
+
+Contact last name
 
 **`memberof`** WebhookNewContactPayload
 
@@ -116,6 +130,8 @@ ___
 
 • **optOut**: `boolean`
 
+Has contact opted out of emails
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -124,6 +140,8 @@ ___
 
 • `Optional` **primaryEmailAddress**: `string`
 
+Primary email address for contact
+
 **`memberof`** WebhookNewContactPayload
 
 ___
@@ -131,6 +149,8 @@ ___
 ### <a id="tags" name="tags"></a> tags
 
 • **tags**: `string`[]
+
+Tags for contact
 
 **`memberof`** WebhookNewContactPayload
 

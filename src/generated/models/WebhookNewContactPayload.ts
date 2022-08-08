@@ -44,49 +44,49 @@ export interface WebhookNewContactPayload {
    */
   eventName: WebhookNewContactPayloadEventNameEnum;
   /**
-   *
+   * Contact ID
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
   contactId: string;
   /**
-   *
+   * Contact group ID
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
-  groupId?: string;
+  groupId?: string | null;
   /**
-   *
+   * Contact first name
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
-  firstName?: string;
+  firstName?: string | null;
   /**
-   *
+   * Contact last name
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
-  lastName?: string;
+  lastName?: string | null;
   /**
-   *
+   * Contact company name
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
-  company?: string;
+  company?: string | null;
   /**
-   *
+   * Primary email address for contact
    * @type {string}
    * @memberof WebhookNewContactPayload
    */
-  primaryEmailAddress?: string;
+  primaryEmailAddress?: string | null;
   /**
-   *
+   * Email addresses for contact
    * @type {Array<string>}
    * @memberof WebhookNewContactPayload
    */
   emailAddresses: Array<string>;
   /**
-   *
+   * Tags for contact
    * @type {Array<string>}
    * @memberof WebhookNewContactPayload
    */
@@ -98,13 +98,13 @@ export interface WebhookNewContactPayload {
    */
   metaData?: object;
   /**
-   *
+   * Has contact opted out of emails
    * @type {boolean}
    * @memberof WebhookNewContactPayload
    */
   optOut: boolean;
   /**
-   *
+   * Date time of event creation
    * @type {Date}
    * @memberof WebhookNewContactPayload
    */
@@ -122,6 +122,7 @@ export enum WebhookNewContactPayloadEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',

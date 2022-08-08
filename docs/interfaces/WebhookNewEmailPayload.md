@@ -111,7 +111,7 @@ ___
 
 • **inboxId**: `string`
 
-Id of the inbox that received an email
+Id of the inbox
 
 **`memberof`** WebhookNewEmailPayload
 

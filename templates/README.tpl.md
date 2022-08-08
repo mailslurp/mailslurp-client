@@ -43,8 +43,6 @@ See the method documentation for a [list of all functions](https://docs.mailslur
 
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy the key from your dashboard.
 
-![api-key](https://mailslurp.com/assets/guides/find-api-key.png)
-
 ### Install NPM dependency
 
 Install MailSlurp using NPM (NodeJS) or by including the [source code](https://github.com/mailslurp/mailslurp-client) in your project.
@@ -112,7 +110,7 @@ see the `test/integration.spec.ts` file for usage examples. You can also instant
 {{controller_use}}
 ```
 
-## Common usage examples
+## Email usage examples
 
 Here are some snippets of common usage.
 
@@ -256,7 +254,26 @@ You can extract useful information from emails using regular expressions. See th
 ```
 
 ## Phone SMS/TXT usage
-Mailslurp supports inbound SMS using real phone numbers. See the [SMS guide](https://app.mailslurp.com/guides/txt-sms/) or the developer [documentation](https://docs.mailslurp.com/txt-sms/) to get started.
+MailSlurp supports inbound SMS using real phone numbers. See the [SMS guide](https://app.mailslurp.com/guides/txt-sms/) or the developer [documentation](https://docs.mailslurp.com/txt-sms/) to get started.
+
+### Create phone numbers
+Phone numbers must be created in the MailSlurp [dashboard](https://app.mailslurp.com). Once you create a number you can use it in code.
+
+### List numbers
+Fetch phone numbers with the phone controller.
+
+```typescript
+{{phone_get_numbers}}
+```
+
+### Receive SMS
+Use the wait for controller to wait for inbound SMS messages:
+
+```typescript
+{{phone_wait_for_sms}}
+```
+
+You can also use webhooks with the `NEW_SMS` event to receive text messages.
 
 ## Webhooks
 To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://docs.mailslurp.com/webhooks/).
@@ -285,6 +302,7 @@ To consume webhooks first create a webhook for an inbox and a given [webhook eve
 
 ## More Documentation
 
+- [Webhook documentation](https://docs.mailslurp.com/webhooks/)
 - [Method documentation](https://docs.mailslurp.com/js/docs/)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)

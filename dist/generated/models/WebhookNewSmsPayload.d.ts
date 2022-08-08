@@ -10,65 +10,83 @@
  * Do not edit the class manually.
  */
 /**
- * EMAIL_READ webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is read. This happens when an email is requested in full from the API or a user views the email in the dashboard.
+ * NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
  * @export
- * @interface WebhookEmailReadPayload
+ * @interface WebhookNewSmsPayload
  */
-export interface WebhookEmailReadPayload {
+export interface WebhookNewSmsPayload {
     /**
      * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
     messageId: string;
     /**
      * ID of webhook entity being triggered
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
     webhookId: string;
     /**
      * Name of the event type webhook is being triggered for.
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
-    eventName: WebhookEmailReadPayloadEventNameEnum;
+    eventName: WebhookNewSmsPayloadEventNameEnum;
     /**
      * Name of the webhook being triggered
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
-     * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
+     * ID of SMS message
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
-    emailId: string;
+    smsId: string;
     /**
-     * Id of the inbox
+     * User ID of event
      * @type {string}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
-    inboxId: string;
+    userId: string;
     /**
-     * Is the email read
+     * ID of phone number receiving SMS
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    phoneNumber: string;
+    /**
+     * Recipient phone number
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    toNumber: string;
+    /**
+     * Sender phone number
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    fromNumber: string;
+    /**
+     * SMS message body
+     * @type {string}
+     * @memberof WebhookNewSmsPayload
+     */
+    body: string;
+    /**
+     * SMS has been read
      * @type {boolean}
-     * @memberof WebhookEmailReadPayload
+     * @memberof WebhookNewSmsPayload
      */
-    emailIsRead: boolean;
-    /**
-     * Date time of event creation
-     * @type {Date}
-     * @memberof WebhookEmailReadPayload
-     */
-    createdAt: Date;
+    read: boolean;
 }
 /**
  * @export
  * @enum {string}
  */
-export declare enum WebhookEmailReadPayloadEventNameEnum {
+export declare enum WebhookNewSmsPayloadEventNameEnum {
     EMAIL_RECEIVED = "EMAIL_RECEIVED",
     NEW_EMAIL = "NEW_EMAIL",
     NEW_CONTACT = "NEW_CONTACT",
@@ -80,6 +98,6 @@ export declare enum WebhookEmailReadPayloadEventNameEnum {
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS"
 }
-export declare function WebhookEmailReadPayloadFromJSON(json: any): WebhookEmailReadPayload;
-export declare function WebhookEmailReadPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookEmailReadPayload;
-export declare function WebhookEmailReadPayloadToJSON(value?: WebhookEmailReadPayload | null): any;
+export declare function WebhookNewSmsPayloadFromJSON(json: any): WebhookNewSmsPayload;
+export declare function WebhookNewSmsPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookNewSmsPayload;
+export declare function WebhookNewSmsPayloadToJSON(value?: WebhookNewSmsPayload | null): any;

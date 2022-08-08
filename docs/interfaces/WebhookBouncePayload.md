@@ -65,6 +65,8 @@ ___
 
 • **sender**: `string`
 
+Sender causing bounce
+
 **`memberof`** WebhookBouncePayload
 
 ___
@@ -72,6 +74,8 @@ ___
 ### <a id="senttorecipients" name="senttorecipients"></a> sentToRecipients
 
 • `Optional` **sentToRecipients**: `string`[]
+
+Email sent to recipients
 
 **`memberof`** WebhookBouncePayload
 

@@ -27,6 +27,7 @@ var WebhookNewAttachmentPayloadEventNameEnum;
     WebhookNewAttachmentPayloadEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookNewAttachmentPayloadEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookNewAttachmentPayloadEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     WebhookNewAttachmentPayloadEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookNewAttachmentPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewAttachmentPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";

@@ -57,6 +57,12 @@ export interface WebhookProjection {
   createdAt: Date;
   /**
    *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  phoneNumberId?: string;
+  /**
+   *
    * @type {Date}
    * @memberof WebhookProjection
    */
@@ -74,6 +80,7 @@ export enum WebhookProjectionEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
@@ -97,6 +104,9 @@ export function WebhookProjectionFromJSONTyped(
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     createdAt: new Date(json['createdAt']),
+    phoneNumberId: !exists(json, 'phoneNumberId')
+      ? undefined
+      : json['phoneNumberId'],
     updatedAt: new Date(json['updatedAt']),
   };
 }
@@ -115,6 +125,7 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     inboxId: value.inboxId,
     eventName: value.eventName,
     createdAt: value.createdAt.toISOString(),
+    phoneNumberId: value.phoneNumberId,
     updatedAt: value.updatedAt.toISOString(),
   };
 }

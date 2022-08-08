@@ -27,6 +27,7 @@ var WebhookProjectionEventNameEnum;
     WebhookProjectionEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookProjectionEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookProjectionEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookProjectionEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     WebhookProjectionEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookProjectionEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookProjectionEventNameEnum["NEW_SMS"] = "NEW_SMS";
@@ -46,6 +47,9 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         createdAt: new Date(json['createdAt']),
+        phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
+            ? undefined
+            : json['phoneNumberId'],
         updatedAt: new Date(json['updatedAt']),
     };
 }
@@ -64,6 +68,7 @@ function WebhookProjectionToJSON(value) {
         inboxId: value.inboxId,
         eventName: value.eventName,
         createdAt: value.createdAt.toISOString(),
+        phoneNumberId: value.phoneNumberId,
         updatedAt: value.updatedAt.toISOString(),
     };
 }

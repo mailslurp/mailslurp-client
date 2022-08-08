@@ -1,8 +1,9 @@
 // es imports
-import { integrationTest } from './_helpers';
+import { integrationTest, phoneTest } from './_helpers';
 import {
   Configuration,
   EmailControllerApi,
+  GetPhoneNumbersPhoneCountryEnum,
   InboxControllerApi,
   WaitForControllerApi,
   WaitForLatestEmailSortEnum,
@@ -61,6 +62,39 @@ describe('common usage patterns using default client', () => {
     });
     await mailslurp.deleteInbox(inboxWithOptions.id);
   });
+});
+describe('phone usages', () => {
+  phoneTest(
+    'can fetch numbers and receive sms',
+    async (mailslurp: MailSlurp) => {
+      //<gen>phone_get_numbers
+      const {
+        content: [phone],
+      } = await mailslurp.phoneController.getPhoneNumbers({
+        phoneCountry: GetPhoneNumbersPhoneCountryEnum.US,
+      });
+      expect(phone.phoneNumber).toContain('+1');
+      //</gen>
+      await mailslurp.phoneController.testPhoneNumberSendSms({
+        phoneNumberId: phone.id,
+        xTestId: process.env.TEST_ID,
+        testPhoneNumberOptions: {
+          message: 'Here is your code: 123',
+        },
+      });
+      //<gen>phone_wait_for_sms
+      const sms = await mailslurp.waitController.waitForLatestSms({
+        waitForSingleSmsOptions: {
+          phoneNumberId: phone.id,
+          timeout: 30_000,
+          unreadOnly: true,
+        },
+      });
+      expect(sms.body).toContain('Here is your code');
+      expect(sms.fromNumber).toEqual('+13252527014');
+      //</gen>
+    }
+  );
 });
 describe('using controller instances for more features', () => {
   integrationTest('can wait for emails', async (mailslurp: MailSlurp) => {

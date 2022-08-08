@@ -29,16 +29,16 @@ export interface TemplateProjection {
     id: string;
     /**
      *
-     * @type {Date}
-     * @memberof TemplateProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {Array<string>}
      * @memberof TemplateProjection
      */
     variables: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof TemplateProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {Date}

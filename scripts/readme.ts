@@ -75,7 +75,7 @@ async function getGenBlocks(content: string): Promise<{ id: string, body: string
 (async () => {
 
     // *.use.ts test classes have a special comment -> //<gen>inbox_send ----> //</gen>
-    const useCases: string[] = await glob([join(__dirname,'../test/*.use.ts')])
+    const useCases: string[] = await glob([join(__dirname,'../test/*.use.ts'),join(__dirname,'../test/integration.spec.ts')])
     const blockMap: any = {};
     for(const useCase of useCases) {
         log(`Get content for ${useCase}`)

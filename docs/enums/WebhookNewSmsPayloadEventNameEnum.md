@@ -1,4 +1,4 @@
-# Enumeration: WebhookResultDtoWebhookEventEnum
+# Enumeration: WebhookNewSmsPayloadEventNameEnum
 
 **`export`**
 
@@ -6,16 +6,16 @@
 
 ### Enumeration Members
 
-- [BOUNCE](WebhookResultDtoWebhookEventEnum.md#bounce)
-- [BOUNCE\_RECIPIENT](WebhookResultDtoWebhookEventEnum.md#bounce_recipient)
-- [DELIVERY\_STATUS](WebhookResultDtoWebhookEventEnum.md#delivery_status)
-- [EMAIL\_OPENED](WebhookResultDtoWebhookEventEnum.md#email_opened)
-- [EMAIL\_READ](WebhookResultDtoWebhookEventEnum.md#email_read)
-- [EMAIL\_RECEIVED](WebhookResultDtoWebhookEventEnum.md#email_received)
-- [NEW\_ATTACHMENT](WebhookResultDtoWebhookEventEnum.md#new_attachment)
-- [NEW\_CONTACT](WebhookResultDtoWebhookEventEnum.md#new_contact)
-- [NEW\_EMAIL](WebhookResultDtoWebhookEventEnum.md#new_email)
-- [NEW\_SMS](WebhookResultDtoWebhookEventEnum.md#new_sms)
+- [BOUNCE](WebhookNewSmsPayloadEventNameEnum.md#bounce)
+- [BOUNCE\_RECIPIENT](WebhookNewSmsPayloadEventNameEnum.md#bounce_recipient)
+- [DELIVERY\_STATUS](WebhookNewSmsPayloadEventNameEnum.md#delivery_status)
+- [EMAIL\_OPENED](WebhookNewSmsPayloadEventNameEnum.md#email_opened)
+- [EMAIL\_READ](WebhookNewSmsPayloadEventNameEnum.md#email_read)
+- [EMAIL\_RECEIVED](WebhookNewSmsPayloadEventNameEnum.md#email_received)
+- [NEW\_ATTACHMENT](WebhookNewSmsPayloadEventNameEnum.md#new_attachment)
+- [NEW\_CONTACT](WebhookNewSmsPayloadEventNameEnum.md#new_contact)
+- [NEW\_EMAIL](WebhookNewSmsPayloadEventNameEnum.md#new_email)
+- [NEW\_SMS](WebhookNewSmsPayloadEventNameEnum.md#new_sms)
 
 ## Enumeration Members
 

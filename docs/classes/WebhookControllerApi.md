@@ -47,6 +47,8 @@
 - [getTestWebhookPayloadBounceRaw](WebhookControllerApi.md#gettestwebhookpayloadbounceraw)
 - [getTestWebhookPayloadBounceRecipient](WebhookControllerApi.md#gettestwebhookpayloadbouncerecipient)
 - [getTestWebhookPayloadBounceRecipientRaw](WebhookControllerApi.md#gettestwebhookpayloadbouncerecipientraw)
+- [getTestWebhookPayloadDeliveryStatus](WebhookControllerApi.md#gettestwebhookpayloaddeliverystatus)
+- [getTestWebhookPayloadDeliveryStatusRaw](WebhookControllerApi.md#gettestwebhookpayloaddeliverystatusraw)
 - [getTestWebhookPayloadEmailOpened](WebhookControllerApi.md#gettestwebhookpayloademailopened)
 - [getTestWebhookPayloadEmailOpenedRaw](WebhookControllerApi.md#gettestwebhookpayloademailopenedraw)
 - [getTestWebhookPayloadEmailRead](WebhookControllerApi.md#gettestwebhookpayloademailread)
@@ -59,6 +61,8 @@
 - [getTestWebhookPayloadNewContactRaw](WebhookControllerApi.md#gettestwebhookpayloadnewcontactraw)
 - [getTestWebhookPayloadNewEmail](WebhookControllerApi.md#gettestwebhookpayloadnewemail)
 - [getTestWebhookPayloadNewEmailRaw](WebhookControllerApi.md#gettestwebhookpayloadnewemailraw)
+- [getTestWebhookPayloadNewSms](WebhookControllerApi.md#gettestwebhookpayloadnewsms)
+- [getTestWebhookPayloadNewSmsRaw](WebhookControllerApi.md#gettestwebhookpayloadnewsmsraw)
 - [getTestWebhookPayloadRaw](WebhookControllerApi.md#gettestwebhookpayloadraw)
 - [getWebhook](WebhookControllerApi.md#getwebhook)
 - [getWebhookRaw](WebhookControllerApi.md#getwebhookraw)
@@ -666,6 +670,42 @@ Get webhook test payload for bounce recipient
 
 ___
 
+### <a id="gettestwebhookpayloaddeliverystatus" name="gettestwebhookpayloaddeliverystatus"></a> getTestWebhookPayloadDeliveryStatus
+
+▸ **getTestWebhookPayloadDeliveryStatus**(`initOverrides?`): `Promise`<[`WebhookDeliveryStatusPayload`](../interfaces/WebhookDeliveryStatusPayload.md)\>
+
+Get webhook test payload for delivery status event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookDeliveryStatusPayload`](../interfaces/WebhookDeliveryStatusPayload.md)\>
+
+___
+
+### <a id="gettestwebhookpayloaddeliverystatusraw" name="gettestwebhookpayloaddeliverystatusraw"></a> getTestWebhookPayloadDeliveryStatusRaw
+
+▸ **getTestWebhookPayloadDeliveryStatusRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDeliveryStatusPayload`](../interfaces/WebhookDeliveryStatusPayload.md)\>\>
+
+Get webhook test payload for delivery status event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDeliveryStatusPayload`](../interfaces/WebhookDeliveryStatusPayload.md)\>\>
+
+___
+
 ### <a id="gettestwebhookpayloademailopened" name="gettestwebhookpayloademailopened"></a> getTestWebhookPayloadEmailOpened
 
 ▸ **getTestWebhookPayloadEmailOpened**(`initOverrides?`): `Promise`<[`WebhookEmailOpenedPayload`](../interfaces/WebhookEmailOpenedPayload.md)\>
@@ -881,6 +921,42 @@ Get webhook test payload for new email event
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewEmailPayload`](../interfaces/WebhookNewEmailPayload.md)\>\>
+
+___
+
+### <a id="gettestwebhookpayloadnewsms" name="gettestwebhookpayloadnewsms"></a> getTestWebhookPayloadNewSms
+
+▸ **getTestWebhookPayloadNewSms**(`initOverrides?`): `Promise`<[`WebhookNewSmsPayload`](../interfaces/WebhookNewSmsPayload.md)\>
+
+Get webhook test payload for new sms event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookNewSmsPayload`](../interfaces/WebhookNewSmsPayload.md)\>
+
+___
+
+### <a id="gettestwebhookpayloadnewsmsraw" name="gettestwebhookpayloadnewsmsraw"></a> getTestWebhookPayloadNewSmsRaw
+
+▸ **getTestWebhookPayloadNewSmsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewSmsPayload`](../interfaces/WebhookNewSmsPayload.md)\>\>
+
+Get webhook test payload for new sms event
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookNewSmsPayload`](../interfaces/WebhookNewSmsPayload.md)\>\>
 
 ___
 

@@ -199,6 +199,7 @@ models/WaitForSingleSmsOptions.ts
 models/WaitForSmsConditions.ts
 models/WebhookBouncePayload.ts
 models/WebhookBounceRecipientPayload.ts
+models/WebhookDeliveryStatusPayload.ts
 models/WebhookDto.ts
 models/WebhookEmailOpenedPayload.ts
 models/WebhookEmailReadPayload.ts
@@ -207,6 +208,7 @@ models/WebhookHeaders.ts
 models/WebhookNewAttachmentPayload.ts
 models/WebhookNewContactPayload.ts
 models/WebhookNewEmailPayload.ts
+models/WebhookNewSmsPayload.ts
 models/WebhookProjection.ts
 models/WebhookRedriveResult.ts
 models/WebhookResultDto.ts

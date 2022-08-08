@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -245,6 +245,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      */
     getTestWebhookPayloadBounceRecipient(initOverrides?: RequestInit): Promise<WebhookBounceRecipientPayload>;
     /**
+     * Get webhook test payload for delivery status event
+     */
+    getTestWebhookPayloadDeliveryStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>>;
+    /**
+     * Get webhook test payload for delivery status event
+     */
+    getTestWebhookPayloadDeliveryStatus(initOverrides?: RequestInit): Promise<WebhookDeliveryStatusPayload>;
+    /**
      * Get webhook test payload for email opened event
      */
     getTestWebhookPayloadEmailOpenedRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookEmailOpenedPayload>>;
@@ -292,6 +300,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get webhook test payload for new email event
      */
     getTestWebhookPayloadNewEmail(initOverrides?: RequestInit): Promise<WebhookNewEmailPayload>;
+    /**
+     * Get webhook test payload for new sms event
+     */
+    getTestWebhookPayloadNewSmsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookNewSmsPayload>>;
+    /**
+     * Get webhook test payload for new sms event
+     */
+    getTestWebhookPayloadNewSms(initOverrides?: RequestInit): Promise<WebhookNewSmsPayload>;
     /**
      * Get a webhook
      */
@@ -404,6 +420,7 @@ export declare enum GetJsonSchemaForWebhookEventEventEnum {
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS"
@@ -427,6 +444,7 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
     NEW_ATTACHMENT = "NEW_ATTACHMENT",
     EMAIL_OPENED = "EMAIL_OPENED",
     EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
     BOUNCE = "BOUNCE",
     BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
     NEW_SMS = "NEW_SMS"

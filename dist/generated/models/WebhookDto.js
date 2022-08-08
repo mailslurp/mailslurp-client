@@ -43,6 +43,7 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
     WebhookDtoEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
     WebhookDtoEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    WebhookDtoEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
     WebhookDtoEventNameEnum["BOUNCE"] = "BOUNCE";
     WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";

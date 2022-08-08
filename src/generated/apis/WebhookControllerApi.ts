@@ -44,6 +44,9 @@ import {
   WebhookBounceRecipientPayload,
   WebhookBounceRecipientPayloadFromJSON,
   WebhookBounceRecipientPayloadToJSON,
+  WebhookDeliveryStatusPayload,
+  WebhookDeliveryStatusPayloadFromJSON,
+  WebhookDeliveryStatusPayloadToJSON,
   WebhookDto,
   WebhookDtoFromJSON,
   WebhookDtoToJSON,
@@ -65,6 +68,9 @@ import {
   WebhookNewEmailPayload,
   WebhookNewEmailPayloadFromJSON,
   WebhookNewEmailPayloadToJSON,
+  WebhookNewSmsPayload,
+  WebhookNewSmsPayloadFromJSON,
+  WebhookNewSmsPayloadToJSON,
   WebhookRedriveResult,
   WebhookRedriveResultFromJSON,
   WebhookRedriveResultToJSON,
@@ -1133,6 +1139,47 @@ export class WebhookControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get webhook test payload for delivery status event
+   */
+  async getTestWebhookPayloadDeliveryStatusRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookDeliveryStatusPayload>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/test/delivery-status-payload`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookDeliveryStatusPayloadFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get webhook test payload for delivery status event
+   */
+  async getTestWebhookPayloadDeliveryStatus(
+    initOverrides?: RequestInit
+  ): Promise<WebhookDeliveryStatusPayload> {
+    const response = await this.getTestWebhookPayloadDeliveryStatusRaw(
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get webhook test payload for email opened event
    */
   async getTestWebhookPayloadEmailOpenedRaw(
@@ -1389,6 +1436,45 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<WebhookNewEmailPayload> {
     const response = await this.getTestWebhookPayloadNewEmailRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get webhook test payload for new sms event
+   */
+  async getTestWebhookPayloadNewSmsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookNewSmsPayload>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/test/new-sms-payload`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookNewSmsPayloadFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get webhook test payload for new sms event
+   */
+  async getTestWebhookPayloadNewSms(
+    initOverrides?: RequestInit
+  ): Promise<WebhookNewSmsPayload> {
+    const response = await this.getTestWebhookPayloadNewSmsRaw(initOverrides);
     return await response.value();
   }
 
@@ -1971,6 +2057,7 @@ export enum GetJsonSchemaForWebhookEventEventEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',
@@ -1994,6 +2081,7 @@ export enum GetTestWebhookPayloadEventNameEnum {
   NEW_ATTACHMENT = 'NEW_ATTACHMENT',
   EMAIL_OPENED = 'EMAIL_OPENED',
   EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
   BOUNCE = 'BOUNCE',
   BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
   NEW_SMS = 'NEW_SMS',

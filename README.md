@@ -53,8 +53,6 @@ See the method documentation for a [list of all functions](https://docs.mailslur
 
 First you'll need an API Key. [Create a free account](https://app.mailslurp.com) and copy the key from your dashboard.
 
-![api-key](https://mailslurp.com/assets/guides/find-api-key.png)
-
 ### Install NPM dependency
 
 Install MailSlurp using NPM (NodeJS) or by including the [source code](https://github.com/mailslurp/mailslurp-client) in your project.
@@ -153,7 +151,7 @@ const inboxController = new InboxControllerApi(new Configuration({ apiKey }));
 await inboxController.createInbox({});
 ```
 
-## Common usage examples
+## Email usage examples
 
 Here are some snippets of common usage.
 
@@ -502,7 +500,39 @@ expect(result.matches[1]).toEqual('123456');
 ```
 
 ## Phone SMS/TXT usage
-Mailslurp supports inbound SMS using real phone numbers. See the [SMS guide](https://app.mailslurp.com/guides/txt-sms/) or the developer [documentation](https://docs.mailslurp.com/txt-sms/) to get started.
+MailSlurp supports inbound SMS using real phone numbers. See the [SMS guide](https://app.mailslurp.com/guides/txt-sms/) or the developer [documentation](https://docs.mailslurp.com/txt-sms/) to get started.
+
+### Create phone numbers
+Phone numbers must be created in the MailSlurp [dashboard](https://app.mailslurp.com). Once you create a number you can use it in code.
+
+### List numbers
+Fetch phone numbers with the phone controller.
+
+```typescript
+const {
+  content: [phone],
+} = await mailslurp.phoneController.getPhoneNumbers({
+  phoneCountry: GetPhoneNumbersPhoneCountryEnum.US,
+});
+expect(phone.phoneNumber).toContain('+1');
+```
+
+### Receive SMS
+Use the wait for controller to wait for inbound SMS messages:
+
+```typescript
+const sms = await mailslurp.waitController.waitForLatestSms({
+  waitForSingleSmsOptions: {
+    phoneNumberId: phone.id,
+    timeout: 30_000,
+    unreadOnly: true,
+  },
+});
+expect(sms.body).toContain('Here is your code');
+expect(sms.fromNumber).toEqual('+13252527014');
+```
+
+You can also use webhooks with the `NEW_SMS` event to receive text messages.
 
 ## Webhooks
 To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://docs.mailslurp.com/js/docs/classes/WebhookControllerApi/) or see the [webhook email guide](https://docs.mailslurp.com/webhooks/).
@@ -566,6 +596,7 @@ expect(testResponse.status).toEqual(200);
 
 ## More Documentation
 
+- [Webhook documentation](https://docs.mailslurp.com/webhooks/)
 - [Method documentation](https://docs.mailslurp.com/js/docs/)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)

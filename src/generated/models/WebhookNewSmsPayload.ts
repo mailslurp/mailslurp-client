@@ -14,72 +14,84 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST when an email containing a tracking pixel is opened and the pixel image is loaded by a reader.
+ * NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
  * @export
- * @interface WebhookEmailOpenedPayload
+ * @interface WebhookNewSmsPayload
  */
-export interface WebhookEmailOpenedPayload {
+export interface WebhookNewSmsPayload {
   /**
    * Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
   messageId: string;
   /**
    * ID of webhook entity being triggered
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
   webhookId: string;
   /**
    * Name of the event type webhook is being triggered for.
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  eventName: WebhookEmailOpenedPayloadEventNameEnum;
+  eventName: WebhookNewSmsPayloadEventNameEnum;
   /**
    * Name of the webhook being triggered
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  webhookName?: string;
+  webhookName?: string | null;
   /**
-   * Id of the inbox
+   * ID of SMS message
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  inboxId: string;
+  smsId: string;
   /**
-   * ID of the tracking pixel
+   * User ID of event
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  pixelId: string;
+  userId: string;
   /**
-   * ID of sent email
+   * ID of phone number receiving SMS
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  sentEmailId: string;
+  phoneNumber: string;
   /**
-   * Email address for the recipient of the tracking pixel
+   * Recipient phone number
    * @type {string}
-   * @memberof WebhookEmailOpenedPayload
+   * @memberof WebhookNewSmsPayload
    */
-  recipient: string;
+  toNumber: string;
   /**
-   * Date time of event creation
-   * @type {Date}
-   * @memberof WebhookEmailOpenedPayload
+   * Sender phone number
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
    */
-  createdAt: Date;
+  fromNumber: string;
+  /**
+   * SMS message body
+   * @type {string}
+   * @memberof WebhookNewSmsPayload
+   */
+  body: string;
+  /**
+   * SMS has been read
+   * @type {boolean}
+   * @memberof WebhookNewSmsPayload
+   */
+  read: boolean;
 }
 
 /**
  * @export
  * @enum {string}
  */
-export enum WebhookEmailOpenedPayloadEventNameEnum {
+export enum WebhookNewSmsPayloadEventNameEnum {
   EMAIL_RECEIVED = 'EMAIL_RECEIVED',
   NEW_EMAIL = 'NEW_EMAIL',
   NEW_CONTACT = 'NEW_CONTACT',
@@ -92,16 +104,14 @@ export enum WebhookEmailOpenedPayloadEventNameEnum {
   NEW_SMS = 'NEW_SMS',
 }
 
-export function WebhookEmailOpenedPayloadFromJSON(
-  json: any
-): WebhookEmailOpenedPayload {
-  return WebhookEmailOpenedPayloadFromJSONTyped(json, false);
+export function WebhookNewSmsPayloadFromJSON(json: any): WebhookNewSmsPayload {
+  return WebhookNewSmsPayloadFromJSONTyped(json, false);
 }
 
-export function WebhookEmailOpenedPayloadFromJSONTyped(
+export function WebhookNewSmsPayloadFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): WebhookEmailOpenedPayload {
+): WebhookNewSmsPayload {
   if (json === undefined || json === null) {
     return json;
   }
@@ -110,16 +120,18 @@ export function WebhookEmailOpenedPayloadFromJSONTyped(
     webhookId: json['webhookId'],
     eventName: json['eventName'],
     webhookName: !exists(json, 'webhookName') ? undefined : json['webhookName'],
-    inboxId: json['inboxId'],
-    pixelId: json['pixelId'],
-    sentEmailId: json['sentEmailId'],
-    recipient: json['recipient'],
-    createdAt: new Date(json['createdAt']),
+    smsId: json['smsId'],
+    userId: json['userId'],
+    phoneNumber: json['phoneNumber'],
+    toNumber: json['toNumber'],
+    fromNumber: json['fromNumber'],
+    body: json['body'],
+    read: json['read'],
   };
 }
 
-export function WebhookEmailOpenedPayloadToJSON(
-  value?: WebhookEmailOpenedPayload | null
+export function WebhookNewSmsPayloadToJSON(
+  value?: WebhookNewSmsPayload | null
 ): any {
   if (value === undefined) {
     return undefined;
@@ -132,10 +144,12 @@ export function WebhookEmailOpenedPayloadToJSON(
     webhookId: value.webhookId,
     eventName: value.eventName,
     webhookName: value.webhookName,
-    inboxId: value.inboxId,
-    pixelId: value.pixelId,
-    sentEmailId: value.sentEmailId,
-    recipient: value.recipient,
-    createdAt: value.createdAt.toISOString(),
+    smsId: value.smsId,
+    userId: value.userId,
+    phoneNumber: value.phoneNumber,
+    toNumber: value.toNumber,
+    fromNumber: value.fromNumber,
+    body: value.body,
+    read: value.read,
   };
 }

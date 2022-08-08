@@ -15,6 +15,7 @@ Representation of a webhook
 - [id](WebhookProjection.md#id)
 - [inboxId](WebhookProjection.md#inboxid)
 - [name](WebhookProjection.md#name)
+- [phoneNumberId](WebhookProjection.md#phonenumberid)
 - [updatedAt](WebhookProjection.md#updatedat)
 - [url](WebhookProjection.md#url)
 
@@ -55,6 +56,14 @@ ___
 ### <a id="name" name="name"></a> name
 
 • `Optional` **name**: `string`
+
+**`memberof`** WebhookProjection
+
+___
+
+### <a id="phonenumberid" name="phonenumberid"></a> phoneNumberId
+
+• `Optional` **phoneNumberId**: `string`
 
 **`memberof`** WebhookProjection
 

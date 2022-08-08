@@ -23,7 +23,7 @@ generate: spec bin/openapi-generator-cli.jar
 	java -jar ./bin/openapi-generator-cli.jar generate \
 		--input-spec $(SPEC_URL) \
 		--generator-name typescript-fetch \
-	        --skip-validate-spec \
+	    --skip-validate-spec \
 		--output src/generated -p 'enumPropertyNaming=original,typescriptThreePlus=true,useSingleRequestParameter=true'
 
 generate-local:
