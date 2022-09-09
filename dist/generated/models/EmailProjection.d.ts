@@ -77,18 +77,6 @@ export interface EmailProjection {
     domainId?: string;
     /**
      *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    read: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    teamAccess: boolean;
-    /**
-     *
      * @type {string}
      * @memberof EmailProjection
      */
@@ -99,6 +87,18 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bodyExcerpt?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    read: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    teamAccess: boolean;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

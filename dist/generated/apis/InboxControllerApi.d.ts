@@ -387,12 +387,12 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getInboxTags(initOverrides?: RequestInit): Promise<Array<string>>;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
      */
     getInboxesRaw(requestParameters: GetInboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<InboxDto>>>;
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
      */
     getInboxes(requestParameters: GetInboxesRequest, initOverrides?: RequestInit): Promise<Array<InboxDto>>;

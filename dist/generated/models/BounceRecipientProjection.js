@@ -25,11 +25,11 @@ function BounceRecipientProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
         status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
         sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
         createdAt: new Date(json['createdAt']),
         recipient: json['recipient'],
+        action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
     };
 }
 exports.BounceRecipientProjectionFromJSONTyped = BounceRecipientProjectionFromJSONTyped;
@@ -42,11 +42,11 @@ function BounceRecipientProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        action: value.action,
         status: value.status,
         sentEmailId: value.sentEmailId,
         createdAt: value.createdAt.toISOString(),
         recipient: value.recipient,
+        action: value.action,
     };
 }
 exports.BounceRecipientProjectionToJSON = BounceRecipientProjectionToJSON;

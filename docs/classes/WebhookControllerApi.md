@@ -30,6 +30,8 @@
 - [deleteWebhookById](WebhookControllerApi.md#deletewebhookbyid)
 - [deleteWebhookByIdRaw](WebhookControllerApi.md#deletewebhookbyidraw)
 - [deleteWebhookRaw](WebhookControllerApi.md#deletewebhookraw)
+- [getAllAccountWebhooks](WebhookControllerApi.md#getallaccountwebhooks)
+- [getAllAccountWebhooksRaw](WebhookControllerApi.md#getallaccountwebhooksraw)
 - [getAllWebhookResults](WebhookControllerApi.md#getallwebhookresults)
 - [getAllWebhookResultsRaw](WebhookControllerApi.md#getallwebhookresultsraw)
 - [getAllWebhooks](WebhookControllerApi.md#getallwebhooks)
@@ -346,6 +348,46 @@ Delete and disable a Webhook for an Inbox
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### <a id="getallaccountwebhooks" name="getallaccountwebhooks"></a> getAllAccountWebhooks
+
+▸ **getAllAccountWebhooks**(`requestParameters`, `initOverrides?`): `Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
+
+List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+List account webhooks Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllAccountWebhooksRequest`](../interfaces/GetAllAccountWebhooksRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>
+
+___
+
+### <a id="getallaccountwebhooksraw" name="getallaccountwebhooksraw"></a> getAllAccountWebhooksRaw
+
+▸ **getAllAccountWebhooksRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
+
+List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+List account webhooks Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllAccountWebhooksRequest`](../interfaces/GetAllAccountWebhooksRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookProjection`](../interfaces/PageWebhookProjection.md)\>\>
 
 ___
 

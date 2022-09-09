@@ -32,6 +32,14 @@ export interface DeleteWebhookRequest {
 export interface DeleteWebhookByIdRequest {
     webhookId: string;
 }
+export interface GetAllAccountWebhooksRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllAccountWebhooksSortEnum;
+    eventType?: GetAllAccountWebhooksEventTypeEnum;
+    since?: Date;
+    before?: Date;
+}
 export interface GetAllWebhookResultsRequest {
     page?: number;
     size?: number;
@@ -170,6 +178,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Delete a webhook
      */
     deleteWebhookById(requestParameters: DeleteWebhookByIdRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    getAllAccountWebhooksRaw(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageWebhookProjection>>;
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    getAllAccountWebhooks(requestParameters: GetAllAccountWebhooksRequest, initOverrides?: RequestInit): Promise<PageWebhookProjection>;
     /**
      * Get results for all webhooks
      */
@@ -384,6 +402,30 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Verify a webhook payload signature
      */
     verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<VerifyWebhookSignatureResults>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllAccountWebhooksSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllAccountWebhooksEventTypeEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }
 /**
  * @export

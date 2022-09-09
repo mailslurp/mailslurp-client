@@ -214,8 +214,8 @@ export interface ReplyToEmailRequest {
 }
 
 export interface SendEmailSourceOptionalRequest {
-  inboxId: string;
   sendEmailOptions: SendEmailOptions;
+  inboxId?: string;
   useDomainPool?: boolean;
   virtualSend?: boolean;
 }
@@ -2040,16 +2040,6 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<void>> {
     if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailSourceOptional.'
-      );
-    }
-
-    if (
       requestParameters.sendEmailOptions === null ||
       requestParameters.sendEmailOptions === undefined
     ) {
@@ -2060,6 +2050,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
     }
 
     const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
 
     if (requestParameters.useDomainPool !== undefined) {
       queryParameters['useDomainPool'] = requestParameters.useDomainPool;
@@ -2079,10 +2073,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/emails`.replace(
-          `{${'inboxId'}}`,
-          encodeURIComponent(String(requestParameters.inboxId))
-        ),
+        path: `/emails`,
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,

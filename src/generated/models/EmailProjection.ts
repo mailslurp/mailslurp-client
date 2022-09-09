@@ -81,18 +81,6 @@ export interface EmailProjection {
   domainId?: string;
   /**
    *
-   * @type {boolean}
-   * @memberof EmailProjection
-   */
-  read: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof EmailProjection
-   */
-  teamAccess: boolean;
-  /**
-   *
    * @type {string}
    * @memberof EmailProjection
    */
@@ -103,6 +91,18 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   bodyExcerpt?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  read: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  teamAccess: boolean;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -127,10 +127,10 @@ export function EmailProjectionFromJSONTyped(
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     createdAt: new Date(json['createdAt']),
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    read: json['read'],
-    teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    read: json['read'],
+    teamAccess: json['teamAccess'],
   };
 }
 
@@ -152,9 +152,9 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     cc: value.cc,
     createdAt: value.createdAt.toISOString(),
     domainId: value.domainId,
-    read: value.read,
-    teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
     bodyExcerpt: value.bodyExcerpt,
+    read: value.read,
+    teamAccess: value.teamAccess,
   };
 }

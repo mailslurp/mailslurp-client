@@ -36,10 +36,10 @@ export interface PageTrackingPixelProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageTrackingPixelProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageTrackingPixelProjection {
     totalElements?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageTrackingPixelProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageTrackingPixelProjection {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageTrackingPixelProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -1697,15 +1697,14 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendEmailSourceOptional.');
-                        }
                         if (requestParameters.sendEmailOptions === null ||
                             requestParameters.sendEmailOptions === undefined) {
                             throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendEmailSourceOptional.');
                         }
                         queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
                         if (requestParameters.useDomainPool !== undefined) {
                             queryParameters['useDomainPool'] = requestParameters.useDomainPool;
                         }
@@ -1718,7 +1717,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/emails",
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,

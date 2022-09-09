@@ -120,8 +120,8 @@ export interface ReplyToEmailRequest {
     replyToEmailOptions: ReplyToEmailOptions;
 }
 export interface SendEmailSourceOptionalRequest {
-    inboxId: string;
     sendEmailOptions: SendEmailOptions;
+    inboxId?: string;
     useDomainPool?: boolean;
     virtualSend?: boolean;
 }

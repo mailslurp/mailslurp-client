@@ -95,23 +95,37 @@ var ApiUserControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    ApiUserControllerApi.prototype.getSmtpPasswordRaw = function (initOverrides) {
+    ApiUserControllerApi.prototype.getJsonPropertyAsStringRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        if (requestParameters.property === null ||
+                            requestParameters.property === undefined) {
+                            throw new runtime.RequiredError('property', 'Required parameter requestParameters.property was null or undefined when calling getJsonPropertyAsString.');
+                        }
+                        if (requestParameters.body === null ||
+                            requestParameters.body === undefined) {
+                            throw new runtime.RequiredError('body', 'Required parameter requestParameters.body was null or undefined when calling getJsonPropertyAsString.');
+                        }
                         queryParameters = {};
+                        if (requestParameters.property !== undefined) {
+                            queryParameters['property'] = requestParameters.property;
+                        }
                         headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/user/smtp/password",
-                                method: 'GET',
+                                path: "/user/json/pluck",
+                                method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
+                                body: requestParameters.body,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
@@ -121,55 +135,14 @@ var ApiUserControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    ApiUserControllerApi.prototype.getSmtpPassword = function (initOverrides) {
+    ApiUserControllerApi.prototype.getJsonPropertyAsString = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getSmtpPasswordRaw(initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
-     */
-    ApiUserControllerApi.prototype.getSmtpUsernameRaw = function (initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParameters = {};
-                        headerParameters = {};
-                        if (this.configuration && this.configuration.apiKey) {
-                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-                        }
-                        return [4 /*yield*/, this.request({
-                                path: "/user/smtp/username",
-                                method: 'GET',
-                                headers: headerParameters,
-                                query: queryParameters,
-                            }, initOverrides)];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
-                }
-            });
-        });
-    };
-    /**
-     */
-    ApiUserControllerApi.prototype.getSmtpUsername = function (initOverrides) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getSmtpUsernameRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getJsonPropertyAsStringRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

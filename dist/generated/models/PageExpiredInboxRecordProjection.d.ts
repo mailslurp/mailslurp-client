@@ -36,10 +36,10 @@ export interface PageExpiredInboxRecordProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageExpiredInboxRecordProjection {
     totalElements?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageExpiredInboxRecordProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageExpiredInboxRecordProjection {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

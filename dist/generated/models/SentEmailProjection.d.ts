@@ -41,6 +41,12 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof SentEmailProjection
      */
@@ -69,12 +75,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     cc: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof SentEmailProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

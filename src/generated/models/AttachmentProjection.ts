@@ -32,12 +32,6 @@ export interface AttachmentProjection {
    */
   contentLength?: number;
   /**
-   * Content type of attachment.
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  contentType?: string;
-  /**
    *
    * @type {string}
    * @memberof AttachmentProjection
@@ -61,6 +55,12 @@ export interface AttachmentProjection {
    * @memberof AttachmentProjection
    */
   updatedAt: Date;
+  /**
+   * Content type of attachment.
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  contentType?: string;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
@@ -79,11 +79,11 @@ export function AttachmentProjectionFromJSONTyped(
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     userId: json['userId'],
     attachmentId: json['attachmentId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
   };
 }
 
@@ -99,10 +99,10 @@ export function AttachmentProjectionToJSON(
   return {
     name: value.name,
     contentLength: value.contentLength,
-    contentType: value.contentType,
     userId: value.userId,
     attachmentId: value.attachmentId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    contentType: value.contentType,
   };
 }

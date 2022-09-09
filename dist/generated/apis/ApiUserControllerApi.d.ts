@@ -11,22 +11,22 @@
  */
 import * as runtime from '../runtime';
 import { UserInfoDto } from '../models';
+export interface GetJsonPropertyAsStringRequest {
+    property: string;
+    body: object;
+}
 /**
  *
  */
 export declare class ApiUserControllerApi extends runtime.BaseAPI {
     /**
+     * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    getSmtpPasswordRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getJsonPropertyAsStringRaw(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
     /**
+     * Utility function to extract properties from JSON objects in language where this is cumbersome.
      */
-    getSmtpPassword(initOverrides?: RequestInit): Promise<string>;
-    /**
-     */
-    getSmtpUsernameRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
-    /**
-     */
-    getSmtpUsername(initOverrides?: RequestInit): Promise<string>;
+    getJsonPropertyAsString(requestParameters: GetJsonPropertyAsStringRequest, initOverrides?: RequestInit): Promise<string>;
     /**
      */
     getUserInfoRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UserInfoDto>>;

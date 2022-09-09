@@ -36,10 +36,10 @@ export interface PageOrganizationInboxProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageOrganizationInboxProjection {
     totalElements?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageOrganizationInboxProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageOrganizationInboxProjection {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageOrganizationInboxProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

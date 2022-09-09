@@ -32,7 +32,7 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    inboxId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}
@@ -44,7 +44,7 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    emailAddress: string;
+    inboxId: string;
     /**
      *
      * @type {Date}

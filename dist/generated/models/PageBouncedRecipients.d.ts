@@ -36,10 +36,10 @@ export interface PageBouncedRecipients {
     total?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageBouncedRecipients
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageBouncedRecipients {
     totalElements?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageBouncedRecipients
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageBouncedRecipients {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedRecipients
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

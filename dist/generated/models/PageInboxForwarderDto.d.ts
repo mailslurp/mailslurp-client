@@ -36,10 +36,10 @@ export interface PageInboxForwarderDto {
     total?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageInboxForwarderDto
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageInboxForwarderDto {
     totalElements?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageInboxForwarderDto
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageInboxForwarderDto {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxForwarderDto
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

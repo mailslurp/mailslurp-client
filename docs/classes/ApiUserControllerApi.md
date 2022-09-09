@@ -18,10 +18,8 @@
 
 ### Methods
 
-- [getSmtpPassword](ApiUserControllerApi.md#getsmtppassword)
-- [getSmtpPasswordRaw](ApiUserControllerApi.md#getsmtppasswordraw)
-- [getSmtpUsername](ApiUserControllerApi.md#getsmtpusername)
-- [getSmtpUsernameRaw](ApiUserControllerApi.md#getsmtpusernameraw)
+- [getJsonPropertyAsString](ApiUserControllerApi.md#getjsonpropertyasstring)
+- [getJsonPropertyAsStringRaw](ApiUserControllerApi.md#getjsonpropertyasstringraw)
 - [getUserInfo](ApiUserControllerApi.md#getuserinfo)
 - [getUserInfoRaw](ApiUserControllerApi.md#getuserinforaw)
 - [request](ApiUserControllerApi.md#request)
@@ -57,14 +55,17 @@
 
 ## Methods
 
-### <a id="getsmtppassword" name="getsmtppassword"></a> getSmtpPassword
+### <a id="getjsonpropertyasstring" name="getjsonpropertyasstring"></a> getJsonPropertyAsString
 
-▸ **getSmtpPassword**(`initOverrides?`): `Promise`<`string`\>
+▸ **getJsonPropertyAsString**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Utility function to extract properties from JSON objects in language where this is cumbersome.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetJsonPropertyAsStringRequest`](../interfaces/GetJsonPropertyAsStringRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -73,46 +74,17 @@
 
 ___
 
-### <a id="getsmtppasswordraw" name="getsmtppasswordraw"></a> getSmtpPasswordRaw
+### <a id="getjsonpropertyasstringraw" name="getjsonpropertyasstringraw"></a> getJsonPropertyAsStringRaw
 
-▸ **getSmtpPasswordRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+▸ **getJsonPropertyAsStringRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
-
-___
-
-### <a id="getsmtpusername" name="getsmtpusername"></a> getSmtpUsername
-
-▸ **getSmtpUsername**(`initOverrides?`): `Promise`<`string`\>
+Utility function to extract properties from JSON objects in language where this is cumbersome.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `initOverrides?` | `RequestInit` |
-
-#### Returns
-
-`Promise`<`string`\>
-
-___
-
-### <a id="getsmtpusernameraw" name="getsmtpusernameraw"></a> getSmtpUsernameRaw
-
-▸ **getSmtpUsernameRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
+| `requestParameters` | [`GetJsonPropertyAsStringRequest`](../interfaces/GetJsonPropertyAsStringRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

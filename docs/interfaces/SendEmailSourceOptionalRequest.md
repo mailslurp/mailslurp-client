@@ -13,7 +13,7 @@
 
 ### <a id="inboxid" name="inboxid"></a> inboxId
 
-• **inboxId**: `string`
+• `Optional` **inboxId**: `string`
 
 ___
 

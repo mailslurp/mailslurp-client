@@ -54,10 +54,10 @@ export interface PageBouncedRecipients {
   total?: number;
   /**
    *
-   * @type {boolean}
+   * @type {number}
    * @memberof PageBouncedRecipients
    */
-  last?: boolean;
+  totalPages?: number;
   /**
    *
    * @type {number}
@@ -66,10 +66,10 @@ export interface PageBouncedRecipients {
   totalElements?: number;
   /**
    *
-   * @type {number}
+   * @type {boolean}
    * @memberof PageBouncedRecipients
    */
-  totalPages?: number;
+  last?: boolean;
   /**
    *
    * @type {number}
@@ -90,16 +90,16 @@ export interface PageBouncedRecipients {
   sort?: Sort;
   /**
    *
-   * @type {boolean}
-   * @memberof PageBouncedRecipients
-   */
-  first?: boolean;
-  /**
-   *
    * @type {number}
    * @memberof PageBouncedRecipients
    */
   numberOfElements?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageBouncedRecipients
+   */
+  first?: boolean;
   /**
    *
    * @type {boolean}
@@ -129,18 +129,18 @@ export function PageBouncedRecipientsFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    last: !exists(json, 'last') ? undefined : json['last'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -161,14 +161,14 @@ export function PageBouncedRecipientsToJSON(
         : (value.content as Array<any>).map(BounceRecipientProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    last: value.last,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
+    last: value.last,
     size: value.size,
     number: value.number,
     sort: SortToJSON(value.sort),
-    first: value.first,
     numberOfElements: value.numberOfElements,
+    first: value.first,
     empty: value.empty,
   };
 }

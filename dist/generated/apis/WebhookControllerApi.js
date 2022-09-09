@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -403,6 +403,72 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    WebhookControllerApi.prototype.getAllAccountWebhooksRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.eventType !== undefined) {
+                            queryParameters['eventType'] = requestParameters.eventType;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/account/paginated",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageWebhookProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List account webhooks in paginated form. Allows for page index, page size, and sort direction.
+     * List account webhooks Paginated
+     */
+    WebhookControllerApi.prototype.getAllAccountWebhooks = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllAccountWebhooksRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -1777,6 +1843,32 @@ var WebhookControllerApi = /** @class */ (function (_super) {
     return WebhookControllerApi;
 }(runtime.BaseAPI));
 exports.WebhookControllerApi = WebhookControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllAccountWebhooksSortEnum;
+(function (GetAllAccountWebhooksSortEnum) {
+    GetAllAccountWebhooksSortEnum["ASC"] = "ASC";
+    GetAllAccountWebhooksSortEnum["DESC"] = "DESC";
+})(GetAllAccountWebhooksSortEnum = exports.GetAllAccountWebhooksSortEnum || (exports.GetAllAccountWebhooksSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllAccountWebhooksEventTypeEnum;
+(function (GetAllAccountWebhooksEventTypeEnum) {
+    GetAllAccountWebhooksEventTypeEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetAllAccountWebhooksEventTypeEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetAllAccountWebhooksEventTypeEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetAllAccountWebhooksEventTypeEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetAllAccountWebhooksEventTypeEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetAllAccountWebhooksEventTypeEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetAllAccountWebhooksEventTypeEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetAllAccountWebhooksEventTypeEnum["BOUNCE"] = "BOUNCE";
+    GetAllAccountWebhooksEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetAllAccountWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
+})(GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksEventTypeEnum || (exports.GetAllAccountWebhooksEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}

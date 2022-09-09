@@ -45,6 +45,12 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof SentEmailProjection
    */
@@ -75,12 +81,6 @@ export interface SentEmailProjection {
   cc: Array<string>;
   /**
    *
-   * @type {Date}
-   * @memberof SentEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof SentEmailProjection
    */
@@ -109,12 +109,12 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    createdAt: new Date(json['createdAt']),
     inboxId: json['inboxId'],
     attachments: json['attachments'],
     to: json['to'],
     bcc: json['bcc'],
     cc: json['cc'],
-    createdAt: new Date(json['createdAt']),
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     virtualSend: json['virtualSend'],
   };
@@ -134,12 +134,12 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
+    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
     attachments: value.attachments,
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,
-    createdAt: value.createdAt.toISOString(),
     bodyMD5Hash: value.bodyMD5Hash,
     virtualSend: value.virtualSend,
   };

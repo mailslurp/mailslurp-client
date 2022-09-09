@@ -15,18 +15,51 @@
 import * as runtime from '../runtime';
 import { UserInfoDto, UserInfoDtoFromJSON, UserInfoDtoToJSON } from '../models';
 
+export interface GetJsonPropertyAsStringRequest {
+  property: string;
+  body: object;
+}
+
 /**
  *
  */
 export class ApiUserControllerApi extends runtime.BaseAPI {
   /**
+   * Utility function to extract properties from JSON objects in language where this is cumbersome.
    */
-  async getSmtpPasswordRaw(
+  async getJsonPropertyAsStringRaw(
+    requestParameters: GetJsonPropertyAsStringRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<string>> {
+    if (
+      requestParameters.property === null ||
+      requestParameters.property === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'property',
+        'Required parameter requestParameters.property was null or undefined when calling getJsonPropertyAsString.'
+      );
+    }
+
+    if (
+      requestParameters.body === null ||
+      requestParameters.body === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'body',
+        'Required parameter requestParameters.body was null or undefined when calling getJsonPropertyAsString.'
+      );
+    }
+
     const queryParameters: any = {};
 
+    if (requestParameters.property !== undefined) {
+      queryParameters['property'] = requestParameters.property;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
 
     if (this.configuration && this.configuration.apiKey) {
       headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -34,10 +67,11 @@ export class ApiUserControllerApi extends runtime.BaseAPI {
 
     const response = await this.request(
       {
-        path: `/user/smtp/password`,
-        method: 'GET',
+        path: `/user/json/pluck`,
+        method: 'POST',
         headers: headerParameters,
         query: queryParameters,
+        body: requestParameters.body as any,
       },
       initOverrides
     );
@@ -46,42 +80,16 @@ export class ApiUserControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Utility function to extract properties from JSON objects in language where this is cumbersome.
    */
-  async getSmtpPassword(initOverrides?: RequestInit): Promise<string> {
-    const response = await this.getSmtpPasswordRaw(initOverrides);
-    return await response.value();
-  }
-
-  /**
-   */
-  async getSmtpUsernameRaw(
+  async getJsonPropertyAsString(
+    requestParameters: GetJsonPropertyAsStringRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
-    const queryParameters: any = {};
-
-    const headerParameters: runtime.HTTPHeaders = {};
-
-    if (this.configuration && this.configuration.apiKey) {
-      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
-    }
-
-    const response = await this.request(
-      {
-        path: `/user/smtp/username`,
-        method: 'GET',
-        headers: headerParameters,
-        query: queryParameters,
-      },
+  ): Promise<string> {
+    const response = await this.getJsonPropertyAsStringRaw(
+      requestParameters,
       initOverrides
     );
-
-    return new runtime.TextApiResponse(response) as any;
-  }
-
-  /**
-   */
-  async getSmtpUsername(initOverrides?: RequestInit): Promise<string> {
-    const response = await this.getSmtpUsernameRaw(initOverrides);
     return await response.value();
   }
 

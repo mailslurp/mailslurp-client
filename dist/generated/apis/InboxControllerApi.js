@@ -1343,7 +1343,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
      */
     InboxControllerApi.prototype.getInboxesRaw = function (requestParameters, initOverrides) {
@@ -1385,7 +1385,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * List the inboxes you have created. Note use of the more advanced `getAllEmails` is recommended and allows paginated access using a limit and sort parameter.
+     * List the inboxes you have created. Note use of the more advanced `getAllInboxes` is recommended and allows paginated access using a limit and sort parameter.
      * List Inboxes and email addresses
      */
     InboxControllerApi.prototype.getInboxes = function (requestParameters, initOverrides) {
