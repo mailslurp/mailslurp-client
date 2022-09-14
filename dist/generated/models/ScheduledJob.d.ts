@@ -10,60 +10,81 @@
  * Do not edit the class manually.
  */
 /**
- * Representation of a alias
+ *
  * @export
- * @interface AliasProjection
+ * @interface ScheduledJob
  */
-export interface AliasProjection {
+export interface ScheduledJob {
     /**
      *
      * @type {string}
-     * @memberof AliasProjection
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
+     * @memberof ScheduledJob
      */
     id: string;
     /**
      *
      * @type {string}
-     * @memberof AliasProjection
-     */
-    inboxId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
+     * @memberof ScheduledJob
      */
     userId: string;
     /**
      *
      * @type {string}
-     * @memberof AliasProjection
+     * @memberof ScheduledJob
      */
-    emailAddress: string;
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    jobId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    groupId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    triggerId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ScheduledJob
+     */
+    status: ScheduledJobStatusEnum;
     /**
      *
      * @type {Date}
-     * @memberof AliasProjection
+     * @memberof ScheduledJob
+     */
+    sendAtTimestamp: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof ScheduledJob
      */
     createdAt: Date;
     /**
      *
-     * @type {boolean}
-     * @memberof AliasProjection
-     */
-    useThreads?: boolean;
-    /**
-     *
      * @type {Date}
-     * @memberof AliasProjection
+     * @memberof ScheduledJob
      */
     updatedAt: Date;
 }
-export declare function AliasProjectionFromJSON(json: any): AliasProjection;
-export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;
-export declare function AliasProjectionToJSON(value?: AliasProjection | null): any;
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ScheduledJobStatusEnum {
+    SUBMITTED = "SUBMITTED",
+    COMPLETED = "COMPLETED",
+    FAILED = "FAILED"
+}
+export declare function ScheduledJobFromJSON(json: any): ScheduledJob;
+export declare function ScheduledJobFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledJob;
+export declare function ScheduledJobToJSON(value?: ScheduledJob | null): any;

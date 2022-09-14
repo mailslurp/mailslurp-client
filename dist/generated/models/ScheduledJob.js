@@ -13,29 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AliasProjectionToJSON = exports.AliasProjectionFromJSONTyped = exports.AliasProjectionFromJSON = void 0;
-var runtime_1 = require("../runtime");
-function AliasProjectionFromJSON(json) {
-    return AliasProjectionFromJSONTyped(json, false);
+exports.ScheduledJobToJSON = exports.ScheduledJobFromJSONTyped = exports.ScheduledJobFromJSON = exports.ScheduledJobStatusEnum = void 0;
+/**
+ * @export
+ * @enum {string}
+ */
+var ScheduledJobStatusEnum;
+(function (ScheduledJobStatusEnum) {
+    ScheduledJobStatusEnum["SUBMITTED"] = "SUBMITTED";
+    ScheduledJobStatusEnum["COMPLETED"] = "COMPLETED";
+    ScheduledJobStatusEnum["FAILED"] = "FAILED";
+})(ScheduledJobStatusEnum = exports.ScheduledJobStatusEnum || (exports.ScheduledJobStatusEnum = {}));
+function ScheduledJobFromJSON(json) {
+    return ScheduledJobFromJSONTyped(json, false);
 }
-exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
-function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScheduledJobFromJSON = ScheduledJobFromJSON;
+function ScheduledJobFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
-        inboxId: json['inboxId'],
         userId: json['userId'],
-        emailAddress: json['emailAddress'],
+        inboxId: json['inboxId'],
+        jobId: json['jobId'],
+        groupId: json['groupId'],
+        triggerId: json['triggerId'],
+        status: json['status'],
+        sendAtTimestamp: new Date(json['sendAtTimestamp']),
         createdAt: new Date(json['createdAt']),
-        useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
-function AliasProjectionToJSON(value) {
+exports.ScheduledJobFromJSONTyped = ScheduledJobFromJSONTyped;
+function ScheduledJobToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,14 +54,16 @@ function AliasProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
         id: value.id,
-        inboxId: value.inboxId,
         userId: value.userId,
-        emailAddress: value.emailAddress,
+        inboxId: value.inboxId,
+        jobId: value.jobId,
+        groupId: value.groupId,
+        triggerId: value.triggerId,
+        status: value.status,
+        sendAtTimestamp: value.sendAtTimestamp.toISOString(),
         createdAt: value.createdAt.toISOString(),
-        useThreads: value.useThreads,
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AliasProjectionToJSON = AliasProjectionToJSON;
+exports.ScheduledJobToJSON = ScheduledJobToJSON;

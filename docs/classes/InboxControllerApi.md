@@ -38,6 +38,8 @@
 - [flushExpiredRaw](InboxControllerApi.md#flushexpiredraw)
 - [getAllInboxes](InboxControllerApi.md#getallinboxes)
 - [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
+- [getAllScheduledJobs](InboxControllerApi.md#getallscheduledjobs)
+- [getAllScheduledJobsRaw](InboxControllerApi.md#getallscheduledjobsraw)
 - [getDeliveryStatusesByInboxId](InboxControllerApi.md#getdeliverystatusesbyinboxid)
 - [getDeliveryStatusesByInboxIdRaw](InboxControllerApi.md#getdeliverystatusesbyinboxidraw)
 - [getEmails](InboxControllerApi.md#getemails)
@@ -68,6 +70,8 @@
 - [getLatestEmailInInboxRaw](InboxControllerApi.md#getlatestemailininboxraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
 - [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
+- [getScheduledJobsByInboxId](InboxControllerApi.md#getscheduledjobsbyinboxid)
+- [getScheduledJobsByInboxIdRaw](InboxControllerApi.md#getscheduledjobsbyinboxidraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
 - [listInboxRulesetsRaw](InboxControllerApi.md#listinboxrulesetsraw)
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
@@ -83,6 +87,8 @@
 - [sendSmtpEnvelopeRaw](InboxControllerApi.md#sendsmtpenveloperaw)
 - [sendTestEmail](InboxControllerApi.md#sendtestemail)
 - [sendTestEmailRaw](InboxControllerApi.md#sendtestemailraw)
+- [sendWithSchedule](InboxControllerApi.md#sendwithschedule)
+- [sendWithScheduleRaw](InboxControllerApi.md#sendwithscheduleraw)
 - [setInboxFavourited](InboxControllerApi.md#setinboxfavourited)
 - [setInboxFavouritedRaw](InboxControllerApi.md#setinboxfavouritedraw)
 - [updateInbox](InboxControllerApi.md#updateinbox)
@@ -510,6 +516,46 @@ List All Inboxes Paginated
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+___
+
+### <a id="getallscheduledjobs" name="getallscheduledjobs"></a> getAllScheduledJobs
+
+▸ **getAllScheduledJobs**(`requestParameters`, `initOverrides?`): `Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
+
+Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+Get all scheduled email sending jobs for account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllScheduledJobsRequest`](../interfaces/GetAllScheduledJobsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
+
+___
+
+### <a id="getallscheduledjobsraw" name="getallscheduledjobsraw"></a> getAllScheduledJobsRaw
+
+▸ **getAllScheduledJobsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>\>
+
+Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+Get all scheduled email sending jobs for account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllScheduledJobsRequest`](../interfaces/GetAllScheduledJobsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>\>
 
 ___
 
@@ -1099,6 +1145,46 @@ List Organization Inboxes Paginated
 
 ___
 
+### <a id="getscheduledjobsbyinboxid" name="getscheduledjobsbyinboxid"></a> getScheduledJobsByInboxId
+
+▸ **getScheduledJobsByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
+
+Schedule sending of emails using scheduled jobs.
+Get all scheduled email sending jobs for the inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetScheduledJobsByInboxIdRequest`](../interfaces/GetScheduledJobsByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
+
+___
+
+### <a id="getscheduledjobsbyinboxidraw" name="getscheduledjobsbyinboxidraw"></a> getScheduledJobsByInboxIdRaw
+
+▸ **getScheduledJobsByInboxIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>\>
+
+Schedule sending of emails using scheduled jobs.
+Get all scheduled email sending jobs for the inbox
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetScheduledJobsByInboxIdRequest`](../interfaces/GetScheduledJobsByInboxIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>\>
+
+___
+
 ### <a id="listinboxrulesets" name="listinboxrulesets"></a> listInboxRulesets
 
 ▸ **listInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
@@ -1392,6 +1478,46 @@ Send a test email to inbox
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`SendTestEmailRequest`](../interfaces/SendTestEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### <a id="sendwithschedule" name="sendwithschedule"></a> sendWithSchedule
+
+▸ **sendWithSchedule**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+Send email with with delay or schedule
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendWithScheduleRequest`](../interfaces/SendWithScheduleRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### <a id="sendwithscheduleraw" name="sendwithscheduleraw"></a> sendWithScheduleRaw
+
+▸ **sendWithScheduleRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+Send email with with delay or schedule
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendWithScheduleRequest`](../interfaces/SendWithScheduleRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

@@ -68,6 +68,9 @@ import {
   PageOrganizationInboxProjection,
   PageOrganizationInboxProjectionFromJSON,
   PageOrganizationInboxProjectionToJSON,
+  PageScheduledJobs,
+  PageScheduledJobsFromJSON,
+  PageScheduledJobsToJSON,
   PageSentEmailProjection,
   PageSentEmailProjectionFromJSON,
   PageSentEmailProjectionToJSON,
@@ -142,6 +145,14 @@ export interface GetAllInboxesRequest {
   before?: Date;
   inboxType?: GetAllInboxesInboxTypeEnum;
   domainId?: string;
+}
+
+export interface GetAllScheduledJobsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetAllScheduledJobsSortEnum;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetDeliveryStatusesByInboxIdRequest {
@@ -226,6 +237,15 @@ export interface GetOrganizationInboxesRequest {
   before?: Date;
 }
 
+export interface GetScheduledJobsByInboxIdRequest {
+  inboxId: string;
+  page?: number;
+  size?: number;
+  sort?: GetScheduledJobsByInboxIdSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
 export interface ListInboxRulesetsRequest {
   inboxId: string;
   page?: number;
@@ -269,6 +289,14 @@ export interface SendSmtpEnvelopeRequest {
 
 export interface SendTestEmailRequest {
   inboxId: string;
+}
+
+export interface SendWithScheduleRequest {
+  inboxId: string;
+  sendEmailOptions: SendEmailOptions;
+  sendAtTimestamp?: Date;
+  sendAtNowPlusSeconds?: number;
+  validateBeforeEnqueue?: boolean;
 }
 
 export interface SetInboxFavouritedRequest {
@@ -889,6 +917,74 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageInboxProjection> {
     const response = await this.getAllInboxesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+   * Get all scheduled email sending jobs for account
+   */
+  async getAllScheduledJobsRaw(
+    requestParameters: GetAllScheduledJobsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageScheduledJobs>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/scheduled-jobs`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageScheduledJobsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+   * Get all scheduled email sending jobs for account
+   */
+  async getAllScheduledJobs(
+    requestParameters: GetAllScheduledJobsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageScheduledJobs> {
+    const response = await this.getAllScheduledJobsRaw(
       requestParameters,
       initOverrides
     );
@@ -1836,6 +1932,87 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Schedule sending of emails using scheduled jobs.
+   * Get all scheduled email sending jobs for the inbox
+   */
+  async getScheduledJobsByInboxIdRaw(
+    requestParameters: GetScheduledJobsByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageScheduledJobs>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling getScheduledJobsByInboxId.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/scheduled-jobs`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageScheduledJobsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Schedule sending of emails using scheduled jobs.
+   * Get all scheduled email sending jobs for the inbox
+   */
+  async getScheduledJobsByInboxId(
+    requestParameters: GetScheduledJobsByInboxIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageScheduledJobs> {
+    const response = await this.getScheduledJobsByInboxIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * List all rulesets attached to an inbox
    * List inbox rulesets
    */
@@ -2352,6 +2529,88 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+   * Send email with with delay or schedule
+   */
+  async sendWithScheduleRaw(
+    requestParameters: SendWithScheduleRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling sendWithSchedule.'
+      );
+    }
+
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendWithSchedule.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.sendAtTimestamp !== undefined) {
+      queryParameters['sendAtTimestamp'] = (
+        requestParameters.sendAtTimestamp as any
+      ).toISOString();
+    }
+
+    if (requestParameters.sendAtNowPlusSeconds !== undefined) {
+      queryParameters['sendAtNowPlusSeconds'] =
+        requestParameters.sendAtNowPlusSeconds;
+    }
+
+    if (requestParameters.validateBeforeEnqueue !== undefined) {
+      queryParameters['validateBeforeEnqueue'] =
+        requestParameters.validateBeforeEnqueue;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/with-schedule`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+   * Send email with with delay or schedule
+   */
+  async sendWithSchedule(
+    requestParameters: SendWithScheduleRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.sendWithScheduleRaw(requestParameters, initOverrides);
+  }
+
+  /**
    * Set and return new favourite state for an inbox
    * Set inbox favourited state
    */
@@ -2526,6 +2785,14 @@ export enum GetAllInboxesInboxTypeEnum {
  * @export
  * @enum {string}
  */
+export enum GetAllScheduledJobsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetDeliveryStatusesByInboxIdSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
@@ -2567,6 +2834,14 @@ export enum GetInboxesSortEnum {
  * @enum {string}
  */
 export enum GetOrganizationInboxesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetScheduledJobsByInboxIdSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

@@ -39,16 +39,16 @@ export interface PhoneNumberProjection {
   phoneNumber: string;
   /**
    *
-   * @type {Date}
-   * @memberof PhoneNumberProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof PhoneNumberProjection
    */
   phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+  /**
+   *
+   * @type {Date}
+   * @memberof PhoneNumberProjection
+   */
+  createdAt: Date;
 }
 
 /**
@@ -77,8 +77,8 @@ export function PhoneNumberProjectionFromJSONTyped(
     id: json['id'],
     userId: json['userId'],
     phoneNumber: json['phoneNumber'],
-    createdAt: new Date(json['createdAt']),
     phoneCountry: json['phoneCountry'],
+    createdAt: new Date(json['createdAt']),
   };
 }
 
@@ -95,7 +95,7 @@ export function PhoneNumberProjectionToJSON(
     id: value.id,
     userId: value.userId,
     phoneNumber: value.phoneNumber,
-    createdAt: value.createdAt.toISOString(),
     phoneCountry: value.phoneCountry,
+    createdAt: value.createdAt.toISOString(),
   };
 }

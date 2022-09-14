@@ -14,85 +14,109 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Representation of a alias
+ *
  * @export
- * @interface AliasProjection
+ * @interface ScheduledJob
  */
-export interface AliasProjection {
+export interface ScheduledJob {
   /**
    *
    * @type {string}
-   * @memberof AliasProjection
-   */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
+   * @memberof ScheduledJob
    */
   id: string;
   /**
    *
    * @type {string}
-   * @memberof AliasProjection
-   */
-  inboxId: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
+   * @memberof ScheduledJob
    */
   userId: string;
   /**
    *
    * @type {string}
-   * @memberof AliasProjection
+   * @memberof ScheduledJob
    */
-  emailAddress: string;
+  inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  jobId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  groupId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  triggerId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ScheduledJob
+   */
+  status: ScheduledJobStatusEnum;
   /**
    *
    * @type {Date}
-   * @memberof AliasProjection
+   * @memberof ScheduledJob
+   */
+  sendAtTimestamp: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof ScheduledJob
    */
   createdAt: Date;
   /**
    *
-   * @type {boolean}
-   * @memberof AliasProjection
-   */
-  useThreads?: boolean;
-  /**
-   *
    * @type {Date}
-   * @memberof AliasProjection
+   * @memberof ScheduledJob
    */
   updatedAt: Date;
 }
 
-export function AliasProjectionFromJSON(json: any): AliasProjection {
-  return AliasProjectionFromJSONTyped(json, false);
+/**
+ * @export
+ * @enum {string}
+ */
+export enum ScheduledJobStatusEnum {
+  SUBMITTED = 'SUBMITTED',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
 }
 
-export function AliasProjectionFromJSONTyped(
+export function ScheduledJobFromJSON(json: any): ScheduledJob {
+  return ScheduledJobFromJSONTyped(json, false);
+}
+
+export function ScheduledJobFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): AliasProjection {
+): ScheduledJob {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
-    inboxId: json['inboxId'],
     userId: json['userId'],
-    emailAddress: json['emailAddress'],
+    inboxId: json['inboxId'],
+    jobId: json['jobId'],
+    groupId: json['groupId'],
+    triggerId: json['triggerId'],
+    status: json['status'],
+    sendAtTimestamp: new Date(json['sendAtTimestamp']),
     createdAt: new Date(json['createdAt']),
-    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
     updatedAt: new Date(json['updatedAt']),
   };
 }
 
-export function AliasProjectionToJSON(value?: AliasProjection | null): any {
+export function ScheduledJobToJSON(value?: ScheduledJob | null): any {
   if (value === undefined) {
     return undefined;
   }
@@ -100,13 +124,15 @@ export function AliasProjectionToJSON(value?: AliasProjection | null): any {
     return null;
   }
   return {
-    name: value.name,
     id: value.id,
-    inboxId: value.inboxId,
     userId: value.userId,
-    emailAddress: value.emailAddress,
+    inboxId: value.inboxId,
+    jobId: value.jobId,
+    groupId: value.groupId,
+    triggerId: value.triggerId,
+    status: value.status,
+    sendAtTimestamp: value.sendAtTimestamp.toISOString(),
     createdAt: value.createdAt.toISOString(),
-    useThreads: value.useThreads,
     updatedAt: value.updatedAt.toISOString(),
   };
 }

@@ -41,6 +41,7 @@
 - [GetAllInboxesInboxTypeEnum](enums/GetAllInboxesInboxTypeEnum.md)
 - [GetAllInboxesSortEnum](enums/GetAllInboxesSortEnum.md)
 - [GetAllMissedEmailsSortEnum](enums/GetAllMissedEmailsSortEnum.md)
+- [GetAllScheduledJobsSortEnum](enums/GetAllScheduledJobsSortEnum.md)
 - [GetAllSentTrackingPixelsSortEnum](enums/GetAllSentTrackingPixelsSortEnum.md)
 - [GetAllTemplatesSortEnum](enums/GetAllTemplatesSortEnum.md)
 - [GetAllTrackingPixelsSortEnum](enums/GetAllTrackingPixelsSortEnum.md)
@@ -69,6 +70,7 @@
 - [GetPhoneNumberWebhooksPaginatedSortEnum](enums/GetPhoneNumberWebhooksPaginatedSortEnum.md)
 - [GetPhoneNumbersPhoneCountryEnum](enums/GetPhoneNumbersPhoneCountryEnum.md)
 - [GetPhoneNumbersSortEnum](enums/GetPhoneNumbersSortEnum.md)
+- [GetScheduledJobsByInboxIdSortEnum](enums/GetScheduledJobsByInboxIdSortEnum.md)
 - [GetSentDeliveryStatusesBySentIdSortEnum](enums/GetSentDeliveryStatusesBySentIdSortEnum.md)
 - [GetSentDeliveryStatusesSortEnum](enums/GetSentDeliveryStatusesSortEnum.md)
 - [GetSentEmailTrackingPixelsSortEnum](enums/GetSentEmailTrackingPixelsSortEnum.md)
@@ -96,6 +98,7 @@
 - [PhonePlanDtoPhoneCountryEnum](enums/PhonePlanDtoPhoneCountryEnum.md)
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
+- [ScheduledJobStatusEnum](enums/ScheduledJobStatusEnum.md)
 - [SendEmailOptionsSendStrategyEnum](enums/SendEmailOptionsSendStrategyEnum.md)
 - [SendEmailOptionsValidateEmailAddressesEnum](enums/SendEmailOptionsValidateEmailAddressesEnum.md)
 - [SmsMatchOptionFieldEnum](enums/SmsMatchOptionFieldEnum.md)
@@ -304,6 +307,7 @@
 - [GetAllGroupsRequest](interfaces/GetAllGroupsRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
 - [GetAllMissedEmailsRequest](interfaces/GetAllMissedEmailsRequest.md)
+- [GetAllScheduledJobsRequest](interfaces/GetAllScheduledJobsRequest.md)
 - [GetAllSentTrackingPixelsRequest](interfaces/GetAllSentTrackingPixelsRequest.md)
 - [GetAllTemplatesRequest](interfaces/GetAllTemplatesRequest.md)
 - [GetAllTrackingPixelsRequest](interfaces/GetAllTrackingPixelsRequest.md)
@@ -374,6 +378,7 @@
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
+- [GetScheduledJobsByInboxIdRequest](interfaces/GetScheduledJobsByInboxIdRequest.md)
 - [GetSentDeliveryStatusRequest](interfaces/GetSentDeliveryStatusRequest.md)
 - [GetSentDeliveryStatusesBySentIdRequest](interfaces/GetSentDeliveryStatusesBySentIdRequest.md)
 - [GetSentDeliveryStatusesRequest](interfaces/GetSentDeliveryStatusesRequest.md)
@@ -449,6 +454,7 @@
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
 - [PageOrganizationInboxProjection](interfaces/PageOrganizationInboxProjection.md)
 - [PagePhoneNumberProjection](interfaces/PagePhoneNumberProjection.md)
+- [PageScheduledJobs](interfaces/PageScheduledJobs.md)
 - [PageSentEmailProjection](interfaces/PageSentEmailProjection.md)
 - [PageSentEmailWithQueueProjection](interfaces/PageSentEmailWithQueueProjection.md)
 - [PageSmsProjection](interfaces/PageSmsProjection.md)
@@ -475,6 +481,7 @@
 - [ResponseContext](interfaces/ResponseContext.md)
 - [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
+- [ScheduledJob](interfaces/ScheduledJob.md)
 - [SendAliasEmailRequest](interfaces/SendAliasEmailRequest.md)
 - [SendEmailAndConfirmRequest](interfaces/SendEmailAndConfirmRequest.md)
 - [SendEmailOptions](interfaces/SendEmailOptions.md)
@@ -487,6 +494,7 @@
 - [SendTestDataRequest](interfaces/SendTestDataRequest.md)
 - [SendTestEmailRequest](interfaces/SendTestEmailRequest.md)
 - [SendWithQueueResult](interfaces/SendWithQueueResult.md)
+- [SendWithScheduleRequest](interfaces/SendWithScheduleRequest.md)
 - [Sender](interfaces/Sender.md)
 - [SentEmailDto](interfaces/SentEmailDto.md)
 - [SentEmailProjection](interfaces/SentEmailProjection.md)
@@ -928,6 +936,9 @@
 - [PagePhoneNumberProjectionFromJSON](README.md#pagephonenumberprojectionfromjson)
 - [PagePhoneNumberProjectionFromJSONTyped](README.md#pagephonenumberprojectionfromjsontyped)
 - [PagePhoneNumberProjectionToJSON](README.md#pagephonenumberprojectiontojson)
+- [PageScheduledJobsFromJSON](README.md#pagescheduledjobsfromjson)
+- [PageScheduledJobsFromJSONTyped](README.md#pagescheduledjobsfromjsontyped)
+- [PageScheduledJobsToJSON](README.md#pagescheduledjobstojson)
 - [PageSentEmailProjectionFromJSON](README.md#pagesentemailprojectionfromjson)
 - [PageSentEmailProjectionFromJSONTyped](README.md#pagesentemailprojectionfromjsontyped)
 - [PageSentEmailProjectionToJSON](README.md#pagesentemailprojectiontojson)
@@ -979,6 +990,9 @@
 - [ReplyToEmailOptionsFromJSON](README.md#replytoemailoptionsfromjson)
 - [ReplyToEmailOptionsFromJSONTyped](README.md#replytoemailoptionsfromjsontyped)
 - [ReplyToEmailOptionsToJSON](README.md#replytoemailoptionstojson)
+- [ScheduledJobFromJSON](README.md#scheduledjobfromjson)
+- [ScheduledJobFromJSONTyped](README.md#scheduledjobfromjsontyped)
+- [ScheduledJobToJSON](README.md#scheduledjobtojson)
 - [SendEmailOptionsFromJSON](README.md#sendemailoptionsfromjson)
 - [SendEmailOptionsFromJSONTyped](README.md#sendemailoptionsfromjsontyped)
 - [SendEmailOptionsToJSON](README.md#sendemailoptionstojson)
@@ -6737,6 +6751,55 @@ ___
 
 ___
 
+### <a id="pagescheduledjobsfromjson" name="pagescheduledjobsfromjson"></a> PageScheduledJobsFromJSON
+
+▸ **PageScheduledJobsFromJSON**(`json`): [`PageScheduledJobs`](interfaces/PageScheduledJobs.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageScheduledJobs`](interfaces/PageScheduledJobs.md)
+
+___
+
+### <a id="pagescheduledjobsfromjsontyped" name="pagescheduledjobsfromjsontyped"></a> PageScheduledJobsFromJSONTyped
+
+▸ **PageScheduledJobsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageScheduledJobs`](interfaces/PageScheduledJobs.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageScheduledJobs`](interfaces/PageScheduledJobs.md)
+
+___
+
+### <a id="pagescheduledjobstojson" name="pagescheduledjobstojson"></a> PageScheduledJobsToJSON
+
+▸ **PageScheduledJobsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageScheduledJobs`](interfaces/PageScheduledJobs.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="pagesentemailprojectionfromjson" name="pagesentemailprojectionfromjson"></a> PageSentEmailProjectionFromJSON
 
 ▸ **PageSentEmailProjectionFromJSON**(`json`): [`PageSentEmailProjection`](interfaces/PageSentEmailProjection.md)
@@ -7563,6 +7626,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="scheduledjobfromjson" name="scheduledjobfromjson"></a> ScheduledJobFromJSON
+
+▸ **ScheduledJobFromJSON**(`json`): [`ScheduledJob`](interfaces/ScheduledJob.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ScheduledJob`](interfaces/ScheduledJob.md)
+
+___
+
+### <a id="scheduledjobfromjsontyped" name="scheduledjobfromjsontyped"></a> ScheduledJobFromJSONTyped
+
+▸ **ScheduledJobFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ScheduledJob`](interfaces/ScheduledJob.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ScheduledJob`](interfaces/ScheduledJob.md)
+
+___
+
+### <a id="scheduledjobtojson" name="scheduledjobtojson"></a> ScheduledJobToJSON
+
+▸ **ScheduledJobToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ScheduledJob`](interfaces/ScheduledJob.md) |
 
 #### Returns
 

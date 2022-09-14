@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -55,6 +55,13 @@ export interface GetAllInboxesRequest {
     before?: Date;
     inboxType?: GetAllInboxesInboxTypeEnum;
     domainId?: string;
+}
+export interface GetAllScheduledJobsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllScheduledJobsSortEnum;
+    since?: Date;
+    before?: Date;
 }
 export interface GetDeliveryStatusesByInboxIdRequest {
     inboxId: string;
@@ -126,6 +133,14 @@ export interface GetOrganizationInboxesRequest {
     since?: Date;
     before?: Date;
 }
+export interface GetScheduledJobsByInboxIdRequest {
+    inboxId: string;
+    page?: number;
+    size?: number;
+    sort?: GetScheduledJobsByInboxIdSortEnum;
+    since?: Date;
+    before?: Date;
+}
 export interface ListInboxRulesetsRequest {
     inboxId: string;
     page?: number;
@@ -163,6 +178,13 @@ export interface SendSmtpEnvelopeRequest {
 }
 export interface SendTestEmailRequest {
     inboxId: string;
+}
+export interface SendWithScheduleRequest {
+    inboxId: string;
+    sendEmailOptions: SendEmailOptions;
+    sendAtTimestamp?: Date;
+    sendAtNowPlusSeconds?: number;
+    validateBeforeEnqueue?: boolean;
 }
 export interface SetInboxFavouritedRequest {
     inboxId: string;
@@ -274,6 +296,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List All Inboxes Paginated
      */
     getAllInboxes(requestParameters: GetAllInboxesRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    getAllScheduledJobsRaw(requestParameters: GetAllScheduledJobsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageScheduledJobs>>;
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    getAllScheduledJobs(requestParameters: GetAllScheduledJobsRequest, initOverrides?: RequestInit): Promise<PageScheduledJobs>;
     /**
      * Get all email delivery statuses for an inbox
      */
@@ -417,6 +449,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getOrganizationInboxes(requestParameters: GetOrganizationInboxesRequest, initOverrides?: RequestInit): Promise<PageOrganizationInboxProjection>;
     /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    getScheduledJobsByInboxIdRaw(requestParameters: GetScheduledJobsByInboxIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageScheduledJobs>>;
+    /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    getScheduledJobsByInboxId(requestParameters: GetScheduledJobsByInboxIdRequest, initOverrides?: RequestInit): Promise<PageScheduledJobs>;
+    /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
@@ -487,6 +529,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     sendTestEmail(requestParameters: SendTestEmailRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    sendWithScheduleRaw(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    sendWithSchedule(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
      * Set and return new favourite state for an inbox
      * Set inbox favourited state
      */
@@ -535,6 +587,14 @@ export declare enum GetAllInboxesInboxTypeEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetAllScheduledJobsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetDeliveryStatusesByInboxIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
@@ -576,6 +636,14 @@ export declare enum GetInboxesSortEnum {
  * @enum {string}
  */
 export declare enum GetOrganizationInboxesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetScheduledJobsByInboxIdSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

@@ -77,18 +77,6 @@ export interface EmailProjection {
     domainId?: string;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyMD5Hash?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyExcerpt?: string;
-    /**
-     *
      * @type {boolean}
      * @memberof EmailProjection
      */
@@ -99,6 +87,18 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     teamAccess: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyMD5Hash?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyExcerpt?: string;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

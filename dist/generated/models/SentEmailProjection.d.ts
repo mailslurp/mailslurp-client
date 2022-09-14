@@ -41,6 +41,12 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    attachments: Array<string>;
+    /**
+     *
      * @type {Date}
      * @memberof SentEmailProjection
      */
@@ -51,12 +57,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     inboxId: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    attachments: Array<string>;
     /**
      *
      * @type {Array<string>}

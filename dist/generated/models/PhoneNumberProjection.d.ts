@@ -35,16 +35,16 @@ export interface PhoneNumberProjection {
     phoneNumber: string;
     /**
      *
-     * @type {Date}
-     * @memberof PhoneNumberProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
     phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof PhoneNumberProjection
+     */
+    createdAt: Date;
 }
 /**
  * @export

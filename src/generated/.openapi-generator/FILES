@@ -138,6 +138,7 @@ models/PageInboxRulesetDto.ts
 models/PageMissedEmailProjection.ts
 models/PageOrganizationInboxProjection.ts
 models/PagePhoneNumberProjection.ts
+models/PageScheduledJobs.ts
 models/PageSentEmailProjection.ts
 models/PageSentEmailWithQueueProjection.ts
 models/PageSmsProjection.ts
@@ -155,6 +156,7 @@ models/RawEmailJson.ts
 models/Recipient.ts
 models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
+models/ScheduledJob.ts
 models/SendEmailOptions.ts
 models/SendSMTPEnvelopeOptions.ts
 models/SendWithQueueResult.ts

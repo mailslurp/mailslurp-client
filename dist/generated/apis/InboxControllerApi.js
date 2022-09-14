@@ -83,7 +83,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -652,6 +652,69 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    InboxControllerApi.prototype.getAllScheduledJobsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/scheduled-jobs",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
+     * Get all scheduled email sending jobs for account
+     */
+    InboxControllerApi.prototype.getAllScheduledJobs = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllScheduledJobsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1531,6 +1594,73 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    InboxControllerApi.prototype.getScheduledJobsByInboxIdRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling getScheduledJobsByInboxId.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageScheduledJobsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Schedule sending of emails using scheduled jobs.
+     * Get all scheduled email sending jobs for the inbox
+     */
+    InboxControllerApi.prototype.getScheduledJobsByInboxId = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getScheduledJobsByInboxIdRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * List all rulesets attached to an inbox
      * List inbox rulesets
      */
@@ -1951,6 +2081,71 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    InboxControllerApi.prototype.sendWithScheduleRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendWithSchedule.');
+                        }
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling sendWithSchedule.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.sendAtTimestamp !== undefined) {
+                            queryParameters['sendAtTimestamp'] = requestParameters.sendAtTimestamp.toISOString();
+                        }
+                        if (requestParameters.sendAtNowPlusSeconds !== undefined) {
+                            queryParameters['sendAtNowPlusSeconds'] =
+                                requestParameters.sendAtNowPlusSeconds;
+                        }
+                        if (requestParameters.validateBeforeEnqueue !== undefined) {
+                            queryParameters['validateBeforeEnqueue'] =
+                                requestParameters.validateBeforeEnqueue;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/with-schedule".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
+     * Send email with with delay or schedule
+     */
+    InboxControllerApi.prototype.sendWithSchedule = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendWithScheduleRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Set and return new favourite state for an inbox
      * Set inbox favourited state
      */
@@ -2100,6 +2295,15 @@ var GetAllInboxesInboxTypeEnum;
  * @export
  * @enum {string}
  */
+var GetAllScheduledJobsSortEnum;
+(function (GetAllScheduledJobsSortEnum) {
+    GetAllScheduledJobsSortEnum["ASC"] = "ASC";
+    GetAllScheduledJobsSortEnum["DESC"] = "DESC";
+})(GetAllScheduledJobsSortEnum = exports.GetAllScheduledJobsSortEnum || (exports.GetAllScheduledJobsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetDeliveryStatusesByInboxIdSortEnum;
 (function (GetDeliveryStatusesByInboxIdSortEnum) {
     GetDeliveryStatusesByInboxIdSortEnum["ASC"] = "ASC";
@@ -2150,6 +2354,15 @@ var GetOrganizationInboxesSortEnum;
     GetOrganizationInboxesSortEnum["ASC"] = "ASC";
     GetOrganizationInboxesSortEnum["DESC"] = "DESC";
 })(GetOrganizationInboxesSortEnum = exports.GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetScheduledJobsByInboxIdSortEnum;
+(function (GetScheduledJobsByInboxIdSortEnum) {
+    GetScheduledJobsByInboxIdSortEnum["ASC"] = "ASC";
+    GetScheduledJobsByInboxIdSortEnum["DESC"] = "DESC";
+})(GetScheduledJobsByInboxIdSortEnum = exports.GetScheduledJobsByInboxIdSortEnum || (exports.GetScheduledJobsByInboxIdSortEnum = {}));
 /**
  * @export
  * @enum {string}
