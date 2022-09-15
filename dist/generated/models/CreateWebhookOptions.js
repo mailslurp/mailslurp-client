@@ -51,6 +51,9 @@ function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
         includeHeaders: !(0, runtime_1.exists)(json, 'includeHeaders')
             ? undefined
             : (0, _1.WebhookHeadersFromJSON)(json['includeHeaders']),
+        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
+            ? undefined
+            : json['requestBodyTemplate'],
     };
 }
 exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
@@ -67,6 +70,7 @@ function CreateWebhookOptionsToJSON(value) {
         name: value.name,
         eventName: value.eventName,
         includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
+        requestBodyTemplate: value.requestBodyTemplate,
     };
 }
 exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

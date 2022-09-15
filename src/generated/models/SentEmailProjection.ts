@@ -45,18 +45,6 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  attachments: Array<string>;
-  /**
-   *
-   * @type {Date}
-   * @memberof SentEmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof SentEmailProjection
    */
@@ -66,7 +54,19 @@ export interface SentEmailProjection {
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
+  attachments: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
   to: Array<string>;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -109,10 +109,10 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    attachments: json['attachments'],
-    createdAt: new Date(json['createdAt']),
     inboxId: json['inboxId'],
+    attachments: json['attachments'],
     to: json['to'],
+    createdAt: new Date(json['createdAt']),
     bcc: json['bcc'],
     cc: json['cc'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
@@ -134,10 +134,10 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
-    attachments: value.attachments,
-    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
+    attachments: value.attachments,
     to: value.to,
+    createdAt: value.createdAt.toISOString(),
     bcc: value.bcc,
     cc: value.cc,
     bodyMD5Hash: value.bodyMD5Hash,

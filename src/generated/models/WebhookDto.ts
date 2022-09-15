@@ -63,6 +63,12 @@ export interface WebhookDto {
    */
   inboxId?: string | null;
   /**
+   * Request body template for HTTP request that will be sent for the webhook. Use Moustache style template variables to insert values from the original event payload.
+   * @type {string}
+   * @memberof WebhookDto
+   */
+  requestBodyTemplate?: string | null;
+  /**
    * URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
    * @type {string}
    * @memberof WebhookDto
@@ -155,6 +161,9 @@ export function WebhookDtoFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    requestBodyTemplate: !exists(json, 'requestBodyTemplate')
+      ? undefined
+      : json['requestBodyTemplate'],
     url: json['url'],
     method: json['method'],
     payloadJsonSchema: json['payloadJsonSchema'],
@@ -181,6 +190,7 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     name: value.name,
     phoneId: value.phoneId,
     inboxId: value.inboxId,
+    requestBodyTemplate: value.requestBodyTemplate,
     url: value.url,
     method: value.method,
     payloadJsonSchema: value.payloadJsonSchema,

@@ -34,23 +34,29 @@ export interface ThreadProjection {
      */
     subject?: string;
     /**
-     * Inbox ID
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    inboxId: string;
-    /**
      * User ID
      * @type {string}
      * @memberof ThreadProjection
      */
     userId: string;
     /**
+     * Inbox ID
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    inboxId: string;
+    /**
      * To recipients
      * @type {Array<string>}
      * @memberof ThreadProjection
      */
     to: Array<string>;
+    /**
+     * Created at DateTime
+     * @type {Date}
+     * @memberof ThreadProjection
+     */
+    createdAt: Date;
     /**
      * BCC recipients
      * @type {Array<string>}
@@ -63,12 +69,6 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     cc?: Array<string>;
-    /**
-     * Created at DateTime
-     * @type {Date}
-     * @memberof ThreadProjection
-     */
-    createdAt: Date;
     /**
      * Updated at DateTime
      * @type {Date}

@@ -44,13 +44,13 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceType?: string;
+    bounceMta?: string;
     /**
      *
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceMta?: string;
+    bounceType?: string;
 }
 export declare function BounceProjectionFromJSON(json: any): BounceProjection;
 export declare function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection;

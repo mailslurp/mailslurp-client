@@ -19,6 +19,7 @@ Representation of a webhook for an inbox. The URL specified will be using by Mai
 - [name](WebhookDto.md#name)
 - [payloadJsonSchema](WebhookDto.md#payloadjsonschema)
 - [phoneId](WebhookDto.md#phoneid)
+- [requestBodyTemplate](WebhookDto.md#requestbodytemplate)
 - [requestHeaders](WebhookDto.md#requestheaders)
 - [updatedAt](WebhookDto.md#updatedat)
 - [url](WebhookDto.md#url)
@@ -111,6 +112,16 @@ ___
 • `Optional` **phoneId**: `string`
 
 The phoneNumberId that the Webhook will be triggered by. If null then webhook triggered at account level or inbox level if inboxId set
+
+**`memberof`** WebhookDto
+
+___
+
+### <a id="requestbodytemplate" name="requestbodytemplate"></a> requestBodyTemplate
+
+• `Optional` **requestBodyTemplate**: `string`
+
+Request body template for HTTP request that will be sent for the webhook. Use Moustache style template variables to insert values from the original event payload.
 
 **`memberof`** WebhookDto
 

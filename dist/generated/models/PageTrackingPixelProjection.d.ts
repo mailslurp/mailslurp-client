@@ -39,13 +39,13 @@ export interface PageTrackingPixelProjection {
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {boolean}

@@ -32,10 +32,10 @@ function PageOrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator)
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
         total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
-        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         totalElements: !(0, runtime_1.exists)(json, 'totalElements')
             ? undefined
             : json['totalElements'],
+        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
         size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
         number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
@@ -61,8 +61,8 @@ function PageOrganizationInboxProjectionToJSON(value) {
             : value.content.map(_1.OrganizationInboxProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
         total: value.total,
-        totalPages: value.totalPages,
         totalElements: value.totalElements,
+        totalPages: value.totalPages,
         last: value.last,
         size: value.size,
         number: value.number,

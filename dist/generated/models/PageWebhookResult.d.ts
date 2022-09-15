@@ -39,13 +39,13 @@ export interface PageWebhookResult {
      * @type {number}
      * @memberof PageWebhookResult
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {number}
      * @memberof PageWebhookResult
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {boolean}

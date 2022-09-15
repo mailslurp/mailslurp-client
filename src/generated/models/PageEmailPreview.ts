@@ -57,13 +57,13 @@ export interface PageEmailPreview {
    * @type {number}
    * @memberof PageEmailPreview
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {number}
    * @memberof PageEmailPreview
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {boolean}
@@ -127,10 +127,10 @@ export function PageEmailPreviewFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
@@ -157,8 +157,8 @@ export function PageEmailPreviewToJSON(value?: PageEmailPreview | null): any {
         : (value.content as Array<any>).map(EmailPreviewToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     size: value.size,
     number: value.number,

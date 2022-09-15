@@ -1,6 +1,6 @@
 # Interface: CreateWebhookOptions
 
-Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the webhook's event is triggered. Webhooks are great for processing many inbound emails and responding to other events at scale.
+Options for creating a webhook. Webhooks can be attached to inboxes and MailSlurp will POST a webhook payload to the URL specified whenever the webhook's event is triggered. Webhooks are great for processing many inbound emails and responding to other events at scale. Customize the payload sent to your endpoint by setting the `requestBodyTemplate` property to a string with moustache style variables. Property names from the standard payload model for the given event are available as variables.
 
 **`export`**
 
@@ -14,6 +14,7 @@ Options for creating a webhook. Webhooks can be attached to inboxes and MailSlur
 - [eventName](CreateWebhookOptions.md#eventname)
 - [includeHeaders](CreateWebhookOptions.md#includeheaders)
 - [name](CreateWebhookOptions.md#name)
+- [requestBodyTemplate](CreateWebhookOptions.md#requestbodytemplate)
 - [url](CreateWebhookOptions.md#url)
 
 ## Properties
@@ -49,6 +50,16 @@ ___
 • `Optional` **name**: `string`
 
 Optional name for the webhook
+
+**`memberof`** CreateWebhookOptions
+
+___
+
+### <a id="requestbodytemplate" name="requestbodytemplate"></a> requestBodyTemplate
+
+• `Optional` **requestBodyTemplate**: `string`
+
+Template for the JSON body of the webhook request that will be sent to your server. Use Moustache style `{{variableName}}` templating to use parts of the standard webhook payload for the given event.
 
 **`memberof`** CreateWebhookOptions
 

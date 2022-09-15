@@ -63,6 +63,9 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
+            ? undefined
+            : json['requestBodyTemplate'],
         url: json['url'],
         method: json['method'],
         payloadJsonSchema: json['payloadJsonSchema'],
@@ -89,6 +92,7 @@ function WebhookDtoToJSON(value) {
         name: value.name,
         phoneId: value.phoneId,
         inboxId: value.inboxId,
+        requestBodyTemplate: value.requestBodyTemplate,
         url: value.url,
         method: value.method,
         payloadJsonSchema: value.payloadJsonSchema,

@@ -30,13 +30,13 @@ export interface Sort {
    * @type {boolean}
    * @memberof Sort
    */
-  unsorted?: boolean;
+  sorted?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof Sort
    */
-  sorted?: boolean;
+  unsorted?: boolean;
 }
 
 export function SortFromJSON(json: any): Sort {
@@ -52,8 +52,8 @@ export function SortFromJSONTyped(
   }
   return {
     empty: !exists(json, 'empty') ? undefined : json['empty'],
-    unsorted: !exists(json, 'unsorted') ? undefined : json['unsorted'],
     sorted: !exists(json, 'sorted') ? undefined : json['sorted'],
+    unsorted: !exists(json, 'unsorted') ? undefined : json['unsorted'],
   };
 }
 
@@ -66,7 +66,7 @@ export function SortToJSON(value?: Sort | null): any {
   }
   return {
     empty: value.empty,
-    unsorted: value.unsorted,
     sorted: value.sorted,
+    unsorted: value.unsorted,
   };
 }

@@ -29,12 +29,6 @@ export interface ContactProjection {
     groupId?: string;
     /**
      *
-     * @type {Date}
-     * @memberof ContactProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ContactProjection
      */
@@ -63,6 +57,12 @@ export interface ContactProjection {
      * @memberof ContactProjection
      */
     optOut: boolean;
+    /**
+     *
+     * @type {Date}
+     * @memberof ContactProjection
+     */
+    createdAt: Date;
 }
 export declare function ContactProjectionFromJSON(json: any): ContactProjection;
 export declare function ContactProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactProjection;

@@ -57,13 +57,13 @@ export interface PageTrackingPixelProjection {
    * @type {number}
    * @memberof PageTrackingPixelProjection
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {number}
    * @memberof PageTrackingPixelProjection
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {boolean}
@@ -129,10 +129,10 @@ export function PageTrackingPixelProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
@@ -161,8 +161,8 @@ export function PageTrackingPixelProjectionToJSON(
         : (value.content as Array<any>).map(TrackingPixelProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    totalPages: value.totalPages,
     totalElements: value.totalElements,
+    totalPages: value.totalPages,
     last: value.last,
     size: value.size,
     number: value.number,

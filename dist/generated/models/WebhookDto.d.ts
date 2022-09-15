@@ -53,6 +53,12 @@ export interface WebhookDto {
      */
     inboxId?: string | null;
     /**
+     * Request body template for HTTP request that will be sent for the webhook. Use Moustache style template variables to insert values from the original event payload.
+     * @type {string}
+     * @memberof WebhookDto
+     */
+    requestBodyTemplate?: string | null;
+    /**
      * URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
      * @type {string}
      * @memberof WebhookDto
