@@ -32,13 +32,13 @@ export interface ReplyToAliasEmailOptions {
      * @type {string}
      * @memberof ReplyToAliasEmailOptions
      */
-    charset?: string;
+    charset?: string | null;
     /**
      * List of uploaded attachments to send with the reply. Optional.
      * @type {Array<string>}
      * @memberof ReplyToAliasEmailOptions
      */
-    attachments?: Array<string>;
+    attachments?: Array<string> | null;
     /**
      * Template variables if using a template
      * @type {{ [key: string]: object; }}
@@ -46,13 +46,13 @@ export interface ReplyToAliasEmailOptions {
      */
     templateVariables?: {
         [key: string]: object;
-    };
+    } | null;
     /**
      * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
      * @type {string}
      * @memberof ReplyToAliasEmailOptions
      */
-    template?: string;
+    template?: string | null;
     /**
      * How an email should be sent based on its recipients
      * @type {string}
@@ -64,7 +64,7 @@ export interface ReplyToAliasEmailOptions {
      * @type {boolean}
      * @memberof ReplyToAliasEmailOptions
      */
-    useInboxName?: boolean;
+    useInboxName?: boolean | null;
     /**
      *
      * @type {boolean}

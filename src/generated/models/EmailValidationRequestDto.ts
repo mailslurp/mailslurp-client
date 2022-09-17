@@ -16,62 +16,62 @@ import { exists, mapValues } from '../runtime';
 /**
  * Email validation request
  * @export
- * @interface EmailValidationRequest
+ * @interface EmailValidationRequestDto
  */
-export interface EmailValidationRequest {
+export interface EmailValidationRequestDto {
   /**
    *
    * @type {string}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
-  id?: string;
+  id: string;
   /**
    *
    * @type {string}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
   userId: string;
   /**
    *
    * @type {string}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
   emailAddress: string;
   /**
    *
    * @type {boolean}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
   isValid: boolean;
   /**
    *
    * @type {Date}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
   createdAt: Date;
   /**
    *
    * @type {Date}
-   * @memberof EmailValidationRequest
+   * @memberof EmailValidationRequestDto
    */
   updatedAt: Date;
 }
 
-export function EmailValidationRequestFromJSON(
+export function EmailValidationRequestDtoFromJSON(
   json: any
-): EmailValidationRequest {
-  return EmailValidationRequestFromJSONTyped(json, false);
+): EmailValidationRequestDto {
+  return EmailValidationRequestDtoFromJSONTyped(json, false);
 }
 
-export function EmailValidationRequestFromJSONTyped(
+export function EmailValidationRequestDtoFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): EmailValidationRequest {
+): EmailValidationRequestDto {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     userId: json['userId'],
     emailAddress: json['emailAddress'],
     isValid: json['isValid'],
@@ -80,8 +80,8 @@ export function EmailValidationRequestFromJSONTyped(
   };
 }
 
-export function EmailValidationRequestToJSON(
-  value?: EmailValidationRequest | null
+export function EmailValidationRequestDtoToJSON(
+  value?: EmailValidationRequestDto | null
 ): any {
   if (value === undefined) {
     return undefined;

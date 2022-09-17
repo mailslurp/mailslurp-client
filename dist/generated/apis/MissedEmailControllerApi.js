@@ -258,7 +258,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.MissedEmailFromJSON)(jsonValue);
+                                return (0, models_1.MissedEmailDtoFromJSON)(jsonValue);
                             })];
                 }
             });
@@ -369,7 +369,7 @@ var MissedEmailControllerApi = /** @class */ (function (_super) {
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
-                                return (0, models_1.MissedEmailFromJSON)(jsonValue);
+                                return (0, models_1.MissedEmailDtoFromJSON)(jsonValue);
                             })];
                 }
             });

@@ -32,7 +32,9 @@ function ExpirationDefaultsFromJSONTyped(json, ignoreDiscriminator) {
             : json['maxExpirationMillis'],
         defaultExpiresAt: !(0, runtime_1.exists)(json, 'defaultExpiresAt')
             ? undefined
-            : new Date(json['defaultExpiresAt']),
+            : json['defaultExpiresAt'] === null
+                ? null
+                : new Date(json['defaultExpiresAt']),
         canPermanentInbox: json['canPermanentInbox'],
         nextInboxAllowsPermanent: json['nextInboxAllowsPermanent'],
     };
@@ -50,7 +52,9 @@ function ExpirationDefaultsToJSON(value) {
         maxExpirationMillis: value.maxExpirationMillis,
         defaultExpiresAt: value.defaultExpiresAt === undefined
             ? undefined
-            : value.defaultExpiresAt.toISOString(),
+            : value.defaultExpiresAt === null
+                ? null
+                : value.defaultExpiresAt.toISOString(),
         canPermanentInbox: value.canPermanentInbox,
         nextInboxAllowsPermanent: value.nextInboxAllowsPermanent,
     };

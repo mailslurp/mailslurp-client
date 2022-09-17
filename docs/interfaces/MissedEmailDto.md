@@ -1,31 +1,31 @@
-# Interface: MissedEmail
+# Interface: MissedEmailDto
 
 Missed email
 
 **`export`**
 
-**`interface`** MissedEmail
+**`interface`** MissedEmailDto
 
 ## Table of contents
 
 ### Properties
 
-- [attachmentCount](MissedEmail.md#attachmentcount)
-- [bcc](MissedEmail.md#bcc)
-- [bodyExcerpt](MissedEmail.md#bodyexcerpt)
-- [canRestore](MissedEmail.md#canrestore)
-- [cc](MissedEmail.md#cc)
-- [createdAt](MissedEmail.md#createdat)
-- [from](MissedEmail.md#from)
-- [id](MissedEmail.md#id)
-- [inboxIds](MissedEmail.md#inboxids)
-- [rawBucket](MissedEmail.md#rawbucket)
-- [rawKey](MissedEmail.md#rawkey)
-- [rawUrl](MissedEmail.md#rawurl)
-- [subject](MissedEmail.md#subject)
-- [to](MissedEmail.md#to)
-- [updatedAt](MissedEmail.md#updatedat)
-- [userId](MissedEmail.md#userid)
+- [attachmentCount](MissedEmailDto.md#attachmentcount)
+- [bcc](MissedEmailDto.md#bcc)
+- [bodyExcerpt](MissedEmailDto.md#bodyexcerpt)
+- [canRestore](MissedEmailDto.md#canrestore)
+- [cc](MissedEmailDto.md#cc)
+- [createdAt](MissedEmailDto.md#createdat)
+- [from](MissedEmailDto.md#from)
+- [id](MissedEmailDto.md#id)
+- [inboxIds](MissedEmailDto.md#inboxids)
+- [rawBucket](MissedEmailDto.md#rawbucket)
+- [rawKey](MissedEmailDto.md#rawkey)
+- [rawUrl](MissedEmailDto.md#rawurl)
+- [subject](MissedEmailDto.md#subject)
+- [to](MissedEmailDto.md#to)
+- [updatedAt](MissedEmailDto.md#updatedat)
+- [userId](MissedEmailDto.md#userid)
 
 ## Properties
 
@@ -33,7 +33,7 @@ Missed email
 
 • **attachmentCount**: `number`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **bcc**: `string`[]
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **bodyExcerpt**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **canRestore**: `boolean`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **cc**: `string`[]
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **createdAt**: `Date`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -81,15 +81,15 @@ ___
 
 • `Optional` **from**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
 ### <a id="id" name="id"></a> id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **inboxIds**: `string`[]
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **rawBucket**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • `Optional` **rawKey**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • `Optional` **rawUrl**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • `Optional` **subject**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 • **to**: `string`[]
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 • **updatedAt**: `Date`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto
 
 ___
 
@@ -153,4 +153,4 @@ ___
 
 • `Optional` **userId**: `string`
 
-**`memberof`** MissedEmail
+**`memberof`** MissedEmailDto

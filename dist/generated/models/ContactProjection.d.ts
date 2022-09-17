@@ -26,31 +26,19 @@ export interface ContactProjection {
      * @type {string}
      * @memberof ContactProjection
      */
-    groupId?: string;
+    groupId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof ContactProjection
      */
-    firstName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ContactProjection
-     */
-    lastName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ContactProjection
-     */
-    company?: string;
+    createdAt: Date;
     /**
      *
      * @type {Array<string>}
      * @memberof ContactProjection
      */
-    emailAddresses?: Array<string>;
+    emailAddresses?: Array<string> | null;
     /**
      *
      * @type {boolean}
@@ -59,10 +47,22 @@ export interface ContactProjection {
     optOut: boolean;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof ContactProjection
      */
-    createdAt: Date;
+    firstName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    lastName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    company?: string | null;
 }
 export declare function ContactProjectionFromJSON(json: any): ContactProjection;
 export declare function ContactProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContactProjection;

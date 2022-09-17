@@ -38,7 +38,7 @@ export interface WebhookEmailReadPayload {
      * @type {string}
      * @memberof WebhookEmailReadPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
      * @type {string}

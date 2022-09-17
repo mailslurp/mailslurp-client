@@ -73,7 +73,7 @@ export interface DomainDto {
    * @type {string}
    * @memberof DomainDto
    */
-  catchAllInboxId?: string;
+  catchAllInboxId?: string | null;
   /**
    *
    * @type {Date}

@@ -35,13 +35,13 @@ export interface MatchOptions {
    * @type {Array<MatchOption>}
    * @memberof MatchOptions
    */
-  matches?: Array<MatchOption>;
+  matches?: Array<MatchOption> | null;
   /**
    * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
    * @type {Array<ConditionOption>}
    * @memberof MatchOptions
    */
-  conditions?: Array<ConditionOption>;
+  conditions?: Array<ConditionOption> | null;
 }
 
 export function MatchOptionsFromJSON(json: any): MatchOptions {
@@ -58,9 +58,13 @@ export function MatchOptionsFromJSONTyped(
   return {
     matches: !exists(json, 'matches')
       ? undefined
+      : json['matches'] === null
+      ? null
       : (json['matches'] as Array<any>).map(MatchOptionFromJSON),
     conditions: !exists(json, 'conditions')
       ? undefined
+      : json['conditions'] === null
+      ? null
       : (json['conditions'] as Array<any>).map(ConditionOptionFromJSON),
   };
 }
@@ -76,10 +80,14 @@ export function MatchOptionsToJSON(value?: MatchOptions | null): any {
     matches:
       value.matches === undefined
         ? undefined
+        : value.matches === null
+        ? null
         : (value.matches as Array<any>).map(MatchOptionToJSON),
     conditions:
       value.conditions === undefined
         ? undefined
+        : value.conditions === null
+        ? null
         : (value.conditions as Array<any>).map(ConditionOptionToJSON),
   };
 }

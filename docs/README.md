@@ -278,7 +278,7 @@
 - [EmailProjection](interfaces/EmailProjection.md)
 - [EmailRecipients](interfaces/EmailRecipients.md)
 - [EmailTextLinesResult](interfaces/EmailTextLinesResult.md)
-- [EmailValidationRequest](interfaces/EmailValidationRequest.md)
+- [EmailValidationRequestDto](interfaces/EmailValidationRequestDto.md)
 - [EmailVerificationResult](interfaces/EmailVerificationResult.md)
 - [EmergencyAddress](interfaces/EmergencyAddress.md)
 - [EmergencyAddressDto](interfaces/EmergencyAddressDto.md)
@@ -432,7 +432,7 @@
 - [MatchOption](interfaces/MatchOption.md)
 - [MatchOptions](interfaces/MatchOptions.md)
 - [Middleware](interfaces/Middleware.md)
-- [MissedEmail](interfaces/MissedEmail.md)
+- [MissedEmailDto](interfaces/MissedEmailDto.md)
 - [MissedEmailProjection](interfaces/MissedEmailProjection.md)
 - [NameServerRecord](interfaces/NameServerRecord.md)
 - [OrganizationInboxProjection](interfaces/OrganizationInboxProjection.md)
@@ -750,9 +750,9 @@
 - [EmailTextLinesResultFromJSONTyped](README.md#emailtextlinesresultfromjsontyped)
 - [EmailTextLinesResultToJSON](README.md#emailtextlinesresulttojson)
 - [EmailToJSON](README.md#emailtojson)
-- [EmailValidationRequestFromJSON](README.md#emailvalidationrequestfromjson)
-- [EmailValidationRequestFromJSONTyped](README.md#emailvalidationrequestfromjsontyped)
-- [EmailValidationRequestToJSON](README.md#emailvalidationrequesttojson)
+- [EmailValidationRequestDtoFromJSON](README.md#emailvalidationrequestdtofromjson)
+- [EmailValidationRequestDtoFromJSONTyped](README.md#emailvalidationrequestdtofromjsontyped)
+- [EmailValidationRequestDtoToJSON](README.md#emailvalidationrequestdtotojson)
 - [EmailVerificationResultFromJSON](README.md#emailverificationresultfromjson)
 - [EmailVerificationResultFromJSONTyped](README.md#emailverificationresultfromjsontyped)
 - [EmailVerificationResultToJSON](README.md#emailverificationresulttojson)
@@ -870,12 +870,12 @@
 - [MatchOptionsFromJSON](README.md#matchoptionsfromjson)
 - [MatchOptionsFromJSONTyped](README.md#matchoptionsfromjsontyped)
 - [MatchOptionsToJSON](README.md#matchoptionstojson)
-- [MissedEmailFromJSON](README.md#missedemailfromjson)
-- [MissedEmailFromJSONTyped](README.md#missedemailfromjsontyped)
+- [MissedEmailDtoFromJSON](README.md#missedemaildtofromjson)
+- [MissedEmailDtoFromJSONTyped](README.md#missedemaildtofromjsontyped)
+- [MissedEmailDtoToJSON](README.md#missedemaildtotojson)
 - [MissedEmailProjectionFromJSON](README.md#missedemailprojectionfromjson)
 - [MissedEmailProjectionFromJSONTyped](README.md#missedemailprojectionfromjsontyped)
 - [MissedEmailProjectionToJSON](README.md#missedemailprojectiontojson)
-- [MissedEmailToJSON](README.md#missedemailtojson)
 - [NameServerRecordFromJSON](README.md#nameserverrecordfromjson)
 - [NameServerRecordFromJSONTyped](README.md#nameserverrecordfromjsontyped)
 - [NameServerRecordToJSON](README.md#nameserverrecordtojson)
@@ -3713,9 +3713,9 @@ ___
 
 ___
 
-### <a id="emailvalidationrequestfromjson" name="emailvalidationrequestfromjson"></a> EmailValidationRequestFromJSON
+### <a id="emailvalidationrequestdtofromjson" name="emailvalidationrequestdtofromjson"></a> EmailValidationRequestDtoFromJSON
 
-▸ **EmailValidationRequestFromJSON**(`json`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+▸ **EmailValidationRequestDtoFromJSON**(`json`): [`EmailValidationRequestDto`](interfaces/EmailValidationRequestDto.md)
 
 #### Parameters
 
@@ -3725,13 +3725,13 @@ ___
 
 #### Returns
 
-[`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+[`EmailValidationRequestDto`](interfaces/EmailValidationRequestDto.md)
 
 ___
 
-### <a id="emailvalidationrequestfromjsontyped" name="emailvalidationrequestfromjsontyped"></a> EmailValidationRequestFromJSONTyped
+### <a id="emailvalidationrequestdtofromjsontyped" name="emailvalidationrequestdtofromjsontyped"></a> EmailValidationRequestDtoFromJSONTyped
 
-▸ **EmailValidationRequestFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+▸ **EmailValidationRequestDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`EmailValidationRequestDto`](interfaces/EmailValidationRequestDto.md)
 
 #### Parameters
 
@@ -3742,19 +3742,19 @@ ___
 
 #### Returns
 
-[`EmailValidationRequest`](interfaces/EmailValidationRequest.md)
+[`EmailValidationRequestDto`](interfaces/EmailValidationRequestDto.md)
 
 ___
 
-### <a id="emailvalidationrequesttojson" name="emailvalidationrequesttojson"></a> EmailValidationRequestToJSON
+### <a id="emailvalidationrequestdtotojson" name="emailvalidationrequestdtotojson"></a> EmailValidationRequestDtoToJSON
 
-▸ **EmailValidationRequestToJSON**(`value?`): `any`
+▸ **EmailValidationRequestDtoToJSON**(`value?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value?` | [`EmailValidationRequest`](interfaces/EmailValidationRequest.md) |
+| `value?` | [`EmailValidationRequestDto`](interfaces/EmailValidationRequestDto.md) |
 
 #### Returns
 
@@ -5673,9 +5673,9 @@ ___
 
 ___
 
-### <a id="missedemailfromjson" name="missedemailfromjson"></a> MissedEmailFromJSON
+### <a id="missedemaildtofromjson" name="missedemaildtofromjson"></a> MissedEmailDtoFromJSON
 
-▸ **MissedEmailFromJSON**(`json`): [`MissedEmail`](interfaces/MissedEmail.md)
+▸ **MissedEmailDtoFromJSON**(`json`): [`MissedEmailDto`](interfaces/MissedEmailDto.md)
 
 #### Parameters
 
@@ -5685,13 +5685,13 @@ ___
 
 #### Returns
 
-[`MissedEmail`](interfaces/MissedEmail.md)
+[`MissedEmailDto`](interfaces/MissedEmailDto.md)
 
 ___
 
-### <a id="missedemailfromjsontyped" name="missedemailfromjsontyped"></a> MissedEmailFromJSONTyped
+### <a id="missedemaildtofromjsontyped" name="missedemaildtofromjsontyped"></a> MissedEmailDtoFromJSONTyped
 
-▸ **MissedEmailFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmail`](interfaces/MissedEmail.md)
+▸ **MissedEmailDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`MissedEmailDto`](interfaces/MissedEmailDto.md)
 
 #### Parameters
 
@@ -5702,7 +5702,23 @@ ___
 
 #### Returns
 
-[`MissedEmail`](interfaces/MissedEmail.md)
+[`MissedEmailDto`](interfaces/MissedEmailDto.md)
+
+___
+
+### <a id="missedemaildtotojson" name="missedemaildtotojson"></a> MissedEmailDtoToJSON
+
+▸ **MissedEmailDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`MissedEmailDto`](interfaces/MissedEmailDto.md) |
+
+#### Returns
+
+`any`
 
 ___
 
@@ -5748,22 +5764,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`MissedEmailProjection`](interfaces/MissedEmailProjection.md) |
-
-#### Returns
-
-`any`
-
-___
-
-### <a id="missedemailtojson" name="missedemailtojson"></a> MissedEmailToJSON
-
-▸ **MissedEmailToJSON**(`value?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value?` | [`MissedEmail`](interfaces/MissedEmail.md) |
 
 #### Returns
 

@@ -24,19 +24,19 @@ export interface ExpirationDefaults {
    * @type {number}
    * @memberof ExpirationDefaults
    */
-  defaultExpirationMillis?: number;
+  defaultExpirationMillis?: number | null;
   /**
    *
    * @type {number}
    * @memberof ExpirationDefaults
    */
-  maxExpirationMillis?: number;
+  maxExpirationMillis?: number | null;
   /**
    *
    * @type {Date}
    * @memberof ExpirationDefaults
    */
-  defaultExpiresAt?: Date;
+  defaultExpiresAt?: Date | null;
   /**
    *
    * @type {boolean}
@@ -71,6 +71,8 @@ export function ExpirationDefaultsFromJSONTyped(
       : json['maxExpirationMillis'],
     defaultExpiresAt: !exists(json, 'defaultExpiresAt')
       ? undefined
+      : json['defaultExpiresAt'] === null
+      ? null
       : new Date(json['defaultExpiresAt']),
     canPermanentInbox: json['canPermanentInbox'],
     nextInboxAllowsPermanent: json['nextInboxAllowsPermanent'],
@@ -92,6 +94,8 @@ export function ExpirationDefaultsToJSON(
     defaultExpiresAt:
       value.defaultExpiresAt === undefined
         ? undefined
+        : value.defaultExpiresAt === null
+        ? null
         : value.defaultExpiresAt.toISOString(),
     canPermanentInbox: value.canPermanentInbox,
     nextInboxAllowsPermanent: value.nextInboxAllowsPermanent,

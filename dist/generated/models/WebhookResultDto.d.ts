@@ -20,7 +20,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    id?: string;
+    id?: string | null;
     /**
      *
      * @type {string}
@@ -32,7 +32,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
@@ -56,7 +56,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    redriveId?: string;
+    redriveId?: string | null;
     /**
      *
      * @type {string}
@@ -74,7 +74,7 @@ export interface WebhookResultDto {
      * @type {number}
      * @memberof WebhookResultDto
      */
-    responseStatus?: number;
+    responseStatus?: number | null;
     /**
      *
      * @type {number}
@@ -86,7 +86,7 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    responseBodyExtract?: string;
+    responseBodyExtract?: string | null;
     /**
      *
      * @type {string}

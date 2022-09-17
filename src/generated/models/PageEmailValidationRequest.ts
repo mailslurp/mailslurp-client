@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-  EmailValidationRequest,
-  EmailValidationRequestFromJSON,
-  EmailValidationRequestFromJSONTyped,
-  EmailValidationRequestToJSON,
+  EmailValidationRequestDto,
+  EmailValidationRequestDtoFromJSON,
+  EmailValidationRequestDtoFromJSONTyped,
+  EmailValidationRequestDtoToJSON,
   PageableObject,
   PageableObjectFromJSON,
   PageableObjectFromJSONTyped,
@@ -36,10 +36,10 @@ import {
 export interface PageEmailValidationRequest {
   /**
    *
-   * @type {Array<EmailValidationRequest>}
+   * @type {Array<EmailValidationRequestDto>}
    * @memberof PageEmailValidationRequest
    */
-  content?: Array<EmailValidationRequest>;
+  content?: Array<EmailValidationRequestDto>;
   /**
    *
    * @type {PageableObject}
@@ -57,13 +57,13 @@ export interface PageEmailValidationRequest {
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {boolean}
@@ -124,15 +124,15 @@ export function PageEmailValidationRequestFromJSONTyped(
   return {
     content: !exists(json, 'content')
       ? undefined
-      : (json['content'] as Array<any>).map(EmailValidationRequestFromJSON),
+      : (json['content'] as Array<any>).map(EmailValidationRequestDtoFromJSON),
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
@@ -158,11 +158,11 @@ export function PageEmailValidationRequestToJSON(
     content:
       value.content === undefined
         ? undefined
-        : (value.content as Array<any>).map(EmailValidationRequestToJSON),
+        : (value.content as Array<any>).map(EmailValidationRequestDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     size: value.size,
     number: value.number,

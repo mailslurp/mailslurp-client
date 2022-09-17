@@ -14,9 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
-  MissedEmail,
-  MissedEmailFromJSON,
-  MissedEmailToJSON,
+  MissedEmailDto,
+  MissedEmailDtoFromJSON,
+  MissedEmailDtoToJSON,
   PageMissedEmailProjection,
   PageMissedEmailProjectionFromJSON,
   PageMissedEmailProjectionToJSON,
@@ -218,7 +218,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   async getMissedEmailRaw(
     requestParameters: GetMissedEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<MissedEmail>> {
+  ): Promise<runtime.ApiResponse<MissedEmailDto>> {
     if (
       requestParameters.missedEmailId === null ||
       requestParameters.missedEmailId === undefined
@@ -251,7 +251,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      MissedEmailFromJSON(jsonValue)
+      MissedEmailDtoFromJSON(jsonValue)
     );
   }
 
@@ -262,7 +262,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   async getMissedEmail(
     requestParameters: GetMissedEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<MissedEmail> {
+  ): Promise<MissedEmailDto> {
     const response = await this.getMissedEmailRaw(
       requestParameters,
       initOverrides
@@ -313,7 +313,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   async waitForNthMissedEmailRaw(
     requestParameters: WaitForNthMissedEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<MissedEmail>> {
+  ): Promise<runtime.ApiResponse<MissedEmailDto>> {
     if (
       requestParameters.index === null ||
       requestParameters.index === undefined
@@ -365,7 +365,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      MissedEmailFromJSON(jsonValue)
+      MissedEmailDtoFromJSON(jsonValue)
     );
   }
 
@@ -376,7 +376,7 @@ export class MissedEmailControllerApi extends runtime.BaseAPI {
   async waitForNthMissedEmail(
     requestParameters: WaitForNthMissedEmailRequest,
     initOverrides?: RequestInit
-  ): Promise<MissedEmail> {
+  ): Promise<MissedEmailDto> {
     const response = await this.waitForNthMissedEmailRaw(
       requestParameters,
       initOverrides

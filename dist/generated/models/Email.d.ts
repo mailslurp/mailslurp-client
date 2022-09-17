@@ -39,7 +39,7 @@ export interface Email {
      * @type {string}
      * @memberof Email
      */
-    domainId?: string;
+    domainId?: string | null;
     /**
      * List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
      * @type {Array<string>}

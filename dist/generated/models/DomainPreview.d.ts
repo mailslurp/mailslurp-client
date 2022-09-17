@@ -32,7 +32,7 @@ export interface DomainPreview {
      * @type {string}
      * @memberof DomainPreview
      */
-    catchAllInboxId?: string;
+    catchAllInboxId?: string | null;
     /**
      *
      * @type {Date}

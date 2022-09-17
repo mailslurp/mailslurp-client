@@ -76,7 +76,7 @@ models/EmailPreviewUrls.ts
 models/EmailProjection.ts
 models/EmailRecipients.ts
 models/EmailTextLinesResult.ts
-models/EmailValidationRequest.ts
+models/EmailValidationRequestDto.ts
 models/EmailVerificationResult.ts
 models/EmergencyAddress.ts
 models/EmergencyAddressDto.ts
@@ -116,7 +116,7 @@ models/InlineObject1.ts
 models/JSONSchemaDto.ts
 models/MatchOption.ts
 models/MatchOptions.ts
-models/MissedEmail.ts
+models/MissedEmailDto.ts
 models/MissedEmailProjection.ts
 models/NameServerRecord.ts
 models/OrganizationInboxProjection.ts

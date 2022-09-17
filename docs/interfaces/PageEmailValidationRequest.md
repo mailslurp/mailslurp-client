@@ -27,7 +27,7 @@ Paginated email validation request records. Page index starts at zero. Projectio
 
 ### <a id="content" name="content"></a> content
 
-• `Optional` **content**: [`EmailValidationRequest`](EmailValidationRequest.md)[]
+• `Optional` **content**: [`EmailValidationRequestDto`](EmailValidationRequestDto.md)[]
 
 **`memberof`** PageEmailValidationRequest
 

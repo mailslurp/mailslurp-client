@@ -31,7 +31,11 @@ function TrackingPixelDtoFromJSONTyped(json, ignoreDiscriminator) {
         url: json['url'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-        seenAt: !(0, runtime_1.exists)(json, 'seenAt') ? undefined : new Date(json['seenAt']),
+        seenAt: !(0, runtime_1.exists)(json, 'seenAt')
+            ? undefined
+            : json['seenAt'] === null
+                ? null
+                : new Date(json['seenAt']),
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -51,7 +55,11 @@ function TrackingPixelDtoToJSON(value) {
         url: value.url,
         inboxId: value.inboxId,
         sentEmailId: value.sentEmailId,
-        seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
+        seenAt: value.seenAt === undefined
+            ? undefined
+            : value.seenAt === null
+                ? null
+                : value.seenAt.toISOString(),
         createdAt: value.createdAt.toISOString(),
     };
 }

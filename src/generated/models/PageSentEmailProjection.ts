@@ -65,6 +65,12 @@ export interface PageSentEmailProjection {
    */
   number: number;
   /**
+   * Total number of pages available
+   * @type {number}
+   * @memberof PageSentEmailProjection
+   */
+  totalPages: number;
+  /**
    * Number of items returned
    * @type {number}
    * @memberof PageSentEmailProjection
@@ -76,12 +82,6 @@ export interface PageSentEmailProjection {
    * @memberof PageSentEmailProjection
    */
   totalElements: number;
-  /**
-   * Total number of pages available
-   * @type {number}
-   * @memberof PageSentEmailProjection
-   */
-  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -129,9 +129,9 @@ export function PageSentEmailProjectionFromJSONTyped(
     total: !exists(json, 'total') ? undefined : json['total'],
     size: json['size'],
     number: json['number'],
+    totalPages: json['totalPages'],
     numberOfElements: json['numberOfElements'],
     totalElements: json['totalElements'],
-    totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
     first: !exists(json, 'first') ? undefined : json['first'],
@@ -154,9 +154,9 @@ export function PageSentEmailProjectionToJSON(
     total: value.total,
     size: value.size,
     number: value.number,
+    totalPages: value.totalPages,
     numberOfElements: value.numberOfElements,
     totalElements: value.totalElements,
-    totalPages: value.totalPages,
     last: value.last,
     sort: SortToJSON(value.sort),
     first: value.first,

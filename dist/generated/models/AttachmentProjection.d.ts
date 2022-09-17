@@ -20,13 +20,13 @@ export interface AttachmentProjection {
      * @type {string}
      * @memberof AttachmentProjection
      */
-    name?: string;
+    name?: string | null;
     /**
      * Content length of attachment in bytes
      * @type {number}
      * @memberof AttachmentProjection
      */
-    contentLength?: number;
+    contentLength?: number | null;
     /**
      *
      * @type {string}
@@ -56,7 +56,7 @@ export interface AttachmentProjection {
      * @type {string}
      * @memberof AttachmentProjection
      */
-    contentType?: string;
+    contentType?: string | null;
 }
 export declare function AttachmentProjectionFromJSON(json: any): AttachmentProjection;
 export declare function AttachmentProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentProjection;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Inbox data
+ * Inbox data preview element.
  * @export
  * @interface InboxPreview
  */
@@ -26,7 +26,7 @@ export interface InboxPreview {
      * @type {string}
      * @memberof InboxPreview
      */
-    domainId?: string;
+    domainId?: string | null;
     /**
      * The inbox's email address. Inbox projections and previews may not include the email address. To view the email address fetch the inbox entity directly. Send an email to this address and the inbox will receive and store it for you. Note the email address in MailSlurp match characters exactly and are case sensitive so `+123` additions are considered different addresses. To retrieve the email use the Inbox and Email Controller endpoints with the inbox ID.
      * @type {string}

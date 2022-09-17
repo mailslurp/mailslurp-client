@@ -38,85 +38,85 @@ export interface SentEmailDto {
      * @type {string}
      * @memberof SentEmailDto
      */
-    domainId?: string;
+    domainId?: string | null;
     /**
      * Recipients email was sent to
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    to?: Array<string>;
+    to?: Array<string> | null;
+    /**
+     * Sent from address
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    from?: string | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    from?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailDto
-     */
-    replyTo?: string;
+    replyTo?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    cc?: Array<string>;
+    cc?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    bcc?: Array<string>;
+    bcc?: Array<string> | null;
     /**
      * Array of IDs of attachments that were sent with this email
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    attachments?: Array<string>;
+    attachments?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * MD5 Hash
      * @type {string}
      * @memberof SentEmailDto
      */
-    bodyMD5Hash?: string;
+    bodyMD5Hash?: string | null;
     /**
-     *
+     * Sent email body
      * @type {string}
      * @memberof SentEmailDto
      */
-    body?: string;
+    body?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    toContacts?: Array<string>;
+    toContacts?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    toGroup?: string;
+    toGroup?: string | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    charset?: string;
+    charset?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof SentEmailDto
      */
-    isHTML?: boolean;
+    isHTML?: boolean | null;
     /**
      *
      * @type {Date}
@@ -128,31 +128,31 @@ export interface SentEmailDto {
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    pixelIds?: Array<string>;
+    pixelIds?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    messageId?: string;
+    messageId?: string | null;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailDto
      */
-    messageIds?: Array<string>;
+    messageIds?: Array<string> | null;
     /**
      *
      * @type {boolean}
      * @memberof SentEmailDto
      */
-    virtualSend?: boolean;
+    virtualSend?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailDto
      */
-    templateId?: string;
+    templateId?: string | null;
     /**
      *
      * @type {{ [key: string]: object; }}
@@ -160,7 +160,7 @@ export interface SentEmailDto {
      */
     templateVariables?: {
         [key: string]: object;
-    };
+    } | null;
     /**
      *
      * @type {boolean}

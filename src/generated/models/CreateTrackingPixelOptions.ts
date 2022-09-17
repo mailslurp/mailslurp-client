@@ -24,13 +24,13 @@ export interface CreateTrackingPixelOptions {
    * @type {string}
    * @memberof CreateTrackingPixelOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
    * @memberof CreateTrackingPixelOptions
    */
-  recipient?: string;
+  recipient?: string | null;
 }
 
 export function CreateTrackingPixelOptionsFromJSON(

@@ -24,7 +24,7 @@ function BouncedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        id: json['id'],
         userId: json['userId'],
         notificationType: json['notificationType'],
         sentToRecipients: !(0, runtime_1.exists)(json, 'sentToRecipients')

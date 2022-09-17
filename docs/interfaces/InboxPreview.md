@@ -1,6 +1,6 @@
 # Interface: InboxPreview
 
-Inbox data
+Inbox data preview element.
 
 **`export`**
 

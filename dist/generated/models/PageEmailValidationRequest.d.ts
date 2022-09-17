@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailValidationRequest, PageableObject, Sort } from './';
+import { EmailValidationRequestDto, PageableObject, Sort } from './';
 /**
  * Paginated email validation request records. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -18,10 +18,10 @@ import { EmailValidationRequest, PageableObject, Sort } from './';
 export interface PageEmailValidationRequest {
     /**
      *
-     * @type {Array<EmailValidationRequest>}
+     * @type {Array<EmailValidationRequestDto>}
      * @memberof PageEmailValidationRequest
      */
-    content?: Array<EmailValidationRequest>;
+    content?: Array<EmailValidationRequestDto>;
     /**
      *
      * @type {PageableObject}
@@ -39,13 +39,13 @@ export interface PageEmailValidationRequest {
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {boolean}

@@ -27,13 +27,13 @@ export interface WaitForConditions {
      * @type {number}
      * @memberof WaitForConditions
      */
-    count?: number;
+    count?: number | null;
     /**
      * Max time in milliseconds to wait between retries if a `timeout` is specified.
      * @type {number}
      * @memberof WaitForConditions
      */
-    delayTimeout?: number;
+    delayTimeout?: number | null;
     /**
      * Max time in milliseconds to retry the `waitFor` operation until conditions are met.
      * @type {number}
@@ -45,7 +45,7 @@ export interface WaitForConditions {
      * @type {boolean}
      * @memberof WaitForConditions
      */
-    unreadOnly?: boolean;
+    unreadOnly?: boolean | null;
     /**
      * How result size should be compared with the expected size. Exactly or at-least matching result?
      * @type {string}
@@ -57,7 +57,7 @@ export interface WaitForConditions {
      * @type {Array<MatchOption>}
      * @memberof WaitForConditions
      */
-    matches?: Array<MatchOption>;
+    matches?: Array<MatchOption> | null;
     /**
      * Direction to sort matching emails by created time
      * @type {string}
@@ -69,13 +69,13 @@ export interface WaitForConditions {
      * @type {Date}
      * @memberof WaitForConditions
      */
-    since?: Date;
+    since?: Date | null;
     /**
      * ISO Date Time latest time of email to consider. Filter for matching emails that were received before this date
      * @type {Date}
      * @memberof WaitForConditions
      */
-    before?: Date;
+    before?: Date | null;
 }
 /**
  * @export

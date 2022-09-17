@@ -39,13 +39,13 @@ export interface PageEmailProjection {
      * @type {number}
      * @memberof PageEmailProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {boolean}

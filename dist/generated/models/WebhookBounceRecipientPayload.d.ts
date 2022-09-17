@@ -38,7 +38,7 @@ export interface WebhookBounceRecipientPayload {
      * @type {string}
      * @memberof WebhookBounceRecipientPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
      * @type {string}

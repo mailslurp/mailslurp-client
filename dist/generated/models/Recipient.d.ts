@@ -32,7 +32,7 @@ export interface Recipient {
      * @type {string}
      * @memberof Recipient
      */
-    name?: string;
+    name?: string | null;
 }
 export declare function RecipientFromJSON(json: any): Recipient;
 export declare function RecipientFromJSONTyped(json: any, ignoreDiscriminator: boolean): Recipient;

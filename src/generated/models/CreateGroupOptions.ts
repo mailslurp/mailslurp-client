@@ -30,7 +30,7 @@ export interface CreateGroupOptions {
    * @type {string}
    * @memberof CreateGroupOptions
    */
-  description?: string;
+  description?: string | null;
 }
 
 export function CreateGroupOptionsFromJSON(json: any): CreateGroupOptions {

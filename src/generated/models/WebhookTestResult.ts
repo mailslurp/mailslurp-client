@@ -35,7 +35,7 @@ export interface WebhookTestResult {
    * @type {string}
    * @memberof WebhookTestResult
    */
-  message?: string;
+  message?: string | null;
   /**
    *
    * @type {WebhookTestResponse}

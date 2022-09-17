@@ -39,7 +39,7 @@ export interface WebhookNewEmailPayload {
      * @type {string}
      * @memberof WebhookNewEmailPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * Id of the inbox
      * @type {string}
@@ -51,7 +51,7 @@ export interface WebhookNewEmailPayload {
      * @type {string}
      * @memberof WebhookNewEmailPayload
      */
-    domainId?: string;
+    domainId?: string | null;
     /**
      * ID of the email that was received. Use this ID for fetching the email with the `EmailController`.
      * @type {string}
@@ -93,7 +93,7 @@ export interface WebhookNewEmailPayload {
      * @type {string}
      * @memberof WebhookNewEmailPayload
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * List of attachment meta data objects if attachments present
      * @type {Array<AttachmentMetaData>}

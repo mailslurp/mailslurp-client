@@ -24,7 +24,7 @@ export interface UpdateAliasOptions {
    * @type {string}
    * @memberof UpdateAliasOptions
    */
-  name?: string;
+  name?: string | null;
 }
 
 export function UpdateAliasOptionsFromJSON(json: any): UpdateAliasOptions {

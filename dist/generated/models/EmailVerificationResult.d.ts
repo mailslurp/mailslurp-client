@@ -44,7 +44,7 @@ export interface EmailVerificationResult {
      * @type {string}
      * @memberof EmailVerificationResult
      */
-    error?: string;
+    error?: string | null;
 }
 export declare function EmailVerificationResultFromJSON(json: any): EmailVerificationResult;
 export declare function EmailVerificationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailVerificationResult;

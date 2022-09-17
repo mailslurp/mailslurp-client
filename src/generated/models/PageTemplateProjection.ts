@@ -57,13 +57,13 @@ export interface PageTemplateProjection {
    * @type {number}
    * @memberof PageTemplateProjection
    */
-  totalElements?: number;
+  totalPages?: number;
   /**
    *
    * @type {number}
    * @memberof PageTemplateProjection
    */
-  totalPages?: number;
+  totalElements?: number;
   /**
    *
    * @type {boolean}
@@ -129,10 +129,10 @@ export function PageTemplateProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
+    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
@@ -161,8 +161,8 @@ export function PageTemplateProjectionToJSON(
         : (value.content as Array<any>).map(TemplateProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     size: value.size,
     number: value.number,

@@ -24,19 +24,19 @@ export interface BouncedRecipientDto {
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  id?: string;
+  id: string;
   /**
    *
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  userId?: string;
+  userId?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  sentEmailId?: string;
+  sentEmailId?: string | null;
   /**
    *
    * @type {string}
@@ -48,19 +48,19 @@ export interface BouncedRecipientDto {
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  diagnosticCode?: string;
+  diagnosticCode?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  action?: string;
+  action?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedRecipientDto
    */
-  status?: string;
+  status?: string | null;
   /**
    *
    * @type {Date}
@@ -81,7 +81,7 @@ export function BouncedRecipientDtoFromJSONTyped(
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     recipient: json['recipient'],

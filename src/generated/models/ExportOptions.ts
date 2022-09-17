@@ -30,31 +30,31 @@ export interface ExportOptions {
    * @type {boolean}
    * @memberof ExportOptions
    */
-  excludePreviouslyExported?: boolean;
+  excludePreviouslyExported?: boolean | null;
   /**
    *
    * @type {Date}
    * @memberof ExportOptions
    */
-  createdEarliestTime?: Date;
+  createdEarliestTime?: Date | null;
   /**
    *
    * @type {Date}
    * @memberof ExportOptions
    */
-  createdOldestTime?: Date;
+  createdOldestTime?: Date | null;
   /**
    *
    * @type {string}
    * @memberof ExportOptions
    */
-  filter?: string;
+  filter?: string | null;
   /**
    *
    * @type {string}
    * @memberof ExportOptions
    */
-  listSeparatorToken?: string;
+  listSeparatorToken?: string | null;
 }
 
 /**
@@ -84,9 +84,13 @@ export function ExportOptionsFromJSONTyped(
       : json['excludePreviouslyExported'],
     createdEarliestTime: !exists(json, 'createdEarliestTime')
       ? undefined
+      : json['createdEarliestTime'] === null
+      ? null
       : new Date(json['createdEarliestTime']),
     createdOldestTime: !exists(json, 'createdOldestTime')
       ? undefined
+      : json['createdOldestTime'] === null
+      ? null
       : new Date(json['createdOldestTime']),
     filter: !exists(json, 'filter') ? undefined : json['filter'],
     listSeparatorToken: !exists(json, 'listSeparatorToken')
@@ -108,10 +112,14 @@ export function ExportOptionsToJSON(value?: ExportOptions | null): any {
     createdEarliestTime:
       value.createdEarliestTime === undefined
         ? undefined
+        : value.createdEarliestTime === null
+        ? null
         : value.createdEarliestTime.toISOString(),
     createdOldestTime:
       value.createdOldestTime === undefined
         ? undefined
+        : value.createdOldestTime === null
+        ? null
         : value.createdOldestTime.toISOString(),
     filter: value.filter,
     listSeparatorToken: value.listSeparatorToken,

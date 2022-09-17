@@ -20,7 +20,7 @@ export interface InboxByNameResult {
      * @type {string}
      * @memberof InboxByNameResult
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {boolean}

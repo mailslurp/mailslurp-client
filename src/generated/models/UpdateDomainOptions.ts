@@ -24,7 +24,7 @@ export interface UpdateDomainOptions {
    * @type {string}
    * @memberof UpdateDomainOptions
    */
-  catchAllInboxId?: string;
+  catchAllInboxId?: string | null;
 }
 
 export function UpdateDomainOptionsFromJSON(json: any): UpdateDomainOptions {

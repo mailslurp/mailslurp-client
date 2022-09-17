@@ -39,10 +39,14 @@ function ExportOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['excludePreviouslyExported'],
         createdEarliestTime: !(0, runtime_1.exists)(json, 'createdEarliestTime')
             ? undefined
-            : new Date(json['createdEarliestTime']),
+            : json['createdEarliestTime'] === null
+                ? null
+                : new Date(json['createdEarliestTime']),
         createdOldestTime: !(0, runtime_1.exists)(json, 'createdOldestTime')
             ? undefined
-            : new Date(json['createdOldestTime']),
+            : json['createdOldestTime'] === null
+                ? null
+                : new Date(json['createdOldestTime']),
         filter: !(0, runtime_1.exists)(json, 'filter') ? undefined : json['filter'],
         listSeparatorToken: !(0, runtime_1.exists)(json, 'listSeparatorToken')
             ? undefined
@@ -62,10 +66,14 @@ function ExportOptionsToJSON(value) {
         excludePreviouslyExported: value.excludePreviouslyExported,
         createdEarliestTime: value.createdEarliestTime === undefined
             ? undefined
-            : value.createdEarliestTime.toISOString(),
+            : value.createdEarliestTime === null
+                ? null
+                : value.createdEarliestTime.toISOString(),
         createdOldestTime: value.createdOldestTime === undefined
             ? undefined
-            : value.createdOldestTime.toISOString(),
+            : value.createdOldestTime === null
+                ? null
+                : value.createdOldestTime.toISOString(),
         filter: value.filter,
         listSeparatorToken: value.listSeparatorToken,
     };

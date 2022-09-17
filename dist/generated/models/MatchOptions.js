@@ -27,10 +27,14 @@ function MatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         matches: !(0, runtime_1.exists)(json, 'matches')
             ? undefined
-            : json['matches'].map(_1.MatchOptionFromJSON),
+            : json['matches'] === null
+                ? null
+                : json['matches'].map(_1.MatchOptionFromJSON),
         conditions: !(0, runtime_1.exists)(json, 'conditions')
             ? undefined
-            : json['conditions'].map(_1.ConditionOptionFromJSON),
+            : json['conditions'] === null
+                ? null
+                : json['conditions'].map(_1.ConditionOptionFromJSON),
     };
 }
 exports.MatchOptionsFromJSONTyped = MatchOptionsFromJSONTyped;
@@ -44,10 +48,14 @@ function MatchOptionsToJSON(value) {
     return {
         matches: value.matches === undefined
             ? undefined
-            : value.matches.map(_1.MatchOptionToJSON),
+            : value.matches === null
+                ? null
+                : value.matches.map(_1.MatchOptionToJSON),
         conditions: value.conditions === undefined
             ? undefined
-            : value.conditions.map(_1.ConditionOptionToJSON),
+            : value.conditions === null
+                ? null
+                : value.conditions.map(_1.ConditionOptionToJSON),
     };
 }
 exports.MatchOptionsToJSON = MatchOptionsToJSON;

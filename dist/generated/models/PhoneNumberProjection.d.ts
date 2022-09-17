@@ -29,16 +29,16 @@ export interface PhoneNumberProjection {
     userId: string;
     /**
      *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    phoneNumber: string;
-    /**
-     *
      * @type {Date}
      * @memberof PhoneNumberProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    phoneNumber: string;
     /**
      *
      * @type {string}

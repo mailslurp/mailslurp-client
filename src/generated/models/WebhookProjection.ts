@@ -57,16 +57,16 @@ export interface WebhookProjection {
   createdAt: Date;
   /**
    *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  phoneNumberId?: string;
-  /**
-   *
    * @type {Date}
    * @memberof WebhookProjection
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  phoneNumberId?: string;
 }
 
 /**
@@ -104,10 +104,10 @@ export function WebhookProjectionFromJSONTyped(
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
-    updatedAt: new Date(json['updatedAt']),
   };
 }
 
@@ -125,7 +125,7 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     inboxId: value.inboxId,
     eventName: value.eventName,
     createdAt: value.createdAt.toISOString(),
-    phoneNumberId: value.phoneNumberId,
     updatedAt: value.updatedAt.toISOString(),
+    phoneNumberId: value.phoneNumberId,
   };
 }

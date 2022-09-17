@@ -141,7 +141,7 @@ ___
 
 ### <a id="getmissedemail" name="getmissedemail"></a> getMissedEmail
 
-▸ **getMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+▸ **getMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>
 
 List emails that were missed due to plan limits.
 Get MissedEmail
@@ -155,13 +155,13 @@ Get MissedEmail
 
 #### Returns
 
-`Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+`Promise`<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>
 
 ___
 
 ### <a id="getmissedemailraw" name="getmissedemailraw"></a> getMissedEmailRaw
 
-▸ **getMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+▸ **getMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>\>
 
 List emails that were missed due to plan limits.
 Get MissedEmail
@@ -175,7 +175,7 @@ Get MissedEmail
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>\>
 
 ___
 
@@ -240,7 +240,7 @@ ___
 
 ### <a id="waitfornthmissedemail" name="waitfornthmissedemail"></a> waitForNthMissedEmail
 
-▸ **waitForNthMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+▸ **waitForNthMissedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>
 
 Wait for 0 based index missed email
 Wait for Nth missed email
@@ -254,13 +254,13 @@ Wait for Nth missed email
 
 #### Returns
 
-`Promise`<[`MissedEmail`](../interfaces/MissedEmail.md)\>
+`Promise`<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>
 
 ___
 
 ### <a id="waitfornthmissedemailraw" name="waitfornthmissedemailraw"></a> waitForNthMissedEmailRaw
 
-▸ **waitForNthMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+▸ **waitForNthMissedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>\>
 
 Wait for 0 based index missed email
 Wait for Nth missed email
@@ -274,7 +274,7 @@ Wait for Nth missed email
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmail`](../interfaces/MissedEmail.md)\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`MissedEmailDto`](../interfaces/MissedEmailDto.md)\>\>
 
 ___
 

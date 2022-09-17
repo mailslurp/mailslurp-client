@@ -17,7 +17,7 @@ import { UserInfoDto, UserInfoDtoFromJSON, UserInfoDtoToJSON } from '../models';
 
 export interface GetJsonPropertyAsStringRequest {
   property: string;
-  body: object;
+  body: object | null;
 }
 
 /**

@@ -39,13 +39,13 @@ export interface PageThreadProjection {
      * @type {number}
      * @memberof PageThreadProjection
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageThreadProjection
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {boolean}

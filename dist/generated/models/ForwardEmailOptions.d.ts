@@ -26,31 +26,31 @@ export interface ForwardEmailOptions {
      * @type {string}
      * @memberof ForwardEmailOptions
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * Optional cc recipients
      * @type {Array<string>}
      * @memberof ForwardEmailOptions
      */
-    cc?: Array<string>;
+    cc?: Array<string> | null;
     /**
      * Optional bcc recipients
      * @type {Array<string>}
      * @memberof ForwardEmailOptions
      */
-    bcc?: Array<string>;
+    bcc?: Array<string> | null;
     /**
      * Optional from override
      * @type {string}
      * @memberof ForwardEmailOptions
      */
-    from?: string;
+    from?: string | null;
     /**
      * Optionally use inbox name as display name for sender email address
      * @type {boolean}
      * @memberof ForwardEmailOptions
      */
-    useInboxName?: boolean;
+    useInboxName?: boolean | null;
 }
 export declare function ForwardEmailOptionsFromJSON(json: any): ForwardEmailOptions;
 export declare function ForwardEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ForwardEmailOptions;

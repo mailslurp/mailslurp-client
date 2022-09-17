@@ -53,16 +53,16 @@ export interface WebhookProjection {
     createdAt: Date;
     /**
      *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    phoneNumberId?: string;
-    /**
-     *
      * @type {Date}
      * @memberof WebhookProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    phoneNumberId?: string;
 }
 /**
  * @export

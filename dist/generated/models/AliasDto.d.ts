@@ -32,7 +32,7 @@ export interface AliasDto {
      * @type {string}
      * @memberof AliasDto
      */
-    maskedEmailAddress?: string;
+    maskedEmailAddress?: string | null;
     /**
      *
      * @type {string}
@@ -50,13 +50,13 @@ export interface AliasDto {
      * @type {string}
      * @memberof AliasDto
      */
-    name?: string;
+    name?: string | null;
     /**
      * If alias will generate response threads or not when email are received by it
      * @type {boolean}
      * @memberof AliasDto
      */
-    useThreads?: boolean;
+    useThreads?: boolean | null;
     /**
      * Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
      * @type {boolean}
@@ -68,13 +68,13 @@ export interface AliasDto {
      * @type {Date}
      * @memberof AliasDto
      */
-    createdAt?: Date;
+    createdAt?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof AliasDto
      */
-    updatedAt?: Date;
+    updatedAt?: Date | null;
 }
 export declare function AliasDtoFromJSON(json: any): AliasDto;
 export declare function AliasDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasDto;

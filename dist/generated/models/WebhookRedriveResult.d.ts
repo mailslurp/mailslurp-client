@@ -32,7 +32,7 @@ export interface WebhookRedriveResult {
      * @type {string}
      * @memberof WebhookRedriveResult
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function WebhookRedriveResultFromJSON(json: any): WebhookRedriveResult;
 export declare function WebhookRedriveResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookRedriveResult;

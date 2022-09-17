@@ -60,6 +60,8 @@ ___
 
 • `Optional` **body**: `string`
 
+Sent email body
+
 **`memberof`** SentEmailDto
 
 ___
@@ -103,6 +105,8 @@ ___
 ### <a id="from" name="from"></a> from
 
 • `Optional` **from**: `string`
+
+Sent from address
 
 **`memberof`** SentEmailDto
 

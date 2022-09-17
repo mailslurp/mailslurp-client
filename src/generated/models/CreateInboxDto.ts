@@ -24,7 +24,7 @@ export interface CreateInboxDto {
    * @type {string}
    * @memberof CreateInboxDto
    */
-  emailAddress?: string;
+  emailAddress?: string | null;
   /**
    * Optional name of the inbox. Displayed in the dashboard for easier search and used as the sender name when sending emails.
    * @type {string}

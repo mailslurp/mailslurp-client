@@ -32,7 +32,7 @@ export interface WebhookNewAttachmentPayload {
      * @type {string}
      * @memberof WebhookNewAttachmentPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * Name of the event type webhook is being triggered for.
      * @type {string}

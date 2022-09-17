@@ -50,7 +50,7 @@ export interface CreateContactOptions {
      * @type {object}
      * @memberof CreateContactOptions
      */
-    metaData?: object;
+    metaData?: object | null;
     /**
      * Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
      * @type {boolean}

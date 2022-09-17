@@ -42,7 +42,7 @@ export interface WebhookBouncePayload {
    * @type {string}
    * @memberof WebhookBouncePayload
    */
-  webhookName?: string;
+  webhookName?: string | null;
   /**
    * ID of the bounce email record. Use the ID with the bounce controller to view more information
    * @type {string}
@@ -54,7 +54,7 @@ export interface WebhookBouncePayload {
    * @type {Array<string>}
    * @memberof WebhookBouncePayload
    */
-  sentToRecipients?: Array<string>;
+  sentToRecipients?: Array<string> | null;
   /**
    * Sender causing bounce
    * @type {string}
@@ -66,7 +66,7 @@ export interface WebhookBouncePayload {
    * @type {Array<string>}
    * @memberof WebhookBouncePayload
    */
-  bounceRecipients?: Array<string>;
+  bounceRecipients?: Array<string> | null;
 }
 
 /**

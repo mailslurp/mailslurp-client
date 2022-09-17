@@ -27,13 +27,13 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        userId: json['userId'],
         inboxId: json['inboxId'],
-        to: json['to'],
+        userId: json['userId'],
         createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
+        to: json['to'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        updatedAt: new Date(json['updatedAt']),
         aliasId: json['aliasId'],
     };
 }
@@ -49,13 +49,13 @@ function ThreadProjectionToJSON(value) {
         name: value.name,
         id: value.id,
         subject: value.subject,
-        userId: value.userId,
         inboxId: value.inboxId,
-        to: value.to,
+        userId: value.userId,
         createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
+        to: value.to,
         bcc: value.bcc,
         cc: value.cc,
-        updatedAt: value.updatedAt.toISOString(),
         aliasId: value.aliasId,
     };
 }

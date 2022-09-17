@@ -36,7 +36,7 @@ export interface TrackingPixelDto {
    * @type {string}
    * @memberof TrackingPixelDto
    */
-  recipient?: string;
+  recipient?: string | null;
   /**
    *
    * @type {string}
@@ -54,19 +54,19 @@ export interface TrackingPixelDto {
    * @type {string}
    * @memberof TrackingPixelDto
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {string}
    * @memberof TrackingPixelDto
    */
-  sentEmailId?: string;
+  sentEmailId?: string | null;
   /**
    *
    * @type {Date}
    * @memberof TrackingPixelDto
    */
-  seenAt?: Date;
+  seenAt?: Date | null;
   /**
    *
    * @type {Date}
@@ -94,7 +94,11 @@ export function TrackingPixelDtoFromJSONTyped(
     url: json['url'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-    seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
+    seenAt: !exists(json, 'seenAt')
+      ? undefined
+      : json['seenAt'] === null
+      ? null
+      : new Date(json['seenAt']),
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -114,7 +118,12 @@ export function TrackingPixelDtoToJSON(value?: TrackingPixelDto | null): any {
     url: value.url,
     inboxId: value.inboxId,
     sentEmailId: value.sentEmailId,
-    seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
+    seenAt:
+      value.seenAt === undefined
+        ? undefined
+        : value.seenAt === null
+        ? null
+        : value.seenAt.toISOString(),
     createdAt: value.createdAt.toISOString(),
   };
 }

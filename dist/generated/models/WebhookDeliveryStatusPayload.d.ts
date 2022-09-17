@@ -38,7 +38,7 @@ export interface WebhookDeliveryStatusPayload {
      * @type {string}
      * @memberof WebhookDeliveryStatusPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * ID of delivery status
      * @type {string}

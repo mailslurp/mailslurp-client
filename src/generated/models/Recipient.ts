@@ -36,7 +36,7 @@ export interface Recipient {
    * @type {string}
    * @memberof Recipient
    */
-  name?: string;
+  name?: string | null;
 }
 
 export function RecipientFromJSON(json: any): Recipient {

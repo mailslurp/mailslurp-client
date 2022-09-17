@@ -42,7 +42,7 @@ export interface WebhookTestRequest {
    * @type {string}
    * @memberof WebhookTestRequest
    */
-  payload?: string;
+  payload?: string | null;
 }
 
 /**

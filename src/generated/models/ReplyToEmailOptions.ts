@@ -36,37 +36,37 @@ export interface ReplyToEmailOptions {
    * @type {string}
    * @memberof ReplyToEmailOptions
    */
-  from?: string;
+  from?: string | null;
   /**
    * The replyTo header that should be used. Optional
    * @type {string}
    * @memberof ReplyToEmailOptions
    */
-  replyTo?: string;
+  replyTo?: string | null;
   /**
    * The charset that your message should be sent with. Optional. Default is UTF-8
    * @type {string}
    * @memberof ReplyToEmailOptions
    */
-  charset?: string;
+  charset?: string | null;
   /**
    * List of uploaded attachments to send with the reply. Optional.
    * @type {Array<string>}
    * @memberof ReplyToEmailOptions
    */
-  attachments?: Array<string>;
+  attachments?: Array<string> | null;
   /**
    * Template variables if using a template
    * @type {{ [key: string]: object; }}
    * @memberof ReplyToEmailOptions
    */
-  templateVariables?: { [key: string]: object };
+  templateVariables?: { [key: string]: object } | null;
   /**
    * Template ID to use instead of body. Will use template variable map to fill defined variable slots.
    * @type {string}
    * @memberof ReplyToEmailOptions
    */
-  template?: string;
+  template?: string | null;
   /**
    * How an email should be sent based on its recipients
    * @type {string}
@@ -78,7 +78,7 @@ export interface ReplyToEmailOptions {
    * @type {boolean}
    * @memberof ReplyToEmailOptions
    */
-  useInboxName?: boolean;
+  useInboxName?: boolean | null;
   /**
    *
    * @type {boolean}

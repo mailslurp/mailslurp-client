@@ -38,29 +38,35 @@ export interface ThreadProjection {
    */
   subject?: string;
   /**
-   * User ID
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  userId: string;
-  /**
    * Inbox ID
    * @type {string}
    * @memberof ThreadProjection
    */
   inboxId: string;
   /**
-   * To recipients
-   * @type {Array<string>}
+   * User ID
+   * @type {string}
    * @memberof ThreadProjection
    */
-  to: Array<string>;
+  userId: string;
   /**
    * Created at DateTime
    * @type {Date}
    * @memberof ThreadProjection
    */
   createdAt: Date;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof ThreadProjection
+   */
+  updatedAt: Date;
+  /**
+   * To recipients
+   * @type {Array<string>}
+   * @memberof ThreadProjection
+   */
+  to: Array<string>;
   /**
    * BCC recipients
    * @type {Array<string>}
@@ -73,12 +79,6 @@ export interface ThreadProjection {
    * @memberof ThreadProjection
    */
   cc?: Array<string>;
-  /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  updatedAt: Date;
   /**
    * Alias ID
    * @type {string}
@@ -102,13 +102,13 @@ export function ThreadProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    userId: json['userId'],
     inboxId: json['inboxId'],
-    to: json['to'],
+    userId: json['userId'],
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
+    to: json['to'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
-    updatedAt: new Date(json['updatedAt']),
     aliasId: json['aliasId'],
   };
 }
@@ -124,13 +124,13 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     name: value.name,
     id: value.id,
     subject: value.subject,
-    userId: value.userId,
     inboxId: value.inboxId,
-    to: value.to,
+    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
+    to: value.to,
     bcc: value.bcc,
     cc: value.cc,
-    updatedAt: value.updatedAt.toISOString(),
     aliasId: value.aliasId,
   };
 }

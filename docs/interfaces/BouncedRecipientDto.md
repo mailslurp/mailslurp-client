@@ -47,7 +47,7 @@ ___
 
 ### <a id="id" name="id"></a> id
 
-• `Optional` **id**: `string`
+• **id**: `string`
 
 **`memberof`** BouncedRecipientDto
 

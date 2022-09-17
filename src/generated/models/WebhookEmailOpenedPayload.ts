@@ -42,7 +42,7 @@ export interface WebhookEmailOpenedPayload {
    * @type {string}
    * @memberof WebhookEmailOpenedPayload
    */
-  webhookName?: string;
+  webhookName?: string | null;
   /**
    * Id of the inbox
    * @type {string}

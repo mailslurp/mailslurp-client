@@ -13,7 +13,7 @@ import * as runtime from '../runtime';
 import { UserInfoDto } from '../models';
 export interface GetJsonPropertyAsStringRequest {
     property: string;
-    body: object;
+    body: object | null;
 }
 /**
  *

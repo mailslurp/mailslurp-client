@@ -36,7 +36,7 @@ export interface GroupDto {
    * @type {string}
    * @memberof GroupDto
    */
-  description?: string;
+  description?: string | null;
   /**
    *
    * @type {Date}

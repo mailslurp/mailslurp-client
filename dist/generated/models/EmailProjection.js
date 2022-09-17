@@ -29,15 +29,15 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         inboxId: json['inboxId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        to: json['to'],
         createdAt: new Date(json['createdAt']),
+        to: json['to'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         read: json['read'],
+        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         teamAccess: json['teamAccess'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     };
 }
 exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
@@ -54,15 +54,15 @@ function EmailProjectionToJSON(value) {
         subject: value.subject,
         inboxId: value.inboxId,
         attachments: value.attachments,
-        to: value.to,
         createdAt: value.createdAt.toISOString(),
+        to: value.to,
         bcc: value.bcc,
         cc: value.cc,
         domainId: value.domainId,
         read: value.read,
+        bodyExcerpt: value.bodyExcerpt,
         teamAccess: value.teamAccess,
         bodyMD5Hash: value.bodyMD5Hash,
-        bodyExcerpt: value.bodyExcerpt,
     };
 }
 exports.EmailProjectionToJSON = EmailProjectionToJSON;

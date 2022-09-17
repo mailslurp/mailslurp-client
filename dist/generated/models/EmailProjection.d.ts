@@ -26,13 +26,13 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    from?: string;
+    from?: string | null;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
-    subject?: string;
+    subject?: string | null;
     /**
      *
      * @type {string}
@@ -44,13 +44,7 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    attachments?: Array<string>;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    to: Array<string>;
+    attachments?: Array<string> | null;
     /**
      *
      * @type {Date}
@@ -62,25 +56,37 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    bcc?: Array<string>;
+    to: Array<string>;
     /**
      *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    cc?: Array<string>;
+    bcc?: Array<string> | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    cc?: Array<string> | null;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
-    domainId?: string;
+    domainId?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof EmailProjection
      */
     read: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    bodyExcerpt?: string | null;
     /**
      *
      * @type {boolean}
@@ -92,13 +98,7 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    bodyMD5Hash?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyExcerpt?: string;
+    bodyMD5Hash?: string | null;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

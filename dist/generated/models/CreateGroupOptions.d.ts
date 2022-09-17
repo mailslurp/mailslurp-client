@@ -26,7 +26,7 @@ export interface CreateGroupOptions {
      * @type {string}
      * @memberof CreateGroupOptions
      */
-    description?: string;
+    description?: string | null;
 }
 export declare function CreateGroupOptionsFromJSON(json: any): CreateGroupOptions;
 export declare function CreateGroupOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateGroupOptions;

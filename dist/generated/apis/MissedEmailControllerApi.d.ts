@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { MissedEmail, PageMissedEmailProjection, PageUnknownMissedEmailProjection } from '../models';
+import { MissedEmailDto, PageMissedEmailProjection, PageUnknownMissedEmailProjection } from '../models';
 export interface GetAllMissedEmailsRequest {
     page?: number;
     size?: number;
@@ -65,12 +65,12 @@ export declare class MissedEmailControllerApi extends runtime.BaseAPI {
      * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
-    getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmail>>;
+    getMissedEmailRaw(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>>;
     /**
      * List emails that were missed due to plan limits.
      * Get MissedEmail
      */
-    getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmail>;
+    getMissedEmail(requestParameters: GetMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto>;
     /**
      * If emails were missed due to a plan limit they are saved as missed emails. If support team enables the canRestore flag these emails can be reload into your account using this method.
      * Restore missed emails
@@ -85,12 +85,12 @@ export declare class MissedEmailControllerApi extends runtime.BaseAPI {
      * Wait for 0 based index missed email
      * Wait for Nth missed email
      */
-    waitForNthMissedEmailRaw(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmail>>;
+    waitForNthMissedEmailRaw(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<MissedEmailDto>>;
     /**
      * Wait for 0 based index missed email
      * Wait for Nth missed email
      */
-    waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmail>;
+    waitForNthMissedEmail(requestParameters: WaitForNthMissedEmailRequest, initOverrides?: RequestInit): Promise<MissedEmailDto>;
 }
 /**
  * @export

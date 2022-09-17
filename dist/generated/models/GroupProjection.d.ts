@@ -32,7 +32,7 @@ export interface GroupProjection {
      * @type {string}
      * @memberof GroupProjection
      */
-    description?: string;
+    description?: string | null;
     /**
      *
      * @type {Date}

@@ -32,7 +32,7 @@ export interface WebhookNewContactPayload {
      * @type {string}
      * @memberof WebhookNewContactPayload
      */
-    webhookName?: string;
+    webhookName?: string | null;
     /**
      * Name of the event type webhook is being triggered for.
      * @type {string}
@@ -92,7 +92,7 @@ export interface WebhookNewContactPayload {
      * @type {object}
      * @memberof WebhookNewContactPayload
      */
-    metaData?: object;
+    metaData?: object | null;
     /**
      * Has contact opted out of emails
      * @type {boolean}

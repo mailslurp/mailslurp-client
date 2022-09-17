@@ -30,13 +30,13 @@ export interface CreateAliasOptions {
    * @type {string}
    * @memberof CreateAliasOptions
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    * Optional name for alias
    * @type {string}
    * @memberof CreateAliasOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    * Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
    * @type {boolean}

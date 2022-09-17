@@ -32,7 +32,7 @@ export interface TrackingPixelDto {
      * @type {string}
      * @memberof TrackingPixelDto
      */
-    recipient?: string;
+    recipient?: string | null;
     /**
      *
      * @type {string}
@@ -50,19 +50,19 @@ export interface TrackingPixelDto {
      * @type {string}
      * @memberof TrackingPixelDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
      * @memberof TrackingPixelDto
      */
-    sentEmailId?: string;
+    sentEmailId?: string | null;
     /**
      *
      * @type {Date}
      * @memberof TrackingPixelDto
      */
-    seenAt?: Date;
+    seenAt?: Date | null;
     /**
      *
      * @type {Date}

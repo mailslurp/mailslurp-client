@@ -35,16 +35,16 @@ export interface SmsProjection {
     userId: string;
     /**
      *
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    phoneNumber: string;
-    /**
-     *
      * @type {Date}
      * @memberof SmsProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    phoneNumber: string;
     /**
      *
      * @type {string}

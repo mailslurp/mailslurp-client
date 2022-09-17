@@ -16,120 +16,120 @@ import { exists, mapValues } from '../runtime';
 /**
  * Missed email
  * @export
- * @interface MissedEmail
+ * @interface MissedEmailDto
  */
-export interface MissedEmail {
+export interface MissedEmailDto {
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  id?: string;
+  id: string;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  userId?: string;
+  userId?: string | null;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  bodyExcerpt?: string;
+  bodyExcerpt?: string | null;
   /**
    *
    * @type {number}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   attachmentCount: number;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  from?: string;
+  from?: string | null;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  rawUrl?: string;
+  rawUrl?: string | null;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  rawKey?: string;
+  rawKey?: string | null;
   /**
    *
    * @type {string}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  rawBucket?: string;
+  rawBucket?: string | null;
   /**
    *
    * @type {boolean}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
-  canRestore?: boolean;
+  canRestore?: boolean | null;
   /**
    *
    * @type {Array<string>}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   to: Array<string>;
   /**
    *
    * @type {Array<string>}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   cc: Array<string>;
   /**
    *
    * @type {Array<string>}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   bcc: Array<string>;
   /**
    *
    * @type {Array<string>}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   inboxIds: Array<string>;
   /**
    *
    * @type {Date}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   createdAt: Date;
   /**
    *
    * @type {Date}
-   * @memberof MissedEmail
+   * @memberof MissedEmailDto
    */
   updatedAt: Date;
 }
 
-export function MissedEmailFromJSON(json: any): MissedEmail {
-  return MissedEmailFromJSONTyped(json, false);
+export function MissedEmailDtoFromJSON(json: any): MissedEmailDto {
+  return MissedEmailDtoFromJSONTyped(json, false);
 }
 
-export function MissedEmailFromJSONTyped(
+export function MissedEmailDtoFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean
-): MissedEmail {
+): MissedEmailDto {
   if (json === undefined || json === null) {
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
@@ -148,7 +148,7 @@ export function MissedEmailFromJSONTyped(
   };
 }
 
-export function MissedEmailToJSON(value?: MissedEmail | null): any {
+export function MissedEmailDtoToJSON(value?: MissedEmailDto | null): any {
   if (value === undefined) {
     return undefined;
   }

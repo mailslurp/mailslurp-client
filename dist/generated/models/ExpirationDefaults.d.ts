@@ -20,19 +20,19 @@ export interface ExpirationDefaults {
      * @type {number}
      * @memberof ExpirationDefaults
      */
-    defaultExpirationMillis?: number;
+    defaultExpirationMillis?: number | null;
     /**
      *
      * @type {number}
      * @memberof ExpirationDefaults
      */
-    maxExpirationMillis?: number;
+    maxExpirationMillis?: number | null;
     /**
      *
      * @type {Date}
      * @memberof ExpirationDefaults
      */
-    defaultExpiresAt?: Date;
+    defaultExpiresAt?: Date | null;
     /**
      *
      * @type {boolean}

@@ -30,25 +30,25 @@ export interface ContactDto {
    * @type {string}
    * @memberof ContactDto
    */
-  groupId?: string;
+  groupId?: string | null;
   /**
    *
    * @type {string}
    * @memberof ContactDto
    */
-  firstName?: string;
+  firstName?: string | null;
   /**
    *
    * @type {string}
    * @memberof ContactDto
    */
-  lastName?: string;
+  lastName?: string | null;
   /**
    *
    * @type {string}
    * @memberof ContactDto
    */
-  company?: string;
+  company?: string | null;
   /**
    *
    * @type {Array<string>}
@@ -60,7 +60,7 @@ export interface ContactDto {
    * @type {string}
    * @memberof ContactDto
    */
-  primaryEmailAddress?: string;
+  primaryEmailAddress?: string | null;
   /**
    *
    * @type {Array<string>}
@@ -72,13 +72,13 @@ export interface ContactDto {
    * @type {object}
    * @memberof ContactDto
    */
-  metaData?: object;
+  metaData?: object | null;
   /**
    *
    * @type {boolean}
    * @memberof ContactDto
    */
-  optOut?: boolean;
+  optOut?: boolean | null;
   /**
    *
    * @type {Date}

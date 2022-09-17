@@ -37,7 +37,7 @@ export interface WaitForSmsConditions {
    * @type {number}
    * @memberof WaitForSmsConditions
    */
-  limit?: number;
+  limit?: number | null;
   /**
    * Number of results that should match conditions. Either exactly or at least this amount based on the `countType`. If count condition is not met and the timeout has not been reached the `waitFor` method will retry the operation.
    * @type {number}
@@ -49,7 +49,7 @@ export interface WaitForSmsConditions {
    * @type {number}
    * @memberof WaitForSmsConditions
    */
-  delayTimeout?: number;
+  delayTimeout?: number | null;
   /**
    * Max time in milliseconds to retry the `waitFor` operation until conditions are met.
    * @type {number}
@@ -61,7 +61,7 @@ export interface WaitForSmsConditions {
    * @type {boolean}
    * @memberof WaitForSmsConditions
    */
-  unreadOnly?: boolean;
+  unreadOnly?: boolean | null;
   /**
    * How result size should be compared with the expected size. Exactly or at-least matching result?
    * @type {string}
@@ -73,7 +73,7 @@ export interface WaitForSmsConditions {
    * @type {Array<SmsMatchOption>}
    * @memberof WaitForSmsConditions
    */
-  matches?: Array<SmsMatchOption>;
+  matches?: Array<SmsMatchOption> | null;
   /**
    * Direction to sort matching SMSs by created time
    * @type {string}
@@ -85,13 +85,13 @@ export interface WaitForSmsConditions {
    * @type {Date}
    * @memberof WaitForSmsConditions
    */
-  since?: Date;
+  since?: Date | null;
   /**
    * ISO Date Time latest time of SMS to consider. Filter for matching SMSs that were received before this date
    * @type {Date}
    * @memberof WaitForSmsConditions
    */
-  before?: Date;
+  before?: Date | null;
 }
 
 /**
@@ -134,12 +134,22 @@ export function WaitForSmsConditionsFromJSONTyped(
     countType: !exists(json, 'countType') ? undefined : json['countType'],
     matches: !exists(json, 'matches')
       ? undefined
+      : json['matches'] === null
+      ? null
       : (json['matches'] as Array<any>).map(SmsMatchOptionFromJSON),
     sortDirection: !exists(json, 'sortDirection')
       ? undefined
       : json['sortDirection'],
-    since: !exists(json, 'since') ? undefined : new Date(json['since']),
-    before: !exists(json, 'before') ? undefined : new Date(json['before']),
+    since: !exists(json, 'since')
+      ? undefined
+      : json['since'] === null
+      ? null
+      : new Date(json['since']),
+    before: !exists(json, 'before')
+      ? undefined
+      : json['before'] === null
+      ? null
+      : new Date(json['before']),
   };
 }
 
@@ -163,9 +173,21 @@ export function WaitForSmsConditionsToJSON(
     matches:
       value.matches === undefined
         ? undefined
+        : value.matches === null
+        ? null
         : (value.matches as Array<any>).map(SmsMatchOptionToJSON),
     sortDirection: value.sortDirection,
-    since: value.since === undefined ? undefined : value.since.toISOString(),
-    before: value.before === undefined ? undefined : value.before.toISOString(),
+    since:
+      value.since === undefined
+        ? undefined
+        : value.since === null
+        ? null
+        : value.since.toISOString(),
+    before:
+      value.before === undefined
+        ? undefined
+        : value.before === null
+        ? null
+        : value.before.toISOString(),
   };
 }

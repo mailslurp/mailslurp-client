@@ -26,31 +26,31 @@ export interface ExportOptions {
      * @type {boolean}
      * @memberof ExportOptions
      */
-    excludePreviouslyExported?: boolean;
+    excludePreviouslyExported?: boolean | null;
     /**
      *
      * @type {Date}
      * @memberof ExportOptions
      */
-    createdEarliestTime?: Date;
+    createdEarliestTime?: Date | null;
     /**
      *
      * @type {Date}
      * @memberof ExportOptions
      */
-    createdOldestTime?: Date;
+    createdOldestTime?: Date | null;
     /**
      *
      * @type {string}
      * @memberof ExportOptions
      */
-    filter?: string;
+    filter?: string | null;
     /**
      *
      * @type {string}
      * @memberof ExportOptions
      */
-    listSeparatorToken?: string;
+    listSeparatorToken?: string | null;
 }
 /**
  * @export

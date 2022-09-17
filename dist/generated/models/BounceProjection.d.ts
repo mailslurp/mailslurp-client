@@ -32,7 +32,7 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    subject?: string;
+    subject?: string | null;
     /**
      *
      * @type {Date}
@@ -44,13 +44,13 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceMta?: string;
+    bounceMta?: string | null;
     /**
      *
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceType?: string;
+    bounceType?: string | null;
 }
 export declare function BounceProjectionFromJSON(json: any): BounceProjection;
 export declare function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection;

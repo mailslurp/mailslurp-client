@@ -37,13 +37,13 @@ export interface WaitForConditions {
    * @type {number}
    * @memberof WaitForConditions
    */
-  count?: number;
+  count?: number | null;
   /**
    * Max time in milliseconds to wait between retries if a `timeout` is specified.
    * @type {number}
    * @memberof WaitForConditions
    */
-  delayTimeout?: number;
+  delayTimeout?: number | null;
   /**
    * Max time in milliseconds to retry the `waitFor` operation until conditions are met.
    * @type {number}
@@ -55,7 +55,7 @@ export interface WaitForConditions {
    * @type {boolean}
    * @memberof WaitForConditions
    */
-  unreadOnly?: boolean;
+  unreadOnly?: boolean | null;
   /**
    * How result size should be compared with the expected size. Exactly or at-least matching result?
    * @type {string}
@@ -67,7 +67,7 @@ export interface WaitForConditions {
    * @type {Array<MatchOption>}
    * @memberof WaitForConditions
    */
-  matches?: Array<MatchOption>;
+  matches?: Array<MatchOption> | null;
   /**
    * Direction to sort matching emails by created time
    * @type {string}
@@ -79,13 +79,13 @@ export interface WaitForConditions {
    * @type {Date}
    * @memberof WaitForConditions
    */
-  since?: Date;
+  since?: Date | null;
   /**
    * ISO Date Time latest time of email to consider. Filter for matching emails that were received before this date
    * @type {Date}
    * @memberof WaitForConditions
    */
-  before?: Date;
+  before?: Date | null;
 }
 
 /**
@@ -127,12 +127,22 @@ export function WaitForConditionsFromJSONTyped(
     countType: !exists(json, 'countType') ? undefined : json['countType'],
     matches: !exists(json, 'matches')
       ? undefined
+      : json['matches'] === null
+      ? null
       : (json['matches'] as Array<any>).map(MatchOptionFromJSON),
     sortDirection: !exists(json, 'sortDirection')
       ? undefined
       : json['sortDirection'],
-    since: !exists(json, 'since') ? undefined : new Date(json['since']),
-    before: !exists(json, 'before') ? undefined : new Date(json['before']),
+    since: !exists(json, 'since')
+      ? undefined
+      : json['since'] === null
+      ? null
+      : new Date(json['since']),
+    before: !exists(json, 'before')
+      ? undefined
+      : json['before'] === null
+      ? null
+      : new Date(json['before']),
   };
 }
 
@@ -153,9 +163,21 @@ export function WaitForConditionsToJSON(value?: WaitForConditions | null): any {
     matches:
       value.matches === undefined
         ? undefined
+        : value.matches === null
+        ? null
         : (value.matches as Array<any>).map(MatchOptionToJSON),
     sortDirection: value.sortDirection,
-    since: value.since === undefined ? undefined : value.since.toISOString(),
-    before: value.before === undefined ? undefined : value.before.toISOString(),
+    since:
+      value.since === undefined
+        ? undefined
+        : value.since === null
+        ? null
+        : value.since.toISOString(),
+    before:
+      value.before === undefined
+        ? undefined
+        : value.before === null
+        ? null
+        : value.before.toISOString(),
   };
 }

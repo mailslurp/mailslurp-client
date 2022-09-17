@@ -20,13 +20,13 @@ export interface WebhookTestResponse {
      * @type {number}
      * @memberof WebhookTestResponse
      */
-    statusCode?: number;
+    statusCode?: number | null;
     /**
      *
      * @type {string}
      * @memberof WebhookTestResponse
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function WebhookTestResponseFromJSON(json: any): WebhookTestResponse;
 export declare function WebhookTestResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookTestResponse;

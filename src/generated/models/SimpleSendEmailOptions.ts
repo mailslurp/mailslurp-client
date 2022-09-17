@@ -24,7 +24,7 @@ export interface SimpleSendEmailOptions {
    * @type {string}
    * @memberof SimpleSendEmailOptions
    */
-  senderId?: string;
+  senderId?: string | null;
   /**
    * Email address to send to
    * @type {string}
@@ -36,13 +36,13 @@ export interface SimpleSendEmailOptions {
    * @type {string}
    * @memberof SimpleSendEmailOptions
    */
-  body?: string;
+  body?: string | null;
   /**
    * Subject line of the email
    * @type {string}
    * @memberof SimpleSendEmailOptions
    */
-  subject?: string;
+  subject?: string | null;
 }
 
 export function SimpleSendEmailOptionsFromJSON(

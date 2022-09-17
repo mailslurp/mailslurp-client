@@ -24,7 +24,7 @@ export interface InboxByEmailAddressResult {
    * @type {string}
    * @memberof InboxByEmailAddressResult
    */
-  inboxId?: string;
+  inboxId?: string | null;
   /**
    *
    * @type {boolean}

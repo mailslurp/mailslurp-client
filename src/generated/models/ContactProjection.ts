@@ -30,31 +30,19 @@ export interface ContactProjection {
    * @type {string}
    * @memberof ContactProjection
    */
-  groupId?: string;
+  groupId?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof ContactProjection
    */
-  firstName?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  lastName?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
-  company?: string;
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
    * @memberof ContactProjection
    */
-  emailAddresses?: Array<string>;
+  emailAddresses?: Array<string> | null;
   /**
    *
    * @type {boolean}
@@ -63,10 +51,22 @@ export interface ContactProjection {
   optOut: boolean;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof ContactProjection
    */
-  createdAt: Date;
+  firstName?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
+  lastName?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
+  company?: string | null;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
@@ -83,14 +83,14 @@ export function ContactProjectionFromJSONTyped(
   return {
     id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
-    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
-    company: !exists(json, 'company') ? undefined : json['company'],
+    createdAt: new Date(json['createdAt']),
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
     optOut: json['optOut'],
-    createdAt: new Date(json['createdAt']),
+    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
+    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
+    company: !exists(json, 'company') ? undefined : json['company'],
   };
 }
 
@@ -104,11 +104,11 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
   return {
     id: value.id,
     groupId: value.groupId,
+    createdAt: value.createdAt.toISOString(),
+    emailAddresses: value.emailAddresses,
+    optOut: value.optOut,
     firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
-    emailAddresses: value.emailAddresses,
-    optOut: value.optOut,
-    createdAt: value.createdAt.toISOString(),
   };
 }

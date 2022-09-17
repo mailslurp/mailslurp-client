@@ -20,7 +20,7 @@ export interface VerifyEmailAddressOptions {
      * @type {string}
      * @memberof VerifyEmailAddressOptions
      */
-    mailServerDomain?: string;
+    mailServerDomain?: string | null;
     /**
      *
      * @type {string}
@@ -32,13 +32,13 @@ export interface VerifyEmailAddressOptions {
      * @type {string}
      * @memberof VerifyEmailAddressOptions
      */
-    senderEmailAddress?: string;
+    senderEmailAddress?: string | null;
     /**
      *
      * @type {number}
      * @memberof VerifyEmailAddressOptions
      */
-    port?: number;
+    port?: number | null;
 }
 export declare function VerifyEmailAddressOptionsFromJSON(json: any): VerifyEmailAddressOptions;
 export declare function VerifyEmailAddressOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyEmailAddressOptions;

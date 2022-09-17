@@ -33,7 +33,7 @@ export interface DescribeMailServerDomainResult {
      * @type {string}
      * @memberof DescribeMailServerDomainResult
      */
-    message?: string;
+    message?: string | null;
 }
 export declare function DescribeMailServerDomainResultFromJSON(json: any): DescribeMailServerDomainResult;
 export declare function DescribeMailServerDomainResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): DescribeMailServerDomainResult;

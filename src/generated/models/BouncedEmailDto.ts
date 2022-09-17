@@ -24,7 +24,7 @@ export interface BouncedEmailDto {
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  id?: string;
+  id: string;
   /**
    *
    * @type {string}
@@ -42,7 +42,7 @@ export interface BouncedEmailDto {
    * @type {Array<string>}
    * @memberof BouncedEmailDto
    */
-  sentToRecipients?: Array<string>;
+  sentToRecipients?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -54,37 +54,37 @@ export interface BouncedEmailDto {
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  bounceMta?: string;
+  bounceMta?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  bounceType?: string;
+  bounceType?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof BouncedEmailDto
    */
-  bounceRecipients?: Array<string>;
+  bounceRecipients?: Array<string> | null;
   /**
    *
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  bounceSubType?: string;
+  bounceSubType?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  sentEmailId?: string;
+  sentEmailId?: string | null;
   /**
    *
    * @type {string}
    * @memberof BouncedEmailDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {Date}
@@ -105,7 +105,7 @@ export function BouncedEmailDtoFromJSONTyped(
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
+    id: json['id'],
     userId: json['userId'],
     notificationType: json['notificationType'],
     sentToRecipients: !exists(json, 'sentToRecipients')

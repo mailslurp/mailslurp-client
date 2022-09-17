@@ -43,7 +43,7 @@ export interface DescribeMailServerDomainResult {
    * @type {string}
    * @memberof DescribeMailServerDomainResult
    */
-  message?: string;
+  message?: string | null;
 }
 
 export function DescribeMailServerDomainResultFromJSON(

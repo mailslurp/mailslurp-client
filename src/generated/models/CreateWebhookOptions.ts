@@ -47,7 +47,7 @@ export interface CreateWebhookOptions {
    * @type {string}
    * @memberof CreateWebhookOptions
    */
-  name?: string;
+  name?: string | null;
   /**
    * Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when an email is received by the inbox associated with the webhook. Payload differ according to the webhook event name.
    * @type {string}

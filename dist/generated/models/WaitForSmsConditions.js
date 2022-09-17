@@ -54,12 +54,22 @@ function WaitForSmsConditionsFromJSONTyped(json, ignoreDiscriminator) {
         countType: !(0, runtime_1.exists)(json, 'countType') ? undefined : json['countType'],
         matches: !(0, runtime_1.exists)(json, 'matches')
             ? undefined
-            : json['matches'].map(_1.SmsMatchOptionFromJSON),
+            : json['matches'] === null
+                ? null
+                : json['matches'].map(_1.SmsMatchOptionFromJSON),
         sortDirection: !(0, runtime_1.exists)(json, 'sortDirection')
             ? undefined
             : json['sortDirection'],
-        since: !(0, runtime_1.exists)(json, 'since') ? undefined : new Date(json['since']),
-        before: !(0, runtime_1.exists)(json, 'before') ? undefined : new Date(json['before']),
+        since: !(0, runtime_1.exists)(json, 'since')
+            ? undefined
+            : json['since'] === null
+                ? null
+                : new Date(json['since']),
+        before: !(0, runtime_1.exists)(json, 'before')
+            ? undefined
+            : json['before'] === null
+                ? null
+                : new Date(json['before']),
     };
 }
 exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
@@ -80,10 +90,20 @@ function WaitForSmsConditionsToJSON(value) {
         countType: value.countType,
         matches: value.matches === undefined
             ? undefined
-            : value.matches.map(_1.SmsMatchOptionToJSON),
+            : value.matches === null
+                ? null
+                : value.matches.map(_1.SmsMatchOptionToJSON),
         sortDirection: value.sortDirection,
-        since: value.since === undefined ? undefined : value.since.toISOString(),
-        before: value.before === undefined ? undefined : value.before.toISOString(),
+        since: value.since === undefined
+            ? undefined
+            : value.since === null
+                ? null
+                : value.since.toISOString(),
+        before: value.before === undefined
+            ? undefined
+            : value.before === null
+                ? null
+                : value.before.toISOString(),
     };
 }
 exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;

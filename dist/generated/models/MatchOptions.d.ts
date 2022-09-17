@@ -21,13 +21,13 @@ export interface MatchOptions {
      * @type {Array<MatchOption>}
      * @memberof MatchOptions
      */
-    matches?: Array<MatchOption>;
+    matches?: Array<MatchOption> | null;
     /**
      * Zero or more conditions such as `{ condition: 'HAS_ATTACHMENTS', value: 'TRUE' }`. Note the values are the strings `TRUE|FALSE` not booleans.
      * @type {Array<ConditionOption>}
      * @memberof MatchOptions
      */
-    conditions?: Array<ConditionOption>;
+    conditions?: Array<ConditionOption> | null;
 }
 export declare function MatchOptionsFromJSON(json: any): MatchOptions;
 export declare function MatchOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): MatchOptions;

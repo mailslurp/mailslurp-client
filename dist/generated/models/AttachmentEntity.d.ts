@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Email attachment entity
+ *
  * @export
  * @interface AttachmentEntity
  */

@@ -39,13 +39,13 @@ export interface PageScheduledJobs {
      * @type {number}
      * @memberof PageScheduledJobs
      */
-    totalElements?: number;
+    totalPages?: number;
     /**
      *
      * @type {number}
      * @memberof PageScheduledJobs
      */
-    totalPages?: number;
+    totalElements?: number;
     /**
      *
      * @type {boolean}
