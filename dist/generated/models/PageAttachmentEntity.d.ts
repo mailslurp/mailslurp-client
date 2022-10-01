@@ -36,10 +36,10 @@ export interface PageAttachmentEntity {
     total?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageAttachmentEntity
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageAttachmentEntity {
     totalElements?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageAttachmentEntity
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageAttachmentEntity {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageAttachmentEntity
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageAttachmentEntity
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageAttachmentEntity
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

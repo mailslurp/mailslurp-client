@@ -30,6 +30,8 @@
 - [getBouncedRecipientsRaw](BounceControllerApi.md#getbouncedrecipientsraw)
 - [getComplaints](BounceControllerApi.md#getcomplaints)
 - [getComplaintsRaw](BounceControllerApi.md#getcomplaintsraw)
+- [getListUnsubscribeRecipients](BounceControllerApi.md#getlistunsubscriberecipients)
+- [getListUnsubscribeRecipientsRaw](BounceControllerApi.md#getlistunsubscriberecipientsraw)
 - [request](BounceControllerApi.md#request)
 - [withMiddleware](BounceControllerApi.md#withmiddleware)
 - [withPostMiddleware](BounceControllerApi.md#withpostmiddleware)
@@ -300,6 +302,46 @@ Get paginated list of complaints.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageComplaint`](../interfaces/PageComplaint.md)\>\>
+
+___
+
+### <a id="getlistunsubscriberecipients" name="getlistunsubscriberecipients"></a> getListUnsubscribeRecipients
+
+▸ **getListUnsubscribeRecipients**(`requestParameters`, `initOverrides?`): `Promise`<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>
+
+Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+Get paginated list of unsubscribed recipients.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetListUnsubscribeRecipientsRequest`](../interfaces/GetListUnsubscribeRecipientsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>
+
+___
+
+### <a id="getlistunsubscriberecipientsraw" name="getlistunsubscriberecipientsraw"></a> getListUnsubscribeRecipientsRaw
+
+▸ **getListUnsubscribeRecipientsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>\>
+
+Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+Get paginated list of unsubscribed recipients.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetListUnsubscribeRecipientsRequest`](../interfaces/GetListUnsubscribeRecipientsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>\>
 
 ___
 

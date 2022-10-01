@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+export interface CancelScheduledJobRequest {
+    jobId: string;
+}
 export interface CreateInboxRequest {
     emailAddress?: string;
     tags?: Array<string>;
@@ -133,6 +136,9 @@ export interface GetOrganizationInboxesRequest {
     since?: Date;
     before?: Date;
 }
+export interface GetScheduledJobRequest {
+    jobId: string;
+}
 export interface GetScheduledJobsByInboxIdRequest {
     inboxId: string;
     page?: number;
@@ -198,6 +204,16 @@ export interface UpdateInboxRequest {
  *
  */
 export declare class InboxControllerApi extends runtime.BaseAPI {
+    /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    cancelScheduledJobRaw(requestParameters: CancelScheduledJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ScheduledJobDto>>;
+    /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    cancelScheduledJob(requestParameters: CancelScheduledJobRequest, initOverrides?: RequestInit): Promise<ScheduledJobDto>;
     /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
@@ -449,6 +465,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getOrganizationInboxes(requestParameters: GetOrganizationInboxesRequest, initOverrides?: RequestInit): Promise<PageOrganizationInboxProjection>;
     /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    getScheduledJobRaw(requestParameters: GetScheduledJobRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ScheduledJobDto>>;
+    /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    getScheduledJob(requestParameters: GetScheduledJobRequest, initOverrides?: RequestInit): Promise<ScheduledJobDto>;
+    /**
      * Schedule sending of emails using scheduled jobs.
      * Get all scheduled email sending jobs for the inbox
      */
@@ -532,12 +558,12 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
      * Send email with with delay or schedule
      */
-    sendWithScheduleRaw(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    sendWithScheduleRaw(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ScheduledJobDto>>;
     /**
      * Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
      * Send email with with delay or schedule
      */
-    sendWithSchedule(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<void>;
+    sendWithSchedule(requestParameters: SendWithScheduleRequest, initOverrides?: RequestInit): Promise<ScheduledJobDto>;
     /**
      * Set and return new favourite state for an inbox
      * Set inbox favourited state

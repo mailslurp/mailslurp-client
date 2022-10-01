@@ -95,6 +95,58 @@ var InboxControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    InboxControllerApi.prototype.cancelScheduledJobRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.jobId === null ||
+                            requestParameters.jobId === undefined) {
+                            throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling cancelScheduledJob.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{" + 'jobId' + "}", encodeURIComponent(String(requestParameters.jobId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+     * Cancel a scheduled email job
+     */
+    InboxControllerApi.prototype.cancelScheduledJob = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cancelScheduledJobRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
      * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
      */
@@ -1594,6 +1646,58 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    InboxControllerApi.prototype.getScheduledJobRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.jobId === null ||
+                            requestParameters.jobId === undefined) {
+                            throw new runtime.RequiredError('jobId', 'Required parameter requestParameters.jobId was null or undefined when calling getScheduledJob.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{" + 'jobId' + "}", encodeURIComponent(String(requestParameters.jobId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a scheduled email job details.
+     * Get a scheduled email job
+     */
+    InboxControllerApi.prototype.getScheduledJob = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getScheduledJobRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Schedule sending of emails using scheduled jobs.
      * Get all scheduled email sending jobs for the inbox
      */
@@ -2124,7 +2228,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ScheduledJobDtoFromJSON)(jsonValue);
+                            })];
                 }
             });
         });
@@ -2135,12 +2241,14 @@ var InboxControllerApi = /** @class */ (function (_super) {
      */
     InboxControllerApi.prototype.sendWithSchedule = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
+            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.sendWithScheduleRaw(requestParameters, initOverrides)];
                     case 1:
-                        _a.sent();
-                        return [2 /*return*/];
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });

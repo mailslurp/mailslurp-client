@@ -36,10 +36,10 @@ export interface PageTemplateProjection {
     total?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageTemplateProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageTemplateProjection {
     totalElements?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageTemplateProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageTemplateProjection {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageTemplateProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageTemplateProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageTemplateProjection
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

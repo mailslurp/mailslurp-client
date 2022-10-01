@@ -18,6 +18,8 @@
 
 ### Methods
 
+- [cancelScheduledJob](InboxControllerApi.md#cancelscheduledjob)
+- [cancelScheduledJobRaw](InboxControllerApi.md#cancelscheduledjobraw)
 - [createInbox](InboxControllerApi.md#createinbox)
 - [createInboxRaw](InboxControllerApi.md#createinboxraw)
 - [createInboxRuleset](InboxControllerApi.md#createinboxruleset)
@@ -70,6 +72,8 @@
 - [getLatestEmailInInboxRaw](InboxControllerApi.md#getlatestemailininboxraw)
 - [getOrganizationInboxes](InboxControllerApi.md#getorganizationinboxes)
 - [getOrganizationInboxesRaw](InboxControllerApi.md#getorganizationinboxesraw)
+- [getScheduledJob](InboxControllerApi.md#getscheduledjob)
+- [getScheduledJobRaw](InboxControllerApi.md#getscheduledjobraw)
 - [getScheduledJobsByInboxId](InboxControllerApi.md#getscheduledjobsbyinboxid)
 - [getScheduledJobsByInboxIdRaw](InboxControllerApi.md#getscheduledjobsbyinboxidraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
@@ -124,6 +128,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### <a id="cancelscheduledjob" name="cancelscheduledjob"></a> cancelScheduledJob
+
+▸ **cancelScheduledJob**(`requestParameters`, `initOverrides?`): `Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
+
+Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+Cancel a scheduled email job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CancelScheduledJobRequest`](../interfaces/CancelScheduledJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
+
+___
+
+### <a id="cancelscheduledjobraw" name="cancelscheduledjobraw"></a> cancelScheduledJobRaw
+
+▸ **cancelScheduledJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
+
+Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+Cancel a scheduled email job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CancelScheduledJobRequest`](../interfaces/CancelScheduledJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
+
+___
 
 ### <a id="createinbox" name="createinbox"></a> createInbox
 
@@ -1145,6 +1189,46 @@ List Organization Inboxes Paginated
 
 ___
 
+### <a id="getscheduledjob" name="getscheduledjob"></a> getScheduledJob
+
+▸ **getScheduledJob**(`requestParameters`, `initOverrides?`): `Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
+
+Get a scheduled email job details.
+Get a scheduled email job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetScheduledJobRequest`](../interfaces/GetScheduledJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
+
+___
+
+### <a id="getscheduledjobraw" name="getscheduledjobraw"></a> getScheduledJobRaw
+
+▸ **getScheduledJobRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
+
+Get a scheduled email job details.
+Get a scheduled email job
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetScheduledJobRequest`](../interfaces/GetScheduledJobRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
+
+___
+
 ### <a id="getscheduledjobsbyinboxid" name="getscheduledjobsbyinboxid"></a> getScheduledJobsByInboxId
 
 ▸ **getScheduledJobsByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>
@@ -1488,7 +1572,7 @@ ___
 
 ### <a id="sendwithschedule" name="sendwithschedule"></a> sendWithSchedule
 
-▸ **sendWithSchedule**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+▸ **sendWithSchedule**(`requestParameters`, `initOverrides?`): `Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
 
 Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
 Send email with with delay or schedule
@@ -1502,13 +1586,13 @@ Send email with with delay or schedule
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>
 
 ___
 
 ### <a id="sendwithscheduleraw" name="sendwithscheduleraw"></a> sendWithScheduleRaw
 
-▸ **sendWithScheduleRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **sendWithScheduleRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
 
 Send an email using a delay. Will place the email onto a scheduler that will then be processed and sent. Use delays to schedule email sending.
 Send email with with delay or schedule
@@ -1522,7 +1606,7 @@ Send email with with delay or schedule
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ScheduledJobDto`](../interfaces/ScheduledJobDto.md)\>\>
 
 ___
 

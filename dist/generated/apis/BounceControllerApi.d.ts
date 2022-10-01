@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { BouncedEmailDto, BouncedRecipientDto, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint } from '../models';
+import { BouncedEmailDto, BouncedRecipientDto, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -40,6 +40,12 @@ export interface GetComplaintsRequest {
     sort?: GetComplaintsSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface GetListUnsubscribeRecipientsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetListUnsubscribeRecipientsSortEnum;
+    domainId?: string;
 }
 /**
  *
@@ -105,6 +111,16 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Get paginated list of complaints.
      */
     getComplaints(requestParameters: GetComplaintsRequest, initOverrides?: RequestInit): Promise<PageComplaint>;
+    /**
+     * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+     * Get paginated list of unsubscribed recipients.
+     */
+    getListUnsubscribeRecipientsRaw(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageListUnsubscribeRecipients>>;
+    /**
+     * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+     * Get paginated list of unsubscribed recipients.
+     */
+    getListUnsubscribeRecipients(requestParameters: GetListUnsubscribeRecipientsRequest, initOverrides?: RequestInit): Promise<PageListUnsubscribeRecipients>;
 }
 /**
  * @export
@@ -127,6 +143,14 @@ export declare enum GetBouncedRecipientsSortEnum {
  * @enum {string}
  */
 export declare enum GetComplaintsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetListUnsubscribeRecipientsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

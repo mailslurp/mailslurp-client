@@ -45,10 +45,10 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof SentEmailProjection
    */
-  createdAt: Date;
+  inboxId: string;
   /**
    *
    * @type {Array<string>}
@@ -57,10 +57,10 @@ export interface SentEmailProjection {
   attachments: Array<string>;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof SentEmailProjection
    */
-  inboxId: string;
+  createdAt: Date;
   /**
    *
    * @type {Array<string>}
@@ -109,9 +109,9 @@ export function SentEmailProjectionFromJSONTyped(
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    createdAt: new Date(json['createdAt']),
-    attachments: json['attachments'],
     inboxId: json['inboxId'],
+    attachments: json['attachments'],
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
     bcc: json['bcc'],
     cc: json['cc'],
@@ -134,9 +134,9 @@ export function SentEmailProjectionToJSON(
     from: value.from,
     userId: value.userId,
     subject: value.subject,
-    createdAt: value.createdAt.toISOString(),
-    attachments: value.attachments,
     inboxId: value.inboxId,
+    attachments: value.attachments,
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,

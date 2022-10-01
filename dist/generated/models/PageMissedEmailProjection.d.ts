@@ -36,10 +36,10 @@ export interface PageMissedEmailProjection {
     total?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageMissedEmailProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageMissedEmailProjection {
     totalElements?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageMissedEmailProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageMissedEmailProjection {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageMissedEmailProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageMissedEmailProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageMissedEmailProjection
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

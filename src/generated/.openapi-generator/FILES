@@ -114,6 +114,7 @@ models/InboxRulesetTestResult.ts
 models/InlineObject.ts
 models/InlineObject1.ts
 models/JSONSchemaDto.ts
+models/ListUnsubscribeRecipientProjection.ts
 models/MatchOption.ts
 models/MatchOptions.ts
 models/MissedEmailDto.ts
@@ -135,6 +136,7 @@ models/PageGroupProjection.ts
 models/PageInboxForwarderDto.ts
 models/PageInboxProjection.ts
 models/PageInboxRulesetDto.ts
+models/PageListUnsubscribeRecipients.ts
 models/PageMissedEmailProjection.ts
 models/PageOrganizationInboxProjection.ts
 models/PagePhoneNumberProjection.ts
@@ -157,6 +159,7 @@ models/Recipient.ts
 models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
 models/ScheduledJob.ts
+models/ScheduledJobDto.ts
 models/SendEmailOptions.ts
 models/SendSMTPEnvelopeOptions.ts
 models/SendWithQueueResult.ts

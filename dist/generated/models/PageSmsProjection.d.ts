@@ -36,10 +36,10 @@ export interface PageSmsProjection {
     total?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageSmsProjection
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageSmsProjection {
     totalElements?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageSmsProjection
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageSmsProjection {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageSmsProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageSmsProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageSmsProjection
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

@@ -36,10 +36,10 @@ export interface PageWebhookResult {
     total?: number;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof PageWebhookResult
      */
-    totalPages?: number;
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -48,10 +48,10 @@ export interface PageWebhookResult {
     totalElements?: number;
     /**
      *
-     * @type {boolean}
+     * @type {number}
      * @memberof PageWebhookResult
      */
-    last?: boolean;
+    totalPages?: number;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageWebhookResult {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageWebhookResult
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageWebhookResult
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

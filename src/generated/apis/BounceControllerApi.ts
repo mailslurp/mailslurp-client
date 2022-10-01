@@ -35,6 +35,9 @@ import {
   PageComplaint,
   PageComplaintFromJSON,
   PageComplaintToJSON,
+  PageListUnsubscribeRecipients,
+  PageListUnsubscribeRecipientsFromJSON,
+  PageListUnsubscribeRecipientsToJSON,
 } from '../models';
 
 export interface FilterBouncedRecipientRequest {
@@ -71,6 +74,13 @@ export interface GetComplaintsRequest {
   sort?: GetComplaintsSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface GetListUnsubscribeRecipientsRequest {
+  page?: number;
+  size?: number;
+  sort?: GetListUnsubscribeRecipientsSortEnum;
+  domainId?: string;
 }
 
 /**
@@ -453,6 +463,68 @@ export class BounceControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+
+  /**
+   * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+   * Get paginated list of unsubscribed recipients.
+   */
+  async getListUnsubscribeRecipientsRaw(
+    requestParameters: GetListUnsubscribeRecipientsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageListUnsubscribeRecipients>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/list-unsubscribe-recipients`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageListUnsubscribeRecipientsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Unsubscribed recipient have unsubscribed from a mailing list for a user or domain and cannot be contacted again.
+   * Get paginated list of unsubscribed recipients.
+   */
+  async getListUnsubscribeRecipients(
+    requestParameters: GetListUnsubscribeRecipientsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageListUnsubscribeRecipients> {
+    const response = await this.getListUnsubscribeRecipientsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
 }
 
 /**
@@ -476,6 +548,14 @@ export enum GetBouncedRecipientsSortEnum {
  * @enum {string}
  */
 export enum GetComplaintsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetListUnsubscribeRecipientsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

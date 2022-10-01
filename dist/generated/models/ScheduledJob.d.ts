@@ -83,7 +83,8 @@ export interface ScheduledJob {
 export declare enum ScheduledJobStatusEnum {
     SUBMITTED = "SUBMITTED",
     COMPLETED = "COMPLETED",
-    FAILED = "FAILED"
+    FAILED = "FAILED",
+    CANCELLED = "CANCELLED"
 }
 export declare function ScheduledJobFromJSON(json: any): ScheduledJob;
 export declare function ScheduledJobFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledJob;

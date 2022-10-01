@@ -6,11 +6,18 @@
 
 ### Enumeration Members
 
+- [CANCELLED](ScheduledJobStatusEnum.md#cancelled)
 - [COMPLETED](ScheduledJobStatusEnum.md#completed)
 - [FAILED](ScheduledJobStatusEnum.md#failed)
 - [SUBMITTED](ScheduledJobStatusEnum.md#submitted)
 
 ## Enumeration Members
+
+### <a id="cancelled" name="cancelled"></a> CANCELLED
+
+• **CANCELLED**
+
+___
 
 ### <a id="completed" name="completed"></a> COMPLETED
 

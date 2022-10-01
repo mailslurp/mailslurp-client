@@ -77,6 +77,9 @@ import {
   PageTrackingPixelProjection,
   PageTrackingPixelProjectionFromJSON,
   PageTrackingPixelProjectionToJSON,
+  ScheduledJobDto,
+  ScheduledJobDtoFromJSON,
+  ScheduledJobDtoToJSON,
   SendEmailOptions,
   SendEmailOptionsFromJSON,
   SendEmailOptionsToJSON,
@@ -93,6 +96,10 @@ import {
   UpdateInboxOptionsFromJSON,
   UpdateInboxOptionsToJSON,
 } from '../models';
+
+export interface CancelScheduledJobRequest {
+  jobId: string;
+}
 
 export interface CreateInboxRequest {
   emailAddress?: string;
@@ -237,6 +244,10 @@ export interface GetOrganizationInboxesRequest {
   before?: Date;
 }
 
+export interface GetScheduledJobRequest {
+  jobId: string;
+}
+
 export interface GetScheduledJobsByInboxIdRequest {
   inboxId: string;
   page?: number;
@@ -313,6 +324,65 @@ export interface UpdateInboxRequest {
  *
  */
 export class InboxControllerApi extends runtime.BaseAPI {
+  /**
+   * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+   * Cancel a scheduled email job
+   */
+  async cancelScheduledJobRaw(
+    requestParameters: CancelScheduledJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
+    if (
+      requestParameters.jobId === null ||
+      requestParameters.jobId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'jobId',
+        'Required parameter requestParameters.jobId was null or undefined when calling cancelScheduledJob.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/scheduled-jobs/{jobId}`.replace(
+          `{${'jobId'}}`,
+          encodeURIComponent(String(requestParameters.jobId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ScheduledJobDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a scheduled email job and cancel it. Will fail if status of job is already cancelled, failed, or complete.
+   * Cancel a scheduled email job
+   */
+  async cancelScheduledJob(
+    requestParameters: CancelScheduledJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<ScheduledJobDto> {
+    const response = await this.cancelScheduledJobRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Create a new inbox and with a randomized email address to send and receive from. Pass emailAddress parameter if you wish to use a specific email address. Creating an inbox is required before sending or receiving emails. If writing tests it is recommended that you create a new inbox during each test method so that it is unique and empty.
    * Create an inbox email address. An inbox has a real email address and can send and receive emails. Inboxes can be either `SMTP` or `HTTP` inboxes.
@@ -1932,6 +2002,65 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a scheduled email job details.
+   * Get a scheduled email job
+   */
+  async getScheduledJobRaw(
+    requestParameters: GetScheduledJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
+    if (
+      requestParameters.jobId === null ||
+      requestParameters.jobId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'jobId',
+        'Required parameter requestParameters.jobId was null or undefined when calling getScheduledJob.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/scheduled-jobs/{jobId}`.replace(
+          `{${'jobId'}}`,
+          encodeURIComponent(String(requestParameters.jobId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ScheduledJobDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a scheduled email job details.
+   * Get a scheduled email job
+   */
+  async getScheduledJob(
+    requestParameters: GetScheduledJobRequest,
+    initOverrides?: RequestInit
+  ): Promise<ScheduledJobDto> {
+    const response = await this.getScheduledJobRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Schedule sending of emails using scheduled jobs.
    * Get all scheduled email sending jobs for the inbox
    */
@@ -2535,7 +2664,7 @@ export class InboxControllerApi extends runtime.BaseAPI {
   async sendWithScheduleRaw(
     requestParameters: SendWithScheduleRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<void>> {
+  ): Promise<runtime.ApiResponse<ScheduledJobDto>> {
     if (
       requestParameters.inboxId === null ||
       requestParameters.inboxId === undefined
@@ -2596,7 +2725,9 @@ export class InboxControllerApi extends runtime.BaseAPI {
       initOverrides
     );
 
-    return new runtime.VoidApiResponse(response);
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ScheduledJobDtoFromJSON(jsonValue)
+    );
   }
 
   /**
@@ -2606,8 +2737,12 @@ export class InboxControllerApi extends runtime.BaseAPI {
   async sendWithSchedule(
     requestParameters: SendWithScheduleRequest,
     initOverrides?: RequestInit
-  ): Promise<void> {
-    await this.sendWithScheduleRaw(requestParameters, initOverrides);
+  ): Promise<ScheduledJobDto> {
+    const response = await this.sendWithScheduleRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
   }
 
   /**

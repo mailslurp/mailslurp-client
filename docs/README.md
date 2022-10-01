@@ -65,6 +65,7 @@
 - [GetInboxWebhooksPaginatedSortEnum](enums/GetInboxWebhooksPaginatedSortEnum.md)
 - [GetInboxesSortEnum](enums/GetInboxesSortEnum.md)
 - [GetJsonSchemaForWebhookEventEventEnum](enums/GetJsonSchemaForWebhookEventEventEnum.md)
+- [GetListUnsubscribeRecipientsSortEnum](enums/GetListUnsubscribeRecipientsSortEnum.md)
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
 - [GetPhoneNumberWebhooksPaginatedSortEnum](enums/GetPhoneNumberWebhooksPaginatedSortEnum.md)
@@ -98,6 +99,7 @@
 - [PhonePlanDtoPhoneCountryEnum](enums/PhonePlanDtoPhoneCountryEnum.md)
 - [ReplyToAliasEmailOptionsSendStrategyEnum](enums/ReplyToAliasEmailOptionsSendStrategyEnum.md)
 - [ReplyToEmailOptionsSendStrategyEnum](enums/ReplyToEmailOptionsSendStrategyEnum.md)
+- [ScheduledJobDtoStatusEnum](enums/ScheduledJobDtoStatusEnum.md)
 - [ScheduledJobStatusEnum](enums/ScheduledJobStatusEnum.md)
 - [SendEmailOptionsSendStrategyEnum](enums/SendEmailOptionsSendStrategyEnum.md)
 - [SendEmailOptionsValidateEmailAddressesEnum](enums/SendEmailOptionsValidateEmailAddressesEnum.md)
@@ -192,6 +194,7 @@
 - [BulkDeleteInboxesRequest](interfaces/BulkDeleteInboxesRequest.md)
 - [BulkSendEmailOptions](interfaces/BulkSendEmailOptions.md)
 - [BulkSendEmailsRequest](interfaces/BulkSendEmailsRequest.md)
+- [CancelScheduledJobRequest](interfaces/CancelScheduledJobRequest.md)
 - [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
@@ -368,6 +371,7 @@
 - [GetLatestEmailInInbox1Request](interfaces/GetLatestEmailInInbox1Request.md)
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
+- [GetListUnsubscribeRecipientsRequest](interfaces/GetListUnsubscribeRecipientsRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
@@ -378,6 +382,7 @@
 - [GetRawEmailJsonRequest](interfaces/GetRawEmailJsonRequest.md)
 - [GetRawSentEmailContentsRequest](interfaces/GetRawSentEmailContentsRequest.md)
 - [GetRawSentEmailJsonRequest](interfaces/GetRawSentEmailJsonRequest.md)
+- [GetScheduledJobRequest](interfaces/GetScheduledJobRequest.md)
 - [GetScheduledJobsByInboxIdRequest](interfaces/GetScheduledJobsByInboxIdRequest.md)
 - [GetSentDeliveryStatusRequest](interfaces/GetSentDeliveryStatusRequest.md)
 - [GetSentDeliveryStatusesBySentIdRequest](interfaces/GetSentDeliveryStatusesBySentIdRequest.md)
@@ -428,6 +433,7 @@
 - [JSONSchemaDto](interfaces/JSONSchemaDto.md)
 - [ListInboxRulesetsRequest](interfaces/ListInboxRulesetsRequest.md)
 - [ListInboxTrackingPixelsRequest](interfaces/ListInboxTrackingPixelsRequest.md)
+- [ListUnsubscribeRecipientProjection](interfaces/ListUnsubscribeRecipientProjection.md)
 - [MarkAsReadRequest](interfaces/MarkAsReadRequest.md)
 - [MatchOption](interfaces/MatchOption.md)
 - [MatchOptions](interfaces/MatchOptions.md)
@@ -451,6 +457,7 @@
 - [PageInboxForwarderDto](interfaces/PageInboxForwarderDto.md)
 - [PageInboxProjection](interfaces/PageInboxProjection.md)
 - [PageInboxRulesetDto](interfaces/PageInboxRulesetDto.md)
+- [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
 - [PageOrganizationInboxProjection](interfaces/PageOrganizationInboxProjection.md)
 - [PagePhoneNumberProjection](interfaces/PagePhoneNumberProjection.md)
@@ -482,6 +489,7 @@
 - [ResponseTransformer](interfaces/ResponseTransformer.md)
 - [Result](interfaces/Result.md)
 - [ScheduledJob](interfaces/ScheduledJob.md)
+- [ScheduledJobDto](interfaces/ScheduledJobDto.md)
 - [SendAliasEmailRequest](interfaces/SendAliasEmailRequest.md)
 - [SendEmailAndConfirmRequest](interfaces/SendEmailAndConfirmRequest.md)
 - [SendEmailOptions](interfaces/SendEmailOptions.md)
@@ -864,6 +872,9 @@
 - [JSONSchemaDtoFromJSON](README.md#jsonschemadtofromjson)
 - [JSONSchemaDtoFromJSONTyped](README.md#jsonschemadtofromjsontyped)
 - [JSONSchemaDtoToJSON](README.md#jsonschemadtotojson)
+- [ListUnsubscribeRecipientProjectionFromJSON](README.md#listunsubscriberecipientprojectionfromjson)
+- [ListUnsubscribeRecipientProjectionFromJSONTyped](README.md#listunsubscriberecipientprojectionfromjsontyped)
+- [ListUnsubscribeRecipientProjectionToJSON](README.md#listunsubscriberecipientprojectiontojson)
 - [MatchOptionFromJSON](README.md#matchoptionfromjson)
 - [MatchOptionFromJSONTyped](README.md#matchoptionfromjsontyped)
 - [MatchOptionToJSON](README.md#matchoptiontojson)
@@ -927,6 +938,9 @@
 - [PageInboxRulesetDtoFromJSON](README.md#pageinboxrulesetdtofromjson)
 - [PageInboxRulesetDtoFromJSONTyped](README.md#pageinboxrulesetdtofromjsontyped)
 - [PageInboxRulesetDtoToJSON](README.md#pageinboxrulesetdtotojson)
+- [PageListUnsubscribeRecipientsFromJSON](README.md#pagelistunsubscriberecipientsfromjson)
+- [PageListUnsubscribeRecipientsFromJSONTyped](README.md#pagelistunsubscriberecipientsfromjsontyped)
+- [PageListUnsubscribeRecipientsToJSON](README.md#pagelistunsubscriberecipientstojson)
 - [PageMissedEmailProjectionFromJSON](README.md#pagemissedemailprojectionfromjson)
 - [PageMissedEmailProjectionFromJSONTyped](README.md#pagemissedemailprojectionfromjsontyped)
 - [PageMissedEmailProjectionToJSON](README.md#pagemissedemailprojectiontojson)
@@ -990,6 +1004,9 @@
 - [ReplyToEmailOptionsFromJSON](README.md#replytoemailoptionsfromjson)
 - [ReplyToEmailOptionsFromJSONTyped](README.md#replytoemailoptionsfromjsontyped)
 - [ReplyToEmailOptionsToJSON](README.md#replytoemailoptionstojson)
+- [ScheduledJobDtoFromJSON](README.md#scheduledjobdtofromjson)
+- [ScheduledJobDtoFromJSONTyped](README.md#scheduledjobdtofromjsontyped)
+- [ScheduledJobDtoToJSON](README.md#scheduledjobdtotojson)
 - [ScheduledJobFromJSON](README.md#scheduledjobfromjson)
 - [ScheduledJobFromJSONTyped](README.md#scheduledjobfromjsontyped)
 - [ScheduledJobToJSON](README.md#scheduledjobtojson)
@@ -5575,6 +5592,55 @@ ___
 
 ___
 
+### <a id="listunsubscriberecipientprojectionfromjson" name="listunsubscriberecipientprojectionfromjson"></a> ListUnsubscribeRecipientProjectionFromJSON
+
+▸ **ListUnsubscribeRecipientProjectionFromJSON**(`json`): [`ListUnsubscribeRecipientProjection`](interfaces/ListUnsubscribeRecipientProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ListUnsubscribeRecipientProjection`](interfaces/ListUnsubscribeRecipientProjection.md)
+
+___
+
+### <a id="listunsubscriberecipientprojectionfromjsontyped" name="listunsubscriberecipientprojectionfromjsontyped"></a> ListUnsubscribeRecipientProjectionFromJSONTyped
+
+▸ **ListUnsubscribeRecipientProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ListUnsubscribeRecipientProjection`](interfaces/ListUnsubscribeRecipientProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ListUnsubscribeRecipientProjection`](interfaces/ListUnsubscribeRecipientProjection.md)
+
+___
+
+### <a id="listunsubscriberecipientprojectiontojson" name="listunsubscriberecipientprojectiontojson"></a> ListUnsubscribeRecipientProjectionToJSON
+
+▸ **ListUnsubscribeRecipientProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ListUnsubscribeRecipientProjection`](interfaces/ListUnsubscribeRecipientProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="matchoptionfromjson" name="matchoptionfromjson"></a> MatchOptionFromJSON
 
 ▸ **MatchOptionFromJSON**(`json`): [`MatchOption`](interfaces/MatchOption.md)
@@ -6604,6 +6670,55 @@ ___
 
 ___
 
+### <a id="pagelistunsubscriberecipientsfromjson" name="pagelistunsubscriberecipientsfromjson"></a> PageListUnsubscribeRecipientsFromJSON
+
+▸ **PageListUnsubscribeRecipientsFromJSON**(`json`): [`PageListUnsubscribeRecipients`](interfaces/PageListUnsubscribeRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageListUnsubscribeRecipients`](interfaces/PageListUnsubscribeRecipients.md)
+
+___
+
+### <a id="pagelistunsubscriberecipientsfromjsontyped" name="pagelistunsubscriberecipientsfromjsontyped"></a> PageListUnsubscribeRecipientsFromJSONTyped
+
+▸ **PageListUnsubscribeRecipientsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageListUnsubscribeRecipients`](interfaces/PageListUnsubscribeRecipients.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageListUnsubscribeRecipients`](interfaces/PageListUnsubscribeRecipients.md)
+
+___
+
+### <a id="pagelistunsubscriberecipientstojson" name="pagelistunsubscriberecipientstojson"></a> PageListUnsubscribeRecipientsToJSON
+
+▸ **PageListUnsubscribeRecipientsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageListUnsubscribeRecipients`](interfaces/PageListUnsubscribeRecipients.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="pagemissedemailprojectionfromjson" name="pagemissedemailprojectionfromjson"></a> PageMissedEmailProjectionFromJSON
 
 ▸ **PageMissedEmailProjectionFromJSON**(`json`): [`PageMissedEmailProjection`](interfaces/PageMissedEmailProjection.md)
@@ -7626,6 +7741,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ReplyToEmailOptions`](interfaces/ReplyToEmailOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="scheduledjobdtofromjson" name="scheduledjobdtofromjson"></a> ScheduledJobDtoFromJSON
+
+▸ **ScheduledJobDtoFromJSON**(`json`): [`ScheduledJobDto`](interfaces/ScheduledJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ScheduledJobDto`](interfaces/ScheduledJobDto.md)
+
+___
+
+### <a id="scheduledjobdtofromjsontyped" name="scheduledjobdtofromjsontyped"></a> ScheduledJobDtoFromJSONTyped
+
+▸ **ScheduledJobDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ScheduledJobDto`](interfaces/ScheduledJobDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ScheduledJobDto`](interfaces/ScheduledJobDto.md)
+
+___
+
+### <a id="scheduledjobdtotojson" name="scheduledjobdtotojson"></a> ScheduledJobDtoToJSON
+
+▸ **ScheduledJobDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ScheduledJobDto`](interfaces/ScheduledJobDto.md) |
 
 #### Returns
 

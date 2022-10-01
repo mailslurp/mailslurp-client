@@ -32,18 +32,18 @@ function PageBouncedRecipientsFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
         total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
-        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
+        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
         totalElements: !(0, runtime_1.exists)(json, 'totalElements')
             ? undefined
             : json['totalElements'],
-        last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
         number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
+        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
             : json['numberOfElements'],
-        first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
@@ -61,14 +61,14 @@ function PageBouncedRecipientsToJSON(value) {
             : value.content.map(_1.BounceRecipientProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
         total: value.total,
-        totalPages: value.totalPages,
-        totalElements: value.totalElements,
         last: value.last,
+        totalElements: value.totalElements,
+        totalPages: value.totalPages,
         size: value.size,
         number: value.number,
         sort: (0, _1.SortToJSON)(value.sort),
-        numberOfElements: value.numberOfElements,
         first: value.first,
+        numberOfElements: value.numberOfElements,
         empty: value.empty,
     };
 }

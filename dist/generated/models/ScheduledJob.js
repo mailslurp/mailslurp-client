@@ -23,6 +23,7 @@ var ScheduledJobStatusEnum;
     ScheduledJobStatusEnum["SUBMITTED"] = "SUBMITTED";
     ScheduledJobStatusEnum["COMPLETED"] = "COMPLETED";
     ScheduledJobStatusEnum["FAILED"] = "FAILED";
+    ScheduledJobStatusEnum["CANCELLED"] = "CANCELLED";
 })(ScheduledJobStatusEnum = exports.ScheduledJobStatusEnum || (exports.ScheduledJobStatusEnum = {}));
 function ScheduledJobFromJSON(json) {
     return ScheduledJobFromJSONTyped(json, false);

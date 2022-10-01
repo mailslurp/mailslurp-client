@@ -89,6 +89,7 @@ export enum ScheduledJobStatusEnum {
   SUBMITTED = 'SUBMITTED',
   COMPLETED = 'COMPLETED',
   FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
 }
 
 export function ScheduledJobFromJSON(json: any): ScheduledJob {

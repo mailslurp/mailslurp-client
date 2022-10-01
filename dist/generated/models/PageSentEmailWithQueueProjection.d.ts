@@ -47,12 +47,6 @@ export interface PageSentEmailWithQueueProjection {
      */
     number: number;
     /**
-     * Total number of pages available
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    totalPages: number;
-    /**
      * Number of items returned
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
@@ -64,6 +58,12 @@ export interface PageSentEmailWithQueueProjection {
      * @memberof PageSentEmailWithQueueProjection
      */
     totalElements: number;
+    /**
+     * Total number of pages available
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    totalPages: number;
     /**
      *
      * @type {boolean}
