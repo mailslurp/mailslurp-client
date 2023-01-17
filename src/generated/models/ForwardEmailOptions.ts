@@ -55,6 +55,12 @@ export interface ForwardEmailOptions {
    * @memberof ForwardEmailOptions
    */
   useInboxName?: boolean | null;
+  /**
+   * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+   * @type {boolean}
+   * @memberof ForwardEmailOptions
+   */
+  filterBouncedRecipients?: boolean | null;
 }
 
 export function ForwardEmailOptionsFromJSON(json: any): ForwardEmailOptions {
@@ -77,6 +83,9 @@ export function ForwardEmailOptionsFromJSONTyped(
     useInboxName: !exists(json, 'useInboxName')
       ? undefined
       : json['useInboxName'],
+    filterBouncedRecipients: !exists(json, 'filterBouncedRecipients')
+      ? undefined
+      : json['filterBouncedRecipients'],
   };
 }
 
@@ -96,5 +105,6 @@ export function ForwardEmailOptionsToJSON(
     bcc: value.bcc,
     from: value.from,
     useInboxName: value.useInboxName,
+    filterBouncedRecipients: value.filterBouncedRecipients,
   };
 }

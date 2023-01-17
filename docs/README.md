@@ -59,6 +59,7 @@
 - [GetExportLinkExportTypeEnum](enums/GetExportLinkExportTypeEnum.md)
 - [GetGroupWithContactsPaginatedSortEnum](enums/GetGroupWithContactsPaginatedSortEnum.md)
 - [GetInboxEmailsPaginatedSortEnum](enums/GetInboxEmailsPaginatedSortEnum.md)
+- [GetInboxForwarderEventsSortEnum](enums/GetInboxForwarderEventsSortEnum.md)
 - [GetInboxForwardersSortEnum](enums/GetInboxForwardersSortEnum.md)
 - [GetInboxRulesetsSortEnum](enums/GetInboxRulesetsSortEnum.md)
 - [GetInboxSentEmailsSortEnum](enums/GetInboxSentEmailsSortEnum.md)
@@ -85,6 +86,7 @@
 - [ImapFlagOperationOptionsFlagOperationEnum](enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
+- [InboxForwarderEventProjectionStatusEnum](enums/InboxForwarderEventProjectionStatusEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
 - [InboxRulesetDtoActionEnum](enums/InboxRulesetDtoActionEnum.md)
 - [InboxRulesetDtoHandlerEnum](enums/InboxRulesetDtoHandlerEnum.md)
@@ -356,6 +358,7 @@
 - [GetInboxByNameRequest](interfaces/GetInboxByNameRequest.md)
 - [GetInboxEmailCountRequest](interfaces/GetInboxEmailCountRequest.md)
 - [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
+- [GetInboxForwarderEventsRequest](interfaces/GetInboxForwarderEventsRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
 - [GetInboxForwardersRequest](interfaces/GetInboxForwardersRequest.md)
 - [GetInboxRequest](interfaces/GetInboxRequest.md)
@@ -420,6 +423,7 @@
 - [InboxDto](interfaces/InboxDto.md)
 - [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
+- [InboxForwarderEventProjection](interfaces/InboxForwarderEventProjection.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
 - [InboxForwarderTestResult](interfaces/InboxForwarderTestResult.md)
 - [InboxIdItem](interfaces/InboxIdItem.md)
@@ -455,6 +459,7 @@
 - [PageExpiredInboxRecordProjection](interfaces/PageExpiredInboxRecordProjection.md)
 - [PageGroupProjection](interfaces/PageGroupProjection.md)
 - [PageInboxForwarderDto](interfaces/PageInboxForwarderDto.md)
+- [PageInboxForwarderEvents](interfaces/PageInboxForwarderEvents.md)
 - [PageInboxProjection](interfaces/PageInboxProjection.md)
 - [PageInboxRulesetDto](interfaces/PageInboxRulesetDto.md)
 - [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
@@ -540,6 +545,7 @@
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
 - [UpdateDomainRequest](interfaces/UpdateDomainRequest.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
+- [UpdateInboxForwarderRequest](interfaces/UpdateInboxForwarderRequest.md)
 - [UpdateInboxOptions](interfaces/UpdateInboxOptions.md)
 - [UpdateInboxRequest](interfaces/UpdateInboxRequest.md)
 - [UpdateTemplateRequest](interfaces/UpdateTemplateRequest.md)
@@ -839,6 +845,9 @@
 - [InboxForwarderDtoFromJSON](README.md#inboxforwarderdtofromjson)
 - [InboxForwarderDtoFromJSONTyped](README.md#inboxforwarderdtofromjsontyped)
 - [InboxForwarderDtoToJSON](README.md#inboxforwarderdtotojson)
+- [InboxForwarderEventProjectionFromJSON](README.md#inboxforwardereventprojectionfromjson)
+- [InboxForwarderEventProjectionFromJSONTyped](README.md#inboxforwardereventprojectionfromjsontyped)
+- [InboxForwarderEventProjectionToJSON](README.md#inboxforwardereventprojectiontojson)
 - [InboxForwarderTestOptionsFromJSON](README.md#inboxforwardertestoptionsfromjson)
 - [InboxForwarderTestOptionsFromJSONTyped](README.md#inboxforwardertestoptionsfromjsontyped)
 - [InboxForwarderTestOptionsToJSON](README.md#inboxforwardertestoptionstojson)
@@ -932,6 +941,9 @@
 - [PageInboxForwarderDtoFromJSON](README.md#pageinboxforwarderdtofromjson)
 - [PageInboxForwarderDtoFromJSONTyped](README.md#pageinboxforwarderdtofromjsontyped)
 - [PageInboxForwarderDtoToJSON](README.md#pageinboxforwarderdtotojson)
+- [PageInboxForwarderEventsFromJSON](README.md#pageinboxforwardereventsfromjson)
+- [PageInboxForwarderEventsFromJSONTyped](README.md#pageinboxforwardereventsfromjsontyped)
+- [PageInboxForwarderEventsToJSON](README.md#pageinboxforwardereventstojson)
 - [PageInboxProjectionFromJSON](README.md#pageinboxprojectionfromjson)
 - [PageInboxProjectionFromJSONTyped](README.md#pageinboxprojectionfromjsontyped)
 - [PageInboxProjectionToJSON](README.md#pageinboxprojectiontojson)
@@ -5053,6 +5065,55 @@ ___
 
 ___
 
+### <a id="inboxforwardereventprojectionfromjson" name="inboxforwardereventprojectionfromjson"></a> InboxForwarderEventProjectionFromJSON
+
+▸ **InboxForwarderEventProjectionFromJSON**(`json`): [`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md)
+
+___
+
+### <a id="inboxforwardereventprojectionfromjsontyped" name="inboxforwardereventprojectionfromjsontyped"></a> InboxForwarderEventProjectionFromJSONTyped
+
+▸ **InboxForwarderEventProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md)
+
+___
+
+### <a id="inboxforwardereventprojectiontojson" name="inboxforwardereventprojectiontojson"></a> InboxForwarderEventProjectionToJSON
+
+▸ **InboxForwarderEventProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### <a id="inboxforwardertestoptionsfromjson" name="inboxforwardertestoptionsfromjson"></a> InboxForwarderTestOptionsFromJSON
 
 ▸ **InboxForwarderTestOptionsFromJSON**(`json`): [`InboxForwarderTestOptions`](interfaces/InboxForwarderTestOptions.md)
@@ -6565,6 +6626,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageInboxForwarderDto`](interfaces/PageInboxForwarderDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### <a id="pageinboxforwardereventsfromjson" name="pageinboxforwardereventsfromjson"></a> PageInboxForwarderEventsFromJSON
+
+▸ **PageInboxForwarderEventsFromJSON**(`json`): [`PageInboxForwarderEvents`](interfaces/PageInboxForwarderEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxForwarderEvents`](interfaces/PageInboxForwarderEvents.md)
+
+___
+
+### <a id="pageinboxforwardereventsfromjsontyped" name="pageinboxforwardereventsfromjsontyped"></a> PageInboxForwarderEventsFromJSONTyped
+
+▸ **PageInboxForwarderEventsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxForwarderEvents`](interfaces/PageInboxForwarderEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxForwarderEvents`](interfaces/PageInboxForwarderEvents.md)
+
+___
+
+### <a id="pageinboxforwardereventstojson" name="pageinboxforwardereventstojson"></a> PageInboxForwarderEventsToJSON
+
+▸ **PageInboxForwarderEventsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxForwarderEvents`](interfaces/PageInboxForwarderEvents.md) |
 
 #### Returns
 

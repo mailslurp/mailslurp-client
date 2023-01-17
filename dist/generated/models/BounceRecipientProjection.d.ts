@@ -26,12 +26,6 @@ export interface BounceRecipientProjection {
      * @type {string}
      * @memberof BounceRecipientProjection
      */
-    action?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceRecipientProjection
-     */
     status?: string | null;
     /**
      *
@@ -51,6 +45,12 @@ export interface BounceRecipientProjection {
      * @memberof BounceRecipientProjection
      */
     recipient: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
+    action?: string | null;
 }
 export declare function BounceRecipientProjectionFromJSON(json: any): BounceRecipientProjection;
 export declare function BounceRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceRecipientProjection;

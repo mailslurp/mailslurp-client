@@ -36,12 +36,6 @@ export interface PageDeliveryStatus {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
@@ -52,6 +46,12 @@ export interface PageDeliveryStatus {
      * @memberof PageDeliveryStatus
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageDeliveryStatus {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

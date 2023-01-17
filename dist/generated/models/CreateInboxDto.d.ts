@@ -81,6 +81,12 @@ export interface CreateInboxDto {
      * @memberof CreateInboxDto
      */
     virtualInbox?: boolean | null;
+    /**
+     * Use a shorter email address under 31 characters
+     * @type {boolean}
+     * @memberof CreateInboxDto
+     */
+    useShortAddress?: boolean | null;
 }
 /**
  * @export

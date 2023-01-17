@@ -23,6 +23,7 @@ export interface CreateNewEmailAddressRequest {
     tags?: Array<string>;
     favourite?: boolean;
     virtualInbox?: boolean;
+    useShortAddress?: boolean;
 }
 export interface CreateRandomInboxRequest {
     allowTeamAccess?: boolean;
@@ -36,6 +37,7 @@ export interface CreateRandomInboxRequest {
     tags?: Array<string>;
     favourite?: boolean;
     virtualInbox?: boolean;
+    useShortAddress?: boolean;
 }
 export interface DeleteEmailAddressRequest {
     inboxId: string;

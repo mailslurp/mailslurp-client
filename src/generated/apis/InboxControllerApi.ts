@@ -113,6 +113,7 @@ export interface CreateInboxRequest {
   allowTeamAccess?: boolean;
   inboxType?: CreateInboxInboxTypeEnum;
   virtualInbox?: boolean;
+  useShortAddress?: boolean;
 }
 
 export interface CreateInboxRulesetRequest {
@@ -437,6 +438,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.virtualInbox !== undefined) {
       queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+    }
+
+    if (requestParameters.useShortAddress !== undefined) {
+      queryParameters['useShortAddress'] = requestParameters.useShortAddress;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

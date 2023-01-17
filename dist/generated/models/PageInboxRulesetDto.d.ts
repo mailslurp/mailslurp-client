@@ -36,12 +36,6 @@ export interface PageInboxRulesetDto {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
@@ -52,6 +46,12 @@ export interface PageInboxRulesetDto {
      * @memberof PageInboxRulesetDto
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageInboxRulesetDto {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -38,17 +38,17 @@ export interface ThreadProjection {
    */
   subject?: string;
   /**
-   * Inbox ID
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  inboxId: string;
-  /**
    * User ID
    * @type {string}
    * @memberof ThreadProjection
    */
   userId: string;
+  /**
+   * Inbox ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  inboxId: string;
   /**
    * Created at DateTime
    * @type {Date}
@@ -102,8 +102,8 @@ export function ThreadProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
     userId: json['userId'],
+    inboxId: json['inboxId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     to: json['to'],
@@ -124,8 +124,8 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     name: value.name,
     id: value.id,
     subject: value.subject,
-    inboxId: value.inboxId,
     userId: value.userId,
+    inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     to: value.to,

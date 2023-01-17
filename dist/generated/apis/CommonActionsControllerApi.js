@@ -138,6 +138,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.virtualInbox !== undefined) {
                             queryParameters['virtualInbox'] = requestParameters.virtualInbox;
                         }
+                        if (requestParameters.useShortAddress !== undefined) {
+                            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -218,6 +221,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.virtualInbox !== undefined) {
                             queryParameters['virtualInbox'] = requestParameters.virtualInbox;
+                        }
+                        if (requestParameters.useShortAddress !== undefined) {
+                            queryParameters['useShortAddress'] = requestParameters.useShortAddress;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {

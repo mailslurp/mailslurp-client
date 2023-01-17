@@ -83,6 +83,7 @@ export enum UserInfoDtoAccountTypeEnum {
   SOLO = 'SOLO',
   CHILD_SOLO = 'CHILD_SOLO',
   CHILD_TEAM = 'CHILD_TEAM',
+  CHILD_ADMIN = 'CHILD_ADMIN',
 }
 
 export function UserInfoDtoFromJSON(json: any): UserInfoDto {

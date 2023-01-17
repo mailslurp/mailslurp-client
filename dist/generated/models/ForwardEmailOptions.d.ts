@@ -51,6 +51,12 @@ export interface ForwardEmailOptions {
      * @memberof ForwardEmailOptions
      */
     useInboxName?: boolean | null;
+    /**
+     * Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
+     * @type {boolean}
+     * @memberof ForwardEmailOptions
+     */
+    filterBouncedRecipients?: boolean | null;
 }
 export declare function ForwardEmailOptionsFromJSON(json: any): ForwardEmailOptions;
 export declare function ForwardEmailOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ForwardEmailOptions;

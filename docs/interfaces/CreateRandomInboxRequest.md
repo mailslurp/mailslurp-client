@@ -14,6 +14,7 @@
 - [name](CreateRandomInboxRequest.md#name)
 - [tags](CreateRandomInboxRequest.md#tags)
 - [useDomainPool](CreateRandomInboxRequest.md#usedomainpool)
+- [useShortAddress](CreateRandomInboxRequest.md#useshortaddress)
 - [virtualInbox](CreateRandomInboxRequest.md#virtualinbox)
 
 ## Properties
@@ -75,6 +76,12 @@ ___
 ### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
+
+___
+
+### <a id="useshortaddress" name="useshortaddress"></a> useShortAddress
+
+• `Optional` **useShortAddress**: `boolean`
 
 ___
 

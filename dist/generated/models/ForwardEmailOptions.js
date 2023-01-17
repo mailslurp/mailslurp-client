@@ -32,6 +32,9 @@ function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
             ? undefined
             : json['useInboxName'],
+        filterBouncedRecipients: !(0, runtime_1.exists)(json, 'filterBouncedRecipients')
+            ? undefined
+            : json['filterBouncedRecipients'],
     };
 }
 exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
@@ -49,6 +52,7 @@ function ForwardEmailOptionsToJSON(value) {
         bcc: value.bcc,
         from: value.from,
         useInboxName: value.useInboxName,
+        filterBouncedRecipients: value.filterBouncedRecipients,
     };
 }
 exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;

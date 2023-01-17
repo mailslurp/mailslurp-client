@@ -103,6 +103,7 @@ models/InboxByNameResult.ts
 models/InboxDto.ts
 models/InboxExistsDto.ts
 models/InboxForwarderDto.ts
+models/InboxForwarderEventProjection.ts
 models/InboxForwarderTestOptions.ts
 models/InboxForwarderTestResult.ts
 models/InboxIdItem.ts
@@ -134,6 +135,7 @@ models/PageEmailValidationRequest.ts
 models/PageExpiredInboxRecordProjection.ts
 models/PageGroupProjection.ts
 models/PageInboxForwarderDto.ts
+models/PageInboxForwarderEvents.ts
 models/PageInboxProjection.ts
 models/PageInboxRulesetDto.ts
 models/PageListUnsubscribeRecipients.ts

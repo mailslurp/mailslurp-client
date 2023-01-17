@@ -26,6 +26,7 @@ export interface CreateInboxRequest {
     allowTeamAccess?: boolean;
     inboxType?: CreateInboxInboxTypeEnum;
     virtualInbox?: boolean;
+    useShortAddress?: boolean;
 }
 export interface CreateInboxRulesetRequest {
     inboxId: string;

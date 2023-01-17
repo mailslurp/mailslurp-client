@@ -36,12 +36,6 @@ export interface PageComplaint {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageComplaint
      */
@@ -52,6 +46,12 @@ export interface PageComplaint {
      * @memberof PageComplaint
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageComplaint {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageComplaint
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

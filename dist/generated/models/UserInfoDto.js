@@ -44,6 +44,7 @@ var UserInfoDtoAccountTypeEnum;
     UserInfoDtoAccountTypeEnum["SOLO"] = "SOLO";
     UserInfoDtoAccountTypeEnum["CHILD_SOLO"] = "CHILD_SOLO";
     UserInfoDtoAccountTypeEnum["CHILD_TEAM"] = "CHILD_TEAM";
+    UserInfoDtoAccountTypeEnum["CHILD_ADMIN"] = "CHILD_ADMIN";
 })(UserInfoDtoAccountTypeEnum = exports.UserInfoDtoAccountTypeEnum || (exports.UserInfoDtoAccountTypeEnum = {}));
 function UserInfoDtoFromJSON(json) {
     return UserInfoDtoFromJSONTyped(json, false);

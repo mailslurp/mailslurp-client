@@ -14,6 +14,7 @@
 - [name](CreateNewEmailAddressRequest.md#name)
 - [tags](CreateNewEmailAddressRequest.md#tags)
 - [useDomainPool](CreateNewEmailAddressRequest.md#usedomainpool)
+- [useShortAddress](CreateNewEmailAddressRequest.md#useshortaddress)
 - [virtualInbox](CreateNewEmailAddressRequest.md#virtualinbox)
 
 ## Properties
@@ -75,6 +76,12 @@ ___
 ### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
+
+___
+
+### <a id="useshortaddress" name="useshortaddress"></a> useShortAddress
+
+• `Optional` **useShortAddress**: `boolean`
 
 ___
 

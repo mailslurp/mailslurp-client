@@ -77,7 +77,8 @@ export declare enum UserInfoDtoSubscriptionTypeEnum {
 export declare enum UserInfoDtoAccountTypeEnum {
     SOLO = "SOLO",
     CHILD_SOLO = "CHILD_SOLO",
-    CHILD_TEAM = "CHILD_TEAM"
+    CHILD_TEAM = "CHILD_TEAM",
+    CHILD_ADMIN = "CHILD_ADMIN"
 }
 export declare function UserInfoDtoFromJSON(json: any): UserInfoDto;
 export declare function UserInfoDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserInfoDto;

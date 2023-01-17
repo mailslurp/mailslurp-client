@@ -36,12 +36,6 @@ export interface PageBouncedEmail {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedEmail
      */
@@ -52,6 +46,12 @@ export interface PageBouncedEmail {
      * @memberof PageBouncedEmail
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageBouncedEmail {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedEmail
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

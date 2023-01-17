@@ -25,6 +25,8 @@
 - [deleteInboxForwarders](InboxForwarderControllerApi.md#deleteinboxforwarders)
 - [deleteInboxForwardersRaw](InboxForwarderControllerApi.md#deleteinboxforwardersraw)
 - [getInboxForwarder](InboxForwarderControllerApi.md#getinboxforwarder)
+- [getInboxForwarderEvents](InboxForwarderControllerApi.md#getinboxforwarderevents)
+- [getInboxForwarderEventsRaw](InboxForwarderControllerApi.md#getinboxforwardereventsraw)
 - [getInboxForwarderRaw](InboxForwarderControllerApi.md#getinboxforwarderraw)
 - [getInboxForwarders](InboxForwarderControllerApi.md#getinboxforwarders)
 - [getInboxForwardersRaw](InboxForwarderControllerApi.md#getinboxforwardersraw)
@@ -35,6 +37,8 @@
 - [testInboxForwardersForInboxRaw](InboxForwarderControllerApi.md#testinboxforwardersforinboxraw)
 - [testNewInboxForwarder](InboxForwarderControllerApi.md#testnewinboxforwarder)
 - [testNewInboxForwarderRaw](InboxForwarderControllerApi.md#testnewinboxforwarderraw)
+- [updateInboxForwarder](InboxForwarderControllerApi.md#updateinboxforwarder)
+- [updateInboxForwarderRaw](InboxForwarderControllerApi.md#updateinboxforwarderraw)
 - [withMiddleware](InboxForwarderControllerApi.md#withmiddleware)
 - [withPostMiddleware](InboxForwarderControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](InboxForwarderControllerApi.md#withpremiddleware)
@@ -204,6 +208,46 @@ Get an inbox forwarder
 #### Returns
 
 `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+
+___
+
+### <a id="getinboxforwarderevents" name="getinboxforwarderevents"></a> getInboxForwarderEvents
+
+▸ **getInboxForwarderEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>
+
+Get inbox ruleset events
+Get an inbox forwarder event list
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxForwarderEventsRequest`](../interfaces/GetInboxForwarderEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>
+
+___
+
+### <a id="getinboxforwardereventsraw" name="getinboxforwardereventsraw"></a> getInboxForwarderEventsRaw
+
+▸ **getInboxForwarderEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>\>
+
+Get inbox ruleset events
+Get an inbox forwarder event list
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxForwarderEventsRequest`](../interfaces/GetInboxForwarderEventsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>\>
 
 ___
 
@@ -405,6 +449,46 @@ Test new inbox forwarder
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
+
+___
+
+### <a id="updateinboxforwarder" name="updateinboxforwarder"></a> updateInboxForwarder
+
+▸ **updateInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+
+Update inbox ruleset
+Update an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxForwarderRequest`](../interfaces/UpdateInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
+
+___
+
+### <a id="updateinboxforwarderraw" name="updateinboxforwarderraw"></a> updateInboxForwarderRaw
+
+▸ **updateInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
+
+Update inbox ruleset
+Update an inbox forwarder
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxForwarderRequest`](../interfaces/UpdateInboxForwarderRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
 
 ___
 

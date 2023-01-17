@@ -12,6 +12,7 @@ Options for forwarding an email
 
 - [bcc](ForwardEmailOptions.md#bcc)
 - [cc](ForwardEmailOptions.md#cc)
+- [filterBouncedRecipients](ForwardEmailOptions.md#filterbouncedrecipients)
 - [from](ForwardEmailOptions.md#from)
 - [subject](ForwardEmailOptions.md#subject)
 - [to](ForwardEmailOptions.md#to)
@@ -34,6 +35,16 @@ ___
 • `Optional` **cc**: `string`[]
 
 Optional cc recipients
+
+**`memberof`** ForwardEmailOptions
+
+___
+
+### <a id="filterbouncedrecipients" name="filterbouncedrecipients"></a> filterBouncedRecipients
+
+• `Optional` **filterBouncedRecipients**: `boolean`
+
+Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
 
 **`memberof`** ForwardEmailOptions
 

@@ -36,12 +36,6 @@ export interface PagePhoneNumberProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
@@ -52,6 +46,12 @@ export interface PagePhoneNumberProjection {
      * @memberof PagePhoneNumberProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PagePhoneNumberProjection {
     sort?: Sort;
     /**
      *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    first?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

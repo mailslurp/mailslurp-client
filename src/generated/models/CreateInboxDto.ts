@@ -85,6 +85,12 @@ export interface CreateInboxDto {
    * @memberof CreateInboxDto
    */
   virtualInbox?: boolean | null;
+  /**
+   * Use a shorter email address under 31 characters
+   * @type {boolean}
+   * @memberof CreateInboxDto
+   */
+  useShortAddress?: boolean | null;
 }
 
 /**
@@ -131,6 +137,9 @@ export function CreateInboxDtoFromJSONTyped(
     virtualInbox: !exists(json, 'virtualInbox')
       ? undefined
       : json['virtualInbox'],
+    useShortAddress: !exists(json, 'useShortAddress')
+      ? undefined
+      : json['useShortAddress'],
   };
 }
 
@@ -158,5 +167,6 @@ export function CreateInboxDtoToJSON(value?: CreateInboxDto | null): any {
     allowTeamAccess: value.allowTeamAccess,
     inboxType: value.inboxType,
     virtualInbox: value.virtualInbox,
+    useShortAddress: value.useShortAddress,
   };
 }
