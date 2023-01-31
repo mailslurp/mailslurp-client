@@ -29,10 +29,10 @@ export interface TrackingPixelProjection {
     id: string;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof TrackingPixelProjection
      */
-    userId: string;
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -44,13 +44,13 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    sentEmailId?: string;
+    userId: string;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof TrackingPixelProjection
      */
-    createdAt: Date;
+    sentEmailId?: string;
     /**
      *
      * @type {string}

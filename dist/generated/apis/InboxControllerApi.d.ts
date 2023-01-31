@@ -43,6 +43,7 @@ export interface DeleteInboxRequest {
 }
 export interface DoesInboxExistRequest {
     emailAddress: string;
+    allowCatchAll?: boolean;
 }
 export interface FlushExpiredRequest {
     before?: Date;

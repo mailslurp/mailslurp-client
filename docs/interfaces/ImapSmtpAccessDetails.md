@@ -14,6 +14,10 @@ Access details for inbox using SMTP or IMAP
 - [imapServerHost](ImapSmtpAccessDetails.md#imapserverhost)
 - [imapServerPort](ImapSmtpAccessDetails.md#imapserverport)
 - [imapUsername](ImapSmtpAccessDetails.md#imapusername)
+- [secureSmtpPassword](ImapSmtpAccessDetails.md#securesmtppassword)
+- [secureSmtpServerHost](ImapSmtpAccessDetails.md#securesmtpserverhost)
+- [secureSmtpServerPort](ImapSmtpAccessDetails.md#securesmtpserverport)
+- [secureSmtpUsername](ImapSmtpAccessDetails.md#securesmtpusername)
 - [smtpPassword](ImapSmtpAccessDetails.md#smtppassword)
 - [smtpServerHost](ImapSmtpAccessDetails.md#smtpserverhost)
 - [smtpServerPort](ImapSmtpAccessDetails.md#smtpserverport)
@@ -61,11 +65,51 @@ IMAP username for login
 
 ___
 
+### <a id="securesmtppassword" name="securesmtppassword"></a> secureSmtpPassword
+
+• **secureSmtpPassword**: `string`
+
+Secure TLS SMTP password for login
+
+**`memberof`** ImapSmtpAccessDetails
+
+___
+
+### <a id="securesmtpserverhost" name="securesmtpserverhost"></a> secureSmtpServerHost
+
+• **secureSmtpServerHost**: `string`
+
+Secure TLS SMTP server host domain
+
+**`memberof`** ImapSmtpAccessDetails
+
+___
+
+### <a id="securesmtpserverport" name="securesmtpserverport"></a> secureSmtpServerPort
+
+• **secureSmtpServerPort**: `number`
+
+Secure TLS SMTP server host port
+
+**`memberof`** ImapSmtpAccessDetails
+
+___
+
+### <a id="securesmtpusername" name="securesmtpusername"></a> secureSmtpUsername
+
+• **secureSmtpUsername**: `string`
+
+Secure TLS SMTP username for login
+
+**`memberof`** ImapSmtpAccessDetails
+
+___
+
 ### <a id="smtppassword" name="smtppassword"></a> smtpPassword
 
 • **smtpPassword**: `string`
 
-SMTP  for login
+SMTP password for login
 
 **`memberof`** ImapSmtpAccessDetails
 

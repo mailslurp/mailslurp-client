@@ -33,16 +33,16 @@ export interface SmsProjection {
   body: string;
   /**
    *
-   * @type {string}
-   * @memberof SmsProjection
-   */
-  userId: string;
-  /**
-   *
    * @type {Date}
    * @memberof SmsProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof SmsProjection
+   */
+  userId: string;
   /**
    *
    * @type {string}
@@ -77,8 +77,8 @@ export function SmsProjectionFromJSONTyped(
   return {
     id: json['id'],
     body: json['body'],
-    userId: json['userId'],
     createdAt: new Date(json['createdAt']),
+    userId: json['userId'],
     phoneNumber: json['phoneNumber'],
     fromNumber: json['fromNumber'],
     read: json['read'],
@@ -95,8 +95,8 @@ export function SmsProjectionToJSON(value?: SmsProjection | null): any {
   return {
     id: value.id,
     body: value.body,
-    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
+    userId: value.userId,
     phoneNumber: value.phoneNumber,
     fromNumber: value.fromNumber,
     read: value.read,

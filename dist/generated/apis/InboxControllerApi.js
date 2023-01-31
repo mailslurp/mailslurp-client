@@ -546,6 +546,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.emailAddress !== undefined) {
                             queryParameters['emailAddress'] = requestParameters.emailAddress;
                         }
+                        if (requestParameters.allowCatchAll !== undefined) {
+                            queryParameters['allowCatchAll'] = requestParameters.allowCatchAll;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication

@@ -36,6 +36,12 @@ export interface PageListUnsubscribeRecipients {
     total?: number;
     /**
      *
+     * @type {boolean}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    last?: boolean;
+    /**
+     *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
@@ -46,12 +52,6 @@ export interface PageListUnsubscribeRecipients {
      * @memberof PageListUnsubscribeRecipients
      */
     totalPages?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    last?: boolean;
     /**
      *
      * @type {number}
@@ -72,16 +72,16 @@ export interface PageListUnsubscribeRecipients {
     sort?: Sort;
     /**
      *
-     * @type {number}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    numberOfElements?: number;
-    /**
-     *
      * @type {boolean}
      * @memberof PageListUnsubscribeRecipients
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    numberOfElements?: number;
     /**
      *
      * @type {boolean}

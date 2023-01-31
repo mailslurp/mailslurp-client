@@ -29,24 +29,6 @@ export interface AliasProjection {
     id: string;
     /**
      *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    userId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    emailAddress: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    inboxId: string;
-    /**
-     *
      * @type {Date}
      * @memberof AliasProjection
      */
@@ -57,6 +39,24 @@ export interface AliasProjection {
      * @memberof AliasProjection
      */
     updatedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    userId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    emailAddress: string;
     /**
      *
      * @type {boolean}

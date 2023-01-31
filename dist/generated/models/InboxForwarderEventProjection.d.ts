@@ -35,10 +35,10 @@ export interface InboxForwarderEventProjection {
     status?: InboxForwarderEventProjectionStatusEnum;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof InboxForwarderEventProjection
      */
-    userId?: string | null;
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -53,10 +53,10 @@ export interface InboxForwarderEventProjection {
     inboxId?: string | null;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof InboxForwarderEventProjection
      */
-    createdAt: Date;
+    userId?: string | null;
     /**
      *
      * @type {string}

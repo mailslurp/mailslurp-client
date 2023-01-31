@@ -20,6 +20,30 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ImapSmtpAccessDetails {
   /**
+   * Secure TLS SMTP server host domain
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureSmtpServerHost: string;
+  /**
+   * Secure TLS SMTP server host port
+   * @type {number}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureSmtpServerPort: number;
+  /**
+   * Secure TLS SMTP username for login
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureSmtpUsername: string;
+  /**
+   * Secure TLS SMTP password for login
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureSmtpPassword: string;
+  /**
    * SMTP server host domain
    * @type {string}
    * @memberof ImapSmtpAccessDetails
@@ -38,7 +62,7 @@ export interface ImapSmtpAccessDetails {
    */
   smtpUsername: string;
   /**
-   * SMTP  for login
+   * SMTP password for login
    * @type {string}
    * @memberof ImapSmtpAccessDetails
    */
@@ -83,6 +107,10 @@ export function ImapSmtpAccessDetailsFromJSONTyped(
     return json;
   }
   return {
+    secureSmtpServerHost: json['secureSmtpServerHost'],
+    secureSmtpServerPort: json['secureSmtpServerPort'],
+    secureSmtpUsername: json['secureSmtpUsername'],
+    secureSmtpPassword: json['secureSmtpPassword'],
     smtpServerHost: json['smtpServerHost'],
     smtpServerPort: json['smtpServerPort'],
     smtpUsername: json['smtpUsername'],
@@ -104,6 +132,10 @@ export function ImapSmtpAccessDetailsToJSON(
     return null;
   }
   return {
+    secureSmtpServerHost: value.secureSmtpServerHost,
+    secureSmtpServerPort: value.secureSmtpServerPort,
+    secureSmtpUsername: value.secureSmtpUsername,
+    secureSmtpPassword: value.secureSmtpPassword,
     smtpServerHost: value.smtpServerHost,
     smtpServerPort: value.smtpServerPort,
     smtpUsername: value.smtpUsername,

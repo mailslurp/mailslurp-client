@@ -26,6 +26,8 @@
 - [deleteDomainRaw](DomainControllerApi.md#deletedomainraw)
 - [getDomain](DomainControllerApi.md#getdomain)
 - [getDomainRaw](DomainControllerApi.md#getdomainraw)
+- [getDomainWildcardCatchAllInbox](DomainControllerApi.md#getdomainwildcardcatchallinbox)
+- [getDomainWildcardCatchAllInboxRaw](DomainControllerApi.md#getdomainwildcardcatchallinboxraw)
 - [getDomains](DomainControllerApi.md#getdomains)
 - [getDomainsRaw](DomainControllerApi.md#getdomainsraw)
 - [request](DomainControllerApi.md#request)
@@ -220,6 +222,46 @@ Get a domain
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
+
+___
+
+### <a id="getdomainwildcardcatchallinbox" name="getdomainwildcardcatchallinbox"></a> getDomainWildcardCatchAllInbox
+
+▸ **getDomainWildcardCatchAllInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
+
+Get the catch all inbox for a domain for missed emails
+Get catch all wild card inbox for domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainWildcardCatchAllInboxRequest`](../interfaces/GetDomainWildcardCatchAllInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
+
+___
+
+### <a id="getdomainwildcardcatchallinboxraw" name="getdomainwildcardcatchallinboxraw"></a> getDomainWildcardCatchAllInboxRaw
+
+▸ **getDomainWildcardCatchAllInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
+
+Get the catch all inbox for a domain for missed emails
+Get catch all wild card inbox for domain
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDomainWildcardCatchAllInboxRequest`](../interfaces/GetDomainWildcardCatchAllInboxRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
 ___
 

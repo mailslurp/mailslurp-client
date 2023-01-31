@@ -23,6 +23,10 @@ function ImapSmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        secureSmtpServerHost: json['secureSmtpServerHost'],
+        secureSmtpServerPort: json['secureSmtpServerPort'],
+        secureSmtpUsername: json['secureSmtpUsername'],
+        secureSmtpPassword: json['secureSmtpPassword'],
         smtpServerHost: json['smtpServerHost'],
         smtpServerPort: json['smtpServerPort'],
         smtpUsername: json['smtpUsername'],
@@ -42,6 +46,10 @@ function ImapSmtpAccessDetailsToJSON(value) {
         return null;
     }
     return {
+        secureSmtpServerHost: value.secureSmtpServerHost,
+        secureSmtpServerPort: value.secureSmtpServerPort,
+        secureSmtpUsername: value.secureSmtpUsername,
+        secureSmtpPassword: value.secureSmtpPassword,
         smtpServerHost: value.smtpServerHost,
         smtpServerPort: value.smtpServerPort,
         smtpUsername: value.smtpUsername,

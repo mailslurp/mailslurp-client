@@ -29,16 +29,16 @@ export interface SmsProjection {
     body: string;
     /**
      *
-     * @type {string}
-     * @memberof SmsProjection
-     */
-    userId: string;
-    /**
-     *
      * @type {Date}
      * @memberof SmsProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    userId: string;
     /**
      *
      * @type {string}

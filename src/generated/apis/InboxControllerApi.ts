@@ -135,6 +135,7 @@ export interface DeleteInboxRequest {
 
 export interface DoesInboxExistRequest {
   emailAddress: string;
+  allowCatchAll?: boolean;
 }
 
 export interface FlushExpiredRequest {
@@ -816,6 +817,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.emailAddress !== undefined) {
       queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    if (requestParameters.allowCatchAll !== undefined) {
+      queryParameters['allowCatchAll'] = requestParameters.allowCatchAll;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

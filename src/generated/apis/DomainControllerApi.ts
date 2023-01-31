@@ -23,6 +23,9 @@ import {
   DomainPreview,
   DomainPreviewFromJSON,
   DomainPreviewToJSON,
+  InboxDto,
+  InboxDtoFromJSON,
+  InboxDtoToJSON,
   UpdateDomainOptions,
   UpdateDomainOptionsFromJSON,
   UpdateDomainOptionsToJSON,
@@ -41,6 +44,10 @@ export interface DeleteDomainRequest {
 }
 
 export interface GetDomainRequest {
+  id: string;
+}
+
+export interface GetDomainWildcardCatchAllInboxRequest {
   id: string;
 }
 
@@ -272,6 +279,62 @@ export class DomainControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainDto> {
     const response = await this.getDomainRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get the catch all inbox for a domain for missed emails
+   * Get catch all wild card inbox for domain
+   */
+  async getDomainWildcardCatchAllInboxRaw(
+    requestParameters: GetDomainWildcardCatchAllInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getDomainWildcardCatchAllInbox.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/{id}/wildcard`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get the catch all inbox for a domain for missed emails
+   * Get catch all wild card inbox for domain
+   */
+  async getDomainWildcardCatchAllInbox(
+    requestParameters: GetDomainWildcardCatchAllInboxRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxDto> {
+    const response = await this.getDomainWildcardCatchAllInboxRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 

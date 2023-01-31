@@ -39,10 +39,10 @@ export interface InboxForwarderEventProjection {
   status?: InboxForwarderEventProjectionStatusEnum;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof InboxForwarderEventProjection
    */
-  userId?: string | null;
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -57,10 +57,10 @@ export interface InboxForwarderEventProjection {
   inboxId?: string | null;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof InboxForwarderEventProjection
    */
-  createdAt: Date;
+  userId?: string | null;
   /**
    *
    * @type {string}
@@ -95,10 +95,10 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
+    createdAt: new Date(json['createdAt']),
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
   };
 }
@@ -116,10 +116,10 @@ export function InboxForwarderEventProjectionToJSON(
     message: value.message,
     id: value.id,
     status: value.status,
-    userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
     emailId: value.emailId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
+    userId: value.userId,
     forwarderId: value.forwarderId,
   };
 }

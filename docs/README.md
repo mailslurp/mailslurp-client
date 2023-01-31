@@ -333,6 +333,7 @@
 - [GetDeliveryStatusesByInboxIdRequest](interfaces/GetDeliveryStatusesByInboxIdRequest.md)
 - [GetDnsLookupRequest](interfaces/GetDnsLookupRequest.md)
 - [GetDomainRequest](interfaces/GetDomainRequest.md)
+- [GetDomainWildcardCatchAllInboxRequest](interfaces/GetDomainWildcardCatchAllInboxRequest.md)
 - [GetEmailAttachmentsRequest](interfaces/GetEmailAttachmentsRequest.md)
 - [GetEmailContentMatchRequest](interfaces/GetEmailContentMatchRequest.md)
 - [GetEmailHTMLJsonRequest](interfaces/GetEmailHTMLJsonRequest.md)
