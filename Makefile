@@ -38,7 +38,7 @@ build: node_modules
 docs: node_modules
 	npm run build
 	rm -rf docs
-	rm -rf docs-html
+	rm -rf docs-markdown
 	npm run docs
 	npm run docs:html
 

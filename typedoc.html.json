@@ -1,7 +1,7 @@
 {
     "name": "MailSlurp JS",
     "readme": "none",
-    "out": "docs-html",
+    "out": "docs",
     "hideGenerator": true,
     "tsconfig": "./tsconfig.json",
     "disableSources": true,

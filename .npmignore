@@ -2,6 +2,7 @@
 Makefile
 docs
 docs-html
+docs-markdown
 bin
 config
 typedoc.json
