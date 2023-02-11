@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DownloadAttachmentRequest
+
 # Interface: DownloadAttachmentRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="apikey" name="apikey"></a> apiKey
+### apiKey
 
 • `Optional` **apiKey**: `string`
 
 ___
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

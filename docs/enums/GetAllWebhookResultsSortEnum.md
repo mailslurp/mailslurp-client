@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / GetAllWebhookResultsSortEnum
+
 # Enumeration: GetAllWebhookResultsSortEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="asc" name="asc"></a> ASC
+### ASC
 
-• **ASC**
+• **ASC** = ``"ASC"``
 
 ___
 
-### <a id="desc" name="desc"></a> DESC
+### DESC
 
-• **DESC**
+• **DESC** = ``"DESC"``

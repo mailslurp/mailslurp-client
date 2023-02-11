@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / RequestOpts
+
 # Interface: RequestOpts
 
 ## Table of contents
@@ -12,30 +14,30 @@
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • `Optional` **body**: `any`
 
 ___
 
-### <a id="headers" name="headers"></a> headers
+### headers
 
 • **headers**: [`HTTPHeaders`](../README.md#httpheaders)
 
 ___
 
-### <a id="method" name="method"></a> method
+### method
 
 • **method**: [`HTTPMethod`](../README.md#httpmethod)
 
 ___
 
-### <a id="path" name="path"></a> path
+### path
 
 • **path**: `string`
 
 ___
 
-### <a id="query" name="query"></a> query
+### query
 
 • `Optional` **query**: [`HTTPQuery`](../README.md#httpquery)

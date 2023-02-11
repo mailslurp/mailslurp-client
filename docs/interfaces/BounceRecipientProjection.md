@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BounceRecipientProjection
+
 # Interface: BounceRecipientProjection
 
 Bounced recipient
 
-**`export`**
+**`Export`**
 
-**`interface`** BounceRecipientProjection
+**`Interface`**
+
+BounceRecipientProjection
 
 ## Table of contents
 
@@ -19,48 +23,60 @@ Bounced recipient
 
 ## Properties
 
-### <a id="action" name="action"></a> action
+### action
 
 • `Optional` **action**: `string`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • **recipient**: `string`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection
 
 ___
 
-### <a id="status" name="status"></a> status
+### status
 
 • `Optional` **status**: `string`
 
-**`memberof`** BounceRecipientProjection
+**`Memberof`**
+
+BounceRecipientProjection

@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / WebhookDtoMethodEnum
+
 # Enumeration: WebhookDtoMethodEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -17,48 +19,48 @@
 
 ## Enumeration Members
 
-### <a id="delete" name="delete"></a> DELETE
+### DELETE
 
-• **DELETE**
-
-___
-
-### <a id="get" name="get"></a> GET
-
-• **GET**
+• **DELETE** = ``"DELETE"``
 
 ___
 
-### <a id="head" name="head"></a> HEAD
+### GET
 
-• **HEAD**
-
-___
-
-### <a id="options" name="options"></a> OPTIONS
-
-• **OPTIONS**
+• **GET** = ``"GET"``
 
 ___
 
-### <a id="patch" name="patch"></a> PATCH
+### HEAD
 
-• **PATCH**
-
-___
-
-### <a id="post" name="post"></a> POST
-
-• **POST**
+• **HEAD** = ``"HEAD"``
 
 ___
 
-### <a id="put" name="put"></a> PUT
+### OPTIONS
 
-• **PUT**
+• **OPTIONS** = ``"OPTIONS"``
 
 ___
 
-### <a id="trace" name="trace"></a> TRACE
+### PATCH
 
-• **TRACE**
+• **PATCH** = ``"PATCH"``
+
+___
+
+### POST
+
+• **POST** = ``"POST"``
+
+___
+
+### PUT
+
+• **PUT** = ``"PUT"``
+
+___
+
+### TRACE
+
+• **TRACE** = ``"TRACE"``

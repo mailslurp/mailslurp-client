@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendEmailSimpleRequest
+
 # Interface: SendEmailSimpleRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="simplesendemailoptions" name="simplesendemailoptions"></a> simpleSendEmailOptions
+### simpleSendEmailOptions
 
 • **simpleSendEmailOptions**: [`SimpleSendEmailOptions`](SimpleSendEmailOptions.md)

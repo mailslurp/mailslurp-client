@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ContactDto
+
 # Interface: ContactDto
 
 Contact object. For saving a user in contact book.
 
-**`export`**
+**`Export`**
 
-**`interface`** ContactDto
+**`Interface`**
+
+ContactDto
 
 ## Table of contents
 
@@ -24,88 +28,110 @@ Contact object. For saving a user in contact book.
 
 ## Properties
 
-### <a id="company" name="company"></a> company
+### company
 
 • `Optional` **company**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
+### emailAddresses
 
 • **emailAddresses**: `string`[]
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="firstname" name="firstname"></a> firstName
+### firstName
 
 • `Optional` **firstName**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • `Optional` **groupId**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="lastname" name="lastname"></a> lastName
+### lastName
 
 • `Optional` **lastName**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="metadata" name="metadata"></a> metaData
+### metaData
 
 • `Optional` **metaData**: `object`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="optout" name="optout"></a> optOut
+### optOut
 
 • `Optional` **optOut**: `boolean`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="primaryemailaddress" name="primaryemailaddress"></a> primaryEmailAddress
+### primaryEmailAddress
 
 • `Optional` **primaryEmailAddress**: `string`
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto
 
 ___
 
-### <a id="tags" name="tags"></a> tags
+### tags
 
 • **tags**: `string`[]
 
-**`memberof`** ContactDto
+**`Memberof`**
+
+ContactDto

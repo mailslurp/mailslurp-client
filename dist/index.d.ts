@@ -1,13 +1,13 @@
 import { AliasControllerApi, ApiUserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
 export * from './generated';
-declare type SortEnum = 'ASC' | 'DESC';
+type SortEnum = 'ASC' | 'DESC';
 /**
  * MailSlurp config
  *
  * @remarks
  * [Obtain your API Key](https://app.mailslurp.com) in your dashboard.
  */
-export declare type Config = {
+export type Config = {
     apiKey: string;
     attribution?: string;
     basePath?: string;
@@ -257,7 +257,7 @@ export declare class MailSlurp {
  * @remarks
  * For more control over fetching. See also Webhook endpoints
  */
-export declare type GetMessagesOptions = {
+export type GetMessagesOptions = {
     limit?: number;
     minCount?: number;
     retryTimeout?: number;

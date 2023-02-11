@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / VerifyEmailAddressRequest
+
 # Interface: VerifyEmailAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="verifyemailaddressoptions" name="verifyemailaddressoptions"></a> verifyEmailAddressOptions
+### verifyEmailAddressOptions
 
 • **verifyEmailAddressOptions**: [`VerifyEmailAddressOptions`](VerifyEmailAddressOptions.md)

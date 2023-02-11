@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateAccountWebhookRequest
+
 # Interface: CreateAccountWebhookRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createwebhookoptions" name="createwebhookoptions"></a> createWebhookOptions
+### createWebhookOptions
 
 • **createWebhookOptions**: [`CreateWebhookOptions`](CreateWebhookOptions.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / InboxRulesetControllerApi
+
 # Class: InboxRulesetControllerApi
 
 ## Hierarchy
@@ -41,7 +43,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new InboxRulesetControllerApi**(`configuration?`)
 
@@ -57,7 +59,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -67,7 +69,7 @@
 
 ## Methods
 
-### <a id="createnewinboxruleset" name="createnewinboxruleset"></a> createNewInboxRuleset
+### createNewInboxRuleset
 
 ▸ **createNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
@@ -87,7 +89,7 @@ Create an inbox ruleset
 
 ___
 
-### <a id="createnewinboxrulesetraw" name="createnewinboxrulesetraw"></a> createNewInboxRulesetRaw
+### createNewInboxRulesetRaw
 
 ▸ **createNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
@@ -107,7 +109,7 @@ Create an inbox ruleset
 
 ___
 
-### <a id="deleteinboxruleset" name="deleteinboxruleset"></a> deleteInboxRuleset
+### deleteInboxRuleset
 
 ▸ **deleteInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -127,7 +129,7 @@ Delete an inbox ruleset
 
 ___
 
-### <a id="deleteinboxrulesetraw" name="deleteinboxrulesetraw"></a> deleteInboxRulesetRaw
+### deleteInboxRulesetRaw
 
 ▸ **deleteInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -147,7 +149,7 @@ Delete an inbox ruleset
 
 ___
 
-### <a id="deleteinboxrulesets" name="deleteinboxrulesets"></a> deleteInboxRulesets
+### deleteInboxRulesets
 
 ▸ **deleteInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -167,7 +169,7 @@ Delete inbox rulesets
 
 ___
 
-### <a id="deleteinboxrulesetsraw" name="deleteinboxrulesetsraw"></a> deleteInboxRulesetsRaw
+### deleteInboxRulesetsRaw
 
 ▸ **deleteInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -187,7 +189,7 @@ Delete inbox rulesets
 
 ___
 
-### <a id="getinboxruleset" name="getinboxruleset"></a> getInboxRuleset
+### getInboxRuleset
 
 ▸ **getInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>
 
@@ -207,7 +209,7 @@ Get an inbox ruleset
 
 ___
 
-### <a id="getinboxrulesetraw" name="getinboxrulesetraw"></a> getInboxRulesetRaw
+### getInboxRulesetRaw
 
 ▸ **getInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetDto`](../interfaces/InboxRulesetDto.md)\>\>
 
@@ -227,7 +229,7 @@ Get an inbox ruleset
 
 ___
 
-### <a id="getinboxrulesets" name="getinboxrulesets"></a> getInboxRulesets
+### getInboxRulesets
 
 ▸ **getInboxRulesets**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>
 
@@ -247,7 +249,7 @@ List inbox rulesets
 
 ___
 
-### <a id="getinboxrulesetsraw" name="getinboxrulesetsraw"></a> getInboxRulesetsRaw
+### getInboxRulesetsRaw
 
 ▸ **getInboxRulesetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxRulesetDto`](../interfaces/PageInboxRulesetDto.md)\>\>
 
@@ -267,7 +269,7 @@ List inbox rulesets
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -288,7 +290,7 @@ ___
 
 ___
 
-### <a id="testinboxruleset" name="testinboxruleset"></a> testInboxRuleset
+### testInboxRuleset
 
 ▸ **testInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -308,7 +310,7 @@ Test an inbox ruleset
 
 ___
 
-### <a id="testinboxrulesetraw" name="testinboxrulesetraw"></a> testInboxRulesetRaw
+### testInboxRulesetRaw
 
 ▸ **testInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -328,7 +330,7 @@ Test an inbox ruleset
 
 ___
 
-### <a id="testinboxrulesetsforinbox" name="testinboxrulesetsforinbox"></a> testInboxRulesetsForInbox
+### testInboxRulesetsForInbox
 
 ▸ **testInboxRulesetsForInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -348,7 +350,7 @@ Test inbox rulesets for inbox
 
 ___
 
-### <a id="testinboxrulesetsforinboxraw" name="testinboxrulesetsforinboxraw"></a> testInboxRulesetsForInboxRaw
+### testInboxRulesetsForInboxRaw
 
 ▸ **testInboxRulesetsForInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -368,7 +370,7 @@ Test inbox rulesets for inbox
 
 ___
 
-### <a id="testnewinboxruleset" name="testnewinboxruleset"></a> testNewInboxRuleset
+### testNewInboxRuleset
 
 ▸ **testNewInboxRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>
 
@@ -388,7 +390,7 @@ Test new inbox ruleset
 
 ___
 
-### <a id="testnewinboxrulesetraw" name="testnewinboxrulesetraw"></a> testNewInboxRulesetRaw
+### testNewInboxRulesetRaw
 
 ▸ **testNewInboxRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
 
@@ -408,9 +410,9 @@ Test new inbox ruleset
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -435,9 +437,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -462,9 +464,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

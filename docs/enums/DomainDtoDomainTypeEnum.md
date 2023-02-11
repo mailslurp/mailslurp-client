@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / DomainDtoDomainTypeEnum
+
 # Enumeration: DomainDtoDomainTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="http_inbox" name="http_inbox"></a> HTTP\_INBOX
+### HTTP\_INBOX
 
-• **HTTP\_INBOX**
+• **HTTP\_INBOX** = ``"HTTP_INBOX"``
 
 ___
 
-### <a id="smtp_domain" name="smtp_domain"></a> SMTP\_DOMAIN
+### SMTP\_DOMAIN
 
-• **SMTP\_DOMAIN**
+• **SMTP\_DOMAIN** = ``"SMTP_DOMAIN"``

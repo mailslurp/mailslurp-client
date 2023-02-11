@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateTrackingPixelRequest
+
 # Interface: CreateTrackingPixelRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createtrackingpixeloptions" name="createtrackingpixeloptions"></a> createTrackingPixelOptions
+### createTrackingPixelOptions
 
 • **createTrackingPixelOptions**: [`CreateTrackingPixelOptions`](CreateTrackingPixelOptions.md)

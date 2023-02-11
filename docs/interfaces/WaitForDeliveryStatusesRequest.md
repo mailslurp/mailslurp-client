@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / WaitForDeliveryStatusesRequest
+
 # Interface: WaitForDeliveryStatusesRequest
 
 ## Table of contents
@@ -13,36 +15,36 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
 ___
 
-### <a id="index" name="index"></a> index
+### index
 
 • `Optional` **index**: `number`
 
 ___
 
-### <a id="sentid" name="sentid"></a> sentId
+### sentId
 
 • `Optional` **sentId**: `string`
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="timeout" name="timeout"></a> timeout
+### timeout
 
 • `Optional` **timeout**: `number`

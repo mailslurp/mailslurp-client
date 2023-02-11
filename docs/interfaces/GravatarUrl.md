@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / GravatarUrl
+
 # Interface: GravatarUrl
 
 User image
 
-**`export`**
+**`Export`**
 
-**`interface`** GravatarUrl
+**`Interface`**
+
+GravatarUrl
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ User image
 
 ## Properties
 
-### <a id="hash" name="hash"></a> hash
+### hash
 
 • **hash**: `string`
 
-**`memberof`** GravatarUrl
+**`Memberof`**
+
+GravatarUrl
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`
 
-**`memberof`** GravatarUrl
+**`Memberof`**
+
+GravatarUrl

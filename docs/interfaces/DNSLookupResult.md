@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DNSLookupResult
+
 # Interface: DNSLookupResult
 
 DNS lookup result. Includes record type, time to live, raw response, and name value for the name server response.
 
-**`export`**
+**`Export`**
 
-**`interface`** DNSLookupResult
+**`Interface`**
+
+DNSLookupResult
 
 ## Table of contents
 
@@ -17,34 +21,42 @@ DNS lookup result. Includes record type, time to live, raw response, and name va
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** DNSLookupResult
+**`Memberof`**
+
+DNSLookupResult
 
 ___
 
-### <a id="recordentries" name="recordentries"></a> recordEntries
+### recordEntries
 
 • **recordEntries**: `string`[]
 
-**`memberof`** DNSLookupResult
+**`Memberof`**
+
+DNSLookupResult
 
 ___
 
-### <a id="recordtype" name="recordtype"></a> recordType
+### recordType
 
 • **recordType**: [`DNSLookupResultRecordTypeEnum`](../enums/DNSLookupResultRecordTypeEnum.md)
 
 Domain Name Server Record Types
 
-**`memberof`** DNSLookupResult
+**`Memberof`**
+
+DNSLookupResult
 
 ___
 
-### <a id="ttl" name="ttl"></a> ttl
+### ttl
 
 • **ttl**: `number`
 
-**`memberof`** DNSLookupResult
+**`Memberof`**
+
+DNSLookupResult

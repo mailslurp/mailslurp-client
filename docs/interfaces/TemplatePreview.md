@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / TemplatePreview
+
 # Interface: TemplatePreview
 
-**`export`**
+**`Export`**
 
-**`interface`** TemplatePreview
+**`Interface`**
+
+TemplatePreview
 
 ## Table of contents
 
@@ -12,8 +16,10 @@
 
 ## Properties
 
-### <a id="preview" name="preview"></a> preview
+### preview
 
 • **preview**: `string`
 
-**`memberof`** TemplatePreview
+**`Memberof`**
+
+TemplatePreview

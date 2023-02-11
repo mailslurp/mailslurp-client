@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ReplyToAliasEmailOptions
+
 # Interface: ReplyToAliasEmailOptions
 
 Options for replying to an alias email using the alias inbox
 
-**`export`**
+**`Export`**
 
-**`interface`** ReplyToAliasEmailOptions
+**`Interface`**
+
+ReplyToAliasEmailOptions
 
 ## Table of contents
 
@@ -22,81 +26,97 @@ Options for replying to an alias email using the alias inbox
 
 ## Properties
 
-### <a id="attachments" name="attachments"></a> attachments
+### attachments
 
 • `Optional` **attachments**: `string`[]
 
 List of uploaded attachments to send with the reply. Optional.
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
 Body of the reply email you want to send
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="charset" name="charset"></a> charset
+### charset
 
 • `Optional` **charset**: `string`
 
 The charset that your message should be sent with. Optional. Default is UTF-8
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="html" name="html"></a> html
+### html
 
 • `Optional` **html**: `boolean`
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="ishtml" name="ishtml"></a> isHTML
+### isHTML
 
 • **isHTML**: `boolean`
 
 Is the reply HTML
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="sendstrategy" name="sendstrategy"></a> sendStrategy
+### sendStrategy
 
 • `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToAliasEmailOptionsSendStrategyEnum.md#single_message)
 
 How an email should be sent based on its recipients
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="template" name="template"></a> template
+### template
 
 • `Optional` **template**: `string`
 
 Template ID to use instead of body. Will use template variable map to fill defined variable slots.
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 ___
 
-### <a id="templatevariables" name="templatevariables"></a> templateVariables
+### templateVariables
 
 • `Optional` **templateVariables**: `Object`
 
 Template variables if using a template
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions
 
 #### Index signature
 
@@ -104,10 +124,12 @@ Template variables if using a template
 
 ___
 
-### <a id="useinboxname" name="useinboxname"></a> useInboxName
+### useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 
 Optionally use inbox name as display name for sender email address
 
-**`memberof`** ReplyToAliasEmailOptions
+**`Memberof`**
+
+ReplyToAliasEmailOptions

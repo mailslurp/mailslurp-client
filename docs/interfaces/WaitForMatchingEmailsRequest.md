@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / WaitForMatchingEmailsRequest
+
 # Interface: WaitForMatchingEmailsRequest
 
 ## Table of contents
@@ -16,54 +18,54 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="count" name="count"></a> count
+### count
 
 • **count**: `number`
 
 ___
 
-### <a id="delay" name="delay"></a> delay
+### delay
 
 • `Optional` **delay**: `number`
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="matchoptions" name="matchoptions"></a> matchOptions
+### matchOptions
 
 • **matchOptions**: [`MatchOptions`](MatchOptions.md)
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`WaitForMatchingEmailsSortEnum`](../enums/WaitForMatchingEmailsSortEnum.md)
 
 ___
 
-### <a id="timeout" name="timeout"></a> timeout
+### timeout
 
 • `Optional` **timeout**: `number`
 
 ___
 
-### <a id="unreadonly" name="unreadonly"></a> unreadOnly
+### unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

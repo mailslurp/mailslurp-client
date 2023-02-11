@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -154,7 +158,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -265,7 +269,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{emailId}/raw".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/sent/{emailId}/raw".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -315,7 +319,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{emailId}/raw/json".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/sent/{emailId}/raw/json".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -366,7 +370,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/delivery-status/{deliveryId}".replace("{" + 'deliveryId' + "}", encodeURIComponent(String(requestParameters.deliveryId))),
+                                path: "/sent/delivery-status/{deliveryId}".replace("{".concat('deliveryId', "}"), encodeURIComponent(String(requestParameters.deliveryId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -492,7 +496,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{sentId}/delivery-status".replace("{" + 'sentId' + "}", encodeURIComponent(String(requestParameters.sentId))),
+                                path: "/sent/{sentId}/delivery-status".replace("{".concat('sentId', "}"), encodeURIComponent(String(requestParameters.sentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -541,7 +545,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -590,7 +594,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}/html".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}/html".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -638,7 +642,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}/urls".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}/urls".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -706,7 +710,7 @@ var SentEmailsControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/sent/{id}/tracking-pixels".replace("{" + 'id' + "}", encodeURIComponent(String(requestParameters.id))),
+                                path: "/sent/{id}/tracking-pixels".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetInboxForwarderEventsRequest
+
 # Interface: GetInboxForwarderEventsRequest
 
 ## Table of contents
@@ -11,24 +13,24 @@
 
 ## Properties
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • `Optional` **page**: `number`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetInboxForwarderEventsSortEnum`](../enums/GetInboxForwarderEventsSortEnum.md)

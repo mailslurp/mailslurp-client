@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / TestNewInboxRulesetRequest
+
 # Interface: TestNewInboxRulesetRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="testnewinboxrulesetoptions" name="testnewinboxrulesetoptions"></a> testNewInboxRulesetOptions
+### testNewInboxRulesetOptions
 
 • **testNewInboxRulesetOptions**: [`TestNewInboxRulesetOptions`](TestNewInboxRulesetOptions.md)

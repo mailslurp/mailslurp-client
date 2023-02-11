@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxIdItem
+
 # Interface: InboxIdItem
 
 Inbox ID and email address pair
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxIdItem
+**`Interface`**
+
+InboxIdItem
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Inbox ID and email address pair
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** InboxIdItem
+**`Memberof`**
+
+InboxIdItem
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** InboxIdItem
+**`Memberof`**
+
+InboxIdItem

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SendSMTPEnvelopeOptions
+
 # Interface: SendSMTPEnvelopeOptions
 
 Options for the email envelope
 
-**`export`**
+**`Export`**
 
-**`interface`** SendSMTPEnvelopeOptions
+**`Interface`**
+
+SendSMTPEnvelopeOptions
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Options for the email envelope
 
 ## Properties
 
-### <a id="data" name="data"></a> data
+### data
 
 • **data**: `string`
 
-**`memberof`** SendSMTPEnvelopeOptions
+**`Memberof`**
+
+SendSMTPEnvelopeOptions
 
 ___
 
-### <a id="mailfrom" name="mailfrom"></a> mailFrom
+### mailFrom
 
 • **mailFrom**: `string`
 
-**`memberof`** SendSMTPEnvelopeOptions
+**`Memberof`**
+
+SendSMTPEnvelopeOptions
 
 ___
 
-### <a id="rcptto" name="rcptto"></a> rcptTo
+### rcptTo
 
 • **rcptTo**: `string`[]
 
-**`memberof`** SendSMTPEnvelopeOptions
+**`Memberof`**
+
+SendSMTPEnvelopeOptions

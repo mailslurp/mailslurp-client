@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UnseenErrorCountDto
+
 # Interface: UnseenErrorCountDto
 
 Number of unseen errors
 
-**`export`**
+**`Export`**
 
-**`interface`** UnseenErrorCountDto
+**`Interface`**
+
+UnseenErrorCountDto
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Number of unseen errors
 
 ## Properties
 
-### <a id="count" name="count"></a> count
+### count
 
 • **count**: `number`
 
-**`memberof`** UnseenErrorCountDto
+**`Memberof`**
+
+UnseenErrorCountDto

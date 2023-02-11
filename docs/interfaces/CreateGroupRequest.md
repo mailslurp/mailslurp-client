@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateGroupRequest
+
 # Interface: CreateGroupRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="creategroupoptions" name="creategroupoptions"></a> createGroupOptions
+### createGroupOptions
 
 • **createGroupOptions**: [`CreateGroupOptions`](CreateGroupOptions.md)

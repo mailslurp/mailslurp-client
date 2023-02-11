@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateDomainRequest
+
 # Interface: UpdateDomainRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ___
 
-### <a id="updatedomainoptions" name="updatedomainoptions"></a> updateDomainOptions
+### updateDomainOptions
 
 • **updateDomainOptions**: [`UpdateDomainOptions`](UpdateDomainOptions.md)

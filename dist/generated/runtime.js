@@ -53,7 +53,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -121,8 +121,8 @@ var isBlob = function (value) {
  */
 var BaseAPI = /** @class */ (function () {
     function BaseAPI(configuration) {
-        var _this = this;
         if (configuration === void 0) { configuration = new Configuration(); }
+        var _this = this;
         this.configuration = configuration;
         this.fetchApi = function (url, init) { return __awaiter(_this, void 0, void 0, function () {
             var fetchParams, _a, _b, middleware, e_1_1, response, _c, _d, middleware, e_2_1;
@@ -395,21 +395,21 @@ function querystring(params, prefix) {
     if (prefix === void 0) { prefix = ''; }
     return Object.keys(params)
         .map(function (key) {
-        var fullKey = prefix + (prefix.length ? "[" + key + "]" : key);
+        var fullKey = prefix + (prefix.length ? "[".concat(key, "]") : key);
         var value = params[key];
         if (value instanceof Array) {
             var multiValue = value
                 .map(function (singleValue) { return encodeURIComponent(String(singleValue)); })
-                .join("&" + encodeURIComponent(fullKey) + "=");
-            return encodeURIComponent(fullKey) + "=" + multiValue;
+                .join("&".concat(encodeURIComponent(fullKey), "="));
+            return "".concat(encodeURIComponent(fullKey), "=").concat(multiValue);
         }
         if (value instanceof Date) {
-            return encodeURIComponent(fullKey) + "=" + encodeURIComponent(value.toISOString());
+            return "".concat(encodeURIComponent(fullKey), "=").concat(encodeURIComponent(value.toISOString()));
         }
         if (value instanceof Object) {
             return querystring(value, fullKey);
         }
-        return encodeURIComponent(fullKey) + "=" + encodeURIComponent(String(value));
+        return "".concat(encodeURIComponent(fullKey), "=").concat(encodeURIComponent(String(value)));
     })
         .filter(function (part) { return part.length > 0; })
         .join('&');

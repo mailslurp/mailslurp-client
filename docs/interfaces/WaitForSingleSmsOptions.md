@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / WaitForSingleSmsOptions
+
 # Interface: WaitForSingleSmsOptions
 
-**`export`**
+**`Export`**
 
-**`interface`** WaitForSingleSmsOptions
+**`Interface`**
+
+WaitForSingleSmsOptions
 
 ## Table of contents
 
@@ -18,56 +22,70 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="delay" name="delay"></a> delay
+### delay
 
 • `Optional` **delay**: `number`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="phonenumberid" name="phonenumberid"></a> phoneNumberId
+### phoneNumberId
 
 • **phoneNumberId**: `string`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="sortdirection" name="sortdirection"></a> sortDirection
+### sortDirection
 
 • `Optional` **sortDirection**: [`WaitForSingleSmsOptionsSortDirectionEnum`](../enums/WaitForSingleSmsOptionsSortDirectionEnum.md)
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="timeout" name="timeout"></a> timeout
+### timeout
 
 • **timeout**: `number`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions
 
 ___
 
-### <a id="unreadonly" name="unreadonly"></a> unreadOnly
+### unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`
 
-**`memberof`** WaitForSingleSmsOptions
+**`Memberof`**
+
+WaitForSingleSmsOptions

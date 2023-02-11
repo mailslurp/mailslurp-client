@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetAliasRequest
+
 # Interface: GetAliasRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="aliasid" name="aliasid"></a> aliasId
+### aliasId
 
 • **aliasId**: `string`

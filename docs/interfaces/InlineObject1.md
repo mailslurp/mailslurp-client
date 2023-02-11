@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InlineObject1
+
 # Interface: InlineObject1
 
 Byte array request body
 
-**`export`**
+**`Export`**
 
-**`interface`** InlineObject1
+**`Interface`**
+
+InlineObject1
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Byte array request body
 
 ## Properties
 
-### <a id="_char" name="_char"></a> \_char
+### \_char
 
 • `Optional` **\_char**: `string`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="_double" name="_double"></a> \_double
+### \_double
 
 • `Optional` **\_double**: `number`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="_float" name="_float"></a> \_float
+### \_float
 
 • `Optional` **\_float**: `number`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="_int" name="_int"></a> \_int
+### \_int
 
 • `Optional` **\_int**: `number`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="_long" name="_long"></a> \_long
+### \_long
 
 • `Optional` **\_long**: `number`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="_short" name="_short"></a> \_short
+### \_short
 
 • `Optional` **\_short**: `number`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="direct" name="direct"></a> direct
+### direct
 
 • `Optional` **direct**: `boolean`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1
 
 ___
 
-### <a id="readonly" name="readonly"></a> readOnly
+### readOnly
 
 • `Optional` **readOnly**: `boolean`
 
-**`memberof`** InlineObject1
+**`Memberof`**
+
+InlineObject1

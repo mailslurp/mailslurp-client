@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UploadAttachmentBytesRequest
+
 # Interface: UploadAttachmentBytesRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • `Optional` **contentType**: `string`
 
 ___
 
-### <a id="filename" name="filename"></a> filename
+### filename
 
 • `Optional` **filename**: `string`
 
 ___
 
-### <a id="inlineobject1" name="inlineobject1"></a> inlineObject1
+### inlineObject1
 
 • **inlineObject1**: [`InlineObject1`](InlineObject1.md)

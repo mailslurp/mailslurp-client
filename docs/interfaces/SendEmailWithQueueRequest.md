@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendEmailWithQueueRequest
+
 # Interface: SendEmailWithQueueRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 ___
 
-### <a id="validatebeforeenqueue" name="validatebeforeenqueue"></a> validateBeforeEnqueue
+### validateBeforeEnqueue
 
 • **validateBeforeEnqueue**: `boolean`

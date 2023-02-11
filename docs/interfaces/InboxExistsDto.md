@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxExistsDto
+
 # Interface: InboxExistsDto
 
 Result of email exists query
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxExistsDto
+**`Interface`**
+
+InboxExistsDto
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Result of email exists query
 
 ## Properties
 
-### <a id="_exists" name="_exists"></a> \_exists
+### \_exists
 
 • **\_exists**: `boolean`
 
-**`memberof`** InboxExistsDto
+**`Memberof`**
+
+InboxExistsDto

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UpdateGroupContacts
+
 # Interface: UpdateGroupContacts
 
 Update group contacts options. Pass a list of contact ids to replace existing group contacts.
 
-**`export`**
+**`Export`**
 
-**`interface`** UpdateGroupContacts
+**`Interface`**
+
+UpdateGroupContacts
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Update group contacts options. Pass a list of contact ids to replace existing gr
 
 ## Properties
 
-### <a id="contactids" name="contactids"></a> contactIds
+### contactIds
 
 • **contactIds**: `string`[]
 
-**`memberof`** UpdateGroupContacts
+**`Memberof`**
+
+UpdateGroupContacts

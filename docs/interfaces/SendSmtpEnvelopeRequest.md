@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendSmtpEnvelopeRequest
+
 # Interface: SendSmtpEnvelopeRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="sendsmtpenvelopeoptions" name="sendsmtpenvelopeoptions"></a> sendSMTPEnvelopeOptions
+### sendSMTPEnvelopeOptions
 
 • **sendSMTPEnvelopeOptions**: [`SendSMTPEnvelopeOptions`](SendSMTPEnvelopeOptions.md)

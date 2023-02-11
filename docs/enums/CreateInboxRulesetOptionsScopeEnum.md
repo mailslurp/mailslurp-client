@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / CreateInboxRulesetOptionsScopeEnum
+
 # Enumeration: CreateInboxRulesetOptionsScopeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="receiving_emails" name="receiving_emails"></a> RECEIVING\_EMAILS
+### RECEIVING\_EMAILS
 
-• **RECEIVING\_EMAILS**
+• **RECEIVING\_EMAILS** = ``"RECEIVING_EMAILS"``
 
 ___
 
-### <a id="sending_emails" name="sending_emails"></a> SENDING\_EMAILS
+### SENDING\_EMAILS
 
-• **SENDING\_EMAILS**
+• **SENDING\_EMAILS** = ``"SENDING_EMAILS"``

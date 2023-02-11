@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / TemplateProjection
+
 # Interface: TemplateProjection
 
 Email template data
 
-**`export`**
+**`Export`**
 
-**`interface`** TemplateProjection
+**`Interface`**
+
+TemplateProjection
 
 ## Table of contents
 
@@ -18,40 +22,50 @@ Email template data
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** TemplateProjection
+**`Memberof`**
+
+TemplateProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** TemplateProjection
+**`Memberof`**
+
+TemplateProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** TemplateProjection
+**`Memberof`**
+
+TemplateProjection
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** TemplateProjection
+**`Memberof`**
+
+TemplateProjection
 
 ___
 
-### <a id="variables" name="variables"></a> variables
+### variables
 
 • **variables**: `string`[]
 
-**`memberof`** TemplateProjection
+**`Memberof`**
+
+TemplateProjection

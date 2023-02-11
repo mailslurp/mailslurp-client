@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SendWithQueueResult
+
 # Interface: SendWithQueueResult
 
 Collection of items
 
-**`export`**
+**`Export`**
 
-**`interface`** SendWithQueueResult
+**`Interface`**
+
+SendWithQueueResult
 
 ## Table of contents
 
@@ -23,80 +27,100 @@ Collection of items
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="delivered" name="delivered"></a> delivered
+### delivered
 
 • **delivered**: `boolean`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="exceptionname" name="exceptionname"></a> exceptionName
+### exceptionName
 
 • `Optional` **exceptionName**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="headerid" name="headerid"></a> headerId
+### headerId
 
 • **headerId**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** SendWithQueueResult
+**`Memberof`**
+
+SendWithQueueResult

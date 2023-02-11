@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateContactOptions
+
 # Interface: CreateContactOptions
 
 Options for creating an email contact in address book
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateContactOptions
+**`Interface`**
+
+CreateContactOptions
 
 ## Table of contents
 
@@ -21,72 +25,88 @@ Options for creating an email contact in address book
 
 ## Properties
 
-### <a id="company" name="company"></a> company
+### company
 
 • `Optional` **company**: `string`
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
+### emailAddresses
 
 • `Optional` **emailAddresses**: `string`[]
 
 Set of email addresses belonging to the contact
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="firstname" name="firstname"></a> firstName
+### firstName
 
 • `Optional` **firstName**: `string`
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • `Optional` **groupId**: `string`
 
 Group IDs that contact belongs to
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="lastname" name="lastname"></a> lastName
+### lastName
 
 • `Optional` **lastName**: `string`
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="metadata" name="metadata"></a> metaData
+### metaData
 
 • `Optional` **metaData**: `object`
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="optout" name="optout"></a> optOut
+### optOut
 
 • `Optional` **optOut**: `boolean`
 
 Has the user explicitly or implicitly opted out of being contacted? If so MailSlurp will ignore them in all actions.
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions
 
 ___
 
-### <a id="tags" name="tags"></a> tags
+### tags
 
 • `Optional` **tags**: `string`[]
 
 Tags that can be used to search and group contacts
 
-**`memberof`** CreateContactOptions
+**`Memberof`**
+
+CreateContactOptions

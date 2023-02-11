@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / RawEmailJson
+
 # Interface: RawEmailJson
 
 Content in raw format
 
-**`export`**
+**`Export`**
 
-**`interface`** RawEmailJson
+**`Interface`**
+
+RawEmailJson
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Content in raw format
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • **content**: `string`
 
-**`memberof`** RawEmailJson
+**`Memberof`**
+
+RawEmailJson

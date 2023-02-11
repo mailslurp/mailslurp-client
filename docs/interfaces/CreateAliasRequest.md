@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateAliasRequest
+
 # Interface: CreateAliasRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createaliasoptions" name="createaliasoptions"></a> createAliasOptions
+### createAliasOptions
 
 • **createAliasOptions**: [`CreateAliasOptions`](CreateAliasOptions.md)

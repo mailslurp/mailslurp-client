@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageDeliveryStatus
+
 # Interface: PageDeliveryStatus
 
 Paginated delivery status results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageDeliveryStatus
+**`Interface`**
+
+PageDeliveryStatus
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated delivery status results. Page index starts at zero. Projection results
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`DeliveryStatusDto`](DeliveryStatusDto.md)[]
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageDeliveryStatus
+**`Memberof`**
+
+PageDeliveryStatus

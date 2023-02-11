@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ValidationDto
+
 # Interface: ValidationDto
 
 Response object for email validation operation
 
-**`export`**
+**`Export`**
 
-**`interface`** ValidationDto
+**`Interface`**
+
+ValidationDto
 
 ## Table of contents
 
@@ -15,18 +19,22 @@ Response object for email validation operation
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ID of the email validated
 
-**`memberof`** ValidationDto
+**`Memberof`**
+
+ValidationDto
 
 ___
 
-### <a id="html" name="html"></a> html
+### html
 
 • **html**: [`HTMLValidationResult`](HTMLValidationResult.md)
 
-**`memberof`** ValidationDto
+**`Memberof`**
+
+ValidationDto

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / BulkCreateInboxesRequest
+
 # Interface: BulkCreateInboxesRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="count" name="count"></a> count
+### count
 
 • **count**: `number`

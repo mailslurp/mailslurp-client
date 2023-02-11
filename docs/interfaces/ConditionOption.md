@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ConditionOption
+
 # Interface: ConditionOption
 
 Options for matching emails in an inbox based on a condition such as `HAS_ATTACHMENTS=TRUE`
 
-**`export`**
+**`Export`**
 
-**`interface`** ConditionOption
+**`Interface`**
+
+ConditionOption
 
 ## Table of contents
 
@@ -15,20 +19,24 @@ Options for matching emails in an inbox based on a condition such as `HAS_ATTACH
 
 ## Properties
 
-### <a id="condition" name="condition"></a> condition
+### condition
 
 • **condition**: [`HAS_ATTACHMENTS`](../enums/ConditionOptionConditionEnum.md#has_attachments)
 
 Condition of an email object that can be used to filter results
 
-**`memberof`** ConditionOption
+**`Memberof`**
+
+ConditionOption
 
 ___
 
-### <a id="value" name="value"></a> value
+### value
 
 • **value**: [`ConditionOptionValueEnum`](../enums/ConditionOptionValueEnum.md)
 
 Expected condition value
 
-**`memberof`** ConditionOption
+**`Memberof`**
+
+ConditionOption

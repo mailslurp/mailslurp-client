@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / Complaint
+
 # Interface: Complaint
 
-**`export`**
+**`Export`**
 
-**`interface`** Complaint
+**`Interface`**
+
+Complaint
 
 ## Table of contents
 
@@ -19,64 +23,80 @@
 
 ## Properties
 
-### <a id="complaintrecipient" name="complaintrecipient"></a> complaintRecipient
+### complaintRecipient
 
 • **complaintRecipient**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="eventtype" name="eventtype"></a> eventType
+### eventType
 
 • `Optional` **eventType**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="mailmessageid" name="mailmessageid"></a> mailMessageId
+### mailMessageId
 
 • `Optional` **mailMessageId**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="mailsource" name="mailsource"></a> mailSource
+### mailSource
 
 • `Optional` **mailSource**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • `Optional` **userId**: `string`
 
-**`memberof`** Complaint
+**`Memberof`**
+
+Complaint

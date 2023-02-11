@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ExportEntitiesRequest
+
 # Interface: ExportEntitiesRequest
 
 ## Table of contents
@@ -15,48 +17,48 @@
 
 ## Properties
 
-### <a id="apikey" name="apikey"></a> apiKey
+### apiKey
 
 • **apiKey**: `string`
 
 ___
 
-### <a id="createdearliesttime" name="createdearliesttime"></a> createdEarliestTime
+### createdEarliestTime
 
 • `Optional` **createdEarliestTime**: `Date`
 
 ___
 
-### <a id="createdoldesttime" name="createdoldesttime"></a> createdOldestTime
+### createdOldestTime
 
 • `Optional` **createdOldestTime**: `Date`
 
 ___
 
-### <a id="excludepreviouslyexported" name="excludepreviouslyexported"></a> excludePreviouslyExported
+### excludePreviouslyExported
 
 • `Optional` **excludePreviouslyExported**: `boolean`
 
 ___
 
-### <a id="exporttype" name="exporttype"></a> exportType
+### exportType
 
 • **exportType**: [`ExportEntitiesExportTypeEnum`](../enums/ExportEntitiesExportTypeEnum.md)
 
 ___
 
-### <a id="filter" name="filter"></a> filter
+### filter
 
 • `Optional` **filter**: `string`
 
 ___
 
-### <a id="listseparatortoken" name="listseparatortoken"></a> listSeparatorToken
+### listSeparatorToken
 
 • `Optional` **listSeparatorToken**: `string`
 
 ___
 
-### <a id="outputformat" name="outputformat"></a> outputFormat
+### outputFormat
 
 • **outputFormat**: [`ExportEntitiesOutputFormatEnum`](../enums/ExportEntitiesOutputFormatEnum.md)

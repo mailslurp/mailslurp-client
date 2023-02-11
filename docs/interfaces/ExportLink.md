@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ExportLink
+
 # Interface: ExportLink
 
 Export download link
 
-**`export`**
+**`Export`**
 
-**`interface`** ExportLink
+**`Interface`**
+
+ExportLink
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Export download link
 
 ## Properties
 
-### <a id="downloadlink" name="downloadlink"></a> downloadLink
+### downloadLink
 
 • **downloadLink**: `string`
 
-**`memberof`** ExportLink
+**`Memberof`**
+
+ExportLink

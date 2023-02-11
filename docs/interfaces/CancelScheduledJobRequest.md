@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CancelScheduledJobRequest
+
 # Interface: CancelScheduledJobRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="jobid" name="jobid"></a> jobId
+### jobId
 
 • **jobId**: `string`

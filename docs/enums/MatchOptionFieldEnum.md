@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / MatchOptionFieldEnum
+
 # Enumeration: MatchOptionFieldEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -14,30 +16,30 @@
 
 ## Enumeration Members
 
-### <a id="bcc" name="bcc"></a> BCC
+### BCC
 
-• **BCC**
-
-___
-
-### <a id="cc" name="cc"></a> CC
-
-• **CC**
+• **BCC** = ``"BCC"``
 
 ___
 
-### <a id="from" name="from"></a> FROM
+### CC
 
-• **FROM**
-
-___
-
-### <a id="subject" name="subject"></a> SUBJECT
-
-• **SUBJECT**
+• **CC** = ``"CC"``
 
 ___
 
-### <a id="to" name="to"></a> TO
+### FROM
 
-• **TO**
+• **FROM** = ``"FROM"``
+
+___
+
+### SUBJECT
+
+• **SUBJECT** = ``"SUBJECT"``
+
+___
+
+### TO
+
+• **TO** = ``"TO"``

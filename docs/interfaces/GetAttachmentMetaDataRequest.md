@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetAttachmentMetaDataRequest
+
 # Interface: GetAttachmentMetaDataRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

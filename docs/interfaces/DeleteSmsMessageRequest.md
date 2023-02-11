@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteSmsMessageRequest
+
 # Interface: DeleteSmsMessageRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="smsid" name="smsid"></a> smsId
+### smsId
 
 • **smsId**: `string`

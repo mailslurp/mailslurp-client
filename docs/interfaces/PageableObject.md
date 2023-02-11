@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / PageableObject
+
 # Interface: PageableObject
 
-**`export`**
+**`Export`**
 
-**`interface`** PageableObject
+**`Interface`**
+
+PageableObject
 
 ## Table of contents
 
@@ -17,48 +21,60 @@
 
 ## Properties
 
-### <a id="offset" name="offset"></a> offset
+### offset
 
 • `Optional` **offset**: `number`
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject
 
 ___
 
-### <a id="pagenumber" name="pagenumber"></a> pageNumber
+### pageNumber
 
 • `Optional` **pageNumber**: `number`
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject
 
 ___
 
-### <a id="pagesize" name="pagesize"></a> pageSize
+### pageSize
 
 • `Optional` **pageSize**: `number`
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject
 
 ___
 
-### <a id="paged" name="paged"></a> paged
+### paged
 
 • `Optional` **paged**: `boolean`
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject
 
 ___
 
-### <a id="unpaged" name="unpaged"></a> unpaged
+### unpaged
 
 • `Optional` **unpaged**: `boolean`
 
-**`memberof`** PageableObject
+**`Memberof`**
+
+PageableObject

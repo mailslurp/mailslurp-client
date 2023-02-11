@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / Configuration
+
 # Class: Configuration
 
 ## Table of contents
@@ -5,6 +7,10 @@
 ### Constructors
 
 - [constructor](Configuration.md#constructor)
+
+### Properties
+
+- [configuration](Configuration.md#configuration)
 
 ### Accessors
 
@@ -21,7 +27,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new Configuration**(`configuration?`)
 
@@ -31,9 +37,15 @@
 | :------ | :------ |
 | `configuration` | [`ConfigurationParameters`](../interfaces/ConfigurationParameters.md) |
 
+## Properties
+
+### configuration
+
+• `Private` **configuration**: [`ConfigurationParameters`](../interfaces/ConfigurationParameters.md) = `{}`
+
 ## Accessors
 
-### <a id="accesstoken" name="accesstoken"></a> accessToken
+### accessToken
 
 • `get` **accessToken**(): (`name?`: `string`, `scopes?`: `string`[]) => `string` \| `Promise`<`string`\>
 
@@ -56,7 +68,7 @@
 
 ___
 
-### <a id="apikey" name="apikey"></a> apiKey
+### apiKey
 
 • `get` **apiKey**(): (`name`: `string`) => `string`
 
@@ -78,7 +90,7 @@ ___
 
 ___
 
-### <a id="basepath" name="basepath"></a> basePath
+### basePath
 
 • `get` **basePath**(): `string`
 
@@ -88,7 +100,7 @@ ___
 
 ___
 
-### <a id="credentials" name="credentials"></a> credentials
+### credentials
 
 • `get` **credentials**(): `RequestCredentials`
 
@@ -98,9 +110,9 @@ ___
 
 ___
 
-### <a id="fetchapi" name="fetchapi"></a> fetchApi
+### fetchApi
 
-• `get` **fetchApi**(): (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
+• `get` **fetchApi**(): (`input`: `RequestInfo` \| `URL`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
 #### Returns
 
@@ -112,7 +124,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `input` | `RequestInfo` |
+| `input` | `RequestInfo` \| `URL` |
 | `init?` | `RequestInit` |
 
 ##### Returns
@@ -121,7 +133,7 @@ ___
 
 ___
 
-### <a id="headers" name="headers"></a> headers
+### headers
 
 • `get` **headers**(): [`HTTPHeaders`](../README.md#httpheaders)
 
@@ -131,7 +143,7 @@ ___
 
 ___
 
-### <a id="middleware" name="middleware"></a> middleware
+### middleware
 
 • `get` **middleware**(): [`Middleware`](../interfaces/Middleware.md)[]
 
@@ -141,7 +153,7 @@ ___
 
 ___
 
-### <a id="password" name="password"></a> password
+### password
 
 • `get` **password**(): `string`
 
@@ -151,7 +163,7 @@ ___
 
 ___
 
-### <a id="queryparamsstringify" name="queryparamsstringify"></a> queryParamsStringify
+### queryParamsStringify
 
 • `get` **queryParamsStringify**(): (`params`: [`HTTPQuery`](../README.md#httpquery)) => `string`
 
@@ -173,7 +185,7 @@ ___
 
 ___
 
-### <a id="username" name="username"></a> username
+### username
 
 • `get` **username**(): `string`
 

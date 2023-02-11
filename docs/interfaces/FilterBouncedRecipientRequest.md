@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / FilterBouncedRecipientRequest
+
 # Interface: FilterBouncedRecipientRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="filterbouncedrecipientsoptions" name="filterbouncedrecipientsoptions"></a> filterBouncedRecipientsOptions
+### filterBouncedRecipientsOptions
 
 • **filterBouncedRecipientsOptions**: [`FilterBouncedRecipientsOptions`](FilterBouncedRecipientsOptions.md)

@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / WebhookBounceRecipientPayloadEventNameEnum
+
 # Enumeration: WebhookBounceRecipientPayloadEventNameEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -19,60 +21,60 @@
 
 ## Enumeration Members
 
-### <a id="bounce" name="bounce"></a> BOUNCE
+### BOUNCE
 
-• **BOUNCE**
-
-___
-
-### <a id="bounce_recipient" name="bounce_recipient"></a> BOUNCE\_RECIPIENT
-
-• **BOUNCE\_RECIPIENT**
+• **BOUNCE** = ``"BOUNCE"``
 
 ___
 
-### <a id="delivery_status" name="delivery_status"></a> DELIVERY\_STATUS
+### BOUNCE\_RECIPIENT
 
-• **DELIVERY\_STATUS**
-
-___
-
-### <a id="email_opened" name="email_opened"></a> EMAIL\_OPENED
-
-• **EMAIL\_OPENED**
+• **BOUNCE\_RECIPIENT** = ``"BOUNCE_RECIPIENT"``
 
 ___
 
-### <a id="email_read" name="email_read"></a> EMAIL\_READ
+### DELIVERY\_STATUS
 
-• **EMAIL\_READ**
-
-___
-
-### <a id="email_received" name="email_received"></a> EMAIL\_RECEIVED
-
-• **EMAIL\_RECEIVED**
+• **DELIVERY\_STATUS** = ``"DELIVERY_STATUS"``
 
 ___
 
-### <a id="new_attachment" name="new_attachment"></a> NEW\_ATTACHMENT
+### EMAIL\_OPENED
 
-• **NEW\_ATTACHMENT**
-
-___
-
-### <a id="new_contact" name="new_contact"></a> NEW\_CONTACT
-
-• **NEW\_CONTACT**
+• **EMAIL\_OPENED** = ``"EMAIL_OPENED"``
 
 ___
 
-### <a id="new_email" name="new_email"></a> NEW\_EMAIL
+### EMAIL\_READ
 
-• **NEW\_EMAIL**
+• **EMAIL\_READ** = ``"EMAIL_READ"``
 
 ___
 
-### <a id="new_sms" name="new_sms"></a> NEW\_SMS
+### EMAIL\_RECEIVED
 
-• **NEW\_SMS**
+• **EMAIL\_RECEIVED** = ``"EMAIL_RECEIVED"``
+
+___
+
+### NEW\_ATTACHMENT
+
+• **NEW\_ATTACHMENT** = ``"NEW_ATTACHMENT"``
+
+___
+
+### NEW\_CONTACT
+
+• **NEW\_CONTACT** = ``"NEW_CONTACT"``
+
+___
+
+### NEW\_EMAIL
+
+• **NEW\_EMAIL** = ``"NEW_EMAIL"``
+
+___
+
+### NEW\_SMS
+
+• **NEW\_SMS** = ``"NEW_SMS"``

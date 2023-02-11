@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetLatestEmailRequest
+
 # Interface: GetLatestEmailRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="inboxids" name="inboxids"></a> inboxIds
+### inboxIds
 
 • `Optional` **inboxIds**: `string`[]

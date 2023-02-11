@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateTemplateRequest
+
 # Interface: UpdateTemplateRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="createtemplateoptions" name="createtemplateoptions"></a> createTemplateOptions
+### createTemplateOptions
 
 • **createTemplateOptions**: [`CreateTemplateOptions`](CreateTemplateOptions.md)
 
 ___
 
-### <a id="templateid" name="templateid"></a> templateId
+### templateId
 
 • **templateId**: `string`

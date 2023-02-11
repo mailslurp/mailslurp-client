@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ContactProjection
+
 # Interface: ContactProjection
 
 Email contact for address book
 
-**`export`**
+**`Export`**
 
-**`interface`** ContactProjection
+**`Interface`**
+
+ContactProjection
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Email contact for address book
 
 ## Properties
 
-### <a id="company" name="company"></a> company
+### company
 
 • `Optional` **company**: `string`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
+### emailAddresses
 
 • `Optional` **emailAddresses**: `string`[]
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="firstname" name="firstname"></a> firstName
+### firstName
 
 • `Optional` **firstName**: `string`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • `Optional` **groupId**: `string`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="lastname" name="lastname"></a> lastName
+### lastName
 
 • `Optional` **lastName**: `string`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection
 
 ___
 
-### <a id="optout" name="optout"></a> optOut
+### optOut
 
 • **optOut**: `boolean`
 
-**`memberof`** ContactProjection
+**`Memberof`**
+
+ContactProjection

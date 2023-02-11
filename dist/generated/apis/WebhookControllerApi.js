@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -173,7 +177,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -231,7 +235,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}/webhooks".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                path: "/phone/numbers/{phoneNumberId}/webhooks".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -333,8 +337,8 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/inboxes/{inboxId}/webhooks/{webhookId}"
-                                    .replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId)))
-                                    .replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                    .replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId)))
+                                    .replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -380,7 +384,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -649,7 +653,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks/paginated".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks/paginated".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -752,7 +756,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/schema".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/schema".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -817,7 +821,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneId}/webhooks/paginated".replace("{" + 'phoneId' + "}", encodeURIComponent(String(requestParameters.phoneId))),
+                                path: "/phone/numbers/{phoneId}/webhooks/paginated".replace("{".concat('phoneId', "}"), encodeURIComponent(String(requestParameters.phoneId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1146,7 +1150,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/example".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/example".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1380,7 +1384,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1430,7 +1434,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/{webhookResultId}".replace("{" + 'webhookResultId' + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
+                                path: "/webhooks/results/{webhookResultId}".replace("{".concat('webhookResultId', "}"), encodeURIComponent(String(requestParameters.webhookResultId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1501,7 +1505,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/results".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/results".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1597,7 +1601,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/webhooks".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/webhooks".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1648,7 +1652,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/results/{webhookResultId}/redrive".replace("{" + 'webhookResultId' + "}", encodeURIComponent(String(requestParameters.webhookResultId))),
+                                path: "/webhooks/results/{webhookResultId}/redrive".replace("{".concat('webhookResultId', "}"), encodeURIComponent(String(requestParameters.webhookResultId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1699,7 +1703,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/test".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/test".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1754,7 +1758,7 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/webhooks/{webhookId}/headers".replace("{" + 'webhookId' + "}", encodeURIComponent(String(requestParameters.webhookId))),
+                                path: "/webhooks/{webhookId}/headers".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,

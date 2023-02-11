@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / RemoveContactsFromGroupRequest
+
 # Interface: RemoveContactsFromGroupRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • **groupId**: `string`
 
 ___
 
-### <a id="updategroupcontacts" name="updategroupcontacts"></a> updateGroupContacts
+### updateGroupContacts
 
 • **updateGroupContacts**: [`UpdateGroupContacts`](UpdateGroupContacts.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailTextLinesRequest
+
 # Interface: GetEmailTextLinesRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="decodehtmlentities" name="decodehtmlentities"></a> decodeHtmlEntities
+### decodeHtmlEntities
 
 • `Optional` **decodeHtmlEntities**: `boolean`
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="lineseparator" name="lineseparator"></a> lineSeparator
+### lineSeparator
 
 • `Optional` **lineSeparator**: `string`

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailLinksRequest
+
 # Interface: GetEmailLinksRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

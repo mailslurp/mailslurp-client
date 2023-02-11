@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SimpleSendEmailOptions
+
 # Interface: SimpleSendEmailOptions
 
 Simplified send email options
 
-**`export`**
+**`Export`**
 
-**`interface`** SimpleSendEmailOptions
+**`Interface`**
+
+SimpleSendEmailOptions
 
 ## Table of contents
 
@@ -17,40 +21,48 @@ Simplified send email options
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • `Optional` **body**: `string`
 
 Body of the email message. Supports HTML
 
-**`memberof`** SimpleSendEmailOptions
+**`Memberof`**
+
+SimpleSendEmailOptions
 
 ___
 
-### <a id="senderid" name="senderid"></a> senderId
+### senderId
 
 • `Optional` **senderId**: `string`
 
 ID of inbox to send from. If null an inbox will be created for sending
 
-**`memberof`** SimpleSendEmailOptions
+**`Memberof`**
+
+SimpleSendEmailOptions
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
 Subject line of the email
 
-**`memberof`** SimpleSendEmailOptions
+**`Memberof`**
+
+SimpleSendEmailOptions
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`
 
 Email address to send to
 
-**`memberof`** SimpleSendEmailOptions
+**`Memberof`**
+
+SimpleSendEmailOptions

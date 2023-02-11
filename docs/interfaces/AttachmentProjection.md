@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / AttachmentProjection
+
 # Interface: AttachmentProjection
 
 Email attachment data
 
-**`export`**
+**`Export`**
 
-**`interface`** AttachmentProjection
+**`Interface`**
+
+AttachmentProjection
 
 ## Table of contents
 
@@ -20,62 +24,76 @@ Email attachment data
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`
 
 Attachment ID
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="contentlength" name="contentlength"></a> contentLength
+### contentLength
 
 • `Optional` **contentLength**: `number`
 
 Content length of attachment in bytes
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • `Optional` **contentType**: `string`
 
 Content type of attachment.
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** AttachmentProjection
+**`Memberof`**
+
+AttachmentProjection

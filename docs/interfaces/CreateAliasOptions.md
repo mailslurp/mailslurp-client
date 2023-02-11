@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateAliasOptions
+
 # Interface: CreateAliasOptions
 
 Create email alias options. Email aliases can be used to mask real email addresses behind an ID. You can also attach an inbox to an alias so that any email received by the inbox email address if forwarded to the alias email address.
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateAliasOptions
+**`Interface`**
+
+CreateAliasOptions
 
 ## Table of contents
 
@@ -17,40 +21,48 @@ Create email alias options. Email aliases can be used to mask real email address
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
 Email address to be hidden behind alias. Emails sent to the alias email address will be forwarded to this address. If you want to enable replies set useThreads true and the reply-to for the email will allow outbound communication via a thread.
 
-**`memberof`** CreateAliasOptions
+**`Memberof`**
+
+CreateAliasOptions
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
 Optional inbox ID to attach to alias. Null by default means an a new inbox will be created for the alias. Use a custom inbox to control what email address the alias uses. To use custom email addresses create a domain and an inbox, the use the inbox ID with this call. Emails received by this inbox will be forwarded to the alias email address
 
-**`memberof`** CreateAliasOptions
+**`Memberof`**
+
+CreateAliasOptions
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
 Optional name for alias
 
-**`memberof`** CreateAliasOptions
+**`Memberof`**
+
+CreateAliasOptions
 
 ___
 
-### <a id="usethreads" name="usethreads"></a> useThreads
+### useThreads
 
 • **useThreads**: `boolean`
 
 Enable threads options. If true emails will be sent with a unique reply-to thread address. This means you can reply to the forwarded email and it will be sent to the recipients via your alias address. That way a thread conversation is preserved.
 
-**`memberof`** CreateAliasOptions
+**`Memberof`**
+
+CreateAliasOptions

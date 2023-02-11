@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UploadAttachmentRequest
+
 # Interface: UploadAttachmentRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="uploadattachmentoptions" name="uploadattachmentoptions"></a> uploadAttachmentOptions
+### uploadAttachmentOptions
 
 • **uploadAttachmentOptions**: [`UploadAttachmentOptions`](UploadAttachmentOptions.md)

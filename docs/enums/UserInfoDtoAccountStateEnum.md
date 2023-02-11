@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / UserInfoDtoAccountStateEnum
+
 # Enumeration: UserInfoDtoAccountStateEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="active" name="active"></a> ACTIVE
+### ACTIVE
 
-• **ACTIVE**
+• **ACTIVE** = ``"ACTIVE"``
 
 ___
 
-### <a id="frozen" name="frozen"></a> FROZEN
+### FROZEN
 
-• **FROZEN**
+• **FROZEN** = ``"FROZEN"``

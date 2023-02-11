@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / InboxRulesetDtoHandlerEnum
+
 # Enumeration: InboxRulesetDtoHandlerEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -10,6 +12,6 @@
 
 ## Enumeration Members
 
-### <a id="exception" name="exception"></a> EXCEPTION
+### EXCEPTION
 
-• **EXCEPTION**
+• **EXCEPTION** = ``"EXCEPTION"``

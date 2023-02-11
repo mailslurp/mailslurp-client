@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / VerifyWebhookSignatureOptions
+
 # Interface: VerifyWebhookSignatureOptions
 
-**`export`**
+**`Export`**
 
-**`interface`** VerifyWebhookSignatureOptions
+**`Interface`**
+
+VerifyWebhookSignatureOptions
 
 ## Table of contents
 
@@ -13,16 +17,20 @@
 
 ## Properties
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
-**`memberof`** VerifyWebhookSignatureOptions
+**`Memberof`**
+
+VerifyWebhookSignatureOptions
 
 ___
 
-### <a id="signature" name="signature"></a> signature
+### signature
 
 • **signature**: `string`
 
-**`memberof`** VerifyWebhookSignatureOptions
+**`Memberof`**
+
+VerifyWebhookSignatureOptions

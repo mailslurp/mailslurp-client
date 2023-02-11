@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BouncedRecipientDto
+
 # Interface: BouncedRecipientDto
 
 Bounced recipient
 
-**`export`**
+**`Export`**
 
-**`interface`** BouncedRecipientDto
+**`Interface`**
+
+BouncedRecipientDto
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Bounced recipient
 
 ## Properties
 
-### <a id="action" name="action"></a> action
+### action
 
 • `Optional` **action**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="diagnosticcode" name="diagnosticcode"></a> diagnosticCode
+### diagnosticCode
 
 • `Optional` **diagnosticCode**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • **recipient**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="status" name="status"></a> status
+### status
 
 • `Optional` **status**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • `Optional` **userId**: `string`
 
-**`memberof`** BouncedRecipientDto
+**`Memberof`**
+
+BouncedRecipientDto

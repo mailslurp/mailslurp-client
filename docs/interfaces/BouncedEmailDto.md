@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BouncedEmailDto
+
 # Interface: BouncedEmailDto
 
 Bounced email
 
-**`export`**
+**`Export`**
 
-**`interface`** BouncedEmailDto
+**`Interface`**
+
+BouncedEmailDto
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Bounced email
 
 ## Properties
 
-### <a id="bouncemta" name="bouncemta"></a> bounceMta
+### bounceMta
 
 • `Optional` **bounceMta**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="bouncerecipients" name="bouncerecipients"></a> bounceRecipients
+### bounceRecipients
 
 • `Optional` **bounceRecipients**: `string`[]
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="bouncesubtype" name="bouncesubtype"></a> bounceSubType
+### bounceSubType
 
 • `Optional` **bounceSubType**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="bouncetype" name="bouncetype"></a> bounceType
+### bounceType
 
 • `Optional` **bounceType**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="notificationtype" name="notificationtype"></a> notificationType
+### notificationType
 
 • **notificationType**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="sender" name="sender"></a> sender
+### sender
 
 • **sender**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="senttorecipients" name="senttorecipients"></a> sentToRecipients
+### sentToRecipients
 
 • `Optional` **sentToRecipients**: `string`[]
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** BouncedEmailDto
+**`Memberof`**
+
+BouncedEmailDto

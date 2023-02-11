@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / CreateInboxRulesetOptionsActionEnum
+
 # Enumeration: CreateInboxRulesetOptionsActionEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -12,18 +14,18 @@
 
 ## Enumeration Members
 
-### <a id="allow" name="allow"></a> ALLOW
+### ALLOW
 
-• **ALLOW**
-
-___
-
-### <a id="block" name="block"></a> BLOCK
-
-• **BLOCK**
+• **ALLOW** = ``"ALLOW"``
 
 ___
 
-### <a id="filter_remove" name="filter_remove"></a> FILTER\_REMOVE
+### BLOCK
 
-• **FILTER\_REMOVE**
+• **BLOCK** = ``"BLOCK"``
+
+___
+
+### FILTER\_REMOVE
+
+• **FILTER\_REMOVE** = ``"FILTER_REMOVE"``

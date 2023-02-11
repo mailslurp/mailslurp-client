@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PhoneNumberProjection
+
 # Interface: PhoneNumberProjection
 
 Phone number projection
 
-**`export`**
+**`Export`**
 
-**`interface`** PhoneNumberProjection
+**`Interface`**
+
+PhoneNumberProjection
 
 ## Table of contents
 
@@ -18,40 +22,50 @@ Phone number projection
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** PhoneNumberProjection
+**`Memberof`**
+
+PhoneNumberProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** PhoneNumberProjection
+**`Memberof`**
+
+PhoneNumberProjection
 
 ___
 
-### <a id="phonecountry" name="phonecountry"></a> phoneCountry
+### phoneCountry
 
 • **phoneCountry**: [`PhoneNumberProjectionPhoneCountryEnum`](../enums/PhoneNumberProjectionPhoneCountryEnum.md)
 
-**`memberof`** PhoneNumberProjection
+**`Memberof`**
+
+PhoneNumberProjection
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • **phoneNumber**: `string`
 
-**`memberof`** PhoneNumberProjection
+**`Memberof`**
+
+PhoneNumberProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** PhoneNumberProjection
+**`Memberof`**
+
+PhoneNumberProjection

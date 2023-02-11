@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendEmailRequest
+
 # Interface: SendEmailRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)

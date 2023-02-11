@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / EmailHtmlDto
+
 # Interface: EmailHtmlDto
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailHtmlDto
+**`Interface`**
+
+EmailHtmlDto
 
 ## Table of contents
 
@@ -13,16 +17,20 @@
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • `Optional` **body**: `string`
 
-**`memberof`** EmailHtmlDto
+**`Memberof`**
+
+EmailHtmlDto
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** EmailHtmlDto
+**`Memberof`**
+
+EmailHtmlDto

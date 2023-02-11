@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / MarkAsReadRequest
+
 # Interface: MarkAsReadRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • `Optional` **read**: `boolean`

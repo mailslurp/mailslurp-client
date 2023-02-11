@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailProjection
+
 # Interface: EmailProjection
 
 A compact representation of a full email. Used in list endpoints to keep response sizes low. Body and attachments are not included. To get all fields of the email use the `getEmail` method with the email projection's ID. See `EmailDto` for documentation on projection properties.
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailProjection
+**`Interface`**
+
+EmailProjection
 
 ## Table of contents
 
@@ -27,112 +31,140 @@ A compact representation of a full email. Used in list endpoints to keep respons
 
 ## Properties
 
-### <a id="attachments" name="attachments"></a> attachments
+### attachments
 
 • `Optional` **attachments**: `string`[]
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • `Optional` **bcc**: `string`[]
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
+### bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
+### bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • `Optional` **cc**: `string`[]
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="domainid" name="domainid"></a> domainId
+### domainId
 
 • `Optional` **domainId**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • **read**: `boolean`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="teamaccess" name="teamaccess"></a> teamAccess
+### teamAccess
 
 • **teamAccess**: `boolean`
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
-**`memberof`** EmailProjection
+**`Memberof`**
+
+EmailProjection

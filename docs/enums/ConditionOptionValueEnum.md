@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ConditionOptionValueEnum
+
 # Enumeration: ConditionOptionValueEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="false" name="false"></a> FALSE
+### FALSE
 
-• **FALSE**
+• **FALSE** = ``"FALSE"``
 
 ___
 
-### <a id="true" name="true"></a> TRUE
+### TRUE
 
-• **TRUE**
+• **TRUE** = ``"TRUE"``

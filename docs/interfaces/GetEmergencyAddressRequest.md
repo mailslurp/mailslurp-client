@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmergencyAddressRequest
+
 # Interface: GetEmergencyAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="addressid" name="addressid"></a> addressId
+### addressId
 
 • **addressId**: `string`

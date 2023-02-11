@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / WaitForControllerApi
+
 # Class: WaitForControllerApi
 
 ## Hierarchy
@@ -41,7 +43,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new WaitForControllerApi**(`configuration?`)
 
@@ -57,7 +59,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -67,7 +69,7 @@
 
 ## Methods
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -88,7 +90,7 @@
 
 ___
 
-### <a id="waitfor" name="waitfor"></a> waitFor
+### waitFor
 
 ▸ **waitFor**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -108,7 +110,7 @@ Wait for an email to match the provided filter conditions such as subject contai
 
 ___
 
-### <a id="waitforemailcount" name="waitforemailcount"></a> waitForEmailCount
+### waitForEmailCount
 
 ▸ **waitForEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -128,7 +130,7 @@ Wait for and return count number of emails. Hold connection until inbox count ma
 
 ___
 
-### <a id="waitforemailcountraw" name="waitforemailcountraw"></a> waitForEmailCountRaw
+### waitForEmailCountRaw
 
 ▸ **waitForEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -148,7 +150,7 @@ Wait for and return count number of emails. Hold connection until inbox count ma
 
 ___
 
-### <a id="waitforlatestemail" name="waitforlatestemail"></a> waitForLatestEmail
+### waitForLatestEmail
 
 ▸ **waitForLatestEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -168,7 +170,7 @@ Fetch inbox\'s latest email or if empty wait for an email to arrive
 
 ___
 
-### <a id="waitforlatestemailraw" name="waitforlatestemailraw"></a> waitForLatestEmailRaw
+### waitForLatestEmailRaw
 
 ▸ **waitForLatestEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -188,7 +190,7 @@ Fetch inbox\'s latest email or if empty wait for an email to arrive
 
 ___
 
-### <a id="waitforlatestsms" name="waitforlatestsms"></a> waitForLatestSms
+### waitForLatestSms
 
 ▸ **waitForLatestSms**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
 
@@ -208,7 +210,7 @@ Wait for the latest SMS message to match the provided filter conditions such as 
 
 ___
 
-### <a id="waitforlatestsmsraw" name="waitforlatestsmsraw"></a> waitForLatestSmsRaw
+### waitForLatestSmsRaw
 
 ▸ **waitForLatestSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
@@ -228,7 +230,7 @@ Wait for the latest SMS message to match the provided filter conditions such as 
 
 ___
 
-### <a id="waitformatchingemails" name="waitformatchingemails"></a> waitForMatchingEmails
+### waitForMatchingEmails
 
 ▸ **waitForMatchingEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>
 
@@ -248,7 +250,7 @@ Wait or return list of emails that match simple matching patterns
 
 ___
 
-### <a id="waitformatchingemailsraw" name="waitformatchingemailsraw"></a> waitForMatchingEmailsRaw
+### waitForMatchingEmailsRaw
 
 ▸ **waitForMatchingEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -268,7 +270,7 @@ Wait or return list of emails that match simple matching patterns
 
 ___
 
-### <a id="waitformatchingfirstemail" name="waitformatchingfirstemail"></a> waitForMatchingFirstEmail
+### waitForMatchingFirstEmail
 
 ▸ **waitForMatchingFirstEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -288,7 +290,7 @@ Wait for or return the first email that matches provided MatchOptions array
 
 ___
 
-### <a id="waitformatchingfirstemailraw" name="waitformatchingfirstemailraw"></a> waitForMatchingFirstEmailRaw
+### waitForMatchingFirstEmailRaw
 
 ▸ **waitForMatchingFirstEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -308,7 +310,7 @@ Wait for or return the first email that matches provided MatchOptions array
 
 ___
 
-### <a id="waitfornthemail" name="waitfornthemail"></a> waitForNthEmail
+### waitForNthEmail
 
 ▸ **waitForNthEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`Email`](../interfaces/Email.md)\>
 
@@ -328,7 +330,7 @@ Wait for or fetch the email with a given index in the inbox specified. If index 
 
 ___
 
-### <a id="waitfornthemailraw" name="waitfornthemailraw"></a> waitForNthEmailRaw
+### waitForNthEmailRaw
 
 ▸ **waitForNthEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
 
@@ -348,7 +350,7 @@ Wait for or fetch the email with a given index in the inbox specified. If index 
 
 ___
 
-### <a id="waitforraw" name="waitforraw"></a> waitForRaw
+### waitForRaw
 
 ▸ **waitForRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)[]\>\>
 
@@ -368,7 +370,7 @@ Wait for an email to match the provided filter conditions such as subject contai
 
 ___
 
-### <a id="waitforsms" name="waitforsms"></a> waitForSms
+### waitForSms
 
 ▸ **waitForSms**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>
 
@@ -388,7 +390,7 @@ Wait for an SMS message to match the provided filter conditions such as body con
 
 ___
 
-### <a id="waitforsmsraw" name="waitforsmsraw"></a> waitForSmsRaw
+### waitForSmsRaw
 
 ▸ **waitForSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsPreview`](../interfaces/SmsPreview.md)[]\>\>
 
@@ -408,9 +410,9 @@ Wait for an SMS message to match the provided filter conditions such as body con
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -435,9 +437,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -462,9 +464,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

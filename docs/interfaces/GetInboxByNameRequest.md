@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetInboxByNameRequest
+
 # Interface: GetInboxByNameRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateEmergencyAddressRequest
+
 # Interface: CreateEmergencyAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createemergencyaddressoptions" name="createemergencyaddressoptions"></a> createEmergencyAddressOptions
+### createEmergencyAddressOptions
 
 • **createEmergencyAddressOptions**: [`CreateEmergencyAddressOptions`](CreateEmergencyAddressOptions.md)

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / FilterBouncedRecipientsResult
+
 # Interface: FilterBouncedRecipientsResult
 
 Remaining recipients that were filtered to remove bounced recipients
 
-**`export`**
+**`Export`**
 
-**`interface`** FilterBouncedRecipientsResult
+**`Interface`**
+
+FilterBouncedRecipientsResult
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Remaining recipients that were filtered to remove bounced recipients
 
 ## Properties
 
-### <a id="filteredrecipients" name="filteredrecipients"></a> filteredRecipients
+### filteredRecipients
 
 • **filteredRecipients**: `string`[]
 
-**`memberof`** FilterBouncedRecipientsResult
+**`Memberof`**
+
+FilterBouncedRecipientsResult

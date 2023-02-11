@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / VoidApiResponse
+
 # Class: VoidApiResponse
 
 ## Table of contents
@@ -16,7 +18,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new VoidApiResponse**(`raw`)
 
@@ -28,13 +30,13 @@
 
 ## Properties
 
-### <a id="raw" name="raw"></a> raw
+### raw
 
 • **raw**: `Response`
 
 ## Methods
 
-### <a id="value" name="value"></a> value
+### value
 
 ▸ **value**(): `Promise`<`void`\>
 

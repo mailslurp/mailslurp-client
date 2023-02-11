@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageSentEmailProjection
+
 # Interface: PageSentEmailProjection
 
 Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageSentEmailProjection
+**`Interface`**
+
+PageSentEmailProjection
 
 ## Table of contents
 
@@ -25,108 +29,132 @@ Paginated sent email results. Page index starts at zero. Projection results may 
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
 
 Collection of items
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • **number**: `number`
 
 Page number starting at 0
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • **numberOfElements**: `number`
 
 Number of items returned
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • **size**: `number`
 
 Size of page requested
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • **totalElements**: `number`
 
 Total number of items available for querying
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • **totalPages**: `number`
 
 Total number of pages available
 
-**`memberof`** PageSentEmailProjection
+**`Memberof`**
+
+PageSentEmailProjection

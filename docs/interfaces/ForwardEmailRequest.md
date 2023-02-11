@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ForwardEmailRequest
+
 # Interface: ForwardEmailRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="forwardemailoptions" name="forwardemailoptions"></a> forwardEmailOptions
+### forwardEmailOptions
 
 • **forwardEmailOptions**: [`ForwardEmailOptions`](ForwardEmailOptions.md)

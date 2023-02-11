@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageWebhookProjection
+
 # Interface: PageWebhookProjection
 
 Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageWebhookProjection
+**`Interface`**
+
+PageWebhookProjection
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated webhook entity. Page index starts at zero. Projection results may omit
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`WebhookProjection`](WebhookProjection.md)[]
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageWebhookProjection
+**`Memberof`**
+
+PageWebhookProjection

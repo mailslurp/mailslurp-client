@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateInboxForwarderOptions
+
 # Interface: CreateInboxForwarderOptions
 
 Options for creating an inbox forwarder
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateInboxForwarderOptions
+**`Interface`**
+
+CreateInboxForwarderOptions
 
 ## Table of contents
 
@@ -16,30 +20,36 @@ Options for creating an inbox forwarder
 
 ## Properties
 
-### <a id="field" name="field"></a> field
+### field
 
 • **field**: [`CreateInboxForwarderOptionsFieldEnum`](../enums/CreateInboxForwarderOptionsFieldEnum.md)
 
 Field to match against to trigger inbox forwarding for inbound email
 
-**`memberof`** CreateInboxForwarderOptions
+**`Memberof`**
+
+CreateInboxForwarderOptions
 
 ___
 
-### <a id="forwardtorecipients" name="forwardtorecipients"></a> forwardToRecipients
+### forwardToRecipients
 
 • **forwardToRecipients**: `string`[]
 
 Email addresses to forward an email to if it matches the field and match criteria of the forwarder
 
-**`memberof`** CreateInboxForwarderOptions
+**`Memberof`**
+
+CreateInboxForwarderOptions
 
 ___
 
-### <a id="match" name="match"></a> match
+### match
 
 • **match**: `string`
 
 String or wildcard style match for field specified when evaluating forwarding rules
 
-**`memberof`** CreateInboxForwarderOptions
+**`Memberof`**
+
+CreateInboxForwarderOptions

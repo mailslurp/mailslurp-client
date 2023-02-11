@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / InlineObject
+
 # Interface: InlineObject
 
-**`export`**
+**`Export`**
 
-**`interface`** InlineObject
+**`Interface`**
+
+InlineObject
 
 ## Table of contents
 
@@ -13,18 +17,22 @@
 
 ## Properties
 
-### <a id="contenttypeheader" name="contenttypeheader"></a> contentTypeHeader
+### contentTypeHeader
 
 • `Optional` **contentTypeHeader**: `string`
 
 Optional content type header of attachment
 
-**`memberof`** InlineObject
+**`Memberof`**
+
+InlineObject
 
 ___
 
-### <a id="file" name="file"></a> file
+### file
 
 • **file**: `Blob`
 
-**`memberof`** InlineObject
+**`Memberof`**
+
+InlineObject

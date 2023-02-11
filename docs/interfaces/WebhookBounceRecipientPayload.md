@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookBounceRecipientPayload
+
 # Interface: WebhookBounceRecipientPayload
 
 BOUNCE_RECIPIENT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email caused a bounce to occur for a recipient. Save the recipient to a ban list of your server and avoid email them again.
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookBounceRecipientPayload
+**`Interface`**
+
+WebhookBounceRecipientPayload
 
 ## Table of contents
 
@@ -18,50 +22,60 @@ BOUNCE_RECIPIENT webhook payload. Sent to your webhook url endpoint via HTTP POS
 
 ## Properties
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`WebhookBounceRecipientPayloadEventNameEnum`](../enums/WebhookBounceRecipientPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
-**`memberof`** WebhookBounceRecipientPayload
+**`Memberof`**
+
+WebhookBounceRecipientPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
-**`memberof`** WebhookBounceRecipientPayload
+**`Memberof`**
+
+WebhookBounceRecipientPayload
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • **recipient**: `string`
 
 Email address that caused a bounce. Make note of the address and try not to message it again to preserve your reputation.
 
-**`memberof`** WebhookBounceRecipientPayload
+**`Memberof`**
+
+WebhookBounceRecipientPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
 ID of webhook entity being triggered
 
-**`memberof`** WebhookBounceRecipientPayload
+**`Memberof`**
+
+WebhookBounceRecipientPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
 Name of the webhook being triggered
 
-**`memberof`** WebhookBounceRecipientPayload
+**`Memberof`**
+
+WebhookBounceRecipientPayload

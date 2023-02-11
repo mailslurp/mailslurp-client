@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageSmsProjection
+
 # Interface: PageSmsProjection
 
 Paginated SMS messages. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageSmsProjection
+**`Interface`**
+
+PageSmsProjection
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated SMS messages. Page index starts at zero. Projection results may omit l
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`SmsProjection`](SmsProjection.md)[]
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageSmsProjection
+**`Memberof`**
+
+PageSmsProjection

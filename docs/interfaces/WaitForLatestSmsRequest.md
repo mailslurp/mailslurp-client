@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / WaitForLatestSmsRequest
+
 # Interface: WaitForLatestSmsRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="waitforsinglesmsoptions" name="waitforsinglesmsoptions"></a> waitForSingleSmsOptions
+### waitForSingleSmsOptions
 
 • **waitForSingleSmsOptions**: [`WaitForSingleSmsOptions`](WaitForSingleSmsOptions.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SubmitFormRequest
+
 # Interface: SubmitFormRequest
 
 ## Table of contents
@@ -14,42 +16,42 @@
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • `Optional` **emailAddress**: `string`
 
 ___
 
-### <a id="otherparameters" name="otherparameters"></a> otherParameters
+### otherParameters
 
 • `Optional` **otherParameters**: `string`
 
 ___
 
-### <a id="redirectto" name="redirectto"></a> redirectTo
+### redirectTo
 
 • `Optional` **redirectTo**: `string`
 
 ___
 
-### <a id="spamcheck" name="spamcheck"></a> spamCheck
+### spamCheck
 
 • `Optional` **spamCheck**: `string`
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
 ___
 
-### <a id="successmessage" name="successmessage"></a> successMessage
+### successMessage
 
 • `Optional` **successMessage**: `string`
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • `Optional` **to**: `string`

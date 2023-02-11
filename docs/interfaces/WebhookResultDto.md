@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookResultDto
+
 # Interface: WebhookResultDto
 
 Result of a webhook notification
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookResultDto
+**`Interface`**
+
+WebhookResultDto
 
 ## Table of contents
 
@@ -29,128 +33,160 @@ Result of a webhook notification
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="httpmethod" name="httpmethod"></a> httpMethod
+### httpMethod
 
 • **httpMethod**: [`WebhookResultDtoHttpMethodEnum`](../enums/WebhookResultDtoHttpMethodEnum.md)
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="redriveid" name="redriveid"></a> redriveId
+### redriveId
 
 • `Optional` **redriveId**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="responsebodyextract" name="responsebodyextract"></a> responseBodyExtract
+### responseBodyExtract
 
 • `Optional` **responseBodyExtract**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="responsestatus" name="responsestatus"></a> responseStatus
+### responseStatus
 
 • `Optional` **responseStatus**: `number`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="responsetimemillis" name="responsetimemillis"></a> responseTimeMillis
+### responseTimeMillis
 
 • **responseTimeMillis**: `number`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="resulttype" name="resulttype"></a> resultType
+### resultType
 
 • `Optional` **resultType**: [`WebhookResultDtoResultTypeEnum`](../enums/WebhookResultDtoResultTypeEnum.md)
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="seen" name="seen"></a> seen
+### seen
 
 • **seen**: `boolean`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="webhookevent" name="webhookevent"></a> webhookEvent
+### webhookEvent
 
 • **webhookEvent**: [`WebhookResultDtoWebhookEventEnum`](../enums/WebhookResultDtoWebhookEventEnum.md)
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto
 
 ___
 
-### <a id="webhookurl" name="webhookurl"></a> webhookUrl
+### webhookUrl
 
 • **webhookUrl**: `string`
 
-**`memberof`** WebhookResultDto
+**`Memberof`**
+
+WebhookResultDto

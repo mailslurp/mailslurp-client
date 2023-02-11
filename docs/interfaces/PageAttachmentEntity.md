@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageAttachmentEntity
+
 # Interface: PageAttachmentEntity
 
 Paginated attachment entity results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageAttachmentEntity
+**`Interface`**
+
+PageAttachmentEntity
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated attachment entity results. Page index starts at zero. Projection resul
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`AttachmentProjection`](AttachmentProjection.md)[]
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageAttachmentEntity
+**`Memberof`**
+
+PageAttachmentEntity

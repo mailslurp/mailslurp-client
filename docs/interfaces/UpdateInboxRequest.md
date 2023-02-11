@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateInboxRequest
+
 # Interface: UpdateInboxRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="updateinboxoptions" name="updateinboxoptions"></a> updateInboxOptions
+### updateInboxOptions
 
 • **updateInboxOptions**: [`UpdateInboxOptions`](UpdateInboxOptions.md)

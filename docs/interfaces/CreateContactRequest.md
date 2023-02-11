@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateContactRequest
+
 # Interface: CreateContactRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createcontactoptions" name="createcontactoptions"></a> createContactOptions
+### createContactOptions
 
 • **createContactOptions**: [`CreateContactOptions`](CreateContactOptions.md)

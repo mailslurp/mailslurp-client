@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / VerifyWebhookSignatureRequest
+
 # Interface: VerifyWebhookSignatureRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="verifywebhooksignatureoptions" name="verifywebhooksignatureoptions"></a> verifyWebhookSignatureOptions
+### verifyWebhookSignatureOptions
 
 • **verifyWebhookSignatureOptions**: [`VerifyWebhookSignatureOptions`](VerifyWebhookSignatureOptions.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / MailServerControllerApi
+
 # Class: MailServerControllerApi
 
 ## Hierarchy
@@ -33,7 +35,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new MailServerControllerApi**(`configuration?`)
 
@@ -49,7 +51,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +61,7 @@
 
 ## Methods
 
-### <a id="describemailserverdomain" name="describemailserverdomain"></a> describeMailServerDomain
+### describeMailServerDomain
 
 ▸ **describeMailServerDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>
 
@@ -78,7 +80,7 @@ Get DNS Mail Server records for a domain
 
 ___
 
-### <a id="describemailserverdomainraw" name="describemailserverdomainraw"></a> describeMailServerDomainRaw
+### describeMailServerDomainRaw
 
 ▸ **describeMailServerDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DescribeMailServerDomainResult`](../interfaces/DescribeMailServerDomainResult.md)\>\>
 
@@ -97,7 +99,7 @@ Get DNS Mail Server records for a domain
 
 ___
 
-### <a id="getdnslookup" name="getdnslookup"></a> getDnsLookup
+### getDnsLookup
 
 ▸ **getDnsLookup**(`requestParameters`, `initOverrides?`): `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
 
@@ -116,7 +118,7 @@ Lookup DNS records for a domain
 
 ___
 
-### <a id="getdnslookupraw" name="getdnslookupraw"></a> getDnsLookupRaw
+### getDnsLookupRaw
 
 ▸ **getDnsLookupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
 
@@ -135,7 +137,7 @@ Lookup DNS records for a domain
 
 ___
 
-### <a id="getipaddress" name="getipaddress"></a> getIpAddress
+### getIpAddress
 
 ▸ **getIpAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>
 
@@ -154,7 +156,7 @@ Get IP address for a domain
 
 ___
 
-### <a id="getipaddressraw" name="getipaddressraw"></a> getIpAddressRaw
+### getIpAddressRaw
 
 ▸ **getIpAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`IPAddressResult`](../interfaces/IPAddressResult.md)\>\>
 
@@ -173,7 +175,7 @@ Get IP address for a domain
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -194,7 +196,7 @@ ___
 
 ___
 
-### <a id="verifyemailaddress" name="verifyemailaddress"></a> verifyEmailAddress
+### verifyEmailAddress
 
 ▸ **verifyEmailAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>
 
@@ -213,7 +215,7 @@ Deprecated. Use the EmailVerificationController methods for more accurate and re
 
 ___
 
-### <a id="verifyemailaddressraw" name="verifyemailaddressraw"></a> verifyEmailAddressRaw
+### verifyEmailAddressRaw
 
 ▸ **verifyEmailAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailVerificationResult`](../interfaces/EmailVerificationResult.md)\>\>
 
@@ -232,9 +234,9 @@ Deprecated. Use the EmailVerificationController methods for more accurate and re
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -259,9 +261,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -286,9 +288,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

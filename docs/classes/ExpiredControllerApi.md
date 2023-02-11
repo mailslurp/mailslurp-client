@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ExpiredControllerApi
+
 # Class: ExpiredControllerApi
 
 ## Hierarchy
@@ -33,7 +35,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new ExpiredControllerApi**(`configuration?`)
 
@@ -49,7 +51,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +61,7 @@
 
 ## Methods
 
-### <a id="getexpirationdefaults" name="getexpirationdefaults"></a> getExpirationDefaults
+### getExpirationDefaults
 
 ▸ **getExpirationDefaults**(`initOverrides?`): `Promise`<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>
 
@@ -78,7 +80,7 @@ Get default expiration settings
 
 ___
 
-### <a id="getexpirationdefaultsraw" name="getexpirationdefaultsraw"></a> getExpirationDefaultsRaw
+### getExpirationDefaultsRaw
 
 ▸ **getExpirationDefaultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpirationDefaults`](../interfaces/ExpirationDefaults.md)\>\>
 
@@ -97,7 +99,7 @@ Get default expiration settings
 
 ___
 
-### <a id="getexpiredinboxbyinboxid" name="getexpiredinboxbyinboxid"></a> getExpiredInboxByInboxId
+### getExpiredInboxByInboxId
 
 ▸ **getExpiredInboxByInboxId**(`requestParameters`, `initOverrides?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
@@ -117,7 +119,7 @@ Get expired inbox record for a previously existing inbox
 
 ___
 
-### <a id="getexpiredinboxbyinboxidraw" name="getexpiredinboxbyinboxidraw"></a> getExpiredInboxByInboxIdRaw
+### getExpiredInboxByInboxIdRaw
 
 ▸ **getExpiredInboxByInboxIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>\>
 
@@ -137,7 +139,7 @@ Get expired inbox record for a previously existing inbox
 
 ___
 
-### <a id="getexpiredinboxrecord" name="getexpiredinboxrecord"></a> getExpiredInboxRecord
+### getExpiredInboxRecord
 
 ▸ **getExpiredInboxRecord**(`requestParameters`, `initOverrides?`): `Promise`<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>
 
@@ -157,7 +159,7 @@ Get an expired inbox record
 
 ___
 
-### <a id="getexpiredinboxrecordraw" name="getexpiredinboxrecordraw"></a> getExpiredInboxRecordRaw
+### getExpiredInboxRecordRaw
 
 ▸ **getExpiredInboxRecordRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExpiredInboxDto`](../interfaces/ExpiredInboxDto.md)\>\>
 
@@ -177,7 +179,7 @@ Get an expired inbox record
 
 ___
 
-### <a id="getexpiredinboxes" name="getexpiredinboxes"></a> getExpiredInboxes
+### getExpiredInboxes
 
 ▸ **getExpiredInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>
 
@@ -197,7 +199,7 @@ List records of expired inboxes
 
 ___
 
-### <a id="getexpiredinboxesraw" name="getexpiredinboxesraw"></a> getExpiredInboxesRaw
+### getExpiredInboxesRaw
 
 ▸ **getExpiredInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageExpiredInboxRecordProjection`](../interfaces/PageExpiredInboxRecordProjection.md)\>\>
 
@@ -217,7 +219,7 @@ List records of expired inboxes
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -238,9 +240,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -265,9 +267,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -292,9 +294,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

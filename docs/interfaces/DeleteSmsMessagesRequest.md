@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteSmsMessagesRequest
+
 # Interface: DeleteSmsMessagesRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="phonenumberid" name="phonenumberid"></a> phoneNumberId
+### phoneNumberId
 
 • `Optional` **phoneNumberId**: `string`

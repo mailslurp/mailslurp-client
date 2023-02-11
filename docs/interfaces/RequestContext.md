@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / RequestContext
+
 # Interface: RequestContext
 
 ## Table of contents
@@ -10,9 +12,9 @@
 
 ## Properties
 
-### <a id="fetch" name="fetch"></a> fetch
+### fetch
 
-• **fetch**: (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
+• **fetch**: (`input`: `RequestInfo` \| `URL`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
 #### Type declaration
 
@@ -22,7 +24,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `input` | `RequestInfo` |
+| `input` | `RequestInfo` \| `URL` |
 | `init?` | `RequestInit` |
 
 ##### Returns
@@ -31,12 +33,12 @@
 
 ___
 
-### <a id="init" name="init"></a> init
+### init
 
 • **init**: `RequestInit`
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`

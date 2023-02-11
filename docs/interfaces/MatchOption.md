@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / MatchOption
+
 # Interface: MatchOption
 
 Options for matching emails in an inbox. Each match option object contains a `field`, `should` and `value` property. Together they form logical conditions such as `SUBJECT` should `CONTAIN` value.
 
-**`export`**
+**`Export`**
 
-**`interface`** MatchOption
+**`Interface`**
+
+MatchOption
 
 ## Table of contents
 
@@ -16,30 +20,36 @@ Options for matching emails in an inbox. Each match option object contains a `fi
 
 ## Properties
 
-### <a id="field" name="field"></a> field
+### field
 
 • **field**: [`MatchOptionFieldEnum`](../enums/MatchOptionFieldEnum.md)
 
 Fields of an email object that can be used to filter results
 
-**`memberof`** MatchOption
+**`Memberof`**
+
+MatchOption
 
 ___
 
-### <a id="should" name="should"></a> should
+### should
 
 • **should**: [`MatchOptionShouldEnum`](../enums/MatchOptionShouldEnum.md)
 
 How the value of the email field specified should be compared to the value given in the match options.
 
-**`memberof`** MatchOption
+**`Memberof`**
+
+MatchOption
 
 ___
 
-### <a id="value" name="value"></a> value
+### value
 
 • **value**: `string`
 
 The value you wish to compare with the value of the field specified using the `should` value passed. For example `BODY` should `CONTAIN` a value passed.
 
-**`memberof`** MatchOption
+**`Memberof`**
+
+MatchOption

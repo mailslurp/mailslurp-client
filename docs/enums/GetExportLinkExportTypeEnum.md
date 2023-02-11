@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / GetExportLinkExportTypeEnum
+
 # Enumeration: GetExportLinkExportTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -13,24 +15,24 @@
 
 ## Enumeration Members
 
-### <a id="attachments" name="attachments"></a> ATTACHMENTS
+### ATTACHMENTS
 
-• **ATTACHMENTS**
-
-___
-
-### <a id="contacts" name="contacts"></a> CONTACTS
-
-• **CONTACTS**
+• **ATTACHMENTS** = ``"ATTACHMENTS"``
 
 ___
 
-### <a id="emails" name="emails"></a> EMAILS
+### CONTACTS
 
-• **EMAILS**
+• **CONTACTS** = ``"CONTACTS"``
 
 ___
 
-### <a id="inboxes" name="inboxes"></a> INBOXES
+### EMAILS
 
-• **INBOXES**
+• **EMAILS** = ``"EMAILS"``
+
+___
+
+### INBOXES
+
+• **INBOXES** = ``"INBOXES"``

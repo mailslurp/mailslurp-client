@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ExpirationDefaults
+
 # Interface: ExpirationDefaults
 
 Expiration defaults for your account
 
-**`export`**
+**`Export`**
 
-**`interface`** ExpirationDefaults
+**`Interface`**
+
+ExpirationDefaults
 
 ## Table of contents
 
@@ -18,40 +22,50 @@ Expiration defaults for your account
 
 ## Properties
 
-### <a id="canpermanentinbox" name="canpermanentinbox"></a> canPermanentInbox
+### canPermanentInbox
 
 • **canPermanentInbox**: `boolean`
 
-**`memberof`** ExpirationDefaults
+**`Memberof`**
+
+ExpirationDefaults
 
 ___
 
-### <a id="defaultexpirationmillis" name="defaultexpirationmillis"></a> defaultExpirationMillis
+### defaultExpirationMillis
 
 • `Optional` **defaultExpirationMillis**: `number`
 
-**`memberof`** ExpirationDefaults
+**`Memberof`**
+
+ExpirationDefaults
 
 ___
 
-### <a id="defaultexpiresat" name="defaultexpiresat"></a> defaultExpiresAt
+### defaultExpiresAt
 
 • `Optional` **defaultExpiresAt**: `Date`
 
-**`memberof`** ExpirationDefaults
+**`Memberof`**
+
+ExpirationDefaults
 
 ___
 
-### <a id="maxexpirationmillis" name="maxexpirationmillis"></a> maxExpirationMillis
+### maxExpirationMillis
 
 • `Optional` **maxExpirationMillis**: `number`
 
-**`memberof`** ExpirationDefaults
+**`Memberof`**
+
+ExpirationDefaults
 
 ___
 
-### <a id="nextinboxallowspermanent" name="nextinboxallowspermanent"></a> nextInboxAllowsPermanent
+### nextInboxAllowsPermanent
 
 • **nextInboxAllowsPermanent**: `boolean`
 
-**`memberof`** ExpirationDefaults
+**`Memberof`**
+
+ExpirationDefaults

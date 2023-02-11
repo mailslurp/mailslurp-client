@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / SmsPreview
+
 # Interface: SmsPreview
 
-**`export`**
+**`Export`**
 
-**`interface`** SmsPreview
+**`Interface`**
+
+SmsPreview
 
 ## Table of contents
 
@@ -17,48 +21,60 @@
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview
 
 ___
 
-### <a id="fromnumber" name="fromnumber"></a> fromNumber
+### fromNumber
 
 • **fromNumber**: `string`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • **phoneNumber**: `string`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** SmsPreview
+**`Memberof`**
+
+SmsPreview

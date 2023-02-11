@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / WaitForSmsRequest
+
 # Interface: WaitForSmsRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="waitforsmsconditions" name="waitforsmsconditions"></a> waitForSmsConditions
+### waitForSmsConditions
 
 • **waitForSmsConditions**: [`WaitForSmsConditions`](WaitForSmsConditions.md)

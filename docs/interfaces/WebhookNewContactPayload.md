@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookNewContactPayload
+
 # Interface: WebhookNewContactPayload
 
 NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to that contains a recipient that has not been saved as a contact.
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookNewContactPayload
+**`Interface`**
+
+WebhookNewContactPayload
 
 ## Table of contents
 
@@ -28,148 +32,178 @@ NEW_CONTACT webhook payload. Sent to your webhook url endpoint via HTTP POST whe
 
 ## Properties
 
-### <a id="company" name="company"></a> company
+### company
 
 • `Optional` **company**: `string`
 
 Contact company name
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="contactid" name="contactid"></a> contactId
+### contactId
 
 • **contactId**: `string`
 
 Contact ID
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
 Date time of event creation
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="emailaddresses" name="emailaddresses"></a> emailAddresses
+### emailAddresses
 
 • **emailAddresses**: `string`[]
 
 Email addresses for contact
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`WebhookNewContactPayloadEventNameEnum`](../enums/WebhookNewContactPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="firstname" name="firstname"></a> firstName
+### firstName
 
 • `Optional` **firstName**: `string`
 
 Contact first name
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • `Optional` **groupId**: `string`
 
 Contact group ID
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="lastname" name="lastname"></a> lastName
+### lastName
 
 • `Optional` **lastName**: `string`
 
 Contact last name
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="metadata" name="metadata"></a> metaData
+### metaData
 
 • `Optional` **metaData**: `object`
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="optout" name="optout"></a> optOut
+### optOut
 
 • **optOut**: `boolean`
 
 Has contact opted out of emails
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="primaryemailaddress" name="primaryemailaddress"></a> primaryEmailAddress
+### primaryEmailAddress
 
 • `Optional` **primaryEmailAddress**: `string`
 
 Primary email address for contact
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="tags" name="tags"></a> tags
+### tags
 
 • **tags**: `string`[]
 
 Tags for contact
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
 ID of webhook entity being triggered
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
 Name of the webhook being triggered
 
-**`memberof`** WebhookNewContactPayload
+**`Memberof`**
+
+WebhookNewContactPayload

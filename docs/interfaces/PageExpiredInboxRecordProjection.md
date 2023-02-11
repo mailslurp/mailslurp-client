@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageExpiredInboxRecordProjection
+
 # Interface: PageExpiredInboxRecordProjection
 
 Paginated expired inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageExpiredInboxRecordProjection
+**`Interface`**
+
+PageExpiredInboxRecordProjection
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated expired inbox results. Page index starts at zero. Projection results m
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`ExpiredInboxRecordProjection`](ExpiredInboxRecordProjection.md)[]
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageExpiredInboxRecordProjection
+**`Memberof`**
+
+PageExpiredInboxRecordProjection

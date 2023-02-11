@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / TemplateVariableVariableTypeEnum
+
 # Enumeration: TemplateVariableVariableTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -10,6 +12,6 @@
 
 ## Enumeration Members
 
-### <a id="string" name="string"></a> STRING
+### STRING
 
-• **STRING**
+• **STRING** = ``"STRING"``

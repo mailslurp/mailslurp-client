@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / SmsDto
+
 # Interface: SmsDto
 
-**`export`**
+**`Export`**
 
-**`interface`** SmsDto
+**`Interface`**
+
+SmsDto
 
 ## Table of contents
 
@@ -19,64 +23,80 @@
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="fromnumber" name="fromnumber"></a> fromNumber
+### fromNumber
 
 • **fromNumber**: `string`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • **phoneNumber**: `string`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • **read**: `boolean`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** SmsDto
+**`Memberof`**
+
+SmsDto

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateGroupOptions
+
 # Interface: CreateGroupOptions
 
 Create contact group options
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateGroupOptions
+**`Interface`**
+
+CreateGroupOptions
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Create contact group options
 
 ## Properties
 
-### <a id="description" name="description"></a> description
+### description
 
 • `Optional` **description**: `string`
 
-**`memberof`** CreateGroupOptions
+**`Memberof`**
+
+CreateGroupOptions
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** CreateGroupOptions
+**`Memberof`**
+
+CreateGroupOptions

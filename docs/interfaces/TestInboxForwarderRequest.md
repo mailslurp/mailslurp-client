@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / TestInboxForwarderRequest
+
 # Interface: TestInboxForwarderRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ___
 
-### <a id="inboxforwardertestoptions" name="inboxforwardertestoptions"></a> inboxForwarderTestOptions
+### inboxForwarderTestOptions
 
 • **inboxForwarderTestOptions**: [`InboxForwarderTestOptions`](InboxForwarderTestOptions.md)

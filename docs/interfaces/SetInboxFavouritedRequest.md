@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SetInboxFavouritedRequest
+
 # Interface: SetInboxFavouritedRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="setinboxfavouritedoptions" name="setinboxfavouritedoptions"></a> setInboxFavouritedOptions
+### setInboxFavouritedOptions
 
 • **setInboxFavouritedOptions**: [`SetInboxFavouritedOptions`](SetInboxFavouritedOptions.md)

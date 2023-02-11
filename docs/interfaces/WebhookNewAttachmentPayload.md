@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookNewAttachmentPayload
+
 # Interface: WebhookNewAttachmentPayload
 
 NEW_ATTACHMENT webhook payload. Sent to your webhook url endpoint via HTTP POST when an email is received by the inbox that your webhook is attached to that contains an attachment. You can use the attachmentId to download the attachment.
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookNewAttachmentPayload
+**`Interface`**
+
+WebhookNewAttachmentPayload
 
 ## Table of contents
 
@@ -21,80 +25,96 @@ NEW_ATTACHMENT webhook payload. Sent to your webhook url endpoint via HTTP POST 
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`
 
 ID of attachment. Use the `AttachmentController` to
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="contentlength" name="contentlength"></a> contentLength
+### contentLength
 
 • **contentLength**: `number`
 
 Size of attachment in bytes
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • **contentType**: `string`
 
 Content type of attachment such as 'image/png' or 'application/pdf
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`WebhookNewAttachmentPayloadEventNameEnum`](../enums/WebhookNewAttachmentPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
 Filename of the attachment if present
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
 ID of webhook entity being triggered
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
 Name of the webhook being triggered
 
-**`memberof`** WebhookNewAttachmentPayload
+**`Memberof`**
+
+WebhookNewAttachmentPayload

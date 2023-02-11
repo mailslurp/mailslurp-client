@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / UserInfoDtoSubscriptionTypeEnum
+
 # Enumeration: UserInfoDtoSubscriptionTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -13,24 +15,24 @@
 
 ## Enumeration Members
 
-### <a id="enterprise" name="enterprise"></a> ENTERPRISE
+### ENTERPRISE
 
-• **ENTERPRISE**
-
-___
-
-### <a id="pro_monthly" name="pro_monthly"></a> PRO\_MONTHLY
-
-• **PRO\_MONTHLY**
+• **ENTERPRISE** = ``"ENTERPRISE"``
 
 ___
 
-### <a id="starter" name="starter"></a> STARTER
+### PRO\_MONTHLY
 
-• **STARTER**
+• **PRO\_MONTHLY** = ``"PRO_MONTHLY"``
 
 ___
 
-### <a id="team" name="team"></a> TEAM
+### STARTER
 
-• **TEAM**
+• **STARTER** = ``"STARTER"``
+
+___
+
+### TEAM
+
+• **TEAM** = ``"TEAM"``

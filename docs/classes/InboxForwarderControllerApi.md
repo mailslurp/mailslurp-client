@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / InboxForwarderControllerApi
+
 # Class: InboxForwarderControllerApi
 
 ## Hierarchy
@@ -45,7 +47,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new InboxForwarderControllerApi**(`configuration?`)
 
@@ -61,7 +63,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -71,7 +73,7 @@
 
 ## Methods
 
-### <a id="createnewinboxforwarder" name="createnewinboxforwarder"></a> createNewInboxForwarder
+### createNewInboxForwarder
 
 ▸ **createNewInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
@@ -91,7 +93,7 @@ Create an inbox forwarder
 
 ___
 
-### <a id="createnewinboxforwarderraw" name="createnewinboxforwarderraw"></a> createNewInboxForwarderRaw
+### createNewInboxForwarderRaw
 
 ▸ **createNewInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
 
@@ -111,7 +113,7 @@ Create an inbox forwarder
 
 ___
 
-### <a id="deleteinboxforwarder" name="deleteinboxforwarder"></a> deleteInboxForwarder
+### deleteInboxForwarder
 
 ▸ **deleteInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -131,7 +133,7 @@ Delete an inbox forwarder
 
 ___
 
-### <a id="deleteinboxforwarderraw" name="deleteinboxforwarderraw"></a> deleteInboxForwarderRaw
+### deleteInboxForwarderRaw
 
 ▸ **deleteInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -151,7 +153,7 @@ Delete an inbox forwarder
 
 ___
 
-### <a id="deleteinboxforwarders" name="deleteinboxforwarders"></a> deleteInboxForwarders
+### deleteInboxForwarders
 
 ▸ **deleteInboxForwarders**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -171,7 +173,7 @@ Delete inbox forwarders
 
 ___
 
-### <a id="deleteinboxforwardersraw" name="deleteinboxforwardersraw"></a> deleteInboxForwardersRaw
+### deleteInboxForwardersRaw
 
 ▸ **deleteInboxForwardersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -191,7 +193,7 @@ Delete inbox forwarders
 
 ___
 
-### <a id="getinboxforwarder" name="getinboxforwarder"></a> getInboxForwarder
+### getInboxForwarder
 
 ▸ **getInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
@@ -211,7 +213,7 @@ Get an inbox forwarder
 
 ___
 
-### <a id="getinboxforwarderevents" name="getinboxforwarderevents"></a> getInboxForwarderEvents
+### getInboxForwarderEvents
 
 ▸ **getInboxForwarderEvents**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>
 
@@ -231,7 +233,7 @@ Get an inbox forwarder event list
 
 ___
 
-### <a id="getinboxforwardereventsraw" name="getinboxforwardereventsraw"></a> getInboxForwarderEventsRaw
+### getInboxForwarderEventsRaw
 
 ▸ **getInboxForwarderEventsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderEvents`](../interfaces/PageInboxForwarderEvents.md)\>\>
 
@@ -251,7 +253,7 @@ Get an inbox forwarder event list
 
 ___
 
-### <a id="getinboxforwarderraw" name="getinboxforwarderraw"></a> getInboxForwarderRaw
+### getInboxForwarderRaw
 
 ▸ **getInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
 
@@ -271,7 +273,7 @@ Get an inbox forwarder
 
 ___
 
-### <a id="getinboxforwarders" name="getinboxforwarders"></a> getInboxForwarders
+### getInboxForwarders
 
 ▸ **getInboxForwarders**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>
 
@@ -291,7 +293,7 @@ List inbox forwarders
 
 ___
 
-### <a id="getinboxforwardersraw" name="getinboxforwardersraw"></a> getInboxForwardersRaw
+### getInboxForwardersRaw
 
 ▸ **getInboxForwardersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxForwarderDto`](../interfaces/PageInboxForwarderDto.md)\>\>
 
@@ -311,7 +313,7 @@ List inbox forwarders
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -332,7 +334,7 @@ ___
 
 ___
 
-### <a id="testinboxforwarder" name="testinboxforwarder"></a> testInboxForwarder
+### testInboxForwarder
 
 ▸ **testInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
@@ -352,7 +354,7 @@ Test an inbox forwarder
 
 ___
 
-### <a id="testinboxforwarderraw" name="testinboxforwarderraw"></a> testInboxForwarderRaw
+### testInboxForwarderRaw
 
 ▸ **testInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
 
@@ -372,7 +374,7 @@ Test an inbox forwarder
 
 ___
 
-### <a id="testinboxforwardersforinbox" name="testinboxforwardersforinbox"></a> testInboxForwardersForInbox
+### testInboxForwardersForInbox
 
 ▸ **testInboxForwardersForInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
@@ -392,7 +394,7 @@ Test inbox forwarders for inbox
 
 ___
 
-### <a id="testinboxforwardersforinboxraw" name="testinboxforwardersforinboxraw"></a> testInboxForwardersForInboxRaw
+### testInboxForwardersForInboxRaw
 
 ▸ **testInboxForwardersForInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
 
@@ -412,7 +414,7 @@ Test inbox forwarders for inbox
 
 ___
 
-### <a id="testnewinboxforwarder" name="testnewinboxforwarder"></a> testNewInboxForwarder
+### testNewInboxForwarder
 
 ▸ **testNewInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>
 
@@ -432,7 +434,7 @@ Test new inbox forwarder
 
 ___
 
-### <a id="testnewinboxforwarderraw" name="testnewinboxforwarderraw"></a> testNewInboxForwarderRaw
+### testNewInboxForwarderRaw
 
 ▸ **testNewInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderTestResult`](../interfaces/InboxForwarderTestResult.md)\>\>
 
@@ -452,7 +454,7 @@ Test new inbox forwarder
 
 ___
 
-### <a id="updateinboxforwarder" name="updateinboxforwarder"></a> updateInboxForwarder
+### updateInboxForwarder
 
 ▸ **updateInboxForwarder**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>
 
@@ -472,7 +474,7 @@ Update an inbox forwarder
 
 ___
 
-### <a id="updateinboxforwarderraw" name="updateinboxforwarderraw"></a> updateInboxForwarderRaw
+### updateInboxForwarderRaw
 
 ▸ **updateInboxForwarderRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxForwarderDto`](../interfaces/InboxForwarderDto.md)\>\>
 
@@ -492,9 +494,9 @@ Update an inbox forwarder
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -519,9 +521,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -546,9 +548,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

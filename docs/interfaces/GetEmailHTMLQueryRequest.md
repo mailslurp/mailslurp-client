@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailHTMLQueryRequest
+
 # Interface: GetEmailHTMLQueryRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="htmlselector" name="htmlselector"></a> htmlSelector
+### htmlSelector
 
 • **htmlSelector**: `string`

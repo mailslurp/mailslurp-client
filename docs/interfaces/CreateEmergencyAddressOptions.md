@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / CreateEmergencyAddressOptions
+
 # Interface: CreateEmergencyAddressOptions
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateEmergencyAddressOptions
+**`Interface`**
+
+CreateEmergencyAddressOptions
 
 ## Table of contents
 
@@ -18,56 +22,70 @@
 
 ## Properties
 
-### <a id="address1" name="address1"></a> address1
+### address1
 
 • **address1**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="city" name="city"></a> city
+### city
 
 • **city**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="customername" name="customername"></a> customerName
+### customerName
 
 • **customerName**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="displayname" name="displayname"></a> displayName
+### displayName
 
 • `Optional` **displayName**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="isocountrycode" name="isocountrycode"></a> isoCountryCode
+### isoCountryCode
 
 • **isoCountryCode**: [`CreateEmergencyAddressOptionsIsoCountryCodeEnum`](../enums/CreateEmergencyAddressOptionsIsoCountryCodeEnum.md)
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="postalcode" name="postalcode"></a> postalCode
+### postalCode
 
 • **postalCode**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions
 
 ___
 
-### <a id="region" name="region"></a> region
+### region
 
 • **region**: `string`
 
-**`memberof`** CreateEmergencyAddressOptions
+**`Memberof`**
+
+CreateEmergencyAddressOptions

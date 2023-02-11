@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetJsonSchemaForWebhookEventRequest
+
 # Interface: GetJsonSchemaForWebhookEventRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="event" name="event"></a> event
+### event
 
 • **event**: [`GetJsonSchemaForWebhookEventEventEnum`](../enums/GetJsonSchemaForWebhookEventEventEnum.md)

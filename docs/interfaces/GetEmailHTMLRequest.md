@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailHTMLRequest
+
 # Interface: GetEmailHTMLRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="decode" name="decode"></a> decode
+### decode
 
 • `Optional` **decode**: `boolean`
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

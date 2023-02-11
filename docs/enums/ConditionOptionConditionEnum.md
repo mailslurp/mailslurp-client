@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ConditionOptionConditionEnum
+
 # Enumeration: ConditionOptionConditionEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -10,6 +12,6 @@
 
 ## Enumeration Members
 
-### <a id="has_attachments" name="has_attachments"></a> HAS\_ATTACHMENTS
+### HAS\_ATTACHMENTS
 
-• **HAS\_ATTACHMENTS**
+• **HAS\_ATTACHMENTS** = ``"HAS_ATTACHMENTS"``

@@ -4,8 +4,5 @@
     "out": "docs",
     "hideGenerator": true,
     "tsconfig": "./tsconfig.json",
-    "disableSources": true,
-    "hideLegend": true,
-    "namedAnchors": true,
-    "hideBreadcrumbs": true
+    "disableSources": true
 }

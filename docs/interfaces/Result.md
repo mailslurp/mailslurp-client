@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / Result
+
 # Interface: Result<T\>
 
 ## Type parameters
@@ -15,13 +17,13 @@
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: `T`
 
 ___
 
-### <a id="error" name="error"></a> error
+### error
 
 • `Optional` **error**: `Object`
 

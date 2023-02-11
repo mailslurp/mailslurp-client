@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookTestResult
+
 # Interface: WebhookTestResult
 
 Results of testing a webhook
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookTestResult
+**`Interface`**
+
+WebhookTestResult
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Results of testing a webhook
 
 ## Properties
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** WebhookTestResult
+**`Memberof`**
+
+WebhookTestResult
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 • **request**: [`WebhookTestRequest`](WebhookTestRequest.md)
 
-**`memberof`** WebhookTestResult
+**`Memberof`**
+
+WebhookTestResult
 
 ___
 
-### <a id="response" name="response"></a> response
+### response
 
 • **response**: [`WebhookTestResponse`](WebhookTestResponse.md)
 
-**`memberof`** WebhookTestResult
+**`Memberof`**
+
+WebhookTestResult

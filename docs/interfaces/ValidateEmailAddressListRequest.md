@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ValidateEmailAddressListRequest
+
 # Interface: ValidateEmailAddressListRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="validateemailaddresslistoptions" name="validateemailaddresslistoptions"></a> validateEmailAddressListOptions
+### validateEmailAddressListOptions
 
 • **validateEmailAddressListOptions**: [`ValidateEmailAddressListOptions`](ValidateEmailAddressListOptions.md)

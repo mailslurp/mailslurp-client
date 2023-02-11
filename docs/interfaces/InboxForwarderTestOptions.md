@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxForwarderTestOptions
+
 # Interface: InboxForwarderTestOptions
 
 Options for testing an inbox forwarder against a value
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxForwarderTestOptions
+**`Interface`**
+
+InboxForwarderTestOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Options for testing an inbox forwarder against a value
 
 ## Properties
 
-### <a id="testvalue" name="testvalue"></a> testValue
+### testValue
 
 • **testValue**: `string`
 
-**`memberof`** InboxForwarderTestOptions
+**`Memberof`**
+
+InboxForwarderTestOptions

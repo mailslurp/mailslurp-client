@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ThreadProjection
+
 # Interface: ThreadProjection
 
 A thread is a message thread created for a message received by an alias
 
-**`export`**
+**`Export`**
 
-**`interface`** ThreadProjection
+**`Interface`**
+
+ThreadProjection
 
 ## Table of contents
 
@@ -24,110 +28,132 @@ A thread is a message thread created for a message received by an alias
 
 ## Properties
 
-### <a id="aliasid" name="aliasid"></a> aliasId
+### aliasId
 
 • **aliasId**: `string`
 
 Alias ID
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • `Optional` **bcc**: `string`[]
 
 BCC recipients
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • `Optional` **cc**: `string`[]
 
 CC recipients
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
 Created at DateTime
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ID of email thread
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 Inbox ID
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
 Name of thread
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
 Thread subject
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
 To recipients
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
 Updated at DateTime
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
 User ID
 
-**`memberof`** ThreadProjection
+**`Memberof`**
+
+ThreadProjection

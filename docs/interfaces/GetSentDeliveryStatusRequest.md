@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetSentDeliveryStatusRequest
+
 # Interface: GetSentDeliveryStatusRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="deliveryid" name="deliveryid"></a> deliveryId
+### deliveryId
 
 • **deliveryId**: `string`

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DownloadAttachmentAsBytesRequest
+
 # Interface: DownloadAttachmentAsBytesRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`

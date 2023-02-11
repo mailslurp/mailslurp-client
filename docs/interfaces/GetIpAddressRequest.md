@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetIpAddressRequest
+
 # Interface: GetIpAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`

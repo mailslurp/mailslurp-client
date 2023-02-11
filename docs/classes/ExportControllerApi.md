@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ExportControllerApi
+
 # Class: ExportControllerApi
 
 ## Hierarchy
@@ -29,7 +31,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new ExportControllerApi**(`configuration?`)
 
@@ -45,7 +47,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -55,7 +57,7 @@
 
 ## Methods
 
-### <a id="exportentities" name="exportentities"></a> exportEntities
+### exportEntities
 
 ▸ **exportEntities**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -74,7 +76,7 @@ Export inboxes link callable via browser
 
 ___
 
-### <a id="exportentitiesraw" name="exportentitiesraw"></a> exportEntitiesRaw
+### exportEntitiesRaw
 
 ▸ **exportEntitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -93,7 +95,7 @@ Export inboxes link callable via browser
 
 ___
 
-### <a id="getexportlink" name="getexportlink"></a> getExportLink
+### getExportLink
 
 ▸ **getExportLink**(`requestParameters`, `initOverrides?`): `Promise`<[`ExportLink`](../interfaces/ExportLink.md)\>
 
@@ -112,7 +114,7 @@ Get export link
 
 ___
 
-### <a id="getexportlinkraw" name="getexportlinkraw"></a> getExportLinkRaw
+### getExportLinkRaw
 
 ▸ **getExportLinkRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ExportLink`](../interfaces/ExportLink.md)\>\>
 
@@ -131,7 +133,7 @@ Get export link
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -152,9 +154,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -179,9 +181,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -206,9 +208,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

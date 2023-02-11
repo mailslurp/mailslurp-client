@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetExpiredInboxRecordRequest
+
 # Interface: GetExpiredInboxRecordRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="expiredid" name="expiredid"></a> expiredId
+### expiredId
 
 • **expiredId**: `string`

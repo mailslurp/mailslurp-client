@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ImapFlagOperationOptionsFlagOperationEnum
+
 # Enumeration: ImapFlagOperationOptionsFlagOperationEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -12,18 +14,18 @@
 
 ## Enumeration Members
 
-### <a id="add_flags" name="add_flags"></a> ADD\_FLAGS
+### ADD\_FLAGS
 
-• **ADD\_FLAGS**
-
-___
-
-### <a id="remove_flags" name="remove_flags"></a> REMOVE\_FLAGS
-
-• **REMOVE\_FLAGS**
+• **ADD\_FLAGS** = ``"ADD_FLAGS"``
 
 ___
 
-### <a id="set_flags" name="set_flags"></a> SET\_FLAGS
+### REMOVE\_FLAGS
 
-• **SET\_FLAGS**
+• **REMOVE\_FLAGS** = ``"REMOVE_FLAGS"``
+
+___
+
+### SET\_FLAGS
+
+• **SET\_FLAGS** = ``"SET_FLAGS"``

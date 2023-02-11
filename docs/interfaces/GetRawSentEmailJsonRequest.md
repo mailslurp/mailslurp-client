@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetRawSentEmailJsonRequest
+
 # Interface: GetRawSentEmailJsonRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

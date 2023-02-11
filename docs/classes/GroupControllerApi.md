@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GroupControllerApi
+
 # Class: GroupControllerApi
 
 ## Hierarchy
@@ -43,7 +45,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new GroupControllerApi**(`configuration?`)
 
@@ -59,7 +61,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -69,7 +71,7 @@
 
 ## Methods
 
-### <a id="addcontactstogroup" name="addcontactstogroup"></a> addContactsToGroup
+### addContactsToGroup
 
 ▸ **addContactsToGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>
 
@@ -88,7 +90,7 @@ Add contacts to a group
 
 ___
 
-### <a id="addcontactstogroupraw" name="addcontactstogroupraw"></a> addContactsToGroupRaw
+### addContactsToGroupRaw
 
 ▸ **addContactsToGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>\>
 
@@ -107,7 +109,7 @@ Add contacts to a group
 
 ___
 
-### <a id="creategroup" name="creategroup"></a> createGroup
+### createGroup
 
 ▸ **createGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
 
@@ -126,7 +128,7 @@ Create a group
 
 ___
 
-### <a id="creategroupraw" name="creategroupraw"></a> createGroupRaw
+### createGroupRaw
 
 ▸ **createGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
 
@@ -145,7 +147,7 @@ Create a group
 
 ___
 
-### <a id="deletegroup" name="deletegroup"></a> deleteGroup
+### deleteGroup
 
 ▸ **deleteGroup**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -164,7 +166,7 @@ Delete group
 
 ___
 
-### <a id="deletegroupraw" name="deletegroupraw"></a> deleteGroupRaw
+### deleteGroupRaw
 
 ▸ **deleteGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -183,7 +185,7 @@ Delete group
 
 ___
 
-### <a id="getallgroups" name="getallgroups"></a> getAllGroups
+### getAllGroups
 
 ▸ **getAllGroups**(`requestParameters`, `initOverrides?`): `Promise`<[`PageGroupProjection`](../interfaces/PageGroupProjection.md)\>
 
@@ -202,7 +204,7 @@ Get all Contact Groups in paginated format
 
 ___
 
-### <a id="getallgroupsraw" name="getallgroupsraw"></a> getAllGroupsRaw
+### getAllGroupsRaw
 
 ▸ **getAllGroupsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageGroupProjection`](../interfaces/PageGroupProjection.md)\>\>
 
@@ -221,7 +223,7 @@ Get all Contact Groups in paginated format
 
 ___
 
-### <a id="getgroup" name="getgroup"></a> getGroup
+### getGroup
 
 ▸ **getGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
 
@@ -240,7 +242,7 @@ Get group
 
 ___
 
-### <a id="getgroupraw" name="getgroupraw"></a> getGroupRaw
+### getGroupRaw
 
 ▸ **getGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
 
@@ -259,7 +261,7 @@ Get group
 
 ___
 
-### <a id="getgroupwithcontacts" name="getgroupwithcontacts"></a> getGroupWithContacts
+### getGroupWithContacts
 
 ▸ **getGroupWithContacts**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>
 
@@ -278,7 +280,7 @@ Get group and contacts belonging to it
 
 ___
 
-### <a id="getgroupwithcontactspaginated" name="getgroupwithcontactspaginated"></a> getGroupWithContactsPaginated
+### getGroupWithContactsPaginated
 
 ▸ **getGroupWithContactsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>
 
@@ -297,7 +299,7 @@ Get group and paginated contacts belonging to it
 
 ___
 
-### <a id="getgroupwithcontactspaginatedraw" name="getgroupwithcontactspaginatedraw"></a> getGroupWithContactsPaginatedRaw
+### getGroupWithContactsPaginatedRaw
 
 ▸ **getGroupWithContactsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageContactProjection`](../interfaces/PageContactProjection.md)\>\>
 
@@ -316,7 +318,7 @@ Get group and paginated contacts belonging to it
 
 ___
 
-### <a id="getgroupwithcontactsraw" name="getgroupwithcontactsraw"></a> getGroupWithContactsRaw
+### getGroupWithContactsRaw
 
 ▸ **getGroupWithContactsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>\>
 
@@ -335,7 +337,7 @@ Get group and contacts belonging to it
 
 ___
 
-### <a id="getgroups" name="getgroups"></a> getGroups
+### getGroups
 
 ▸ **getGroups**(`initOverrides?`): `Promise`<[`GroupProjection`](../interfaces/GroupProjection.md)[]\>
 
@@ -353,7 +355,7 @@ Get all groups
 
 ___
 
-### <a id="getgroupsraw" name="getgroupsraw"></a> getGroupsRaw
+### getGroupsRaw
 
 ▸ **getGroupsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupProjection`](../interfaces/GroupProjection.md)[]\>\>
 
@@ -371,7 +373,7 @@ Get all groups
 
 ___
 
-### <a id="removecontactsfromgroup" name="removecontactsfromgroup"></a> removeContactsFromGroup
+### removeContactsFromGroup
 
 ▸ **removeContactsFromGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>
 
@@ -390,7 +392,7 @@ Remove contacts from a group
 
 ___
 
-### <a id="removecontactsfromgroupraw" name="removecontactsfromgroupraw"></a> removeContactsFromGroupRaw
+### removeContactsFromGroupRaw
 
 ▸ **removeContactsFromGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupContactsDto`](../interfaces/GroupContactsDto.md)\>\>
 
@@ -409,7 +411,7 @@ Remove contacts from a group
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -430,9 +432,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -457,9 +459,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -484,9 +486,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

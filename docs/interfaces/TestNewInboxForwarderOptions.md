@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / TestNewInboxForwarderOptions
+
 # Interface: TestNewInboxForwarderOptions
 
 Options for testing new inbox forwarder rules
 
-**`export`**
+**`Export`**
 
-**`interface`** TestNewInboxForwarderOptions
+**`Interface`**
+
+TestNewInboxForwarderOptions
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Options for testing new inbox forwarder rules
 
 ## Properties
 
-### <a id="createinboxforwarderoptions" name="createinboxforwarderoptions"></a> createInboxForwarderOptions
+### createInboxForwarderOptions
 
 • **createInboxForwarderOptions**: [`CreateInboxForwarderOptions`](CreateInboxForwarderOptions.md)
 
-**`memberof`** TestNewInboxForwarderOptions
+**`Memberof`**
+
+TestNewInboxForwarderOptions
 
 ___
 
-### <a id="inboxforwardertestoptions" name="inboxforwardertestoptions"></a> inboxForwarderTestOptions
+### inboxForwarderTestOptions
 
 • **inboxForwarderTestOptions**: [`InboxForwarderTestOptions`](InboxForwarderTestOptions.md)
 
-**`memberof`** TestNewInboxForwarderOptions
+**`Memberof`**
+
+TestNewInboxForwarderOptions

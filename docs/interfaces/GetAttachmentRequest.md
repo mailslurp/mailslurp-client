@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetAttachmentRequest
+
 # Interface: GetAttachmentRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`

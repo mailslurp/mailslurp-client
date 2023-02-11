@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DoesInboxExistRequest
+
 # Interface: DoesInboxExistRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="allowcatchall" name="allowcatchall"></a> allowCatchAll
+### allowCatchAll
 
 • `Optional` **allowCatchAll**: `boolean`
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`

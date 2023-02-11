@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / JSONApiResponse
+
 # Class: JSONApiResponse<T\>
 
 ## Type parameters
@@ -15,6 +17,7 @@
 ### Properties
 
 - [raw](JSONApiResponse.md#raw)
+- [transformer](JSONApiResponse.md#transformer)
 
 ### Methods
 
@@ -22,7 +25,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new JSONApiResponse**<`T`\>(`raw`, `transformer?`)
 
@@ -41,13 +44,19 @@
 
 ## Properties
 
-### <a id="raw" name="raw"></a> raw
+### raw
 
 • **raw**: `Response`
 
+___
+
+### transformer
+
+• `Private` **transformer**: [`ResponseTransformer`](../interfaces/ResponseTransformer.md)<`T`\>
+
 ## Methods
 
-### <a id="value" name="value"></a> value
+### value
 
 ▸ **value**(): `Promise`<`T`\>
 

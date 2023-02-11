@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BasicAuthOptions
+
 # Interface: BasicAuthOptions
 
 Basic Authentication options for webhooks. Will be used is present when calling webhook endpoints.
 
-**`export`**
+**`Export`**
 
-**`interface`** BasicAuthOptions
+**`Interface`**
+
+BasicAuthOptions
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Basic Authentication options for webhooks. Will be used is present when calling 
 
 ## Properties
 
-### <a id="password" name="password"></a> password
+### password
 
 • **password**: `string`
 
-**`memberof`** BasicAuthOptions
+**`Memberof`**
+
+BasicAuthOptions
 
 ___
 
-### <a id="username" name="username"></a> username
+### username
 
 • **username**: `string`
 
-**`memberof`** BasicAuthOptions
+**`Memberof`**
+
+BasicAuthOptions

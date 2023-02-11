@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteAliasRequest
+
 # Interface: DeleteAliasRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="aliasid" name="aliasid"></a> aliasId
+### aliasId
 
 • **aliasId**: `string`

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailValidationRequestDto
+
 # Interface: EmailValidationRequestDto
 
 Email validation request
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailValidationRequestDto
+**`Interface`**
+
+EmailValidationRequestDto
 
 ## Table of contents
 
@@ -19,48 +23,60 @@ Email validation request
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto
 
 ___
 
-### <a id="isvalid" name="isvalid"></a> isValid
+### isValid
 
 • **isValid**: `boolean`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** EmailValidationRequestDto
+**`Memberof`**
+
+EmailValidationRequestDto

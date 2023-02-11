@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UpdateDomainOptions
+
 # Interface: UpdateDomainOptions
 
 Options for creating a domain to use with MailSlurp. You must have ownership access to this domain in order to verify it. Domains will not functionally currently until the domain has been verified. See https://www.mailslurp.com/guides/custom-domains for help.
 
-**`export`**
+**`Export`**
 
-**`interface`** UpdateDomainOptions
+**`Interface`**
+
+UpdateDomainOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Options for creating a domain to use with MailSlurp. You must have ownership acc
 
 ## Properties
 
-### <a id="catchallinboxid" name="catchallinboxid"></a> catchAllInboxId
+### catchAllInboxId
 
 • `Optional` **catchAllInboxId**: `string`
 
-**`memberof`** UpdateDomainOptions
+**`Memberof`**
+
+UpdateDomainOptions

@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / PhonePlanDto
+
 # Interface: PhonePlanDto
 
-**`export`**
+**`Export`**
 
-**`interface`** PhonePlanDto
+**`Interface`**
+
+PhonePlanDto
 
 ## Table of contents
 
@@ -15,32 +19,40 @@
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** PhonePlanDto
+**`Memberof`**
+
+PhonePlanDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** PhonePlanDto
+**`Memberof`**
+
+PhonePlanDto
 
 ___
 
-### <a id="phonecountry" name="phonecountry"></a> phoneCountry
+### phoneCountry
 
 • **phoneCountry**: [`PhonePlanDtoPhoneCountryEnum`](../enums/PhonePlanDtoPhoneCountryEnum.md)
 
-**`memberof`** PhonePlanDto
+**`Memberof`**
+
+PhonePlanDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** PhonePlanDto
+**`Memberof`**
+
+PhonePlanDto

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / HTMLValidationResult
+
 # Interface: HTMLValidationResult
 
 HTML Validation Results
 
-**`export`**
+**`Export`**
 
-**`interface`** HTMLValidationResult
+**`Interface`**
+
+HTMLValidationResult
 
 ## Table of contents
 
@@ -16,30 +20,36 @@ HTML Validation Results
 
 ## Properties
 
-### <a id="errors" name="errors"></a> errors
+### errors
 
 • **errors**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional errors resulting from HTML validation
 
-**`memberof`** HTMLValidationResult
+**`Memberof`**
+
+HTMLValidationResult
 
 ___
 
-### <a id="isvalid" name="isvalid"></a> isValid
+### isValid
 
 • **isValid**: `boolean`
 
 Is HTML validation result valid
 
-**`memberof`** HTMLValidationResult
+**`Memberof`**
+
+HTMLValidationResult
 
 ___
 
-### <a id="warnings" name="warnings"></a> warnings
+### warnings
 
 • **warnings**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional warnings resulting from HTML validation
 
-**`memberof`** HTMLValidationResult
+**`Memberof`**
+
+HTMLValidationResult

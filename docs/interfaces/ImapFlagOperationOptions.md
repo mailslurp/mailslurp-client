@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ImapFlagOperationOptions
+
 # Interface: ImapFlagOperationOptions
 
 IMAP operation flags
 
-**`export`**
+**`Export`**
 
-**`interface`** ImapFlagOperationOptions
+**`Interface`**
+
+ImapFlagOperationOptions
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ IMAP operation flags
 
 ## Properties
 
-### <a id="flagoperation" name="flagoperation"></a> flagOperation
+### flagOperation
 
 • **flagOperation**: [`ImapFlagOperationOptionsFlagOperationEnum`](../enums/ImapFlagOperationOptionsFlagOperationEnum.md)
 
-**`memberof`** ImapFlagOperationOptions
+**`Memberof`**
+
+ImapFlagOperationOptions
 
 ___
 
-### <a id="flags" name="flags"></a> flags
+### flags
 
 • **flags**: `string`[]
 
-**`memberof`** ImapFlagOperationOptions
+**`Memberof`**
+
+ImapFlagOperationOptions

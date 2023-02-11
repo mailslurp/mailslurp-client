@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailRecipients
+
 # Interface: EmailRecipients
 
 The `To`,`CC`,`BCC` recipients stored in object form with email address and name accessible.
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailRecipients
+**`Interface`**
+
+EmailRecipients
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ The `To`,`CC`,`BCC` recipients stored in object form with email address and name
 
 ## Properties
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • `Optional` **bcc**: [`Recipient`](Recipient.md)[]
 
-**`memberof`** EmailRecipients
+**`Memberof`**
+
+EmailRecipients
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • `Optional` **cc**: [`Recipient`](Recipient.md)[]
 
-**`memberof`** EmailRecipients
+**`Memberof`**
+
+EmailRecipients
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • `Optional` **to**: [`Recipient`](Recipient.md)[]
 
-**`memberof`** EmailRecipients
+**`Memberof`**
+
+EmailRecipients

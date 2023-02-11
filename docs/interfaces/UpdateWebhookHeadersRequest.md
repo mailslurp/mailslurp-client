@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateWebhookHeadersRequest
+
 # Interface: UpdateWebhookHeadersRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="webhookheaders" name="webhookheaders"></a> webhookHeaders
+### webhookHeaders
 
 • **webhookHeaders**: [`WebhookHeaders`](WebhookHeaders.md)
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`

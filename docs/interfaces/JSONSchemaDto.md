@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / JSONSchemaDto
+
 # Interface: JSONSchemaDto
 
 JSONSchema for payload
 
-**`export`**
+**`Export`**
 
-**`interface`** JSONSchemaDto
+**`Interface`**
+
+JSONSchemaDto
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ JSONSchema for payload
 
 ## Properties
 
-### <a id="value" name="value"></a> value
+### value
 
 • **value**: `string`
 
-**`memberof`** JSONSchemaDto
+**`Memberof`**
+
+JSONSchemaDto

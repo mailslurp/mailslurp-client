@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateInboxWithOptionsRequest
+
 # Interface: CreateInboxWithOptionsRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createinboxdto" name="createinboxdto"></a> createInboxDto
+### createInboxDto
 
 • **createInboxDto**: [`CreateInboxDto`](CreateInboxDto.md)

@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -167,7 +171,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -214,7 +218,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -281,7 +285,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/emails".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}/emails".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -348,7 +352,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/threads".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}/threads".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -473,8 +477,8 @@ var AliasControllerApi = /** @class */ (function (_super) {
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/aliases/{aliasId}/emails/{emailId}"
-                                    .replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId)))
-                                    .replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                    .replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId)))
+                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -532,7 +536,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}/emails".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}/emails".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -589,7 +593,7 @@ var AliasControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/aliases/{aliasId}".replace("{" + 'aliasId' + "}", encodeURIComponent(String(requestParameters.aliasId))),
+                                path: "/aliases/{aliasId}".replace("{".concat('aliasId', "}"), encodeURIComponent(String(requestParameters.aliasId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,

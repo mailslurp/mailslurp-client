@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / BulkSendEmailsRequest
+
 # Interface: BulkSendEmailsRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="bulksendemailoptions" name="bulksendemailoptions"></a> bulkSendEmailOptions
+### bulkSendEmailOptions
 
 • **bulkSendEmailOptions**: [`BulkSendEmailOptions`](BulkSendEmailOptions.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetLatestEmailInInboxRequest
+
 # Interface: GetLatestEmailInInboxRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="timeoutmillis" name="timeoutmillis"></a> timeoutMillis
+### timeoutMillis
 
 • **timeoutMillis**: `number`

@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / GetAllInboxesInboxTypeEnum
+
 # Enumeration: GetAllInboxesInboxTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="http_inbox" name="http_inbox"></a> HTTP\_INBOX
+### HTTP\_INBOX
 
-• **HTTP\_INBOX**
+• **HTTP\_INBOX** = ``"HTTP_INBOX"``
 
 ___
 
-### <a id="smtp_inbox" name="smtp_inbox"></a> SMTP\_INBOX
+### SMTP\_INBOX
 
-• **SMTP\_INBOX**
+• **SMTP\_INBOX** = ``"SMTP_INBOX"``

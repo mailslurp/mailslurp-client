@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailContentMatchResult
+
 # Interface: EmailContentMatchResult
 
 Matches for the given pattern
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailContentMatchResult
+**`Interface`**
+
+EmailContentMatchResult
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Matches for the given pattern
 
 ## Properties
 
-### <a id="matches" name="matches"></a> matches
+### matches
 
 • **matches**: `string`[]
 
-**`memberof`** EmailContentMatchResult
+**`Memberof`**
+
+EmailContentMatchResult
 
 ___
 
-### <a id="pattern" name="pattern"></a> pattern
+### pattern
 
 • **pattern**: `string`
 
-**`memberof`** EmailContentMatchResult
+**`Memberof`**
+
+EmailContentMatchResult

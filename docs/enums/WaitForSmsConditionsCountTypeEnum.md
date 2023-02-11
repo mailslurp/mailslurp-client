@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / WaitForSmsConditionsCountTypeEnum
+
 # Enumeration: WaitForSmsConditionsCountTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="atleast" name="atleast"></a> ATLEAST
+### ATLEAST
 
-• **ATLEAST**
+• **ATLEAST** = ``"ATLEAST"``
 
 ___
 
-### <a id="exactly" name="exactly"></a> EXACTLY
+### EXACTLY
 
-• **EXACTLY**
+• **EXACTLY** = ``"EXACTLY"``

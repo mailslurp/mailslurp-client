@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteAllWebhooksRequest
+
 # Interface: DeleteAllWebhooksRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`

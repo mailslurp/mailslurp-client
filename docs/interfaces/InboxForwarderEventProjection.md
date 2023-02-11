@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxForwarderEventProjection
+
 # Interface: InboxForwarderEventProjection
 
 Inbox forwarder event
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxForwarderEventProjection
+**`Interface`**
+
+InboxForwarderEventProjection
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Inbox forwarder event
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • `Optional` **emailId**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="forwarderid" name="forwarderid"></a> forwarderId
+### forwarderId
 
 • `Optional` **forwarderId**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="status" name="status"></a> status
+### status
 
 • `Optional` **status**: [`InboxForwarderEventProjectionStatusEnum`](../enums/InboxForwarderEventProjectionStatusEnum.md)
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • `Optional` **userId**: `string`
 
-**`memberof`** InboxForwarderEventProjection
+**`Memberof`**
+
+InboxForwarderEventProjection

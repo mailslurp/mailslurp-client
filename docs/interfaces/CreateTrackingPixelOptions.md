@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateTrackingPixelOptions
+
 # Interface: CreateTrackingPixelOptions
 
 Options for creating a tracking pixel for email open tracking
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateTrackingPixelOptions
+**`Interface`**
+
+CreateTrackingPixelOptions
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Options for creating a tracking pixel for email open tracking
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** CreateTrackingPixelOptions
+**`Memberof`**
+
+CreateTrackingPixelOptions
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • `Optional` **recipient**: `string`
 
-**`memberof`** CreateTrackingPixelOptions
+**`Memberof`**
+
+CreateTrackingPixelOptions

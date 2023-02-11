@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SmsProjection
+
 # Interface: SmsProjection
 
 SMS projection
 
-**`export`**
+**`Export`**
 
-**`interface`** SmsProjection
+**`Interface`**
+
+SmsProjection
 
 ## Table of contents
 
@@ -20,56 +24,70 @@ SMS projection
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="fromnumber" name="fromnumber"></a> fromNumber
+### fromNumber
 
 • **fromNumber**: `string`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • **phoneNumber**: `string`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • **read**: `boolean`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** SmsProjection
+**`Memberof`**
+
+SmsProjection

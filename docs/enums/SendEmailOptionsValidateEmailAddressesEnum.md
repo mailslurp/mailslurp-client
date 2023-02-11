@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / SendEmailOptionsValidateEmailAddressesEnum
+
 # Enumeration: SendEmailOptionsValidateEmailAddressesEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -12,18 +14,18 @@
 
 ## Enumeration Members
 
-### <a id="no_validation" name="no_validation"></a> NO\_VALIDATION
+### NO\_VALIDATION
 
-• **NO\_VALIDATION**
-
-___
-
-### <a id="validate_error_if_invalid" name="validate_error_if_invalid"></a> VALIDATE\_ERROR\_IF\_INVALID
-
-• **VALIDATE\_ERROR\_IF\_INVALID**
+• **NO\_VALIDATION** = ``"NO_VALIDATION"``
 
 ___
 
-### <a id="validate_filter_remove_invalid" name="validate_filter_remove_invalid"></a> VALIDATE\_FILTER\_REMOVE\_INVALID
+### VALIDATE\_ERROR\_IF\_INVALID
 
-• **VALIDATE\_FILTER\_REMOVE\_INVALID**
+• **VALIDATE\_ERROR\_IF\_INVALID** = ``"VALIDATE_ERROR_IF_INVALID"``
+
+___
+
+### VALIDATE\_FILTER\_REMOVE\_INVALID
+
+• **VALIDATE\_FILTER\_REMOVE\_INVALID** = ``"VALIDATE_FILTER_REMOVE_INVALID"``

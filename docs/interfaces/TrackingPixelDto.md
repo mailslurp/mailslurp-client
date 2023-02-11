@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / TrackingPixelDto
+
 # Interface: TrackingPixelDto
 
 Tracking pixel
 
-**`export`**
+**`Export`**
 
-**`interface`** TrackingPixelDto
+**`Interface`**
+
+TrackingPixelDto
 
 ## Table of contents
 
@@ -22,72 +26,90 @@ Tracking pixel
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="html" name="html"></a> html
+### html
 
 • **html**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • `Optional` **recipient**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="seen" name="seen"></a> seen
+### seen
 
 • **seen**: `boolean`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="seenat" name="seenat"></a> seenAt
+### seenAt
 
 • `Optional` **seenAt**: `Date`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`
 
-**`memberof`** TrackingPixelDto
+**`Memberof`**
+
+TrackingPixelDto

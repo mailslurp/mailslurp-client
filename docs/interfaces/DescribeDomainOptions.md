@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DescribeDomainOptions
+
 # Interface: DescribeDomainOptions
 
 Domain record description
 
-**`export`**
+**`Export`**
 
-**`interface`** DescribeDomainOptions
+**`Interface`**
+
+DescribeDomainOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Domain record description
 
 ## Properties
 
-### <a id="domain" name="domain"></a> domain
+### domain
 
 • **domain**: `string`
 
-**`memberof`** DescribeDomainOptions
+**`Memberof`**
+
+DescribeDomainOptions

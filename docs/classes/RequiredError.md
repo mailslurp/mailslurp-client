@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / RequiredError
+
 # Class: RequiredError
 
 ## Hierarchy
@@ -27,7 +29,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new RequiredError**(`field`, `msg?`)
 
@@ -44,13 +46,13 @@ Error.constructor
 
 ## Properties
 
-### <a id="field" name="field"></a> field
+### field
 
 • **field**: `string`
 
 ___
 
-### <a id="message" name="message"></a> message
+### message
 
 • **message**: `string`
 
@@ -60,7 +62,7 @@ Error.message
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: ``"RequiredError"``
 
@@ -70,7 +72,7 @@ Error.name
 
 ___
 
-### <a id="stack" name="stack"></a> stack
+### stack
 
 • `Optional` **stack**: `string`
 
@@ -80,7 +82,7 @@ Error.stack
 
 ___
 
-### <a id="preparestacktrace" name="preparestacktrace"></a> prepareStackTrace
+### prepareStackTrace
 
 ▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
 
@@ -90,7 +92,9 @@ ___
 
 Optional override for formatting stack traces
 
-**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+**`See`**
+
+https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 ##### Parameters
 
@@ -109,7 +113,7 @@ Error.prepareStackTrace
 
 ___
 
-### <a id="stacktracelimit" name="stacktracelimit"></a> stackTraceLimit
+### stackTraceLimit
 
 ▪ `Static` **stackTraceLimit**: `number`
 
@@ -119,7 +123,7 @@ Error.stackTraceLimit
 
 ## Methods
 
-### <a id="capturestacktrace" name="capturestacktrace"></a> captureStackTrace
+### captureStackTrace
 
 ▸ `Static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`
 

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UploadMultipartFormRequest
+
 # Interface: UploadMultipartFormRequest
 
 ## Table of contents
@@ -11,24 +13,24 @@
 
 ## Properties
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • `Optional` **contentType**: `string`
 
 ___
 
-### <a id="filename" name="filename"></a> filename
+### filename
 
 • `Optional` **filename**: `string`
 
 ___
 
-### <a id="inlineobject" name="inlineobject"></a> inlineObject
+### inlineObject
 
 • `Optional` **inlineObject**: [`InlineObject`](InlineObject.md)
 
 ___
 
-### <a id="xfilename" name="xfilename"></a> xFilename
+### xFilename
 
 • `Optional` **xFilename**: `string`

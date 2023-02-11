@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / AttachmentMetaData
+
 # Interface: AttachmentMetaData
 
 Meta data associated with an attachment. Attachments are stored as byte blobs so the meta data is stored separately.
 
-**`export`**
+**`Export`**
 
-**`interface`** AttachmentMetaData
+**`Interface`**
+
+AttachmentMetaData
 
 ## Table of contents
 
@@ -17,40 +21,48 @@ Meta data associated with an attachment. Attachments are stored as byte blobs so
 
 ## Properties
 
-### <a id="contentlength" name="contentlength"></a> contentLength
+### contentLength
 
 • **contentLength**: `number`
 
 Size of attachment in bytes
 
-**`memberof`** AttachmentMetaData
+**`Memberof`**
+
+AttachmentMetaData
 
 ___
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • **contentType**: `string`
 
 Content type of attachment such as `image/png`
 
-**`memberof`** AttachmentMetaData
+**`Memberof`**
+
+AttachmentMetaData
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ID of attachment. Can be used to with attachment controller endpoints to download attachment or with sending methods to attach to an email.
 
-**`memberof`** AttachmentMetaData
+**`Memberof`**
+
+AttachmentMetaData
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
 Name of attachment if given
 
-**`memberof`** AttachmentMetaData
+**`Memberof`**
+
+AttachmentMetaData

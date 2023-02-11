@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CountDto
+
 # Interface: CountDto
 
 Number of elements
 
-**`export`**
+**`Export`**
 
-**`interface`** CountDto
+**`Interface`**
+
+CountDto
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Number of elements
 
 ## Properties
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • **totalElements**: `number`
 
-**`memberof`** CountDto
+**`Memberof`**
+
+CountDto

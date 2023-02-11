@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ExportEntitiesOutputFormatEnum
+
 # Enumeration: ExportEntitiesOutputFormatEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="default" name="default"></a> DEFAULT
+### DEFAULT
 
-• **DEFAULT**
+• **DEFAULT** = ``"CSV_DEFAULT"``
 
 ___
 
-### <a id="excel" name="excel"></a> EXCEL
+### EXCEL
 
-• **EXCEL**
+• **EXCEL** = ``"CSV_EXCEL"``

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / AliasDto
+
 # Interface: AliasDto
 
 Email alias representation
 
-**`export`**
+**`Export`**
 
-**`interface`** AliasDto
+**`Interface`**
+
+AliasDto
 
 ## Table of contents
 
@@ -23,90 +27,110 @@ Email alias representation
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • `Optional` **createdAt**: `Date`
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
 The alias's email address for receiving email
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 Inbox that is associated with the alias
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="isverified" name="isverified"></a> isVerified
+### isVerified
 
 • **isVerified**: `boolean`
 
 Has the alias been verified. You must verify an alias if the masked email address has not yet been verified by your account
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="maskedemailaddress" name="maskedemailaddress"></a> maskedEmailAddress
+### maskedEmailAddress
 
 • `Optional` **maskedEmailAddress**: `string`
 
 The underlying email address that is hidden and will received forwarded email
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • `Optional` **updatedAt**: `Date`
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="usethreads" name="usethreads"></a> useThreads
+### useThreads
 
 • `Optional` **useThreads**: `boolean`
 
 If alias will generate response threads or not when email are received by it
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** AliasDto
+**`Memberof`**
+
+AliasDto

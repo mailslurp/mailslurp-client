@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailTextLinesResult
+
 # Interface: EmailTextLinesResult
 
 Parsed text of an email
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailTextLinesResult
+**`Interface`**
+
+EmailTextLinesResult
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Parsed text of an email
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
-**`memberof`** EmailTextLinesResult
+**`Memberof`**
+
+EmailTextLinesResult
 
 ___
 
-### <a id="lines" name="lines"></a> lines
+### lines
 
 • **lines**: `string`[]
 
-**`memberof`** EmailTextLinesResult
+**`Memberof`**
+
+EmailTextLinesResult

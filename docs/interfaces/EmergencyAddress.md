@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / EmergencyAddress
+
 # Interface: EmergencyAddress
 
-**`export`**
+**`Export`**
 
-**`interface`** EmergencyAddress
+**`Interface`**
+
+EmergencyAddress
 
 ## Table of contents
 
@@ -24,104 +28,130 @@
 
 ## Properties
 
-### <a id="accountsid" name="accountsid"></a> accountSid
+### accountSid
 
 • **accountSid**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="address1" name="address1"></a> address1
+### address1
 
 • **address1**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="city" name="city"></a> city
+### city
 
 • **city**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="customername" name="customername"></a> customerName
+### customerName
 
 • **customerName**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="displayname" name="displayname"></a> displayName
+### displayName
 
 • **displayName**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="phonecountry" name="phonecountry"></a> phoneCountry
+### phoneCountry
 
 • **phoneCountry**: [`EmergencyAddressPhoneCountryEnum`](../enums/EmergencyAddressPhoneCountryEnum.md)
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="postalcode" name="postalcode"></a> postalCode
+### postalCode
 
 • **postalCode**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="region" name="region"></a> region
+### region
 
 • **region**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="sid" name="sid"></a> sid
+### sid
 
 • **sid**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** EmergencyAddress
+**`Memberof`**
+
+EmergencyAddress

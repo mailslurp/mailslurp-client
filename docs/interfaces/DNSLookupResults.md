@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DNSLookupResults
+
 # Interface: DNSLookupResults
 
 Results of query on domain name servers
 
-**`export`**
+**`Export`**
 
-**`interface`** DNSLookupResults
+**`Interface`**
+
+DNSLookupResults
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Results of query on domain name servers
 
 ## Properties
 
-### <a id="results" name="results"></a> results
+### results
 
 • **results**: [`DNSLookupResult`](DNSLookupResult.md)[]
 
-**`memberof`** DNSLookupResults
+**`Memberof`**
+
+DNSLookupResults

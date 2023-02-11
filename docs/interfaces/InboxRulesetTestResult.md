@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxRulesetTestResult
+
 # Interface: InboxRulesetTestResult
 
 Result of test of inbox ruleset
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxRulesetTestResult
+**`Interface`**
+
+InboxRulesetTestResult
 
 ## Table of contents
 
@@ -15,21 +19,25 @@ Result of test of inbox ruleset
 
 ## Properties
 
-### <a id="matches" name="matches"></a> matches
+### matches
 
 • **matches**: `boolean`
 
-**`memberof`** InboxRulesetTestResult
+**`Memberof`**
+
+InboxRulesetTestResult
 
 ___
 
-### <a id="rulesetmatches" name="rulesetmatches"></a> rulesetMatches
+### rulesetMatches
 
 • **rulesetMatches**: `Object`
 
 Map of inbox ruleset ID to boolean of if target matches
 
-**`memberof`** InboxRulesetTestResult
+**`Memberof`**
+
+InboxRulesetTestResult
 
 #### Index signature
 

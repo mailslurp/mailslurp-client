@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ReplyToAliasEmailOptionsSendStrategyEnum
+
 # Enumeration: ReplyToAliasEmailOptionsSendStrategyEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -10,6 +12,6 @@
 
 ## Enumeration Members
 
-### <a id="single_message" name="single_message"></a> SINGLE\_MESSAGE
+### SINGLE\_MESSAGE
 
-• **SINGLE\_MESSAGE**
+• **SINGLE\_MESSAGE** = ``"SINGLE_MESSAGE"``

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetAllInboxesRequest
+
 # Interface: GetAllInboxesRequest
 
 ## Table of contents
@@ -18,66 +20,66 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="domainid" name="domainid"></a> domainId
+### domainId
 
 • `Optional` **domainId**: `string`
 
 ___
 
-### <a id="favourite" name="favourite"></a> favourite
+### favourite
 
 • `Optional` **favourite**: `boolean`
 
 ___
 
-### <a id="inboxtype" name="inboxtype"></a> inboxType
+### inboxType
 
 • `Optional` **inboxType**: [`GetAllInboxesInboxTypeEnum`](../enums/GetAllInboxesInboxTypeEnum.md)
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • `Optional` **page**: `number`
 
 ___
 
-### <a id="search" name="search"></a> search
+### search
 
 • `Optional` **search**: `string`
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetAllInboxesSortEnum`](../enums/GetAllInboxesSortEnum.md)
 
 ___
 
-### <a id="tag" name="tag"></a> tag
+### tag
 
 • `Optional` **tag**: `string`
 
 ___
 
-### <a id="teamaccess" name="teamaccess"></a> teamAccess
+### teamAccess
 
 • `Optional` **teamAccess**: `boolean`

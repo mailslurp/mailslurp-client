@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / WebhookResultDtoResultTypeEnum
+
 # Enumeration: WebhookResultDtoResultTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -12,18 +14,18 @@
 
 ## Enumeration Members
 
-### <a id="bad_response" name="bad_response"></a> BAD\_RESPONSE
+### BAD\_RESPONSE
 
-• **BAD\_RESPONSE**
-
-___
-
-### <a id="exception" name="exception"></a> EXCEPTION
-
-• **EXCEPTION**
+• **BAD\_RESPONSE** = ``"BAD_RESPONSE"``
 
 ___
 
-### <a id="success" name="success"></a> SUCCESS
+### EXCEPTION
 
-• **SUCCESS**
+• **EXCEPTION** = ``"EXCEPTION"``
+
+___
+
+### SUCCESS
+
+• **SUCCESS** = ``"SUCCESS"``

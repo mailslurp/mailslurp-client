@@ -38,7 +38,9 @@ build: node_modules
 docs: node_modules
 	npm run build
 	rm -rf docs
+	rm -rf docs-html
 	npm run docs
+	npm run docs:html
 
 docs-lint: node_modules
 	# fix bad links in docs

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteGroupRequest
+
 # Interface: DeleteGroupRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • **groupId**: `string`

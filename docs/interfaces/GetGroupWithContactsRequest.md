@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetGroupWithContactsRequest
+
 # Interface: GetGroupWithContactsRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • **groupId**: `string`

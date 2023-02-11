@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / Sort
+
 # Interface: Sort
 
-**`export`**
+**`Export`**
 
-**`interface`** Sort
+**`Interface`**
+
+Sort
 
 ## Table of contents
 
@@ -14,24 +18,30 @@
 
 ## Properties
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** Sort
+**`Memberof`**
+
+Sort
 
 ___
 
-### <a id="sorted" name="sorted"></a> sorted
+### sorted
 
 • `Optional` **sorted**: `boolean`
 
-**`memberof`** Sort
+**`Memberof`**
+
+Sort
 
 ___
 
-### <a id="unsorted" name="unsorted"></a> unsorted
+### unsorted
 
 • `Optional` **unsorted**: `boolean`
 
-**`memberof`** Sort
+**`Memberof`**
+
+Sort

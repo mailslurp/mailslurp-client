@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -119,7 +123,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/imap-flag-operation".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/imap-flag-operation".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -216,7 +220,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -272,8 +276,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/emails/{emailId}/attachments/{attachmentId}"
-                                    .replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{" + 'attachmentId' + "}", encodeURIComponent(String(requestParameters.attachmentId))),
+                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
+                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -328,8 +332,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/emails/{emailId}/attachments/{attachmentId}/base64"
-                                    .replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{" + 'attachmentId' + "}", encodeURIComponent(String(requestParameters.attachmentId))),
+                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
+                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -381,7 +385,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/body".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/body".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -431,7 +435,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/body-bytes".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/body-bytes".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -486,7 +490,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/forward".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/forward".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -544,8 +548,8 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         }
                         return [4 /*yield*/, this.request({
                                 path: "/emails/{emailId}/attachments/{attachmentId}/metadata"
-                                    .replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId)))
-                                    .replace("{" + 'attachmentId' + "}", encodeURIComponent(String(requestParameters.attachmentId))),
+                                    .replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId)))
+                                    .replace("{".concat('attachmentId', "}"), encodeURIComponent(String(requestParameters.attachmentId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -600,7 +604,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -652,7 +656,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/attachments".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/attachments".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -709,7 +713,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/contentMatch".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/contentMatch".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -811,7 +815,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/html".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/html".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -864,7 +868,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/html/json".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/html/json".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -923,7 +927,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/htmlQuery".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/htmlQuery".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -975,7 +979,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/links".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/links".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1027,7 +1031,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/urls".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/urls".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1086,7 +1090,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/textLines".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/textLines".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1444,7 +1448,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/raw".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/raw".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1494,7 +1498,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/raw/json".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/raw/json".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1597,7 +1601,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/read".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/read".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'PATCH',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1654,7 +1658,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1766,7 +1770,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/emails/{emailId}/validate".replace("{" + 'emailId' + "}", encodeURIComponent(String(requestParameters.emailId))),
+                                path: "/emails/{emailId}/validate".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UnknownMissedEmailProjection
+
 # Interface: UnknownMissedEmailProjection
 
 Unknown missed email projection
 
-**`export`**
+**`Export`**
 
-**`interface`** UnknownMissedEmailProjection
+**`Interface`**
+
+UnknownMissedEmailProjection
 
 ## Table of contents
 
@@ -18,40 +22,50 @@ Unknown missed email projection
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** UnknownMissedEmailProjection
+**`Memberof`**
+
+UnknownMissedEmailProjection
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
-**`memberof`** UnknownMissedEmailProjection
+**`Memberof`**
+
+UnknownMissedEmailProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** UnknownMissedEmailProjection
+**`Memberof`**
+
+UnknownMissedEmailProjection
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** UnknownMissedEmailProjection
+**`Memberof`**
+
+UnknownMissedEmailProjection
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • `Optional` **to**: `string`[]
 
-**`memberof`** UnknownMissedEmailProjection
+**`Memberof`**
+
+UnknownMissedEmailProjection

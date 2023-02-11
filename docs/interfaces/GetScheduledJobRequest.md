@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetScheduledJobRequest
+
 # Interface: GetScheduledJobRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="jobid" name="jobid"></a> jobId
+### jobId
 
 • **jobId**: `string`

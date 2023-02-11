@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetComplaintsRequest
+
 # Interface: GetComplaintsRequest
 
 ## Table of contents
@@ -12,30 +14,30 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • `Optional` **page**: `number`
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetComplaintsSortEnum`](../enums/GetComplaintsSortEnum.md)

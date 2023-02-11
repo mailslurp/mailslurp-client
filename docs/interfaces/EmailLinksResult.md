@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailLinksResult
+
 # Interface: EmailLinksResult
 
 Links found in HTML
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailLinksResult
+**`Interface`**
+
+EmailLinksResult
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Links found in HTML
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
-**`memberof`** EmailLinksResult
+**`Memberof`**
+
+EmailLinksResult
 
 ___
 
-### <a id="links" name="links"></a> links
+### links
 
 • **links**: `string`[]
 
-**`memberof`** EmailLinksResult
+**`Memberof`**
+
+EmailLinksResult

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / Recipient
+
 # Interface: Recipient
 
 Email recipient
 
-**`export`**
+**`Export`**
 
-**`interface`** Recipient
+**`Interface`**
+
+Recipient
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Email recipient
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** Recipient
+**`Memberof`**
+
+Recipient
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** Recipient
+**`Memberof`**
+
+Recipient
 
 ___
 
-### <a id="rawvalue" name="rawvalue"></a> rawValue
+### rawValue
 
 • **rawValue**: `string`
 
-**`memberof`** Recipient
+**`Memberof`**
+
+Recipient

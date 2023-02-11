@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BulkSendEmailOptions
+
 # Interface: BulkSendEmailOptions
 
 Options for bulk sending an email from multiple addresses. See regular `sendEmail` methods for more information.
 
-**`export`**
+**`Export`**
 
-**`interface`** BulkSendEmailOptions
+**`Interface`**
+
+BulkSendEmailOptions
 
 ## Table of contents
 
@@ -15,18 +19,22 @@ Options for bulk sending an email from multiple addresses. See regular `sendEmai
 
 ## Properties
 
-### <a id="inboxids" name="inboxids"></a> inboxIds
+### inboxIds
 
 • **inboxIds**: `string`[]
 
 Inboxes to send the email from
 
-**`memberof`** BulkSendEmailOptions
+**`Memberof`**
+
+BulkSendEmailOptions
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
-**`memberof`** BulkSendEmailOptions
+**`Memberof`**
+
+BulkSendEmailOptions

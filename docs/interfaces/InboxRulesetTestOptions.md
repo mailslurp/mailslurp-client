@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxRulesetTestOptions
+
 # Interface: InboxRulesetTestOptions
 
 Test options for inbox ruleset
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxRulesetTestOptions
+**`Interface`**
+
+InboxRulesetTestOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Test options for inbox ruleset
 
 ## Properties
 
-### <a id="testtarget" name="testtarget"></a> testTarget
+### testTarget
 
 • **testTarget**: `string`
 
-**`memberof`** InboxRulesetTestOptions
+**`Memberof`**
+
+InboxRulesetTestOptions

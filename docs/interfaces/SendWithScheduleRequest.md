@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendWithScheduleRequest
+
 # Interface: SendWithScheduleRequest
 
 ## Table of contents
@@ -12,30 +14,30 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="sendatnowplusseconds" name="sendatnowplusseconds"></a> sendAtNowPlusSeconds
+### sendAtNowPlusSeconds
 
 • `Optional` **sendAtNowPlusSeconds**: `number`
 
 ___
 
-### <a id="sendattimestamp" name="sendattimestamp"></a> sendAtTimestamp
+### sendAtTimestamp
 
 • `Optional` **sendAtTimestamp**: `Date`
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 ___
 
-### <a id="validatebeforeenqueue" name="validatebeforeenqueue"></a> validateBeforeEnqueue
+### validateBeforeEnqueue
 
 • `Optional` **validateBeforeEnqueue**: `boolean`

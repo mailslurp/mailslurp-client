@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / BulkDeleteInboxesRequest
+
 # Interface: BulkDeleteInboxesRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="requestbody" name="requestbody"></a> requestBody
+### requestBody
 
 • **requestBody**: `string`[]

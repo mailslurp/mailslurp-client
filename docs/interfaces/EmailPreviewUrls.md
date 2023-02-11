@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailPreviewUrls
+
 # Interface: EmailPreviewUrls
 
 URLs for email body
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailPreviewUrls
+**`Interface`**
+
+EmailPreviewUrls
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ URLs for email body
 
 ## Properties
 
-### <a id="plainhtmlbodyurl" name="plainhtmlbodyurl"></a> plainHtmlBodyUrl
+### plainHtmlBodyUrl
 
 • **plainHtmlBodyUrl**: `string`
 
-**`memberof`** EmailPreviewUrls
+**`Memberof`**
+
+EmailPreviewUrls
 
 ___
 
-### <a id="rawsmtpmessageurl" name="rawsmtpmessageurl"></a> rawSmtpMessageUrl
+### rawSmtpMessageUrl
 
 • **rawSmtpMessageUrl**: `string`
 
-**`memberof`** EmailPreviewUrls
+**`Memberof`**
+
+EmailPreviewUrls

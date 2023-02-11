@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / TrackingPixelProjection
+
 # Interface: TrackingPixelProjection
 
 Tracking pixel data
 
-**`export`**
+**`Export`**
 
-**`interface`** TrackingPixelProjection
+**`Interface`**
+
+TrackingPixelProjection
 
 ## Table of contents
 
@@ -22,72 +26,90 @@ Tracking pixel data
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • `Optional` **recipient**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="seen" name="seen"></a> seen
+### seen
 
 • **seen**: `boolean`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="seenat" name="seenat"></a> seenAt
+### seenAt
 
 • `Optional` **seenAt**: `Date`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • `Optional` **sentEmailId**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** TrackingPixelProjection
+**`Memberof`**
+
+TrackingPixelProjection

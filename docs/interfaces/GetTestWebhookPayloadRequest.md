@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetTestWebhookPayloadRequest
+
 # Interface: GetTestWebhookPayloadRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • `Optional` **eventName**: [`GetTestWebhookPayloadEventNameEnum`](../enums/GetTestWebhookPayloadEventNameEnum.md)

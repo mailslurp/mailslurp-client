@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteAttachmentRequest
+
 # Interface: DeleteAttachmentRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`

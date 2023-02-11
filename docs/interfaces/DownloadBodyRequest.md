@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DownloadBodyRequest
+
 # Interface: DownloadBodyRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

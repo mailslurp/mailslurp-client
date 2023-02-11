@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetSmsMessageRequest
+
 # Interface: GetSmsMessageRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="smsid" name="smsid"></a> smsId
+### smsId
 
 • **smsId**: `string`

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookHeaderNameValue
+
 # Interface: WebhookHeaderNameValue
 
 Name value pair for webhook header
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookHeaderNameValue
+**`Interface`**
+
+WebhookHeaderNameValue
 
 ## Table of contents
 
@@ -15,20 +19,24 @@ Name value pair for webhook header
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
 Name of header
 
-**`memberof`** WebhookHeaderNameValue
+**`Memberof`**
+
+WebhookHeaderNameValue
 
 ___
 
-### <a id="value" name="value"></a> value
+### value
 
 • **value**: `string`
 
 Value of header
 
-**`memberof`** WebhookHeaderNameValue
+**`Memberof`**
+
+WebhookHeaderNameValue

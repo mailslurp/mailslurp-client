@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ConfigurationParameters
+
 # Interface: ConfigurationParameters
 
 ## Table of contents
@@ -12,41 +14,38 @@
 - [headers](ConfigurationParameters.md#headers)
 - [middleware](ConfigurationParameters.md#middleware)
 - [password](ConfigurationParameters.md#password)
-- [username](ConfigurationParameters.md#username)
-
-### Methods
-
 - [queryParamsStringify](ConfigurationParameters.md#queryparamsstringify)
+- [username](ConfigurationParameters.md#username)
 
 ## Properties
 
-### <a id="accesstoken" name="accesstoken"></a> accessToken
+### accessToken
 
 • `Optional` **accessToken**: `string` \| `Promise`<`string`\> \| (`name?`: `string`, `scopes?`: `string`[]) => `string` \| `Promise`<`string`\>
 
 ___
 
-### <a id="apikey" name="apikey"></a> apiKey
+### apiKey
 
 • `Optional` **apiKey**: `string` \| (`name`: `string`) => `string`
 
 ___
 
-### <a id="basepath" name="basepath"></a> basePath
+### basePath
 
 • `Optional` **basePath**: `string`
 
 ___
 
-### <a id="credentials" name="credentials"></a> credentials
+### credentials
 
 • `Optional` **credentials**: `RequestCredentials`
 
 ___
 
-### <a id="fetchapi" name="fetchapi"></a> fetchApi
+### fetchApi
 
-• `Optional` **fetchApi**: (`input`: `RequestInfo`, `init?`: `RequestInit`) => `Promise`<`Response`\>
+• `Optional` **fetchApi**: (`input`: `RequestInfo` \| `URL`, `init?`: `RequestInit`) => `Promise`<`Response`\>
 
 #### Type declaration
 
@@ -56,7 +55,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `input` | `RequestInfo` |
+| `input` | `RequestInfo` \| `URL` |
 | `init?` | `RequestInit` |
 
 ##### Returns
@@ -65,40 +64,44 @@ ___
 
 ___
 
-### <a id="headers" name="headers"></a> headers
+### headers
 
 • `Optional` **headers**: [`HTTPHeaders`](../README.md#httpheaders)
 
 ___
 
-### <a id="middleware" name="middleware"></a> middleware
+### middleware
 
 • `Optional` **middleware**: [`Middleware`](Middleware.md)[]
 
 ___
 
-### <a id="password" name="password"></a> password
+### password
 
 • `Optional` **password**: `string`
 
 ___
 
-### <a id="username" name="username"></a> username
+### queryParamsStringify
 
-• `Optional` **username**: `string`
+• `Optional` **queryParamsStringify**: (`params`: [`HTTPQuery`](../README.md#httpquery)) => `string`
 
-## Methods
+#### Type declaration
 
-### <a id="queryparamsstringify" name="queryparamsstringify"></a> queryParamsStringify
+▸ (`params`): `string`
 
-▸ `Optional` **queryParamsStringify**(`params`): `string`
-
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `params` | [`HTTPQuery`](../README.md#httpquery) |
 
-#### Returns
+##### Returns
 
 `string`
+
+___
+
+### username
+
+• `Optional` **username**: `string`

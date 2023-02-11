@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / Consume
+
 # Interface: Consume
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • **contentType**: `string`

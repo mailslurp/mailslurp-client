@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / BounceProjection
+
 # Interface: BounceProjection
 
 Bounced email event
 
-**`export`**
+**`Export`**
 
-**`interface`** BounceProjection
+**`Interface`**
+
+BounceProjection
 
 ## Table of contents
 
@@ -19,48 +23,60 @@ Bounced email event
 
 ## Properties
 
-### <a id="bouncemta" name="bouncemta"></a> bounceMta
+### bounceMta
 
 • `Optional` **bounceMta**: `string`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection
 
 ___
 
-### <a id="bouncetype" name="bouncetype"></a> bounceType
+### bounceType
 
 • `Optional` **bounceType**: `string`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection
 
 ___
 
-### <a id="sender" name="sender"></a> sender
+### sender
 
 • **sender**: `string`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** BounceProjection
+**`Memberof`**
+
+BounceProjection

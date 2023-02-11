@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / GroupContactsDto
+
 # Interface: GroupContactsDto
 
 Describes contacts attached to a contact group
 
-**`export`**
+**`Export`**
 
-**`interface`** GroupContactsDto
+**`Interface`**
+
+GroupContactsDto
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Describes contacts attached to a contact group
 
 ## Properties
 
-### <a id="contacts" name="contacts"></a> contacts
+### contacts
 
 • **contacts**: [`ContactDto`](ContactDto.md)[]
 
-**`memberof`** GroupContactsDto
+**`Memberof`**
+
+GroupContactsDto
 
 ___
 
-### <a id="group" name="group"></a> group
+### group
 
 • **group**: [`GroupDto`](GroupDto.md)
 
-**`memberof`** GroupContactsDto
+**`Memberof`**
+
+GroupContactsDto

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DomainControllerApi
+
 # Class: DomainControllerApi
 
 ## Hierarchy
@@ -39,7 +41,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new DomainControllerApi**(`configuration?`)
 
@@ -55,7 +57,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -65,7 +67,7 @@
 
 ## Methods
 
-### <a id="adddomainwildcardcatchall" name="adddomainwildcardcatchall"></a> addDomainWildcardCatchAll
+### addDomainWildcardCatchAll
 
 ▸ **addDomainWildcardCatchAll**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -85,7 +87,7 @@ Add catch all wild card inbox to domain
 
 ___
 
-### <a id="adddomainwildcardcatchallraw" name="adddomainwildcardcatchallraw"></a> addDomainWildcardCatchAllRaw
+### addDomainWildcardCatchAllRaw
 
 ▸ **addDomainWildcardCatchAllRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -105,7 +107,7 @@ Add catch all wild card inbox to domain
 
 ___
 
-### <a id="createdomain" name="createdomain"></a> createDomain
+### createDomain
 
 ▸ **createDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -125,7 +127,7 @@ Create Domain
 
 ___
 
-### <a id="createdomainraw" name="createdomainraw"></a> createDomainRaw
+### createDomainRaw
 
 ▸ **createDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -145,7 +147,7 @@ Create Domain
 
 ___
 
-### <a id="deletedomain" name="deletedomain"></a> deleteDomain
+### deleteDomain
 
 ▸ **deleteDomain**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
 
@@ -165,7 +167,7 @@ Delete a domain
 
 ___
 
-### <a id="deletedomainraw" name="deletedomainraw"></a> deleteDomainRaw
+### deleteDomainRaw
 
 ▸ **deleteDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
 
@@ -185,7 +187,7 @@ Delete a domain
 
 ___
 
-### <a id="getdomain" name="getdomain"></a> getDomain
+### getDomain
 
 ▸ **getDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -205,7 +207,7 @@ Get a domain
 
 ___
 
-### <a id="getdomainraw" name="getdomainraw"></a> getDomainRaw
+### getDomainRaw
 
 ▸ **getDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -225,7 +227,7 @@ Get a domain
 
 ___
 
-### <a id="getdomainwildcardcatchallinbox" name="getdomainwildcardcatchallinbox"></a> getDomainWildcardCatchAllInbox
+### getDomainWildcardCatchAllInbox
 
 ▸ **getDomainWildcardCatchAllInbox**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxDto`](../interfaces/InboxDto.md)\>
 
@@ -245,7 +247,7 @@ Get catch all wild card inbox for domain
 
 ___
 
-### <a id="getdomainwildcardcatchallinboxraw" name="getdomainwildcardcatchallinboxraw"></a> getDomainWildcardCatchAllInboxRaw
+### getDomainWildcardCatchAllInboxRaw
 
 ▸ **getDomainWildcardCatchAllInboxRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxDto`](../interfaces/InboxDto.md)\>\>
 
@@ -265,7 +267,7 @@ Get catch all wild card inbox for domain
 
 ___
 
-### <a id="getdomains" name="getdomains"></a> getDomains
+### getDomains
 
 ▸ **getDomains**(`initOverrides?`): `Promise`<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>
 
@@ -284,7 +286,7 @@ Get domains
 
 ___
 
-### <a id="getdomainsraw" name="getdomainsraw"></a> getDomainsRaw
+### getDomainsRaw
 
 ▸ **getDomainsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>\>
 
@@ -303,7 +305,7 @@ Get domains
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -324,7 +326,7 @@ ___
 
 ___
 
-### <a id="updatedomain" name="updatedomain"></a> updateDomain
+### updateDomain
 
 ▸ **updateDomain**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
 
@@ -344,7 +346,7 @@ Update a domain
 
 ___
 
-### <a id="updatedomainraw" name="updatedomainraw"></a> updateDomainRaw
+### updateDomainRaw
 
 ▸ **updateDomainRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainDto`](../interfaces/DomainDto.md)\>\>
 
@@ -364,9 +366,9 @@ Update a domain
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -391,9 +393,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -418,9 +420,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

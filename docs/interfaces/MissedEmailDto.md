@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / MissedEmailDto
+
 # Interface: MissedEmailDto
 
 Missed email
 
-**`export`**
+**`Export`**
 
-**`interface`** MissedEmailDto
+**`Interface`**
+
+MissedEmailDto
 
 ## Table of contents
 
@@ -29,128 +33,160 @@ Missed email
 
 ## Properties
 
-### <a id="attachmentcount" name="attachmentcount"></a> attachmentCount
+### attachmentCount
 
 • **attachmentCount**: `number`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • **bcc**: `string`[]
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="bodyexcerpt" name="bodyexcerpt"></a> bodyExcerpt
+### bodyExcerpt
 
 • `Optional` **bodyExcerpt**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="canrestore" name="canrestore"></a> canRestore
+### canRestore
 
 • `Optional` **canRestore**: `boolean`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • **cc**: `string`[]
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="inboxids" name="inboxids"></a> inboxIds
+### inboxIds
 
 • **inboxIds**: `string`[]
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="rawbucket" name="rawbucket"></a> rawBucket
+### rawBucket
 
 • `Optional` **rawBucket**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="rawkey" name="rawkey"></a> rawKey
+### rawKey
 
 • `Optional` **rawKey**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="rawurl" name="rawurl"></a> rawUrl
+### rawUrl
 
 • `Optional` **rawUrl**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • `Optional` **userId**: `string`
 
-**`memberof`** MissedEmailDto
+**`Memberof`**
+
+MissedEmailDto

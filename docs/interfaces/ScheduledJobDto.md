@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / ScheduledJobDto
+
 # Interface: ScheduledJobDto
 
-**`export`**
+**`Export`**
 
-**`interface`** ScheduledJobDto
+**`Interface`**
+
+ScheduledJobDto
 
 ## Table of contents
 
@@ -21,80 +25,100 @@
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="groupid" name="groupid"></a> groupId
+### groupId
 
 • **groupId**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="jobid" name="jobid"></a> jobId
+### jobId
 
 • **jobId**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="sendattimestamp" name="sendattimestamp"></a> sendAtTimestamp
+### sendAtTimestamp
 
 • **sendAtTimestamp**: `Date`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="status" name="status"></a> status
+### status
 
 • **status**: [`ScheduledJobDtoStatusEnum`](../enums/ScheduledJobDtoStatusEnum.md)
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="triggerid" name="triggerid"></a> triggerId
+### triggerId
 
 • **triggerId**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** ScheduledJobDto
+**`Memberof`**
+
+ScheduledJobDto

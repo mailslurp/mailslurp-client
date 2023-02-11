@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ApiResponse
+
 # Interface: ApiResponse<T\>
 
 ## Type parameters
@@ -18,13 +20,13 @@
 
 ## Properties
 
-### <a id="raw" name="raw"></a> raw
+### raw
 
 • **raw**: `Response`
 
 ## Methods
 
-### <a id="value" name="value"></a> value
+### value
 
 ▸ **value**(): `Promise`<`T`\>
 

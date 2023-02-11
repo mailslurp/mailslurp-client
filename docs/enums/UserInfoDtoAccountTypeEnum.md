@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / UserInfoDtoAccountTypeEnum
+
 # Enumeration: UserInfoDtoAccountTypeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -13,24 +15,24 @@
 
 ## Enumeration Members
 
-### <a id="child_admin" name="child_admin"></a> CHILD\_ADMIN
+### CHILD\_ADMIN
 
-• **CHILD\_ADMIN**
-
-___
-
-### <a id="child_solo" name="child_solo"></a> CHILD\_SOLO
-
-• **CHILD\_SOLO**
+• **CHILD\_ADMIN** = ``"CHILD_ADMIN"``
 
 ___
 
-### <a id="child_team" name="child_team"></a> CHILD\_TEAM
+### CHILD\_SOLO
 
-• **CHILD\_TEAM**
+• **CHILD\_SOLO** = ``"CHILD_SOLO"``
 
 ___
 
-### <a id="solo" name="solo"></a> SOLO
+### CHILD\_TEAM
 
-• **SOLO**
+• **CHILD\_TEAM** = ``"CHILD_TEAM"``
+
+___
+
+### SOLO
+
+• **SOLO** = ``"SOLO"``

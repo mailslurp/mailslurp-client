@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ReplyToEmailRequest
+
 # Interface: ReplyToEmailRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="replytoemailoptions" name="replytoemailoptions"></a> replyToEmailOptions
+### replyToEmailOptions
 
 • **replyToEmailOptions**: [`ReplyToEmailOptions`](ReplyToEmailOptions.md)

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ExportOptions
+
 # Interface: ExportOptions
 
 Options for exporting user data
 
-**`export`**
+**`Export`**
 
-**`interface`** ExportOptions
+**`Interface`**
+
+ExportOptions
 
 ## Table of contents
 
@@ -19,48 +23,60 @@ Options for exporting user data
 
 ## Properties
 
-### <a id="createdearliesttime" name="createdearliesttime"></a> createdEarliestTime
+### createdEarliestTime
 
 • `Optional` **createdEarliestTime**: `Date`
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions
 
 ___
 
-### <a id="createdoldesttime" name="createdoldesttime"></a> createdOldestTime
+### createdOldestTime
 
 • `Optional` **createdOldestTime**: `Date`
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions
 
 ___
 
-### <a id="excludepreviouslyexported" name="excludepreviouslyexported"></a> excludePreviouslyExported
+### excludePreviouslyExported
 
 • `Optional` **excludePreviouslyExported**: `boolean`
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions
 
 ___
 
-### <a id="filter" name="filter"></a> filter
+### filter
 
 • `Optional` **filter**: `string`
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions
 
 ___
 
-### <a id="listseparatortoken" name="listseparatortoken"></a> listSeparatorToken
+### listSeparatorToken
 
 • `Optional` **listSeparatorToken**: `string`
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions
 
 ___
 
-### <a id="outputformat" name="outputformat"></a> outputFormat
+### outputFormat
 
 • **outputFormat**: [`ExportOptionsOutputFormatEnum`](../enums/ExportOptionsOutputFormatEnum.md)
 
-**`memberof`** ExportOptions
+**`Memberof`**
+
+ExportOptions

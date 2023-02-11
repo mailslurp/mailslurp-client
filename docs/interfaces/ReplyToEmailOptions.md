@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ReplyToEmailOptions
+
 # Interface: ReplyToEmailOptions
 
 Options for replying to email with API
 
-**`export`**
+**`Export`**
 
-**`interface`** ReplyToEmailOptions
+**`Interface`**
+
+ReplyToEmailOptions
 
 ## Table of contents
 
@@ -24,101 +28,121 @@ Options for replying to email with API
 
 ## Properties
 
-### <a id="attachments" name="attachments"></a> attachments
+### attachments
 
 • `Optional` **attachments**: `string`[]
 
 List of uploaded attachments to send with the reply. Optional.
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
 Body of the reply email you want to send
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="charset" name="charset"></a> charset
+### charset
 
 • `Optional` **charset**: `string`
 
 The charset that your message should be sent with. Optional. Default is UTF-8
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
 The from header that should be used. Optional
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="html" name="html"></a> html
+### html
 
 • `Optional` **html**: `boolean`
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="ishtml" name="ishtml"></a> isHTML
+### isHTML
 
 • **isHTML**: `boolean`
 
 Is the reply HTML
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="replyto" name="replyto"></a> replyTo
+### replyTo
 
 • `Optional` **replyTo**: `string`
 
 The replyTo header that should be used. Optional
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="sendstrategy" name="sendstrategy"></a> sendStrategy
+### sendStrategy
 
 • `Optional` **sendStrategy**: [`SINGLE_MESSAGE`](../enums/ReplyToEmailOptionsSendStrategyEnum.md#single_message)
 
 How an email should be sent based on its recipients
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="template" name="template"></a> template
+### template
 
 • `Optional` **template**: `string`
 
 Template ID to use instead of body. Will use template variable map to fill defined variable slots.
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 ___
 
-### <a id="templatevariables" name="templatevariables"></a> templateVariables
+### templateVariables
 
 • `Optional` **templateVariables**: `Object`
 
 Template variables if using a template
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions
 
 #### Index signature
 
@@ -126,10 +150,12 @@ Template variables if using a template
 
 ___
 
-### <a id="useinboxname" name="useinboxname"></a> useInboxName
+### useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 
 Optionally use inbox name as display name for sender email address
 
-**`memberof`** ReplyToEmailOptions
+**`Memberof`**
+
+ReplyToEmailOptions

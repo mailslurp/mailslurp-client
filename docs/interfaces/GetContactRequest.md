@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetContactRequest
+
 # Interface: GetContactRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="contactid" name="contactid"></a> contactId
+### contactId
 
 • **contactId**: `string`

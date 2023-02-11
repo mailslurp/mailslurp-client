@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetSentEmailHTMLContentRequest
+
 # Interface: GetSentEmailHTMLContentRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`

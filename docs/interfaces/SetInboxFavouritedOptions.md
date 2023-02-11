@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SetInboxFavouritedOptions
+
 # Interface: SetInboxFavouritedOptions
 
 Options for setting inbox favourite state
 
-**`export`**
+**`Export`**
 
-**`interface`** SetInboxFavouritedOptions
+**`Interface`**
+
+SetInboxFavouritedOptions
 
 ## Table of contents
 
@@ -14,10 +18,12 @@ Options for setting inbox favourite state
 
 ## Properties
 
-### <a id="state" name="state"></a> state
+### state
 
 • **state**: `boolean`
 
 Is the inbox a favorite. Marking an inbox as a favorite is typically done in the dashboard for quick access or filtering
 
-**`memberof`** SetInboxFavouritedOptions
+**`Memberof`**
+
+SetInboxFavouritedOptions

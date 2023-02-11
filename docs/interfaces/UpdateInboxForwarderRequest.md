@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateInboxForwarderRequest
+
 # Interface: UpdateInboxForwarderRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="createinboxforwarderoptions" name="createinboxforwarderoptions"></a> createInboxForwarderOptions
+### createInboxForwarderOptions
 
 • **createInboxForwarderOptions**: [`CreateInboxForwarderOptions`](CreateInboxForwarderOptions.md)
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`

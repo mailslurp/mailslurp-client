@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookHeaders
+
 # Interface: WebhookHeaders
 
 Webhook HTTP headers to include with each request from MailSlurp to your server
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookHeaders
+**`Interface`**
+
+WebhookHeaders
 
 ## Table of contents
 
@@ -14,10 +18,12 @@ Webhook HTTP headers to include with each request from MailSlurp to your server
 
 ## Properties
 
-### <a id="headers" name="headers"></a> headers
+### headers
 
 • **headers**: [`WebhookHeaderNameValue`](WebhookHeaderNameValue.md)[]
 
 List of header name value pairs to include with webhook requests
 
-**`memberof`** WebhookHeaders
+**`Memberof`**
+
+WebhookHeaders

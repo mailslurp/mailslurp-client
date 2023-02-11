@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteWebhookByIdRequest
+
 # Interface: DeleteWebhookByIdRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`

@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -162,7 +166,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses/{addressId}".replace("{" + 'addressId' + "}", encodeURIComponent(String(requestParameters.addressId))),
+                                path: "/phone/emergency-addresses/{addressId}".replace("{".concat('addressId', "}"), encodeURIComponent(String(requestParameters.addressId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -210,7 +214,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                path: "/phone/numbers/{phoneNumberId}".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -254,7 +258,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/emergency-addresses/{addressId}".replace("{" + 'addressId' + "}", encodeURIComponent(String(requestParameters.addressId))),
+                                path: "/phone/emergency-addresses/{addressId}".replace("{".concat('addressId', "}"), encodeURIComponent(String(requestParameters.addressId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -346,7 +350,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                path: "/phone/numbers/{phoneNumberId}".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -509,7 +513,7 @@ var PhoneControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/phone/numbers/{phoneNumberId}/test".replace("{" + 'phoneNumberId' + "}", encodeURIComponent(String(requestParameters.phoneNumberId))),
+                                path: "/phone/numbers/{phoneNumberId}/test".replace("{".concat('phoneNumberId', "}"), encodeURIComponent(String(requestParameters.phoneNumberId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,

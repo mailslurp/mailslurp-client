@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / PhoneControllerApi
+
 # Class: PhoneControllerApi
 
 ## Hierarchy
@@ -43,7 +45,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new PhoneControllerApi**(`configuration?`)
 
@@ -59,7 +61,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -69,7 +71,7 @@
 
 ## Methods
 
-### <a id="createemergencyaddress" name="createemergencyaddress"></a> createEmergencyAddress
+### createEmergencyAddress
 
 ▸ **createEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>
 
@@ -86,7 +88,7 @@
 
 ___
 
-### <a id="createemergencyaddressraw" name="createemergencyaddressraw"></a> createEmergencyAddressRaw
+### createEmergencyAddressRaw
 
 ▸ **createEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>\>
 
@@ -103,7 +105,7 @@ ___
 
 ___
 
-### <a id="deleteemergencyaddress" name="deleteemergencyaddress"></a> deleteEmergencyAddress
+### deleteEmergencyAddress
 
 ▸ **deleteEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
 
@@ -120,7 +122,7 @@ ___
 
 ___
 
-### <a id="deleteemergencyaddressraw" name="deleteemergencyaddressraw"></a> deleteEmergencyAddressRaw
+### deleteEmergencyAddressRaw
 
 ▸ **deleteEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
 
@@ -137,7 +139,7 @@ ___
 
 ___
 
-### <a id="deletephonenumber" name="deletephonenumber"></a> deletePhoneNumber
+### deletePhoneNumber
 
 ▸ **deletePhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -154,7 +156,7 @@ ___
 
 ___
 
-### <a id="deletephonenumberraw" name="deletephonenumberraw"></a> deletePhoneNumberRaw
+### deletePhoneNumberRaw
 
 ▸ **deletePhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -171,7 +173,7 @@ ___
 
 ___
 
-### <a id="getemergencyaddress" name="getemergencyaddress"></a> getEmergencyAddress
+### getEmergencyAddress
 
 ▸ **getEmergencyAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>
 
@@ -188,7 +190,7 @@ ___
 
 ___
 
-### <a id="getemergencyaddressraw" name="getemergencyaddressraw"></a> getEmergencyAddressRaw
+### getEmergencyAddressRaw
 
 ▸ **getEmergencyAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddress`](../interfaces/EmergencyAddress.md)\>\>
 
@@ -205,7 +207,7 @@ ___
 
 ___
 
-### <a id="getemergencyaddresses" name="getemergencyaddresses"></a> getEmergencyAddresses
+### getEmergencyAddresses
 
 ▸ **getEmergencyAddresses**(`initOverrides?`): `Promise`<[`EmergencyAddressDto`](../interfaces/EmergencyAddressDto.md)[]\>
 
@@ -221,7 +223,7 @@ ___
 
 ___
 
-### <a id="getemergencyaddressesraw" name="getemergencyaddressesraw"></a> getEmergencyAddressesRaw
+### getEmergencyAddressesRaw
 
 ▸ **getEmergencyAddressesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmergencyAddressDto`](../interfaces/EmergencyAddressDto.md)[]\>\>
 
@@ -237,7 +239,7 @@ ___
 
 ___
 
-### <a id="getphonenumber" name="getphonenumber"></a> getPhoneNumber
+### getPhoneNumber
 
 ▸ **getPhoneNumber**(`requestParameters`, `initOverrides?`): `Promise`<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>
 
@@ -254,7 +256,7 @@ ___
 
 ___
 
-### <a id="getphonenumberraw" name="getphonenumberraw"></a> getPhoneNumberRaw
+### getPhoneNumberRaw
 
 ▸ **getPhoneNumberRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhoneNumberDto`](../interfaces/PhoneNumberDto.md)\>\>
 
@@ -271,7 +273,7 @@ ___
 
 ___
 
-### <a id="getphonenumbers" name="getphonenumbers"></a> getPhoneNumbers
+### getPhoneNumbers
 
 ▸ **getPhoneNumbers**(`requestParameters`, `initOverrides?`): `Promise`<[`PagePhoneNumberProjection`](../interfaces/PagePhoneNumberProjection.md)\>
 
@@ -288,7 +290,7 @@ ___
 
 ___
 
-### <a id="getphonenumbersraw" name="getphonenumbersraw"></a> getPhoneNumbersRaw
+### getPhoneNumbersRaw
 
 ▸ **getPhoneNumbersRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PagePhoneNumberProjection`](../interfaces/PagePhoneNumberProjection.md)\>\>
 
@@ -305,7 +307,7 @@ ___
 
 ___
 
-### <a id="getphoneplans" name="getphoneplans"></a> getPhonePlans
+### getPhonePlans
 
 ▸ **getPhonePlans**(`initOverrides?`): `Promise`<[`PhonePlanDto`](../interfaces/PhonePlanDto.md)[]\>
 
@@ -321,7 +323,7 @@ ___
 
 ___
 
-### <a id="getphoneplansraw" name="getphoneplansraw"></a> getPhonePlansRaw
+### getPhonePlansRaw
 
 ▸ **getPhonePlansRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PhonePlanDto`](../interfaces/PhonePlanDto.md)[]\>\>
 
@@ -337,7 +339,7 @@ ___
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -358,7 +360,7 @@ ___
 
 ___
 
-### <a id="testphonenumbersendsms" name="testphonenumbersendsms"></a> testPhoneNumberSendSms
+### testPhoneNumberSendSms
 
 ▸ **testPhoneNumberSendSms**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -375,7 +377,7 @@ ___
 
 ___
 
-### <a id="testphonenumbersendsmsraw" name="testphonenumbersendsmsraw"></a> testPhoneNumberSendSmsRaw
+### testPhoneNumberSendSmsRaw
 
 ▸ **testPhoneNumberSendSmsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -392,9 +394,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -419,9 +421,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -446,9 +448,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

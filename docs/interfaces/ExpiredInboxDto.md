@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ExpiredInboxDto
+
 # Interface: ExpiredInboxDto
 
 Expired inbox
 
-**`export`**
+**`Export`**
 
-**`interface`** ExpiredInboxDto
+**`Interface`**
+
+ExpiredInboxDto
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Expired inbox
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** ExpiredInboxDto
+**`Memberof`**
+
+ExpiredInboxDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ExpiredInboxDto
+**`Memberof`**
+
+ExpiredInboxDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** ExpiredInboxDto
+**`Memberof`**
+
+ExpiredInboxDto

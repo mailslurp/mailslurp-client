@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DNSLookupOptions
+
 # Interface: DNSLookupOptions
 
 Options for DNS query.
 
-**`export`**
+**`Export`**
 
-**`interface`** DNSLookupOptions
+**`Interface`**
+
+DNSLookupOptions
 
 ## Table of contents
 
@@ -16,30 +20,36 @@ Options for DNS query.
 
 ## Properties
 
-### <a id="hostname" name="hostname"></a> hostname
+### hostname
 
 • **hostname**: `string`
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
-**`memberof`** DNSLookupOptions
+**`Memberof`**
+
+DNSLookupOptions
 
 ___
 
-### <a id="omitfinaldnsdot" name="omitfinaldnsdot"></a> omitFinalDNSDot
+### omitFinalDNSDot
 
 • **omitFinalDNSDot**: `boolean`
 
 Optionally control whether to omit the final dot in full DNS name values.
 
-**`memberof`** DNSLookupOptions
+**`Memberof`**
+
+DNSLookupOptions
 
 ___
 
-### <a id="recordtypes" name="recordtypes"></a> recordTypes
+### recordTypes
 
 • **recordTypes**: [`DNSLookupOptionsRecordTypesEnum`](../enums/DNSLookupOptionsRecordTypesEnum.md)[]
 
 List of record types you wish to query such as MX, DNS, TXT, NS, A etc.
 
-**`memberof`** DNSLookupOptions
+**`Memberof`**
+
+DNSLookupOptions

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetListUnsubscribeRecipientsRequest
+
 # Interface: GetListUnsubscribeRecipientsRequest
 
 ## Table of contents
@@ -11,24 +13,24 @@
 
 ## Properties
 
-### <a id="domainid" name="domainid"></a> domainId
+### domainId
 
 • `Optional` **domainId**: `string`
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • `Optional` **page**: `number`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetListUnsubscribeRecipientsSortEnum`](../enums/GetListUnsubscribeRecipientsSortEnum.md)

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / TestInboxRulesetsForInboxRequest
+
 # Interface: TestInboxRulesetsForInboxRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="inboxrulesettestoptions" name="inboxrulesettestoptions"></a> inboxRulesetTestOptions
+### inboxRulesetTestOptions
 
 • **inboxRulesetTestOptions**: [`InboxRulesetTestOptions`](InboxRulesetTestOptions.md)

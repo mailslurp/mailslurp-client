@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetExportLinkRequest
+
 # Interface: GetExportLinkRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="apikey" name="apikey"></a> apiKey
+### apiKey
 
 • `Optional` **apiKey**: `string`
 
 ___
 
-### <a id="exportoptions" name="exportoptions"></a> exportOptions
+### exportOptions
 
 • **exportOptions**: [`ExportOptions`](ExportOptions.md)
 
 ___
 
-### <a id="exporttype" name="exporttype"></a> exportType
+### exportType
 
 • **exportType**: [`GetExportLinkExportTypeEnum`](../enums/GetExportLinkExportTypeEnum.md)

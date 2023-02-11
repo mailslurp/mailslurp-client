@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ListUnsubscribeRecipientProjection
+
 # Interface: ListUnsubscribeRecipientProjection
 
 List unsubscribe recipient
 
-**`export`**
+**`Export`**
 
-**`interface`** ListUnsubscribeRecipientProjection
+**`Interface`**
+
+ListUnsubscribeRecipientProjection
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ List unsubscribe recipient
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** ListUnsubscribeRecipientProjection
+**`Memberof`**
+
+ListUnsubscribeRecipientProjection
 
 ___
 
-### <a id="domainid" name="domainid"></a> domainId
+### domainId
 
 • `Optional` **domainId**: `string`
 
-**`memberof`** ListUnsubscribeRecipientProjection
+**`Memberof`**
+
+ListUnsubscribeRecipientProjection
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** ListUnsubscribeRecipientProjection
+**`Memberof`**
+
+ListUnsubscribeRecipientProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ListUnsubscribeRecipientProjection
+**`Memberof`**
+
+ListUnsubscribeRecipientProjection

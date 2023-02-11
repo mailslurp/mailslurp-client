@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetInboxByEmailAddressRequest
+
 # Interface: GetInboxByEmailAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`

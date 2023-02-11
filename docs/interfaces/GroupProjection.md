@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / GroupProjection
+
 # Interface: GroupProjection
 
 Data for contact group
 
-**`export`**
+**`Export`**
 
-**`interface`** GroupProjection
+**`Interface`**
+
+GroupProjection
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Data for contact group
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** GroupProjection
+**`Memberof`**
+
+GroupProjection
 
 ___
 
-### <a id="description" name="description"></a> description
+### description
 
 • `Optional` **description**: `string`
 
-**`memberof`** GroupProjection
+**`Memberof`**
+
+GroupProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** GroupProjection
+**`Memberof`**
+
+GroupProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** GroupProjection
+**`Memberof`**
+
+GroupProjection

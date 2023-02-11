@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendEmailSourceOptionalRequest
+
 # Interface: SendEmailSourceOptionalRequest
 
 ## Table of contents
@@ -11,24 +13,24 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)
 
 ___
 
-### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
+### useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
 
 ___
 
-### <a id="virtualsend" name="virtualsend"></a> virtualSend
+### virtualSend
 
 • `Optional` **virtualSend**: `boolean`

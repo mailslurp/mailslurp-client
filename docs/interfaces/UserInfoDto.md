@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / UserInfoDto
+
 # Interface: UserInfoDto
 
-**`export`**
+**`Export`**
 
-**`interface`** UserInfoDto
+**`Interface`**
+
+UserInfoDto
 
 ## Table of contents
 
@@ -17,48 +21,60 @@
 
 ## Properties
 
-### <a id="accountstate" name="accountstate"></a> accountState
+### accountState
 
 • **accountState**: [`UserInfoDtoAccountStateEnum`](../enums/UserInfoDtoAccountStateEnum.md)
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto
 
 ___
 
-### <a id="accounttype" name="accounttype"></a> accountType
+### accountType
 
 • **accountType**: [`UserInfoDtoAccountTypeEnum`](../enums/UserInfoDtoAccountTypeEnum.md)
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto
 
 ___
 
-### <a id="subscriptiontype" name="subscriptiontype"></a> subscriptionType
+### subscriptionType
 
 • `Optional` **subscriptionType**: [`UserInfoDtoSubscriptionTypeEnum`](../enums/UserInfoDtoSubscriptionTypeEnum.md)
 
-**`memberof`** UserInfoDto
+**`Memberof`**
+
+UserInfoDto

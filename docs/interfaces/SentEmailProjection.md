@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / SentEmailProjection
+
 # Interface: SentEmailProjection
 
 Collection of items
 
-**`export`**
+**`Export`**
 
-**`interface`** SentEmailProjection
+**`Interface`**
+
+SentEmailProjection
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Collection of items
 
 ## Properties
 
-### <a id="attachments" name="attachments"></a> attachments
+### attachments
 
 • **attachments**: `string`[]
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • **bcc**: `string`[]
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="bodymd5hash" name="bodymd5hash"></a> bodyMD5Hash
+### bodyMD5Hash
 
 • `Optional` **bodyMD5Hash**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • **cc**: `string`[]
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection
 
 ___
 
-### <a id="virtualsend" name="virtualsend"></a> virtualSend
+### virtualSend
 
 • **virtualSend**: `boolean`
 
-**`memberof`** SentEmailProjection
+**`Memberof`**
+
+SentEmailProjection

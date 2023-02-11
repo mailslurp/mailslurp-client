@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ValidateEmailAddressListOptions
+
 # Interface: ValidateEmailAddressListOptions
 
 Options for validating a list of email addresses
 
-**`export`**
+**`Export`**
 
-**`interface`** ValidateEmailAddressListOptions
+**`Interface`**
+
+ValidateEmailAddressListOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Options for validating a list of email addresses
 
 ## Properties
 
-### <a id="emailaddresslist" name="emailaddresslist"></a> emailAddressList
+### emailAddressList
 
 • **emailAddressList**: `string`[]
 
-**`memberof`** ValidateEmailAddressListOptions
+**`Memberof`**
+
+ValidateEmailAddressListOptions

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetSmsMessagesPaginatedRequest
+
 # Interface: GetSmsMessagesPaginatedRequest
 
 ## Table of contents
@@ -14,42 +16,42 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="page" name="page"></a> page
+### page
 
 • `Optional` **page**: `number`
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • `Optional` **phoneNumber**: `string`
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetSmsMessagesPaginatedSortEnum`](../enums/GetSmsMessagesPaginatedSortEnum.md)
 
 ___
 
-### <a id="unreadonly" name="unreadonly"></a> unreadOnly
+### unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

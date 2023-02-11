@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / BaseAPI
+
 # Class: BaseAPI
 
 This is the base class for all generated API classes.
@@ -81,7 +83,7 @@ This is the base class for all generated API classes.
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new BaseAPI**(`configuration?`)
 
@@ -93,19 +95,19 @@ This is the base class for all generated API classes.
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
 ___
 
-### <a id="middleware" name="middleware"></a> middleware
+### middleware
 
 • `Private` **middleware**: [`Middleware`](../interfaces/Middleware.md)[]
 
 ## Methods
 
-### <a id="clone" name="clone"></a> clone
+### clone
 
 ▸ `Private` **clone**<`T`\>(`this`): `T`
 
@@ -130,7 +132,7 @@ and then shallow cloning data members.
 
 ___
 
-### <a id="createfetchparams" name="createfetchparams"></a> createFetchParams
+### createFetchParams
 
 ▸ `Private` **createFetchParams**(`context`, `initOverrides?`): `Object`
 
@@ -147,11 +149,11 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `init` | { `body`: `any` ; `cache?`: `RequestCache` ; `credentials`: `RequestCredentials` ; `headers`: [`HTTPHeaders`](../README.md#httpheaders) \| `HeadersInit` = headers; `integrity?`: `string` ; `keepalive?`: `boolean` ; `method`: `string` = context.method; `mode?`: `RequestMode` ; `redirect?`: `RequestRedirect` ; `referrer?`: `string` ; `referrerPolicy?`: `ReferrerPolicy` ; `signal?`: `AbortSignal` ; `window?`: `any`  } |
+| `init` | { `body`: `any` ; `cache?`: `RequestCache` ; `credentials`: `RequestCredentials` ; `headers`: [`HTTPHeaders`](../README.md#httpheaders) \| [`string`, `string`][] \| `Headers` = headers; `integrity?`: `string` ; `keepalive?`: `boolean` ; `method`: `string` = context.method; `mode?`: `RequestMode` ; `redirect?`: `RequestRedirect` ; `referrer?`: `string` ; `referrerPolicy?`: `ReferrerPolicy` ; `signal?`: `AbortSignal` ; `window?`: ``null``  } |
 | `init.body` | `any` |
 | `init.cache?` | `RequestCache` |
 | `init.credentials` | `RequestCredentials` |
-| `init.headers` | [`HTTPHeaders`](../README.md#httpheaders) \| `HeadersInit` |
+| `init.headers` | [`HTTPHeaders`](../README.md#httpheaders) \| [`string`, `string`][] \| `Headers` |
 | `init.integrity?` | `string` |
 | `init.keepalive?` | `boolean` |
 | `init.method` | `string` |
@@ -160,12 +162,12 @@ ___
 | `init.referrer?` | `string` |
 | `init.referrerPolicy?` | `ReferrerPolicy` |
 | `init.signal?` | `AbortSignal` |
-| `init.window?` | `any` |
+| `init.window?` | ``null`` |
 | `url` | `string` |
 
 ___
 
-### <a id="fetchapi" name="fetchapi"></a> fetchApi
+### fetchApi
 
 ▸ `Private` **fetchApi**(`url`, `init`): `Promise`<`Response`\>
 
@@ -182,7 +184,7 @@ ___
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -199,9 +201,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -222,9 +224,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -245,9 +247,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

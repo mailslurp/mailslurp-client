@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetMissedEmailRequest
+
 # Interface: GetMissedEmailRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="missedemailid" name="missedemailid"></a> missedEmailId
+### missedEmailId
 
 • **missedEmailId**: `string`

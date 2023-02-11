@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateDomainRequest
+
 # Interface: CreateDomainRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="createdomainoptions" name="createdomainoptions"></a> createDomainOptions
+### createDomainOptions
 
 • **createDomainOptions**: [`CreateDomainOptions`](CreateDomainOptions.md)

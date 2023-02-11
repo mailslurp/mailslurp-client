@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / PageUnknownMissedEmailProjection
+
 # Interface: PageUnknownMissedEmailProjection
 
 Paginated unknown MissedEmail results. Unknown missed emails are emails that were sent to MailSlurp /Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
 
-**`export`**
+**`Export`**
 
-**`interface`** PageUnknownMissedEmailProjection
+**`Interface`**
+
+PageUnknownMissedEmailProjection
 
 ## Table of contents
 
@@ -25,96 +29,120 @@ Paginated unknown MissedEmail results. Unknown missed emails are emails that wer
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • `Optional` **content**: [`UnknownMissedEmailProjection`](UnknownMissedEmailProjection.md)[]
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="empty" name="empty"></a> empty
+### empty
 
 • `Optional` **empty**: `boolean`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="first" name="first"></a> first
+### first
 
 • `Optional` **first**: `boolean`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="last" name="last"></a> last
+### last
 
 • `Optional` **last**: `boolean`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="number" name="number"></a> number
+### number
 
 • `Optional` **number**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="numberofelements" name="numberofelements"></a> numberOfElements
+### numberOfElements
 
 • `Optional` **numberOfElements**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="pageable" name="pageable"></a> pageable
+### pageable
 
 • `Optional` **pageable**: [`PageableObject`](PageableObject.md)
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`Sort`](Sort.md)
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="total" name="total"></a> total
+### total
 
 • `Optional` **total**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="totalelements" name="totalelements"></a> totalElements
+### totalElements
 
 • `Optional` **totalElements**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection
 
 ___
 
-### <a id="totalpages" name="totalpages"></a> totalPages
+### totalPages
 
 • `Optional` **totalPages**: `number`
 
-**`memberof`** PageUnknownMissedEmailProjection
+**`Memberof`**
+
+PageUnknownMissedEmailProjection

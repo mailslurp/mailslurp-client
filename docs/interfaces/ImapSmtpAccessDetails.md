@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ImapSmtpAccessDetails
+
 # Interface: ImapSmtpAccessDetails
 
 Access details for inbox using SMTP or IMAP
 
-**`export`**
+**`Export`**
 
-**`interface`** ImapSmtpAccessDetails
+**`Interface`**
+
+ImapSmtpAccessDetails
 
 ## Table of contents
 
@@ -25,120 +29,144 @@ Access details for inbox using SMTP or IMAP
 
 ## Properties
 
-### <a id="imappassword" name="imappassword"></a> imapPassword
+### imapPassword
 
 • **imapPassword**: `string`
 
 IMAP password for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="imapserverhost" name="imapserverhost"></a> imapServerHost
+### imapServerHost
 
 • **imapServerHost**: `string`
 
 IMAP server host domain
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="imapserverport" name="imapserverport"></a> imapServerPort
+### imapServerPort
 
 • **imapServerPort**: `number`
 
 IMAP server host port
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="imapusername" name="imapusername"></a> imapUsername
+### imapUsername
 
 • **imapUsername**: `string`
 
 IMAP username for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="securesmtppassword" name="securesmtppassword"></a> secureSmtpPassword
+### secureSmtpPassword
 
 • **secureSmtpPassword**: `string`
 
 Secure TLS SMTP password for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="securesmtpserverhost" name="securesmtpserverhost"></a> secureSmtpServerHost
+### secureSmtpServerHost
 
 • **secureSmtpServerHost**: `string`
 
 Secure TLS SMTP server host domain
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="securesmtpserverport" name="securesmtpserverport"></a> secureSmtpServerPort
+### secureSmtpServerPort
 
 • **secureSmtpServerPort**: `number`
 
 Secure TLS SMTP server host port
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="securesmtpusername" name="securesmtpusername"></a> secureSmtpUsername
+### secureSmtpUsername
 
 • **secureSmtpUsername**: `string`
 
 Secure TLS SMTP username for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="smtppassword" name="smtppassword"></a> smtpPassword
+### smtpPassword
 
 • **smtpPassword**: `string`
 
 SMTP password for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="smtpserverhost" name="smtpserverhost"></a> smtpServerHost
+### smtpServerHost
 
 • **smtpServerHost**: `string`
 
 SMTP server host domain
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="smtpserverport" name="smtpserverport"></a> smtpServerPort
+### smtpServerPort
 
 • **smtpServerPort**: `number`
 
 SMTP server host port
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails
 
 ___
 
-### <a id="smtpusername" name="smtpusername"></a> smtpUsername
+### smtpUsername
 
 • **smtpUsername**: `string`
 
 SMTP username for login
 
-**`memberof`** ImapSmtpAccessDetails
+**`Memberof`**
+
+ImapSmtpAccessDetails

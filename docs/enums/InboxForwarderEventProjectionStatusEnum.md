@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / InboxForwarderEventProjectionStatusEnum
+
 # Enumeration: InboxForwarderEventProjectionStatusEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="failure" name="failure"></a> FAILURE
+### FAILURE
 
-• **FAILURE**
+• **FAILURE** = ``"FAILURE"``
 
 ___
 
-### <a id="success" name="success"></a> SUCCESS
+### SUCCESS
 
-• **SUCCESS**
+• **SUCCESS** = ``"SUCCESS"``

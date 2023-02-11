@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / CreateInboxForwarderOptionsFieldEnum
+
 # Enumeration: CreateInboxForwarderOptionsFieldEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -13,24 +15,24 @@
 
 ## Enumeration Members
 
-### <a id="attachments" name="attachments"></a> ATTACHMENTS
+### ATTACHMENTS
 
-• **ATTACHMENTS**
-
-___
-
-### <a id="recipients" name="recipients"></a> RECIPIENTS
-
-• **RECIPIENTS**
+• **ATTACHMENTS** = ``"ATTACHMENTS"``
 
 ___
 
-### <a id="sender" name="sender"></a> SENDER
+### RECIPIENTS
 
-• **SENDER**
+• **RECIPIENTS** = ``"RECIPIENTS"``
 
 ___
 
-### <a id="subject" name="subject"></a> SUBJECT
+### SENDER
 
-• **SUBJECT**
+• **SENDER** = ``"SENDER"``
+
+___
+
+### SUBJECT
+
+• **SUBJECT** = ``"SUBJECT"``

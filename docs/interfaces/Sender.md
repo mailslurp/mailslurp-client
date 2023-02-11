@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / Sender
+
 # Interface: Sender
 
 Sender object containing from email address and from personal name if provided in address
 
-**`export`**
+**`Export`**
 
-**`interface`** Sender
+**`Interface`**
+
+Sender
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Sender object containing from email address and from personal name if provided i
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** Sender
+**`Memberof`**
+
+Sender
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** Sender
+**`Memberof`**
+
+Sender
 
 ___
 
-### <a id="rawvalue" name="rawvalue"></a> rawValue
+### rawValue
 
 • **rawValue**: `string`
 
-**`memberof`** Sender
+**`Memberof`**
+
+Sender

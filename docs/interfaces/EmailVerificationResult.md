@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailVerificationResult
+
 # Interface: EmailVerificationResult
 
 Email verification result. Valid means email address exists according to response from mail server running at the domain and port given.
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailVerificationResult
+**`Interface`**
+
+EmailVerificationResult
 
 ## Table of contents
 
@@ -18,40 +22,50 @@ Email verification result. Valid means email address exists according to respons
 
 ## Properties
 
-### <a id="domainname" name="domainname"></a> domainName
+### domainName
 
 • **domainName**: `string`
 
-**`memberof`** EmailVerificationResult
+**`Memberof`**
+
+EmailVerificationResult
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** EmailVerificationResult
+**`Memberof`**
+
+EmailVerificationResult
 
 ___
 
-### <a id="error" name="error"></a> error
+### error
 
 • `Optional` **error**: `string`
 
-**`memberof`** EmailVerificationResult
+**`Memberof`**
+
+EmailVerificationResult
 
 ___
 
-### <a id="isvalid" name="isvalid"></a> isValid
+### isValid
 
 • **isValid**: `boolean`
 
-**`memberof`** EmailVerificationResult
+**`Memberof`**
+
+EmailVerificationResult
 
 ___
 
-### <a id="port" name="port"></a> port
+### port
 
 • **port**: `number`
 
-**`memberof`** EmailVerificationResult
+**`Memberof`**
+
+EmailVerificationResult

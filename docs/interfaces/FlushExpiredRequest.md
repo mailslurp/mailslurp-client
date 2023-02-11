@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / FlushExpiredRequest
+
 # Interface: FlushExpiredRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxForwarderTestResult
+
 # Interface: InboxForwarderTestResult
 
 Results of inbox forwarder test
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxForwarderTestResult
+**`Interface`**
+
+InboxForwarderTestResult
 
 ## Table of contents
 
@@ -15,19 +19,23 @@ Results of inbox forwarder test
 
 ## Properties
 
-### <a id="doesmatch" name="doesmatch"></a> doesMatch
+### doesMatch
 
 • **doesMatch**: `boolean`
 
-**`memberof`** InboxForwarderTestResult
+**`Memberof`**
+
+InboxForwarderTestResult
 
 ___
 
-### <a id="matches" name="matches"></a> matches
+### matches
 
 • **matches**: `Object`
 
-**`memberof`** InboxForwarderTestResult
+**`Memberof`**
+
+InboxForwarderTestResult
 
 #### Index signature
 

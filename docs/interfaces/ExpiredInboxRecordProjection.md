@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ExpiredInboxRecordProjection
+
 # Interface: ExpiredInboxRecordProjection
 
 Record of inbox expiration
 
-**`export`**
+**`Export`**
 
-**`interface`** ExpiredInboxRecordProjection
+**`Interface`**
+
+ExpiredInboxRecordProjection
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Record of inbox expiration
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** ExpiredInboxRecordProjection
+**`Memberof`**
+
+ExpiredInboxRecordProjection
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** ExpiredInboxRecordProjection
+**`Memberof`**
+
+ExpiredInboxRecordProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** ExpiredInboxRecordProjection
+**`Memberof`**
+
+ExpiredInboxRecordProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** ExpiredInboxRecordProjection
+**`Memberof`**
+
+ExpiredInboxRecordProjection

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookEmailOpenedPayload
+
 # Interface: WebhookEmailOpenedPayload
 
 EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST when an email containing a tracking pixel is opened and the pixel image is loaded by a reader.
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookEmailOpenedPayload
+**`Interface`**
+
+WebhookEmailOpenedPayload
 
 ## Table of contents
 
@@ -22,90 +26,108 @@ EMAIL_OPENED webhook payload. Sent to your webhook url endpoint via HTTP POST wh
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
 Date time of event creation
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`WebhookEmailOpenedPayloadEventNameEnum`](../enums/WebhookEmailOpenedPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 Id of the inbox
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="pixelid" name="pixelid"></a> pixelId
+### pixelId
 
 • **pixelId**: `string`
 
 ID of the tracking pixel
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="recipient" name="recipient"></a> recipient
+### recipient
 
 • **recipient**: `string`
 
 Email address for the recipient of the tracking pixel
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="sentemailid" name="sentemailid"></a> sentEmailId
+### sentEmailId
 
 • **sentEmailId**: `string`
 
 ID of sent email
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
 ID of webhook entity being triggered
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
 Name of the webhook being triggered
 
-**`memberof`** WebhookEmailOpenedPayload
+**`Memberof`**
+
+WebhookEmailOpenedPayload

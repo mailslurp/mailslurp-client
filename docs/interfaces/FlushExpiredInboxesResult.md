@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / FlushExpiredInboxesResult
+
 # Interface: FlushExpiredInboxesResult
 
 Result from calling expire on any inboxes that have applicable expiration dates given current time.
 
-**`export`**
+**`Export`**
 
-**`interface`** FlushExpiredInboxesResult
+**`Interface`**
+
+FlushExpiredInboxesResult
 
 ## Table of contents
 
@@ -15,20 +19,24 @@ Result from calling expire on any inboxes that have applicable expiration dates 
 
 ## Properties
 
-### <a id="expirebefore" name="expirebefore"></a> expireBefore
+### expireBefore
 
 • **expireBefore**: `Date`
 
 DateTime to filter inboxes so that those expiring before this time are expired
 
-**`memberof`** FlushExpiredInboxesResult
+**`Memberof`**
+
+FlushExpiredInboxesResult
 
 ___
 
-### <a id="inboxids" name="inboxids"></a> inboxIds
+### inboxIds
 
 • **inboxIds**: `string`[]
 
 Inbox IDs affected by expiration
 
-**`memberof`** FlushExpiredInboxesResult
+**`Memberof`**
+
+FlushExpiredInboxesResult

@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / ScheduledJobDtoStatusEnum
+
 # Enumeration: ScheduledJobDtoStatusEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -13,24 +15,24 @@
 
 ## Enumeration Members
 
-### <a id="cancelled" name="cancelled"></a> CANCELLED
+### CANCELLED
 
-• **CANCELLED**
-
-___
-
-### <a id="completed" name="completed"></a> COMPLETED
-
-• **COMPLETED**
+• **CANCELLED** = ``"CANCELLED"``
 
 ___
 
-### <a id="failed" name="failed"></a> FAILED
+### COMPLETED
 
-• **FAILED**
+• **COMPLETED** = ``"COMPLETED"``
 
 ___
 
-### <a id="submitted" name="submitted"></a> SUBMITTED
+### FAILED
 
-• **SUBMITTED**
+• **FAILED** = ``"FAILED"``
+
+___
+
+### SUBMITTED
+
+• **SUBMITTED** = ``"SUBMITTED"``

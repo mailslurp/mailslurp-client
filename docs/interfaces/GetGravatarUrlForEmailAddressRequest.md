@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetGravatarUrlForEmailAddressRequest
+
 # Interface: GetGravatarUrlForEmailAddressRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `string`

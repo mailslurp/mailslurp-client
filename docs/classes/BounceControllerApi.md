@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / BounceControllerApi
+
 # Class: BounceControllerApi
 
 ## Hierarchy
@@ -39,7 +41,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new BounceControllerApi**(`configuration?`)
 
@@ -55,7 +57,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -65,7 +67,7 @@
 
 ## Methods
 
-### <a id="filterbouncedrecipient" name="filterbouncedrecipient"></a> filterBouncedRecipient
+### filterBouncedRecipient
 
 ▸ **filterBouncedRecipient**(`requestParameters`, `initOverrides?`): `Promise`<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>
 
@@ -85,7 +87,7 @@ Filter a list of email recipients and remove those who have bounced
 
 ___
 
-### <a id="filterbouncedrecipientraw" name="filterbouncedrecipientraw"></a> filterBouncedRecipientRaw
+### filterBouncedRecipientRaw
 
 ▸ **filterBouncedRecipientRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>\>
 
@@ -105,7 +107,7 @@ Filter a list of email recipients and remove those who have bounced
 
 ___
 
-### <a id="getbouncedemail" name="getbouncedemail"></a> getBouncedEmail
+### getBouncedEmail
 
 ▸ **getBouncedEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>
 
@@ -125,7 +127,7 @@ Get a bounced email.
 
 ___
 
-### <a id="getbouncedemailraw" name="getbouncedemailraw"></a> getBouncedEmailRaw
+### getBouncedEmailRaw
 
 ▸ **getBouncedEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`BouncedEmailDto`](../interfaces/BouncedEmailDto.md)\>\>
 
@@ -145,7 +147,7 @@ Get a bounced email.
 
 ___
 
-### <a id="getbouncedemails" name="getbouncedemails"></a> getBouncedEmails
+### getBouncedEmails
 
 ▸ **getBouncedEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>
 
@@ -165,7 +167,7 @@ Get paginated list of bounced emails.
 
 ___
 
-### <a id="getbouncedemailsraw" name="getbouncedemailsraw"></a> getBouncedEmailsRaw
+### getBouncedEmailsRaw
 
 ▸ **getBouncedEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageBouncedEmail`](../interfaces/PageBouncedEmail.md)\>\>
 
@@ -185,7 +187,7 @@ Get paginated list of bounced emails.
 
 ___
 
-### <a id="getbouncedrecipient" name="getbouncedrecipient"></a> getBouncedRecipient
+### getBouncedRecipient
 
 ▸ **getBouncedRecipient**(`requestParameters`, `initOverrides?`): `Promise`<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>
 
@@ -205,7 +207,7 @@ Get a bounced email.
 
 ___
 
-### <a id="getbouncedrecipientraw" name="getbouncedrecipientraw"></a> getBouncedRecipientRaw
+### getBouncedRecipientRaw
 
 ▸ **getBouncedRecipientRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`BouncedRecipientDto`](../interfaces/BouncedRecipientDto.md)\>\>
 
@@ -225,7 +227,7 @@ Get a bounced email.
 
 ___
 
-### <a id="getbouncedrecipients" name="getbouncedrecipients"></a> getBouncedRecipients
+### getBouncedRecipients
 
 ▸ **getBouncedRecipients**(`requestParameters`, `initOverrides?`): `Promise`<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>
 
@@ -245,7 +247,7 @@ Get paginated list of bounced recipients.
 
 ___
 
-### <a id="getbouncedrecipientsraw" name="getbouncedrecipientsraw"></a> getBouncedRecipientsRaw
+### getBouncedRecipientsRaw
 
 ▸ **getBouncedRecipientsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageBouncedRecipients`](../interfaces/PageBouncedRecipients.md)\>\>
 
@@ -265,7 +267,7 @@ Get paginated list of bounced recipients.
 
 ___
 
-### <a id="getcomplaints" name="getcomplaints"></a> getComplaints
+### getComplaints
 
 ▸ **getComplaints**(`requestParameters`, `initOverrides?`): `Promise`<[`PageComplaint`](../interfaces/PageComplaint.md)\>
 
@@ -285,7 +287,7 @@ Get paginated list of complaints.
 
 ___
 
-### <a id="getcomplaintsraw" name="getcomplaintsraw"></a> getComplaintsRaw
+### getComplaintsRaw
 
 ▸ **getComplaintsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageComplaint`](../interfaces/PageComplaint.md)\>\>
 
@@ -305,7 +307,7 @@ Get paginated list of complaints.
 
 ___
 
-### <a id="getlistunsubscriberecipients" name="getlistunsubscriberecipients"></a> getListUnsubscribeRecipients
+### getListUnsubscribeRecipients
 
 ▸ **getListUnsubscribeRecipients**(`requestParameters`, `initOverrides?`): `Promise`<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>
 
@@ -325,7 +327,7 @@ Get paginated list of unsubscribed recipients.
 
 ___
 
-### <a id="getlistunsubscriberecipientsraw" name="getlistunsubscriberecipientsraw"></a> getListUnsubscribeRecipientsRaw
+### getListUnsubscribeRecipientsRaw
 
 ▸ **getListUnsubscribeRecipientsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageListUnsubscribeRecipients`](../interfaces/PageListUnsubscribeRecipients.md)\>\>
 
@@ -345,7 +347,7 @@ Get paginated list of unsubscribed recipients.
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -366,9 +368,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -393,9 +395,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -420,9 +422,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

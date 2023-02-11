@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetDnsLookupRequest
+
 # Interface: GetDnsLookupRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="dnslookupoptions" name="dnslookupoptions"></a> dNSLookupOptions
+### dNSLookupOptions
 
 • **dNSLookupOptions**: [`DNSLookupOptions`](DNSLookupOptions.md)

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookRedriveResult
+
 # Interface: WebhookRedriveResult
 
 Result of retrying webhook
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookRedriveResult
+**`Interface`**
+
+WebhookRedriveResult
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Result of retrying webhook
 
 ## Properties
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** WebhookRedriveResult
+**`Memberof`**
+
+WebhookRedriveResult
 
 ___
 
-### <a id="success" name="success"></a> success
+### success
 
 • **success**: `boolean`
 
-**`memberof`** WebhookRedriveResult
+**`Memberof`**
+
+WebhookRedriveResult
 
 ___
 
-### <a id="webhookresultid" name="webhookresultid"></a> webhookResultId
+### webhookResultId
 
 • **webhookResultId**: `string`
 
-**`memberof`** WebhookRedriveResult
+**`Memberof`**
+
+WebhookRedriveResult

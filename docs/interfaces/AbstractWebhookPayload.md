@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / AbstractWebhookPayload
+
 # Interface: AbstractWebhookPayload
 
 Abstract webhook payload. Use the correct payload type for your webhook event type in order to access all the specific properties for that event. See the `NEW_EMAIL`,`NEW_CONTACT`, `NEW_ATTACHMENT` and `EMAIL_OPENED` payloads for the properties available for those events.
 
-**`export`**
+**`Export`**
 
-**`interface`** AbstractWebhookPayload
+**`Interface`**
+
+AbstractWebhookPayload
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Abstract webhook payload. Use the correct payload type for your webhook event ty
 
 ## Properties
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`AbstractWebhookPayloadEventNameEnum`](../enums/AbstractWebhookPayloadEventNameEnum.md)
 
-**`memberof`** AbstractWebhookPayload
+**`Memberof`**
+
+AbstractWebhookPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
-**`memberof`** AbstractWebhookPayload
+**`Memberof`**
+
+AbstractWebhookPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
-**`memberof`** AbstractWebhookPayload
+**`Memberof`**
+
+AbstractWebhookPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
-**`memberof`** AbstractWebhookPayload
+**`Memberof`**
+
+AbstractWebhookPayload

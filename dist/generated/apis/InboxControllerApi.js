@@ -29,7 +29,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -61,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -114,7 +118,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{" + 'jobId' + "}", encodeURIComponent(String(requestParameters.jobId))),
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -255,7 +259,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -408,7 +412,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/deleteAllInboxEmails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -500,7 +504,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'DELETE',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -815,7 +819,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/delivery-status".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/delivery-status".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -893,7 +897,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -994,7 +998,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1201,7 +1205,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/count".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails/count".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1267,7 +1271,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/emails/paginated".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/emails/paginated".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1385,7 +1389,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/sent".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/sent".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1671,7 +1675,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{" + 'jobId' + "}", encodeURIComponent(String(requestParameters.jobId))),
+                                path: "/inboxes/scheduled-jobs/{jobId}".replace("{".concat('jobId', "}"), encodeURIComponent(String(requestParameters.jobId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1738,7 +1742,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/scheduled-jobs".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1808,7 +1812,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/rulesets".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/rulesets".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1878,7 +1882,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/tracking-pixels".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/tracking-pixels".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'GET',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1935,7 +1939,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -1989,7 +1993,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/confirm".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/confirm".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2055,7 +2059,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-queue".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/with-queue".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2109,7 +2113,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/smtp-envelope".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2162,7 +2166,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/send-test-email".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/send-test-email".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2226,7 +2230,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/with-schedule".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/with-schedule".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2284,7 +2288,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}/favourite".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}/favourite".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'PUT',
                                 headers: headerParameters,
                                 query: queryParameters,
@@ -2342,7 +2346,7 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
                         return [4 /*yield*/, this.request({
-                                path: "/inboxes/{inboxId}".replace("{" + 'inboxId' + "}", encodeURIComponent(String(requestParameters.inboxId))),
+                                path: "/inboxes/{inboxId}".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
                                 method: 'PATCH',
                                 headers: headerParameters,
                                 query: queryParameters,

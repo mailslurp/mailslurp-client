@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / VerifyEmailAddressOptions
+
 # Interface: VerifyEmailAddressOptions
 
 Options for verifying that an email address exists at a remote mail server.
 
-**`export`**
+**`Export`**
 
-**`interface`** VerifyEmailAddressOptions
+**`Interface`**
+
+VerifyEmailAddressOptions
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Options for verifying that an email address exists at a remote mail server.
 
 ## Properties
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** VerifyEmailAddressOptions
+**`Memberof`**
+
+VerifyEmailAddressOptions
 
 ___
 
-### <a id="mailserverdomain" name="mailserverdomain"></a> mailServerDomain
+### mailServerDomain
 
 • `Optional` **mailServerDomain**: `string`
 
-**`memberof`** VerifyEmailAddressOptions
+**`Memberof`**
+
+VerifyEmailAddressOptions
 
 ___
 
-### <a id="port" name="port"></a> port
+### port
 
 • `Optional` **port**: `number`
 
-**`memberof`** VerifyEmailAddressOptions
+**`Memberof`**
+
+VerifyEmailAddressOptions
 
 ___
 
-### <a id="senderemailaddress" name="senderemailaddress"></a> senderEmailAddress
+### senderEmailAddress
 
 • `Optional` **senderEmailAddress**: `string`
 
-**`memberof`** VerifyEmailAddressOptions
+**`Memberof`**
+
+VerifyEmailAddressOptions

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / Middleware
+
 # Interface: Middleware
 
 ## Table of contents
@@ -9,7 +11,7 @@
 
 ## Methods
 
-### <a id="post" name="post"></a> post
+### post
 
 ▸ `Optional` **post**(`context`): `Promise`<`void` \| `Response`\>
 
@@ -25,7 +27,7 @@
 
 ___
 
-### <a id="pre" name="pre"></a> pre
+### pre
 
 ▸ `Optional` **pre**(`context`): `Promise`<`void` \| [`FetchParams`](FetchParams.md)\>
 

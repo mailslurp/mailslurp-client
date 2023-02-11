@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailPreview
+
 # Interface: EmailPreview
 
 Preview of an email message. For full message (including body and attachments) call the `getEmail` or other email endpoints with the provided email ID.
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailPreview
+**`Interface`**
+
+EmailPreview
 
 ## Table of contents
 
@@ -23,100 +27,120 @@ Preview of an email message. For full message (including body and attachments) c
 
 ## Properties
 
-### <a id="attachments" name="attachments"></a> attachments
+### attachments
 
 • `Optional` **attachments**: `string`[]
 
 List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • `Optional` **bcc**: `string`[]
 
 List of `BCC` recipients email addresses that the email was addressed to. See recipients object for names.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • `Optional` **cc**: `string`[]
 
 List of `CC` recipients email addresses that the email was addressed to. See recipients object for names.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
 When was the email received by MailSlurp
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="domainid" name="domainid"></a> domainId
+### domainId
 
 • `Optional` **domainId**: `string`
 
 ID of the domain that received the email
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
 Who the email was sent from. An email address - see fromName for the sender name.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
 ID of the email entity
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • **read**: `boolean`
 
 Read flag. Has the email ever been viewed in the dashboard or fetched via the API with a hydrated body? If so the email is marked as read. Paginated results do not affect read status. Read status is different to email opened event as it depends on your own account accessing the email. Email opened is determined by tracking pixels sent to other uses if enable during sending. You can listened for both email read and email opened events using webhooks.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
 The subject line of the email message as specified by SMTP subject header
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
 List of `To` recipient email addresses that the email was addressed to. See recipients object for names.
 
-**`memberof`** EmailPreview
+**`Memberof`**
+
+EmailPreview

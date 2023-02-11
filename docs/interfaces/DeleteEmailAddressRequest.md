@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DeleteEmailAddressRequest
+
 # Interface: DeleteEmailAddressRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`

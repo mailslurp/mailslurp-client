@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ApiUserControllerApi
+
 # Class: ApiUserControllerApi
 
 ## Hierarchy
@@ -29,7 +31,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new ApiUserControllerApi**(`configuration?`)
 
@@ -45,7 +47,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -55,7 +57,7 @@
 
 ## Methods
 
-### <a id="getjsonpropertyasstring" name="getjsonpropertyasstring"></a> getJsonPropertyAsString
+### getJsonPropertyAsString
 
 ▸ **getJsonPropertyAsString**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -74,7 +76,7 @@ Utility function to extract properties from JSON objects in language where this 
 
 ___
 
-### <a id="getjsonpropertyasstringraw" name="getjsonpropertyasstringraw"></a> getJsonPropertyAsStringRaw
+### getJsonPropertyAsStringRaw
 
 ▸ **getJsonPropertyAsStringRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -93,7 +95,7 @@ Utility function to extract properties from JSON objects in language where this 
 
 ___
 
-### <a id="getuserinfo" name="getuserinfo"></a> getUserInfo
+### getUserInfo
 
 ▸ **getUserInfo**(`initOverrides?`): `Promise`<[`UserInfoDto`](../interfaces/UserInfoDto.md)\>
 
@@ -109,7 +111,7 @@ ___
 
 ___
 
-### <a id="getuserinforaw" name="getuserinforaw"></a> getUserInfoRaw
+### getUserInfoRaw
 
 ▸ **getUserInfoRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UserInfoDto`](../interfaces/UserInfoDto.md)\>\>
 
@@ -125,7 +127,7 @@ ___
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -146,9 +148,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -173,9 +175,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -200,9 +202,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / DescribeMailServerDomainRequest
+
 # Interface: DescribeMailServerDomainRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="describedomainoptions" name="describedomainoptions"></a> describeDomainOptions
+### describeDomainOptions
 
 • **describeDomainOptions**: [`DescribeDomainOptions`](DescribeDomainOptions.md)

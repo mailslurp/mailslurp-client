@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DomainNameRecord
+
 # Interface: DomainNameRecord
 
 DNS Record required for verification of a domain. Record vary depending on domain type.
 
-**`export`**
+**`Export`**
 
-**`interface`** DomainNameRecord
+**`Interface`**
+
+DomainNameRecord
 
 ## Table of contents
 
@@ -17,34 +21,42 @@ DNS Record required for verification of a domain. Record vary depending on domai
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** DomainNameRecord
+**`Memberof`**
+
+DomainNameRecord
 
 ___
 
-### <a id="recordentries" name="recordentries"></a> recordEntries
+### recordEntries
 
 • **recordEntries**: `string`[]
 
-**`memberof`** DomainNameRecord
+**`Memberof`**
+
+DomainNameRecord
 
 ___
 
-### <a id="recordtype" name="recordtype"></a> recordType
+### recordType
 
 • **recordType**: [`DomainNameRecordRecordTypeEnum`](../enums/DomainNameRecordRecordTypeEnum.md)
 
 Domain Name Server Record Types
 
-**`memberof`** DomainNameRecord
+**`Memberof`**
+
+DomainNameRecord
 
 ___
 
-### <a id="ttl" name="ttl"></a> ttl
+### ttl
 
 • **ttl**: `number`
 
-**`memberof`** DomainNameRecord
+**`Memberof`**
+
+DomainNameRecord

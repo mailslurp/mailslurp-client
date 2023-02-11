@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ForwardEmailOptions
+
 # Interface: ForwardEmailOptions
 
 Options for forwarding an email
 
-**`export`**
+**`Export`**
 
-**`interface`** ForwardEmailOptions
+**`Interface`**
+
+ForwardEmailOptions
 
 ## Table of contents
 
@@ -20,70 +24,84 @@ Options for forwarding an email
 
 ## Properties
 
-### <a id="bcc" name="bcc"></a> bcc
+### bcc
 
 • `Optional` **bcc**: `string`[]
 
 Optional bcc recipients
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="cc" name="cc"></a> cc
+### cc
 
 • `Optional` **cc**: `string`[]
 
 Optional cc recipients
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="filterbouncedrecipients" name="filterbouncedrecipients"></a> filterBouncedRecipients
+### filterBouncedRecipients
 
 • `Optional` **filterBouncedRecipients**: `boolean`
 
 Filter recipients to remove any bounced recipients from to, bcc, and cc before sending
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="from" name="from"></a> from
+### from
 
 • `Optional` **from**: `string`
 
 Optional from override
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
 Subject for forwarded email
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="to" name="to"></a> to
+### to
 
 • **to**: `string`[]
 
 To recipients for forwarded email
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions
 
 ___
 
-### <a id="useinboxname" name="useinboxname"></a> useInboxName
+### useInboxName
 
 • `Optional` **useInboxName**: `boolean`
 
 Optionally use inbox name as display name for sender email address
 
-**`memberof`** ForwardEmailOptions
+**`Memberof`**
+
+ForwardEmailOptions

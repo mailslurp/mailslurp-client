@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / UpdateAliasRequest
+
 # Interface: UpdateAliasRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="aliasid" name="aliasid"></a> aliasId
+### aliasId
 
 • **aliasId**: `string`
 
 ___
 
-### <a id="updatealiasoptions" name="updatealiasoptions"></a> updateAliasOptions
+### updateAliasOptions
 
 • **updateAliasOptions**: [`UpdateAliasOptions`](UpdateAliasOptions.md)

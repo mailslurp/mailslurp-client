@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / EmergencyAddressDto
+
 # Interface: EmergencyAddressDto
 
-**`export`**
+**`Export`**
 
-**`interface`** EmergencyAddressDto
+**`Interface`**
+
+EmergencyAddressDto
 
 ## Table of contents
 
@@ -14,24 +18,30 @@
 
 ## Properties
 
-### <a id="address1" name="address1"></a> address1
+### address1
 
 • **address1**: `string`
 
-**`memberof`** EmergencyAddressDto
+**`Memberof`**
+
+EmergencyAddressDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** EmergencyAddressDto
+**`Memberof`**
+
+EmergencyAddressDto
 
 ___
 
-### <a id="phonecountry" name="phonecountry"></a> phoneCountry
+### phoneCountry
 
 • **phoneCountry**: [`EmergencyAddressDtoPhoneCountryEnum`](../enums/EmergencyAddressDtoPhoneCountryEnum.md)
 
-**`memberof`** EmergencyAddressDto
+**`Memberof`**
+
+EmergencyAddressDto

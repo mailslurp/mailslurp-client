@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / NameServerRecord
+
 # Interface: NameServerRecord
 
 Name Server Record
 
-**`export`**
+**`Export`**
 
-**`interface`** NameServerRecord
+**`Interface`**
+
+NameServerRecord
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Name Server Record
 
 ## Properties
 
-### <a id="priority" name="priority"></a> priority
+### priority
 
 • **priority**: `string`
 
-**`memberof`** NameServerRecord
+**`Memberof`**
+
+NameServerRecord
 
 ___
 
-### <a id="raw" name="raw"></a> raw
+### raw
 
 • **raw**: `string`
 
-**`memberof`** NameServerRecord
+**`Memberof`**
+
+NameServerRecord
 
 ___
 
-### <a id="recordtype" name="recordtype"></a> recordType
+### recordType
 
 • **recordType**: `string`
 
-**`memberof`** NameServerRecord
+**`Memberof`**
+
+NameServerRecord
 
 ___
 
-### <a id="value" name="value"></a> value
+### value
 
 • **value**: `string`
 
-**`memberof`** NameServerRecord
+**`Memberof`**
+
+NameServerRecord

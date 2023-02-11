@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / ApplyImapFlagOperationRequest
+
 # Interface: ApplyImapFlagOperationRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`
 
 ___
 
-### <a id="imapflagoperationoptions" name="imapflagoperationoptions"></a> imapFlagOperationOptions
+### imapFlagOperationOptions
 
 • **imapFlagOperationOptions**: [`ImapFlagOperationOptions`](ImapFlagOperationOptions.md)

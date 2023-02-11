@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / AliasProjection
+
 # Interface: AliasProjection
 
 Representation of a alias
 
-**`export`**
+**`Export`**
 
-**`interface`** AliasProjection
+**`Interface`**
+
+AliasProjection
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Representation of a alias
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • **emailAddress**: `string`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="usethreads" name="usethreads"></a> useThreads
+### useThreads
 
 • `Optional` **useThreads**: `boolean`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** AliasProjection
+**`Memberof`**
+
+AliasProjection

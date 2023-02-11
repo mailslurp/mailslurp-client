@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / DescribeMailServerDomainResult
+
 # Interface: DescribeMailServerDomainResult
 
 Name Server lookup result
 
-**`export`**
+**`Export`**
 
-**`interface`** DescribeMailServerDomainResult
+**`Interface`**
+
+DescribeMailServerDomainResult
 
 ## Table of contents
 
@@ -16,24 +20,30 @@ Name Server lookup result
 
 ## Properties
 
-### <a id="domain" name="domain"></a> domain
+### domain
 
 • **domain**: `string`
 
-**`memberof`** DescribeMailServerDomainResult
+**`Memberof`**
+
+DescribeMailServerDomainResult
 
 ___
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** DescribeMailServerDomainResult
+**`Memberof`**
+
+DescribeMailServerDomainResult
 
 ___
 
-### <a id="mxrecords" name="mxrecords"></a> mxRecords
+### mxRecords
 
 • **mxRecords**: [`NameServerRecord`](NameServerRecord.md)[]
 
-**`memberof`** DescribeMailServerDomainResult
+**`Memberof`**
+
+DescribeMailServerDomainResult

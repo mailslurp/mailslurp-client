@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetTemplatePreviewJsonRequest
+
 # Interface: GetTemplatePreviewJsonRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="templateid" name="templateid"></a> templateId
+### templateId
 
 • **templateId**: `string`

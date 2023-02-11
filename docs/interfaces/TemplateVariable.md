@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / TemplateVariable
+
 # Interface: TemplateVariable
 
 Variable for use with email template
 
-**`export`**
+**`Export`**
 
-**`interface`** TemplateVariable
+**`Interface`**
+
+TemplateVariable
 
 ## Table of contents
 
@@ -15,20 +19,24 @@ Variable for use with email template
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
 Name of variable. This can be used in a template as {{name}}
 
-**`memberof`** TemplateVariable
+**`Memberof`**
+
+TemplateVariable
 
 ___
 
-### <a id="variabletype" name="variabletype"></a> variableType
+### variableType
 
 • **variableType**: [`STRING`](../enums/TemplateVariableVariableTypeEnum.md#string)
 
 The type of variable
 
-**`memberof`** TemplateVariable
+**`Memberof`**
+
+TemplateVariable

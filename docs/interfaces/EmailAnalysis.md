@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / EmailAnalysis
+
 # Interface: EmailAnalysis
 
 Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or dynamic error message
 
-**`export`**
+**`Export`**
 
-**`interface`** EmailAnalysis
+**`Interface`**
+
+EmailAnalysis
 
 ## Table of contents
 
@@ -18,50 +22,60 @@ Analysis result for email. Each verdict property is a string PASS|FAIL|GRAY or d
 
 ## Properties
 
-### <a id="dkimverdict" name="dkimverdict"></a> dkimVerdict
+### dkimVerdict
 
 • `Optional` **dkimVerdict**: `string`
 
 Verdict of DomainKeys Identified Mail analysis
 
-**`memberof`** EmailAnalysis
+**`Memberof`**
+
+EmailAnalysis
 
 ___
 
-### <a id="dmarcverdict" name="dmarcverdict"></a> dmarcVerdict
+### dmarcVerdict
 
 • `Optional` **dmarcVerdict**: `string`
 
 Verdict of Domain-based Message Authentication Reporting and Conformance analysis
 
-**`memberof`** EmailAnalysis
+**`Memberof`**
+
+EmailAnalysis
 
 ___
 
-### <a id="spamverdict" name="spamverdict"></a> spamVerdict
+### spamVerdict
 
 • `Optional` **spamVerdict**: `string`
 
 Verdict of spam ranking analysis
 
-**`memberof`** EmailAnalysis
+**`Memberof`**
+
+EmailAnalysis
 
 ___
 
-### <a id="spfverdict" name="spfverdict"></a> spfVerdict
+### spfVerdict
 
 • `Optional` **spfVerdict**: `string`
 
 Verdict of Send Policy Framework record spoofing analysis
 
-**`memberof`** EmailAnalysis
+**`Memberof`**
+
+EmailAnalysis
 
 ___
 
-### <a id="virusverdict" name="virusverdict"></a> virusVerdict
+### virusVerdict
 
 • `Optional` **virusVerdict**: `string`
 
 Verdict of virus scan analysis
 
-**`memberof`** EmailAnalysis
+**`Memberof`**
+
+EmailAnalysis

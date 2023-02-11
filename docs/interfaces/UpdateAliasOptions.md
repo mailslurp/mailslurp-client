@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UpdateAliasOptions
+
 # Interface: UpdateAliasOptions
 
 Update an email alias
 
-**`export`**
+**`Export`**
 
-**`interface`** UpdateAliasOptions
+**`Interface`**
+
+UpdateAliasOptions
 
 ## Table of contents
 
@@ -14,10 +18,12 @@ Update an email alias
 
 ## Properties
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
 Optional name for alias
 
-**`memberof`** UpdateAliasOptions
+**`Memberof`**
+
+UpdateAliasOptions

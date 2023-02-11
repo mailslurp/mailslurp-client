@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / GroupDto
+
 # Interface: GroupDto
 
 Contact group data
 
-**`export`**
+**`Export`**
 
-**`interface`** GroupDto
+**`Interface`**
+
+GroupDto
 
 ## Table of contents
 
@@ -17,32 +21,40 @@ Contact group data
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** GroupDto
+**`Memberof`**
+
+GroupDto
 
 ___
 
-### <a id="description" name="description"></a> description
+### description
 
 • `Optional` **description**: `string`
 
-**`memberof`** GroupDto
+**`Memberof`**
+
+GroupDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** GroupDto
+**`Memberof`**
+
+GroupDto
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
-**`memberof`** GroupDto
+**`Memberof`**
+
+GroupDto

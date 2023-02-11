@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / TestPhoneNumberOptions
+
 # Interface: TestPhoneNumberOptions
 
-**`export`**
+**`Export`**
 
-**`interface`** TestPhoneNumberOptions
+**`Interface`**
+
+TestPhoneNumberOptions
 
 ## Table of contents
 
@@ -12,8 +16,10 @@
 
 ## Properties
 
-### <a id="message" name="message"></a> message
+### message
 
 • **message**: `string`
 
-**`memberof`** TestPhoneNumberOptions
+**`Memberof`**
+
+TestPhoneNumberOptions

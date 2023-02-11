@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxRulesetDto
+
 # Interface: InboxRulesetDto
 
 Rules for inbox
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxRulesetDto
+**`Interface`**
+
+InboxRulesetDto
 
 ## Table of contents
 
@@ -20,56 +24,70 @@ Rules for inbox
 
 ## Properties
 
-### <a id="action" name="action"></a> action
+### action
 
 • **action**: [`InboxRulesetDtoActionEnum`](../enums/InboxRulesetDtoActionEnum.md)
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="handler" name="handler"></a> handler
+### handler
 
 • **handler**: [`EXCEPTION`](../enums/InboxRulesetDtoHandlerEnum.md#exception)
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="scope" name="scope"></a> scope
+### scope
 
 • **scope**: [`InboxRulesetDtoScopeEnum`](../enums/InboxRulesetDtoScopeEnum.md)
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto
 
 ___
 
-### <a id="target" name="target"></a> target
+### target
 
 • **target**: `string`
 
-**`memberof`** InboxRulesetDto
+**`Memberof`**
+
+InboxRulesetDto

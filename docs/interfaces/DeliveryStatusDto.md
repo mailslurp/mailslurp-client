@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / DeliveryStatusDto
+
 # Interface: DeliveryStatusDto
 
-**`export`**
+**`Export`**
 
-**`interface`** DeliveryStatusDto
+**`Interface`**
+
+DeliveryStatusDto
 
 ## Table of contents
 
@@ -25,112 +29,140 @@
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="processingtimemillis" name="processingtimemillis"></a> processingTimeMillis
+### processingTimeMillis
 
 • `Optional` **processingTimeMillis**: `number`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="received" name="received"></a> received
+### received
 
 • `Optional` **received**: `Date`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="recipients" name="recipients"></a> recipients
+### recipients
 
 • `Optional` **recipients**: `string`[]
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="remotemtaip" name="remotemtaip"></a> remoteMtaIp
+### remoteMtaIp
 
 • `Optional` **remoteMtaIp**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="reportingmta" name="reportingmta"></a> reportingMta
+### reportingMta
 
 • `Optional` **reportingMta**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="sentid" name="sentid"></a> sentId
+### sentId
 
 • `Optional` **sentId**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="smtpresponse" name="smtpresponse"></a> smtpResponse
+### smtpResponse
 
 • `Optional` **smtpResponse**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="smtpstatuscode" name="smtpstatuscode"></a> smtpStatusCode
+### smtpStatusCode
 
 • `Optional` **smtpStatusCode**: `number`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="subject" name="subject"></a> subject
+### subject
 
 • `Optional` **subject**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** DeliveryStatusDto
+**`Memberof`**
+
+DeliveryStatusDto

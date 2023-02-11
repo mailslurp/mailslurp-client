@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / RedriveWebhookResultRequest
+
 # Interface: RedriveWebhookResultRequest
 
 ## Table of contents
@@ -8,6 +10,6 @@
 
 ## Properties
 
-### <a id="webhookresultid" name="webhookresultid"></a> webhookResultId
+### webhookResultId
 
 • **webhookResultId**: `string`

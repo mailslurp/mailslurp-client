@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SendAliasEmailRequest
+
 # Interface: SendAliasEmailRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="aliasid" name="aliasid"></a> aliasId
+### aliasId
 
 • **aliasId**: `string`
 
 ___
 
-### <a id="sendemailoptions" name="sendemailoptions"></a> sendEmailOptions
+### sendEmailOptions
 
 • **sendEmailOptions**: [`SendEmailOptions`](SendEmailOptions.md)

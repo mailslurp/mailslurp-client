@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / AttachmentEntity
+
 # Interface: AttachmentEntity
 
-**`export`**
+**`Export`**
 
-**`interface`** AttachmentEntity
+**`Interface`**
+
+AttachmentEntity
 
 ## Table of contents
 
@@ -20,72 +24,90 @@
 
 ## Properties
 
-### <a id="attachmentid" name="attachmentid"></a> attachmentId
+### attachmentId
 
 • **attachmentId**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="bucket" name="bucket"></a> bucket
+### bucket
 
 • `Optional` **bucket**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="contentlength" name="contentlength"></a> contentLength
+### contentLength
 
 • `Optional` **contentLength**: `number`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="contenttype" name="contenttype"></a> contentType
+### contentType
 
 • `Optional` **contentType**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • `Optional` **id**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
-**`memberof`** AttachmentEntity
+**`Memberof`**
+
+AttachmentEntity

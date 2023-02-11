@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / FetchParams
+
 # Interface: FetchParams
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="init" name="init"></a> init
+### init
 
 • **init**: `RequestInit`
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`

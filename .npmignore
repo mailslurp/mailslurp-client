@@ -1,6 +1,7 @@
 .env
 Makefile
 docs
+docs-html
 bin
 config
 typedoc.json

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / IPAddressResult
+
 # Interface: IPAddressResult
 
 IP Address look up result for a given domain / hostname
 
-**`export`**
+**`Export`**
 
-**`interface`** IPAddressResult
+**`Interface`**
+
+IPAddressResult
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ IP Address look up result for a given domain / hostname
 
 ## Properties
 
-### <a id="address" name="address"></a> address
+### address
 
 • **address**: `string`
 
-**`memberof`** IPAddressResult
+**`Memberof`**
+
+IPAddressResult
 
 ___
 
-### <a id="hostname" name="hostname"></a> hostname
+### hostname
 
 • **hostname**: `string`
 
-**`memberof`** IPAddressResult
+**`Memberof`**
+
+IPAddressResult

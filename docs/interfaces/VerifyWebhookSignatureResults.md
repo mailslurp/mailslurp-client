@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / VerifyWebhookSignatureResults
+
 # Interface: VerifyWebhookSignatureResults
 
-**`export`**
+**`Export`**
 
-**`interface`** VerifyWebhookSignatureResults
+**`Interface`**
+
+VerifyWebhookSignatureResults
 
 ## Table of contents
 
@@ -12,8 +16,10 @@
 
 ## Properties
 
-### <a id="isvalid" name="isvalid"></a> isValid
+### isValid
 
 • **isValid**: `boolean`
 
-**`memberof`** VerifyWebhookSignatureResults
+**`Memberof`**
+
+VerifyWebhookSignatureResults

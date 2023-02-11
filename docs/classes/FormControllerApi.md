@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / FormControllerApi
+
 # Class: FormControllerApi
 
 ## Hierarchy
@@ -27,7 +29,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new FormControllerApi**(`configuration?`)
 
@@ -43,7 +45,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -53,7 +55,7 @@
 
 ## Methods
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -74,7 +76,7 @@
 
 ___
 
-### <a id="submitform" name="submitform"></a> submitForm
+### submitForm
 
 ▸ **submitForm**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -94,7 +96,7 @@ Submit a form to be parsed and sent as an email to an address determined by the 
 
 ___
 
-### <a id="submitformraw" name="submitformraw"></a> submitFormRaw
+### submitFormRaw
 
 ▸ **submitFormRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -114,9 +116,9 @@ Submit a form to be parsed and sent as an email to an address determined by the 
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -141,9 +143,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -168,9 +170,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

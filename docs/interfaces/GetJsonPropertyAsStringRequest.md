@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetJsonPropertyAsStringRequest
+
 # Interface: GetJsonPropertyAsStringRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `object`
 
 ___
 
-### <a id="property" name="property"></a> property
+### property
 
 • **property**: `string`

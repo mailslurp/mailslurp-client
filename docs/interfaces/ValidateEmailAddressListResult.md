@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ValidateEmailAddressListResult
+
 # Interface: ValidateEmailAddressListResult
 
 Result of validating a list of email addresses
 
-**`export`**
+**`Export`**
 
-**`interface`** ValidateEmailAddressListResult
+**`Interface`**
+
+ValidateEmailAddressListResult
 
 ## Table of contents
 
@@ -16,19 +20,23 @@ Result of validating a list of email addresses
 
 ## Properties
 
-### <a id="invalidemailaddresses" name="invalidemailaddresses"></a> invalidEmailAddresses
+### invalidEmailAddresses
 
 • **invalidEmailAddresses**: `string`[]
 
-**`memberof`** ValidateEmailAddressListResult
+**`Memberof`**
+
+ValidateEmailAddressListResult
 
 ___
 
-### <a id="resultmapemailaddressisvalid" name="resultmapemailaddressisvalid"></a> resultMapEmailAddressIsValid
+### resultMapEmailAddressIsValid
 
 • **resultMapEmailAddressIsValid**: `Object`
 
-**`memberof`** ValidateEmailAddressListResult
+**`Memberof`**
+
+ValidateEmailAddressListResult
 
 #### Index signature
 
@@ -36,8 +44,10 @@ ___
 
 ___
 
-### <a id="validemailaddresses" name="validemailaddresses"></a> validEmailAddresses
+### validEmailAddresses
 
 • **validEmailAddresses**: `string`[]
 
-**`memberof`** ValidateEmailAddressListResult
+**`Memberof`**
+
+ValidateEmailAddressListResult

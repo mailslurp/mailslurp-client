@@ -1,8 +1,12 @@
+[MailSlurp JS](../README.md) / EmptyResponseDto
+
 # Interface: EmptyResponseDto
 
-**`export`**
+**`Export`**
 
-**`interface`** EmptyResponseDto
+**`Interface`**
+
+EmptyResponseDto
 
 ## Table of contents
 
@@ -12,8 +16,10 @@
 
 ## Properties
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** EmptyResponseDto
+**`Memberof`**
+
+EmptyResponseDto

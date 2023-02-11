@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailsRequest
+
 # Interface: GetEmailsRequest
 
 ## Table of contents
@@ -17,60 +19,60 @@
 
 ## Properties
 
-### <a id="before" name="before"></a> before
+### before
 
 • `Optional` **before**: `Date`
 
 ___
 
-### <a id="delaytimeout" name="delaytimeout"></a> delayTimeout
+### delayTimeout
 
 • `Optional` **delayTimeout**: `number`
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
 ___
 
-### <a id="limit" name="limit"></a> limit
+### limit
 
 • `Optional` **limit**: `number`
 
 ___
 
-### <a id="mincount" name="mincount"></a> minCount
+### minCount
 
 • `Optional` **minCount**: `number`
 
 ___
 
-### <a id="retrytimeout" name="retrytimeout"></a> retryTimeout
+### retryTimeout
 
 • `Optional` **retryTimeout**: `number`
 
 ___
 
-### <a id="since" name="since"></a> since
+### since
 
 • `Optional` **since**: `Date`
 
 ___
 
-### <a id="size" name="size"></a> size
+### size
 
 • `Optional` **size**: `number`
 
 ___
 
-### <a id="sort" name="sort"></a> sort
+### sort
 
 • `Optional` **sort**: [`GetEmailsSortEnum`](../enums/GetEmailsSortEnum.md)
 
 ___
 
-### <a id="unreadonly" name="unreadonly"></a> unreadOnly
+### unreadOnly
 
 • `Optional` **unreadOnly**: `boolean`

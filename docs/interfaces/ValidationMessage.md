@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / ValidationMessage
+
 # Interface: ValidationMessage
 
 Optional warnings resulting from HTML validation
 
-**`export`**
+**`Export`**
 
-**`interface`** ValidationMessage
+**`Interface`**
+
+ValidationMessage
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Optional warnings resulting from HTML validation
 
 ## Properties
 
-### <a id="linenumber" name="linenumber"></a> lineNumber
+### lineNumber
 
 • **lineNumber**: `number`
 
-**`memberof`** ValidationMessage
+**`Memberof`**
+
+ValidationMessage
 
 ___
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** ValidationMessage
+**`Memberof`**
+
+ValidationMessage

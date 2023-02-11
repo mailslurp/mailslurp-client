@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / FilterBouncedRecipientsOptions
+
 # Interface: FilterBouncedRecipientsOptions
 
 Options for filtering bounced email recipients
 
-**`export`**
+**`Export`**
 
-**`interface`** FilterBouncedRecipientsOptions
+**`Interface`**
+
+FilterBouncedRecipientsOptions
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Options for filtering bounced email recipients
 
 ## Properties
 
-### <a id="emailrecipients" name="emailrecipients"></a> emailRecipients
+### emailRecipients
 
 • **emailRecipients**: `string`[]
 
-**`memberof`** FilterBouncedRecipientsOptions
+**`Memberof`**
+
+FilterBouncedRecipientsOptions

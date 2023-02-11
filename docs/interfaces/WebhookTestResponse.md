@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookTestResponse
+
 # Interface: WebhookTestResponse
 
 Response from webhook test request
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookTestResponse
+**`Interface`**
+
+WebhookTestResponse
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Response from webhook test request
 
 ## Properties
 
-### <a id="message" name="message"></a> message
+### message
 
 • `Optional` **message**: `string`
 
-**`memberof`** WebhookTestResponse
+**`Memberof`**
+
+WebhookTestResponse
 
 ___
 
-### <a id="statuscode" name="statuscode"></a> statusCode
+### statusCode
 
 • `Optional` **statusCode**: `number`
 
-**`memberof`** WebhookTestResponse
+**`Memberof`**
+
+WebhookTestResponse

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxForwarderDto
+
 # Interface: InboxForwarderDto
 
 Inbox forwarder
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxForwarderDto
+**`Interface`**
+
+InboxForwarderDto
 
 ## Table of contents
 
@@ -19,48 +23,60 @@ Inbox forwarder
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto
 
 ___
 
-### <a id="field" name="field"></a> field
+### field
 
 • **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto
 
 ___
 
-### <a id="forwardtorecipients" name="forwardtorecipients"></a> forwardToRecipients
+### forwardToRecipients
 
 • **forwardToRecipients**: `string`[]
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • **inboxId**: `string`
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto
 
 ___
 
-### <a id="match" name="match"></a> match
+### match
 
 • **match**: `string`
 
-**`memberof`** InboxForwarderDto
+**`Memberof`**
+
+InboxForwarderDto

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookTestRequest
+
 # Interface: WebhookTestRequest
 
 Result of webhook test request
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookTestRequest
+**`Interface`**
+
+WebhookTestRequest
 
 ## Table of contents
 
@@ -17,11 +21,13 @@ Result of webhook test request
 
 ## Properties
 
-### <a id="headers" name="headers"></a> headers
+### headers
 
 • **headers**: `Object`
 
-**`memberof`** WebhookTestRequest
+**`Memberof`**
+
+WebhookTestRequest
 
 #### Index signature
 
@@ -29,24 +35,30 @@ Result of webhook test request
 
 ___
 
-### <a id="method" name="method"></a> method
+### method
 
 • **method**: [`WebhookTestRequestMethodEnum`](../enums/WebhookTestRequestMethodEnum.md)
 
-**`memberof`** WebhookTestRequest
+**`Memberof`**
+
+WebhookTestRequest
 
 ___
 
-### <a id="payload" name="payload"></a> payload
+### payload
 
 • `Optional` **payload**: `string`
 
-**`memberof`** WebhookTestRequest
+**`Memberof`**
+
+WebhookTestRequest
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`
 
-**`memberof`** WebhookTestRequest
+**`Memberof`**
+
+WebhookTestRequest

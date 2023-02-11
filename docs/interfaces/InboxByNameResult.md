@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxByNameResult
+
 # Interface: InboxByNameResult
 
 Result of search for inbox by name
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxByNameResult
+**`Interface`**
+
+InboxByNameResult
 
 ## Table of contents
 
@@ -15,16 +19,20 @@ Result of search for inbox by name
 
 ## Properties
 
-### <a id="_exists" name="_exists"></a> \_exists
+### \_exists
 
 • **\_exists**: `boolean`
 
-**`memberof`** InboxByNameResult
+**`Memberof`**
+
+InboxByNameResult
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** InboxByNameResult
+**`Memberof`**
+
+InboxByNameResult

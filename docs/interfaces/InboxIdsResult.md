@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / InboxIdsResult
+
 # Interface: InboxIdsResult
 
 List of inbox IDs and email addresses
 
-**`export`**
+**`Export`**
 
-**`interface`** InboxIdsResult
+**`Interface`**
+
+InboxIdsResult
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ List of inbox IDs and email addresses
 
 ## Properties
 
-### <a id="inboxids" name="inboxids"></a> inboxIds
+### inboxIds
 
 • **inboxIds**: [`InboxIdItem`](InboxIdItem.md)[]
 
-**`memberof`** InboxIdsResult
+**`Memberof`**
+
+InboxIdsResult

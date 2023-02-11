@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / CreateNewEmailAddressRequest
+
 # Interface: CreateNewEmailAddressRequest
 
 ## Table of contents
@@ -19,72 +21,72 @@
 
 ## Properties
 
-### <a id="allowteamaccess" name="allowteamaccess"></a> allowTeamAccess
+### allowTeamAccess
 
 • `Optional` **allowTeamAccess**: `boolean`
 
 ___
 
-### <a id="description" name="description"></a> description
+### description
 
 • `Optional` **description**: `string`
 
 ___
 
-### <a id="emailaddress" name="emailaddress"></a> emailAddress
+### emailAddress
 
 • `Optional` **emailAddress**: `string`
 
 ___
 
-### <a id="expiresat" name="expiresat"></a> expiresAt
+### expiresAt
 
 • `Optional` **expiresAt**: `Date`
 
 ___
 
-### <a id="expiresin" name="expiresin"></a> expiresIn
+### expiresIn
 
 • `Optional` **expiresIn**: `number`
 
 ___
 
-### <a id="favourite" name="favourite"></a> favourite
+### favourite
 
 • `Optional` **favourite**: `boolean`
 
 ___
 
-### <a id="inboxtype" name="inboxtype"></a> inboxType
+### inboxType
 
 • `Optional` **inboxType**: [`CreateNewEmailAddressInboxTypeEnum`](../enums/CreateNewEmailAddressInboxTypeEnum.md)
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
 ___
 
-### <a id="tags" name="tags"></a> tags
+### tags
 
 • `Optional` **tags**: `string`[]
 
 ___
 
-### <a id="usedomainpool" name="usedomainpool"></a> useDomainPool
+### useDomainPool
 
 • `Optional` **useDomainPool**: `boolean`
 
 ___
 
-### <a id="useshortaddress" name="useshortaddress"></a> useShortAddress
+### useShortAddress
 
 • `Optional` **useShortAddress**: `boolean`
 
 ___
 
-### <a id="virtualinbox" name="virtualinbox"></a> virtualInbox
+### virtualInbox
 
 • `Optional` **virtualInbox**: `boolean`

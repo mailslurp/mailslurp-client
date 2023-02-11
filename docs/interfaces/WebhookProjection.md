@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookProjection
+
 # Interface: WebhookProjection
 
 Representation of a webhook
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookProjection
+**`Interface`**
+
+WebhookProjection
 
 ## Table of contents
 
@@ -21,64 +25,80 @@ Representation of a webhook
 
 ## Properties
 
-### <a id="createdat" name="createdat"></a> createdAt
+### createdAt
 
 • **createdAt**: `Date`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • `Optional` **eventName**: [`WebhookProjectionEventNameEnum`](../enums/WebhookProjectionEventNameEnum.md)
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="id" name="id"></a> id
+### id
 
 • **id**: `string`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="inboxid" name="inboxid"></a> inboxId
+### inboxId
 
 • `Optional` **inboxId**: `string`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • `Optional` **name**: `string`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="phonenumberid" name="phonenumberid"></a> phoneNumberId
+### phoneNumberId
 
 • `Optional` **phoneNumberId**: `string`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="updatedat" name="updatedat"></a> updatedAt
+### updatedAt
 
 • **updatedAt**: `Date`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection
 
 ___
 
-### <a id="url" name="url"></a> url
+### url
 
 • **url**: `string`
 
-**`memberof`** WebhookProjection
+**`Memberof`**
+
+WebhookProjection

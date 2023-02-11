@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / UnreadCount
+
 # Interface: UnreadCount
 
 Number of unread emails
 
-**`export`**
+**`Export`**
 
-**`interface`** UnreadCount
+**`Interface`**
+
+UnreadCount
 
 ## Table of contents
 
@@ -14,8 +18,10 @@ Number of unread emails
 
 ## Properties
 
-### <a id="count" name="count"></a> count
+### count
 
 • **count**: `number`
 
-**`memberof`** UnreadCount
+**`Memberof`**
+
+UnreadCount

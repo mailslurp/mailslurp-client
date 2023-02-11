@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / EmailVerificationControllerApi
+
 # Class: EmailVerificationControllerApi
 
 ## Hierarchy
@@ -29,7 +31,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new EmailVerificationControllerApi**(`configuration?`)
 
@@ -45,7 +47,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -55,7 +57,7 @@
 
 ## Methods
 
-### <a id="getvalidationrequests" name="getvalidationrequests"></a> getValidationRequests
+### getValidationRequests
 
 ▸ **getValidationRequests**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>
 
@@ -74,7 +76,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### <a id="getvalidationrequestsraw" name="getvalidationrequestsraw"></a> getValidationRequestsRaw
+### getValidationRequestsRaw
 
 ▸ **getValidationRequestsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailValidationRequest`](../interfaces/PageEmailValidationRequest.md)\>\>
 
@@ -93,7 +95,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -114,7 +116,7 @@ ___
 
 ___
 
-### <a id="validateemailaddresslist" name="validateemailaddresslist"></a> validateEmailAddressList
+### validateEmailAddressList
 
 ▸ **validateEmailAddressList**(`requestParameters`, `initOverrides?`): `Promise`<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>
 
@@ -133,7 +135,7 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### <a id="validateemailaddresslistraw" name="validateemailaddresslistraw"></a> validateEmailAddressListRaw
+### validateEmailAddressListRaw
 
 ▸ **validateEmailAddressListRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ValidateEmailAddressListResult`](../interfaces/ValidateEmailAddressListResult.md)\>\>
 
@@ -152,9 +154,9 @@ Validate a list of email addresses. Per unit billing. See your plan for pricing.
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -179,9 +181,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -206,9 +208,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

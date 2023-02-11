@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / MatchOptionShouldEnum
+
 # Enumeration: MatchOptionShouldEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="contain" name="contain"></a> CONTAIN
+### CONTAIN
 
-• **CONTAIN**
+• **CONTAIN** = ``"CONTAIN"``
 
 ___
 
-### <a id="equal" name="equal"></a> EQUAL
+### EQUAL
 
-• **EQUAL**
+• **EQUAL** = ``"EQUAL"``

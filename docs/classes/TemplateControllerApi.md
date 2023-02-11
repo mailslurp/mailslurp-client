@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / TemplateControllerApi
+
 # Class: TemplateControllerApi
 
 ## Hierarchy
@@ -41,7 +43,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new TemplateControllerApi**(`configuration?`)
 
@@ -57,7 +59,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -67,7 +69,7 @@
 
 ## Methods
 
-### <a id="createtemplate" name="createtemplate"></a> createTemplate
+### createTemplate
 
 ▸ **createTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -87,7 +89,7 @@ Create a Template
 
 ___
 
-### <a id="createtemplateraw" name="createtemplateraw"></a> createTemplateRaw
+### createTemplateRaw
 
 ▸ **createTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -107,7 +109,7 @@ Create a Template
 
 ___
 
-### <a id="deletetemplate" name="deletetemplate"></a> deleteTemplate
+### deleteTemplate
 
 ▸ **deleteTemplate**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -127,7 +129,7 @@ Delete email template
 
 ___
 
-### <a id="deletetemplateraw" name="deletetemplateraw"></a> deleteTemplateRaw
+### deleteTemplateRaw
 
 ▸ **deleteTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -147,7 +149,7 @@ Delete email template
 
 ___
 
-### <a id="getalltemplates" name="getalltemplates"></a> getAllTemplates
+### getAllTemplates
 
 ▸ **getAllTemplates**(`requestParameters`, `initOverrides?`): `Promise`<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>
 
@@ -167,7 +169,7 @@ List templates
 
 ___
 
-### <a id="getalltemplatesraw" name="getalltemplatesraw"></a> getAllTemplatesRaw
+### getAllTemplatesRaw
 
 ▸ **getAllTemplatesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageTemplateProjection`](../interfaces/PageTemplateProjection.md)\>\>
 
@@ -187,7 +189,7 @@ List templates
 
 ___
 
-### <a id="gettemplate" name="gettemplate"></a> getTemplate
+### getTemplate
 
 ▸ **getTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -207,7 +209,7 @@ Get template
 
 ___
 
-### <a id="gettemplatepreviewhtml" name="gettemplatepreviewhtml"></a> getTemplatePreviewHtml
+### getTemplatePreviewHtml
 
 ▸ **getTemplatePreviewHtml**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
@@ -227,7 +229,7 @@ Get template preview HTML
 
 ___
 
-### <a id="gettemplatepreviewhtmlraw" name="gettemplatepreviewhtmlraw"></a> getTemplatePreviewHtmlRaw
+### getTemplatePreviewHtmlRaw
 
 ▸ **getTemplatePreviewHtmlRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
@@ -247,7 +249,7 @@ Get template preview HTML
 
 ___
 
-### <a id="gettemplatepreviewjson" name="gettemplatepreviewjson"></a> getTemplatePreviewJson
+### getTemplatePreviewJson
 
 ▸ **getTemplatePreviewJson**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>
 
@@ -267,7 +269,7 @@ Get template preview Json
 
 ___
 
-### <a id="gettemplatepreviewjsonraw" name="gettemplatepreviewjsonraw"></a> getTemplatePreviewJsonRaw
+### getTemplatePreviewJsonRaw
 
 ▸ **getTemplatePreviewJsonRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplatePreview`](../interfaces/TemplatePreview.md)\>\>
 
@@ -287,7 +289,7 @@ Get template preview Json
 
 ___
 
-### <a id="gettemplateraw" name="gettemplateraw"></a> getTemplateRaw
+### getTemplateRaw
 
 ▸ **getTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -307,7 +309,7 @@ Get template
 
 ___
 
-### <a id="gettemplates" name="gettemplates"></a> getTemplates
+### getTemplates
 
 ▸ **getTemplates**(`initOverrides?`): `Promise`<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>
 
@@ -326,7 +328,7 @@ List templates
 
 ___
 
-### <a id="gettemplatesraw" name="gettemplatesraw"></a> getTemplatesRaw
+### getTemplatesRaw
 
 ▸ **getTemplatesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateProjection`](../interfaces/TemplateProjection.md)[]\>\>
 
@@ -345,7 +347,7 @@ List templates
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -366,7 +368,7 @@ ___
 
 ___
 
-### <a id="updatetemplate" name="updatetemplate"></a> updateTemplate
+### updateTemplate
 
 ▸ **updateTemplate**(`requestParameters`, `initOverrides?`): `Promise`<[`TemplateDto`](../interfaces/TemplateDto.md)\>
 
@@ -386,7 +388,7 @@ Update template
 
 ___
 
-### <a id="updatetemplateraw" name="updatetemplateraw"></a> updateTemplateRaw
+### updateTemplateRaw
 
 ▸ **updateTemplateRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TemplateDto`](../interfaces/TemplateDto.md)\>\>
 
@@ -406,9 +408,9 @@ Update template
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -433,9 +435,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -460,9 +462,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / WebhookNewSmsPayload
+
 # Interface: WebhookNewSmsPayload
 
 NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an sms is received by the phone number that your webhook is attached to. Use the SMS ID to fetch the full SMS details.
 
-**`export`**
+**`Export`**
 
-**`interface`** WebhookNewSmsPayload
+**`Interface`**
+
+WebhookNewSmsPayload
 
 ## Table of contents
 
@@ -24,110 +28,132 @@ NEW_SMS webhook payload. Sent to your webhook url endpoint via HTTP POST when an
 
 ## Properties
 
-### <a id="body" name="body"></a> body
+### body
 
 • **body**: `string`
 
 SMS message body
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="eventname" name="eventname"></a> eventName
+### eventName
 
 • **eventName**: [`WebhookNewSmsPayloadEventNameEnum`](../enums/WebhookNewSmsPayloadEventNameEnum.md)
 
 Name of the event type webhook is being triggered for.
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="fromnumber" name="fromnumber"></a> fromNumber
+### fromNumber
 
 • **fromNumber**: `string`
 
 Sender phone number
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="messageid" name="messageid"></a> messageId
+### messageId
 
 • **messageId**: `string`
 
 Idempotent message ID. Store this ID locally or in a database to prevent message duplication.
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="phonenumber" name="phonenumber"></a> phoneNumber
+### phoneNumber
 
 • **phoneNumber**: `string`
 
 ID of phone number receiving SMS
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="read" name="read"></a> read
+### read
 
 • **read**: `boolean`
 
 SMS has been read
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="smsid" name="smsid"></a> smsId
+### smsId
 
 • **smsId**: `string`
 
 ID of SMS message
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="tonumber" name="tonumber"></a> toNumber
+### toNumber
 
 • **toNumber**: `string`
 
 Recipient phone number
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="userid" name="userid"></a> userId
+### userId
 
 • **userId**: `string`
 
 User ID of event
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="webhookid" name="webhookid"></a> webhookId
+### webhookId
 
 • **webhookId**: `string`
 
 ID of webhook entity being triggered
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload
 
 ___
 
-### <a id="webhookname" name="webhookname"></a> webhookName
+### webhookName
 
 • `Optional` **webhookName**: `string`
 
 Name of the webhook being triggered
 
-**`memberof`** WebhookNewSmsPayload
+**`Memberof`**
+
+WebhookNewSmsPayload

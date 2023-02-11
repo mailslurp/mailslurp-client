@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / TestPhoneNumberSendSmsRequest
+
 # Interface: TestPhoneNumberSendSmsRequest
 
 ## Table of contents
@@ -10,18 +12,18 @@
 
 ## Properties
 
-### <a id="phonenumberid" name="phonenumberid"></a> phoneNumberId
+### phoneNumberId
 
 • **phoneNumberId**: `string`
 
 ___
 
-### <a id="testphonenumberoptions" name="testphonenumberoptions"></a> testPhoneNumberOptions
+### testPhoneNumberOptions
 
 • **testPhoneNumberOptions**: [`TestPhoneNumberOptions`](TestPhoneNumberOptions.md)
 
 ___
 
-### <a id="xtestid" name="xtestid"></a> xTestId
+### xTestId
 
 • `Optional` **xTestId**: `string`

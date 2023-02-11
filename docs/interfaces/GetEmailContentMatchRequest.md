@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / GetEmailContentMatchRequest
+
 # Interface: GetEmailContentMatchRequest
 
 ## Table of contents
@@ -9,12 +11,12 @@
 
 ## Properties
 
-### <a id="contentmatchoptions" name="contentmatchoptions"></a> contentMatchOptions
+### contentMatchOptions
 
 • **contentMatchOptions**: [`ContentMatchOptions`](ContentMatchOptions.md)
 
 ___
 
-### <a id="emailid" name="emailid"></a> emailId
+### emailId
 
 • **emailId**: `string`

@@ -1,6 +1,8 @@
+[MailSlurp JS](../README.md) / CreateEmergencyAddressOptionsIsoCountryCodeEnum
+
 # Enumeration: CreateEmergencyAddressOptionsIsoCountryCodeEnum
 
-**`export`**
+**`Export`**
 
 ## Table of contents
 
@@ -11,12 +13,12 @@
 
 ## Enumeration Members
 
-### <a id="gb" name="gb"></a> GB
+### GB
 
-• **GB**
+• **GB** = ``"GB"``
 
 ___
 
-### <a id="us" name="us"></a> US
+### US
 
-• **US**
+• **US** = ``"US"``

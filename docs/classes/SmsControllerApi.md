@@ -1,3 +1,5 @@
+[MailSlurp JS](../README.md) / SmsControllerApi
+
 # Class: SmsControllerApi
 
 ## Hierarchy
@@ -33,7 +35,7 @@
 
 ## Constructors
 
-### <a id="constructor" name="constructor"></a> constructor
+### constructor
 
 • **new SmsControllerApi**(`configuration?`)
 
@@ -49,7 +51,7 @@
 
 ## Properties
 
-### <a id="configuration" name="configuration"></a> configuration
+### configuration
 
 • `Protected` **configuration**: [`Configuration`](Configuration.md)
 
@@ -59,7 +61,7 @@
 
 ## Methods
 
-### <a id="deletesmsmessage" name="deletesmsmessage"></a> deleteSmsMessage
+### deleteSmsMessage
 
 ▸ **deleteSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -79,7 +81,7 @@ Delete SMS message.
 
 ___
 
-### <a id="deletesmsmessageraw" name="deletesmsmessageraw"></a> deleteSmsMessageRaw
+### deleteSmsMessageRaw
 
 ▸ **deleteSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -99,7 +101,7 @@ Delete SMS message.
 
 ___
 
-### <a id="deletesmsmessages" name="deletesmsmessages"></a> deleteSmsMessages
+### deleteSmsMessages
 
 ▸ **deleteSmsMessages**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
@@ -119,7 +121,7 @@ Delete all SMS messages
 
 ___
 
-### <a id="deletesmsmessagesraw" name="deletesmsmessagesraw"></a> deleteSmsMessagesRaw
+### deleteSmsMessagesRaw
 
 ▸ **deleteSmsMessagesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
@@ -139,7 +141,7 @@ Delete all SMS messages
 
 ___
 
-### <a id="getsmsmessage" name="getsmsmessage"></a> getSmsMessage
+### getSmsMessage
 
 ▸ **getSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`SmsDto`](../interfaces/SmsDto.md)\>
 
@@ -159,7 +161,7 @@ Get SMS content including body. Expects SMS to exist by ID. For SMS that may not
 
 ___
 
-### <a id="getsmsmessageraw" name="getsmsmessageraw"></a> getSmsMessageRaw
+### getSmsMessageRaw
 
 ▸ **getSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmsDto`](../interfaces/SmsDto.md)\>\>
 
@@ -179,7 +181,7 @@ Get SMS content including body. Expects SMS to exist by ID. For SMS that may not
 
 ___
 
-### <a id="getsmsmessagespaginated" name="getsmsmessagespaginated"></a> getSmsMessagesPaginated
+### getSmsMessagesPaginated
 
 ▸ **getSmsMessagesPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>
 
@@ -199,7 +201,7 @@ Get all SMS messages in all phone numbers in paginated form. .
 
 ___
 
-### <a id="getsmsmessagespaginatedraw" name="getsmsmessagespaginatedraw"></a> getSmsMessagesPaginatedRaw
+### getSmsMessagesPaginatedRaw
 
 ▸ **getSmsMessagesPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>\>
 
@@ -219,7 +221,7 @@ Get all SMS messages in all phone numbers in paginated form. .
 
 ___
 
-### <a id="request" name="request"></a> request
+### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
 
@@ -240,9 +242,9 @@ ___
 
 ___
 
-### <a id="withmiddleware" name="withmiddleware"></a> withMiddleware
+### withMiddleware
 
-▸ **withMiddleware**<`T`\>(`this`, ...`middlewares`): `T`
+▸ **withMiddleware**<`T`\>(`this`, `...middlewares`): `T`
 
 #### Type parameters
 
@@ -267,9 +269,9 @@ ___
 
 ___
 
-### <a id="withpostmiddleware" name="withpostmiddleware"></a> withPostMiddleware
+### withPostMiddleware
 
-▸ **withPostMiddleware**<`T`\>(`this`, ...`postMiddlewares`): `T`
+▸ **withPostMiddleware**<`T`\>(`this`, `...postMiddlewares`): `T`
 
 #### Type parameters
 
@@ -294,9 +296,9 @@ ___
 
 ___
 
-### <a id="withpremiddleware" name="withpremiddleware"></a> withPreMiddleware
+### withPreMiddleware
 
-▸ **withPreMiddleware**<`T`\>(`this`, ...`preMiddlewares`): `T`
+▸ **withPreMiddleware**<`T`\>(`this`, `...preMiddlewares`): `T`
 
 #### Type parameters
 

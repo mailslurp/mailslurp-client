@@ -1,10 +1,14 @@
+[MailSlurp JS](../README.md) / CreateTemplateOptions
+
 # Interface: CreateTemplateOptions
 
 Create template options
 
-**`export`**
+**`Export`**
 
-**`interface`** CreateTemplateOptions
+**`Interface`**
+
+CreateTemplateOptions
 
 ## Table of contents
 
@@ -15,20 +19,24 @@ Create template options
 
 ## Properties
 
-### <a id="content" name="content"></a> content
+### content
 
 • **content**: `string`
 
 Template content. Can include moustache style variables such as {{var_name}}
 
-**`memberof`** CreateTemplateOptions
+**`Memberof`**
+
+CreateTemplateOptions
 
 ___
 
-### <a id="name" name="name"></a> name
+### name
 
 • **name**: `string`
 
 Name of template
 
-**`memberof`** CreateTemplateOptions
+**`Memberof`**
+
+CreateTemplateOptions
