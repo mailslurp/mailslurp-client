@@ -87,7 +87,7 @@ export type Config = {
 
  * ## Call methods
  * Most methods are asynchronous and return Promises. You can `await` the results or use `.then(result => {})`
- * Common controllers include the [InboxController](https://docs.mailslurp.com/js/docs/classes/inboxcontrollerapi/), [EmailController](https://docs.mailslurp.com/js/docs/classes/emailcontrollerapi/) and the [WaitForController](https://docs.mailslurp.com/js/docs/classes/waitforcontrollerapi/) for receiving emails.
+ * Common controllers include the [InboxController](https://mailslurp.github.io/mailslurp-client/classes/InboxControllerApi.html), [EmailController](https://mailslurp.github.io/mailslurp-client/classes/EmailControllerApi.html), [SMSController](https://mailslurp.github.io/mailslurp-client/classes/SmsControllerApi.html) and the [WaitForController](https://mailslurp.github.io/mailslurp-client/classes/WaitForControllerApi.html) for receiving emails.
  *
  * ```javascript
  * // call convenience functions

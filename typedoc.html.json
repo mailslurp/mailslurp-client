@@ -6,6 +6,7 @@
     "tsconfig": "./tsconfig.json",
     "disableSources": true,
     "navigationLinks": {
+        "Setup": "/classes/MailSlurp.html",
         "Guides": "https://www.mailslurp.com/guides/",
         "Examples": "https://github.com/mailslurp/examples/",
         "Dashboard": "https://app.mailslurp.com/login/",
