@@ -22,6 +22,17 @@ var PhoneNumberProjectionPhoneCountryEnum;
 (function (PhoneNumberProjectionPhoneCountryEnum) {
     PhoneNumberProjectionPhoneCountryEnum["US"] = "US";
     PhoneNumberProjectionPhoneCountryEnum["GB"] = "GB";
+    PhoneNumberProjectionPhoneCountryEnum["AU"] = "AU";
+    PhoneNumberProjectionPhoneCountryEnum["DE"] = "DE";
+    PhoneNumberProjectionPhoneCountryEnum["CA"] = "CA";
+    PhoneNumberProjectionPhoneCountryEnum["HK"] = "HK";
+    PhoneNumberProjectionPhoneCountryEnum["IT"] = "IT";
+    PhoneNumberProjectionPhoneCountryEnum["SE"] = "SE";
+    PhoneNumberProjectionPhoneCountryEnum["NL"] = "NL";
+    PhoneNumberProjectionPhoneCountryEnum["CH"] = "CH";
+    PhoneNumberProjectionPhoneCountryEnum["EE"] = "EE";
+    PhoneNumberProjectionPhoneCountryEnum["PL"] = "PL";
+    PhoneNumberProjectionPhoneCountryEnum["BE"] = "BE";
 })(PhoneNumberProjectionPhoneCountryEnum = exports.PhoneNumberProjectionPhoneCountryEnum || (exports.PhoneNumberProjectionPhoneCountryEnum = {}));
 function PhoneNumberProjectionFromJSON(json) {
     return PhoneNumberProjectionFromJSONTyped(json, false);
@@ -33,8 +44,8 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        createdAt: new Date(json['createdAt']),
         userId: json['userId'],
+        createdAt: new Date(json['createdAt']),
         phoneNumber: json['phoneNumber'],
         phoneCountry: json['phoneCountry'],
     };
@@ -49,8 +60,8 @@ function PhoneNumberProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        createdAt: value.createdAt.toISOString(),
         userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
         phoneNumber: value.phoneNumber,
         phoneCountry: value.phoneCountry,
     };

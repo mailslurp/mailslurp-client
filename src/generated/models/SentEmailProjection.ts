@@ -54,25 +54,7 @@ export interface SentEmailProjection {
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  cc: Array<string>;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SentEmailProjection
-   */
-  virtualSend: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  bodyMD5Hash?: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof SentEmailProjection
-   */
-  bcc: Array<string>;
+  attachments: Array<string>;
   /**
    *
    * @type {Date}
@@ -84,13 +66,31 @@ export interface SentEmailProjection {
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  attachments: Array<string>;
+  to: Array<string>;
   /**
    *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
-  to: Array<string>;
+  bcc: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof SentEmailProjection
+   */
+  cc: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  bodyMD5Hash?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SentEmailProjection
+   */
+  virtualSend: boolean;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -110,13 +110,13 @@ export function SentEmailProjectionFromJSONTyped(
     userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     inboxId: json['inboxId'],
-    cc: json['cc'],
-    virtualSend: json['virtualSend'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-    bcc: json['bcc'],
-    createdAt: new Date(json['createdAt']),
     attachments: json['attachments'],
+    createdAt: new Date(json['createdAt']),
     to: json['to'],
+    bcc: json['bcc'],
+    cc: json['cc'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    virtualSend: json['virtualSend'],
   };
 }
 
@@ -135,12 +135,12 @@ export function SentEmailProjectionToJSON(
     userId: value.userId,
     subject: value.subject,
     inboxId: value.inboxId,
-    cc: value.cc,
-    virtualSend: value.virtualSend,
-    bodyMD5Hash: value.bodyMD5Hash,
-    bcc: value.bcc,
-    createdAt: value.createdAt.toISOString(),
     attachments: value.attachments,
+    createdAt: value.createdAt.toISOString(),
     to: value.to,
+    bcc: value.bcc,
+    cc: value.cc,
+    bodyMD5Hash: value.bodyMD5Hash,
+    virtualSend: value.virtualSend,
   };
 }

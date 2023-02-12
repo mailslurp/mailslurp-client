@@ -551,6 +551,17 @@ var GetPhoneNumbersPhoneCountryEnum;
 (function (GetPhoneNumbersPhoneCountryEnum) {
     GetPhoneNumbersPhoneCountryEnum["US"] = "US";
     GetPhoneNumbersPhoneCountryEnum["GB"] = "GB";
+    GetPhoneNumbersPhoneCountryEnum["AU"] = "AU";
+    GetPhoneNumbersPhoneCountryEnum["DE"] = "DE";
+    GetPhoneNumbersPhoneCountryEnum["CA"] = "CA";
+    GetPhoneNumbersPhoneCountryEnum["HK"] = "HK";
+    GetPhoneNumbersPhoneCountryEnum["IT"] = "IT";
+    GetPhoneNumbersPhoneCountryEnum["SE"] = "SE";
+    GetPhoneNumbersPhoneCountryEnum["NL"] = "NL";
+    GetPhoneNumbersPhoneCountryEnum["CH"] = "CH";
+    GetPhoneNumbersPhoneCountryEnum["EE"] = "EE";
+    GetPhoneNumbersPhoneCountryEnum["PL"] = "PL";
+    GetPhoneNumbersPhoneCountryEnum["BE"] = "BE";
 })(GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumbersPhoneCountryEnum || (exports.GetPhoneNumbersPhoneCountryEnum = {}));
 /**
  * @export

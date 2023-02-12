@@ -25,11 +25,11 @@ function BounceProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        sender: json['sender'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        sender: json['sender'],
         createdAt: new Date(json['createdAt']),
-        bounceMta: !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
         bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
+        bounceMta: !(0, runtime_1.exists)(json, 'bounceMta') ? undefined : json['bounceMta'],
     };
 }
 exports.BounceProjectionFromJSONTyped = BounceProjectionFromJSONTyped;
@@ -42,11 +42,11 @@ function BounceProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        sender: value.sender,
         subject: value.subject,
+        sender: value.sender,
         createdAt: value.createdAt.toISOString(),
-        bounceMta: value.bounceMta,
         bounceType: value.bounceType,
+        bounceMta: value.bounceMta,
     };
 }
 exports.BounceProjectionToJSON = BounceProjectionToJSON;

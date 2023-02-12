@@ -29,16 +29,16 @@ export interface BounceRecipientProjection {
     status?: string | null;
     /**
      *
-     * @type {Date}
-     * @memberof BounceRecipientProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof BounceRecipientProjection
      */
     sentEmailId?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof BounceRecipientProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

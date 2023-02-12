@@ -25,8 +25,8 @@ function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         body: json['body'],
-        createdAt: new Date(json['createdAt']),
         userId: json['userId'],
+        createdAt: new Date(json['createdAt']),
         phoneNumber: json['phoneNumber'],
         fromNumber: json['fromNumber'],
         read: json['read'],
@@ -43,8 +43,8 @@ function SmsProjectionToJSON(value) {
     return {
         id: value.id,
         body: value.body,
-        createdAt: value.createdAt.toISOString(),
         userId: value.userId,
+        createdAt: value.createdAt.toISOString(),
         phoneNumber: value.phoneNumber,
         fromNumber: value.fromNumber,
         read: value.read,

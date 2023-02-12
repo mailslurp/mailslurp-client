@@ -23,6 +23,17 @@ var EmergencyAddressPhoneCountryEnum;
 (function (EmergencyAddressPhoneCountryEnum) {
     EmergencyAddressPhoneCountryEnum["US"] = "US";
     EmergencyAddressPhoneCountryEnum["GB"] = "GB";
+    EmergencyAddressPhoneCountryEnum["AU"] = "AU";
+    EmergencyAddressPhoneCountryEnum["DE"] = "DE";
+    EmergencyAddressPhoneCountryEnum["CA"] = "CA";
+    EmergencyAddressPhoneCountryEnum["HK"] = "HK";
+    EmergencyAddressPhoneCountryEnum["IT"] = "IT";
+    EmergencyAddressPhoneCountryEnum["SE"] = "SE";
+    EmergencyAddressPhoneCountryEnum["NL"] = "NL";
+    EmergencyAddressPhoneCountryEnum["CH"] = "CH";
+    EmergencyAddressPhoneCountryEnum["EE"] = "EE";
+    EmergencyAddressPhoneCountryEnum["PL"] = "PL";
+    EmergencyAddressPhoneCountryEnum["BE"] = "BE";
 })(EmergencyAddressPhoneCountryEnum = exports.EmergencyAddressPhoneCountryEnum || (exports.EmergencyAddressPhoneCountryEnum = {}));
 function EmergencyAddressFromJSON(json) {
     return EmergencyAddressFromJSONTyped(json, false);

@@ -571,6 +571,17 @@ export class PhoneControllerApi extends runtime.BaseAPI {
 export enum GetPhoneNumbersPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
+  DE = 'DE',
+  CA = 'CA',
+  HK = 'HK',
+  IT = 'IT',
+  SE = 'SE',
+  NL = 'NL',
+  CH = 'CH',
+  EE = 'EE',
+  PL = 'PL',
+  BE = 'BE',
 }
 /**
  * @export

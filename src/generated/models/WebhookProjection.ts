@@ -39,6 +39,18 @@ export interface WebhookProjection {
   url: string;
   /**
    *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  inboxId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookProjection
+   */
+  eventName?: WebhookProjectionEventNameEnum;
+  /**
+   *
    * @type {Date}
    * @memberof WebhookProjection
    */
@@ -49,18 +61,6 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   updatedAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  eventName?: WebhookProjectionEventNameEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookProjection
-   */
-  inboxId?: string;
   /**
    *
    * @type {string}
@@ -101,10 +101,10 @@ export function WebhookProjectionFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
     url: json['url'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
-    eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
@@ -122,10 +122,10 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     name: value.name,
     id: value.id,
     url: value.url,
+    inboxId: value.inboxId,
+    eventName: value.eventName,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
-    eventName: value.eventName,
-    inboxId: value.inboxId,
     phoneNumberId: value.phoneNumberId,
   };
 }

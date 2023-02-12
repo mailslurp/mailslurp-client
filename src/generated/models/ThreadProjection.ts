@@ -32,11 +32,23 @@ export interface ThreadProjection {
    */
   id: string;
   /**
+   * User ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  userId: string;
+  /**
    * Thread subject
    * @type {string}
    * @memberof ThreadProjection
    */
   subject?: string;
+  /**
+   * Inbox ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  inboxId: string;
   /**
    * Created at DateTime
    * @type {Date}
@@ -49,18 +61,6 @@ export interface ThreadProjection {
    * @memberof ThreadProjection
    */
   updatedAt: Date;
-  /**
-   * Inbox ID
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  inboxId: string;
-  /**
-   * User ID
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  userId: string;
   /**
    * To recipients
    * @type {Array<string>}
@@ -101,11 +101,11 @@ export function ThreadProjectionFromJSONTyped(
   return {
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
+    userId: json['userId'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    inboxId: json['inboxId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
-    inboxId: json['inboxId'],
-    userId: json['userId'],
     to: json['to'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
@@ -123,11 +123,11 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
   return {
     name: value.name,
     id: value.id,
+    userId: value.userId,
     subject: value.subject,
+    inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
-    inboxId: value.inboxId,
-    userId: value.userId,
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,

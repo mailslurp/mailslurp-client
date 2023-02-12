@@ -35,6 +35,18 @@ export interface WebhookProjection {
     url: string;
     /**
      *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    inboxId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    eventName?: WebhookProjectionEventNameEnum;
+    /**
+     *
      * @type {Date}
      * @memberof WebhookProjection
      */
@@ -45,18 +57,6 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     updatedAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    eventName?: WebhookProjectionEventNameEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    inboxId?: string;
     /**
      *
      * @type {string}

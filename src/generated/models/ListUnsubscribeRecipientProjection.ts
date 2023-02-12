@@ -27,16 +27,16 @@ export interface ListUnsubscribeRecipientProjection {
   id: string;
   /**
    *
-   * @type {Date}
-   * @memberof ListUnsubscribeRecipientProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof ListUnsubscribeRecipientProjection
    */
   emailAddress: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -60,8 +60,8 @@ export function ListUnsubscribeRecipientProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    createdAt: new Date(json['createdAt']),
     emailAddress: json['emailAddress'],
+    createdAt: new Date(json['createdAt']),
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
   };
 }
@@ -77,8 +77,8 @@ export function ListUnsubscribeRecipientProjectionToJSON(
   }
   return {
     id: value.id,
-    createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
+    createdAt: value.createdAt.toISOString(),
     domainId: value.domainId,
   };
 }

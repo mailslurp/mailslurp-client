@@ -23,6 +23,17 @@ var PhoneNumberDtoPhoneCountryEnum;
 (function (PhoneNumberDtoPhoneCountryEnum) {
     PhoneNumberDtoPhoneCountryEnum["US"] = "US";
     PhoneNumberDtoPhoneCountryEnum["GB"] = "GB";
+    PhoneNumberDtoPhoneCountryEnum["AU"] = "AU";
+    PhoneNumberDtoPhoneCountryEnum["DE"] = "DE";
+    PhoneNumberDtoPhoneCountryEnum["CA"] = "CA";
+    PhoneNumberDtoPhoneCountryEnum["HK"] = "HK";
+    PhoneNumberDtoPhoneCountryEnum["IT"] = "IT";
+    PhoneNumberDtoPhoneCountryEnum["SE"] = "SE";
+    PhoneNumberDtoPhoneCountryEnum["NL"] = "NL";
+    PhoneNumberDtoPhoneCountryEnum["CH"] = "CH";
+    PhoneNumberDtoPhoneCountryEnum["EE"] = "EE";
+    PhoneNumberDtoPhoneCountryEnum["PL"] = "PL";
+    PhoneNumberDtoPhoneCountryEnum["BE"] = "BE";
 })(PhoneNumberDtoPhoneCountryEnum = exports.PhoneNumberDtoPhoneCountryEnum || (exports.PhoneNumberDtoPhoneCountryEnum = {}));
 function PhoneNumberDtoFromJSON(json) {
     return PhoneNumberDtoFromJSONTyped(json, false);

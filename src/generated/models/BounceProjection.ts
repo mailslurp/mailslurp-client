@@ -30,13 +30,13 @@ export interface BounceProjection {
    * @type {string}
    * @memberof BounceProjection
    */
-  sender: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof BounceProjection
    */
-  subject?: string | null;
+  sender: string;
   /**
    *
    * @type {Date}
@@ -48,13 +48,13 @@ export interface BounceProjection {
    * @type {string}
    * @memberof BounceProjection
    */
-  bounceMta?: string | null;
+  bounceType?: string | null;
   /**
    *
    * @type {string}
    * @memberof BounceProjection
    */
-  bounceType?: string | null;
+  bounceMta?: string | null;
 }
 
 export function BounceProjectionFromJSON(json: any): BounceProjection {
@@ -70,11 +70,11 @@ export function BounceProjectionFromJSONTyped(
   }
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
-    sender: json['sender'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    sender: json['sender'],
     createdAt: new Date(json['createdAt']),
-    bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
     bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
+    bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
   };
 }
 
@@ -87,10 +87,10 @@ export function BounceProjectionToJSON(value?: BounceProjection | null): any {
   }
   return {
     id: value.id,
-    sender: value.sender,
     subject: value.subject,
+    sender: value.sender,
     createdAt: value.createdAt.toISOString(),
-    bounceMta: value.bounceMta,
     bounceType: value.bounceType,
+    bounceMta: value.bounceMta,
   };
 }

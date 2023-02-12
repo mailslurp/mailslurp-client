@@ -35,6 +35,12 @@ export interface AttachmentProjection {
     contentType?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    userId: string;
+    /**
+     *
      * @type {Date}
      * @memberof AttachmentProjection
      */
@@ -45,12 +51,6 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     updatedAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
-    userId: string;
     /**
      * Attachment ID
      * @type {string}
