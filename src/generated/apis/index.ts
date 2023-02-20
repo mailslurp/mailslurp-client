@@ -1,7 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './AliasControllerApi';
-export * from './ApiUserControllerApi';
 export * from './AttachmentControllerApi';
 export * from './BounceControllerApi';
 export * from './BulkActionsControllerApi';
@@ -24,5 +23,6 @@ export * from './SentEmailsControllerApi';
 export * from './SmsControllerApi';
 export * from './TemplateControllerApi';
 export * from './TrackingControllerApi';
+export * from './UserControllerApi';
 export * from './WaitForControllerApi';
 export * from './WebhookControllerApi';

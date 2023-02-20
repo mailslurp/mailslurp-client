@@ -1,39 +1,39 @@
-[MailSlurp JS](../README.md) / ApiUserControllerApi
+[MailSlurp JS](../README.md) / UserControllerApi
 
-# Class: ApiUserControllerApi
+# Class: UserControllerApi
 
 ## Hierarchy
 
 - [`BaseAPI`](BaseAPI.md)
 
-  ↳ **`ApiUserControllerApi`**
+  ↳ **`UserControllerApi`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](ApiUserControllerApi.md#constructor)
+- [constructor](UserControllerApi.md#constructor)
 
 ### Properties
 
-- [configuration](ApiUserControllerApi.md#configuration)
+- [configuration](UserControllerApi.md#configuration)
 
 ### Methods
 
-- [getJsonPropertyAsString](ApiUserControllerApi.md#getjsonpropertyasstring)
-- [getJsonPropertyAsStringRaw](ApiUserControllerApi.md#getjsonpropertyasstringraw)
-- [getUserInfo](ApiUserControllerApi.md#getuserinfo)
-- [getUserInfoRaw](ApiUserControllerApi.md#getuserinforaw)
-- [request](ApiUserControllerApi.md#request)
-- [withMiddleware](ApiUserControllerApi.md#withmiddleware)
-- [withPostMiddleware](ApiUserControllerApi.md#withpostmiddleware)
-- [withPreMiddleware](ApiUserControllerApi.md#withpremiddleware)
+- [getJsonPropertyAsString](UserControllerApi.md#getjsonpropertyasstring)
+- [getJsonPropertyAsStringRaw](UserControllerApi.md#getjsonpropertyasstringraw)
+- [getUserInfo](UserControllerApi.md#getuserinfo)
+- [getUserInfoRaw](UserControllerApi.md#getuserinforaw)
+- [request](UserControllerApi.md#request)
+- [withMiddleware](UserControllerApi.md#withmiddleware)
+- [withPostMiddleware](UserControllerApi.md#withpostmiddleware)
+- [withPreMiddleware](UserControllerApi.md#withpremiddleware)
 
 ## Constructors
 
 ### constructor
 
-• **new ApiUserControllerApi**(`configuration?`)
+• **new UserControllerApi**(`configuration?`)
 
 #### Parameters
 
@@ -99,6 +99,8 @@ ___
 
 ▸ **getUserInfo**(`initOverrides?`): `Promise`<[`UserInfoDto`](../interfaces/UserInfoDto.md)\>
 
+Get account information for your user
+
 #### Parameters
 
 | Name | Type |
@@ -114,6 +116,8 @@ ___
 ### getUserInfoRaw
 
 ▸ **getUserInfoRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UserInfoDto`](../interfaces/UserInfoDto.md)\>\>
+
+Get account information for your user
 
 #### Parameters
 

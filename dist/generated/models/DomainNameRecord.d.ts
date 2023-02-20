@@ -16,6 +16,18 @@
  */
 export interface DomainNameRecord {
     /**
+     * Domain Name Server Record Label
+     * @type {string}
+     * @memberof DomainNameRecord
+     */
+    label: DomainNameRecordLabelEnum;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainNameRecord
+     */
+    required: boolean;
+    /**
      * Domain Name Server Record Types
      * @type {string}
      * @memberof DomainNameRecord
@@ -39,6 +51,17 @@ export interface DomainNameRecord {
      * @memberof DomainNameRecord
      */
     ttl: number;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum DomainNameRecordLabelEnum {
+    VERIFICATION = "VERIFICATION",
+    MX = "MX",
+    SPF = "SPF",
+    DKIM = "DKIM",
+    DMARC = "DMARC"
 }
 /**
  * @export

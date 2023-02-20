@@ -22,17 +22,6 @@ var EmergencyAddressDtoPhoneCountryEnum;
 (function (EmergencyAddressDtoPhoneCountryEnum) {
     EmergencyAddressDtoPhoneCountryEnum["US"] = "US";
     EmergencyAddressDtoPhoneCountryEnum["GB"] = "GB";
-    EmergencyAddressDtoPhoneCountryEnum["AU"] = "AU";
-    EmergencyAddressDtoPhoneCountryEnum["DE"] = "DE";
-    EmergencyAddressDtoPhoneCountryEnum["CA"] = "CA";
-    EmergencyAddressDtoPhoneCountryEnum["HK"] = "HK";
-    EmergencyAddressDtoPhoneCountryEnum["IT"] = "IT";
-    EmergencyAddressDtoPhoneCountryEnum["SE"] = "SE";
-    EmergencyAddressDtoPhoneCountryEnum["NL"] = "NL";
-    EmergencyAddressDtoPhoneCountryEnum["CH"] = "CH";
-    EmergencyAddressDtoPhoneCountryEnum["EE"] = "EE";
-    EmergencyAddressDtoPhoneCountryEnum["PL"] = "PL";
-    EmergencyAddressDtoPhoneCountryEnum["BE"] = "BE";
 })(EmergencyAddressDtoPhoneCountryEnum = exports.EmergencyAddressDtoPhoneCountryEnum || (exports.EmergencyAddressDtoPhoneCountryEnum = {}));
 function EmergencyAddressDtoFromJSON(json) {
     return EmergencyAddressDtoFromJSONTyped(json, false);

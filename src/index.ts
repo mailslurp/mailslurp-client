@@ -5,7 +5,7 @@ require('es6-promise').polyfill();
 require('cross-fetch/polyfill');
 import {
   AliasControllerApi,
-  ApiUserControllerApi,
+  UserControllerApi,
   AttachmentControllerApi,
   AttachmentMetaData,
   BounceControllerApi,
@@ -111,7 +111,7 @@ export class MailSlurp {
   public readonly emailController: EmailControllerApi;
   public readonly emailVerificationController: EmailVerificationControllerApi;
   public readonly inboxController: InboxControllerApi;
-  public readonly userController: ApiUserControllerApi;
+  public readonly userController: UserControllerApi;
   public readonly phoneController: PhoneControllerApi;
   public readonly smsController: SmsControllerApi;
   public readonly sentController: SentEmailsControllerApi;
@@ -166,7 +166,7 @@ export class MailSlurp {
     );
     this.phoneController = new PhoneControllerApi(...args);
     this.smsController = new SmsControllerApi(...args);
-    this.userController = new ApiUserControllerApi(...args);
+    this.userController = new UserControllerApi(...args);
     this.emailController = new EmailControllerApi(...args);
     this.inboxController = new InboxControllerApi(...args);
     this.attachmentController = new AttachmentControllerApi(...args);

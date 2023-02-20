@@ -23,7 +23,7 @@ export interface GetJsonPropertyAsStringRequest {
 /**
  *
  */
-export class ApiUserControllerApi extends runtime.BaseAPI {
+export class UserControllerApi extends runtime.BaseAPI {
   /**
    * Utility function to extract properties from JSON objects in language where this is cumbersome.
    */
@@ -94,6 +94,7 @@ export class ApiUserControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get account information for your user
    */
   async getUserInfoRaw(
     initOverrides?: RequestInit
@@ -122,6 +123,7 @@ export class ApiUserControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get account information for your user
    */
   async getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto> {
     const response = await this.getUserInfoRaw(initOverrides);

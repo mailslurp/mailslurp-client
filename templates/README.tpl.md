@@ -303,7 +303,7 @@ To consume webhooks first create a webhook for an inbox and a given [webhook eve
 ## More Documentation
 
 - [Webhook documentation](https://docs.mailslurp.com/webhooks/)
-- [Method documentation](https://docs.mailslurp.com/js/docs/)
+- [Method documentation](https://mailslurp.github.io/mailslurp-client/)
 - [Guides](https://www.mailslurp/guides/)
 - [API Key](https://app.mailslurp.com/sign-up/)
 - [Example repositories](https://www.mailslurp.com/examples/)

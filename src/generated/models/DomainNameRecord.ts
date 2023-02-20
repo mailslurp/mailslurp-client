@@ -20,6 +20,18 @@ import { exists, mapValues } from '../runtime';
  */
 export interface DomainNameRecord {
   /**
+   * Domain Name Server Record Label
+   * @type {string}
+   * @memberof DomainNameRecord
+   */
+  label: DomainNameRecordLabelEnum;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainNameRecord
+   */
+  required: boolean;
+  /**
    * Domain Name Server Record Types
    * @type {string}
    * @memberof DomainNameRecord
@@ -45,6 +57,17 @@ export interface DomainNameRecord {
   ttl: number;
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum DomainNameRecordLabelEnum {
+  VERIFICATION = 'VERIFICATION',
+  MX = 'MX',
+  SPF = 'SPF',
+  DKIM = 'DKIM',
+  DMARC = 'DMARC',
+}
 /**
  * @export
  * @enum {string}
@@ -153,6 +176,8 @@ export function DomainNameRecordFromJSONTyped(
     return json;
   }
   return {
+    label: json['label'],
+    required: json['required'],
     recordType: json['recordType'],
     name: json['name'],
     recordEntries: json['recordEntries'],
@@ -168,6 +193,8 @@ export function DomainNameRecordToJSON(value?: DomainNameRecord | null): any {
     return null;
   }
   return {
+    label: value.label,
+    required: value.required,
     recordType: value.recordType,
     name: value.name,
     recordEntries: value.recordEntries,

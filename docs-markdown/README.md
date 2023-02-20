@@ -26,6 +26,7 @@ MailSlurp JS
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
 - [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
 - [DomainDtoDomainTypeEnum](enums/DomainDtoDomainTypeEnum.md)
+- [DomainNameRecordLabelEnum](enums/DomainNameRecordLabelEnum.md)
 - [DomainNameRecordRecordTypeEnum](enums/DomainNameRecordRecordTypeEnum.md)
 - [DomainPreviewDomainTypeEnum](enums/DomainPreviewDomainTypeEnum.md)
 - [EmergencyAddressDtoPhoneCountryEnum](enums/EmergencyAddressDtoPhoneCountryEnum.md)
@@ -143,7 +144,6 @@ MailSlurp JS
 ### Classes
 
 - [AliasControllerApi](classes/AliasControllerApi.md)
-- [ApiUserControllerApi](classes/ApiUserControllerApi.md)
 - [AttachmentControllerApi](classes/AttachmentControllerApi.md)
 - [BaseAPI](classes/BaseAPI.md)
 - [BlobApiResponse](classes/BlobApiResponse.md)
@@ -173,6 +173,7 @@ MailSlurp JS
 - [TemplateControllerApi](classes/TemplateControllerApi.md)
 - [TextApiResponse](classes/TextApiResponse.md)
 - [TrackingControllerApi](classes/TrackingControllerApi.md)
+- [UserControllerApi](classes/UserControllerApi.md)
 - [VoidApiResponse](classes/VoidApiResponse.md)
 - [WaitForControllerApi](classes/WaitForControllerApi.md)
 - [WebhookControllerApi](classes/WebhookControllerApi.md)

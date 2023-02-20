@@ -26,9 +26,9 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
-        userId: json['userId'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         inboxId: json['inboxId'],
+        userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         to: json['to'],
@@ -48,9 +48,9 @@ function ThreadProjectionToJSON(value) {
     return {
         name: value.name,
         id: value.id,
-        userId: value.userId,
         subject: value.subject,
         inboxId: value.inboxId,
+        userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         to: value.to,

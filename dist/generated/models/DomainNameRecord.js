@@ -13,7 +13,19 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = void 0;
+exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+/**
+ * @export
+ * @enum {string}
+ */
+var DomainNameRecordLabelEnum;
+(function (DomainNameRecordLabelEnum) {
+    DomainNameRecordLabelEnum["VERIFICATION"] = "VERIFICATION";
+    DomainNameRecordLabelEnum["MX"] = "MX";
+    DomainNameRecordLabelEnum["SPF"] = "SPF";
+    DomainNameRecordLabelEnum["DKIM"] = "DKIM";
+    DomainNameRecordLabelEnum["DMARC"] = "DMARC";
+})(DomainNameRecordLabelEnum = exports.DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -119,6 +131,8 @@ function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        label: json['label'],
+        required: json['required'],
         recordType: json['recordType'],
         name: json['name'],
         recordEntries: json['recordEntries'],
@@ -134,6 +148,8 @@ function DomainNameRecordToJSON(value) {
         return null;
     }
     return {
+        label: value.label,
+        required: value.required,
         recordType: value.recordType,
         name: value.name,
         recordEntries: value.recordEntries,

@@ -247,7 +247,7 @@ ___
 
 ### userController
 
-• `Readonly` **userController**: [`ApiUserControllerApi`](ApiUserControllerApi.md)
+• `Readonly` **userController**: [`UserControllerApi`](UserControllerApi.md)
 
 ___
 

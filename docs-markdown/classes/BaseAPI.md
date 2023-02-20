@@ -10,8 +10,6 @@ This is the base class for all generated API classes.
 
   ↳ [`AliasControllerApi`](AliasControllerApi.md)
 
-  ↳ [`ApiUserControllerApi`](ApiUserControllerApi.md)
-
   ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
 
   ↳ [`BounceControllerApi`](BounceControllerApi.md)
@@ -55,6 +53,8 @@ This is the base class for all generated API classes.
   ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 
   ↳ [`TrackingControllerApi`](TrackingControllerApi.md)
+
+  ↳ [`UserControllerApi`](UserControllerApi.md)
 
   ↳ [`WaitForControllerApi`](WaitForControllerApi.md)
 
