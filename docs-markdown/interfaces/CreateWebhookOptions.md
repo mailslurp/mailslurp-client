@@ -21,6 +21,7 @@ CreateWebhookOptions
 - [name](CreateWebhookOptions.md#name)
 - [requestBodyTemplate](CreateWebhookOptions.md#requestbodytemplate)
 - [url](CreateWebhookOptions.md#url)
+- [useStaticIpRange](CreateWebhookOptions.md#usestaticiprange)
 
 ## Properties
 
@@ -97,6 +98,18 @@ ___
 • **url**: `string`
 
 Public URL on your server that MailSlurp can post WebhookNotification payload to when an email is received or an event is trigger. The payload of the submitted JSON is dependent on the webhook event type. See docs.mailslurp.com/webhooks for event payload documentation.
+
+**`Memberof`**
+
+CreateWebhookOptions
+
+___
+
+### useStaticIpRange
+
+• `Optional` **useStaticIpRange**: `boolean`
+
+Use static IP range when calling webhook endpoint
 
 **`Memberof`**
 

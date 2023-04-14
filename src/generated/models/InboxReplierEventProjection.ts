@@ -39,6 +39,18 @@ export interface InboxReplierEventProjection {
   status?: InboxReplierEventProjectionStatusEnum;
   /**
    *
+   * @type {Array<string>}
+   * @memberof InboxReplierEventProjection
+   */
+  recipients?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  userId?: string | null;
+  /**
+   *
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
@@ -51,16 +63,16 @@ export interface InboxReplierEventProjection {
   inboxId?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  userId?: string | null;
-  /**
-   *
    * @type {Date}
    * @memberof InboxReplierEventProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  sentId?: string | null;
   /**
    *
    * @type {string}
@@ -95,10 +107,12 @@ export function InboxReplierEventProjectionFromJSONTyped(
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
+    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
+    sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
   };
 }
@@ -116,10 +130,12 @@ export function InboxReplierEventProjectionToJSON(
     message: value.message,
     id: value.id,
     status: value.status,
+    recipients: value.recipients,
+    userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
-    userId: value.userId,
     createdAt: value.createdAt.toISOString(),
+    sentId: value.sentId,
     replierId: value.replierId,
   };
 }

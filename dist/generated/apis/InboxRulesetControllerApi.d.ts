@@ -12,8 +12,8 @@
 import * as runtime from '../runtime';
 import { CreateInboxRulesetOptions, InboxRulesetDto, InboxRulesetTestOptions, InboxRulesetTestResult, PageInboxRulesetDto, TestNewInboxRulesetOptions } from '../models';
 export interface CreateNewInboxRulesetRequest {
-    inboxId: string;
     createInboxRulesetOptions: CreateInboxRulesetOptions;
+    inboxId?: string;
 }
 export interface DeleteInboxRulesetRequest {
     id: string;

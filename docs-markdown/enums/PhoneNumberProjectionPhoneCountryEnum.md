@@ -8,10 +8,17 @@
 
 ### Enumeration Members
 
+- [AU](PhoneNumberProjectionPhoneCountryEnum.md#au)
 - [GB](PhoneNumberProjectionPhoneCountryEnum.md#gb)
 - [US](PhoneNumberProjectionPhoneCountryEnum.md#us)
 
 ## Enumeration Members
+
+### AU
+
+• **AU** = ``"AU"``
+
+___
 
 ### GB
 

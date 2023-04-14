@@ -6,9 +6,16 @@
 
 ### Properties
 
+- [checkForErrors](GetDomainRequest.md#checkforerrors)
 - [id](GetDomainRequest.md#id)
 
 ## Properties
+
+### checkForErrors
+
+• `Optional` **checkForErrors**: `boolean`
+
+___
 
 ### id
 

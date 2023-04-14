@@ -35,6 +35,7 @@ export * from './DeliveryStatusDto';
 export * from './DescribeDomainOptions';
 export * from './DescribeMailServerDomainResult';
 export * from './DomainDto';
+export * from './DomainIssuesDto';
 export * from './DomainNameRecord';
 export * from './DomainPreview';
 export * from './DownloadAttachmentDto';

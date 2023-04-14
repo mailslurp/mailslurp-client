@@ -27,6 +27,8 @@
 - [deleteDomain](DomainControllerApi.md#deletedomain)
 - [deleteDomainRaw](DomainControllerApi.md#deletedomainraw)
 - [getDomain](DomainControllerApi.md#getdomain)
+- [getDomainIssues](DomainControllerApi.md#getdomainissues)
+- [getDomainIssuesRaw](DomainControllerApi.md#getdomainissuesraw)
 - [getDomainRaw](DomainControllerApi.md#getdomainraw)
 - [getDomainWildcardCatchAllInbox](DomainControllerApi.md#getdomainwildcardcatchallinbox)
 - [getDomainWildcardCatchAllInboxRaw](DomainControllerApi.md#getdomainwildcardcatchallinboxraw)
@@ -204,6 +206,44 @@ Get a domain
 #### Returns
 
 `Promise`<[`DomainDto`](../interfaces/DomainDto.md)\>
+
+___
+
+### getDomainIssues
+
+▸ **getDomainIssues**(`initOverrides?`): `Promise`<[`DomainIssuesDto`](../interfaces/DomainIssuesDto.md)\>
+
+List domain issues for domains you have created
+Get domain issues
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainIssuesDto`](../interfaces/DomainIssuesDto.md)\>
+
+___
+
+### getDomainIssuesRaw
+
+▸ **getDomainIssuesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainIssuesDto`](../interfaces/DomainIssuesDto.md)\>\>
+
+List domain issues for domains you have created
+Get domain issues
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainIssuesDto`](../interfaces/DomainIssuesDto.md)\>\>
 
 ___
 

@@ -51,6 +51,12 @@ export interface DomainPreview {
      * @memberof DomainPreview
      */
     isVerified: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DomainPreview
+     */
+    hasMissingRecords: boolean;
 }
 /**
  * @export

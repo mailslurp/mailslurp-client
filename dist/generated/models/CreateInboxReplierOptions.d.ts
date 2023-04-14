@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Options for creating an inbox replier
+ * Options for creating an inbox replier. Repliers can be attached to inboxes and send automated responses when an inbound email matches given criteria.
  * @export
  * @interface CreateInboxReplierOptions
  */
@@ -34,7 +34,7 @@ export interface CreateInboxReplierOptions {
      */
     field: CreateInboxReplierOptionsFieldEnum;
     /**
-     * String or wildcard style match for field specified when evaluating reply rules
+     * String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
      * @type {string}
      * @memberof CreateInboxReplierOptions
      */
@@ -68,7 +68,7 @@ export interface CreateInboxReplierOptions {
      * @type {boolean}
      * @memberof CreateInboxReplierOptions
      */
-    ignoreReplyTo?: boolean;
+    ignoreReplyTo?: boolean | null;
     /**
      * Send HTML email
      * @type {boolean}

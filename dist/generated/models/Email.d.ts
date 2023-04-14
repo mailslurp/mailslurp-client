@@ -91,6 +91,14 @@ export interface Email {
         [key: string]: string;
     } | null;
     /**
+     * Multi-value map of SMTP headers attached to email
+     * @type {{ [key: string]: Array<string>; }}
+     * @memberof Email
+     */
+    headersMap?: {
+        [key: string]: Array<string>;
+    } | null;
+    /**
      * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
      * @type {Array<string>}
      * @memberof Email

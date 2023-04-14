@@ -46,6 +46,7 @@ export interface EmergencyAddressDto {
 export enum EmergencyAddressDtoPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
 }
 
 export function EmergencyAddressDtoFromJSON(json: any): EmergencyAddressDto {

@@ -22,6 +22,7 @@ var EmergencyAddressDtoPhoneCountryEnum;
 (function (EmergencyAddressDtoPhoneCountryEnum) {
     EmergencyAddressDtoPhoneCountryEnum["US"] = "US";
     EmergencyAddressDtoPhoneCountryEnum["GB"] = "GB";
+    EmergencyAddressDtoPhoneCountryEnum["AU"] = "AU";
 })(EmergencyAddressDtoPhoneCountryEnum = exports.EmergencyAddressDtoPhoneCountryEnum || (exports.EmergencyAddressDtoPhoneCountryEnum = {}));
 function EmergencyAddressDtoFromJSON(json) {
     return EmergencyAddressDtoFromJSONTyped(json, false);

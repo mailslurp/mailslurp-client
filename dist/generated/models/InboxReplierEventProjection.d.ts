@@ -35,6 +35,18 @@ export interface InboxReplierEventProjection {
     status?: InboxReplierEventProjectionStatusEnum;
     /**
      *
+     * @type {Array<string>}
+     * @memberof InboxReplierEventProjection
+     */
+    recipients?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    userId?: string | null;
+    /**
+     *
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
@@ -47,16 +59,16 @@ export interface InboxReplierEventProjection {
     inboxId?: string | null;
     /**
      *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    userId?: string | null;
-    /**
-     *
      * @type {Date}
      * @memberof InboxReplierEventProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    sentId?: string | null;
     /**
      *
      * @type {string}

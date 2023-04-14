@@ -116,6 +116,12 @@ export interface WebhookDto {
    * @memberof WebhookDto
    */
   ignoreInsecureSslCertificates?: boolean | null;
+  /**
+   * Should notifier use static IP range when sending webhook payload
+   * @type {boolean}
+   * @memberof WebhookDto
+   */
+  useStaticIpRange?: boolean | null;
 }
 
 /**
@@ -185,6 +191,9 @@ export function WebhookDtoFromJSONTyped(
     )
       ? undefined
       : json['ignoreInsecureSslCertificates'],
+    useStaticIpRange: !exists(json, 'useStaticIpRange')
+      ? undefined
+      : json['useStaticIpRange'],
   };
 }
 
@@ -211,5 +220,6 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     eventName: value.eventName,
     requestHeaders: WebhookHeadersToJSON(value.requestHeaders),
     ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
+    useStaticIpRange: value.useStaticIpRange,
   };
 }

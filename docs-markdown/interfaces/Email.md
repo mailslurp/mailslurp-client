@@ -26,6 +26,7 @@ Email
 - [domainId](Email.md#domainid)
 - [from](Email.md#from)
 - [headers](Email.md#headers)
+- [headersMap](Email.md#headersmap)
 - [html](Email.md#html)
 - [id](Email.md#id)
 - [inboxId](Email.md#inboxid)
@@ -185,6 +186,22 @@ Email
 #### Index signature
 
 ▪ [key: `string`]: `string`
+
+___
+
+### headersMap
+
+• `Optional` **headersMap**: `Object`
+
+Multi-value map of SMTP headers attached to email
+
+**`Memberof`**
+
+Email
+
+#### Index signature
+
+▪ [key: `string`]: `string`[]
 
 ___
 

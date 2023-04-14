@@ -18,6 +18,7 @@ DomainPreview
 - [createdAt](DomainPreview.md#createdat)
 - [domain](DomainPreview.md#domain)
 - [domainType](DomainPreview.md#domaintype)
+- [hasMissingRecords](DomainPreview.md#hasmissingrecords)
 - [id](DomainPreview.md#id)
 - [isVerified](DomainPreview.md#isverified)
 
@@ -58,6 +59,16 @@ ___
 • **domainType**: [`DomainPreviewDomainTypeEnum`](../enums/DomainPreviewDomainTypeEnum.md)
 
 Type of domain. Dictates type of inbox that can be created with domain. HTTP means inboxes are processed using SES while SMTP inboxes use a custom SMTP mail server. SMTP does not support sending so use HTTP for sending emails.
+
+**`Memberof`**
+
+DomainPreview
+
+___
+
+### hasMissingRecords
+
+• **hasMissingRecords**: `boolean`
 
 **`Memberof`**
 

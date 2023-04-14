@@ -55,6 +55,12 @@ export interface DomainPreview {
    * @memberof DomainPreview
    */
   isVerified: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DomainPreview
+   */
+  hasMissingRecords: boolean;
 }
 
 /**
@@ -86,6 +92,7 @@ export function DomainPreviewFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     domainType: json['domainType'],
     isVerified: json['isVerified'],
+    hasMissingRecords: json['hasMissingRecords'],
   };
 }
 
@@ -103,5 +110,6 @@ export function DomainPreviewToJSON(value?: DomainPreview | null): any {
     createdAt: value.createdAt.toISOString(),
     domainType: value.domainType,
     isVerified: value.isVerified,
+    hasMissingRecords: value.hasMissingRecords,
   };
 }

@@ -54,6 +54,9 @@ function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
         requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
             ? undefined
             : json['requestBodyTemplate'],
+        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
+            ? undefined
+            : json['useStaticIpRange'],
         ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
             ? undefined
             : json['ignoreInsecureSslCertificates'],
@@ -74,6 +77,7 @@ function CreateWebhookOptionsToJSON(value) {
         eventName: value.eventName,
         includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
         requestBodyTemplate: value.requestBodyTemplate,
+        useStaticIpRange: value.useStaticIpRange,
         ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
     };
 }

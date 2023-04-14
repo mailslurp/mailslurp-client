@@ -19,7 +19,9 @@ InboxReplierEventProjection
 - [id](InboxReplierEventProjection.md#id)
 - [inboxId](InboxReplierEventProjection.md#inboxid)
 - [message](InboxReplierEventProjection.md#message)
+- [recipients](InboxReplierEventProjection.md#recipients)
 - [replierId](InboxReplierEventProjection.md#replierid)
+- [sentId](InboxReplierEventProjection.md#sentid)
 - [status](InboxReplierEventProjection.md#status)
 - [userId](InboxReplierEventProjection.md#userid)
 
@@ -75,9 +77,29 @@ InboxReplierEventProjection
 
 ___
 
+### recipients
+
+• `Optional` **recipients**: `string`[]
+
+**`Memberof`**
+
+InboxReplierEventProjection
+
+___
+
 ### replierId
 
 • `Optional` **replierId**: `string`
+
+**`Memberof`**
+
+InboxReplierEventProjection
+
+___
+
+### sentId
+
+• `Optional` **sentId**: `string`
 
 **`Memberof`**
 

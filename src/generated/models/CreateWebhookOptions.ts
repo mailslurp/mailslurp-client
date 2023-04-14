@@ -67,6 +67,12 @@ export interface CreateWebhookOptions {
    */
   requestBodyTemplate?: string | null;
   /**
+   * Use static IP range when calling webhook endpoint
+   * @type {boolean}
+   * @memberof CreateWebhookOptions
+   */
+  useStaticIpRange?: boolean | null;
+  /**
    * Ignore insecure SSL certificates when sending request. Useful for self-signed certs.
    * @type {boolean}
    * @memberof CreateWebhookOptions
@@ -115,6 +121,9 @@ export function CreateWebhookOptionsFromJSONTyped(
     requestBodyTemplate: !exists(json, 'requestBodyTemplate')
       ? undefined
       : json['requestBodyTemplate'],
+    useStaticIpRange: !exists(json, 'useStaticIpRange')
+      ? undefined
+      : json['useStaticIpRange'],
     ignoreInsecureSslCertificates: !exists(
       json,
       'ignoreInsecureSslCertificates'
@@ -140,6 +149,7 @@ export function CreateWebhookOptionsToJSON(
     eventName: value.eventName,
     includeHeaders: WebhookHeadersToJSON(value.includeHeaders),
     requestBodyTemplate: value.requestBodyTemplate,
+    useStaticIpRange: value.useStaticIpRange,
     ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
   };
 }

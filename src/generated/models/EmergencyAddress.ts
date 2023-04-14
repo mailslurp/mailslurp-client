@@ -106,6 +106,7 @@ export interface EmergencyAddress {
 export enum EmergencyAddressPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
 }
 
 export function EmergencyAddressFromJSON(json: any): EmergencyAddress {

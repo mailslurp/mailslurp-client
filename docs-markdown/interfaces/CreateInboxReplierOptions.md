@@ -2,7 +2,7 @@
 
 # Interface: CreateInboxReplierOptions
 
-Options for creating an inbox replier
+Options for creating an inbox replier. Repliers can be attached to inboxes and send automated responses when an inbound email matches given criteria.
 
 **`Export`**
 
@@ -118,7 +118,7 @@ ___
 
 • **match**: `string`
 
-String or wildcard style match for field specified when evaluating reply rules
+String or wildcard style match for field specified when evaluating reply rules. Use `*` to match anything.
 
 **`Memberof`**
 

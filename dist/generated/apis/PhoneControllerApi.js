@@ -551,6 +551,7 @@ var GetPhoneNumbersPhoneCountryEnum;
 (function (GetPhoneNumbersPhoneCountryEnum) {
     GetPhoneNumbersPhoneCountryEnum["US"] = "US";
     GetPhoneNumbersPhoneCountryEnum["GB"] = "GB";
+    GetPhoneNumbersPhoneCountryEnum["AU"] = "AU";
 })(GetPhoneNumbersPhoneCountryEnum = exports.GetPhoneNumbersPhoneCountryEnum || (exports.GetPhoneNumbersPhoneCountryEnum = {}));
 /**
  * @export

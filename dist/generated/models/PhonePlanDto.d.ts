@@ -46,7 +46,8 @@ export interface PhonePlanDto {
  */
 export declare enum PhonePlanDtoPhoneCountryEnum {
     US = "US",
-    GB = "GB"
+    GB = "GB",
+    AU = "AU"
 }
 export declare function PhonePlanDtoFromJSON(json: any): PhonePlanDto;
 export declare function PhonePlanDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhonePlanDto;

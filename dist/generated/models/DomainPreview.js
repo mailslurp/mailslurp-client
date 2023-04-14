@@ -41,6 +41,7 @@ function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
         domainType: json['domainType'],
         isVerified: json['isVerified'],
+        hasMissingRecords: json['hasMissingRecords'],
     };
 }
 exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
@@ -58,6 +59,7 @@ function DomainPreviewToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         domainType: value.domainType,
         isVerified: value.isVerified,
+        hasMissingRecords: value.hasMissingRecords,
     };
 }
 exports.DomainPreviewToJSON = DomainPreviewToJSON;

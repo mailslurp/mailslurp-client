@@ -106,6 +106,12 @@ export interface WebhookDto {
      * @memberof WebhookDto
      */
     ignoreInsecureSslCertificates?: boolean | null;
+    /**
+     * Should notifier use static IP range when sending webhook payload
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    useStaticIpRange?: boolean | null;
 }
 /**
  * @export

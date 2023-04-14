@@ -82,6 +82,7 @@ export interface PhoneNumberDto {
 export enum PhoneNumberDtoPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
 }
 
 export function PhoneNumberDtoFromJSON(json: any): PhoneNumberDto {

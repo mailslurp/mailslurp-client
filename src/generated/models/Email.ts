@@ -107,6 +107,12 @@ export interface Email {
    */
   headers?: { [key: string]: string } | null;
   /**
+   * Multi-value map of SMTP headers attached to email
+   * @type {{ [key: string]: Array<string>; }}
+   * @memberof Email
+   */
+  headersMap?: { [key: string]: Array<string> } | null;
+  /**
    * List of IDs of attachments found in the email. Use these IDs with the Inbox and Email Controllers to download attachments and attachment meta data such as filesize, name, extension.
    * @type {Array<string>}
    * @memberof Email
@@ -214,6 +220,7 @@ export function EmailFromJSONTyped(
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     headers: !exists(json, 'headers') ? undefined : json['headers'],
+    headersMap: !exists(json, 'headersMap') ? undefined : json['headersMap'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     body: !exists(json, 'body') ? undefined : json['body'],
@@ -252,6 +259,7 @@ export function EmailToJSON(value?: Email | null): any {
     cc: value.cc,
     bcc: value.bcc,
     headers: value.headers,
+    headersMap: value.headersMap,
     attachments: value.attachments,
     subject: value.subject,
     body: value.body,

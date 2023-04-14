@@ -65,6 +65,7 @@ models/DeliveryStatusDto.ts
 models/DescribeDomainOptions.ts
 models/DescribeMailServerDomainResult.ts
 models/DomainDto.ts
+models/DomainIssuesDto.ts
 models/DomainNameRecord.ts
 models/DomainPreview.ts
 models/DownloadAttachmentDto.ts

@@ -57,6 +57,18 @@ export interface DomainDto {
    */
   dkimTokens: Array<string>;
   /**
+   * If the domain is missing records then show which pairs are missing.
+   * @type {string}
+   * @memberof DomainDto
+   */
+  missingRecordsMessage?: string | null;
+  /**
+   * Whether the domain has missing required records. If true then see the domain in the dashboard app.
+   * @type {boolean}
+   * @memberof DomainDto
+   */
+  hasMissingRecords: boolean;
+  /**
    * Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
    * @type {boolean}
    * @memberof DomainDto
@@ -120,6 +132,10 @@ export function DomainDtoFromJSONTyped(
     domain: json['domain'],
     verificationToken: json['verificationToken'],
     dkimTokens: json['dkimTokens'],
+    missingRecordsMessage: !exists(json, 'missingRecordsMessage')
+      ? undefined
+      : json['missingRecordsMessage'],
+    hasMissingRecords: json['hasMissingRecords'],
     isVerified: json['isVerified'],
     domainNameRecords: (json['domainNameRecords'] as Array<any>).map(
       DomainNameRecordFromJSON
@@ -146,6 +162,8 @@ export function DomainDtoToJSON(value?: DomainDto | null): any {
     domain: value.domain,
     verificationToken: value.verificationToken,
     dkimTokens: value.dkimTokens,
+    missingRecordsMessage: value.missingRecordsMessage,
+    hasMissingRecords: value.hasMissingRecords,
     isVerified: value.isVerified,
     domainNameRecords: (value.domainNameRecords as Array<any>).map(
       DomainNameRecordToJSON

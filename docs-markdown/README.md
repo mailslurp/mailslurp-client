@@ -278,6 +278,7 @@ MailSlurp JS
 - [DescribeMailServerDomainResult](interfaces/DescribeMailServerDomainResult.md)
 - [DoesInboxExistRequest](interfaces/DoesInboxExistRequest.md)
 - [DomainDto](interfaces/DomainDto.md)
+- [DomainIssuesDto](interfaces/DomainIssuesDto.md)
 - [DomainNameRecord](interfaces/DomainNameRecord.md)
 - [DomainPreview](interfaces/DomainPreview.md)
 - [DownloadAttachmentAsBase64EncodedRequest](interfaces/DownloadAttachmentAsBase64EncodedRequest.md)
@@ -752,6 +753,9 @@ MailSlurp JS
 - [DomainDtoFromJSON](README.md#domaindtofromjson)
 - [DomainDtoFromJSONTyped](README.md#domaindtofromjsontyped)
 - [DomainDtoToJSON](README.md#domaindtotojson)
+- [DomainIssuesDtoFromJSON](README.md#domainissuesdtofromjson)
+- [DomainIssuesDtoFromJSONTyped](README.md#domainissuesdtofromjsontyped)
+- [DomainIssuesDtoToJSON](README.md#domainissuesdtotojson)
 - [DomainNameRecordFromJSON](README.md#domainnamerecordfromjson)
 - [DomainNameRecordFromJSONTyped](README.md#domainnamerecordfromjsontyped)
 - [DomainNameRecordToJSON](README.md#domainnamerecordtojson)
@@ -3191,6 +3195,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`DomainDto`](interfaces/DomainDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainIssuesDtoFromJSON
+
+▸ **DomainIssuesDtoFromJSON**(`json`): [`DomainIssuesDto`](interfaces/DomainIssuesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainIssuesDto`](interfaces/DomainIssuesDto.md)
+
+___
+
+### DomainIssuesDtoFromJSONTyped
+
+▸ **DomainIssuesDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainIssuesDto`](interfaces/DomainIssuesDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainIssuesDto`](interfaces/DomainIssuesDto.md)
+
+___
+
+### DomainIssuesDtoToJSON
+
+▸ **DomainIssuesDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainIssuesDto`](interfaces/DomainIssuesDto.md) |
 
 #### Returns
 

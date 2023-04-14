@@ -35,8 +35,8 @@ import {
 } from '../models';
 
 export interface CreateNewInboxRulesetRequest {
-  inboxId: string;
   createInboxRulesetOptions: CreateInboxRulesetOptions;
+  inboxId?: string;
 }
 
 export interface DeleteInboxRulesetRequest {
@@ -87,16 +87,6 @@ export class InboxRulesetControllerApi extends runtime.BaseAPI {
     requestParameters: CreateNewInboxRulesetRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<InboxRulesetDto>> {
-    if (
-      requestParameters.inboxId === null ||
-      requestParameters.inboxId === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inboxId',
-        'Required parameter requestParameters.inboxId was null or undefined when calling createNewInboxRuleset.'
-      );
-    }
-
     if (
       requestParameters.createInboxRulesetOptions === null ||
       requestParameters.createInboxRulesetOptions === undefined

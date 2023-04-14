@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Official client for MailSlurp Email and SMS API. Create email addresses and phone numbers in Javascript without a mail server. Send and receive real emails in applications or tests.",
-  "version": "15.17.0",
+  "version": "15.17.1",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",

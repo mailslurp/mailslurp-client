@@ -108,10 +108,6 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inboxId === null ||
-                            requestParameters.inboxId === undefined) {
-                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling createNewInboxRuleset.');
-                        }
                         if (requestParameters.createInboxRulesetOptions === null ||
                             requestParameters.createInboxRulesetOptions === undefined) {
                             throw new runtime.RequiredError('createInboxRulesetOptions', 'Required parameter requestParameters.createInboxRulesetOptions was null or undefined when calling createNewInboxRuleset.');

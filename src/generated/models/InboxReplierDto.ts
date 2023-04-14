@@ -36,7 +36,7 @@ export interface InboxReplierDto {
    * @type {string}
    * @memberof InboxReplierDto
    */
-  name?: string;
+  name?: string | null;
   /**
    *
    * @type {string}
@@ -54,25 +54,25 @@ export interface InboxReplierDto {
    * @type {string}
    * @memberof InboxReplierDto
    */
-  replyTo?: string;
+  replyTo?: string | null;
   /**
    *
    * @type {string}
    * @memberof InboxReplierDto
    */
-  subject?: string;
+  subject?: string | null;
   /**
    *
    * @type {string}
    * @memberof InboxReplierDto
    */
-  from?: string;
+  from?: string | null;
   /**
    *
    * @type {string}
    * @memberof InboxReplierDto
    */
-  charset?: string;
+  charset?: string | null;
   /**
    *
    * @type {boolean}
@@ -84,13 +84,13 @@ export interface InboxReplierDto {
    * @type {string}
    * @memberof InboxReplierDto
    */
-  templateId?: string;
+  templateId?: string | null;
   /**
    *
    * @type {{ [key: string]: object; }}
    * @memberof InboxReplierDto
    */
-  templateVariables?: { [key: string]: object };
+  templateVariables?: { [key: string]: object } | null;
   /**
    *
    * @type {boolean}

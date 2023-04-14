@@ -53,6 +53,7 @@ __exportStar(require("./DeliveryStatusDto"), exports);
 __exportStar(require("./DescribeDomainOptions"), exports);
 __exportStar(require("./DescribeMailServerDomainResult"), exports);
 __exportStar(require("./DomainDto"), exports);
+__exportStar(require("./DomainIssuesDto"), exports);
 __exportStar(require("./DomainNameRecord"), exports);
 __exportStar(require("./DomainPreview"), exports);
 __exportStar(require("./DownloadAttachmentDto"), exports);

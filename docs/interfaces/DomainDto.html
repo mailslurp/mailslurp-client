@@ -38,8 +38,10 @@
 <a href="DomainDto.html#domain" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>domain</span></a>
 <a href="DomainDto.html#domainNameRecords" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>domain<wbr/>Name<wbr/>Records</span></a>
 <a href="DomainDto.html#domainType" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>domain<wbr/>Type</span></a>
+<a href="DomainDto.html#hasMissingRecords" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>has<wbr/>Missing<wbr/>Records</span></a>
 <a href="DomainDto.html#id" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>id</span></a>
 <a href="DomainDto.html#isVerified" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>is<wbr/>Verified</span></a>
+<a href="DomainDto.html#missingRecordsMessage" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>missing<wbr/>Records<wbr/>Message?</span></a>
 <a href="DomainDto.html#updatedAt" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>updated<wbr/>At</span></a>
 <a href="DomainDto.html#userId" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>user<wbr/>Id</span></a>
 <a href="DomainDto.html#verificationToken" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>verification<wbr/>Token</span></a>
@@ -87,6 +89,13 @@
 
 <h3>Memberof</h3><p>DomainDto</p>
 </div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="hasMissingRecords" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>has<wbr/>Missing<wbr/>Records</span><a href="#hasMissingRecords" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">has<wbr/>Missing<wbr/>Records<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Whether the domain has missing required records. If true then see the domain in the dashboard app.</p>
+
+<h3>Memberof</h3><p>DomainDto</p>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -97,6 +106,13 @@
 <h3 class="tsd-anchor-link"><span>is<wbr/>Verified</span><a href="#isVerified" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">is<wbr/>Verified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.</p>
+
+<h3>Memberof</h3><p>DomainDto</p>
+</div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="missingRecordsMessage" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>missing<wbr/>Records<wbr/>Message</span><a href="#missingRecordsMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">missing<wbr/>Records<wbr/>Message<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>If the domain is missing records then show which pairs are missing.</p>
 
 <h3>Memberof</h3><p>DomainDto</p>
 </div></section>
@@ -150,8 +166,10 @@
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#domain" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>domain</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#domainNameRecords" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>domain<wbr/>Name<wbr/>Records</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#domainType" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>domain<wbr/>Type</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#hasMissingRecords" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>has<wbr/>Missing<wbr/>Records</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#id" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>id</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#isVerified" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>is<wbr/>Verified</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#missingRecordsMessage" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>missing<wbr/>Records<wbr/>Message?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#updatedAt" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>updated<wbr/>At</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#userId" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>user<wbr/>Id</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="DomainDto.html#verificationToken" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>verification<wbr/>Token</a></li></ul></li></ul></nav></div></div>

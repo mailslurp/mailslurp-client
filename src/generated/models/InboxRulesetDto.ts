@@ -30,7 +30,7 @@ export interface InboxRulesetDto {
    * @type {string}
    * @memberof InboxRulesetDto
    */
-  inboxId: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
@@ -101,7 +101,7 @@ export function InboxRulesetDtoFromJSONTyped(
   }
   return {
     id: json['id'],
-    inboxId: json['inboxId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     scope: json['scope'],
     action: json['action'],
     target: json['target'],

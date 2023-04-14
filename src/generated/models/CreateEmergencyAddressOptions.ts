@@ -70,6 +70,7 @@ export interface CreateEmergencyAddressOptions {
 export enum CreateEmergencyAddressOptionsIsoCountryCodeEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
 }
 
 export function CreateEmergencyAddressOptionsFromJSON(

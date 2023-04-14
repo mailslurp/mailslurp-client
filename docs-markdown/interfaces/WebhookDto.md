@@ -28,6 +28,7 @@ WebhookDto
 - [requestHeaders](WebhookDto.md#requestheaders)
 - [updatedAt](WebhookDto.md#updatedat)
 - [url](WebhookDto.md#url)
+- [useStaticIpRange](WebhookDto.md#usestaticiprange)
 - [userId](WebhookDto.md#userid)
 
 ## Properties
@@ -189,6 +190,18 @@ ___
 • **url**: `string`
 
 URL of your server that the webhook will be sent to. The schema of the JSON that is sent is described by the payloadJsonSchema.
+
+**`Memberof`**
+
+WebhookDto
+
+___
+
+### useStaticIpRange
+
+• `Optional` **useStaticIpRange**: `boolean`
+
+Should notifier use static IP range when sending webhook payload
 
 **`Memberof`**
 

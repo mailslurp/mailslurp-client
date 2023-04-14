@@ -52,6 +52,7 @@ export interface PhonePlanDto {
 export enum PhonePlanDtoPhoneCountryEnum {
   US = 'US',
   GB = 'GB',
+  AU = 'AU',
 }
 
 export function PhonePlanDtoFromJSON(json: any): PhonePlanDto {

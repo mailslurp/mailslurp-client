@@ -2,7 +2,7 @@
 
 # Interface: InboxForwarderDto
 
-Inbox forwarder
+Inbox forwarder. Describes how an inbox will forward matching emails to designated recipients.
 
 **`Export`**
 
@@ -38,6 +38,8 @@ ___
 
 • **field**: [`InboxForwarderDtoFieldEnum`](../enums/InboxForwarderDtoFieldEnum.md)
 
+Which field to match against
+
 **`Memberof`**
 
 InboxForwarderDto
@@ -47,6 +49,8 @@ ___
 ### forwardToRecipients
 
 • **forwardToRecipients**: `string`[]
+
+Who to send forwarded email to
 
 **`Memberof`**
 
@@ -78,6 +82,8 @@ ___
 
 • **match**: `string`
 
+Wild-card type pattern to apply to field
+
 **`Memberof`**
 
 InboxForwarderDto
@@ -87,6 +93,8 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+Name of inbox forwarder
 
 **`Memberof`**
 

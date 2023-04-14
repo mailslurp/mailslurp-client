@@ -39,6 +39,10 @@ function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
         domain: json['domain'],
         verificationToken: json['verificationToken'],
         dkimTokens: json['dkimTokens'],
+        missingRecordsMessage: !(0, runtime_1.exists)(json, 'missingRecordsMessage')
+            ? undefined
+            : json['missingRecordsMessage'],
+        hasMissingRecords: json['hasMissingRecords'],
         isVerified: json['isVerified'],
         domainNameRecords: json['domainNameRecords'].map(_1.DomainNameRecordFromJSON),
         catchAllInboxId: !(0, runtime_1.exists)(json, 'catchAllInboxId')
@@ -63,6 +67,8 @@ function DomainDtoToJSON(value) {
         domain: value.domain,
         verificationToken: value.verificationToken,
         dkimTokens: value.dkimTokens,
+        missingRecordsMessage: value.missingRecordsMessage,
+        hasMissingRecords: value.hasMissingRecords,
         isVerified: value.isVerified,
         domainNameRecords: value.domainNameRecords.map(_1.DomainNameRecordToJSON),
         catchAllInboxId: value.catchAllInboxId,

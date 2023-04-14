@@ -23,6 +23,7 @@ var CreateEmergencyAddressOptionsIsoCountryCodeEnum;
 (function (CreateEmergencyAddressOptionsIsoCountryCodeEnum) {
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["US"] = "US";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["GB"] = "GB";
+    CreateEmergencyAddressOptionsIsoCountryCodeEnum["AU"] = "AU";
 })(CreateEmergencyAddressOptionsIsoCountryCodeEnum = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum || (exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = {}));
 function CreateEmergencyAddressOptionsFromJSON(json) {
     return CreateEmergencyAddressOptionsFromJSONTyped(json, false);

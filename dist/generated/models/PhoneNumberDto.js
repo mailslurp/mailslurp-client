@@ -23,6 +23,7 @@ var PhoneNumberDtoPhoneCountryEnum;
 (function (PhoneNumberDtoPhoneCountryEnum) {
     PhoneNumberDtoPhoneCountryEnum["US"] = "US";
     PhoneNumberDtoPhoneCountryEnum["GB"] = "GB";
+    PhoneNumberDtoPhoneCountryEnum["AU"] = "AU";
 })(PhoneNumberDtoPhoneCountryEnum = exports.PhoneNumberDtoPhoneCountryEnum || (exports.PhoneNumberDtoPhoneCountryEnum = {}));
 function PhoneNumberDtoFromJSON(json) {
     return PhoneNumberDtoFromJSONTyped(json, false);

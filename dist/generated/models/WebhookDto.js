@@ -78,6 +78,9 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
             ? undefined
             : json['ignoreInsecureSslCertificates'],
+        useStaticIpRange: !(0, runtime_1.exists)(json, 'useStaticIpRange')
+            ? undefined
+            : json['useStaticIpRange'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -104,6 +107,7 @@ function WebhookDtoToJSON(value) {
         eventName: value.eventName,
         requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
         ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
+        useStaticIpRange: value.useStaticIpRange,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

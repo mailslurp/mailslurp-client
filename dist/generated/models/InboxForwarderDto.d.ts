@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Inbox forwarder
+ * Inbox forwarder. Describes how an inbox will forward matching emails to designated recipients.
  * @export
  * @interface InboxForwarderDto
  */
@@ -28,25 +28,25 @@ export interface InboxForwarderDto {
      */
     inboxId: string;
     /**
-     *
+     * Name of inbox forwarder
      * @type {string}
      * @memberof InboxForwarderDto
      */
-    name?: string;
+    name?: string | null;
     /**
-     *
+     * Which field to match against
      * @type {string}
      * @memberof InboxForwarderDto
      */
     field: InboxForwarderDtoFieldEnum;
     /**
-     *
+     * Wild-card type pattern to apply to field
      * @type {string}
      * @memberof InboxForwarderDto
      */
     match: string;
     /**
-     *
+     * Who to send forwarded email to
      * @type {Array<string>}
      * @memberof InboxForwarderDto
      */

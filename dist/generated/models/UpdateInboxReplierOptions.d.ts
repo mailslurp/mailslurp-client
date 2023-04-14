@@ -26,7 +26,7 @@ export interface UpdateInboxReplierOptions {
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    name?: string;
+    name?: string | null;
     /**
      * Field to match against to trigger inbox replier for inbound email
      * @type {string}
@@ -44,49 +44,49 @@ export interface UpdateInboxReplierOptions {
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    replyTo?: string;
+    replyTo?: string | null;
     /**
      * Subject override when replying to email
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    subject?: string;
+    subject?: string | null;
     /**
      * Send email from address
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    from?: string;
+    from?: string | null;
     /**
      * Email reply charset
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    charset?: string;
+    charset?: string | null;
     /**
      * Send HTML email
      * @type {boolean}
      * @memberof UpdateInboxReplierOptions
      */
-    isHTML?: boolean;
+    isHTML?: boolean | null;
     /**
      * Ignore sender replyTo when responding. Send directly to the sender if enabled.
      * @type {boolean}
      * @memberof UpdateInboxReplierOptions
      */
-    ignoreReplyTo?: boolean;
+    ignoreReplyTo?: boolean | null;
     /**
      * Email body for reply
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    body?: string;
+    body?: string | null;
     /**
      * ID of template to use when sending a reply
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    templateId?: string;
+    templateId?: string | null;
     /**
      * Template variable values
      * @type {{ [key: string]: object; }}
@@ -94,7 +94,7 @@ export interface UpdateInboxReplierOptions {
      */
     templateVariables?: {
         [key: string]: object;
-    };
+    } | null;
 }
 /**
  * @export

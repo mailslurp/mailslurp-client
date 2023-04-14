@@ -8,10 +8,17 @@
 
 ### Enumeration Members
 
+- [AU](EmergencyAddressDtoPhoneCountryEnum.md#au)
 - [GB](EmergencyAddressDtoPhoneCountryEnum.md#gb)
 - [US](EmergencyAddressDtoPhoneCountryEnum.md#us)
 
 ## Enumeration Members
+
+### AU
+
+• **AU** = ``"AU"``
+
+___
 
 ### GB
 

@@ -20,6 +20,9 @@ import {
   DomainDto,
   DomainDtoFromJSON,
   DomainDtoToJSON,
+  DomainIssuesDto,
+  DomainIssuesDtoFromJSON,
+  DomainIssuesDtoToJSON,
   DomainPreview,
   DomainPreviewFromJSON,
   DomainPreviewToJSON,
@@ -45,6 +48,7 @@ export interface DeleteDomainRequest {
 
 export interface GetDomainRequest {
   id: string;
+  checkForErrors?: boolean;
 }
 
 export interface GetDomainWildcardCatchAllInboxRequest {
@@ -246,6 +250,10 @@ export class DomainControllerApi extends runtime.BaseAPI {
 
     const queryParameters: any = {};
 
+    if (requestParameters.checkForErrors !== undefined) {
+      queryParameters['checkForErrors'] = requestParameters.checkForErrors;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -279,6 +287,45 @@ export class DomainControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DomainDto> {
     const response = await this.getDomainRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * List domain issues for domains you have created
+   * Get domain issues
+   */
+  async getDomainIssuesRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainIssuesDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/issues`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainIssuesDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List domain issues for domains you have created
+   * Get domain issues
+   */
+  async getDomainIssues(initOverrides?: RequestInit): Promise<DomainIssuesDto> {
+    const response = await this.getDomainIssuesRaw(initOverrides);
     return await response.value();
   }
 

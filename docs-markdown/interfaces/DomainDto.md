@@ -20,8 +20,10 @@ DomainDto
 - [domain](DomainDto.md#domain)
 - [domainNameRecords](DomainDto.md#domainnamerecords)
 - [domainType](DomainDto.md#domaintype)
+- [hasMissingRecords](DomainDto.md#hasmissingrecords)
 - [id](DomainDto.md#id)
 - [isVerified](DomainDto.md#isverified)
+- [missingRecordsMessage](DomainDto.md#missingrecordsmessage)
 - [updatedAt](DomainDto.md#updatedat)
 - [userId](DomainDto.md#userid)
 - [verificationToken](DomainDto.md#verificationtoken)
@@ -98,6 +100,18 @@ DomainDto
 
 ___
 
+### hasMissingRecords
+
+• **hasMissingRecords**: `boolean`
+
+Whether the domain has missing required records. If true then see the domain in the dashboard app.
+
+**`Memberof`**
+
+DomainDto
+
+___
+
 ### id
 
 • **id**: `string`
@@ -113,6 +127,18 @@ ___
 • **isVerified**: `boolean`
 
 Whether domain has been verified or not. If the domain is not verified after 72 hours there is most likely an issue with the domains DNS records.
+
+**`Memberof`**
+
+DomainDto
+
+___
+
+### missingRecordsMessage
+
+• `Optional` **missingRecordsMessage**: `string`
+
+If the domain is missing records then show which pairs are missing.
 
 **`Memberof`**
 

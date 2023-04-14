@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainOptions, DomainDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
+import { CreateDomainOptions, DomainDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
 export interface AddDomainWildcardCatchAllRequest {
     id: string;
 }
@@ -22,6 +22,7 @@ export interface DeleteDomainRequest {
 }
 export interface GetDomainRequest {
     id: string;
+    checkForErrors?: boolean;
 }
 export interface GetDomainWildcardCatchAllInboxRequest {
     id: string;
@@ -74,6 +75,16 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Get a domain
      */
     getDomain(requestParameters: GetDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+    /**
+     * List domain issues for domains you have created
+     * Get domain issues
+     */
+    getDomainIssuesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainIssuesDto>>;
+    /**
+     * List domain issues for domains you have created
+     * Get domain issues
+     */
+    getDomainIssues(initOverrides?: RequestInit): Promise<DomainIssuesDto>;
     /**
      * Get the catch all inbox for a domain for missed emails
      * Get catch all wild card inbox for domain

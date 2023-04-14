@@ -22,6 +22,7 @@ var PhonePlanDtoPhoneCountryEnum;
 (function (PhonePlanDtoPhoneCountryEnum) {
     PhonePlanDtoPhoneCountryEnum["US"] = "US";
     PhonePlanDtoPhoneCountryEnum["GB"] = "GB";
+    PhonePlanDtoPhoneCountryEnum["AU"] = "AU";
 })(PhonePlanDtoPhoneCountryEnum = exports.PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = {}));
 function PhonePlanDtoFromJSON(json) {
     return PhonePlanDtoFromJSONTyped(json, false);

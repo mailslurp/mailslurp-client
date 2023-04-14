@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxRulesetDtoToJSON = exports.InboxRulesetDtoFromJSONTyped = exports.InboxRulesetDtoFromJSON = exports.InboxRulesetDtoHandlerEnum = exports.InboxRulesetDtoActionEnum = exports.InboxRulesetDtoScopeEnum = void 0;
+var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -51,7 +52,7 @@ function InboxRulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        inboxId: json['inboxId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         scope: json['scope'],
         action: json['action'],
         target: json['target'],
