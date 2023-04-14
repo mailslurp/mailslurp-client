@@ -31,6 +31,7 @@ __exportStar(require("./FormControllerApi"), exports);
 __exportStar(require("./GroupControllerApi"), exports);
 __exportStar(require("./InboxControllerApi"), exports);
 __exportStar(require("./InboxForwarderControllerApi"), exports);
+__exportStar(require("./InboxReplierControllerApi"), exports);
 __exportStar(require("./InboxRulesetControllerApi"), exports);
 __exportStar(require("./MailServerControllerApi"), exports);
 __exportStar(require("./MissedEmailControllerApi"), exports);

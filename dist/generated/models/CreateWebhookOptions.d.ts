@@ -52,6 +52,12 @@ export interface CreateWebhookOptions {
      * @memberof CreateWebhookOptions
      */
     requestBodyTemplate?: string | null;
+    /**
+     * Ignore insecure SSL certificates when sending request. Useful for self-signed certs.
+     * @type {boolean}
+     * @memberof CreateWebhookOptions
+     */
+    ignoreInsecureSslCertificates?: boolean | null;
 }
 /**
  * @export

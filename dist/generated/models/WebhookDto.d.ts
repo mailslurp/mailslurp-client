@@ -100,6 +100,12 @@ export interface WebhookDto {
      * @memberof WebhookDto
      */
     requestHeaders?: WebhookHeaders;
+    /**
+     * Should notifier ignore insecure SSL certificates
+     * @type {boolean}
+     * @memberof WebhookDto
+     */
+    ignoreInsecureSslCertificates?: boolean | null;
 }
 /**
  * @export

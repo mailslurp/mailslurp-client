@@ -33,6 +33,12 @@ export interface ContactProjection {
   groupId?: string | null;
   /**
    *
+   * @type {string}
+   * @memberof ContactProjection
+   */
+  emailAddress?: string | null;
+  /**
+   *
    * @type {Date}
    * @memberof ContactProjection
    */
@@ -83,6 +89,9 @@ export function ContactProjectionFromJSONTyped(
   return {
     id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
+    emailAddress: !exists(json, 'emailAddress')
+      ? undefined
+      : json['emailAddress'],
     createdAt: new Date(json['createdAt']),
     firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
@@ -104,6 +113,7 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
   return {
     id: value.id,
     groupId: value.groupId,
+    emailAddress: value.emailAddress,
     createdAt: value.createdAt.toISOString(),
     firstName: value.firstName,
     lastName: value.lastName,

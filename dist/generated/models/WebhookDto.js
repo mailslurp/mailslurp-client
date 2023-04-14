@@ -75,6 +75,9 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         requestHeaders: !(0, runtime_1.exists)(json, 'requestHeaders')
             ? undefined
             : (0, _1.WebhookHeadersFromJSON)(json['requestHeaders']),
+        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
+            ? undefined
+            : json['ignoreInsecureSslCertificates'],
     };
 }
 exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
@@ -100,6 +103,7 @@ function WebhookDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
         eventName: value.eventName,
         requestHeaders: (0, _1.WebhookHeadersToJSON)(value.requestHeaders),
+        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
     };
 }
 exports.WebhookDtoToJSON = WebhookDtoToJSON;

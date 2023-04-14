@@ -110,6 +110,12 @@ export interface WebhookDto {
    * @memberof WebhookDto
    */
   requestHeaders?: WebhookHeaders;
+  /**
+   * Should notifier ignore insecure SSL certificates
+   * @type {boolean}
+   * @memberof WebhookDto
+   */
+  ignoreInsecureSslCertificates?: boolean | null;
 }
 
 /**
@@ -173,6 +179,12 @@ export function WebhookDtoFromJSONTyped(
     requestHeaders: !exists(json, 'requestHeaders')
       ? undefined
       : WebhookHeadersFromJSON(json['requestHeaders']),
+    ignoreInsecureSslCertificates: !exists(
+      json,
+      'ignoreInsecureSslCertificates'
+    )
+      ? undefined
+      : json['ignoreInsecureSslCertificates'],
   };
 }
 
@@ -198,5 +210,6 @@ export function WebhookDtoToJSON(value?: WebhookDto | null): any {
     updatedAt: value.updatedAt.toISOString(),
     eventName: value.eventName,
     requestHeaders: WebhookHeadersToJSON(value.requestHeaders),
+    ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
   };
 }

@@ -36,6 +36,12 @@ export interface InboxForwarderDto {
    * @type {string}
    * @memberof InboxForwarderDto
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderDto
+   */
   field: InboxForwarderDtoFieldEnum;
   /**
    *
@@ -82,6 +88,7 @@ export function InboxForwarderDtoFromJSONTyped(
   return {
     id: json['id'],
     inboxId: json['inboxId'],
+    name: !exists(json, 'name') ? undefined : json['name'],
     field: json['field'],
     match: json['match'],
     forwardToRecipients: json['forwardToRecipients'],
@@ -99,6 +106,7 @@ export function InboxForwarderDtoToJSON(value?: InboxForwarderDto | null): any {
   return {
     id: value.id,
     inboxId: value.inboxId,
+    name: value.name,
     field: value.field,
     match: value.match,
     forwardToRecipients: value.forwardToRecipients,

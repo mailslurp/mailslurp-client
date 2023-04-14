@@ -1,4 +1,4 @@
-import { AliasControllerApi, UserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi } from './generated';
+import { AliasControllerApi, UserControllerApi, AttachmentControllerApi, AttachmentMetaData, BounceControllerApi, BulkActionsControllerApi, CommonActionsControllerApi, ContactControllerApi, CreateInboxDto, DomainControllerApi, Email, EmailControllerApi, EmailPreview, EmailVerificationControllerApi, FetchAPI, FormControllerApi, GroupControllerApi, ImapSmtpAccessDetails, InboxControllerApi, InboxDto, InboxForwarderControllerApi, InboxRulesetControllerApi, MailServerControllerApi, MatchOptions, MissedEmailControllerApi, PageInboxProjection, PhoneControllerApi, SendEmailOptions, SentEmailDto, SentEmailsControllerApi, SmsControllerApi, TemplateControllerApi, TrackingControllerApi, UploadAttachmentOptions, WaitForControllerApi, WebhookControllerApi, InboxReplierControllerApi } from './generated';
 export * from './generated';
 type SortEnum = 'ASC' | 'DESC';
 /**
@@ -62,6 +62,7 @@ export declare class MailSlurp {
     readonly phoneController: PhoneControllerApi;
     readonly smsController: SmsControllerApi;
     readonly sentController: SentEmailsControllerApi;
+    readonly inboxReplierController: InboxReplierControllerApi;
     readonly attachmentController: AttachmentControllerApi;
     readonly commonController: CommonActionsControllerApi;
     readonly bulkController: BulkActionsControllerApi;

@@ -36,6 +36,8 @@ function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
+        domainName: !(0, runtime_1.exists)(json, 'domainName') ? undefined : json['domainName'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
         useDomainPool: !(0, runtime_1.exists)(json, 'useDomainPool')
@@ -71,6 +73,8 @@ function CreateInboxDtoToJSON(value) {
     }
     return {
         emailAddress: value.emailAddress,
+        domainName: value.domainName,
+        domainId: value.domainId,
         name: value.name,
         description: value.description,
         useDomainPool: value.useDomainPool,

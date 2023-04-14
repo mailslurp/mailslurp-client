@@ -2,7 +2,7 @@
 
 # Interface: CreateInboxDto
 
-Options for creating an inbox. An inbox has a real email address that can send and receive emails. Inboxes can be permanent or expire at a given time. Inboxes are either `SMTP` or `HTTP` mailboxes. `SMTP` inboxes are processed by a mail server running at `mx.mailslurp.com` while `HTTP` inboxes are processed by AWS SES. Inboxes can use a custom email address (by verifying your own domain) or a randomly assigned email ending in either `mailslurp.com` or (if `useDomainPool` is enabled) ending in a similar domain such as `mailslurp.xyz` (selected at random).
+Options for creating an inbox. An inbox has a real email address that can send and receive emails. Inboxes can be permanent or expire at a given time. Inboxes are either `SMTP` or `HTTP` mailboxes. `SMTP` inboxes are processed by a mail server running at `mailslurp.mx` while `HTTP` inboxes are processed by AWS SES backed mailservers. An inbox email address is randomly assigned by default ending in either `mailslurp.com` or (if `useDomainPool` is enabled) ending in a similar domain such as `mailslurp.xyz` (selected at random). To specify an address use a custom domain: either pass the `emailAddress` options with `<your-recipient>@<your-domain>`. To create a randomized address for your domain set the `domainName` to the domain you have verified or pass the `domainId`. Virtual inboxes prevent outbound sending and instead trap mail.
 
 **`Export`**
 
@@ -16,6 +16,8 @@ CreateInboxDto
 
 - [allowTeamAccess](CreateInboxDto.md#allowteamaccess)
 - [description](CreateInboxDto.md#description)
+- [domainId](CreateInboxDto.md#domainid)
+- [domainName](CreateInboxDto.md#domainname)
 - [emailAddress](CreateInboxDto.md#emailaddress)
 - [expiresAt](CreateInboxDto.md#expiresat)
 - [expiresIn](CreateInboxDto.md#expiresin)
@@ -46,6 +48,30 @@ ___
 • `Optional` **description**: `string`
 
 Optional description of the inbox for labelling purposes. Is shown in the dashboard and can be used with
+
+**`Memberof`**
+
+CreateInboxDto
+
+___
+
+### domainId
+
+• `Optional` **domainId**: `string`
+
+ID of custom domain to use for email address.
+
+**`Memberof`**
+
+CreateInboxDto
+
+___
+
+### domainName
+
+• `Optional` **domainName**: `string`
+
+FQDN domain name for the domain you have verified. Will be appended with a randomly assigned recipient name. Use the `emailAddress` option instead to specify the full custom inbox.
 
 **`Memberof`**
 

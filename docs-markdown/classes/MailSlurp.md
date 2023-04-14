@@ -60,6 +60,7 @@ mailslurp.getEmails(inbox.id).then(emails => {
 - [groupController](MailSlurp.md#groupcontroller)
 - [inboxController](MailSlurp.md#inboxcontroller)
 - [inboxForwarderController](MailSlurp.md#inboxforwardercontroller)
+- [inboxReplierController](MailSlurp.md#inboxrepliercontroller)
 - [inboxRulesetController](MailSlurp.md#inboxrulesetcontroller)
 - [mailServerController](MailSlurp.md#mailservercontroller)
 - [missedEmailController](MailSlurp.md#missedemailcontroller)
@@ -194,6 +195,12 @@ ___
 ### inboxForwarderController
 
 • `Readonly` **inboxForwarderController**: [`InboxForwarderControllerApi`](InboxForwarderControllerApi.md)
+
+___
+
+### inboxReplierController
+
+• `Readonly` **inboxReplierController**: [`InboxReplierControllerApi`](InboxReplierControllerApi.md)
 
 ___
 

@@ -18,6 +18,7 @@ WebhookDto
 - [createdAt](WebhookDto.md#createdat)
 - [eventName](WebhookDto.md#eventname)
 - [id](WebhookDto.md#id)
+- [ignoreInsecureSslCertificates](WebhookDto.md#ignoreinsecuresslcertificates)
 - [inboxId](WebhookDto.md#inboxid)
 - [method](WebhookDto.md#method)
 - [name](WebhookDto.md#name)
@@ -72,6 +73,18 @@ ___
 • **id**: `string`
 
 ID of the Webhook
+
+**`Memberof`**
+
+WebhookDto
+
+___
+
+### ignoreInsecureSslCertificates
+
+• `Optional` **ignoreInsecureSslCertificates**: `boolean`
+
+Should notifier ignore insecure SSL certificates
 
 **`Memberof`**
 

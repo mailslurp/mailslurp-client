@@ -38,6 +38,8 @@ This is the base class for all generated API classes.
 
   ↳ [`InboxForwarderControllerApi`](InboxForwarderControllerApi.md)
 
+  ↳ [`InboxReplierControllerApi`](InboxReplierControllerApi.md)
+
   ↳ [`InboxRulesetControllerApi`](InboxRulesetControllerApi.md)
 
   ↳ [`MailServerControllerApi`](MailServerControllerApi.md)

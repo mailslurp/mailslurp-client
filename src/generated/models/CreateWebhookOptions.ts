@@ -66,6 +66,12 @@ export interface CreateWebhookOptions {
    * @memberof CreateWebhookOptions
    */
   requestBodyTemplate?: string | null;
+  /**
+   * Ignore insecure SSL certificates when sending request. Useful for self-signed certs.
+   * @type {boolean}
+   * @memberof CreateWebhookOptions
+   */
+  ignoreInsecureSslCertificates?: boolean | null;
 }
 
 /**
@@ -109,6 +115,12 @@ export function CreateWebhookOptionsFromJSONTyped(
     requestBodyTemplate: !exists(json, 'requestBodyTemplate')
       ? undefined
       : json['requestBodyTemplate'],
+    ignoreInsecureSslCertificates: !exists(
+      json,
+      'ignoreInsecureSslCertificates'
+    )
+      ? undefined
+      : json['ignoreInsecureSslCertificates'],
   };
 }
 
@@ -128,5 +140,6 @@ export function CreateWebhookOptionsToJSON(
     eventName: value.eventName,
     includeHeaders: WebhookHeadersToJSON(value.includeHeaders),
     requestBodyTemplate: value.requestBodyTemplate,
+    ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
   };
 }

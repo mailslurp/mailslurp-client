@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoFieldEnum = void 0;
+var runtime_1 = require("../runtime");
 /**
  * @export
  * @enum {string}
@@ -36,6 +37,7 @@ function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         inboxId: json['inboxId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         field: json['field'],
         match: json['match'],
         forwardToRecipients: json['forwardToRecipients'],
@@ -53,6 +55,7 @@ function InboxForwarderDtoToJSON(value) {
     return {
         id: value.id,
         inboxId: value.inboxId,
+        name: value.name,
         field: value.field,
         match: value.match,
         forwardToRecipients: value.forwardToRecipients,

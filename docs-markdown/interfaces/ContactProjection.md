@@ -16,6 +16,7 @@ ContactProjection
 
 - [company](ContactProjection.md#company)
 - [createdAt](ContactProjection.md#createdat)
+- [emailAddress](ContactProjection.md#emailaddress)
 - [emailAddresses](ContactProjection.md#emailaddresses)
 - [firstName](ContactProjection.md#firstname)
 - [groupId](ContactProjection.md#groupid)
@@ -38,6 +39,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+ContactProjection
+
+___
+
+### emailAddress
+
+• `Optional` **emailAddress**: `string`
 
 **`Memberof`**
 

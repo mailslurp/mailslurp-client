@@ -18,6 +18,7 @@ MailSlurp JS
 - [CreateInboxDtoInboxTypeEnum](enums/CreateInboxDtoInboxTypeEnum.md)
 - [CreateInboxForwarderOptionsFieldEnum](enums/CreateInboxForwarderOptionsFieldEnum.md)
 - [CreateInboxInboxTypeEnum](enums/CreateInboxInboxTypeEnum.md)
+- [CreateInboxReplierOptionsFieldEnum](enums/CreateInboxReplierOptionsFieldEnum.md)
 - [CreateInboxRulesetOptionsActionEnum](enums/CreateInboxRulesetOptionsActionEnum.md)
 - [CreateInboxRulesetOptionsScopeEnum](enums/CreateInboxRulesetOptionsScopeEnum.md)
 - [CreateNewEmailAddressInboxTypeEnum](enums/CreateNewEmailAddressInboxTypeEnum.md)
@@ -64,6 +65,8 @@ MailSlurp JS
 - [GetInboxEmailsPaginatedSortEnum](enums/GetInboxEmailsPaginatedSortEnum.md)
 - [GetInboxForwarderEventsSortEnum](enums/GetInboxForwarderEventsSortEnum.md)
 - [GetInboxForwardersSortEnum](enums/GetInboxForwardersSortEnum.md)
+- [GetInboxReplierEventsSortEnum](enums/GetInboxReplierEventsSortEnum.md)
+- [GetInboxRepliersSortEnum](enums/GetInboxRepliersSortEnum.md)
 - [GetInboxRulesetsSortEnum](enums/GetInboxRulesetsSortEnum.md)
 - [GetInboxSentEmailsSortEnum](enums/GetInboxSentEmailsSortEnum.md)
 - [GetInboxWebhooksPaginatedSortEnum](enums/GetInboxWebhooksPaginatedSortEnum.md)
@@ -91,6 +94,8 @@ MailSlurp JS
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
 - [InboxForwarderEventProjectionStatusEnum](enums/InboxForwarderEventProjectionStatusEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
+- [InboxReplierDtoFieldEnum](enums/InboxReplierDtoFieldEnum.md)
+- [InboxReplierEventProjectionStatusEnum](enums/InboxReplierEventProjectionStatusEnum.md)
 - [InboxRulesetDtoActionEnum](enums/InboxRulesetDtoActionEnum.md)
 - [InboxRulesetDtoHandlerEnum](enums/InboxRulesetDtoHandlerEnum.md)
 - [InboxRulesetDtoScopeEnum](enums/InboxRulesetDtoScopeEnum.md)
@@ -111,6 +116,7 @@ MailSlurp JS
 - [SmsMatchOptionFieldEnum](enums/SmsMatchOptionFieldEnum.md)
 - [SmsMatchOptionShouldEnum](enums/SmsMatchOptionShouldEnum.md)
 - [TemplateVariableVariableTypeEnum](enums/TemplateVariableVariableTypeEnum.md)
+- [UpdateInboxReplierOptionsFieldEnum](enums/UpdateInboxReplierOptionsFieldEnum.md)
 - [UserInfoDtoAccountStateEnum](enums/UserInfoDtoAccountStateEnum.md)
 - [UserInfoDtoAccountTypeEnum](enums/UserInfoDtoAccountTypeEnum.md)
 - [UserInfoDtoSubscriptionTypeEnum](enums/UserInfoDtoSubscriptionTypeEnum.md)
@@ -161,6 +167,7 @@ MailSlurp JS
 - [GroupControllerApi](classes/GroupControllerApi.md)
 - [InboxControllerApi](classes/InboxControllerApi.md)
 - [InboxForwarderControllerApi](classes/InboxForwarderControllerApi.md)
+- [InboxReplierControllerApi](classes/InboxReplierControllerApi.md)
 - [InboxRulesetControllerApi](classes/InboxRulesetControllerApi.md)
 - [JSONApiResponse](classes/JSONApiResponse.md)
 - [MailServerControllerApi](classes/MailServerControllerApi.md)
@@ -221,12 +228,14 @@ MailSlurp JS
 - [CreateGroupRequest](interfaces/CreateGroupRequest.md)
 - [CreateInboxDto](interfaces/CreateInboxDto.md)
 - [CreateInboxForwarderOptions](interfaces/CreateInboxForwarderOptions.md)
+- [CreateInboxReplierOptions](interfaces/CreateInboxReplierOptions.md)
 - [CreateInboxRequest](interfaces/CreateInboxRequest.md)
 - [CreateInboxRulesetOptions](interfaces/CreateInboxRulesetOptions.md)
 - [CreateInboxRulesetRequest](interfaces/CreateInboxRulesetRequest.md)
 - [CreateInboxWithOptionsRequest](interfaces/CreateInboxWithOptionsRequest.md)
 - [CreateNewEmailAddressRequest](interfaces/CreateNewEmailAddressRequest.md)
 - [CreateNewInboxForwarderRequest](interfaces/CreateNewInboxForwarderRequest.md)
+- [CreateNewInboxReplierRequest](interfaces/CreateNewInboxReplierRequest.md)
 - [CreateNewInboxRulesetRequest](interfaces/CreateNewInboxRulesetRequest.md)
 - [CreateRandomInboxRequest](interfaces/CreateRandomInboxRequest.md)
 - [CreateTemplateOptions](interfaces/CreateTemplateOptions.md)
@@ -251,6 +260,8 @@ MailSlurp JS
 - [DeleteGroupRequest](interfaces/DeleteGroupRequest.md)
 - [DeleteInboxForwarderRequest](interfaces/DeleteInboxForwarderRequest.md)
 - [DeleteInboxForwardersRequest](interfaces/DeleteInboxForwardersRequest.md)
+- [DeleteInboxReplierRequest](interfaces/DeleteInboxReplierRequest.md)
+- [DeleteInboxRepliersRequest](interfaces/DeleteInboxRepliersRequest.md)
 - [DeleteInboxRequest](interfaces/DeleteInboxRequest.md)
 - [DeleteInboxRulesetRequest](interfaces/DeleteInboxRulesetRequest.md)
 - [DeleteInboxRulesetsRequest](interfaces/DeleteInboxRulesetsRequest.md)
@@ -365,6 +376,9 @@ MailSlurp JS
 - [GetInboxForwarderEventsRequest](interfaces/GetInboxForwarderEventsRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
 - [GetInboxForwardersRequest](interfaces/GetInboxForwardersRequest.md)
+- [GetInboxReplierEventsRequest](interfaces/GetInboxReplierEventsRequest.md)
+- [GetInboxReplierRequest](interfaces/GetInboxReplierRequest.md)
+- [GetInboxRepliersRequest](interfaces/GetInboxRepliersRequest.md)
 - [GetInboxRequest](interfaces/GetInboxRequest.md)
 - [GetInboxRulesetRequest](interfaces/GetInboxRulesetRequest.md)
 - [GetInboxRulesetsRequest](interfaces/GetInboxRulesetsRequest.md)
@@ -433,6 +447,8 @@ MailSlurp JS
 - [InboxIdItem](interfaces/InboxIdItem.md)
 - [InboxIdsResult](interfaces/InboxIdsResult.md)
 - [InboxPreview](interfaces/InboxPreview.md)
+- [InboxReplierDto](interfaces/InboxReplierDto.md)
+- [InboxReplierEventProjection](interfaces/InboxReplierEventProjection.md)
 - [InboxRulesetDto](interfaces/InboxRulesetDto.md)
 - [InboxRulesetTestOptions](interfaces/InboxRulesetTestOptions.md)
 - [InboxRulesetTestResult](interfaces/InboxRulesetTestResult.md)
@@ -465,6 +481,8 @@ MailSlurp JS
 - [PageInboxForwarderDto](interfaces/PageInboxForwarderDto.md)
 - [PageInboxForwarderEvents](interfaces/PageInboxForwarderEvents.md)
 - [PageInboxProjection](interfaces/PageInboxProjection.md)
+- [PageInboxReplierDto](interfaces/PageInboxReplierDto.md)
+- [PageInboxReplierEvents](interfaces/PageInboxReplierEvents.md)
 - [PageInboxRulesetDto](interfaces/PageInboxRulesetDto.md)
 - [PageListUnsubscribeRecipients](interfaces/PageListUnsubscribeRecipients.md)
 - [PageMissedEmailProjection](interfaces/PageMissedEmailProjection.md)
@@ -551,6 +569,8 @@ MailSlurp JS
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
 - [UpdateInboxForwarderRequest](interfaces/UpdateInboxForwarderRequest.md)
 - [UpdateInboxOptions](interfaces/UpdateInboxOptions.md)
+- [UpdateInboxReplierOptions](interfaces/UpdateInboxReplierOptions.md)
+- [UpdateInboxReplierRequest](interfaces/UpdateInboxReplierRequest.md)
 - [UpdateInboxRequest](interfaces/UpdateInboxRequest.md)
 - [UpdateTemplateRequest](interfaces/UpdateTemplateRequest.md)
 - [UpdateWebhookHeadersRequest](interfaces/UpdateWebhookHeadersRequest.md)
@@ -696,6 +716,9 @@ MailSlurp JS
 - [CreateInboxForwarderOptionsFromJSON](README.md#createinboxforwarderoptionsfromjson)
 - [CreateInboxForwarderOptionsFromJSONTyped](README.md#createinboxforwarderoptionsfromjsontyped)
 - [CreateInboxForwarderOptionsToJSON](README.md#createinboxforwarderoptionstojson)
+- [CreateInboxReplierOptionsFromJSON](README.md#createinboxreplieroptionsfromjson)
+- [CreateInboxReplierOptionsFromJSONTyped](README.md#createinboxreplieroptionsfromjsontyped)
+- [CreateInboxReplierOptionsToJSON](README.md#createinboxreplieroptionstojson)
 - [CreateInboxRulesetOptionsFromJSON](README.md#createinboxrulesetoptionsfromjson)
 - [CreateInboxRulesetOptionsFromJSONTyped](README.md#createinboxrulesetoptionsfromjsontyped)
 - [CreateInboxRulesetOptionsToJSON](README.md#createinboxrulesetoptionstojson)
@@ -867,6 +890,12 @@ MailSlurp JS
 - [InboxPreviewFromJSON](README.md#inboxpreviewfromjson)
 - [InboxPreviewFromJSONTyped](README.md#inboxpreviewfromjsontyped)
 - [InboxPreviewToJSON](README.md#inboxpreviewtojson)
+- [InboxReplierDtoFromJSON](README.md#inboxreplierdtofromjson)
+- [InboxReplierDtoFromJSONTyped](README.md#inboxreplierdtofromjsontyped)
+- [InboxReplierDtoToJSON](README.md#inboxreplierdtotojson)
+- [InboxReplierEventProjectionFromJSON](README.md#inboxrepliereventprojectionfromjson)
+- [InboxReplierEventProjectionFromJSONTyped](README.md#inboxrepliereventprojectionfromjsontyped)
+- [InboxReplierEventProjectionToJSON](README.md#inboxrepliereventprojectiontojson)
 - [InboxRulesetDtoFromJSON](README.md#inboxrulesetdtofromjson)
 - [InboxRulesetDtoFromJSONTyped](README.md#inboxrulesetdtofromjsontyped)
 - [InboxRulesetDtoToJSON](README.md#inboxrulesetdtotojson)
@@ -951,6 +980,12 @@ MailSlurp JS
 - [PageInboxProjectionFromJSON](README.md#pageinboxprojectionfromjson)
 - [PageInboxProjectionFromJSONTyped](README.md#pageinboxprojectionfromjsontyped)
 - [PageInboxProjectionToJSON](README.md#pageinboxprojectiontojson)
+- [PageInboxReplierDtoFromJSON](README.md#pageinboxreplierdtofromjson)
+- [PageInboxReplierDtoFromJSONTyped](README.md#pageinboxreplierdtofromjsontyped)
+- [PageInboxReplierDtoToJSON](README.md#pageinboxreplierdtotojson)
+- [PageInboxReplierEventsFromJSON](README.md#pageinboxrepliereventsfromjson)
+- [PageInboxReplierEventsFromJSONTyped](README.md#pageinboxrepliereventsfromjsontyped)
+- [PageInboxReplierEventsToJSON](README.md#pageinboxrepliereventstojson)
 - [PageInboxRulesetDtoFromJSON](README.md#pageinboxrulesetdtofromjson)
 - [PageInboxRulesetDtoFromJSONTyped](README.md#pageinboxrulesetdtofromjsontyped)
 - [PageInboxRulesetDtoToJSON](README.md#pageinboxrulesetdtotojson)
@@ -1116,6 +1151,9 @@ MailSlurp JS
 - [UpdateInboxOptionsFromJSON](README.md#updateinboxoptionsfromjson)
 - [UpdateInboxOptionsFromJSONTyped](README.md#updateinboxoptionsfromjsontyped)
 - [UpdateInboxOptionsToJSON](README.md#updateinboxoptionstojson)
+- [UpdateInboxReplierOptionsFromJSON](README.md#updateinboxreplieroptionsfromjson)
+- [UpdateInboxReplierOptionsFromJSONTyped](README.md#updateinboxreplieroptionsfromjsontyped)
+- [UpdateInboxReplierOptionsToJSON](README.md#updateinboxreplieroptionstojson)
 - [UploadAttachmentOptionsFromJSON](README.md#uploadattachmentoptionsfromjson)
 - [UploadAttachmentOptionsFromJSONTyped](README.md#uploadattachmentoptionsfromjsontyped)
 - [UploadAttachmentOptionsToJSON](README.md#uploadattachmentoptionstojson)
@@ -2565,6 +2603,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateInboxForwarderOptions`](interfaces/CreateInboxForwarderOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateInboxReplierOptionsFromJSON
+
+▸ **CreateInboxReplierOptionsFromJSON**(`json`): [`CreateInboxReplierOptions`](interfaces/CreateInboxReplierOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateInboxReplierOptions`](interfaces/CreateInboxReplierOptions.md)
+
+___
+
+### CreateInboxReplierOptionsFromJSONTyped
+
+▸ **CreateInboxReplierOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateInboxReplierOptions`](interfaces/CreateInboxReplierOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateInboxReplierOptions`](interfaces/CreateInboxReplierOptions.md)
+
+___
+
+### CreateInboxReplierOptionsToJSON
+
+▸ **CreateInboxReplierOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateInboxReplierOptions`](interfaces/CreateInboxReplierOptions.md) |
 
 #### Returns
 
@@ -5365,6 +5452,104 @@ ___
 
 ___
 
+### InboxReplierDtoFromJSON
+
+▸ **InboxReplierDtoFromJSON**(`json`): [`InboxReplierDto`](interfaces/InboxReplierDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxReplierDto`](interfaces/InboxReplierDto.md)
+
+___
+
+### InboxReplierDtoFromJSONTyped
+
+▸ **InboxReplierDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxReplierDto`](interfaces/InboxReplierDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxReplierDto`](interfaces/InboxReplierDto.md)
+
+___
+
+### InboxReplierDtoToJSON
+
+▸ **InboxReplierDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxReplierDto`](interfaces/InboxReplierDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### InboxReplierEventProjectionFromJSON
+
+▸ **InboxReplierEventProjectionFromJSON**(`json`): [`InboxReplierEventProjection`](interfaces/InboxReplierEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxReplierEventProjection`](interfaces/InboxReplierEventProjection.md)
+
+___
+
+### InboxReplierEventProjectionFromJSONTyped
+
+▸ **InboxReplierEventProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxReplierEventProjection`](interfaces/InboxReplierEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxReplierEventProjection`](interfaces/InboxReplierEventProjection.md)
+
+___
+
+### InboxReplierEventProjectionToJSON
+
+▸ **InboxReplierEventProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxReplierEventProjection`](interfaces/InboxReplierEventProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### InboxRulesetDtoFromJSON
 
 ▸ **InboxRulesetDtoFromJSON**(`json`): [`InboxRulesetDto`](interfaces/InboxRulesetDto.md)
@@ -6730,6 +6915,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageInboxProjection`](interfaces/PageInboxProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageInboxReplierDtoFromJSON
+
+▸ **PageInboxReplierDtoFromJSON**(`json`): [`PageInboxReplierDto`](interfaces/PageInboxReplierDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxReplierDto`](interfaces/PageInboxReplierDto.md)
+
+___
+
+### PageInboxReplierDtoFromJSONTyped
+
+▸ **PageInboxReplierDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxReplierDto`](interfaces/PageInboxReplierDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxReplierDto`](interfaces/PageInboxReplierDto.md)
+
+___
+
+### PageInboxReplierDtoToJSON
+
+▸ **PageInboxReplierDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxReplierDto`](interfaces/PageInboxReplierDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageInboxReplierEventsFromJSON
+
+▸ **PageInboxReplierEventsFromJSON**(`json`): [`PageInboxReplierEvents`](interfaces/PageInboxReplierEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageInboxReplierEvents`](interfaces/PageInboxReplierEvents.md)
+
+___
+
+### PageInboxReplierEventsFromJSONTyped
+
+▸ **PageInboxReplierEventsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageInboxReplierEvents`](interfaces/PageInboxReplierEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageInboxReplierEvents`](interfaces/PageInboxReplierEvents.md)
+
+___
+
+### PageInboxReplierEventsToJSON
+
+▸ **PageInboxReplierEventsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageInboxReplierEvents`](interfaces/PageInboxReplierEvents.md) |
 
 #### Returns
 
@@ -9425,6 +9708,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`UpdateInboxOptions`](interfaces/UpdateInboxOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### UpdateInboxReplierOptionsFromJSON
+
+▸ **UpdateInboxReplierOptionsFromJSON**(`json`): [`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md)
+
+___
+
+### UpdateInboxReplierOptionsFromJSONTyped
+
+▸ **UpdateInboxReplierOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md)
+
+___
+
+### UpdateInboxReplierOptionsToJSON
+
+▸ **UpdateInboxReplierOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`UpdateInboxReplierOptions`](interfaces/UpdateInboxReplierOptions.md) |
 
 #### Returns
 

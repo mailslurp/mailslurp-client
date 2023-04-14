@@ -166,6 +166,7 @@ var MailSlurp = /** @class */ (function () {
         this.missedEmailController = new (generated_1.MissedEmailControllerApi.bind.apply(generated_1.MissedEmailControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.inboxRulesetController = new (generated_1.InboxRulesetControllerApi.bind.apply(generated_1.InboxRulesetControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.inboxForwarderController = new (generated_1.InboxForwarderControllerApi.bind.apply(generated_1.InboxForwarderControllerApi, __spreadArray([void 0], __read(args), false)))();
+        this.inboxReplierController = new (generated_1.InboxReplierControllerApi.bind.apply(generated_1.InboxReplierControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.trackingController = new (generated_1.TrackingControllerApi.bind.apply(generated_1.TrackingControllerApi, __spreadArray([void 0], __read(args), false)))();
         this.bounceController = new (generated_1.BounceControllerApi.bind.apply(generated_1.BounceControllerApi, __spreadArray([void 0], __read(args), false)))();
     }

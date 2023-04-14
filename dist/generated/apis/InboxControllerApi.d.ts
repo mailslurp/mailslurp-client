@@ -27,6 +27,8 @@ export interface CreateInboxRequest {
     inboxType?: CreateInboxInboxTypeEnum;
     virtualInbox?: boolean;
     useShortAddress?: boolean;
+    domainId?: string;
+    domainName?: string;
 }
 export interface CreateInboxRulesetRequest {
     inboxId: string;
@@ -124,6 +126,7 @@ export interface GetInboxesRequest {
     size?: number;
     sort?: GetInboxesSortEnum;
     since?: Date;
+    excludeCatchAllInboxes?: boolean;
     before?: Date;
 }
 export interface GetLatestEmailInInboxRequest {

@@ -7,6 +7,7 @@
 ### Properties
 
 - [before](GetInboxesRequest.md#before)
+- [excludeCatchAllInboxes](GetInboxesRequest.md#excludecatchallinboxes)
 - [since](GetInboxesRequest.md#since)
 - [size](GetInboxesRequest.md#size)
 - [sort](GetInboxesRequest.md#sort)
@@ -16,6 +17,12 @@
 ### before
 
 • `Optional` **before**: `Date`
+
+___
+
+### excludeCatchAllInboxes
+
+• `Optional` **excludeCatchAllInboxes**: `boolean`
 
 ___
 

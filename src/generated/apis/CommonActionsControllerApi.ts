@@ -35,6 +35,8 @@ export interface CreateNewEmailAddressRequest {
   favourite?: boolean;
   virtualInbox?: boolean;
   useShortAddress?: boolean;
+  domainName?: string;
+  domainId?: string;
 }
 
 export interface CreateRandomInboxRequest {
@@ -50,6 +52,8 @@ export interface CreateRandomInboxRequest {
   favourite?: boolean;
   virtualInbox?: boolean;
   useShortAddress?: boolean;
+  domainName?: string;
+  domainId?: string;
 }
 
 export interface DeleteEmailAddressRequest {
@@ -126,6 +130,14 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.useShortAddress !== undefined) {
       queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+    }
+
+    if (requestParameters.domainName !== undefined) {
+      queryParameters['domainName'] = requestParameters.domainName;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -222,6 +234,14 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.useShortAddress !== undefined) {
       queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+    }
+
+    if (requestParameters.domainName !== undefined) {
+      queryParameters['domainName'] = requestParameters.domainName;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

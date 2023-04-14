@@ -29,6 +29,12 @@ export interface ContactProjection {
     groupId?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    emailAddress?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof ContactProjection
      */

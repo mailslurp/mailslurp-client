@@ -54,6 +54,9 @@ function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
         requestBodyTemplate: !(0, runtime_1.exists)(json, 'requestBodyTemplate')
             ? undefined
             : json['requestBodyTemplate'],
+        ignoreInsecureSslCertificates: !(0, runtime_1.exists)(json, 'ignoreInsecureSslCertificates')
+            ? undefined
+            : json['ignoreInsecureSslCertificates'],
     };
 }
 exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
@@ -71,6 +74,7 @@ function CreateWebhookOptionsToJSON(value) {
         eventName: value.eventName,
         includeHeaders: (0, _1.WebhookHeadersToJSON)(value.includeHeaders),
         requestBodyTemplate: value.requestBodyTemplate,
+        ignoreInsecureSslCertificates: value.ignoreInsecureSslCertificates,
     };
 }
 exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

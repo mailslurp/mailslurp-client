@@ -14,6 +14,7 @@ apis/FormControllerApi.ts
 apis/GroupControllerApi.ts
 apis/InboxControllerApi.ts
 apis/InboxForwarderControllerApi.ts
+apis/InboxReplierControllerApi.ts
 apis/InboxRulesetControllerApi.ts
 apis/MailServerControllerApi.ts
 apis/MissedEmailControllerApi.ts
@@ -52,6 +53,7 @@ models/CreateEmergencyAddressOptions.ts
 models/CreateGroupOptions.ts
 models/CreateInboxDto.ts
 models/CreateInboxForwarderOptions.ts
+models/CreateInboxReplierOptions.ts
 models/CreateInboxRulesetOptions.ts
 models/CreateTemplateOptions.ts
 models/CreateTrackingPixelOptions.ts
@@ -109,6 +111,8 @@ models/InboxForwarderTestResult.ts
 models/InboxIdItem.ts
 models/InboxIdsResult.ts
 models/InboxPreview.ts
+models/InboxReplierDto.ts
+models/InboxReplierEventProjection.ts
 models/InboxRulesetDto.ts
 models/InboxRulesetTestOptions.ts
 models/InboxRulesetTestResult.ts
@@ -137,6 +141,8 @@ models/PageGroupProjection.ts
 models/PageInboxForwarderDto.ts
 models/PageInboxForwarderEvents.ts
 models/PageInboxProjection.ts
+models/PageInboxReplierDto.ts
+models/PageInboxReplierEvents.ts
 models/PageInboxRulesetDto.ts
 models/PageListUnsubscribeRecipients.ts
 models/PageMissedEmailProjection.ts
@@ -192,6 +198,7 @@ models/UpdateAliasOptions.ts
 models/UpdateDomainOptions.ts
 models/UpdateGroupContacts.ts
 models/UpdateInboxOptions.ts
+models/UpdateInboxReplierOptions.ts
 models/UploadAttachmentOptions.ts
 models/UserInfoDto.ts
 models/ValidateEmailAddressListOptions.ts

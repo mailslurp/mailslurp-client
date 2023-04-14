@@ -197,6 +197,12 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.useShortAddress !== undefined) {
                             queryParameters['useShortAddress'] = requestParameters.useShortAddress;
                         }
+                        if (requestParameters.domainId !== undefined) {
+                            queryParameters['domainId'] = requestParameters.domainId;
+                        }
+                        if (requestParameters.domainName !== undefined) {
+                            queryParameters['domainName'] = requestParameters.domainName;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1486,6 +1492,10 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.since !== undefined) {
                             queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.excludeCatchAllInboxes !== undefined) {
+                            queryParameters['excludeCatchAllInboxes'] =
+                                requestParameters.excludeCatchAllInboxes;
                         }
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();

@@ -13,6 +13,7 @@ export * from './FormControllerApi';
 export * from './GroupControllerApi';
 export * from './InboxControllerApi';
 export * from './InboxForwarderControllerApi';
+export * from './InboxReplierControllerApi';
 export * from './InboxRulesetControllerApi';
 export * from './MailServerControllerApi';
 export * from './MissedEmailControllerApi';

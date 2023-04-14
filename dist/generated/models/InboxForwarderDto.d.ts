@@ -32,6 +32,12 @@ export interface InboxForwarderDto {
      * @type {string}
      * @memberof InboxForwarderDto
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderDto
+     */
     field: InboxForwarderDtoFieldEnum;
     /**
      *

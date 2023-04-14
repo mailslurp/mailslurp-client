@@ -16,6 +16,7 @@ CreateWebhookOptions
 
 - [basicAuth](CreateWebhookOptions.md#basicauth)
 - [eventName](CreateWebhookOptions.md#eventname)
+- [ignoreInsecureSslCertificates](CreateWebhookOptions.md#ignoreinsecuresslcertificates)
 - [includeHeaders](CreateWebhookOptions.md#includeheaders)
 - [name](CreateWebhookOptions.md#name)
 - [requestBodyTemplate](CreateWebhookOptions.md#requestbodytemplate)
@@ -38,6 +39,18 @@ ___
 • `Optional` **eventName**: [`CreateWebhookOptionsEventNameEnum`](../enums/CreateWebhookOptionsEventNameEnum.md)
 
 Optional webhook event name. Default is `EMAIL_RECEIVED` and is triggered when an email is received by the inbox associated with the webhook. Payload differ according to the webhook event name.
+
+**`Memberof`**
+
+CreateWebhookOptions
+
+___
+
+### ignoreInsecureSslCertificates
+
+• `Optional` **ignoreInsecureSslCertificates**: `boolean`
+
+Ignore insecure SSL certificates when sending request. Useful for self-signed certs.
 
 **`Memberof`**
 

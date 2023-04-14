@@ -8,6 +8,8 @@
 
 - [allowTeamAccess](CreateRandomInboxRequest.md#allowteamaccess)
 - [description](CreateRandomInboxRequest.md#description)
+- [domainId](CreateRandomInboxRequest.md#domainid)
+- [domainName](CreateRandomInboxRequest.md#domainname)
 - [emailAddress](CreateRandomInboxRequest.md#emailaddress)
 - [expiresAt](CreateRandomInboxRequest.md#expiresat)
 - [expiresIn](CreateRandomInboxRequest.md#expiresin)
@@ -30,6 +32,18 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### domainId
+
+• `Optional` **domainId**: `string`
+
+___
+
+### domainName
+
+• `Optional` **domainName**: `string`
 
 ___
 

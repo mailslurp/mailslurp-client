@@ -20,6 +20,7 @@ InboxForwarderDto
 - [id](InboxForwarderDto.md#id)
 - [inboxId](InboxForwarderDto.md#inboxid)
 - [match](InboxForwarderDto.md#match)
+- [name](InboxForwarderDto.md#name)
 
 ## Properties
 
@@ -76,6 +77,16 @@ ___
 ### match
 
 • **match**: `string`
+
+**`Memberof`**
+
+InboxForwarderDto
+
+___
+
+### name
+
+• `Optional` **name**: `string`
 
 **`Memberof`**
 

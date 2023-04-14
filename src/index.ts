@@ -45,6 +45,7 @@ import {
   UploadAttachmentOptions,
   WaitForControllerApi,
   WebhookControllerApi,
+  InboxReplierControllerApi,
 } from './generated';
 
 export * from './generated';
@@ -115,6 +116,7 @@ export class MailSlurp {
   public readonly phoneController: PhoneControllerApi;
   public readonly smsController: SmsControllerApi;
   public readonly sentController: SentEmailsControllerApi;
+  public readonly inboxReplierController: InboxReplierControllerApi;
   public readonly attachmentController: AttachmentControllerApi;
 
   public readonly commonController: CommonActionsControllerApi;
@@ -187,6 +189,7 @@ export class MailSlurp {
     this.missedEmailController = new MissedEmailControllerApi(...args);
     this.inboxRulesetController = new InboxRulesetControllerApi(...args);
     this.inboxForwarderController = new InboxForwarderControllerApi(...args);
+    this.inboxReplierController = new InboxReplierControllerApi(...args);
     this.trackingController = new TrackingControllerApi(...args);
     this.bounceController = new BounceControllerApi(...args);
   }

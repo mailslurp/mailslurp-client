@@ -114,6 +114,8 @@ export interface CreateInboxRequest {
   inboxType?: CreateInboxInboxTypeEnum;
   virtualInbox?: boolean;
   useShortAddress?: boolean;
+  domainId?: string;
+  domainName?: string;
 }
 
 export interface CreateInboxRulesetRequest {
@@ -229,6 +231,7 @@ export interface GetInboxesRequest {
   size?: number;
   sort?: GetInboxesSortEnum;
   since?: Date;
+  excludeCatchAllInboxes?: boolean;
   before?: Date;
 }
 
@@ -443,6 +446,14 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.useShortAddress !== undefined) {
       queryParameters['useShortAddress'] = requestParameters.useShortAddress;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
+    }
+
+    if (requestParameters.domainName !== undefined) {
+      queryParameters['domainName'] = requestParameters.domainName;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1824,6 +1835,11 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.since !== undefined) {
       queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.excludeCatchAllInboxes !== undefined) {
+      queryParameters['excludeCatchAllInboxes'] =
+        requestParameters.excludeCatchAllInboxes;
     }
 
     if (requestParameters.before !== undefined) {

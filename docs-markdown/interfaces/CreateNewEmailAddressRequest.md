@@ -8,6 +8,8 @@
 
 - [allowTeamAccess](CreateNewEmailAddressRequest.md#allowteamaccess)
 - [description](CreateNewEmailAddressRequest.md#description)
+- [domainId](CreateNewEmailAddressRequest.md#domainid)
+- [domainName](CreateNewEmailAddressRequest.md#domainname)
 - [emailAddress](CreateNewEmailAddressRequest.md#emailaddress)
 - [expiresAt](CreateNewEmailAddressRequest.md#expiresat)
 - [expiresIn](CreateNewEmailAddressRequest.md#expiresin)
@@ -30,6 +32,18 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### domainId
+
+• `Optional` **domainId**: `string`
+
+___
+
+### domainName
+
+• `Optional` **domainName**: `string`
 
 ___
 

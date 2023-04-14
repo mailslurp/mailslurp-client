@@ -8,6 +8,8 @@
 
 - [allowTeamAccess](CreateInboxRequest.md#allowteamaccess)
 - [description](CreateInboxRequest.md#description)
+- [domainId](CreateInboxRequest.md#domainid)
+- [domainName](CreateInboxRequest.md#domainname)
 - [emailAddress](CreateInboxRequest.md#emailaddress)
 - [expiresAt](CreateInboxRequest.md#expiresat)
 - [expiresIn](CreateInboxRequest.md#expiresin)
@@ -30,6 +32,18 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### domainId
+
+• `Optional` **domainId**: `string`
+
+___
+
+### domainName
+
+• `Optional` **domainName**: `string`
 
 ___
 

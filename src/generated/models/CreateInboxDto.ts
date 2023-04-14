@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Options for creating an inbox. An inbox has a real email address that can send and receive emails. Inboxes can be permanent or expire at a given time. Inboxes are either `SMTP` or `HTTP` mailboxes. `SMTP` inboxes are processed by a mail server running at `mx.mailslurp.com` while `HTTP` inboxes are processed by AWS SES. Inboxes can use a custom email address (by verifying your own domain) or a randomly assigned email ending in either `mailslurp.com` or (if `useDomainPool` is enabled) ending in a similar domain such as `mailslurp.xyz` (selected at random).
+ * Options for creating an inbox. An inbox has a real email address that can send and receive emails. Inboxes can be permanent or expire at a given time. Inboxes are either `SMTP` or `HTTP` mailboxes. `SMTP` inboxes are processed by a mail server running at `mailslurp.mx` while `HTTP` inboxes are processed by AWS SES backed mailservers. An inbox email address is randomly assigned by default ending in either `mailslurp.com` or (if `useDomainPool` is enabled) ending in a similar domain such as `mailslurp.xyz` (selected at random). To specify an address use a custom domain: either pass the `emailAddress` options with `<your-recipient>@<your-domain>`. To create a randomized address for your domain set the `domainName` to the domain you have verified or pass the `domainId`. Virtual inboxes prevent outbound sending and instead trap mail.
  * @export
  * @interface CreateInboxDto
  */
@@ -25,6 +25,18 @@ export interface CreateInboxDto {
    * @memberof CreateInboxDto
    */
   emailAddress?: string | null;
+  /**
+   * FQDN domain name for the domain you have verified. Will be appended with a randomly assigned recipient name. Use the `emailAddress` option instead to specify the full custom inbox.
+   * @type {string}
+   * @memberof CreateInboxDto
+   */
+  domainName?: string | null;
+  /**
+   * ID of custom domain to use for email address.
+   * @type {string}
+   * @memberof CreateInboxDto
+   */
+  domainId?: string | null;
   /**
    * Optional name of the inbox. Displayed in the dashboard for easier search and used as the sender name when sending emails.
    * @type {string}
@@ -117,6 +129,8 @@ export function CreateInboxDtoFromJSONTyped(
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
+    domainName: !exists(json, 'domainName') ? undefined : json['domainName'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     description: !exists(json, 'description') ? undefined : json['description'],
     useDomainPool: !exists(json, 'useDomainPool')
@@ -152,6 +166,8 @@ export function CreateInboxDtoToJSON(value?: CreateInboxDto | null): any {
   }
   return {
     emailAddress: value.emailAddress,
+    domainName: value.domainName,
+    domainId: value.domainId,
     name: value.name,
     description: value.description,
     useDomainPool: value.useDomainPool,
