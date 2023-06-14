@@ -40,6 +40,15 @@ export interface CreateInboxWithOptionsRequest {
 export interface DeleteAllInboxEmailsRequest {
     inboxId: string;
 }
+export interface DeleteAllInboxesByDescriptionRequest {
+    description: string;
+}
+export interface DeleteAllInboxesByNameRequest {
+    name: string;
+}
+export interface DeleteAllInboxesByTagRequest {
+    tag: string;
+}
 export interface DeleteInboxRequest {
     inboxId: string;
 }
@@ -277,6 +286,36 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Delete all inboxes
      */
     deleteAllInboxes(initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    deleteAllInboxesByDescriptionRaw(requestParameters: DeleteAllInboxesByDescriptionRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    deleteAllInboxesByDescription(requestParameters: DeleteAllInboxesByDescriptionRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    deleteAllInboxesByNameRaw(requestParameters: DeleteAllInboxesByNameRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    deleteAllInboxesByName(requestParameters: DeleteAllInboxesByNameRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    deleteAllInboxesByTagRaw(requestParameters: DeleteAllInboxesByTagRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    deleteAllInboxesByTag(requestParameters: DeleteAllInboxesByTagRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * Delete inbox

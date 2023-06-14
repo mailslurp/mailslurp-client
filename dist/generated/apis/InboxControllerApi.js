@@ -491,6 +491,158 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByDescriptionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.description === null ||
+                            requestParameters.description === undefined) {
+                            throw new runtime.RequiredError('description', 'Required parameter requestParameters.description was null or undefined when calling deleteAllInboxesByDescription.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.description !== undefined) {
+                            queryParameters['description'] = requestParameters.description;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/by-description",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Permanently delete all inboxes by description
+     * Delete inboxes by description
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByDescription = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteAllInboxesByDescriptionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByNameRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.name === null ||
+                            requestParameters.name === undefined) {
+                            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling deleteAllInboxesByName.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.name !== undefined) {
+                            queryParameters['name'] = requestParameters.name;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/by-name",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Permanently delete all inboxes by name
+     * Delete inboxes by name
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByName = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteAllInboxesByNameRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByTagRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.tag === null || requestParameters.tag === undefined) {
+                            throw new runtime.RequiredError('tag', 'Required parameter requestParameters.tag was null or undefined when calling deleteAllInboxesByTag.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.tag !== undefined) {
+                            queryParameters['tag'] = requestParameters.tag;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/by-tag",
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Permanently delete all inboxes by tag
+     * Delete inboxes by tag
+     */
+    InboxControllerApi.prototype.deleteAllInboxesByTag = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteAllInboxesByTagRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Permanently delete an inbox and associated email address as well as all emails within the given inbox. This action cannot be undone. Note: deleting an inbox will not affect your account usage. Monthly inbox usage is based on how many inboxes you create within 30 days, not how many exist at time of request.
      * Delete inbox
      */

@@ -38,13 +38,13 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    userId: string;
+    inboxId: string;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    inboxId: string;
+    userId: string;
     /**
      *
      * @type {Array<string>}

@@ -33,6 +33,12 @@
 - [deleteAllInboxEmails](InboxControllerApi.md#deleteallinboxemails)
 - [deleteAllInboxEmailsRaw](InboxControllerApi.md#deleteallinboxemailsraw)
 - [deleteAllInboxes](InboxControllerApi.md#deleteallinboxes)
+- [deleteAllInboxesByDescription](InboxControllerApi.md#deleteallinboxesbydescription)
+- [deleteAllInboxesByDescriptionRaw](InboxControllerApi.md#deleteallinboxesbydescriptionraw)
+- [deleteAllInboxesByName](InboxControllerApi.md#deleteallinboxesbyname)
+- [deleteAllInboxesByNameRaw](InboxControllerApi.md#deleteallinboxesbynameraw)
+- [deleteAllInboxesByTag](InboxControllerApi.md#deleteallinboxesbytag)
+- [deleteAllInboxesByTagRaw](InboxControllerApi.md#deleteallinboxesbytagraw)
 - [deleteAllInboxesRaw](InboxControllerApi.md#deleteallinboxesraw)
 - [deleteInbox](InboxControllerApi.md#deleteinbox)
 - [deleteInboxRaw](InboxControllerApi.md#deleteinboxraw)
@@ -383,6 +389,126 @@ Delete all inboxes
 #### Returns
 
 `Promise`<`void`\>
+
+___
+
+### deleteAllInboxesByDescription
+
+▸ **deleteAllInboxesByDescription**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Permanently delete all inboxes by description
+Delete inboxes by description
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByDescriptionRequest`](../interfaces/DeleteAllInboxesByDescriptionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllInboxesByDescriptionRaw
+
+▸ **deleteAllInboxesByDescriptionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Permanently delete all inboxes by description
+Delete inboxes by description
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByDescriptionRequest`](../interfaces/DeleteAllInboxesByDescriptionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deleteAllInboxesByName
+
+▸ **deleteAllInboxesByName**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Permanently delete all inboxes by name
+Delete inboxes by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByNameRequest`](../interfaces/DeleteAllInboxesByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllInboxesByNameRaw
+
+▸ **deleteAllInboxesByNameRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Permanently delete all inboxes by name
+Delete inboxes by name
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByNameRequest`](../interfaces/DeleteAllInboxesByNameRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deleteAllInboxesByTag
+
+▸ **deleteAllInboxesByTag**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Permanently delete all inboxes by tag
+Delete inboxes by tag
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByTagRequest`](../interfaces/DeleteAllInboxesByTagRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllInboxesByTagRaw
+
+▸ **deleteAllInboxesByTagRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Permanently delete all inboxes by tag
+Delete inboxes by tag
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteAllInboxesByTagRequest`](../interfaces/DeleteAllInboxesByTagRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

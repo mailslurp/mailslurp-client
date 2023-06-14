@@ -21,6 +21,7 @@ __exportStar(require("./AttachmentControllerApi"), exports);
 __exportStar(require("./BounceControllerApi"), exports);
 __exportStar(require("./BulkActionsControllerApi"), exports);
 __exportStar(require("./CommonActionsControllerApi"), exports);
+__exportStar(require("./ConnectorControllerApi"), exports);
 __exportStar(require("./ContactControllerApi"), exports);
 __exportStar(require("./DomainControllerApi"), exports);
 __exportStar(require("./EmailControllerApi"), exports);

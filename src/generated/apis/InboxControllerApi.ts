@@ -131,6 +131,18 @@ export interface DeleteAllInboxEmailsRequest {
   inboxId: string;
 }
 
+export interface DeleteAllInboxesByDescriptionRequest {
+  description: string;
+}
+
+export interface DeleteAllInboxesByNameRequest {
+  name: string;
+}
+
+export interface DeleteAllInboxesByTagRequest {
+  tag: string;
+}
+
 export interface DeleteInboxRequest {
   inboxId: string;
 }
@@ -751,6 +763,168 @@ export class InboxControllerApi extends runtime.BaseAPI {
    */
   async deleteAllInboxes(initOverrides?: RequestInit): Promise<void> {
     await this.deleteAllInboxesRaw(initOverrides);
+  }
+
+  /**
+   * Permanently delete all inboxes by description
+   * Delete inboxes by description
+   */
+  async deleteAllInboxesByDescriptionRaw(
+    requestParameters: DeleteAllInboxesByDescriptionRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.description === null ||
+      requestParameters.description === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'description',
+        'Required parameter requestParameters.description was null or undefined when calling deleteAllInboxesByDescription.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.description !== undefined) {
+      queryParameters['description'] = requestParameters.description;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/by-description`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Permanently delete all inboxes by description
+   * Delete inboxes by description
+   */
+  async deleteAllInboxesByDescription(
+    requestParameters: DeleteAllInboxesByDescriptionRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllInboxesByDescriptionRaw(
+      requestParameters,
+      initOverrides
+    );
+  }
+
+  /**
+   * Permanently delete all inboxes by name
+   * Delete inboxes by name
+   */
+  async deleteAllInboxesByNameRaw(
+    requestParameters: DeleteAllInboxesByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.name === null ||
+      requestParameters.name === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'name',
+        'Required parameter requestParameters.name was null or undefined when calling deleteAllInboxesByName.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.name !== undefined) {
+      queryParameters['name'] = requestParameters.name;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/by-name`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Permanently delete all inboxes by name
+   * Delete inboxes by name
+   */
+  async deleteAllInboxesByName(
+    requestParameters: DeleteAllInboxesByNameRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllInboxesByNameRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Permanently delete all inboxes by tag
+   * Delete inboxes by tag
+   */
+  async deleteAllInboxesByTagRaw(
+    requestParameters: DeleteAllInboxesByTagRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.tag === null || requestParameters.tag === undefined) {
+      throw new runtime.RequiredError(
+        'tag',
+        'Required parameter requestParameters.tag was null or undefined when calling deleteAllInboxesByTag.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.tag !== undefined) {
+      queryParameters['tag'] = requestParameters.tag;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/by-tag`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Permanently delete all inboxes by tag
+   * Delete inboxes by tag
+   */
+  async deleteAllInboxesByTag(
+    requestParameters: DeleteAllInboxesByTagRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllInboxesByTagRaw(requestParameters, initOverrides);
   }
 
   /**

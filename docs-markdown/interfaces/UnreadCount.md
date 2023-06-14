@@ -2,7 +2,7 @@
 
 # Interface: UnreadCount
 
-Number of unread emails
+Number of unread entities
 
 **`Export`**
 

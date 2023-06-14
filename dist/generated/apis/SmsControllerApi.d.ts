@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageSmsProjection, SmsDto } from '../models';
+import { PageSmsProjection, SmsDto, UnreadCount } from '../models';
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
@@ -73,6 +73,16 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get all SMS messages in all phone numbers in paginated form. .
      */
     getSmsMessagesPaginated(requestParameters: GetSmsMessagesPaginatedRequest, initOverrides?: RequestInit): Promise<PageSmsProjection>;
+    /**
+     * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Get unread SMS count
+     */
+    getUnreadSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnreadCount>>;
+    /**
+     * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+     * Get unread SMS count
+     */
+    getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount>;
 }
 /**
  * @export

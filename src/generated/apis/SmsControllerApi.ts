@@ -20,6 +20,9 @@ import {
   SmsDto,
   SmsDtoFromJSON,
   SmsDtoToJSON,
+  UnreadCount,
+  UnreadCountFromJSON,
+  UnreadCountToJSON,
 } from '../models';
 
 export interface DeleteSmsMessageRequest {
@@ -277,6 +280,45 @@ export class SmsControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+   * Get unread SMS count
+   */
+  async getUnreadSmsCountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<UnreadCount>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/unreadCount`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      UnreadCountFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+   * Get unread SMS count
+   */
+  async getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount> {
+    const response = await this.getUnreadSmsCountRaw(initOverrides);
     return await response.value();
   }
 }

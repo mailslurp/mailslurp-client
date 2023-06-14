@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Number of unread emails
+ * Number of unread entities
  * @export
  * @interface UnreadCount
  */

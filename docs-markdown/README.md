@@ -13,6 +13,16 @@ MailSlurp JS
 - [AbstractWebhookPayloadEventNameEnum](enums/AbstractWebhookPayloadEventNameEnum.md)
 - [ConditionOptionConditionEnum](enums/ConditionOptionConditionEnum.md)
 - [ConditionOptionValueEnum](enums/ConditionOptionValueEnum.md)
+- [ConnectorDtoConnectorAuthTypeEnum](enums/ConnectorDtoConnectorAuthTypeEnum.md)
+- [ConnectorDtoConnectorTypeEnum](enums/ConnectorDtoConnectorTypeEnum.md)
+- [ConnectorDtoSyncScheduleTypeEnum](enums/ConnectorDtoSyncScheduleTypeEnum.md)
+- [ConnectorProjectionConnectorTypeEnum](enums/ConnectorProjectionConnectorTypeEnum.md)
+- [ConnectorProjectionSyncScheduleTypeEnum](enums/ConnectorProjectionSyncScheduleTypeEnum.md)
+- [ConnectorSyncEventDtoSyncStatusEnum](enums/ConnectorSyncEventDtoSyncStatusEnum.md)
+- [ConnectorSyncEventProjectionSyncStatusEnum](enums/ConnectorSyncEventProjectionSyncStatusEnum.md)
+- [CreateConnectorOptionsConnectorAuthTypeEnum](enums/CreateConnectorOptionsConnectorAuthTypeEnum.md)
+- [CreateConnectorOptionsConnectorTypeEnum](enums/CreateConnectorOptionsConnectorTypeEnum.md)
+- [CreateConnectorOptionsSyncScheduleTypeEnum](enums/CreateConnectorOptionsSyncScheduleTypeEnum.md)
 - [CreateDomainOptionsDomainTypeEnum](enums/CreateDomainOptionsDomainTypeEnum.md)
 - [CreateEmergencyAddressOptionsIsoCountryCodeEnum](enums/CreateEmergencyAddressOptionsIsoCountryCodeEnum.md)
 - [CreateInboxDtoInboxTypeEnum](enums/CreateInboxDtoInboxTypeEnum.md)
@@ -40,6 +50,7 @@ MailSlurp JS
 - [GetAliasesSortEnum](enums/GetAliasesSortEnum.md)
 - [GetAllAccountWebhooksEventTypeEnum](enums/GetAllAccountWebhooksEventTypeEnum.md)
 - [GetAllAccountWebhooksSortEnum](enums/GetAllAccountWebhooksSortEnum.md)
+- [GetAllConnectorSyncEventsSortEnum](enums/GetAllConnectorSyncEventsSortEnum.md)
 - [GetAllContactsSortEnum](enums/GetAllContactsSortEnum.md)
 - [GetAllGroupsSortEnum](enums/GetAllGroupsSortEnum.md)
 - [GetAllInboxesInboxTypeEnum](enums/GetAllInboxesInboxTypeEnum.md)
@@ -56,6 +67,8 @@ MailSlurp JS
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
 - [GetComplaintsSortEnum](enums/GetComplaintsSortEnum.md)
+- [GetConnectorSyncEventsSortEnum](enums/GetConnectorSyncEventsSortEnum.md)
+- [GetConnectorsSortEnum](enums/GetConnectorsSortEnum.md)
 - [GetDeliveryStatusesByInboxIdSortEnum](enums/GetDeliveryStatusesByInboxIdSortEnum.md)
 - [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
 - [GetEmailsSortEnum](enums/GetEmailsSortEnum.md)
@@ -157,6 +170,7 @@ MailSlurp JS
 - [BulkActionsControllerApi](classes/BulkActionsControllerApi.md)
 - [CommonActionsControllerApi](classes/CommonActionsControllerApi.md)
 - [Configuration](classes/Configuration.md)
+- [ConnectorControllerApi](classes/ConnectorControllerApi.md)
 - [ContactControllerApi](classes/ContactControllerApi.md)
 - [DomainControllerApi](classes/DomainControllerApi.md)
 - [EmailControllerApi](classes/EmailControllerApi.md)
@@ -210,6 +224,16 @@ MailSlurp JS
 - [Complaint](interfaces/Complaint.md)
 - [ConditionOption](interfaces/ConditionOption.md)
 - [ConfigurationParameters](interfaces/ConfigurationParameters.md)
+- [ConnectorDto](interfaces/ConnectorDto.md)
+- [ConnectorProjection](interfaces/ConnectorProjection.md)
+- [ConnectorSyncEventDto](interfaces/ConnectorSyncEventDto.md)
+- [ConnectorSyncEventProjection](interfaces/ConnectorSyncEventProjection.md)
+- [ConnectorSyncRequestResult](interfaces/ConnectorSyncRequestResult.md)
+- [ConnectorSyncRequestResultException](interfaces/ConnectorSyncRequestResultException.md)
+- [ConnectorSyncRequestResultExceptionCause](interfaces/ConnectorSyncRequestResultExceptionCause.md)
+- [ConnectorSyncRequestResultExceptionCauseStackTrace](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
+- [ConnectorSyncRequestResultExceptionCauseSuppressed](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md)
+- [ConnectorSyncResult](interfaces/ConnectorSyncResult.md)
 - [Consume](interfaces/Consume.md)
 - [ContactDto](interfaces/ContactDto.md)
 - [ContactProjection](interfaces/ContactProjection.md)
@@ -218,6 +242,9 @@ MailSlurp JS
 - [CreateAccountWebhookRequest](interfaces/CreateAccountWebhookRequest.md)
 - [CreateAliasOptions](interfaces/CreateAliasOptions.md)
 - [CreateAliasRequest](interfaces/CreateAliasRequest.md)
+- [CreateConnectorImapOptions](interfaces/CreateConnectorImapOptions.md)
+- [CreateConnectorOptions](interfaces/CreateConnectorOptions.md)
+- [CreateConnectorRequest](interfaces/CreateConnectorRequest.md)
 - [CreateContactOptions](interfaces/CreateContactOptions.md)
 - [CreateContactRequest](interfaces/CreateContactRequest.md)
 - [CreateDomainOptions](interfaces/CreateDomainOptions.md)
@@ -250,8 +277,12 @@ MailSlurp JS
 - [DNSLookupResults](interfaces/DNSLookupResults.md)
 - [DeleteAliasRequest](interfaces/DeleteAliasRequest.md)
 - [DeleteAllInboxEmailsRequest](interfaces/DeleteAllInboxEmailsRequest.md)
+- [DeleteAllInboxesByDescriptionRequest](interfaces/DeleteAllInboxesByDescriptionRequest.md)
+- [DeleteAllInboxesByNameRequest](interfaces/DeleteAllInboxesByNameRequest.md)
+- [DeleteAllInboxesByTagRequest](interfaces/DeleteAllInboxesByTagRequest.md)
 - [DeleteAllWebhooksRequest](interfaces/DeleteAllWebhooksRequest.md)
 - [DeleteAttachmentRequest](interfaces/DeleteAttachmentRequest.md)
+- [DeleteConnectorRequest](interfaces/DeleteConnectorRequest.md)
 - [DeleteContactRequest](interfaces/DeleteContactRequest.md)
 - [DeleteDomainRequest](interfaces/DeleteDomainRequest.md)
 - [DeleteEmailAddressRequest](interfaces/DeleteEmailAddressRequest.md)
@@ -323,6 +354,7 @@ MailSlurp JS
 - [GetAliasThreadsRequest](interfaces/GetAliasThreadsRequest.md)
 - [GetAliasesRequest](interfaces/GetAliasesRequest.md)
 - [GetAllAccountWebhooksRequest](interfaces/GetAllAccountWebhooksRequest.md)
+- [GetAllConnectorSyncEventsRequest](interfaces/GetAllConnectorSyncEventsRequest.md)
 - [GetAllContactsRequest](interfaces/GetAllContactsRequest.md)
 - [GetAllGroupsRequest](interfaces/GetAllGroupsRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
@@ -343,6 +375,10 @@ MailSlurp JS
 - [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
 - [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
 - [GetComplaintsRequest](interfaces/GetComplaintsRequest.md)
+- [GetConnectorRequest](interfaces/GetConnectorRequest.md)
+- [GetConnectorSyncEventRequest](interfaces/GetConnectorSyncEventRequest.md)
+- [GetConnectorSyncEventsRequest](interfaces/GetConnectorSyncEventsRequest.md)
+- [GetConnectorsRequest](interfaces/GetConnectorsRequest.md)
 - [GetContactRequest](interfaces/GetContactRequest.md)
 - [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
 - [GetDeliveryStatusesByInboxIdRequest](interfaces/GetDeliveryStatusesByInboxIdRequest.md)
@@ -472,6 +508,8 @@ MailSlurp JS
 - [PageBouncedEmail](interfaces/PageBouncedEmail.md)
 - [PageBouncedRecipients](interfaces/PageBouncedRecipients.md)
 - [PageComplaint](interfaces/PageComplaint.md)
+- [PageConnector](interfaces/PageConnector.md)
+- [PageConnectorSyncEvents](interfaces/PageConnectorSyncEvents.md)
 - [PageContactProjection](interfaces/PageContactProjection.md)
 - [PageDeliveryStatus](interfaces/PageDeliveryStatus.md)
 - [PageEmailPreview](interfaces/PageEmailPreview.md)
@@ -543,6 +581,7 @@ MailSlurp JS
 - [SmsProjection](interfaces/SmsProjection.md)
 - [Sort](interfaces/Sort.md)
 - [SubmitFormRequest](interfaces/SubmitFormRequest.md)
+- [SyncConnectorRequest](interfaces/SyncConnectorRequest.md)
 - [TemplateDto](interfaces/TemplateDto.md)
 - [TemplatePreview](interfaces/TemplatePreview.md)
 - [TemplateProjection](interfaces/TemplateProjection.md)
@@ -565,6 +604,7 @@ MailSlurp JS
 - [UnseenErrorCountDto](interfaces/UnseenErrorCountDto.md)
 - [UpdateAliasOptions](interfaces/UpdateAliasOptions.md)
 - [UpdateAliasRequest](interfaces/UpdateAliasRequest.md)
+- [UpdateConnectorRequest](interfaces/UpdateConnectorRequest.md)
 - [UpdateDomainOptions](interfaces/UpdateDomainOptions.md)
 - [UpdateDomainRequest](interfaces/UpdateDomainRequest.md)
 - [UpdateGroupContacts](interfaces/UpdateGroupContacts.md)
@@ -684,6 +724,36 @@ MailSlurp JS
 - [ConditionOptionFromJSON](README.md#conditionoptionfromjson)
 - [ConditionOptionFromJSONTyped](README.md#conditionoptionfromjsontyped)
 - [ConditionOptionToJSON](README.md#conditionoptiontojson)
+- [ConnectorDtoFromJSON](README.md#connectordtofromjson)
+- [ConnectorDtoFromJSONTyped](README.md#connectordtofromjsontyped)
+- [ConnectorDtoToJSON](README.md#connectordtotojson)
+- [ConnectorProjectionFromJSON](README.md#connectorprojectionfromjson)
+- [ConnectorProjectionFromJSONTyped](README.md#connectorprojectionfromjsontyped)
+- [ConnectorProjectionToJSON](README.md#connectorprojectiontojson)
+- [ConnectorSyncEventDtoFromJSON](README.md#connectorsynceventdtofromjson)
+- [ConnectorSyncEventDtoFromJSONTyped](README.md#connectorsynceventdtofromjsontyped)
+- [ConnectorSyncEventDtoToJSON](README.md#connectorsynceventdtotojson)
+- [ConnectorSyncEventProjectionFromJSON](README.md#connectorsynceventprojectionfromjson)
+- [ConnectorSyncEventProjectionFromJSONTyped](README.md#connectorsynceventprojectionfromjsontyped)
+- [ConnectorSyncEventProjectionToJSON](README.md#connectorsynceventprojectiontojson)
+- [ConnectorSyncRequestResultExceptionCauseFromJSON](README.md#connectorsyncrequestresultexceptioncausefromjson)
+- [ConnectorSyncRequestResultExceptionCauseFromJSONTyped](README.md#connectorsyncrequestresultexceptioncausefromjsontyped)
+- [ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON](README.md#connectorsyncrequestresultexceptioncausestacktracefromjson)
+- [ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped](README.md#connectorsyncrequestresultexceptioncausestacktracefromjsontyped)
+- [ConnectorSyncRequestResultExceptionCauseStackTraceToJSON](README.md#connectorsyncrequestresultexceptioncausestacktracetojson)
+- [ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON](README.md#connectorsyncrequestresultexceptioncausesuppressedfromjson)
+- [ConnectorSyncRequestResultExceptionCauseSuppressedFromJSONTyped](README.md#connectorsyncrequestresultexceptioncausesuppressedfromjsontyped)
+- [ConnectorSyncRequestResultExceptionCauseSuppressedToJSON](README.md#connectorsyncrequestresultexceptioncausesuppressedtojson)
+- [ConnectorSyncRequestResultExceptionCauseToJSON](README.md#connectorsyncrequestresultexceptioncausetojson)
+- [ConnectorSyncRequestResultExceptionFromJSON](README.md#connectorsyncrequestresultexceptionfromjson)
+- [ConnectorSyncRequestResultExceptionFromJSONTyped](README.md#connectorsyncrequestresultexceptionfromjsontyped)
+- [ConnectorSyncRequestResultExceptionToJSON](README.md#connectorsyncrequestresultexceptiontojson)
+- [ConnectorSyncRequestResultFromJSON](README.md#connectorsyncrequestresultfromjson)
+- [ConnectorSyncRequestResultFromJSONTyped](README.md#connectorsyncrequestresultfromjsontyped)
+- [ConnectorSyncRequestResultToJSON](README.md#connectorsyncrequestresulttojson)
+- [ConnectorSyncResultFromJSON](README.md#connectorsyncresultfromjson)
+- [ConnectorSyncResultFromJSONTyped](README.md#connectorsyncresultfromjsontyped)
+- [ConnectorSyncResultToJSON](README.md#connectorsyncresulttojson)
 - [ContactDtoFromJSON](README.md#contactdtofromjson)
 - [ContactDtoFromJSONTyped](README.md#contactdtofromjsontyped)
 - [ContactDtoToJSON](README.md#contactdtotojson)
@@ -699,6 +769,12 @@ MailSlurp JS
 - [CreateAliasOptionsFromJSON](README.md#createaliasoptionsfromjson)
 - [CreateAliasOptionsFromJSONTyped](README.md#createaliasoptionsfromjsontyped)
 - [CreateAliasOptionsToJSON](README.md#createaliasoptionstojson)
+- [CreateConnectorImapOptionsFromJSON](README.md#createconnectorimapoptionsfromjson)
+- [CreateConnectorImapOptionsFromJSONTyped](README.md#createconnectorimapoptionsfromjsontyped)
+- [CreateConnectorImapOptionsToJSON](README.md#createconnectorimapoptionstojson)
+- [CreateConnectorOptionsFromJSON](README.md#createconnectoroptionsfromjson)
+- [CreateConnectorOptionsFromJSONTyped](README.md#createconnectoroptionsfromjsontyped)
+- [CreateConnectorOptionsToJSON](README.md#createconnectoroptionstojson)
 - [CreateContactOptionsFromJSON](README.md#createcontactoptionsfromjson)
 - [CreateContactOptionsFromJSONTyped](README.md#createcontactoptionsfromjsontyped)
 - [CreateContactOptionsToJSON](README.md#createcontactoptionstojson)
@@ -954,6 +1030,12 @@ MailSlurp JS
 - [PageComplaintFromJSON](README.md#pagecomplaintfromjson)
 - [PageComplaintFromJSONTyped](README.md#pagecomplaintfromjsontyped)
 - [PageComplaintToJSON](README.md#pagecomplainttojson)
+- [PageConnectorFromJSON](README.md#pageconnectorfromjson)
+- [PageConnectorFromJSONTyped](README.md#pageconnectorfromjsontyped)
+- [PageConnectorSyncEventsFromJSON](README.md#pageconnectorsynceventsfromjson)
+- [PageConnectorSyncEventsFromJSONTyped](README.md#pageconnectorsynceventsfromjsontyped)
+- [PageConnectorSyncEventsToJSON](README.md#pageconnectorsynceventstojson)
+- [PageConnectorToJSON](README.md#pageconnectortojson)
 - [PageContactProjectionFromJSON](README.md#pagecontactprojectionfromjson)
 - [PageContactProjectionFromJSONTyped](README.md#pagecontactprojectionfromjsontyped)
 - [PageContactProjectionToJSON](README.md#pagecontactprojectiontojson)
@@ -2075,6 +2157,496 @@ ___
 
 ___
 
+### ConnectorDtoFromJSON
+
+▸ **ConnectorDtoFromJSON**(`json`): [`ConnectorDto`](interfaces/ConnectorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorDto`](interfaces/ConnectorDto.md)
+
+___
+
+### ConnectorDtoFromJSONTyped
+
+▸ **ConnectorDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorDto`](interfaces/ConnectorDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorDto`](interfaces/ConnectorDto.md)
+
+___
+
+### ConnectorDtoToJSON
+
+▸ **ConnectorDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorDto`](interfaces/ConnectorDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorProjectionFromJSON
+
+▸ **ConnectorProjectionFromJSON**(`json`): [`ConnectorProjection`](interfaces/ConnectorProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorProjection`](interfaces/ConnectorProjection.md)
+
+___
+
+### ConnectorProjectionFromJSONTyped
+
+▸ **ConnectorProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorProjection`](interfaces/ConnectorProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorProjection`](interfaces/ConnectorProjection.md)
+
+___
+
+### ConnectorProjectionToJSON
+
+▸ **ConnectorProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorProjection`](interfaces/ConnectorProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncEventDtoFromJSON
+
+▸ **ConnectorSyncEventDtoFromJSON**(`json`): [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
+
+___
+
+### ConnectorSyncEventDtoFromJSONTyped
+
+▸ **ConnectorSyncEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md)
+
+___
+
+### ConnectorSyncEventDtoToJSON
+
+▸ **ConnectorSyncEventDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncEventDto`](interfaces/ConnectorSyncEventDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncEventProjectionFromJSON
+
+▸ **ConnectorSyncEventProjectionFromJSON**(`json`): [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+
+___
+
+### ConnectorSyncEventProjectionFromJSONTyped
+
+▸ **ConnectorSyncEventProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md)
+
+___
+
+### ConnectorSyncEventProjectionToJSON
+
+▸ **ConnectorSyncEventProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncEventProjection`](interfaces/ConnectorSyncEventProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseFromJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseFromJSON**(`json`): [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseFromJSONTyped
+
+▸ **ConnectorSyncRequestResultExceptionCauseFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON**(`json`): [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped
+
+▸ **ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseStackTraceToJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseStackTraceToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncRequestResultExceptionCauseStackTrace`](interfaces/ConnectorSyncRequestResultExceptionCauseStackTrace.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON**(`json`): [`ConnectorSyncRequestResultExceptionCauseSuppressed`](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCauseSuppressed`](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseSuppressedFromJSONTyped
+
+▸ **ConnectorSyncRequestResultExceptionCauseSuppressedFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultExceptionCauseSuppressed`](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultExceptionCauseSuppressed`](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseSuppressedToJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseSuppressedToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncRequestResultExceptionCauseSuppressed`](interfaces/ConnectorSyncRequestResultExceptionCauseSuppressed.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncRequestResultExceptionCauseToJSON
+
+▸ **ConnectorSyncRequestResultExceptionCauseToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncRequestResultExceptionCause`](interfaces/ConnectorSyncRequestResultExceptionCause.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncRequestResultExceptionFromJSON
+
+▸ **ConnectorSyncRequestResultExceptionFromJSON**(`json`): [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionFromJSONTyped
+
+▸ **ConnectorSyncRequestResultExceptionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md)
+
+___
+
+### ConnectorSyncRequestResultExceptionToJSON
+
+▸ **ConnectorSyncRequestResultExceptionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncRequestResultException`](interfaces/ConnectorSyncRequestResultException.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncRequestResultFromJSON
+
+▸ **ConnectorSyncRequestResultFromJSON**(`json`): [`ConnectorSyncRequestResult`](interfaces/ConnectorSyncRequestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncRequestResult`](interfaces/ConnectorSyncRequestResult.md)
+
+___
+
+### ConnectorSyncRequestResultFromJSONTyped
+
+▸ **ConnectorSyncRequestResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncRequestResult`](interfaces/ConnectorSyncRequestResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncRequestResult`](interfaces/ConnectorSyncRequestResult.md)
+
+___
+
+### ConnectorSyncRequestResultToJSON
+
+▸ **ConnectorSyncRequestResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncRequestResult`](interfaces/ConnectorSyncRequestResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ConnectorSyncResultFromJSON
+
+▸ **ConnectorSyncResultFromJSON**(`json`): [`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md)
+
+___
+
+### ConnectorSyncResultFromJSONTyped
+
+▸ **ConnectorSyncResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md)
+
+___
+
+### ConnectorSyncResultToJSON
+
+▸ **ConnectorSyncResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ConnectorSyncResult`](interfaces/ConnectorSyncResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ContactDtoFromJSON
 
 ▸ **ContactDtoFromJSON**(`json`): [`ContactDto`](interfaces/ContactDto.md)
@@ -2313,6 +2885,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`CreateAliasOptions`](interfaces/CreateAliasOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateConnectorImapOptionsFromJSON
+
+▸ **CreateConnectorImapOptionsFromJSON**(`json`): [`CreateConnectorImapOptions`](interfaces/CreateConnectorImapOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateConnectorImapOptions`](interfaces/CreateConnectorImapOptions.md)
+
+___
+
+### CreateConnectorImapOptionsFromJSONTyped
+
+▸ **CreateConnectorImapOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateConnectorImapOptions`](interfaces/CreateConnectorImapOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateConnectorImapOptions`](interfaces/CreateConnectorImapOptions.md)
+
+___
+
+### CreateConnectorImapOptionsToJSON
+
+▸ **CreateConnectorImapOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateConnectorImapOptions`](interfaces/CreateConnectorImapOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### CreateConnectorOptionsFromJSON
+
+▸ **CreateConnectorOptionsFromJSON**(`json`): [`CreateConnectorOptions`](interfaces/CreateConnectorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`CreateConnectorOptions`](interfaces/CreateConnectorOptions.md)
+
+___
+
+### CreateConnectorOptionsFromJSONTyped
+
+▸ **CreateConnectorOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`CreateConnectorOptions`](interfaces/CreateConnectorOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`CreateConnectorOptions`](interfaces/CreateConnectorOptions.md)
+
+___
+
+### CreateConnectorOptionsToJSON
+
+▸ **CreateConnectorOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`CreateConnectorOptions`](interfaces/CreateConnectorOptions.md) |
 
 #### Returns
 
@@ -6478,6 +7148,104 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`PageComplaint`](interfaces/PageComplaint.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageConnectorFromJSON
+
+▸ **PageConnectorFromJSON**(`json`): [`PageConnector`](interfaces/PageConnector.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageConnector`](interfaces/PageConnector.md)
+
+___
+
+### PageConnectorFromJSONTyped
+
+▸ **PageConnectorFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageConnector`](interfaces/PageConnector.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageConnector`](interfaces/PageConnector.md)
+
+___
+
+### PageConnectorSyncEventsFromJSON
+
+▸ **PageConnectorSyncEventsFromJSON**(`json`): [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
+
+___
+
+### PageConnectorSyncEventsFromJSONTyped
+
+▸ **PageConnectorSyncEventsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md)
+
+___
+
+### PageConnectorSyncEventsToJSON
+
+▸ **PageConnectorSyncEventsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageConnectorSyncEvents`](interfaces/PageConnectorSyncEvents.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### PageConnectorToJSON
+
+▸ **PageConnectorToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`PageConnector`](interfaces/PageConnector.md) |
 
 #### Returns
 

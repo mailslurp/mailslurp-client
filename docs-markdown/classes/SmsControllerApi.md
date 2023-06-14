@@ -28,6 +28,8 @@
 - [getSmsMessageRaw](SmsControllerApi.md#getsmsmessageraw)
 - [getSmsMessagesPaginated](SmsControllerApi.md#getsmsmessagespaginated)
 - [getSmsMessagesPaginatedRaw](SmsControllerApi.md#getsmsmessagespaginatedraw)
+- [getUnreadSmsCount](SmsControllerApi.md#getunreadsmscount)
+- [getUnreadSmsCountRaw](SmsControllerApi.md#getunreadsmscountraw)
 - [request](SmsControllerApi.md#request)
 - [withMiddleware](SmsControllerApi.md#withmiddleware)
 - [withPostMiddleware](SmsControllerApi.md#withpostmiddleware)
@@ -218,6 +220,44 @@ Get all SMS messages in all phone numbers in paginated form. .
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageSmsProjection`](../interfaces/PageSmsProjection.md)\>\>
+
+___
+
+### getUnreadSmsCount
+
+▸ **getUnreadSmsCount**(`initOverrides?`): `Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
+
+Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+Get unread SMS count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
+
+___
+
+### getUnreadSmsCountRaw
+
+▸ **getUnreadSmsCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
+
+Get number of SMS unread. Unread means has not been viewed in dashboard or returned in an email API response
+Get unread SMS count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
 
 ___
 

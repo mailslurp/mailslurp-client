@@ -3,6 +3,7 @@ export * from './AttachmentControllerApi';
 export * from './BounceControllerApi';
 export * from './BulkActionsControllerApi';
 export * from './CommonActionsControllerApi';
+export * from './ConnectorControllerApi';
 export * from './ContactControllerApi';
 export * from './DomainControllerApi';
 export * from './EmailControllerApi';

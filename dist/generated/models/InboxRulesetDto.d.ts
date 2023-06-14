@@ -26,7 +26,7 @@ export interface InboxRulesetDto {
      * @type {string}
      * @memberof InboxRulesetDto
      */
-    inboxId?: string;
+    inboxId?: string | null;
     /**
      *
      * @type {string}

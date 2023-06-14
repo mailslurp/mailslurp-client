@@ -18,6 +18,8 @@ This is the base class for all generated API classes.
 
   ↳ [`CommonActionsControllerApi`](CommonActionsControllerApi.md)
 
+  ↳ [`ConnectorControllerApi`](ConnectorControllerApi.md)
+
   ↳ [`ContactControllerApi`](ContactControllerApi.md)
 
   ↳ [`DomainControllerApi`](DomainControllerApi.md)
