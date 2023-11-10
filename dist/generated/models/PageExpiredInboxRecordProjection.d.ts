@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ExpiredInboxRecordProjection, PageableObject, Sort } from './';
+import { ExpiredInboxRecordProjection, PageableObject, SortObject } from './';
 /**
  * Paginated expired inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageExpiredInboxRecordProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
@@ -52,6 +46,12 @@ export interface PageExpiredInboxRecordProjection {
      * @memberof PageExpiredInboxRecordProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageExpiredInboxRecordProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageExpiredInboxRecordProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

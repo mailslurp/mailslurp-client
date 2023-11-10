@@ -129,12 +129,12 @@ export declare class SentEmailsControllerApi extends runtime.BaseAPI {
      * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
      * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawSentEmailContentsRaw(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getRawSentEmailContentsRaw(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
      * Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawSentEmailContents(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<string>;
+    getRawSentEmailContents(requestParameters: GetRawSentEmailContentsRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Returns a raw, unparsed, and unprocessed sent email wrapped in a JSON response object for easier handling when compared with the getRawSentEmail text/plain response
      * Get raw sent email in JSON. Unparsed SMTP message in JSON wrapper format.

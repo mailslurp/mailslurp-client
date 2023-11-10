@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxRulesetDto, PageableObject, Sort } from './';
+import { InboxRulesetDto, PageableObject, SortObject } from './';
 /**
  * Paginated inbox ruleset results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageInboxRulesetDto {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
@@ -52,6 +46,12 @@ export interface PageInboxRulesetDto {
      * @memberof PageInboxRulesetDto
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageInboxRulesetDto {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageInboxRulesetDto
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

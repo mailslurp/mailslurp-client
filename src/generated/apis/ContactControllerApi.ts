@@ -42,6 +42,7 @@ export interface GetAllContactsRequest {
   sort?: GetAllContactsSortEnum;
   since?: Date;
   before?: Date;
+  search?: string;
 }
 
 export interface GetContactRequest {
@@ -197,6 +198,10 @@ export class ContactControllerApi extends runtime.BaseAPI {
       ).toISOString();
     }
 
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -292,7 +297,7 @@ export class ContactControllerApi extends runtime.BaseAPI {
   async getContactVCardRaw(
     requestParameters: GetContactVCardRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
+  ): Promise<runtime.ApiResponse<void>> {
     if (
       requestParameters.contactId === null ||
       requestParameters.contactId === undefined
@@ -324,7 +329,7 @@ export class ContactControllerApi extends runtime.BaseAPI {
       initOverrides
     );
 
-    return new runtime.JSONApiResponse<any>(response);
+    return new runtime.VoidApiResponse(response);
   }
 
   /**
@@ -333,12 +338,8 @@ export class ContactControllerApi extends runtime.BaseAPI {
   async getContactVCard(
     requestParameters: GetContactVCardRequest,
     initOverrides?: RequestInit
-  ): Promise<Array<string>> {
-    const response = await this.getContactVCardRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
+  ): Promise<void> {
+    await this.getContactVCardRaw(requestParameters, initOverrides);
   }
 
   /**

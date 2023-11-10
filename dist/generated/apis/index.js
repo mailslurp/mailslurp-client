@@ -40,6 +40,7 @@ __exportStar(require("./PhoneControllerApi"), exports);
 __exportStar(require("./SentEmailsControllerApi"), exports);
 __exportStar(require("./SmsControllerApi"), exports);
 __exportStar(require("./TemplateControllerApi"), exports);
+__exportStar(require("./ToolsControllerApi"), exports);
 __exportStar(require("./TrackingControllerApi"), exports);
 __exportStar(require("./UserControllerApi"), exports);
 __exportStar(require("./WaitForControllerApi"), exports);

@@ -515,19 +515,21 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (requestParameters.inlineObject1 === null ||
-                            requestParameters.inlineObject1 === undefined) {
-                            throw new runtime.RequiredError('inlineObject1', 'Required parameter requestParameters.inlineObject1 was null or undefined when calling uploadAttachmentBytes.');
-                        }
                         queryParameters = {};
+                        if (requestParameters.contentType2 !== undefined) {
+                            queryParameters['contentType'] = requestParameters.contentType2;
+                        }
                         if (requestParameters.filename !== undefined) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
                         headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/octet-stream';
                         if (requestParameters.contentType !== undefined &&
                             requestParameters.contentType !== null) {
                             headerParameters['contentType'] = String(requestParameters.contentType);
+                        }
+                        if (requestParameters.filename2 !== undefined &&
+                            requestParameters.filename2 !== null) {
+                            headerParameters['filename'] = String(requestParameters.filename2);
                         }
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -537,7 +539,6 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: (0, models_1.InlineObject1ToJSON)(requestParameters.inlineObject1),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();

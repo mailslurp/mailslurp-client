@@ -64,6 +64,12 @@ export interface AliasDto {
      */
     isVerified: boolean;
     /**
+     * Domain ID associated with the alias
+     * @type {string}
+     * @memberof AliasDto
+     */
+    domainId?: string | null;
+    /**
      *
      * @type {Date}
      * @memberof AliasDto

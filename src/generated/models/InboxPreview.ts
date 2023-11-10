@@ -85,6 +85,12 @@ export interface InboxPreview {
    * @memberof InboxPreview
    */
   expiresAt?: string | null;
+  /**
+   * Inbox function if used as a primitive for another system.
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  functionsAs?: InboxPreviewFunctionsAsEnum;
 }
 
 /**
@@ -94,6 +100,16 @@ export interface InboxPreview {
 export enum InboxPreviewInboxTypeEnum {
   HTTP_INBOX = 'HTTP_INBOX',
   SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxPreviewFunctionsAsEnum {
+  ALIAS = 'ALIAS',
+  THREAD = 'THREAD',
+  CATCH_ALL = 'CATCH_ALL',
+  CONNECTOR = 'CONNECTOR',
 }
 
 export function InboxPreviewFromJSON(json: any): InboxPreview {
@@ -121,6 +137,7 @@ export function InboxPreviewFromJSONTyped(
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     virtualInbox: json['virtualInbox'],
     expiresAt: !exists(json, 'expiresAt') ? undefined : json['expiresAt'],
+    functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
   };
 }
 
@@ -143,5 +160,6 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
     inboxType: value.inboxType,
     virtualInbox: value.virtualInbox,
     expiresAt: value.expiresAt,
+    functionsAs: value.functionsAs,
   };
 }

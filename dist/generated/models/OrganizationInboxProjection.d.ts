@@ -81,6 +81,12 @@ export interface OrganizationInboxProjection {
      * @memberof OrganizationInboxProjection
      */
     virtualInbox: boolean;
+    /**
+     * Inbox function if used as a primitive for another system.
+     * @type {string}
+     * @memberof OrganizationInboxProjection
+     */
+    functionsAs?: OrganizationInboxProjectionFunctionsAsEnum;
 }
 /**
  * @export
@@ -89,6 +95,16 @@ export interface OrganizationInboxProjection {
 export declare enum OrganizationInboxProjectionInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum OrganizationInboxProjectionFunctionsAsEnum {
+    ALIAS = "ALIAS",
+    THREAD = "THREAD",
+    CATCH_ALL = "CATCH_ALL",
+    CONNECTOR = "CONNECTOR"
 }
 export declare function OrganizationInboxProjectionFromJSON(json: any): OrganizationInboxProjection;
 export declare function OrganizationInboxProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): OrganizationInboxProjection;

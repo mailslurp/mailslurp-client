@@ -56,6 +56,8 @@ This is the base class for all generated API classes.
 
   ↳ [`TemplateControllerApi`](TemplateControllerApi.md)
 
+  ↳ [`ToolsControllerApi`](ToolsControllerApi.md)
+
   ↳ [`TrackingControllerApi`](TrackingControllerApi.md)
 
   ↳ [`UserControllerApi`](UserControllerApi.md)

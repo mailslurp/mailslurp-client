@@ -25,6 +25,12 @@ export interface ValidateEmailAddressListOptions {
    * @memberof ValidateEmailAddressListOptions
    */
   emailAddressList: Array<string>;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ValidateEmailAddressListOptions
+   */
+  ignoreOldResults?: boolean | null;
 }
 
 export function ValidateEmailAddressListOptionsFromJSON(
@@ -42,6 +48,9 @@ export function ValidateEmailAddressListOptionsFromJSONTyped(
   }
   return {
     emailAddressList: json['emailAddressList'],
+    ignoreOldResults: !exists(json, 'ignoreOldResults')
+      ? undefined
+      : json['ignoreOldResults'],
   };
 }
 
@@ -56,5 +65,6 @@ export function ValidateEmailAddressListOptionsToJSON(
   }
   return {
     emailAddressList: value.emailAddressList,
+    ignoreOldResults: value.ignoreOldResults,
   };
 }

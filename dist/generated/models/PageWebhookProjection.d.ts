@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, WebhookProjection } from './';
+import { PageableObject, SortObject, WebhookProjection } from './';
 /**
  * Paginated webhook entity. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageWebhookProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageWebhookProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageWebhookProjection
      */
@@ -52,6 +46,12 @@ export interface PageWebhookProjection {
      * @memberof PageWebhookProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageWebhookProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageWebhookProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageWebhookProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageWebhookProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

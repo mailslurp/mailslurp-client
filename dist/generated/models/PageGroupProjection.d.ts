@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { GroupProjection, PageableObject, Sort } from './';
+import { GroupProjection, PageableObject, SortObject } from './';
 /**
  * Paginated missed email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageGroupProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageGroupProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageGroupProjection
      */
@@ -52,6 +46,12 @@ export interface PageGroupProjection {
      * @memberof PageGroupProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageGroupProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageGroupProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageGroupProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageGroupProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageGroupProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

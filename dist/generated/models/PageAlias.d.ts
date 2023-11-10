@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AliasProjection, PageableObject, Sort } from './';
+import { AliasProjection, PageableObject, SortObject } from './';
 /**
  * Paginated email alias results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageAlias {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageAlias
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageAlias
      */
@@ -52,6 +46,12 @@ export interface PageAlias {
      * @memberof PageAlias
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageAlias {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageAlias
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAlias
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageAlias
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAlias
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

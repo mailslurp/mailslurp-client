@@ -131,11 +131,17 @@ export interface Email {
    */
   body?: string | null;
   /**
-   * An excerpt of the body of the email message for quick preview .
+   * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
    * @type {string}
    * @memberof Email
    */
   bodyExcerpt?: string | null;
+  /**
+   * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+   * @type {string}
+   * @memberof Email
+   */
+  textExcerpt?: string | null;
   /**
    * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
    * @type {string}
@@ -225,6 +231,7 @@ export function EmailFromJSONTyped(
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     body: !exists(json, 'body') ? undefined : json['body'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
     charset: !exists(json, 'charset') ? undefined : json['charset'],
@@ -264,6 +271,7 @@ export function EmailToJSON(value?: Email | null): any {
     subject: value.subject,
     body: value.body,
     bodyExcerpt: value.bodyExcerpt,
+    textExcerpt: value.textExcerpt,
     bodyMD5Hash: value.bodyMD5Hash,
     isHTML: value.isHTML,
     charset: value.charset,

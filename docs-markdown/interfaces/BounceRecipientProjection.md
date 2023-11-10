@@ -15,6 +15,7 @@ BounceRecipientProjection
 ### Properties
 
 - [action](BounceRecipientProjection.md#action)
+- [bounceType](BounceRecipientProjection.md#bouncetype)
 - [createdAt](BounceRecipientProjection.md#createdat)
 - [id](BounceRecipientProjection.md#id)
 - [recipient](BounceRecipientProjection.md#recipient)
@@ -26,6 +27,16 @@ BounceRecipientProjection
 ### action
 
 • `Optional` **action**: `string`
+
+**`Memberof`**
+
+BounceRecipientProjection
+
+___
+
+### bounceType
+
+• `Optional` **bounceType**: `string`
 
 **`Memberof`**
 

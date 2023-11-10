@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Sort } from './';
+import { SortObject } from './';
 /**
  *
  * @export
@@ -24,10 +24,10 @@ export interface PageableObject {
     offset?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageableObject
      */
-    sort?: Sort;
+    sort?: SortObject;
     /**
      *
      * @type {number}

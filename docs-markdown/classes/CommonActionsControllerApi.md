@@ -29,6 +29,8 @@
 - [emptyInbox](CommonActionsControllerApi.md#emptyinbox)
 - [emptyInboxRaw](CommonActionsControllerApi.md#emptyinboxraw)
 - [request](CommonActionsControllerApi.md#request)
+- [sendEmailQuery](CommonActionsControllerApi.md#sendemailquery)
+- [sendEmailQueryRaw](CommonActionsControllerApi.md#sendemailqueryraw)
 - [sendEmailSimple](CommonActionsControllerApi.md#sendemailsimple)
 - [sendEmailSimpleRaw](CommonActionsControllerApi.md#sendemailsimpleraw)
 - [withMiddleware](CommonActionsControllerApi.md#withmiddleware)
@@ -241,6 +243,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### sendEmailQuery
+
+▸ **sendEmailQuery**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+Send an email using query parameters
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailQueryRequest`](../interfaces/SendEmailQueryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### sendEmailQueryRaw
+
+▸ **sendEmailQueryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+Send an email using query parameters
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailQueryRequest`](../interfaces/SendEmailQueryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

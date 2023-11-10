@@ -17,6 +17,18 @@ import {
   AttachmentMetaData,
   AttachmentMetaDataFromJSON,
   AttachmentMetaDataToJSON,
+  CanSendEmailResults,
+  CanSendEmailResultsFromJSON,
+  CanSendEmailResultsToJSON,
+  CheckEmailBodyFeatureSupportResults,
+  CheckEmailBodyFeatureSupportResultsFromJSON,
+  CheckEmailBodyFeatureSupportResultsToJSON,
+  CheckEmailClientSupportOptions,
+  CheckEmailClientSupportOptionsFromJSON,
+  CheckEmailClientSupportOptionsToJSON,
+  CheckEmailClientSupportResults,
+  CheckEmailClientSupportResultsFromJSON,
+  CheckEmailClientSupportResultsToJSON,
   ContentMatchOptions,
   ContentMatchOptionsFromJSON,
   ContentMatchOptionsToJSON,
@@ -82,6 +94,19 @@ import {
 export interface ApplyImapFlagOperationRequest {
   emailId: string;
   imapFlagOperationOptions: ImapFlagOperationOptions;
+}
+
+export interface CanSendRequest {
+  inboxId: string;
+  sendEmailOptions: SendEmailOptions;
+}
+
+export interface CheckEmailBodyFeatureSupportRequest {
+  emailId: string;
+}
+
+export interface CheckEmailClientSupportRequest {
+  checkEmailClientSupportOptions: CheckEmailClientSupportOptions;
 }
 
 export interface DeleteEmailRequest {
@@ -296,6 +321,196 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<EmailPreview> {
     const response = await this.applyImapFlagOperationRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Can user send email to given recipient or is the recipient blocked
+   * Check if email can be sent and options are valid.
+   */
+  async canSendRaw(
+    requestParameters: CanSendRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CanSendEmailResults>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling canSend.'
+      );
+    }
+
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling canSend.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/can-send`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CanSendEmailResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Can user send email to given recipient or is the recipient blocked
+   * Check if email can be sent and options are valid.
+   */
+  async canSend(
+    requestParameters: CanSendRequest,
+    initOverrides?: RequestInit
+  ): Promise<CanSendEmailResults> {
+    const response = await this.canSendRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+   * Show which mail clients support the HTML and CSS features used in an email body.
+   */
+  async checkEmailBodyFeatureSupportRaw(
+    requestParameters: CheckEmailBodyFeatureSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailBodyFeatureSupportResults>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling checkEmailBodyFeatureSupport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/check-email-body-feature-support`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailBodyFeatureSupportResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+   * Show which mail clients support the HTML and CSS features used in an email body.
+   */
+  async checkEmailBodyFeatureSupport(
+    requestParameters: CheckEmailBodyFeatureSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailBodyFeatureSupportResults> {
+    const response = await this.checkEmailBodyFeatureSupportRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+   * Show which email programs and devices support the features used in an email body.
+   */
+  async checkEmailClientSupportRaw(
+    requestParameters: CheckEmailClientSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailClientSupportResults>> {
+    if (
+      requestParameters.checkEmailClientSupportOptions === null ||
+      requestParameters.checkEmailClientSupportOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'checkEmailClientSupportOptions',
+        'Required parameter requestParameters.checkEmailClientSupportOptions was null or undefined when calling checkEmailClientSupport.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/check-email-client-support`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CheckEmailClientSupportOptionsToJSON(
+          requestParameters.checkEmailClientSupportOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailClientSupportResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+   * Show which email programs and devices support the features used in an email body.
+   */
+  async checkEmailClientSupport(
+    requestParameters: CheckEmailClientSupportRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailClientSupportResults> {
+    const response = await this.checkEmailClientSupportRaw(
       requestParameters,
       initOverrides
     );
@@ -1751,7 +1966,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   async getRawEmailContentsRaw(
     requestParameters: GetRawEmailContentsRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
+  ): Promise<runtime.ApiResponse<void>> {
     if (
       requestParameters.emailId === null ||
       requestParameters.emailId === undefined
@@ -1783,7 +1998,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
       initOverrides
     );
 
-    return new runtime.TextApiResponse(response) as any;
+    return new runtime.VoidApiResponse(response);
   }
 
   /**
@@ -1793,12 +2008,8 @@ export class EmailControllerApi extends runtime.BaseAPI {
   async getRawEmailContents(
     requestParameters: GetRawEmailContentsRequest,
     initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.getRawEmailContentsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
+  ): Promise<void> {
+    await this.getRawEmailContentsRaw(requestParameters, initOverrides);
   }
 
   /**

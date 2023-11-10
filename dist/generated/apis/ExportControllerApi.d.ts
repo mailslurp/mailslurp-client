@@ -33,11 +33,11 @@ export declare class ExportControllerApi extends runtime.BaseAPI {
     /**
      * Export inboxes link callable via browser
      */
-    exportEntitiesRaw(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    exportEntitiesRaw(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
     /**
      * Export inboxes link callable via browser
      */
-    exportEntities(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    exportEntities(requestParameters: ExportEntitiesRequest, initOverrides?: RequestInit): Promise<string>;
     /**
      * Get export link
      */

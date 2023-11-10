@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, UnknownMissedEmailProjection } from './';
+import { PageableObject, SortObject, UnknownMissedEmailProjection } from './';
 /**
  * Paginated unknown MissedEmail results. Unknown missed emails are emails that were sent to MailSlurp /Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageUnknownMissedEmailProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageUnknownMissedEmailProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
@@ -52,6 +46,12 @@ export interface PageUnknownMissedEmailProjection {
      * @memberof PageUnknownMissedEmailProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageUnknownMissedEmailProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageUnknownMissedEmailProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageUnknownMissedEmailProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageUnknownMissedEmailProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageUnknownMissedEmailProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

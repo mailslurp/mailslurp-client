@@ -19,6 +19,7 @@ InboxPreview
 - [emailAddress](InboxPreview.md#emailaddress)
 - [expiresAt](InboxPreview.md#expiresat)
 - [favourite](InboxPreview.md#favourite)
+- [functionsAs](InboxPreview.md#functionsas)
 - [id](InboxPreview.md#id)
 - [inboxType](InboxPreview.md#inboxtype)
 - [name](InboxPreview.md#name)
@@ -81,6 +82,18 @@ ___
 • **favourite**: `boolean`
 
 Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
+
+**`Memberof`**
+
+InboxPreview
+
+___
+
+### functionsAs
+
+• `Optional` **functionsAs**: [`InboxPreviewFunctionsAsEnum`](../enums/InboxPreviewFunctionsAsEnum.md)
+
+Inbox function if used as a primitive for another system.
 
 **`Memberof`**
 

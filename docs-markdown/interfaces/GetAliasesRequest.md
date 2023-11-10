@@ -8,6 +8,7 @@
 
 - [before](GetAliasesRequest.md#before)
 - [page](GetAliasesRequest.md#page)
+- [search](GetAliasesRequest.md#search)
 - [since](GetAliasesRequest.md#since)
 - [size](GetAliasesRequest.md#size)
 - [sort](GetAliasesRequest.md#sort)
@@ -23,6 +24,12 @@ ___
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### search
+
+• `Optional` **search**: `string`
 
 ___
 

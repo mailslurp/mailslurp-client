@@ -22,6 +22,7 @@ var ScheduledJobDtoStatusEnum;
 (function (ScheduledJobDtoStatusEnum) {
     ScheduledJobDtoStatusEnum["SUBMITTED"] = "SUBMITTED";
     ScheduledJobDtoStatusEnum["COMPLETED"] = "COMPLETED";
+    ScheduledJobDtoStatusEnum["ABORTED"] = "ABORTED";
     ScheduledJobDtoStatusEnum["FAILED"] = "FAILED";
     ScheduledJobDtoStatusEnum["CANCELLED"] = "CANCELLED";
 })(ScheduledJobDtoStatusEnum = exports.ScheduledJobDtoStatusEnum || (exports.ScheduledJobDtoStatusEnum = {}));

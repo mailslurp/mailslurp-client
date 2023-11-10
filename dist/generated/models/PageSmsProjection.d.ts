@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SmsProjection, Sort } from './';
+import { PageableObject, SmsProjection, SortObject } from './';
 /**
  * Paginated SMS messages. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageSmsProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageSmsProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageSmsProjection
      */
@@ -52,6 +46,12 @@ export interface PageSmsProjection {
      * @memberof PageSmsProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageSmsProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageSmsProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageSmsProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageSmsProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageSmsProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageSmsProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

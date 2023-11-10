@@ -22,10 +22,10 @@ import {
   PageableObjectFromJSON,
   PageableObjectFromJSONTyped,
   PageableObjectToJSON,
-  Sort,
-  SortFromJSON,
-  SortFromJSONTyped,
-  SortToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -54,12 +54,6 @@ export interface PageEmailProjection {
   total?: number;
   /**
    *
-   * @type {boolean}
-   * @memberof PageEmailProjection
-   */
-  last?: boolean;
-  /**
-   *
    * @type {number}
    * @memberof PageEmailProjection
    */
@@ -70,6 +64,12 @@ export interface PageEmailProjection {
    * @memberof PageEmailProjection
    */
   totalPages?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageEmailProjection
+   */
+  last?: boolean;
   /**
    *
    * @type {number}
@@ -84,22 +84,22 @@ export interface PageEmailProjection {
   number?: number;
   /**
    *
-   * @type {Sort}
+   * @type {SortObject}
    * @memberof PageEmailProjection
    */
-  sort?: Sort;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageEmailProjection
-   */
-  first?: boolean;
+  sort?: SortObject;
   /**
    *
    * @type {number}
    * @memberof PageEmailProjection
    */
   numberOfElements?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageEmailProjection
+   */
+  first?: boolean;
   /**
    *
    * @type {boolean}
@@ -127,18 +127,18 @@ export function PageEmailProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    last: !exists(json, 'last') ? undefined : json['last'],
     totalElements: !exists(json, 'totalElements')
       ? undefined
       : json['totalElements'],
     totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    last: !exists(json, 'last') ? undefined : json['last'],
     size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
-    first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
+    first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -159,14 +159,14 @@ export function PageEmailProjectionToJSON(
         : (value.content as Array<any>).map(EmailProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    last: value.last,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
+    last: value.last,
     size: value.size,
     number: value.number,
-    sort: SortToJSON(value.sort),
-    first: value.first,
+    sort: SortObjectToJSON(value.sort),
     numberOfElements: value.numberOfElements,
+    first: value.first,
     empty: value.empty,
   };
 }

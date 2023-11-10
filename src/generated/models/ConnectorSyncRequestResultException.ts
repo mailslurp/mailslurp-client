@@ -22,10 +22,6 @@ import {
   ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON,
   ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped,
   ConnectorSyncRequestResultExceptionCauseStackTraceToJSON,
-  ConnectorSyncRequestResultExceptionCauseSuppressed,
-  ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON,
-  ConnectorSyncRequestResultExceptionCauseSuppressedFromJSONTyped,
-  ConnectorSyncRequestResultExceptionCauseSuppressedToJSON,
 } from './';
 
 /**
@@ -54,10 +50,10 @@ export interface ConnectorSyncRequestResultException {
   message?: string;
   /**
    *
-   * @type {Array<ConnectorSyncRequestResultExceptionCauseSuppressed>}
+   * @type {Array<ConnectorSyncRequestResultExceptionCause>}
    * @memberof ConnectorSyncRequestResultException
    */
-  suppressed?: Array<ConnectorSyncRequestResultExceptionCauseSuppressed>;
+  suppressed?: Array<ConnectorSyncRequestResultExceptionCause>;
   /**
    *
    * @type {string}
@@ -92,7 +88,7 @@ export function ConnectorSyncRequestResultExceptionFromJSONTyped(
     suppressed: !exists(json, 'suppressed')
       ? undefined
       : (json['suppressed'] as Array<any>).map(
-          ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON
+          ConnectorSyncRequestResultExceptionCauseFromJSON
         ),
     localizedMessage: !exists(json, 'localizedMessage')
       ? undefined
@@ -122,7 +118,7 @@ export function ConnectorSyncRequestResultExceptionToJSON(
       value.suppressed === undefined
         ? undefined
         : (value.suppressed as Array<any>).map(
-            ConnectorSyncRequestResultExceptionCauseSuppressedToJSON
+            ConnectorSyncRequestResultExceptionCauseToJSON
           ),
     localizedMessage: value.localizedMessage,
   };

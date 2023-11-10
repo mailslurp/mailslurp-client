@@ -24,6 +24,7 @@ export * from './PhoneControllerApi';
 export * from './SentEmailsControllerApi';
 export * from './SmsControllerApi';
 export * from './TemplateControllerApi';
+export * from './ToolsControllerApi';
 export * from './TrackingControllerApi';
 export * from './UserControllerApi';
 export * from './WaitForControllerApi';

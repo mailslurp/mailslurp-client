@@ -163,6 +163,14 @@ export interface SentEmailDto {
     } | null;
     /**
      *
+     * @type {{ [key: string]: string; }}
+     * @memberof SentEmailDto
+     */
+    headers?: {
+        [key: string]: string;
+    } | null;
+    /**
+     *
      * @type {boolean}
      * @memberof SentEmailDto
      */

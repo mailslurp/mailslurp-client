@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Complaint, PageableObject, Sort } from './';
+import { Complaint, PageableObject, SortObject } from './';
 /**
  * Paginated complaint email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageComplaint {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageComplaint
      */
@@ -52,6 +46,12 @@ export interface PageComplaint {
      * @memberof PageComplaint
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageComplaint {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageComplaint
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageComplaint
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

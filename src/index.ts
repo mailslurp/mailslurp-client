@@ -522,8 +522,9 @@ export class MailSlurp {
    * @param {string} emailId emailId
    */
   async getRawEmail(emailId: string): Promise<string> {
-    return wrapCall('getRawEmail', () =>
-      this.emailController.getRawEmailContents({ emailId })
+    return wrapCall(
+      'getRawEmail',
+      () => this.emailController.getRawEmailContents({ emailId }) as any
     );
   }
 

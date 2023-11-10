@@ -11,6 +11,9 @@
  */
 import * as runtime from '../runtime';
 import { PageEmailValidationRequest, ValidateEmailAddressListOptions, ValidateEmailAddressListResult } from '../models';
+export interface DeleteValidationRequestRequest {
+    id: string;
+}
 export interface GetValidationRequestsRequest {
     page?: number;
     size?: number;
@@ -27,6 +30,22 @@ export interface ValidateEmailAddressListRequest {
  *
  */
 export declare class EmailVerificationControllerApi extends runtime.BaseAPI {
+    /**
+     * Delete all validation requests
+     */
+    deleteAllValidationRequestsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all validation requests
+     */
+    deleteAllValidationRequests(initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete a validation record
+     */
+    deleteValidationRequestRaw(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a validation record
+     */
+    deleteValidationRequest(requestParameters: DeleteValidationRequestRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Validate a list of email addresses. Per unit billing. See your plan for pricing.
      */

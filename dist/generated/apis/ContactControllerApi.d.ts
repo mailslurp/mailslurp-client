@@ -23,6 +23,7 @@ export interface GetAllContactsRequest {
     sort?: GetAllContactsSortEnum;
     since?: Date;
     before?: Date;
+    search?: string;
 }
 export interface GetContactRequest {
     contactId: string;
@@ -69,11 +70,11 @@ export declare class ContactControllerApi extends runtime.BaseAPI {
     /**
      * Get contact vCard vcf file
      */
-    getContactVCardRaw(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<string>>>;
+    getContactVCardRaw(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Get contact vCard vcf file
      */
-    getContactVCard(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    getContactVCard(requestParameters: GetContactVCardRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Get all contacts
      */

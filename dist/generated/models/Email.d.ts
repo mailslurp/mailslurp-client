@@ -117,11 +117,17 @@ export interface Email {
      */
     body?: string | null;
     /**
-     * An excerpt of the body of the email message for quick preview .
+     * An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
      * @type {string}
      * @memberof Email
      */
     bodyExcerpt?: string | null;
+    /**
+     * An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
+     * @type {string}
+     * @memberof Email
+     */
+    textExcerpt?: string | null;
     /**
      * A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
      * @type {string}

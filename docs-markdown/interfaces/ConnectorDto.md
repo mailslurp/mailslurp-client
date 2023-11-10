@@ -15,12 +15,15 @@ ConnectorDto
 - [connectorAuthType](ConnectorDto.md#connectorauthtype)
 - [connectorType](ConnectorDto.md#connectortype)
 - [createdAt](ConnectorDto.md#createdat)
+- [enabled](ConnectorDto.md#enabled)
 - [id](ConnectorDto.md#id)
 - [imapHost](ConnectorDto.md#imaphost)
 - [imapPassword](ConnectorDto.md#imappassword)
 - [imapPort](ConnectorDto.md#imapport)
 - [imapSsl](ConnectorDto.md#imapssl)
 - [imapUsername](ConnectorDto.md#imapusername)
+- [searchTerms](ConnectorDto.md#searchterms)
+- [selectFolder](ConnectorDto.md#selectfolder)
 - [syncEnabled](ConnectorDto.md#syncenabled)
 - [syncInterval](ConnectorDto.md#syncinterval)
 - [syncScheduleType](ConnectorDto.md#syncscheduletype)
@@ -51,6 +54,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
+### enabled
+
+• **enabled**: `boolean`
 
 **`Memberof`**
 
@@ -111,6 +124,26 @@ ___
 ### imapUsername
 
 • `Optional` **imapUsername**: `string`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
+### searchTerms
+
+• `Optional` **searchTerms**: `string`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
+### selectFolder
+
+• `Optional` **selectFolder**: `string`
 
 **`Memberof`**
 

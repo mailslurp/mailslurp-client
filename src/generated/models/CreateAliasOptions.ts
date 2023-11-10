@@ -43,6 +43,18 @@ export interface CreateAliasOptions {
    * @memberof CreateAliasOptions
    */
   useThreads: boolean;
+  /**
+   * Custom domain ID to use when generating alias email addresses
+   * @type {string}
+   * @memberof CreateAliasOptions
+   */
+  domainId?: string | null;
+  /**
+   * Whether to verify the masked email address exists before sending an email to it
+   * @type {boolean}
+   * @memberof CreateAliasOptions
+   */
+  verifyEmailAddress?: boolean | null;
 }
 
 export function CreateAliasOptionsFromJSON(json: any): CreateAliasOptions {
@@ -61,6 +73,10 @@ export function CreateAliasOptionsFromJSONTyped(
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     useThreads: json['useThreads'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
+    verifyEmailAddress: !exists(json, 'verifyEmailAddress')
+      ? undefined
+      : json['verifyEmailAddress'],
   };
 }
 
@@ -78,5 +94,7 @@ export function CreateAliasOptionsToJSON(
     inboxId: value.inboxId,
     name: value.name,
     useThreads: value.useThreads,
+    domainId: value.domainId,
+    verifyEmailAddress: value.verifyEmailAddress,
   };
 }

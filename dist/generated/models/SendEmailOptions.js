@@ -50,6 +50,9 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
+        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
+            ? undefined
+            : json['customHeaders'],
         body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
         isHTML: !(0, runtime_1.exists)(json, 'isHTML') ? undefined : json['isHTML'],
@@ -74,6 +77,9 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         validateEmailAddresses: !(0, runtime_1.exists)(json, 'validateEmailAddresses')
             ? undefined
             : json['validateEmailAddresses'],
+        ignoreEmptyRecipients: !(0, runtime_1.exists)(json, 'ignoreEmptyRecipients')
+            ? undefined
+            : json['ignoreEmptyRecipients'],
     };
 }
 exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
@@ -93,6 +99,7 @@ function SendEmailOptionsToJSON(value) {
         bcc: value.bcc,
         subject: value.subject,
         replyTo: value.replyTo,
+        customHeaders: value.customHeaders,
         body: value.body,
         html: value.html,
         isHTML: value.isHTML,
@@ -105,6 +112,7 @@ function SendEmailOptionsToJSON(value) {
         addTrackingPixel: value.addTrackingPixel,
         filterBouncedRecipients: value.filterBouncedRecipients,
         validateEmailAddresses: value.validateEmailAddresses,
+        ignoreEmptyRecipients: value.ignoreEmptyRecipients,
     };
 }
 exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

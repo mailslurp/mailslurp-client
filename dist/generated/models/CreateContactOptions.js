@@ -34,6 +34,9 @@ function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
         metaData: !(0, runtime_1.exists)(json, 'metaData') ? undefined : json['metaData'],
         optOut: !(0, runtime_1.exists)(json, 'optOut') ? undefined : json['optOut'],
         groupId: !(0, runtime_1.exists)(json, 'groupId') ? undefined : json['groupId'],
+        verifyEmailAddresses: !(0, runtime_1.exists)(json, 'verifyEmailAddresses')
+            ? undefined
+            : json['verifyEmailAddresses'],
     };
 }
 exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
@@ -53,6 +56,7 @@ function CreateContactOptionsToJSON(value) {
         metaData: value.metaData,
         optOut: value.optOut,
         groupId: value.groupId,
+        verifyEmailAddresses: value.verifyEmailAddresses,
     };
 }
 exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;

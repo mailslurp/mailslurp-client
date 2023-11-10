@@ -93,6 +93,12 @@ export interface InboxDto {
      * @memberof InboxDto
      */
     virtualInbox: boolean;
+    /**
+     * Inbox function if used as a primitive for another system.
+     * @type {string}
+     * @memberof InboxDto
+     */
+    functionsAs?: InboxDtoFunctionsAsEnum;
 }
 /**
  * @export
@@ -101,6 +107,16 @@ export interface InboxDto {
 export declare enum InboxDtoInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxDtoFunctionsAsEnum {
+    ALIAS = "ALIAS",
+    THREAD = "THREAD",
+    CATCH_ALL = "CATCH_ALL",
+    CONNECTOR = "CONNECTOR"
 }
 export declare function InboxDtoFromJSON(json: any): InboxDto;
 export declare function InboxDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxDto;

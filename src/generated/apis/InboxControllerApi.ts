@@ -167,6 +167,7 @@ export interface GetAllInboxesRequest {
   since?: Date;
   before?: Date;
   inboxType?: GetAllInboxesInboxTypeEnum;
+  inboxFunction?: GetAllInboxesInboxFunctionEnum;
   domainId?: string;
 }
 
@@ -1146,6 +1147,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.inboxType !== undefined) {
       queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    if (requestParameters.inboxFunction !== undefined) {
+      queryParameters['inboxFunction'] = requestParameters.inboxFunction;
     }
 
     if (requestParameters.domainId !== undefined) {
@@ -3115,6 +3120,16 @@ export enum GetAllInboxesSortEnum {
 export enum GetAllInboxesInboxTypeEnum {
   HTTP_INBOX = 'HTTP_INBOX',
   SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxesInboxFunctionEnum {
+  ALIAS = 'ALIAS',
+  THREAD = 'THREAD',
+  CATCH_ALL = 'CATCH_ALL',
+  CONNECTOR = 'CONNECTOR',
 }
 /**
  * @export

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AliasDto, CreateAliasOptions, PageAlias, PageEmailProjection, PageThreadProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, UpdateAliasOptions } from '../models';
+import { AliasDto, CreateAliasOptions, PageAlias, PageEmailProjection, PageThreadProjection, ReplyToAliasEmailOptions, SendEmailOptions, SentEmailDto, ThreadProjection, UpdateAliasOptions } from '../models';
 export interface CreateAliasRequest {
     createAliasOptions: CreateAliasOptions;
 }
@@ -37,9 +37,20 @@ export interface GetAliasThreadsRequest {
     before?: Date;
 }
 export interface GetAliasesRequest {
+    search?: string;
     page?: number;
     size?: number;
     sort?: GetAliasesSortEnum;
+    since?: Date;
+    before?: Date;
+}
+export interface GetThreadRequest {
+    threadId: string;
+}
+export interface GetThreadsPaginatedRequest {
+    page?: number;
+    size?: number;
+    sort?: GetThreadsPaginatedSortEnum;
     since?: Date;
     before?: Date;
 }
@@ -119,6 +130,26 @@ export declare class AliasControllerApi extends runtime.BaseAPI {
      */
     getAliases(requestParameters: GetAliasesRequest, initOverrides?: RequestInit): Promise<PageAlias>;
     /**
+     * Return a thread associated with an alias
+     * Get a thread
+     */
+    getThreadRaw(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ThreadProjection>>;
+    /**
+     * Return a thread associated with an alias
+     * Get a thread
+     */
+    getThread(requestParameters: GetThreadRequest, initOverrides?: RequestInit): Promise<ThreadProjection>;
+    /**
+     * Returns threads created for all aliases in paginated form
+     * Get all threads
+     */
+    getThreadsPaginatedRaw(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageThreadProjection>>;
+    /**
+     * Returns threads created for all aliases in paginated form
+     * Get all threads
+     */
+    getThreadsPaginated(requestParameters: GetThreadsPaginatedRequest, initOverrides?: RequestInit): Promise<PageThreadProjection>;
+    /**
      * Send the reply to the email sender or reply-to and include same subject cc bcc etc. Reply to an email and the contents will be sent with the existing subject to the emails `to`, `cc`, and `bcc`.
      * Reply to an email
      */
@@ -168,6 +199,14 @@ export declare enum GetAliasThreadsSortEnum {
  * @enum {string}
  */
 export declare enum GetAliasesSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetThreadsPaginatedSortEnum {
     ASC = "ASC",
     DESC = "DESC"
 }

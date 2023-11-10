@@ -47,12 +47,12 @@ export interface WebhookTestRequest {
  * @enum {string}
  */
 export declare enum WebhookTestRequestMethodEnum {
-    GET = "GET",
-    HEAD = "HEAD",
     POST = "POST",
+    DELETE = "DELETE",
+    GET = "GET",
     PUT = "PUT",
     PATCH = "PATCH",
-    DELETE = "DELETE",
+    HEAD = "HEAD",
     OPTIONS = "OPTIONS",
     TRACE = "TRACE"
 }

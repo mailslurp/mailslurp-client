@@ -13,7 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import { Sort, SortFromJSON, SortFromJSONTyped, SortToJSON } from './';
+import {
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
+} from './';
 
 /**
  *
@@ -29,10 +34,10 @@ export interface PageableObject {
   offset?: number;
   /**
    *
-   * @type {Sort}
+   * @type {SortObject}
    * @memberof PageableObject
    */
-  sort?: Sort;
+  sort?: SortObject;
   /**
    *
    * @type {number}
@@ -72,7 +77,7 @@ export function PageableObjectFromJSONTyped(
   }
   return {
     offset: !exists(json, 'offset') ? undefined : json['offset'],
-    sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     pageNumber: !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
     pageSize: !exists(json, 'pageSize') ? undefined : json['pageSize'],
     paged: !exists(json, 'paged') ? undefined : json['paged'],
@@ -89,7 +94,7 @@ export function PageableObjectToJSON(value?: PageableObject | null): any {
   }
   return {
     offset: value.offset,
-    sort: SortToJSON(value.sort),
+    sort: SortObjectToJSON(value.sort),
     pageNumber: value.pageNumber,
     pageSize: value.pageSize,
     paged: value.paged,

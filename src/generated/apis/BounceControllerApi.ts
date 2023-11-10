@@ -14,6 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
+  AccountBounceBlockDto,
+  AccountBounceBlockDtoFromJSON,
+  AccountBounceBlockDtoToJSON,
   BouncedEmailDto,
   BouncedEmailDtoFromJSON,
   BouncedEmailDtoToJSON,
@@ -145,6 +148,47 @@ export class BounceControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Check if account block status prevents sending
+   * Can account send email
+   */
+  async getAccountBounceBlockStatusRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AccountBounceBlockDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/account-block`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AccountBounceBlockDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Check if account block status prevents sending
+   * Can account send email
+   */
+  async getAccountBounceBlockStatus(
+    initOverrides?: RequestInit
+  ): Promise<AccountBounceBlockDto> {
+    const response = await this.getAccountBounceBlockStatusRaw(initOverrides);
     return await response.value();
   }
 

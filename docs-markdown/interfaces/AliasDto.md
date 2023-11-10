@@ -15,6 +15,7 @@ AliasDto
 ### Properties
 
 - [createdAt](AliasDto.md#createdat)
+- [domainId](AliasDto.md#domainid)
 - [emailAddress](AliasDto.md#emailaddress)
 - [id](AliasDto.md#id)
 - [inboxId](AliasDto.md#inboxid)
@@ -30,6 +31,18 @@ AliasDto
 ### createdAt
 
 • `Optional` **createdAt**: `Date`
+
+**`Memberof`**
+
+AliasDto
+
+___
+
+### domainId
+
+• `Optional` **domainId**: `string`
+
+Domain ID associated with the alias
 
 **`Memberof`**
 

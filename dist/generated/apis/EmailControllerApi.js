@@ -157,6 +157,173 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Can user send email to given recipient or is the recipient blocked
+     * Check if email can be sent and options are valid.
+     */
+    EmailControllerApi.prototype.canSendRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling canSend.');
+                        }
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling canSend.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/can-send",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CanSendEmailResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Can user send email to given recipient or is the recipient blocked
+     * Check if email can be sent and options are valid.
+     */
+    EmailControllerApi.prototype.canSend = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.canSendRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+     * Show which mail clients support the HTML and CSS features used in an email body.
+     */
+    EmailControllerApi.prototype.checkEmailBodyFeatureSupportRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling checkEmailBodyFeatureSupport.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/check-email-body-feature-support".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckEmailBodyFeatureSupportResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+     * Show which mail clients support the HTML and CSS features used in an email body.
+     */
+    EmailControllerApi.prototype.checkEmailBodyFeatureSupport = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkEmailBodyFeatureSupportRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+     * Show which email programs and devices support the features used in an email body.
+     */
+    EmailControllerApi.prototype.checkEmailClientSupportRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.checkEmailClientSupportOptions === null ||
+                            requestParameters.checkEmailClientSupportOptions === undefined) {
+                            throw new runtime.RequiredError('checkEmailClientSupportOptions', 'Required parameter requestParameters.checkEmailClientSupportOptions was null or undefined when calling checkEmailClientSupport.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/check-email-client-support",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CheckEmailClientSupportOptionsToJSON)(requestParameters.checkEmailClientSupportOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CheckEmailClientSupportResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+     * Show which email programs and devices support the features used in an email body.
+     */
+    EmailControllerApi.prototype.checkEmailClientSupport = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.checkEmailClientSupportRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Deletes all emails in your account. Be careful as emails cannot be recovered
      * Delete all emails in all inboxes.
      */
@@ -1455,7 +1622,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.TextApiResponse(response)];
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
         });
@@ -1466,14 +1633,12 @@ var EmailControllerApi = /** @class */ (function (_super) {
      */
     EmailControllerApi.prototype.getRawEmailContents = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getRawEmailContentsRaw(requestParameters, initOverrides)];
                     case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });

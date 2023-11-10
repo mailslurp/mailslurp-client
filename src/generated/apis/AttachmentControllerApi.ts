@@ -26,9 +26,6 @@ import {
   InlineObject,
   InlineObjectFromJSON,
   InlineObjectToJSON,
-  InlineObject1,
-  InlineObject1FromJSON,
-  InlineObject1ToJSON,
   PageAttachmentEntity,
   PageAttachmentEntityFromJSON,
   PageAttachmentEntityToJSON,
@@ -71,9 +68,10 @@ export interface UploadAttachmentRequest {
 }
 
 export interface UploadAttachmentBytesRequest {
-  inlineObject1: InlineObject1;
   contentType?: string;
+  contentType2?: string;
   filename?: string;
+  filename2?: string;
 }
 
 export interface UploadMultipartFormRequest {
@@ -540,17 +538,11 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     requestParameters: UploadAttachmentBytesRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<Array<string>>> {
-    if (
-      requestParameters.inlineObject1 === null ||
-      requestParameters.inlineObject1 === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'inlineObject1',
-        'Required parameter requestParameters.inlineObject1 was null or undefined when calling uploadAttachmentBytes.'
-      );
-    }
-
     const queryParameters: any = {};
+
+    if (requestParameters.contentType2 !== undefined) {
+      queryParameters['contentType'] = requestParameters.contentType2;
+    }
 
     if (requestParameters.filename !== undefined) {
       queryParameters['filename'] = requestParameters.filename;
@@ -558,13 +550,18 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
 
     const headerParameters: runtime.HTTPHeaders = {};
 
-    headerParameters['Content-Type'] = 'application/octet-stream';
-
     if (
       requestParameters.contentType !== undefined &&
       requestParameters.contentType !== null
     ) {
       headerParameters['contentType'] = String(requestParameters.contentType);
+    }
+
+    if (
+      requestParameters.filename2 !== undefined &&
+      requestParameters.filename2 !== null
+    ) {
+      headerParameters['filename'] = String(requestParameters.filename2);
     }
 
     if (this.configuration && this.configuration.apiKey) {
@@ -577,7 +574,6 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: InlineObject1ToJSON(requestParameters.inlineObject1),
       },
       initOverrides
     );

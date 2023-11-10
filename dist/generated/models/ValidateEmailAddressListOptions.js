@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidateEmailAddressListOptionsToJSON = exports.ValidateEmailAddressListOptionsFromJSONTyped = exports.ValidateEmailAddressListOptionsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function ValidateEmailAddressListOptionsFromJSON(json) {
     return ValidateEmailAddressListOptionsFromJSONTyped(json, false);
 }
@@ -24,6 +25,9 @@ function ValidateEmailAddressListOptionsFromJSONTyped(json, ignoreDiscriminator)
     }
     return {
         emailAddressList: json['emailAddressList'],
+        ignoreOldResults: !(0, runtime_1.exists)(json, 'ignoreOldResults')
+            ? undefined
+            : json['ignoreOldResults'],
     };
 }
 exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
@@ -36,6 +40,7 @@ function ValidateEmailAddressListOptionsToJSON(value) {
     }
     return {
         emailAddressList: value.emailAddressList,
+        ignoreOldResults: value.ignoreOldResults,
     };
 }
 exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;

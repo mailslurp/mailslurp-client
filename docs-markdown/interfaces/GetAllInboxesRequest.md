@@ -9,6 +9,7 @@
 - [before](GetAllInboxesRequest.md#before)
 - [domainId](GetAllInboxesRequest.md#domainid)
 - [favourite](GetAllInboxesRequest.md#favourite)
+- [inboxFunction](GetAllInboxesRequest.md#inboxfunction)
 - [inboxType](GetAllInboxesRequest.md#inboxtype)
 - [page](GetAllInboxesRequest.md#page)
 - [search](GetAllInboxesRequest.md#search)
@@ -35,6 +36,12 @@ ___
 ### favourite
 
 • `Optional` **favourite**: `boolean`
+
+___
+
+### inboxFunction
+
+• `Optional` **inboxFunction**: [`GetAllInboxesInboxFunctionEnum`](../enums/GetAllInboxesInboxFunctionEnum.md)
 
 ___
 

@@ -37,6 +37,7 @@ Email
 - [sender](Email.md#sender)
 - [subject](Email.md#subject)
 - [teamAccess](Email.md#teamaccess)
+- [textExcerpt](Email.md#textexcerpt)
 - [to](Email.md#to)
 - [updatedAt](Email.md#updatedat)
 - [userId](Email.md#userid)
@@ -93,7 +94,7 @@ ___
 
 • `Optional` **bodyExcerpt**: `string`
 
-An excerpt of the body of the email message for quick preview .
+An excerpt of the body of the email message for quick preview. Takes HTML content part if exists falls back to TEXT content part if not
 
 **`Memberof`**
 
@@ -312,6 +313,18 @@ ___
 • **teamAccess**: `boolean`
 
 Can the email be accessed by organization team members
+
+**`Memberof`**
+
+Email
+
+___
+
+### textExcerpt
+
+• `Optional` **textExcerpt**: `string`
+
+An excerpt of the body of the email message for quick preview. Takes TEXT content part if exists
 
 **`Memberof`**
 

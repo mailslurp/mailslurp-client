@@ -50,6 +50,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
             ? undefined
             : json['templateVariables'],
+        headers: !(0, runtime_1.exists)(json, 'headers') ? undefined : json['headers'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
@@ -86,6 +87,7 @@ function SentEmailDtoToJSON(value) {
         virtualSend: value.virtualSend,
         templateId: value.templateId,
         templateVariables: value.templateVariables,
+        headers: value.headers,
         html: value.html,
     };
 }

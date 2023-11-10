@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CreateConnectorImapOptions } from './';
+import { CreateConnectorImapFetchOptions, CreateConnectorImapOptions } from './';
 /**
  *
  * @export
@@ -58,6 +58,12 @@ export interface CreateConnectorOptions {
      * @memberof CreateConnectorOptions
      */
     syncInterval?: number;
+    /**
+     *
+     * @type {CreateConnectorImapFetchOptions}
+     * @memberof CreateConnectorOptions
+     */
+    fetchSettings?: CreateConnectorImapFetchOptions;
 }
 /**
  * @export

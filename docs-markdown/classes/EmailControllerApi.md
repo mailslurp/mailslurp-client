@@ -22,6 +22,12 @@
 
 - [applyImapFlagOperation](EmailControllerApi.md#applyimapflagoperation)
 - [applyImapFlagOperationRaw](EmailControllerApi.md#applyimapflagoperationraw)
+- [canSend](EmailControllerApi.md#cansend)
+- [canSendRaw](EmailControllerApi.md#cansendraw)
+- [checkEmailBodyFeatureSupport](EmailControllerApi.md#checkemailbodyfeaturesupport)
+- [checkEmailBodyFeatureSupportRaw](EmailControllerApi.md#checkemailbodyfeaturesupportraw)
+- [checkEmailClientSupport](EmailControllerApi.md#checkemailclientsupport)
+- [checkEmailClientSupportRaw](EmailControllerApi.md#checkemailclientsupportraw)
 - [deleteAllEmails](EmailControllerApi.md#deleteallemails)
 - [deleteAllEmailsRaw](EmailControllerApi.md#deleteallemailsraw)
 - [deleteEmail](EmailControllerApi.md#deleteemail)
@@ -152,6 +158,126 @@ Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
+
+___
+
+### canSend
+
+▸ **canSend**(`requestParameters`, `initOverrides?`): `Promise`<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>
+
+Can user send email to given recipient or is the recipient blocked
+Check if email can be sent and options are valid.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CanSendRequest`](../interfaces/CanSendRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>
+
+___
+
+### canSendRaw
+
+▸ **canSendRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>\>
+
+Can user send email to given recipient or is the recipient blocked
+Check if email can be sent and options are valid.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CanSendRequest`](../interfaces/CanSendRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CanSendEmailResults`](../interfaces/CanSendEmailResults.md)\>\>
+
+___
+
+### checkEmailBodyFeatureSupport
+
+▸ **checkEmailBodyFeatureSupport**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>
+
+Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+Show which mail clients support the HTML and CSS features used in an email body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBodyFeatureSupportRequest`](../interfaces/CheckEmailBodyFeatureSupportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>
+
+___
+
+### checkEmailBodyFeatureSupportRaw
+
+▸ **checkEmailBodyFeatureSupportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>\>
+
+Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+Show which mail clients support the HTML and CSS features used in an email body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBodyFeatureSupportRequest`](../interfaces/CheckEmailBodyFeatureSupportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>\>
+
+___
+
+### checkEmailClientSupport
+
+▸ **checkEmailClientSupport**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>
+
+Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+Show which email programs and devices support the features used in an email body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailClientSupportRequest`](../interfaces/CheckEmailClientSupportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>
+
+___
+
+### checkEmailClientSupportRaw
+
+▸ **checkEmailClientSupportRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>\>
+
+Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+Show which email programs and devices support the features used in an email body.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailClientSupportRequest`](../interfaces/CheckEmailClientSupportRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailClientSupportResults`](../interfaces/CheckEmailClientSupportResults.md)\>\>
 
 ___
 
@@ -1069,7 +1195,7 @@ ___
 
 ### getRawEmailContents
 
-▸ **getRawEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+▸ **getRawEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
 Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -1083,13 +1209,13 @@ Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`<`void`\>
 
 ___
 
 ### getRawEmailContentsRaw
 
-▸ **getRawEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+▸ **getRawEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
 Get raw email string. Returns unparsed raw SMTP message with headers and body.
@@ -1103,7 +1229,7 @@ Get raw email string. Returns unparsed raw SMTP message with headers and body.
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

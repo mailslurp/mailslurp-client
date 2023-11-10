@@ -15,12 +15,23 @@ ValidateEmailAddressListOptions
 ### Properties
 
 - [emailAddressList](ValidateEmailAddressListOptions.md#emailaddresslist)
+- [ignoreOldResults](ValidateEmailAddressListOptions.md#ignoreoldresults)
 
 ## Properties
 
 ### emailAddressList
 
 • **emailAddressList**: `string`[]
+
+**`Memberof`**
+
+ValidateEmailAddressListOptions
+
+___
+
+### ignoreOldResults
+
+• `Optional` **ignoreOldResults**: `boolean`
 
 **`Memberof`**
 

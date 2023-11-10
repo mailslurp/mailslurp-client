@@ -27,6 +27,12 @@ export interface ConnectorDto {
   id: string;
   /**
    *
+   * @type {boolean}
+   * @memberof ConnectorDto
+   */
+  enabled: boolean;
+  /**
+   *
    * @type {string}
    * @memberof ConnectorDto
    */
@@ -93,6 +99,18 @@ export interface ConnectorDto {
   imapSsl?: boolean;
   /**
    *
+   * @type {string}
+   * @memberof ConnectorDto
+   */
+  selectFolder?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorDto
+   */
+  searchTerms?: string;
+  /**
+   *
    * @type {Date}
    * @memberof ConnectorDto
    */
@@ -134,6 +152,7 @@ export function ConnectorDtoFromJSONTyped(
   }
   return {
     id: json['id'],
+    enabled: json['enabled'],
     userId: json['userId'],
     connectorType: json['connectorType'],
     connectorAuthType: json['connectorAuthType'],
@@ -151,6 +170,10 @@ export function ConnectorDtoFromJSONTyped(
       ? undefined
       : json['imapPassword'],
     imapSsl: !exists(json, 'imapSsl') ? undefined : json['imapSsl'],
+    selectFolder: !exists(json, 'selectFolder')
+      ? undefined
+      : json['selectFolder'],
+    searchTerms: !exists(json, 'searchTerms') ? undefined : json['searchTerms'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -164,6 +187,7 @@ export function ConnectorDtoToJSON(value?: ConnectorDto | null): any {
   }
   return {
     id: value.id,
+    enabled: value.enabled,
     userId: value.userId,
     connectorType: value.connectorType,
     connectorAuthType: value.connectorAuthType,
@@ -175,6 +199,8 @@ export function ConnectorDtoToJSON(value?: ConnectorDto | null): any {
     imapUsername: value.imapUsername,
     imapPassword: value.imapPassword,
     imapSsl: value.imapSsl,
+    selectFolder: value.selectFolder,
+    searchTerms: value.searchTerms,
     createdAt: value.createdAt.toISOString(),
   };
 }

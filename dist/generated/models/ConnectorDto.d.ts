@@ -23,6 +23,12 @@ export interface ConnectorDto {
     id: string;
     /**
      *
+     * @type {boolean}
+     * @memberof ConnectorDto
+     */
+    enabled: boolean;
+    /**
+     *
      * @type {string}
      * @memberof ConnectorDto
      */
@@ -87,6 +93,18 @@ export interface ConnectorDto {
      * @memberof ConnectorDto
      */
     imapSsl?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    selectFolder?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    searchTerms?: string;
     /**
      *
      * @type {Date}

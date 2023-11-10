@@ -22,10 +22,10 @@ import {
   SentEmailProjectionFromJSON,
   SentEmailProjectionFromJSONTyped,
   SentEmailProjectionToJSON,
-  Sort,
-  SortFromJSON,
-  SortFromJSONTyped,
-  SortToJSON,
+  SortObject,
+  SortObjectFromJSON,
+  SortObjectFromJSONTyped,
+  SortObjectToJSON,
 } from './';
 
 /**
@@ -90,10 +90,10 @@ export interface PageSentEmailProjection {
   last?: boolean;
   /**
    *
-   * @type {Sort}
+   * @type {SortObject}
    * @memberof PageSentEmailProjection
    */
-  sort?: Sort;
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -133,7 +133,7 @@ export function PageSentEmailProjectionFromJSONTyped(
     totalElements: json['totalElements'],
     totalPages: json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    sort: !exists(json, 'sort') ? undefined : SortFromJSON(json['sort']),
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     first: !exists(json, 'first') ? undefined : json['first'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
@@ -158,7 +158,7 @@ export function PageSentEmailProjectionToJSON(
     totalElements: value.totalElements,
     totalPages: value.totalPages,
     last: value.last,
-    sort: SortToJSON(value.sort),
+    sort: SortObjectToJSON(value.sort),
     first: value.first,
     empty: value.empty,
   };

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, PhoneNumberProjection, Sort } from './';
+import { PageableObject, PhoneNumberProjection, SortObject } from './';
 /**
  * Paginated phone numbers. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PagePhoneNumberProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
@@ -52,6 +46,12 @@ export interface PagePhoneNumberProjection {
      * @memberof PagePhoneNumberProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PagePhoneNumberProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PagePhoneNumberProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PagePhoneNumberProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PagePhoneNumberProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

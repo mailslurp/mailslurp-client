@@ -150,6 +150,40 @@ export class ConnectorControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Delete all inbox connectors
+   */
+  async deleteAllConnectorRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/connectors`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete all inbox connectors
+   */
+  async deleteAllConnector(initOverrides?: RequestInit): Promise<void> {
+    await this.deleteAllConnectorRaw(initOverrides);
+  }
+
+  /**
    * Delete an inbox connector
    */
   async deleteConnectorRaw(

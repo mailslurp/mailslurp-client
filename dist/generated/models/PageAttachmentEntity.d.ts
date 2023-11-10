@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AttachmentProjection, PageableObject, Sort } from './';
+import { AttachmentProjection, PageableObject, SortObject } from './';
 /**
  * Paginated attachment entity results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageAttachmentEntity {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageAttachmentEntity
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
@@ -52,6 +46,12 @@ export interface PageAttachmentEntity {
      * @memberof PageAttachmentEntity
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAttachmentEntity
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageAttachmentEntity {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageAttachmentEntity
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageAttachmentEntity
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageAttachmentEntity
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

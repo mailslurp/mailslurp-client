@@ -60,6 +60,14 @@ export interface ReplyToAliasEmailOptions {
      */
     sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum;
     /**
+     * Optional custom headers
+     * @type {{ [key: string]: string; }}
+     * @memberof ReplyToAliasEmailOptions
+     */
+    customHeaders?: {
+        [key: string]: string;
+    } | null;
+    /**
      * Optionally use inbox name as display name for sender email address
      * @type {boolean}
      * @memberof ReplyToAliasEmailOptions

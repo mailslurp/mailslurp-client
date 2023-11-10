@@ -194,6 +194,58 @@ var SmsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    SmsControllerApi.prototype.getReplyForSmsMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.smsId === null ||
+                            requestParameters.smsId === undefined) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling getReplyForSmsMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/{smsId}/reply".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ReplyForSmsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    SmsControllerApi.prototype.getReplyForSmsMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getReplyForSmsMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
      */
@@ -354,6 +406,64 @@ var SmsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getUnreadSmsCountRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    SmsControllerApi.prototype.replyToSmsMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.smsId === null ||
+                            requestParameters.smsId === undefined) {
+                            throw new runtime.RequiredError('smsId', 'Required parameter requestParameters.smsId was null or undefined when calling replyToSmsMessage.');
+                        }
+                        if (requestParameters.smsReplyOptions === null ||
+                            requestParameters.smsReplyOptions === undefined) {
+                            throw new runtime.RequiredError('smsReplyOptions', 'Required parameter requestParameters.smsReplyOptions was null or undefined when calling replyToSmsMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sms/{smsId}/reply".replace("{".concat('smsId', "}"), encodeURIComponent(String(requestParameters.smsId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SmsReplyOptionsToJSON)(requestParameters.smsReplyOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentSmsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    SmsControllerApi.prototype.replyToSmsMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.replyToSmsMessageRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

@@ -40,6 +40,14 @@ export interface ReplyToEmailOptions {
      */
     replyTo?: string | null;
     /**
+     * Optional custom headers
+     * @type {{ [key: string]: string; }}
+     * @memberof ReplyToEmailOptions
+     */
+    customHeaders?: {
+        [key: string]: string;
+    } | null;
+    /**
      * The charset that your message should be sent with. Optional. Default is UTF-8
      * @type {string}
      * @memberof ReplyToEmailOptions

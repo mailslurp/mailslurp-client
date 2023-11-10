@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxReplierDto, PageableObject, Sort } from './';
+import { InboxReplierDto, PageableObject, SortObject } from './';
 /**
  * Paginated inbox replier results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageInboxReplierDto {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxReplierDto
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxReplierDto
      */
@@ -52,6 +46,12 @@ export interface PageInboxReplierDto {
      * @memberof PageInboxReplierDto
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierDto
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageInboxReplierDto {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageInboxReplierDto
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxReplierDto
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageInboxReplierDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierDto
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

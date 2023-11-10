@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { BouncedEmailDto, BouncedRecipientDto, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
+import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -61,6 +61,16 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Filter a list of email recipients and remove those who have bounced
      */
     filterBouncedRecipient(requestParameters: FilterBouncedRecipientRequest, initOverrides?: RequestInit): Promise<FilterBouncedRecipientsResult>;
+    /**
+     * Check if account block status prevents sending
+     * Can account send email
+     */
+    getAccountBounceBlockStatusRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<AccountBounceBlockDto>>;
+    /**
+     * Check if account block status prevents sending
+     * Can account send email
+     */
+    getAccountBounceBlockStatus(initOverrides?: RequestInit): Promise<AccountBounceBlockDto>;
     /**
      * Bounced emails are email you have sent that were rejected by a recipient
      * Get a bounced email.

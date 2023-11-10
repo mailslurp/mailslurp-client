@@ -68,6 +68,12 @@ export interface AliasDto {
    */
   isVerified: boolean;
   /**
+   * Domain ID associated with the alias
+   * @type {string}
+   * @memberof AliasDto
+   */
+  domainId?: string | null;
+  /**
    *
    * @type {Date}
    * @memberof AliasDto
@@ -103,6 +109,7 @@ export function AliasDtoFromJSONTyped(
     name: !exists(json, 'name') ? undefined : json['name'],
     useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
     isVerified: json['isVerified'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     createdAt: !exists(json, 'createdAt')
       ? undefined
       : json['createdAt'] === null
@@ -132,6 +139,7 @@ export function AliasDtoToJSON(value?: AliasDto | null): any {
     name: value.name,
     useThreads: value.useThreads,
     isVerified: value.isVerified,
+    domainId: value.domainId,
     createdAt:
       value.createdAt === undefined
         ? undefined

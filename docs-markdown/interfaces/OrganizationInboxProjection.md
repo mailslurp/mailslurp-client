@@ -18,6 +18,7 @@ OrganizationInboxProjection
 - [domainId](OrganizationInboxProjection.md#domainid)
 - [emailAddress](OrganizationInboxProjection.md#emailaddress)
 - [favourite](OrganizationInboxProjection.md#favourite)
+- [functionsAs](OrganizationInboxProjection.md#functionsas)
 - [id](OrganizationInboxProjection.md#id)
 - [inboxType](OrganizationInboxProjection.md#inboxtype)
 - [name](OrganizationInboxProjection.md#name)
@@ -69,6 +70,18 @@ ___
 • **favourite**: `boolean`
 
 Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
+
+### functionsAs
+
+• `Optional` **functionsAs**: [`OrganizationInboxProjectionFunctionsAsEnum`](../enums/OrganizationInboxProjectionFunctionsAsEnum.md)
+
+Inbox function if used as a primitive for another system.
 
 **`Memberof`**
 

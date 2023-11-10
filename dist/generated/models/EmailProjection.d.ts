@@ -99,6 +99,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     bodyMD5Hash?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    textExcerpt?: string | null;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

@@ -22,6 +22,7 @@ CreateContactOptions
 - [metaData](CreateContactOptions.md#metadata)
 - [optOut](CreateContactOptions.md#optout)
 - [tags](CreateContactOptions.md#tags)
+- [verifyEmailAddresses](CreateContactOptions.md#verifyemailaddresses)
 
 ## Properties
 
@@ -106,6 +107,18 @@ ___
 • `Optional` **tags**: `string`[]
 
 Tags that can be used to search and group contacts
+
+**`Memberof`**
+
+CreateContactOptions
+
+___
+
+### verifyEmailAddresses
+
+• `Optional` **verifyEmailAddresses**: `boolean`
+
+Whether to validate contact email address exists
 
 **`Memberof`**
 

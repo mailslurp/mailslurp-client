@@ -33,6 +33,12 @@ export interface HTMLValidationResult {
    */
   isValid: boolean;
   /**
+   * Optional infos resulting from HTML validation
+   * @type {Array<ValidationMessage>}
+   * @memberof HTMLValidationResult
+   */
+  infos: Array<ValidationMessage>;
+  /**
    * Optional errors resulting from HTML validation
    * @type {Array<ValidationMessage>}
    * @memberof HTMLValidationResult
@@ -59,6 +65,7 @@ export function HTMLValidationResultFromJSONTyped(
   }
   return {
     isValid: json['isValid'],
+    infos: (json['infos'] as Array<any>).map(ValidationMessageFromJSON),
     errors: (json['errors'] as Array<any>).map(ValidationMessageFromJSON),
     warnings: (json['warnings'] as Array<any>).map(ValidationMessageFromJSON),
   };
@@ -75,6 +82,7 @@ export function HTMLValidationResultToJSON(
   }
   return {
     isValid: value.isValid,
+    infos: (value.infos as Array<any>).map(ValidationMessageToJSON),
     errors: (value.errors as Array<any>).map(ValidationMessageToJSON),
     warnings: (value.warnings as Array<any>).map(ValidationMessageToJSON),
   };

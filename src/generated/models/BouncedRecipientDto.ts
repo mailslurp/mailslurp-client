@@ -60,6 +60,12 @@ export interface BouncedRecipientDto {
    * @type {string}
    * @memberof BouncedRecipientDto
    */
+  bounceType?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BouncedRecipientDto
+   */
   status?: string | null;
   /**
    *
@@ -89,6 +95,7 @@ export function BouncedRecipientDtoFromJSONTyped(
       ? undefined
       : json['diagnosticCode'],
     action: !exists(json, 'action') ? undefined : json['action'],
+    bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
     status: !exists(json, 'status') ? undefined : json['status'],
     createdAt: new Date(json['createdAt']),
   };
@@ -110,6 +117,7 @@ export function BouncedRecipientDtoToJSON(
     recipient: value.recipient,
     diagnosticCode: value.diagnosticCode,
     action: value.action,
+    bounceType: value.bounceType,
     status: value.status,
     createdAt: value.createdAt.toISOString(),
   };

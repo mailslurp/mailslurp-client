@@ -81,6 +81,12 @@ export interface InboxPreview {
      * @memberof InboxPreview
      */
     expiresAt?: string | null;
+    /**
+     * Inbox function if used as a primitive for another system.
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    functionsAs?: InboxPreviewFunctionsAsEnum;
 }
 /**
  * @export
@@ -89,6 +95,16 @@ export interface InboxPreview {
 export declare enum InboxPreviewInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxPreviewFunctionsAsEnum {
+    ALIAS = "ALIAS",
+    THREAD = "THREAD",
+    CATCH_ALL = "CATCH_ALL",
+    CONNECTOR = "CONNECTOR"
 }
 export declare function InboxPreviewFromJSON(json: any): InboxPreview;
 export declare function InboxPreviewFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPreview;

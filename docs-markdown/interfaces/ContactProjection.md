@@ -108,7 +108,7 @@ ___
 
 ### optOut
 
-• **optOut**: `boolean`
+• `Optional` **optOut**: `boolean`
 
 **`Memberof`**
 

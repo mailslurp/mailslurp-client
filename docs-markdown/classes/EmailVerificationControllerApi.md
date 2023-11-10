@@ -20,6 +20,10 @@
 
 ### Methods
 
+- [deleteAllValidationRequests](EmailVerificationControllerApi.md#deleteallvalidationrequests)
+- [deleteAllValidationRequestsRaw](EmailVerificationControllerApi.md#deleteallvalidationrequestsraw)
+- [deleteValidationRequest](EmailVerificationControllerApi.md#deletevalidationrequest)
+- [deleteValidationRequestRaw](EmailVerificationControllerApi.md#deletevalidationrequestraw)
 - [getValidationRequests](EmailVerificationControllerApi.md#getvalidationrequests)
 - [getValidationRequestsRaw](EmailVerificationControllerApi.md#getvalidationrequestsraw)
 - [request](EmailVerificationControllerApi.md#request)
@@ -56,6 +60,80 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### deleteAllValidationRequests
+
+▸ **deleteAllValidationRequests**(`initOverrides?`): `Promise`<`void`\>
+
+Delete all validation requests
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllValidationRequestsRaw
+
+▸ **deleteAllValidationRequestsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete all validation requests
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deleteValidationRequest
+
+▸ **deleteValidationRequest**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a validation record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteValidationRequestRequest`](../interfaces/DeleteValidationRequestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteValidationRequestRaw
+
+▸ **deleteValidationRequestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a validation record
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteValidationRequestRequest`](../interfaces/DeleteValidationRequestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
 
 ### getValidationRequests
 

@@ -44,6 +44,12 @@ export interface ReplyToEmailOptions {
    */
   replyTo?: string | null;
   /**
+   * Optional custom headers
+   * @type {{ [key: string]: string; }}
+   * @memberof ReplyToEmailOptions
+   */
+  customHeaders?: { [key: string]: string } | null;
+  /**
    * The charset that your message should be sent with. Optional. Default is UTF-8
    * @type {string}
    * @memberof ReplyToEmailOptions
@@ -111,6 +117,9 @@ export function ReplyToEmailOptionsFromJSONTyped(
     isHTML: json['isHTML'],
     from: !exists(json, 'from') ? undefined : json['from'],
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
+    customHeaders: !exists(json, 'customHeaders')
+      ? undefined
+      : json['customHeaders'],
     charset: !exists(json, 'charset') ? undefined : json['charset'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     templateVariables: !exists(json, 'templateVariables')
@@ -141,6 +150,7 @@ export function ReplyToEmailOptionsToJSON(
     isHTML: value.isHTML,
     from: value.from,
     replyTo: value.replyTo,
+    customHeaders: value.customHeaders,
     charset: value.charset,
     attachments: value.attachments,
     templateVariables: value.templateVariables,

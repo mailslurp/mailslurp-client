@@ -120,6 +120,11 @@ export interface UpdateWebhookHeadersRequest {
 export interface VerifyWebhookSignatureRequest {
     verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
 }
+export interface WaitForWebhookResultsRequest {
+    webhookId: string;
+    expectedCount: number;
+    timeout: number;
+}
 /**
  *
  */
@@ -402,6 +407,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Verify a webhook payload signature
      */
     verifyWebhookSignature(requestParameters: VerifyWebhookSignatureRequest, initOverrides?: RequestInit): Promise<VerifyWebhookSignatureResults>;
+    /**
+     * Wait for webhook results for a webhook
+     */
+    waitForWebhookResultsRaw(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<WebhookResultDto>>>;
+    /**
+     * Wait for webhook results for a webhook
+     */
+    waitForWebhookResults(requestParameters: WaitForWebhookResultsRequest, initOverrides?: RequestInit): Promise<Array<WebhookResultDto>>;
 }
 /**
  * @export

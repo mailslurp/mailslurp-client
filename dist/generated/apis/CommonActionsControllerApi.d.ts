@@ -49,6 +49,12 @@ export interface DeleteEmailAddressRequest {
 export interface EmptyInboxRequest {
     inboxId: string;
 }
+export interface SendEmailQueryRequest {
+    to: string;
+    senderId?: string;
+    body?: string;
+    subject?: string;
+}
 export interface SendEmailSimpleRequest {
     simpleSendEmailOptions: SimpleSendEmailOptions;
 }
@@ -96,6 +102,16 @@ export declare class CommonActionsControllerApi extends runtime.BaseAPI {
      * Delete all emails in an inbox
      */
     emptyInbox(requestParameters: EmptyInboxRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    sendEmailQueryRaw(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    sendEmailQuery(requestParameters: SendEmailQueryRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * If no senderId or inboxId provided a random email address will be used to send from.
      * Send an email

@@ -20,9 +20,11 @@ SendEmailOptions
 - [body](SendEmailOptions.md#body)
 - [cc](SendEmailOptions.md#cc)
 - [charset](SendEmailOptions.md#charset)
+- [customHeaders](SendEmailOptions.md#customheaders)
 - [filterBouncedRecipients](SendEmailOptions.md#filterbouncedrecipients)
 - [from](SendEmailOptions.md#from)
 - [html](SendEmailOptions.md#html)
+- [ignoreEmptyRecipients](SendEmailOptions.md#ignoreemptyrecipients)
 - [isHTML](SendEmailOptions.md#ishtml)
 - [replyTo](SendEmailOptions.md#replyto)
 - [sendStrategy](SendEmailOptions.md#sendstrategy)
@@ -109,6 +111,22 @@ SendEmailOptions
 
 ___
 
+### customHeaders
+
+• `Optional` **customHeaders**: `Object`
+
+Optional custom headers
+
+**`Memberof`**
+
+SendEmailOptions
+
+#### Index signature
+
+▪ [key: `string`]: `string`
+
+___
+
 ### filterBouncedRecipients
 
 • `Optional` **filterBouncedRecipients**: `boolean`
@@ -138,6 +156,18 @@ ___
 • `Optional` **html**: `boolean`
 
 Optional HTML flag to indicate that contents is HTML. Set's a `content-type: text/html` for email. (Deprecated: use `isHTML` instead.)
+
+**`Memberof`**
+
+SendEmailOptions
+
+___
+
+### ignoreEmptyRecipients
+
+• `Optional` **ignoreEmptyRecipients**: `boolean`
+
+Ignore empty recipients after validation removes all recipients as invalid and fail silently
 
 **`Memberof`**
 

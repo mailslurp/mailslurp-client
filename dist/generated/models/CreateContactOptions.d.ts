@@ -63,6 +63,12 @@ export interface CreateContactOptions {
      * @memberof CreateContactOptions
      */
     groupId?: string | null;
+    /**
+     * Whether to validate contact email address exists
+     * @type {boolean}
+     * @memberof CreateContactOptions
+     */
+    verifyEmailAddresses?: boolean | null;
 }
 export declare function CreateContactOptionsFromJSON(json: any): CreateContactOptions;
 export declare function CreateContactOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateContactOptions;

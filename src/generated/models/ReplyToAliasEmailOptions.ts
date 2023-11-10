@@ -62,6 +62,12 @@ export interface ReplyToAliasEmailOptions {
    */
   sendStrategy?: ReplyToAliasEmailOptionsSendStrategyEnum;
   /**
+   * Optional custom headers
+   * @type {{ [key: string]: string; }}
+   * @memberof ReplyToAliasEmailOptions
+   */
+  customHeaders?: { [key: string]: string } | null;
+  /**
    * Optionally use inbox name as display name for sender email address
    * @type {boolean}
    * @memberof ReplyToAliasEmailOptions
@@ -108,6 +114,9 @@ export function ReplyToAliasEmailOptionsFromJSONTyped(
     sendStrategy: !exists(json, 'sendStrategy')
       ? undefined
       : json['sendStrategy'],
+    customHeaders: !exists(json, 'customHeaders')
+      ? undefined
+      : json['customHeaders'],
     useInboxName: !exists(json, 'useInboxName')
       ? undefined
       : json['useInboxName'],
@@ -132,6 +141,7 @@ export function ReplyToAliasEmailOptionsToJSON(
     templateVariables: value.templateVariables,
     template: value.template,
     sendStrategy: value.sendStrategy,
+    customHeaders: value.customHeaders,
     useInboxName: value.useInboxName,
     html: value.html,
   };

@@ -199,7 +199,7 @@ ___
 
 ### getRawSentEmailContents
 
-▸ **getRawSentEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+▸ **getRawSentEmailContents**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
 Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
@@ -213,13 +213,13 @@ Get raw sent email string. Returns unparsed raw SMTP message with headers and bo
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`<`void`\>
 
 ___
 
 ### getRawSentEmailContentsRaw
 
-▸ **getRawSentEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+▸ **getRawSentEmailContentsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Returns a raw, unparsed, and unprocessed sent email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawSentEmailJson endpoint
 Get raw sent email string. Returns unparsed raw SMTP message with headers and body.
@@ -233,7 +233,7 @@ Get raw sent email string. Returns unparsed raw SMTP message with headers and bo
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

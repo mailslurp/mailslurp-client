@@ -15,6 +15,7 @@ BouncedRecipientDto
 ### Properties
 
 - [action](BouncedRecipientDto.md#action)
+- [bounceType](BouncedRecipientDto.md#bouncetype)
 - [createdAt](BouncedRecipientDto.md#createdat)
 - [diagnosticCode](BouncedRecipientDto.md#diagnosticcode)
 - [id](BouncedRecipientDto.md#id)
@@ -28,6 +29,16 @@ BouncedRecipientDto
 ### action
 
 • `Optional` **action**: `string`
+
+**`Memberof`**
+
+BouncedRecipientDto
+
+___
+
+### bounceType
+
+• `Optional` **bounceType**: `string`
 
 **`Memberof`**
 

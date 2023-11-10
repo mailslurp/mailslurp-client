@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, ThreadProjection } from './';
+import { PageableObject, SortObject, ThreadProjection } from './';
 /**
  * Paginated email projection results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full email entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments.
  * @export
@@ -36,12 +36,6 @@ export interface PageThreadProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageThreadProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageThreadProjection
      */
@@ -52,6 +46,12 @@ export interface PageThreadProjection {
      * @memberof PageThreadProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageThreadProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageThreadProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageThreadProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageThreadProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageThreadProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageThreadProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

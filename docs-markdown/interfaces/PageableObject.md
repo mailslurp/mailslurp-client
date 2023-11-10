@@ -63,7 +63,7 @@ ___
 
 ### sort
 
-• `Optional` **sort**: [`Sort`](Sort.md)
+• `Optional` **sort**: [`SortObject`](SortObject.md)
 
 **`Memberof`**
 

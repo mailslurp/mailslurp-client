@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewInboxTypeEnum = void 0;
+exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,6 +24,17 @@ var InboxPreviewInboxTypeEnum;
     InboxPreviewInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxPreviewInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(InboxPreviewInboxTypeEnum = exports.InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxPreviewFunctionsAsEnum;
+(function (InboxPreviewFunctionsAsEnum) {
+    InboxPreviewFunctionsAsEnum["ALIAS"] = "ALIAS";
+    InboxPreviewFunctionsAsEnum["THREAD"] = "THREAD";
+    InboxPreviewFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
+    InboxPreviewFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+})(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);
 }
@@ -46,6 +57,7 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         virtualInbox: json['virtualInbox'],
         expiresAt: !(0, runtime_1.exists)(json, 'expiresAt') ? undefined : json['expiresAt'],
+        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -68,6 +80,7 @@ function InboxPreviewToJSON(value) {
         inboxType: value.inboxType,
         virtualInbox: value.virtualInbox,
         expiresAt: value.expiresAt,
+        functionsAs: value.functionsAs,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

@@ -62,7 +62,7 @@ ___
 
 ### suppressed
 
-• `Optional` **suppressed**: [`ConnectorSyncRequestResultExceptionCauseSuppressed`](ConnectorSyncRequestResultExceptionCauseSuppressed.md)[]
+• `Optional` **suppressed**: [`ConnectorSyncRequestResultExceptionCause`](ConnectorSyncRequestResultExceptionCause.md)[]
 
 **`Memberof`**
 

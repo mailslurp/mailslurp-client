@@ -22,12 +22,12 @@ var _1 = require("./");
  */
 var WebhookDtoMethodEnum;
 (function (WebhookDtoMethodEnum) {
-    WebhookDtoMethodEnum["GET"] = "GET";
-    WebhookDtoMethodEnum["HEAD"] = "HEAD";
     WebhookDtoMethodEnum["POST"] = "POST";
+    WebhookDtoMethodEnum["DELETE"] = "DELETE";
+    WebhookDtoMethodEnum["GET"] = "GET";
     WebhookDtoMethodEnum["PUT"] = "PUT";
     WebhookDtoMethodEnum["PATCH"] = "PATCH";
-    WebhookDtoMethodEnum["DELETE"] = "DELETE";
+    WebhookDtoMethodEnum["HEAD"] = "HEAD";
     WebhookDtoMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookDtoMethodEnum["TRACE"] = "TRACE";
 })(WebhookDtoMethodEnum = exports.WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = {}));

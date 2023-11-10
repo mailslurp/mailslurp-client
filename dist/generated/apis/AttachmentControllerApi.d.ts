@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentEntity, AttachmentMetaData, DownloadAttachmentDto, InlineObject, InlineObject1, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
+import { AttachmentEntity, AttachmentMetaData, DownloadAttachmentDto, InlineObject, PageAttachmentEntity, UploadAttachmentOptions } from '../models';
 export interface DeleteAttachmentRequest {
     attachmentId: string;
 }
@@ -38,9 +38,10 @@ export interface UploadAttachmentRequest {
     uploadAttachmentOptions: UploadAttachmentOptions;
 }
 export interface UploadAttachmentBytesRequest {
-    inlineObject1: InlineObject1;
     contentType?: string;
+    contentType2?: string;
     filename?: string;
+    filename2?: string;
 }
 export interface UploadMultipartFormRequest {
     contentType?: string;

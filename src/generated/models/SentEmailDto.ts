@@ -165,6 +165,12 @@ export interface SentEmailDto {
   templateVariables?: { [key: string]: object } | null;
   /**
    *
+   * @type {{ [key: string]: string; }}
+   * @memberof SentEmailDto
+   */
+  headers?: { [key: string]: string } | null;
+  /**
+   *
    * @type {boolean}
    * @memberof SentEmailDto
    */
@@ -209,6 +215,7 @@ export function SentEmailDtoFromJSONTyped(
     templateVariables: !exists(json, 'templateVariables')
       ? undefined
       : json['templateVariables'],
+    headers: !exists(json, 'headers') ? undefined : json['headers'],
     html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
@@ -245,6 +252,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     virtualSend: value.virtualSend,
     templateId: value.templateId,
     templateVariables: value.templateVariables,
+    headers: value.headers,
     html: value.html,
   };
 }

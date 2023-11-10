@@ -39,6 +39,18 @@ export interface CreateAliasOptions {
      * @memberof CreateAliasOptions
      */
     useThreads: boolean;
+    /**
+     * Custom domain ID to use when generating alias email addresses
+     * @type {string}
+     * @memberof CreateAliasOptions
+     */
+    domainId?: string | null;
+    /**
+     * Whether to verify the masked email address exists before sending an email to it
+     * @type {boolean}
+     * @memberof CreateAliasOptions
+     */
+    verifyEmailAddress?: boolean | null;
 }
 export declare function CreateAliasOptionsFromJSON(json: any): CreateAliasOptions;
 export declare function CreateAliasOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateAliasOptions;

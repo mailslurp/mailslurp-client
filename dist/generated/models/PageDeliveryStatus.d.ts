@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DeliveryStatusDto, PageableObject, Sort } from './';
+import { DeliveryStatusDto, PageableObject, SortObject } from './';
 /**
  * Paginated delivery status results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageDeliveryStatus {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
@@ -52,6 +46,12 @@ export interface PageDeliveryStatus {
      * @memberof PageDeliveryStatus
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageDeliveryStatus {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageDeliveryStatus
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

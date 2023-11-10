@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, TemplateProjection } from './';
+import { PageableObject, SortObject, TemplateProjection } from './';
 /**
  * Paginated email template results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageTemplateProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageTemplateProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageTemplateProjection
      */
@@ -52,6 +46,12 @@ export interface PageTemplateProjection {
      * @memberof PageTemplateProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTemplateProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageTemplateProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageTemplateProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageTemplateProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageTemplateProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTemplateProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

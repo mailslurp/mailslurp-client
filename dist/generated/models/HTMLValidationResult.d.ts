@@ -23,6 +23,12 @@ export interface HTMLValidationResult {
      */
     isValid: boolean;
     /**
+     * Optional infos resulting from HTML validation
+     * @type {Array<ValidationMessage>}
+     * @memberof HTMLValidationResult
+     */
+    infos: Array<ValidationMessage>;
+    /**
      * Optional errors resulting from HTML validation
      * @type {Array<ValidationMessage>}
      * @memberof HTMLValidationResult

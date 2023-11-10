@@ -8,12 +8,19 @@
 
 ### Enumeration Members
 
+- [ABORTED](ScheduledJobDtoStatusEnum.md#aborted)
 - [CANCELLED](ScheduledJobDtoStatusEnum.md#cancelled)
 - [COMPLETED](ScheduledJobDtoStatusEnum.md#completed)
 - [FAILED](ScheduledJobDtoStatusEnum.md#failed)
 - [SUBMITTED](ScheduledJobDtoStatusEnum.md#submitted)
 
 ## Enumeration Members
+
+### ABORTED
+
+• **ABORTED** = ``"ABORTED"``
+
+___
 
 ### CANCELLED
 

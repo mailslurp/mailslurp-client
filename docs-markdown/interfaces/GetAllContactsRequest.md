@@ -8,6 +8,7 @@
 
 - [before](GetAllContactsRequest.md#before)
 - [page](GetAllContactsRequest.md#page)
+- [search](GetAllContactsRequest.md#search)
 - [since](GetAllContactsRequest.md#since)
 - [size](GetAllContactsRequest.md#size)
 - [sort](GetAllContactsRequest.md#sort)
@@ -23,6 +24,12 @@ ___
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### search
+
+• `Optional` **search**: `string`
 
 ___
 

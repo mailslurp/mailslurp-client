@@ -67,6 +67,14 @@ export declare class ConnectorControllerApi extends runtime.BaseAPI {
      */
     createConnector(requestParameters: CreateConnectorRequest, initOverrides?: RequestInit): Promise<ConnectorDto>;
     /**
+     * Delete all inbox connectors
+     */
+    deleteAllConnectorRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete all inbox connectors
+     */
+    deleteAllConnector(initOverrides?: RequestInit): Promise<void>;
+    /**
      * Delete an inbox connector
      */
     deleteConnectorRaw(requestParameters: DeleteConnectorRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ListUnsubscribeRecipientProjection, PageableObject, Sort } from './';
+import { ListUnsubscribeRecipientProjection, PageableObject, SortObject } from './';
 /**
  * Paginated list unsubscribe recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageListUnsubscribeRecipients {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
@@ -52,6 +46,12 @@ export interface PageListUnsubscribeRecipients {
      * @memberof PageListUnsubscribeRecipients
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageListUnsubscribeRecipients {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageListUnsubscribeRecipients
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageListUnsubscribeRecipients
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

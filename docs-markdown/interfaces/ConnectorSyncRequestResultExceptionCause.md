@@ -15,7 +15,6 @@ ConnectorSyncRequestResultExceptionCause
 - [localizedMessage](ConnectorSyncRequestResultExceptionCause.md#localizedmessage)
 - [message](ConnectorSyncRequestResultExceptionCause.md#message)
 - [stackTrace](ConnectorSyncRequestResultExceptionCause.md#stacktrace)
-- [suppressed](ConnectorSyncRequestResultExceptionCause.md#suppressed)
 
 ## Properties
 
@@ -42,16 +41,6 @@ ___
 ### stackTrace
 
 • `Optional` **stackTrace**: [`ConnectorSyncRequestResultExceptionCauseStackTrace`](ConnectorSyncRequestResultExceptionCauseStackTrace.md)[]
-
-**`Memberof`**
-
-ConnectorSyncRequestResultExceptionCause
-
-___
-
-### suppressed
-
-• `Optional` **suppressed**: [`ConnectorSyncRequestResultExceptionCauseSuppressed`](ConnectorSyncRequestResultExceptionCauseSuppressed.md)[]
 
 **`Memberof`**
 

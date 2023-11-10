@@ -33,12 +33,6 @@ export interface InboxReplierEventProjection {
   id?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  status?: InboxReplierEventProjectionStatusEnum;
-  /**
-   *
    * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
@@ -48,13 +42,13 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  emailId?: string | null;
+  inboxId?: string | null;
   /**
    *
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  inboxId?: string | null;
+  emailId?: string | null;
   /**
    *
    * @type {string}
@@ -79,6 +73,12 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   replierId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  status?: InboxReplierEventProjectionStatusEnum;
 }
 
 /**
@@ -106,14 +106,14 @@ export function InboxReplierEventProjectionFromJSONTyped(
   return {
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
-    status: !exists(json, 'status') ? undefined : json['status'],
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
+    status: !exists(json, 'status') ? undefined : json['status'],
   };
 }
 
@@ -129,13 +129,13 @@ export function InboxReplierEventProjectionToJSON(
   return {
     message: value.message,
     id: value.id,
-    status: value.status,
     recipients: value.recipients,
-    emailId: value.emailId,
     inboxId: value.inboxId,
+    emailId: value.emailId,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     replierId: value.replierId,
+    status: value.status,
   };
 }

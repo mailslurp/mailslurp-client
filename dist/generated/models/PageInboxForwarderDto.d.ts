@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxForwarderDto, PageableObject, Sort } from './';
+import { InboxForwarderDto, PageableObject, SortObject } from './';
 /**
  * Paginated inbox forwarder results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageInboxForwarderDto {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxForwarderDto
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
@@ -52,6 +46,12 @@ export interface PageInboxForwarderDto {
      * @memberof PageInboxForwarderDto
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageInboxForwarderDto {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageInboxForwarderDto
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxForwarderDto
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxForwarderDto
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

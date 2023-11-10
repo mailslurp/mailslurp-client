@@ -25,6 +25,10 @@ import {
   ValidateEmailAddressListResultToJSON,
 } from '../models';
 
+export interface DeleteValidationRequestRequest {
+  id: string;
+}
+
 export interface GetValidationRequestsRequest {
   page?: number;
   size?: number;
@@ -43,6 +47,90 @@ export interface ValidateEmailAddressListRequest {
  *
  */
 export class EmailVerificationControllerApi extends runtime.BaseAPI {
+  /**
+   * Delete all validation requests
+   */
+  async deleteAllValidationRequestsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/email-verification`,
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete all validation requests
+   */
+  async deleteAllValidationRequests(
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteAllValidationRequestsRaw(initOverrides);
+  }
+
+  /**
+   * Delete a validation record
+   */
+  async deleteValidationRequestRaw(
+    requestParameters: DeleteValidationRequestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling deleteValidationRequest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/email-verification/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a validation record
+   */
+  async deleteValidationRequest(
+    requestParameters: DeleteValidationRequestRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteValidationRequestRaw(requestParameters, initOverrides);
+  }
+
   /**
    * Validate a list of email addresses. Per unit billing. See your plan for pricing.
    */

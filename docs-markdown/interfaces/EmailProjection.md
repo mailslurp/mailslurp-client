@@ -27,6 +27,7 @@ EmailProjection
 - [read](EmailProjection.md#read)
 - [subject](EmailProjection.md#subject)
 - [teamAccess](EmailProjection.md#teamaccess)
+- [textExcerpt](EmailProjection.md#textexcerpt)
 - [to](EmailProjection.md#to)
 
 ## Properties
@@ -154,6 +155,16 @@ ___
 ### teamAccess
 
 • **teamAccess**: `boolean`
+
+**`Memberof`**
+
+EmailProjection
+
+___
+
+### textExcerpt
+
+• `Optional` **textExcerpt**: `string`
 
 **`Memberof`**
 

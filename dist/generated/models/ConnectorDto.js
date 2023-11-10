@@ -49,6 +49,7 @@ function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        enabled: json['enabled'],
         userId: json['userId'],
         connectorType: json['connectorType'],
         connectorAuthType: json['connectorAuthType'],
@@ -66,6 +67,10 @@ function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['imapPassword'],
         imapSsl: !(0, runtime_1.exists)(json, 'imapSsl') ? undefined : json['imapSsl'],
+        selectFolder: !(0, runtime_1.exists)(json, 'selectFolder')
+            ? undefined
+            : json['selectFolder'],
+        searchTerms: !(0, runtime_1.exists)(json, 'searchTerms') ? undefined : json['searchTerms'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -79,6 +84,7 @@ function ConnectorDtoToJSON(value) {
     }
     return {
         id: value.id,
+        enabled: value.enabled,
         userId: value.userId,
         connectorType: value.connectorType,
         connectorAuthType: value.connectorAuthType,
@@ -90,6 +96,8 @@ function ConnectorDtoToJSON(value) {
         imapUsername: value.imapUsername,
         imapPassword: value.imapPassword,
         imapSsl: value.imapSsl,
+        selectFolder: value.selectFolder,
+        searchTerms: value.searchTerms,
         createdAt: value.createdAt.toISOString(),
     };
 }

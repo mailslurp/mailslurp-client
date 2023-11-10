@@ -29,16 +29,16 @@ export interface GroupProjection {
     id: string;
     /**
      *
-     * @type {string}
-     * @memberof GroupProjection
-     */
-    description?: string | null;
-    /**
-     *
      * @type {Date}
      * @memberof GroupProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof GroupProjection
+     */
+    description?: string | null;
 }
 export declare function GroupProjectionFromJSON(json: any): GroupProjection;
 export declare function GroupProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupProjection;

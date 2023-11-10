@@ -29,12 +29,6 @@ export interface InboxReplierEventProjection {
     id?: string | null;
     /**
      *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    status?: InboxReplierEventProjectionStatusEnum;
-    /**
-     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
@@ -44,13 +38,13 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    emailId?: string | null;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    inboxId?: string | null;
+    emailId?: string | null;
     /**
      *
      * @type {string}
@@ -75,6 +69,12 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    status?: InboxReplierEventProjectionStatusEnum;
 }
 /**
  * @export

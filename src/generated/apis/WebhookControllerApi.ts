@@ -214,6 +214,12 @@ export interface VerifyWebhookSignatureRequest {
   verifyWebhookSignatureOptions: VerifyWebhookSignatureOptions;
 }
 
+export interface WaitForWebhookResultsRequest {
+  webhookId: string;
+  expectedCount: number;
+  timeout: number;
+}
+
 /**
  *
  */
@@ -2096,6 +2102,91 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<VerifyWebhookSignatureResults> {
     const response = await this.verifyWebhookSignatureRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait for webhook results for a webhook
+   */
+  async waitForWebhookResultsRaw(
+    requestParameters: WaitForWebhookResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<WebhookResultDto>>> {
+    if (
+      requestParameters.webhookId === null ||
+      requestParameters.webhookId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookId',
+        'Required parameter requestParameters.webhookId was null or undefined when calling waitForWebhookResults.'
+      );
+    }
+
+    if (
+      requestParameters.expectedCount === null ||
+      requestParameters.expectedCount === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'expectedCount',
+        'Required parameter requestParameters.expectedCount was null or undefined when calling waitForWebhookResults.'
+      );
+    }
+
+    if (
+      requestParameters.timeout === null ||
+      requestParameters.timeout === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'timeout',
+        'Required parameter requestParameters.timeout was null or undefined when calling waitForWebhookResults.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.expectedCount !== undefined) {
+      queryParameters['expectedCount'] = requestParameters.expectedCount;
+    }
+
+    if (requestParameters.timeout !== undefined) {
+      queryParameters['timeout'] = requestParameters.timeout;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/{webhookId}/wait`.replace(
+          `{${'webhookId'}}`,
+          encodeURIComponent(String(requestParameters.webhookId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(WebhookResultDtoFromJSON)
+    );
+  }
+
+  /**
+   * Wait for webhook results for a webhook
+   */
+  async waitForWebhookResults(
+    requestParameters: WaitForWebhookResultsRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<WebhookResultDto>> {
+    const response = await this.waitForWebhookResultsRaw(
       requestParameters,
       initOverrides
     );

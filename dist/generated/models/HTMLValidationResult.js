@@ -25,6 +25,7 @@ function HTMLValidationResultFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         isValid: json['isValid'],
+        infos: json['infos'].map(_1.ValidationMessageFromJSON),
         errors: json['errors'].map(_1.ValidationMessageFromJSON),
         warnings: json['warnings'].map(_1.ValidationMessageFromJSON),
     };
@@ -39,6 +40,7 @@ function HTMLValidationResultToJSON(value) {
     }
     return {
         isValid: value.isValid,
+        infos: value.infos.map(_1.ValidationMessageToJSON),
         errors: value.errors.map(_1.ValidationMessageToJSON),
         warnings: value.warnings.map(_1.ValidationMessageToJSON),
     };

@@ -103,6 +103,12 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   bodyMD5Hash?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  textExcerpt?: string | null;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -131,6 +137,7 @@ export function EmailProjectionFromJSONTyped(
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
   };
 }
 
@@ -156,5 +163,6 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     bodyExcerpt: value.bodyExcerpt,
     teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
+    textExcerpt: value.textExcerpt,
   };
 }

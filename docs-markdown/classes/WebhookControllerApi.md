@@ -87,6 +87,8 @@
 - [updateWebhookHeadersRaw](WebhookControllerApi.md#updatewebhookheadersraw)
 - [verifyWebhookSignature](WebhookControllerApi.md#verifywebhooksignature)
 - [verifyWebhookSignatureRaw](WebhookControllerApi.md#verifywebhooksignatureraw)
+- [waitForWebhookResults](WebhookControllerApi.md#waitforwebhookresults)
+- [waitForWebhookResultsRaw](WebhookControllerApi.md#waitforwebhookresultsraw)
 - [withMiddleware](WebhookControllerApi.md#withmiddleware)
 - [withPostMiddleware](WebhookControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](WebhookControllerApi.md#withpremiddleware)
@@ -1385,6 +1387,44 @@ Verify a webhook payload signature
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`VerifyWebhookSignatureResults`](../interfaces/VerifyWebhookSignatureResults.md)\>\>
+
+___
+
+### waitForWebhookResults
+
+▸ **waitForWebhookResults**(`requestParameters`, `initOverrides?`): `Promise`<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)[]\>
+
+Wait for webhook results for a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForWebhookResultsRequest`](../interfaces/WaitForWebhookResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)[]\>
+
+___
+
+### waitForWebhookResultsRaw
+
+▸ **waitForWebhookResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)[]\>\>
+
+Wait for webhook results for a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForWebhookResultsRequest`](../interfaces/WaitForWebhookResultsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookResultDto`](../interfaces/WebhookResultDto.md)[]\>\>
 
 ___
 

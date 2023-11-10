@@ -21,6 +21,12 @@ export interface ValidateEmailAddressListOptions {
      * @memberof ValidateEmailAddressListOptions
      */
     emailAddressList: Array<string>;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ValidateEmailAddressListOptions
+     */
+    ignoreOldResults?: boolean | null;
 }
 export declare function ValidateEmailAddressListOptionsFromJSON(json: any): ValidateEmailAddressListOptions;
 export declare function ValidateEmailAddressListOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ValidateEmailAddressListOptions;

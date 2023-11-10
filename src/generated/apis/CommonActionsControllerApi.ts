@@ -64,6 +64,13 @@ export interface EmptyInboxRequest {
   inboxId: string;
 }
 
+export interface SendEmailQueryRequest {
+  to: string;
+  senderId?: string;
+  body?: string;
+  subject?: string;
+}
+
 export interface SendEmailSimpleRequest {
   simpleSendEmailOptions: SimpleSendEmailOptions;
 }
@@ -386,6 +393,69 @@ export class CommonActionsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.emptyInboxRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+   * Send an email using query parameters
+   */
+  async sendEmailQueryRaw(
+    requestParameters: SendEmailQueryRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (requestParameters.to === null || requestParameters.to === undefined) {
+      throw new runtime.RequiredError(
+        'to',
+        'Required parameter requestParameters.to was null or undefined when calling sendEmailQuery.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.senderId !== undefined) {
+      queryParameters['senderId'] = requestParameters.senderId;
+    }
+
+    if (requestParameters.to !== undefined) {
+      queryParameters['to'] = requestParameters.to;
+    }
+
+    if (requestParameters.body !== undefined) {
+      queryParameters['body'] = requestParameters.body;
+    }
+
+    if (requestParameters.subject !== undefined) {
+      queryParameters['subject'] = requestParameters.subject;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sendEmailQuery`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+   * Send an email using query parameters
+   */
+  async sendEmailQuery(
+    requestParameters: SendEmailQueryRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.sendEmailQueryRaw(requestParameters, initOverrides);
   }
 
   /**

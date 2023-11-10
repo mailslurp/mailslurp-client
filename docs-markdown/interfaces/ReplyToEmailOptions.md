@@ -17,6 +17,7 @@ ReplyToEmailOptions
 - [attachments](ReplyToEmailOptions.md#attachments)
 - [body](ReplyToEmailOptions.md#body)
 - [charset](ReplyToEmailOptions.md#charset)
+- [customHeaders](ReplyToEmailOptions.md#customheaders)
 - [from](ReplyToEmailOptions.md#from)
 - [html](ReplyToEmailOptions.md#html)
 - [isHTML](ReplyToEmailOptions.md#ishtml)
@@ -61,6 +62,22 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 **`Memberof`**
 
 ReplyToEmailOptions
+
+___
+
+### customHeaders
+
+• `Optional` **customHeaders**: `Object`
+
+Optional custom headers
+
+**`Memberof`**
+
+ReplyToEmailOptions
+
+#### Index signature
+
+▪ [key: `string`]: `string`
 
 ___
 

@@ -22,6 +22,7 @@ SentEmailDto
 - [charset](SentEmailDto.md#charset)
 - [domainId](SentEmailDto.md#domainid)
 - [from](SentEmailDto.md#from)
+- [headers](SentEmailDto.md#headers)
 - [html](SentEmailDto.md#html)
 - [id](SentEmailDto.md#id)
 - [inboxId](SentEmailDto.md#inboxid)
@@ -129,6 +130,20 @@ Sent from address
 **`Memberof`**
 
 SentEmailDto
+
+___
+
+### headers
+
+• `Optional` **headers**: `Object`
+
+**`Memberof`**
+
+SentEmailDto
+
+#### Index signature
+
+▪ [key: `string`]: `string`
 
 ___
 

@@ -56,6 +56,12 @@ export interface BouncedRecipientDto {
      * @type {string}
      * @memberof BouncedRecipientDto
      */
+    bounceType?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof BouncedRecipientDto
+     */
     status?: string | null;
     /**
      *

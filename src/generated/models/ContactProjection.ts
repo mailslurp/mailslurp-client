@@ -30,12 +30,6 @@ export interface ContactProjection {
    * @type {string}
    * @memberof ContactProjection
    */
-  groupId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
   emailAddress?: string | null;
   /**
    *
@@ -43,6 +37,12 @@ export interface ContactProjection {
    * @memberof ContactProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof ContactProjection
+   */
+  emailAddresses?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -63,16 +63,16 @@ export interface ContactProjection {
   company?: string | null;
   /**
    *
-   * @type {Array<string>}
-   * @memberof ContactProjection
-   */
-  emailAddresses?: Array<string> | null;
-  /**
-   *
    * @type {boolean}
    * @memberof ContactProjection
    */
-  optOut: boolean;
+  optOut?: boolean | null;
+  /**
+   *
+   * @type {string}
+   * @memberof ContactProjection
+   */
+  groupId?: string | null;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
@@ -88,18 +88,18 @@ export function ContactProjectionFromJSONTyped(
   }
   return {
     id: json['id'],
-    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
     createdAt: new Date(json['createdAt']),
-    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
-    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
-    company: !exists(json, 'company') ? undefined : json['company'],
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
-    optOut: json['optOut'],
+    firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
+    lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
+    company: !exists(json, 'company') ? undefined : json['company'],
+    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
+    groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
   };
 }
 
@@ -112,13 +112,13 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
   }
   return {
     id: value.id,
-    groupId: value.groupId,
     emailAddress: value.emailAddress,
     createdAt: value.createdAt.toISOString(),
+    emailAddresses: value.emailAddresses,
     firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
-    emailAddresses: value.emailAddresses,
     optOut: value.optOut,
+    groupId: value.groupId,
   };
 }

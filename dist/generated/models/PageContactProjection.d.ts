@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ContactProjection, PageableObject, Sort } from './';
+import { ContactProjection, PageableObject, SortObject } from './';
 /**
  * Paginated contact results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageContactProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageContactProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageContactProjection
      */
@@ -52,6 +46,12 @@ export interface PageContactProjection {
      * @memberof PageContactProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageContactProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageContactProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageContactProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageContactProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageContactProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageContactProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

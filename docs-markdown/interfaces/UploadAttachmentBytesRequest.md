@@ -7,8 +7,9 @@
 ### Properties
 
 - [contentType](UploadAttachmentBytesRequest.md#contenttype)
+- [contentType2](UploadAttachmentBytesRequest.md#contenttype2)
 - [filename](UploadAttachmentBytesRequest.md#filename)
-- [inlineObject1](UploadAttachmentBytesRequest.md#inlineobject1)
+- [filename2](UploadAttachmentBytesRequest.md#filename2)
 
 ## Properties
 
@@ -18,12 +19,18 @@
 
 ___
 
+### contentType2
+
+• `Optional` **contentType2**: `string`
+
+___
+
 ### filename
 
 • `Optional` **filename**: `string`
 
 ___
 
-### inlineObject1
+### filename2
 
-• **inlineObject1**: [`InlineObject1`](InlineObject1.md)
+• `Optional` **filename2**: `string`

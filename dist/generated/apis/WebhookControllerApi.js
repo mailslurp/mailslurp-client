@@ -1844,6 +1844,70 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Wait for webhook results for a webhook
+     */
+    WebhookControllerApi.prototype.waitForWebhookResultsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
+                            throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling waitForWebhookResults.');
+                        }
+                        if (requestParameters.expectedCount === null ||
+                            requestParameters.expectedCount === undefined) {
+                            throw new runtime.RequiredError('expectedCount', 'Required parameter requestParameters.expectedCount was null or undefined when calling waitForWebhookResults.');
+                        }
+                        if (requestParameters.timeout === null ||
+                            requestParameters.timeout === undefined) {
+                            throw new runtime.RequiredError('timeout', 'Required parameter requestParameters.timeout was null or undefined when calling waitForWebhookResults.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.expectedCount !== undefined) {
+                            queryParameters['expectedCount'] = requestParameters.expectedCount;
+                        }
+                        if (requestParameters.timeout !== undefined) {
+                            queryParameters['timeout'] = requestParameters.timeout;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/{webhookId}/wait".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.WebhookResultDtoFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait for webhook results for a webhook
+     */
+    WebhookControllerApi.prototype.waitForWebhookResults = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForWebhookResultsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return WebhookControllerApi;
 }(runtime.BaseAPI));
 exports.WebhookControllerApi = WebhookControllerApi;

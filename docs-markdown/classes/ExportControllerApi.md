@@ -59,7 +59,7 @@
 
 ### exportEntities
 
-▸ **exportEntities**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+▸ **exportEntities**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
 
 Export inboxes link callable via browser
 
@@ -72,13 +72,13 @@ Export inboxes link callable via browser
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<`string`\>
 
 ___
 
 ### exportEntitiesRaw
 
-▸ **exportEntitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+▸ **exportEntitiesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
 Export inboxes link callable via browser
 
@@ -91,7 +91,7 @@ Export inboxes link callable via browser
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
 ___
 

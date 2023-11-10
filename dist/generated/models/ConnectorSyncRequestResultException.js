@@ -34,7 +34,7 @@ function ConnectorSyncRequestResultExceptionFromJSONTyped(json, ignoreDiscrimina
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
         suppressed: !(0, runtime_1.exists)(json, 'suppressed')
             ? undefined
-            : json['suppressed'].map(_1.ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON),
+            : json['suppressed'].map(_1.ConnectorSyncRequestResultExceptionCauseFromJSON),
         localizedMessage: !(0, runtime_1.exists)(json, 'localizedMessage')
             ? undefined
             : json['localizedMessage'],
@@ -56,7 +56,7 @@ function ConnectorSyncRequestResultExceptionToJSON(value) {
         message: value.message,
         suppressed: value.suppressed === undefined
             ? undefined
-            : value.suppressed.map(_1.ConnectorSyncRequestResultExceptionCauseSuppressedToJSON),
+            : value.suppressed.map(_1.ConnectorSyncRequestResultExceptionCauseToJSON),
         localizedMessage: value.localizedMessage,
     };
 }

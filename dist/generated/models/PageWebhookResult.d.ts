@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, WebhookResultDto } from './';
+import { PageableObject, SortObject, WebhookResultDto } from './';
 /**
  * Paginated webhook results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageWebhookResult {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageWebhookResult
      */
@@ -52,6 +46,12 @@ export interface PageWebhookResult {
      * @memberof PageWebhookResult
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookResult
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageWebhookResult {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageWebhookResult
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageWebhookResult
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookResult
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

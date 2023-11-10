@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConnectorSyncRequestResultExceptionCause, ConnectorSyncRequestResultExceptionCauseStackTrace, ConnectorSyncRequestResultExceptionCauseSuppressed } from './';
+import { ConnectorSyncRequestResultExceptionCause, ConnectorSyncRequestResultExceptionCauseStackTrace } from './';
 /**
  *
  * @export
@@ -36,10 +36,10 @@ export interface ConnectorSyncRequestResultException {
     message?: string;
     /**
      *
-     * @type {Array<ConnectorSyncRequestResultExceptionCauseSuppressed>}
+     * @type {Array<ConnectorSyncRequestResultExceptionCause>}
      * @memberof ConnectorSyncRequestResultException
      */
-    suppressed?: Array<ConnectorSyncRequestResultExceptionCauseSuppressed>;
+    suppressed?: Array<ConnectorSyncRequestResultExceptionCause>;
     /**
      *
      * @type {string}

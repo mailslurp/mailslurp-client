@@ -17,6 +17,7 @@ ReplyToAliasEmailOptions
 - [attachments](ReplyToAliasEmailOptions.md#attachments)
 - [body](ReplyToAliasEmailOptions.md#body)
 - [charset](ReplyToAliasEmailOptions.md#charset)
+- [customHeaders](ReplyToAliasEmailOptions.md#customheaders)
 - [html](ReplyToAliasEmailOptions.md#html)
 - [isHTML](ReplyToAliasEmailOptions.md#ishtml)
 - [sendStrategy](ReplyToAliasEmailOptions.md#sendstrategy)
@@ -59,6 +60,22 @@ The charset that your message should be sent with. Optional. Default is UTF-8
 **`Memberof`**
 
 ReplyToAliasEmailOptions
+
+___
+
+### customHeaders
+
+• `Optional` **customHeaders**: `Object`
+
+Optional custom headers
+
+**`Memberof`**
+
+ReplyToAliasEmailOptions
+
+#### Index signature
+
+▪ [key: `string`]: `string`
 
 ___
 

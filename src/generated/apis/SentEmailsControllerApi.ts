@@ -304,7 +304,7 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
   async getRawSentEmailContentsRaw(
     requestParameters: GetRawSentEmailContentsRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<string>> {
+  ): Promise<runtime.ApiResponse<void>> {
     if (
       requestParameters.emailId === null ||
       requestParameters.emailId === undefined
@@ -336,7 +336,7 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
       initOverrides
     );
 
-    return new runtime.TextApiResponse(response) as any;
+    return new runtime.VoidApiResponse(response);
   }
 
   /**
@@ -346,12 +346,8 @@ export class SentEmailsControllerApi extends runtime.BaseAPI {
   async getRawSentEmailContents(
     requestParameters: GetRawSentEmailContentsRequest,
     initOverrides?: RequestInit
-  ): Promise<string> {
-    const response = await this.getRawSentEmailContentsRaw(
-      requestParameters,
-      initOverrides
-    );
-    return await response.value();
+  ): Promise<void> {
+    await this.getRawSentEmailContentsRaw(requestParameters, initOverrides);
   }
 
   /**

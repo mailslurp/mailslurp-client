@@ -29,9 +29,6 @@ function ConnectorSyncRequestResultExceptionCauseFromJSONTyped(json, ignoreDiscr
             ? undefined
             : json['stackTrace'].map(_1.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON),
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        suppressed: !(0, runtime_1.exists)(json, 'suppressed')
-            ? undefined
-            : json['suppressed'].map(_1.ConnectorSyncRequestResultExceptionCauseSuppressedFromJSON),
         localizedMessage: !(0, runtime_1.exists)(json, 'localizedMessage')
             ? undefined
             : json['localizedMessage'],
@@ -50,9 +47,6 @@ function ConnectorSyncRequestResultExceptionCauseToJSON(value) {
             ? undefined
             : value.stackTrace.map(_1.ConnectorSyncRequestResultExceptionCauseStackTraceToJSON),
         message: value.message,
-        suppressed: value.suppressed === undefined
-            ? undefined
-            : value.suppressed.map(_1.ConnectorSyncRequestResultExceptionCauseSuppressedToJSON),
         localizedMessage: value.localizedMessage,
     };
 }

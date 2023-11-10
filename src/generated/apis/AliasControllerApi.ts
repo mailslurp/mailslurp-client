@@ -38,6 +38,9 @@ import {
   SentEmailDto,
   SentEmailDtoFromJSON,
   SentEmailDtoToJSON,
+  ThreadProjection,
+  ThreadProjectionFromJSON,
+  ThreadProjectionToJSON,
   UpdateAliasOptions,
   UpdateAliasOptionsFromJSON,
   UpdateAliasOptionsToJSON,
@@ -74,9 +77,22 @@ export interface GetAliasThreadsRequest {
 }
 
 export interface GetAliasesRequest {
+  search?: string;
   page?: number;
   size?: number;
   sort?: GetAliasesSortEnum;
+  since?: Date;
+  before?: Date;
+}
+
+export interface GetThreadRequest {
+  threadId: string;
+}
+
+export interface GetThreadsPaginatedRequest {
+  page?: number;
+  size?: number;
+  sort?: GetThreadsPaginatedSortEnum;
   since?: Date;
   before?: Date;
 }
@@ -439,6 +455,10 @@ export class AliasControllerApi extends runtime.BaseAPI {
   ): Promise<runtime.ApiResponse<PageAlias>> {
     const queryParameters: any = {};
 
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
     if (requestParameters.page !== undefined) {
       queryParameters['page'] = requestParameters.page;
     }
@@ -491,6 +511,130 @@ export class AliasControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageAlias> {
     const response = await this.getAliasesRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Return a thread associated with an alias
+   * Get a thread
+   */
+  async getThreadRaw(
+    requestParameters: GetThreadRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ThreadProjection>> {
+    if (
+      requestParameters.threadId === null ||
+      requestParameters.threadId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'threadId',
+        'Required parameter requestParameters.threadId was null or undefined when calling getThread.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/aliases/threads/{threadId}`.replace(
+          `{${'threadId'}}`,
+          encodeURIComponent(String(requestParameters.threadId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ThreadProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Return a thread associated with an alias
+   * Get a thread
+   */
+  async getThread(
+    requestParameters: GetThreadRequest,
+    initOverrides?: RequestInit
+  ): Promise<ThreadProjection> {
+    const response = await this.getThreadRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Returns threads created for all aliases in paginated form
+   * Get all threads
+   */
+  async getThreadsPaginatedRaw(
+    requestParameters: GetThreadsPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageThreadProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/aliases/threads`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageThreadProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns threads created for all aliases in paginated form
+   * Get all threads
+   */
+  async getThreadsPaginated(
+    requestParameters: GetThreadsPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageThreadProjection> {
+    const response = await this.getThreadsPaginatedRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -747,6 +891,14 @@ export enum GetAliasThreadsSortEnum {
  * @enum {string}
  */
 export enum GetAliasesSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetThreadsPaginatedSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

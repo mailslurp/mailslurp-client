@@ -67,6 +67,12 @@ export interface CreateContactOptions {
    * @memberof CreateContactOptions
    */
   groupId?: string | null;
+  /**
+   * Whether to validate contact email address exists
+   * @type {boolean}
+   * @memberof CreateContactOptions
+   */
+  verifyEmailAddresses?: boolean | null;
 }
 
 export function CreateContactOptionsFromJSON(json: any): CreateContactOptions {
@@ -91,6 +97,9 @@ export function CreateContactOptionsFromJSONTyped(
     metaData: !exists(json, 'metaData') ? undefined : json['metaData'],
     optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
+    verifyEmailAddresses: !exists(json, 'verifyEmailAddresses')
+      ? undefined
+      : json['verifyEmailAddresses'],
   };
 }
 
@@ -112,5 +121,6 @@ export function CreateContactOptionsToJSON(
     metaData: value.metaData,
     optOut: value.optOut,
     groupId: value.groupId,
+    verifyEmailAddresses: value.verifyEmailAddresses,
   };
 }

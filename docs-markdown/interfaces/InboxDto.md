@@ -20,6 +20,7 @@ InboxDto
 - [emailAddress](InboxDto.md#emailaddress)
 - [expiresAt](InboxDto.md#expiresat)
 - [favourite](InboxDto.md#favourite)
+- [functionsAs](InboxDto.md#functionsas)
 - [id](InboxDto.md#id)
 - [inboxType](InboxDto.md#inboxtype)
 - [name](InboxDto.md#name)
@@ -95,6 +96,18 @@ ___
 • **favourite**: `boolean`
 
 Is the inbox a favorite inbox. Make an inbox a favorite is typically done in the dashboard for quick access or filtering
+
+**`Memberof`**
+
+InboxDto
+
+___
+
+### functionsAs
+
+• `Optional` **functionsAs**: [`InboxDtoFunctionsAsEnum`](../enums/InboxDtoFunctionsAsEnum.md)
+
+Inbox function if used as a primitive for another system.
 
 **`Memberof`**
 

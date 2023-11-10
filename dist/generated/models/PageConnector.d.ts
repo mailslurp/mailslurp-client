@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConnectorProjection, PageableObject, Sort } from './';
+import { ConnectorProjection, PageableObject, SortObject } from './';
 /**
  * Paginated inbox connectors. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageConnector {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageConnector
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageConnector
      */
@@ -52,6 +46,12 @@ export interface PageConnector {
      * @memberof PageConnector
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageConnector
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageConnector {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageConnector
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageConnector
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageConnector
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageConnector
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

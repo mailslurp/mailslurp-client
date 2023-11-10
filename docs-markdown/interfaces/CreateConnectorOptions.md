@@ -14,6 +14,7 @@ CreateConnectorOptions
 
 - [connectorAuthType](CreateConnectorOptions.md#connectorauthtype)
 - [connectorType](CreateConnectorOptions.md#connectortype)
+- [fetchSettings](CreateConnectorOptions.md#fetchsettings)
 - [imapSettings](CreateConnectorOptions.md#imapsettings)
 - [inboxId](CreateConnectorOptions.md#inboxid)
 - [syncEnabled](CreateConnectorOptions.md#syncenabled)
@@ -35,6 +36,16 @@ ___
 ### connectorType
 
 • **connectorType**: [`IMAP`](../enums/CreateConnectorOptionsConnectorTypeEnum.md#imap)
+
+**`Memberof`**
+
+CreateConnectorOptions
+
+___
+
+### fetchSettings
+
+• `Optional` **fetchSettings**: [`CreateConnectorImapFetchOptions`](CreateConnectorImapFetchOptions.md)
 
 **`Memberof`**
 

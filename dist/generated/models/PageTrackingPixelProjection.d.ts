@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, Sort, TrackingPixelProjection } from './';
+import { PageableObject, SortObject, TrackingPixelProjection } from './';
 /**
  * Paginated TrackingPixel results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageTrackingPixelProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageTrackingPixelProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
@@ -52,6 +46,12 @@ export interface PageTrackingPixelProjection {
      * @memberof PageTrackingPixelProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageTrackingPixelProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageTrackingPixelProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageTrackingPixelProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageTrackingPixelProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTrackingPixelProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

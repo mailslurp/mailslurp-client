@@ -36,7 +36,7 @@ function PageSentEmailWithQueueProjectionFromJSONTyped(json, ignoreDiscriminator
         totalElements: json['totalElements'],
         totalPages: json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortFromJSON)(json['sort']),
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
@@ -59,7 +59,7 @@ function PageSentEmailWithQueueProjectionToJSON(value) {
         totalElements: value.totalElements,
         totalPages: value.totalPages,
         last: value.last,
-        sort: (0, _1.SortToJSON)(value.sort),
+        sort: (0, _1.SortObjectToJSON)(value.sort),
         first: value.first,
         empty: value.empty,
     };

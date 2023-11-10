@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, ScheduledJob, Sort } from './';
+import { PageableObject, ScheduledJob, SortObject } from './';
 /**
  * Paginated scheduled jobs results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageScheduledJobs {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageScheduledJobs
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageScheduledJobs
      */
@@ -52,6 +46,12 @@ export interface PageScheduledJobs {
      * @memberof PageScheduledJobs
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageScheduledJobs {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageScheduledJobs
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageScheduledJobs
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageScheduledJobs
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageScheduledJobs
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

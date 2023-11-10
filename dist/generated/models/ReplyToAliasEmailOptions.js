@@ -43,6 +43,9 @@ function ReplyToAliasEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         sendStrategy: !(0, runtime_1.exists)(json, 'sendStrategy')
             ? undefined
             : json['sendStrategy'],
+        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
+            ? undefined
+            : json['customHeaders'],
         useInboxName: !(0, runtime_1.exists)(json, 'useInboxName')
             ? undefined
             : json['useInboxName'],
@@ -65,6 +68,7 @@ function ReplyToAliasEmailOptionsToJSON(value) {
         templateVariables: value.templateVariables,
         template: value.template,
         sendStrategy: value.sendStrategy,
+        customHeaders: value.customHeaders,
         useInboxName: value.useInboxName,
         html: value.html,
     };

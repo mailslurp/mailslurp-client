@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BounceProjection, PageableObject, Sort } from './';
+import { BounceProjection, PageableObject, SortObject } from './';
 /**
  * Paginated bounced email. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageBouncedEmail {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedEmail
      */
@@ -52,6 +46,12 @@ export interface PageBouncedEmail {
      * @memberof PageBouncedEmail
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageBouncedEmail {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageBouncedEmail
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageBouncedEmail
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

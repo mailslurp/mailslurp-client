@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxReplierEventProjection, PageableObject, Sort } from './';
+import { InboxReplierEventProjection, PageableObject, SortObject } from './';
 /**
  * Paginated inbox replier events. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageInboxReplierEvents {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageInboxReplierEvents
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
@@ -52,6 +46,12 @@ export interface PageInboxReplierEvents {
      * @memberof PageInboxReplierEvents
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageInboxReplierEvents {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageInboxReplierEvents
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxReplierEvents
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

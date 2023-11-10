@@ -15,6 +15,7 @@ HTMLValidationResult
 ### Properties
 
 - [errors](HTMLValidationResult.md#errors)
+- [infos](HTMLValidationResult.md#infos)
 - [isValid](HTMLValidationResult.md#isvalid)
 - [warnings](HTMLValidationResult.md#warnings)
 
@@ -25,6 +26,18 @@ HTMLValidationResult
 • **errors**: [`ValidationMessage`](ValidationMessage.md)[]
 
 Optional errors resulting from HTML validation
+
+**`Memberof`**
+
+HTMLValidationResult
+
+___
+
+### infos
+
+• **infos**: [`ValidationMessage`](ValidationMessage.md)[]
+
+Optional infos resulting from HTML validation
 
 **`Memberof`**
 

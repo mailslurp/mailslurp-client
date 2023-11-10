@@ -21,12 +21,12 @@ var runtime_1 = require("../runtime");
  */
 var WebhookTestRequestMethodEnum;
 (function (WebhookTestRequestMethodEnum) {
-    WebhookTestRequestMethodEnum["GET"] = "GET";
-    WebhookTestRequestMethodEnum["HEAD"] = "HEAD";
     WebhookTestRequestMethodEnum["POST"] = "POST";
+    WebhookTestRequestMethodEnum["DELETE"] = "DELETE";
+    WebhookTestRequestMethodEnum["GET"] = "GET";
     WebhookTestRequestMethodEnum["PUT"] = "PUT";
     WebhookTestRequestMethodEnum["PATCH"] = "PATCH";
-    WebhookTestRequestMethodEnum["DELETE"] = "DELETE";
+    WebhookTestRequestMethodEnum["HEAD"] = "HEAD";
     WebhookTestRequestMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookTestRequestMethodEnum["TRACE"] = "TRACE";
 })(WebhookTestRequestMethodEnum = exports.WebhookTestRequestMethodEnum || (exports.WebhookTestRequestMethodEnum = {}));

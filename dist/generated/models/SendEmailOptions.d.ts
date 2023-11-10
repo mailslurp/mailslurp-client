@@ -64,6 +64,14 @@ export interface SendEmailOptions {
      */
     replyTo?: string | null;
     /**
+     * Optional custom headers
+     * @type {{ [key: string]: string; }}
+     * @memberof SendEmailOptions
+     */
+    customHeaders?: {
+        [key: string]: string;
+    } | null;
+    /**
      * Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.
      * @type {string}
      * @memberof SendEmailOptions
@@ -137,6 +145,12 @@ export interface SendEmailOptions {
      * @memberof SendEmailOptions
      */
     validateEmailAddresses?: SendEmailOptionsValidateEmailAddressesEnum;
+    /**
+     * Ignore empty recipients after validation removes all recipients as invalid and fail silently
+     * @type {boolean}
+     * @memberof SendEmailOptions
+     */
+    ignoreEmptyRecipients?: boolean | null;
 }
 /**
  * @export

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BounceRecipientProjection, PageableObject, Sort } from './';
+import { BounceRecipientProjection, PageableObject, SortObject } from './';
 /**
  * Paginated bounced recipients. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageBouncedRecipients {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageBouncedRecipients
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
@@ -52,6 +46,12 @@ export interface PageBouncedRecipients {
      * @memberof PageBouncedRecipients
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageBouncedRecipients {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageBouncedRecipients
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageBouncedRecipients
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedRecipients
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

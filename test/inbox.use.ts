@@ -15,7 +15,7 @@ integrationTest('can create inboxes', async (mailslurp) => {
   await mailslurp.inboxController.createInbox({});
   //</gen>
   const inboxId = inbox.id;
-  const timeout = 10;
+  const timeout = 1000;
   //<gen>fetch_try_catch
   try {
     await mailslurp.waitController.waitForLatestEmail({

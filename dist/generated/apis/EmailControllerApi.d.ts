@@ -10,10 +10,20 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
+}
+export interface CanSendRequest {
+    inboxId: string;
+    sendEmailOptions: SendEmailOptions;
+}
+export interface CheckEmailBodyFeatureSupportRequest {
+    emailId: string;
+}
+export interface CheckEmailClientSupportRequest {
+    checkEmailClientSupportOptions: CheckEmailClientSupportOptions;
 }
 export interface DeleteEmailRequest {
     emailId: string;
@@ -142,6 +152,36 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Set IMAP flags associated with a message. Only supports \'\\Seen\' flag.
      */
     applyImapFlagOperation(requestParameters: ApplyImapFlagOperationRequest, initOverrides?: RequestInit): Promise<EmailPreview>;
+    /**
+     * Can user send email to given recipient or is the recipient blocked
+     * Check if email can be sent and options are valid.
+     */
+    canSendRaw(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CanSendEmailResults>>;
+    /**
+     * Can user send email to given recipient or is the recipient blocked
+     * Check if email can be sent and options are valid.
+     */
+    canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<CanSendEmailResults>;
+    /**
+     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+     * Show which mail clients support the HTML and CSS features used in an email body.
+     */
+    checkEmailBodyFeatureSupportRaw(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBodyFeatureSupportResults>>;
+    /**
+     * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
+     * Show which mail clients support the HTML and CSS features used in an email body.
+     */
+    checkEmailBodyFeatureSupport(requestParameters: CheckEmailBodyFeatureSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailBodyFeatureSupportResults>;
+    /**
+     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+     * Show which email programs and devices support the features used in an email body.
+     */
+    checkEmailClientSupportRaw(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailClientSupportResults>>;
+    /**
+     * Evaluate the features used in an email body and return a report of email client support across different platforms and versions.
+     * Show which email programs and devices support the features used in an email body.
+     */
+    checkEmailClientSupport(requestParameters: CheckEmailClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailClientSupportResults>;
     /**
      * Deletes all emails in your account. Be careful as emails cannot be recovered
      * Delete all emails in all inboxes.
@@ -372,12 +412,12 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawEmailContentsRaw(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    getRawEmailContentsRaw(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns a raw, unparsed, and unprocessed email. If your client has issues processing the response it is likely due to the response content-type which is text/plain. If you need a JSON response content-type use the getRawEmailJson endpoint
      * Get raw email string. Returns unparsed raw SMTP message with headers and body.
      */
-    getRawEmailContents(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<string>;
+    getRawEmailContents(requestParameters: GetRawEmailContentsRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Returns a raw, unparsed, and unprocessed email wrapped in a JSON response object for easier handling when compared with the getRawEmail text/plain response
      * Get raw email in JSON. Unparsed SMTP message in JSON wrapper format.

@@ -24,12 +24,16 @@
 - [deleteSmsMessageRaw](SmsControllerApi.md#deletesmsmessageraw)
 - [deleteSmsMessages](SmsControllerApi.md#deletesmsmessages)
 - [deleteSmsMessagesRaw](SmsControllerApi.md#deletesmsmessagesraw)
+- [getReplyForSmsMessage](SmsControllerApi.md#getreplyforsmsmessage)
+- [getReplyForSmsMessageRaw](SmsControllerApi.md#getreplyforsmsmessageraw)
 - [getSmsMessage](SmsControllerApi.md#getsmsmessage)
 - [getSmsMessageRaw](SmsControllerApi.md#getsmsmessageraw)
 - [getSmsMessagesPaginated](SmsControllerApi.md#getsmsmessagespaginated)
 - [getSmsMessagesPaginatedRaw](SmsControllerApi.md#getsmsmessagespaginatedraw)
 - [getUnreadSmsCount](SmsControllerApi.md#getunreadsmscount)
 - [getUnreadSmsCountRaw](SmsControllerApi.md#getunreadsmscountraw)
+- [replyToSmsMessage](SmsControllerApi.md#replytosmsmessage)
+- [replyToSmsMessageRaw](SmsControllerApi.md#replytosmsmessageraw)
 - [request](SmsControllerApi.md#request)
 - [withMiddleware](SmsControllerApi.md#withmiddleware)
 - [withPostMiddleware](SmsControllerApi.md#withpostmiddleware)
@@ -140,6 +144,46 @@ Delete all SMS messages
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### getReplyForSmsMessage
+
+▸ **getReplyForSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`ReplyForSms`](../interfaces/ReplyForSms.md)\>
+
+Get reply for an SMS message.
+Get reply for an SMS message
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetReplyForSmsMessageRequest`](../interfaces/GetReplyForSmsMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ReplyForSms`](../interfaces/ReplyForSms.md)\>
+
+___
+
+### getReplyForSmsMessageRaw
+
+▸ **getReplyForSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ReplyForSms`](../interfaces/ReplyForSms.md)\>\>
+
+Get reply for an SMS message.
+Get reply for an SMS message
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetReplyForSmsMessageRequest`](../interfaces/GetReplyForSmsMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ReplyForSms`](../interfaces/ReplyForSms.md)\>\>
 
 ___
 
@@ -258,6 +302,46 @@ Get unread SMS count
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
+
+___
+
+### replyToSmsMessage
+
+▸ **replyToSmsMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>
+
+Reply to an SMS message.
+Send a reply to a received SMS message. Replies are sent from the receiving number.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReplyToSmsMessageRequest`](../interfaces/ReplyToSmsMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>
+
+___
+
+### replyToSmsMessageRaw
+
+▸ **replyToSmsMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>\>
+
+Reply to an SMS message.
+Send a reply to a received SMS message. Replies are sent from the receiving number.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ReplyToSmsMessageRequest`](../interfaces/ReplyToSmsMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentSmsDto`](../interfaces/SentSmsDto.md)\>\>
 
 ___
 

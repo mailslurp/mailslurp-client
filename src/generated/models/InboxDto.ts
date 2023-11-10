@@ -97,6 +97,12 @@ export interface InboxDto {
    * @memberof InboxDto
    */
   virtualInbox: boolean;
+  /**
+   * Inbox function if used as a primitive for another system.
+   * @type {string}
+   * @memberof InboxDto
+   */
+  functionsAs?: InboxDtoFunctionsAsEnum;
 }
 
 /**
@@ -106,6 +112,16 @@ export interface InboxDto {
 export enum InboxDtoInboxTypeEnum {
   HTTP_INBOX = 'HTTP_INBOX',
   SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxDtoFunctionsAsEnum {
+  ALIAS = 'ALIAS',
+  THREAD = 'THREAD',
+  CATCH_ALL = 'CATCH_ALL',
+  CONNECTOR = 'CONNECTOR',
 }
 
 export function InboxDtoFromJSON(json: any): InboxDto {
@@ -133,6 +149,7 @@ export function InboxDtoFromJSONTyped(
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     readOnly: json['readOnly'],
     virtualInbox: json['virtualInbox'],
+    functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
   };
 }
 
@@ -157,5 +174,6 @@ export function InboxDtoToJSON(value?: InboxDto | null): any {
     inboxType: value.inboxType,
     readOnly: value.readOnly,
     virtualInbox: value.virtualInbox,
+    functionsAs: value.functionsAs,
   };
 }

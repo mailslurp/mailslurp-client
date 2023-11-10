@@ -83,6 +83,7 @@ export interface ScheduledJobDto {
 export declare enum ScheduledJobDtoStatusEnum {
     SUBMITTED = "SUBMITTED",
     COMPLETED = "COMPLETED",
+    ABORTED = "ABORTED",
     FAILED = "FAILED",
     CANCELLED = "CANCELLED"
 }

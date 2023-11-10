@@ -34,6 +34,7 @@ function AliasDtoFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
         isVerified: json['isVerified'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         createdAt: !(0, runtime_1.exists)(json, 'createdAt')
             ? undefined
             : json['createdAt'] === null
@@ -63,6 +64,7 @@ function AliasDtoToJSON(value) {
         name: value.name,
         useThreads: value.useThreads,
         isVerified: value.isVerified,
+        domainId: value.domainId,
         createdAt: value.createdAt === undefined
             ? undefined
             : value.createdAt === null

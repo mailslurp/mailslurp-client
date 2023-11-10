@@ -17,9 +17,18 @@ import {
   PageSmsProjection,
   PageSmsProjectionFromJSON,
   PageSmsProjectionToJSON,
+  ReplyForSms,
+  ReplyForSmsFromJSON,
+  ReplyForSmsToJSON,
+  SentSmsDto,
+  SentSmsDtoFromJSON,
+  SentSmsDtoToJSON,
   SmsDto,
   SmsDtoFromJSON,
   SmsDtoToJSON,
+  SmsReplyOptions,
+  SmsReplyOptionsFromJSON,
+  SmsReplyOptionsToJSON,
   UnreadCount,
   UnreadCountFromJSON,
   UnreadCountToJSON,
@@ -31,6 +40,10 @@ export interface DeleteSmsMessageRequest {
 
 export interface DeleteSmsMessagesRequest {
   phoneNumberId?: string;
+}
+
+export interface GetReplyForSmsMessageRequest {
+  smsId: string;
 }
 
 export interface GetSmsMessageRequest {
@@ -45,6 +58,11 @@ export interface GetSmsMessagesPaginatedRequest {
   unreadOnly?: boolean;
   since?: Date;
   before?: Date;
+}
+
+export interface ReplyToSmsMessageRequest {
+  smsId: string;
+  smsReplyOptions: SmsReplyOptions;
 }
 
 /**
@@ -146,6 +164,65 @@ export class SmsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteSmsMessagesRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Get reply for an SMS message.
+   * Get reply for an SMS message
+   */
+  async getReplyForSmsMessageRaw(
+    requestParameters: GetReplyForSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ReplyForSms>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling getReplyForSmsMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/reply`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ReplyForSmsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get reply for an SMS message.
+   * Get reply for an SMS message
+   */
+  async getReplyForSmsMessage(
+    requestParameters: GetReplyForSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<ReplyForSms> {
+    const response = await this.getReplyForSmsMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
   }
 
   /**
@@ -319,6 +396,78 @@ export class SmsControllerApi extends runtime.BaseAPI {
    */
   async getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount> {
     const response = await this.getUnreadSmsCountRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Reply to an SMS message.
+   * Send a reply to a received SMS message. Replies are sent from the receiving number.
+   */
+  async replyToSmsMessageRaw(
+    requestParameters: ReplyToSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentSmsDto>> {
+    if (
+      requestParameters.smsId === null ||
+      requestParameters.smsId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsId',
+        'Required parameter requestParameters.smsId was null or undefined when calling replyToSmsMessage.'
+      );
+    }
+
+    if (
+      requestParameters.smsReplyOptions === null ||
+      requestParameters.smsReplyOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'smsReplyOptions',
+        'Required parameter requestParameters.smsReplyOptions was null or undefined when calling replyToSmsMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/{smsId}/reply`.replace(
+          `{${'smsId'}}`,
+          encodeURIComponent(String(requestParameters.smsId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SmsReplyOptionsToJSON(requestParameters.smsReplyOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentSmsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Reply to an SMS message.
+   * Send a reply to a received SMS message. Replies are sent from the receiving number.
+   */
+  async replyToSmsMessage(
+    requestParameters: ReplyToSmsMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentSmsDto> {
+    const response = await this.replyToSmsMessageRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 }

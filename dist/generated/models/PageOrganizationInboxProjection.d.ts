@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { OrganizationInboxProjection, PageableObject, Sort } from './';
+import { OrganizationInboxProjection, PageableObject, SortObject } from './';
 /**
  * Paginated organization inbox results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageOrganizationInboxProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageOrganizationInboxProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
@@ -52,6 +46,12 @@ export interface PageOrganizationInboxProjection {
      * @memberof PageOrganizationInboxProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageOrganizationInboxProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageOrganizationInboxProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageOrganizationInboxProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageOrganizationInboxProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

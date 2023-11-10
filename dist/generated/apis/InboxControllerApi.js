@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -839,6 +839,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.inboxType !== undefined) {
                             queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        if (requestParameters.inboxFunction !== undefined) {
+                            queryParameters['inboxFunction'] = requestParameters.inboxFunction;
                         }
                         if (requestParameters.domainId !== undefined) {
                             queryParameters['domainId'] = requestParameters.domainId;
@@ -2571,6 +2574,17 @@ var GetAllInboxesInboxTypeEnum;
     GetAllInboxesInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAllInboxesInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(GetAllInboxesInboxTypeEnum = exports.GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxesInboxFunctionEnum;
+(function (GetAllInboxesInboxFunctionEnum) {
+    GetAllInboxesInboxFunctionEnum["ALIAS"] = "ALIAS";
+    GetAllInboxesInboxFunctionEnum["THREAD"] = "THREAD";
+    GetAllInboxesInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
+    GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
+})(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
 /**
  * @export
  * @enum {string}

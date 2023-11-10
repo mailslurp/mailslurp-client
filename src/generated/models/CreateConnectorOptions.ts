@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  CreateConnectorImapFetchOptions,
+  CreateConnectorImapFetchOptionsFromJSON,
+  CreateConnectorImapFetchOptionsFromJSONTyped,
+  CreateConnectorImapFetchOptionsToJSON,
   CreateConnectorImapOptions,
   CreateConnectorImapOptionsFromJSON,
   CreateConnectorImapOptionsFromJSONTyped,
@@ -68,6 +72,12 @@ export interface CreateConnectorOptions {
    * @memberof CreateConnectorOptions
    */
   syncInterval?: number;
+  /**
+   *
+   * @type {CreateConnectorImapFetchOptions}
+   * @memberof CreateConnectorOptions
+   */
+  fetchSettings?: CreateConnectorImapFetchOptions;
 }
 
 /**
@@ -117,6 +127,9 @@ export function CreateConnectorOptionsFromJSONTyped(
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
+    fetchSettings: !exists(json, 'fetchSettings')
+      ? undefined
+      : CreateConnectorImapFetchOptionsFromJSON(json['fetchSettings']),
   };
 }
 
@@ -137,5 +150,6 @@ export function CreateConnectorOptionsToJSON(
     syncEnabled: value.syncEnabled,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
+    fetchSettings: CreateConnectorImapFetchOptionsToJSON(value.fetchSettings),
   };
 }

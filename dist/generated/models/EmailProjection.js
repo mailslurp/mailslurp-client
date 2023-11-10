@@ -38,6 +38,7 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         teamAccess: json['teamAccess'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     };
 }
 exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
@@ -63,6 +64,7 @@ function EmailProjectionToJSON(value) {
         bodyExcerpt: value.bodyExcerpt,
         teamAccess: value.teamAccess,
         bodyMD5Hash: value.bodyMD5Hash,
+        textExcerpt: value.textExcerpt,
     };
 }
 exports.EmailProjectionToJSON = EmailProjectionToJSON;

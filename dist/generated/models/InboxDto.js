@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoInboxTypeEnum = void 0;
+exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,6 +24,17 @@ var InboxDtoInboxTypeEnum;
     InboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxDtoInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(InboxDtoInboxTypeEnum = exports.InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxDtoFunctionsAsEnum;
+(function (InboxDtoFunctionsAsEnum) {
+    InboxDtoFunctionsAsEnum["ALIAS"] = "ALIAS";
+    InboxDtoFunctionsAsEnum["THREAD"] = "THREAD";
+    InboxDtoFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
+    InboxDtoFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+})(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);
 }
@@ -46,6 +57,7 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         readOnly: json['readOnly'],
         virtualInbox: json['virtualInbox'],
+        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -70,6 +82,7 @@ function InboxDtoToJSON(value) {
         inboxType: value.inboxType,
         readOnly: value.readOnly,
         virtualInbox: value.virtualInbox,
+        functionsAs: value.functionsAs,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

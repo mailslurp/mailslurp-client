@@ -49,7 +49,7 @@ export class ExportControllerApi extends runtime.BaseAPI {
   async exportEntitiesRaw(
     requestParameters: ExportEntitiesRequest,
     initOverrides?: RequestInit
-  ): Promise<runtime.ApiResponse<Array<string>>> {
+  ): Promise<runtime.ApiResponse<string>> {
     if (
       requestParameters.exportType === null ||
       requestParameters.exportType === undefined
@@ -136,7 +136,7 @@ export class ExportControllerApi extends runtime.BaseAPI {
       initOverrides
     );
 
-    return new runtime.JSONApiResponse<any>(response);
+    return new runtime.TextApiResponse(response) as any;
   }
 
   /**
@@ -145,7 +145,7 @@ export class ExportControllerApi extends runtime.BaseAPI {
   async exportEntities(
     requestParameters: ExportEntitiesRequest,
     initOverrides?: RequestInit
-  ): Promise<Array<string>> {
+  ): Promise<string> {
     const response = await this.exportEntitiesRaw(
       requestParameters,
       initOverrides

@@ -70,6 +70,7 @@ export interface GetAllInboxesRequest {
     since?: Date;
     before?: Date;
     inboxType?: GetAllInboxesInboxTypeEnum;
+    inboxFunction?: GetAllInboxesInboxFunctionEnum;
     domainId?: string;
 }
 export interface GetAllScheduledJobsRequest {
@@ -652,6 +653,16 @@ export declare enum GetAllInboxesSortEnum {
 export declare enum GetAllInboxesInboxTypeEnum {
     HTTP_INBOX = "HTTP_INBOX",
     SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxesInboxFunctionEnum {
+    ALIAS = "ALIAS",
+    THREAD = "THREAD",
+    CATCH_ALL = "CATCH_ALL",
+    CONNECTOR = "CONNECTOR"
 }
 /**
  * @export

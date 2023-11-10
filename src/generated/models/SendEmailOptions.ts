@@ -68,6 +68,12 @@ export interface SendEmailOptions {
    */
   replyTo?: string | null;
   /**
+   * Optional custom headers
+   * @type {{ [key: string]: string; }}
+   * @memberof SendEmailOptions
+   */
+  customHeaders?: { [key: string]: string } | null;
+  /**
    * Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.
    * @type {string}
    * @memberof SendEmailOptions
@@ -139,6 +145,12 @@ export interface SendEmailOptions {
    * @memberof SendEmailOptions
    */
   validateEmailAddresses?: SendEmailOptionsValidateEmailAddressesEnum;
+  /**
+   * Ignore empty recipients after validation removes all recipients as invalid and fail silently
+   * @type {boolean}
+   * @memberof SendEmailOptions
+   */
+  ignoreEmptyRecipients?: boolean | null;
 }
 
 /**
@@ -178,6 +190,9 @@ export function SendEmailOptionsFromJSONTyped(
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     replyTo: !exists(json, 'replyTo') ? undefined : json['replyTo'],
+    customHeaders: !exists(json, 'customHeaders')
+      ? undefined
+      : json['customHeaders'],
     body: !exists(json, 'body') ? undefined : json['body'],
     html: !exists(json, 'html') ? undefined : json['html'],
     isHTML: !exists(json, 'isHTML') ? undefined : json['isHTML'],
@@ -202,6 +217,9 @@ export function SendEmailOptionsFromJSONTyped(
     validateEmailAddresses: !exists(json, 'validateEmailAddresses')
       ? undefined
       : json['validateEmailAddresses'],
+    ignoreEmptyRecipients: !exists(json, 'ignoreEmptyRecipients')
+      ? undefined
+      : json['ignoreEmptyRecipients'],
   };
 }
 
@@ -221,6 +239,7 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
     bcc: value.bcc,
     subject: value.subject,
     replyTo: value.replyTo,
+    customHeaders: value.customHeaders,
     body: value.body,
     html: value.html,
     isHTML: value.isHTML,
@@ -233,5 +252,6 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
     addTrackingPixel: value.addTrackingPixel,
     filterBouncedRecipients: value.filterBouncedRecipients,
     validateEmailAddresses: value.validateEmailAddresses,
+    ignoreEmptyRecipients: value.ignoreEmptyRecipients,
   };
 }

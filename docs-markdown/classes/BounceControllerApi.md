@@ -22,6 +22,8 @@
 
 - [filterBouncedRecipient](BounceControllerApi.md#filterbouncedrecipient)
 - [filterBouncedRecipientRaw](BounceControllerApi.md#filterbouncedrecipientraw)
+- [getAccountBounceBlockStatus](BounceControllerApi.md#getaccountbounceblockstatus)
+- [getAccountBounceBlockStatusRaw](BounceControllerApi.md#getaccountbounceblockstatusraw)
 - [getBouncedEmail](BounceControllerApi.md#getbouncedemail)
 - [getBouncedEmailRaw](BounceControllerApi.md#getbouncedemailraw)
 - [getBouncedEmails](BounceControllerApi.md#getbouncedemails)
@@ -104,6 +106,44 @@ Filter a list of email recipients and remove those who have bounced
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FilterBouncedRecipientsResult`](../interfaces/FilterBouncedRecipientsResult.md)\>\>
+
+___
+
+### getAccountBounceBlockStatus
+
+▸ **getAccountBounceBlockStatus**(`initOverrides?`): `Promise`<[`AccountBounceBlockDto`](../interfaces/AccountBounceBlockDto.md)\>
+
+Check if account block status prevents sending
+Can account send email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AccountBounceBlockDto`](../interfaces/AccountBounceBlockDto.md)\>
+
+___
+
+### getAccountBounceBlockStatusRaw
+
+▸ **getAccountBounceBlockStatusRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AccountBounceBlockDto`](../interfaces/AccountBounceBlockDto.md)\>\>
+
+Check if account block status prevents sending
+Can account send email
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AccountBounceBlockDto`](../interfaces/AccountBounceBlockDto.md)\>\>
 
 ___
 

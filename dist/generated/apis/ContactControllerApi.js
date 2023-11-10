@@ -221,6 +221,9 @@ var ContactControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.before !== undefined) {
                             queryParameters['before'] = requestParameters.before.toISOString();
                         }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -333,7 +336,7 @@ var ContactControllerApi = /** @class */ (function (_super) {
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response)];
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
                 }
             });
         });
@@ -343,14 +346,12 @@ var ContactControllerApi = /** @class */ (function (_super) {
      */
     ContactControllerApi.prototype.getContactVCard = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
-            var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getContactVCardRaw(requestParameters, initOverrides)];
                     case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });

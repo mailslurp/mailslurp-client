@@ -32,19 +32,13 @@ export interface InboxForwarderEventProjection {
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
-    status?: InboxForwarderEventProjectionStatusEnum;
+    inboxId?: string | null;
     /**
      *
      * @type {string}
      * @memberof InboxForwarderEventProjection
      */
     emailId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxForwarderEventProjection
-     */
-    inboxId?: string | null;
     /**
      *
      * @type {string}
@@ -63,6 +57,12 @@ export interface InboxForwarderEventProjection {
      * @memberof InboxForwarderEventProjection
      */
     forwarderId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxForwarderEventProjection
+     */
+    status?: InboxForwarderEventProjectionStatusEnum;
 }
 /**
  * @export

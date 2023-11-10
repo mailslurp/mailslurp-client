@@ -36,6 +36,9 @@ function ReplyToEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         isHTML: json['isHTML'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         replyTo: !(0, runtime_1.exists)(json, 'replyTo') ? undefined : json['replyTo'],
+        customHeaders: !(0, runtime_1.exists)(json, 'customHeaders')
+            ? undefined
+            : json['customHeaders'],
         charset: !(0, runtime_1.exists)(json, 'charset') ? undefined : json['charset'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         templateVariables: !(0, runtime_1.exists)(json, 'templateVariables')
@@ -64,6 +67,7 @@ function ReplyToEmailOptionsToJSON(value) {
         isHTML: value.isHTML,
         from: value.from,
         replyTo: value.replyTo,
+        customHeaders: value.customHeaders,
         charset: value.charset,
         attachments: value.attachments,
         templateVariables: value.templateVariables,

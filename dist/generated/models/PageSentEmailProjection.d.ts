@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PageableObject, SentEmailProjection, Sort } from './';
+import { PageableObject, SentEmailProjection, SortObject } from './';
 /**
  * Paginated sent email results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full sent email entity use the projection ID with individual method calls.
  * @export
@@ -72,10 +72,10 @@ export interface PageSentEmailProjection {
     last?: boolean;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageSentEmailProjection
      */
-    sort?: Sort;
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

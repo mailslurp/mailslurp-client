@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MissedEmailProjection, PageableObject, Sort } from './';
+import { MissedEmailProjection, PageableObject, SortObject } from './';
 /**
  * Paginated MissedEmail results. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls.
  * @export
@@ -36,12 +36,6 @@ export interface PageMissedEmailProjection {
     total?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageMissedEmailProjection
-     */
-    last?: boolean;
-    /**
-     *
      * @type {number}
      * @memberof PageMissedEmailProjection
      */
@@ -52,6 +46,12 @@ export interface PageMissedEmailProjection {
      * @memberof PageMissedEmailProjection
      */
     totalPages?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageMissedEmailProjection
+     */
+    last?: boolean;
     /**
      *
      * @type {number}
@@ -66,22 +66,22 @@ export interface PageMissedEmailProjection {
     number?: number;
     /**
      *
-     * @type {Sort}
+     * @type {SortObject}
      * @memberof PageMissedEmailProjection
      */
-    sort?: Sort;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageMissedEmailProjection
-     */
-    first?: boolean;
+    sort?: SortObject;
     /**
      *
      * @type {number}
      * @memberof PageMissedEmailProjection
      */
     numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageMissedEmailProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -60,6 +60,9 @@ function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
+        fetchSettings: !(0, runtime_1.exists)(json, 'fetchSettings')
+            ? undefined
+            : (0, _1.CreateConnectorImapFetchOptionsFromJSON)(json['fetchSettings']),
     };
 }
 exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
@@ -78,6 +81,7 @@ function CreateConnectorOptionsToJSON(value) {
         syncEnabled: value.syncEnabled,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
+        fetchSettings: (0, _1.CreateConnectorImapFetchOptionsToJSON)(value.fetchSettings),
     };
 }
 exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;

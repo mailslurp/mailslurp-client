@@ -32,12 +32,6 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    url: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
     inboxId?: string;
     /**
      *
@@ -63,6 +57,12 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     phoneNumberId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    url: string;
 }
 /**
  * @export

@@ -32,6 +32,7 @@ function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['diagnosticCode'],
         action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
         status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
         createdAt: new Date(json['createdAt']),
     };
@@ -51,6 +52,7 @@ function BouncedRecipientDtoToJSON(value) {
         recipient: value.recipient,
         diagnosticCode: value.diagnosticCode,
         action: value.action,
+        bounceType: value.bounceType,
         status: value.status,
         createdAt: value.createdAt.toISOString(),
     };

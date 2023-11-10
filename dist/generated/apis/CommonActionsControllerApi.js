@@ -381,6 +381,65 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    CommonActionsControllerApi.prototype.sendEmailQueryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.to === null || requestParameters.to === undefined) {
+                            throw new runtime.RequiredError('to', 'Required parameter requestParameters.to was null or undefined when calling sendEmailQuery.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.senderId !== undefined) {
+                            queryParameters['senderId'] = requestParameters.senderId;
+                        }
+                        if (requestParameters.to !== undefined) {
+                            queryParameters['to'] = requestParameters.to;
+                        }
+                        if (requestParameters.body !== undefined) {
+                            queryParameters['body'] = requestParameters.body;
+                        }
+                        if (requestParameters.subject !== undefined) {
+                            queryParameters['subject'] = requestParameters.subject;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/sendEmailQuery",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * If no senderId or inboxId provided a random email address will be used to send from. Ensure your parameters are URL encoded.
+     * Send an email using query parameters
+     */
+    CommonActionsControllerApi.prototype.sendEmailQuery = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendEmailQueryRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * If no senderId or inboxId provided a random email address will be used to send from.
      * Send an email
      */

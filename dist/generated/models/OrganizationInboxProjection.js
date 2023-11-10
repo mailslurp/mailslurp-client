@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
+exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,6 +24,17 @@ var OrganizationInboxProjectionInboxTypeEnum;
     OrganizationInboxProjectionInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     OrganizationInboxProjectionInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
 })(OrganizationInboxProjectionInboxTypeEnum = exports.OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var OrganizationInboxProjectionFunctionsAsEnum;
+(function (OrganizationInboxProjectionFunctionsAsEnum) {
+    OrganizationInboxProjectionFunctionsAsEnum["ALIAS"] = "ALIAS";
+    OrganizationInboxProjectionFunctionsAsEnum["THREAD"] = "THREAD";
+    OrganizationInboxProjectionFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
+    OrganizationInboxProjectionFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
+})(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);
 }
@@ -46,6 +57,7 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
         inboxType: !(0, runtime_1.exists)(json, 'inboxType') ? undefined : json['inboxType'],
         readOnly: json['readOnly'],
         virtualInbox: json['virtualInbox'],
+        functionsAs: !(0, runtime_1.exists)(json, 'functionsAs') ? undefined : json['functionsAs'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -68,6 +80,7 @@ function OrganizationInboxProjectionToJSON(value) {
         inboxType: value.inboxType,
         readOnly: value.readOnly,
         virtualInbox: value.virtualInbox,
+        functionsAs: value.functionsAs,
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

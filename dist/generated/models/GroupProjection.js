@@ -26,8 +26,8 @@ function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         name: json['name'],
         id: json['id'],
-        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
         createdAt: new Date(json['createdAt']),
+        description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
 exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
@@ -41,8 +41,8 @@ function GroupProjectionToJSON(value) {
     return {
         name: value.name,
         id: value.id,
-        description: value.description,
         createdAt: value.createdAt.toISOString(),
+        description: value.description,
     };
 }
 exports.GroupProjectionToJSON = GroupProjectionToJSON;

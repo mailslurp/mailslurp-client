@@ -85,6 +85,12 @@ export interface OrganizationInboxProjection {
    * @memberof OrganizationInboxProjection
    */
   virtualInbox: boolean;
+  /**
+   * Inbox function if used as a primitive for another system.
+   * @type {string}
+   * @memberof OrganizationInboxProjection
+   */
+  functionsAs?: OrganizationInboxProjectionFunctionsAsEnum;
 }
 
 /**
@@ -94,6 +100,16 @@ export interface OrganizationInboxProjection {
 export enum OrganizationInboxProjectionInboxTypeEnum {
   HTTP_INBOX = 'HTTP_INBOX',
   SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum OrganizationInboxProjectionFunctionsAsEnum {
+  ALIAS = 'ALIAS',
+  THREAD = 'THREAD',
+  CATCH_ALL = 'CATCH_ALL',
+  CONNECTOR = 'CONNECTOR',
 }
 
 export function OrganizationInboxProjectionFromJSON(
@@ -123,6 +139,7 @@ export function OrganizationInboxProjectionFromJSONTyped(
     inboxType: !exists(json, 'inboxType') ? undefined : json['inboxType'],
     readOnly: json['readOnly'],
     virtualInbox: json['virtualInbox'],
+    functionsAs: !exists(json, 'functionsAs') ? undefined : json['functionsAs'],
   };
 }
 
@@ -147,5 +164,6 @@ export function OrganizationInboxProjectionToJSON(
     inboxType: value.inboxType,
     readOnly: value.readOnly,
     virtualInbox: value.virtualInbox,
+    functionsAs: value.functionsAs,
   };
 }

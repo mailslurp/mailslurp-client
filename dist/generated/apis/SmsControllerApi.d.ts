@@ -10,12 +10,15 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageSmsProjection, SmsDto, UnreadCount } from '../models';
+import { PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models';
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
 export interface DeleteSmsMessagesRequest {
     phoneNumberId?: string;
+}
+export interface GetReplyForSmsMessageRequest {
+    smsId: string;
 }
 export interface GetSmsMessageRequest {
     smsId: string;
@@ -28,6 +31,10 @@ export interface GetSmsMessagesPaginatedRequest {
     unreadOnly?: boolean;
     since?: Date;
     before?: Date;
+}
+export interface ReplyToSmsMessageRequest {
+    smsId: string;
+    smsReplyOptions: SmsReplyOptions;
 }
 /**
  *
@@ -53,6 +60,16 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Delete all SMS messages
      */
     deleteSmsMessages(requestParameters: DeleteSmsMessagesRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    getReplyForSmsMessageRaw(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ReplyForSms>>;
+    /**
+     * Get reply for an SMS message.
+     * Get reply for an SMS message
+     */
+    getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<ReplyForSms>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.
@@ -83,6 +100,16 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get unread SMS count
      */
     getUnreadSmsCount(initOverrides?: RequestInit): Promise<UnreadCount>;
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    replyToSmsMessageRaw(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentSmsDto>>;
+    /**
+     * Reply to an SMS message.
+     * Send a reply to a received SMS message. Replies are sent from the receiving number.
+     */
+    replyToSmsMessage(requestParameters: ReplyToSmsMessageRequest, initOverrides?: RequestInit): Promise<SentSmsDto>;
 }
 /**
  * @export

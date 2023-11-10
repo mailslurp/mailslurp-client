@@ -32,6 +32,10 @@
 - [getAliasThreadsRaw](AliasControllerApi.md#getaliasthreadsraw)
 - [getAliases](AliasControllerApi.md#getaliases)
 - [getAliasesRaw](AliasControllerApi.md#getaliasesraw)
+- [getThread](AliasControllerApi.md#getthread)
+- [getThreadRaw](AliasControllerApi.md#getthreadraw)
+- [getThreadsPaginated](AliasControllerApi.md#getthreadspaginated)
+- [getThreadsPaginatedRaw](AliasControllerApi.md#getthreadspaginatedraw)
 - [replyToAliasEmail](AliasControllerApi.md#replytoaliasemail)
 - [replyToAliasEmailRaw](AliasControllerApi.md#replytoaliasemailraw)
 - [request](AliasControllerApi.md#request)
@@ -306,6 +310,86 @@ Get all email aliases you have created
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageAlias`](../interfaces/PageAlias.md)\>\>
+
+___
+
+### getThread
+
+▸ **getThread**(`requestParameters`, `initOverrides?`): `Promise`<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>
+
+Return a thread associated with an alias
+Get a thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetThreadRequest`](../interfaces/GetThreadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>
+
+___
+
+### getThreadRaw
+
+▸ **getThreadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>\>
+
+Return a thread associated with an alias
+Get a thread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetThreadRequest`](../interfaces/GetThreadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ThreadProjection`](../interfaces/ThreadProjection.md)\>\>
+
+___
+
+### getThreadsPaginated
+
+▸ **getThreadsPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+
+Returns threads created for all aliases in paginated form
+Get all threads
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetThreadsPaginatedRequest`](../interfaces/GetThreadsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>
+
+___
+
+### getThreadsPaginatedRaw
+
+▸ **getThreadsPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
+
+Returns threads created for all aliases in paginated form
+Get all threads
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetThreadsPaginatedRequest`](../interfaces/GetThreadsPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageThreadProjection`](../interfaces/PageThreadProjection.md)\>\>
 
 ___
 

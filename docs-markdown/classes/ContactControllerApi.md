@@ -219,7 +219,7 @@ ___
 
 ### getContactVCard
 
-▸ **getContactVCard**(`requestParameters`, `initOverrides?`): `Promise`<`string`[]\>
+▸ **getContactVCard**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Get contact vCard vcf file
 
@@ -232,13 +232,13 @@ Get contact vCard vcf file
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<`void`\>
 
 ___
 
 ### getContactVCardRaw
 
-▸ **getContactVCardRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+▸ **getContactVCardRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Get contact vCard vcf file
 
@@ -251,7 +251,7 @@ Get contact vCard vcf file
 
 #### Returns
 
-`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

@@ -22,6 +22,8 @@
 
 - [createConnector](ConnectorControllerApi.md#createconnector)
 - [createConnectorRaw](ConnectorControllerApi.md#createconnectorraw)
+- [deleteAllConnector](ConnectorControllerApi.md#deleteallconnector)
+- [deleteAllConnectorRaw](ConnectorControllerApi.md#deleteallconnectorraw)
 - [deleteConnector](ConnectorControllerApi.md#deleteconnector)
 - [deleteConnectorRaw](ConnectorControllerApi.md#deleteconnectorraw)
 - [getAllConnectorSyncEvents](ConnectorControllerApi.md#getallconnectorsyncevents)
@@ -108,6 +110,42 @@ Create an inbox connector
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
+
+___
+
+### deleteAllConnector
+
+▸ **deleteAllConnector**(`initOverrides?`): `Promise`<`void`\>
+
+Delete all inbox connectors
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteAllConnectorRaw
+
+▸ **deleteAllConnectorRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete all inbox connectors
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
