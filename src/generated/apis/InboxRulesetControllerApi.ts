@@ -29,6 +29,18 @@ import {
   PageInboxRulesetDto,
   PageInboxRulesetDtoFromJSON,
   PageInboxRulesetDtoToJSON,
+  TestInboxRulesetReceivingOptions,
+  TestInboxRulesetReceivingOptionsFromJSON,
+  TestInboxRulesetReceivingOptionsToJSON,
+  TestInboxRulesetReceivingResult,
+  TestInboxRulesetReceivingResultFromJSON,
+  TestInboxRulesetReceivingResultToJSON,
+  TestInboxRulesetSendingOptions,
+  TestInboxRulesetSendingOptionsFromJSON,
+  TestInboxRulesetSendingOptionsToJSON,
+  TestInboxRulesetSendingResult,
+  TestInboxRulesetSendingResultFromJSON,
+  TestInboxRulesetSendingResultToJSON,
   TestNewInboxRulesetOptions,
   TestNewInboxRulesetOptionsFromJSON,
   TestNewInboxRulesetOptionsToJSON,
@@ -64,6 +76,14 @@ export interface GetInboxRulesetsRequest {
 export interface TestInboxRulesetRequest {
   id: string;
   inboxRulesetTestOptions: InboxRulesetTestOptions;
+}
+
+export interface TestInboxRulesetReceivingRequest {
+  testInboxRulesetReceivingOptions: TestInboxRulesetReceivingOptions;
+}
+
+export interface TestInboxRulesetSendingRequest {
+  testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
 }
 
 export interface TestInboxRulesetsForInboxRequest {
@@ -435,6 +455,128 @@ export class InboxRulesetControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<InboxRulesetTestResult> {
     const response = await this.testInboxRulesetRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+   * Test receiving with inbox rulesets
+   */
+  async testInboxRulesetReceivingRaw(
+    requestParameters: TestInboxRulesetReceivingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>> {
+    if (
+      requestParameters.testInboxRulesetReceivingOptions === null ||
+      requestParameters.testInboxRulesetReceivingOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testInboxRulesetReceivingOptions',
+        'Required parameter requestParameters.testInboxRulesetReceivingOptions was null or undefined when calling testInboxRulesetReceiving.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets/test-receiving`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestInboxRulesetReceivingOptionsToJSON(
+          requestParameters.testInboxRulesetReceivingOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TestInboxRulesetReceivingResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+   * Test receiving with inbox rulesets
+   */
+  async testInboxRulesetReceiving(
+    requestParameters: TestInboxRulesetReceivingRequest,
+    initOverrides?: RequestInit
+  ): Promise<TestInboxRulesetReceivingResult> {
+    const response = await this.testInboxRulesetReceivingRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+   * Test sending with inbox rulesets
+   */
+  async testInboxRulesetSendingRaw(
+    requestParameters: TestInboxRulesetSendingRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>> {
+    if (
+      requestParameters.testInboxRulesetSendingOptions === null ||
+      requestParameters.testInboxRulesetSendingOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'testInboxRulesetSendingOptions',
+        'Required parameter requestParameters.testInboxRulesetSendingOptions was null or undefined when calling testInboxRulesetSending.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets/test-sending`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: TestInboxRulesetSendingOptionsToJSON(
+          requestParameters.testInboxRulesetSendingOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      TestInboxRulesetSendingResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+   * Test sending with inbox rulesets
+   */
+  async testInboxRulesetSending(
+    requestParameters: TestInboxRulesetSendingRequest,
+    initOverrides?: RequestInit
+  ): Promise<TestInboxRulesetSendingResult> {
+    const response = await this.testInboxRulesetSendingRaw(
       requestParameters,
       initOverrides
     );

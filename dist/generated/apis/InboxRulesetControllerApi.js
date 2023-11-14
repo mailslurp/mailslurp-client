@@ -427,6 +427,114 @@ var InboxRulesetControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+     * Test receiving with inbox rulesets
+     */
+    InboxRulesetControllerApi.prototype.testInboxRulesetReceivingRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.testInboxRulesetReceivingOptions === null ||
+                            requestParameters.testInboxRulesetReceivingOptions === undefined) {
+                            throw new runtime.RequiredError('testInboxRulesetReceivingOptions', 'Required parameter requestParameters.testInboxRulesetReceivingOptions was null or undefined when calling testInboxRulesetReceiving.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/rulesets/test-receiving",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.TestInboxRulesetReceivingOptionsToJSON)(requestParameters.testInboxRulesetReceivingOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TestInboxRulesetReceivingResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+     * Test receiving with inbox rulesets
+     */
+    InboxRulesetControllerApi.prototype.testInboxRulesetReceiving = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testInboxRulesetReceivingRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+     * Test sending with inbox rulesets
+     */
+    InboxRulesetControllerApi.prototype.testInboxRulesetSendingRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.testInboxRulesetSendingOptions === null ||
+                            requestParameters.testInboxRulesetSendingOptions === undefined) {
+                            throw new runtime.RequiredError('testInboxRulesetSendingOptions', 'Required parameter requestParameters.testInboxRulesetSendingOptions was null or undefined when calling testInboxRulesetSending.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/rulesets/test-sending",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.TestInboxRulesetSendingOptionsToJSON)(requestParameters.testInboxRulesetSendingOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.TestInboxRulesetSendingResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+     * Test sending with inbox rulesets
+     */
+    InboxRulesetControllerApi.prototype.testInboxRulesetSending = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.testInboxRulesetSendingRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Test inbox rulesets for inbox
      * Test inbox rulesets for inbox
      */

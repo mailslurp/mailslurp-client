@@ -675,7 +675,13 @@ MailSlurp JS
 - [TemplateVariable](interfaces/TemplateVariable.md)
 - [TestInboxForwarderRequest](interfaces/TestInboxForwarderRequest.md)
 - [TestInboxForwardersForInboxRequest](interfaces/TestInboxForwardersForInboxRequest.md)
+- [TestInboxRulesetReceivingOptions](interfaces/TestInboxRulesetReceivingOptions.md)
+- [TestInboxRulesetReceivingRequest](interfaces/TestInboxRulesetReceivingRequest.md)
+- [TestInboxRulesetReceivingResult](interfaces/TestInboxRulesetReceivingResult.md)
 - [TestInboxRulesetRequest](interfaces/TestInboxRulesetRequest.md)
+- [TestInboxRulesetSendingOptions](interfaces/TestInboxRulesetSendingOptions.md)
+- [TestInboxRulesetSendingRequest](interfaces/TestInboxRulesetSendingRequest.md)
+- [TestInboxRulesetSendingResult](interfaces/TestInboxRulesetSendingResult.md)
 - [TestInboxRulesetsForInboxRequest](interfaces/TestInboxRulesetsForInboxRequest.md)
 - [TestNewInboxForwarderOptions](interfaces/TestNewInboxForwarderOptions.md)
 - [TestNewInboxForwarderRequest](interfaces/TestNewInboxForwarderRequest.md)
@@ -1394,6 +1400,18 @@ MailSlurp JS
 - [TemplateVariableFromJSON](README.md#templatevariablefromjson)
 - [TemplateVariableFromJSONTyped](README.md#templatevariablefromjsontyped)
 - [TemplateVariableToJSON](README.md#templatevariabletojson)
+- [TestInboxRulesetReceivingOptionsFromJSON](README.md#testinboxrulesetreceivingoptionsfromjson)
+- [TestInboxRulesetReceivingOptionsFromJSONTyped](README.md#testinboxrulesetreceivingoptionsfromjsontyped)
+- [TestInboxRulesetReceivingOptionsToJSON](README.md#testinboxrulesetreceivingoptionstojson)
+- [TestInboxRulesetReceivingResultFromJSON](README.md#testinboxrulesetreceivingresultfromjson)
+- [TestInboxRulesetReceivingResultFromJSONTyped](README.md#testinboxrulesetreceivingresultfromjsontyped)
+- [TestInboxRulesetReceivingResultToJSON](README.md#testinboxrulesetreceivingresulttojson)
+- [TestInboxRulesetSendingOptionsFromJSON](README.md#testinboxrulesetsendingoptionsfromjson)
+- [TestInboxRulesetSendingOptionsFromJSONTyped](README.md#testinboxrulesetsendingoptionsfromjsontyped)
+- [TestInboxRulesetSendingOptionsToJSON](README.md#testinboxrulesetsendingoptionstojson)
+- [TestInboxRulesetSendingResultFromJSON](README.md#testinboxrulesetsendingresultfromjson)
+- [TestInboxRulesetSendingResultFromJSONTyped](README.md#testinboxrulesetsendingresultfromjsontyped)
+- [TestInboxRulesetSendingResultToJSON](README.md#testinboxrulesetsendingresulttojson)
 - [TestNewInboxForwarderOptionsFromJSON](README.md#testnewinboxforwarderoptionsfromjson)
 - [TestNewInboxForwarderOptionsFromJSONTyped](README.md#testnewinboxforwarderoptionsfromjsontyped)
 - [TestNewInboxForwarderOptionsToJSON](README.md#testnewinboxforwarderoptionstojson)
@@ -11852,6 +11870,202 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`TemplateVariable`](interfaces/TemplateVariable.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestInboxRulesetReceivingOptionsFromJSON
+
+▸ **TestInboxRulesetReceivingOptionsFromJSON**(`json`): [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
+
+___
+
+### TestInboxRulesetReceivingOptionsFromJSONTyped
+
+▸ **TestInboxRulesetReceivingOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md)
+
+___
+
+### TestInboxRulesetReceivingOptionsToJSON
+
+▸ **TestInboxRulesetReceivingOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestInboxRulesetReceivingOptions`](interfaces/TestInboxRulesetReceivingOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestInboxRulesetReceivingResultFromJSON
+
+▸ **TestInboxRulesetReceivingResultFromJSON**(`json`): [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
+
+___
+
+### TestInboxRulesetReceivingResultFromJSONTyped
+
+▸ **TestInboxRulesetReceivingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md)
+
+___
+
+### TestInboxRulesetReceivingResultToJSON
+
+▸ **TestInboxRulesetReceivingResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestInboxRulesetReceivingResult`](interfaces/TestInboxRulesetReceivingResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestInboxRulesetSendingOptionsFromJSON
+
+▸ **TestInboxRulesetSendingOptionsFromJSON**(`json`): [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
+
+___
+
+### TestInboxRulesetSendingOptionsFromJSONTyped
+
+▸ **TestInboxRulesetSendingOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md)
+
+___
+
+### TestInboxRulesetSendingOptionsToJSON
+
+▸ **TestInboxRulesetSendingOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestInboxRulesetSendingOptions`](interfaces/TestInboxRulesetSendingOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### TestInboxRulesetSendingResultFromJSON
+
+▸ **TestInboxRulesetSendingResultFromJSON**(`json`): [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
+
+___
+
+### TestInboxRulesetSendingResultFromJSONTyped
+
+▸ **TestInboxRulesetSendingResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md)
+
+___
+
+### TestInboxRulesetSendingResultToJSON
+
+▸ **TestInboxRulesetSendingResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`TestInboxRulesetSendingResult`](interfaces/TestInboxRulesetSendingResult.md) |
 
 #### Returns
 

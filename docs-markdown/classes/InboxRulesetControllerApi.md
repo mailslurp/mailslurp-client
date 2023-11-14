@@ -33,6 +33,10 @@
 - [request](InboxRulesetControllerApi.md#request)
 - [testInboxRuleset](InboxRulesetControllerApi.md#testinboxruleset)
 - [testInboxRulesetRaw](InboxRulesetControllerApi.md#testinboxrulesetraw)
+- [testInboxRulesetReceiving](InboxRulesetControllerApi.md#testinboxrulesetreceiving)
+- [testInboxRulesetReceivingRaw](InboxRulesetControllerApi.md#testinboxrulesetreceivingraw)
+- [testInboxRulesetSending](InboxRulesetControllerApi.md#testinboxrulesetsending)
+- [testInboxRulesetSendingRaw](InboxRulesetControllerApi.md#testinboxrulesetsendingraw)
 - [testInboxRulesetsForInbox](InboxRulesetControllerApi.md#testinboxrulesetsforinbox)
 - [testInboxRulesetsForInboxRaw](InboxRulesetControllerApi.md#testinboxrulesetsforinboxraw)
 - [testNewInboxRuleset](InboxRulesetControllerApi.md#testnewinboxruleset)
@@ -327,6 +331,86 @@ Test an inbox ruleset
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRulesetTestResult`](../interfaces/InboxRulesetTestResult.md)\>\>
+
+___
+
+### testInboxRulesetReceiving
+
+▸ **testInboxRulesetReceiving**(`requestParameters`, `initOverrides?`): `Promise`<[`TestInboxRulesetReceivingResult`](../interfaces/TestInboxRulesetReceivingResult.md)\>
+
+Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+Test receiving with inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetReceivingRequest`](../interfaces/TestInboxRulesetReceivingRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TestInboxRulesetReceivingResult`](../interfaces/TestInboxRulesetReceivingResult.md)\>
+
+___
+
+### testInboxRulesetReceivingRaw
+
+▸ **testInboxRulesetReceivingRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestInboxRulesetReceivingResult`](../interfaces/TestInboxRulesetReceivingResult.md)\>\>
+
+Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+Test receiving with inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetReceivingRequest`](../interfaces/TestInboxRulesetReceivingRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestInboxRulesetReceivingResult`](../interfaces/TestInboxRulesetReceivingResult.md)\>\>
+
+___
+
+### testInboxRulesetSending
+
+▸ **testInboxRulesetSending**(`requestParameters`, `initOverrides?`): `Promise`<[`TestInboxRulesetSendingResult`](../interfaces/TestInboxRulesetSendingResult.md)\>
+
+Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+Test sending with inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetSendingRequest`](../interfaces/TestInboxRulesetSendingRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`TestInboxRulesetSendingResult`](../interfaces/TestInboxRulesetSendingResult.md)\>
+
+___
+
+### testInboxRulesetSendingRaw
+
+▸ **testInboxRulesetSendingRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestInboxRulesetSendingResult`](../interfaces/TestInboxRulesetSendingResult.md)\>\>
+
+Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+Test sending with inbox rulesets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`TestInboxRulesetSendingRequest`](../interfaces/TestInboxRulesetSendingRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestInboxRulesetSendingResult`](../interfaces/TestInboxRulesetSendingResult.md)\>\>
 
 ___
 

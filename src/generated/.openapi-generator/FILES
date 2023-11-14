@@ -238,6 +238,10 @@ models/TemplateDto.ts
 models/TemplatePreview.ts
 models/TemplateProjection.ts
 models/TemplateVariable.ts
+models/TestInboxRulesetReceivingOptions.ts
+models/TestInboxRulesetReceivingResult.ts
+models/TestInboxRulesetSendingOptions.ts
+models/TestInboxRulesetSendingResult.ts
 models/TestNewInboxForwarderOptions.ts
 models/TestNewInboxRulesetOptions.ts
 models/TestPhoneNumberOptions.ts

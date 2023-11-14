@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxRulesetOptions, InboxRulesetDto, InboxRulesetTestOptions, InboxRulesetTestResult, PageInboxRulesetDto, TestNewInboxRulesetOptions } from '../models';
+import { CreateInboxRulesetOptions, InboxRulesetDto, InboxRulesetTestOptions, InboxRulesetTestResult, PageInboxRulesetDto, TestInboxRulesetReceivingOptions, TestInboxRulesetReceivingResult, TestInboxRulesetSendingOptions, TestInboxRulesetSendingResult, TestNewInboxRulesetOptions } from '../models';
 export interface CreateNewInboxRulesetRequest {
     createInboxRulesetOptions: CreateInboxRulesetOptions;
     inboxId?: string;
@@ -36,6 +36,12 @@ export interface GetInboxRulesetsRequest {
 export interface TestInboxRulesetRequest {
     id: string;
     inboxRulesetTestOptions: InboxRulesetTestOptions;
+}
+export interface TestInboxRulesetReceivingRequest {
+    testInboxRulesetReceivingOptions: TestInboxRulesetReceivingOptions;
+}
+export interface TestInboxRulesetSendingRequest {
+    testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
 }
 export interface TestInboxRulesetsForInboxRequest {
     inboxId: string;
@@ -108,6 +114,26 @@ export declare class InboxRulesetControllerApi extends runtime.BaseAPI {
      * Test an inbox ruleset
      */
     testInboxRuleset(requestParameters: TestInboxRulesetRequest, initOverrides?: RequestInit): Promise<InboxRulesetTestResult>;
+    /**
+     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+     * Test receiving with inbox rulesets
+     */
+    testInboxRulesetReceivingRaw(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetReceivingResult>>;
+    /**
+     * Test whether inbound emails from an email address would be blocked or allowed by inbox rulesets
+     * Test receiving with inbox rulesets
+     */
+    testInboxRulesetReceiving(requestParameters: TestInboxRulesetReceivingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetReceivingResult>;
+    /**
+     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+     * Test sending with inbox rulesets
+     */
+    testInboxRulesetSendingRaw(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<TestInboxRulesetSendingResult>>;
+    /**
+     * Test whether outbound emails to an email address would be blocked or allowed by inbox rulesets
+     * Test sending with inbox rulesets
+     */
+    testInboxRulesetSending(requestParameters: TestInboxRulesetSendingRequest, initOverrides?: RequestInit): Promise<TestInboxRulesetSendingResult>;
     /**
      * Test inbox rulesets for inbox
      * Test inbox rulesets for inbox
