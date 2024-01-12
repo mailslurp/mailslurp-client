@@ -20,6 +20,7 @@ Email
 - [body](Email.md#body)
 - [bodyExcerpt](Email.md#bodyexcerpt)
 - [bodyMD5Hash](Email.md#bodymd5hash)
+- [bodyPartContentTypes](Email.md#bodypartcontenttypes)
 - [cc](Email.md#cc)
 - [charset](Email.md#charset)
 - [createdAt](Email.md#createdat)
@@ -31,6 +32,7 @@ Email
 - [id](Email.md#id)
 - [inboxId](Email.md#inboxid)
 - [isHTML](Email.md#ishtml)
+- [isXAmpHtml](Email.md#isxamphtml)
 - [read](Email.md#read)
 - [recipients](Email.md#recipients)
 - [replyTo](Email.md#replyto)
@@ -41,6 +43,7 @@ Email
 - [to](Email.md#to)
 - [updatedAt](Email.md#updatedat)
 - [userId](Email.md#userid)
+- [xampHtml](Email.md#xamphtml)
 
 ## Properties
 
@@ -107,6 +110,18 @@ ___
 • `Optional` **bodyMD5Hash**: `string`
 
 A hash signature of the email message using MD5. Useful for comparing emails without fetching full body.
+
+**`Memberof`**
+
+Email
+
+___
+
+### bodyPartContentTypes
+
+• `Optional` **bodyPartContentTypes**: `string`[]
+
+A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
 
 **`Memberof`**
 
@@ -252,6 +267,18 @@ Email
 
 ___
 
+### isXAmpHtml
+
+• `Optional` **isXAmpHtml**: `boolean`
+
+Is the email body content type x-amp-html Amp4Email?
+
+**`Memberof`**
+
+Email
+
+___
+
 ### read
 
 • **read**: `boolean`
@@ -361,6 +388,16 @@ ___
 • **userId**: `string`
 
 ID of user that email belongs to
+
+**`Memberof`**
+
+Email
+
+___
+
+### xampHtml
+
+• `Optional` **xampHtml**: `boolean`
 
 **`Memberof`**
 

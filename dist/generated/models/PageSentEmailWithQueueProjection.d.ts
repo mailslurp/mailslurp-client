@@ -35,18 +35,6 @@ export interface PageSentEmailWithQueueProjection {
      */
     total?: number;
     /**
-     * Size of page requested
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    size: number;
-    /**
-     * Page number starting at 0
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    number: number;
-    /**
      * Number of items returned
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
@@ -65,6 +53,18 @@ export interface PageSentEmailWithQueueProjection {
      */
     totalPages: number;
     /**
+     * Size of page requested
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    size: number;
+    /**
+     * Page number starting at 0
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    number: number;
+    /**
      *
      * @type {boolean}
      * @memberof PageSentEmailWithQueueProjection
@@ -72,16 +72,16 @@ export interface PageSentEmailWithQueueProjection {
     last?: boolean;
     /**
      *
-     * @type {SortObject}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    sort?: SortObject;
-    /**
-     *
      * @type {boolean}
      * @memberof PageSentEmailWithQueueProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {SortObject}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    sort?: SortObject;
     /**
      *
      * @type {boolean}

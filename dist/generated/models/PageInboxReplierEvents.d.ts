@@ -57,6 +57,18 @@ export interface PageInboxReplierEvents {
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxReplierEvents
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxReplierEvents
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageInboxReplierEvents {
      * @memberof PageInboxReplierEvents
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxReplierEvents
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxReplierEvents
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

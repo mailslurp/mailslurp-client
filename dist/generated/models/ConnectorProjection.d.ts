@@ -20,12 +20,6 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
     inboxId: string;
     /**
      *
@@ -63,6 +57,12 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     syncInterval?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    id?: string;
 }
 /**
  * @export

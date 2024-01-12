@@ -159,11 +159,13 @@ export interface GetEmailContentMatchRequest {
 export interface GetEmailHTMLRequest {
   emailId: string;
   decode?: boolean;
+  replaceCidImages?: boolean;
 }
 
 export interface GetEmailHTMLJsonRequest {
   emailId: string;
   decode?: boolean;
+  replaceCidImages?: boolean;
 }
 
 export interface GetEmailHTMLQueryRequest {
@@ -183,6 +185,17 @@ export interface GetEmailTextLinesRequest {
   emailId: string;
   decodeHtmlEntities?: boolean;
   lineSeparator?: string;
+}
+
+export interface GetEmailsOffsetPaginatedRequest {
+  inboxId?: Array<string>;
+  page?: number;
+  size?: number;
+  sort?: GetEmailsOffsetPaginatedSortEnum;
+  unreadOnly?: boolean;
+  searchFilter?: string;
+  since?: Date;
+  before?: Date;
 }
 
 export interface GetEmailsPaginatedRequest {
@@ -1268,6 +1281,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
       queryParameters['decode'] = requestParameters.decode;
     }
 
+    if (requestParameters.replaceCidImages !== undefined) {
+      queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -1327,6 +1344,10 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.decode !== undefined) {
       queryParameters['decode'] = requestParameters.decode;
+    }
+
+    if (requestParameters.replaceCidImages !== undefined) {
+      queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1621,6 +1642,86 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<EmailTextLinesResult> {
     const response = await this.getEmailTextLinesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+   * Get all emails in all inboxes in paginated form. Email API list all.
+   */
+  async getEmailsOffsetPaginatedRaw(
+    requestParameters: GetEmailsOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.unreadOnly !== undefined) {
+      queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+    }
+
+    if (requestParameters.searchFilter !== undefined) {
+      queryParameters['searchFilter'] = requestParameters.searchFilter;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/offset-paginated`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+   * Get all emails in all inboxes in paginated form. Email API list all.
+   */
+  async getEmailsOffsetPaginated(
+    requestParameters: GetEmailsOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailProjection> {
+    const response = await this.getEmailsOffsetPaginatedRaw(
       requestParameters,
       initOverrides
     );
@@ -2367,6 +2468,14 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEmailsOffsetPaginatedSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
 /**
  * @export
  * @enum {string}

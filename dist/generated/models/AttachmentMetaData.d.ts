@@ -39,6 +39,12 @@ export interface AttachmentMetaData {
      * @memberof AttachmentMetaData
      */
     id: string;
+    /**
+     * CID of attachment
+     * @type {string}
+     * @memberof AttachmentMetaData
+     */
+    contentId?: string | null;
 }
 export declare function AttachmentMetaDataFromJSON(json: any): AttachmentMetaData;
 export declare function AttachmentMetaDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): AttachmentMetaData;

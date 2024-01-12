@@ -53,18 +53,6 @@ export interface PageSentEmailWithQueueProjection {
    */
   total?: number;
   /**
-   * Size of page requested
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  size: number;
-  /**
-   * Page number starting at 0
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  number: number;
-  /**
    * Number of items returned
    * @type {number}
    * @memberof PageSentEmailWithQueueProjection
@@ -83,6 +71,18 @@ export interface PageSentEmailWithQueueProjection {
    */
   totalPages: number;
   /**
+   * Size of page requested
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  size: number;
+  /**
+   * Page number starting at 0
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  number: number;
+  /**
    *
    * @type {boolean}
    * @memberof PageSentEmailWithQueueProjection
@@ -90,16 +90,16 @@ export interface PageSentEmailWithQueueProjection {
   last?: boolean;
   /**
    *
-   * @type {SortObject}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  sort?: SortObject;
-  /**
-   *
    * @type {boolean}
    * @memberof PageSentEmailWithQueueProjection
    */
   first?: boolean;
+  /**
+   *
+   * @type {SortObject}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  sort?: SortObject;
   /**
    *
    * @type {boolean}
@@ -127,14 +127,14 @@ export function PageSentEmailWithQueueProjectionFromJSONTyped(
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
     total: !exists(json, 'total') ? undefined : json['total'],
-    size: json['size'],
-    number: json['number'],
     numberOfElements: json['numberOfElements'],
     totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    size: json['size'],
+    number: json['number'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -152,14 +152,14 @@ export function PageSentEmailWithQueueProjectionToJSON(
     content: (value.content as Array<any>).map(SendWithQueueResultToJSON),
     pageable: PageableObjectToJSON(value.pageable),
     total: value.total,
-    size: value.size,
-    number: value.number,
     numberOfElements: value.numberOfElements,
     totalElements: value.totalElements,
     totalPages: value.totalPages,
+    size: value.size,
+    number: value.number,
     last: value.last,
-    sort: SortObjectToJSON(value.sort),
     first: value.first,
+    sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };
 }

@@ -24,24 +24,6 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  from?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
   inboxId: string;
   /**
    *
@@ -109,6 +91,24 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   textExcerpt?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  from?: string | null;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -123,9 +123,6 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
-    from: !exists(json, 'from') ? undefined : json['from'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     createdAt: new Date(json['createdAt']),
@@ -138,6 +135,9 @@ export function EmailProjectionFromJSONTyped(
     teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    id: json['id'],
+    from: !exists(json, 'from') ? undefined : json['from'],
   };
 }
 
@@ -149,9 +149,6 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    id: value.id,
-    from: value.from,
-    subject: value.subject,
     inboxId: value.inboxId,
     attachments: value.attachments,
     createdAt: value.createdAt.toISOString(),
@@ -164,5 +161,8 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
     textExcerpt: value.textExcerpt,
+    subject: value.subject,
+    id: value.id,
+    from: value.from,
   };
 }

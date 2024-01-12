@@ -57,6 +57,18 @@ export interface PageThreadProjection {
      * @type {number}
      * @memberof PageThreadProjection
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageThreadProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageThreadProjection
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageThreadProjection {
      * @memberof PageThreadProjection
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageThreadProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageThreadProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

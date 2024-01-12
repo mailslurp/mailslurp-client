@@ -57,16 +57,16 @@ export interface ConnectorSyncRequestResultExceptionCauseStackTrace {
   lineNumber?: number;
   /**
    *
-   * @type {boolean}
-   * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
-   */
-  nativeMethod?: boolean;
-  /**
-   *
    * @type {string}
    * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
    */
   className?: string;
+  /**
+   *
+   * @type {boolean}
+   * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
+   */
+  nativeMethod?: boolean;
 }
 
 export function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON(
@@ -96,10 +96,10 @@ export function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(
     methodName: !exists(json, 'methodName') ? undefined : json['methodName'],
     fileName: !exists(json, 'fileName') ? undefined : json['fileName'],
     lineNumber: !exists(json, 'lineNumber') ? undefined : json['lineNumber'],
+    className: !exists(json, 'className') ? undefined : json['className'],
     nativeMethod: !exists(json, 'nativeMethod')
       ? undefined
       : json['nativeMethod'],
-    className: !exists(json, 'className') ? undefined : json['className'],
   };
 }
 
@@ -119,7 +119,7 @@ export function ConnectorSyncRequestResultExceptionCauseStackTraceToJSON(
     methodName: value.methodName,
     fileName: value.fileName,
     lineNumber: value.lineNumber,
-    nativeMethod: value.nativeMethod,
     className: value.className,
+    nativeMethod: value.nativeMethod,
   };
 }

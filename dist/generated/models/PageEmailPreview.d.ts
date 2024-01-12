@@ -57,6 +57,18 @@ export interface PageEmailPreview {
      * @type {number}
      * @memberof PageEmailPreview
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailPreview
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEmailPreview
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageEmailPreview {
      * @memberof PageEmailPreview
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailPreview
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEmailPreview
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

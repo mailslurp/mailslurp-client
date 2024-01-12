@@ -43,6 +43,12 @@ export interface AttachmentMetaData {
    * @memberof AttachmentMetaData
    */
   id: string;
+  /**
+   * CID of attachment
+   * @type {string}
+   * @memberof AttachmentMetaData
+   */
+  contentId?: string | null;
 }
 
 export function AttachmentMetaDataFromJSON(json: any): AttachmentMetaData {
@@ -61,6 +67,7 @@ export function AttachmentMetaDataFromJSONTyped(
     contentType: json['contentType'],
     contentLength: json['contentLength'],
     id: json['id'],
+    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
   };
 }
 
@@ -78,5 +85,6 @@ export function AttachmentMetaDataToJSON(
     contentType: value.contentType,
     contentLength: value.contentLength,
     id: value.id,
+    contentId: value.contentId,
   };
 }

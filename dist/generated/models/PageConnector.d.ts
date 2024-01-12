@@ -57,6 +57,18 @@ export interface PageConnector {
      * @type {number}
      * @memberof PageConnector
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageConnector
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageConnector
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageConnector {
      * @memberof PageConnector
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageConnector
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageConnector
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -16,6 +16,7 @@
 - [favourite](CreateInboxRequest.md#favourite)
 - [inboxType](CreateInboxRequest.md#inboxtype)
 - [name](CreateInboxRequest.md#name)
+- [prefix](CreateInboxRequest.md#prefix)
 - [tags](CreateInboxRequest.md#tags)
 - [useDomainPool](CreateInboxRequest.md#usedomainpool)
 - [useShortAddress](CreateInboxRequest.md#useshortaddress)
@@ -80,6 +81,12 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### prefix
+
+• `Optional` **prefix**: `string`
 
 ___
 

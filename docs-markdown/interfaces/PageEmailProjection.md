@@ -131,7 +131,7 @@ ___
 
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +141,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

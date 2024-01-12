@@ -57,6 +57,18 @@ export interface PageBouncedEmail {
      * @type {number}
      * @memberof PageBouncedEmail
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageBouncedEmail
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageBouncedEmail
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageBouncedEmail {
      * @memberof PageBouncedEmail
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageBouncedEmail
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageBouncedEmail
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

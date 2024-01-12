@@ -17,24 +17,6 @@
 export interface UnknownMissedEmailProjection {
     /**
      *
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    from?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    subject?: string;
-    /**
-     *
      * @type {Date}
      * @memberof UnknownMissedEmailProjection
      */
@@ -45,6 +27,24 @@ export interface UnknownMissedEmailProjection {
      * @memberof UnknownMissedEmailProjection
      */
     to?: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    subject?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    from?: string;
 }
 export declare function UnknownMissedEmailProjectionFromJSON(json: any): UnknownMissedEmailProjection;
 export declare function UnknownMissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnknownMissedEmailProjection;

@@ -57,6 +57,18 @@ export interface PageInboxRulesetDto {
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageInboxRulesetDto
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageInboxRulesetDto
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageInboxRulesetDto {
      * @memberof PageInboxRulesetDto
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxRulesetDto
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageInboxRulesetDto
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

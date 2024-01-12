@@ -24,6 +24,7 @@ function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
         contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
         filename: !(0, runtime_1.exists)(json, 'filename') ? undefined : json['filename'],
         base64Contents: json['base64Contents'],
@@ -38,6 +39,7 @@ function UploadAttachmentOptionsToJSON(value) {
         return null;
     }
     return {
+        contentId: value.contentId,
         contentType: value.contentType,
         filename: value.filename,
         base64Contents: value.base64Contents,

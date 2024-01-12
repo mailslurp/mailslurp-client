@@ -23,6 +23,9 @@ import {
   BouncedRecipientDto,
   BouncedRecipientDtoFromJSON,
   BouncedRecipientDtoToJSON,
+  Complaint,
+  ComplaintFromJSON,
+  ComplaintToJSON,
   FilterBouncedRecipientsOptions,
   FilterBouncedRecipientsOptionsFromJSON,
   FilterBouncedRecipientsOptionsToJSON,
@@ -69,6 +72,10 @@ export interface GetBouncedRecipientsRequest {
   sort?: GetBouncedRecipientsSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface GetComplaintRequest {
+  id: string;
 }
 
 export interface GetComplaintsRequest {
@@ -434,6 +441,62 @@ export class BounceControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageBouncedRecipients> {
     const response = await this.getBouncedRecipientsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get complaint
+   * Get complaint
+   */
+  async getComplaintRaw(
+    requestParameters: GetComplaintRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Complaint>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getComplaint.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/bounce/complaints/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ComplaintFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get complaint
+   * Get complaint
+   */
+  async getComplaint(
+    requestParameters: GetComplaintRequest,
+    initOverrides?: RequestInit
+  ): Promise<Complaint> {
+    const response = await this.getComplaintRaw(
       requestParameters,
       initOverrides
     );

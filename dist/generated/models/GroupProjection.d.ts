@@ -17,6 +17,12 @@
 export interface GroupProjection {
     /**
      *
+     * @type {Date}
+     * @memberof GroupProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof GroupProjection
      */
@@ -27,12 +33,6 @@ export interface GroupProjection {
      * @memberof GroupProjection
      */
     id: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof GroupProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

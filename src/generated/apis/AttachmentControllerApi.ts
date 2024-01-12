@@ -70,11 +70,13 @@ export interface UploadAttachmentRequest {
 export interface UploadAttachmentBytesRequest {
   contentType?: string;
   contentType2?: string;
+  contentId?: string;
   filename?: string;
   filename2?: string;
 }
 
 export interface UploadMultipartFormRequest {
+  contentId?: string;
   contentType?: string;
   filename?: string;
   xFilename?: string;
@@ -544,6 +546,10 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
       queryParameters['contentType'] = requestParameters.contentType2;
     }
 
+    if (requestParameters.contentId !== undefined) {
+      queryParameters['contentId'] = requestParameters.contentId;
+    }
+
     if (requestParameters.filename !== undefined) {
       queryParameters['filename'] = requestParameters.filename;
     }
@@ -603,6 +609,10 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<Array<string>>> {
     const queryParameters: any = {};
+
+    if (requestParameters.contentId !== undefined) {
+      queryParameters['contentId'] = requestParameters.contentId;
+    }
 
     if (requestParameters.contentType !== undefined) {
       queryParameters['contentType'] = requestParameters.contentType;

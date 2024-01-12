@@ -24,18 +24,6 @@ export interface AliasProjection {
    * @type {string}
    * @memberof AliasProjection
    */
-  name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AliasProjection
-   */
   inboxId: string;
   /**
    *
@@ -67,6 +55,18 @@ export interface AliasProjection {
    * @memberof AliasProjection
    */
   useThreads?: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof AliasProjection
+   */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AliasProjection
+   */
+  id: string;
 }
 
 export function AliasProjectionFromJSON(json: any): AliasProjection {
@@ -81,14 +81,14 @@ export function AliasProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     inboxId: json['inboxId'],
     userId: json['userId'],
     emailAddress: json['emailAddress'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -100,13 +100,13 @@ export function AliasProjectionToJSON(value?: AliasProjection | null): any {
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     inboxId: value.inboxId,
     userId: value.userId,
     emailAddress: value.emailAddress,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     useThreads: value.useThreads,
+    name: value.name,
+    id: value.id,
   };
 }

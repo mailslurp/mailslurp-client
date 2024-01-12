@@ -20,12 +20,6 @@ export interface BounceRecipientProjection {
      * @type {string}
      * @memberof BounceRecipientProjection
      */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceRecipientProjection
-     */
     sentEmailId?: string | null;
     /**
      *
@@ -44,13 +38,19 @@ export interface BounceRecipientProjection {
      * @type {string}
      * @memberof BounceRecipientProjection
      */
+    action?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceRecipientProjection
+     */
     bounceType?: string | null;
     /**
      *
      * @type {string}
      * @memberof BounceRecipientProjection
      */
-    action?: string | null;
+    id?: string;
     /**
      *
      * @type {string}

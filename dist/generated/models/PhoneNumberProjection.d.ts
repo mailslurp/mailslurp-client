@@ -20,12 +20,6 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
     userId: string;
     /**
      *
@@ -45,6 +39,12 @@ export interface PhoneNumberProjection {
      * @memberof PhoneNumberProjection
      */
     phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    id: string;
 }
 /**
  * @export

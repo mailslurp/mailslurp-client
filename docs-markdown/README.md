@@ -80,8 +80,12 @@ MailSlurp JS
 - [GetAllConnectorSyncEventsSortEnum](enums/GetAllConnectorSyncEventsSortEnum.md)
 - [GetAllContactsSortEnum](enums/GetAllContactsSortEnum.md)
 - [GetAllGroupsSortEnum](enums/GetAllGroupsSortEnum.md)
+- [GetAllInboxForwarderEventsSortEnum](enums/GetAllInboxForwarderEventsSortEnum.md)
 - [GetAllInboxesInboxFunctionEnum](enums/GetAllInboxesInboxFunctionEnum.md)
 - [GetAllInboxesInboxTypeEnum](enums/GetAllInboxesInboxTypeEnum.md)
+- [GetAllInboxesOffsetPaginatedInboxFunctionEnum](enums/GetAllInboxesOffsetPaginatedInboxFunctionEnum.md)
+- [GetAllInboxesOffsetPaginatedInboxTypeEnum](enums/GetAllInboxesOffsetPaginatedInboxTypeEnum.md)
+- [GetAllInboxesOffsetPaginatedSortEnum](enums/GetAllInboxesOffsetPaginatedSortEnum.md)
 - [GetAllInboxesSortEnum](enums/GetAllInboxesSortEnum.md)
 - [GetAllMissedEmailsSortEnum](enums/GetAllMissedEmailsSortEnum.md)
 - [GetAllScheduledJobsSortEnum](enums/GetAllScheduledJobsSortEnum.md)
@@ -98,6 +102,7 @@ MailSlurp JS
 - [GetConnectorSyncEventsSortEnum](enums/GetConnectorSyncEventsSortEnum.md)
 - [GetConnectorsSortEnum](enums/GetConnectorsSortEnum.md)
 - [GetDeliveryStatusesByInboxIdSortEnum](enums/GetDeliveryStatusesByInboxIdSortEnum.md)
+- [GetEmailsOffsetPaginatedSortEnum](enums/GetEmailsOffsetPaginatedSortEnum.md)
 - [GetEmailsPaginatedSortEnum](enums/GetEmailsPaginatedSortEnum.md)
 - [GetEmailsSortEnum](enums/GetEmailsSortEnum.md)
 - [GetExpiredInboxesSortEnum](enums/GetExpiredInboxesSortEnum.md)
@@ -135,6 +140,7 @@ MailSlurp JS
 - [InboxDtoFunctionsAsEnum](enums/InboxDtoFunctionsAsEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
+- [InboxForwarderEventDtoStatusEnum](enums/InboxForwarderEventDtoStatusEnum.md)
 - [InboxForwarderEventProjectionStatusEnum](enums/InboxForwarderEventProjectionStatusEnum.md)
 - [InboxPreviewFunctionsAsEnum](enums/InboxPreviewFunctionsAsEnum.md)
 - [InboxPreviewInboxTypeEnum](enums/InboxPreviewInboxTypeEnum.md)
@@ -425,6 +431,8 @@ MailSlurp JS
 - [GetAllConnectorSyncEventsRequest](interfaces/GetAllConnectorSyncEventsRequest.md)
 - [GetAllContactsRequest](interfaces/GetAllContactsRequest.md)
 - [GetAllGroupsRequest](interfaces/GetAllGroupsRequest.md)
+- [GetAllInboxForwarderEventsRequest](interfaces/GetAllInboxForwarderEventsRequest.md)
+- [GetAllInboxesOffsetPaginatedRequest](interfaces/GetAllInboxesOffsetPaginatedRequest.md)
 - [GetAllInboxesRequest](interfaces/GetAllInboxesRequest.md)
 - [GetAllMissedEmailsRequest](interfaces/GetAllMissedEmailsRequest.md)
 - [GetAllScheduledJobsRequest](interfaces/GetAllScheduledJobsRequest.md)
@@ -442,6 +450,7 @@ MailSlurp JS
 - [GetBouncedEmailsRequest](interfaces/GetBouncedEmailsRequest.md)
 - [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
 - [GetBouncedRecipientsRequest](interfaces/GetBouncedRecipientsRequest.md)
+- [GetComplaintRequest](interfaces/GetComplaintRequest.md)
 - [GetComplaintsRequest](interfaces/GetComplaintsRequest.md)
 - [GetConnectorRequest](interfaces/GetConnectorRequest.md)
 - [GetConnectorSyncEventRequest](interfaces/GetConnectorSyncEventRequest.md)
@@ -462,6 +471,7 @@ MailSlurp JS
 - [GetEmailPreviewURLsRequest](interfaces/GetEmailPreviewURLsRequest.md)
 - [GetEmailRequest](interfaces/GetEmailRequest.md)
 - [GetEmailTextLinesRequest](interfaces/GetEmailTextLinesRequest.md)
+- [GetEmailsOffsetPaginatedRequest](interfaces/GetEmailsOffsetPaginatedRequest.md)
 - [GetEmailsPaginatedRequest](interfaces/GetEmailsPaginatedRequest.md)
 - [GetEmailsRequest](interfaces/GetEmailsRequest.md)
 - [GetEmergencyAddressRequest](interfaces/GetEmergencyAddressRequest.md)
@@ -469,6 +479,7 @@ MailSlurp JS
 - [GetExpiredInboxRecordRequest](interfaces/GetExpiredInboxRecordRequest.md)
 - [GetExpiredInboxesRequest](interfaces/GetExpiredInboxesRequest.md)
 - [GetExportLinkRequest](interfaces/GetExportLinkRequest.md)
+- [GetForwarderEventRequest](interfaces/GetForwarderEventRequest.md)
 - [GetGravatarUrlForEmailAddressRequest](interfaces/GetGravatarUrlForEmailAddressRequest.md)
 - [GetGroupRequest](interfaces/GetGroupRequest.md)
 - [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
@@ -478,6 +489,7 @@ MailSlurp JS
 - [GetInboxByNameRequest](interfaces/GetInboxByNameRequest.md)
 - [GetInboxEmailCountRequest](interfaces/GetInboxEmailCountRequest.md)
 - [GetInboxEmailsPaginatedRequest](interfaces/GetInboxEmailsPaginatedRequest.md)
+- [GetInboxForwarderEventRequest](interfaces/GetInboxForwarderEventRequest.md)
 - [GetInboxForwarderEventsRequest](interfaces/GetInboxForwarderEventsRequest.md)
 - [GetInboxForwarderRequest](interfaces/GetInboxForwarderRequest.md)
 - [GetInboxForwardersRequest](interfaces/GetInboxForwardersRequest.md)
@@ -549,6 +561,7 @@ MailSlurp JS
 - [InboxDto](interfaces/InboxDto.md)
 - [InboxExistsDto](interfaces/InboxExistsDto.md)
 - [InboxForwarderDto](interfaces/InboxForwarderDto.md)
+- [InboxForwarderEventDto](interfaces/InboxForwarderEventDto.md)
 - [InboxForwarderEventProjection](interfaces/InboxForwarderEventProjection.md)
 - [InboxForwarderTestOptions](interfaces/InboxForwarderTestOptions.md)
 - [InboxForwarderTestResult](interfaces/InboxForwarderTestResult.md)
@@ -642,6 +655,7 @@ MailSlurp JS
 - [ScheduledJobDto](interfaces/ScheduledJobDto.md)
 - [SendAliasEmailRequest](interfaces/SendAliasEmailRequest.md)
 - [SendEmailAndConfirmRequest](interfaces/SendEmailAndConfirmRequest.md)
+- [SendEmailBodyPart](interfaces/SendEmailBodyPart.md)
 - [SendEmailOptions](interfaces/SendEmailOptions.md)
 - [SendEmailQueryRequest](interfaces/SendEmailQueryRequest.md)
 - [SendEmailRequest](interfaces/SendEmailRequest.md)
@@ -1124,6 +1138,9 @@ MailSlurp JS
 - [InboxForwarderDtoFromJSON](README.md#inboxforwarderdtofromjson)
 - [InboxForwarderDtoFromJSONTyped](README.md#inboxforwarderdtofromjsontyped)
 - [InboxForwarderDtoToJSON](README.md#inboxforwarderdtotojson)
+- [InboxForwarderEventDtoFromJSON](README.md#inboxforwardereventdtofromjson)
+- [InboxForwarderEventDtoFromJSONTyped](README.md#inboxforwardereventdtofromjsontyped)
+- [InboxForwarderEventDtoToJSON](README.md#inboxforwardereventdtotojson)
 - [InboxForwarderEventProjectionFromJSON](README.md#inboxforwardereventprojectionfromjson)
 - [InboxForwarderEventProjectionFromJSONTyped](README.md#inboxforwardereventprojectionfromjsontyped)
 - [InboxForwarderEventProjectionToJSON](README.md#inboxforwardereventprojectiontojson)
@@ -1343,6 +1360,9 @@ MailSlurp JS
 - [ScheduledJobFromJSON](README.md#scheduledjobfromjson)
 - [ScheduledJobFromJSONTyped](README.md#scheduledjobfromjsontyped)
 - [ScheduledJobToJSON](README.md#scheduledjobtojson)
+- [SendEmailBodyPartFromJSON](README.md#sendemailbodypartfromjson)
+- [SendEmailBodyPartFromJSONTyped](README.md#sendemailbodypartfromjsontyped)
+- [SendEmailBodyPartToJSON](README.md#sendemailbodyparttojson)
 - [SendEmailOptionsFromJSON](README.md#sendemailoptionsfromjson)
 - [SendEmailOptionsFromJSONTyped](README.md#sendemailoptionsfromjsontyped)
 - [SendEmailOptionsToJSON](README.md#sendemailoptionstojson)
@@ -7369,6 +7389,55 @@ ___
 
 ___
 
+### InboxForwarderEventDtoFromJSON
+
+▸ **InboxForwarderEventDtoFromJSON**(`json`): [`InboxForwarderEventDto`](interfaces/InboxForwarderEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`InboxForwarderEventDto`](interfaces/InboxForwarderEventDto.md)
+
+___
+
+### InboxForwarderEventDtoFromJSONTyped
+
+▸ **InboxForwarderEventDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`InboxForwarderEventDto`](interfaces/InboxForwarderEventDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`InboxForwarderEventDto`](interfaces/InboxForwarderEventDto.md)
+
+___
+
+### InboxForwarderEventDtoToJSON
+
+▸ **InboxForwarderEventDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`InboxForwarderEventDto`](interfaces/InboxForwarderEventDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### InboxForwarderEventProjectionFromJSON
 
 ▸ **InboxForwarderEventProjectionFromJSON**(`json`): [`InboxForwarderEventProjection`](interfaces/InboxForwarderEventProjection.md)
@@ -10939,6 +11008,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ScheduledJob`](interfaces/ScheduledJob.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### SendEmailBodyPartFromJSON
+
+▸ **SendEmailBodyPartFromJSON**(`json`): [`SendEmailBodyPart`](interfaces/SendEmailBodyPart.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`SendEmailBodyPart`](interfaces/SendEmailBodyPart.md)
+
+___
+
+### SendEmailBodyPartFromJSONTyped
+
+▸ **SendEmailBodyPartFromJSONTyped**(`json`, `ignoreDiscriminator`): [`SendEmailBodyPart`](interfaces/SendEmailBodyPart.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`SendEmailBodyPart`](interfaces/SendEmailBodyPart.md)
+
+___
+
+### SendEmailBodyPartToJSON
+
+▸ **SendEmailBodyPartToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`SendEmailBodyPart`](interfaces/SendEmailBodyPart.md) |
 
 #### Returns
 

@@ -16,6 +16,12 @@
  */
 export interface UploadAttachmentOptions {
     /**
+     * Optional contentId for file.
+     * @type {string}
+     * @memberof UploadAttachmentOptions
+     */
+    contentId?: string | null;
+    /**
      * Optional contentType for file. For instance `application/pdf`
      * @type {string}
      * @memberof UploadAttachmentOptions

@@ -75,6 +75,18 @@ export interface PageBouncedEmail {
    * @type {number}
    * @memberof PageBouncedEmail
    */
+  numberOfElements?: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageBouncedEmail
+   */
+  first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageBouncedEmail
+   */
   size?: number;
   /**
    *
@@ -88,18 +100,6 @@ export interface PageBouncedEmail {
    * @memberof PageBouncedEmail
    */
   sort?: SortObject;
-  /**
-   *
-   * @type {number}
-   * @memberof PageBouncedEmail
-   */
-  numberOfElements?: number;
-  /**
-   *
-   * @type {boolean}
-   * @memberof PageBouncedEmail
-   */
-  first?: boolean;
   /**
    *
    * @type {boolean}
@@ -132,13 +132,13 @@ export function PageBouncedEmailFromJSONTyped(
       : json['totalElements'],
     totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
-    number: !exists(json, 'number') ? undefined : json['number'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -160,11 +160,11 @@ export function PageBouncedEmailToJSON(value?: PageBouncedEmail | null): any {
     totalElements: value.totalElements,
     totalPages: value.totalPages,
     last: value.last,
+    numberOfElements: value.numberOfElements,
+    first: value.first,
     size: value.size,
     number: value.number,
     sort: SortObjectToJSON(value.sort),
-    numberOfElements: value.numberOfElements,
-    first: value.first,
     empty: value.empty,
   };
 }

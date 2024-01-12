@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SendEmailOptionsToJSON = exports.SendEmailOptionsFromJSONTyped = exports.SendEmailOptionsFromJSON = exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -80,6 +81,12 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         ignoreEmptyRecipients: !(0, runtime_1.exists)(json, 'ignoreEmptyRecipients')
             ? undefined
             : json['ignoreEmptyRecipients'],
+        isXAmpHtml: !(0, runtime_1.exists)(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
+        bodyParts: !(0, runtime_1.exists)(json, 'bodyParts')
+            ? undefined
+            : json['bodyParts'] === null
+                ? null
+                : json['bodyParts'].map(_1.SendEmailBodyPartFromJSON),
     };
 }
 exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
@@ -113,6 +120,12 @@ function SendEmailOptionsToJSON(value) {
         filterBouncedRecipients: value.filterBouncedRecipients,
         validateEmailAddresses: value.validateEmailAddresses,
         ignoreEmptyRecipients: value.ignoreEmptyRecipients,
+        isXAmpHtml: value.isXAmpHtml,
+        bodyParts: value.bodyParts === undefined
+            ? undefined
+            : value.bodyParts === null
+                ? null
+                : value.bodyParts.map(_1.SendEmailBodyPartToJSON),
     };
 }
 exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

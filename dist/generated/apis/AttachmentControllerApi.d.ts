@@ -40,10 +40,12 @@ export interface UploadAttachmentRequest {
 export interface UploadAttachmentBytesRequest {
     contentType?: string;
     contentType2?: string;
+    contentId?: string;
     filename?: string;
     filename2?: string;
 }
 export interface UploadMultipartFormRequest {
+    contentId?: string;
     contentType?: string;
     filename?: string;
     xFilename?: string;

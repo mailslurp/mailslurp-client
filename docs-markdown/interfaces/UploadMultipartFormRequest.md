@@ -6,12 +6,19 @@
 
 ### Properties
 
+- [contentId](UploadMultipartFormRequest.md#contentid)
 - [contentType](UploadMultipartFormRequest.md#contenttype)
 - [filename](UploadMultipartFormRequest.md#filename)
 - [inlineObject](UploadMultipartFormRequest.md#inlineobject)
 - [xFilename](UploadMultipartFormRequest.md#xfilename)
 
 ## Properties
+
+### contentId
+
+• `Optional` **contentId**: `string`
+
+___
 
 ### contentType
 

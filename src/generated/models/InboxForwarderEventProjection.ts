@@ -24,25 +24,13 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  id?: string | null;
+  emailId?: string | null;
   /**
    *
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
   inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  emailId?: string | null;
   /**
    *
    * @type {string}
@@ -61,6 +49,18 @@ export interface InboxForwarderEventProjection {
    * @memberof InboxForwarderEventProjection
    */
   forwarderId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
+  message?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
+  id?: string | null;
   /**
    *
    * @type {string}
@@ -92,13 +92,13 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
   };
 }
@@ -113,13 +113,13 @@ export function InboxForwarderEventProjectionToJSON(
     return null;
   }
   return {
-    message: value.message,
-    id: value.id,
-    inboxId: value.inboxId,
     emailId: value.emailId,
+    inboxId: value.inboxId,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     forwarderId: value.forwarderId,
+    message: value.message,
+    id: value.id,
     status: value.status,
   };
 }

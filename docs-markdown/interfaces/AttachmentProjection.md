@@ -15,6 +15,7 @@ AttachmentProjection
 ### Properties
 
 - [attachmentId](AttachmentProjection.md#attachmentid)
+- [contentId](AttachmentProjection.md#contentid)
 - [contentLength](AttachmentProjection.md#contentlength)
 - [contentType](AttachmentProjection.md#contenttype)
 - [createdAt](AttachmentProjection.md#createdat)
@@ -29,6 +30,18 @@ AttachmentProjection
 • **attachmentId**: `string`
 
 Attachment ID
+
+**`Memberof`**
+
+AttachmentProjection
+
+___
+
+### contentId
+
+• `Optional` **contentId**: `string`
+
+Content ID of attachment.
 
 **`Memberof`**
 

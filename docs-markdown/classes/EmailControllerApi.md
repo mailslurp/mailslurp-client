@@ -64,6 +64,8 @@
 - [getEmailRaw](EmailControllerApi.md#getemailraw)
 - [getEmailTextLines](EmailControllerApi.md#getemailtextlines)
 - [getEmailTextLinesRaw](EmailControllerApi.md#getemailtextlinesraw)
+- [getEmailsOffsetPaginated](EmailControllerApi.md#getemailsoffsetpaginated)
+- [getEmailsOffsetPaginatedRaw](EmailControllerApi.md#getemailsoffsetpaginatedraw)
 - [getEmailsPaginated](EmailControllerApi.md#getemailspaginated)
 - [getEmailsPaginatedRaw](EmailControllerApi.md#getemailspaginatedraw)
 - [getGravatarUrlForEmailAddress](EmailControllerApi.md#getgravatarurlforemailaddress)
@@ -992,6 +994,46 @@ Parse and return text from an email, stripping HTML and decoding encoded charact
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailTextLinesResult`](../interfaces/EmailTextLinesResult.md)\>\>
+
+___
+
+### getEmailsOffsetPaginated
+
+▸ **getEmailsOffsetPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Get all emails in all inboxes in paginated form. Email API list all.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailsOffsetPaginatedRequest`](../interfaces/GetEmailsOffsetPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+___
+
+### getEmailsOffsetPaginatedRaw
+
+▸ **getEmailsOffsetPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
+
+By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+Get all emails in all inboxes in paginated form. Email API list all.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailsOffsetPaginatedRequest`](../interfaces/GetEmailsOffsetPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
 ___
 

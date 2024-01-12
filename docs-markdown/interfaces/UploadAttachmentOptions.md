@@ -15,6 +15,7 @@ UploadAttachmentOptions
 ### Properties
 
 - [base64Contents](UploadAttachmentOptions.md#base64contents)
+- [contentId](UploadAttachmentOptions.md#contentid)
 - [contentType](UploadAttachmentOptions.md#contenttype)
 - [filename](UploadAttachmentOptions.md#filename)
 
@@ -25,6 +26,18 @@ UploadAttachmentOptions
 • **base64Contents**: `string`
 
 Base64 encoded string of file contents. Typically this means reading the bytes or string content of a file and then converting that to a base64 encoded string. For examples of how to do this see https://www.mailslurp.com/guides/base64-file-uploads/
+
+**`Memberof`**
+
+UploadAttachmentOptions
+
+___
+
+### contentId
+
+• `Optional` **contentId**: `string`
+
+Optional contentId for file.
 
 **`Memberof`**
 

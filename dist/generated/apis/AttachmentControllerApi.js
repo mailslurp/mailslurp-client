@@ -519,6 +519,9 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.contentType2 !== undefined) {
                             queryParameters['contentType'] = requestParameters.contentType2;
                         }
+                        if (requestParameters.contentId !== undefined) {
+                            queryParameters['contentId'] = requestParameters.contentId;
+                        }
                         if (requestParameters.filename !== undefined) {
                             queryParameters['filename'] = requestParameters.filename;
                         }
@@ -574,6 +577,9 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.contentId !== undefined) {
+                            queryParameters['contentId'] = requestParameters.contentId;
+                        }
                         if (requestParameters.contentType !== undefined) {
                             queryParameters['contentType'] = requestParameters.contentType;
                         }

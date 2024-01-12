@@ -191,11 +191,29 @@ export interface Email {
    */
   teamAccess: boolean;
   /**
+   * Is the email body content type x-amp-html Amp4Email?
+   * @type {boolean}
+   * @memberof Email
+   */
+  isXAmpHtml?: boolean | null;
+  /**
+   * A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
+   * @type {Array<string>}
+   * @memberof Email
+   */
+  bodyPartContentTypes?: Array<string> | null;
+  /**
    *
    * @type {boolean}
    * @memberof Email
    */
   html?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof Email
+   */
+  xampHtml?: boolean;
 }
 
 export function EmailFromJSON(json: any): Email {
@@ -242,7 +260,12 @@ export function EmailFromJSONTyped(
     updatedAt: new Date(json['updatedAt']),
     read: json['read'],
     teamAccess: json['teamAccess'],
+    isXAmpHtml: !exists(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
+    bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
+      ? undefined
+      : json['bodyPartContentTypes'],
     html: !exists(json, 'html') ? undefined : json['html'],
+    xampHtml: !exists(json, 'xampHtml') ? undefined : json['xampHtml'],
   };
 }
 
@@ -280,6 +303,9 @@ export function EmailToJSON(value?: Email | null): any {
     updatedAt: value.updatedAt.toISOString(),
     read: value.read,
     teamAccess: value.teamAccess,
+    isXAmpHtml: value.isXAmpHtml,
+    bodyPartContentTypes: value.bodyPartContentTypes,
     html: value.html,
+    xampHtml: value.xampHtml,
   };
 }

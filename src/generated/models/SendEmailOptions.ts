@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  SendEmailBodyPart,
+  SendEmailBodyPartFromJSON,
+  SendEmailBodyPartFromJSONTyped,
+  SendEmailBodyPartToJSON,
+} from './';
+
 /**
  * Options for the email to be sent
  * @export
@@ -151,6 +158,18 @@ export interface SendEmailOptions {
    * @memberof SendEmailOptions
    */
   ignoreEmptyRecipients?: boolean | null;
+  /**
+   * Is content AMP4EMAIL compatible. If set will send as x-amp-html part.
+   * @type {boolean}
+   * @memberof SendEmailOptions
+   */
+  isXAmpHtml?: boolean | null;
+  /**
+   * Email body content parts for multipart mime message. Will override body.
+   * @type {Array<SendEmailBodyPart>}
+   * @memberof SendEmailOptions
+   */
+  bodyParts?: Array<SendEmailBodyPart> | null;
 }
 
 /**
@@ -220,6 +239,12 @@ export function SendEmailOptionsFromJSONTyped(
     ignoreEmptyRecipients: !exists(json, 'ignoreEmptyRecipients')
       ? undefined
       : json['ignoreEmptyRecipients'],
+    isXAmpHtml: !exists(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
+    bodyParts: !exists(json, 'bodyParts')
+      ? undefined
+      : json['bodyParts'] === null
+      ? null
+      : (json['bodyParts'] as Array<any>).map(SendEmailBodyPartFromJSON),
   };
 }
 
@@ -253,5 +278,12 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
     filterBouncedRecipients: value.filterBouncedRecipients,
     validateEmailAddresses: value.validateEmailAddresses,
     ignoreEmptyRecipients: value.ignoreEmptyRecipients,
+    isXAmpHtml: value.isXAmpHtml,
+    bodyParts:
+      value.bodyParts === undefined
+        ? undefined
+        : value.bodyParts === null
+        ? null
+        : (value.bodyParts as Array<any>).map(SendEmailBodyPartToJSON),
   };
 }

@@ -30,14 +30,14 @@ function PageSentEmailWithQueueProjectionFromJSONTyped(json, ignoreDiscriminator
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
         total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
-        size: json['size'],
-        number: json['number'],
         numberOfElements: json['numberOfElements'],
         totalElements: json['totalElements'],
         totalPages: json['totalPages'],
+        size: json['size'],
+        number: json['number'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
@@ -53,14 +53,14 @@ function PageSentEmailWithQueueProjectionToJSON(value) {
         content: value.content.map(_1.SendWithQueueResultToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
         total: value.total,
-        size: value.size,
-        number: value.number,
         numberOfElements: value.numberOfElements,
         totalElements: value.totalElements,
         totalPages: value.totalPages,
+        size: value.size,
+        number: value.number,
         last: value.last,
-        sort: (0, _1.SortObjectToJSON)(value.sort),
         first: value.first,
+        sort: (0, _1.SortObjectToJSON)(value.sort),
         empty: value.empty,
     };
 }

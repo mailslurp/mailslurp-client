@@ -37,13 +37,13 @@ function PageInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
             : json['totalElements'],
         totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
-        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
-        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
             : json['numberOfElements'],
         first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
+        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
+        sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
@@ -64,11 +64,11 @@ function PageInboxProjectionToJSON(value) {
         totalElements: value.totalElements,
         totalPages: value.totalPages,
         last: value.last,
+        numberOfElements: value.numberOfElements,
+        first: value.first,
         size: value.size,
         number: value.number,
         sort: (0, _1.SortObjectToJSON)(value.sort),
-        numberOfElements: value.numberOfElements,
-        first: value.first,
         empty: value.empty,
     };
 }

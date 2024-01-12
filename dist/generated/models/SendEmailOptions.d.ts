@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SendEmailBodyPart } from './';
 /**
  * Options for the email to be sent
  * @export
@@ -151,6 +152,18 @@ export interface SendEmailOptions {
      * @memberof SendEmailOptions
      */
     ignoreEmptyRecipients?: boolean | null;
+    /**
+     * Is content AMP4EMAIL compatible. If set will send as x-amp-html part.
+     * @type {boolean}
+     * @memberof SendEmailOptions
+     */
+    isXAmpHtml?: boolean | null;
+    /**
+     * Email body content parts for multipart mime message. Will override body.
+     * @type {Array<SendEmailBodyPart>}
+     * @memberof SendEmailOptions
+     */
+    bodyParts?: Array<SendEmailBodyPart> | null;
 }
 /**
  * @export

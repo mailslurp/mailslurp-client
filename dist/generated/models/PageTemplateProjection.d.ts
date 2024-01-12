@@ -57,6 +57,18 @@ export interface PageTemplateProjection {
      * @type {number}
      * @memberof PageTemplateProjection
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageTemplateProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageTemplateProjection
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageTemplateProjection {
      * @memberof PageTemplateProjection
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageTemplateProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageTemplateProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

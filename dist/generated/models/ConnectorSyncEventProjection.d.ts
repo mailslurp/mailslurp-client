@@ -17,18 +17,6 @@
 export interface ConnectorSyncEventProjection {
     /**
      *
-     * @type {string}
-     * @memberof ConnectorSyncEventProjection
-     */
-    message?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorSyncEventProjection
-     */
-    id?: string;
-    /**
-     *
      * @type {Date}
      * @memberof ConnectorSyncEventProjection
      */
@@ -51,6 +39,18 @@ export interface ConnectorSyncEventProjection {
      * @memberof ConnectorSyncEventProjection
      */
     syncStatus: ConnectorSyncEventProjectionSyncStatusEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSyncEventProjection
+     */
+    message?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorSyncEventProjection
+     */
+    id?: string;
 }
 /**
  * @export

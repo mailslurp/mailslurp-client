@@ -24,6 +24,7 @@ CreateInboxDto
 - [favourite](CreateInboxDto.md#favourite)
 - [inboxType](CreateInboxDto.md#inboxtype)
 - [name](CreateInboxDto.md#name)
+- [prefix](CreateInboxDto.md#prefix)
 - [tags](CreateInboxDto.md#tags)
 - [useDomainPool](CreateInboxDto.md#usedomainpool)
 - [useShortAddress](CreateInboxDto.md#useshortaddress)
@@ -144,6 +145,18 @@ ___
 • `Optional` **name**: `string`
 
 Optional name of the inbox. Displayed in the dashboard for easier search and used as the sender name when sending emails.
+
+**`Memberof`**
+
+CreateInboxDto
+
+___
+
+### prefix
+
+• `Optional` **prefix**: `string`
+
+Prefix to add before the email address for easier labelling or identification.
 
 **`Memberof`**
 

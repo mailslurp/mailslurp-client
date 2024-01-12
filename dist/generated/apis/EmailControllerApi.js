@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.EmailControllerApi = void 0;
+exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.EmailControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -977,6 +977,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.decode !== undefined) {
                             queryParameters['decode'] = requestParameters.decode;
                         }
+                        if (requestParameters.replaceCidImages !== undefined) {
+                            queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1029,6 +1032,9 @@ var EmailControllerApi = /** @class */ (function (_super) {
                         queryParameters = {};
                         if (requestParameters.decode !== undefined) {
                             queryParameters['decode'] = requestParameters.decode;
+                        }
+                        if (requestParameters.replaceCidImages !== undefined) {
+                            queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1281,6 +1287,78 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmailTextLinesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Get all emails in all inboxes in paginated form. Email API list all.
+     */
+    EmailControllerApi.prototype.getEmailsOffsetPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxId) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.unreadOnly !== undefined) {
+                            queryParameters['unreadOnly'] = requestParameters.unreadOnly;
+                        }
+                        if (requestParameters.searchFilter !== undefined) {
+                            queryParameters['searchFilter'] = requestParameters.searchFilter;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/offset-paginated",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Get all emails in all inboxes in paginated form. Email API list all.
+     */
+    EmailControllerApi.prototype.getEmailsOffsetPaginated = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailsOffsetPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1970,6 +2048,15 @@ var EmailControllerApi = /** @class */ (function (_super) {
     return EmailControllerApi;
 }(runtime.BaseAPI));
 exports.EmailControllerApi = EmailControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEmailsOffsetPaginatedSortEnum;
+(function (GetEmailsOffsetPaginatedSortEnum) {
+    GetEmailsOffsetPaginatedSortEnum["ASC"] = "ASC";
+    GetEmailsOffsetPaginatedSortEnum["DESC"] = "DESC";
+})(GetEmailsOffsetPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum || (exports.GetEmailsOffsetPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}

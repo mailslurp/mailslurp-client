@@ -20,12 +20,6 @@ export interface ContactProjection {
      * @type {string}
      * @memberof ContactProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ContactProjection
-     */
     emailAddress?: string | null;
     /**
      *
@@ -63,6 +57,12 @@ export interface ContactProjection {
      * @memberof ContactProjection
      */
     optOut?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ContactProjection
+     */
+    id: string;
     /**
      *
      * @type {string}

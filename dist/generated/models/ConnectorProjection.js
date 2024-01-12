@@ -40,7 +40,6 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         inboxId: json['inboxId'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
@@ -50,6 +49,7 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
 exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
@@ -61,7 +61,6 @@ function ConnectorProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
         inboxId: value.inboxId,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
@@ -69,6 +68,7 @@ function ConnectorProjectionToJSON(value) {
         connectorType: value.connectorType,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
+        id: value.id,
     };
 }
 exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;

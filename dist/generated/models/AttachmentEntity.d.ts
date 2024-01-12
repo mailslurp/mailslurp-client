@@ -56,6 +56,12 @@ export interface AttachmentEntity {
      * @type {string}
      * @memberof AttachmentEntity
      */
+    contentId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
     name?: string;
     /**
      *

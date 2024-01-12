@@ -60,6 +60,12 @@ export interface AttachmentEntity {
    * @type {string}
    * @memberof AttachmentEntity
    */
+  contentId?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AttachmentEntity
+   */
   name?: string;
   /**
    *
@@ -95,6 +101,7 @@ export function AttachmentEntityFromJSONTyped(
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
+    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     name: !exists(json, 'name') ? undefined : json['name'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
@@ -115,6 +122,7 @@ export function AttachmentEntityToJSON(value?: AttachmentEntity | null): any {
     userId: value.userId,
     contentType: value.contentType,
     contentLength: value.contentLength,
+    contentId: value.contentId,
     name: value.name,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),

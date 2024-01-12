@@ -57,6 +57,18 @@ export interface PageExpiredInboxRecordProjection {
      * @type {number}
      * @memberof PageExpiredInboxRecordProjection
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageExpiredInboxRecordProjection
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageExpiredInboxRecordProjection
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageExpiredInboxRecordProjection {
      * @memberof PageExpiredInboxRecordProjection
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageExpiredInboxRecordProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

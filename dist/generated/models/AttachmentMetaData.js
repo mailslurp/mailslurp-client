@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AttachmentMetaDataToJSON = exports.AttachmentMetaDataFromJSONTyped = exports.AttachmentMetaDataFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function AttachmentMetaDataFromJSON(json) {
     return AttachmentMetaDataFromJSONTyped(json, false);
 }
@@ -27,6 +28,7 @@ function AttachmentMetaDataFromJSONTyped(json, ignoreDiscriminator) {
         contentType: json['contentType'],
         contentLength: json['contentLength'],
         id: json['id'],
+        contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
     };
 }
 exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
@@ -42,6 +44,7 @@ function AttachmentMetaDataToJSON(value) {
         contentType: value.contentType,
         contentLength: value.contentLength,
         id: value.id,
+        contentId: value.contentId,
     };
 }
 exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;

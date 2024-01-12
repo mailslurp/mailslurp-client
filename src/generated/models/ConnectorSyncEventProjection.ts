@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorSyncEventProjection {
   /**
    *
-   * @type {string}
-   * @memberof ConnectorSyncEventProjection
-   */
-  message?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorSyncEventProjection
-   */
-  id?: string;
-  /**
-   *
    * @type {Date}
    * @memberof ConnectorSyncEventProjection
    */
@@ -55,6 +43,18 @@ export interface ConnectorSyncEventProjection {
    * @memberof ConnectorSyncEventProjection
    */
   syncStatus: ConnectorSyncEventProjectionSyncStatusEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncEventProjection
+   */
+  message?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorSyncEventProjection
+   */
+  id?: string;
 }
 
 /**
@@ -83,12 +83,12 @@ export function ConnectorSyncEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
     createdAt: new Date(json['createdAt']),
     connectorId: json['connectorId'],
     syncCount: json['syncCount'],
     syncStatus: json['syncStatus'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
 
@@ -102,11 +102,11 @@ export function ConnectorSyncEventProjectionToJSON(
     return null;
   }
   return {
-    message: value.message,
-    id: value.id,
     createdAt: value.createdAt.toISOString(),
     connectorId: value.connectorId,
     syncCount: value.syncCount,
     syncStatus: value.syncStatus,
+    message: value.message,
+    id: value.id,
   };
 }

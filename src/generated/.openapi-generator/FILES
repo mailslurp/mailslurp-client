@@ -146,6 +146,7 @@ models/InboxByNameResult.ts
 models/InboxDto.ts
 models/InboxExistsDto.ts
 models/InboxForwarderDto.ts
+models/InboxForwarderEventDto.ts
 models/InboxForwarderEventProjection.ts
 models/InboxForwarderTestOptions.ts
 models/InboxForwarderTestResult.ts
@@ -219,6 +220,7 @@ models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
 models/ScheduledJob.ts
 models/ScheduledJobDto.ts
+models/SendEmailBodyPart.ts
 models/SendEmailOptions.ts
 models/SendSMTPEnvelopeOptions.ts
 models/SendWithQueueResult.ts

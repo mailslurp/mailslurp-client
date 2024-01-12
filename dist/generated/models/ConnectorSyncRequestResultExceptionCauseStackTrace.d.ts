@@ -53,16 +53,16 @@ export interface ConnectorSyncRequestResultExceptionCauseStackTrace {
     lineNumber?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
-     */
-    nativeMethod?: boolean;
-    /**
-     *
      * @type {string}
      * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
      */
     className?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ConnectorSyncRequestResultExceptionCauseStackTrace
+     */
+    nativeMethod?: boolean;
 }
 export declare function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSON(json: any): ConnectorSyncRequestResultExceptionCauseStackTrace;
 export declare function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorSyncRequestResultExceptionCauseStackTrace;

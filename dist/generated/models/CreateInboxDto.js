@@ -61,6 +61,7 @@ function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         useShortAddress: !(0, runtime_1.exists)(json, 'useShortAddress')
             ? undefined
             : json['useShortAddress'],
+        prefix: !(0, runtime_1.exists)(json, 'prefix') ? undefined : json['prefix'],
     };
 }
 exports.CreateInboxDtoFromJSONTyped = CreateInboxDtoFromJSONTyped;
@@ -90,6 +91,7 @@ function CreateInboxDtoToJSON(value) {
         inboxType: value.inboxType,
         virtualInbox: value.virtualInbox,
         useShortAddress: value.useShortAddress,
+        prefix: value.prefix,
     };
 }
 exports.CreateInboxDtoToJSON = CreateInboxDtoToJSON;

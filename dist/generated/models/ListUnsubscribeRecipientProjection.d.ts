@@ -20,12 +20,6 @@ export interface ListUnsubscribeRecipientProjection {
      * @type {string}
      * @memberof ListUnsubscribeRecipientProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
     emailAddress: string;
     /**
      *
@@ -39,6 +33,12 @@ export interface ListUnsubscribeRecipientProjection {
      * @memberof ListUnsubscribeRecipientProjection
      */
     domainId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ListUnsubscribeRecipientProjection
+     */
+    id: string;
 }
 export declare function ListUnsubscribeRecipientProjectionFromJSON(json: any): ListUnsubscribeRecipientProjection;
 export declare function ListUnsubscribeRecipientProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ListUnsubscribeRecipientProjection;

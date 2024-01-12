@@ -14,12 +14,25 @@ AttachmentMetaData
 
 ### Properties
 
+- [contentId](AttachmentMetaData.md#contentid)
 - [contentLength](AttachmentMetaData.md#contentlength)
 - [contentType](AttachmentMetaData.md#contenttype)
 - [id](AttachmentMetaData.md#id)
 - [name](AttachmentMetaData.md#name)
 
 ## Properties
+
+### contentId
+
+• `Optional` **contentId**: `string`
+
+CID of attachment
+
+**`Memberof`**
+
+AttachmentMetaData
+
+___
 
 ### contentLength
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxForwarderOptions, InboxForwarderDto, InboxForwarderTestOptions, InboxForwarderTestResult, PageInboxForwarderDto, PageInboxForwarderEvents, TestNewInboxForwarderOptions } from '../models';
+import { CreateInboxForwarderOptions, InboxForwarderDto, InboxForwarderEventDto, InboxForwarderTestOptions, InboxForwarderTestResult, PageInboxForwarderDto, PageInboxForwarderEvents, TestNewInboxForwarderOptions } from '../models';
 export interface CreateNewInboxForwarderRequest {
     inboxId: string;
     createInboxForwarderOptions: CreateInboxForwarderOptions;
@@ -21,8 +21,20 @@ export interface DeleteInboxForwarderRequest {
 export interface DeleteInboxForwardersRequest {
     inboxId?: string;
 }
+export interface GetAllInboxForwarderEventsRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxForwarderEventsSortEnum;
+}
+export interface GetForwarderEventRequest {
+    eventId: string;
+}
 export interface GetInboxForwarderRequest {
     id: string;
+}
+export interface GetInboxForwarderEventRequest {
+    id: string;
+    eventId: string;
 }
 export interface GetInboxForwarderEventsRequest {
     id: string;
@@ -89,22 +101,52 @@ export declare class InboxForwarderControllerApi extends runtime.BaseAPI {
      */
     deleteInboxForwarders(requestParameters: DeleteInboxForwardersRequest, initOverrides?: RequestInit): Promise<void>;
     /**
-     * Get inbox ruleset
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    getAllInboxForwarderEventsRaw(requestParameters: GetAllInboxForwarderEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxForwarderEvents>>;
+    /**
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    getAllInboxForwarderEvents(requestParameters: GetAllInboxForwarderEventsRequest, initOverrides?: RequestInit): Promise<PageInboxForwarderEvents>;
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    getForwarderEventRaw(requestParameters: GetForwarderEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxForwarderEventDto>>;
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    getForwarderEvent(requestParameters: GetForwarderEventRequest, initOverrides?: RequestInit): Promise<InboxForwarderEventDto>;
+    /**
+     * Get inbox forwarder
      * Get an inbox forwarder
      */
     getInboxForwarderRaw(requestParameters: GetInboxForwarderRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxForwarderDto>>;
     /**
-     * Get inbox ruleset
+     * Get inbox forwarder
      * Get an inbox forwarder
      */
     getInboxForwarder(requestParameters: GetInboxForwarderRequest, initOverrides?: RequestInit): Promise<InboxForwarderDto>;
     /**
-     * Get inbox ruleset events
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    getInboxForwarderEventRaw(requestParameters: GetInboxForwarderEventRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxForwarderEventDto>>;
+    /**
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    getInboxForwarderEvent(requestParameters: GetInboxForwarderEventRequest, initOverrides?: RequestInit): Promise<InboxForwarderEventDto>;
+    /**
+     * Get inbox forwarder events
      * Get an inbox forwarder event list
      */
     getInboxForwarderEventsRaw(requestParameters: GetInboxForwarderEventsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxForwarderEvents>>;
     /**
-     * Get inbox ruleset events
+     * Get inbox forwarder events
      * Get an inbox forwarder event list
      */
     getInboxForwarderEvents(requestParameters: GetInboxForwarderEventsRequest, initOverrides?: RequestInit): Promise<PageInboxForwarderEvents>;
@@ -149,15 +191,23 @@ export declare class InboxForwarderControllerApi extends runtime.BaseAPI {
      */
     testNewInboxForwarder(requestParameters: TestNewInboxForwarderRequest, initOverrides?: RequestInit): Promise<InboxForwarderTestResult>;
     /**
-     * Update inbox ruleset
+     * Update inbox forwarder
      * Update an inbox forwarder
      */
     updateInboxForwarderRaw(requestParameters: UpdateInboxForwarderRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxForwarderDto>>;
     /**
-     * Update inbox ruleset
+     * Update inbox forwarder
      * Update an inbox forwarder
      */
     updateInboxForwarder(requestParameters: UpdateInboxForwarderRequest, initOverrides?: RequestInit): Promise<InboxForwarderDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxForwarderEventsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

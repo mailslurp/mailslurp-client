@@ -18,6 +18,7 @@ SendEmailOptions
 - [attachments](SendEmailOptions.md#attachments)
 - [bcc](SendEmailOptions.md#bcc)
 - [body](SendEmailOptions.md#body)
+- [bodyParts](SendEmailOptions.md#bodyparts)
 - [cc](SendEmailOptions.md#cc)
 - [charset](SendEmailOptions.md#charset)
 - [customHeaders](SendEmailOptions.md#customheaders)
@@ -26,6 +27,7 @@ SendEmailOptions
 - [html](SendEmailOptions.md#html)
 - [ignoreEmptyRecipients](SendEmailOptions.md#ignoreemptyrecipients)
 - [isHTML](SendEmailOptions.md#ishtml)
+- [isXAmpHtml](SendEmailOptions.md#isxamphtml)
 - [replyTo](SendEmailOptions.md#replyto)
 - [sendStrategy](SendEmailOptions.md#sendstrategy)
 - [subject](SendEmailOptions.md#subject)
@@ -80,6 +82,18 @@ ___
 • `Optional` **body**: `string`
 
 Optional contents of email. If body contains HTML then set `isHTML` to true to ensure that email clients render it correctly. You can use moustache template syntax in the email body in conjunction with `toGroup` contact variables or `templateVariables` data. If you need more templating control consider creating a template and using the `template` property instead of the body.
+
+**`Memberof`**
+
+SendEmailOptions
+
+___
+
+### bodyParts
+
+• `Optional` **bodyParts**: [`SendEmailBodyPart`](SendEmailBodyPart.md)[]
+
+Email body content parts for multipart mime message. Will override body.
 
 **`Memberof`**
 
@@ -180,6 +194,18 @@ ___
 • `Optional` **isHTML**: `boolean`
 
 Optional HTML flag. If true the `content-type` of the email will be `text/html`. Set to true when sending HTML to ensure proper rending on email clients
+
+**`Memberof`**
+
+SendEmailOptions
+
+___
+
+### isXAmpHtml
+
+• `Optional` **isXAmpHtml**: `boolean`
+
+Is content AMP4EMAIL compatible. If set will send as x-amp-html part.
 
 **`Memberof`**
 

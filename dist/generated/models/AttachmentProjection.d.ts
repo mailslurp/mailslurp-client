@@ -20,18 +20,6 @@ export interface AttachmentProjection {
      * @type {string}
      * @memberof AttachmentProjection
      */
-    name?: string | null;
-    /**
-     * Content length of attachment in bytes
-     * @type {number}
-     * @memberof AttachmentProjection
-     */
-    contentLength?: number | null;
-    /**
-     *
-     * @type {string}
-     * @memberof AttachmentProjection
-     */
     userId: string;
     /**
      * Attachment ID
@@ -51,6 +39,24 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     updatedAt: Date;
+    /**
+     * Content ID of attachment.
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    contentId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AttachmentProjection
+     */
+    name?: string | null;
+    /**
+     * Content length of attachment in bytes
+     * @type {number}
+     * @memberof AttachmentProjection
+     */
+    contentLength?: number | null;
     /**
      * Content type of attachment.
      * @type {string}

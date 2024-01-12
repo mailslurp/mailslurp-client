@@ -24,19 +24,7 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof InboxReplierEventProjection
-   */
-  recipients?: Array<string> | null;
+  emailId?: string | null;
   /**
    *
    * @type {string}
@@ -45,10 +33,10 @@ export interface InboxReplierEventProjection {
   inboxId?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
-  emailId?: string | null;
+  recipients?: Array<string> | null;
   /**
    *
    * @type {string}
@@ -73,6 +61,18 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   replierId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  message?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  id?: string | null;
   /**
    *
    * @type {string}
@@ -104,15 +104,15 @@ export function InboxReplierEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     createdAt: new Date(json['createdAt']),
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
   };
 }
@@ -127,15 +127,15 @@ export function InboxReplierEventProjectionToJSON(
     return null;
   }
   return {
-    message: value.message,
-    id: value.id,
-    recipients: value.recipients,
-    inboxId: value.inboxId,
     emailId: value.emailId,
+    inboxId: value.inboxId,
+    recipients: value.recipients,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
     sentId: value.sentId,
     replierId: value.replierId,
+    message: value.message,
+    id: value.id,
     status: value.status,
   };
 }

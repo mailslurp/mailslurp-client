@@ -20,18 +20,6 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
     inboxId?: string;
     /**
      *
@@ -57,6 +45,18 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     phoneNumberId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    id: string;
     /**
      *
      * @type {string}

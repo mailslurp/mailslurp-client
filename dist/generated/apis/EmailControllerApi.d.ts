@@ -65,10 +65,12 @@ export interface GetEmailContentMatchRequest {
 export interface GetEmailHTMLRequest {
     emailId: string;
     decode?: boolean;
+    replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLJsonRequest {
     emailId: string;
     decode?: boolean;
+    replaceCidImages?: boolean;
 }
 export interface GetEmailHTMLQueryRequest {
     emailId: string;
@@ -84,6 +86,16 @@ export interface GetEmailTextLinesRequest {
     emailId: string;
     decodeHtmlEntities?: boolean;
     lineSeparator?: string;
+}
+export interface GetEmailsOffsetPaginatedRequest {
+    inboxId?: Array<string>;
+    page?: number;
+    size?: number;
+    sort?: GetEmailsOffsetPaginatedSortEnum;
+    unreadOnly?: boolean;
+    searchFilter?: string;
+    since?: Date;
+    before?: Date;
 }
 export interface GetEmailsPaginatedRequest {
     inboxId?: Array<string>;
@@ -364,6 +376,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
      * Get all emails in all inboxes in paginated form. Email API list all.
      */
+    getEmailsOffsetPaginatedRaw(requestParameters: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    /**
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Get all emails in all inboxes in paginated form. Email API list all.
+     */
+    getEmailsOffsetPaginated(requestParameters: GetEmailsOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    /**
+     * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
+     * Get all emails in all inboxes in paginated form. Email API list all.
+     */
     getEmailsPaginatedRaw(requestParameters: GetEmailsPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
      * By default returns all emails across all inboxes sorted by ascending created at date. Responses are paginated. You can restrict results to a list of inbox IDs. You can also filter out read messages
@@ -478,6 +500,14 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Validate email HTML contents
      */
     validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<ValidationDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEmailsOffsetPaginatedSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
 }
 /**
  * @export

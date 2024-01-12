@@ -33,11 +33,11 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: json['id'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
         phoneNumber: json['phoneNumber'],
         phoneCountry: json['phoneCountry'],
+        id: json['id'],
     };
 }
 exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
@@ -49,11 +49,11 @@ function PhoneNumberProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         phoneNumber: value.phoneNumber,
         phoneCountry: value.phoneCountry,
+        id: value.id,
     };
 }
 exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;

@@ -20,18 +20,6 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AliasProjection
-     */
     inboxId: string;
     /**
      *
@@ -63,6 +51,18 @@ export interface AliasProjection {
      * @memberof AliasProjection
      */
     useThreads?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AliasProjection
+     */
+    id: string;
 }
 export declare function AliasProjectionFromJSON(json: any): AliasProjection;
 export declare function AliasProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AliasProjection;

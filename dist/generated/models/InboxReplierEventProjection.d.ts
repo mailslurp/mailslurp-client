@@ -20,19 +20,7 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    message?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    id?: string | null;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof InboxReplierEventProjection
-     */
-    recipients?: Array<string> | null;
+    emailId?: string | null;
     /**
      *
      * @type {string}
@@ -41,10 +29,10 @@ export interface InboxReplierEventProjection {
     inboxId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
-    emailId?: string | null;
+    recipients?: Array<string> | null;
     /**
      *
      * @type {string}
@@ -69,6 +57,18 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    message?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    id?: string | null;
     /**
      *
      * @type {string}

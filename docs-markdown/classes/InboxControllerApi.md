@@ -47,6 +47,8 @@
 - [flushExpired](InboxControllerApi.md#flushexpired)
 - [flushExpiredRaw](InboxControllerApi.md#flushexpiredraw)
 - [getAllInboxes](InboxControllerApi.md#getallinboxes)
+- [getAllInboxesOffsetPaginated](InboxControllerApi.md#getallinboxesoffsetpaginated)
+- [getAllInboxesOffsetPaginatedRaw](InboxControllerApi.md#getallinboxesoffsetpaginatedraw)
 - [getAllInboxesRaw](InboxControllerApi.md#getallinboxesraw)
 - [getAllScheduledJobs](InboxControllerApi.md#getallscheduledjobs)
 - [getAllScheduledJobsRaw](InboxControllerApi.md#getallscheduledjobsraw)
@@ -668,6 +670,46 @@ List All Inboxes Paginated
 #### Returns
 
 `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+___
+
+### getAllInboxesOffsetPaginated
+
+▸ **getAllInboxesOffsetPaginated**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+List All Inboxes Offset Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllInboxesOffsetPaginatedRequest`](../interfaces/GetAllInboxesOffsetPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+___
+
+### getAllInboxesOffsetPaginatedRaw
+
+▸ **getAllInboxesOffsetPaginatedRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+List All Inboxes Offset Paginated
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAllInboxesOffsetPaginatedRequest`](../interfaces/GetAllInboxesOffsetPaginatedRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
 ___
 

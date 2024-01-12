@@ -16,6 +16,7 @@
 - [favourite](CreateRandomInboxRequest.md#favourite)
 - [inboxType](CreateRandomInboxRequest.md#inboxtype)
 - [name](CreateRandomInboxRequest.md#name)
+- [prefix](CreateRandomInboxRequest.md#prefix)
 - [tags](CreateRandomInboxRequest.md#tags)
 - [useDomainPool](CreateRandomInboxRequest.md#usedomainpool)
 - [useShortAddress](CreateRandomInboxRequest.md#useshortaddress)
@@ -80,6 +81,12 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### prefix
+
+• `Optional` **prefix**: `string`
 
 ___
 

@@ -24,9 +24,6 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         inboxId: json['inboxId'],
         userId: json['userId'],
         createdAt: new Date(json['createdAt']),
@@ -35,6 +32,9 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         aliasId: json['aliasId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.ThreadProjectionFromJSONTyped = ThreadProjectionFromJSONTyped;
@@ -46,9 +46,6 @@ function ThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
-        subject: value.subject,
         inboxId: value.inboxId,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
@@ -57,6 +54,9 @@ function ThreadProjectionToJSON(value) {
         bcc: value.bcc,
         cc: value.cc,
         aliasId: value.aliasId,
+        subject: value.subject,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.ThreadProjectionToJSON = ThreadProjectionToJSON;

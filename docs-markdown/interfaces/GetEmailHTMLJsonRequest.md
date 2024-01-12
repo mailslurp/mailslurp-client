@@ -8,6 +8,7 @@
 
 - [decode](GetEmailHTMLJsonRequest.md#decode)
 - [emailId](GetEmailHTMLJsonRequest.md#emailid)
+- [replaceCidImages](GetEmailHTMLJsonRequest.md#replacecidimages)
 
 ## Properties
 
@@ -20,3 +21,9 @@ ___
 ### emailId
 
 • **emailId**: `string`
+
+___
+
+### replaceCidImages
+
+• `Optional` **replaceCidImages**: `boolean`

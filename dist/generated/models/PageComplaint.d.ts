@@ -57,6 +57,18 @@ export interface PageComplaint {
      * @type {number}
      * @memberof PageComplaint
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageComplaint
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageComplaint
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageComplaint {
      * @memberof PageComplaint
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageComplaint
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageComplaint
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -36,12 +36,12 @@ function ConnectorSyncEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         createdAt: new Date(json['createdAt']),
         connectorId: json['connectorId'],
         syncCount: json['syncCount'],
         syncStatus: json['syncStatus'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
 exports.ConnectorSyncEventProjectionFromJSONTyped = ConnectorSyncEventProjectionFromJSONTyped;
@@ -53,12 +53,12 @@ function ConnectorSyncEventProjectionToJSON(value) {
         return null;
     }
     return {
-        message: value.message,
-        id: value.id,
         createdAt: value.createdAt.toISOString(),
         connectorId: value.connectorId,
         syncCount: value.syncCount,
         syncStatus: value.syncStatus,
+        message: value.message,
+        id: value.id,
     };
 }
 exports.ConnectorSyncEventProjectionToJSON = ConnectorSyncEventProjectionToJSON;

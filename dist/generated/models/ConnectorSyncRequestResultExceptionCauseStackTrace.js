@@ -34,10 +34,10 @@ function ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped(json, i
         methodName: !(0, runtime_1.exists)(json, 'methodName') ? undefined : json['methodName'],
         fileName: !(0, runtime_1.exists)(json, 'fileName') ? undefined : json['fileName'],
         lineNumber: !(0, runtime_1.exists)(json, 'lineNumber') ? undefined : json['lineNumber'],
+        className: !(0, runtime_1.exists)(json, 'className') ? undefined : json['className'],
         nativeMethod: !(0, runtime_1.exists)(json, 'nativeMethod')
             ? undefined
             : json['nativeMethod'],
-        className: !(0, runtime_1.exists)(json, 'className') ? undefined : json['className'],
     };
 }
 exports.ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped = ConnectorSyncRequestResultExceptionCauseStackTraceFromJSONTyped;
@@ -55,8 +55,8 @@ function ConnectorSyncRequestResultExceptionCauseStackTraceToJSON(value) {
         methodName: value.methodName,
         fileName: value.fileName,
         lineNumber: value.lineNumber,
-        nativeMethod: value.nativeMethod,
         className: value.className,
+        nativeMethod: value.nativeMethod,
     };
 }
 exports.ConnectorSyncRequestResultExceptionCauseStackTraceToJSON = ConnectorSyncRequestResultExceptionCauseStackTraceToJSON;

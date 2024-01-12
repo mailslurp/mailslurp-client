@@ -24,10 +24,10 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        inboxId: json['inboxId'],
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        inboxId: json['inboxId'],
         userId: json['userId'],
         attachments: json['attachments'],
         createdAt: new Date(json['createdAt']),
@@ -47,10 +47,10 @@ function SentEmailProjectionToJSON(value) {
         return null;
     }
     return {
+        inboxId: value.inboxId,
         id: value.id,
         from: value.from,
         subject: value.subject,
-        inboxId: value.inboxId,
         userId: value.userId,
         attachments: value.attachments,
         createdAt: value.createdAt.toISOString(),

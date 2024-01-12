@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetInboxForwardersSortEnum = exports.GetInboxForwarderEventsSortEnum = exports.InboxForwarderControllerApi = void 0;
+exports.GetInboxForwardersSortEnum = exports.GetInboxForwarderEventsSortEnum = exports.GetAllInboxForwarderEventsSortEnum = exports.InboxForwarderControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -254,7 +254,116 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get inbox ruleset
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    InboxForwarderControllerApi.prototype.getAllInboxForwarderEventsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/forwarders/events",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxForwarderEventsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get all inbox forwarder events
+     * Get all inbox forwarder events
+     */
+    InboxForwarderControllerApi.prototype.getAllInboxForwarderEvents = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllInboxForwarderEventsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    InboxForwarderControllerApi.prototype.getForwarderEventRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.eventId === null ||
+                            requestParameters.eventId === undefined) {
+                            throw new runtime.RequiredError('eventId', 'Required parameter requestParameters.eventId was null or undefined when calling getForwarderEvent.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/forwarders/events/{eventId}".replace("{".concat('eventId', "}"), encodeURIComponent(String(requestParameters.eventId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get forwarder event
+     * Get a forwarder event
+     */
+    InboxForwarderControllerApi.prototype.getForwarderEvent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getForwarderEventRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get inbox forwarder
      * Get an inbox forwarder
      */
     InboxForwarderControllerApi.prototype.getInboxForwarderRaw = function (requestParameters, initOverrides) {
@@ -287,7 +396,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get inbox ruleset
+     * Get inbox forwarder
      * Get an inbox forwarder
      */
     InboxForwarderControllerApi.prototype.getInboxForwarder = function (requestParameters, initOverrides) {
@@ -305,7 +414,64 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get inbox ruleset events
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    InboxForwarderControllerApi.prototype.getInboxForwarderEventRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling getInboxForwarderEvent.');
+                        }
+                        if (requestParameters.eventId === null ||
+                            requestParameters.eventId === undefined) {
+                            throw new runtime.RequiredError('eventId', 'Required parameter requestParameters.eventId was null or undefined when calling getInboxForwarderEvent.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/forwarders/{id}/events/{eventId}"
+                                    .replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id)))
+                                    .replace("{".concat('eventId', "}"), encodeURIComponent(String(requestParameters.eventId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxForwarderEventDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get inbox forwarder event
+     * Get an inbox forwarder event
+     */
+    InboxForwarderControllerApi.prototype.getInboxForwarderEvent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getInboxForwarderEventRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get inbox forwarder events
      * Get an inbox forwarder event list
      */
     InboxForwarderControllerApi.prototype.getInboxForwarderEventsRaw = function (requestParameters, initOverrides) {
@@ -347,7 +513,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Get inbox ruleset events
+     * Get inbox forwarder events
      * Get an inbox forwarder event list
      */
     InboxForwarderControllerApi.prototype.getInboxForwarderEvents = function (requestParameters, initOverrides) {
@@ -606,7 +772,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Update inbox ruleset
+     * Update inbox forwarder
      * Update an inbox forwarder
      */
     InboxForwarderControllerApi.prototype.updateInboxForwarderRaw = function (requestParameters, initOverrides) {
@@ -645,7 +811,7 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Update inbox ruleset
+     * Update inbox forwarder
      * Update an inbox forwarder
      */
     InboxForwarderControllerApi.prototype.updateInboxForwarder = function (requestParameters, initOverrides) {
@@ -665,6 +831,15 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
     return InboxForwarderControllerApi;
 }(runtime.BaseAPI));
 exports.InboxForwarderControllerApi = InboxForwarderControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxForwarderEventsSortEnum;
+(function (GetAllInboxForwarderEventsSortEnum) {
+    GetAllInboxForwarderEventsSortEnum["ASC"] = "ASC";
+    GetAllInboxForwarderEventsSortEnum["DESC"] = "DESC";
+})(GetAllInboxForwarderEventsSortEnum = exports.GetAllInboxForwarderEventsSortEnum || (exports.GetAllInboxForwarderEventsSortEnum = {}));
 /**
  * @export
  * @enum {string}

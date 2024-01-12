@@ -26,6 +26,7 @@ export interface CreateNewEmailAddressRequest {
     useShortAddress?: boolean;
     domainName?: string;
     domainId?: string;
+    prefix?: string;
 }
 export interface CreateRandomInboxRequest {
     allowTeamAccess?: boolean;
@@ -42,6 +43,7 @@ export interface CreateRandomInboxRequest {
     useShortAddress?: boolean;
     domainName?: string;
     domainId?: string;
+    prefix?: string;
 }
 export interface DeleteEmailAddressRequest {
     inboxId: string;

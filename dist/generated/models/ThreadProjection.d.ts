@@ -16,24 +16,6 @@
  */
 export interface ThreadProjection {
     /**
-     * Name of thread
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    name?: string;
-    /**
-     * ID of email thread
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    id: string;
-    /**
-     * Thread subject
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    subject?: string;
-    /**
      * Inbox ID
      * @type {string}
      * @memberof ThreadProjection
@@ -81,6 +63,24 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     aliasId: string;
+    /**
+     * Thread subject
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    subject?: string;
+    /**
+     * Name of thread
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    name?: string;
+    /**
+     * ID of email thread
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    id: string;
 }
 export declare function ThreadProjectionFromJSON(json: any): ThreadProjection;
 export declare function ThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ThreadProjection;

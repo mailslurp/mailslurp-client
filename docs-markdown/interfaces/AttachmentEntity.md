@@ -14,6 +14,7 @@ AttachmentEntity
 
 - [attachmentId](AttachmentEntity.md#attachmentid)
 - [bucket](AttachmentEntity.md#bucket)
+- [contentId](AttachmentEntity.md#contentid)
 - [contentLength](AttachmentEntity.md#contentlength)
 - [contentType](AttachmentEntity.md#contenttype)
 - [createdAt](AttachmentEntity.md#createdat)
@@ -37,6 +38,16 @@ ___
 ### bucket
 
 • `Optional` **bucket**: `string`
+
+**`Memberof`**
+
+AttachmentEntity
+
+___
+
+### contentId
+
+• `Optional` **contentId**: `string`
 
 **`Memberof`**
 

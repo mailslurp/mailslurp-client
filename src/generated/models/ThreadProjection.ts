@@ -20,24 +20,6 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ThreadProjection {
   /**
-   * Name of thread
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  name?: string;
-  /**
-   * ID of email thread
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  id: string;
-  /**
-   * Thread subject
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  subject?: string;
-  /**
    * Inbox ID
    * @type {string}
    * @memberof ThreadProjection
@@ -85,6 +67,24 @@ export interface ThreadProjection {
    * @memberof ThreadProjection
    */
   aliasId: string;
+  /**
+   * Thread subject
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  subject?: string;
+  /**
+   * Name of thread
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  name?: string;
+  /**
+   * ID of email thread
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  id: string;
 }
 
 export function ThreadProjectionFromJSON(json: any): ThreadProjection {
@@ -99,9 +99,6 @@ export function ThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     inboxId: json['inboxId'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
@@ -110,6 +107,9 @@ export function ThreadProjectionFromJSONTyped(
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     aliasId: json['aliasId'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -121,9 +121,6 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
-    subject: value.subject,
     inboxId: value.inboxId,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
@@ -132,5 +129,8 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     bcc: value.bcc,
     cc: value.cc,
     aliasId: value.aliasId,
+    subject: value.subject,
+    name: value.name,
+    id: value.id,
   };
 }

@@ -116,6 +116,7 @@ export interface CreateInboxRequest {
   useShortAddress?: boolean;
   domainId?: string;
   domainName?: string;
+  prefix?: string;
 }
 
 export interface CreateInboxRulesetRequest {
@@ -168,6 +169,21 @@ export interface GetAllInboxesRequest {
   before?: Date;
   inboxType?: GetAllInboxesInboxTypeEnum;
   inboxFunction?: GetAllInboxesInboxFunctionEnum;
+  domainId?: string;
+}
+
+export interface GetAllInboxesOffsetPaginatedRequest {
+  page?: number;
+  size?: number;
+  sort?: GetAllInboxesOffsetPaginatedSortEnum;
+  favourite?: boolean;
+  search?: string;
+  tag?: string;
+  teamAccess?: boolean;
+  since?: Date;
+  before?: Date;
+  inboxType?: GetAllInboxesOffsetPaginatedInboxTypeEnum;
+  inboxFunction?: GetAllInboxesOffsetPaginatedInboxFunctionEnum;
   domainId?: string;
 }
 
@@ -467,6 +483,10 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.domainName !== undefined) {
       queryParameters['domainName'] = requestParameters.domainName;
+    }
+
+    if (requestParameters.prefix !== undefined) {
+      queryParameters['prefix'] = requestParameters.prefix;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1187,6 +1207,102 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageInboxProjection> {
     const response = await this.getAllInboxesRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+   * List All Inboxes Offset Paginated
+   */
+  async getAllInboxesOffsetPaginatedRaw(
+    requestParameters: GetAllInboxesOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    if (requestParameters.favourite !== undefined) {
+      queryParameters['favourite'] = requestParameters.favourite;
+    }
+
+    if (requestParameters.search !== undefined) {
+      queryParameters['search'] = requestParameters.search;
+    }
+
+    if (requestParameters.tag !== undefined) {
+      queryParameters['tag'] = requestParameters.tag;
+    }
+
+    if (requestParameters.teamAccess !== undefined) {
+      queryParameters['teamAccess'] = requestParameters.teamAccess;
+    }
+
+    if (requestParameters.since !== undefined) {
+      queryParameters['since'] = (requestParameters.since as any).toISOString();
+    }
+
+    if (requestParameters.before !== undefined) {
+      queryParameters['before'] = (
+        requestParameters.before as any
+      ).toISOString();
+    }
+
+    if (requestParameters.inboxType !== undefined) {
+      queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    if (requestParameters.inboxFunction !== undefined) {
+      queryParameters['inboxFunction'] = requestParameters.inboxFunction;
+    }
+
+    if (requestParameters.domainId !== undefined) {
+      queryParameters['domainId'] = requestParameters.domainId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/offset-paginated`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+   * List All Inboxes Offset Paginated
+   */
+  async getAllInboxesOffsetPaginated(
+    requestParameters: GetAllInboxesOffsetPaginatedRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxProjection> {
+    const response = await this.getAllInboxesOffsetPaginatedRaw(
       requestParameters,
       initOverrides
     );
@@ -3126,6 +3242,32 @@ export enum GetAllInboxesInboxTypeEnum {
  * @enum {string}
  */
 export enum GetAllInboxesInboxFunctionEnum {
+  ALIAS = 'ALIAS',
+  THREAD = 'THREAD',
+  CATCH_ALL = 'CATCH_ALL',
+  CONNECTOR = 'CONNECTOR',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxesOffsetPaginatedSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxesOffsetPaginatedInboxTypeEnum {
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
   ALIAS = 'ALIAS',
   THREAD = 'THREAD',
   CATCH_ALL = 'CATCH_ALL',

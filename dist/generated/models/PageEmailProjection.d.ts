@@ -39,19 +39,31 @@ export interface PageEmailProjection {
      * @type {number}
      * @memberof PageEmailProjection
      */
-    totalElements?: number;
+    totalElements: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailProjection
      */
-    totalPages?: number;
+    totalPages: number;
     /**
      *
      * @type {boolean}
      * @memberof PageEmailProjection
      */
     last?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageEmailProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageEmailProjection
+     */
+    first?: boolean;
     /**
      *
      * @type {number}
@@ -70,18 +82,6 @@ export interface PageEmailProjection {
      * @memberof PageEmailProjection
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailProjection
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageEmailProjection
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

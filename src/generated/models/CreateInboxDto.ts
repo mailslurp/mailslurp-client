@@ -103,6 +103,12 @@ export interface CreateInboxDto {
    * @memberof CreateInboxDto
    */
   useShortAddress?: boolean | null;
+  /**
+   * Prefix to add before the email address for easier labelling or identification.
+   * @type {string}
+   * @memberof CreateInboxDto
+   */
+  prefix?: string | null;
 }
 
 /**
@@ -154,6 +160,7 @@ export function CreateInboxDtoFromJSONTyped(
     useShortAddress: !exists(json, 'useShortAddress')
       ? undefined
       : json['useShortAddress'],
+    prefix: !exists(json, 'prefix') ? undefined : json['prefix'],
   };
 }
 
@@ -184,5 +191,6 @@ export function CreateInboxDtoToJSON(value?: CreateInboxDto | null): any {
     inboxType: value.inboxType,
     virtualInbox: value.virtualInbox,
     useShortAddress: value.useShortAddress,
+    prefix: value.prefix,
   };
 }

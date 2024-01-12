@@ -57,6 +57,18 @@ export interface PageWebhookResult {
      * @type {number}
      * @memberof PageWebhookResult
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageWebhookResult
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageWebhookResult
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageWebhookResult {
      * @memberof PageWebhookResult
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageWebhookResult
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageWebhookResult
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

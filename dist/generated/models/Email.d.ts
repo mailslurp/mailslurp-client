@@ -177,11 +177,29 @@ export interface Email {
      */
     teamAccess: boolean;
     /**
+     * Is the email body content type x-amp-html Amp4Email?
+     * @type {boolean}
+     * @memberof Email
+     */
+    isXAmpHtml?: boolean | null;
+    /**
+     * A list of detected multipart mime message body part content types such as text/plain and text/html. Can be used with email bodyPart endpoints to fetch individual body parts.
+     * @type {Array<string>}
+     * @memberof Email
+     */
+    bodyPartContentTypes?: Array<string> | null;
+    /**
      *
      * @type {boolean}
      * @memberof Email
      */
     html?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof Email
+     */
+    xampHtml?: boolean;
 }
 export declare function EmailFromJSON(json: any): Email;
 export declare function EmailFromJSONTyped(json: any, ignoreDiscriminator: boolean): Email;

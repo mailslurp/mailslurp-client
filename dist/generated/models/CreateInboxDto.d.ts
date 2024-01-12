@@ -99,6 +99,12 @@ export interface CreateInboxDto {
      * @memberof CreateInboxDto
      */
     useShortAddress?: boolean | null;
+    /**
+     * Prefix to add before the email address for easier labelling or identification.
+     * @type {string}
+     * @memberof CreateInboxDto
+     */
+    prefix?: string | null;
 }
 /**
  * @export

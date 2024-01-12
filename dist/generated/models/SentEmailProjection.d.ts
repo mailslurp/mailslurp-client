@@ -20,6 +20,12 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
     id: string;
     /**
      *
@@ -33,12 +39,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     subject?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    inboxId: string;
     /**
      *
      * @type {string}

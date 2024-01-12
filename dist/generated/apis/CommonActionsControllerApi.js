@@ -151,6 +151,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.domainId !== undefined) {
                             queryParameters['domainId'] = requestParameters.domainId;
                         }
+                        if (requestParameters.prefix !== undefined) {
+                            queryParameters['prefix'] = requestParameters.prefix;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -240,6 +243,9 @@ var CommonActionsControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.domainId !== undefined) {
                             queryParameters['domainId'] = requestParameters.domainId;
+                        }
+                        if (requestParameters.prefix !== undefined) {
+                            queryParameters['prefix'] = requestParameters.prefix;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {

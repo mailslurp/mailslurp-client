@@ -24,12 +24,6 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
-  id?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
   inboxId: string;
   /**
    *
@@ -67,6 +61,12 @@ export interface ConnectorProjection {
    * @memberof ConnectorProjection
    */
   syncInterval?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  id?: string;
 }
 
 /**
@@ -96,7 +96,6 @@ export function ConnectorProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
     inboxId: json['inboxId'],
     userId: json['userId'],
     createdAt: new Date(json['createdAt']),
@@ -106,6 +105,7 @@ export function ConnectorProjectionFromJSONTyped(
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
+    id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
 
@@ -119,7 +119,6 @@ export function ConnectorProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     inboxId: value.inboxId,
     userId: value.userId,
     createdAt: value.createdAt.toISOString(),
@@ -127,5 +126,6 @@ export function ConnectorProjectionToJSON(
     connectorType: value.connectorType,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
+    id: value.id,
   };
 }

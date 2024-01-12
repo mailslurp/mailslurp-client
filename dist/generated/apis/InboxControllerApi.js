@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
+exports.ListInboxTrackingPixelsSortEnum = exports.ListInboxRulesetsSortEnum = exports.GetScheduledJobsByInboxIdSortEnum = exports.GetOrganizationInboxesSortEnum = exports.GetInboxesSortEnum = exports.GetInboxSentEmailsSortEnum = exports.GetInboxEmailsPaginatedSortEnum = exports.GetEmailsSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum = exports.GetAllScheduledJobsSortEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxTypeEnum = exports.GetAllInboxesSortEnum = exports.CreateInboxInboxTypeEnum = exports.InboxControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -202,6 +202,9 @@ var InboxControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.domainName !== undefined) {
                             queryParameters['domainName'] = requestParameters.domainName;
+                        }
+                        if (requestParameters.prefix !== undefined) {
+                            queryParameters['prefix'] = requestParameters.prefix;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -875,6 +878,90 @@ var InboxControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAllInboxesRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    InboxControllerApi.prototype.getAllInboxesOffsetPaginatedRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        if (requestParameters.favourite !== undefined) {
+                            queryParameters['favourite'] = requestParameters.favourite;
+                        }
+                        if (requestParameters.search !== undefined) {
+                            queryParameters['search'] = requestParameters.search;
+                        }
+                        if (requestParameters.tag !== undefined) {
+                            queryParameters['tag'] = requestParameters.tag;
+                        }
+                        if (requestParameters.teamAccess !== undefined) {
+                            queryParameters['teamAccess'] = requestParameters.teamAccess;
+                        }
+                        if (requestParameters.since !== undefined) {
+                            queryParameters['since'] = requestParameters.since.toISOString();
+                        }
+                        if (requestParameters.before !== undefined) {
+                            queryParameters['before'] = requestParameters.before.toISOString();
+                        }
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        if (requestParameters.inboxFunction !== undefined) {
+                            queryParameters['inboxFunction'] = requestParameters.inboxFunction;
+                        }
+                        if (requestParameters.domainId !== undefined) {
+                            queryParameters['domainId'] = requestParameters.domainId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/offset-paginated",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageInboxProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    InboxControllerApi.prototype.getAllInboxesOffsetPaginated = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAllInboxesOffsetPaginatedRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2585,6 +2672,35 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
 })(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxesOffsetPaginatedSortEnum;
+(function (GetAllInboxesOffsetPaginatedSortEnum) {
+    GetAllInboxesOffsetPaginatedSortEnum["ASC"] = "ASC";
+    GetAllInboxesOffsetPaginatedSortEnum["DESC"] = "DESC";
+})(GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesOffsetPaginatedSortEnum || (exports.GetAllInboxesOffsetPaginatedSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxesOffsetPaginatedInboxTypeEnum;
+(function (GetAllInboxesOffsetPaginatedInboxTypeEnum) {
+    GetAllInboxesOffsetPaginatedInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    GetAllInboxesOffsetPaginatedInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum || (exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
+(function (GetAllInboxesOffsetPaginatedInboxFunctionEnum) {
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["ALIAS"] = "ALIAS";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["THREAD"] = "THREAD";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
+})(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
 /**
  * @export
  * @enum {string}

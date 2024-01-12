@@ -57,7 +57,12 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
         read: json['read'],
         teamAccess: json['teamAccess'],
+        isXAmpHtml: !(0, runtime_1.exists)(json, 'isXAmpHtml') ? undefined : json['isXAmpHtml'],
+        bodyPartContentTypes: !(0, runtime_1.exists)(json, 'bodyPartContentTypes')
+            ? undefined
+            : json['bodyPartContentTypes'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
+        xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
     };
 }
 exports.EmailFromJSONTyped = EmailFromJSONTyped;
@@ -95,7 +100,10 @@ function EmailToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
         read: value.read,
         teamAccess: value.teamAccess,
+        isXAmpHtml: value.isXAmpHtml,
+        bodyPartContentTypes: value.bodyPartContentTypes,
         html: value.html,
+        xampHtml: value.xampHtml,
     };
 }
 exports.EmailToJSON = EmailToJSON;

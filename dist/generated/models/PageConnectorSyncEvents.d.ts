@@ -57,6 +57,18 @@ export interface PageConnectorSyncEvents {
      * @type {number}
      * @memberof PageConnectorSyncEvents
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageConnectorSyncEvents
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageConnectorSyncEvents
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageConnectorSyncEvents {
      * @memberof PageConnectorSyncEvents
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageConnectorSyncEvents
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageConnectorSyncEvents
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
+import { AccountBounceBlockDto, BouncedEmailDto, BouncedRecipientDto, Complaint, FilterBouncedRecipientsOptions, FilterBouncedRecipientsResult, PageBouncedEmail, PageBouncedRecipients, PageComplaint, PageListUnsubscribeRecipients } from '../models';
 export interface FilterBouncedRecipientRequest {
     filterBouncedRecipientsOptions: FilterBouncedRecipientsOptions;
 }
@@ -33,6 +33,9 @@ export interface GetBouncedRecipientsRequest {
     sort?: GetBouncedRecipientsSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface GetComplaintRequest {
+    id: string;
 }
 export interface GetComplaintsRequest {
     page?: number;
@@ -111,6 +114,16 @@ export declare class BounceControllerApi extends runtime.BaseAPI {
      * Get paginated list of bounced recipients.
      */
     getBouncedRecipients(requestParameters: GetBouncedRecipientsRequest, initOverrides?: RequestInit): Promise<PageBouncedRecipients>;
+    /**
+     * Get complaint
+     * Get complaint
+     */
+    getComplaintRaw(requestParameters: GetComplaintRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Complaint>>;
+    /**
+     * Get complaint
+     * Get complaint
+     */
+    getComplaint(requestParameters: GetComplaintRequest, initOverrides?: RequestInit): Promise<Complaint>;
     /**
      * SMTP complaints made against your account
      * Get paginated list of complaints.

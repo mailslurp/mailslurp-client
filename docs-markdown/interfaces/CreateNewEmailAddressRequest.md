@@ -16,6 +16,7 @@
 - [favourite](CreateNewEmailAddressRequest.md#favourite)
 - [inboxType](CreateNewEmailAddressRequest.md#inboxtype)
 - [name](CreateNewEmailAddressRequest.md#name)
+- [prefix](CreateNewEmailAddressRequest.md#prefix)
 - [tags](CreateNewEmailAddressRequest.md#tags)
 - [useDomainPool](CreateNewEmailAddressRequest.md#usedomainpool)
 - [useShortAddress](CreateNewEmailAddressRequest.md#useshortaddress)
@@ -80,6 +81,12 @@ ___
 ### name
 
 • `Optional` **name**: `string`
+
+___
+
+### prefix
+
+• `Optional` **prefix**: `string`
 
 ___
 

@@ -33,15 +33,15 @@ function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
         createdAt: new Date(json['createdAt']),
         sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
         replierId: !(0, runtime_1.exists)(json, 'replierId') ? undefined : json['replierId'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
     };
 }
@@ -54,15 +54,15 @@ function InboxReplierEventProjectionToJSON(value) {
         return null;
     }
     return {
-        message: value.message,
-        id: value.id,
-        recipients: value.recipients,
-        inboxId: value.inboxId,
         emailId: value.emailId,
+        inboxId: value.inboxId,
+        recipients: value.recipients,
         userId: value.userId,
         createdAt: value.createdAt.toISOString(),
         sentId: value.sentId,
         replierId: value.replierId,
+        message: value.message,
+        id: value.id,
         status: value.status,
     };
 }

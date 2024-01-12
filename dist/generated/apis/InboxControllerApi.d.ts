@@ -29,6 +29,7 @@ export interface CreateInboxRequest {
     useShortAddress?: boolean;
     domainId?: string;
     domainName?: string;
+    prefix?: string;
 }
 export interface CreateInboxRulesetRequest {
     inboxId: string;
@@ -71,6 +72,20 @@ export interface GetAllInboxesRequest {
     before?: Date;
     inboxType?: GetAllInboxesInboxTypeEnum;
     inboxFunction?: GetAllInboxesInboxFunctionEnum;
+    domainId?: string;
+}
+export interface GetAllInboxesOffsetPaginatedRequest {
+    page?: number;
+    size?: number;
+    sort?: GetAllInboxesOffsetPaginatedSortEnum;
+    favourite?: boolean;
+    search?: string;
+    tag?: string;
+    teamAccess?: boolean;
+    since?: Date;
+    before?: Date;
+    inboxType?: GetAllInboxesOffsetPaginatedInboxTypeEnum;
+    inboxFunction?: GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     domainId?: string;
 }
 export interface GetAllScheduledJobsRequest {
@@ -357,6 +372,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List All Inboxes Paginated
      */
     getAllInboxes(requestParameters: GetAllInboxesRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    getAllInboxesOffsetPaginatedRaw(requestParameters: GetAllInboxesOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxProjection>>;
+    /**
+     * List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * List All Inboxes Offset Paginated
+     */
+    getAllInboxesOffsetPaginated(requestParameters: GetAllInboxesOffsetPaginatedRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
     /**
      * Schedule sending of emails using scheduled jobs. These can be inbox or account level.
      * Get all scheduled email sending jobs for account
@@ -659,6 +684,32 @@ export declare enum GetAllInboxesInboxTypeEnum {
  * @enum {string}
  */
 export declare enum GetAllInboxesInboxFunctionEnum {
+    ALIAS = "ALIAS",
+    THREAD = "THREAD",
+    CATCH_ALL = "CATCH_ALL",
+    CONNECTOR = "CONNECTOR"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxesOffsetPaginatedSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxesOffsetPaginatedInboxTypeEnum {
+    HTTP_INBOX = "HTTP_INBOX",
+    SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     ALIAS = "ALIAS",
     THREAD = "THREAD",
     CATCH_ALL = "CATCH_ALL",

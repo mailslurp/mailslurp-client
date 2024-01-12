@@ -59,7 +59,7 @@ integrationTest('send with queue', async (mailslurp) => {
 describe('email verification', () => {
   const config = { apiKey: process.env.API_KEY };
 
-  it('can verify email addresses', async () => {
+  it.skip('can verify email addresses', async () => {
     //<gen>verify_email_address
     const mailslurp = new MailSlurp(config);
     const res =

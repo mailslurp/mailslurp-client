@@ -24,6 +24,12 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
+  inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
   id: string;
   /**
    *
@@ -37,12 +43,6 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   subject?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  inboxId: string;
   /**
    *
    * @type {string}
@@ -105,10 +105,10 @@ export function SentEmailProjectionFromJSONTyped(
     return json;
   }
   return {
+    inboxId: json['inboxId'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
     userId: json['userId'],
     attachments: json['attachments'],
     createdAt: new Date(json['createdAt']),
@@ -130,10 +130,10 @@ export function SentEmailProjectionToJSON(
     return null;
   }
   return {
+    inboxId: value.inboxId,
     id: value.id,
     from: value.from,
     subject: value.subject,
-    inboxId: value.inboxId,
     userId: value.userId,
     attachments: value.attachments,
     createdAt: value.createdAt.toISOString(),

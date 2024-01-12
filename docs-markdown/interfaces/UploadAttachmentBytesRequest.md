@@ -6,12 +6,19 @@
 
 ### Properties
 
+- [contentId](UploadAttachmentBytesRequest.md#contentid)
 - [contentType](UploadAttachmentBytesRequest.md#contenttype)
 - [contentType2](UploadAttachmentBytesRequest.md#contenttype2)
 - [filename](UploadAttachmentBytesRequest.md#filename)
 - [filename2](UploadAttachmentBytesRequest.md#filename2)
 
 ## Properties
+
+### contentId
+
+• `Optional` **contentId**: `string`
+
+___
 
 ### contentType
 

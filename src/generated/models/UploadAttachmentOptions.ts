@@ -20,6 +20,12 @@ import { exists, mapValues } from '../runtime';
  */
 export interface UploadAttachmentOptions {
   /**
+   * Optional contentId for file.
+   * @type {string}
+   * @memberof UploadAttachmentOptions
+   */
+  contentId?: string | null;
+  /**
    * Optional contentType for file. For instance `application/pdf`
    * @type {string}
    * @memberof UploadAttachmentOptions
@@ -53,6 +59,7 @@ export function UploadAttachmentOptionsFromJSONTyped(
     return json;
   }
   return {
+    contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     filename: !exists(json, 'filename') ? undefined : json['filename'],
     base64Contents: json['base64Contents'],
@@ -69,6 +76,7 @@ export function UploadAttachmentOptionsToJSON(
     return null;
   }
   return {
+    contentId: value.contentId,
     contentType: value.contentType,
     filename: value.filename,
     base64Contents: value.base64Contents,

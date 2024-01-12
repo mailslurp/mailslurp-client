@@ -20,24 +20,6 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    from?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
     inboxId: string;
     /**
      *
@@ -105,6 +87,24 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     textExcerpt?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    from?: string | null;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

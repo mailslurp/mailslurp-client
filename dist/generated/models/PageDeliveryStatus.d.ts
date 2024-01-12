@@ -57,6 +57,18 @@ export interface PageDeliveryStatus {
      * @type {number}
      * @memberof PageDeliveryStatus
      */
+    numberOfElements?: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageDeliveryStatus
+     */
+    first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageDeliveryStatus
+     */
     size?: number;
     /**
      *
@@ -70,18 +82,6 @@ export interface PageDeliveryStatus {
      * @memberof PageDeliveryStatus
      */
     sort?: SortObject;
-    /**
-     *
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
-    numberOfElements?: number;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PageDeliveryStatus
-     */
-    first?: boolean;
     /**
      *
      * @type {boolean}
