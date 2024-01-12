@@ -6,9 +6,9 @@ Create real email addresses on demand. Send and receive emails and attachments f
 
 MailSlurp is free for personal use but requires an [API KEY](https://app.mailslurp.com). Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading. 
 
-<br/>
+## Tutorial
 
-![email testing](https://www.mailslurp.com/assets/slurpie-vibrant.png)
+[![NodeJS mailslurp tutorial](https://www.mailslurp.com/video-thumbnails/node-mailslurp-still.jpg)](https://youtu.be/V3kmUe9eeic)
 
 ## Quick start
 Install with npm `npm install --save mailslurp-client` or `yarn add mailslurp-client`
