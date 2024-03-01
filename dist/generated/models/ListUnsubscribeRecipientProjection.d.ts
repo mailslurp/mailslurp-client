@@ -23,16 +23,16 @@ export interface ListUnsubscribeRecipientProjection {
     emailAddress: string;
     /**
      *
-     * @type {Date}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ListUnsubscribeRecipientProjection
      */
     domainId?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof ListUnsubscribeRecipientProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

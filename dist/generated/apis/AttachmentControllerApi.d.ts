@@ -33,6 +33,7 @@ export interface GetAttachmentsRequest {
     fileNameFilter?: string;
     since?: Date;
     before?: Date;
+    inboxId?: string;
 }
 export interface UploadAttachmentRequest {
     uploadAttachmentOptions: UploadAttachmentOptions;

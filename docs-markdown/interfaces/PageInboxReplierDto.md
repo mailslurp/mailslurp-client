@@ -23,7 +23,6 @@ PageInboxReplierDto
 - [pageable](PageInboxReplierDto.md#pageable)
 - [size](PageInboxReplierDto.md#size)
 - [sort](PageInboxReplierDto.md#sort)
-- [total](PageInboxReplierDto.md#total)
 - [totalElements](PageInboxReplierDto.md#totalelements)
 - [totalPages](PageInboxReplierDto.md#totalpages)
 
@@ -119,19 +118,9 @@ PageInboxReplierDto
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageInboxReplierDto
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

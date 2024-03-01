@@ -24,8 +24,8 @@ function UnknownMissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
         to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
+        createdAt: new Date(json['createdAt']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
@@ -40,8 +40,8 @@ function UnknownMissedEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
         to: value.to,
+        createdAt: value.createdAt.toISOString(),
         subject: value.subject,
         id: value.id,
         from: value.from,

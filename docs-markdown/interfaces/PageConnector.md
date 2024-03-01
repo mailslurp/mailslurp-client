@@ -23,7 +23,6 @@ PageConnector
 - [pageable](PageConnector.md#pageable)
 - [size](PageConnector.md#size)
 - [sort](PageConnector.md#sort)
-- [total](PageConnector.md#total)
 - [totalElements](PageConnector.md#totalelements)
 - [totalPages](PageConnector.md#totalpages)
 
@@ -119,19 +118,9 @@ PageConnector
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageConnector
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

@@ -72,6 +72,7 @@ export enum UserInfoDtoAccountStateEnum {
 export enum UserInfoDtoSubscriptionTypeEnum {
   PRO_MONTHLY = 'PRO_MONTHLY',
   STARTER = 'STARTER',
+  PRO = 'PRO',
   TEAM = 'TEAM',
   ENTERPRISE = 'ENTERPRISE',
 }

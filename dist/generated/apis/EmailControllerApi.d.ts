@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -18,6 +18,9 @@ export interface ApplyImapFlagOperationRequest {
 export interface CanSendRequest {
     inboxId: string;
     sendEmailOptions: SendEmailOptions;
+}
+export interface CheckEmailBodyRequest {
+    emailId: string;
 }
 export interface CheckEmailBodyFeatureSupportRequest {
     emailId: string;
@@ -61,6 +64,10 @@ export interface GetEmailAttachmentsRequest {
 export interface GetEmailContentMatchRequest {
     emailId: string;
     contentMatchOptions: ContentMatchOptions;
+}
+export interface GetEmailContentPartRequest {
+    emailId: string;
+    contentType: string;
 }
 export interface GetEmailHTMLRequest {
     emailId: string;
@@ -141,6 +148,9 @@ export interface ReplyToEmailRequest {
     emailId: string;
     replyToEmailOptions: ReplyToEmailOptions;
 }
+export interface SearchEmailsRequest {
+    searchEmailsOptions: SearchEmailsOptions;
+}
 export interface SendEmailSourceOptionalRequest {
     sendEmailOptions: SendEmailOptions;
     inboxId?: string;
@@ -174,6 +184,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Check if email can be sent and options are valid.
      */
     canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<CanSendEmailResults>;
+    /**
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Detect broken links, spelling, and images in email content
+     */
+    checkEmailBodyRaw(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBodyResults>>;
+    /**
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Detect broken links, spelling, and images in email content
+     */
+    checkEmailBody(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<CheckEmailBodyResults>;
     /**
      * Detect HTML and CSS features inside an email body and return a report of email client support across different platforms and versions.
      * Show which mail clients support the HTML and CSS features used in an email body.
@@ -304,6 +324,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Get email content regex pattern match results. Runs regex against email body and returns match groups.
      */
     getEmailContentMatch(requestParameters: GetEmailContentMatchRequest, initOverrides?: RequestInit): Promise<EmailContentMatchResult>;
+    /**
+     * Get email body content parts from a multipart email message for a given content type
+     * Get email content part by content type
+     */
+    getEmailContentPartRaw(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailContentPartResult>>;
+    /**
+     * Get email body content parts from a multipart email message for a given content type
+     * Get email content part by content type
+     */
+    getEmailContentPart(requestParameters: GetEmailContentPartRequest, initOverrides?: RequestInit): Promise<EmailContentPartResult>;
     /**
      * Get email count
      */
@@ -480,6 +510,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Reply to an email
      */
     replyToEmail(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    /**
+     * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+     * Get all emails by search criteria. Return in paginated form.
+     */
+    searchEmailsRaw(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
+    /**
+     * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+     * Get all emails by search criteria. Return in paginated form.
+     */
+    searchEmails(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
     /**
      * Alias for `InboxController.sendEmail` method - see original method for full details. Sends an email from a given inbox that you have created. If no inbox is supplied a random inbox will be created for you and used to send the email.
      * Send email

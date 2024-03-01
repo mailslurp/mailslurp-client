@@ -23,7 +23,6 @@ PageContactProjection
 - [pageable](PageContactProjection.md#pageable)
 - [size](PageContactProjection.md#size)
 - [sort](PageContactProjection.md#sort)
-- [total](PageContactProjection.md#total)
 - [totalElements](PageContactProjection.md#totalelements)
 - [totalPages](PageContactProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageContactProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageContactProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

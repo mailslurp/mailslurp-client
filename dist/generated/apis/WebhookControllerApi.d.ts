@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AbstractWebhookPayload, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
+import { AbstractWebhookPayload, CountDto, CreateWebhookOptions, JSONSchemaDto, PageWebhookProjection, PageWebhookResult, UnseenErrorCountDto, VerifyWebhookSignatureOptions, VerifyWebhookSignatureResults, WebhookBouncePayload, WebhookBounceRecipientPayload, WebhookDeliveryStatusPayload, WebhookDto, WebhookEmailOpenedPayload, WebhookEmailReadPayload, WebhookHeaders, WebhookNewAttachmentPayload, WebhookNewContactPayload, WebhookNewEmailPayload, WebhookNewSmsPayload, WebhookRedriveAllResult, WebhookRedriveResult, WebhookResultDto, WebhookTestResult } from '../models';
 export interface CreateAccountWebhookRequest {
     createWebhookOptions: CreateWebhookOptions;
 }
@@ -48,6 +48,15 @@ export interface GetAllWebhookResultsRequest {
     since?: Date;
     before?: Date;
     unseenOnly?: boolean;
+    resultType?: GetAllWebhookResultsResultTypeEnum;
+    eventName?: GetAllWebhookResultsEventNameEnum;
+    minStatusCode?: number;
+    maxStatusCode?: number;
+    inboxId?: string;
+    smsId?: string;
+    attachmentId?: string;
+    emailId?: string;
+    phoneId?: string;
 }
 export interface GetAllWebhooksRequest {
     page?: number;
@@ -103,6 +112,18 @@ export interface GetWebhookResultsRequest {
     since?: Date;
     before?: Date;
     unseenOnly?: boolean;
+    resultType?: GetWebhookResultsResultTypeEnum;
+    eventName?: GetWebhookResultsEventNameEnum;
+    minStatusCode?: number;
+    maxStatusCode?: number;
+    inboxId?: string;
+    smsId?: string;
+    attachmentId?: string;
+    emailId?: string;
+    phoneId?: string;
+}
+export interface GetWebhookResultsCountRequest {
+    webhookId: string;
 }
 export interface GetWebhooksRequest {
     inboxId: string;
@@ -356,6 +377,14 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      */
     getWebhookResults(requestParameters: GetWebhookResultsRequest, initOverrides?: RequestInit): Promise<PageWebhookResult>;
     /**
+     * Get a webhook results count for a webhook
+     */
+    getWebhookResultsCountRaw(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get a webhook results count for a webhook
+     */
+    getWebhookResultsCount(requestParameters: GetWebhookResultsCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
+    /**
      * Get count of unseen webhook results with error status
      */
     getWebhookResultsUnseenErrorCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<UnseenErrorCountDto>>;
@@ -371,6 +400,16 @@ export declare class WebhookControllerApi extends runtime.BaseAPI {
      * Get all webhooks for an Inbox
      */
     getWebhooks(requestParameters: GetWebhooksRequest, initOverrides?: RequestInit): Promise<Array<WebhookDto>>;
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    redriveAllWebhookResultsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<WebhookRedriveAllResult>>;
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    redriveAllWebhookResults(initOverrides?: RequestInit): Promise<WebhookRedriveAllResult>;
     /**
      * Allows you to resend a webhook payload that was already sent. Webhooks that fail are retried automatically for 24 hours and then put in a dead letter queue. You can retry results manually using this method.
      * Get a webhook result and try to resend the original webhook payload
@@ -452,6 +491,32 @@ export declare enum GetAllWebhookResultsSortEnum {
  * @export
  * @enum {string}
  */
+export declare enum GetAllWebhookResultsResultTypeEnum {
+    BAD_RESPONSE = "BAD_RESPONSE",
+    EXCEPTION = "EXCEPTION",
+    SUCCESS = "SUCCESS",
+    REDRIVEN = "REDRIVEN"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAllWebhookResultsEventNameEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export declare enum GetAllWebhooksSortEnum {
     ASC = "ASC",
     DESC = "DESC"
@@ -511,4 +576,30 @@ export declare enum GetTestWebhookPayloadEventNameEnum {
 export declare enum GetWebhookResultsSortEnum {
     ASC = "ASC",
     DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetWebhookResultsResultTypeEnum {
+    BAD_RESPONSE = "BAD_RESPONSE",
+    EXCEPTION = "EXCEPTION",
+    SUCCESS = "SUCCESS",
+    REDRIVEN = "REDRIVEN"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetWebhookResultsEventNameEnum {
+    EMAIL_RECEIVED = "EMAIL_RECEIVED",
+    NEW_EMAIL = "NEW_EMAIL",
+    NEW_CONTACT = "NEW_CONTACT",
+    NEW_ATTACHMENT = "NEW_ATTACHMENT",
+    EMAIL_OPENED = "EMAIL_OPENED",
+    EMAIL_READ = "EMAIL_READ",
+    DELIVERY_STATUS = "DELIVERY_STATUS",
+    BOUNCE = "BOUNCE",
+    BOUNCE_RECIPIENT = "BOUNCE_RECIPIENT",
+    NEW_SMS = "NEW_SMS"
 }

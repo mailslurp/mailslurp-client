@@ -23,7 +23,6 @@ PageConnectorSyncEvents
 - [pageable](PageConnectorSyncEvents.md#pageable)
 - [size](PageConnectorSyncEvents.md#size)
 - [sort](PageConnectorSyncEvents.md#sort)
-- [total](PageConnectorSyncEvents.md#total)
 - [totalElements](PageConnectorSyncEvents.md#totalelements)
 - [totalPages](PageConnectorSyncEvents.md#totalpages)
 
@@ -119,19 +118,9 @@ PageConnectorSyncEvents
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageConnectorSyncEvents
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

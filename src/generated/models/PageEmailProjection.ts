@@ -51,19 +51,13 @@ export interface PageEmailProjection {
    * @type {number}
    * @memberof PageEmailProjection
    */
-  total?: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageEmailProjection
    */
   totalElements: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailProjection
-   */
-  totalPages: number;
   /**
    *
    * @type {boolean}
@@ -126,9 +120,8 @@ export function PageEmailProjectionFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    total: !exists(json, 'total') ? undefined : json['total'],
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -156,9 +149,8 @@ export function PageEmailProjectionToJSON(
         ? undefined
         : (value.content as Array<any>).map(EmailProjectionToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

@@ -33,19 +33,13 @@ export interface PageTemplateProjection {
      * @type {number}
      * @memberof PageTemplateProjection
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageTemplateProjection
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageTemplateProjection
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

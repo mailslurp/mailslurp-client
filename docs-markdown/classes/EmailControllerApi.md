@@ -24,8 +24,10 @@
 - [applyImapFlagOperationRaw](EmailControllerApi.md#applyimapflagoperationraw)
 - [canSend](EmailControllerApi.md#cansend)
 - [canSendRaw](EmailControllerApi.md#cansendraw)
+- [checkEmailBody](EmailControllerApi.md#checkemailbody)
 - [checkEmailBodyFeatureSupport](EmailControllerApi.md#checkemailbodyfeaturesupport)
 - [checkEmailBodyFeatureSupportRaw](EmailControllerApi.md#checkemailbodyfeaturesupportraw)
+- [checkEmailBodyRaw](EmailControllerApi.md#checkemailbodyraw)
 - [checkEmailClientSupport](EmailControllerApi.md#checkemailclientsupport)
 - [checkEmailClientSupportRaw](EmailControllerApi.md#checkemailclientsupportraw)
 - [deleteAllEmails](EmailControllerApi.md#deleteallemails)
@@ -49,6 +51,8 @@
 - [getEmailAttachmentsRaw](EmailControllerApi.md#getemailattachmentsraw)
 - [getEmailContentMatch](EmailControllerApi.md#getemailcontentmatch)
 - [getEmailContentMatchRaw](EmailControllerApi.md#getemailcontentmatchraw)
+- [getEmailContentPart](EmailControllerApi.md#getemailcontentpart)
+- [getEmailContentPartRaw](EmailControllerApi.md#getemailcontentpartraw)
 - [getEmailCount](EmailControllerApi.md#getemailcount)
 - [getEmailCountRaw](EmailControllerApi.md#getemailcountraw)
 - [getEmailHTML](EmailControllerApi.md#getemailhtml)
@@ -87,6 +91,8 @@
 - [replyToEmail](EmailControllerApi.md#replytoemail)
 - [replyToEmailRaw](EmailControllerApi.md#replytoemailraw)
 - [request](EmailControllerApi.md#request)
+- [searchEmails](EmailControllerApi.md#searchemails)
+- [searchEmailsRaw](EmailControllerApi.md#searchemailsraw)
 - [sendEmailSourceOptional](EmailControllerApi.md#sendemailsourceoptional)
 - [sendEmailSourceOptionalRaw](EmailControllerApi.md#sendemailsourceoptionalraw)
 - [validateEmail](EmailControllerApi.md#validateemail)
@@ -203,6 +209,26 @@ Check if email can be sent and options are valid.
 
 ___
 
+### checkEmailBody
+
+▸ **checkEmailBody**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>
+
+Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+Detect broken links, spelling, and images in email content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBodyRequest`](../interfaces/CheckEmailBodyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>
+
+___
+
 ### checkEmailBodyFeatureSupport
 
 ▸ **checkEmailBodyFeatureSupport**(`requestParameters`, `initOverrides?`): `Promise`<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>
@@ -240,6 +266,26 @@ Show which mail clients support the HTML and CSS features used in an email body.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyFeatureSupportResults`](../interfaces/CheckEmailBodyFeatureSupportResults.md)\>\>
+
+___
+
+### checkEmailBodyRaw
+
+▸ **checkEmailBodyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>\>
+
+Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+Detect broken links, spelling, and images in email content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CheckEmailBodyRequest`](../interfaces/CheckEmailBodyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailBodyResults`](../interfaces/CheckEmailBodyResults.md)\>\>
 
 ___
 
@@ -698,6 +744,46 @@ Get email content regex pattern match results. Runs regex against email body and
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentMatchResult`](../interfaces/EmailContentMatchResult.md)\>\>
+
+___
+
+### getEmailContentPart
+
+▸ **getEmailContentPart**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>
+
+Get email body content parts from a multipart email message for a given content type
+Get email content part by content type
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailContentPartRequest`](../interfaces/GetEmailContentPartRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>
+
+___
+
+### getEmailContentPartRaw
+
+▸ **getEmailContentPartRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>\>
+
+Get email body content parts from a multipart email message for a given content type
+Get email content part by content type
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailContentPartRequest`](../interfaces/GetEmailContentPartRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailContentPartResult`](../interfaces/EmailContentPartResult.md)\>\>
 
 ___
 
@@ -1451,6 +1537,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### searchEmails
+
+▸ **searchEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+Get all emails by search criteria. Return in paginated form.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchEmailsRequest`](../interfaces/SearchEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
+
+___
+
+### searchEmailsRaw
+
+▸ **searchEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
+
+Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+Get all emails by search criteria. Return in paginated form.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchEmailsRequest`](../interfaces/SearchEmailsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
 ___
 

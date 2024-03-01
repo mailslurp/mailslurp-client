@@ -23,7 +23,6 @@ PageThreadProjection
 - [pageable](PageThreadProjection.md#pageable)
 - [size](PageThreadProjection.md#size)
 - [sort](PageThreadProjection.md#sort)
-- [total](PageThreadProjection.md#total)
 - [totalElements](PageThreadProjection.md#totalelements)
 - [totalPages](PageThreadProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageThreadProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageThreadProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

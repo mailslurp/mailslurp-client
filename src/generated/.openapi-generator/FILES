@@ -45,6 +45,7 @@ models/BouncedRecipientDto.ts
 models/BulkSendEmailOptions.ts
 models/CanSendEmailResults.ts
 models/CheckEmailBodyFeatureSupportResults.ts
+models/CheckEmailBodyResults.ts
 models/CheckEmailClientSupportOptions.ts
 models/CheckEmailClientSupportResults.ts
 models/CheckEmailFeaturesClientSupportOptions.ts
@@ -93,6 +94,7 @@ models/DownloadAttachmentDto.ts
 models/Email.ts
 models/EmailAnalysis.ts
 models/EmailContentMatchResult.ts
+models/EmailContentPartResult.ts
 models/EmailFeatureCategoryName.ts
 models/EmailFeatureFamilyName.ts
 models/EmailFeatureFamilyStatistics.ts
@@ -121,6 +123,9 @@ models/ExpiredInboxDto.ts
 models/ExpiredInboxRecordProjection.ts
 models/ExportLink.ts
 models/ExportOptions.ts
+models/FakeEmailDto.ts
+models/FakeEmailPreview.ts
+models/FakeEmailResult.ts
 models/FilterBouncedRecipientsOptions.ts
 models/FilterBouncedRecipientsResult.ts
 models/FlushExpiredInboxesResult.ts
@@ -139,6 +144,7 @@ models/GroupDto.ts
 models/GroupProjection.ts
 models/HTMLValidationResult.ts
 models/IPAddressResult.ts
+models/ImageIssue.ts
 models/ImapFlagOperationOptions.ts
 models/ImapSmtpAccessDetails.ts
 models/InboxByEmailAddressResult.ts
@@ -160,6 +166,7 @@ models/InboxRulesetTestOptions.ts
 models/InboxRulesetTestResult.ts
 models/InlineObject.ts
 models/JSONSchemaDto.ts
+models/LinkIssue.ts
 models/ListUnsubscribeRecipientProjection.ts
 models/LookupBimiDomainOptions.ts
 models/LookupBimiDomainResults.ts
@@ -174,6 +181,7 @@ models/MatchOptions.ts
 models/MissedEmailDto.ts
 models/MissedEmailProjection.ts
 models/NameServerRecord.ts
+models/NewFakeEmailAddressResult.ts
 models/OrganizationInboxProjection.ts
 models/PageAlias.ts
 models/PageAttachmentEntity.ts
@@ -220,6 +228,8 @@ models/ReplyToAliasEmailOptions.ts
 models/ReplyToEmailOptions.ts
 models/ScheduledJob.ts
 models/ScheduledJobDto.ts
+models/SearchEmailsOptions.ts
+models/SearchInboxesOptions.ts
 models/SendEmailBodyPart.ts
 models/SendEmailOptions.ts
 models/SendSMTPEnvelopeOptions.ts
@@ -236,6 +246,7 @@ models/SmsPreview.ts
 models/SmsProjection.ts
 models/SmsReplyOptions.ts
 models/SortObject.ts
+models/SpellingIssue.ts
 models/TemplateDto.ts
 models/TemplatePreview.ts
 models/TemplateProjection.ts
@@ -283,6 +294,7 @@ models/WebhookNewContactPayload.ts
 models/WebhookNewEmailPayload.ts
 models/WebhookNewSmsPayload.ts
 models/WebhookProjection.ts
+models/WebhookRedriveAllResult.ts
 models/WebhookRedriveResult.ts
 models/WebhookResultDto.ts
 models/WebhookTestRequest.ts

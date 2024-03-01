@@ -33,19 +33,13 @@ export interface PageConnectorSyncEvents {
      * @type {number}
      * @memberof PageConnectorSyncEvents
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageConnectorSyncEvents
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageConnectorSyncEvents
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

@@ -61,6 +61,7 @@ export interface GetAttachmentsRequest {
   fileNameFilter?: string;
   since?: Date;
   before?: Date;
+  inboxId?: string;
 }
 
 export interface UploadAttachmentRequest {
@@ -438,6 +439,10 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
       queryParameters['before'] = (
         requestParameters.before as any
       ).toISOString();
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};

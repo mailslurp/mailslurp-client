@@ -23,7 +23,6 @@ PageInboxForwarderDto
 - [pageable](PageInboxForwarderDto.md#pageable)
 - [size](PageInboxForwarderDto.md#size)
 - [sort](PageInboxForwarderDto.md#sort)
-- [total](PageInboxForwarderDto.md#total)
 - [totalElements](PageInboxForwarderDto.md#totalelements)
 - [totalPages](PageInboxForwarderDto.md#totalpages)
 
@@ -119,19 +118,9 @@ PageInboxForwarderDto
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageInboxForwarderDto
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

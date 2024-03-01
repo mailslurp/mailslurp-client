@@ -23,7 +23,6 @@ PagePhoneNumberProjection
 - [pageable](PagePhoneNumberProjection.md#pageable)
 - [size](PagePhoneNumberProjection.md#size)
 - [sort](PagePhoneNumberProjection.md#sort)
-- [total](PagePhoneNumberProjection.md#total)
 - [totalElements](PagePhoneNumberProjection.md#totalelements)
 - [totalPages](PagePhoneNumberProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PagePhoneNumberProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PagePhoneNumberProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImapSmtpAccessDetailsToJSON = exports.ImapSmtpAccessDetailsFromJSONTyped = exports.ImapSmtpAccessDetailsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function ImapSmtpAccessDetailsFromJSON(json) {
     return ImapSmtpAccessDetailsFromJSONTyped(json, false);
 }
@@ -35,6 +36,9 @@ function ImapSmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
         imapServerPort: json['imapServerPort'],
         imapUsername: json['imapUsername'],
         imapPassword: json['imapPassword'],
+        mailFromDomain: !(0, runtime_1.exists)(json, 'mailFromDomain')
+            ? undefined
+            : json['mailFromDomain'],
     };
 }
 exports.ImapSmtpAccessDetailsFromJSONTyped = ImapSmtpAccessDetailsFromJSONTyped;
@@ -58,6 +62,7 @@ function ImapSmtpAccessDetailsToJSON(value) {
         imapServerPort: value.imapServerPort,
         imapUsername: value.imapUsername,
         imapPassword: value.imapPassword,
+        mailFromDomain: value.mailFromDomain,
     };
 }
 exports.ImapSmtpAccessDetailsToJSON = ImapSmtpAccessDetailsToJSON;

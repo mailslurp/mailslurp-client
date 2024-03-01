@@ -91,6 +91,12 @@ export interface ImapSmtpAccessDetails {
    * @memberof ImapSmtpAccessDetails
    */
   imapPassword: string;
+  /**
+   * Mail from domain or SMTP HELO value
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  mailFromDomain?: string | null;
 }
 
 export function ImapSmtpAccessDetailsFromJSON(
@@ -119,6 +125,9 @@ export function ImapSmtpAccessDetailsFromJSONTyped(
     imapServerPort: json['imapServerPort'],
     imapUsername: json['imapUsername'],
     imapPassword: json['imapPassword'],
+    mailFromDomain: !exists(json, 'mailFromDomain')
+      ? undefined
+      : json['mailFromDomain'],
   };
 }
 
@@ -144,5 +153,6 @@ export function ImapSmtpAccessDetailsToJSON(
     imapServerPort: value.imapServerPort,
     imapUsername: value.imapUsername,
     imapPassword: value.imapPassword,
+    mailFromDomain: value.mailFromDomain,
   };
 }

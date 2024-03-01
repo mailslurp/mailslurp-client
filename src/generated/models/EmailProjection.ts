@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface EmailProjection {
   /**
    *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  attachments?: Array<string> | null;
+  /**
+   *
    * @type {string}
    * @memberof EmailProjection
    */
@@ -30,19 +36,13 @@ export interface EmailProjection {
    * @type {Array<string>}
    * @memberof EmailProjection
    */
-  attachments?: Array<string> | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
   to: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  domainId?: string | null;
   /**
    *
    * @type {Array<string>}
@@ -55,12 +55,6 @@ export interface EmailProjection {
    * @memberof EmailProjection
    */
   cc?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  domainId?: string | null;
   /**
    *
    * @type {boolean}
@@ -93,6 +87,12 @@ export interface EmailProjection {
   textExcerpt?: string | null;
   /**
    *
+   * @type {Date}
+   * @memberof EmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof EmailProjection
    */
@@ -123,18 +123,18 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
-    createdAt: new Date(json['createdAt']),
+    inboxId: json['inboxId'],
     to: json['to'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
-    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     read: json['read'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+    createdAt: new Date(json['createdAt']),
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
@@ -149,18 +149,18 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    inboxId: value.inboxId,
     attachments: value.attachments,
-    createdAt: value.createdAt.toISOString(),
+    inboxId: value.inboxId,
     to: value.to,
+    domainId: value.domainId,
     bcc: value.bcc,
     cc: value.cc,
-    domainId: value.domainId,
     read: value.read,
     bodyExcerpt: value.bodyExcerpt,
     teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
     textExcerpt: value.textExcerpt,
+    createdAt: value.createdAt.toISOString(),
     subject: value.subject,
     id: value.id,
     from: value.from,

@@ -33,19 +33,13 @@ export interface PagePhoneNumberProjection {
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PagePhoneNumberProjection
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PagePhoneNumberProjection
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

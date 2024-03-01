@@ -23,7 +23,6 @@ PageBouncedEmail
 - [pageable](PageBouncedEmail.md#pageable)
 - [size](PageBouncedEmail.md#size)
 - [sort](PageBouncedEmail.md#sort)
-- [total](PageBouncedEmail.md#total)
 - [totalElements](PageBouncedEmail.md#totalelements)
 - [totalPages](PageBouncedEmail.md#totalpages)
 
@@ -119,19 +118,9 @@ PageBouncedEmail
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageBouncedEmail
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

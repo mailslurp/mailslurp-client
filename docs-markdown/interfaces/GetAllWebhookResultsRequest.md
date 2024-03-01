@@ -6,15 +6,30 @@
 
 ### Properties
 
+- [attachmentId](GetAllWebhookResultsRequest.md#attachmentid)
 - [before](GetAllWebhookResultsRequest.md#before)
+- [emailId](GetAllWebhookResultsRequest.md#emailid)
+- [eventName](GetAllWebhookResultsRequest.md#eventname)
+- [inboxId](GetAllWebhookResultsRequest.md#inboxid)
+- [maxStatusCode](GetAllWebhookResultsRequest.md#maxstatuscode)
+- [minStatusCode](GetAllWebhookResultsRequest.md#minstatuscode)
 - [page](GetAllWebhookResultsRequest.md#page)
+- [phoneId](GetAllWebhookResultsRequest.md#phoneid)
+- [resultType](GetAllWebhookResultsRequest.md#resulttype)
 - [searchFilter](GetAllWebhookResultsRequest.md#searchfilter)
 - [since](GetAllWebhookResultsRequest.md#since)
 - [size](GetAllWebhookResultsRequest.md#size)
+- [smsId](GetAllWebhookResultsRequest.md#smsid)
 - [sort](GetAllWebhookResultsRequest.md#sort)
 - [unseenOnly](GetAllWebhookResultsRequest.md#unseenonly)
 
 ## Properties
+
+### attachmentId
+
+• `Optional` **attachmentId**: `string`
+
+___
 
 ### before
 
@@ -22,9 +37,51 @@
 
 ___
 
+### emailId
+
+• `Optional` **emailId**: `string`
+
+___
+
+### eventName
+
+• `Optional` **eventName**: [`GetAllWebhookResultsEventNameEnum`](../enums/GetAllWebhookResultsEventNameEnum.md)
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
+
+___
+
+### maxStatusCode
+
+• `Optional` **maxStatusCode**: `number`
+
+___
+
+### minStatusCode
+
+• `Optional` **minStatusCode**: `number`
+
+___
+
 ### page
 
 • `Optional` **page**: `number`
+
+___
+
+### phoneId
+
+• `Optional` **phoneId**: `string`
+
+___
+
+### resultType
+
+• `Optional` **resultType**: [`GetAllWebhookResultsResultTypeEnum`](../enums/GetAllWebhookResultsResultTypeEnum.md)
 
 ___
 
@@ -43,6 +100,12 @@ ___
 ### size
 
 • `Optional` **size**: `number`
+
+___
+
+### smsId
+
+• `Optional` **smsId**: `string`
 
 ___
 

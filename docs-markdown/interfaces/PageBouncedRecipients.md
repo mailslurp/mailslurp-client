@@ -23,7 +23,6 @@ PageBouncedRecipients
 - [pageable](PageBouncedRecipients.md#pageable)
 - [size](PageBouncedRecipients.md#size)
 - [sort](PageBouncedRecipients.md#sort)
-- [total](PageBouncedRecipients.md#total)
 - [totalElements](PageBouncedRecipients.md#totalelements)
 - [totalPages](PageBouncedRecipients.md#totalpages)
 
@@ -119,19 +118,9 @@ PageBouncedRecipients
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageBouncedRecipients
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

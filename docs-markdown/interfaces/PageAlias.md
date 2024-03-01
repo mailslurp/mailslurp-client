@@ -23,7 +23,6 @@ PageAlias
 - [pageable](PageAlias.md#pageable)
 - [size](PageAlias.md#size)
 - [sort](PageAlias.md#sort)
-- [total](PageAlias.md#total)
 - [totalElements](PageAlias.md#totalelements)
 - [totalPages](PageAlias.md#totalpages)
 
@@ -119,19 +118,9 @@ PageAlias
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageAlias
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

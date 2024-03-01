@@ -91,6 +91,8 @@
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
 - [listInboxTrackingPixelsRaw](InboxControllerApi.md#listinboxtrackingpixelsraw)
 - [request](InboxControllerApi.md#request)
+- [searchInboxes](InboxControllerApi.md#searchinboxes)
+- [searchInboxesRaw](InboxControllerApi.md#searchinboxesraw)
 - [sendEmail](InboxControllerApi.md#sendemail)
 - [sendEmailAndConfirm](InboxControllerApi.md#sendemailandconfirm)
 - [sendEmailAndConfirmRaw](InboxControllerApi.md#sendemailandconfirmraw)
@@ -1537,6 +1539,46 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### searchInboxes
+
+▸ **searchInboxes**(`requestParameters`, `initOverrides?`): `Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+Search all inboxes and return matching inboxes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchInboxesRequest`](../interfaces/SearchInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>
+
+___
+
+### searchInboxesRaw
+
+▸ **searchInboxesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
+
+Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+Search all inboxes and return matching inboxes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SearchInboxesRequest`](../interfaces/SearchInboxesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageInboxProjection`](../interfaces/PageInboxProjection.md)\>\>
 
 ___
 

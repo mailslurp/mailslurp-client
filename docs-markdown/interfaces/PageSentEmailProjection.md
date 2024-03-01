@@ -23,7 +23,6 @@ PageSentEmailProjection
 - [pageable](PageSentEmailProjection.md#pageable)
 - [size](PageSentEmailProjection.md#size)
 - [sort](PageSentEmailProjection.md#sort)
-- [total](PageSentEmailProjection.md#total)
 - [totalElements](PageSentEmailProjection.md#totalelements)
 - [totalPages](PageSentEmailProjection.md#totalpages)
 
@@ -31,9 +30,7 @@ PageSentEmailProjection
 
 ### content
 
-• **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
-
-Collection of items
+• `Optional` **content**: [`SentEmailProjection`](SentEmailProjection.md)[]
 
 **`Memberof`**
 
@@ -73,9 +70,7 @@ ___
 
 ### number
 
-• **number**: `number`
-
-Page number starting at 0
+• `Optional` **number**: `number`
 
 **`Memberof`**
 
@@ -85,9 +80,7 @@ ___
 
 ### numberOfElements
 
-• **numberOfElements**: `number`
-
-Number of items returned
+• `Optional` **numberOfElements**: `number`
 
 **`Memberof`**
 
@@ -107,9 +100,7 @@ ___
 
 ### size
 
-• **size**: `number`
-
-Size of page requested
+• `Optional` **size**: `number`
 
 **`Memberof`**
 
@@ -127,21 +118,9 @@ PageSentEmailProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageSentEmailProjection
-
-___
-
 ### totalElements
 
 • **totalElements**: `number`
-
-Total number of items available for querying
 
 **`Memberof`**
 
@@ -152,8 +131,6 @@ ___
 ### totalPages
 
 • **totalPages**: `number`
-
-Total number of pages available
 
 **`Memberof`**
 

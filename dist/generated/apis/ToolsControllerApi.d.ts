@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults } from '../models';
+import { CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult } from '../models';
 export interface CheckEmailFeaturesClientSupportRequest {
     checkEmailFeaturesClientSupportOptions: CheckEmailFeaturesClientSupportOptions;
 }
@@ -25,6 +25,13 @@ export interface GenerateMtaStsRecordRequest {
 }
 export interface GenerateTlsReportingRecordRequest {
     generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
+}
+export interface GetFakeEmailByIdRequest {
+    id: string;
+}
+export interface GetFakeEmailsForAddressRequest {
+    emailAddress: string;
+    page?: number;
 }
 export interface LookupBimiDomainRequest {
     lookupBimiDomainOptions: LookupBimiDomainOptions;
@@ -50,6 +57,14 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Check email client support for email HTML and CSS features
      */
     checkEmailFeaturesClientSupport(requestParameters: CheckEmailFeaturesClientSupportRequest, initOverrides?: RequestInit): Promise<CheckEmailFeaturesClientSupportResults>;
+    /**
+     * Create a new email address using the fake email domains
+     */
+    createNewFakeEmailAddressRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>>;
+    /**
+     * Create a new email address using the fake email domains
+     */
+    createNewFakeEmailAddress(initOverrides?: RequestInit): Promise<NewFakeEmailAddressResult>;
     /**
      * Create a BIMI record policy
      */
@@ -82,6 +97,18 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Create a TLS reporting record policy
      */
     generateTlsReportingRecord(requestParameters: GenerateTlsReportingRecordRequest, initOverrides?: RequestInit): Promise<GenerateTlsReportingRecordResults>;
+    /**
+     */
+    getFakeEmailByIdRaw(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<FakeEmailResult>>;
+    /**
+     */
+    getFakeEmailById(requestParameters: GetFakeEmailByIdRequest, initOverrides?: RequestInit): Promise<FakeEmailResult>;
+    /**
+     */
+    getFakeEmailsForAddressRaw(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>>;
+    /**
+     */
+    getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>>;
     /**
      * Lookup a BIMI record policy
      */

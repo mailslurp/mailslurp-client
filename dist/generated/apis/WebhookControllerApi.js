@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
+exports.GetWebhookResultsEventNameEnum = exports.GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsSortEnum = exports.GetTestWebhookPayloadEventNameEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetJsonSchemaForWebhookEventEventEnum = exports.GetInboxWebhooksPaginatedSortEnum = exports.GetAllWebhooksSortEnum = exports.GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsSortEnum = exports.GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksSortEnum = exports.WebhookControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -507,6 +507,33 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         }
                         if (requestParameters.unseenOnly !== undefined) {
                             queryParameters['unseenOnly'] = requestParameters.unseenOnly;
+                        }
+                        if (requestParameters.resultType !== undefined) {
+                            queryParameters['resultType'] = requestParameters.resultType;
+                        }
+                        if (requestParameters.eventName !== undefined) {
+                            queryParameters['eventName'] = requestParameters.eventName;
+                        }
+                        if (requestParameters.minStatusCode !== undefined) {
+                            queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+                        }
+                        if (requestParameters.maxStatusCode !== undefined) {
+                            queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -1500,6 +1527,33 @@ var WebhookControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.unseenOnly !== undefined) {
                             queryParameters['unseenOnly'] = requestParameters.unseenOnly;
                         }
+                        if (requestParameters.resultType !== undefined) {
+                            queryParameters['resultType'] = requestParameters.resultType;
+                        }
+                        if (requestParameters.eventName !== undefined) {
+                            queryParameters['eventName'] = requestParameters.eventName;
+                        }
+                        if (requestParameters.minStatusCode !== undefined) {
+                            queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+                        }
+                        if (requestParameters.maxStatusCode !== undefined) {
+                            queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.smsId !== undefined) {
+                            queryParameters['smsId'] = requestParameters.smsId;
+                        }
+                        if (requestParameters.attachmentId !== undefined) {
+                            queryParameters['attachmentId'] = requestParameters.attachmentId;
+                        }
+                        if (requestParameters.emailId !== undefined) {
+                            queryParameters['emailId'] = requestParameters.emailId;
+                        }
+                        if (requestParameters.phoneId !== undefined) {
+                            queryParameters['phoneId'] = requestParameters.phoneId;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -1528,6 +1582,56 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getWebhookResultsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get a webhook results count for a webhook
+     */
+    WebhookControllerApi.prototype.getWebhookResultsCountRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.webhookId === null ||
+                            requestParameters.webhookId === undefined) {
+                            throw new runtime.RequiredError('webhookId', 'Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResultsCount.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/{webhookId}/results/count".replace("{".concat('webhookId', "}"), encodeURIComponent(String(requestParameters.webhookId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CountDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a webhook results count for a webhook
+     */
+    WebhookControllerApi.prototype.getWebhookResultsCount = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getWebhookResultsCountRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1624,6 +1728,54 @@ var WebhookControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getWebhooksRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    WebhookControllerApi.prototype.redriveAllWebhookResultsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/webhooks/results/redrive",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.WebhookRedriveAllResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+     * Redrive all webhook results that have failed status
+     */
+    WebhookControllerApi.prototype.redriveAllWebhookResults = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.redriveAllWebhookResultsRaw(initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1950,6 +2102,34 @@ var GetAllWebhookResultsSortEnum;
  * @export
  * @enum {string}
  */
+var GetAllWebhookResultsResultTypeEnum;
+(function (GetAllWebhookResultsResultTypeEnum) {
+    GetAllWebhookResultsResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
+    GetAllWebhookResultsResultTypeEnum["EXCEPTION"] = "EXCEPTION";
+    GetAllWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
+    GetAllWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
+})(GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsResultTypeEnum || (exports.GetAllWebhookResultsResultTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAllWebhookResultsEventNameEnum;
+(function (GetAllWebhookResultsEventNameEnum) {
+    GetAllWebhookResultsEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetAllWebhookResultsEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetAllWebhookResultsEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetAllWebhookResultsEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetAllWebhookResultsEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetAllWebhookResultsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetAllWebhookResultsEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetAllWebhookResultsEventNameEnum["BOUNCE"] = "BOUNCE";
+    GetAllWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetAllWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
+})(GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsEventNameEnum || (exports.GetAllWebhookResultsEventNameEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
 var GetAllWebhooksSortEnum;
 (function (GetAllWebhooksSortEnum) {
     GetAllWebhooksSortEnum["ASC"] = "ASC";
@@ -2016,3 +2196,31 @@ var GetWebhookResultsSortEnum;
     GetWebhookResultsSortEnum["ASC"] = "ASC";
     GetWebhookResultsSortEnum["DESC"] = "DESC";
 })(GetWebhookResultsSortEnum = exports.GetWebhookResultsSortEnum || (exports.GetWebhookResultsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetWebhookResultsResultTypeEnum;
+(function (GetWebhookResultsResultTypeEnum) {
+    GetWebhookResultsResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
+    GetWebhookResultsResultTypeEnum["EXCEPTION"] = "EXCEPTION";
+    GetWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
+    GetWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
+})(GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsResultTypeEnum || (exports.GetWebhookResultsResultTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetWebhookResultsEventNameEnum;
+(function (GetWebhookResultsEventNameEnum) {
+    GetWebhookResultsEventNameEnum["EMAIL_RECEIVED"] = "EMAIL_RECEIVED";
+    GetWebhookResultsEventNameEnum["NEW_EMAIL"] = "NEW_EMAIL";
+    GetWebhookResultsEventNameEnum["NEW_CONTACT"] = "NEW_CONTACT";
+    GetWebhookResultsEventNameEnum["NEW_ATTACHMENT"] = "NEW_ATTACHMENT";
+    GetWebhookResultsEventNameEnum["EMAIL_OPENED"] = "EMAIL_OPENED";
+    GetWebhookResultsEventNameEnum["EMAIL_READ"] = "EMAIL_READ";
+    GetWebhookResultsEventNameEnum["DELIVERY_STATUS"] = "DELIVERY_STATUS";
+    GetWebhookResultsEventNameEnum["BOUNCE"] = "BOUNCE";
+    GetWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
+    GetWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
+})(GetWebhookResultsEventNameEnum = exports.GetWebhookResultsEventNameEnum || (exports.GetWebhookResultsEventNameEnum = {}));

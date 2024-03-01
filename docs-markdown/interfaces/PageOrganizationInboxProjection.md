@@ -23,7 +23,6 @@ PageOrganizationInboxProjection
 - [pageable](PageOrganizationInboxProjection.md#pageable)
 - [size](PageOrganizationInboxProjection.md#size)
 - [sort](PageOrganizationInboxProjection.md#sort)
-- [total](PageOrganizationInboxProjection.md#total)
 - [totalElements](PageOrganizationInboxProjection.md#totalelements)
 - [totalPages](PageOrganizationInboxProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageOrganizationInboxProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageOrganizationInboxProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

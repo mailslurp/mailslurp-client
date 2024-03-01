@@ -24,18 +24,18 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
-        createdAt: new Date(json['createdAt']),
+        inboxId: json['inboxId'],
         to: json['to'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
-        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         read: json['read'],
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         teamAccess: json['teamAccess'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
+        createdAt: new Date(json['createdAt']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
@@ -50,18 +50,18 @@ function EmailProjectionToJSON(value) {
         return null;
     }
     return {
-        inboxId: value.inboxId,
         attachments: value.attachments,
-        createdAt: value.createdAt.toISOString(),
+        inboxId: value.inboxId,
         to: value.to,
+        domainId: value.domainId,
         bcc: value.bcc,
         cc: value.cc,
-        domainId: value.domainId,
         read: value.read,
         bodyExcerpt: value.bodyExcerpt,
         teamAccess: value.teamAccess,
         bodyMD5Hash: value.bodyMD5Hash,
         textExcerpt: value.textExcerpt,
+        createdAt: value.createdAt.toISOString(),
         subject: value.subject,
         id: value.id,
         from: value.from,

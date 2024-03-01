@@ -20,19 +20,7 @@ export interface SmsProjection {
      * @type {string}
      * @memberof SmsProjection
      */
-    body: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SmsProjection
-     */
     userId: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof SmsProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}
@@ -51,6 +39,18 @@ export interface SmsProjection {
      * @memberof SmsProjection
      */
     read: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SmsProjection
+     */
+    body: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof SmsProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

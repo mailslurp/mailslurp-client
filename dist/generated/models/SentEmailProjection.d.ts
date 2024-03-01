@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Collection of items
+ *
  * @export
  * @interface SentEmailProjection
  */
@@ -20,13 +20,13 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    inboxId: string;
+    id: string;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
-    id: string;
+    userId: string;
     /**
      *
      * @type {string}
@@ -41,22 +41,16 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    userId: string;
-    /**
-     *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
     attachments: Array<string>;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof SentEmailProjection
      */
-    createdAt: Date;
+    inboxId: string;
     /**
      *
      * @type {Array<string>}
@@ -75,6 +69,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     cc: Array<string>;
+    /**
+     *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

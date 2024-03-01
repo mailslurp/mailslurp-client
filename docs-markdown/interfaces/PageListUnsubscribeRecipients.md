@@ -23,7 +23,6 @@ PageListUnsubscribeRecipients
 - [pageable](PageListUnsubscribeRecipients.md#pageable)
 - [size](PageListUnsubscribeRecipients.md#size)
 - [sort](PageListUnsubscribeRecipients.md#sort)
-- [total](PageListUnsubscribeRecipients.md#total)
 - [totalElements](PageListUnsubscribeRecipients.md#totalelements)
 - [totalPages](PageListUnsubscribeRecipients.md#totalpages)
 
@@ -119,19 +118,9 @@ PageListUnsubscribeRecipients
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageListUnsubscribeRecipients
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

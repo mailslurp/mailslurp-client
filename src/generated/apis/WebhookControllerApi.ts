@@ -17,6 +17,9 @@ import {
   AbstractWebhookPayload,
   AbstractWebhookPayloadFromJSON,
   AbstractWebhookPayloadToJSON,
+  CountDto,
+  CountDtoFromJSON,
+  CountDtoToJSON,
   CreateWebhookOptions,
   CreateWebhookOptionsFromJSON,
   CreateWebhookOptionsToJSON,
@@ -71,6 +74,9 @@ import {
   WebhookNewSmsPayload,
   WebhookNewSmsPayloadFromJSON,
   WebhookNewSmsPayloadToJSON,
+  WebhookRedriveAllResult,
+  WebhookRedriveAllResultFromJSON,
+  WebhookRedriveAllResultToJSON,
   WebhookRedriveResult,
   WebhookRedriveResultFromJSON,
   WebhookRedriveResultToJSON,
@@ -126,6 +132,15 @@ export interface GetAllWebhookResultsRequest {
   since?: Date;
   before?: Date;
   unseenOnly?: boolean;
+  resultType?: GetAllWebhookResultsResultTypeEnum;
+  eventName?: GetAllWebhookResultsEventNameEnum;
+  minStatusCode?: number;
+  maxStatusCode?: number;
+  inboxId?: string;
+  smsId?: string;
+  attachmentId?: string;
+  emailId?: string;
+  phoneId?: string;
 }
 
 export interface GetAllWebhooksRequest {
@@ -191,6 +206,19 @@ export interface GetWebhookResultsRequest {
   since?: Date;
   before?: Date;
   unseenOnly?: boolean;
+  resultType?: GetWebhookResultsResultTypeEnum;
+  eventName?: GetWebhookResultsEventNameEnum;
+  minStatusCode?: number;
+  maxStatusCode?: number;
+  inboxId?: string;
+  smsId?: string;
+  attachmentId?: string;
+  emailId?: string;
+  phoneId?: string;
+}
+
+export interface GetWebhookResultsCountRequest {
+  webhookId: string;
 }
 
 export interface GetWebhooksRequest {
@@ -703,6 +731,42 @@ export class WebhookControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.unseenOnly !== undefined) {
       queryParameters['unseenOnly'] = requestParameters.unseenOnly;
+    }
+
+    if (requestParameters.resultType !== undefined) {
+      queryParameters['resultType'] = requestParameters.resultType;
+    }
+
+    if (requestParameters.eventName !== undefined) {
+      queryParameters['eventName'] = requestParameters.eventName;
+    }
+
+    if (requestParameters.minStatusCode !== undefined) {
+      queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+    }
+
+    if (requestParameters.maxStatusCode !== undefined) {
+      queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1725,6 +1789,42 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       queryParameters['unseenOnly'] = requestParameters.unseenOnly;
     }
 
+    if (requestParameters.resultType !== undefined) {
+      queryParameters['resultType'] = requestParameters.resultType;
+    }
+
+    if (requestParameters.eventName !== undefined) {
+      queryParameters['eventName'] = requestParameters.eventName;
+    }
+
+    if (requestParameters.minStatusCode !== undefined) {
+      queryParameters['minStatusCode'] = requestParameters.minStatusCode;
+    }
+
+    if (requestParameters.maxStatusCode !== undefined) {
+      queryParameters['maxStatusCode'] = requestParameters.maxStatusCode;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.smsId !== undefined) {
+      queryParameters['smsId'] = requestParameters.smsId;
+    }
+
+    if (requestParameters.attachmentId !== undefined) {
+      queryParameters['attachmentId'] = requestParameters.attachmentId;
+    }
+
+    if (requestParameters.emailId !== undefined) {
+      queryParameters['emailId'] = requestParameters.emailId;
+    }
+
+    if (requestParameters.phoneId !== undefined) {
+      queryParameters['phoneId'] = requestParameters.phoneId;
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -1757,6 +1857,63 @@ export class WebhookControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageWebhookResult> {
     const response = await this.getWebhookResultsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get a webhook results count for a webhook
+   */
+  async getWebhookResultsCountRaw(
+    requestParameters: GetWebhookResultsCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    if (
+      requestParameters.webhookId === null ||
+      requestParameters.webhookId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'webhookId',
+        'Required parameter requestParameters.webhookId was null or undefined when calling getWebhookResultsCount.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/{webhookId}/results/count`.replace(
+          `{${'webhookId'}}`,
+          encodeURIComponent(String(requestParameters.webhookId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a webhook results count for a webhook
+   */
+  async getWebhookResultsCount(
+    requestParameters: GetWebhookResultsCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<CountDto> {
+    const response = await this.getWebhookResultsCountRaw(
       requestParameters,
       initOverrides
     );
@@ -1858,6 +2015,47 @@ export class WebhookControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+   * Redrive all webhook results that have failed status
+   */
+  async redriveAllWebhookResultsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<WebhookRedriveAllResult>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/webhooks/results/redrive`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      WebhookRedriveAllResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+   * Redrive all webhook results that have failed status
+   */
+  async redriveAllWebhookResults(
+    initOverrides?: RequestInit
+  ): Promise<WebhookRedriveAllResult> {
+    const response = await this.redriveAllWebhookResultsRaw(initOverrides);
     return await response.value();
   }
 
@@ -2230,6 +2428,32 @@ export enum GetAllWebhookResultsSortEnum {
  * @export
  * @enum {string}
  */
+export enum GetAllWebhookResultsResultTypeEnum {
+  BAD_RESPONSE = 'BAD_RESPONSE',
+  EXCEPTION = 'EXCEPTION',
+  SUCCESS = 'SUCCESS',
+  REDRIVEN = 'REDRIVEN',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAllWebhookResultsEventNameEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
+}
+/**
+ * @export
+ * @enum {string}
+ */
 export enum GetAllWebhooksSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
@@ -2289,4 +2513,30 @@ export enum GetTestWebhookPayloadEventNameEnum {
 export enum GetWebhookResultsSortEnum {
   ASC = 'ASC',
   DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetWebhookResultsResultTypeEnum {
+  BAD_RESPONSE = 'BAD_RESPONSE',
+  EXCEPTION = 'EXCEPTION',
+  SUCCESS = 'SUCCESS',
+  REDRIVEN = 'REDRIVEN',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetWebhookResultsEventNameEnum {
+  EMAIL_RECEIVED = 'EMAIL_RECEIVED',
+  NEW_EMAIL = 'NEW_EMAIL',
+  NEW_CONTACT = 'NEW_CONTACT',
+  NEW_ATTACHMENT = 'NEW_ATTACHMENT',
+  EMAIL_OPENED = 'EMAIL_OPENED',
+  EMAIL_READ = 'EMAIL_READ',
+  DELIVERY_STATUS = 'DELIVERY_STATUS',
+  BOUNCE = 'BOUNCE',
+  BOUNCE_RECIPIENT = 'BOUNCE_RECIPIENT',
+  NEW_SMS = 'NEW_SMS',
 }

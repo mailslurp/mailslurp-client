@@ -36,12 +36,6 @@ export interface WebhookResultDto {
    * @type {string}
    * @memberof WebhookResultDto
    */
-  inboxId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof WebhookResultDto
-   */
   webhookId: string;
   /**
    *
@@ -115,6 +109,36 @@ export interface WebhookResultDto {
    * @memberof WebhookResultDto
    */
   seen: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookResultDto
+   */
+  inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookResultDto
+   */
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookResultDto
+   */
+  attachmentId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookResultDto
+   */
+  phoneId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof WebhookResultDto
+   */
+  smsId?: string | null;
 }
 
 /**
@@ -155,6 +179,7 @@ export enum WebhookResultDtoResultTypeEnum {
   BAD_RESPONSE = 'BAD_RESPONSE',
   EXCEPTION = 'EXCEPTION',
   SUCCESS = 'SUCCESS',
+  REDRIVEN = 'REDRIVEN',
 }
 
 export function WebhookResultDtoFromJSON(json: any): WebhookResultDto {
@@ -171,7 +196,6 @@ export function WebhookResultDtoFromJSONTyped(
   return {
     id: !exists(json, 'id') ? undefined : json['id'],
     userId: json['userId'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     webhookId: json['webhookId'],
     webhookUrl: json['webhookUrl'],
     messageId: json['messageId'],
@@ -189,6 +213,13 @@ export function WebhookResultDtoFromJSONTyped(
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     seen: json['seen'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    attachmentId: !exists(json, 'attachmentId')
+      ? undefined
+      : json['attachmentId'],
+    phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
+    smsId: !exists(json, 'smsId') ? undefined : json['smsId'],
   };
 }
 
@@ -202,7 +233,6 @@ export function WebhookResultDtoToJSON(value?: WebhookResultDto | null): any {
   return {
     id: value.id,
     userId: value.userId,
-    inboxId: value.inboxId,
     webhookId: value.webhookId,
     webhookUrl: value.webhookUrl,
     messageId: value.messageId,
@@ -216,5 +246,10 @@ export function WebhookResultDtoToJSON(value?: WebhookResultDto | null): any {
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     seen: value.seen,
+    inboxId: value.inboxId,
+    emailId: value.emailId,
+    attachmentId: value.attachmentId,
+    phoneId: value.phoneId,
+    smsId: value.smsId,
   };
 }

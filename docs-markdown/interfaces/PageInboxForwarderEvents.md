@@ -23,7 +23,6 @@ PageInboxForwarderEvents
 - [pageable](PageInboxForwarderEvents.md#pageable)
 - [size](PageInboxForwarderEvents.md#size)
 - [sort](PageInboxForwarderEvents.md#sort)
-- [total](PageInboxForwarderEvents.md#total)
 - [totalElements](PageInboxForwarderEvents.md#totalelements)
 - [totalPages](PageInboxForwarderEvents.md#totalpages)
 
@@ -119,19 +118,9 @@ PageInboxForwarderEvents
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageInboxForwarderEvents
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

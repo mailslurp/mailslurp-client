@@ -23,7 +23,6 @@ PageEmailValidationRequest
 - [pageable](PageEmailValidationRequest.md#pageable)
 - [size](PageEmailValidationRequest.md#size)
 - [sort](PageEmailValidationRequest.md#sort)
-- [total](PageEmailValidationRequest.md#total)
 - [totalElements](PageEmailValidationRequest.md#totalelements)
 - [totalPages](PageEmailValidationRequest.md#totalpages)
 
@@ -119,19 +118,9 @@ PageEmailValidationRequest
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageEmailValidationRequest
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

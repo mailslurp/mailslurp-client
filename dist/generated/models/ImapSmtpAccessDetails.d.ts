@@ -87,6 +87,12 @@ export interface ImapSmtpAccessDetails {
      * @memberof ImapSmtpAccessDetails
      */
     imapPassword: string;
+    /**
+     * Mail from domain or SMTP HELO value
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    mailFromDomain?: string | null;
 }
 export declare function ImapSmtpAccessDetailsFromJSON(json: any): ImapSmtpAccessDetails;
 export declare function ImapSmtpAccessDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapSmtpAccessDetails;

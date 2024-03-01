@@ -17,11 +17,11 @@ import { PageableObject, SendWithQueueResult, SortObject } from './';
  */
 export interface PageSentEmailWithQueueProjection {
     /**
-     * Collection of items
+     *
      * @type {Array<SendWithQueueResult>}
      * @memberof PageSentEmailWithQueueProjection
      */
-    content: Array<SendWithQueueResult>;
+    content?: Array<SendWithQueueResult>;
     /**
      *
      * @type {PageableObject}
@@ -33,37 +33,13 @@ export interface PageSentEmailWithQueueProjection {
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
      */
-    total?: number;
+    totalPages: number;
     /**
-     * Number of items returned
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    numberOfElements: number;
-    /**
-     * Total number of items available for querying
+     *
      * @type {number}
      * @memberof PageSentEmailWithQueueProjection
      */
     totalElements: number;
-    /**
-     * Total number of pages available
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    totalPages: number;
-    /**
-     * Size of page requested
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    size: number;
-    /**
-     * Page number starting at 0
-     * @type {number}
-     * @memberof PageSentEmailWithQueueProjection
-     */
-    number: number;
     /**
      *
      * @type {boolean}
@@ -72,10 +48,28 @@ export interface PageSentEmailWithQueueProjection {
     last?: boolean;
     /**
      *
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
      * @type {boolean}
      * @memberof PageSentEmailWithQueueProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    size?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageSentEmailWithQueueProjection
+     */
+    number?: number;
     /**
      *
      * @type {SortObject}

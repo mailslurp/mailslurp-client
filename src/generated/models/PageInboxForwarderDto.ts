@@ -51,19 +51,13 @@ export interface PageInboxForwarderDto {
    * @type {number}
    * @memberof PageInboxForwarderDto
    */
-  total?: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageInboxForwarderDto
    */
-  totalElements?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageInboxForwarderDto
-   */
-  totalPages?: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -128,11 +122,8 @@ export function PageInboxForwarderDtoFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    total: !exists(json, 'total') ? undefined : json['total'],
-    totalElements: !exists(json, 'totalElements')
-      ? undefined
-      : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -160,9 +151,8 @@ export function PageInboxForwarderDtoToJSON(
         ? undefined
         : (value.content as Array<any>).map(InboxForwarderDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

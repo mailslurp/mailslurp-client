@@ -23,7 +23,6 @@ PageGroupProjection
 - [pageable](PageGroupProjection.md#pageable)
 - [size](PageGroupProjection.md#size)
 - [sort](PageGroupProjection.md#sort)
-- [total](PageGroupProjection.md#total)
 - [totalElements](PageGroupProjection.md#totalelements)
 - [totalPages](PageGroupProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageGroupProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageGroupProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

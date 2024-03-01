@@ -33,19 +33,13 @@ export interface PageInboxRulesetDto {
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxRulesetDto
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxRulesetDto
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

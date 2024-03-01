@@ -33,19 +33,13 @@ export interface PageOrganizationInboxProjection {
      * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageOrganizationInboxProjection
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageOrganizationInboxProjection
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

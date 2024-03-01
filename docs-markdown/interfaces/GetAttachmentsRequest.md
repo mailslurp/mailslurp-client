@@ -8,6 +8,7 @@
 
 - [before](GetAttachmentsRequest.md#before)
 - [fileNameFilter](GetAttachmentsRequest.md#filenamefilter)
+- [inboxId](GetAttachmentsRequest.md#inboxid)
 - [page](GetAttachmentsRequest.md#page)
 - [since](GetAttachmentsRequest.md#since)
 - [size](GetAttachmentsRequest.md#size)
@@ -24,6 +25,12 @@ ___
 ### fileNameFilter
 
 • `Optional` **fileNameFilter**: `string`
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
 
 ___
 

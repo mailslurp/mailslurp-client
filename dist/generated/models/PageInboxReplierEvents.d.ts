@@ -33,19 +33,13 @@ export interface PageInboxReplierEvents {
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxReplierEvents
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxReplierEvents
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

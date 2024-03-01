@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models';
+import { CountDto, PageSmsProjection, ReplyForSms, SentSmsDto, SmsDto, SmsReplyOptions, UnreadCount } from '../models';
 export interface DeleteSmsMessageRequest {
     smsId: string;
 }
@@ -70,6 +70,16 @@ export declare class SmsControllerApi extends runtime.BaseAPI {
      * Get reply for an SMS message
      */
     getReplyForSmsMessage(requestParameters: GetReplyForSmsMessageRequest, initOverrides?: RequestInit): Promise<ReplyForSms>;
+    /**
+     * Get number of SMS
+     * Get SMS count
+     */
+    getSmsCountRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<CountDto>>;
+    /**
+     * Get number of SMS
+     * Get SMS count
+     */
+    getSmsCount(initOverrides?: RequestInit): Promise<CountDto>;
     /**
      * Returns a SMS summary object with content.
      * Get SMS content including body. Expects SMS to exist by ID. For SMS that may not have arrived yet use the WaitForController.

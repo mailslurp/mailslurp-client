@@ -33,19 +33,13 @@ export interface PageInboxForwarderDto {
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxForwarderDto
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxForwarderDto
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

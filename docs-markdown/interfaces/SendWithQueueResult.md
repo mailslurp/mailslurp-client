@@ -2,8 +2,6 @@
 
 # Interface: SendWithQueueResult
 
-Collection of items
-
 **`Export`**
 
 **`Interface`**

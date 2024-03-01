@@ -31,11 +31,8 @@ function PageBouncedRecipientsFromJSONTyped(json, ignoreDiscriminator) {
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
-        totalElements: !(0, runtime_1.exists)(json, 'totalElements')
-            ? undefined
-            : json['totalElements'],
-        totalPages: !(0, runtime_1.exists)(json, 'totalPages') ? undefined : json['totalPages'],
+        totalPages: json['totalPages'],
+        totalElements: json['totalElements'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
         numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
             ? undefined
@@ -60,9 +57,8 @@ function PageBouncedRecipientsToJSON(value) {
             ? undefined
             : value.content.map(_1.BounceRecipientProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        total: value.total,
-        totalElements: value.totalElements,
         totalPages: value.totalPages,
+        totalElements: value.totalElements,
         last: value.last,
         numberOfElements: value.numberOfElements,
         first: value.first,

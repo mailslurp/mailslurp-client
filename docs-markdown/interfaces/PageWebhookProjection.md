@@ -23,7 +23,6 @@ PageWebhookProjection
 - [pageable](PageWebhookProjection.md#pageable)
 - [size](PageWebhookProjection.md#size)
 - [sort](PageWebhookProjection.md#sort)
-- [total](PageWebhookProjection.md#total)
 - [totalElements](PageWebhookProjection.md#totalelements)
 - [totalPages](PageWebhookProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageWebhookProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageWebhookProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

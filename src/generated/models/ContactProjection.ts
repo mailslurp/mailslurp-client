@@ -27,12 +27,6 @@ export interface ContactProjection {
   emailAddress?: string | null;
   /**
    *
-   * @type {Date}
-   * @memberof ContactProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {Array<string>}
    * @memberof ContactProjection
    */
@@ -63,6 +57,12 @@ export interface ContactProjection {
   optOut?: boolean | null;
   /**
    *
+   * @type {Date}
+   * @memberof ContactProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof ContactProjection
    */
@@ -90,7 +90,6 @@ export function ContactProjectionFromJSONTyped(
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
-    createdAt: new Date(json['createdAt']),
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
@@ -98,6 +97,7 @@ export function ContactProjectionFromJSONTyped(
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
     company: !exists(json, 'company') ? undefined : json['company'],
     optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
+    createdAt: new Date(json['createdAt']),
     id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
   };
@@ -112,12 +112,12 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
   }
   return {
     emailAddress: value.emailAddress,
-    createdAt: value.createdAt.toISOString(),
     emailAddresses: value.emailAddresses,
     firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
     optOut: value.optOut,
+    createdAt: value.createdAt.toISOString(),
     id: value.id,
     groupId: value.groupId,
   };

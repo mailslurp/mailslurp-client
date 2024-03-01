@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Collection of items
+ *
  * @export
  * @interface SendWithQueueResult
  */

@@ -33,19 +33,13 @@ export interface PageMissedEmailProjection {
      * @type {number}
      * @memberof PageMissedEmailProjection
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageMissedEmailProjection
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageMissedEmailProjection
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

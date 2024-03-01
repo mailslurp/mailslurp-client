@@ -73,11 +73,15 @@
 - [getWebhookResult](WebhookControllerApi.md#getwebhookresult)
 - [getWebhookResultRaw](WebhookControllerApi.md#getwebhookresultraw)
 - [getWebhookResults](WebhookControllerApi.md#getwebhookresults)
+- [getWebhookResultsCount](WebhookControllerApi.md#getwebhookresultscount)
+- [getWebhookResultsCountRaw](WebhookControllerApi.md#getwebhookresultscountraw)
 - [getWebhookResultsRaw](WebhookControllerApi.md#getwebhookresultsraw)
 - [getWebhookResultsUnseenErrorCount](WebhookControllerApi.md#getwebhookresultsunseenerrorcount)
 - [getWebhookResultsUnseenErrorCountRaw](WebhookControllerApi.md#getwebhookresultsunseenerrorcountraw)
 - [getWebhooks](WebhookControllerApi.md#getwebhooks)
 - [getWebhooksRaw](WebhookControllerApi.md#getwebhooksraw)
+- [redriveAllWebhookResults](WebhookControllerApi.md#redriveallwebhookresults)
+- [redriveAllWebhookResultsRaw](WebhookControllerApi.md#redriveallwebhookresultsraw)
 - [redriveWebhookResult](WebhookControllerApi.md#redrivewebhookresult)
 - [redriveWebhookResultRaw](WebhookControllerApi.md#redrivewebhookresultraw)
 - [request](WebhookControllerApi.md#request)
@@ -1120,6 +1124,44 @@ Get a webhook results for a webhook
 
 ___
 
+### getWebhookResultsCount
+
+▸ **getWebhookResultsCount**(`requestParameters`, `initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get a webhook results count for a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetWebhookResultsCountRequest`](../interfaces/GetWebhookResultsCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getWebhookResultsCountRaw
+
+▸ **getWebhookResultsCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get a webhook results count for a webhook
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetWebhookResultsCountRequest`](../interfaces/GetWebhookResultsCountRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+___
+
 ### getWebhookResultsRaw
 
 ▸ **getWebhookResultsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageWebhookResult`](../interfaces/PageWebhookResult.md)\>\>
@@ -1210,6 +1252,44 @@ Get all webhooks for an Inbox
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookDto`](../interfaces/WebhookDto.md)[]\>\>
+
+___
+
+### redriveAllWebhookResults
+
+▸ **redriveAllWebhookResults**(`initOverrides?`): `Promise`<[`WebhookRedriveAllResult`](../interfaces/WebhookRedriveAllResult.md)\>
+
+Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+Redrive all webhook results that have failed status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`WebhookRedriveAllResult`](../interfaces/WebhookRedriveAllResult.md)\>
+
+___
+
+### redriveAllWebhookResultsRaw
+
+▸ **redriveAllWebhookResultsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookRedriveAllResult`](../interfaces/WebhookRedriveAllResult.md)\>\>
+
+Allows you to resend webhook payloads for any recorded webhook result that failed to deliver the payload.
+Redrive all webhook results that have failed status
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`WebhookRedriveAllResult`](../interfaces/WebhookRedriveAllResult.md)\>\>
 
 ___
 

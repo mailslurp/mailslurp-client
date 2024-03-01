@@ -17,18 +17,6 @@
 export interface InboxReplierEventProjection {
     /**
      *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    emailId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    inboxId?: string | null;
-    /**
-     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
@@ -41,10 +29,16 @@ export interface InboxReplierEventProjection {
     userId?: string | null;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    createdAt: Date;
+    emailId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    inboxId?: string | null;
     /**
      *
      * @type {string}
@@ -57,6 +51,12 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof InboxReplierEventProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

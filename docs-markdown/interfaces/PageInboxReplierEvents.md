@@ -23,7 +23,6 @@ PageInboxReplierEvents
 - [pageable](PageInboxReplierEvents.md#pageable)
 - [size](PageInboxReplierEvents.md#size)
 - [sort](PageInboxReplierEvents.md#sort)
-- [total](PageInboxReplierEvents.md#total)
 - [totalElements](PageInboxReplierEvents.md#totalelements)
 - [totalPages](PageInboxReplierEvents.md#totalpages)
 
@@ -119,19 +118,9 @@ PageInboxReplierEvents
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageInboxReplierEvents
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

@@ -33,19 +33,13 @@ export interface PageAlias {
      * @type {number}
      * @memberof PageAlias
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAlias
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAlias
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

@@ -17,11 +17,11 @@ import { PageableObject, SentEmailProjection, SortObject } from './';
  */
 export interface PageSentEmailProjection {
     /**
-     * Collection of items
+     *
      * @type {Array<SentEmailProjection>}
      * @memberof PageSentEmailProjection
      */
-    content: Array<SentEmailProjection>;
+    content?: Array<SentEmailProjection>;
     /**
      *
      * @type {PageableObject}
@@ -33,37 +33,13 @@ export interface PageSentEmailProjection {
      * @type {number}
      * @memberof PageSentEmailProjection
      */
-    total?: number;
+    totalPages: number;
     /**
-     * Number of items returned
-     * @type {number}
-     * @memberof PageSentEmailProjection
-     */
-    numberOfElements: number;
-    /**
-     * Total number of items available for querying
+     *
      * @type {number}
      * @memberof PageSentEmailProjection
      */
     totalElements: number;
-    /**
-     * Total number of pages available
-     * @type {number}
-     * @memberof PageSentEmailProjection
-     */
-    totalPages: number;
-    /**
-     * Size of page requested
-     * @type {number}
-     * @memberof PageSentEmailProjection
-     */
-    size: number;
-    /**
-     * Page number starting at 0
-     * @type {number}
-     * @memberof PageSentEmailProjection
-     */
-    number: number;
     /**
      *
      * @type {boolean}
@@ -72,10 +48,28 @@ export interface PageSentEmailProjection {
     last?: boolean;
     /**
      *
+     * @type {number}
+     * @memberof PageSentEmailProjection
+     */
+    numberOfElements?: number;
+    /**
+     *
      * @type {boolean}
      * @memberof PageSentEmailProjection
      */
     first?: boolean;
+    /**
+     *
+     * @type {number}
+     * @memberof PageSentEmailProjection
+     */
+    size?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof PageSentEmailProjection
+     */
+    number?: number;
     /**
      *
      * @type {SortObject}

@@ -23,7 +23,6 @@ PageSmsProjection
 - [pageable](PageSmsProjection.md#pageable)
 - [size](PageSmsProjection.md#size)
 - [sort](PageSmsProjection.md#sort)
-- [total](PageSmsProjection.md#total)
 - [totalElements](PageSmsProjection.md#totalelements)
 - [totalPages](PageSmsProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageSmsProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageSmsProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

@@ -20,6 +20,12 @@ import {
   CheckEmailFeaturesClientSupportResults,
   CheckEmailFeaturesClientSupportResultsFromJSON,
   CheckEmailFeaturesClientSupportResultsToJSON,
+  FakeEmailPreview,
+  FakeEmailPreviewFromJSON,
+  FakeEmailPreviewToJSON,
+  FakeEmailResult,
+  FakeEmailResultFromJSON,
+  FakeEmailResultToJSON,
   GenerateBimiRecordOptions,
   GenerateBimiRecordOptionsFromJSON,
   GenerateBimiRecordOptionsToJSON,
@@ -68,6 +74,9 @@ import {
   LookupTlsReportingDomainResults,
   LookupTlsReportingDomainResultsFromJSON,
   LookupTlsReportingDomainResultsToJSON,
+  NewFakeEmailAddressResult,
+  NewFakeEmailAddressResultFromJSON,
+  NewFakeEmailAddressResultToJSON,
 } from '../models';
 
 export interface CheckEmailFeaturesClientSupportRequest {
@@ -88,6 +97,15 @@ export interface GenerateMtaStsRecordRequest {
 
 export interface GenerateTlsReportingRecordRequest {
   generateTlsReportingRecordOptions: GenerateTlsReportingRecordOptions;
+}
+
+export interface GetFakeEmailByIdRequest {
+  id: string;
+}
+
+export interface GetFakeEmailsForAddressRequest {
+  emailAddress: string;
+  page?: number;
 }
 
 export interface LookupBimiDomainRequest {
@@ -166,6 +184,45 @@ export class ToolsControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Create a new email address using the fake email domains
+   */
+  async createNewFakeEmailAddressRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<NewFakeEmailAddressResult>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      NewFakeEmailAddressResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a new email address using the fake email domains
+   */
+  async createNewFakeEmailAddress(
+    initOverrides?: RequestInit
+  ): Promise<NewFakeEmailAddressResult> {
+    const response = await this.createNewFakeEmailAddressRaw(initOverrides);
     return await response.value();
   }
 
@@ -399,6 +456,119 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<GenerateTlsReportingRecordResults> {
     const response = await this.generateTlsReportingRecordRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getFakeEmailByIdRaw(
+    requestParameters: GetFakeEmailByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<FakeEmailResult>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getFakeEmailById.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.id !== undefined) {
+      queryParameters['id'] = requestParameters.id;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-email`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      FakeEmailResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   */
+  async getFakeEmailById(
+    requestParameters: GetFakeEmailByIdRequest,
+    initOverrides?: RequestInit
+  ): Promise<FakeEmailResult> {
+    const response = await this.getFakeEmailByIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   */
+  async getFakeEmailsForAddressRaw(
+    requestParameters: GetFakeEmailsForAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<FakeEmailPreview>>> {
+    if (
+      requestParameters.emailAddress === null ||
+      requestParameters.emailAddress === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailAddress',
+        'Required parameter requestParameters.emailAddress was null or undefined when calling getFakeEmailsForAddress.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.emailAddress !== undefined) {
+      queryParameters['emailAddress'] = requestParameters.emailAddress;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/fake-emails`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(FakeEmailPreviewFromJSON)
+    );
+  }
+
+  /**
+   */
+  async getFakeEmailsForAddress(
+    requestParameters: GetFakeEmailsForAddressRequest,
+    initOverrides?: RequestInit
+  ): Promise<Array<FakeEmailPreview>> {
+    const response = await this.getFakeEmailsForAddressRaw(
       requestParameters,
       initOverrides
     );

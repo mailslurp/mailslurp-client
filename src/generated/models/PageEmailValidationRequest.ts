@@ -51,19 +51,13 @@ export interface PageEmailValidationRequest {
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  total?: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageEmailValidationRequest
    */
-  totalElements?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageEmailValidationRequest
-   */
-  totalPages?: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -128,11 +122,8 @@ export function PageEmailValidationRequestFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    total: !exists(json, 'total') ? undefined : json['total'],
-    totalElements: !exists(json, 'totalElements')
-      ? undefined
-      : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -160,9 +151,8 @@ export function PageEmailValidationRequestToJSON(
         ? undefined
         : (value.content as Array<any>).map(EmailValidationRequestDtoToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

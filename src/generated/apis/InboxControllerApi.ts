@@ -80,6 +80,9 @@ import {
   ScheduledJobDto,
   ScheduledJobDtoFromJSON,
   ScheduledJobDtoToJSON,
+  SearchInboxesOptions,
+  SearchInboxesOptionsFromJSON,
+  SearchInboxesOptionsToJSON,
   SendEmailOptions,
   SendEmailOptionsFromJSON,
   SendEmailOptionsToJSON,
@@ -309,6 +312,10 @@ export interface ListInboxTrackingPixelsRequest {
   searchFilter?: string;
   since?: Date;
   before?: Date;
+}
+
+export interface SearchInboxesRequest {
+  searchInboxesOptions: SearchInboxesOptions;
 }
 
 export interface SendEmailRequest {
@@ -2626,6 +2633,67 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageTrackingPixelProjection> {
     const response = await this.listInboxTrackingPixelsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+   * Search all inboxes and return matching inboxes
+   */
+  async searchInboxesRaw(
+    requestParameters: SearchInboxesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageInboxProjection>> {
+    if (
+      requestParameters.searchInboxesOptions === null ||
+      requestParameters.searchInboxesOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'searchInboxesOptions',
+        'Required parameter requestParameters.searchInboxesOptions was null or undefined when calling searchInboxes.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/search`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SearchInboxesOptionsToJSON(
+          requestParameters.searchInboxesOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageInboxProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+   * Search all inboxes and return matching inboxes
+   */
+  async searchInboxes(
+    requestParameters: SearchInboxesRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageInboxProjection> {
+    const response = await this.searchInboxesRaw(
       requestParameters,
       initOverrides
     );

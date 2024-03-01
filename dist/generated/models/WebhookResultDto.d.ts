@@ -32,12 +32,6 @@ export interface WebhookResultDto {
      * @type {string}
      * @memberof WebhookResultDto
      */
-    inboxId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookResultDto
-     */
     webhookId: string;
     /**
      *
@@ -111,6 +105,36 @@ export interface WebhookResultDto {
      * @memberof WebhookResultDto
      */
     seen: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    inboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    emailId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    attachmentId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    phoneId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookResultDto
+     */
+    smsId?: string | null;
 }
 /**
  * @export
@@ -149,7 +173,8 @@ export declare enum WebhookResultDtoWebhookEventEnum {
 export declare enum WebhookResultDtoResultTypeEnum {
     BAD_RESPONSE = "BAD_RESPONSE",
     EXCEPTION = "EXCEPTION",
-    SUCCESS = "SUCCESS"
+    SUCCESS = "SUCCESS",
+    REDRIVEN = "REDRIVEN"
 }
 export declare function WebhookResultDtoFromJSON(json: any): WebhookResultDto;
 export declare function WebhookResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookResultDto;

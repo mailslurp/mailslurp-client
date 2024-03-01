@@ -14,6 +14,9 @@
 
 import * as runtime from '../runtime';
 import {
+  CountDto,
+  CountDtoFromJSON,
+  CountDtoToJSON,
   PageSmsProjection,
   PageSmsProjectionFromJSON,
   PageSmsProjectionToJSON,
@@ -222,6 +225,45 @@ export class SmsControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get number of SMS
+   * Get SMS count
+   */
+  async getSmsCountRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CountDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/sms/count`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CountDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get number of SMS
+   * Get SMS count
+   */
+  async getSmsCount(initOverrides?: RequestInit): Promise<CountDto> {
+    const response = await this.getSmsCountRaw(initOverrides);
     return await response.value();
   }
 

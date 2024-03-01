@@ -56,6 +56,7 @@ var WebhookResultDtoResultTypeEnum;
     WebhookResultDtoResultTypeEnum["BAD_RESPONSE"] = "BAD_RESPONSE";
     WebhookResultDtoResultTypeEnum["EXCEPTION"] = "EXCEPTION";
     WebhookResultDtoResultTypeEnum["SUCCESS"] = "SUCCESS";
+    WebhookResultDtoResultTypeEnum["REDRIVEN"] = "REDRIVEN";
 })(WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = {}));
 function WebhookResultDtoFromJSON(json) {
     return WebhookResultDtoFromJSONTyped(json, false);
@@ -68,7 +69,6 @@ function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         userId: json['userId'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         webhookId: json['webhookId'],
         webhookUrl: json['webhookUrl'],
         messageId: json['messageId'],
@@ -86,6 +86,13 @@ function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         seen: json['seen'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
+        attachmentId: !(0, runtime_1.exists)(json, 'attachmentId')
+            ? undefined
+            : json['attachmentId'],
+        phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
+        smsId: !(0, runtime_1.exists)(json, 'smsId') ? undefined : json['smsId'],
     };
 }
 exports.WebhookResultDtoFromJSONTyped = WebhookResultDtoFromJSONTyped;
@@ -99,7 +106,6 @@ function WebhookResultDtoToJSON(value) {
     return {
         id: value.id,
         userId: value.userId,
-        inboxId: value.inboxId,
         webhookId: value.webhookId,
         webhookUrl: value.webhookUrl,
         messageId: value.messageId,
@@ -113,6 +119,11 @@ function WebhookResultDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         seen: value.seen,
+        inboxId: value.inboxId,
+        emailId: value.emailId,
+        attachmentId: value.attachmentId,
+        phoneId: value.phoneId,
+        smsId: value.smsId,
     };
 }
 exports.WebhookResultDtoToJSON = WebhookResultDtoToJSON;

@@ -18,6 +18,7 @@ ImapSmtpAccessDetails
 - [imapServerHost](ImapSmtpAccessDetails.md#imapserverhost)
 - [imapServerPort](ImapSmtpAccessDetails.md#imapserverport)
 - [imapUsername](ImapSmtpAccessDetails.md#imapusername)
+- [mailFromDomain](ImapSmtpAccessDetails.md#mailfromdomain)
 - [secureSmtpPassword](ImapSmtpAccessDetails.md#securesmtppassword)
 - [secureSmtpServerHost](ImapSmtpAccessDetails.md#securesmtpserverhost)
 - [secureSmtpServerPort](ImapSmtpAccessDetails.md#securesmtpserverport)
@@ -70,6 +71,18 @@ ___
 • **imapUsername**: `string`
 
 IMAP username for login
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
+
+### mailFromDomain
+
+• `Optional` **mailFromDomain**: `string`
+
+Mail from domain or SMTP HELO value
 
 **`Memberof`**
 

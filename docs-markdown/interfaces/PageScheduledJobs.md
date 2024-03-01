@@ -23,7 +23,6 @@ PageScheduledJobs
 - [pageable](PageScheduledJobs.md#pageable)
 - [size](PageScheduledJobs.md#size)
 - [sort](PageScheduledJobs.md#sort)
-- [total](PageScheduledJobs.md#total)
 - [totalElements](PageScheduledJobs.md#totalelements)
 - [totalPages](PageScheduledJobs.md#totalpages)
 
@@ -119,19 +118,9 @@ PageScheduledJobs
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageScheduledJobs
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

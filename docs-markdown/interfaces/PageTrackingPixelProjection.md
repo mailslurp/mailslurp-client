@@ -23,7 +23,6 @@ PageTrackingPixelProjection
 - [pageable](PageTrackingPixelProjection.md#pageable)
 - [size](PageTrackingPixelProjection.md#size)
 - [sort](PageTrackingPixelProjection.md#sort)
-- [total](PageTrackingPixelProjection.md#total)
 - [totalElements](PageTrackingPixelProjection.md#totalelements)
 - [totalPages](PageTrackingPixelProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageTrackingPixelProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageTrackingPixelProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

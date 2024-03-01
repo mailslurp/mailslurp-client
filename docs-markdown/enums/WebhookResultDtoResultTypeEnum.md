@@ -10,6 +10,7 @@
 
 - [BAD\_RESPONSE](WebhookResultDtoResultTypeEnum.md#bad_response)
 - [EXCEPTION](WebhookResultDtoResultTypeEnum.md#exception)
+- [REDRIVEN](WebhookResultDtoResultTypeEnum.md#redriven)
 - [SUCCESS](WebhookResultDtoResultTypeEnum.md#success)
 
 ## Enumeration Members
@@ -23,6 +24,12 @@ ___
 ### EXCEPTION
 
 • **EXCEPTION** = ``"EXCEPTION"``
+
+___
+
+### REDRIVEN
+
+• **REDRIVEN** = ``"REDRIVEN"``
 
 ___
 

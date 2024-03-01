@@ -20,6 +20,12 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
+    url: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     inboxId?: string;
     /**
      *
@@ -27,6 +33,12 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     eventName?: WebhookProjectionEventNameEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    phoneNumberId?: string;
     /**
      *
      * @type {Date}
@@ -44,12 +56,6 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    phoneNumberId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
     name?: string;
     /**
      *
@@ -57,12 +63,6 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    url: string;
 }
 /**
  * @export

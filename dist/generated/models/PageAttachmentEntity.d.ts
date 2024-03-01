@@ -33,19 +33,13 @@ export interface PageAttachmentEntity {
      * @type {number}
      * @memberof PageAttachmentEntity
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAttachmentEntity
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

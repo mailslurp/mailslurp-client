@@ -51,19 +51,13 @@ export interface PageScheduledJobs {
    * @type {number}
    * @memberof PageScheduledJobs
    */
-  total?: number;
+  totalPages: number;
   /**
    *
    * @type {number}
    * @memberof PageScheduledJobs
    */
-  totalElements?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageScheduledJobs
-   */
-  totalPages?: number;
+  totalElements: number;
   /**
    *
    * @type {boolean}
@@ -126,11 +120,8 @@ export function PageScheduledJobsFromJSONTyped(
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    total: !exists(json, 'total') ? undefined : json['total'],
-    totalElements: !exists(json, 'totalElements')
-      ? undefined
-      : json['totalElements'],
-    totalPages: !exists(json, 'totalPages') ? undefined : json['totalPages'],
+    totalPages: json['totalPages'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
@@ -156,9 +147,8 @@ export function PageScheduledJobsToJSON(value?: PageScheduledJobs | null): any {
         ? undefined
         : (value.content as Array<any>).map(ScheduledJobToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    total: value.total,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
     last: value.last,
     numberOfElements: value.numberOfElements,
     first: value.first,

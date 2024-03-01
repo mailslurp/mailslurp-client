@@ -23,7 +23,6 @@ PageWebhookResult
 - [pageable](PageWebhookResult.md#pageable)
 - [size](PageWebhookResult.md#size)
 - [sort](PageWebhookResult.md#sort)
-- [total](PageWebhookResult.md#total)
 - [totalElements](PageWebhookResult.md#totalelements)
 - [totalPages](PageWebhookResult.md#totalpages)
 
@@ -119,19 +118,9 @@ PageWebhookResult
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageWebhookResult
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

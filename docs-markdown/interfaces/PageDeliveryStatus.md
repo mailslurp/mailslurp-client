@@ -23,7 +23,6 @@ PageDeliveryStatus
 - [pageable](PageDeliveryStatus.md#pageable)
 - [size](PageDeliveryStatus.md#size)
 - [sort](PageDeliveryStatus.md#sort)
-- [total](PageDeliveryStatus.md#total)
 - [totalElements](PageDeliveryStatus.md#totalelements)
 - [totalPages](PageDeliveryStatus.md#totalpages)
 
@@ -119,19 +118,9 @@ PageDeliveryStatus
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageDeliveryStatus
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

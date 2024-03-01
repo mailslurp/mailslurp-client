@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -194,6 +194,9 @@ export interface ListInboxTrackingPixelsRequest {
     searchFilter?: string;
     since?: Date;
     before?: Date;
+}
+export interface SearchInboxesRequest {
+    searchInboxesOptions: SearchInboxesOptions;
 }
 export interface SendEmailRequest {
     inboxId: string;
@@ -574,6 +577,16 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * List inbox tracking pixels
      */
     listInboxTrackingPixels(requestParameters: ListInboxTrackingPixelsRequest, initOverrides?: RequestInit): Promise<PageTrackingPixelProjection>;
+    /**
+     * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * Search all inboxes and return matching inboxes
+     */
+    searchInboxesRaw(requestParameters: SearchInboxesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageInboxProjection>>;
+    /**
+     * Search inboxes and return in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.
+     * Search all inboxes and return matching inboxes
+     */
+    searchInboxes(requestParameters: SearchInboxesRequest, initOverrides?: RequestInit): Promise<PageInboxProjection>;
     /**
      * Send an email from an inbox\'s email address.  The request body should contain the `SendEmailOptions` that include recipients, attachments, body etc. See `SendEmailOptions` for all available properties. Note the `inboxId` refers to the inbox\'s id not the inbox\'s email address. See https://www.mailslurp.com/guides/ for more information on how to send emails. This method does not return a sent email entity due to legacy reasons. To send and get a sent email as returned response use the sister method `sendEmailAndConfirm`.
      * Send Email

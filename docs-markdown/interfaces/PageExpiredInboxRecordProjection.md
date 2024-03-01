@@ -23,7 +23,6 @@ PageExpiredInboxRecordProjection
 - [pageable](PageExpiredInboxRecordProjection.md#pageable)
 - [size](PageExpiredInboxRecordProjection.md#size)
 - [sort](PageExpiredInboxRecordProjection.md#sort)
-- [total](PageExpiredInboxRecordProjection.md#total)
 - [totalElements](PageExpiredInboxRecordProjection.md#totalelements)
 - [totalPages](PageExpiredInboxRecordProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageExpiredInboxRecordProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageExpiredInboxRecordProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

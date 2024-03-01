@@ -32,6 +32,7 @@ var UserInfoDtoSubscriptionTypeEnum;
 (function (UserInfoDtoSubscriptionTypeEnum) {
     UserInfoDtoSubscriptionTypeEnum["PRO_MONTHLY"] = "PRO_MONTHLY";
     UserInfoDtoSubscriptionTypeEnum["STARTER"] = "STARTER";
+    UserInfoDtoSubscriptionTypeEnum["PRO"] = "PRO";
     UserInfoDtoSubscriptionTypeEnum["TEAM"] = "TEAM";
     UserInfoDtoSubscriptionTypeEnum["ENTERPRISE"] = "ENTERPRISE";
 })(UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum || (exports.UserInfoDtoSubscriptionTypeEnum = {}));

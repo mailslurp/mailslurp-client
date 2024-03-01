@@ -17,6 +17,12 @@
 export interface TemplateProjection {
     /**
      *
+     * @type {Array<string>}
+     * @memberof TemplateProjection
+     */
+    variables: Array<string>;
+    /**
+     *
      * @type {Date}
      * @memberof TemplateProjection
      */
@@ -27,12 +33,6 @@ export interface TemplateProjection {
      * @memberof TemplateProjection
      */
     updatedAt: Date;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof TemplateProjection
-     */
-    variables: Array<string>;
     /**
      *
      * @type {string}

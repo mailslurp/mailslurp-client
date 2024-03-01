@@ -33,19 +33,13 @@ export interface PageEmailValidationRequest {
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailValidationRequest
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailValidationRequest
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

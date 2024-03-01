@@ -19,6 +19,7 @@ AttachmentEntity
 - [contentType](AttachmentEntity.md#contenttype)
 - [createdAt](AttachmentEntity.md#createdat)
 - [id](AttachmentEntity.md#id)
+- [inboxId](AttachmentEntity.md#inboxid)
 - [name](AttachmentEntity.md#name)
 - [updatedAt](AttachmentEntity.md#updatedat)
 - [userId](AttachmentEntity.md#userid)
@@ -88,6 +89,16 @@ ___
 ### id
 
 • `Optional` **id**: `string`
+
+**`Memberof`**
+
+AttachmentEntity
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
 
 **`Memberof`**
 

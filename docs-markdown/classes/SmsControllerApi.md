@@ -26,6 +26,8 @@
 - [deleteSmsMessagesRaw](SmsControllerApi.md#deletesmsmessagesraw)
 - [getReplyForSmsMessage](SmsControllerApi.md#getreplyforsmsmessage)
 - [getReplyForSmsMessageRaw](SmsControllerApi.md#getreplyforsmsmessageraw)
+- [getSmsCount](SmsControllerApi.md#getsmscount)
+- [getSmsCountRaw](SmsControllerApi.md#getsmscountraw)
 - [getSmsMessage](SmsControllerApi.md#getsmsmessage)
 - [getSmsMessageRaw](SmsControllerApi.md#getsmsmessageraw)
 - [getSmsMessagesPaginated](SmsControllerApi.md#getsmsmessagespaginated)
@@ -184,6 +186,44 @@ Get reply for an SMS message
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ReplyForSms`](../interfaces/ReplyForSms.md)\>\>
+
+___
+
+### getSmsCount
+
+▸ **getSmsCount**(`initOverrides?`): `Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+Get number of SMS
+Get SMS count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CountDto`](../interfaces/CountDto.md)\>
+
+___
+
+### getSmsCountRaw
+
+▸ **getSmsCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
+
+Get number of SMS
+Get SMS count
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CountDto`](../interfaces/CountDto.md)\>\>
 
 ___
 

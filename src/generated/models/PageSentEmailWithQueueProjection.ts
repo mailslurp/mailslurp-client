@@ -35,11 +35,11 @@ import {
  */
 export interface PageSentEmailWithQueueProjection {
   /**
-   * Collection of items
+   *
    * @type {Array<SendWithQueueResult>}
    * @memberof PageSentEmailWithQueueProjection
    */
-  content: Array<SendWithQueueResult>;
+  content?: Array<SendWithQueueResult>;
   /**
    *
    * @type {PageableObject}
@@ -51,37 +51,13 @@ export interface PageSentEmailWithQueueProjection {
    * @type {number}
    * @memberof PageSentEmailWithQueueProjection
    */
-  total?: number;
+  totalPages: number;
   /**
-   * Number of items returned
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  numberOfElements: number;
-  /**
-   * Total number of items available for querying
+   *
    * @type {number}
    * @memberof PageSentEmailWithQueueProjection
    */
   totalElements: number;
-  /**
-   * Total number of pages available
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  totalPages: number;
-  /**
-   * Size of page requested
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  size: number;
-  /**
-   * Page number starting at 0
-   * @type {number}
-   * @memberof PageSentEmailWithQueueProjection
-   */
-  number: number;
   /**
    *
    * @type {boolean}
@@ -90,10 +66,28 @@ export interface PageSentEmailWithQueueProjection {
   last?: boolean;
   /**
    *
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  numberOfElements?: number;
+  /**
+   *
    * @type {boolean}
    * @memberof PageSentEmailWithQueueProjection
    */
   first?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  size?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof PageSentEmailWithQueueProjection
+   */
+  number?: number;
   /**
    *
    * @type {SortObject}
@@ -122,18 +116,21 @@ export function PageSentEmailWithQueueProjectionFromJSONTyped(
     return json;
   }
   return {
-    content: (json['content'] as Array<any>).map(SendWithQueueResultFromJSON),
+    content: !exists(json, 'content')
+      ? undefined
+      : (json['content'] as Array<any>).map(SendWithQueueResultFromJSON),
     pageable: !exists(json, 'pageable')
       ? undefined
       : PageableObjectFromJSON(json['pageable']),
-    total: !exists(json, 'total') ? undefined : json['total'],
-    numberOfElements: json['numberOfElements'],
-    totalElements: json['totalElements'],
     totalPages: json['totalPages'],
-    size: json['size'],
-    number: json['number'],
+    totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
+    numberOfElements: !exists(json, 'numberOfElements')
+      ? undefined
+      : json['numberOfElements'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    size: !exists(json, 'size') ? undefined : json['size'],
+    number: !exists(json, 'number') ? undefined : json['number'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
@@ -149,16 +146,18 @@ export function PageSentEmailWithQueueProjectionToJSON(
     return null;
   }
   return {
-    content: (value.content as Array<any>).map(SendWithQueueResultToJSON),
+    content:
+      value.content === undefined
+        ? undefined
+        : (value.content as Array<any>).map(SendWithQueueResultToJSON),
     pageable: PageableObjectToJSON(value.pageable),
-    total: value.total,
-    numberOfElements: value.numberOfElements,
-    totalElements: value.totalElements,
     totalPages: value.totalPages,
+    totalElements: value.totalElements,
+    last: value.last,
+    numberOfElements: value.numberOfElements,
+    first: value.first,
     size: value.size,
     number: value.number,
-    last: value.last,
-    first: value.first,
     sort: SortObjectToJSON(value.sort),
     empty: value.empty,
   };

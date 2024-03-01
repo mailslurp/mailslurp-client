@@ -23,12 +23,6 @@ export interface ContactProjection {
     emailAddress?: string | null;
     /**
      *
-     * @type {Date}
-     * @memberof ContactProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {Array<string>}
      * @memberof ContactProjection
      */
@@ -57,6 +51,12 @@ export interface ContactProjection {
      * @memberof ContactProjection
      */
     optOut?: boolean | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof ContactProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

@@ -23,7 +23,6 @@ PageUnknownMissedEmailProjection
 - [pageable](PageUnknownMissedEmailProjection.md#pageable)
 - [size](PageUnknownMissedEmailProjection.md#size)
 - [sort](PageUnknownMissedEmailProjection.md#sort)
-- [total](PageUnknownMissedEmailProjection.md#total)
 - [totalElements](PageUnknownMissedEmailProjection.md#totalelements)
 - [totalPages](PageUnknownMissedEmailProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageUnknownMissedEmailProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageUnknownMissedEmailProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

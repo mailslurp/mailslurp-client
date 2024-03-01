@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * Collection of items
+ *
  * @export
  * @interface SendWithQueueResult
  */

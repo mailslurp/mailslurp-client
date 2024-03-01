@@ -25,18 +25,21 @@ function PageSentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        content: json['content'].map(_1.SentEmailProjectionFromJSON),
+        content: !(0, runtime_1.exists)(json, 'content')
+            ? undefined
+            : json['content'].map(_1.SentEmailProjectionFromJSON),
         pageable: !(0, runtime_1.exists)(json, 'pageable')
             ? undefined
             : (0, _1.PageableObjectFromJSON)(json['pageable']),
-        total: !(0, runtime_1.exists)(json, 'total') ? undefined : json['total'],
-        numberOfElements: json['numberOfElements'],
-        totalElements: json['totalElements'],
         totalPages: json['totalPages'],
-        size: json['size'],
-        number: json['number'],
+        totalElements: json['totalElements'],
         last: !(0, runtime_1.exists)(json, 'last') ? undefined : json['last'],
+        numberOfElements: !(0, runtime_1.exists)(json, 'numberOfElements')
+            ? undefined
+            : json['numberOfElements'],
         first: !(0, runtime_1.exists)(json, 'first') ? undefined : json['first'],
+        size: !(0, runtime_1.exists)(json, 'size') ? undefined : json['size'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         sort: !(0, runtime_1.exists)(json, 'sort') ? undefined : (0, _1.SortObjectFromJSON)(json['sort']),
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
@@ -50,16 +53,17 @@ function PageSentEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        content: value.content.map(_1.SentEmailProjectionToJSON),
+        content: value.content === undefined
+            ? undefined
+            : value.content.map(_1.SentEmailProjectionToJSON),
         pageable: (0, _1.PageableObjectToJSON)(value.pageable),
-        total: value.total,
-        numberOfElements: value.numberOfElements,
-        totalElements: value.totalElements,
         totalPages: value.totalPages,
+        totalElements: value.totalElements,
+        last: value.last,
+        numberOfElements: value.numberOfElements,
+        first: value.first,
         size: value.size,
         number: value.number,
-        last: value.last,
-        first: value.first,
         sort: (0, _1.SortObjectToJSON)(value.sort),
         empty: value.empty,
     };

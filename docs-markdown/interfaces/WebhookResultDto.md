@@ -14,17 +14,21 @@ WebhookResultDto
 
 ### Properties
 
+- [attachmentId](WebhookResultDto.md#attachmentid)
 - [createdAt](WebhookResultDto.md#createdat)
+- [emailId](WebhookResultDto.md#emailid)
 - [httpMethod](WebhookResultDto.md#httpmethod)
 - [id](WebhookResultDto.md#id)
 - [inboxId](WebhookResultDto.md#inboxid)
 - [messageId](WebhookResultDto.md#messageid)
+- [phoneId](WebhookResultDto.md#phoneid)
 - [redriveId](WebhookResultDto.md#redriveid)
 - [responseBodyExtract](WebhookResultDto.md#responsebodyextract)
 - [responseStatus](WebhookResultDto.md#responsestatus)
 - [responseTimeMillis](WebhookResultDto.md#responsetimemillis)
 - [resultType](WebhookResultDto.md#resulttype)
 - [seen](WebhookResultDto.md#seen)
+- [smsId](WebhookResultDto.md#smsid)
 - [updatedAt](WebhookResultDto.md#updatedat)
 - [userId](WebhookResultDto.md#userid)
 - [webhookEvent](WebhookResultDto.md#webhookevent)
@@ -33,9 +37,29 @@ WebhookResultDto
 
 ## Properties
 
+### attachmentId
+
+• `Optional` **attachmentId**: `string`
+
+**`Memberof`**
+
+WebhookResultDto
+
+___
+
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+WebhookResultDto
+
+___
+
+### emailId
+
+• `Optional` **emailId**: `string`
 
 **`Memberof`**
 
@@ -76,6 +100,16 @@ ___
 ### messageId
 
 • **messageId**: `string`
+
+**`Memberof`**
+
+WebhookResultDto
+
+___
+
+### phoneId
+
+• `Optional` **phoneId**: `string`
 
 **`Memberof`**
 
@@ -136,6 +170,16 @@ ___
 ### seen
 
 • **seen**: `boolean`
+
+**`Memberof`**
+
+WebhookResultDto
+
+___
+
+### smsId
+
+• `Optional` **smsId**: `string`
 
 **`Memberof`**
 

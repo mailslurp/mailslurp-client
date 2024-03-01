@@ -33,19 +33,13 @@ export interface PageListUnsubscribeRecipients {
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageListUnsubscribeRecipients
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageListUnsubscribeRecipients
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

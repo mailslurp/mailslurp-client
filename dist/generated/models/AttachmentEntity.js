@@ -34,6 +34,7 @@ function AttachmentEntityFromJSONTyped(json, ignoreDiscriminator) {
             : json['contentLength'],
         contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
     };
@@ -55,6 +56,7 @@ function AttachmentEntityToJSON(value) {
         contentLength: value.contentLength,
         contentId: value.contentId,
         name: value.name,
+        inboxId: value.inboxId,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
     };

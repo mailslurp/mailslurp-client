@@ -69,6 +69,12 @@ export interface AttachmentEntity {
   name?: string;
   /**
    *
+   * @type {string}
+   * @memberof AttachmentEntity
+   */
+  inboxId?: string;
+  /**
+   *
    * @type {Date}
    * @memberof AttachmentEntity
    */
@@ -103,6 +109,7 @@ export function AttachmentEntityFromJSONTyped(
       : json['contentLength'],
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     name: !exists(json, 'name') ? undefined : json['name'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
@@ -124,6 +131,7 @@ export function AttachmentEntityToJSON(value?: AttachmentEntity | null): any {
     contentLength: value.contentLength,
     contentId: value.contentId,
     name: value.name,
+    inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };

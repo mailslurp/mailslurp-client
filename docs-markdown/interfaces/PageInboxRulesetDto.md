@@ -23,7 +23,6 @@ PageInboxRulesetDto
 - [pageable](PageInboxRulesetDto.md#pageable)
 - [size](PageInboxRulesetDto.md#size)
 - [sort](PageInboxRulesetDto.md#sort)
-- [total](PageInboxRulesetDto.md#total)
 - [totalElements](PageInboxRulesetDto.md#totalelements)
 - [totalPages](PageInboxRulesetDto.md#totalpages)
 
@@ -119,19 +118,9 @@ PageInboxRulesetDto
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageInboxRulesetDto
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

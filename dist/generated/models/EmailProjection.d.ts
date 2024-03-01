@@ -17,6 +17,12 @@
 export interface EmailProjection {
     /**
      *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string> | null;
+    /**
+     *
      * @type {string}
      * @memberof EmailProjection
      */
@@ -26,19 +32,13 @@ export interface EmailProjection {
      * @type {Array<string>}
      * @memberof EmailProjection
      */
-    attachments?: Array<string> | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
     to: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    domainId?: string | null;
     /**
      *
      * @type {Array<string>}
@@ -51,12 +51,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     cc?: Array<string> | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    domainId?: string | null;
     /**
      *
      * @type {boolean}
@@ -87,6 +81,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     textExcerpt?: string | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof EmailProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

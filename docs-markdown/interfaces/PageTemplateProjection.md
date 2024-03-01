@@ -23,7 +23,6 @@ PageTemplateProjection
 - [pageable](PageTemplateProjection.md#pageable)
 - [size](PageTemplateProjection.md#size)
 - [sort](PageTemplateProjection.md#sort)
-- [total](PageTemplateProjection.md#total)
 - [totalElements](PageTemplateProjection.md#totalelements)
 - [totalPages](PageTemplateProjection.md#totalpages)
 
@@ -119,19 +118,9 @@ PageTemplateProjection
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageTemplateProjection
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

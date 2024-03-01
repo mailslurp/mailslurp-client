@@ -24,6 +24,12 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
+  userId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
   emailId?: string | null;
   /**
    *
@@ -36,19 +42,13 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
-  userId?: string | null;
+  forwarderId?: string | null;
   /**
    *
    * @type {Date}
    * @memberof InboxForwarderEventProjection
    */
   createdAt: Date;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  forwarderId?: string | null;
   /**
    *
    * @type {string}
@@ -92,11 +92,11 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     return json;
   }
   return {
+    userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    userId: !exists(json, 'userId') ? undefined : json['userId'],
-    createdAt: new Date(json['createdAt']),
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
+    createdAt: new Date(json['createdAt']),
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
@@ -113,11 +113,11 @@ export function InboxForwarderEventProjectionToJSON(
     return null;
   }
   return {
+    userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
-    userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
     forwarderId: value.forwarderId,
+    createdAt: value.createdAt.toISOString(),
     message: value.message,
     id: value.id,
     status: value.status,

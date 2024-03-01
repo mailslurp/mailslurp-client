@@ -65,6 +65,12 @@ export interface AttachmentEntity {
     name?: string;
     /**
      *
+     * @type {string}
+     * @memberof AttachmentEntity
+     */
+    inboxId?: string;
+    /**
+     *
      * @type {Date}
      * @memberof AttachmentEntity
      */

@@ -14,7 +14,7 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * Collection of items
+ *
  * @export
  * @interface SentEmailProjection
  */
@@ -24,13 +24,13 @@ export interface SentEmailProjection {
    * @type {string}
    * @memberof SentEmailProjection
    */
-  inboxId: string;
+  id: string;
   /**
    *
    * @type {string}
    * @memberof SentEmailProjection
    */
-  id: string;
+  userId: string;
   /**
    *
    * @type {string}
@@ -45,22 +45,16 @@ export interface SentEmailProjection {
   subject?: string;
   /**
    *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  userId: string;
-  /**
-   *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
   attachments: Array<string>;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof SentEmailProjection
    */
-  createdAt: Date;
+  inboxId: string;
   /**
    *
    * @type {Array<string>}
@@ -79,6 +73,12 @@ export interface SentEmailProjection {
    * @memberof SentEmailProjection
    */
   cc: Array<string>;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentEmailProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -105,16 +105,16 @@ export function SentEmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    inboxId: json['inboxId'],
     id: json['id'],
+    userId: json['userId'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
-    userId: json['userId'],
     attachments: json['attachments'],
-    createdAt: new Date(json['createdAt']),
+    inboxId: json['inboxId'],
     to: json['to'],
     bcc: json['bcc'],
     cc: json['cc'],
+    createdAt: new Date(json['createdAt']),
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     virtualSend: json['virtualSend'],
   };
@@ -130,16 +130,16 @@ export function SentEmailProjectionToJSON(
     return null;
   }
   return {
-    inboxId: value.inboxId,
     id: value.id,
+    userId: value.userId,
     from: value.from,
     subject: value.subject,
-    userId: value.userId,
     attachments: value.attachments,
-    createdAt: value.createdAt.toISOString(),
+    inboxId: value.inboxId,
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,
+    createdAt: value.createdAt.toISOString(),
     bodyMD5Hash: value.bodyMD5Hash,
     virtualSend: value.virtualSend,
   };

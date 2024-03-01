@@ -23,7 +23,6 @@ PageAttachmentEntity
 - [pageable](PageAttachmentEntity.md#pageable)
 - [size](PageAttachmentEntity.md#size)
 - [sort](PageAttachmentEntity.md#sort)
-- [total](PageAttachmentEntity.md#total)
 - [totalElements](PageAttachmentEntity.md#totalelements)
 - [totalPages](PageAttachmentEntity.md#totalpages)
 
@@ -119,19 +118,9 @@ PageAttachmentEntity
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageAttachmentEntity
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

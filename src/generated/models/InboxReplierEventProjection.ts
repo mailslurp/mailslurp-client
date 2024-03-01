@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface InboxReplierEventProjection {
   /**
    *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  emailId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  inboxId?: string | null;
-  /**
-   *
    * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
@@ -45,10 +33,16 @@ export interface InboxReplierEventProjection {
   userId?: string | null;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  createdAt: Date;
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  inboxId?: string | null;
   /**
    *
    * @type {string}
@@ -61,6 +55,12 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   replierId?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof InboxReplierEventProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -104,13 +104,13 @@ export function InboxReplierEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
-    createdAt: new Date(json['createdAt']),
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
+    createdAt: new Date(json['createdAt']),
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
@@ -127,13 +127,13 @@ export function InboxReplierEventProjectionToJSON(
     return null;
   }
   return {
-    emailId: value.emailId,
-    inboxId: value.inboxId,
     recipients: value.recipients,
     userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
+    emailId: value.emailId,
+    inboxId: value.inboxId,
     sentId: value.sentId,
     replierId: value.replierId,
+    createdAt: value.createdAt.toISOString(),
     message: value.message,
     id: value.id,
     status: value.status,

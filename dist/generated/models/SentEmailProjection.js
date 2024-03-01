@@ -24,16 +24,16 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        inboxId: json['inboxId'],
         id: json['id'],
+        userId: json['userId'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        userId: json['userId'],
         attachments: json['attachments'],
-        createdAt: new Date(json['createdAt']),
+        inboxId: json['inboxId'],
         to: json['to'],
         bcc: json['bcc'],
         cc: json['cc'],
+        createdAt: new Date(json['createdAt']),
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         virtualSend: json['virtualSend'],
     };
@@ -47,16 +47,16 @@ function SentEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        inboxId: value.inboxId,
         id: value.id,
+        userId: value.userId,
         from: value.from,
         subject: value.subject,
-        userId: value.userId,
         attachments: value.attachments,
-        createdAt: value.createdAt.toISOString(),
+        inboxId: value.inboxId,
         to: value.to,
         bcc: value.bcc,
         cc: value.cc,
+        createdAt: value.createdAt.toISOString(),
         bodyMD5Hash: value.bodyMD5Hash,
         virtualSend: value.virtualSend,
     };

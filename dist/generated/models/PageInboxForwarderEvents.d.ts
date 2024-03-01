@@ -33,19 +33,13 @@ export interface PageInboxForwarderEvents {
      * @type {number}
      * @memberof PageInboxForwarderEvents
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageInboxForwarderEvents
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxForwarderEvents
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

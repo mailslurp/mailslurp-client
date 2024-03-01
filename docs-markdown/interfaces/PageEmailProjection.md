@@ -23,7 +23,6 @@ PageEmailProjection
 - [pageable](PageEmailProjection.md#pageable)
 - [size](PageEmailProjection.md#size)
 - [sort](PageEmailProjection.md#sort)
-- [total](PageEmailProjection.md#total)
 - [totalElements](PageEmailProjection.md#totalelements)
 - [totalPages](PageEmailProjection.md#totalpages)
 
@@ -112,16 +111,6 @@ ___
 ### sort
 
 • `Optional` **sort**: [`SortObject`](SortObject.md)
-
-**`Memberof`**
-
-PageEmailProjection
-
-___
-
-### total
-
-• `Optional` **total**: `number`
 
 **`Memberof`**
 

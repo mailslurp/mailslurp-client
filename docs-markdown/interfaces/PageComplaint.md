@@ -23,7 +23,6 @@ PageComplaint
 - [pageable](PageComplaint.md#pageable)
 - [size](PageComplaint.md#size)
 - [sort](PageComplaint.md#sort)
-- [total](PageComplaint.md#total)
 - [totalElements](PageComplaint.md#totalelements)
 - [totalPages](PageComplaint.md#totalpages)
 
@@ -119,19 +118,9 @@ PageComplaint
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageComplaint
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 

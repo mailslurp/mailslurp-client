@@ -23,6 +23,9 @@ import {
   CheckEmailBodyFeatureSupportResults,
   CheckEmailBodyFeatureSupportResultsFromJSON,
   CheckEmailBodyFeatureSupportResultsToJSON,
+  CheckEmailBodyResults,
+  CheckEmailBodyResultsFromJSON,
+  CheckEmailBodyResultsToJSON,
   CheckEmailClientSupportOptions,
   CheckEmailClientSupportOptionsFromJSON,
   CheckEmailClientSupportOptionsToJSON,
@@ -44,6 +47,9 @@ import {
   EmailContentMatchResult,
   EmailContentMatchResultFromJSON,
   EmailContentMatchResultToJSON,
+  EmailContentPartResult,
+  EmailContentPartResultFromJSON,
+  EmailContentPartResultToJSON,
   EmailHtmlDto,
   EmailHtmlDtoFromJSON,
   EmailHtmlDtoToJSON,
@@ -77,6 +83,9 @@ import {
   ReplyToEmailOptions,
   ReplyToEmailOptionsFromJSON,
   ReplyToEmailOptionsToJSON,
+  SearchEmailsOptions,
+  SearchEmailsOptionsFromJSON,
+  SearchEmailsOptionsToJSON,
   SendEmailOptions,
   SendEmailOptionsFromJSON,
   SendEmailOptionsToJSON,
@@ -99,6 +108,10 @@ export interface ApplyImapFlagOperationRequest {
 export interface CanSendRequest {
   inboxId: string;
   sendEmailOptions: SendEmailOptions;
+}
+
+export interface CheckEmailBodyRequest {
+  emailId: string;
 }
 
 export interface CheckEmailBodyFeatureSupportRequest {
@@ -154,6 +167,11 @@ export interface GetEmailAttachmentsRequest {
 export interface GetEmailContentMatchRequest {
   emailId: string;
   contentMatchOptions: ContentMatchOptions;
+}
+
+export interface GetEmailContentPartRequest {
+  emailId: string;
+  contentType: string;
 }
 
 export interface GetEmailHTMLRequest {
@@ -249,6 +267,10 @@ export interface MarkAsReadRequest {
 export interface ReplyToEmailRequest {
   emailId: string;
   replyToEmailOptions: ReplyToEmailOptions;
+}
+
+export interface SearchEmailsRequest {
+  searchEmailsOptions: SearchEmailsOptions;
 }
 
 export interface SendEmailSourceOptionalRequest {
@@ -407,6 +429,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<CanSendEmailResults> {
     const response = await this.canSendRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+   * Detect broken links, spelling, and images in email content
+   */
+  async checkEmailBodyRaw(
+    requestParameters: CheckEmailBodyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CheckEmailBodyResults>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling checkEmailBody.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/check-email-body`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CheckEmailBodyResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+   * Detect broken links, spelling, and images in email content
+   */
+  async checkEmailBody(
+    requestParameters: CheckEmailBodyRequest,
+    initOverrides?: RequestInit
+  ): Promise<CheckEmailBodyResults> {
+    const response = await this.checkEmailBodyRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
@@ -1214,6 +1295,79 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<EmailContentMatchResult> {
     const response = await this.getEmailContentMatchRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get email body content parts from a multipart email message for a given content type
+   * Get email content part by content type
+   */
+  async getEmailContentPartRaw(
+    requestParameters: GetEmailContentPartRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailContentPartResult>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailContentPart.'
+      );
+    }
+
+    if (
+      requestParameters.contentType === null ||
+      requestParameters.contentType === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'contentType',
+        'Required parameter requestParameters.contentType was null or undefined when calling getEmailContentPart.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.contentType !== undefined) {
+      queryParameters['contentType'] = requestParameters.contentType;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/contentPart`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailContentPartResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get email body content parts from a multipart email message for a given content type
+   * Get email content part by content type
+   */
+  async getEmailContentPart(
+    requestParameters: GetEmailContentPartRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailContentPartResult> {
+    const response = await this.getEmailContentPartRaw(
       requestParameters,
       initOverrides
     );
@@ -2337,6 +2491,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<SentEmailDto> {
     const response = await this.replyToEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+   * Get all emails by search criteria. Return in paginated form.
+   */
+  async searchEmailsRaw(
+    requestParameters: SearchEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailProjection>> {
+    if (
+      requestParameters.searchEmailsOptions === null ||
+      requestParameters.searchEmailsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'searchEmailsOptions',
+        'Required parameter requestParameters.searchEmailsOptions was null or undefined when calling searchEmails.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/search`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SearchEmailsOptionsToJSON(requestParameters.searchEmailsOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Search emails by given criteria return matches in paginated format. Searches against email recipients, sender, subject, email address and ID. Does not search email body
+   * Get all emails by search criteria. Return in paginated form.
+   */
+  async searchEmails(
+    requestParameters: SearchEmailsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailProjection> {
+    const response = await this.searchEmailsRaw(
       requestParameters,
       initOverrides
     );

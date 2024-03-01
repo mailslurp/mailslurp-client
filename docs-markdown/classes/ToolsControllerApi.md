@@ -22,6 +22,8 @@
 
 - [checkEmailFeaturesClientSupport](ToolsControllerApi.md#checkemailfeaturesclientsupport)
 - [checkEmailFeaturesClientSupportRaw](ToolsControllerApi.md#checkemailfeaturesclientsupportraw)
+- [createNewFakeEmailAddress](ToolsControllerApi.md#createnewfakeemailaddress)
+- [createNewFakeEmailAddressRaw](ToolsControllerApi.md#createnewfakeemailaddressraw)
 - [generateBimiRecord](ToolsControllerApi.md#generatebimirecord)
 - [generateBimiRecordRaw](ToolsControllerApi.md#generatebimirecordraw)
 - [generateDmarcRecord](ToolsControllerApi.md#generatedmarcrecord)
@@ -30,6 +32,10 @@
 - [generateMtaStsRecordRaw](ToolsControllerApi.md#generatemtastsrecordraw)
 - [generateTlsReportingRecord](ToolsControllerApi.md#generatetlsreportingrecord)
 - [generateTlsReportingRecordRaw](ToolsControllerApi.md#generatetlsreportingrecordraw)
+- [getFakeEmailById](ToolsControllerApi.md#getfakeemailbyid)
+- [getFakeEmailByIdRaw](ToolsControllerApi.md#getfakeemailbyidraw)
+- [getFakeEmailsForAddress](ToolsControllerApi.md#getfakeemailsforaddress)
+- [getFakeEmailsForAddressRaw](ToolsControllerApi.md#getfakeemailsforaddressraw)
 - [lookupBimiDomain](ToolsControllerApi.md#lookupbimidomain)
 - [lookupBimiDomainRaw](ToolsControllerApi.md#lookupbimidomainraw)
 - [lookupDmarcDomain](ToolsControllerApi.md#lookupdmarcdomain)
@@ -106,6 +112,42 @@ Check email client support for email HTML and CSS features
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CheckEmailFeaturesClientSupportResults`](../interfaces/CheckEmailFeaturesClientSupportResults.md)\>\>
+
+___
+
+### createNewFakeEmailAddress
+
+▸ **createNewFakeEmailAddress**(`initOverrides?`): `Promise`<[`NewFakeEmailAddressResult`](../interfaces/NewFakeEmailAddressResult.md)\>
+
+Create a new email address using the fake email domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`NewFakeEmailAddressResult`](../interfaces/NewFakeEmailAddressResult.md)\>
+
+___
+
+### createNewFakeEmailAddressRaw
+
+▸ **createNewFakeEmailAddressRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`NewFakeEmailAddressResult`](../interfaces/NewFakeEmailAddressResult.md)\>\>
+
+Create a new email address using the fake email domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`NewFakeEmailAddressResult`](../interfaces/NewFakeEmailAddressResult.md)\>\>
 
 ___
 
@@ -258,6 +300,74 @@ Create a TLS reporting record policy
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GenerateTlsReportingRecordResults`](../interfaces/GenerateTlsReportingRecordResults.md)\>\>
+
+___
+
+### getFakeEmailById
+
+▸ **getFakeEmailById**(`requestParameters`, `initOverrides?`): `Promise`<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailByIdRequest`](../interfaces/GetFakeEmailByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>
+
+___
+
+### getFakeEmailByIdRaw
+
+▸ **getFakeEmailByIdRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailByIdRequest`](../interfaces/GetFakeEmailByIdRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailResult`](../interfaces/FakeEmailResult.md)\>\>
+
+___
+
+### getFakeEmailsForAddress
+
+▸ **getFakeEmailsForAddress**(`requestParameters`, `initOverrides?`): `Promise`<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailsForAddressRequest`](../interfaces/GetFakeEmailsForAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>
+
+___
+
+### getFakeEmailsForAddressRaw
+
+▸ **getFakeEmailsForAddressRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetFakeEmailsForAddressRequest`](../interfaces/GetFakeEmailsForAddressRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`FakeEmailPreview`](../interfaces/FakeEmailPreview.md)[]\>\>
 
 ___
 

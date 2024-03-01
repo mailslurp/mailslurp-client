@@ -9,6 +9,7 @@
 ### Enumeration Members
 
 - [ENTERPRISE](UserInfoDtoSubscriptionTypeEnum.md#enterprise)
+- [PRO](UserInfoDtoSubscriptionTypeEnum.md#pro)
 - [PRO\_MONTHLY](UserInfoDtoSubscriptionTypeEnum.md#pro_monthly)
 - [STARTER](UserInfoDtoSubscriptionTypeEnum.md#starter)
 - [TEAM](UserInfoDtoSubscriptionTypeEnum.md#team)
@@ -18,6 +19,12 @@
 ### ENTERPRISE
 
 • **ENTERPRISE** = ``"ENTERPRISE"``
+
+___
+
+### PRO
+
+• **PRO** = ``"PRO"``
 
 ___
 

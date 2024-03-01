@@ -33,19 +33,13 @@ export interface PageEmailPreview {
      * @type {number}
      * @memberof PageEmailPreview
      */
-    total?: number;
+    totalPages: number;
     /**
      *
      * @type {number}
      * @memberof PageEmailPreview
      */
-    totalElements?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailPreview
-     */
-    totalPages?: number;
+    totalElements: number;
     /**
      *
      * @type {boolean}

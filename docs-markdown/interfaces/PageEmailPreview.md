@@ -23,7 +23,6 @@ PageEmailPreview
 - [pageable](PageEmailPreview.md#pageable)
 - [size](PageEmailPreview.md#size)
 - [sort](PageEmailPreview.md#sort)
-- [total](PageEmailPreview.md#total)
 - [totalElements](PageEmailPreview.md#totalelements)
 - [totalPages](PageEmailPreview.md#totalpages)
 
@@ -119,19 +118,9 @@ PageEmailPreview
 
 ___
 
-### total
-
-• `Optional` **total**: `number`
-
-**`Memberof`**
-
-PageEmailPreview
-
-___
-
 ### totalElements
 
-• `Optional` **totalElements**: `number`
+• **totalElements**: `number`
 
 **`Memberof`**
 
@@ -141,7 +130,7 @@ ___
 
 ### totalPages
 
-• `Optional` **totalPages**: `number`
+• **totalPages**: `number`
 
 **`Memberof`**
 
