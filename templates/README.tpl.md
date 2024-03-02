@@ -275,6 +275,38 @@ Use the wait for controller to wait for inbound SMS messages:
 
 You can also use webhooks with the `NEW_SMS` event to receive text messages.
 
+## Testing
+MailSlurp is testing email and SMS in code. Testing can include the analysis of email content, feature support, and the sending and receiving of emails and SMS to test applications and processes. MailSlurp can be used with common test frameworks.
+
+### Connect with common test frameworks
+- [Testing guide](https://docs.mailslurp.com/testing/)
+- [Cypress](https://docs.mailslurp.com/cypress-mailslurp/)
+- [Playwright](https://docs.mailslurp.com/playwright/)
+- [Selenium](https://docs.mailslurp.com/selenium/)
+
+### Email feature support testing
+Check rendering of email HTML, CSS, and images across different devices and mail clients. MailSlurp can analyze your emails and [detect HTML, CSS, and image features](https://www.mailslurp.com/product/email-compatibility-tester/) that may not be supported by all email clients. 
+
+```typescript
+{{email_feature_checker_basic}}
+```
+
+### Find broken links
+You can parse emails and detect 404s and broken links. MailSlurp will attempt to call the resource to ensure it exists. Check for dead links like this:
+
+```typescript
+{{email_content_check_invalid_link}}
+```
+
+### Detect missing images
+Broken images can be detected in emails. MailSlurp will attempt to load the image and detect if it is missing. Check for missing images like this:
+
+```typescript
+{{email_content_check_invalid_image}}
+```
+
+See the [content testing guide](https://docs.mailslurp.com/email-feature-check/) for more information.
+
 ## Webhooks
 To have received emails sent to your server using HTTP webhook push create a webhook using the [WebhookController](https://mailslurp.github.io/mailslurp-client/classes/WebhookControllerApi.html) or see the [webhook email guide](https://docs.mailslurp.com/webhooks/).
 
