@@ -17,16 +17,16 @@
 export interface UnknownMissedEmailProjection {
     /**
      *
-     * @type {Array<string>}
-     * @memberof UnknownMissedEmailProjection
-     */
-    to?: Array<string>;
-    /**
-     *
      * @type {Date}
      * @memberof UnknownMissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof UnknownMissedEmailProjection
+     */
+    to?: Array<string>;
     /**
      *
      * @type {string}

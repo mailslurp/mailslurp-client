@@ -17,16 +17,22 @@
 export interface ConnectorProjection {
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof ConnectorProjection
      */
-    userId: string;
+    createdAt: Date;
     /**
      *
      * @type {string}
      * @memberof ConnectorProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    userId: string;
     /**
      *
      * @type {boolean}
@@ -51,12 +57,6 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     syncInterval?: number;
-    /**
-     *
-     * @type {Date}
-     * @memberof ConnectorProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

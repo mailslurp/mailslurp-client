@@ -21,6 +21,18 @@ import { exists, mapValues } from '../runtime';
 export interface AttachmentProjection {
   /**
    *
+   * @type {Date}
+   * @memberof AttachmentProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof AttachmentProjection
+   */
+  updatedAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof AttachmentProjection
    */
@@ -37,18 +49,6 @@ export interface AttachmentProjection {
    * @memberof AttachmentProjection
    */
   attachmentId: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  updatedAt: Date;
   /**
    *
    * @type {string}
@@ -81,11 +81,11 @@ export function AttachmentProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     userId: json['userId'],
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
     attachmentId: json['attachmentId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     contentLength: !exists(json, 'contentLength')
       ? undefined
@@ -104,11 +104,11 @@ export function AttachmentProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     userId: value.userId,
     contentId: value.contentId,
     attachmentId: value.attachmentId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     name: value.name,
     contentLength: value.contentLength,
     contentType: value.contentType,

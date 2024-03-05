@@ -218,7 +218,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
     EmailControllerApi.prototype.checkEmailBodyRaw = function (requestParameters, initOverrides) {
@@ -252,7 +252,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
     EmailControllerApi.prototype.checkEmailBody = function (requestParameters, initOverrides) {

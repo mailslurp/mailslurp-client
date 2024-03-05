@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface ExpiredInboxRecordProjection {
   /**
    *
+   * @type {Date}
+   * @memberof ExpiredInboxRecordProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof ExpiredInboxRecordProjection
    */
@@ -31,12 +37,6 @@ export interface ExpiredInboxRecordProjection {
    * @memberof ExpiredInboxRecordProjection
    */
   emailAddress: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof ExpiredInboxRecordProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -59,9 +59,9 @@ export function ExpiredInboxRecordProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
     emailAddress: json['emailAddress'],
-    createdAt: new Date(json['createdAt']),
     id: json['id'],
   };
 }
@@ -76,9 +76,9 @@ export function ExpiredInboxRecordProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     emailAddress: value.emailAddress,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }

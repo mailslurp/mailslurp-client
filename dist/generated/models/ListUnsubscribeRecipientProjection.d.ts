@@ -17,6 +17,12 @@
 export interface ListUnsubscribeRecipientProjection {
     /**
      *
+     * @type {Date}
+     * @memberof ListUnsubscribeRecipientProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof ListUnsubscribeRecipientProjection
      */
@@ -27,12 +33,6 @@ export interface ListUnsubscribeRecipientProjection {
      * @memberof ListUnsubscribeRecipientProjection
      */
     domainId?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof ListUnsubscribeRecipientProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

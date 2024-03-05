@@ -17,6 +17,18 @@
 export interface WebhookProjection {
     /**
      *
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof WebhookProjection
+     */
+    updatedAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof WebhookProjection
      */
@@ -39,18 +51,6 @@ export interface WebhookProjection {
      * @memberof WebhookProjection
      */
     phoneNumberId?: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof WebhookProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof WebhookProjection
-     */
-    updatedAt: Date;
     /**
      *
      * @type {string}

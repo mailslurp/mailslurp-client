@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface ListUnsubscribeRecipientProjection {
   /**
    *
+   * @type {Date}
+   * @memberof ListUnsubscribeRecipientProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof ListUnsubscribeRecipientProjection
    */
@@ -31,12 +37,6 @@ export interface ListUnsubscribeRecipientProjection {
    * @memberof ListUnsubscribeRecipientProjection
    */
   domainId?: string | null;
-  /**
-   *
-   * @type {Date}
-   * @memberof ListUnsubscribeRecipientProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -59,9 +59,9 @@ export function ListUnsubscribeRecipientProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     emailAddress: json['emailAddress'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    createdAt: new Date(json['createdAt']),
     id: json['id'],
   };
 }
@@ -76,9 +76,9 @@ export function ListUnsubscribeRecipientProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
     domainId: value.domainId,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }

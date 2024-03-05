@@ -21,6 +21,18 @@ import { exists, mapValues } from '../runtime';
 export interface WebhookProjection {
   /**
    *
+   * @type {Date}
+   * @memberof WebhookProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof WebhookProjection
+   */
+  updatedAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof WebhookProjection
    */
@@ -43,18 +55,6 @@ export interface WebhookProjection {
    * @memberof WebhookProjection
    */
   phoneNumberId?: string;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof WebhookProjection
-   */
-  updatedAt: Date;
   /**
    *
    * @type {string}
@@ -98,14 +98,14 @@ export function WebhookProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     url: json['url'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     eventName: !exists(json, 'eventName') ? undefined : json['eventName'],
     phoneNumberId: !exists(json, 'phoneNumberId')
       ? undefined
       : json['phoneNumberId'],
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -119,12 +119,12 @@ export function WebhookProjectionToJSON(value?: WebhookProjection | null): any {
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     url: value.url,
     inboxId: value.inboxId,
     eventName: value.eventName,
     phoneNumberId: value.phoneNumberId,
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     name: value.name,
     id: value.id,
   };

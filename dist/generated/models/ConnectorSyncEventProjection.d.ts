@@ -17,6 +17,12 @@
 export interface ConnectorSyncEventProjection {
     /**
      *
+     * @type {Date}
+     * @memberof ConnectorSyncEventProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof ConnectorSyncEventProjection
      */
@@ -33,12 +39,6 @@ export interface ConnectorSyncEventProjection {
      * @memberof ConnectorSyncEventProjection
      */
     syncStatus: ConnectorSyncEventProjectionSyncStatusEnum;
-    /**
-     *
-     * @type {Date}
-     * @memberof ConnectorSyncEventProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

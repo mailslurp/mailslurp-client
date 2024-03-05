@@ -23,9 +23,9 @@ function ExpiredInboxRecordProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        createdAt: new Date(json['createdAt']),
         userId: json['userId'],
         emailAddress: json['emailAddress'],
-        createdAt: new Date(json['createdAt']),
         id: json['id'],
     };
 }
@@ -38,9 +38,9 @@ function ExpiredInboxRecordProjectionToJSON(value) {
         return null;
     }
     return {
+        createdAt: value.createdAt.toISOString(),
         userId: value.userId,
         emailAddress: value.emailAddress,
-        createdAt: value.createdAt.toISOString(),
         id: value.id,
     };
 }

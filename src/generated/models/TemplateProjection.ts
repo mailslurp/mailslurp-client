@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface TemplateProjection {
   /**
    *
-   * @type {Array<string>}
-   * @memberof TemplateProjection
-   */
-  variables: Array<string>;
-  /**
-   *
    * @type {Date}
    * @memberof TemplateProjection
    */
@@ -37,6 +31,12 @@ export interface TemplateProjection {
    * @memberof TemplateProjection
    */
   updatedAt: Date;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof TemplateProjection
+   */
+  variables: Array<string>;
   /**
    *
    * @type {string}
@@ -63,9 +63,9 @@ export function TemplateProjectionFromJSONTyped(
     return json;
   }
   return {
-    variables: json['variables'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    variables: json['variables'],
     name: json['name'],
     id: json['id'],
   };
@@ -81,9 +81,9 @@ export function TemplateProjectionToJSON(
     return null;
   }
   return {
-    variables: value.variables,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    variables: value.variables,
     name: value.name,
     id: value.id,
   };

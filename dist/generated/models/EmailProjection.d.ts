@@ -17,16 +17,22 @@
 export interface EmailProjection {
     /**
      *
-     * @type {Array<string>}
+     * @type {Date}
      * @memberof EmailProjection
      */
-    attachments?: Array<string> | null;
+    createdAt: Date;
     /**
      *
      * @type {string}
      * @memberof EmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
@@ -81,12 +87,6 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     textExcerpt?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof EmailProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

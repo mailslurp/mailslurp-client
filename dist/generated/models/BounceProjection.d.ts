@@ -17,6 +17,12 @@
 export interface BounceProjection {
     /**
      *
+     * @type {Date}
+     * @memberof BounceProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof BounceProjection
      */
@@ -33,12 +39,6 @@ export interface BounceProjection {
      * @memberof BounceProjection
      */
     bounceMta?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof BounceProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

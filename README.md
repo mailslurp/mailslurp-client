@@ -547,11 +547,19 @@ MailSlurp is testing email and SMS in code. Testing can include the analysis of 
 Check rendering of email HTML, CSS, and images across different devices and mail clients. MailSlurp can analyze your emails and [detect HTML, CSS, and image features](https://www.mailslurp.com/product/email-compatibility-tester/) that may not be supported by all email clients. 
 
 ```typescript
-const { result } = await mailslurp.emailController.checkEmailBodyFeatureSupport({
-  emailId: email.id
-})
-expect(result.detectedFeatures).toContain(EmailFeatureSupportResultDetectedFeaturesEnum.html_doctype)
-expect(result.featurePercentages.find(it => it.status === EmailFeatureSupportStatusPercentageStatusEnum.SUPPORTED)?.percentage).toBeGreaterThan(50)
+const { result } =
+  await mailslurp.emailController.checkEmailBodyFeatureSupport({
+    emailId: email.id,
+  });
+expect(result.detectedFeatures).toContain(
+  EmailFeatureSupportResultDetectedFeaturesEnum.html_doctype
+);
+expect(
+  result.featurePercentages.find(
+    (it) =>
+      it.status === EmailFeatureSupportStatusPercentageStatusEnum.SUPPORTED
+  )?.percentage
+).toBeGreaterThan(50);
 ```
 
 ### Find broken links
@@ -559,11 +567,13 @@ You can parse emails and detect 404s and broken links. MailSlurp will attempt to
 
 ```typescript
 const result = await mailslurp.emailController.checkEmailBody({
-  emailId: email.id
-})
-expect(result.hasIssues).toEqual(true)
-expect(result.linkIssues.length).toEqual(1)
-expect(result.linkIssues[0].url).toEqual("https://api.mailslurp.com/not-existing")
+  emailId: email.id,
+});
+expect(result.hasIssues).toEqual(true);
+expect(result.linkIssues.length).toEqual(1);
+expect(result.linkIssues[0].url).toEqual(
+  'https://api.mailslurp.com/not-existing'
+);
 ```
 
 ### Detect missing images
@@ -571,11 +581,13 @@ Broken images can be detected in emails. MailSlurp will attempt to load the imag
 
 ```typescript
 const result = await mailslurp.emailController.checkEmailBody({
-  emailId: email.id
-})
-expect(result.hasIssues).toEqual(true)
-expect(result.imageIssues.length).toEqual(1)
-expect(result.imageIssues[0].url).toEqual("https://www.mailslurp.com/broken-image.png")
+  emailId: email.id,
+});
+expect(result.hasIssues).toEqual(true);
+expect(result.imageIssues.length).toEqual(1);
+expect(result.imageIssues[0].url).toEqual(
+  'https://www.mailslurp.com/broken-image.png'
+);
 ```
 
 See the [content testing guide](https://docs.mailslurp.com/email-feature-check/) for more information.

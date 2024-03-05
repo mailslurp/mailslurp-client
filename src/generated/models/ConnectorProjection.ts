@@ -21,16 +21,22 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorProjection {
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof ConnectorProjection
    */
-  userId: string;
+  createdAt: Date;
   /**
    *
    * @type {string}
    * @memberof ConnectorProjection
    */
   inboxId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  userId: string;
   /**
    *
    * @type {boolean}
@@ -55,12 +61,6 @@ export interface ConnectorProjection {
    * @memberof ConnectorProjection
    */
   syncInterval?: number;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -96,15 +96,15 @@ export function ConnectorProjectionFromJSONTyped(
     return json;
   }
   return {
-    userId: json['userId'],
+    createdAt: new Date(json['createdAt']),
     inboxId: json['inboxId'],
+    userId: json['userId'],
     syncEnabled: json['syncEnabled'],
     connectorType: json['connectorType'],
     syncScheduleType: json['syncScheduleType'],
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
-    createdAt: new Date(json['createdAt']),
     id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
@@ -119,13 +119,13 @@ export function ConnectorProjectionToJSON(
     return null;
   }
   return {
-    userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
+    userId: value.userId,
     syncEnabled: value.syncEnabled,
     connectorType: value.connectorType,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }

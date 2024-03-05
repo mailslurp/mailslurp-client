@@ -17,10 +17,22 @@
 export interface SentEmailProjection {
     /**
      *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof SentEmailProjection
      */
     id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyMD5Hash?: string;
     /**
      *
      * @type {string}
@@ -41,16 +53,16 @@ export interface SentEmailProjection {
     subject?: string;
     /**
      *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    attachments: Array<string>;
-    /**
-     *
      * @type {string}
      * @memberof SentEmailProjection
      */
     inboxId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    attachments: Array<string>;
     /**
      *
      * @type {Array<string>}
@@ -69,18 +81,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     cc: Array<string>;
-    /**
-     *
-     * @type {Date}
-     * @memberof SentEmailProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    bodyMD5Hash?: string;
     /**
      *
      * @type {boolean}

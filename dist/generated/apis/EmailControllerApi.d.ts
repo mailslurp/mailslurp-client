@@ -185,12 +185,12 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     canSend(requestParameters: CanSendRequest, initOverrides?: RequestInit): Promise<CanSendEmailResults>;
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
     checkEmailBodyRaw(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<CheckEmailBodyResults>>;
     /**
-     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful.
+     * Find dead links, broken images, and spelling mistakes in email body. Will call included links via HTTP so do not invoke if your links are sensitive or stateful. Any resource that returns a 4xx or 5xx response or is not reachable via HEAD or GET HTTP operations will be considered unhealthy.
      * Detect broken links, spelling, and images in email content
      */
     checkEmailBody(requestParameters: CheckEmailBodyRequest, initOverrides?: RequestInit): Promise<CheckEmailBodyResults>;
