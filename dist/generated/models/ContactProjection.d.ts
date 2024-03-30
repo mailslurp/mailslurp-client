@@ -17,12 +17,6 @@
 export interface ContactProjection {
     /**
      *
-     * @type {Date}
-     * @memberof ContactProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof ContactProjection
      */
@@ -57,6 +51,12 @@ export interface ContactProjection {
      * @memberof ContactProjection
      */
     optOut?: boolean | null;
+    /**
+     *
+     * @type {Date}
+     * @memberof ContactProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

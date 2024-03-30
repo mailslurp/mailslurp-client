@@ -17,10 +17,10 @@
 export interface UnknownMissedEmailProjection {
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof UnknownMissedEmailProjection
      */
-    createdAt: Date;
+    subject?: string;
     /**
      *
      * @type {Array<string>}
@@ -29,10 +29,10 @@ export interface UnknownMissedEmailProjection {
     to?: Array<string>;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof UnknownMissedEmailProjection
      */
-    subject?: string;
+    createdAt: Date;
     /**
      *
      * @type {string}

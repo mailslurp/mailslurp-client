@@ -83,6 +83,7 @@ models/CreateWebhookOptions.ts
 models/DNSLookupOptions.ts
 models/DNSLookupResult.ts
 models/DNSLookupResults.ts
+models/DNSLookupsOptions.ts
 models/DeliveryStatusDto.ts
 models/DescribeDomainOptions.ts
 models/DescribeMailServerDomainResult.ts

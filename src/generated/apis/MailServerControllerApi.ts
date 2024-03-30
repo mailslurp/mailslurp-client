@@ -20,6 +20,9 @@ import {
   DNSLookupResults,
   DNSLookupResultsFromJSON,
   DNSLookupResultsToJSON,
+  DNSLookupsOptions,
+  DNSLookupsOptionsFromJSON,
+  DNSLookupsOptionsToJSON,
   DescribeDomainOptions,
   DescribeDomainOptionsFromJSON,
   DescribeDomainOptionsToJSON,
@@ -43,6 +46,10 @@ export interface DescribeMailServerDomainRequest {
 
 export interface GetDnsLookupRequest {
   dNSLookupOptions: DNSLookupOptions;
+}
+
+export interface GetDnsLookupsRequest {
+  dNSLookupsOptions: DNSLookupsOptions;
 }
 
 export interface GetIpAddressRequest {
@@ -167,6 +174,63 @@ export class MailServerControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<DNSLookupResults> {
     const response = await this.getDnsLookupRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Lookup DNS records for multiple domains
+   */
+  async getDnsLookupsRaw(
+    requestParameters: GetDnsLookupsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DNSLookupResults>> {
+    if (
+      requestParameters.dNSLookupsOptions === null ||
+      requestParameters.dNSLookupsOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'dNSLookupsOptions',
+        'Required parameter requestParameters.dNSLookupsOptions was null or undefined when calling getDnsLookups.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/mail-server/describe/dns-lookups`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: DNSLookupsOptionsToJSON(requestParameters.dNSLookupsOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DNSLookupResultsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Lookup DNS records for multiple domains
+   */
+  async getDnsLookups(
+    requestParameters: GetDnsLookupsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DNSLookupResults> {
+    const response = await this.getDnsLookupsRaw(
       requestParameters,
       initOverrides
     );

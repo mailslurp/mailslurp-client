@@ -24,6 +24,8 @@
 - [describeMailServerDomainRaw](MailServerControllerApi.md#describemailserverdomainraw)
 - [getDnsLookup](MailServerControllerApi.md#getdnslookup)
 - [getDnsLookupRaw](MailServerControllerApi.md#getdnslookupraw)
+- [getDnsLookups](MailServerControllerApi.md#getdnslookups)
+- [getDnsLookupsRaw](MailServerControllerApi.md#getdnslookupsraw)
 - [getIpAddress](MailServerControllerApi.md#getipaddress)
 - [getIpAddressRaw](MailServerControllerApi.md#getipaddressraw)
 - [request](MailServerControllerApi.md#request)
@@ -129,6 +131,44 @@ Lookup DNS records for a domain
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`GetDnsLookupRequest`](../interfaces/GetDnsLookupRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
+
+___
+
+### getDnsLookups
+
+▸ **getDnsLookups**(`requestParameters`, `initOverrides?`): `Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
+
+Lookup DNS records for multiple domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDnsLookupsRequest`](../interfaces/GetDnsLookupsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>
+
+___
+
+### getDnsLookupsRaw
+
+▸ **getDnsLookupsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DNSLookupResults`](../interfaces/DNSLookupResults.md)\>\>
+
+Lookup DNS records for multiple domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDnsLookupsRequest`](../interfaces/GetDnsLookupsRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

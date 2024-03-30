@@ -10,12 +10,15 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { DNSLookupOptions, DNSLookupResults, DescribeDomainOptions, DescribeMailServerDomainResult, EmailVerificationResult, IPAddressResult, VerifyEmailAddressOptions } from '../models';
+import { DNSLookupOptions, DNSLookupResults, DNSLookupsOptions, DescribeDomainOptions, DescribeMailServerDomainResult, EmailVerificationResult, IPAddressResult, VerifyEmailAddressOptions } from '../models';
 export interface DescribeMailServerDomainRequest {
     describeDomainOptions: DescribeDomainOptions;
 }
 export interface GetDnsLookupRequest {
     dNSLookupOptions: DNSLookupOptions;
+}
+export interface GetDnsLookupsRequest {
+    dNSLookupsOptions: DNSLookupsOptions;
 }
 export interface GetIpAddressRequest {
     name: string;
@@ -43,6 +46,14 @@ export declare class MailServerControllerApi extends runtime.BaseAPI {
      * Lookup DNS records for a domain
      */
     getDnsLookup(requestParameters: GetDnsLookupRequest, initOverrides?: RequestInit): Promise<DNSLookupResults>;
+    /**
+     * Lookup DNS records for multiple domains
+     */
+    getDnsLookupsRaw(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DNSLookupResults>>;
+    /**
+     * Lookup DNS records for multiple domains
+     */
+    getDnsLookups(requestParameters: GetDnsLookupsRequest, initOverrides?: RequestInit): Promise<DNSLookupResults>;
     /**
      * Get IP address for a domain
      */

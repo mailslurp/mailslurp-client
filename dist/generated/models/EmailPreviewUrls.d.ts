@@ -27,6 +27,12 @@ export interface EmailPreviewUrls {
      * @memberof EmailPreviewUrls
      */
     plainHtmlBodyUrl: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailPreviewUrls
+     */
+    origin?: string;
 }
 export declare function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls;
 export declare function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls;

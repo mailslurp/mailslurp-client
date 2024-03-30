@@ -203,6 +203,58 @@ var MailServerControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Lookup DNS records for multiple domains
+     */
+    MailServerControllerApi.prototype.getDnsLookupsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.dNSLookupsOptions === null ||
+                            requestParameters.dNSLookupsOptions === undefined) {
+                            throw new runtime.RequiredError('dNSLookupsOptions', 'Required parameter requestParameters.dNSLookupsOptions was null or undefined when calling getDnsLookups.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/mail-server/describe/dns-lookups",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.DNSLookupsOptionsToJSON)(requestParameters.dNSLookupsOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DNSLookupResultsFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Lookup DNS records for multiple domains
+     */
+    MailServerControllerApi.prototype.getDnsLookups = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDnsLookupsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Get IP address for a domain
      */
     MailServerControllerApi.prototype.getIpAddressRaw = function (requestParameters, initOverrides) {

@@ -24,9 +24,9 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        inboxId: json['inboxId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        inboxId: json['inboxId'],
         to: json['to'],
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
@@ -36,7 +36,7 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         teamAccess: json['teamAccess'],
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        createdAt: new Date(json['createdAt']),
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
@@ -50,9 +50,9 @@ function EmailProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        inboxId: value.inboxId,
+        subject: value.subject,
         attachments: value.attachments,
+        inboxId: value.inboxId,
         to: value.to,
         domainId: value.domainId,
         bcc: value.bcc,
@@ -62,7 +62,7 @@ function EmailProjectionToJSON(value) {
         teamAccess: value.teamAccess,
         bodyMD5Hash: value.bodyMD5Hash,
         textExcerpt: value.textExcerpt,
-        subject: value.subject,
+        createdAt: value.createdAt.toISOString(),
         id: value.id,
         from: value.from,
     };

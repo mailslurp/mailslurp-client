@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailPreviewUrlsToJSON = exports.EmailPreviewUrlsFromJSONTyped = exports.EmailPreviewUrlsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 function EmailPreviewUrlsFromJSON(json) {
     return EmailPreviewUrlsFromJSONTyped(json, false);
 }
@@ -25,6 +26,7 @@ function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
     return {
         rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
         plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
+        origin: !(0, runtime_1.exists)(json, 'origin') ? undefined : json['origin'],
     };
 }
 exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
@@ -38,6 +40,7 @@ function EmailPreviewUrlsToJSON(value) {
     return {
         rawSmtpMessageUrl: value.rawSmtpMessageUrl,
         plainHtmlBodyUrl: value.plainHtmlBodyUrl,
+        origin: value.origin,
     };
 }
 exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;

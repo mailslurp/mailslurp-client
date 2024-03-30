@@ -69,6 +69,7 @@ __exportStar(require("./CreateWebhookOptions"), exports);
 __exportStar(require("./DNSLookupOptions"), exports);
 __exportStar(require("./DNSLookupResult"), exports);
 __exportStar(require("./DNSLookupResults"), exports);
+__exportStar(require("./DNSLookupsOptions"), exports);
 __exportStar(require("./DeliveryStatusDto"), exports);
 __exportStar(require("./DescribeDomainOptions"), exports);
 __exportStar(require("./DescribeMailServerDomainResult"), exports);

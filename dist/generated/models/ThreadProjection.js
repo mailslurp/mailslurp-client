@@ -24,15 +24,15 @@ function ThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
-        inboxId: json['inboxId'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         userId: json['userId'],
+        inboxId: json['inboxId'],
         to: json['to'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         aliasId: json['aliasId'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: json['id'],
     };
@@ -46,15 +46,15 @@ function ThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
-        inboxId: value.inboxId,
+        subject: value.subject,
         userId: value.userId,
+        inboxId: value.inboxId,
         to: value.to,
         bcc: value.bcc,
         cc: value.cc,
         aliasId: value.aliasId,
-        subject: value.subject,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
         name: value.name,
         id: value.id,
     };

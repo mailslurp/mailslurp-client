@@ -338,6 +338,7 @@ MailSlurp JS
 - [DNSLookupOptions](interfaces/DNSLookupOptions.md)
 - [DNSLookupResult](interfaces/DNSLookupResult.md)
 - [DNSLookupResults](interfaces/DNSLookupResults.md)
+- [DNSLookupsOptions](interfaces/DNSLookupsOptions.md)
 - [DeleteAliasRequest](interfaces/DeleteAliasRequest.md)
 - [DeleteAllInboxEmailsRequest](interfaces/DeleteAllInboxEmailsRequest.md)
 - [DeleteAllInboxesByDescriptionRequest](interfaces/DeleteAllInboxesByDescriptionRequest.md)
@@ -477,6 +478,7 @@ MailSlurp JS
 - [GetContactVCardRequest](interfaces/GetContactVCardRequest.md)
 - [GetDeliveryStatusesByInboxIdRequest](interfaces/GetDeliveryStatusesByInboxIdRequest.md)
 - [GetDnsLookupRequest](interfaces/GetDnsLookupRequest.md)
+- [GetDnsLookupsRequest](interfaces/GetDnsLookupsRequest.md)
 - [GetDomainRequest](interfaces/GetDomainRequest.md)
 - [GetDomainWildcardCatchAllInboxRequest](interfaces/GetDomainWildcardCatchAllInboxRequest.md)
 - [GetEmailAttachmentsRequest](interfaces/GetEmailAttachmentsRequest.md)
@@ -979,6 +981,9 @@ MailSlurp JS
 - [DNSLookupResultsFromJSON](README.md#dnslookupresultsfromjson)
 - [DNSLookupResultsFromJSONTyped](README.md#dnslookupresultsfromjsontyped)
 - [DNSLookupResultsToJSON](README.md#dnslookupresultstojson)
+- [DNSLookupsOptionsFromJSON](README.md#dnslookupsoptionsfromjson)
+- [DNSLookupsOptionsFromJSONTyped](README.md#dnslookupsoptionsfromjsontyped)
+- [DNSLookupsOptionsToJSON](README.md#dnslookupsoptionstojson)
 - [DeliveryStatusDtoFromJSON](README.md#deliverystatusdtofromjson)
 - [DeliveryStatusDtoFromJSONTyped](README.md#deliverystatusdtofromjsontyped)
 - [DeliveryStatusDtoToJSON](README.md#deliverystatusdtotojson)
@@ -4361,6 +4366,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`DNSLookupResults`](interfaces/DNSLookupResults.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DNSLookupsOptionsFromJSON
+
+▸ **DNSLookupsOptionsFromJSON**(`json`): [`DNSLookupsOptions`](interfaces/DNSLookupsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DNSLookupsOptions`](interfaces/DNSLookupsOptions.md)
+
+___
+
+### DNSLookupsOptionsFromJSONTyped
+
+▸ **DNSLookupsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DNSLookupsOptions`](interfaces/DNSLookupsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DNSLookupsOptions`](interfaces/DNSLookupsOptions.md)
+
+___
+
+### DNSLookupsOptionsToJSON
+
+▸ **DNSLookupsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DNSLookupsOptions`](interfaces/DNSLookupsOptions.md) |
 
 #### Returns
 

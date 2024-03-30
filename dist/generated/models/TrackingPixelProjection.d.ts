@@ -17,16 +17,10 @@
 export interface TrackingPixelProjection {
     /**
      *
-     * @type {Date}
-     * @memberof TrackingPixelProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    inboxId?: string;
+    sentEmailId?: string;
     /**
      *
      * @type {string}
@@ -38,7 +32,7 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    sentEmailId?: string;
+    inboxId?: string;
     /**
      *
      * @type {string}
@@ -57,6 +51,12 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     seenAt?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof TrackingPixelProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

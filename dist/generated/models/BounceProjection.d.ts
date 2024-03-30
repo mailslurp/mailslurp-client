@@ -17,10 +17,10 @@
 export interface BounceProjection {
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof BounceProjection
      */
-    createdAt: Date;
+    subject?: string | null;
     /**
      *
      * @type {string}
@@ -41,10 +41,10 @@ export interface BounceProjection {
     bounceMta?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof BounceProjection
      */
-    subject?: string | null;
+    createdAt: Date;
     /**
      *
      * @type {string}

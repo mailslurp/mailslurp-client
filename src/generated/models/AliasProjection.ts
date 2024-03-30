@@ -21,22 +21,10 @@ import { exists, mapValues } from '../runtime';
 export interface AliasProjection {
   /**
    *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  createdAt: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof AliasProjection
-   */
-  updatedAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof AliasProjection
    */
-  inboxId: string;
+  emailAddress: string;
   /**
    *
    * @type {string}
@@ -48,13 +36,25 @@ export interface AliasProjection {
    * @type {string}
    * @memberof AliasProjection
    */
-  emailAddress: string;
+  inboxId: string;
   /**
    *
    * @type {boolean}
    * @memberof AliasProjection
    */
   useThreads?: boolean;
+  /**
+   *
+   * @type {Date}
+   * @memberof AliasProjection
+   */
+  createdAt: Date;
+  /**
+   *
+   * @type {Date}
+   * @memberof AliasProjection
+   */
+  updatedAt: Date;
   /**
    *
    * @type {string}
@@ -81,12 +81,12 @@ export function AliasProjectionFromJSONTyped(
     return json;
   }
   return {
+    emailAddress: json['emailAddress'],
+    userId: json['userId'],
+    inboxId: json['inboxId'],
+    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
-    inboxId: json['inboxId'],
-    userId: json['userId'],
-    emailAddress: json['emailAddress'],
-    useThreads: !exists(json, 'useThreads') ? undefined : json['useThreads'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -100,12 +100,12 @@ export function AliasProjectionToJSON(value?: AliasProjection | null): any {
     return null;
   }
   return {
+    emailAddress: value.emailAddress,
+    userId: value.userId,
+    inboxId: value.inboxId,
+    useThreads: value.useThreads,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
-    inboxId: value.inboxId,
-    userId: value.userId,
-    emailAddress: value.emailAddress,
-    useThreads: value.useThreads,
     name: value.name,
     id: value.id,
   };

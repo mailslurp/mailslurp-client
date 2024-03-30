@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface ContactProjection {
   /**
    *
-   * @type {Date}
-   * @memberof ContactProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof ContactProjection
    */
@@ -63,6 +57,12 @@ export interface ContactProjection {
   optOut?: boolean | null;
   /**
    *
+   * @type {Date}
+   * @memberof ContactProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof ContactProjection
    */
@@ -87,7 +87,6 @@ export function ContactProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
@@ -98,6 +97,7 @@ export function ContactProjectionFromJSONTyped(
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
     company: !exists(json, 'company') ? undefined : json['company'],
     optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
+    createdAt: new Date(json['createdAt']),
     id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
   };
@@ -111,13 +111,13 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
     emailAddresses: value.emailAddresses,
     firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
     optOut: value.optOut,
+    createdAt: value.createdAt.toISOString(),
     id: value.id,
     groupId: value.groupId,
   };

@@ -17,12 +17,6 @@
 export interface PhoneNumberProjection {
     /**
      *
-     * @type {Date}
-     * @memberof PhoneNumberProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
@@ -39,6 +33,12 @@ export interface PhoneNumberProjection {
      * @memberof PhoneNumberProjection
      */
     phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    /**
+     *
+     * @type {Date}
+     * @memberof PhoneNumberProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}

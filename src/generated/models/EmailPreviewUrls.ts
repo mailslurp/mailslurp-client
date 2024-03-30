@@ -31,6 +31,12 @@ export interface EmailPreviewUrls {
    * @memberof EmailPreviewUrls
    */
   plainHtmlBodyUrl: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailPreviewUrls
+   */
+  origin?: string;
 }
 
 export function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls {
@@ -47,6 +53,7 @@ export function EmailPreviewUrlsFromJSONTyped(
   return {
     rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
     plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
+    origin: !exists(json, 'origin') ? undefined : json['origin'],
   };
 }
 
@@ -60,5 +67,6 @@ export function EmailPreviewUrlsToJSON(value?: EmailPreviewUrls | null): any {
   return {
     rawSmtpMessageUrl: value.rawSmtpMessageUrl,
     plainHtmlBodyUrl: value.plainHtmlBodyUrl,
+    origin: value.origin,
   };
 }

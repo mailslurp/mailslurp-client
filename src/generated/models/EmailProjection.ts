@@ -21,22 +21,22 @@ import { exists, mapValues } from '../runtime';
 export interface EmailProjection {
   /**
    *
-   * @type {Date}
-   * @memberof EmailProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof EmailProjection
    */
-  inboxId: string;
+  subject?: string | null;
   /**
    *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
   attachments?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  inboxId: string;
   /**
    *
    * @type {Array<string>}
@@ -93,10 +93,10 @@ export interface EmailProjection {
   textExcerpt?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof EmailProjection
    */
-  subject?: string | null;
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -123,9 +123,9 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    inboxId: json['inboxId'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    inboxId: json['inboxId'],
     to: json['to'],
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
@@ -135,7 +135,7 @@ export function EmailProjectionFromJSONTyped(
     teamAccess: json['teamAccess'],
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    createdAt: new Date(json['createdAt']),
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
   };
@@ -149,9 +149,9 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    inboxId: value.inboxId,
+    subject: value.subject,
     attachments: value.attachments,
+    inboxId: value.inboxId,
     to: value.to,
     domainId: value.domainId,
     bcc: value.bcc,
@@ -161,7 +161,7 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     teamAccess: value.teamAccess,
     bodyMD5Hash: value.bodyMD5Hash,
     textExcerpt: value.textExcerpt,
-    subject: value.subject,
+    createdAt: value.createdAt.toISOString(),
     id: value.id,
     from: value.from,
   };

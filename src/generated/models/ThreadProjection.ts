@@ -20,29 +20,23 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ThreadProjection {
   /**
-   * Created at DateTime
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  createdAt: Date;
-  /**
-   * Updated at DateTime
-   * @type {Date}
-   * @memberof ThreadProjection
-   */
-  updatedAt: Date;
-  /**
-   * Inbox ID
+   * Thread subject
    * @type {string}
    * @memberof ThreadProjection
    */
-  inboxId: string;
+  subject?: string;
   /**
    * User ID
    * @type {string}
    * @memberof ThreadProjection
    */
   userId: string;
+  /**
+   * Inbox ID
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  inboxId: string;
   /**
    * To recipients
    * @type {Array<string>}
@@ -68,11 +62,17 @@ export interface ThreadProjection {
    */
   aliasId: string;
   /**
-   * Thread subject
-   * @type {string}
+   * Created at DateTime
+   * @type {Date}
    * @memberof ThreadProjection
    */
-  subject?: string;
+  createdAt: Date;
+  /**
+   * Updated at DateTime
+   * @type {Date}
+   * @memberof ThreadProjection
+   */
+  updatedAt: Date;
   /**
    * Name of thread
    * @type {string}
@@ -99,15 +99,15 @@ export function ThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    updatedAt: new Date(json['updatedAt']),
-    inboxId: json['inboxId'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     userId: json['userId'],
+    inboxId: json['inboxId'],
     to: json['to'],
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     cc: !exists(json, 'cc') ? undefined : json['cc'],
     aliasId: json['aliasId'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -121,15 +121,15 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
-    inboxId: value.inboxId,
+    subject: value.subject,
     userId: value.userId,
+    inboxId: value.inboxId,
     to: value.to,
     bcc: value.bcc,
     cc: value.cc,
     aliasId: value.aliasId,
-    subject: value.subject,
+    createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     name: value.name,
     id: value.id,
   };

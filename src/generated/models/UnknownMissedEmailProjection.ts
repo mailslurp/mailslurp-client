@@ -21,10 +21,10 @@ import { exists, mapValues } from '../runtime';
 export interface UnknownMissedEmailProjection {
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof UnknownMissedEmailProjection
    */
-  createdAt: Date;
+  subject?: string;
   /**
    *
    * @type {Array<string>}
@@ -33,10 +33,10 @@ export interface UnknownMissedEmailProjection {
   to?: Array<string>;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof UnknownMissedEmailProjection
    */
-  subject?: string;
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -65,9 +65,9 @@ export function UnknownMissedEmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
-    to: !exists(json, 'to') ? undefined : json['to'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
+    to: !exists(json, 'to') ? undefined : json['to'],
+    createdAt: new Date(json['createdAt']),
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
   };
@@ -83,9 +83,9 @@ export function UnknownMissedEmailProjectionToJSON(
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
-    to: value.to,
     subject: value.subject,
+    to: value.to,
+    createdAt: value.createdAt.toISOString(),
     id: value.id,
     from: value.from,
   };

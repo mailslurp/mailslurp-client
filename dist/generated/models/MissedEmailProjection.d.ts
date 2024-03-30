@@ -17,10 +17,10 @@
 export interface MissedEmailProjection {
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof MissedEmailProjection
      */
-    createdAt: Date;
+    subject?: string | null;
     /**
      *
      * @type {string}
@@ -29,10 +29,10 @@ export interface MissedEmailProjection {
     userId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof MissedEmailProjection
      */
-    subject?: string | null;
+    createdAt: Date;
     /**
      *
      * @type {string}

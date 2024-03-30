@@ -51,6 +51,7 @@ export * from './CreateWebhookOptions';
 export * from './DNSLookupOptions';
 export * from './DNSLookupResult';
 export * from './DNSLookupResults';
+export * from './DNSLookupsOptions';
 export * from './DeliveryStatusDto';
 export * from './DescribeDomainOptions';
 export * from './DescribeMailServerDomainResult';

@@ -14,10 +14,21 @@ EmailPreviewUrls
 
 ### Properties
 
+- [origin](EmailPreviewUrls.md#origin)
 - [plainHtmlBodyUrl](EmailPreviewUrls.md#plainhtmlbodyurl)
 - [rawSmtpMessageUrl](EmailPreviewUrls.md#rawsmtpmessageurl)
 
 ## Properties
+
+### origin
+
+• `Optional` **origin**: `string`
+
+**`Memberof`**
+
+EmailPreviewUrls
+
+___
 
 ### plainHtmlBodyUrl
 

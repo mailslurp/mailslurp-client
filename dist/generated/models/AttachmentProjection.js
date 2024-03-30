@@ -24,11 +24,11 @@ function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        createdAt: new Date(json['createdAt']),
-        updatedAt: new Date(json['updatedAt']),
         userId: json['userId'],
         contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
         attachmentId: json['attachmentId'],
+        createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         contentLength: !(0, runtime_1.exists)(json, 'contentLength')
             ? undefined
@@ -45,11 +45,11 @@ function AttachmentProjectionToJSON(value) {
         return null;
     }
     return {
-        createdAt: value.createdAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
         userId: value.userId,
         contentId: value.contentId,
         attachmentId: value.attachmentId,
+        createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
         name: value.name,
         contentLength: value.contentLength,
         contentType: value.contentType,

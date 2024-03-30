@@ -21,10 +21,10 @@ import { exists, mapValues } from '../runtime';
 export interface BounceProjection {
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof BounceProjection
    */
-  createdAt: Date;
+  subject?: string | null;
   /**
    *
    * @type {string}
@@ -45,10 +45,10 @@ export interface BounceProjection {
   bounceMta?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof BounceProjection
    */
-  subject?: string | null;
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -69,11 +69,11 @@ export function BounceProjectionFromJSONTyped(
     return json;
   }
   return {
-    createdAt: new Date(json['createdAt']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     sender: json['sender'],
     bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
     bounceMta: !exists(json, 'bounceMta') ? undefined : json['bounceMta'],
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    createdAt: new Date(json['createdAt']),
     id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
@@ -86,11 +86,11 @@ export function BounceProjectionToJSON(value?: BounceProjection | null): any {
     return null;
   }
   return {
-    createdAt: value.createdAt.toISOString(),
+    subject: value.subject,
     sender: value.sender,
     bounceType: value.bounceType,
     bounceMta: value.bounceMta,
-    subject: value.subject,
+    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }
