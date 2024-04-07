@@ -26,8 +26,8 @@ function BounceRecipientProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
         recipient: json['recipient'],
-        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
         action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
+        bounceType: !(0, runtime_1.exists)(json, 'bounceType') ? undefined : json['bounceType'],
         createdAt: new Date(json['createdAt']),
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
@@ -44,8 +44,8 @@ function BounceRecipientProjectionToJSON(value) {
     return {
         sentEmailId: value.sentEmailId,
         recipient: value.recipient,
-        bounceType: value.bounceType,
         action: value.action,
+        bounceType: value.bounceType,
         createdAt: value.createdAt.toISOString(),
         id: value.id,
         status: value.status,

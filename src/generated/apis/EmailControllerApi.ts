@@ -62,12 +62,18 @@ import {
   EmailPreviewUrls,
   EmailPreviewUrlsFromJSON,
   EmailPreviewUrlsToJSON,
+  EmailScreenshotResult,
+  EmailScreenshotResultFromJSON,
+  EmailScreenshotResultToJSON,
   EmailTextLinesResult,
   EmailTextLinesResultFromJSON,
   EmailTextLinesResultToJSON,
   ForwardEmailOptions,
   ForwardEmailOptionsFromJSON,
   ForwardEmailOptionsToJSON,
+  GetEmailScreenshotOptions,
+  GetEmailScreenshotOptionsFromJSON,
+  GetEmailScreenshotOptionsToJSON,
   GravatarUrl,
   GravatarUrlFromJSON,
   GravatarUrlToJSON,
@@ -197,6 +203,16 @@ export interface GetEmailLinksRequest {
 
 export interface GetEmailPreviewURLsRequest {
   emailId: string;
+}
+
+export interface GetEmailScreenshotAsBase64Request {
+  emailId: string;
+  getEmailScreenshotOptions: GetEmailScreenshotOptions;
+}
+
+export interface GetEmailScreenshotAsBinaryRequest {
+  emailId: string;
+  getEmailScreenshotOptions: GetEmailScreenshotOptions;
 }
 
 export interface GetEmailTextLinesRequest {
@@ -1732,6 +1748,148 @@ export class EmailControllerApi extends runtime.BaseAPI {
       initOverrides
     );
     return await response.value();
+  }
+
+  /**
+   * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+   * Take a screenshot of an email in a browser and return base64 encoded string
+   */
+  async getEmailScreenshotAsBase64Raw(
+    requestParameters: GetEmailScreenshotAsBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailScreenshotResult>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBase64.'
+      );
+    }
+
+    if (
+      requestParameters.getEmailScreenshotOptions === null ||
+      requestParameters.getEmailScreenshotOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'getEmailScreenshotOptions',
+        'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBase64.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/screenshot/base64`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GetEmailScreenshotOptionsToJSON(
+          requestParameters.getEmailScreenshotOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailScreenshotResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+   * Take a screenshot of an email in a browser and return base64 encoded string
+   */
+  async getEmailScreenshotAsBase64(
+    requestParameters: GetEmailScreenshotAsBase64Request,
+    initOverrides?: RequestInit
+  ): Promise<EmailScreenshotResult> {
+    const response = await this.getEmailScreenshotAsBase64Raw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns binary octet-stream of screenshot of the given email
+   * Take a screenshot of an email in a browser
+   */
+  async getEmailScreenshotAsBinaryRaw(
+    requestParameters: GetEmailScreenshotAsBinaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBinary.'
+      );
+    }
+
+    if (
+      requestParameters.getEmailScreenshotOptions === null ||
+      requestParameters.getEmailScreenshotOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'getEmailScreenshotOptions',
+        'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBinary.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/screenshot/binary`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: GetEmailScreenshotOptionsToJSON(
+          requestParameters.getEmailScreenshotOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Returns binary octet-stream of screenshot of the given email
+   * Take a screenshot of an email in a browser
+   */
+  async getEmailScreenshotAsBinary(
+    requestParameters: GetEmailScreenshotAsBinaryRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.getEmailScreenshotAsBinaryRaw(requestParameters, initOverrides);
   }
 
   /**

@@ -13,25 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = exports.CreateConnectorOptionsSyncScheduleTypeEnum = exports.CreateConnectorOptionsConnectorAuthTypeEnum = exports.CreateConnectorOptionsConnectorTypeEnum = void 0;
+exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = exports.CreateConnectorOptionsSyncScheduleTypeEnum = void 0;
 var runtime_1 = require("../runtime");
-var _1 = require("./");
-/**
- * @export
- * @enum {string}
- */
-var CreateConnectorOptionsConnectorTypeEnum;
-(function (CreateConnectorOptionsConnectorTypeEnum) {
-    CreateConnectorOptionsConnectorTypeEnum["IMAP"] = "IMAP";
-})(CreateConnectorOptionsConnectorTypeEnum = exports.CreateConnectorOptionsConnectorTypeEnum || (exports.CreateConnectorOptionsConnectorTypeEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var CreateConnectorOptionsConnectorAuthTypeEnum;
-(function (CreateConnectorOptionsConnectorAuthTypeEnum) {
-    CreateConnectorOptionsConnectorAuthTypeEnum["PLAIN_TEXT"] = "PLAIN_TEXT";
-})(CreateConnectorOptionsConnectorAuthTypeEnum = exports.CreateConnectorOptionsConnectorAuthTypeEnum || (exports.CreateConnectorOptionsConnectorAuthTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -49,20 +32,18 @@ function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        connectorType: json['connectorType'],
-        connectorAuthType: json['connectorAuthType'],
-        imapSettings: !(0, runtime_1.exists)(json, 'imapSettings')
+        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
+        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
             ? undefined
-            : (0, _1.CreateConnectorImapOptionsFromJSON)(json['imapSettings']),
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        syncEnabled: json['syncEnabled'],
-        syncScheduleType: json['syncScheduleType'],
+            : json['syncScheduleType'],
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
-        fetchSettings: !(0, runtime_1.exists)(json, 'fetchSettings')
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
-            : (0, _1.CreateConnectorImapFetchOptionsFromJSON)(json['fetchSettings']),
+            : json['emailAddress'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
 exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
@@ -74,14 +55,12 @@ function CreateConnectorOptionsToJSON(value) {
         return null;
     }
     return {
-        connectorType: value.connectorType,
-        connectorAuthType: value.connectorAuthType,
-        imapSettings: (0, _1.CreateConnectorImapOptionsToJSON)(value.imapSettings),
-        inboxId: value.inboxId,
         syncEnabled: value.syncEnabled,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
-        fetchSettings: (0, _1.CreateConnectorImapFetchOptionsToJSON)(value.fetchSettings),
+        name: value.name,
+        emailAddress: value.emailAddress,
+        enabled: value.enabled,
     };
 }
 exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;

@@ -36,7 +36,7 @@ export interface EmailPreviewUrls {
    * @type {string}
    * @memberof EmailPreviewUrls
    */
-  origin?: string;
+  origin: string;
 }
 
 export function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls {
@@ -53,7 +53,7 @@ export function EmailPreviewUrlsFromJSONTyped(
   return {
     rawSmtpMessageUrl: json['rawSmtpMessageUrl'],
     plainHtmlBodyUrl: json['plainHtmlBodyUrl'],
-    origin: !exists(json, 'origin') ? undefined : json['origin'],
+    origin: json['origin'],
   };
 }
 

@@ -20,13 +20,13 @@ export interface AliasProjection {
      * @type {string}
      * @memberof AliasProjection
      */
-    emailAddress: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof AliasProjection
      */
-    userId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}

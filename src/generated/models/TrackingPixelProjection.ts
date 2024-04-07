@@ -24,13 +24,13 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  sentEmailId?: string;
+  userId: string;
   /**
    *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  userId: string;
+  sentEmailId?: string;
   /**
    *
    * @type {string}
@@ -89,8 +89,8 @@ export function TrackingPixelProjectionFromJSONTyped(
     return json;
   }
   return {
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     userId: json['userId'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
@@ -111,8 +111,8 @@ export function TrackingPixelProjectionToJSON(
     return null;
   }
   return {
-    sentEmailId: value.sentEmailId,
     userId: value.userId,
+    sentEmailId: value.sentEmailId,
     inboxId: value.inboxId,
     recipient: value.recipient,
     seen: value.seen,

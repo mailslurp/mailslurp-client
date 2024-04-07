@@ -1348,6 +1348,118 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Take a screenshot of an email in a browser and return base64 encoded string
+     */
+    EmailControllerApi.prototype.getEmailScreenshotAsBase64Raw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBase64.');
+                        }
+                        if (requestParameters.getEmailScreenshotOptions === null ||
+                            requestParameters.getEmailScreenshotOptions === undefined) {
+                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBase64.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/screenshot/base64".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.GetEmailScreenshotOptionsToJSON)(requestParameters.getEmailScreenshotOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailScreenshotResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Take a screenshot of an email in a browser and return base64 encoded string
+     */
+    EmailControllerApi.prototype.getEmailScreenshotAsBase64 = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailScreenshotAsBase64Raw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns binary octet-stream of screenshot of the given email
+     * Take a screenshot of an email in a browser
+     */
+    EmailControllerApi.prototype.getEmailScreenshotAsBinaryRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailScreenshotAsBinary.');
+                        }
+                        if (requestParameters.getEmailScreenshotOptions === null ||
+                            requestParameters.getEmailScreenshotOptions === undefined) {
+                            throw new runtime.RequiredError('getEmailScreenshotOptions', 'Required parameter requestParameters.getEmailScreenshotOptions was null or undefined when calling getEmailScreenshotAsBinary.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/screenshot/binary".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.GetEmailScreenshotOptionsToJSON)(requestParameters.getEmailScreenshotOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Returns binary octet-stream of screenshot of the given email
+     * Take a screenshot of an email in a browser
+     */
+    EmailControllerApi.prototype.getEmailScreenshotAsBinary = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailScreenshotAsBinaryRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters
      */

@@ -27,6 +27,12 @@ export interface ConnectorDto {
   id: string;
   /**
    *
+   * @type {string}
+   * @memberof ConnectorDto
+   */
+  name?: string | null;
+  /**
+   *
    * @type {boolean}
    * @memberof ConnectorDto
    */
@@ -42,13 +48,7 @@ export interface ConnectorDto {
    * @type {string}
    * @memberof ConnectorDto
    */
-  connectorType: ConnectorDtoConnectorTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  connectorAuthType: ConnectorDtoConnectorAuthTypeEnum;
+  inboxId: string;
   /**
    *
    * @type {boolean}
@@ -60,55 +60,25 @@ export interface ConnectorDto {
    * @type {string}
    * @memberof ConnectorDto
    */
-  syncScheduleType: ConnectorDtoSyncScheduleTypeEnum;
+  syncScheduleType?: ConnectorDtoSyncScheduleTypeEnum;
   /**
    *
    * @type {number}
    * @memberof ConnectorDto
    */
-  syncInterval?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  imapHost?: string;
-  /**
-   *
-   * @type {number}
-   * @memberof ConnectorDto
-   */
-  imapPort?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  imapUsername?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  imapPassword?: string;
+  syncInterval?: number | null;
   /**
    *
    * @type {boolean}
    * @memberof ConnectorDto
    */
-  imapSsl?: boolean;
+  hasImapConnection: boolean;
   /**
    *
-   * @type {string}
+   * @type {boolean}
    * @memberof ConnectorDto
    */
-  selectFolder?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorDto
-   */
-  searchTerms?: string;
+  hasSmtpConnection: boolean;
   /**
    *
    * @type {Date}
@@ -117,20 +87,6 @@ export interface ConnectorDto {
   createdAt: Date;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorDtoConnectorTypeEnum {
-  IMAP = 'IMAP',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorDtoConnectorAuthTypeEnum {
-  PLAIN_TEXT = 'PLAIN_TEXT',
-}
 /**
  * @export
  * @enum {string}
@@ -152,28 +108,19 @@ export function ConnectorDtoFromJSONTyped(
   }
   return {
     id: json['id'],
+    name: !exists(json, 'name') ? undefined : json['name'],
     enabled: json['enabled'],
     userId: json['userId'],
-    connectorType: json['connectorType'],
-    connectorAuthType: json['connectorAuthType'],
+    inboxId: json['inboxId'],
     syncEnabled: json['syncEnabled'],
-    syncScheduleType: json['syncScheduleType'],
+    syncScheduleType: !exists(json, 'syncScheduleType')
+      ? undefined
+      : json['syncScheduleType'],
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
-    imapHost: !exists(json, 'imapHost') ? undefined : json['imapHost'],
-    imapPort: !exists(json, 'imapPort') ? undefined : json['imapPort'],
-    imapUsername: !exists(json, 'imapUsername')
-      ? undefined
-      : json['imapUsername'],
-    imapPassword: !exists(json, 'imapPassword')
-      ? undefined
-      : json['imapPassword'],
-    imapSsl: !exists(json, 'imapSsl') ? undefined : json['imapSsl'],
-    selectFolder: !exists(json, 'selectFolder')
-      ? undefined
-      : json['selectFolder'],
-    searchTerms: !exists(json, 'searchTerms') ? undefined : json['searchTerms'],
+    hasImapConnection: json['hasImapConnection'],
+    hasSmtpConnection: json['hasSmtpConnection'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -187,20 +134,15 @@ export function ConnectorDtoToJSON(value?: ConnectorDto | null): any {
   }
   return {
     id: value.id,
+    name: value.name,
     enabled: value.enabled,
     userId: value.userId,
-    connectorType: value.connectorType,
-    connectorAuthType: value.connectorAuthType,
+    inboxId: value.inboxId,
     syncEnabled: value.syncEnabled,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
-    imapHost: value.imapHost,
-    imapPort: value.imapPort,
-    imapUsername: value.imapUsername,
-    imapPassword: value.imapPassword,
-    imapSsl: value.imapSsl,
-    selectFolder: value.selectFolder,
-    searchTerms: value.searchTerms,
+    hasImapConnection: value.hasImapConnection,
+    hasSmtpConnection: value.hasSmtpConnection,
     createdAt: value.createdAt.toISOString(),
   };
 }

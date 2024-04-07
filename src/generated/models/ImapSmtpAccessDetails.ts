@@ -92,6 +92,12 @@ export interface ImapSmtpAccessDetails {
    */
   imapPassword: string;
   /**
+   * IMAP mailbox to SELECT
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  imapMailbox: string;
+  /**
    * Mail from domain or SMTP HELO value
    * @type {string}
    * @memberof ImapSmtpAccessDetails
@@ -125,6 +131,7 @@ export function ImapSmtpAccessDetailsFromJSONTyped(
     imapServerPort: json['imapServerPort'],
     imapUsername: json['imapUsername'],
     imapPassword: json['imapPassword'],
+    imapMailbox: json['imapMailbox'],
     mailFromDomain: !exists(json, 'mailFromDomain')
       ? undefined
       : json['mailFromDomain'],
@@ -153,6 +160,7 @@ export function ImapSmtpAccessDetailsToJSON(
     imapServerPort: value.imapServerPort,
     imapUsername: value.imapUsername,
     imapPassword: value.imapPassword,
+    imapMailbox: value.imapMailbox,
     mailFromDomain: value.mailFromDomain,
   };
 }

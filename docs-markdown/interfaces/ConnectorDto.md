@@ -12,44 +12,19 @@ ConnectorDto
 
 ### Properties
 
-- [connectorAuthType](ConnectorDto.md#connectorauthtype)
-- [connectorType](ConnectorDto.md#connectortype)
 - [createdAt](ConnectorDto.md#createdat)
 - [enabled](ConnectorDto.md#enabled)
+- [hasImapConnection](ConnectorDto.md#hasimapconnection)
+- [hasSmtpConnection](ConnectorDto.md#hassmtpconnection)
 - [id](ConnectorDto.md#id)
-- [imapHost](ConnectorDto.md#imaphost)
-- [imapPassword](ConnectorDto.md#imappassword)
-- [imapPort](ConnectorDto.md#imapport)
-- [imapSsl](ConnectorDto.md#imapssl)
-- [imapUsername](ConnectorDto.md#imapusername)
-- [searchTerms](ConnectorDto.md#searchterms)
-- [selectFolder](ConnectorDto.md#selectfolder)
+- [inboxId](ConnectorDto.md#inboxid)
+- [name](ConnectorDto.md#name)
 - [syncEnabled](ConnectorDto.md#syncenabled)
 - [syncInterval](ConnectorDto.md#syncinterval)
 - [syncScheduleType](ConnectorDto.md#syncscheduletype)
 - [userId](ConnectorDto.md#userid)
 
 ## Properties
-
-### connectorAuthType
-
-• **connectorAuthType**: [`PLAIN_TEXT`](../enums/ConnectorDtoConnectorAuthTypeEnum.md#plain_text)
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### connectorType
-
-• **connectorType**: [`IMAP`](../enums/ConnectorDtoConnectorTypeEnum.md#imap)
-
-**`Memberof`**
-
-ConnectorDto
-
-___
 
 ### createdAt
 
@@ -71,6 +46,26 @@ ConnectorDto
 
 ___
 
+### hasImapConnection
+
+• **hasImapConnection**: `boolean`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
+### hasSmtpConnection
+
+• **hasSmtpConnection**: `boolean`
+
+**`Memberof`**
+
+ConnectorDto
+
+___
+
 ### id
 
 • **id**: `string`
@@ -81,19 +76,9 @@ ConnectorDto
 
 ___
 
-### imapHost
+### inboxId
 
-• `Optional` **imapHost**: `string`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### imapPassword
-
-• `Optional` **imapPassword**: `string`
+• **inboxId**: `string`
 
 **`Memberof`**
 
@@ -101,49 +86,9 @@ ConnectorDto
 
 ___
 
-### imapPort
+### name
 
-• `Optional` **imapPort**: `number`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### imapSsl
-
-• `Optional` **imapSsl**: `boolean`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### imapUsername
-
-• `Optional` **imapUsername**: `string`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### searchTerms
-
-• `Optional` **searchTerms**: `string`
-
-**`Memberof`**
-
-ConnectorDto
-
-___
-
-### selectFolder
-
-• `Optional` **selectFolder**: `string`
+• `Optional` **name**: `string`
 
 **`Memberof`**
 
@@ -173,7 +118,7 @@ ___
 
 ### syncScheduleType
 
-• **syncScheduleType**: [`INTERVAL`](../enums/ConnectorDtoSyncScheduleTypeEnum.md#interval)
+• `Optional` **syncScheduleType**: [`INTERVAL`](../enums/ConnectorDtoSyncScheduleTypeEnum.md#interval)
 
 **`Memberof`**
 

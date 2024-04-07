@@ -88,6 +88,12 @@ export interface ImapSmtpAccessDetails {
      */
     imapPassword: string;
     /**
+     * IMAP mailbox to SELECT
+     * @type {string}
+     * @memberof ImapSmtpAccessDetails
+     */
+    imapMailbox: string;
+    /**
      * Mail from domain or SMTP HELO value
      * @type {string}
      * @memberof ImapSmtpAccessDetails

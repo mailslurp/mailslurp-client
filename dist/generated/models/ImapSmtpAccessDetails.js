@@ -36,6 +36,7 @@ function ImapSmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
         imapServerPort: json['imapServerPort'],
         imapUsername: json['imapUsername'],
         imapPassword: json['imapPassword'],
+        imapMailbox: json['imapMailbox'],
         mailFromDomain: !(0, runtime_1.exists)(json, 'mailFromDomain')
             ? undefined
             : json['mailFromDomain'],
@@ -62,6 +63,7 @@ function ImapSmtpAccessDetailsToJSON(value) {
         imapServerPort: value.imapServerPort,
         imapUsername: value.imapUsername,
         imapPassword: value.imapPassword,
+        imapMailbox: value.imapMailbox,
         mailFromDomain: value.mailFromDomain,
     };
 }

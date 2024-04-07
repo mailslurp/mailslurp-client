@@ -22,7 +22,7 @@ EmailPreviewUrls
 
 ### origin
 
-• `Optional` **origin**: `string`
+• **origin**: `string`
 
 **`Memberof`**
 

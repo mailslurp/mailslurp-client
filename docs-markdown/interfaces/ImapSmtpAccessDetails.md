@@ -14,6 +14,7 @@ ImapSmtpAccessDetails
 
 ### Properties
 
+- [imapMailbox](ImapSmtpAccessDetails.md#imapmailbox)
 - [imapPassword](ImapSmtpAccessDetails.md#imappassword)
 - [imapServerHost](ImapSmtpAccessDetails.md#imapserverhost)
 - [imapServerPort](ImapSmtpAccessDetails.md#imapserverport)
@@ -29,6 +30,18 @@ ImapSmtpAccessDetails
 - [smtpUsername](ImapSmtpAccessDetails.md#smtpusername)
 
 ## Properties
+
+### imapMailbox
+
+• **imapMailbox**: `string`
+
+IMAP mailbox to SELECT
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
 
 ### imapPassword
 

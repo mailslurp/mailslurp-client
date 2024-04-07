@@ -23,6 +23,12 @@ export interface ConnectorDto {
     id: string;
     /**
      *
+     * @type {string}
+     * @memberof ConnectorDto
+     */
+    name?: string | null;
+    /**
+     *
      * @type {boolean}
      * @memberof ConnectorDto
      */
@@ -38,13 +44,7 @@ export interface ConnectorDto {
      * @type {string}
      * @memberof ConnectorDto
      */
-    connectorType: ConnectorDtoConnectorTypeEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    connectorAuthType: ConnectorDtoConnectorAuthTypeEnum;
+    inboxId: string;
     /**
      *
      * @type {boolean}
@@ -56,75 +56,31 @@ export interface ConnectorDto {
      * @type {string}
      * @memberof ConnectorDto
      */
-    syncScheduleType: ConnectorDtoSyncScheduleTypeEnum;
+    syncScheduleType?: ConnectorDtoSyncScheduleTypeEnum;
     /**
      *
      * @type {number}
      * @memberof ConnectorDto
      */
-    syncInterval?: number;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    imapHost?: string;
-    /**
-     *
-     * @type {number}
-     * @memberof ConnectorDto
-     */
-    imapPort?: number;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    imapUsername?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    imapPassword?: string;
+    syncInterval?: number | null;
     /**
      *
      * @type {boolean}
      * @memberof ConnectorDto
      */
-    imapSsl?: boolean;
+    hasImapConnection: boolean;
     /**
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof ConnectorDto
      */
-    selectFolder?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorDto
-     */
-    searchTerms?: string;
+    hasSmtpConnection: boolean;
     /**
      *
      * @type {Date}
      * @memberof ConnectorDto
      */
     createdAt: Date;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ConnectorDtoConnectorTypeEnum {
-    IMAP = "IMAP"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ConnectorDtoConnectorAuthTypeEnum {
-    PLAIN_TEXT = "PLAIN_TEXT"
 }
 /**
  * @export

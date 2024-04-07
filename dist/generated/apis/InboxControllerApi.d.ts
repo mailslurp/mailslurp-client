@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateInboxOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -115,6 +115,9 @@ export interface GetEmailsRequest {
     before?: Date;
     since?: Date;
 }
+export interface GetImapAccessRequest {
+    inboxId?: string;
+}
 export interface GetImapSmtpAccessRequest {
     inboxId?: string;
 }
@@ -176,6 +179,9 @@ export interface GetScheduledJobsByInboxIdRequest {
     sort?: GetScheduledJobsByInboxIdSortEnum;
     since?: Date;
     before?: Date;
+}
+export interface GetSmtpAccessRequest {
+    inboxId?: string;
 }
 export interface ListInboxRulesetsRequest {
     inboxId: string;
@@ -414,6 +420,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     getEmails(requestParameters: GetEmailsRequest, initOverrides?: RequestInit): Promise<Array<EmailPreview>>;
     /**
+     * Get IMAP access usernames and passwords
+     */
+    getImapAccessRaw(requestParameters: GetImapAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapAccessDetails>>;
+    /**
+     * Get IMAP access usernames and passwords
+     */
+    getImapAccess(requestParameters: GetImapAccessRequest, initOverrides?: RequestInit): Promise<ImapAccessDetails>;
+    /**
      * Get IMAP and SMTP access usernames and passwords
      */
     getImapSmtpAccessRaw(requestParameters: GetImapSmtpAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapSmtpAccessDetails>>;
@@ -557,6 +571,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get all scheduled email sending jobs for the inbox
      */
     getScheduledJobsByInboxId(requestParameters: GetScheduledJobsByInboxIdRequest, initOverrides?: RequestInit): Promise<PageScheduledJobs>;
+    /**
+     * Get SMTP access usernames and passwords
+     */
+    getSmtpAccessRaw(requestParameters: GetSmtpAccessRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SmtpAccessDetails>>;
+    /**
+     * Get SMTP access usernames and passwords
+     */
+    getSmtpAccess(requestParameters: GetSmtpAccessRequest, initOverrides?: RequestInit): Promise<SmtpAccessDetails>;
     /**
      * List all rulesets attached to an inbox
      * List inbox rulesets

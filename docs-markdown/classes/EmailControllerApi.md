@@ -66,6 +66,10 @@
 - [getEmailPreviewURLs](EmailControllerApi.md#getemailpreviewurls)
 - [getEmailPreviewURLsRaw](EmailControllerApi.md#getemailpreviewurlsraw)
 - [getEmailRaw](EmailControllerApi.md#getemailraw)
+- [getEmailScreenshotAsBase64](EmailControllerApi.md#getemailscreenshotasbase64)
+- [getEmailScreenshotAsBase64Raw](EmailControllerApi.md#getemailscreenshotasbase64raw)
+- [getEmailScreenshotAsBinary](EmailControllerApi.md#getemailscreenshotasbinary)
+- [getEmailScreenshotAsBinaryRaw](EmailControllerApi.md#getemailscreenshotasbinaryraw)
 - [getEmailTextLines](EmailControllerApi.md#getemailtextlines)
 - [getEmailTextLinesRaw](EmailControllerApi.md#getemailtextlinesraw)
 - [getEmailsOffsetPaginated](EmailControllerApi.md#getemailsoffsetpaginated)
@@ -1040,6 +1044,86 @@ Get email content including headers and body. Expects email to exist by ID. For 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+
+___
+
+### getEmailScreenshotAsBase64
+
+▸ **getEmailScreenshotAsBase64**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>
+
+Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+Take a screenshot of an email in a browser and return base64 encoded string
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailScreenshotAsBase64Request`](../interfaces/GetEmailScreenshotAsBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>
+
+___
+
+### getEmailScreenshotAsBase64Raw
+
+▸ **getEmailScreenshotAsBase64Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>\>
+
+Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+Take a screenshot of an email in a browser and return base64 encoded string
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailScreenshotAsBase64Request`](../interfaces/GetEmailScreenshotAsBase64Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailScreenshotResult`](../interfaces/EmailScreenshotResult.md)\>\>
+
+___
+
+### getEmailScreenshotAsBinary
+
+▸ **getEmailScreenshotAsBinary**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Returns binary octet-stream of screenshot of the given email
+Take a screenshot of an email in a browser
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailScreenshotAsBinaryRequest`](../interfaces/GetEmailScreenshotAsBinaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### getEmailScreenshotAsBinaryRaw
+
+▸ **getEmailScreenshotAsBinaryRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Returns binary octet-stream of screenshot of the given email
+Take a screenshot of an email in a browser
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailScreenshotAsBinaryRequest`](../interfaces/GetEmailScreenshotAsBinaryRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 

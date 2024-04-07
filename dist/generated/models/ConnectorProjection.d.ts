@@ -17,10 +17,22 @@
 export interface ConnectorProjection {
     /**
      *
+     * @type {boolean}
+     * @memberof ConnectorProjection
+     */
+    enabled?: boolean;
+    /**
+     *
      * @type {string}
      * @memberof ConnectorProjection
      */
     userId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    emailAddress?: string;
     /**
      *
      * @type {string}
@@ -32,13 +44,7 @@ export interface ConnectorProjection {
      * @type {boolean}
      * @memberof ConnectorProjection
      */
-    syncEnabled: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    connectorType: ConnectorProjectionConnectorTypeEnum;
+    syncEnabled?: boolean;
     /**
      *
      * @type {string}
@@ -62,14 +68,13 @@ export interface ConnectorProjection {
      * @type {string}
      * @memberof ConnectorProjection
      */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
     id?: string;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ConnectorProjectionConnectorTypeEnum {
-    IMAP = "IMAP"
 }
 /**
  * @export

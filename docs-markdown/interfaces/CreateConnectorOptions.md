@@ -2,6 +2,8 @@
 
 # Interface: CreateConnectorOptions
 
+Options for creating an inbox connection with an external mail provider
+
 **`Export`**
 
 **`Interface`**
@@ -12,30 +14,20 @@ CreateConnectorOptions
 
 ### Properties
 
-- [connectorAuthType](CreateConnectorOptions.md#connectorauthtype)
-- [connectorType](CreateConnectorOptions.md#connectortype)
-- [fetchSettings](CreateConnectorOptions.md#fetchsettings)
-- [imapSettings](CreateConnectorOptions.md#imapsettings)
-- [inboxId](CreateConnectorOptions.md#inboxid)
+- [emailAddress](CreateConnectorOptions.md#emailaddress)
+- [enabled](CreateConnectorOptions.md#enabled)
+- [name](CreateConnectorOptions.md#name)
 - [syncEnabled](CreateConnectorOptions.md#syncenabled)
 - [syncInterval](CreateConnectorOptions.md#syncinterval)
 - [syncScheduleType](CreateConnectorOptions.md#syncscheduletype)
 
 ## Properties
 
-### connectorAuthType
+### emailAddress
 
-• **connectorAuthType**: [`PLAIN_TEXT`](../enums/CreateConnectorOptionsConnectorAuthTypeEnum.md#plain_text)
+• `Optional` **emailAddress**: `string`
 
-**`Memberof`**
-
-CreateConnectorOptions
-
-___
-
-### connectorType
-
-• **connectorType**: [`IMAP`](../enums/CreateConnectorOptionsConnectorTypeEnum.md#imap)
+Email address of external inbox
 
 **`Memberof`**
 
@@ -43,19 +35,11 @@ CreateConnectorOptions
 
 ___
 
-### fetchSettings
+### enabled
 
-• `Optional` **fetchSettings**: [`CreateConnectorImapFetchOptions`](CreateConnectorImapFetchOptions.md)
+• `Optional` **enabled**: `boolean`
 
-**`Memberof`**
-
-CreateConnectorOptions
-
-___
-
-### imapSettings
-
-• `Optional` **imapSettings**: [`CreateConnectorImapOptions`](CreateConnectorImapOptions.md)
+Is connector enabled
 
 **`Memberof`**
 
@@ -63,9 +47,11 @@ CreateConnectorOptions
 
 ___
 
-### inboxId
+### name
 
-• `Optional` **inboxId**: `string`
+• `Optional` **name**: `string`
+
+Name of connector
 
 **`Memberof`**
 
@@ -75,7 +61,9 @@ ___
 
 ### syncEnabled
 
-• **syncEnabled**: `boolean`
+• `Optional` **syncEnabled**: `boolean`
+
+Enable automatic background sync
 
 **`Memberof`**
 
@@ -87,6 +75,8 @@ ___
 
 • `Optional` **syncInterval**: `number`
 
+Sync interval in minutes
+
 **`Memberof`**
 
 CreateConnectorOptions
@@ -95,7 +85,9 @@ ___
 
 ### syncScheduleType
 
-• **syncScheduleType**: [`INTERVAL`](../enums/CreateConnectorOptionsSyncScheduleTypeEnum.md#interval)
+• `Optional` **syncScheduleType**: [`INTERVAL`](../enums/CreateConnectorOptionsSyncScheduleTypeEnum.md#interval)
+
+Sync schedule type
 
 **`Memberof`**
 

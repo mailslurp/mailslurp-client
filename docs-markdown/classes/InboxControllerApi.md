@@ -56,6 +56,8 @@
 - [getDeliveryStatusesByInboxIdRaw](InboxControllerApi.md#getdeliverystatusesbyinboxidraw)
 - [getEmails](InboxControllerApi.md#getemails)
 - [getEmailsRaw](InboxControllerApi.md#getemailsraw)
+- [getImapAccess](InboxControllerApi.md#getimapaccess)
+- [getImapAccessRaw](InboxControllerApi.md#getimapaccessraw)
 - [getImapSmtpAccess](InboxControllerApi.md#getimapsmtpaccess)
 - [getImapSmtpAccessRaw](InboxControllerApi.md#getimapsmtpaccessraw)
 - [getInbox](InboxControllerApi.md#getinbox)
@@ -86,6 +88,8 @@
 - [getScheduledJobRaw](InboxControllerApi.md#getscheduledjobraw)
 - [getScheduledJobsByInboxId](InboxControllerApi.md#getscheduledjobsbyinboxid)
 - [getScheduledJobsByInboxIdRaw](InboxControllerApi.md#getscheduledjobsbyinboxidraw)
+- [getSmtpAccess](InboxControllerApi.md#getsmtpaccess)
+- [getSmtpAccessRaw](InboxControllerApi.md#getsmtpaccessraw)
 - [listInboxRulesets](InboxControllerApi.md#listinboxrulesets)
 - [listInboxRulesetsRaw](InboxControllerApi.md#listinboxrulesetsraw)
 - [listInboxTrackingPixels](InboxControllerApi.md#listinboxtrackingpixels)
@@ -853,6 +857,44 @@ Get emails in an Inbox. This method is not idempotent as it allows retries and w
 
 ___
 
+### getImapAccess
+
+▸ **getImapAccess**(`requestParameters`, `initOverrides?`): `Promise`<[`ImapAccessDetails`](../interfaces/ImapAccessDetails.md)\>
+
+Get IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapAccessRequest`](../interfaces/GetImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ImapAccessDetails`](../interfaces/ImapAccessDetails.md)\>
+
+___
+
+### getImapAccessRaw
+
+▸ **getImapAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapAccessDetails`](../interfaces/ImapAccessDetails.md)\>\>
+
+Get IMAP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapAccessRequest`](../interfaces/GetImapAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ImapAccessDetails`](../interfaces/ImapAccessDetails.md)\>\>
+
+___
+
 ### getImapSmtpAccess
 
 ▸ **getImapSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
@@ -1438,6 +1480,44 @@ Get all scheduled email sending jobs for the inbox
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageScheduledJobs`](../interfaces/PageScheduledJobs.md)\>\>
+
+___
+
+### getSmtpAccess
+
+▸ **getSmtpAccess**(`requestParameters`, `initOverrides?`): `Promise`<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>
+
+Get SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmtpAccessRequest`](../interfaces/GetSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>
+
+___
+
+### getSmtpAccessRaw
+
+▸ **getSmtpAccessRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>\>
+
+Get SMTP access usernames and passwords
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetSmtpAccessRequest`](../interfaces/GetSmtpAccessRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SmtpAccessDetails`](../interfaces/SmtpAccessDetails.md)\>\>
 
 ___
 

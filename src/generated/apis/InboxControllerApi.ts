@@ -32,6 +32,9 @@ import {
   FlushExpiredInboxesResult,
   FlushExpiredInboxesResultFromJSON,
   FlushExpiredInboxesResultToJSON,
+  ImapAccessDetails,
+  ImapAccessDetailsFromJSON,
+  ImapAccessDetailsToJSON,
   ImapSmtpAccessDetails,
   ImapSmtpAccessDetailsFromJSON,
   ImapSmtpAccessDetailsToJSON,
@@ -95,6 +98,9 @@ import {
   SetInboxFavouritedOptions,
   SetInboxFavouritedOptionsFromJSON,
   SetInboxFavouritedOptionsToJSON,
+  SmtpAccessDetails,
+  SmtpAccessDetailsFromJSON,
+  SmtpAccessDetailsToJSON,
   UpdateInboxOptions,
   UpdateInboxOptionsFromJSON,
   UpdateInboxOptionsToJSON,
@@ -220,6 +226,10 @@ export interface GetEmailsRequest {
   since?: Date;
 }
 
+export interface GetImapAccessRequest {
+  inboxId?: string;
+}
+
 export interface GetImapSmtpAccessRequest {
   inboxId?: string;
 }
@@ -292,6 +302,10 @@ export interface GetScheduledJobsByInboxIdRequest {
   sort?: GetScheduledJobsByInboxIdSortEnum;
   since?: Date;
   before?: Date;
+}
+
+export interface GetSmtpAccessRequest {
+  inboxId?: string;
 }
 
 export interface ListInboxRulesetsRequest {
@@ -1558,6 +1572,54 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get IMAP access usernames and passwords
+   */
+  async getImapAccessRaw(
+    requestParameters: GetImapAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ImapAccessDetails>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/imap-access`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ImapAccessDetailsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get IMAP access usernames and passwords
+   */
+  async getImapAccess(
+    requestParameters: GetImapAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<ImapAccessDetails> {
+    const response = await this.getImapAccessRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get IMAP and SMTP access usernames and passwords
    */
   async getImapSmtpAccessRaw(
@@ -2463,6 +2525,54 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageScheduledJobs> {
     const response = await this.getScheduledJobsByInboxIdRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get SMTP access usernames and passwords
+   */
+  async getSmtpAccessRaw(
+    requestParameters: GetSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SmtpAccessDetails>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/smtp-access`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SmtpAccessDetailsFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get SMTP access usernames and passwords
+   */
+  async getSmtpAccess(
+    requestParameters: GetSmtpAccessRequest,
+    initOverrides?: RequestInit
+  ): Promise<SmtpAccessDetails> {
+    const response = await this.getSmtpAccessRaw(
       requestParameters,
       initOverrides
     );

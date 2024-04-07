@@ -32,7 +32,7 @@ export interface EmailPreviewUrls {
      * @type {string}
      * @memberof EmailPreviewUrls
      */
-    origin?: string;
+    origin: string;
 }
 export declare function EmailPreviewUrlsFromJSON(json: any): EmailPreviewUrls;
 export declare function EmailPreviewUrlsFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPreviewUrls;

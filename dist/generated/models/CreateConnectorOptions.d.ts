@@ -9,75 +9,48 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CreateConnectorImapFetchOptions, CreateConnectorImapOptions } from './';
 /**
- *
+ * Options for creating an inbox connection with an external mail provider
  * @export
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
     /**
-     *
-     * @type {string}
-     * @memberof CreateConnectorOptions
-     */
-    connectorType: CreateConnectorOptionsConnectorTypeEnum;
-    /**
-     *
-     * @type {string}
-     * @memberof CreateConnectorOptions
-     */
-    connectorAuthType: CreateConnectorOptionsConnectorAuthTypeEnum;
-    /**
-     *
-     * @type {CreateConnectorImapOptions}
-     * @memberof CreateConnectorOptions
-     */
-    imapSettings?: CreateConnectorImapOptions;
-    /**
-     *
-     * @type {string}
-     * @memberof CreateConnectorOptions
-     */
-    inboxId?: string;
-    /**
-     *
+     * Enable automatic background sync
      * @type {boolean}
      * @memberof CreateConnectorOptions
      */
-    syncEnabled: boolean;
+    syncEnabled?: boolean | null;
     /**
-     *
+     * Sync schedule type
      * @type {string}
      * @memberof CreateConnectorOptions
      */
-    syncScheduleType: CreateConnectorOptionsSyncScheduleTypeEnum;
+    syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
     /**
-     *
+     * Sync interval in minutes
      * @type {number}
      * @memberof CreateConnectorOptions
      */
-    syncInterval?: number;
+    syncInterval?: number | null;
     /**
-     *
-     * @type {CreateConnectorImapFetchOptions}
+     * Name of connector
+     * @type {string}
      * @memberof CreateConnectorOptions
      */
-    fetchSettings?: CreateConnectorImapFetchOptions;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum CreateConnectorOptionsConnectorTypeEnum {
-    IMAP = "IMAP"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum CreateConnectorOptionsConnectorAuthTypeEnum {
-    PLAIN_TEXT = "PLAIN_TEXT"
+    name?: string | null;
+    /**
+     * Email address of external inbox
+     * @type {string}
+     * @memberof CreateConnectorOptions
+     */
+    emailAddress?: string | null;
+    /**
+     * Is connector enabled
+     * @type {boolean}
+     * @memberof CreateConnectorOptions
+     */
+    enabled?: boolean | null;
 }
 /**
  * @export

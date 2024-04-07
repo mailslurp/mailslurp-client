@@ -53,7 +53,9 @@ models/CheckEmailFeaturesClientSupportResults.ts
 models/Complaint.ts
 models/ConditionOption.ts
 models/ConnectorDto.ts
+models/ConnectorImapConnectionDto.ts
 models/ConnectorProjection.ts
+models/ConnectorSmtpConnectionDto.ts
 models/ConnectorSyncEventDto.ts
 models/ConnectorSyncEventProjection.ts
 models/ConnectorSyncRequestResult.ts
@@ -66,9 +68,9 @@ models/ContactProjection.ts
 models/ContentMatchOptions.ts
 models/CountDto.ts
 models/CreateAliasOptions.ts
-models/CreateConnectorImapFetchOptions.ts
-models/CreateConnectorImapOptions.ts
+models/CreateConnectorImapConnectionOptions.ts
 models/CreateConnectorOptions.ts
+models/CreateConnectorSmtpConnectionOptions.ts
 models/CreateContactOptions.ts
 models/CreateDomainOptions.ts
 models/CreateEmergencyAddressOptions.ts
@@ -113,6 +115,7 @@ models/EmailPreview.ts
 models/EmailPreviewUrls.ts
 models/EmailProjection.ts
 models/EmailRecipients.ts
+models/EmailScreenshotResult.ts
 models/EmailTextLinesResult.ts
 models/EmailValidationRequestDto.ts
 models/EmailVerificationResult.ts
@@ -139,6 +142,7 @@ models/GenerateMtaStsRecordOptions.ts
 models/GenerateMtaStsRecordResults.ts
 models/GenerateTlsReportingRecordOptions.ts
 models/GenerateTlsReportingRecordResults.ts
+models/GetEmailScreenshotOptions.ts
 models/GravatarUrl.ts
 models/GroupContactsDto.ts
 models/GroupDto.ts
@@ -146,6 +150,7 @@ models/GroupProjection.ts
 models/HTMLValidationResult.ts
 models/IPAddressResult.ts
 models/ImageIssue.ts
+models/ImapAccessDetails.ts
 models/ImapFlagOperationOptions.ts
 models/ImapSmtpAccessDetails.ts
 models/InboxByEmailAddressResult.ts
@@ -246,6 +251,7 @@ models/SmsMatchOption.ts
 models/SmsPreview.ts
 models/SmsProjection.ts
 models/SmsReplyOptions.ts
+models/SmtpAccessDetails.ts
 models/SortObject.ts
 models/SpellingIssue.ts
 models/TemplateDto.ts

@@ -13,87 +13,50 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import {
-  CreateConnectorImapFetchOptions,
-  CreateConnectorImapFetchOptionsFromJSON,
-  CreateConnectorImapFetchOptionsFromJSONTyped,
-  CreateConnectorImapFetchOptionsToJSON,
-  CreateConnectorImapOptions,
-  CreateConnectorImapOptionsFromJSON,
-  CreateConnectorImapOptionsFromJSONTyped,
-  CreateConnectorImapOptionsToJSON,
-} from './';
-
 /**
- *
+ * Options for creating an inbox connection with an external mail provider
  * @export
  * @interface CreateConnectorOptions
  */
 export interface CreateConnectorOptions {
   /**
-   *
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  connectorType: CreateConnectorOptionsConnectorTypeEnum;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  connectorAuthType: CreateConnectorOptionsConnectorAuthTypeEnum;
-  /**
-   *
-   * @type {CreateConnectorImapOptions}
-   * @memberof CreateConnectorOptions
-   */
-  imapSettings?: CreateConnectorImapOptions;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateConnectorOptions
-   */
-  inboxId?: string;
-  /**
-   *
+   * Enable automatic background sync
    * @type {boolean}
    * @memberof CreateConnectorOptions
    */
-  syncEnabled: boolean;
+  syncEnabled?: boolean | null;
   /**
-   *
+   * Sync schedule type
    * @type {string}
    * @memberof CreateConnectorOptions
    */
-  syncScheduleType: CreateConnectorOptionsSyncScheduleTypeEnum;
+  syncScheduleType?: CreateConnectorOptionsSyncScheduleTypeEnum;
   /**
-   *
+   * Sync interval in minutes
    * @type {number}
    * @memberof CreateConnectorOptions
    */
-  syncInterval?: number;
+  syncInterval?: number | null;
   /**
-   *
-   * @type {CreateConnectorImapFetchOptions}
+   * Name of connector
+   * @type {string}
    * @memberof CreateConnectorOptions
    */
-  fetchSettings?: CreateConnectorImapFetchOptions;
+  name?: string | null;
+  /**
+   * Email address of external inbox
+   * @type {string}
+   * @memberof CreateConnectorOptions
+   */
+  emailAddress?: string | null;
+  /**
+   * Is connector enabled
+   * @type {boolean}
+   * @memberof CreateConnectorOptions
+   */
+  enabled?: boolean | null;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum CreateConnectorOptionsConnectorTypeEnum {
-  IMAP = 'IMAP',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum CreateConnectorOptionsConnectorAuthTypeEnum {
-  PLAIN_TEXT = 'PLAIN_TEXT',
-}
 /**
  * @export
  * @enum {string}
@@ -116,20 +79,18 @@ export function CreateConnectorOptionsFromJSONTyped(
     return json;
   }
   return {
-    connectorType: json['connectorType'],
-    connectorAuthType: json['connectorAuthType'],
-    imapSettings: !exists(json, 'imapSettings')
+    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
+    syncScheduleType: !exists(json, 'syncScheduleType')
       ? undefined
-      : CreateConnectorImapOptionsFromJSON(json['imapSettings']),
-    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    syncEnabled: json['syncEnabled'],
-    syncScheduleType: json['syncScheduleType'],
+      : json['syncScheduleType'],
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
-    fetchSettings: !exists(json, 'fetchSettings')
+    name: !exists(json, 'name') ? undefined : json['name'],
+    emailAddress: !exists(json, 'emailAddress')
       ? undefined
-      : CreateConnectorImapFetchOptionsFromJSON(json['fetchSettings']),
+      : json['emailAddress'],
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
   };
 }
 
@@ -143,13 +104,11 @@ export function CreateConnectorOptionsToJSON(
     return null;
   }
   return {
-    connectorType: value.connectorType,
-    connectorAuthType: value.connectorAuthType,
-    imapSettings: CreateConnectorImapOptionsToJSON(value.imapSettings),
-    inboxId: value.inboxId,
     syncEnabled: value.syncEnabled,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
-    fetchSettings: CreateConnectorImapFetchOptionsToJSON(value.fetchSettings),
+    name: value.name,
+    emailAddress: value.emailAddress,
+    enabled: value.enabled,
   };
 }

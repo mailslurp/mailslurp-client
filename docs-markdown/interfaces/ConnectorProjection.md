@@ -14,10 +14,12 @@ ConnectorProjection
 
 ### Properties
 
-- [connectorType](ConnectorProjection.md#connectortype)
 - [createdAt](ConnectorProjection.md#createdat)
+- [emailAddress](ConnectorProjection.md#emailaddress)
+- [enabled](ConnectorProjection.md#enabled)
 - [id](ConnectorProjection.md#id)
 - [inboxId](ConnectorProjection.md#inboxid)
+- [name](ConnectorProjection.md#name)
 - [syncEnabled](ConnectorProjection.md#syncenabled)
 - [syncInterval](ConnectorProjection.md#syncinterval)
 - [syncScheduleType](ConnectorProjection.md#syncscheduletype)
@@ -25,9 +27,9 @@ ConnectorProjection
 
 ## Properties
 
-### connectorType
+### createdAt
 
-• **connectorType**: [`IMAP`](../enums/ConnectorProjectionConnectorTypeEnum.md#imap)
+• **createdAt**: `Date`
 
 **`Memberof`**
 
@@ -35,9 +37,19 @@ ConnectorProjection
 
 ___
 
-### createdAt
+### emailAddress
 
-• **createdAt**: `Date`
+• `Optional` **emailAddress**: `string`
+
+**`Memberof`**
+
+ConnectorProjection
+
+___
+
+### enabled
+
+• `Optional` **enabled**: `boolean`
 
 **`Memberof`**
 
@@ -65,9 +77,19 @@ ConnectorProjection
 
 ___
 
+### name
+
+• `Optional` **name**: `string`
+
+**`Memberof`**
+
+ConnectorProjection
+
+___
+
 ### syncEnabled
 
-• **syncEnabled**: `boolean`
+• `Optional` **syncEnabled**: `boolean`
 
 **`Memberof`**
 

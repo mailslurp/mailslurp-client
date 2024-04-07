@@ -32,6 +32,12 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
+    bodyMD5Hash?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
     userId: string;
     /**
      *
@@ -75,12 +81,6 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     createdAt: Date;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    bodyMD5Hash?: string;
     /**
      *
      * @type {boolean}

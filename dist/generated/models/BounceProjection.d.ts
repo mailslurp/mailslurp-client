@@ -32,13 +32,13 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceType?: string | null;
+    bounceMta?: string | null;
     /**
      *
      * @type {string}
      * @memberof BounceProjection
      */
-    bounceMta?: string | null;
+    bounceType?: string | null;
     /**
      *
      * @type {Date}

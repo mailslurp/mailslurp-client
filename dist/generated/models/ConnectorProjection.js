@@ -13,16 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = exports.ConnectorProjectionSyncScheduleTypeEnum = exports.ConnectorProjectionConnectorTypeEnum = void 0;
+exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = exports.ConnectorProjectionSyncScheduleTypeEnum = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var ConnectorProjectionConnectorTypeEnum;
-(function (ConnectorProjectionConnectorTypeEnum) {
-    ConnectorProjectionConnectorTypeEnum["IMAP"] = "IMAP";
-})(ConnectorProjectionConnectorTypeEnum = exports.ConnectorProjectionConnectorTypeEnum || (exports.ConnectorProjectionConnectorTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -40,15 +32,19 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
         userId: json['userId'],
+        emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
+            ? undefined
+            : json['emailAddress'],
         inboxId: json['inboxId'],
-        syncEnabled: json['syncEnabled'],
-        connectorType: json['connectorType'],
+        syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
         syncScheduleType: json['syncScheduleType'],
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
         createdAt: new Date(json['createdAt']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
@@ -61,13 +57,15 @@ function ConnectorProjectionToJSON(value) {
         return null;
     }
     return {
+        enabled: value.enabled,
         userId: value.userId,
+        emailAddress: value.emailAddress,
         inboxId: value.inboxId,
         syncEnabled: value.syncEnabled,
-        connectorType: value.connectorType,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
         createdAt: value.createdAt.toISOString(),
+        name: value.name,
         id: value.id,
     };
 }

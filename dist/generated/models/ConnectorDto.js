@@ -13,24 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = exports.ConnectorDtoSyncScheduleTypeEnum = exports.ConnectorDtoConnectorAuthTypeEnum = exports.ConnectorDtoConnectorTypeEnum = void 0;
+exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = exports.ConnectorDtoSyncScheduleTypeEnum = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var ConnectorDtoConnectorTypeEnum;
-(function (ConnectorDtoConnectorTypeEnum) {
-    ConnectorDtoConnectorTypeEnum["IMAP"] = "IMAP";
-})(ConnectorDtoConnectorTypeEnum = exports.ConnectorDtoConnectorTypeEnum || (exports.ConnectorDtoConnectorTypeEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var ConnectorDtoConnectorAuthTypeEnum;
-(function (ConnectorDtoConnectorAuthTypeEnum) {
-    ConnectorDtoConnectorAuthTypeEnum["PLAIN_TEXT"] = "PLAIN_TEXT";
-})(ConnectorDtoConnectorAuthTypeEnum = exports.ConnectorDtoConnectorAuthTypeEnum || (exports.ConnectorDtoConnectorAuthTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -49,28 +33,19 @@ function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         enabled: json['enabled'],
         userId: json['userId'],
-        connectorType: json['connectorType'],
-        connectorAuthType: json['connectorAuthType'],
+        inboxId: json['inboxId'],
         syncEnabled: json['syncEnabled'],
-        syncScheduleType: json['syncScheduleType'],
+        syncScheduleType: !(0, runtime_1.exists)(json, 'syncScheduleType')
+            ? undefined
+            : json['syncScheduleType'],
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
-        imapHost: !(0, runtime_1.exists)(json, 'imapHost') ? undefined : json['imapHost'],
-        imapPort: !(0, runtime_1.exists)(json, 'imapPort') ? undefined : json['imapPort'],
-        imapUsername: !(0, runtime_1.exists)(json, 'imapUsername')
-            ? undefined
-            : json['imapUsername'],
-        imapPassword: !(0, runtime_1.exists)(json, 'imapPassword')
-            ? undefined
-            : json['imapPassword'],
-        imapSsl: !(0, runtime_1.exists)(json, 'imapSsl') ? undefined : json['imapSsl'],
-        selectFolder: !(0, runtime_1.exists)(json, 'selectFolder')
-            ? undefined
-            : json['selectFolder'],
-        searchTerms: !(0, runtime_1.exists)(json, 'searchTerms') ? undefined : json['searchTerms'],
+        hasImapConnection: json['hasImapConnection'],
+        hasSmtpConnection: json['hasSmtpConnection'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -84,20 +59,15 @@ function ConnectorDtoToJSON(value) {
     }
     return {
         id: value.id,
+        name: value.name,
         enabled: value.enabled,
         userId: value.userId,
-        connectorType: value.connectorType,
-        connectorAuthType: value.connectorAuthType,
+        inboxId: value.inboxId,
         syncEnabled: value.syncEnabled,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
-        imapHost: value.imapHost,
-        imapPort: value.imapPort,
-        imapUsername: value.imapUsername,
-        imapPassword: value.imapPassword,
-        imapSsl: value.imapSsl,
-        selectFolder: value.selectFolder,
-        searchTerms: value.searchTerms,
+        hasImapConnection: value.hasImapConnection,
+        hasSmtpConnection: value.hasSmtpConnection,
         createdAt: value.createdAt.toISOString(),
     };
 }

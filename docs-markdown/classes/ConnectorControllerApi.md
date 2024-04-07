@@ -21,11 +21,19 @@
 ### Methods
 
 - [createConnector](ConnectorControllerApi.md#createconnector)
+- [createConnectorImapConnection](ConnectorControllerApi.md#createconnectorimapconnection)
+- [createConnectorImapConnectionRaw](ConnectorControllerApi.md#createconnectorimapconnectionraw)
 - [createConnectorRaw](ConnectorControllerApi.md#createconnectorraw)
+- [createConnectorSmtpConnection](ConnectorControllerApi.md#createconnectorsmtpconnection)
+- [createConnectorSmtpConnectionRaw](ConnectorControllerApi.md#createconnectorsmtpconnectionraw)
 - [deleteAllConnector](ConnectorControllerApi.md#deleteallconnector)
 - [deleteAllConnectorRaw](ConnectorControllerApi.md#deleteallconnectorraw)
 - [deleteConnector](ConnectorControllerApi.md#deleteconnector)
+- [deleteConnectorImapConnection](ConnectorControllerApi.md#deleteconnectorimapconnection)
+- [deleteConnectorImapConnectionRaw](ConnectorControllerApi.md#deleteconnectorimapconnectionraw)
 - [deleteConnectorRaw](ConnectorControllerApi.md#deleteconnectorraw)
+- [deleteConnectorSmtpConnection](ConnectorControllerApi.md#deleteconnectorsmtpconnection)
+- [deleteConnectorSmtpConnectionRaw](ConnectorControllerApi.md#deleteconnectorsmtpconnectionraw)
 - [getAllConnectorSyncEvents](ConnectorControllerApi.md#getallconnectorsyncevents)
 - [getAllConnectorSyncEventsRaw](ConnectorControllerApi.md#getallconnectorsynceventsraw)
 - [getConnector](ConnectorControllerApi.md#getconnector)
@@ -93,6 +101,46 @@ Create an inbox connector
 
 ___
 
+### createConnectorImapConnection
+
+▸ **createConnectorImapConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>
+
+Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+Create an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorImapConnectionRequest`](../interfaces/CreateConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>
+
+___
+
+### createConnectorImapConnectionRaw
+
+▸ **createConnectorImapConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>\>
+
+Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+Create an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorImapConnectionRequest`](../interfaces/CreateConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorImapConnectionDto`](../interfaces/ConnectorImapConnectionDto.md)\>\>
+
+___
+
 ### createConnectorRaw
 
 ▸ **createConnectorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
@@ -110,6 +158,46 @@ Create an inbox connector
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorDto`](../interfaces/ConnectorDto.md)\>\>
+
+___
+
+### createConnectorSmtpConnection
+
+▸ **createConnectorSmtpConnection**(`requestParameters`, `initOverrides?`): `Promise`<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>
+
+Allows sending via connector and email is routed to connected inbox and sent via SMTP
+Create an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorSmtpConnectionRequest`](../interfaces/CreateConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>
+
+___
+
+### createConnectorSmtpConnectionRaw
+
+▸ **createConnectorSmtpConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>\>
+
+Allows sending via connector and email is routed to connected inbox and sent via SMTP
+Create an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateConnectorSmtpConnectionRequest`](../interfaces/CreateConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ConnectorSmtpConnectionDto`](../interfaces/ConnectorSmtpConnectionDto.md)\>\>
 
 ___
 
@@ -168,6 +256,46 @@ Delete an inbox connector
 
 ___
 
+### deleteConnectorImapConnection
+
+▸ **deleteConnectorImapConnection**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete IMAP connection for external inbox
+Delete an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteConnectorImapConnectionRequest`](../interfaces/DeleteConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteConnectorImapConnectionRaw
+
+▸ **deleteConnectorImapConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete IMAP connection for external inbox
+Delete an inbox connector IMAP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteConnectorImapConnectionRequest`](../interfaces/DeleteConnectorImapConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### deleteConnectorRaw
 
 ▸ **deleteConnectorRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
@@ -179,6 +307,46 @@ Delete an inbox connector
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`DeleteConnectorRequest`](../interfaces/DeleteConnectorRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### deleteConnectorSmtpConnection
+
+▸ **deleteConnectorSmtpConnection**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete SMTP connection for external inbox
+Delete an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteConnectorSmtpConnectionRequest`](../interfaces/DeleteConnectorSmtpConnectionRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteConnectorSmtpConnectionRaw
+
+▸ **deleteConnectorSmtpConnectionRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete SMTP connection for external inbox
+Delete an inbox connector SMTP connection
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteConnectorSmtpConnectionRequest`](../interfaces/DeleteConnectorSmtpConnectionRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

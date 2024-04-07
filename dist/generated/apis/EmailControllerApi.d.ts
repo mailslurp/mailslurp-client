@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailTextLinesResult, ForwardEmailOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailTextLinesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -88,6 +88,14 @@ export interface GetEmailLinksRequest {
 }
 export interface GetEmailPreviewURLsRequest {
     emailId: string;
+}
+export interface GetEmailScreenshotAsBase64Request {
+    emailId: string;
+    getEmailScreenshotOptions: GetEmailScreenshotOptions;
+}
+export interface GetEmailScreenshotAsBinaryRequest {
+    emailId: string;
+    getEmailScreenshotOptions: GetEmailScreenshotOptions;
 }
 export interface GetEmailTextLinesRequest {
     emailId: string;
@@ -392,6 +400,26 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Get email URLs for viewing in browser or downloading
      */
     getEmailPreviewURLs(requestParameters: GetEmailPreviewURLsRequest, initOverrides?: RequestInit): Promise<EmailPreviewUrls>;
+    /**
+     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Take a screenshot of an email in a browser and return base64 encoded string
+     */
+    getEmailScreenshotAsBase64Raw(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailScreenshotResult>>;
+    /**
+     * Capture image of email screenshot and return as base64 encoded string. Useful for embedding in HTML. Be careful as this may contain sensitive information.
+     * Take a screenshot of an email in a browser and return base64 encoded string
+     */
+    getEmailScreenshotAsBase64(requestParameters: GetEmailScreenshotAsBase64Request, initOverrides?: RequestInit): Promise<EmailScreenshotResult>;
+    /**
+     * Returns binary octet-stream of screenshot of the given email
+     * Take a screenshot of an email in a browser
+     */
+    getEmailScreenshotAsBinaryRaw(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Returns binary octet-stream of screenshot of the given email
+     * Take a screenshot of an email in a browser
+     */
+    getEmailScreenshotAsBinary(requestParameters: GetEmailScreenshotAsBinaryRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Parse an email body and return the content as an array of strings. HTML parsing uses JSoup and UNIX line separators.
      * Parse and return text from an email, stripping HTML and decoding encoded characters

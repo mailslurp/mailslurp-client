@@ -26,6 +26,7 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     return {
         id: json['id'],
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         userId: json['userId'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         attachments: json['attachments'],
@@ -34,7 +35,6 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bcc: json['bcc'],
         cc: json['cc'],
         createdAt: new Date(json['createdAt']),
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         virtualSend: json['virtualSend'],
     };
 }
@@ -49,6 +49,7 @@ function SentEmailProjectionToJSON(value) {
     return {
         id: value.id,
         subject: value.subject,
+        bodyMD5Hash: value.bodyMD5Hash,
         userId: value.userId,
         from: value.from,
         attachments: value.attachments,
@@ -57,7 +58,6 @@ function SentEmailProjectionToJSON(value) {
         bcc: value.bcc,
         cc: value.cc,
         createdAt: value.createdAt.toISOString(),
-        bodyMD5Hash: value.bodyMD5Hash,
         virtualSend: value.virtualSend,
     };
 }

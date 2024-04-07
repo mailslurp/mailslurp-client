@@ -153,6 +153,120 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+     * Create an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.createConnectorImapConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorImapConnection.');
+                        }
+                        if (requestParameters.createConnectorImapConnectionOptions === null ||
+                            requestParameters.createConnectorImapConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorImapConnectionOptions', 'Required parameter requestParameters.createConnectorImapConnectionOptions was null or undefined when calling createConnectorImapConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorImapConnectionOptionsToJSON)(requestParameters.createConnectorImapConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorImapConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Allows the reading of emails in an external mailbox and syncing to a MailSlurp inbox
+     * Create an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.createConnectorImapConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createConnectorImapConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Allows sending via connector and email is routed to connected inbox and sent via SMTP
+     * Create an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.createConnectorSmtpConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling createConnectorSmtpConnection.');
+                        }
+                        if (requestParameters.createConnectorSmtpConnectionOptions === null ||
+                            requestParameters.createConnectorSmtpConnectionOptions === undefined) {
+                            throw new runtime.RequiredError('createConnectorSmtpConnectionOptions', 'Required parameter requestParameters.createConnectorSmtpConnectionOptions was null or undefined when calling createConnectorSmtpConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateConnectorSmtpConnectionOptionsToJSON)(requestParameters.createConnectorSmtpConnectionOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.ConnectorSmtpConnectionDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Allows sending via connector and email is routed to connected inbox and sent via SMTP
+     * Create an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.createConnectorSmtpConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Delete all inbox connectors
      */
     ConnectorControllerApi.prototype.deleteAllConnectorRaw = function (initOverrides) {
@@ -232,6 +346,100 @@ var ConnectorControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteConnectorRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete IMAP connection for external inbox
+     * Delete an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.deleteConnectorImapConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteConnectorImapConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/imap".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete IMAP connection for external inbox
+     * Delete an inbox connector IMAP connection
+     */
+    ConnectorControllerApi.prototype.deleteConnectorImapConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteConnectorImapConnectionRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete SMTP connection for external inbox
+     * Delete an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.deleteConnectorSmtpConnectionRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling deleteConnectorSmtpConnection.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/connectors/{id}/smtp".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete SMTP connection for external inbox
+     * Delete an inbox connector SMTP connection
+     */
+    ConnectorControllerApi.prototype.deleteConnectorSmtpConnection = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteConnectorSmtpConnectionRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];

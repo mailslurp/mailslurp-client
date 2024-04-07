@@ -21,10 +21,22 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorProjection {
   /**
    *
+   * @type {boolean}
+   * @memberof ConnectorProjection
+   */
+  enabled?: boolean;
+  /**
+   *
    * @type {string}
    * @memberof ConnectorProjection
    */
   userId: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
+  emailAddress?: string;
   /**
    *
    * @type {string}
@@ -36,13 +48,7 @@ export interface ConnectorProjection {
    * @type {boolean}
    * @memberof ConnectorProjection
    */
-  syncEnabled: boolean;
-  /**
-   *
-   * @type {string}
-   * @memberof ConnectorProjection
-   */
-  connectorType: ConnectorProjectionConnectorTypeEnum;
+  syncEnabled?: boolean;
   /**
    *
    * @type {string}
@@ -66,16 +72,15 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
+  name?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof ConnectorProjection
+   */
   id?: string;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum ConnectorProjectionConnectorTypeEnum {
-  IMAP = 'IMAP',
-}
 /**
  * @export
  * @enum {string}
@@ -96,15 +101,19 @@ export function ConnectorProjectionFromJSONTyped(
     return json;
   }
   return {
+    enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
     userId: json['userId'],
+    emailAddress: !exists(json, 'emailAddress')
+      ? undefined
+      : json['emailAddress'],
     inboxId: json['inboxId'],
-    syncEnabled: json['syncEnabled'],
-    connectorType: json['connectorType'],
+    syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
     syncScheduleType: json['syncScheduleType'],
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
     createdAt: new Date(json['createdAt']),
+    name: !exists(json, 'name') ? undefined : json['name'],
     id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
@@ -119,13 +128,15 @@ export function ConnectorProjectionToJSON(
     return null;
   }
   return {
+    enabled: value.enabled,
     userId: value.userId,
+    emailAddress: value.emailAddress,
     inboxId: value.inboxId,
     syncEnabled: value.syncEnabled,
-    connectorType: value.connectorType,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
     createdAt: value.createdAt.toISOString(),
+    name: value.name,
     id: value.id,
   };
 }
