@@ -24,7 +24,6 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
         inboxId: json['inboxId'],
         to: json['to'],
@@ -37,6 +36,7 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
         createdAt: new Date(json['createdAt']),
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
@@ -50,7 +50,6 @@ function EmailProjectionToJSON(value) {
         return null;
     }
     return {
-        subject: value.subject,
         attachments: value.attachments,
         inboxId: value.inboxId,
         to: value.to,
@@ -63,6 +62,7 @@ function EmailProjectionToJSON(value) {
         bodyMD5Hash: value.bodyMD5Hash,
         textExcerpt: value.textExcerpt,
         createdAt: value.createdAt.toISOString(),
+        subject: value.subject,
         id: value.id,
         from: value.from,
     };

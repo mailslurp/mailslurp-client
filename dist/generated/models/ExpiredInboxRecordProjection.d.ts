@@ -20,13 +20,13 @@ export interface ExpiredInboxRecordProjection {
      * @type {string}
      * @memberof ExpiredInboxRecordProjection
      */
-    userId: string;
+    emailAddress: string;
     /**
      *
      * @type {string}
      * @memberof ExpiredInboxRecordProjection
      */
-    emailAddress: string;
+    userId: string;
     /**
      *
      * @type {Date}

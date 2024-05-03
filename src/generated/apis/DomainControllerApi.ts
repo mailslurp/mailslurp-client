@@ -20,6 +20,9 @@ import {
   DomainDto,
   DomainDtoFromJSON,
   DomainDtoToJSON,
+  DomainGroupsDto,
+  DomainGroupsDtoFromJSON,
+  DomainGroupsDtoToJSON,
   DomainIssuesDto,
   DomainIssuesDtoFromJSON,
   DomainIssuesDtoToJSON,
@@ -46,6 +49,10 @@ export interface DeleteDomainRequest {
   id: string;
 }
 
+export interface GetAvailableDomainsRequest {
+  inboxType?: GetAvailableDomainsInboxTypeEnum;
+}
+
 export interface GetDomainRequest {
   id: string;
   checkForErrors?: boolean;
@@ -53,6 +60,10 @@ export interface GetDomainRequest {
 
 export interface GetDomainWildcardCatchAllInboxRequest {
   id: string;
+}
+
+export interface GetMailSlurpDomainsRequest {
+  inboxType?: GetMailSlurpDomainsInboxTypeEnum;
 }
 
 export interface UpdateDomainRequest {
@@ -227,6 +238,56 @@ export class DomainControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<string>> {
     const response = await this.deleteDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List all domains available for use with email address creation
+   * Get all usable domains
+   */
+  async getAvailableDomainsRaw(
+    requestParameters: GetAvailableDomainsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainGroupsDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxType !== undefined) {
+      queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/available-domains`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainGroupsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List all domains available for use with email address creation
+   * Get all usable domains
+   */
+  async getAvailableDomains(
+    requestParameters: GetAvailableDomainsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainGroupsDto> {
+    const response = await this.getAvailableDomainsRaw(
       requestParameters,
       initOverrides
     );
@@ -425,6 +486,56 @@ export class DomainControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * List all MailSlurp domains used with non-custom email addresses
+   * Get MailSlurp domains
+   */
+  async getMailSlurpDomainsRaw(
+    requestParameters: GetMailSlurpDomainsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DomainGroupsDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxType !== undefined) {
+      queryParameters['inboxType'] = requestParameters.inboxType;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/domains/mailslurp-domains`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DomainGroupsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List all MailSlurp domains used with non-custom email addresses
+   * Get MailSlurp domains
+   */
+  async getMailSlurpDomains(
+    requestParameters: GetMailSlurpDomainsRequest,
+    initOverrides?: RequestInit
+  ): Promise<DomainGroupsDto> {
+    const response = await this.getMailSlurpDomainsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
    * Update a domain
    */
@@ -492,4 +603,21 @@ export class DomainControllerApi extends runtime.BaseAPI {
     );
     return await response.value();
   }
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetAvailableDomainsInboxTypeEnum {
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_INBOX = 'SMTP_INBOX',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetMailSlurpDomainsInboxTypeEnum {
+  HTTP_INBOX = 'HTTP_INBOX',
+  SMTP_INBOX = 'SMTP_INBOX',
 }

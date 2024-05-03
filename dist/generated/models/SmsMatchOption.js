@@ -29,6 +29,7 @@ var SmsMatchOptionFieldEnum;
  */
 var SmsMatchOptionShouldEnum;
 (function (SmsMatchOptionShouldEnum) {
+    SmsMatchOptionShouldEnum["MATCH"] = "MATCH";
     SmsMatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     SmsMatchOptionShouldEnum["EQUAL"] = "EQUAL";
 })(SmsMatchOptionShouldEnum = exports.SmsMatchOptionShouldEnum || (exports.SmsMatchOptionShouldEnum = {}));

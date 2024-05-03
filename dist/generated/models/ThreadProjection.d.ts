@@ -16,12 +16,6 @@
  */
 export interface ThreadProjection {
     /**
-     * Thread subject
-     * @type {string}
-     * @memberof ThreadProjection
-     */
-    subject?: string;
-    /**
      * User ID
      * @type {string}
      * @memberof ThreadProjection
@@ -69,6 +63,12 @@ export interface ThreadProjection {
      * @memberof ThreadProjection
      */
     updatedAt: Date;
+    /**
+     * Thread subject
+     * @type {string}
+     * @memberof ThreadProjection
+     */
+    subject?: string;
     /**
      * Name of thread
      * @type {string}

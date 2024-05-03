@@ -17,12 +17,6 @@
 export interface EmailProjection {
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
@@ -93,6 +87,12 @@ export interface EmailProjection {
      * @memberof EmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {string}

@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainControllerApi = void 0;
+exports.GetMailSlurpDomainsInboxTypeEnum = exports.GetAvailableDomainsInboxTypeEnum = exports.DomainControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -244,6 +244,57 @@ var DomainControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteDomainRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    DomainControllerApi.prototype.getAvailableDomainsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domains/available-domains",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    DomainControllerApi.prototype.getAvailableDomains = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAvailableDomainsRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -454,6 +505,57 @@ var DomainControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    DomainControllerApi.prototype.getMailSlurpDomainsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxType !== undefined) {
+                            queryParameters['inboxType'] = requestParameters.inboxType;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/domains/mailslurp-domains",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DomainGroupsDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    DomainControllerApi.prototype.getMailSlurpDomains = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getMailSlurpDomainsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
      * Update a domain
      */
@@ -513,3 +615,21 @@ var DomainControllerApi = /** @class */ (function (_super) {
     return DomainControllerApi;
 }(runtime.BaseAPI));
 exports.DomainControllerApi = DomainControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetAvailableDomainsInboxTypeEnum;
+(function (GetAvailableDomainsInboxTypeEnum) {
+    GetAvailableDomainsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    GetAvailableDomainsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(GetAvailableDomainsInboxTypeEnum = exports.GetAvailableDomainsInboxTypeEnum || (exports.GetAvailableDomainsInboxTypeEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetMailSlurpDomainsInboxTypeEnum;
+(function (GetMailSlurpDomainsInboxTypeEnum) {
+    GetMailSlurpDomainsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
+    GetMailSlurpDomainsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
+})(GetMailSlurpDomainsInboxTypeEnum = exports.GetMailSlurpDomainsInboxTypeEnum || (exports.GetMailSlurpDomainsInboxTypeEnum = {}));

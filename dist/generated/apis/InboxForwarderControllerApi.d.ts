@@ -24,6 +24,7 @@ export interface DeleteInboxForwardersRequest {
 export interface GetAllInboxForwarderEventsRequest {
     page?: number;
     size?: number;
+    inboxId?: string;
     sort?: GetAllInboxForwarderEventsSortEnum;
 }
 export interface GetForwarderEventRequest {

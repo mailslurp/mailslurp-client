@@ -26,31 +26,25 @@ export interface SentEmailProjection {
      * @type {string}
      * @memberof SentEmailProjection
      */
-    subject?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    bodyMD5Hash?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    userId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
     from?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string;
     /**
      *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
     attachments: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    userId: string;
     /**
      *
      * @type {string}
@@ -81,6 +75,12 @@ export interface SentEmailProjection {
      * @memberof SentEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    bodyMD5Hash?: string;
     /**
      *
      * @type {boolean}

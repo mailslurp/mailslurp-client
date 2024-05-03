@@ -234,6 +234,10 @@ export interface GetImapSmtpAccessRequest {
   inboxId?: string;
 }
 
+export interface GetImapSmtpAccessEnvRequest {
+  inboxId?: string;
+}
+
 export interface GetInboxRequest {
   inboxId: string;
 }
@@ -1661,6 +1665,52 @@ export class InboxControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<ImapSmtpAccessDetails> {
     const response = await this.getImapSmtpAccessRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get IMAP and SMTP access details in .env format
+   */
+  async getImapSmtpAccessEnvRaw(
+    requestParameters: GetImapSmtpAccessEnvRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<string>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/imap-smtp-access/env`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.TextApiResponse(response) as any;
+  }
+
+  /**
+   * Get IMAP and SMTP access details in .env format
+   */
+  async getImapSmtpAccessEnv(
+    requestParameters: GetImapSmtpAccessEnvRequest,
+    initOverrides?: RequestInit
+  ): Promise<string> {
+    const response = await this.getImapSmtpAccessEnvRaw(
       requestParameters,
       initOverrides
     );

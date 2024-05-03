@@ -24,8 +24,8 @@ function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        userId: json['userId'],
         emailAddress: json['emailAddress'],
+        userId: json['userId'],
         inboxId: json['inboxId'],
         useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
         createdAt: new Date(json['createdAt']),
@@ -43,8 +43,8 @@ function AliasProjectionToJSON(value) {
         return null;
     }
     return {
-        userId: value.userId,
         emailAddress: value.emailAddress,
+        userId: value.userId,
         inboxId: value.inboxId,
         useThreads: value.useThreads,
         createdAt: value.createdAt.toISOString(),

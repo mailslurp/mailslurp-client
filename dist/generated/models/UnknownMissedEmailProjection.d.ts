@@ -17,12 +17,6 @@
 export interface UnknownMissedEmailProjection {
     /**
      *
-     * @type {string}
-     * @memberof UnknownMissedEmailProjection
-     */
-    subject?: string;
-    /**
-     *
      * @type {Array<string>}
      * @memberof UnknownMissedEmailProjection
      */
@@ -33,6 +27,12 @@ export interface UnknownMissedEmailProjection {
      * @memberof UnknownMissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof UnknownMissedEmailProjection
+     */
+    subject?: string;
     /**
      *
      * @type {string}

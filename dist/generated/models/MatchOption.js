@@ -25,6 +25,7 @@ var MatchOptionFieldEnum;
     MatchOptionFieldEnum["BCC"] = "BCC";
     MatchOptionFieldEnum["CC"] = "CC";
     MatchOptionFieldEnum["FROM"] = "FROM";
+    MatchOptionFieldEnum["HEADERS"] = "HEADERS";
 })(MatchOptionFieldEnum = exports.MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = {}));
 /**
  * @export
@@ -32,6 +33,7 @@ var MatchOptionFieldEnum;
  */
 var MatchOptionShouldEnum;
 (function (MatchOptionShouldEnum) {
+    MatchOptionShouldEnum["MATCH"] = "MATCH";
     MatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     MatchOptionShouldEnum["EQUAL"] = "EQUAL";
 })(MatchOptionShouldEnum = exports.MatchOptionShouldEnum || (exports.MatchOptionShouldEnum = {}));

@@ -20,12 +20,6 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ThreadProjection {
   /**
-   * Thread subject
-   * @type {string}
-   * @memberof ThreadProjection
-   */
-  subject?: string;
-  /**
    * User ID
    * @type {string}
    * @memberof ThreadProjection
@@ -74,6 +68,12 @@ export interface ThreadProjection {
    */
   updatedAt: Date;
   /**
+   * Thread subject
+   * @type {string}
+   * @memberof ThreadProjection
+   */
+  subject?: string;
+  /**
    * Name of thread
    * @type {string}
    * @memberof ThreadProjection
@@ -99,7 +99,6 @@ export function ThreadProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     userId: json['userId'],
     inboxId: json['inboxId'],
     to: json['to'],
@@ -108,6 +107,7 @@ export function ThreadProjectionFromJSONTyped(
     aliasId: json['aliasId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -121,7 +121,6 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     return null;
   }
   return {
-    subject: value.subject,
     userId: value.userId,
     inboxId: value.inboxId,
     to: value.to,
@@ -130,6 +129,7 @@ export function ThreadProjectionToJSON(value?: ThreadProjection | null): any {
     aliasId: value.aliasId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
+    subject: value.subject,
     name: value.name,
     id: value.id,
   };

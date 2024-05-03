@@ -275,6 +275,15 @@ export interface GetRawEmailJsonRequest {
   emailId: string;
 }
 
+export interface GetUnreadEmailCountRequest {
+  inboxId?: string;
+}
+
+export interface MarkAllAsReadRequest {
+  read?: boolean;
+  inboxId?: string;
+}
+
 export interface MarkAsReadRequest {
   emailId: string;
   read?: boolean;
@@ -2489,9 +2498,14 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Get unread email count
    */
   async getUnreadEmailCountRaw(
+    requestParameters: GetUnreadEmailCountRequest,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<UnreadCount>> {
     const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
 
     const headerParameters: runtime.HTTPHeaders = {};
 
@@ -2518,14 +2532,68 @@ export class EmailControllerApi extends runtime.BaseAPI {
    * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
    * Get unread email count
    */
-  async getUnreadEmailCount(initOverrides?: RequestInit): Promise<UnreadCount> {
-    const response = await this.getUnreadEmailCountRaw(initOverrides);
+  async getUnreadEmailCount(
+    requestParameters: GetUnreadEmailCountRequest,
+    initOverrides?: RequestInit
+  ): Promise<UnreadCount> {
+    const response = await this.getUnreadEmailCountRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 
   /**
+   * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+   * Mark all emails as read or unread
+   */
+  async markAllAsReadRaw(
+    requestParameters: MarkAllAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.read !== undefined) {
+      queryParameters['read'] = requestParameters.read;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/read`,
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+   * Mark all emails as read or unread
+   */
+  async markAllAsRead(
+    requestParameters: MarkAllAsReadRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.markAllAsReadRaw(requestParameters, initOverrides);
+  }
+
+  /**
    * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-   * Mark an email as read on unread
+   * Mark an email as read or unread
    */
   async markAsReadRaw(
     requestParameters: MarkAsReadRequest,
@@ -2573,7 +2641,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
 
   /**
    * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-   * Mark an email as read on unread
+   * Mark an email as read or unread
    */
   async markAsRead(
     requestParameters: MarkAsReadRequest,

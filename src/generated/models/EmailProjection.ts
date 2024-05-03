@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface EmailProjection {
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
@@ -102,6 +96,12 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
+  subject?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
   id: string;
   /**
    *
@@ -123,7 +123,6 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
     inboxId: json['inboxId'],
     to: json['to'],
@@ -136,6 +135,7 @@ export function EmailProjectionFromJSONTyped(
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     createdAt: new Date(json['createdAt']),
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
   };
@@ -149,7 +149,6 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    subject: value.subject,
     attachments: value.attachments,
     inboxId: value.inboxId,
     to: value.to,
@@ -162,6 +161,7 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     bodyMD5Hash: value.bodyMD5Hash,
     textExcerpt: value.textExcerpt,
     createdAt: value.createdAt.toISOString(),
+    subject: value.subject,
     id: value.id,
     from: value.from,
   };

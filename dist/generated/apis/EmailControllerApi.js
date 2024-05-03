@@ -2000,13 +2000,16 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread email count
      */
-    EmailControllerApi.prototype.getUnreadEmailCountRaw = function (initOverrides) {
+    EmailControllerApi.prototype.getUnreadEmailCountRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
@@ -2030,12 +2033,12 @@ var EmailControllerApi = /** @class */ (function (_super) {
      * Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
      * Get unread email count
      */
-    EmailControllerApi.prototype.getUnreadEmailCount = function (initOverrides) {
+    EmailControllerApi.prototype.getUnreadEmailCount = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getUnreadEmailCountRaw(initOverrides)];
+                    case 0: return [4 /*yield*/, this.getUnreadEmailCountRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2045,8 +2048,58 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Mark all emails as read or unread
+     */
+    EmailControllerApi.prototype.markAllAsReadRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.read !== undefined) {
+                            queryParameters['read'] = requestParameters.read;
+                        }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/read",
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+     * Mark all emails as read or unread
+     */
+    EmailControllerApi.prototype.markAllAsRead = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.markAllAsReadRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
      * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-     * Mark an email as read on unread
+     * Mark an email as read or unread
      */
     EmailControllerApi.prototype.markAsReadRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -2083,7 +2136,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
     };
     /**
      * Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-     * Mark an email as read on unread
+     * Mark an email as read or unread
      */
     EmailControllerApi.prototype.markAsRead = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface InboxReplierEventProjection {
   /**
    *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  replierId?: string | null;
-  /**
-   *
    * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
@@ -55,6 +49,12 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   sentId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  replierId?: string | null;
   /**
    *
    * @type {Date}
@@ -104,12 +104,12 @@ export function InboxReplierEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
     recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
     emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
+    replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
     createdAt: new Date(json['createdAt']),
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
@@ -127,12 +127,12 @@ export function InboxReplierEventProjectionToJSON(
     return null;
   }
   return {
-    replierId: value.replierId,
     recipients: value.recipients,
     userId: value.userId,
     emailId: value.emailId,
     inboxId: value.inboxId,
     sentId: value.sentId,
+    replierId: value.replierId,
     createdAt: value.createdAt.toISOString(),
     message: value.message,
     id: value.id,

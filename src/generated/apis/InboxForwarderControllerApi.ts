@@ -56,6 +56,7 @@ export interface DeleteInboxForwardersRequest {
 export interface GetAllInboxForwarderEventsRequest {
   page?: number;
   size?: number;
+  inboxId?: string;
   sort?: GetAllInboxForwarderEventsSortEnum;
 }
 
@@ -297,6 +298,10 @@ export class InboxForwarderControllerApi extends runtime.BaseAPI {
 
     if (requestParameters.size !== undefined) {
       queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
     }
 
     if (requestParameters.sort !== undefined) {

@@ -270,6 +270,9 @@ var InboxForwarderControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.size !== undefined) {
                             queryParameters['size'] = requestParameters.size;
                         }
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
                         if (requestParameters.sort !== undefined) {
                             queryParameters['sort'] = requestParameters.sort;
                         }

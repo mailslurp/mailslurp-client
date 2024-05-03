@@ -10,6 +10,7 @@
 
 - [CONTAIN](SmsMatchOptionShouldEnum.md#contain)
 - [EQUAL](SmsMatchOptionShouldEnum.md#equal)
+- [MATCH](SmsMatchOptionShouldEnum.md#match)
 
 ## Enumeration Members
 
@@ -22,3 +23,9 @@ ___
 ### EQUAL
 
 • **EQUAL** = ``"EQUAL"``
+
+___
+
+### MATCH
+
+• **MATCH** = ``"MATCH"``

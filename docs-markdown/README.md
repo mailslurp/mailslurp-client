@@ -32,6 +32,8 @@ MailSlurp JS
 - [DNSLookupOptionsRecordTypesEnum](enums/DNSLookupOptionsRecordTypesEnum.md)
 - [DNSLookupResultRecordTypeEnum](enums/DNSLookupResultRecordTypeEnum.md)
 - [DomainDtoDomainTypeEnum](enums/DomainDtoDomainTypeEnum.md)
+- [DomainGroupLabelEnum](enums/DomainGroupLabelEnum.md)
+- [DomainInformationDomainTypeEnum](enums/DomainInformationDomainTypeEnum.md)
 - [DomainNameRecordLabelEnum](enums/DomainNameRecordLabelEnum.md)
 - [DomainNameRecordRecordTypeEnum](enums/DomainNameRecordRecordTypeEnum.md)
 - [DomainPreviewDomainTypeEnum](enums/DomainPreviewDomainTypeEnum.md)
@@ -93,6 +95,7 @@ MailSlurp JS
 - [GetAllWebhookResultsSortEnum](enums/GetAllWebhookResultsSortEnum.md)
 - [GetAllWebhooksSortEnum](enums/GetAllWebhooksSortEnum.md)
 - [GetAttachmentsSortEnum](enums/GetAttachmentsSortEnum.md)
+- [GetAvailableDomainsInboxTypeEnum](enums/GetAvailableDomainsInboxTypeEnum.md)
 - [GetBouncedEmailsSortEnum](enums/GetBouncedEmailsSortEnum.md)
 - [GetBouncedRecipientsSortEnum](enums/GetBouncedRecipientsSortEnum.md)
 - [GetComplaintsSortEnum](enums/GetComplaintsSortEnum.md)
@@ -116,6 +119,7 @@ MailSlurp JS
 - [GetInboxesSortEnum](enums/GetInboxesSortEnum.md)
 - [GetJsonSchemaForWebhookEventEventEnum](enums/GetJsonSchemaForWebhookEventEventEnum.md)
 - [GetListUnsubscribeRecipientsSortEnum](enums/GetListUnsubscribeRecipientsSortEnum.md)
+- [GetMailSlurpDomainsInboxTypeEnum](enums/GetMailSlurpDomainsInboxTypeEnum.md)
 - [GetOrganizationEmailsPaginatedSortEnum](enums/GetOrganizationEmailsPaginatedSortEnum.md)
 - [GetOrganizationInboxesSortEnum](enums/GetOrganizationInboxesSortEnum.md)
 - [GetPhoneNumberWebhooksPaginatedSortEnum](enums/GetPhoneNumberWebhooksPaginatedSortEnum.md)
@@ -137,6 +141,7 @@ MailSlurp JS
 - [GetWebhookResultsSortEnum](enums/GetWebhookResultsSortEnum.md)
 - [ImageIssueSeverityEnum](enums/ImageIssueSeverityEnum.md)
 - [ImapFlagOperationOptionsFlagOperationEnum](enums/ImapFlagOperationOptionsFlagOperationEnum.md)
+- [ImapServerStatusOptionsStatusItemsEnum](enums/ImapServerStatusOptionsStatusItemsEnum.md)
 - [InboxDtoFunctionsAsEnum](enums/InboxDtoFunctionsAsEnum.md)
 - [InboxDtoInboxTypeEnum](enums/InboxDtoInboxTypeEnum.md)
 - [InboxForwarderDtoFieldEnum](enums/InboxForwarderDtoFieldEnum.md)
@@ -223,6 +228,7 @@ MailSlurp JS
 - [ExportControllerApi](classes/ExportControllerApi.md)
 - [FormControllerApi](classes/FormControllerApi.md)
 - [GroupControllerApi](classes/GroupControllerApi.md)
+- [ImapControllerApi](classes/ImapControllerApi.md)
 - [InboxControllerApi](classes/InboxControllerApi.md)
 - [InboxForwarderControllerApi](classes/InboxForwarderControllerApi.md)
 - [InboxReplierControllerApi](classes/InboxReplierControllerApi.md)
@@ -375,6 +381,9 @@ MailSlurp JS
 - [DescribeMailServerDomainResult](interfaces/DescribeMailServerDomainResult.md)
 - [DoesInboxExistRequest](interfaces/DoesInboxExistRequest.md)
 - [DomainDto](interfaces/DomainDto.md)
+- [DomainGroup](interfaces/DomainGroup.md)
+- [DomainGroupsDto](interfaces/DomainGroupsDto.md)
+- [DomainInformation](interfaces/DomainInformation.md)
 - [DomainIssuesDto](interfaces/DomainIssuesDto.md)
 - [DomainNameRecord](interfaces/DomainNameRecord.md)
 - [DomainPreview](interfaces/DomainPreview.md)
@@ -466,6 +475,7 @@ MailSlurp JS
 - [GetAttachmentMetaDataRequest](interfaces/GetAttachmentMetaDataRequest.md)
 - [GetAttachmentRequest](interfaces/GetAttachmentRequest.md)
 - [GetAttachmentsRequest](interfaces/GetAttachmentsRequest.md)
+- [GetAvailableDomainsRequest](interfaces/GetAvailableDomainsRequest.md)
 - [GetBouncedEmailRequest](interfaces/GetBouncedEmailRequest.md)
 - [GetBouncedEmailsRequest](interfaces/GetBouncedEmailsRequest.md)
 - [GetBouncedRecipientRequest](interfaces/GetBouncedRecipientRequest.md)
@@ -512,6 +522,7 @@ MailSlurp JS
 - [GetGroupWithContactsPaginatedRequest](interfaces/GetGroupWithContactsPaginatedRequest.md)
 - [GetGroupWithContactsRequest](interfaces/GetGroupWithContactsRequest.md)
 - [GetImapAccessRequest](interfaces/GetImapAccessRequest.md)
+- [GetImapSmtpAccessEnvRequest](interfaces/GetImapSmtpAccessEnvRequest.md)
 - [GetImapSmtpAccessRequest](interfaces/GetImapSmtpAccessRequest.md)
 - [GetInboxByEmailAddressRequest](interfaces/GetInboxByEmailAddressRequest.md)
 - [GetInboxByNameRequest](interfaces/GetInboxByNameRequest.md)
@@ -538,6 +549,7 @@ MailSlurp JS
 - [GetLatestEmailInInboxRequest](interfaces/GetLatestEmailInInboxRequest.md)
 - [GetLatestEmailRequest](interfaces/GetLatestEmailRequest.md)
 - [GetListUnsubscribeRecipientsRequest](interfaces/GetListUnsubscribeRecipientsRequest.md)
+- [GetMailSlurpDomainsRequest](interfaces/GetMailSlurpDomainsRequest.md)
 - [GetMissedEmailRequest](interfaces/GetMissedEmailRequest.md)
 - [GetOrganizationEmailsPaginatedRequest](interfaces/GetOrganizationEmailsPaginatedRequest.md)
 - [GetOrganizationInboxesRequest](interfaces/GetOrganizationInboxesRequest.md)
@@ -572,6 +584,7 @@ MailSlurp JS
 - [GetThreadRequest](interfaces/GetThreadRequest.md)
 - [GetThreadsPaginatedRequest](interfaces/GetThreadsPaginatedRequest.md)
 - [GetTrackingPixelRequest](interfaces/GetTrackingPixelRequest.md)
+- [GetUnreadEmailCountRequest](interfaces/GetUnreadEmailCountRequest.md)
 - [GetValidationRequestsRequest](interfaces/GetValidationRequestsRequest.md)
 - [GetWebhookRequest](interfaces/GetWebhookRequest.md)
 - [GetWebhookResultRequest](interfaces/GetWebhookResultRequest.md)
@@ -586,8 +599,26 @@ MailSlurp JS
 - [IPAddressResult](interfaces/IPAddressResult.md)
 - [ImageIssue](interfaces/ImageIssue.md)
 - [ImapAccessDetails](interfaces/ImapAccessDetails.md)
+- [ImapEmailProjection](interfaces/ImapEmailProjection.md)
 - [ImapFlagOperationOptions](interfaces/ImapFlagOperationOptions.md)
+- [ImapMailboxStatus](interfaces/ImapMailboxStatus.md)
+- [ImapServerFetchItem](interfaces/ImapServerFetchItem.md)
+- [ImapServerFetchRequest](interfaces/ImapServerFetchRequest.md)
+- [ImapServerFetchResult](interfaces/ImapServerFetchResult.md)
+- [ImapServerGetRequest](interfaces/ImapServerGetRequest.md)
+- [ImapServerGetResult](interfaces/ImapServerGetResult.md)
+- [ImapServerListOptions](interfaces/ImapServerListOptions.md)
+- [ImapServerListRequest](interfaces/ImapServerListRequest.md)
+- [ImapServerListResult](interfaces/ImapServerListResult.md)
+- [ImapServerSearchOptions](interfaces/ImapServerSearchOptions.md)
+- [ImapServerSearchRequest](interfaces/ImapServerSearchRequest.md)
+- [ImapServerSearchResult](interfaces/ImapServerSearchResult.md)
+- [ImapServerStatusOptions](interfaces/ImapServerStatusOptions.md)
+- [ImapServerStatusRequest](interfaces/ImapServerStatusRequest.md)
+- [ImapServerStatusResult](interfaces/ImapServerStatusResult.md)
+- [ImapServerUpdateFlagsRequest](interfaces/ImapServerUpdateFlagsRequest.md)
 - [ImapSmtpAccessDetails](interfaces/ImapSmtpAccessDetails.md)
+- [ImapUpdateFlagsOptions](interfaces/ImapUpdateFlagsOptions.md)
 - [InboxByEmailAddressResult](interfaces/InboxByEmailAddressResult.md)
 - [InboxByNameResult](interfaces/InboxByNameResult.md)
 - [InboxDto](interfaces/InboxDto.md)
@@ -623,6 +654,7 @@ MailSlurp JS
 - [LookupTlsReportingDomainOptions](interfaces/LookupTlsReportingDomainOptions.md)
 - [LookupTlsReportingDomainRequest](interfaces/LookupTlsReportingDomainRequest.md)
 - [LookupTlsReportingDomainResults](interfaces/LookupTlsReportingDomainResults.md)
+- [MarkAllAsReadRequest](interfaces/MarkAllAsReadRequest.md)
 - [MarkAsReadRequest](interfaces/MarkAsReadRequest.md)
 - [MatchOption](interfaces/MatchOption.md)
 - [MatchOptions](interfaces/MatchOptions.md)
@@ -1011,6 +1043,15 @@ MailSlurp JS
 - [DomainDtoFromJSON](README.md#domaindtofromjson)
 - [DomainDtoFromJSONTyped](README.md#domaindtofromjsontyped)
 - [DomainDtoToJSON](README.md#domaindtotojson)
+- [DomainGroupFromJSON](README.md#domaingroupfromjson)
+- [DomainGroupFromJSONTyped](README.md#domaingroupfromjsontyped)
+- [DomainGroupToJSON](README.md#domaingrouptojson)
+- [DomainGroupsDtoFromJSON](README.md#domaingroupsdtofromjson)
+- [DomainGroupsDtoFromJSONTyped](README.md#domaingroupsdtofromjsontyped)
+- [DomainGroupsDtoToJSON](README.md#domaingroupsdtotojson)
+- [DomainInformationFromJSON](README.md#domaininformationfromjson)
+- [DomainInformationFromJSONTyped](README.md#domaininformationfromjsontyped)
+- [DomainInformationToJSON](README.md#domaininformationtojson)
 - [DomainIssuesDtoFromJSON](README.md#domainissuesdtofromjson)
 - [DomainIssuesDtoFromJSONTyped](README.md#domainissuesdtofromjsontyped)
 - [DomainIssuesDtoToJSON](README.md#domainissuesdtotojson)
@@ -1194,12 +1235,48 @@ MailSlurp JS
 - [ImapAccessDetailsFromJSON](README.md#imapaccessdetailsfromjson)
 - [ImapAccessDetailsFromJSONTyped](README.md#imapaccessdetailsfromjsontyped)
 - [ImapAccessDetailsToJSON](README.md#imapaccessdetailstojson)
+- [ImapEmailProjectionFromJSON](README.md#imapemailprojectionfromjson)
+- [ImapEmailProjectionFromJSONTyped](README.md#imapemailprojectionfromjsontyped)
+- [ImapEmailProjectionToJSON](README.md#imapemailprojectiontojson)
 - [ImapFlagOperationOptionsFromJSON](README.md#imapflagoperationoptionsfromjson)
 - [ImapFlagOperationOptionsFromJSONTyped](README.md#imapflagoperationoptionsfromjsontyped)
 - [ImapFlagOperationOptionsToJSON](README.md#imapflagoperationoptionstojson)
+- [ImapMailboxStatusFromJSON](README.md#imapmailboxstatusfromjson)
+- [ImapMailboxStatusFromJSONTyped](README.md#imapmailboxstatusfromjsontyped)
+- [ImapMailboxStatusToJSON](README.md#imapmailboxstatustojson)
+- [ImapServerFetchItemFromJSON](README.md#imapserverfetchitemfromjson)
+- [ImapServerFetchItemFromJSONTyped](README.md#imapserverfetchitemfromjsontyped)
+- [ImapServerFetchItemToJSON](README.md#imapserverfetchitemtojson)
+- [ImapServerFetchResultFromJSON](README.md#imapserverfetchresultfromjson)
+- [ImapServerFetchResultFromJSONTyped](README.md#imapserverfetchresultfromjsontyped)
+- [ImapServerFetchResultToJSON](README.md#imapserverfetchresulttojson)
+- [ImapServerGetResultFromJSON](README.md#imapservergetresultfromjson)
+- [ImapServerGetResultFromJSONTyped](README.md#imapservergetresultfromjsontyped)
+- [ImapServerGetResultToJSON](README.md#imapservergetresulttojson)
+- [ImapServerListOptionsFromJSON](README.md#imapserverlistoptionsfromjson)
+- [ImapServerListOptionsFromJSONTyped](README.md#imapserverlistoptionsfromjsontyped)
+- [ImapServerListOptionsToJSON](README.md#imapserverlistoptionstojson)
+- [ImapServerListResultFromJSON](README.md#imapserverlistresultfromjson)
+- [ImapServerListResultFromJSONTyped](README.md#imapserverlistresultfromjsontyped)
+- [ImapServerListResultToJSON](README.md#imapserverlistresulttojson)
+- [ImapServerSearchOptionsFromJSON](README.md#imapserversearchoptionsfromjson)
+- [ImapServerSearchOptionsFromJSONTyped](README.md#imapserversearchoptionsfromjsontyped)
+- [ImapServerSearchOptionsToJSON](README.md#imapserversearchoptionstojson)
+- [ImapServerSearchResultFromJSON](README.md#imapserversearchresultfromjson)
+- [ImapServerSearchResultFromJSONTyped](README.md#imapserversearchresultfromjsontyped)
+- [ImapServerSearchResultToJSON](README.md#imapserversearchresulttojson)
+- [ImapServerStatusOptionsFromJSON](README.md#imapserverstatusoptionsfromjson)
+- [ImapServerStatusOptionsFromJSONTyped](README.md#imapserverstatusoptionsfromjsontyped)
+- [ImapServerStatusOptionsToJSON](README.md#imapserverstatusoptionstojson)
+- [ImapServerStatusResultFromJSON](README.md#imapserverstatusresultfromjson)
+- [ImapServerStatusResultFromJSONTyped](README.md#imapserverstatusresultfromjsontyped)
+- [ImapServerStatusResultToJSON](README.md#imapserverstatusresulttojson)
 - [ImapSmtpAccessDetailsFromJSON](README.md#imapsmtpaccessdetailsfromjson)
 - [ImapSmtpAccessDetailsFromJSONTyped](README.md#imapsmtpaccessdetailsfromjsontyped)
 - [ImapSmtpAccessDetailsToJSON](README.md#imapsmtpaccessdetailstojson)
+- [ImapUpdateFlagsOptionsFromJSON](README.md#imapupdateflagsoptionsfromjson)
+- [ImapUpdateFlagsOptionsFromJSONTyped](README.md#imapupdateflagsoptionsfromjsontyped)
+- [ImapUpdateFlagsOptionsToJSON](README.md#imapupdateflagsoptionstojson)
 - [InboxByEmailAddressResultFromJSON](README.md#inboxbyemailaddressresultfromjson)
 - [InboxByEmailAddressResultFromJSONTyped](README.md#inboxbyemailaddressresultfromjsontyped)
 - [InboxByEmailAddressResultToJSON](README.md#inboxbyemailaddressresulttojson)
@@ -4743,6 +4820,153 @@ ___
 
 ___
 
+### DomainGroupFromJSON
+
+▸ **DomainGroupFromJSON**(`json`): [`DomainGroup`](interfaces/DomainGroup.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainGroup`](interfaces/DomainGroup.md)
+
+___
+
+### DomainGroupFromJSONTyped
+
+▸ **DomainGroupFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainGroup`](interfaces/DomainGroup.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainGroup`](interfaces/DomainGroup.md)
+
+___
+
+### DomainGroupToJSON
+
+▸ **DomainGroupToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainGroup`](interfaces/DomainGroup.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainGroupsDtoFromJSON
+
+▸ **DomainGroupsDtoFromJSON**(`json`): [`DomainGroupsDto`](interfaces/DomainGroupsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainGroupsDto`](interfaces/DomainGroupsDto.md)
+
+___
+
+### DomainGroupsDtoFromJSONTyped
+
+▸ **DomainGroupsDtoFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainGroupsDto`](interfaces/DomainGroupsDto.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainGroupsDto`](interfaces/DomainGroupsDto.md)
+
+___
+
+### DomainGroupsDtoToJSON
+
+▸ **DomainGroupsDtoToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainGroupsDto`](interfaces/DomainGroupsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### DomainInformationFromJSON
+
+▸ **DomainInformationFromJSON**(`json`): [`DomainInformation`](interfaces/DomainInformation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`DomainInformation`](interfaces/DomainInformation.md)
+
+___
+
+### DomainInformationFromJSONTyped
+
+▸ **DomainInformationFromJSONTyped**(`json`, `ignoreDiscriminator`): [`DomainInformation`](interfaces/DomainInformation.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`DomainInformation`](interfaces/DomainInformation.md)
+
+___
+
+### DomainInformationToJSON
+
+▸ **DomainInformationToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`DomainInformation`](interfaces/DomainInformation.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### DomainIssuesDtoFromJSON
 
 ▸ **DomainIssuesDtoFromJSON**(`json`): [`DomainIssuesDto`](interfaces/DomainIssuesDto.md)
@@ -7732,6 +7956,55 @@ ___
 
 ___
 
+### ImapEmailProjectionFromJSON
+
+▸ **ImapEmailProjectionFromJSON**(`json`): [`ImapEmailProjection`](interfaces/ImapEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapEmailProjection`](interfaces/ImapEmailProjection.md)
+
+___
+
+### ImapEmailProjectionFromJSONTyped
+
+▸ **ImapEmailProjectionFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapEmailProjection`](interfaces/ImapEmailProjection.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapEmailProjection`](interfaces/ImapEmailProjection.md)
+
+___
+
+### ImapEmailProjectionToJSON
+
+▸ **ImapEmailProjectionToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapEmailProjection`](interfaces/ImapEmailProjection.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ImapFlagOperationOptionsFromJSON
 
 ▸ **ImapFlagOperationOptionsFromJSON**(`json`): [`ImapFlagOperationOptions`](interfaces/ImapFlagOperationOptions.md)
@@ -7781,6 +8054,496 @@ ___
 
 ___
 
+### ImapMailboxStatusFromJSON
+
+▸ **ImapMailboxStatusFromJSON**(`json`): [`ImapMailboxStatus`](interfaces/ImapMailboxStatus.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapMailboxStatus`](interfaces/ImapMailboxStatus.md)
+
+___
+
+### ImapMailboxStatusFromJSONTyped
+
+▸ **ImapMailboxStatusFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapMailboxStatus`](interfaces/ImapMailboxStatus.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapMailboxStatus`](interfaces/ImapMailboxStatus.md)
+
+___
+
+### ImapMailboxStatusToJSON
+
+▸ **ImapMailboxStatusToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapMailboxStatus`](interfaces/ImapMailboxStatus.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerFetchItemFromJSON
+
+▸ **ImapServerFetchItemFromJSON**(`json`): [`ImapServerFetchItem`](interfaces/ImapServerFetchItem.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerFetchItem`](interfaces/ImapServerFetchItem.md)
+
+___
+
+### ImapServerFetchItemFromJSONTyped
+
+▸ **ImapServerFetchItemFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerFetchItem`](interfaces/ImapServerFetchItem.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerFetchItem`](interfaces/ImapServerFetchItem.md)
+
+___
+
+### ImapServerFetchItemToJSON
+
+▸ **ImapServerFetchItemToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerFetchItem`](interfaces/ImapServerFetchItem.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerFetchResultFromJSON
+
+▸ **ImapServerFetchResultFromJSON**(`json`): [`ImapServerFetchResult`](interfaces/ImapServerFetchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerFetchResult`](interfaces/ImapServerFetchResult.md)
+
+___
+
+### ImapServerFetchResultFromJSONTyped
+
+▸ **ImapServerFetchResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerFetchResult`](interfaces/ImapServerFetchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerFetchResult`](interfaces/ImapServerFetchResult.md)
+
+___
+
+### ImapServerFetchResultToJSON
+
+▸ **ImapServerFetchResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerFetchResult`](interfaces/ImapServerFetchResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerGetResultFromJSON
+
+▸ **ImapServerGetResultFromJSON**(`json`): [`ImapServerGetResult`](interfaces/ImapServerGetResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerGetResult`](interfaces/ImapServerGetResult.md)
+
+___
+
+### ImapServerGetResultFromJSONTyped
+
+▸ **ImapServerGetResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerGetResult`](interfaces/ImapServerGetResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerGetResult`](interfaces/ImapServerGetResult.md)
+
+___
+
+### ImapServerGetResultToJSON
+
+▸ **ImapServerGetResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerGetResult`](interfaces/ImapServerGetResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerListOptionsFromJSON
+
+▸ **ImapServerListOptionsFromJSON**(`json`): [`ImapServerListOptions`](interfaces/ImapServerListOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerListOptions`](interfaces/ImapServerListOptions.md)
+
+___
+
+### ImapServerListOptionsFromJSONTyped
+
+▸ **ImapServerListOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerListOptions`](interfaces/ImapServerListOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerListOptions`](interfaces/ImapServerListOptions.md)
+
+___
+
+### ImapServerListOptionsToJSON
+
+▸ **ImapServerListOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerListOptions`](interfaces/ImapServerListOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerListResultFromJSON
+
+▸ **ImapServerListResultFromJSON**(`json`): [`ImapServerListResult`](interfaces/ImapServerListResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerListResult`](interfaces/ImapServerListResult.md)
+
+___
+
+### ImapServerListResultFromJSONTyped
+
+▸ **ImapServerListResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerListResult`](interfaces/ImapServerListResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerListResult`](interfaces/ImapServerListResult.md)
+
+___
+
+### ImapServerListResultToJSON
+
+▸ **ImapServerListResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerListResult`](interfaces/ImapServerListResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerSearchOptionsFromJSON
+
+▸ **ImapServerSearchOptionsFromJSON**(`json`): [`ImapServerSearchOptions`](interfaces/ImapServerSearchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerSearchOptions`](interfaces/ImapServerSearchOptions.md)
+
+___
+
+### ImapServerSearchOptionsFromJSONTyped
+
+▸ **ImapServerSearchOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerSearchOptions`](interfaces/ImapServerSearchOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerSearchOptions`](interfaces/ImapServerSearchOptions.md)
+
+___
+
+### ImapServerSearchOptionsToJSON
+
+▸ **ImapServerSearchOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerSearchOptions`](interfaces/ImapServerSearchOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerSearchResultFromJSON
+
+▸ **ImapServerSearchResultFromJSON**(`json`): [`ImapServerSearchResult`](interfaces/ImapServerSearchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerSearchResult`](interfaces/ImapServerSearchResult.md)
+
+___
+
+### ImapServerSearchResultFromJSONTyped
+
+▸ **ImapServerSearchResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerSearchResult`](interfaces/ImapServerSearchResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerSearchResult`](interfaces/ImapServerSearchResult.md)
+
+___
+
+### ImapServerSearchResultToJSON
+
+▸ **ImapServerSearchResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerSearchResult`](interfaces/ImapServerSearchResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerStatusOptionsFromJSON
+
+▸ **ImapServerStatusOptionsFromJSON**(`json`): [`ImapServerStatusOptions`](interfaces/ImapServerStatusOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerStatusOptions`](interfaces/ImapServerStatusOptions.md)
+
+___
+
+### ImapServerStatusOptionsFromJSONTyped
+
+▸ **ImapServerStatusOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerStatusOptions`](interfaces/ImapServerStatusOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerStatusOptions`](interfaces/ImapServerStatusOptions.md)
+
+___
+
+### ImapServerStatusOptionsToJSON
+
+▸ **ImapServerStatusOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerStatusOptions`](interfaces/ImapServerStatusOptions.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapServerStatusResultFromJSON
+
+▸ **ImapServerStatusResultFromJSON**(`json`): [`ImapServerStatusResult`](interfaces/ImapServerStatusResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapServerStatusResult`](interfaces/ImapServerStatusResult.md)
+
+___
+
+### ImapServerStatusResultFromJSONTyped
+
+▸ **ImapServerStatusResultFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapServerStatusResult`](interfaces/ImapServerStatusResult.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapServerStatusResult`](interfaces/ImapServerStatusResult.md)
+
+___
+
+### ImapServerStatusResultToJSON
+
+▸ **ImapServerStatusResultToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapServerStatusResult`](interfaces/ImapServerStatusResult.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ImapSmtpAccessDetailsFromJSON
 
 ▸ **ImapSmtpAccessDetailsFromJSON**(`json`): [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md)
@@ -7823,6 +8586,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`ImapSmtpAccessDetails`](interfaces/ImapSmtpAccessDetails.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ImapUpdateFlagsOptionsFromJSON
+
+▸ **ImapUpdateFlagsOptionsFromJSON**(`json`): [`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md)
+
+___
+
+### ImapUpdateFlagsOptionsFromJSONTyped
+
+▸ **ImapUpdateFlagsOptionsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md)
+
+___
+
+### ImapUpdateFlagsOptionsToJSON
+
+▸ **ImapUpdateFlagsOptionsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md) |
 
 #### Returns
 

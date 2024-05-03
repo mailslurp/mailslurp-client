@@ -17,12 +17,6 @@
 export interface InboxReplierEventProjection {
     /**
      *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    replierId?: string | null;
-    /**
-     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
@@ -51,6 +45,12 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     sentId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    replierId?: string | null;
     /**
      *
      * @type {Date}

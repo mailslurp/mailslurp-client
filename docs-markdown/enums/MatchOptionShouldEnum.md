@@ -10,6 +10,7 @@
 
 - [CONTAIN](MatchOptionShouldEnum.md#contain)
 - [EQUAL](MatchOptionShouldEnum.md#equal)
+- [MATCH](MatchOptionShouldEnum.md#match)
 
 ## Enumeration Members
 
@@ -22,3 +23,9 @@ ___
 ### EQUAL
 
 • **EQUAL** = ``"EQUAL"``
+
+___
+
+### MATCH
+
+• **MATCH** = ``"MATCH"``

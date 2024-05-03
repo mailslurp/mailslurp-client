@@ -90,6 +90,8 @@
 - [getRawEmailJsonRaw](EmailControllerApi.md#getrawemailjsonraw)
 - [getUnreadEmailCount](EmailControllerApi.md#getunreademailcount)
 - [getUnreadEmailCountRaw](EmailControllerApi.md#getunreademailcountraw)
+- [markAllAsRead](EmailControllerApi.md#markallasread)
+- [markAllAsReadRaw](EmailControllerApi.md#markallasreadraw)
 - [markAsRead](EmailControllerApi.md#markasread)
 - [markAsReadRaw](EmailControllerApi.md#markasreadraw)
 - [replyToEmail](EmailControllerApi.md#replytoemail)
@@ -1487,7 +1489,7 @@ ___
 
 ### getUnreadEmailCount
 
-▸ **getUnreadEmailCount**(`initOverrides?`): `Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
+▸ **getUnreadEmailCount**(`requestParameters`, `initOverrides?`): `Promise`<[`UnreadCount`](../interfaces/UnreadCount.md)\>
 
 Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
 Get unread email count
@@ -1496,6 +1498,7 @@ Get unread email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetUnreadEmailCountRequest`](../interfaces/GetUnreadEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1506,7 +1509,7 @@ ___
 
 ### getUnreadEmailCountRaw
 
-▸ **getUnreadEmailCountRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
+▸ **getUnreadEmailCountRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UnreadCount`](../interfaces/UnreadCount.md)\>\>
 
 Get number of emails unread. Unread means has not been viewed in dashboard or returned in an email API response
 Get unread email count
@@ -1515,6 +1518,7 @@ Get unread email count
 
 | Name | Type |
 | :------ | :------ |
+| `requestParameters` | [`GetUnreadEmailCountRequest`](../interfaces/GetUnreadEmailCountRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -1523,12 +1527,52 @@ Get unread email count
 
 ___
 
+### markAllAsRead
+
+▸ **markAllAsRead**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Mark all emails as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkAllAsReadRequest`](../interfaces/MarkAllAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### markAllAsReadRaw
+
+▸ **markAllAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Marks all emails as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
+Mark all emails as read or unread
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`MarkAllAsReadRequest`](../interfaces/MarkAllAsReadRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
 ### markAsRead
 
 ▸ **markAsRead**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreview`](../interfaces/EmailPreview.md)\>
 
 Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-Mark an email as read on unread
+Mark an email as read or unread
 
 #### Parameters
 
@@ -1548,7 +1592,7 @@ ___
 ▸ **markAsReadRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreview`](../interfaces/EmailPreview.md)\>\>
 
 Marks an email as read or unread. Pass boolean read flag to set value. This is useful if you want to read an email but keep it as unread
-Mark an email as read on unread
+Mark an email as read or unread
 
 #### Parameters
 

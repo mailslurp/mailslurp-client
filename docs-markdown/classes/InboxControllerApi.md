@@ -59,6 +59,8 @@
 - [getImapAccess](InboxControllerApi.md#getimapaccess)
 - [getImapAccessRaw](InboxControllerApi.md#getimapaccessraw)
 - [getImapSmtpAccess](InboxControllerApi.md#getimapsmtpaccess)
+- [getImapSmtpAccessEnv](InboxControllerApi.md#getimapsmtpaccessenv)
+- [getImapSmtpAccessEnvRaw](InboxControllerApi.md#getimapsmtpaccessenvraw)
 - [getImapSmtpAccessRaw](InboxControllerApi.md#getimapsmtpaccessraw)
 - [getInbox](InboxControllerApi.md#getinbox)
 - [getInboxByEmailAddress](InboxControllerApi.md#getinboxbyemailaddress)
@@ -911,6 +913,44 @@ Get IMAP and SMTP access usernames and passwords
 #### Returns
 
 `Promise`<[`ImapSmtpAccessDetails`](../interfaces/ImapSmtpAccessDetails.md)\>
+
+___
+
+### getImapSmtpAccessEnv
+
+▸ **getImapSmtpAccessEnv**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
+
+Get IMAP and SMTP access details in .env format
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapSmtpAccessEnvRequest`](../interfaces/GetImapSmtpAccessEnvRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### getImapSmtpAccessEnvRaw
+
+▸ **getImapSmtpAccessEnvRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+Get IMAP and SMTP access details in .env format
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetImapSmtpAccessEnvRequest`](../interfaces/GetImapSmtpAccessEnvRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
 ___
 

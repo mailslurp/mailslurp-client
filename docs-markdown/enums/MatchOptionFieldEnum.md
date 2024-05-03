@@ -11,6 +11,7 @@
 - [BCC](MatchOptionFieldEnum.md#bcc)
 - [CC](MatchOptionFieldEnum.md#cc)
 - [FROM](MatchOptionFieldEnum.md#from)
+- [HEADERS](MatchOptionFieldEnum.md#headers)
 - [SUBJECT](MatchOptionFieldEnum.md#subject)
 - [TO](MatchOptionFieldEnum.md#to)
 
@@ -31,6 +32,12 @@ ___
 ### FROM
 
 • **FROM** = ``"FROM"``
+
+___
+
+### HEADERS
+
+• **HEADERS** = ``"HEADERS"``
 
 ___
 

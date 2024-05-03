@@ -121,6 +121,9 @@ export interface GetImapAccessRequest {
 export interface GetImapSmtpAccessRequest {
     inboxId?: string;
 }
+export interface GetImapSmtpAccessEnvRequest {
+    inboxId?: string;
+}
 export interface GetInboxRequest {
     inboxId: string;
 }
@@ -435,6 +438,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get IMAP and SMTP access usernames and passwords
      */
     getImapSmtpAccess(requestParameters: GetImapSmtpAccessRequest, initOverrides?: RequestInit): Promise<ImapSmtpAccessDetails>;
+    /**
+     * Get IMAP and SMTP access details in .env format
+     */
+    getImapSmtpAccessEnvRaw(requestParameters: GetImapSmtpAccessEnvRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Get IMAP and SMTP access details in .env format
+     */
+    getImapSmtpAccessEnv(requestParameters: GetImapSmtpAccessEnvRequest, initOverrides?: RequestInit): Promise<string>;
     /**
      * Returns an inbox\'s properties, including its email address and ID.
      * Get Inbox. Returns properties of an inbox.

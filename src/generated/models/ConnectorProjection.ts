@@ -30,13 +30,13 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
-  userId: string;
+  emailAddress?: string;
   /**
    *
    * @type {string}
    * @memberof ConnectorProjection
    */
-  emailAddress?: string;
+  userId: string;
   /**
    *
    * @type {string}
@@ -102,10 +102,10 @@ export function ConnectorProjectionFromJSONTyped(
   }
   return {
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
-    userId: json['userId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
+    userId: json['userId'],
     inboxId: json['inboxId'],
     syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
     syncScheduleType: json['syncScheduleType'],
@@ -129,8 +129,8 @@ export function ConnectorProjectionToJSON(
   }
   return {
     enabled: value.enabled,
-    userId: value.userId,
     emailAddress: value.emailAddress,
+    userId: value.userId,
     inboxId: value.inboxId,
     syncEnabled: value.syncEnabled,
     syncScheduleType: value.syncScheduleType,

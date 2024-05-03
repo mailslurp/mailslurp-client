@@ -20,13 +20,13 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    userId: string;
+    sentEmailId?: string;
     /**
      *
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    sentEmailId?: string;
+    userId: string;
     /**
      *
      * @type {string}

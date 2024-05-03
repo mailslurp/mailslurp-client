@@ -52,6 +52,7 @@ export enum SmsMatchOptionFieldEnum {
  * @enum {string}
  */
 export enum SmsMatchOptionShouldEnum {
+  MATCH = 'MATCH',
   CONTAIN = 'CONTAIN',
   EQUAL = 'EQUAL',
 }

@@ -12,6 +12,7 @@ export * from './ExpiredControllerApi';
 export * from './ExportControllerApi';
 export * from './FormControllerApi';
 export * from './GroupControllerApi';
+export * from './ImapControllerApi';
 export * from './InboxControllerApi';
 export * from './InboxForwarderControllerApi';
 export * from './InboxReplierControllerApi';

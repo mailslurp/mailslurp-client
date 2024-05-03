@@ -20,12 +20,6 @@ export interface MissedEmailProjection {
      * @type {string}
      * @memberof MissedEmailProjection
      */
-    subject?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof MissedEmailProjection
-     */
     userId?: string | null;
     /**
      *
@@ -33,6 +27,12 @@ export interface MissedEmailProjection {
      * @memberof MissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {string}

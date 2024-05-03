@@ -33,10 +33,10 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
-        userId: json['userId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
+        userId: json['userId'],
         inboxId: json['inboxId'],
         syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
         syncScheduleType: json['syncScheduleType'],
@@ -58,8 +58,8 @@ function ConnectorProjectionToJSON(value) {
     }
     return {
         enabled: value.enabled,
-        userId: value.userId,
         emailAddress: value.emailAddress,
+        userId: value.userId,
         inboxId: value.inboxId,
         syncEnabled: value.syncEnabled,
         syncScheduleType: value.syncScheduleType,

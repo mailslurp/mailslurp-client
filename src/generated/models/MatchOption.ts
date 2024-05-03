@@ -49,12 +49,14 @@ export enum MatchOptionFieldEnum {
   BCC = 'BCC',
   CC = 'CC',
   FROM = 'FROM',
+  HEADERS = 'HEADERS',
 }
 /**
  * @export
  * @enum {string}
  */
 export enum MatchOptionShouldEnum {
+  MATCH = 'MATCH',
   CONTAIN = 'CONTAIN',
   EQUAL = 'EQUAL',
 }

@@ -26,6 +26,8 @@
 - [createDomainRaw](DomainControllerApi.md#createdomainraw)
 - [deleteDomain](DomainControllerApi.md#deletedomain)
 - [deleteDomainRaw](DomainControllerApi.md#deletedomainraw)
+- [getAvailableDomains](DomainControllerApi.md#getavailabledomains)
+- [getAvailableDomainsRaw](DomainControllerApi.md#getavailabledomainsraw)
 - [getDomain](DomainControllerApi.md#getdomain)
 - [getDomainIssues](DomainControllerApi.md#getdomainissues)
 - [getDomainIssuesRaw](DomainControllerApi.md#getdomainissuesraw)
@@ -34,6 +36,8 @@
 - [getDomainWildcardCatchAllInboxRaw](DomainControllerApi.md#getdomainwildcardcatchallinboxraw)
 - [getDomains](DomainControllerApi.md#getdomains)
 - [getDomainsRaw](DomainControllerApi.md#getdomainsraw)
+- [getMailSlurpDomains](DomainControllerApi.md#getmailslurpdomains)
+- [getMailSlurpDomainsRaw](DomainControllerApi.md#getmailslurpdomainsraw)
 - [request](DomainControllerApi.md#request)
 - [updateDomain](DomainControllerApi.md#updatedomain)
 - [updateDomainRaw](DomainControllerApi.md#updatedomainraw)
@@ -186,6 +190,46 @@ Delete a domain
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`[]\>\>
+
+___
+
+### getAvailableDomains
+
+▸ **getAvailableDomains**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>
+
+List all domains available for use with email address creation
+Get all usable domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAvailableDomainsRequest`](../interfaces/GetAvailableDomainsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>
+
+___
+
+### getAvailableDomainsRaw
+
+▸ **getAvailableDomainsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>\>
+
+List all domains available for use with email address creation
+Get all usable domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetAvailableDomainsRequest`](../interfaces/GetAvailableDomainsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>\>
 
 ___
 
@@ -342,6 +386,46 @@ Get domains
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainPreview`](../interfaces/DomainPreview.md)[]\>\>
+
+___
+
+### getMailSlurpDomains
+
+▸ **getMailSlurpDomains**(`requestParameters`, `initOverrides?`): `Promise`<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>
+
+List all MailSlurp domains used with non-custom email addresses
+Get MailSlurp domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetMailSlurpDomainsRequest`](../interfaces/GetMailSlurpDomainsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>
+
+___
+
+### getMailSlurpDomainsRaw
+
+▸ **getMailSlurpDomainsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>\>
+
+List all MailSlurp domains used with non-custom email addresses
+Get MailSlurp domains
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetMailSlurpDomainsRequest`](../interfaces/GetMailSlurpDomainsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DomainGroupsDto`](../interfaces/DomainGroupsDto.md)\>\>
 
 ___
 

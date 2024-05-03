@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateDomainOptions, DomainDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
+import { CreateDomainOptions, DomainDto, DomainGroupsDto, DomainIssuesDto, DomainPreview, InboxDto, UpdateDomainOptions } from '../models';
 export interface AddDomainWildcardCatchAllRequest {
     id: string;
 }
@@ -20,12 +20,18 @@ export interface CreateDomainRequest {
 export interface DeleteDomainRequest {
     id: string;
 }
+export interface GetAvailableDomainsRequest {
+    inboxType?: GetAvailableDomainsInboxTypeEnum;
+}
 export interface GetDomainRequest {
     id: string;
     checkForErrors?: boolean;
 }
 export interface GetDomainWildcardCatchAllInboxRequest {
     id: string;
+}
+export interface GetMailSlurpDomainsRequest {
+    inboxType?: GetMailSlurpDomainsInboxTypeEnum;
 }
 export interface UpdateDomainRequest {
     id: string;
@@ -65,6 +71,16 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Delete a domain
      */
     deleteDomain(requestParameters: DeleteDomainRequest, initOverrides?: RequestInit): Promise<Array<string>>;
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    getAvailableDomainsRaw(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainGroupsDto>>;
+    /**
+     * List all domains available for use with email address creation
+     * Get all usable domains
+     */
+    getAvailableDomains(requestParameters: GetAvailableDomainsRequest, initOverrides?: RequestInit): Promise<DomainGroupsDto>;
     /**
      * Returns domain verification status and tokens for a given domain
      * Get a domain
@@ -106,6 +122,16 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      */
     getDomains(initOverrides?: RequestInit): Promise<Array<DomainPreview>>;
     /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    getMailSlurpDomainsRaw(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<DomainGroupsDto>>;
+    /**
+     * List all MailSlurp domains used with non-custom email addresses
+     * Get MailSlurp domains
+     */
+    getMailSlurpDomains(requestParameters: GetMailSlurpDomainsRequest, initOverrides?: RequestInit): Promise<DomainGroupsDto>;
+    /**
      * Update values on a domain. Note you cannot change the domain name as it is immutable. Recreate the domain if you need to alter this.
      * Update a domain
      */
@@ -115,4 +141,20 @@ export declare class DomainControllerApi extends runtime.BaseAPI {
      * Update a domain
      */
     updateDomain(requestParameters: UpdateDomainRequest, initOverrides?: RequestInit): Promise<DomainDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetAvailableDomainsInboxTypeEnum {
+    HTTP_INBOX = "HTTP_INBOX",
+    SMTP_INBOX = "SMTP_INBOX"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetMailSlurpDomainsInboxTypeEnum {
+    HTTP_INBOX = "HTTP_INBOX",
+    SMTP_INBOX = "SMTP_INBOX"
 }

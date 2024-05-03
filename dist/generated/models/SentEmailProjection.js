@@ -25,16 +25,16 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
-        userId: json['userId'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         attachments: json['attachments'],
+        userId: json['userId'],
         inboxId: json['inboxId'],
         to: json['to'],
         bcc: json['bcc'],
         cc: json['cc'],
         createdAt: new Date(json['createdAt']),
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         virtualSend: json['virtualSend'],
     };
 }
@@ -48,16 +48,16 @@ function SentEmailProjectionToJSON(value) {
     }
     return {
         id: value.id,
-        subject: value.subject,
-        bodyMD5Hash: value.bodyMD5Hash,
-        userId: value.userId,
         from: value.from,
+        subject: value.subject,
         attachments: value.attachments,
+        userId: value.userId,
         inboxId: value.inboxId,
         to: value.to,
         bcc: value.bcc,
         cc: value.cc,
         createdAt: value.createdAt.toISOString(),
+        bodyMD5Hash: value.bodyMD5Hash,
         virtualSend: value.virtualSend,
     };
 }

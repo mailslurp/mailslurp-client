@@ -43,13 +43,15 @@ export declare enum MatchOptionFieldEnum {
     TO = "TO",
     BCC = "BCC",
     CC = "CC",
-    FROM = "FROM"
+    FROM = "FROM",
+    HEADERS = "HEADERS"
 }
 /**
  * @export
  * @enum {string}
  */
 export declare enum MatchOptionShouldEnum {
+    MATCH = "MATCH",
     CONTAIN = "CONTAIN",
     EQUAL = "EQUAL"
 }

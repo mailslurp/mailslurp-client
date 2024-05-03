@@ -6,11 +6,18 @@
 
 ### Properties
 
+- [inboxId](GetAllInboxForwarderEventsRequest.md#inboxid)
 - [page](GetAllInboxForwarderEventsRequest.md#page)
 - [size](GetAllInboxForwarderEventsRequest.md#size)
 - [sort](GetAllInboxForwarderEventsRequest.md#sort)
 
 ## Properties
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
+
+___
 
 ### page
 
