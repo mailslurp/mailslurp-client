@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorSyncEventProjection {
   /**
    *
+   * @type {Date}
+   * @memberof ConnectorSyncEventProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof ConnectorSyncEventProjection
    */
@@ -37,12 +43,6 @@ export interface ConnectorSyncEventProjection {
    * @memberof ConnectorSyncEventProjection
    */
   syncStatus: ConnectorSyncEventProjectionSyncStatusEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorSyncEventProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -83,10 +83,10 @@ export function ConnectorSyncEventProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     connectorId: json['connectorId'],
     syncCount: json['syncCount'],
     syncStatus: json['syncStatus'],
-    createdAt: new Date(json['createdAt']),
     message: !exists(json, 'message') ? undefined : json['message'],
     id: !exists(json, 'id') ? undefined : json['id'],
   };
@@ -102,10 +102,10 @@ export function ConnectorSyncEventProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     connectorId: value.connectorId,
     syncCount: value.syncCount,
     syncStatus: value.syncStatus,
-    createdAt: value.createdAt.toISOString(),
     message: value.message,
     id: value.id,
   };

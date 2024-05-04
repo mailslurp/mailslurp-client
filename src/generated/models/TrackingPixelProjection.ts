@@ -21,10 +21,16 @@ import { exists, mapValues } from '../runtime';
 export interface TrackingPixelProjection {
   /**
    *
+   * @type {Date}
+   * @memberof TrackingPixelProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  sentEmailId?: string;
+  inboxId?: string;
   /**
    *
    * @type {string}
@@ -36,7 +42,7 @@ export interface TrackingPixelProjection {
    * @type {string}
    * @memberof TrackingPixelProjection
    */
-  inboxId?: string;
+  sentEmailId?: string;
   /**
    *
    * @type {string}
@@ -55,12 +61,6 @@ export interface TrackingPixelProjection {
    * @memberof TrackingPixelProjection
    */
   seenAt?: Date;
-  /**
-   *
-   * @type {Date}
-   * @memberof TrackingPixelProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -89,13 +89,13 @@ export function TrackingPixelProjectionFromJSONTyped(
     return json;
   }
   return {
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
-    userId: json['userId'],
+    createdAt: new Date(json['createdAt']),
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    userId: json['userId'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
     seen: json['seen'],
     seenAt: !exists(json, 'seenAt') ? undefined : new Date(json['seenAt']),
-    createdAt: new Date(json['createdAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     id: json['id'],
   };
@@ -111,13 +111,13 @@ export function TrackingPixelProjectionToJSON(
     return null;
   }
   return {
-    sentEmailId: value.sentEmailId,
-    userId: value.userId,
+    createdAt: value.createdAt.toISOString(),
     inboxId: value.inboxId,
+    userId: value.userId,
+    sentEmailId: value.sentEmailId,
     recipient: value.recipient,
     seen: value.seen,
     seenAt: value.seenAt === undefined ? undefined : value.seenAt.toISOString(),
-    createdAt: value.createdAt.toISOString(),
     name: value.name,
     id: value.id,
   };

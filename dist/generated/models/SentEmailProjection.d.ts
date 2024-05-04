@@ -17,46 +17,16 @@
 export interface SentEmailProjection {
     /**
      *
+     * @type {Date}
+     * @memberof SentEmailProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof SentEmailProjection
      */
     id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    from?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    subject?: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    attachments: Array<string>;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    userId: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    inboxId: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof SentEmailProjection
-     */
-    to: Array<string>;
     /**
      *
      * @type {Array<string>}
@@ -71,22 +41,52 @@ export interface SentEmailProjection {
     cc: Array<string>;
     /**
      *
-     * @type {Date}
+     * @type {boolean}
      * @memberof SentEmailProjection
      */
-    createdAt: Date;
+    virtualSend: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    from?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    inboxId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    userId: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    attachments: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof SentEmailProjection
+     */
+    to: Array<string>;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
     bodyMD5Hash?: string;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SentEmailProjection
-     */
-    virtualSend: boolean;
 }
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;

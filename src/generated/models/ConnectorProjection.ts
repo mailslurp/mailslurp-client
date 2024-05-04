@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface ConnectorProjection {
   /**
    *
+   * @type {Date}
+   * @memberof ConnectorProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {boolean}
    * @memberof ConnectorProjection
    */
@@ -30,7 +36,7 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
-  emailAddress?: string;
+  inboxId: string;
   /**
    *
    * @type {string}
@@ -42,7 +48,7 @@ export interface ConnectorProjection {
    * @type {string}
    * @memberof ConnectorProjection
    */
-  inboxId: string;
+  emailAddress?: string;
   /**
    *
    * @type {boolean}
@@ -61,12 +67,6 @@ export interface ConnectorProjection {
    * @memberof ConnectorProjection
    */
   syncInterval?: number;
-  /**
-   *
-   * @type {Date}
-   * @memberof ConnectorProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -101,18 +101,18 @@ export function ConnectorProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     enabled: !exists(json, 'enabled') ? undefined : json['enabled'],
+    inboxId: json['inboxId'],
+    userId: json['userId'],
     emailAddress: !exists(json, 'emailAddress')
       ? undefined
       : json['emailAddress'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
     syncEnabled: !exists(json, 'syncEnabled') ? undefined : json['syncEnabled'],
     syncScheduleType: json['syncScheduleType'],
     syncInterval: !exists(json, 'syncInterval')
       ? undefined
       : json['syncInterval'],
-    createdAt: new Date(json['createdAt']),
     name: !exists(json, 'name') ? undefined : json['name'],
     id: !exists(json, 'id') ? undefined : json['id'],
   };
@@ -128,14 +128,14 @@ export function ConnectorProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     enabled: value.enabled,
-    emailAddress: value.emailAddress,
-    userId: value.userId,
     inboxId: value.inboxId,
+    userId: value.userId,
+    emailAddress: value.emailAddress,
     syncEnabled: value.syncEnabled,
     syncScheduleType: value.syncScheduleType,
     syncInterval: value.syncInterval,
-    createdAt: value.createdAt.toISOString(),
     name: value.name,
     id: value.id,
   };

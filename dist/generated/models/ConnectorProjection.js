@@ -32,18 +32,18 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        createdAt: new Date(json['createdAt']),
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        inboxId: json['inboxId'],
+        userId: json['userId'],
         emailAddress: !(0, runtime_1.exists)(json, 'emailAddress')
             ? undefined
             : json['emailAddress'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
         syncEnabled: !(0, runtime_1.exists)(json, 'syncEnabled') ? undefined : json['syncEnabled'],
         syncScheduleType: json['syncScheduleType'],
         syncInterval: !(0, runtime_1.exists)(json, 'syncInterval')
             ? undefined
             : json['syncInterval'],
-        createdAt: new Date(json['createdAt']),
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
@@ -57,14 +57,14 @@ function ConnectorProjectionToJSON(value) {
         return null;
     }
     return {
+        createdAt: value.createdAt.toISOString(),
         enabled: value.enabled,
-        emailAddress: value.emailAddress,
-        userId: value.userId,
         inboxId: value.inboxId,
+        userId: value.userId,
+        emailAddress: value.emailAddress,
         syncEnabled: value.syncEnabled,
         syncScheduleType: value.syncScheduleType,
         syncInterval: value.syncInterval,
-        createdAt: value.createdAt.toISOString(),
         name: value.name,
         id: value.id,
     };

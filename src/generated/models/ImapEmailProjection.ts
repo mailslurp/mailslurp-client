@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface ImapEmailProjection {
   /**
    *
+   * @type {Date}
+   * @memberof ImapEmailProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {boolean}
    * @memberof ImapEmailProjection
    */
@@ -37,12 +43,6 @@ export interface ImapEmailProjection {
    * @memberof ImapEmailProjection
    */
   seqNum: number;
-  /**
-   *
-   * @type {Date}
-   * @memberof ImapEmailProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -63,10 +63,10 @@ export function ImapEmailProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     read: !exists(json, 'read') ? undefined : json['read'],
     uid: json['uid'],
     seqNum: json['seqNum'],
-    createdAt: new Date(json['createdAt']),
     id: json['id'],
   };
 }
@@ -81,10 +81,10 @@ export function ImapEmailProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     read: value.read,
     uid: value.uid,
     seqNum: value.seqNum,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }

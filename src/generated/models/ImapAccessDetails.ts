@@ -20,6 +20,30 @@ import { exists, mapValues } from '../runtime';
  */
 export interface ImapAccessDetails {
   /**
+   * Secure TLS IMAP server host domain
+   * @type {string}
+   * @memberof ImapAccessDetails
+   */
+  secureImapServerHost: string;
+  /**
+   * Secure TLS IMAP server host port
+   * @type {number}
+   * @memberof ImapAccessDetails
+   */
+  secureImapServerPort: number;
+  /**
+   * Secure TLS IMAP username for login
+   * @type {string}
+   * @memberof ImapAccessDetails
+   */
+  secureImapUsername: string;
+  /**
+   * Secure TLS IMAP password for login
+   * @type {string}
+   * @memberof ImapAccessDetails
+   */
+  secureImapPassword: string;
+  /**
    * IMAP server host domain
    * @type {string}
    * @memberof ImapAccessDetails
@@ -63,6 +87,10 @@ export function ImapAccessDetailsFromJSONTyped(
     return json;
   }
   return {
+    secureImapServerHost: json['secureImapServerHost'],
+    secureImapServerPort: json['secureImapServerPort'],
+    secureImapUsername: json['secureImapUsername'],
+    secureImapPassword: json['secureImapPassword'],
     imapServerHost: json['imapServerHost'],
     imapServerPort: json['imapServerPort'],
     imapUsername: json['imapUsername'],
@@ -79,6 +107,10 @@ export function ImapAccessDetailsToJSON(value?: ImapAccessDetails | null): any {
     return null;
   }
   return {
+    secureImapServerHost: value.secureImapServerHost,
+    secureImapServerPort: value.secureImapServerPort,
+    secureImapUsername: value.secureImapUsername,
+    secureImapPassword: value.secureImapPassword,
     imapServerHost: value.imapServerHost,
     imapServerPort: value.imapServerPort,
     imapUsername: value.imapUsername,

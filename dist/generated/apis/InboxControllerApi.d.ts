@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateInboxOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateInboxRulesetOptions, Email, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, InboxRulesetDto, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxRulesetDto, PageOrganizationInboxProjection, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateInboxOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -446,6 +446,14 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      * Get IMAP and SMTP access details in .env format
      */
     getImapSmtpAccessEnv(requestParameters: GetImapSmtpAccessEnvRequest, initOverrides?: RequestInit): Promise<string>;
+    /**
+     * Get IMAP and SMTP server hosts
+     */
+    getImapSmtpAccessServersRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<ImapSmtpAccessServers>>;
+    /**
+     * Get IMAP and SMTP server hosts
+     */
+    getImapSmtpAccessServers(initOverrides?: RequestInit): Promise<ImapSmtpAccessServers>;
     /**
      * Returns an inbox\'s properties, including its email address and ID.
      * Get Inbox. Returns properties of an inbox.

@@ -24,10 +24,10 @@ function ImapEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        createdAt: new Date(json['createdAt']),
         read: !(0, runtime_1.exists)(json, 'read') ? undefined : json['read'],
         uid: json['uid'],
         seqNum: json['seqNum'],
-        createdAt: new Date(json['createdAt']),
         id: json['id'],
     };
 }
@@ -40,10 +40,10 @@ function ImapEmailProjectionToJSON(value) {
         return null;
     }
     return {
+        createdAt: value.createdAt.toISOString(),
         read: value.read,
         uid: value.uid,
         seqNum: value.seqNum,
-        createdAt: value.createdAt.toISOString(),
         id: value.id,
     };
 }

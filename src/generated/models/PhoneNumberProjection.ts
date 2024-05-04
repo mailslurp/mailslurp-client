@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface PhoneNumberProjection {
   /**
    *
+   * @type {Date}
+   * @memberof PhoneNumberProjection
+   */
+  createdAt: Date;
+  /**
+   *
    * @type {string}
    * @memberof PhoneNumberProjection
    */
@@ -37,12 +43,6 @@ export interface PhoneNumberProjection {
    * @memberof PhoneNumberProjection
    */
   phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
-  /**
-   *
-   * @type {Date}
-   * @memberof PhoneNumberProjection
-   */
-  createdAt: Date;
   /**
    *
    * @type {string}
@@ -75,10 +75,10 @@ export function PhoneNumberProjectionFromJSONTyped(
     return json;
   }
   return {
+    createdAt: new Date(json['createdAt']),
     userId: json['userId'],
     phoneNumber: json['phoneNumber'],
     phoneCountry: json['phoneCountry'],
-    createdAt: new Date(json['createdAt']),
     id: json['id'],
   };
 }
@@ -93,10 +93,10 @@ export function PhoneNumberProjectionToJSON(
     return null;
   }
   return {
+    createdAt: value.createdAt.toISOString(),
     userId: value.userId,
     phoneNumber: value.phoneNumber,
     phoneCountry: value.phoneCountry,
-    createdAt: value.createdAt.toISOString(),
     id: value.id,
   };
 }

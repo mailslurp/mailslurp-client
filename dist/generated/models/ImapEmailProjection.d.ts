@@ -17,6 +17,12 @@
 export interface ImapEmailProjection {
     /**
      *
+     * @type {Date}
+     * @memberof ImapEmailProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {boolean}
      * @memberof ImapEmailProjection
      */
@@ -33,12 +39,6 @@ export interface ImapEmailProjection {
      * @memberof ImapEmailProjection
      */
     seqNum: number;
-    /**
-     *
-     * @type {Date}
-     * @memberof ImapEmailProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

@@ -68,6 +68,30 @@ export interface ImapSmtpAccessDetails {
    */
   smtpPassword: string;
   /**
+   * Secure TLS IMAP server host domain
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureImapServerHost: string;
+  /**
+   * Secure TLS IMAP server host port
+   * @type {number}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureImapServerPort: number;
+  /**
+   * Secure TLS IMAP username for login
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureImapUsername: string;
+  /**
+   * Secure TLS IMAP password for login
+   * @type {string}
+   * @memberof ImapSmtpAccessDetails
+   */
+  secureImapPassword: string;
+  /**
    * IMAP server host domain
    * @type {string}
    * @memberof ImapSmtpAccessDetails
@@ -127,6 +151,10 @@ export function ImapSmtpAccessDetailsFromJSONTyped(
     smtpServerPort: json['smtpServerPort'],
     smtpUsername: json['smtpUsername'],
     smtpPassword: json['smtpPassword'],
+    secureImapServerHost: json['secureImapServerHost'],
+    secureImapServerPort: json['secureImapServerPort'],
+    secureImapUsername: json['secureImapUsername'],
+    secureImapPassword: json['secureImapPassword'],
     imapServerHost: json['imapServerHost'],
     imapServerPort: json['imapServerPort'],
     imapUsername: json['imapUsername'],
@@ -156,6 +184,10 @@ export function ImapSmtpAccessDetailsToJSON(
     smtpServerPort: value.smtpServerPort,
     smtpUsername: value.smtpUsername,
     smtpPassword: value.smtpPassword,
+    secureImapServerHost: value.secureImapServerHost,
+    secureImapServerPort: value.secureImapServerPort,
+    secureImapUsername: value.secureImapUsername,
+    secureImapPassword: value.secureImapPassword,
     imapServerHost: value.imapServerHost,
     imapServerPort: value.imapServerPort,
     imapUsername: value.imapUsername,

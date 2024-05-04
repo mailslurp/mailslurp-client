@@ -38,6 +38,9 @@ import {
   ImapSmtpAccessDetails,
   ImapSmtpAccessDetailsFromJSON,
   ImapSmtpAccessDetailsToJSON,
+  ImapSmtpAccessServers,
+  ImapSmtpAccessServersFromJSON,
+  ImapSmtpAccessServersToJSON,
   InboxByEmailAddressResult,
   InboxByEmailAddressResultFromJSON,
   InboxByEmailAddressResultToJSON,
@@ -1714,6 +1717,45 @@ export class InboxControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Get IMAP and SMTP server hosts
+   */
+  async getImapSmtpAccessServersRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<ImapSmtpAccessServers>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/imap-smtp-access/servers`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      ImapSmtpAccessServersFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get IMAP and SMTP server hosts
+   */
+  async getImapSmtpAccessServers(
+    initOverrides?: RequestInit
+  ): Promise<ImapSmtpAccessServers> {
+    const response = await this.getImapSmtpAccessServersRaw(initOverrides);
     return await response.value();
   }
 

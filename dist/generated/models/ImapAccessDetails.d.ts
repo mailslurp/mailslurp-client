@@ -16,6 +16,30 @@
  */
 export interface ImapAccessDetails {
     /**
+     * Secure TLS IMAP server host domain
+     * @type {string}
+     * @memberof ImapAccessDetails
+     */
+    secureImapServerHost: string;
+    /**
+     * Secure TLS IMAP server host port
+     * @type {number}
+     * @memberof ImapAccessDetails
+     */
+    secureImapServerPort: number;
+    /**
+     * Secure TLS IMAP username for login
+     * @type {string}
+     * @memberof ImapAccessDetails
+     */
+    secureImapUsername: string;
+    /**
+     * Secure TLS IMAP password for login
+     * @type {string}
+     * @memberof ImapAccessDetails
+     */
+    secureImapPassword: string;
+    /**
      * IMAP server host domain
      * @type {string}
      * @memberof ImapAccessDetails

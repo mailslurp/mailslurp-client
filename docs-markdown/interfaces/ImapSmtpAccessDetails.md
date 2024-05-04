@@ -20,6 +20,10 @@ ImapSmtpAccessDetails
 - [imapServerPort](ImapSmtpAccessDetails.md#imapserverport)
 - [imapUsername](ImapSmtpAccessDetails.md#imapusername)
 - [mailFromDomain](ImapSmtpAccessDetails.md#mailfromdomain)
+- [secureImapPassword](ImapSmtpAccessDetails.md#secureimappassword)
+- [secureImapServerHost](ImapSmtpAccessDetails.md#secureimapserverhost)
+- [secureImapServerPort](ImapSmtpAccessDetails.md#secureimapserverport)
+- [secureImapUsername](ImapSmtpAccessDetails.md#secureimapusername)
 - [secureSmtpPassword](ImapSmtpAccessDetails.md#securesmtppassword)
 - [secureSmtpServerHost](ImapSmtpAccessDetails.md#securesmtpserverhost)
 - [secureSmtpServerPort](ImapSmtpAccessDetails.md#securesmtpserverport)
@@ -96,6 +100,54 @@ ___
 • `Optional` **mailFromDomain**: `string`
 
 Mail from domain or SMTP HELO value
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
+
+### secureImapPassword
+
+• **secureImapPassword**: `string`
+
+Secure TLS IMAP password for login
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
+
+### secureImapServerHost
+
+• **secureImapServerHost**: `string`
+
+Secure TLS IMAP server host domain
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
+
+### secureImapServerPort
+
+• **secureImapServerPort**: `number`
+
+Secure TLS IMAP server host port
+
+**`Memberof`**
+
+ImapSmtpAccessDetails
+
+___
+
+### secureImapUsername
+
+• **secureImapUsername**: `string`
+
+Secure TLS IMAP username for login
 
 **`Memberof`**
 

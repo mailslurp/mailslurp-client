@@ -24,18 +24,18 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        createdAt: new Date(json['createdAt']),
         id: json['id'],
-        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        attachments: json['attachments'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
-        to: json['to'],
         bcc: json['bcc'],
         cc: json['cc'],
-        createdAt: new Date(json['createdAt']),
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         virtualSend: json['virtualSend'],
+        from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        inboxId: json['inboxId'],
+        userId: json['userId'],
+        attachments: json['attachments'],
+        to: json['to'],
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     };
 }
 exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
@@ -47,18 +47,18 @@ function SentEmailProjectionToJSON(value) {
         return null;
     }
     return {
+        createdAt: value.createdAt.toISOString(),
         id: value.id,
-        from: value.from,
-        subject: value.subject,
-        attachments: value.attachments,
-        userId: value.userId,
-        inboxId: value.inboxId,
-        to: value.to,
         bcc: value.bcc,
         cc: value.cc,
-        createdAt: value.createdAt.toISOString(),
-        bodyMD5Hash: value.bodyMD5Hash,
         virtualSend: value.virtualSend,
+        from: value.from,
+        subject: value.subject,
+        inboxId: value.inboxId,
+        userId: value.userId,
+        attachments: value.attachments,
+        to: value.to,
+        bodyMD5Hash: value.bodyMD5Hash,
     };
 }
 exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;

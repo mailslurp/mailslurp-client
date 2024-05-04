@@ -17,16 +17,16 @@
 export interface MissedEmailProjection {
     /**
      *
-     * @type {string}
-     * @memberof MissedEmailProjection
-     */
-    userId?: string | null;
-    /**
-     *
      * @type {Date}
      * @memberof MissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    userId?: string | null;
     /**
      *
      * @type {string}

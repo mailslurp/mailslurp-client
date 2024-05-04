@@ -17,6 +17,18 @@
 export interface AttachmentProjection {
     /**
      *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    createdAt: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof AttachmentProjection
+     */
+    updatedAt: Date;
+    /**
+     *
      * @type {string}
      * @memberof AttachmentProjection
      */
@@ -33,18 +45,6 @@ export interface AttachmentProjection {
      * @memberof AttachmentProjection
      */
     attachmentId: string;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    createdAt: Date;
-    /**
-     *
-     * @type {Date}
-     * @memberof AttachmentProjection
-     */
-    updatedAt: Date;
     /**
      *
      * @type {string}

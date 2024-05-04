@@ -618,6 +618,7 @@ MailSlurp JS
 - [ImapServerStatusResult](interfaces/ImapServerStatusResult.md)
 - [ImapServerUpdateFlagsRequest](interfaces/ImapServerUpdateFlagsRequest.md)
 - [ImapSmtpAccessDetails](interfaces/ImapSmtpAccessDetails.md)
+- [ImapSmtpAccessServers](interfaces/ImapSmtpAccessServers.md)
 - [ImapUpdateFlagsOptions](interfaces/ImapUpdateFlagsOptions.md)
 - [InboxByEmailAddressResult](interfaces/InboxByEmailAddressResult.md)
 - [InboxByNameResult](interfaces/InboxByNameResult.md)
@@ -742,6 +743,7 @@ MailSlurp JS
 - [SentEmailDto](interfaces/SentEmailDto.md)
 - [SentEmailProjection](interfaces/SentEmailProjection.md)
 - [SentSmsDto](interfaces/SentSmsDto.md)
+- [ServerEndpoints](interfaces/ServerEndpoints.md)
 - [SetInboxFavouritedOptions](interfaces/SetInboxFavouritedOptions.md)
 - [SetInboxFavouritedRequest](interfaces/SetInboxFavouritedRequest.md)
 - [SimpleSendEmailOptions](interfaces/SimpleSendEmailOptions.md)
@@ -1274,6 +1276,9 @@ MailSlurp JS
 - [ImapSmtpAccessDetailsFromJSON](README.md#imapsmtpaccessdetailsfromjson)
 - [ImapSmtpAccessDetailsFromJSONTyped](README.md#imapsmtpaccessdetailsfromjsontyped)
 - [ImapSmtpAccessDetailsToJSON](README.md#imapsmtpaccessdetailstojson)
+- [ImapSmtpAccessServersFromJSON](README.md#imapsmtpaccessserversfromjson)
+- [ImapSmtpAccessServersFromJSONTyped](README.md#imapsmtpaccessserversfromjsontyped)
+- [ImapSmtpAccessServersToJSON](README.md#imapsmtpaccessserverstojson)
 - [ImapUpdateFlagsOptionsFromJSON](README.md#imapupdateflagsoptionsfromjson)
 - [ImapUpdateFlagsOptionsFromJSONTyped](README.md#imapupdateflagsoptionsfromjsontyped)
 - [ImapUpdateFlagsOptionsToJSON](README.md#imapupdateflagsoptionstojson)
@@ -1550,6 +1555,9 @@ MailSlurp JS
 - [SentSmsDtoFromJSON](README.md#sentsmsdtofromjson)
 - [SentSmsDtoFromJSONTyped](README.md#sentsmsdtofromjsontyped)
 - [SentSmsDtoToJSON](README.md#sentsmsdtotojson)
+- [ServerEndpointsFromJSON](README.md#serverendpointsfromjson)
+- [ServerEndpointsFromJSONTyped](README.md#serverendpointsfromjsontyped)
+- [ServerEndpointsToJSON](README.md#serverendpointstojson)
 - [SetInboxFavouritedOptionsFromJSON](README.md#setinboxfavouritedoptionsfromjson)
 - [SetInboxFavouritedOptionsFromJSONTyped](README.md#setinboxfavouritedoptionsfromjsontyped)
 - [SetInboxFavouritedOptionsToJSON](README.md#setinboxfavouritedoptionstojson)
@@ -8593,6 +8601,55 @@ ___
 
 ___
 
+### ImapSmtpAccessServersFromJSON
+
+▸ **ImapSmtpAccessServersFromJSON**(`json`): [`ImapSmtpAccessServers`](interfaces/ImapSmtpAccessServers.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ImapSmtpAccessServers`](interfaces/ImapSmtpAccessServers.md)
+
+___
+
+### ImapSmtpAccessServersFromJSONTyped
+
+▸ **ImapSmtpAccessServersFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ImapSmtpAccessServers`](interfaces/ImapSmtpAccessServers.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ImapSmtpAccessServers`](interfaces/ImapSmtpAccessServers.md)
+
+___
+
+### ImapSmtpAccessServersToJSON
+
+▸ **ImapSmtpAccessServersToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ImapSmtpAccessServers`](interfaces/ImapSmtpAccessServers.md) |
+
+#### Returns
+
+`any`
+
+___
+
 ### ImapUpdateFlagsOptionsFromJSON
 
 ▸ **ImapUpdateFlagsOptionsFromJSON**(`json`): [`ImapUpdateFlagsOptions`](interfaces/ImapUpdateFlagsOptions.md)
@@ -13094,6 +13151,55 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `value?` | [`SentSmsDto`](interfaces/SentSmsDto.md) |
+
+#### Returns
+
+`any`
+
+___
+
+### ServerEndpointsFromJSON
+
+▸ **ServerEndpointsFromJSON**(`json`): [`ServerEndpoints`](interfaces/ServerEndpoints.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+
+#### Returns
+
+[`ServerEndpoints`](interfaces/ServerEndpoints.md)
+
+___
+
+### ServerEndpointsFromJSONTyped
+
+▸ **ServerEndpointsFromJSONTyped**(`json`, `ignoreDiscriminator`): [`ServerEndpoints`](interfaces/ServerEndpoints.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `any` |
+| `ignoreDiscriminator` | `boolean` |
+
+#### Returns
+
+[`ServerEndpoints`](interfaces/ServerEndpoints.md)
+
+___
+
+### ServerEndpointsToJSON
+
+▸ **ServerEndpointsToJSON**(`value?`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value?` | [`ServerEndpoints`](interfaces/ServerEndpoints.md) |
 
 #### Returns
 

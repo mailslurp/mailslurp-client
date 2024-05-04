@@ -17,16 +17,16 @@
 export interface InboxReplierEventProjection {
     /**
      *
+     * @type {Date}
+     * @memberof InboxReplierEventProjection
+     */
+    createdAt: Date;
+    /**
+     *
      * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
     recipients?: Array<string> | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    userId?: string | null;
     /**
      *
      * @type {string}
@@ -44,6 +44,12 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
+    userId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
     sentId?: string | null;
     /**
      *
@@ -51,12 +57,6 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
-    /**
-     *
-     * @type {Date}
-     * @memberof InboxReplierEventProjection
-     */
-    createdAt: Date;
     /**
      *
      * @type {string}

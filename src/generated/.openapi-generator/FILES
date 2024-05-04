@@ -168,6 +168,7 @@ models/ImapServerSearchResult.ts
 models/ImapServerStatusOptions.ts
 models/ImapServerStatusResult.ts
 models/ImapSmtpAccessDetails.ts
+models/ImapSmtpAccessServers.ts
 models/ImapUpdateFlagsOptions.ts
 models/InboxByEmailAddressResult.ts
 models/InboxByNameResult.ts
@@ -260,6 +261,7 @@ models/Sender.ts
 models/SentEmailDto.ts
 models/SentEmailProjection.ts
 models/SentSmsDto.ts
+models/ServerEndpoints.ts
 models/SetInboxFavouritedOptions.ts
 models/SimpleSendEmailOptions.ts
 models/SmsDto.ts
