@@ -41,6 +41,7 @@ docs: node_modules
 	rm -rf docs-markdown
 	npm run docs
 	npm run docs:html
+	cp CNAME docs/CNAME
 
 docs-lint: node_modules
 	# fix bad links in docs
